@@ -1,0 +1,47 @@
+<!doctype html>
+<html th:fragment="layout(title, activePage, content, scripts)" xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A generator for military symbols based on NATO standard APP-6(E)">
+        <meta name="author" content="CTG Games Limited">
+        <title th:replace="${title}">Page Title</title>
+        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/starter-template.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-sm text-bg-primary bg-opacity-25 p-0">
+                <a href="/" class="d-flex align-items-center px-4 text-dark text-decoration-none"> 
+                    <img alt="CTG Games Limited" src="/images/logo_48.png" /> 
+                    <span class="fs-5 ms-3">JMSFX Icon Generator</span>
+                </a>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a th:if="${activePage} == 'home'" class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a th:unless="${activePage} == 'home'" class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:if="${activePage} == 'browse'" class="nav-link active" aria-current="page" href="/browse">Browse</a>
+                        <a th:unless="${activePage} == 'browse'" class="nav-link" href="/browse">Browse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:if="${activePage} == 'generate'" class="nav-link active" aria-current="page" href="/generate">Generate</a>
+                        <a th:unless="${activePage} == 'generate'" class="nav-link" href="/generate">Generate</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main role="main" class="container p-2">
+            <div th:replace="${content}">Interesting content goes here...</div>
+        </main>
+        <footer class="footer border-top bg-secondary">
+            <div class="d-flex justify-content-center">
+                <span class="text-bg-secondary">Brought to you by CTG Games Ltd &middot; &copy; 2022</span>
+            </div> 
+        </footer>
+        <script src="/js/bootstrap.bundle.js"></script>
+        <script src="/js/jquery-3.6.1.js"></script>
+        <script th:replace="${scripts}"></script>
+    </body>
+</html>

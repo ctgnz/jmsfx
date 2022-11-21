@@ -1,0 +1,92 @@
+<!doctype html>
+<html th:replace="~{layout :: layout(~{::title}, 'browse', ~{::#content}, ~{::script})}">
+    <head>
+        <title>JMSFX | Browse Symbol Sets</title>
+        <script type="text/javascript">
+$(document).ready(function() {
+	$.getJSON('/generate/symbols/', function(data) {
+		var select = $("#symbol-sets");
+		select.empty();
+		select.append('<option value="" selected>Select symbol set</option>');
+		$.each(data, function(ix, symbol) {
+			select.append($('<option>', {
+				value: symbol.id,
+				text: symbol.label
+			}));
+		});
+		$('#symbol-sets').change(function () {
+			var opt = $('#symbol-sets option:selected');
+        	var url = '/browse/' + opt.val(); 
+            $.get(url, function(data) {
+                $('#entities').html(data);
+            });
+		});
+    });
+});
+        </script>
+    </head>
+    <body>
+        <div id="content">
+            <form>
+                <div class="d-flex mb-2">
+                    <label for="symbol-sets" class="col-sm-2 col-form-label">Symbol Set:</label>
+                    <select id="symbol-sets" class="col-sm-4 col-form-select" aria-label="Symbol Set">
+                        <option>Select symbol set</option>
+                    </select>
+                </div>
+            </form>
+            <div id="entities">
+                <p class="mt-3">Select the required symbol set to view the entities, types and sub-types for that set.</p>
+            </div>
+            <div th:if="${symbolSet}" th:fragment="entities">
+                <h5 class="p-3" th:text="${symbolSet.label}">Symbol Set</h5>
+                <div class="accordion" id="entityBrowser">
+                    <div class="accordion-item entity bg-light" th:each="entity,entityStat : ${entities}">
+                        <div th:if="${#lists.isEmpty(entity.entityTypes)}">
+                            <img class="jms-icon" alt="Icon for ${entity.label}" th:attr="src='/' + ${symbolSet.path} + '/symbol/entity/'+${entity}" />
+                            <span class="entity" th:text="${entity.label}"></span>
+                        </div>
+                        <h2 th:unless="${#lists.isEmpty(entity.entityTypes)}" class="d-flex accordion-header clearfix" th:attr="id='entity-heading-' + ${entityStat.count}">
+                          <img class="jms-icon" th:attr="src='/' + ${symbolSet.path} + '/symbol/entity/'+${entity},alt='Icon for entity ' + ${entity.label},title='Icon for entity ' + ${entity.label}" />
+                          <button th:text="${entity.label}" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false"
+                                  th:attr="data-bs-target='#entity-collapse-' + ${entityStat.count},aria-controls='entity-collapse-' + ${entityStat.count}">
+                            Entity
+                          </button>
+                        </h2>
+                        <div th:unless="${#lists.isEmpty(entity.entityTypes)}" class="accordion-collapse collapse entity" 
+                            th:attr="id='entity-collapse-' + ${entityStat.count},aria-labelledby='entity-heading-' + ${entityStat.count}">
+                            <div class="accordion" th:attr="id='entityTypeBrowser' + ${entityStat.count}">
+                                <div class="accordion-item col-md-10 offset-md-1" th:each="entityType,entityTypeStat : ${entity.entityTypes}">
+                                    <div th:if="${#lists.isEmpty(entityType.entitySubTypes)}" class="clearfix">
+                                        <img class="jms-icon" th:attr="src='/' + ${symbolSet.path} + '/symbol/'+${entityType},alt='Icon for entity type' + ${entityType.label}" />
+                                        <span class="entity-type" th:text="${entityType.label}"></span>
+                                    </div>
+                                    <h2 th:unless="${#lists.isEmpty(entityType.entitySubTypes)}" class="d-flex accordion-header clearfix" th:attr="id='entity-type-heading-' + ${entityStat.count}">
+                                        <img class="jms-icon" alt="Icon for ${entityType.label}" th:attr="src='/' + ${symbolSet.path} + '/symbol/'+${entityType}" />
+                                        <button th:text="${entityType.label}" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false"
+                                                th:attr="data-bs-target='#entity-type-collapse-' + ${entityStat.count} + '-' + ${entityTypeStat.count},aria-controls='entity-type-collapse-' + ${entityTypeStat.count}">
+                                          Entity Type
+                                        </button>
+                                    </h2>
+                                    <div th:unless="${#lists.isEmpty(entityType.entitySubTypes)}" th:if="${not #lists.isEmpty(entityType.entitySubTypes)}" class="accordion-collapse collapse" 
+                                         th:attr="id='entity-type-collapse-' + ${entityStat.count} + '-' + ${entityTypeStat.count},aria-labelledby='entity-type-heading-' + ${entityTypeStat.count}">
+                                        <ul class="list-group entity-type col-md-10 offset-md-1">
+                                            <li class="list-group-item" th:each="entitySubType : ${entityType.entitySubTypes}">
+                                                <img class="jms-icon" alt="Icon for ${entitySubType.label}" th:attr="src='/' + ${symbolSet.path} + '/symbol/'+${entityType}+'/'+${entitySubType}" />
+                                                <span th:text="${entitySubType.label}" class="entity-subtype">Entity Sub Type</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                        
+            </div>
+            
+        </div>
+    </body>
+</html>
+    

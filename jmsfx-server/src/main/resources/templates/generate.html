@@ -1,0 +1,267 @@
+<!doctype html>
+<html th:replace="~{layout :: layout(~{::title}, 'generate', ~{::#content}, ~{::script})}">
+<head>
+    <title>JMSFX | Generate Icons</title>
+    <script type="text/javascript">
+var symbolSet, entity, entityType, entitySubType, modOne, modTwo, amplifier;
+$(document).ready(function () {
+	$.getJSON('/generate/symbols/', function (data) {
+		var select = $("#symbol-set");
+		select.empty();
+		select.append('<option value="" selected>Select symbol set</option>');
+		$.each(data, function(ix, symbol) {
+			var opt = $('<option>', {
+				value: symbol.path,
+				text: symbol.label
+			})
+			select.append(opt);
+		});
+    });
+	$('#symbol-set').change(function () {
+		$('#preview').html('');
+		var opt = $('#symbol-set option:selected');
+		symbolSet = opt.val();
+		entity = entityType = entitySubType = modOne = modTwo = amplifier = '';
+		$("#entity").empty();
+		$("#entity-type").empty();
+		$("#entity-subtype").empty();
+		$("#modifier-one").empty();
+		$("#modifier-two").empty();
+		$("#amplifier").empty();
+		$.get(symbolSet + '/entity/list', function (data) {
+    		var select = $("#entity");
+    		select.empty();
+    		$.each(data, function(ix, entity) {
+    			var opt = $('<option>', {
+    				value: entity.entity,
+    				text: entity.label
+    			})
+    			select.append(opt);
+    		});
+    		var first = $('#entity option:first');
+    		first.prop('selected', 'selected');
+    		entity = first.val(); 
+    		updatePreview();
+		});
+		$.get(symbolSet + '/modifier/one', function (data) {
+    		var select = $("#modifier-one");
+    		select.empty();
+    		if (data.length == 0) {
+    			select.attr('disabled', 'disabled');
+    		} else {
+    			select.removeAttr('disabled');
+    		}
+    		$.each(data, function(ix, mod) {
+    			var opt = $('<option>', {
+    				value: mod.modifier,
+    				text: mod.label
+    			})
+    			select.append(opt);
+    		});
+		});
+		$.get(symbolSet + '/modifier/two', function (data) {
+    		var select = $("#modifier-two");
+    		select.empty();
+    		if (data.length == 0) {
+    			select.attr('disabled', 'disabled');
+    		} else {
+    			select.removeAttr('disabled');
+    		}
+    		$.each(data, function(ix, mod) {
+    			var opt = $('<option>', {
+    				value: mod.modifier,
+    				text: mod.label
+    			})
+    			select.append(opt);
+    		});
+		});
+		$.get(symbolSet + '/amplifier', function (data) {
+    		var select = $("#amplifier");
+    		select.empty();
+			select.append('<option value="" selected>Unspecified</option>');
+    		if (data.length == 0) {
+    			select.attr('disabled', 'disabled');
+    		} else {
+    			select.removeAttr('disabled');
+    		}
+    		$.each(data, function(ix, amp) {
+    			var opt = $('<option>', {
+    				value: amp.amplifier,
+    				text: amp.label
+    			})
+    			select.append(opt);
+    		});
+		});
+	});
+	$('#entity').change(function () {
+		var opt = $('#entity option:selected');
+		entity = opt.val();
+		entityType = entitySubType = ''
+		$.get(symbolSet + '/entityType/' + entity + '/list', function (data) {
+    		var select = $("#entity-type");
+    		select.empty();
+    		if (data.length == 0) {
+    			select.attr('disabled', 'disabled');
+    			$('#entity-subtype').attr('disabled', 'disabled');
+    		} else {
+    			select.append('<option value="" selected>Unspecified</option>');
+    			select.removeAttr('disabled');
+    		}
+    		$.each(data, function(ix, entityType) {
+    			var opt = $('<option>', {
+    				value: entityType.entityType,
+    				text: entityType.label
+    			})
+    			select.append(opt);
+    		});
+		});
+		updatePreview();
+	});
+	$('#entity-type').change(function () {
+		var opt = $('#entity-type option:selected');
+		entityType = opt.val();
+		entitySubType = ''
+		if (entityType === '') {
+    		var select = $("#entity-subtype");
+    		select.empty();
+			select.append('<option value="" selected>Unspecified</option>');
+		} else {
+    		$.get(symbolSet + '/entitySubType/' + entityType + '/list', function (data) {
+        		var select = $("#entity-subtype");
+        		select.empty();
+        		if (data.length == 0) {
+        			select.attr('disabled', 'disabled');
+        		} else {
+        			select.append('<option value="" selected>Unspecified</option>');
+        			select.removeAttr('disabled');
+        		}
+        		$.each(data, function(ix, entitySubType) {
+        			var opt = $('<option>', {
+        				value: entitySubType.entitySubType,
+        				text: entitySubType.label
+        			})
+        			select.append(opt);
+        		});
+    		});
+		}
+		updatePreview();
+	});
+	$('#entity-subtype').change(function () {
+		var opt = $('#entity-subtype option:selected');
+		entitySubType = opt.val();
+		updatePreview();
+	});
+	$('#modifier-one').change(function () {
+		var opt = $('#modifier-one option:selected');
+		modOne = opt.val();
+		updatePreview();
+	});
+	$('#modifier-two').change(function () {
+		var opt = $('#modifier-two option:selected');
+		modTwo = opt.val();
+		updatePreview();
+	});
+	$('#amplifier').change(function () {
+		var opt = $('#amplifier option:selected');
+		amplifier = opt.val();
+		updatePreview();
+	});
+});
+
+function updatePreview() {
+	if (entity) {
+    	var symbolUrl = symbolSet + '/symbol/'
+    	if (entityType === "") {
+    		symbolUrl += 'entity/' + entity;
+    	} else {
+    		symbolUrl += entityType;
+    		if (entitySubType) {
+    			symbolUrl += '/' + entitySubType;	
+    		}
+    	}
+    	var symbolData = {};
+    	if (modOne) {
+    		symbolData['sectorOneMod'] = modOne;
+    	}
+    	if (modTwo) {
+    		symbolData['sectorTwoMod'] = modTwo; 
+    	}
+    	if (amplifier) {
+    		symbolData['amplifier'] = amplifier; 
+    	}
+    	$.get({
+    		url: symbolUrl,
+    		data: symbolData,
+    		dataType: "html", 
+    		success: function (data) {
+    			$('#preview').html(data);
+				$('#preview').attr('href', this.url);
+    			$('#preview-caption').html($(data).find('title').html());
+    		}
+    	});
+	} else {
+		$('#preview').html('');
+	}
+}
+	</script>
+</head>
+<body>
+    <div id="content">
+        <h5 class="py-3">JMSFX Icon Generator</h5>
+        <div class="row">
+            <div id="controls" class="col-md-4">
+                <form>
+                    <div class="d-flex mb-2">
+                        <label for="symbol-set" class="col-sm-4 col-form-label">Symbol Set:</label>
+                        <select id="symbol-set" class="col-sm-8 col-form-select" aria-label="Symbol Set">
+                            <option>Select symbol set</option>
+                        </select>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <label for="entity" class="col-sm-4 col-form-label">Entity:</label>
+                        <select id="entity" class="col-sm-8 col-form-select" aria-label="Entity">
+                            <option>Unspecified</option>
+                        </select>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <label for="entity-type" class="col-sm-4 col-form-label">Entity Type:</label>
+                        <select id="entity-type" class="col-sm-8 col-form-select" aria-label="Entity Type">
+                            <option>Unspecified</option>
+                        </select>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <label for="entity-subtype" class="col-sm-4 col-form-label">Entity Sub-Type:</label>
+                        <select id="entity-subtype" class="col-sm-8 col-form-select" aria-label="Entity Sub-Type">
+                            <option>Unspecified</option>
+                        </select>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <label for="modifier-one" class="col-sm-4 col-form-label">Modifier One:</label>
+                        <select id="modifier-one" class="col-sm-8 col-form-select" aria-label="Modifier One">
+                            <option>Unspecified</option>
+                        </select>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <label for="modifier-two" class="col-sm-4 col-form-label">Modifier Two:</label>
+                        <select id="modifier-two" class="col-sm-8 col-form-select" aria-label="Modifier Two">
+                            <option>Unspecified</option>
+                        </select>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <label for="amplifier" class="col-sm-4 col-form-label">Amplifier:</label>
+                        <select id="amplifier" class="col-sm-8 col-form-select" aria-label="Amplifier">
+                            <option>Unspecified</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 ms-auto">
+                <figure>
+                    <a id="preview"></a>
+                    <figcaption id="preview-caption"></figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
