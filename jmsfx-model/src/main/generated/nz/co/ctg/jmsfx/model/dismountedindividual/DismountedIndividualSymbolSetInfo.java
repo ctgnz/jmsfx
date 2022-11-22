@@ -17,7 +17,10 @@ import nz.co.ctg.jmsfx.model.EntityType;
 import nz.co.ctg.jmsfx.model.SectorOneModifier;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 import nz.co.ctg.jmsfx.model.SymbolSetInfo;
+import nz.co.ctg.jmsfx.model.UnitEchelon;
 import nz.co.ctg.jmsfx.model.LeadershipRole;
+import nz.co.ctg.jmsfx.model.StandardRank;
+import nz.co.ctg.jmsfx.model.StandardServiceTier;
 
 public class DismountedIndividualSymbolSetInfo implements SymbolSetInfo {
     public static final SymbolSetInfo INSTANCE = new DismountedIndividualSymbolSetInfo();
@@ -51,17 +54,17 @@ public class DismountedIndividualSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<AmplifierGroup> getAmplifiers() {
-        return Arrays.asList(LeadershipRole.values());
+        return Arrays.asList(UnitEchelon.values());
     }
 
     @Override
     public List<AmplifierGroup> getAmplifiersTwo() {
-        return Collections.emptyList();
+        return Arrays.asList(LeadershipRole.values());
     }
 
     @Override
     public List<AmplifierGroup> getAmplifiersThree() {
-        return Collections.emptyList();
+        return Arrays.asList(StandardRank.values());
     }
 
     @Override
@@ -81,7 +84,7 @@ public class DismountedIndividualSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<AmplifierGroup> getFrameAmplifiers() {
-        return Collections.emptyList();
+        return Arrays.asList(StandardServiceTier.values());
     }
 
     @Override
@@ -106,12 +109,12 @@ public class DismountedIndividualSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isAmplifierTwoPresent() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAmplifierThreePresent() {
-        return false;
+        return true;
     }
 
     @Override
@@ -126,7 +129,7 @@ public class DismountedIndividualSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isFrameAmplifierPresent() {
-        return false;
+        return true;
     }
 
     @Override

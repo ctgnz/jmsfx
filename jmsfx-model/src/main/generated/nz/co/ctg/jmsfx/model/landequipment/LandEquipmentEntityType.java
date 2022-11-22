@@ -81,6 +81,8 @@ public enum LandEquipmentEntityType implements EntityType {
     TRANSPORTATION_SECURITY_ADMINISTRATION_TSA("09", "Transportation Security Administration (TSA)", LandEquipmentEntity.LAW_ENFORCEMENT, IconType.MAIN),
     COAST_GUARD("10", "Coast Guard", LandEquipmentEntity.LAW_ENFORCEMENT, IconType.FULL_OCTAGON),
     US_MARSHALS_SERVICE("11", "US Marshals Service", LandEquipmentEntity.LAW_ENFORCEMENT, IconType.FULL_OCTAGON),
+    PACK_ANIMALS("01", "Pack Animals", LandEquipmentEntity.WORKING_ANIMALS, IconType.FULL_OCTAGON),
+    TRAINED_ANIMALS("02", "Trained Animals", LandEquipmentEntity.WORKING_ANIMALS, IconType.FULL_OCTAGON),
     MISSILE_TRANSLOADER("01", "Transloader", LandEquipmentEntity.MISSILE_SUPPORT, IconType.FULL_OCTAGON),
     MISSILE_TRANSPORTER("02", "Transporter", LandEquipmentEntity.MISSILE_SUPPORT, IconType.FULL_OCTAGON),
     MISSILE_CRANE_LOADING_DEVICE("03", "Crane/Loading Device", LandEquipmentEntity.MISSILE_SUPPORT, IconType.FULL_OCTAGON),

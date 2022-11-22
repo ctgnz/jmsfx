@@ -16,7 +16,6 @@ import nz.co.ctg.jmsfx.model.EntityType;
 import nz.co.ctg.jmsfx.model.SectorOneModifier;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 import nz.co.ctg.jmsfx.model.SymbolSetInfo;
-import nz.co.ctg.jmsfx.model.UnitEchelon;
 
 public class AirSymbolSetInfo implements SymbolSetInfo {
     public static final SymbolSetInfo INSTANCE = new AirSymbolSetInfo();
@@ -34,7 +33,7 @@ public class AirSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<AmplifierGroup> getAmplifiers() {
-        return Arrays.asList(UnitEchelon.values());
+        return Collections.emptyList();
     }
 
     @Override
@@ -84,7 +83,7 @@ public class AirSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isAmplifierPresent() {
-        return true;
+        return false;
     }
 
     @Override

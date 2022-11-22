@@ -4,10 +4,12 @@ import java.util.Arrays;
 
 public enum AmplifierGroupType implements SymbolIdentificationCodeElement {
     UNKNOWN("0", "Unspecified", UnknownAmplifier.class),
-    UNIT_ECHELON("1", "Unit Echelon", UnitEchelon.class, SymbolSet.SS_AIR),
-    EQUIPMENT_MOBILITY("3", "Equipment Mobility", EquipmentMobility.class),
-    TOWED_ARRAYS("6", "Naval towed array", TowedArrayType.class, SymbolSet.SS_SEA_SURFACE),
-    LEADERSHIP_ROLE("7", "Leadership role", LeadershipRole.class, SymbolSet.SS_DISMOUNTED);
+    SERVICE_TIER("0", "Nato standard service tiers", StandardServiceTier.class, SymbolSet.SS_LAND_UNIT, SymbolSet.SS_LAND_EQUIPMENT, SymbolSet.SS_DISMOUNTED),
+    UNIT_ECHELON("1", "Unit Echelon", UnitEchelon.class, SymbolSet.SS_LAND_UNIT, SymbolSet.SS_DISMOUNTED),
+    EQUIPMENT_MOBILITY("3", "Equipment Mobility", EquipmentMobility.class, SymbolSet.SS_LAND_EQUIPMENT),
+    TOWED_ARRAYS("4", "Naval towed array", TowedArrayType.class, SymbolSet.SS_SEA_SURFACE),
+    LEADERSHIP_INDICATOR("5", "Role for dismounted individuals", LeadershipRole.class, SymbolSet.SS_DISMOUNTED),
+    RANK("7", "NATO standard rank scales", StandardRank.class, SymbolSet.SS_DISMOUNTED);
 
     private final String id;
     private final String label;

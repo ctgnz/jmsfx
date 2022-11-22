@@ -31,6 +31,14 @@
             "frameAmplifier": true
         },
         {
+            "enumType": "StandardServiceTier",
+            "enumId": "SERVICE_TIER",
+            "enumDesc": "Nato standard service tiers",
+            "graphicLocation": "Extension",
+            "groupIds": [ "SERVICE_TIER" ],
+            "frameAmplifier": true
+        },
+        {
             "enumType": "UnitEchelon",
             "enumId": "UNIT_ECHELON",
             "enumDesc": "Unit Echelon",
@@ -56,10 +64,18 @@
         },
         {
             "enumType": "LeadershipRole",
-            "enumId": "LEADERSHIP_ROLE",
-            "enumDesc": "Leadership role",
+            "enumId": "LEADERSHIP_INDICATOR",
+            "enumDesc": "Role for dismounted individuals",
             "graphicLocation": "Amplifier",
-            "groupIds": [ "LEADERSHIP_INDICATOR" ],
+            "groupIds": [ "LEADERSHIP_INDICATOR", "STAFF_ROLE" ],
+            "frameAmplifier": false
+        },
+        {
+            "enumType": "StandardRank",
+            "enumId": "RANK",
+            "enumDesc": "NATO standard rank scales",
+            "graphicLocation": "Extension",
+            "groupIds": [ "RANK_ENLISTED", "RANK_WARRANT", "RANK_OFFICER" ],
             "frameAmplifier": false
         }
     ],
@@ -108,7 +124,7 @@
         ],
         "LAND_UNIT": [
             { "code": "C",  "x": 205, "y": 192, "width" : 200, "height":  80, "amplifier": "Quantity" },
-            { "code": "F",  "x": 486, "y": 196, "width" : 126, "height":  80, "amplifier": "ReinforcedorReduced" },
+            { "code": "F",  "x": 486, "y": 196, "width" : 126, "height":  80, "amplifier": "ReinforcedOrReduced" },
             { "code": "G",  "x": 486, "y": 276, "width" : 126, "height":  80, "amplifier": "StaffComments" },
             { "code": "H",  "x": 486, "y": 356, "width" : 126, "height":  80, "amplifier": "AdditionalInformation" },
             { "code": "J",  "x": 486, "y": 516, "width" : 126, "height":  80, "amplifier": "EvaluationRating" },
@@ -126,7 +142,7 @@
             { "code": "AE", "x":   0, "y": 356, "width" : 126, "height":  80, "amplifier": "EquipmentTeardownTime" },
             { "code": "AF", "x": 486, "y": 356, "width" : 126, "height":  80, "amplifier": "CommonIdentifier" },
             { "code": "AH", "x": 185, "y": 520, "width" : 240, "height":  80, "amplifier": "HeadquartersElement" },
-            { "code": "AL", "x": 130, "y": 600, "width" : 350, "height":  80, "amplifier": "AreaofUncertainty" },
+            { "code": "AL", "x": 130, "y": 600, "width" : 350, "height":  80, "amplifier": "AreaOfUncertainty" },
             { "code": "AO", "x": 130, "y":   5, "width" : 350, "height":  80, "amplifier": "EngagementBar" },
             { "code": "AR", "x":   0, "y": 196, "width" : 126, "height":  80, "amplifier": "SpecialDesignator" }
         ]

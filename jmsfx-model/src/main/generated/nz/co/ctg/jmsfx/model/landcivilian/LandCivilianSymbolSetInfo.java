@@ -30,7 +30,7 @@ public class LandCivilianSymbolSetInfo implements SymbolSetInfo {
     public List<AmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
             new AmplifierGuide("C", Amplifier.Quantity, 205, 192, 200, 80),
-            new AmplifierGuide("F", Amplifier.ReinforcedorReduced, 486, 196, 126, 80),
+            new AmplifierGuide("F", Amplifier.ReinforcedOrReduced, 486, 196, 126, 80),
             new AmplifierGuide("G", Amplifier.StaffComments, 486, 276, 126, 80),
             new AmplifierGuide("H", Amplifier.AdditionalInformation, 486, 356, 126, 80),
             new AmplifierGuide("J", Amplifier.EvaluationRating, 486, 516, 126, 80),
@@ -48,7 +48,7 @@ public class LandCivilianSymbolSetInfo implements SymbolSetInfo {
             new AmplifierGuide("AE", Amplifier.EquipmentTeardownTime, 0, 356, 126, 80),
             new AmplifierGuide("AF", Amplifier.CommonIdentifier, 486, 356, 126, 80),
             new AmplifierGuide("AH", Amplifier.HeadquartersElement, 185, 520, 240, 80),
-            new AmplifierGuide("AL", Amplifier.AreaofUncertainty, 130, 600, 350, 80),
+            new AmplifierGuide("AL", Amplifier.AreaOfUncertainty, 130, 600, 350, 80),
             new AmplifierGuide("AO", Amplifier.EngagementBar, 130, 5, 350, 80),
             new AmplifierGuide("AR", Amplifier.SpecialDesignator, 0, 196, 126, 80)
         );
