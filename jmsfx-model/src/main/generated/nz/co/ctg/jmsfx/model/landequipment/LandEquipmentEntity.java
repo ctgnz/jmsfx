@@ -16,7 +16,7 @@ public enum LandEquipmentEntity implements Entity {
     TRAIN("15", "Train", IconType.NA),
     CIVILIAN_VEHICLE("16", "Civilian Vehicle", IconType.NA),
     LAW_ENFORCEMENT("17", "Law Enforcement", IconType.FULL_OCTAGON),
-    WORKING_ANIMALS("18", "Working Animals", IconType.FULL_OCTAGON),
+    PACK_ANIMALS("18", "Pack Animals", IconType.FULL_OCTAGON),
     MISSILE_SUPPORT("19", "Missile Support", IconType.FULL_OCTAGON),
     OTHER_EQUIPMENT("20", "Other Equipment", IconType.NA),
     LAND_MINES("21", "Land Mines", IconType.NA),

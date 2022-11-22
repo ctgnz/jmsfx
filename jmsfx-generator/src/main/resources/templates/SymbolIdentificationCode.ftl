@@ -105,6 +105,33 @@ public class SymbolIdentificationCode {
         return symbolSet.getEntities().get(0);
     }
 
+    public String getDescription() {
+        StringBuilder sb = new StringBuilder();
+        if (entityType != null) {
+            sb.append(entityType.getLabel());
+        } else if (entity != null) {
+            sb.append(entity.getLabel());
+        }
+        if (entitySubType != null) {
+            sb.append(" (");
+            sb.append(entitySubType.getLabel());
+            sb.append(")");
+        }
+        if (sectorOneModifier != null && !sectorOneModifier.isUnknown()) {
+            sb.append(" ");
+            sb.append(sectorOneModifier.getLabel());
+        }
+        if (sectorTwoModifier != null && !sectorTwoModifier.isUnknown()) {
+            sb.append(" ");
+            sb.append(sectorTwoModifier.getLabel());
+        }
+        if (amplifier != null && !amplifier.isUnknown()) {
+            sb.append(" ");
+            sb.append(amplifier.getLabel());
+        }
+        return sb.toString();
+    }
+    
     public List<Entity> getEntities() {
         return symbolSet.getEntities();
     }

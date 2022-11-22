@@ -109,12 +109,6 @@ public enum LandEquipmentEntitySubType implements EntitySubType {
     TRACTOR_TRAILER_BED_LIGHT("01", "Small/Light", LandEquipmentEntityType.TRACTOR_TRAILER_FLATBED, IconType.FULL_OCTAGON),
     TRACTOR_TRAILER_BED_MEDIUM("02", "Medium", LandEquipmentEntityType.TRACTOR_TRAILER_FLATBED, IconType.FULL_OCTAGON),
     TRACTOR_TRAILER_BED_HEAVY("03", "Large/Heavy", LandEquipmentEntityType.TRACTOR_TRAILER_FLATBED, IconType.FULL_OCTAGON),
-    HORSE("01", "Horse", LandEquipmentEntityType.PACK_ANIMALS, IconType.FULL_OCTAGON),
-    MULE("02", "Mule", LandEquipmentEntityType.PACK_ANIMALS, IconType.FULL_OCTAGON),
-    CAMEL("03", "Camel", LandEquipmentEntityType.PACK_ANIMALS, IconType.FULL_OCTAGON),
-    OXEN("04", "Oxen", LandEquipmentEntityType.PACK_ANIMALS, IconType.FULL_OCTAGON),
-    ELEPHANT("05", "Elephant", LandEquipmentEntityType.PACK_ANIMALS, IconType.FULL_OCTAGON),
-    DOG("01", "Dog", LandEquipmentEntityType.TRAINED_ANIMALS, IconType.FULL_OCTAGON),
     MEDICAL_EVACUATION_HELICOPTER("01", "Medical Evacuation Helicopter", LandEquipmentEntityType.EMERGENCY_MEDICAL_OPERATION, IconType.MAIN_1);
 
     private final String id;

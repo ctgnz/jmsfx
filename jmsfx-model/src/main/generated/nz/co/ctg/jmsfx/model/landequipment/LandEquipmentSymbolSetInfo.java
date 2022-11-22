@@ -16,8 +16,6 @@ import nz.co.ctg.jmsfx.model.EntityType;
 import nz.co.ctg.jmsfx.model.SectorOneModifier;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 import nz.co.ctg.jmsfx.model.SymbolSetInfo;
-import nz.co.ctg.jmsfx.model.EquipmentMobility;
-import nz.co.ctg.jmsfx.model.StandardServiceTier;
 
 public class LandEquipmentSymbolSetInfo implements SymbolSetInfo {
     public static final SymbolSetInfo INSTANCE = new LandEquipmentSymbolSetInfo();
@@ -35,7 +33,7 @@ public class LandEquipmentSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<AmplifierGroup> getAmplifiers() {
-        return Arrays.asList(EquipmentMobility.values());
+        return Collections.emptyList();
     }
 
     @Override
@@ -65,7 +63,7 @@ public class LandEquipmentSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<AmplifierGroup> getFrameAmplifiers() {
-        return Arrays.asList(StandardServiceTier.values());
+        return Collections.emptyList();
     }
 
     @Override
@@ -85,7 +83,7 @@ public class LandEquipmentSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isAmplifierPresent() {
-        return true;
+        return false;
     }
 
     @Override
@@ -110,7 +108,7 @@ public class LandEquipmentSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isFrameAmplifierPresent() {
-        return true;
+        return false;
     }
 
     @Override

@@ -17,8 +17,6 @@ import nz.co.ctg.jmsfx.model.EntityType;
 import nz.co.ctg.jmsfx.model.SectorOneModifier;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 import nz.co.ctg.jmsfx.model.SymbolSetInfo;
-import nz.co.ctg.jmsfx.model.UnitEchelon;
-import nz.co.ctg.jmsfx.model.StandardServiceTier;
 
 public class LandUnitsSymbolSetInfo implements SymbolSetInfo {
     public static final SymbolSetInfo INSTANCE = new LandUnitsSymbolSetInfo();
@@ -33,7 +31,7 @@ public class LandUnitsSymbolSetInfo implements SymbolSetInfo {
     public List<AmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
             new AmplifierGuide("C", Amplifier.Quantity, 205, 192, 200, 80),
-            new AmplifierGuide("F", Amplifier.ReinforcedOrReduced, 486, 196, 126, 80),
+            new AmplifierGuide("F", Amplifier.ReinforcedorReduced, 486, 196, 126, 80),
             new AmplifierGuide("G", Amplifier.StaffComments, 486, 276, 126, 80),
             new AmplifierGuide("H", Amplifier.AdditionalInformation, 486, 356, 126, 80),
             new AmplifierGuide("J", Amplifier.EvaluationRating, 486, 516, 126, 80),
@@ -51,7 +49,7 @@ public class LandUnitsSymbolSetInfo implements SymbolSetInfo {
             new AmplifierGuide("AE", Amplifier.EquipmentTeardownTime, 0, 356, 126, 80),
             new AmplifierGuide("AF", Amplifier.CommonIdentifier, 486, 356, 126, 80),
             new AmplifierGuide("AH", Amplifier.HeadquartersElement, 185, 520, 240, 80),
-            new AmplifierGuide("AL", Amplifier.AreaOfUncertainty, 130, 600, 350, 80),
+            new AmplifierGuide("AL", Amplifier.AreaofUncertainty, 130, 600, 350, 80),
             new AmplifierGuide("AO", Amplifier.EngagementBar, 130, 5, 350, 80),
             new AmplifierGuide("AR", Amplifier.SpecialDesignator, 0, 196, 126, 80)
         );
@@ -59,7 +57,7 @@ public class LandUnitsSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<AmplifierGroup> getAmplifiers() {
-        return Arrays.asList(UnitEchelon.values());
+        return Collections.emptyList();
     }
 
     @Override
@@ -79,7 +77,9 @@ public class LandUnitsSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<EntitySubType> getEntitySubTypes(EntityType entityType) {
-        return Lists.newArrayList(ENTITY_SUB_TYPES.get(entityType));
+        List<EntitySubType> subTypes = Lists.newArrayList(ENTITY_SUB_TYPES.get(entityType));
+        subTypes.addAll(getSpecialEntitySubTypes());
+        return subTypes;
     }
 
     @Override
@@ -89,7 +89,7 @@ public class LandUnitsSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<AmplifierGroup> getFrameAmplifiers() {
-        return Arrays.asList(StandardServiceTier.values());
+        return Collections.emptyList();
     }
 
     @Override
@@ -105,11 +105,12 @@ public class LandUnitsSymbolSetInfo implements SymbolSetInfo {
     @Override
     public List<EntitySubType> getSpecialEntitySubTypes() {
         return Collections.emptyList();
+//        return Arrays.asList(LandUnitsSpecialEntitySubType.values());
     }
 
     @Override
     public boolean isAmplifierPresent() {
-        return true;
+        return false;
     }
 
     @Override
@@ -134,7 +135,7 @@ public class LandUnitsSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isFrameAmplifierPresent() {
-        return true;
+        return false;
     }
 
     @Override
@@ -149,7 +150,7 @@ public class LandUnitsSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isSpecialEntitySubTypePresent() {
-        return false;
+        return true;
     }
 
 }

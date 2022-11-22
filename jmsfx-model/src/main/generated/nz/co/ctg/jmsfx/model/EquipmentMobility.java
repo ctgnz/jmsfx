@@ -10,8 +10,8 @@ public enum EquipmentMobility implements AmplifierGroup {
     PACK_ANIMALS("37", "Pack animals"),
     OVER_SNOW("41", "Over snow (prime mover)"),
     SLED("42", "Sled"),
-    BARGE("44", "Barge"),
-    AMPHIB("45", "Amphibious");
+    BARGE("51", "Barge"),
+    AMPHIB("52", "Amphibious");
 
     private final String id;
     private final String label;

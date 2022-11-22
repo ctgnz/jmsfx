@@ -1,8 +1,8 @@
 package nz.co.ctg.jmsfx.model;
 
 public enum TowedArrayType implements AmplifierGroup {
-    SHORT_TOWED_ARRAY("47", "Short towed array"),
-    LONG_TOWED_ARRAY("48", "Long towed array");
+    SHORT_TOWED_ARRAY("61", "Short towed array"),
+    LONG_TOWED_ARRAY("62", "Long towed array");
 
     private final String id;
     private final String label;

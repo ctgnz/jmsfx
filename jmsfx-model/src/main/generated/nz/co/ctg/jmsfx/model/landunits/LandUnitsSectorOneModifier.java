@@ -82,12 +82,7 @@ public enum LandUnitsSectorOneModifier implements SectorOneModifier {
     MEDEVAC_MOD("75", "Medevac", SymbolSet.SS_LAND_UNIT),
     RANGER_MOD("76", "Ranger", SymbolSet.SS_LAND_UNIT),
     SUPPORT_MOD("77", "Support", SymbolSet.SS_LAND_UNIT),
-    AVIATION_MOD("78", "Aviation", SymbolSet.SS_LAND_UNIT),
-    THEATRE_MOD("94", "Theatre", SymbolSet.SS_LAND_UNIT),
-    ARMY_MOD("95", "Army", SymbolSet.SS_LAND_UNIT),
-    CORPS_MOD("96", "Corps", SymbolSet.SS_LAND_UNIT),
-    BRIGADE_MOD("97", "Brigade", SymbolSet.SS_LAND_UNIT),
-    HEADQUARTERS_MOD("98", "Headquarters", SymbolSet.SS_LAND_UNIT);
+    AVIATION_MOD("78", "Aviation", SymbolSet.SS_LAND_UNIT);
 
     private final String id;
     private final String label;
