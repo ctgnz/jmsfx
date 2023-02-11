@@ -35,6 +35,8 @@ public class DismountedIndividualSymbolSetInfo implements SymbolSetInfo {
     public List<AmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
             new AmplifierGuide("C", Amplifier.Quantity, 180, 548, 252, 96),
+            new AmplifierGuide("D", Amplifier.LeadershipIdentifier, 180, 248, 252, 96),
+            new AmplifierGuide("AB", Amplifier.FeintDummyIndicator, 180, 152, 252, 96),
             new AmplifierGuide("G", Amplifier.StaffComments, 440, 248, 168, 96),
             new AmplifierGuide("H", Amplifier.AdditionalInformation, 440, 344, 168, 96),
             new AmplifierGuide("J", Amplifier.EvaluationRating, 440, 536, 168, 96),

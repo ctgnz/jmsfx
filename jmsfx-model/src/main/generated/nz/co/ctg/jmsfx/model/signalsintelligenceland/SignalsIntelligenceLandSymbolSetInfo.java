@@ -8,6 +8,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 
+import nz.co.ctg.jmsfx.model.Amplifier;
 import nz.co.ctg.jmsfx.model.AmplifierGroup;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
 import nz.co.ctg.jmsfx.model.Entity;
@@ -27,7 +28,30 @@ public class SignalsIntelligenceLandSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
-        return Collections.emptyList();        
+        return Arrays.asList(
+            new AmplifierGuide("C", Amplifier.Quantity, 205, 192, 200, 80),
+            new AmplifierGuide("F", Amplifier.ReinforcedOrReduced, 486, 196, 126, 80),
+            new AmplifierGuide("G", Amplifier.StaffComments, 486, 276, 126, 80),
+            new AmplifierGuide("H", Amplifier.AdditionalInformation, 486, 356, 126, 80),
+            new AmplifierGuide("J", Amplifier.EvaluationRating, 486, 516, 126, 80),
+            new AmplifierGuide("K", Amplifier.CombatEffectiveness, 486, 516, 126, 80),
+            new AmplifierGuide("M", Amplifier.HigherFormation, 486, 436, 126, 80),
+            new AmplifierGuide("P", Amplifier.IFFSIFAIS, 486, 516, 126, 80),
+            new AmplifierGuide("R", Amplifier.MobilityIndicator, 185, 520, 240, 80),
+            new AmplifierGuide("T", Amplifier.UniqueDesignation, 0, 436, 126, 80),
+            new AmplifierGuide("V", Amplifier.Type, 0, 356, 126, 80),
+            new AmplifierGuide("W", Amplifier.DateTimeGroupDTG, 0, 196, 126, 80),
+            new AmplifierGuide("X", Amplifier.AltitudeDepth, 0, 276, 126, 80),
+            new AmplifierGuide("Y", Amplifier.Location, 0, 276, 126, 80),
+            new AmplifierGuide("Z", Amplifier.Speed, 0, 516, 126, 80),
+            new AmplifierGuide("AD", Amplifier.PlatformType, 0, 356, 126, 80),
+            new AmplifierGuide("AE", Amplifier.EquipmentTeardownTime, 0, 356, 126, 80),
+            new AmplifierGuide("AF", Amplifier.CommonIdentifier, 486, 356, 126, 80),
+            new AmplifierGuide("AH", Amplifier.HeadquartersElement, 185, 520, 240, 80),
+            new AmplifierGuide("AL", Amplifier.AreaOfUncertainty, 130, 600, 350, 80),
+            new AmplifierGuide("AO", Amplifier.EngagementBar, 130, 5, 350, 80),
+            new AmplifierGuide("AR", Amplifier.SpecialDesignator, 0, 196, 126, 80)
+        );
     }
 
     @Override
