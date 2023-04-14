@@ -84,8 +84,28 @@ $(document).ready(function() {
                     </div>
                 </div>
                         
+	            <div class="row">
+		            <div th:unless="${#lists.isEmpty(sectorOneMods)}" th:fragment="entities" class="col-md-6 col-sm-12">
+		                <h5 class="p-3">Sector One Modifiers</h5>
+		                <ul class="list-group entity col-md-12">
+		                    <li class="list-group-item" th:each="sectorOneMod : ${sectorOneMods}">
+		                        <img class="jms-icon" alt="Icon for ${sectorOneMod.label}" th:attr="src='/' + ${symbolSet.path} + '/symbol/modifier/one/'+${sectorOneMod}" />
+		                        <span th:text="${sectorOneMod.label}" class="entity">Sector One Modifier</span>
+		                    </li>
+		                </ul>
+			        </div>
+		            <div th:unless="${#lists.isEmpty(sectorTwoMods)}"  th:fragment="entities" class="col-md-5 col-sm-12">
+		                <h5 class="p-3">Sector Two Modifiers</h5>
+		                <ul class="list-group entity col-md-12">
+		                    <li class="list-group-item" th:each="sectorTwoMod : ${sectorTwoMods}">
+		                        <img class="jms-icon" alt="Icon for ${sectorTwoMod.label}" th:attr="src='/' + ${symbolSet.path} + '/symbol/modifier/two/'+${sectorTwoMod}" />
+		                        <span th:text="${sectorTwoMod.label}" class="entity">Sector Two Modifier</span>
+		                    </li>
+		                </ul>
+			        </div>
+				</div>
             </div>
-            
+
         </div>
     </body>
 </html>

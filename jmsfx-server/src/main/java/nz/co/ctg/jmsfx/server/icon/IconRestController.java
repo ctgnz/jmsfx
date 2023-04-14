@@ -71,6 +71,16 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
         return entitySubTypes.stream().map(EntitySubTypeData::new).collect(toList());
     }
 
+    @GetMapping(value = "/symbol/modifier/one/{sectorOneMod}", produces = "image/svg+xml")
+    public String generateModifierOneSymbol(@PathVariable M sectorOneMod) {
+        return createGraphic(null, null, null, sectorOneMod, null, null);
+    }
+
+    @GetMapping(value = "/symbol/modifier/two/{sectorTwoMod}", produces = "image/svg+xml")
+    public String generateModifierTwoSymbol(@PathVariable N sectorTwoMod) {
+        return createGraphic(null, null, null, null, sectorTwoMod, null);
+    }
+
     @GetMapping(value = "/symbol/entity/{entity}", produces = "image/svg+xml")
     public String generateEntitySymbol(@PathVariable E entity,
                                        @RequestParam(required = false) M sectorOneMod,
