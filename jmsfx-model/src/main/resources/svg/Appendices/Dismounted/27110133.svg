@@ -20,7 +20,13 @@
 	</g>
 </g>
 <g id="main">
-	<polygon stroke="#000000" points="387.838,443.678 305.082,396.307 387.486,348.322 	"/>
-	<polygon stroke="#000000" points="223.609,443.481 223.915,348.518 306,396.264 	"/>
+	<g id="Speaker">
+		<rect x="263" y="366.167" stroke="#000000" width="59.167" height="61.667"/>
+		<polyline stroke="#000000" points="338.667,444.334 291.54,397.208 340.801,347.946 		"/>
+		<line fill="none" stroke="#000000" stroke-width="5" x1="362.583" y1="366.167" x2="326.917" y2="366.167"/>
+		<line fill="none" stroke="#000000" stroke-width="5" x1="362.583" y1="427.834" x2="326.917" y2="427.834"/>
+		<line fill="none" stroke="#000000" stroke-width="5" x1="362.583" y1="386.723" x2="326.917" y2="386.723"/>
+		<line fill="none" stroke="#000000" stroke-width="5" x1="362.583" y1="407.278" x2="326.917" y2="407.278"/>
+	</g>
 </g>
 </svg>
