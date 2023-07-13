@@ -1,6 +1,6 @@
 package nz.co.ctg.jmsfx.icon;
 
-import nz.co.ctg.jmsfx.icon.svg.SvgGraphic;
+import nz.co.ctg.foxglove.SvgGraphic;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
 
 import javafx.beans.binding.Bindings;

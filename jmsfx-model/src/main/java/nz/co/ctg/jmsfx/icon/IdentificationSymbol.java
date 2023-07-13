@@ -3,8 +3,8 @@ package nz.co.ctg.jmsfx.icon;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import nz.co.ctg.jmsfx.icon.parser.SvgParser;
-import nz.co.ctg.jmsfx.icon.svg.SvgGraphic;
+import nz.co.ctg.foxglove.FoxgloveParser;
+import nz.co.ctg.foxglove.SvgGraphic;
 import nz.co.ctg.jmsfx.model.Amplifier;
 import nz.co.ctg.jmsfx.model.AmplifierGroup;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
@@ -39,6 +39,7 @@ import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.geometry.Bounds;
 import javafx.geometry.Pos;
+import javafx.scene.layout.Region;
 
 public class IdentificationSymbol {
     private final SymbolIdentificationCode sidc = new SymbolIdentificationCode();
@@ -82,7 +83,7 @@ public class IdentificationSymbol {
     private final ObservableMap<Amplifier, TextAmplifier> textAmplifiers = FXCollections.observableHashMap();
     private final ObservableMap<Amplifier, GraphicAmplifier> graphicAmplifiers = FXCollections.observableHashMap();
     private final BooleanProperty amplifierGuidesVisible = new SimpleBooleanProperty(false);
-    private final SvgParser parser = new SvgParser();
+    private final FoxgloveParser parser = new FoxgloveParser();
 
     @SuppressWarnings("unchecked")
     public IdentificationSymbol() {
@@ -234,40 +235,41 @@ public class IdentificationSymbol {
 //                FrameAmplifierGroup frameAmplifier = getFrameAmplifier();
 //                replaceFill(frame, FXColorHandler.parseColor(frameAmplifier.getBackgroundFill()));
 //            }
-            container.getBaseGroup().add(frame.getBaseGroup());
+            container.getContent().addAll(frame.getVisibleContent());
         }
         if (isStatusIconUsed()) {
-            container.getBaseGroup().add(getStatusGraphic().getBaseGroup());
+            container.getContent().addAll(getStatusGraphic().getVisibleContent());
         }
         if (isHqtfDummyIconUsed()) {
-            container.getBaseGroup().add(getHqtfDummyGraphic().getBaseGroup());
+            container.getContent().addAll(getHqtfDummyGraphic().getVisibleContent());
         }
         if (isMainIconUsed() && getMainIconGraphic() != null) {
-            container.getBaseGroup().add(getMainIconGraphic().getBaseGroup());
+            container.getContent().addAll(getMainIconGraphic().getVisibleContent());
         }
         if (isAmplifierUsed()) {
-            container.getBaseGroup().add(getAmplifierGraphic().getBaseGroup());
+            container.getContent().addAll(getAmplifierGraphic().getVisibleContent());
         }
         if (isAmplifierTwoUsed()) {
-            container.getBaseGroup().add(getAmplifierTwoGraphic().getBaseGroup());
+            container.getContent().addAll(getAmplifierTwoGraphic().getVisibleContent());
         }
         if (isAmplifierThreeUsed()) {
-            container.getBaseGroup().add(getAmplifierThreeGraphic().getBaseGroup());
+            container.getContent().addAll(getAmplifierThreeGraphic().getVisibleContent());
         }
         if (isSectorOneModifierUsed()) {
-            container.getBaseGroup().add(getSectorOneModifierGraphic().getBaseGroup());
+            container.getContent().addAll(getSectorOneModifierGraphic().getVisibleContent());
         }
         if (isSectorTwoModifierUsed()) {
-            container.getBaseGroup().add(getSectorTwoModifierGraphic().getBaseGroup());
+            container.getContent().addAll(getSectorTwoModifierGraphic().getVisibleContent());
         }
         if (isSpecialSubTypeUsed()) {
-            container.getBaseGroup().add(getSpecialSubTypeGraphic().getBaseGroup());
+            container.getContent().addAll(getSpecialSubTypeGraphic().getVisibleContent());
         }
-        Bounds bounds = container.getBaseGroup().createGroup().getLayoutBounds();
-        container.setX(bounds.getMinX());
-        container.setY(bounds.getMinY());
-        container.setWidth(bounds.getWidth());
-        container.setHeight(bounds.getHeight());
+        Region graphic = container.createGraphic();
+        Bounds bounds = graphic.getBoundsInLocal();
+        container.setPixelsX(bounds.getMinX());
+        container.setPixelsY(bounds.getMinY());
+        container.setPixelsWidth(bounds.getWidth());
+        container.setPixelsHeight(bounds.getHeight());
         return container;
     }
 

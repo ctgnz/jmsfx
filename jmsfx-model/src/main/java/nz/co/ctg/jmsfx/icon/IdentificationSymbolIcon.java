@@ -1,6 +1,5 @@
 package nz.co.ctg.jmsfx.icon;
 
-import nz.co.ctg.jmsfx.icon.parser.FXColorHandler;
 import nz.co.ctg.jmsfx.model.Amplifier;
 import nz.co.ctg.jmsfx.model.FrameAmplifierGroup;
 
@@ -54,7 +53,7 @@ public class IdentificationSymbolIcon extends Pane {
             Group frame = symbol.getFrameGraphic().createGroup();
             if (symbol.isFrameAmplifierUsed()) {
                 FrameAmplifierGroup frameAmplifier = symbol.getFrameAmplifier();
-                replaceFill(frame, FXColorHandler.parseColor(frameAmplifier.getBackgroundFill()));
+                replaceFill(frame, Color.web(frameAmplifier.getBackgroundFill()));
             }
             container.getChildren().add(frame);
         }

@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import nz.co.ctg.foxglove.FoxgloveParser;
 import nz.co.ctg.jmsfx.icon.IdentificationSymbol;
-import nz.co.ctg.jmsfx.icon.parser.SvgParser;
 import nz.co.ctg.jmsfx.model.AmplifierGroup;
 import nz.co.ctg.jmsfx.model.Entity;
 import nz.co.ctg.jmsfx.model.EntitySubType;
@@ -28,7 +28,7 @@ import static java.util.stream.Collectors.toList;
 public abstract class IconRestController<E extends Entity, T extends EntityType, S extends EntitySubType, M extends SectorOneModifier, N extends SectorTwoModifier, A extends AmplifierGroup> {
     private SymbolSet symbolSet;
     private SymbolSetInfo symbolSetInfo;
-    private SvgParser parser = new SvgParser();
+    private FoxgloveParser parser = new FoxgloveParser();
 
     public IconRestController(SymbolSet symbolSet) {
         this.symbolSet = symbolSet;
@@ -72,12 +72,12 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
     }
 
     @GetMapping(value = "/symbol/modifier/one/{sectorOneMod}", produces = "image/svg+xml")
-    public String generateModifierOneSymbol(@PathVariable M sectorOneMod) {
+    public String generateModifierOneSymbol(@PathVariable M sectorOneMod) throws Exception {
         return createGraphic(null, null, null, sectorOneMod, null, null);
     }
 
     @GetMapping(value = "/symbol/modifier/two/{sectorTwoMod}", produces = "image/svg+xml")
-    public String generateModifierTwoSymbol(@PathVariable N sectorTwoMod) {
+    public String generateModifierTwoSymbol(@PathVariable N sectorTwoMod) throws Exception {
         return createGraphic(null, null, null, null, sectorTwoMod, null);
     }
 
@@ -85,7 +85,7 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
     public String generateEntitySymbol(@PathVariable E entity,
                                        @RequestParam(required = false) M sectorOneMod,
                                        @RequestParam(required = false) N sectorTwoMod,
-                                       @RequestParam(required = false) A amplifier) {
+                                       @RequestParam(required = false) A amplifier) throws Exception {
         return createGraphic(entity, null, null, sectorOneMod, sectorTwoMod, amplifier);
     }
 
@@ -95,7 +95,7 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
                                               @PathVariable S entitySubType,
                                               @RequestParam(required = false) M sectorOneMod,
                                               @RequestParam(required = false) N sectorTwoMod,
-                                              @RequestParam(required = false) A amplifier) {
+                                              @RequestParam(required = false) A amplifier) throws Exception {
         return createGraphic((E) entityType.getEntity(), entityType, entitySubType, sectorOneMod, sectorTwoMod, amplifier);
     }
 
@@ -104,11 +104,11 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
     public String generateSymbol(@PathVariable T entityType,
                                  @RequestParam(required = false) M sectorOneMod,
                                  @RequestParam(required = false) N sectorTwoMod,
-                                 @RequestParam(required = false) A amplifier) {
+                                 @RequestParam(required = false) A amplifier) throws Exception {
         return createGraphic((E) entityType.getEntity(), entityType, null, sectorOneMod, sectorTwoMod, amplifier);
     }
 
-    private String createGraphic(E entity, T entityType, S entitySubType, M sectorOneMod, N sectorTwoMod, A amplifier) {
+    private String createGraphic(E entity, T entityType, S entitySubType, M sectorOneMod, N sectorTwoMod, A amplifier) throws Exception {
         IdentificationSymbol symbol = new IdentificationSymbol();
         symbol.symbolSetProperty().set(symbolSet);
         symbol.entityProperty().set(entity);
@@ -123,7 +123,7 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
         if (amplifier != null) {
             symbol.amplifierProperty().set(amplifier);
         }
-        return parser.writeGraphic(symbol.getCombinedGraphic());
+        return parser.write(symbol.getCombinedGraphic());
     }
 
 }

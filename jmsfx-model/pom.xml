@@ -8,6 +8,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>nz.co.ctg</groupId>
+            <artifactId>foxglove</artifactId>
+            <version>0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.9</version>
@@ -42,27 +47,11 @@
             <artifactId>dom4j</artifactId>
             <version>2.1.1</version>
         </dependency>
-    	<dependency>
-		    <groupId>org.apache.xmlgraphics</groupId>
-		    <artifactId>batik-parser</artifactId>
-		    <version>1.14</version>
-		</dependency>
-    	<dependency>
-		    <groupId>org.apache.xmlgraphics</groupId>
-		    <artifactId>batik-anim</artifactId>
-		    <version>1.14</version>
-		    <exclusions>
-		      <exclusion>
-		        <groupId>xml-apis</groupId>
-		        <artifactId>xml-apis</artifactId>
-		      </exclusion>
-		    </exclusions>
-    	</dependency>
-		<dependency>
-		    <groupId>org.apache.xmlgraphics</groupId>
-		    <artifactId>batik-ext</artifactId>
-		    <version>1.14</version>
-		</dependency>
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>4.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -76,6 +65,11 @@
             </resource>
         </resources>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version>
+            </plugin>
         	<plugin>
 	            <groupId>org.codehaus.mojo</groupId>
 	            <artifactId>build-helper-maven-plugin</artifactId>

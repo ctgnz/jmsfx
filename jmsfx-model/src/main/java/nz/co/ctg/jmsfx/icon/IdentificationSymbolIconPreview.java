@@ -6,8 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import nz.co.ctg.jmsfx.icon.parser.SvgParser;
-import nz.co.ctg.jmsfx.icon.svg.SvgGraphic;
+import nz.co.ctg.foxglove.FoxgloveParser;
+import nz.co.ctg.foxglove.SvgGraphic;
 import nz.co.ctg.jmsfx.model.AmplifierGroup;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
 import nz.co.ctg.jmsfx.model.Context;
@@ -74,7 +74,7 @@ public class IdentificationSymbolIconPreview extends Application {
     private ProgressBar showAllProgress;
     private GridPane amplifiers;
     private Stage mainStage;
-    private SvgParser svgParser = new SvgParser();
+    private FoxgloveParser svgParser = new FoxgloveParser();
     private File lastDirectory;
 
     @Override
@@ -373,7 +373,7 @@ public class IdentificationSymbolIconPreview extends Application {
         gridPane.add(showAllProgress, 0, row++, 2, 1);
 
         Button clearCache = new Button("Clear Cache");
-        clearCache.setOnAction(evt -> SvgParser.clearCache());
+        clearCache.setOnAction(evt -> FoxgloveParser.clearCache());
         gridPane.add(clearCache, 1, row++);
 
         return gridPane;
