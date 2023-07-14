@@ -4,7 +4,10 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
+import nz.co.ctg.foxglove.ISvgContent;
+import nz.co.ctg.foxglove.ISvgStylable;
 import nz.co.ctg.foxglove.SvgGraphic;
+import nz.co.ctg.foxglove.type.ViewBox;
 import nz.co.ctg.jmsfx.model.Amplifier;
 import nz.co.ctg.jmsfx.model.AmplifierGroup;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
@@ -39,7 +42,8 @@ import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.geometry.Bounds;
 import javafx.geometry.Pos;
-import javafx.scene.layout.Region;
+import javafx.scene.Group;
+import javafx.scene.paint.Color;
 
 public class IdentificationSymbol {
     private final SymbolIdentificationCode sidc = new SymbolIdentificationCode();
@@ -83,10 +87,11 @@ public class IdentificationSymbol {
     private final ObservableMap<Amplifier, TextAmplifier> textAmplifiers = FXCollections.observableHashMap();
     private final ObservableMap<Amplifier, GraphicAmplifier> graphicAmplifiers = FXCollections.observableHashMap();
     private final BooleanProperty amplifierGuidesVisible = new SimpleBooleanProperty(false);
-    private final FoxgloveParser parser = new FoxgloveParser();
+    private final FoxgloveParser parser;
 
     @SuppressWarnings("unchecked")
-    public IdentificationSymbol() {
+    public IdentificationSymbol(FoxgloveParser parser) {
+        this.parser = parser;
         try {
             version = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("version").build();
             context = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("context").build();
@@ -231,10 +236,10 @@ public class IdentificationSymbol {
         container.setTitle(sidc.getDescription());
         if (isFrameUsed()) {
             SvgGraphic frame = getFrameGraphic();
-//            if (isFrameAmplifierUsed()) {
-//                FrameAmplifierGroup frameAmplifier = getFrameAmplifier();
-//                replaceFill(frame, FXColorHandler.parseColor(frameAmplifier.getBackgroundFill()));
-//            }
+            if (isFrameAmplifierUsed()) {
+                FrameAmplifierGroup frameAmplifier = getFrameAmplifier();
+                replaceFill(frame, Color.web(frameAmplifier.getBackgroundFill()));
+            }
             container.getContent().addAll(frame.getVisibleContent());
         }
         if (isStatusIconUsed()) {
@@ -264,12 +269,14 @@ public class IdentificationSymbol {
         if (isSpecialSubTypeUsed()) {
             container.getContent().addAll(getSpecialSubTypeGraphic().getVisibleContent());
         }
-        Region graphic = container.createGraphic();
+        Group graphic = container.createGroup();
+        graphic.autosize();
         Bounds bounds = graphic.getBoundsInLocal();
         container.setPixelsX(bounds.getMinX());
         container.setPixelsY(bounds.getMinY());
         container.setPixelsWidth(bounds.getWidth());
         container.setPixelsHeight(bounds.getHeight());
+        container.setViewBox(new ViewBox(bounds));
         return container;
     }
 
@@ -748,6 +755,20 @@ public class IdentificationSymbol {
         } else {
             return null;
         }
+    }
+
+    private void replaceFill(ISvgContent graphic, Color fill) {
+        graphic.getContent().forEach(element -> {
+            if (element instanceof ISvgStylable) {
+                ISvgStylable styly = (ISvgStylable) element;
+                if (styly.isFilled()) {
+                    styly.setFill(fill);
+                }
+            }
+            if (element instanceof ISvgContent) {
+                replaceFill((ISvgContent) element, fill);
+            }
+         });
     }
 
 }

@@ -380,7 +380,7 @@ public class IdentificationSymbolIconPreview extends Application {
     }
 
     private VBox createSymbol() {
-        symbol = new IdentificationSymbol();
+        symbol = new IdentificationSymbol(svgParser);
         VBox vBox = new VBox(symbol.createIcon());
         vBox.setPadding(new Insets(24));
         return vBox;

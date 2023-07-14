@@ -109,7 +109,7 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
     }
 
     private String createGraphic(E entity, T entityType, S entitySubType, M sectorOneMod, N sectorTwoMod, A amplifier) throws Exception {
-        IdentificationSymbol symbol = new IdentificationSymbol();
+        IdentificationSymbol symbol = new IdentificationSymbol(parser);
         symbol.symbolSetProperty().set(symbolSet);
         symbol.entityProperty().set(entity);
         symbol.entityTypeProperty().set(entityType);
