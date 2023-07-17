@@ -3,7 +3,7 @@
     <name>Hallux Force Manager - JMS JavaFX</name>
     <groupId>nz.co.ctg</groupId>
     <artifactId>jmsfx-model</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.0.1-HLX</version>
     <packaging>jar</packaging>
 
     <dependencies>
