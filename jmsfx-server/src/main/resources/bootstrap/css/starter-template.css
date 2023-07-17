@@ -34,7 +34,8 @@ body {
 
 img.jms-icon {
 	margin: 6px;
-	height: 48px;
+	max-height: 48px;
+	max-width: 50%;
 }
 
 span.entity {

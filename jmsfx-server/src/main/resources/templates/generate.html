@@ -5,7 +5,7 @@
     <script type="text/javascript">
 var symbolSet, entity, entityType, entitySubType, modOne, modTwo, amplifier;
 $(document).ready(function () {
-	$.getJSON('/generate/symbols/', function (data) {
+	$.getJSON('/info/symbols', function (data) {
 		var select = $("#symbol-set");
 		select.empty();
 		select.append('<option value="" selected>Select symbol set</option>');
@@ -195,8 +195,10 @@ function updatePreview() {
     		dataType: "html", 
     		success: function (data) {
     			$('#preview').html(data);
-				$('#preview').attr('href', this.url);
-    			$('#preview-caption').html($(data).find('title').html());
+				$('#preview').attr('src', this.url);
+                $('#preview-link').attr('href', this.url);
+                $title = $(data).find("svg\\:title");
+    			$('#preview-caption').html($title.text());
     		}
     	});
 	} else {
@@ -257,8 +259,10 @@ function updatePreview() {
             </div>
             <div class="col-md-6 ms-auto">
                 <figure>
-                    <a id="preview"></a>
                     <figcaption id="preview-caption"></figcaption>
+                    <a id="preview-link" target="_blank">
+                        <img id="preview" />
+                    </a>
                 </figure>
             </div>
         </div>

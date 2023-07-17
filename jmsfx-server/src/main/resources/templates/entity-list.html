@@ -4,7 +4,7 @@
         <title>JMSFX | Browse Symbol Sets</title>
         <script type="text/javascript">
 $(document).ready(function() {
-	$.getJSON('/generate/symbols/', function(data) {
+	$.getJSON('/info/symbols', function(data) {
 		var select = $("#symbol-sets");
 		select.empty();
 		select.append('<option value="" selected>Select symbol set</option>');

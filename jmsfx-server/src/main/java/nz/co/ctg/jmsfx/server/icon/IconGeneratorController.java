@@ -12,7 +12,7 @@ import nz.co.ctg.jmsfx.model.SymbolSet;
 import nz.co.ctg.jmsfx.server.model.SymbolSetData;
 
 @RestController
-@RequestMapping("/generate")
+@RequestMapping("/info")
 public class IconGeneratorController {
 
     @GetMapping("/symbols")
