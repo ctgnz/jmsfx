@@ -662,7 +662,7 @@ public class IdentificationSymbol {
     private SvgGraphic loadAmplifierThreeGraphic() {
         AmplifierGroup amplifierGroup = getAmplifierThree();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
-            String filePath = String.format("/svg/%s/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), SymbolIdentificationCode.getExtensionCountryCode(), getStandardIdentityGroupId(), amplifierGroup.getId());
+            String filePath = String.format("/svg/%s/%s%s/%s%s.svg", amplifierGroup.getGraphicLocation(), SymbolIdentificationCode.getExtensionCountryCode(), SymbolIdentificationCode.getExtensionSymbolSet(), getStandardIdentityGroupId(), amplifierGroup.getId());
             return parser.parseFile(filePath);
         } else {
             return null;
