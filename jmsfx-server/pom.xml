@@ -1,24 +1,29 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>io.github.ctgnz</groupId>
 	<artifactId>jmsfx-server</artifactId>
-	<version>1.0.1-HLX</version>
 	<name>JMSFX Icon Generator - Web Server</name>
-
+	
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.1</version>
-	</parent>
+        <groupId>io.github.ctgnz</groupId>
+        <artifactId>jmsfx</artifactId>
+        <version>1.0.1-HLX</version>
+        <relativePath>../pom.xml</relativePath>        
+    </parent>
+
+    <properties>
+        <spring.boot.version>3.1.1</spring.boot.version>
+    </properties>
 	
 	<dependencies>
 	    <dependency>
 	        <groupId>org.springframework.boot</groupId>
 	        <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.boot.version}</version>
 	    </dependency>
 	    <dependency>
 	        <groupId>org.springframework.boot</groupId>
 	        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <version>${spring.boot.version}</version>
 	    </dependency>
 	    <dependency>
 	        <groupId>io.github.ctgnz</groupId>
@@ -33,14 +38,17 @@
         <dependency>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-devtools</artifactId>
+            <version>${spring.boot.version}</version>
         </dependency>
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>4.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
+            <version>4.0.0</version>
         </dependency>
 	</dependencies>
 	
@@ -75,6 +83,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
                 <configuration>
                     <mainClass>nz.co.ctg.jmsfx.server.JmsfxServer</mainClass>
                 </configuration>
