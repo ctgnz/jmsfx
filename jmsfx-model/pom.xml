@@ -129,35 +129,6 @@
                     <encoding>ISO-8859-1</encoding>
                 </configuration>
             </plugin>
-            <plugin>
-            <!-- Copy non-Ecipse plugins to target/dependency so that may be referenced 
-                for runtime use. -->
-	        	<groupId>org.apache.maven.plugins</groupId>
-	            <artifactId>maven-dependency-plugin</artifactId>
-	            <version>3.3.0</version>
-            <executions>
-                <execution>
-                    <id>copy-dependencies</id>
-                    <goals>
-                        <goal>copy-dependencies</goal>
-                    </goals>
-                    <configuration>
-                    </configuration>
-                </execution>
-                <execution>
-                    <id>classpath</id>
-                    <goals>
-                        <goal>build-classpath</goal>
-                    </goals>
-                    <configuration>
-                        <fileSeparator>/</fileSeparator>
-                        <prefix>target/dependency</prefix>
-                        <outputFile>${project.build.directory}/classPath.txt
-                        </outputFile>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
         </plugins>
     </build>
 
