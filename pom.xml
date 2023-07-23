@@ -5,7 +5,38 @@
 	<version>1.0.1-HLX</version>
 	<name>JMSFX - Joint Military Symbology on JavaFX</name>
 	<packaging>pom</packaging>
+    <url>https://www.ctg.co.nz/jsmfx</url>
 
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    
+    <developers>
+        <developer>
+            <name>Colin Sharples</name>
+            <email>ctg@ctg.co.nz</email>
+            <organization>CTG Games Ltd</organization>
+            <organizationUrl>http://www.ctg.co.nz</organizationUrl>
+        </developer>
+    </developers>
+    
+    <scm>
+        <connection>scm:git:git://github.com/ctgnz/jmsfx.git</connection>
+        <developerConnection>scm:git:ssh://github.com:ctgnz/jmsfx.git</developerConnection>
+        <url>http://github.com/ctgnz/jmsfx/tree/master</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>ossrh</id>
+            <name>Central Repository OSSRH</name>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+    
 	<modules>
 		<module>jmsfx-generator</module>
 		<module>jmsfx-model</module>
@@ -32,6 +63,19 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadoc</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>3.3.0</version>
                 <executions>
@@ -40,6 +84,26 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                        <configuration>
+                            <gpgArguments>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
