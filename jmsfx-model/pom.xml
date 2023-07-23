@@ -7,7 +7,7 @@
     <parent>
         <groupId>io.github.ctgnz</groupId>
         <artifactId>jmsfx</artifactId>
-        <version>1.0.1-HLX</version>
+        <version>1.0.2-HLX</version>
         <relativePath>../pom.xml</relativePath>        
     </parent>
 
