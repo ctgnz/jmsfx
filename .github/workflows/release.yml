@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: Create GitHub Package
 
 on:
   push:
@@ -32,5 +32,5 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         allowUpdates: true
-        artifacts: "${{ github.workspace }}/target/*.jar,${{ github.workspace }}/target/*.zip"
+        artifacts: "${{ github.workspace }}/jmsfx-server/target/*.jar,${{ github.workspace }}/jmsfx-server/target/*.zip"
         token: ${{ secrets.GITHUB_TOKEN }}
