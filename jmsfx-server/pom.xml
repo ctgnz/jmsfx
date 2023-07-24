@@ -6,7 +6,7 @@
 	<parent>
         <groupId>io.github.ctgnz</groupId>
         <artifactId>jmsfx</artifactId>
-        <version>1.0.3-HLX</version>
+        <version>1.1.0</version>
         <relativePath>../pom.xml</relativePath>        
     </parent>
 
@@ -27,8 +27,8 @@
 	    </dependency>
 	    <dependency>
 	        <groupId>io.github.ctgnz</groupId>
-	        <artifactId>jmsfx-model</artifactId>
-	        <version>1.0.3-HLX</version>
+	        <artifactId>jmsfx-standard</artifactId>
+	        <version>1.1.0</version>
 	    </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>

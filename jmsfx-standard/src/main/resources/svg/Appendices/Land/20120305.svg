@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve" sodipodi:docname="20120305.svg" inkscape:version="1.1 (c68e22c387, 2021-05-23)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs1136" /><sodipodi:namedview id="namedview1134" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" showgrid="false" inkscape:snap-nodes="false" inkscape:zoom="1.040404" inkscape:cx="259.03398" inkscape:cy="395.51942" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="Version_1.0" />
+<g id="octagon" display="none">
+	<g id="outFrame" display="inline">
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="220" y1="309.5" x2="306" y2="273" id="line1102" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="306" y1="273" x2="390.5" y2="309.5" id="line1104" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" y1="309.5" x2="427" y2="396" id="line1106" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="427" y1="396" x2="390.5" y2="482.5" id="line1108" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" y1="482.5" x2="306" y2="516" id="line1110" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="306" y1="516" x2="220" y2="482.5" id="line1112" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="220" y1="482.5" x2="183" y2="396" id="line1114" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="183" y1="396" x2="220" y2="309.5" id="line1116" />
+	</g>
+	
+		<line id="mod2_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="445.015" x2="406.199" y2="445.295" />
+	
+		<line id="mod1_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="346.985" x2="406.199" y2="346.705" />
+</g>
+<g id="main">
+	<g id="g1128" transform="translate(10.572816,24.029126)">
+		<path id="_65846384" fill="#ffffff" d="m 240,385.35 v 16.05 h 13.35 V 372 c -1.8,1.2 -13.35,11.7 -13.35,13.35 z" />
+		<polygon id="_65247944" fill="#ffffff" points="285.6,401.4 285.45,340.35 269.85,355.65 269.4,401.4 " />
+		<path id="_64268320" fill="#ffffff" d="m 304.35,401.4 h 16.05 v -44.85 c 0,-1.65 -14.1,-14.7 -16.05,-16.05 z" />
+		<path id="_64249792" fill="#ffffff" d="m 336.45,401.4 h 13.35 v -14.7 c 0,-2.55 -0.15,-0.3 0.6,-1.8 L 336.45,372 Z" />
+		<polygon id="_94571432" fill="#ffffff" points="222.45,403.5 294.75,473.25 367.2,403.5 " />
+		<path id="_94539784" d="M 222.45,403.5 H 367.2 l -72.45,69.75 z m 81.9,-63 c 1.95,1.35 16.05,14.4 16.05,16.05 v 44.85 h -16.05 z m -18.9,-0.15 0.15,61.05 h -16.2 l 0.45,-45.75 z m -45.45,45 c 0,-1.65 11.7,-12.15 13.35,-13.35 v 29.55 H 240 Z M 336.45,372 350.4,384.9 c -0.75,1.65 -0.6,-0.75 -0.6,1.8 v 14.7 h -13.35 z m 35.4,30.75 -76.8,-75.15 -76.8,75 76.65,74.7 z" />
+	</g>
+	<text transform="matrix(1 0 0 1 232.2461 347)" font-family="sans-serif" font-size="52" id="text1130">STOR</text>
+</g>
+</svg>

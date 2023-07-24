@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve" sodipodi:docname="20121004.svg" inkscape:version="1.1 (c68e22c387, 2021-05-23)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs1364" /><sodipodi:namedview id="namedview1362" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" showgrid="false" inkscape:zoom="1.040404" inkscape:cx="250.86408" inkscape:cy="395.51942" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="Version_1.0" />
+<g id="octagon" display="none">
+	<g id="outFrame" display="inline">
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="220" y1="309.5" x2="306" y2="273" id="line1333" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="306" y1="273" x2="390.5" y2="309.5" id="line1335" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" y1="309.5" x2="427" y2="396" id="line1337" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="427" y1="396" x2="390.5" y2="482.5" id="line1339" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" y1="482.5" x2="306" y2="516" id="line1341" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="306" y1="516" x2="220" y2="482.5" id="line1343" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="220" y1="482.5" x2="183" y2="396" id="line1345" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="183" y1="396" x2="220" y2="309.5" id="line1347" />
+	</g>
+	
+		<line id="mod2_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="445.015" x2="406.199" y2="445.295" />
+	
+		<line id="mod1_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="346.985" x2="406.199" y2="346.705" />
+</g>
+<g id="main">
+	<g id="g1358" transform="translate(43.400957,35.105639)">
+		<path id="_100264232" fill="#ffffff" d="m 246.48,387.36 h -1.08 c -1.32,0 -2.76,-1.44 -2.76,-2.76 v -31.2 c 0,-1.32 0.96,-2.16 2.16,-2.16 h 1.68 c 1.32,0 2.16,0.96 2.16,2.16 v 29.52 c 0,1.92 -0.24,4.44 -2.16,4.44 z m -59.64,-37.2 v 89.16 h 71.64 V 279.6 c -19.32,0 -42.48,8.88 -52.32,18.72 -10.68,10.68 -19.32,30.72 -19.32,51.84 z" />
+		<path id="_97764416" d="m 246.48,387.36 c 1.92,0 2.16,-2.4 2.16,-4.32 V 353.4 c 0,-1.32 -0.96,-2.16 -2.16,-2.16 h -1.56 c -1.32,0 -2.16,0.96 -2.16,2.16 v 31.2 c 0,1.32 1.44,2.76 2.76,2.76 z" />
+		<path id="_102084936" d="m 274.44,353.4 v 31.2 c 0,1.32 1.44,2.76 2.76,2.76 h 1.08 c 1.8,0 2.76,-2.04 2.76,-3.84 v -29.64 c 0,-1.32 -1.44,-2.76 -2.76,-2.76 h -1.68 c -1.32,0.12 -2.16,0.96 -2.16,2.28 z" />
+		<path id="_236268984" fill="#ffffff" d="m 274.44,353.4 c 0,-1.32 0.96,-2.16 2.16,-2.16 h 1.68 c 1.32,0 2.76,1.44 2.76,2.76 v 29.52 c 0,1.8 -0.96,3.84 -2.76,3.84 h -1.2 c -1.32,0 -2.76,-1.44 -2.76,-2.76 v -31.2 z m -9.84,85.92 h 71.64 v -82.68 c 0,-26.16 -4.92,-42.84 -17.4,-57 C 309.6,289.08 284.28,279.6 264.6,279.6 Z" />
+		<path id="_97094432" d="m 264.6,279.6 c 19.68,0 45,9.6 54.24,20.04 12.48,14.16 17.4,30.84 17.4,57 V 439.2 H 264.6 Z m -77.76,70.56 c 0,-21.12 8.52,-41.04 19.32,-51.84 9.84,-9.84 33,-18.72 52.32,-18.72 v 159.72 h -71.64 z m -6.48,95.64 h 162.48 v -88.08 c 0,-27.12 -6.36,-49.32 -20.16,-63 C 310.56,282.6 285.12,273 261.24,273 c -20.76,0 -48.6,9.36 -58.92,19.8 -8.04,8.16 -10.8,12.48 -15.6,23.76 -2.4,5.88 -6.36,25.08 -6.36,33 z" />
+	</g>
+</g>
+</svg>

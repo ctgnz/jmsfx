@@ -29,7 +29,6 @@ import nz.co.ctg.jmsfx.generator.model.EntitySubTypeEnum;
 import nz.co.ctg.jmsfx.generator.model.EntityTypeEnum;
 import nz.co.ctg.jmsfx.generator.model.SectorOneModEnum;
 import nz.co.ctg.jmsfx.generator.model.SectorTwoModEnum;
-import nz.co.ctg.jmsfx.generator.model.SpecialEntitySubTypeEnum;
 import nz.co.ctg.jmsfx.generator.model.StandardEnum;
 import nz.co.ctg.jmsfx.generator.model.SymbolSetEnum;
 import nz.co.ctg.jmsfx.generator.schema.Library;
@@ -48,7 +47,7 @@ public class DomainModelGenerator {
     private static JAXBContext CTX_SYMBOL_SET;
     public static void main(String[] args) {
         try {
-            DomainModelGenerator generator = new DomainModelGenerator();
+            DomainModelGenerator generator = new DomainModelGenerator(args.length > 0 ? args[0] : "/config.json");
             generator.generate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -57,10 +56,11 @@ public class DomainModelGenerator {
 
     private GeneratorConfig config;
 
-    public DomainModelGenerator() {
-        try (InputStream inputStream = DomainModelGenerator.class.getResourceAsStream("/config.json")) {
+    public DomainModelGenerator(String configFile) {
+        try (InputStream inputStream = DomainModelGenerator.class.getResourceAsStream(configFile)) {
             ObjectMapper mapper = new ObjectMapper(new JsonFactory());
             config = mapper.readValue(inputStream, GeneratorConfig.class);
+            System.out.format("Writing to %s%n", config.getOutputDir());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -194,13 +194,13 @@ public class DomainModelGenerator {
                 values.add(new SectorTwoModEnum(mod));
             });
         }
-        if (symbolSet.getSpecialEntitySubTypes() != null) {
-            symSetDetails.setSpecialEntitySubTypePresent(true);
-            symbolSet.getSpecialEntitySubTypes().getEntitySubType().forEach(subType -> {
-                List<SpecialEntitySubTypeEnum> values = (List<SpecialEntitySubTypeEnum>) dataModel.computeIfAbsent("specialEntitySubTypes", key -> new ArrayList<SpecialEntitySubTypeEnum>());
-                values.add(new SpecialEntitySubTypeEnum(subType));
-            });
-        }
+//        if (symbolSet.getSpecialEntitySubTypes() != null) {
+//            symSetDetails.setSpecialEntitySubTypePresent(true);
+//            symbolSet.getSpecialEntitySubTypes().getEntitySubType().forEach(subType -> {
+//                List<SpecialEntitySubTypeEnum> values = (List<SpecialEntitySubTypeEnum>) dataModel.computeIfAbsent("specialEntitySubTypes", key -> new ArrayList<SpecialEntitySubTypeEnum>());
+//                values.add(new SpecialEntitySubTypeEnum(subType));
+//            });
+//        }
         Template symSetInfoTemplate = config.getTemplateConfig().getTemplate("SymbolSetInfo.ftl");
         symSetInfoTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve(symSetDetails.getBaseTypeName() + "SymbolSetInfo.java"))));
         Template entityTemplate = config.getTemplateConfig().getTemplate("Entity.ftl");

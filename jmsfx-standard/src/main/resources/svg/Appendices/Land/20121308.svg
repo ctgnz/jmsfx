@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
+<g id="octagon" display="none">
+	<g id="outFrame" display="inline">
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="220" y1="309.5" x2="306" y2="273"/>
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="306" y1="273" x2="390.5" y2="309.5"/>
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" y1="309.5" x2="427" y2="396"/>
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="427" y1="396" x2="390.5" y2="482.5"/>
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" y1="482.5" x2="306" y2="516"/>
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="306" y1="516" x2="220" y2="482.5"/>
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="220" y1="482.5" x2="183" y2="396"/>
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="183" y1="396" x2="220" y2="309.5"/>
+	</g>
+	
+		<line id="mod2_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="445.015" x2="406.199" y2="445.295"/>
+	
+		<line id="mod1_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="346.985" x2="406.199" y2="346.705"/>
+</g>
+<g id="main">
+	<g transform="translate(79,73)">
+		<path id="_95705736" d="M 161.5 257.1 c 0 4.9 7 11 12.6 11 h 0.5 c 10.5 0 10.8 -8.5 13.1 -9.4 V 251.3 c 0 -4.5 -7.1 -10 -13.1 -10 c -5.8 0 -13.1 5.4 -13.1 10 V 257.1 z"/>
+		<path id="_102731816" d="M 253.2 254.4 c 0 6.7 5.9 13.6 12.6 13.6 h 0.5 c 4 0 6.9 -1.6 9 -3.5 c 1.2 -1 4.6 -6.1 4.6 -7.5 V 252.9 c 0 -6 -6.9 -11.5 -13.6 -11.5 C 258.9 241.3 253.2 247.3 253.2 254.4 z"/>
+		<path id="_95491320" d="M 150.5 294.3 h 5.8 v 109 h 15.2 v -64 h 6.8 v 63.9 H 193 v -109 h 5.8 v 40.9 h 11.5 V 288 L 209.6 282.2 h -1 c 0 -5.8 -4.2 -11 -10 -11 H 150.5 c -7.4 0 -11 8.6 -11 16.2 v 47.7 h 11 V 294.3 z"/>
+		<polygon id="_230322080" fill="#FFFFFF" points="285.2,297.4 285.7,296.4 285.5,295.4 284,293.8 		"/>
+		<polygon id="_43277104" fill="#FFFFFF" points="247.4,296.4 248,297.4 248.9,293.7 247.4,295.3 		"/>
+		<path id="_42218880" d="M 247.4 296.4 v -1 l 1.5 -1.6 L 248 297.4 L 238.4 331 L 238 333 L 236.9 334.5 L 237 336.7 L 232 353.4 l 18.1 0.1 v 49.2 h 13.1 V 353.4 H 270 v 49.2 h 13.1 V 353.4 h 17.8 L 297.6 340.2 l -0.4 -2 l -12 -40.9 L 284 293.8 l 1.5 1.7 l 0.2 0.9 C 290.9 302.4 299.3 332 307.2 332 h 1 c 3.1 0 5.2 -2.8 5.2 -5.8 V 324.6 c 0 -1.2 -11.9 -25 -13.3 -29.1 C 298.4 290.4 295.8 285.1 293.5 280.6 C 290.9 275.4 290.4 271.2 282 271.2 H 251.1 c -8.5 0 -8.9 4.5 -11.7 9.7 C 237.2 285.1 234.7 291 233.1 295.6 c -1.4 4 -12.9 27.7 -12.9 29 v 1.6 c 0 3.3 1.5 5.8 4.7 5.8 H 227 C 232.9 332 242.9 301.5 247.4 296.4 z"/>
+	</g>
+</g>
+</svg>

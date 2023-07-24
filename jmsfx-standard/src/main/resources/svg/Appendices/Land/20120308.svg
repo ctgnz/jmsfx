@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
+<g id="octagon" display="none">
+	<g id="outFrame" display="inline">
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="220" y1="309.5" x2="306" y2="273"/>
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="306" y1="273" x2="390.5" y2="309.5"/>
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" y1="309.5" x2="427" y2="396"/>
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="427" y1="396" x2="390.5" y2="482.5"/>
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" y1="482.5" x2="306" y2="516"/>
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="306" y1="516" x2="220" y2="482.5"/>
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="220" y1="482.5" x2="183" y2="396"/>
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="183" y1="396" x2="220" y2="309.5"/>
+	</g>
+	
+		<line id="mod2_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="445.015" x2="406.199" y2="445.295"/>
+	
+		<line id="mod1_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="346.985" x2="406.199" y2="346.705"/>
+</g>
+<g id="main">
+	<g transform="translate(74,77)">
+		<path id="_65378808" fill="#FFFFFF" d="M 207.8 317.1 h 18.6 c 3.1 0 9.1 -4.1 9.1 -7.3 V 303.5 c 0 -2.4 -5.6 -6.8 -8.6 -6.8 H 207.8 V 317.1 z"/>
+		<path id="_95912048" d="M 207.8 296.7 h 19.1 c 3.1 0 8.6 4.5 8.6 6.8 v 6.4 c 0 3.2 -6 7.3 -9.1 7.3 H 207.8 V 296.7 z M 195.6 363 h 12.3 V 330.3 l 4.3 0.2 l 18.9 24.9 L 209.2 382.9 l 14.7 0.2 l 14.8 -17.4 c 3.1 0.8 10.4 14.8 14.1 17.2 h 15.4 C 266 378.7 247.3 357 247.3 355.3 c 0 -0.8 18.6 -24.3 20.4 -25.9 L 252.6 329.2 L 238.5 344.6 L 227.8 330.3 C 240.9 327.2 248.7 322 248.7 305.8 V 304.4 c 0 -5 -4.2 -11.8 -6.9 -14.4 C 239.2 287.5 231.6 284 226.4 284 H 195.6 V 363 z"/>
+		<path id="_96956424" fill="#FFFFFF" d="M 195.6 284 h 30.9 c 5.2 0 12.7 3.5 15.3 6 c 2.7 2.7 6.9 9.4 6.9 14.4 v 1.4 c 0 16.2 -7.8 21.5 -20.9 24.5 l 10.7 14.3 l 14.1 -15.4 l 15.2 0.2 C 265.9 331 247.3 354.5 247.3 355.3 c 0 1.8 18.6 23.5 20.9 27.7 H 252.8 c -3.7 -2.5 -11 -16.4 -14.1 -17.2 L 223.9 383.1 L 209.2 382.9 l 21.9 -27.6 L 212.2 330.5 L 207.8 330.3 V 363 H 195.6 V 284 z M 245.1 280.4 H 146.6 v 105.3 h 171.1 V 280.4 H 298.6 V 242.2 H 285.9 v 38.1 H 257.8 V 242.2 H 245.1 V 280.4 z"/>
+		<path id="_66485456" d="M 245.1 242.2 h 12.7 v 38.1 h 28.1 V 242.2 h 12.7 v 38.1 h 19.1 v 105.3 H 146.6 V 280.4 h 98.5 V 242.2 z M 143.4 389.3 h 177.5 V 277.2 H 302.7 V 238.6 H 282.3 v 38.6 H 261.8 V 238.6 H 241.4 v 38.6 h -98 V 389.3 z"/>
+	</g>
+</g>
+</svg>

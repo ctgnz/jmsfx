@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve" sodipodi:docname="20120307.svg" inkscape:version="1.1 (c68e22c387, 2021-05-23)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs1279" /><sodipodi:namedview id="namedview1277" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" showgrid="false" inkscape:snap-nodes="false" inkscape:zoom="1.040404" inkscape:cx="259.03398" inkscape:cy="395.51942" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="Version_1.0" />
+<g id="octagon" display="none">
+	<g id="outFrame" display="inline">
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="220" y1="309.5" x2="306" y2="273" id="line1250" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="306" y1="273" x2="390.5" y2="309.5" id="line1252" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" y1="309.5" x2="427" y2="396" id="line1254" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="427" y1="396" x2="390.5" y2="482.5" id="line1256" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" y1="482.5" x2="306" y2="516" id="line1258" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="306" y1="516" x2="220" y2="482.5" id="line1260" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="220" y1="482.5" x2="183" y2="396" id="line1262" />
+		<line fill="none" stroke="#0000FF" stroke-width="2" x1="183" y1="396" x2="220" y2="309.5" id="line1264" />
+	</g>
+	
+		<line id="mod2_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="445.015" x2="406.199" y2="445.295" />
+	
+		<line id="mod1_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="346.985" x2="406.199" y2="346.705" />
+</g>
+<g id="main">
+	<g id="g1273" transform="translate(84.539498,92.035015)">
+		<path id="_97508600" fill="#ffffff" d="m 277.38,309.51 h 20.25 c -1.17,-1.62 -10.44,-13.59 -11.61,-13.59 h -8.64 z" />
+		<path id="_98074256" d="m 277.38,295.92 h 8.64 c 1.17,0 10.44,11.97 11.52,13.59 h -20.16 z m -10.35,-44.55 -1.8,-3.24 -17.46,9.63 3.51,8.82 -80.01,36.36 c 1.89,1.08 5.13,10.8 6.39,13.14 0.54,0.99 5.67,12.6 5.67,12.87 0,1.26 -2.25,0.54 -2.07,1.62 l 1.35,7.83 h 8.55 c 0,-6.12 4.95,-11.97 10.71,-11.97 h 2.43 c 5.94,0 10.71,5.76 10.71,11.97 h 1.62 c 0,-5.94 1.53,-5.76 3.69,-9.09 l -5.22,-14.04 23.85,-10.8 10.53,24.75 -12.87,0.09 c 2.16,3.24 4.05,3.24 4.05,9.09 h 35.91 v -1.26 c 0,-5.13 6.3,-10.71 11.97,-10.71 h 1.26 c 6.39,0 11.52,5.4 11.52,11.97 h 6.57 v -7.83 h -2.88 v -18.54 c 0,-3.06 -14.4,-17.01 -15.3,-20.16 h -16.02 v 37.53 h -10.35 l -13.32,-30.15 13.68,-5.67 -10.71,-23.67 z" />
+		<path id="_94759656" d="m 279.9,340.02 c 0,6.21 3.96,6.84 7.38,9.09 H 230.4 c 2.88,-1.8 7.02,-2.97 7.02,-8.28 v -2.88 c 0,-3.33 -4.68,-7.02 -9.09,-7.02 -2.52,0 -4.5,0.99 -5.85,2.34 -0.9,0.9 -2.79,3.96 -2.79,5.13 v 3.33 c 0,0.54 2.16,4.32 2.61,4.86 1.53,1.71 2.88,1.53 4.41,2.61 H 205.2 c 1.44,-1.08 3.15,-1.35 4.41,-2.7 0.9,-0.99 1.44,-3.51 2.61,-3.96 v -4.14 c 0,-0.99 -2.16,-4.59 -2.97,-5.22 -1.62,-1.44 -3.24,-2.25 -6.12,-2.25 h -0.36 c -4.23,0 -8.64,3.69 -8.64,7.83 v 3.33 c 0,3.78 4.95,5.58 7.02,7.02 h -21.87 c -0.18,-8.1 -6.3,-4.59 -7.83,-7.38 -2.79,-4.86 2.25,-5.49 -7.11,-7.83 -7.83,-1.89 -5.04,-0.72 -9.72,-5.49 C 153,326.7 147.15,324 144.18,324 h -0.36 c -2.52,0 -4.77,2.88 -6.84,3.87 -2.79,1.35 -5.67,0.9 -8.1,2.7 -2.7,1.98 -5.67,10.89 -5.67,15.39 v 1.62 h -0.9 v 5.4 h 180.18 12.33 v -3.87 h -23.85 c 1.98,-1.26 2.34,-0.45 4.5,-2.61 0.9,-0.9 2.16,-3.69 2.97,-4.05 v -4.05 c 0,-1.17 -2.34,-4.68 -3.24,-5.4 -1.71,-1.17 -3.42,-2.07 -6.3,-2.07 -4.86,0 -9.09,3.78 -9.09,8.64 v 0.45 z" />
+	</g>
+</g>
+</svg>

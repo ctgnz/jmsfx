@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Version_1.0"
+   x="0px"
+   y="0px"
+   width="612px"
+   height="792px"
+   viewBox="0 0 612 792"
+   enable-background="new 0 0 612 792"
+   xml:space="preserve"
+   sodipodi:docname="20120203.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs1337" /><sodipodi:namedview
+   id="namedview1335"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   inkscape:zoom="1.040404"
+   inkscape:cx="250.86408"
+   inkscape:cy="395.51942"
+   inkscape:window-width="1920"
+   inkscape:window-height="1009"
+   inkscape:window-x="1912"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Version_1.0" />
+<g
+   id="octagon"
+   display="none">
+	<g
+   id="outFrame"
+   display="inline">
+		<line
+   fill="none"
+   stroke="#0000FF"
+   stroke-width="2"
+   x1="220"
+   y1="309.5"
+   x2="306"
+   y2="273"
+   id="line1299" />
+		<line
+   fill="none"
+   stroke="#0000FF"
+   stroke-width="2"
+   x1="306"
+   y1="273"
+   x2="390.5"
+   y2="309.5"
+   id="line1301" />
+		<line
+   fill="none"
+   stroke="#0000FF"
+   stroke-width="2"
+   x1="390.5"
+   y1="309.5"
+   x2="427"
+   y2="396"
+   id="line1303" />
+		<line
+   fill="none"
+   stroke="#0000FF"
+   stroke-width="2"
+   x1="427"
+   y1="396"
+   x2="390.5"
+   y2="482.5"
+   id="line1305" />
+		<line
+   fill="none"
+   stroke="#0000FF"
+   stroke-width="2"
+   x1="390.5"
+   y1="482.5"
+   x2="306"
+   y2="516"
+   id="line1307" />
+		<line
+   fill="none"
+   stroke="#0000FF"
+   stroke-width="2"
+   x1="306"
+   y1="516"
+   x2="220"
+   y2="482.5"
+   id="line1309" />
+		<line
+   fill="none"
+   stroke="#0000FF"
+   stroke-width="2"
+   x1="220"
+   y1="482.5"
+   x2="183"
+   y2="396"
+   id="line1311" />
+		<line
+   fill="none"
+   stroke="#0000FF"
+   stroke-width="2"
+   x1="183"
+   y1="396"
+   x2="220"
+   y2="309.5"
+   id="line1313" />
+	</g>
+	
+		<line
+   id="mod2_1_"
+   display="inline"
+   fill="none"
+   stroke="#0000FF"
+   stroke-width="2"
+   x1="203.966"
+   y1="445.015"
+   x2="406.199"
+   y2="445.295" />
+	
+		<line
+   id="mod1_1_"
+   display="inline"
+   fill="none"
+   stroke="#0000FF"
+   stroke-width="2"
+   x1="203.966"
+   y1="346.985"
+   x2="406.199"
+   y2="346.705" />
+</g>
+<g id="main">
+	<g id="g1329" transform="translate(56.600957,32.095015)">
+		<path id="_65485904" fill="#ffffff" d="m 221.04,357.48 23.4,-0.12 23.64,-31.32 h -16.8 c -1.8,0 -28.08,28.08 -30.24,31.44 z" />
+		<path id="_65378808" fill="#ffffff" d="m 246.96,357.96 22.32,24.84 c 1.56,-1.08 24.84,-34.8 24.84,-35.04 0,-0.84 -20.28,-19.68 -22.44,-21.24 z" />
+		<path id="_65377104" fill="#ffffff" d="m 185.76,383.16 10.56,0.24 c 3.48,-5.28 9.84,-12.84 14.04,-18 4.08,-4.8 12.84,-13.08 15.48,-17.04 L 218.88,348 Z" />
+		<path id="_65450664" fill="#ffffff" d="m 199.32,383.4 h 66.96 c -0.6,-2.16 -21.24,-23.52 -22.92,-23.52 h -22.92 c -2.16,0 -19.32,20.76 -21.12,23.52 z" />
+		<polygon id="_65717896" fill="#ffffff" points="308.64,348.36 296.64,348.48 272.16,383.28 282.36,383.64 " />
+		<path id="_95045944" d="m 257.28,385.8 h 24.12 c 1.08,0 22.56,22.92 24.12,25.32 h -68.16 c 0.6,-2.4 18.6,-25.32 19.92,-25.32 z m -73.08,0 h 24.72 c 1.44,0 20.52,22.56 22.32,25.32 h -68.16 c 0.72,-2.52 19.56,-25.32 21.12,-25.32 z m 28.8,0.12 h 38.4 l -17.16,24.72 z m -13.68,-2.52 c 1.8,-2.76 18.96,-23.52 21.12,-23.52 h 22.92 c 1.68,0 22.32,21.36 22.92,23.52 z M 308.64,410.52 285,384.6 l 25.92,-35.64 24.36,21.24 z m -12,-62.04 12,-0.12 -26.28,35.28 -10.2,-0.36 z m -77.76,-0.48 6.96,0.36 c -2.64,3.96 -11.4,12.24 -15.48,17.04 -4.32,5.16 -10.56,12.72 -14.04,18 l -10.56,-0.24 z m 52.68,-21.48 c 2.28,1.56 22.44,20.4 22.44,21.24 0,0.24 -23.28,33.96 -24.72,35.04 l -22.32,-24.84 z m -50.52,30.96 c 2.16,-3.36 28.44,-31.44 30.24,-31.44 h 16.92 l -23.76,31.32 z m 7.2,-11.52 h -11.4 c -3.12,4.56 -10.8,12.24 -15,16.44 -5.16,5.28 -9.84,11.04 -15,16.32 -3.36,3.36 -27.96,31.92 -28.56,34.2 1.32,0.36 1.32,0.6 3,0.6 l 148.2,-0.12 29.04,-43.68 -0.72,0.24 -26.16,-24 h -14.52 c -3.84,-2.52 -24,-22.32 -25.92,-22.32 h -20.52 c -2.28,0 -18.96,20.04 -22.44,22.32 z" />
+		<polygon id="_95405912" fill="#ffffff" points="213,385.92 234.24,410.64 251.4,385.92 " />
+		<polygon id="_95049136" fill="#ffffff" points="285,384.6 308.64,410.52 335.28,370.2 311.04,348.96 " />
+		<path id="_97584424" fill="#ffffff" d="m 184.2,385.8 c -1.56,0 -20.4,22.8 -21.12,25.32 h 68.16 c -1.8,-2.76 -20.76,-25.32 -22.32,-25.32 z" />
+		<path id="_65835248" fill="#ffffff" d="m 257.28,385.8 c -1.32,0 -19.32,22.92 -19.92,25.32 h 68.16 c -1.56,-2.4 -23.04,-25.32 -24.12,-25.32 z" />
+	</g>
+	<text font-family="sans-serif" font-size="52px" id="text1331" x="231.4951" y="344.58261">STOR</text>
+</g>
+</svg>
