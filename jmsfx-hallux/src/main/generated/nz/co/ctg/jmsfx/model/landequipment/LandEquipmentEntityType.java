@@ -28,6 +28,7 @@ public enum LandEquipmentEntityType implements EntityType {
     NONLETHAL_WEAPON("18", "Nonlethal Weapon", LandEquipmentEntity.WEAPON_SYSTEM, IconType.FULL_OCTAGON),
     TASER("19", "Taser", LandEquipmentEntity.WEAPON_SYSTEM, IconType.FULL_OCTAGON),
     WATER_CANNON("20", "Water Cannon", LandEquipmentEntity.WEAPON_SYSTEM, IconType.FULL_OCTAGON),
+    DIRECTED_ENERGY("21", "Directed Energy Weapon", LandEquipmentEntity.WEAPON_SYSTEM, IconType.FULL_OCTAGON),
     VEHICLE_ARMORED("01", "Armored Vehicle", LandEquipmentEntity.VEHICLE, IconType.FULL_OCTAGON),
     TANK("02", "Tank", LandEquipmentEntity.VEHICLE, IconType.FULL_OCTAGON),
     TANK_RECOVERY_VEHICLE("03", "Tank Recovery Vehicle", LandEquipmentEntity.VEHICLE, IconType.FULL_OCTAGON),
