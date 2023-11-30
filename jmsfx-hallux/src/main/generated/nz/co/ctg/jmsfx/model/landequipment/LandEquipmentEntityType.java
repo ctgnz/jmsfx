@@ -120,7 +120,11 @@ public enum LandEquipmentEntityType implements EntityType {
     SENSOR_EMPLACED("02", "Sensor Emplaced", LandEquipmentEntity.SENSORS, IconType.FULL_OCTAGON),
     RADAR("03", "Radar", LandEquipmentEntity.SENSORS, IconType.FULL_OCTAGON),
     AMBULANCE("01", "Ambulance", LandEquipmentEntity.EMERGENCY_OPERATION, IconType.FULL_OCTAGON),
-    FIRE_FIGHTING_FIRE_PROTECTION("02", "Fire Fighting/Fire Protection", LandEquipmentEntity.EMERGENCY_OPERATION, IconType.MAIN);
+    FIRE_FIGHTING_FIRE_PROTECTION("02", "Fire Fighting/Fire Protection", LandEquipmentEntity.EMERGENCY_OPERATION, IconType.MAIN),
+    HORSE_DRAWN_VEHICLE("01", "Horse-Drawn Vehicle", LandEquipmentEntity.HARNESS_VEHICLES, IconType.FULL_OCTAGON),
+    OX_DRAWN_VEHICLE("02", "Ox-Drawn Vehicle", LandEquipmentEntity.HARNESS_VEHICLES, IconType.FULL_OCTAGON),
+    DOG_DRAWN_VEHICLE("03", "Dog-Drawn Vehicle", LandEquipmentEntity.HARNESS_VEHICLES, IconType.FULL_OCTAGON),
+    ANIMAL_DRAWN_VEHICLE("04", "Animal-Drawn Vehicle", LandEquipmentEntity.HARNESS_VEHICLES, IconType.FULL_OCTAGON);
 
     private final String id;
     private final String label;

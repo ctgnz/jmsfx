@@ -22,7 +22,8 @@ public enum LandEquipmentEntity implements Entity {
     LAND_MINES("21", "Land Mines", IconType.NA),
     SENSORS("22", "Sensors", IconType.NA),
     EMERGENCY_OPERATION("23", "Emergency Operation", IconType.FULL_OCTAGON),
-    MANUAL_TRACK("24", "Manual Track", IconType.FULL_OCTAGON);
+    MANUAL_TRACK("24", "Manual Track", IconType.FULL_OCTAGON),
+    HARNESS_VEHICLES("25", "Harness Vehicles", IconType.FULL_OCTAGON);
 
     private final String id;
     private final String label;
