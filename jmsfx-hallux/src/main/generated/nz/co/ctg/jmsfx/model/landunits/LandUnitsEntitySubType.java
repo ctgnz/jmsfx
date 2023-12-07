@@ -34,6 +34,8 @@ public enum LandUnitsEntitySubType implements EntitySubType {
     AD_MISSILE("02", "Missile", LandUnitsEntityType.AIR_DEFENSE, IconType.FULL_FRAME),
     FA_SELF_PROPELLED("01", "Self-propelled", LandUnitsEntityType.FIELD_ARTILLERY, IconType.MAIN),
     FA_TARGET_ACQUISITION("02", "Target Acquisition", LandUnitsEntityType.FIELD_ARTILLERY, IconType.FULL_FRAME),
+    FA_HORSE("03", "Horse Artillery", LandUnitsEntityType.FIELD_ARTILLERY, IconType.FULL_FRAME),
+    FA_SIEGE("04", "Siege Artillery", LandUnitsEntityType.FIELD_ARTILLERY, IconType.MAIN),
     ARMORED_MECHANIZED_TRACKED("01", "Armored/Mechanized/Tracked", LandUnitsEntityType.MORTAR, IconType.FULL_OCTAGON),
     SELF_PROPELLED_WHEELED("02", "Self-Propelled Wheeled", LandUnitsEntityType.MORTAR, IconType.FULL_OCTAGON),
     TOWED("03", "Towed", LandUnitsEntityType.MORTAR, IconType.FULL_OCTAGON),
