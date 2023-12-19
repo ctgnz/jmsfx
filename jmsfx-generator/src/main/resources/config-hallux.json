@@ -1,6 +1,6 @@
 {
     "inputDir": "D:/git/joint-military-symbology-xml/instance",
-    "outputDir": "D:/git/jmsfx/jmsfx-hallux/src/main/generated",
+    "outputDir": "D:/git/hallux/hallux-jmsfx/src/main/generated",
     "basePackage": "nz.co.ctg.jmsfx.model",
     "libraryFile": "Base.xml",
     "extensionCountryCode": "826",

@@ -40,7 +40,6 @@
 	<modules>
 		<module>jmsfx-generator</module>
 		<module>jmsfx-standard</module>
-		<module>jmsfx-hallux</module>
 		<module>jmsfx-server</module>
 	</modules>
 	
