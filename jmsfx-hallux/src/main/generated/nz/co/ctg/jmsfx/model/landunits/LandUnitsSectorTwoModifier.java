@@ -61,7 +61,8 @@ public enum LandUnitsSectorTwoModifier implements SectorTwoModifier {
     ATTACK_2_MOD("54", "Attack", SymbolSet.SS_LAND_UNIT),
     REFUEL_MOD("55", "Refuel", SymbolSet.SS_LAND_UNIT),
     UTILITY_2_MOD("56", "Utility", SymbolSet.SS_LAND_UNIT),
-    COMBAT_SEARCH_RESCUE_MOD("57", "Combat Search and Rescue", SymbolSet.SS_LAND_UNIT);
+    COMBAT_SEARCH_RESCUE_MOD("57", "Combat Search and Rescue", SymbolSet.SS_LAND_UNIT),
+    LIGHT_INFANTRY_MOD("58", "Light Infantry", SymbolSet.SS_LAND_UNIT);
 
     private final String id;
     private final String label;

@@ -67,6 +67,8 @@ public enum LandEquipmentEntityType implements EntityType {
     WATER_VEHICLE("10", "Water", LandEquipmentEntity.UTILITY_VEHICLES, IconType.FULL_OCTAGON),
     AMPHIBIOUS_UTILITY_WHEELED_VEHICLE("11", "Amphibious Utility Wheeled Vehicle", LandEquipmentEntity.UTILITY_VEHICLES, IconType.FULL_OCTAGON),
     TOW_TRUCK("12", "Tow Truck", LandEquipmentEntity.UTILITY_VEHICLES, IconType.FULL_OCTAGON),
+    BICYCLE("13", "Bicycle", LandEquipmentEntity.UTILITY_VEHICLES, IconType.FULL_OCTAGON),
+    MOTORBIKE("14", "Motorbike", LandEquipmentEntity.UTILITY_VEHICLES, IconType.FULL_OCTAGON),
     LOCOMOTIVE("01", "Locomotive", LandEquipmentEntity.TRAIN, IconType.FULL_OCTAGON),
     RAILCAR("02", "Railcar", LandEquipmentEntity.TRAIN, IconType.FULL_OCTAGON),
     AUTOMOBILE("01", "Automobile", LandEquipmentEntity.CIVILIAN_VEHICLE, IconType.FULL_OCTAGON),
