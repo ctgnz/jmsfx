@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.ctgnz</groupId>
 	<artifactId>jmsfx</artifactId>
-	<version>1.1.6</version>
+	<version>1.1.7-SNAPSHOT</version>
 	<name>JMSFX - Joint Military Symbology on JavaFX</name>
 	<packaging>pom</packaging>
     <url>https://www.ctg.co.nz/jsmfx</url>
@@ -108,8 +108,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <source>17</source>
-                    <target>17</target>
+                    <source>21</source>
+                    <target>21</target>
                     <encoding>ISO-8859-1</encoding>
                 </configuration>
             </plugin>

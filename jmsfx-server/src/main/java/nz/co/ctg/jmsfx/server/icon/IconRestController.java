@@ -123,7 +123,7 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
         if (amplifier != null) {
             symbol.amplifierProperty().set(amplifier);
         }
-        return parser.write(symbol.getCombinedGraphic());
+        return parser.write(symbol.getCombinedGraphic(), false);
     }
 
 }
