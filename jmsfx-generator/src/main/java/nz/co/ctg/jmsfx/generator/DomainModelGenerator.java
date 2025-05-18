@@ -43,8 +43,8 @@ import freemarker.template.Template;
 
 public class DomainModelGenerator {
     private static JAXBContext CTX_LIBRARY;
-
     private static JAXBContext CTX_SYMBOL_SET;
+
     public static void main(String[] args) {
         try {
             DomainModelGenerator generator = new DomainModelGenerator(args.length > 0 ? args[0] : "/config.json");

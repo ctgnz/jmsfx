@@ -46,6 +46,12 @@ import javafx.scene.Group;
 import javafx.scene.paint.Color;
 
 public class IdentificationSymbol {
+    public static final Color CRYSTAL_BLUE = Color.rgb(128, 224, 255); // 80E0FF
+    public static final Color LT_YELLOW = Color.rgb(255, 255, 128);    // FFFF80
+    public static final Color BAMBOO_GREEN = Color.rgb(170, 255, 170); // AAFFAA
+    public static final Color SALMON_RED = Color.rgb(255, 128, 128);   // FF8080
+    public static final Color OFF_WHITE = Color.rgb(239, 239, 239);    // EFEFEF
+    public static final Color NEARLY_WHITE = Color.rgb(250, 250, 250); // FAFAFA
     private final SymbolIdentificationCode sidc = new SymbolIdentificationCode();
     private final ObjectProperty<IconScale> scale = new SimpleObjectProperty<>(IconScale.Medium);
     private final ObjectProperty<Version> version;
