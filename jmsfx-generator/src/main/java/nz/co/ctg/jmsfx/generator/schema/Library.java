@@ -489,6 +489,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "drawRules",
     "labelRules",
     "amplifiers",
+    "commonModifiers",
     "versions",
     "contexts",
     "standardIdentities",
@@ -510,6 +511,8 @@ public class Library {
     protected Library.LabelRules labelRules;
     @XmlElement(name = "Amplifiers", required = true)
     protected Library.Amplifiers amplifiers;
+    @XmlElement(name = "CommonModifiers", required = true)
+    protected Library.CommonModifiers commonModifiers;
     @XmlElement(name = "Versions", required = true)
     protected Library.Versions versions;
     @XmlElement(name = "Contexts", required = true)
@@ -639,6 +642,30 @@ public class Library {
      */
     public void setAmplifiers(Library.Amplifiers value) {
         this.amplifiers = value;
+    }
+
+    /**
+     * Gets the value of the commonModifiers property.
+     *
+     * @return
+     *     possible object is
+     *     {@link Library.CommonModifiers }
+     *
+     */
+    public Library.CommonModifiers getCommonModifiers() {
+        return commonModifiers;
+    }
+
+    /**
+     * Sets the value of the commonModifiers property.
+     *
+     * @param value
+     *     allowed object is
+     *     {@link Library.CommonModifiers }
+     *
+     */
+    public void setCommonModifiers(Library.CommonModifiers commonModifiers) {
+        this.commonModifiers = commonModifiers;
     }
 
     /**
@@ -3398,6 +3425,87 @@ public class Library {
 
     }
 
+
+    /**
+     * <p>Java class for anonymous complex type.
+     *
+     * <p>The following schema fragment specifies the expected content contained within this class.
+     *
+     * <pre>
+     * &lt;complexType>
+     *   &lt;complexContent>
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       &lt;sequence>
+     *         &lt;element name="SectorOneModifiers" type="{http://disa.mil/JointMilSyML.xsd}ModifiersType" minOccurs="0"/>
+     *         &lt;element name="SectorTwoModifiers" type="{http://disa.mil/JointMilSyML.xsd}ModifiersType" minOccurs="0"/>
+     *       &lt;/sequence>
+     *     &lt;/restriction>
+     *   &lt;/complexContent>
+     * &lt;/complexType>
+     * </pre>
+     *
+     *
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "sectorOneModifiers",
+        "sectorTwoModifiers",
+    })
+    public static class CommonModifiers {
+
+        @XmlElement(name = "SectorOneModifiers")
+        protected ModifiersType sectorOneModifiers;
+        @XmlElement(name = "SectorTwoModifiers")
+        protected ModifiersType sectorTwoModifiers;
+        /**
+         * Gets the value of the sectorOneModifiers property.
+         *
+         * @return
+         *     possible object is
+         *     {@link ModifiersType }
+         *
+         */
+        public ModifiersType getSectorOneModifiers() {
+            return sectorOneModifiers;
+        }
+
+        /**
+         * Sets the value of the sectorOneModifiers property.
+         *
+         * @param value
+         *     allowed object is
+         *     {@link ModifiersType }
+         *
+         */
+        public void setSectorOneModifiers(ModifiersType value) {
+            this.sectorOneModifiers = value;
+        }
+
+        /**
+         * Gets the value of the sectorTwoModifiers property.
+         *
+         * @return
+         *     possible object is
+         *     {@link ModifiersType }
+         *
+         */
+        public ModifiersType getSectorTwoModifiers() {
+            return sectorTwoModifiers;
+        }
+
+        /**
+         * Sets the value of the sectorTwoModifiers property.
+         *
+         * @param value
+         *     allowed object is
+         *     {@link ModifiersType }
+         *
+         */
+        public void setSectorTwoModifiers(ModifiersType value) {
+            this.sectorTwoModifiers = value;
+        }
+
+    }
 
     /**
      * <p>Java class for anonymous complex type.

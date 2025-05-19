@@ -30,6 +30,7 @@ import nz.co.ctg.jmsfx.model.internal.InternalSymbolSetInfo;
 import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
 public enum SymbolSet implements SymbolIdentificationCodeElement {
+    COMMON("C0", "Common", Dimension.INTERNAL, "Common", CommonSymbolSetInfo.INSTANCE),
     SS_UNKNOWN("00", "Unknown", Dimension.UNKNOWN, null, UnknownSymbolSetInfo.INSTANCE),
     SS_AIR("01", "Air", Dimension.AIR, null, AirSymbolSetInfo.INSTANCE),
     SS_AIR_MISSILE("02", "Air Missile", Dimension.AIR, null, AirMissileSymbolSetInfo.INSTANCE),

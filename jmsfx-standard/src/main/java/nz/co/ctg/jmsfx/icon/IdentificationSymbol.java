@@ -692,7 +692,6 @@ public class IdentificationSymbol {
     private SvgGraphic loadFrameGraphic() {
         if (isFrameUsed()) {
             String filePath = calculateFrameLocation();
-            System.out.println(filePath);
             return parser.parseFile(filePath);
         } else {
             return null;

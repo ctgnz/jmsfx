@@ -47,6 +47,16 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class DoubleDigitType {
 
+    public DoubleDigitType() {
+    }
+
+    public DoubleDigitType(Integer digitOne, Integer digitTwo) {
+        getContent().add("DigitOne");
+        getContent().add(digitOne);
+        getContent().add("DigitTwo");
+        getContent().add(digitTwo);
+    }
+
     @XmlElementRefs({
         @XmlElementRef(name = "DigitOne", namespace = "http://disa.mil/JointMilSyML.xsd", type = JAXBElement.class),
         @XmlElementRef(name = "DigitTwo", namespace = "http://disa.mil/JointMilSyML.xsd", type = JAXBElement.class)

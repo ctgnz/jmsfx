@@ -131,7 +131,7 @@ public class SymbolIdentificationCode {
         }
         return sb.toString();
     }
-    
+
     public List<Entity> getEntities() {
         return symbolSet.getEntities();
     }
@@ -157,13 +157,13 @@ public class SymbolIdentificationCode {
     }
 
     public String getFirstTenDigits() {
-        return String.format("%s%s%s%s%s%s%s", 
-                             version.getId(), 
-                             context.getId(), 
+        return String.format("%s%s%s%s%s%s%s",
+                             version.getId(),
+                             context.getId(),
                              standardIdentity.getId(),
-                             symbolSet != null ? symbolSet.getId() : "00", 
-                             status.getId(), 
-                             hqtfDummy.getId(), 
+                             symbolSet != null ? symbolSet.getId() : "00",
+                             status.getId(),
+                             hqtfDummy.getId(),
                              amplifier != null ? amplifier.getId() : "00");
     }
 
@@ -199,7 +199,7 @@ public class SymbolIdentificationCode {
     }
 
     public List<SectorOneModifier> getSectorOneModifiers() {
-        return symbolSet.getSectorOneModifiers();
+        return Stream.concat(symbolSet.getSectorOneModifiers().stream(), CommonSymbolSetInfo.INSTANCE.getSectorOneModifiers().stream()).toList();
     }
 
     public SectorTwoModifier getSectorTwoModifier() {
@@ -207,7 +207,7 @@ public class SymbolIdentificationCode {
     }
 
     public List<SectorTwoModifier> getSectorTwoModifiers() {
-        return symbolSet.getSectorTwoModifiers();
+        return Stream.concat(symbolSet.getSectorTwoModifiers().stream(), CommonSymbolSetInfo.INSTANCE.getSectorTwoModifiers().stream()).toList();
     }
 
     public StandardIdentity getStandardIdentity() {

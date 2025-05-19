@@ -31,6 +31,7 @@ import nz.co.ctg.jmsfx.generator.model.SectorOneModEnum;
 import nz.co.ctg.jmsfx.generator.model.SectorTwoModEnum;
 import nz.co.ctg.jmsfx.generator.model.StandardEnum;
 import nz.co.ctg.jmsfx.generator.model.SymbolSetEnum;
+import nz.co.ctg.jmsfx.generator.schema.DoubleDigitType;
 import nz.co.ctg.jmsfx.generator.schema.Library;
 import nz.co.ctg.jmsfx.generator.schema.Library.Dimensions.Dimension.SymbolSets.SymbolSetRef;
 import nz.co.ctg.jmsfx.generator.schema.SymbolSet;
@@ -73,6 +74,7 @@ public class DomainModelGenerator {
         Library library = parseLibraryFile(config.getInputDir().resolve(config.getLibraryFile()));
         dataModel.put("dimensionGraphics", config.getDimensionGraphicLocations());
         config.getStandardEnums().forEach(enumConfig -> generateStandardEnum(dataModel, library, enumConfig));
+        generateCommonModifiers(config.getBasePackageDir(), dataModel, library);
         generateAmplifierEnum(dataModel, library);
         generateAmplifierGroupEnums(dataModel, library);
         generateSymbolSets(dataModel, library);
@@ -139,6 +141,31 @@ public class DomainModelGenerator {
                 throw new IllegalArgumentException("Unable to create amplifier group enum", e);
             }
         });
+    }
+
+    @SuppressWarnings("unchecked")
+    private void generateCommonModifiers(Path packagePath, Map<String, Object> dataModel, Library library) throws Exception {
+        System.out.format("Processing common modifiers%n");
+        SymbolSet symbolSet = new SymbolSet();
+        symbolSet.setSymbolSetCode(new DoubleDigitType(12, 0));
+        symbolSet.setSectorOneModifiers(library.getCommonModifiers().getSectorOneModifiers());
+        symbolSet.setSectorTwoModifiers(library.getCommonModifiers().getSectorTwoModifiers());
+        dataModel.remove("sectorOneMods");
+        dataModel.remove("sectorTwoMods");
+        Template symSetInfoTemplate = config.getTemplateConfig().getTemplate("CommonSymbolSetInfo.ftl");
+        symSetInfoTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve("CommonSymbolSetInfo.java"))));
+        symbolSet.getSectorOneModifiers().getModifier().forEach(mod -> {
+            List<SectorOneModEnum> values = (List<SectorOneModEnum>) dataModel.computeIfAbsent("sectorOneMods", key -> new ArrayList<SectorOneModEnum>());
+            values.add(new SectorOneModEnum(mod));
+        });
+        symbolSet.getSectorTwoModifiers().getModifier().forEach(mod -> {
+            List<SectorTwoModEnum> values = (List<SectorTwoModEnum>) dataModel.computeIfAbsent("sectorTwoMods", key -> new ArrayList<SectorTwoModEnum>());
+            values.add(new SectorTwoModEnum(mod));
+        });
+        Template s1ModTemplate = config.getTemplateConfig().getTemplate("CommonSectorOneModifier.ftl");
+        s1ModTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve("CommonSectorOneModifier.java"))));
+        Template s2ModTemplate = config.getTemplateConfig().getTemplate("CommonSectorTwoModifier.ftl");
+        s2ModTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve("CommonSectorTwoModifier.java"))));
     }
 
     @SuppressWarnings("unchecked")

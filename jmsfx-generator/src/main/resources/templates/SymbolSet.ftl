@@ -9,6 +9,7 @@ import ${basePackage}.${sym.packageName}.${sym.baseTypeName}SymbolSetInfo;
 import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
 public enum SymbolSet implements SymbolIdentificationCodeElement {
+    COMMON("C0", "Common", Dimension.INTERNAL, "Common", CommonSymbolSetInfo.INSTANCE),
 <#list symbolSets as sym>
     ${sym.id}("${sym.code}", "${sym.label}", Dimension.${sym.dimensionId}, <#if sym.graphicLocation??>"${sym.graphicLocation}", <#else>null, </#if>${sym.baseTypeName}SymbolSetInfo.INSTANCE)<#if sym?is_last>;<#else>,</#if>
 </#list>    
