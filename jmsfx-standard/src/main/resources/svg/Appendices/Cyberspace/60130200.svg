@@ -1,25 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
+
+<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve" sodipodi:docname="60130200.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs28" /><sodipodi:namedview id="namedview26" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="1.1123737" inkscape:cx="180.69467" inkscape:cy="396.44949" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="Version_1.0" />
 <g id="octagon" display="none">
 	
-		<line id="mod2_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="445.015" x2="406.199" y2="445.295"/>
+		<line id="mod2_1_" display="inline" fill="none" stroke="#0000ff" stroke-width="2" x1="203.966" y1="445.01501" x2="406.19901" y2="445.29501" />
 	
-		<line id="mod1_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="346.985" x2="406.199" y2="346.705"/>
+		<line id="mod1_1_" display="inline" fill="none" stroke="#0000ff" stroke-width="2" x1="203.966" y1="346.98499" x2="406.19901" y2="346.70499" />
 	<g id="outFrame" display="inline">
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="220" y1="309.5" x2="306" y2="273"/>
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="306" y1="273" x2="390.5" y2="309.5"/>
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" y1="309.5" x2="427" y2="396"/>
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="427" y1="396" x2="390.5" y2="482.5"/>
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" y1="482.5" x2="306" y2="516"/>
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="306" y1="516" x2="220" y2="482.5"/>
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="220" y1="482.5" x2="183" y2="396"/>
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="183" y1="396" x2="220" y2="309.5"/>
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="220" y1="309.5" x2="306" y2="273" id="line4" />
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="306" y1="273" x2="390.5" y2="309.5" id="line6" />
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="390.5" y1="309.5" x2="427" y2="396" id="line8" />
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="427" y1="396" x2="390.5" y2="482.5" id="line10" />
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="390.5" y1="482.5" x2="306" y2="516" id="line12" />
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="306" y1="516" x2="220" y2="482.5" id="line14" />
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="220" y1="482.5" x2="183" y2="396" id="line16" />
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="183" y1="396" x2="220" y2="309.5" id="line18" />
 	</g>
 </g>
-<g id="main">
-	<text transform="matrix(1 0 0 1 193 432.25)" font-family="sans-serif" font-size="100">OUT</text>
+<g id="main" transform="translate(12.641354,-1.3918223)" style="fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1">
+	<g aria-label="CTA" transform="translate(193,432.25)" id="text22" style="font-size:100px;display:inline;fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"><path d="m 65.917969,-5.2734375 q -2.685547,1.171875 -4.882813,2.1972656 -2.148437,1.0253906 -5.664062,2.14843752 Q 52.392578,0 48.876953,0.63476562 45.410156,1.3183594 41.210937,1.3183594 q -7.910156,0 -14.404296,-2.19726565 Q 20.361328,-3.125 15.576172,-7.8613281 10.888672,-12.5 8.2519531,-19.628906 5.6152344,-26.806641 5.6152344,-36.279297 q 0,-8.984375 2.5390625,-16.064453 2.5390621,-7.080078 7.3242191,-11.962891 4.638671,-4.736328 11.18164,-7.226562 6.591797,-2.490234 14.59961,-2.490234 5.859375,0 11.669921,1.416015 5.859375,1.416016 12.988282,4.980469 v 11.474609 h -0.732422 q -6.00586,-5.029297 -11.914063,-7.324218 -5.908203,-2.294922 -12.646484,-2.294922 -5.517578,0 -9.960938,1.80664 -4.394531,1.757813 -7.861328,5.517578 -3.36914,3.66211 -5.273437,9.277344 -1.855469,5.566406 -1.855469,12.890625 0,7.666016 2.050781,13.183594 2.09961,5.517578 5.371094,8.984375 3.417969,3.613281 7.958984,5.3710936 4.589844,1.7089844 9.667969,1.7089844 6.982422,0 13.085938,-2.3925781 6.103515,-2.3925779 11.425781,-7.1777339 h 0.683594 z" id="path345" style="fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" /><path d="M 131.44531,-64.111328 H 105.46875 V 0 H 95.800781 V -64.111328 H 69.824219 v -8.59375 h 61.621091 z" id="path347" style="fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" /><path d="m 192.67578,0 h -10.30273 l -7.12891,-20.263672 H 143.79883 L 136.66992,0 h -9.81445 l 26.46484,-72.705078 h 12.89063 z m -20.41016,-28.564453 -12.74414,-35.693359 -12.79296,35.693359 z" id="path349" style="fill:none;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" /></g>
 </g>
 </svg>
