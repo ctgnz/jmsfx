@@ -23,7 +23,7 @@ public class SymbolIdentificationCode {
     public static final Status DEFAULT_STATUS = Status.PRESENT;
     public static final HqtfDummy DEFAULT_HQTF_DUMMY = HqtfDummy.NA;
     public static final UnknownAmplifier DEFAULT_AMPLIFIER = UnknownAmplifier.NA;
-    private static String extensionCountryCode = "826";
+    private static String extensionCountryCode = "000";
     private static String extensionSymbolSet = "0";
 
     public static String getExtensionCountryCode() {

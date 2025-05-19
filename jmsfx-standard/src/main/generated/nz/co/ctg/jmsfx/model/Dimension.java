@@ -14,7 +14,7 @@ public enum Dimension implements SymbolIdentificationCodeElement {
     SEA_SURFACE("30", "Sea Surface", Geometry.POINT_GEOMETRY, "SeaSurface"),
     SEA_SUBSURFACE("35", "Sea Subsurface", Geometry.POINT_GEOMETRY, "SeaSubsurface"),
     ACTIVITY("40", "Activities", Geometry.POINT_GEOMETRY, "Activities"),
-    METOC("45", "Meteorological", Geometry.MIXED_GEOMETRY, "METOC"),
+    CYBERSPACE("60", "Cyberspace", Geometry.POINT_GEOMETRY, "Cyberspace"),
     INTERNAL("98", "Internal", Geometry.POINT_GEOMETRY, "Internal");
 
     private final String id;

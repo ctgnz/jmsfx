@@ -32,7 +32,7 @@ public class DismountedIndividualSymbolSetInfo implements SymbolSetInfo {
     public List<AmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
             new AmplifierGuide("C", Amplifier.Quantity, 180, 548, 252, 96),
-            new AmplifierGuide("D", Amplifier.LeadershipIdentifier, 180, 248, 252, 96),
+            new AmplifierGuide("AV", Amplifier.LeadershipIdentifier, 180, 248, 252, 96),
             new AmplifierGuide("AB", Amplifier.FeintDummyIndicator, 180, 152, 252, 96),
             new AmplifierGuide("G", Amplifier.StaffComments, 440, 248, 168, 96),
             new AmplifierGuide("H", Amplifier.AdditionalInformation, 440, 344, 168, 96),
@@ -41,7 +41,7 @@ public class DismountedIndividualSymbolSetInfo implements SymbolSetInfo {
             new AmplifierGuide("M", Amplifier.HigherFormation, 440, 440, 168, 96),
             new AmplifierGuide("P", Amplifier.IFFSIFAIS, 440, 536, 168, 96),
             new AmplifierGuide("T", Amplifier.UniqueDesignation, 4, 440, 168, 96),
-            new AmplifierGuide("V", Amplifier.Type, 4, 344, 168, 96),
+            new AmplifierGuide("V", Amplifier.TypeofEquipment, 4, 344, 168, 96),
             new AmplifierGuide("W", Amplifier.DateTimeGroupDTG, 4, 152, 168, 96),
             new AmplifierGuide("X", Amplifier.AltitudeDepth, 4, 248, 168, 96),
             new AmplifierGuide("Y", Amplifier.Location, 4, 248, 168, 96),

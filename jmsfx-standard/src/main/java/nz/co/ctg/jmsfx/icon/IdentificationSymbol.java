@@ -432,19 +432,13 @@ public class IdentificationSymbol {
     }
 
     public boolean isFrameUsed() {
-        if (getContext() == Context.EXTENSION) {
-            return false;
-        }
-        if (getStandardIdentity() == StandardIdentity.SI_EXTENSION) {
-            return false;
-        }
         SymbolSet selectedSymbolSet = getSymbolSet();
         return selectedSymbolSet != null && selectedSymbolSet.getDimension().getGeometry() == Geometry.POINT_GEOMETRY;
     }
 
     public boolean isHqtfDummyIconUsed() {
         HqtfDummy currentHqtfDummy = getHqtfDummy();
-        return currentHqtfDummy != null && currentHqtfDummy != HqtfDummy.NA && currentHqtfDummy != HqtfDummy.EXTENSION;
+        return currentHqtfDummy != null && currentHqtfDummy != HqtfDummy.NA;
     }
 
     public boolean isKnownIdentity(StandardIdentity stdIdentity) {
@@ -698,6 +692,7 @@ public class IdentificationSymbol {
     private SvgGraphic loadFrameGraphic() {
         if (isFrameUsed()) {
             String filePath = calculateFrameLocation();
+            System.out.println(filePath);
             return parser.parseFile(filePath);
         } else {
             return null;

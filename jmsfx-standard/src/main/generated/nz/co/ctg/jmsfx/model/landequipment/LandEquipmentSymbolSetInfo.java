@@ -41,7 +41,7 @@ public class LandEquipmentSymbolSetInfo implements SymbolSetInfo {
             new AmplifierGuide("P", Amplifier.IFFSIFAIS, 486, 516, 126, 80),
             new AmplifierGuide("R", Amplifier.MobilityIndicator, 185, 520, 240, 80),
             new AmplifierGuide("T", Amplifier.UniqueDesignation, 0, 436, 126, 80),
-            new AmplifierGuide("V", Amplifier.Type, 0, 356, 126, 80),
+            new AmplifierGuide("V", Amplifier.TypeofEquipment, 0, 356, 126, 80),
             new AmplifierGuide("W", Amplifier.DateTimeGroupDTG, 0, 196, 126, 80),
             new AmplifierGuide("X", Amplifier.AltitudeDepth, 0, 276, 126, 80),
             new AmplifierGuide("Y", Amplifier.Location, 0, 276, 126, 80),
@@ -49,8 +49,8 @@ public class LandEquipmentSymbolSetInfo implements SymbolSetInfo {
             new AmplifierGuide("AD", Amplifier.PlatformType, 0, 356, 126, 80),
             new AmplifierGuide("AE", Amplifier.EquipmentTeardownTime, 0, 356, 126, 80),
             new AmplifierGuide("AF", Amplifier.CommonIdentifier, 486, 356, 126, 80),
-            new AmplifierGuide("AH", Amplifier.HeadquartersElement, 185, 520, 240, 80),
-            new AmplifierGuide("AL", Amplifier.AreaofUncertainty, 130, 600, 350, 80),
+            new AmplifierGuide("AW", Amplifier.HeadquartersElement, 185, 520, 240, 80),
+            new AmplifierGuide("AH", Amplifier.AreaofUncertaintyIndicator, 130, 600, 350, 80),
             new AmplifierGuide("AO", Amplifier.EngagementBar, 130, 5, 350, 80),
             new AmplifierGuide("AR", Amplifier.SpecialDesignator, 0, 196, 126, 80)
         );

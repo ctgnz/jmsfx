@@ -21,7 +21,6 @@ public class CyberspaceSymbolSetInfo implements SymbolSetInfo {
     public static final SymbolSetInfo INSTANCE = new CyberspaceSymbolSetInfo();
     private static final List<Entity> ENTITIES = Arrays.asList(CyberspaceEntity.values());
     private static final Multimap<Entity, EntityType> ENTITY_TYPES = Multimaps.index(Arrays.asList(CyberspaceEntityType.values()), EntityType::getEntity);
-    private static final Multimap<EntityType, EntitySubType> ENTITY_SUB_TYPES = Multimaps.index(Arrays.asList(CyberspaceEntitySubType.values()), EntitySubType::getEntityType);
 
     private CyberspaceSymbolSetInfo() {
     }
@@ -53,7 +52,7 @@ public class CyberspaceSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<EntitySubType> getEntitySubTypes(EntityType entityType) {
-        return Lists.newArrayList(ENTITY_SUB_TYPES.get(entityType));
+        return Collections.emptyList();
     }
 
     @Override
@@ -68,12 +67,12 @@ public class CyberspaceSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<SectorOneModifier> getSectorOneModifiers() {
-        return Collections.emptyList();
+        return Arrays.asList(CyberspaceSectorOneModifier.values());
     }
 
     @Override
     public List<SectorTwoModifier> getSectorTwoModifiers() {
-        return Collections.emptyList();
+        return Arrays.asList(CyberspaceSectorTwoModifier.values());
     }
 
     @Override
@@ -98,7 +97,7 @@ public class CyberspaceSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isEntitySubTypePresent() {
-        return true;
+        return false;
     }
 
     @Override
@@ -113,12 +112,12 @@ public class CyberspaceSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isSectorOneModifierPresent() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isSectorTwoModifierPresent() {
-        return false;
+        return true;
     }
 
     @Override

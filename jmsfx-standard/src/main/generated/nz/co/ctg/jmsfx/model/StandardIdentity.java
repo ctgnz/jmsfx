@@ -7,8 +7,7 @@ public enum StandardIdentity implements SymbolIdentificationCodeElement {
     SI_FRIEND("3", "Friend"),
     SI_NEUTRAL("4", "Neutral"),
     SI_SUSPECT_JOKER("5", "Suspect/Joker"),
-    SI_HOSTILE_FAKER("6", "Hostile/Faker"),
-    SI_EXTENSION("9", "Extension");
+    SI_HOSTILE_FAKER("6", "Hostile/Faker");
 
     private final String id;
     private final String label;

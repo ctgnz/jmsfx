@@ -2,6 +2,8 @@ package nz.co.ctg.jmsfx.generator.model;
 
 import java.util.Comparator;
 
+import org.apache.commons.lang3.RegExUtils;
+
 public abstract class StandardEnum {
 
     public static <E extends StandardEnum> Comparator<E> getStandardOrder() {
@@ -13,9 +15,13 @@ public abstract class StandardEnum {
     protected final String code;
 
     public StandardEnum(String id, String label, String code) {
-        this.id = id;
+        this.id = sanitiseId(id);
         this.label = label;
         this.code = code;
+    }
+
+    public String getCode() {
+        return code;
     }
 
     public String getId() {
@@ -26,8 +32,11 @@ public abstract class StandardEnum {
         return label;
     }
 
-    public String getCode() {
-        return code;
+    protected String sanitiseId(String id) {
+        String result = RegExUtils.removeAll(id, "[-\\(\\)]");
+        result = RegExUtils.replaceAll(result, "(\\s+)", " ");
+        result = RegExUtils.replaceAll(result, " ", "_");
+        return result;
     }
 
 }

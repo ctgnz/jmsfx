@@ -1,49 +1,38 @@
 package nz.co.ctg.jmsfx.model.cyberspace;
 
-import java.util.List;
-
 import nz.co.ctg.jmsfx.model.Entity;
 import nz.co.ctg.jmsfx.model.EntityType;
-import nz.co.ctg.jmsfx.model.EntitySubType;
 import nz.co.ctg.jmsfx.model.IconType;
 
 public enum CyberspaceEntityType implements EntityType {
-    COMMAND_AND_CONTROL_C2("01", "Command and Control (C2)", CyberspaceEntity.BOTNET, IconType.MAIN),
-    HERDER("02", "Herder", CyberspaceEntity.BOTNET, IconType.MAIN),
-    CALLBACK_DOMAIN("03", "Callback Domain", CyberspaceEntity.BOTNET, IconType.MAIN),
-    ZOMBIE("04", "Zombie", CyberspaceEntity.BOTNET, IconType.MAIN),
-    ADVANCED_PERSISTENT_THREAT_APT("01", "Advanced Persistent Threat (APT)", CyberspaceEntity.INFECTION, IconType.MAIN),
-    NON_ADVANCED_PERSISTENT_THREAT_NAPT("02", "Non-Advanced Persistent Threat (NAPT)", CyberspaceEntity.INFECTION, IconType.MAIN),
-    NORMAL("01", "Normal", CyberspaceEntity.HEALTH_AND_STATUS, IconType.MAIN),
-    NETWORK_OUTAGE("02", "Network Outage", CyberspaceEntity.HEALTH_AND_STATUS, IconType.MAIN),
-    UNKNOWN("03", "Unknown", CyberspaceEntity.HEALTH_AND_STATUS, IconType.MAIN),
-    IMPAIRED("04", "Impaired", CyberspaceEntity.HEALTH_AND_STATUS, IconType.MAIN),
-    CORE_ROUTER("01", "Core Router", CyberspaceEntity.DEVICE_TYPE, IconType.MAIN),
-    ROUTER("02", "Router", CyberspaceEntity.DEVICE_TYPE, IconType.MAIN),
-    CROSS_DOMAIN_SOLUTION("03", "Cross Domain Solution", CyberspaceEntity.DEVICE_TYPE, IconType.MAIN),
-    MAIL_SERVER("04", "Mail Server", CyberspaceEntity.DEVICE_TYPE, IconType.MAIN),
-    WEB_SERVER("05", "Web Server", CyberspaceEntity.DEVICE_TYPE, IconType.MAIN),
-    DOMAIN_SERVER("06", "Domain Server", CyberspaceEntity.DEVICE_TYPE, IconType.MAIN),
-    FILE_SERVER("07", "File Server", CyberspaceEntity.DEVICE_TYPE, IconType.MAIN),
-    PEER_TO_PEER_NODE("08", "Peer-to-Peer Node", CyberspaceEntity.DEVICE_TYPE, IconType.MAIN),
-    FIREWALL("09", "Firewall", CyberspaceEntity.DEVICE_TYPE, IconType.MAIN),
-    SWITCH("10", "Switch", CyberspaceEntity.DEVICE_TYPE, IconType.MAIN),
-    HOST("11", "Host", CyberspaceEntity.DEVICE_TYPE, IconType.MAIN),
-    VIRTUAL_PRIVATE_NETWORK_VPN("12", "Virtual Private Network (VPN)", CyberspaceEntity.DEVICE_TYPE, IconType.MAIN),
-    DEPARTMENT_OF_DEFENSE_DOD("01", "Department of Defense (DoD)", CyberspaceEntity.DEVICE_DOMAIN, IconType.MAIN),
-    GOVERNMENT("02", "Government", CyberspaceEntity.DEVICE_DOMAIN, IconType.MAIN),
-    CONTRACTOR("03", "Contractor", CyberspaceEntity.DEVICE_DOMAIN, IconType.MAIN),
-    SUPERVISORY_CONTROL_AND_DATA_ACQUISITION_SCADA("04", "Supervisory Control and Data Acquisition (SCADA)", CyberspaceEntity.DEVICE_DOMAIN, IconType.MAIN),
-    NON_GOVERNMENT("05", "Non-Government", CyberspaceEntity.DEVICE_DOMAIN, IconType.MAIN),
-    CYBER_INFECTION("01", "Infection", CyberspaceEntity.EFFECT, IconType.MAIN),
-    DEGRADATION("02", "Degradation", CyberspaceEntity.EFFECT, IconType.MAIN),
-    DATA_SPOOFING("03", "Data Spoofing", CyberspaceEntity.EFFECT, IconType.MAIN),
-    DATA_MANIPULATION("04", "Data Manipulation", CyberspaceEntity.EFFECT, IconType.MAIN),
-    EXFILTRATION("05", "Exfiltration", CyberspaceEntity.EFFECT, IconType.MAIN),
-    POWER_OUTAGE("06", "Power Outage", CyberspaceEntity.EFFECT, IconType.MAIN),
-    CYBER_NETWORK_OUTAGE("07", "Network Outage", CyberspaceEntity.EFFECT, IconType.MAIN),
-    SERVICE_OUTAGE("08", "Service Outage", CyberspaceEntity.EFFECT, IconType.MAIN),
-    DEVICE_OUTAGE("09", "Device Outage", CyberspaceEntity.EFFECT, IconType.MAIN);
+    COMBAT_MISSION_TEAM("01", "Combat Mission Team", CyberspaceEntity.MISSION_FORCE, IconType.MAIN),
+    NATIONAL_MISSION_TEAM("02", "National Mission Team", CyberspaceEntity.MISSION_FORCE, IconType.MAIN),
+    CYBER_PROTECTION_TEAM("03", "Cyber Protection Team", CyberspaceEntity.MISSION_FORCE, IconType.MAIN),
+    DEFENSIVE_CYBERSPACE_OPERATION("01", "Defensive Cyberspace Operation", CyberspaceEntity.CYBERSPACE_UNIT, IconType.MAIN),
+    OFFENSIVE_CYBERSPACE_OPERATION("02", "Cyberspace Operation", CyberspaceEntity.CYBERSPACE_UNIT, IconType.MAIN),
+    INTERNET_SERVICE_PROVIDER("03", "Internet Service Provider", CyberspaceEntity.CYBERSPACE_UNIT, IconType.MAIN),
+    SECURITY_OPERATIONS_CENTRE("04", "Security Operations Centre", CyberspaceEntity.CYBERSPACE_UNIT, IconType.MAIN),
+    ACTIVE_CYBER_OPERATIONS("05", "Active Cyber Operations", CyberspaceEntity.CYBERSPACE_UNIT, IconType.MAIN),
+    ADVANCED_PERSISTANT_THREAT("06", "Advanced Persistant Threat", CyberspaceEntity.CYBERSPACE_UNIT, IconType.MAIN),
+    NATION_STATE("01", "Nation State", CyberspaceEntity.THREAT_ACTOR, IconType.MAIN),
+    NON_NATION_STATE("02", "Non Nation State", CyberspaceEntity.THREAT_ACTOR, IconType.MAIN),
+    CRIMINAL("03", "Unknown", CyberspaceEntity.THREAT_ACTOR, IconType.MAIN),
+    INSIDER("04", "Insider", CyberspaceEntity.THREAT_ACTOR, IconType.MAIN),
+    FIREWALL("01", "Firewall", CyberspaceEntity.AGENT, IconType.MAIN),
+    FIRMWARE("02", "Firmware", CyberspaceEntity.AGENT, IconType.MAIN),
+    BANKING("01", "Banking", CyberspaceEntity.APPLICATION, IconType.MAIN),
+    CLOUD("02", "Cloud", CyberspaceEntity.APPLICATION, IconType.MAIN),
+    FILESERVER("03", "Fileserver", CyberspaceEntity.APPLICATION, IconType.MAIN),
+    SEARCH_ENGINE("04", "Search Engine", CyberspaceEntity.APPLICATION, IconType.MAIN),
+    SOCIAL_MEDIA("05", "Social Media", CyberspaceEntity.APPLICATION, IconType.MAIN),
+    MALWARE("01", "Malware", CyberspaceEntity.THREAT, IconType.MAIN),
+    PHISHING("02", "Phishing", CyberspaceEntity.THREAT, IconType.MAIN),
+    SPEARPHISHING("03", "Spearphishing", CyberspaceEntity.THREAT, IconType.MAIN),
+    DIGITAL_CURRENCY("01", "Digital Currency", CyberspaceEntity.DATA, IconType.MAIN),
+    PERSONA("02", "Persona", CyberspaceEntity.DATA, IconType.MAIN),
+    DATA_PATH_SEGMENT("01", "Data Path Segment", CyberspaceEntity.PATHS, IconType.MAIN),
+    DATA_TUNNEL("02", "Data Tunnel", CyberspaceEntity.PATHS, IconType.MAIN),
+    NETWORK("01", "Network", CyberspaceEntity.TERRAIN, IconType.MAIN);
 
     private final String id;
     private final String label;
@@ -78,9 +67,4 @@ public enum CyberspaceEntityType implements EntityType {
         return entity;
     }
     
-   @Override
-    public List<EntitySubType> getEntitySubTypes() {
-        return CyberspaceSymbolSetInfo.INSTANCE.getEntitySubTypes(this);
-    }    
-
 }

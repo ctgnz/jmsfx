@@ -9,12 +9,13 @@ public enum UnitEchelon implements AmplifierGroup {
     BN_SQUADRON("16", "Battalion/Squadron"),
     REGT_GRP("17", "Regiment/Group"),
     BDE("18", "Brigade"),
-    DIV("21", "Division"),
-    CORPS_MEF("22", "Corps/MEF"),
-    ARMY("23", "Army"),
-    ARMY_GROUP_FRONT("24", "Army Group/Front"),
-    REGION_THEATER("25", "Region/Theater"),
-    COMMAND("26", "Command");
+    DIV("19", "Division"),
+    CORPS_MEF("10", "Corps/MEF"),
+    ARMY("10", "Army"),
+    ARMY_GROUP_FRONT("10", "Army Group/Front"),
+    REGION_THEATER("10", "Region/Theater"),
+    COMMAND("10", "Command"),
+    STAFFEL("10", "Staffel");
 
     private final String id;
     private final String label;

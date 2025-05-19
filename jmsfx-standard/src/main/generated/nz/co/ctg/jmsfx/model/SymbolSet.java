@@ -6,7 +6,6 @@ import nz.co.ctg.jmsfx.model.unknown.UnknownSymbolSetInfo;
 import nz.co.ctg.jmsfx.model.air.AirSymbolSetInfo;
 import nz.co.ctg.jmsfx.model.airmissile.AirMissileSymbolSetInfo;
 import nz.co.ctg.jmsfx.model.space.SpaceSymbolSetInfo;
-import nz.co.ctg.jmsfx.model.spacemissile.SpaceMissileSymbolSetInfo;
 import nz.co.ctg.jmsfx.model.landunits.LandUnitsSymbolSetInfo;
 import nz.co.ctg.jmsfx.model.landcivilian.LandCivilianSymbolSetInfo;
 import nz.co.ctg.jmsfx.model.landequipment.LandEquipmentSymbolSetInfo;
@@ -17,15 +16,15 @@ import nz.co.ctg.jmsfx.model.seasurface.SeaSurfaceSymbolSetInfo;
 import nz.co.ctg.jmsfx.model.seasubsurface.SeaSubsurfaceSymbolSetInfo;
 import nz.co.ctg.jmsfx.model.minewarfare.MineWarfareSymbolSetInfo;
 import nz.co.ctg.jmsfx.model.activity.ActivitySymbolSetInfo;
-import nz.co.ctg.jmsfx.model.atmospheric.AtmosphericSymbolSetInfo;
-import nz.co.ctg.jmsfx.model.oceanographic.OceanographicSymbolSetInfo;
-import nz.co.ctg.jmsfx.model.meteorologicalspace.MeteorologicalSpaceSymbolSetInfo;
-import nz.co.ctg.jmsfx.model.signalsintelligencespace.SignalsIntelligenceSpaceSymbolSetInfo;
-import nz.co.ctg.jmsfx.model.signalsintelligenceair.SignalsIntelligenceAirSymbolSetInfo;
-import nz.co.ctg.jmsfx.model.signalsintelligenceland.SignalsIntelligenceLandSymbolSetInfo;
-import nz.co.ctg.jmsfx.model.signalsintelligencesurface.SignalsIntelligenceSurfaceSymbolSetInfo;
-import nz.co.ctg.jmsfx.model.signalsintelligencesubsurface.SignalsIntelligenceSubsurfaceSymbolSetInfo;
 import nz.co.ctg.jmsfx.model.cyberspace.CyberspaceSymbolSetInfo;
+import nz.co.ctg.jmsfx.model.cyberspacespace.CyberspaceSpaceSymbolSetInfo;
+import nz.co.ctg.jmsfx.model.cyberspaceair.CyberspaceAirSymbolSetInfo;
+import nz.co.ctg.jmsfx.model.cyberspacelandunit.CyberspaceLandUnitSymbolSetInfo;
+import nz.co.ctg.jmsfx.model.cyberspacelandequipment.CyberspaceLandEquipmentSymbolSetInfo;
+import nz.co.ctg.jmsfx.model.cyberspacelandinstallation.CyberspaceLandInstallationSymbolSetInfo;
+import nz.co.ctg.jmsfx.model.cyberspacedismountedindividual.CyberspaceDismountedIndividualSymbolSetInfo;
+import nz.co.ctg.jmsfx.model.cyberspaceseasurface.CyberspaceSeaSurfaceSymbolSetInfo;
+import nz.co.ctg.jmsfx.model.cyberspaceseasubsurface.CyberspaceSeaSubsurfaceSymbolSetInfo;
 import nz.co.ctg.jmsfx.model.internal.InternalSymbolSetInfo;
 
 import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
@@ -35,7 +34,6 @@ public enum SymbolSet implements SymbolIdentificationCodeElement {
     SS_AIR("01", "Air", Dimension.AIR, null, AirSymbolSetInfo.INSTANCE),
     SS_AIR_MISSILE("02", "Air Missile", Dimension.AIR, null, AirMissileSymbolSetInfo.INSTANCE),
     SS_SPACE("05", "Space", Dimension.SPACE, null, SpaceSymbolSetInfo.INSTANCE),
-    SS_SPACE_MISSILE("06", "Space Missile", Dimension.SPACE, null, SpaceMissileSymbolSetInfo.INSTANCE),
     SS_LAND_UNIT("10", "Land Units", Dimension.LAND_UNIT, null, LandUnitsSymbolSetInfo.INSTANCE),
     SS_LAND_CIVILIAN("11", "Land Civilian", Dimension.LAND_UNIT, null, LandCivilianSymbolSetInfo.INSTANCE),
     SS_LAND_EQUIPMENT("15", "Land Equipment", Dimension.LAND_EQUIPMENT, null, LandEquipmentSymbolSetInfo.INSTANCE),
@@ -46,15 +44,15 @@ public enum SymbolSet implements SymbolIdentificationCodeElement {
     SS_SEA_SUBSURFACE("35", "Sea Subsurface", Dimension.SEA_SUBSURFACE, null, SeaSubsurfaceSymbolSetInfo.INSTANCE),
     SS_MINE_WARFARE("36", "Mine Warfare", Dimension.SEA_SUBSURFACE, null, MineWarfareSymbolSetInfo.INSTANCE),
     SS_ACTIVITY("40", "Activity", Dimension.ACTIVITY, null, ActivitySymbolSetInfo.INSTANCE),
-    SS_ATMOSPHERIC("45", "Atmospheric", Dimension.METOC, "METOC/Atmospheric", AtmosphericSymbolSetInfo.INSTANCE),
-    SS_OCEANIC("46", "Oceanographic", Dimension.METOC, "METOC/Oceanographic", OceanographicSymbolSetInfo.INSTANCE),
-    SS_MET_SPACE("47", "Meteorological Space", Dimension.METOC, null, MeteorologicalSpaceSymbolSetInfo.INSTANCE),
-    SS_SIGINT_SPACE("50", "Signals Intelligence - Space", Dimension.SPACE, "SigInt", SignalsIntelligenceSpaceSymbolSetInfo.INSTANCE),
-    SS_SIGINT_AIR("51", "Signals Intelligence - Air", Dimension.AIR, "SigInt", SignalsIntelligenceAirSymbolSetInfo.INSTANCE),
-    SS_SIGINT_LAND("52", "Signals Intelligence - Land", Dimension.LAND_EQUIPMENT, "SigInt", SignalsIntelligenceLandSymbolSetInfo.INSTANCE),
-    SS_SIGINT_SURFACE("53", "Signals Intelligence - Surface", Dimension.SEA_SURFACE, "SigInt", SignalsIntelligenceSurfaceSymbolSetInfo.INSTANCE),
-    SS_SIGINT_SUBSURFACE("54", "Signals Intelligence - Subsurface", Dimension.SEA_SUBSURFACE, "SigInt", SignalsIntelligenceSubsurfaceSymbolSetInfo.INSTANCE),
-    SS_CYBERSPACE("60", "Cyberspace", Dimension.AIR, "Cyberspace", CyberspaceSymbolSetInfo.INSTANCE),
+    SS_CYBERSPACE("60", "Cyberspace", Dimension.CYBERSPACE, "Cyberspace", CyberspaceSymbolSetInfo.INSTANCE),
+    SS_CYBERSPACE_SPACE("61", "Cyberspace Space", Dimension.SPACE, null, CyberspaceSpaceSymbolSetInfo.INSTANCE),
+    SS_CYBERSPACE_AIR("62", "Cyberspace Air", Dimension.AIR, null, CyberspaceAirSymbolSetInfo.INSTANCE),
+    SS_CYBERSPACE_LAND_UNIT("63", "Cyberspace Land Unit", Dimension.LAND_UNIT, null, CyberspaceLandUnitSymbolSetInfo.INSTANCE),
+    SS_CYBERSPACE_LAND_EQUIPMENT("64", "Cyberspace Land Equipment", Dimension.LAND_EQUIPMENT, null, CyberspaceLandEquipmentSymbolSetInfo.INSTANCE),
+    SS_CYBERSPACE_LAND_INSTALLATION("65", "Cyberspace Land Installation", Dimension.LAND_INSTALLATION, null, CyberspaceLandInstallationSymbolSetInfo.INSTANCE),
+    SS_CYBERSPACE_DISMOUNTED("66", "Cyberspace Dismounted Individual", Dimension.DISMOUNTED, null, CyberspaceDismountedIndividualSymbolSetInfo.INSTANCE),
+    SS_CYBERSPACE_SEA_SURFACE("67", "Cyberspace Sea Surface", Dimension.SEA_SURFACE, null, CyberspaceSeaSurfaceSymbolSetInfo.INSTANCE),
+    SS_CYBERSPACE_SEA_SUBSURFACE("68", "Cyberspace Sea Subsurface", Dimension.SEA_SUBSURFACE, null, CyberspaceSeaSubsurfaceSymbolSetInfo.INSTANCE),
     SS_INTERNAL("98", "Internal", Dimension.INTERNAL, null, InternalSymbolSetInfo.INSTANCE);
 
     private final String id;

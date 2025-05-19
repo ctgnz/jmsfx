@@ -3,7 +3,7 @@
     "outputDir": "D:/git/jmsfx/jmsfx-standard/src/main/generated",
     "basePackage": "nz.co.ctg.jmsfx.model",
     "libraryFile": "Base.xml",
-    "extensionCountryCode": "826",
+    "extensionCountryCode": "000",
     "extensionSymbolSet": "0",
     "simpleTypes": {
         "ISymbolIdentificationCodeElement": "SymbolIdentificationCodeElement",
@@ -35,7 +35,7 @@
             "enumId": "UNIT_ECHELON",
             "enumDesc": "Unit Echelon",
             "graphicLocation": "Echelon",
-            "groupIds": [ "ECHELON_BDE_BELOW", "ECHELON_DIV_ABOVE" ],
+            "groupIds": [ "ECHELON" ],
             "frameAmplifier": false
         },
         {
@@ -43,7 +43,7 @@
             "enumId": "EQUIPMENT_MOBILITY",
             "enumDesc": "Equipment Mobility",
             "graphicLocation": "Amplifier",
-            "groupIds": [ "EQUIP_MOBILITY_LAND", "EQUIP_MOBILITY_SNOW", "EQUIP_MOBILITY_WATER" ],
+            "groupIds": [ "EQUIP_MOBILITY" ],
             "frameAmplifier": false
         },
         {
@@ -76,22 +76,15 @@
         "SEA_SUBSURFACE": "SeaSubsurface",
         "ACTIVITY": "Activities",
         "CONTROL_MEASURE": "ControlMeasures",
-        "METOC": "METOC"
+        "CYBERSPACE": "Cyberspace"
     },
     "symbolGraphicLocations": {
-        "SS_ATMOSPHERIC": "METOC/Atmospheric",
-        "SS_OCEANIC": "METOC/Oceanographic",
-        "SS_SIGINT_AIR": "SigInt",
-        "SS_SIGINT_LAND": "SigInt",
-        "SS_SIGINT_SPACE": "SigInt",
-        "SS_SIGINT_SURFACE": "SigInt",
-        "SS_SIGINT_SUBSURFACE": "SigInt",
         "SS_CYBERSPACE": "Cyberspace"
     },
     "amplifierGuides" : {
         "DISMOUNTED": [
             { "code": "C" , "x": 180, "y": 548, "width" : 252, "height":  96, "amplifier": "Quantity" },
-            { "code": "D" , "x": 180, "y": 248, "width" : 252, "height":  96, "amplifier": "LeadershipIdentifier" },
+            { "code": "AV" , "x": 180, "y": 248, "width" : 252, "height":  96, "amplifier": "LeadershipIdentifier" },
             { "code": "AB" , "x": 180, "y": 152, "width" : 252, "height":  96, "amplifier": "FeintDummyIndicator" },
             { "code": "G" , "x": 440, "y": 248, "width" : 168, "height":  96, "amplifier": "StaffComments" },
             { "code": "H" , "x": 440, "y": 344, "width" : 168, "height":  96, "amplifier": "AdditionalInformation" },
@@ -100,7 +93,7 @@
             { "code": "M" , "x": 440, "y": 440, "width" : 168, "height":  96, "amplifier": "HigherFormation" },
             { "code": "P" , "x": 440, "y": 536, "width" : 168, "height":  96, "amplifier": "IFFSIFAIS" },
             { "code": "T" , "x":   4, "y": 440, "width" : 168, "height":  96, "amplifier": "UniqueDesignation" },
-            { "code": "V" , "x":   4, "y": 344, "width" : 168, "height":  96, "amplifier": "Type" },
+            { "code": "V" , "x":   4, "y": 344, "width" : 168, "height":  96, "amplifier": "TypeofEquipment" },
             { "code": "W" , "x":   4, "y": 152, "width" : 168, "height":  96, "amplifier": "DateTimeGroupDTG" },
             { "code": "X" , "x":   4, "y": 248, "width" : 168, "height":  96, "amplifier": "AltitudeDepth" },
             { "code": "Y" , "x":   4, "y": 248, "width" : 168, "height":  96, "amplifier": "Location" },
@@ -119,7 +112,7 @@
             { "code": "P",  "x": 486, "y": 516, "width" : 126, "height":  80, "amplifier": "IFFSIFAIS" },
             { "code": "R",  "x": 185, "y": 520, "width" : 240, "height":  80, "amplifier": "MobilityIndicator" },
             { "code": "T",  "x":   0, "y": 436, "width" : 126, "height":  80, "amplifier": "UniqueDesignation" },
-            { "code": "V",  "x":   0, "y": 356, "width" : 126, "height":  80, "amplifier": "Type" },
+            { "code": "V",  "x":   0, "y": 356, "width" : 126, "height":  80, "amplifier": "TypeofEquipment" },
             { "code": "W",  "x":   0, "y": 196, "width" : 126, "height":  80, "amplifier": "DateTimeGroupDTG" },
             { "code": "X",  "x":   0, "y": 276, "width" : 126, "height":  80, "amplifier": "AltitudeDepth" },
             { "code": "Y",  "x":   0, "y": 276, "width" : 126, "height":  80, "amplifier": "Location" },
@@ -127,8 +120,8 @@
             { "code": "AD", "x":   0, "y": 356, "width" : 126, "height":  80, "amplifier": "PlatformType" },
             { "code": "AE", "x":   0, "y": 356, "width" : 126, "height":  80, "amplifier": "EquipmentTeardownTime" },
             { "code": "AF", "x": 486, "y": 356, "width" : 126, "height":  80, "amplifier": "CommonIdentifier" },
-            { "code": "AH", "x": 185, "y": 520, "width" : 240, "height":  80, "amplifier": "HeadquartersElement" },
-            { "code": "AL", "x": 130, "y": 600, "width" : 350, "height":  80, "amplifier": "AreaofUncertainty" },
+            { "code": "AW", "x": 185, "y": 520, "width" : 240, "height":  80, "amplifier": "HeadquartersElement" },
+            { "code": "AH", "x": 130, "y": 600, "width" : 350, "height":  80, "amplifier": "AreaofUncertaintyIndicator" },
             { "code": "AO", "x": 130, "y":   5, "width" : 350, "height":  80, "amplifier": "EngagementBar" },
             { "code": "AR", "x":   0, "y": 196, "width" : 126, "height":  80, "amplifier": "SpecialDesignator" }
         ],
@@ -143,7 +136,7 @@
             { "code": "P",  "x": 486, "y": 516, "width" : 126, "height":  80, "amplifier": "IFFSIFAIS" },
             { "code": "R",  "x": 185, "y": 520, "width" : 240, "height":  80, "amplifier": "MobilityIndicator" },
             { "code": "T",  "x":   0, "y": 436, "width" : 126, "height":  80, "amplifier": "UniqueDesignation" },
-            { "code": "V",  "x":   0, "y": 356, "width" : 126, "height":  80, "amplifier": "Type" },
+            { "code": "V",  "x":   0, "y": 356, "width" : 126, "height":  80, "amplifier": "TypeofEquipment" },
             { "code": "W",  "x":   0, "y": 196, "width" : 126, "height":  80, "amplifier": "DateTimeGroupDTG" },
             { "code": "X",  "x":   0, "y": 276, "width" : 126, "height":  80, "amplifier": "AltitudeDepth" },
             { "code": "Y",  "x":   0, "y": 276, "width" : 126, "height":  80, "amplifier": "Location" },
@@ -151,8 +144,8 @@
             { "code": "AD", "x":   0, "y": 356, "width" : 126, "height":  80, "amplifier": "PlatformType" },
             { "code": "AE", "x":   0, "y": 356, "width" : 126, "height":  80, "amplifier": "EquipmentTeardownTime" },
             { "code": "AF", "x": 486, "y": 356, "width" : 126, "height":  80, "amplifier": "CommonIdentifier" },
-            { "code": "AH", "x": 185, "y": 520, "width" : 240, "height":  80, "amplifier": "HeadquartersElement" },
-            { "code": "AL", "x": 130, "y": 600, "width" : 350, "height":  80, "amplifier": "AreaofUncertainty" },
+            { "code": "AW", "x": 185, "y": 520, "width" : 240, "height":  80, "amplifier": "HeadquartersElement" },
+            { "code": "AH", "x": 130, "y": 600, "width" : 350, "height":  80, "amplifier": "AreaofUncertaintyIndicator" },
             { "code": "AO", "x": 130, "y":   5, "width" : 350, "height":  80, "amplifier": "EngagementBar" },
             { "code": "AR", "x":   0, "y": 196, "width" : 126, "height":  80, "amplifier": "SpecialDesignator" }
         ]

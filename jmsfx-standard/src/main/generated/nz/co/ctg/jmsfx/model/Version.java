@@ -1,7 +1,7 @@
 package nz.co.ctg.jmsfx.model;
 
 public enum Version implements SymbolIdentificationCodeElement {
-    Base("10", "No changes to APP-6(C)/2525D");
+    Base("14", "APP-6(E)/2525E");
 
     private final String id;
     private final String label;

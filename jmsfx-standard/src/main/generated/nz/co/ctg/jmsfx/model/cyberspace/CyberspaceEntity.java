@@ -9,12 +9,15 @@ import nz.co.ctg.jmsfx.model.IconType;
 
 public enum CyberspaceEntity implements Entity {
     UNSPECIFIED("00", "Unspecified", IconType.NA),
-    BOTNET("11", "Botnet", IconType.NA),
-    INFECTION("12", "Infection", IconType.NA),
-    HEALTH_AND_STATUS("13", "Health and Status", IconType.NA),
-    DEVICE_TYPE("14", "Device Type", IconType.NA),
-    DEVICE_DOMAIN("15", "Device Domain", IconType.NA),
-    EFFECT("16", "Effect", IconType.NA);
+    MISSION_FORCE("11", "Mission Force", IconType.NA),
+    CYBERSPACE_UNIT("12", "Cyberspace Unit", IconType.NA),
+    THREAT_ACTOR("13", "Threat Actor", IconType.MAIN),
+    AGENT("14", "Agent", IconType.NA),
+    APPLICATION("15", "Application", IconType.MAIN),
+    THREAT("16", "Threat", IconType.MAIN),
+    DATA("17", "Data", IconType.MAIN),
+    PATHS("20", "Paths", IconType.NA),
+    TERRAIN("21", "Terrain", IconType.NA);
 
     private final String id;
     private final String label;

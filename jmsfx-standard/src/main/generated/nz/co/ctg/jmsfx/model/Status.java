@@ -6,8 +6,7 @@ public enum Status implements SymbolIdentificationCodeElement {
     FULLY_CAPABLE("2", "Present/Fully Capable"),
     DAMAGED("3", "Present/Damaged"),
     DESTROYED("4", "Present/Destroyed"),
-    FULL("5", "Present/Full to Capacity"),
-    EXTENSION("9", "Extension");
+    FULL("5", "Present/Full to Capacity");
 
     private final String id;
     private final String label;
