@@ -5,9 +5,7 @@ import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 
 public enum DismountedIndividualSectorTwoModifier implements SectorTwoModifier {
     UNSPECIFIED_TWO_MOD("00", "Unspecified", SymbolSet.SS_DISMOUNTED),
-    AIRBORNE_MOD("01", "Airborne", SymbolSet.SS_DISMOUNTED),
-    BICYCLE_MOD("02", "Bicycle Equipped", SymbolSet.SS_DISMOUNTED),
-    DEMOLITION_MOD("03", "Demolition", SymbolSet.SS_DISMOUNTED),
+    VIDEO_IMAGERY_MOD2("03", "Video Imagery (Combat Camera)", SymbolSet.SS_DISMOUNTED),
     J1_MOD2("04", "J1", SymbolSet.SS_DISMOUNTED),
     J2_MOD2("05", "J2", SymbolSet.SS_DISMOUNTED),
     J3_MOD2("06", "J3", SymbolSet.SS_DISMOUNTED),
@@ -17,7 +15,6 @@ public enum DismountedIndividualSectorTwoModifier implements SectorTwoModifier {
     J7_MOD2("10", "J7", SymbolSet.SS_DISMOUNTED),
     J8_MOD2("11", "J8", SymbolSet.SS_DISMOUNTED),
     J9_MOD2("12", "J9", SymbolSet.SS_DISMOUNTED),
-    MOUNTAIN_MOD2("13", "Mountain", SymbolSet.SS_DISMOUNTED),
     OF01_MOD2("14", "OF-1", SymbolSet.SS_DISMOUNTED),
     OF02_MOD2("15", "OF-2", SymbolSet.SS_DISMOUNTED),
     OF03_MOD2("16", "OF-3", SymbolSet.SS_DISMOUNTED),
@@ -42,8 +39,7 @@ public enum DismountedIndividualSectorTwoModifier implements SectorTwoModifier {
     WO2_MOD2("35", "WO-2", SymbolSet.SS_DISMOUNTED),
     WO3_MOD2("36", "WO-3", SymbolSet.SS_DISMOUNTED),
     WO4_MOD2("37", "WO-4", SymbolSet.SS_DISMOUNTED),
-    WO5_MOD2("38", "WO-5", SymbolSet.SS_DISMOUNTED),
-    SKI_MOD2("39", "Ski", SymbolSet.SS_DISMOUNTED);
+    WO5_MOD2("38", "WO-5", SymbolSet.SS_DISMOUNTED);
 
     private final String id;
     private final String label;

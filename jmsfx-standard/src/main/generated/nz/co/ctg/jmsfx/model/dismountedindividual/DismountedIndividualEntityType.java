@@ -8,7 +8,6 @@ import nz.co.ctg.jmsfx.model.EntitySubType;
 import nz.co.ctg.jmsfx.model.IconType;
 
 public enum DismountedIndividualEntityType implements EntityType {
-    SERVICE("01", "Service Branch", DismountedIndividualEntity.MILITARY, IconType.NA),
     TASK("02", "Activity/Task", DismountedIndividualEntity.MILITARY, IconType.NA),
     LETHAL_WEAPONS("03", "Lethal Weapons", DismountedIndividualEntity.MILITARY, IconType.NA),
     NON_LETHAL_WEAPONS("04", "Non-Lethal Weapons", DismountedIndividualEntity.MILITARY, IconType.NA),

@@ -5,10 +5,6 @@ import nz.co.ctg.jmsfx.model.EntityType;
 import nz.co.ctg.jmsfx.model.IconType;
 
 public enum DismountedIndividualEntitySubType implements EntitySubType {
-    INFANTRY("01", "Infantry", DismountedIndividualEntityType.SERVICE, IconType.FULL_OCTAGON),
-    MEDICAL("02", "Medical", DismountedIndividualEntityType.SERVICE, IconType.FULL_OCTAGON),
-    RECONNAISSANCE("03", "Reconnaissance", DismountedIndividualEntityType.SERVICE, IconType.FULL_OCTAGON),
-    SIGNAL("04", "Signal", DismountedIndividualEntityType.SERVICE, IconType.FULL_OCTAGON),
     EOD("01", "Explosive Ordnance Disposal", DismountedIndividualEntityType.TASK, IconType.MAIN),
     FO("02", "Field Artillery Observer", DismountedIndividualEntityType.TASK, IconType.MAIN),
     JFS("03", "Joint Fire Support", DismountedIndividualEntityType.TASK, IconType.MAIN),
@@ -19,6 +15,17 @@ public enum DismountedIndividualEntitySubType implements EntitySubType {
     SECURITY("08", "Security", DismountedIndividualEntityType.TASK, IconType.MAIN),
     SNIPER("09", "Sniper", DismountedIndividualEntityType.TASK, IconType.MAIN),
     SOF("10", "Special Operations Forces (SOF)", DismountedIndividualEntityType.TASK, IconType.MAIN),
+    DESIGNATED_MARKSMAN("11", "Designated Marksman (DM)", DismountedIndividualEntityType.TASK, IconType.MAIN),
+    MEDICAL("12", "Medical", DismountedIndividualEntityType.TASK, IconType.MAIN),
+    SIGNAL("13", "Signal", DismountedIndividualEntityType.TASK, IconType.MAIN),
+    RECONNAISSANCE("14", "Reconnaissance", DismountedIndividualEntityType.TASK, IconType.MAIN),
+    INFANTRY("15", "Infantry", DismountedIndividualEntityType.TASK, IconType.MAIN),
+    CLOSE_PROTECTION("16", "Close Protection (CLP)", DismountedIndividualEntityType.TASK, IconType.MAIN),
+    CROWD_RIOT_CONTROL("17", "Infantry", DismountedIndividualEntityType.TASK, IconType.MAIN),
+    SWAT("18", "Special Weapons and Tactics (SWAT)", DismountedIndividualEntityType.TASK, IconType.MAIN),
+    DEMOLITION("19", "Demolition", DismountedIndividualEntityType.TASK, IconType.MAIN),
+    COMMANDER("20", "Commander", DismountedIndividualEntityType.TASK, IconType.MAIN),
+    SECOND_IN_COMMAND("21", "Second in Command", DismountedIndividualEntityType.TASK, IconType.MAIN),
     RIFLE("01", "Rifle", DismountedIndividualEntityType.LETHAL_WEAPONS, IconType.MAIN),
     SINGLE_SHOT_RIFLE("02", "Single-Shot Rifle", DismountedIndividualEntityType.LETHAL_WEAPONS, IconType.MAIN),
     SEMIAUTOMATIC_RIFLE("03", "Semiautomatic Rifle", DismountedIndividualEntityType.LETHAL_WEAPONS, IconType.MAIN),
@@ -38,7 +45,9 @@ public enum DismountedIndividualEntitySubType implements EntitySubType {
     NON_LETHAL_WEAPON("01", "Non-Lethal Weapon", DismountedIndividualEntityType.NON_LETHAL_WEAPONS, IconType.MAIN),
     NON_LETHAL_GRENADE_LAUNCHER("02", "Non-Lethal Grenade Launcher", DismountedIndividualEntityType.NON_LETHAL_WEAPONS, IconType.MAIN),
     TASER("03", "Taser", DismountedIndividualEntityType.NON_LETHAL_WEAPONS, IconType.MAIN),
-    POLICE("01", "Police", DismountedIndividualEntityType.TASK2, IconType.MAIN);
+    POLICE("01", "Police", DismountedIndividualEntityType.TASK2, IconType.MAIN),
+    NON_GOVT_ORG("02", "Non-Governmental Organizational Member or Non-Governmental Organization (NGO)", DismountedIndividualEntityType.TASK2, IconType.MAIN),
+    GOVT_ORG("03", "Government Organization (GO)", DismountedIndividualEntityType.TASK2, IconType.MAIN);
 
     private final String id;
     private final String label;
