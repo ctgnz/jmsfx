@@ -16,27 +16,27 @@ public enum EquipmentMobility implements AmplifierGroup {
 
     private final String id;
     private final String label;
-
-    EquipmentMobility(String id, String label) {
+    
+    private EquipmentMobility(String id, String label) {
         this.id = id;
         this.label = label;
     }
-
+    
     @Override
     public String getGraphicLocation() {
         return "Amplifier";
     }
-
+    
     @Override
     public String getFullId() {
         return String.format("%s%s", TYPE.getId(), id);
     }
-
+    
     @Override
     public String getId() {
         return id;
     }
-
+    
     @Override
     public String getLabel() {
         return label;

@@ -21,6 +21,7 @@ public enum AirEntityType implements EntityType {
     CIV_LTA("04", "Lighter Than Air", AirEntity.CIVILIAN, IconType.MAIN),
     CIV_AIRSHIP("05", "Airship", AirEntity.CIVILIAN, IconType.MAIN),
     CIV_TETHERED_LTA("06", "Tethered Lighter than Air", AirEntity.CIVILIAN, IconType.MAIN),
+    CIV_MEDEVAC("07", "Medical Evacuation (MEDEVAC)", AirEntity.CIVILIAN, IconType.MAIN),
     BOMB("01", "Bomb", AirEntity.WEAPON, IconType.MAIN),
     DECOY("02", "Decoy", AirEntity.WEAPON, IconType.MAIN);
 

@@ -24,7 +24,7 @@ public enum AirEntitySubType implements EntitySubType {
     ASW("18", "Antisubmarine Warfare", AirEntityType.FIXED_WING, IconType.MAIN),
     COM("19", "Communications", AirEntityType.FIXED_WING, IconType.MAIN),
     CSAR("20", "Combat Search and Rescue (CSAR)", AirEntityType.FIXED_WING, IconType.MAIN),
-    ES("21", "Electronic Support (ES)", AirEntityType.FIXED_WING, IconType.MAIN),
+    ESM("21", "Electronic Support Measures (ESM)", AirEntityType.FIXED_WING, IconType.MAIN),
     GOV("22", "Government", AirEntityType.FIXED_WING, IconType.MAIN),
     MCM("23", "Mine Countermeasures (MCM)", AirEntityType.FIXED_WING, IconType.MAIN),
     PR("24", "Personnel Recovery", AirEntityType.FIXED_WING, IconType.MAIN),

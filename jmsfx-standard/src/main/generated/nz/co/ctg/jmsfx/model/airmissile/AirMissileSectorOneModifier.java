@@ -12,7 +12,8 @@ public enum AirMissileSectorOneModifier implements SectorOneModifier {
     AB_MOD("05", "Anti-Ballistic", SymbolSet.SS_AIR_MISSILE),
     BALLISTIC_MOD("06", "Ballistic", SymbolSet.SS_AIR_MISSILE),
     CRUISE_MOD("07", "Cruise", SymbolSet.SS_AIR_MISSILE),
-    INTERCEPTOR_MOD("08", "Interceptor", SymbolSet.SS_AIR_MISSILE);
+    INTERCEPTOR_MOD("08", "Interceptor", SymbolSet.SS_AIR_MISSILE),
+    HYPERSONIC_MOD("09", "Interceptor", SymbolSet.SS_AIR_MISSILE);
 
     private final String id;
     private final String label;

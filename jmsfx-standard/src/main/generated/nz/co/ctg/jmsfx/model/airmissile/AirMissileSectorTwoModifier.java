@@ -10,7 +10,6 @@ public enum AirMissileSectorTwoModifier implements SectorTwoModifier {
     SUB_DEST_MOD("03", "Subsurface", SymbolSet.SS_AIR_MISSILE),
     SPACE_DEST_MOD("04", "Space", SymbolSet.SS_AIR_MISSILE),
     LAUNCHED_MOD("05", "Launched", SymbolSet.SS_AIR_MISSILE),
-    MISSILE_MOD("06", "Missile", SymbolSet.SS_AIR_MISSILE),
     PATRIOT_MOD("07", "Patriot", SymbolSet.SS_AIR_MISSILE),
     SM2_MOD("08", "Standard Missile-2 (SM-2)", SymbolSet.SS_AIR_MISSILE),
     SM6_MOD("09", "Standard Missile-6 (SM-6)", SymbolSet.SS_AIR_MISSILE),
