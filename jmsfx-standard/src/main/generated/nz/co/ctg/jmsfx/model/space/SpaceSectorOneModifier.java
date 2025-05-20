@@ -9,7 +9,7 @@ public enum SpaceSectorOneModifier implements SectorOneModifier {
     MEO_MOD("02", "Medium Earth Orbit (MEO)", SymbolSet.SS_SPACE),
     HEO_MOD("03", "High Earth Orbit (HEO)", SymbolSet.SS_SPACE),
     GSO_MOD("04", "Geosynchronous Orbit (GSO)", SymbolSet.SS_SPACE),
-    GO_MOD("05", "Geostationary Orbit (GO)", SymbolSet.SS_SPACE),
+    GEO_MOD("05", "Geostationary Orbit (GEO)", SymbolSet.SS_SPACE),
     MO_MOD("06", "Molniya Orbit (MO)", SymbolSet.SS_SPACE);
 
     private final String id;

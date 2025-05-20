@@ -17,10 +17,7 @@ public enum SeaSubsurfaceSectorTwoModifier implements SectorTwoModifier {
     NUCLEAR___TYPE_4_MOD("10", "Nuclear - Type 4", SymbolSet.SS_SEA_SUBSURFACE),
     NUCLEAR___TYPE_5_MOD("11", "Nuclear - Type 5", SymbolSet.SS_SEA_SUBSURFACE),
     NUCLEAR___TYPE_6_MOD("12", "Nuclear - Type 6", SymbolSet.SS_SEA_SUBSURFACE),
-    NUCLEAR___TYPE_7_MOD("13", "Nuclear - Type 7", SymbolSet.SS_SEA_SUBSURFACE),
-    AUTONOMOUS_CONTROL_MOD("14", "Autonomous Control", SymbolSet.SS_SEA_SUBSURFACE),
-    REMOTELY_PILOTED_MOD("15", "Remotely Piloted", SymbolSet.SS_SEA_SUBSURFACE),
-    EXPENDABLE_MOD("16", "Expendable", SymbolSet.SS_SEA_SUBSURFACE);
+    NUCLEAR___TYPE_7_MOD("13", "Nuclear - Type 7", SymbolSet.SS_SEA_SUBSURFACE);
 
     private final String id;
     private final String label;

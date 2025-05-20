@@ -14,7 +14,9 @@ public enum SeaSubsurfaceEntity implements Entity {
     WEAPON("13", "Weapon", IconType.MAIN),
     ECHO_TRACKER_CLASSIFIER_ETC_POSSIBLE_CONTACT_POSCON("14", "Echo Tracker Classifier (ETC) / Possible Contact (POSCON)", IconType.FULL_OCTAGON),
     FUSED_TRACK("15", "Fused Track", IconType.FULL_OCTAGON),
-    MANUAL_TRACK("16", "Manual Track", IconType.FULL_OCTAGON);
+    MANUAL_TRACK("16", "Manual Track", IconType.FULL_OCTAGON),
+    SEABED_INSTALLATION_MIL("20", "Seabed Installation, Human-Made, Military", IconType.MAIN),
+    SEABED_INSTALLATION_NON_MIL("21", "Seabed Installation, Human-Made, Non-Military", IconType.MAIN);
 
     private final String id;
     private final String label;

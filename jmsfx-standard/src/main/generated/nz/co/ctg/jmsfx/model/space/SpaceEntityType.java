@@ -35,7 +35,9 @@ public enum SpaceEntityType implements EntityType {
     CIV_NAVIGATIONAL_SATELLITE("09", "Navigational Satellite", SpaceEntity.CIVILIAN, IconType.MAIN),
     CIV_SPACE_STATION("10", "Space Station", SpaceEntity.CIVILIAN, IconType.MAIN),
     CIV_TETHERED_SATELLITE("11", "Tethered Satellite", SpaceEntity.CIVILIAN, IconType.MAIN),
-    CIV_WEATHER_SATELLITE("12", "Weather Satellite", SpaceEntity.CIVILIAN, IconType.MAIN);
+    CIV_WEATHER_SATELLITE("12", "Weather Satellite", SpaceEntity.CIVILIAN, IconType.MAIN),
+    CIV_PLANET_LANDER("13", "Planet Lander", SpaceEntity.CIVILIAN, IconType.MAIN),
+    CIV_SPACE_VEHICLE("14", "Space Vehicle", SpaceEntity.CIVILIAN, IconType.MAIN);
 
     private final String id;
     private final String label;
