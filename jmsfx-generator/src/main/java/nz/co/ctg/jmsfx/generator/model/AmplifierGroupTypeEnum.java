@@ -17,6 +17,7 @@ public class AmplifierGroupTypeEnum extends StandardEnum {
     private final String enumId;
     private final String enumDesc;
     private final boolean frameAmplifier;
+    private final boolean unknown;
 
     public AmplifierGroupTypeEnum(AmplifierGroupConfig groupConfig, AmplifierGroup group) {
         super(group.getName(), group.getLabel(), Integer.toString(group.getAmplifierGroupCode()));
@@ -25,6 +26,7 @@ public class AmplifierGroupTypeEnum extends StandardEnum {
         this.enumId = groupConfig.getEnumId();
         this.enumDesc = groupConfig.getEnumDesc();
         this.frameAmplifier = groupConfig.isFrameAmplifier();
+        this.unknown = groupConfig.isUnknown();
         this.symbolSets = group.getCompatibleSymbolSetIDs().stream().map(id -> (SymbolSetRef) id).map(SymbolSetRef::getID).toArray(size -> new String[size]);
     }
 
@@ -64,6 +66,10 @@ public class AmplifierGroupTypeEnum extends StandardEnum {
 
     public boolean isFrameAmplifier() {
         return frameAmplifier;
+    }
+
+    public boolean isUnknown() {
+        return unknown;
     }
 
 }

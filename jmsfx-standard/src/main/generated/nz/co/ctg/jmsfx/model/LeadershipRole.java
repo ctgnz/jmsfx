@@ -1,8 +1,9 @@
 package nz.co.ctg.jmsfx.model;
 
 public enum LeadershipRole implements AmplifierGroup {
-    LEADER_INDIVIDUAL("71", "Leader"),
-    DEPUTY_LEADER_INDIVIDUAL("72", "Deputy Leader");
+    LEADER_INDIVIDUAL("1", "Leader"),
+    DEPUTY_LEADER_INDIVIDUAL("2", "Deputy Leader");
+    private static final AmplifierGroupType TYPE = AmplifierGroupType.LEADERSHIP_ROLE;
 
     private final String id;
     private final String label;
@@ -18,6 +19,11 @@ public enum LeadershipRole implements AmplifierGroup {
     }
     
     @Override
+    public String getFullId() {
+        return String.format("%s%s", TYPE.getId(), id);
+    }
+    
+    @Override
     public String getId() {
         return id;
     }
@@ -26,4 +32,5 @@ public enum LeadershipRole implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+
 }

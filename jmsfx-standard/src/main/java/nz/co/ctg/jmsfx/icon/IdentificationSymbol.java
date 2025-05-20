@@ -652,7 +652,7 @@ public class IdentificationSymbol {
     private SvgGraphic loadAmplifierGraphic() {
         AmplifierGroup amplifierGroup = getAmplifier();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
-            String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getId());
+            String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getFullId());
             return parser.parseFile(filePath);
         } else {
             return null;
@@ -662,7 +662,7 @@ public class IdentificationSymbol {
     private SvgGraphic loadAmplifierThreeGraphic() {
         AmplifierGroup amplifierGroup = getAmplifierThree();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
-            String filePath = String.format("/svg/%s/%s%s/%s%s.svg", amplifierGroup.getGraphicLocation(), SymbolIdentificationCode.getExtensionCountryCode(), SymbolIdentificationCode.getExtensionSymbolSet(), getStandardIdentityGroupId(), amplifierGroup.getId());
+            String filePath = String.format("/svg/%s/%s%s/%s%s.svg", amplifierGroup.getGraphicLocation(), SymbolIdentificationCode.getExtensionCountryCode(), SymbolIdentificationCode.getExtensionSymbolSet(), getStandardIdentityGroupId(), amplifierGroup.getFullId());
             return parser.parseFile(filePath);
         } else {
             return null;
@@ -672,7 +672,7 @@ public class IdentificationSymbol {
     private SvgGraphic loadAmplifierTwoGraphic() {
         AmplifierGroup amplifierGroup = getAmplifierTwo();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
-            String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getId());
+            String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getFullId());
             return parser.parseFile(filePath);
         } else {
             return null;
@@ -719,7 +719,7 @@ public class IdentificationSymbol {
     private SvgGraphic loadSectorOneModifierGraphic() {
         if (isSectorOneModifierUsed()) {
             SectorOneModifier sectorOneMod = getSectorOneModifier();
-            String graphicLocation = getSymbolSet().getGraphicLocation();
+            String graphicLocation = sectorOneMod.getGraphicLocation();
             String filePath = String.format("/svg/Appendices/%s/mod1/%s.svg", graphicLocation, sectorOneMod.getGraphicIdentifier());
             return parser.parseFile(filePath);
         } else {
@@ -730,7 +730,7 @@ public class IdentificationSymbol {
     private SvgGraphic loadSectorTwoModifierGraphic() {
         if (isSectorTwoModifierUsed()) {
             SectorTwoModifier sectorTwoMod = getSectorTwoModifier();
-            String graphicLocation = getSymbolSet().getGraphicLocation();
+            String graphicLocation = sectorTwoMod.getGraphicLocation();
             String filePath = String.format("/svg/Appendices/%s/mod2/%s.svg", graphicLocation, sectorTwoMod.getGraphicIdentifier());
             return parser.parseFile(filePath);
         } else {

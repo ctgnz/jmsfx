@@ -7,4 +7,8 @@ public interface SectorOneModifier extends IconModifier {
         return String.format("%s%s1", getSymbolSet().getId(), getId());
     }
 
+    default String getGraphicLocation() {
+        return getSymbolSet().getGraphicLocation();
+    }
+
 }

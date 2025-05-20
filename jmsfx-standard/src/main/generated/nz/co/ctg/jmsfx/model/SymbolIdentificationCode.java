@@ -131,7 +131,7 @@ public class SymbolIdentificationCode {
         }
         return sb.toString();
     }
-
+    
     public List<Entity> getEntities() {
         return symbolSet.getEntities();
     }
@@ -157,13 +157,13 @@ public class SymbolIdentificationCode {
     }
 
     public String getFirstTenDigits() {
-        return String.format("%s%s%s%s%s%s%s",
-                             version.getId(),
-                             context.getId(),
+        return String.format("%s%s%s%s%s%s%s", 
+                             version.getId(), 
+                             context.getId(), 
                              standardIdentity.getId(),
-                             symbolSet != null ? symbolSet.getId() : "00",
-                             status.getId(),
-                             hqtfDummy.getId(),
+                             symbolSet != null ? symbolSet.getId() : "00", 
+                             status.getId(), 
+                             hqtfDummy.getId(), 
                              amplifier != null ? amplifier.getId() : "00");
     }
 
@@ -186,16 +186,25 @@ public class SymbolIdentificationCode {
     }
 
     public String getThirdTenDigits() {
-        return String.format("%s%s%s%s%s",
-                             getExtensionCountryCode(),
+        return String.format("%s%s%s%s%s%s0%s",
+                             getSectorOneModifierType(),
+                             getSectorTwoModifierType(),
                              getExtensionSymbolSet(),
-                             amplifierTwo != null ? amplifierTwo.getId() : "00",
-                             amplifierThree != null ? amplifierThree.getId() : "00",
-                             frameAmplifier != null ? frameAmplifier.getId() : "00");
+                             amplifierTwo != null ? amplifierTwo.getId() : "0",
+                             amplifierThree != null ? amplifierThree.getId() : "0",
+                             frameAmplifier != null ? frameAmplifier.getId() : "0",
+                             getExtensionCountryCode());
     }
 
     public SectorOneModifier getSectorOneModifier() {
         return sectorOneModifier;
+    }
+
+    public String getSectorOneModifierType() {
+        if (getSectorOneModifier() instanceof CommonSectorOneModifier commonMod) {
+            return commonMod.getGroupId();
+        }
+        return "0";
     }
 
     public List<SectorOneModifier> getSectorOneModifiers() {
@@ -204,6 +213,13 @@ public class SymbolIdentificationCode {
 
     public SectorTwoModifier getSectorTwoModifier() {
         return sectorTwoModifier;
+    }
+
+    public String getSectorTwoModifierType() {
+        if (getSectorTwoModifier() instanceof CommonSectorTwoModifier commonMod) {
+            return commonMod.getGroupId();
+        }
+        return "0";
     }
 
     public List<SectorTwoModifier> getSectorTwoModifiers() {

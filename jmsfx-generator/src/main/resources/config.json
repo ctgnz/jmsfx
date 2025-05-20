@@ -28,7 +28,8 @@
             "enumDesc": "Unspecified",
             "graphicLocation": "Amplifier",
             "groupIds": [ "NA" ],
-            "frameAmplifier": true
+            "frameAmplifier": true,
+            "unknown": true
         },
         {
             "enumType": "UnitEchelon",

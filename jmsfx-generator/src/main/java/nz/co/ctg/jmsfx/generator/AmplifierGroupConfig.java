@@ -9,6 +9,7 @@ public class AmplifierGroupConfig {
     private String graphicLocation;
     private String[] groupIds;
     private boolean frameAmplifier;
+    private boolean unknown;
 
      public String getEnumDesc() {
         return enumDesc;
@@ -30,16 +31,16 @@ public class AmplifierGroupConfig {
         return groupIds;
     }
 
-    public boolean isFrameAmplifier() {
-        return frameAmplifier;
-    }
-
     public boolean isForGroup(String name) {
         return Arrays.stream(groupIds).anyMatch(group -> group.equals(name));
     }
 
-    public void setFrameAmplifier(boolean colorModifier) {
-        this.frameAmplifier = colorModifier;
+    public boolean isFrameAmplifier() {
+        return frameAmplifier;
+    }
+
+    public boolean isUnknown() {
+        return unknown;
     }
 
     public void setEnumDesc(String enumDesc) {
@@ -54,11 +55,19 @@ public class AmplifierGroupConfig {
         this.enumType = enumType;
     }
 
+    public void setFrameAmplifier(boolean colorModifier) {
+        this.frameAmplifier = colorModifier;
+    }
+
     public void setGraphicLocation(String graphicLocation) {
         this.graphicLocation = graphicLocation;
     }
 
     public void setGroupIds(String[] groupIds) {
         this.groupIds = groupIds;
+    }
+
+    public void setUnknown(boolean unknown) {
+        this.unknown = unknown;
     }
 }

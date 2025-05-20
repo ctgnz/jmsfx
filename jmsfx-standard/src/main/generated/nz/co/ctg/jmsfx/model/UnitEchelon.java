@@ -1,21 +1,22 @@
 package nz.co.ctg.jmsfx.model;
 
 public enum UnitEchelon implements AmplifierGroup {
-    TEAM_CREW("11", "Team/Crew"),
-    SQUAD("12", "Squad"),
-    SEC("13", "Section"),
-    PLT_DETACHMENT("14", "Platoon/Detachment"),
-    CPY_BTY_TRP("15", "Company/Battery/Troop"),
-    BN_SQUADRON("16", "Battalion/Squadron"),
-    REGT_GRP("17", "Regiment/Group"),
-    BDE("18", "Brigade"),
-    DIV("19", "Division"),
-    CORPS_MEF("10", "Corps/MEF"),
-    ARMY("10", "Army"),
-    ARMY_GROUP_FRONT("10", "Army Group/Front"),
-    REGION_THEATER("10", "Region/Theater"),
-    COMMAND("10", "Command"),
-    STAFFEL("10", "Staffel");
+    TEAM_CREW("1", "Team/Crew"),
+    SQUAD("2", "Squad"),
+    SEC("3", "Section"),
+    PLT_DETACHMENT("4", "Platoon/Detachment"),
+    CPY_BTY_TRP("5", "Company/Battery/Troop"),
+    BN_SQUADRON("6", "Battalion/Squadron"),
+    REGT_GRP("7", "Regiment/Group"),
+    BDE("8", "Brigade"),
+    DIV("9", "Division"),
+    CORPS_MEF("A", "Corps/MEF"),
+    ARMY("B", "Army"),
+    ARMY_GROUP_FRONT("C", "Army Group/Front"),
+    REGION_THEATER("D", "Region/Theater"),
+    COMMAND("E", "Command"),
+    STAFFEL("F", "Staffel");
+    private static final AmplifierGroupType TYPE = AmplifierGroupType.UNIT_ECHELON;
 
     private final String id;
     private final String label;
@@ -31,6 +32,11 @@ public enum UnitEchelon implements AmplifierGroup {
     }
     
     @Override
+    public String getFullId() {
+        return String.format("%s%s", TYPE.getId(), id);
+    }
+    
+    @Override
     public String getId() {
         return id;
     }
@@ -39,4 +45,5 @@ public enum UnitEchelon implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+
 }

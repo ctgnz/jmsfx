@@ -9,7 +9,7 @@ public class AmplifierGroupEnum extends StandardEnum {
     private final String backgroundFill;
 
     public AmplifierGroupEnum(AmplifierGroup group, Amplifier amplifier) {
-        super(amplifier.getName(), amplifier.getLabel(), String.format("%d%d", group.getAmplifierGroupCode(), amplifier.getAmplifierCode()));
+        super(amplifier.getName(), amplifier.getLabel(), amplifier.getAmplifierCode().getHexValue());
         this.backgroundFill = StringUtils.defaultIfBlank(amplifier.getRemarks(), "");
     }
 

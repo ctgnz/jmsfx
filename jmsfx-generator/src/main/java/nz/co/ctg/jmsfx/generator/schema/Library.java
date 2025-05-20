@@ -2246,7 +2246,7 @@ public class Library {
 
                     @XmlElement(name = "AmplifierCode")
                     @XmlSchemaType(name = "unsignedShort")
-                    protected int amplifierCode;
+                    protected HexDigit amplifierCode;
                     @XmlElement(name = "LegacyModifierCode")
                     protected List<LegacyLetterCodeType> legacyModifierCode;
                     @XmlElement(name = "Graphics")
@@ -2274,7 +2274,7 @@ public class Library {
                      * Gets the value of the amplifierCode property.
                      *
                      */
-                    public int getAmplifierCode() {
+                    public HexDigit getAmplifierCode() {
                         return amplifierCode;
                     }
 
@@ -2282,7 +2282,7 @@ public class Library {
                      * Sets the value of the amplifierCode property.
                      *
                      */
-                    public void setAmplifierCode(int value) {
+                    public void setAmplifierCode(HexDigit value) {
                         this.amplifierCode = value;
                     }
 

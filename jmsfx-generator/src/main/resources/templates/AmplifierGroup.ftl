@@ -4,6 +4,7 @@ public enum ${amplifier.typeName} implements <#if amplifier.frameAmplifier>Frame
 <#list amplifier.values as val>
     ${val.id}("${val.code}", "${val.label}"<#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#if val?is_last>;<#else>,</#if>
 </#list>    
+    private static final AmplifierGroupType TYPE = AmplifierGroupType.${amplifier.enumId};
 
     private final String id;
     private final String label;<#if amplifier.frameAmplifier>
@@ -18,6 +19,11 @@ public enum ${amplifier.typeName} implements <#if amplifier.frameAmplifier>Frame
     @Override
     public String getGraphicLocation() {
         return "${amplifier.graphicLocation}";
+    }
+    
+    @Override
+    public String getFullId() {
+        return String.format("%s%s", TYPE.getId(), id);
     }
     
     @Override
@@ -36,4 +42,12 @@ public enum ${amplifier.typeName} implements <#if amplifier.frameAmplifier>Frame
         return backgroundFill;
     }
 </#if>    
+<#if amplifier.unknown>
+
+    @Override
+    public boolean isUnknown() {
+        return true;
+    }
+</#if>    
+
 }

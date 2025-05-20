@@ -8,4 +8,6 @@ public interface AmplifierGroup extends SymbolIdentificationCodeElement {
         return true;
     }
 
+    String getFullId();
+    
 }

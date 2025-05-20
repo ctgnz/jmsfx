@@ -186,28 +186,44 @@ public class SymbolIdentificationCode {
     }
 
     public String getThirdTenDigits() {
-        return String.format("%s%s%s%s%s",
-                             getExtensionCountryCode(),
+        return String.format("%s%s%s%s%s%s0%s",
+                             getSectorOneModifierType(),
+                             getSectorTwoModifierType(),
                              getExtensionSymbolSet(),
-                             amplifierTwo != null ? amplifierTwo.getId() : "00",
-                             amplifierThree != null ? amplifierThree.getId() : "00",
-                             frameAmplifier != null ? frameAmplifier.getId() : "00");
+                             amplifierTwo != null ? amplifierTwo.getId() : "0",
+                             amplifierThree != null ? amplifierThree.getId() : "0",
+                             frameAmplifier != null ? frameAmplifier.getId() : "0",
+                             getExtensionCountryCode());
     }
 
     public SectorOneModifier getSectorOneModifier() {
         return sectorOneModifier;
     }
 
+    public String getSectorOneModifierType() {
+        if (getSectorOneModifier() instanceof CommonSectorOneModifier commonMod) {
+            return commonMod.getGroupId();
+        }
+        return "0";
+    }
+
     public List<SectorOneModifier> getSectorOneModifiers() {
-        return symbolSet.getSectorOneModifiers();
+        return Stream.concat(symbolSet.getSectorOneModifiers().stream(), CommonSymbolSetInfo.INSTANCE.getSectorOneModifiers().stream()).toList();
     }
 
     public SectorTwoModifier getSectorTwoModifier() {
         return sectorTwoModifier;
     }
 
+    public String getSectorTwoModifierType() {
+        if (getSectorTwoModifier() instanceof CommonSectorTwoModifier commonMod) {
+            return commonMod.getGroupId();
+        }
+        return "0";
+    }
+
     public List<SectorTwoModifier> getSectorTwoModifiers() {
-        return symbolSet.getSectorTwoModifiers();
+        return Stream.concat(symbolSet.getSectorTwoModifiers().stream(), CommonSymbolSetInfo.INSTANCE.getSectorTwoModifiers().stream()).toList();
     }
 
     public StandardIdentity getStandardIdentity() {

@@ -1,8 +1,9 @@
 package nz.co.ctg.jmsfx.model;
 
 public enum TowedArrayType implements AmplifierGroup {
-    SHORT_TOWED_ARRAY("61", "Short towed array"),
-    LONG_TOWED_ARRAY("62", "Long towed array");
+    SHORT_TOWED_ARRAY("1", "Short towed array"),
+    LONG_TOWED_ARRAY("2", "Long towed array");
+    private static final AmplifierGroupType TYPE = AmplifierGroupType.TOWED_ARRAYS;
 
     private final String id;
     private final String label;
@@ -18,6 +19,11 @@ public enum TowedArrayType implements AmplifierGroup {
     }
     
     @Override
+    public String getFullId() {
+        return String.format("%s%s", TYPE.getId(), id);
+    }
+    
+    @Override
     public String getId() {
         return id;
     }
@@ -26,4 +32,5 @@ public enum TowedArrayType implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+
 }

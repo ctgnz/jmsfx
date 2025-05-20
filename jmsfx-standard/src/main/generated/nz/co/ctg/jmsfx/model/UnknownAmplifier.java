@@ -1,7 +1,8 @@
 package nz.co.ctg.jmsfx.model;
 
 public enum UnknownAmplifier implements FrameAmplifierGroup {
-    NA("00", "Unknown", "");
+    NA("0", "Unknown", "FFFF80");
+    private static final AmplifierGroupType TYPE = AmplifierGroupType.UNKNOWN;
 
     private final String id;
     private final String label;
@@ -19,6 +20,11 @@ public enum UnknownAmplifier implements FrameAmplifierGroup {
     }
     
     @Override
+    public String getFullId() {
+        return String.format("%s%s", TYPE.getId(), id);
+    }
+    
+    @Override
     public String getId() {
         return id;
     }
@@ -32,4 +38,10 @@ public enum UnknownAmplifier implements FrameAmplifierGroup {
     public String getBackgroundFill() {
         return backgroundFill;
     }
+
+    @Override
+    public boolean isUnknown() {
+        return true;
+    }
+
 }
