@@ -12,7 +12,6 @@ public enum ActivityEntity implements Entity {
     INCIDENT("11", "Incident", IconType.NA),
     CIVIL_DISTURBANCE("12", "Civil Disturbance", IconType.FULL_OCTAGON),
     OPERATION("13", "Operation", IconType.NA),
-    FIRE_EVENT("14", "Fire Event", IconType.FULL_OCTAGON),
     HAZARD_MATERIALS("15", "Hazard Materials", IconType.NA),
     TRANSPORTATION_INCIDENT("16", "Transportation Incident", IconType.FULL_OCTAGON),
     NATURAL_EVENT("17", "Natural Event", IconType.MAIN),
