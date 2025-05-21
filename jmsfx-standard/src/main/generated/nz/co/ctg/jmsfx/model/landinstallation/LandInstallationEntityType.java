@@ -8,7 +8,6 @@ import nz.co.ctg.jmsfx.model.EntitySubType;
 import nz.co.ctg.jmsfx.model.IconType;
 
 public enum LandInstallationEntityType implements EntityType {
-    AIRCRAFT_PRODUCTION_ASSEMBLY("01", "Aircraft Production/Assembly", LandInstallationEntity.INSTALLATION, IconType.MAIN),
     AMMUNITION_EXPLOSIVES_ASSEMBLY("02", "Ammunition and Explosives/Assembly", LandInstallationEntity.INSTALLATION, IconType.FULL_OCTAGON),
     AMMUNITION_CACHE("03", "Ammunition Cache", LandInstallationEntity.INSTALLATION, IconType.FULL_FRAME),
     ARMAMENT_PRODUCTION("04", "Armament Production", LandInstallationEntity.INSTALLATION, IconType.FULL_OCTAGON),
@@ -30,17 +29,16 @@ public enum LandInstallationEntityType implements EntityType {
     WAREHOUSE_STORAGE_FACILITY("20", "Warehouse/Storage Facility", LandInstallationEntity.INSTALLATION, IconType.FULL_OCTAGON),
     LAW_ENFORCEMENT("21", "Law Enforcement", LandInstallationEntity.INSTALLATION, IconType.FULL_OCTAGON),
     EMERGENCY_OPERATION("22", "Emergency Operation", LandInstallationEntity.INSTALLATION, IconType.FULL_OCTAGON),
+    HOUSE("23", "House", LandInstallationEntity.INSTALLATION, IconType.MAIN),
     AGRICULTURE_FOOD_INFRASTRUCTURE("01", "Agriculture and Food Infrastructure", LandInstallationEntity.INFRASTRUCTURE, IconType.FULL_OCTAGON),
     BANKING_INFRASTRUCTURE("02", "Banking, Finance, and Insurance Infrastructure", LandInstallationEntity.INFRASTRUCTURE, IconType.FULL_OCTAGON),
     COMMERCIAL_INFRASTRUCTURE("03", "Commercial Infrastructure", LandInstallationEntity.INFRASTRUCTURE, IconType.FULL_OCTAGON),
     EDUCATIONAL_FACILITIES_INFRASTRUCTURE("04", "Educational Facilities Infrastructure", LandInstallationEntity.INFRASTRUCTURE, IconType.FULL_OCTAGON),
     ENERGY_FACILITY_INFRASTRUCTURE("05", "Energy Facility Infrastructure", LandInstallationEntity.INFRASTRUCTURE, IconType.FULL_OCTAGON),
-    GOVERNMENT_SITE_INFRASTRUCTURE("06", "Government Site Infrastructure", LandInstallationEntity.INFRASTRUCTURE, IconType.FULL_OCTAGON),
     MEDICAL_INFRASTRUCTURE("07", "Medical Infrastructure", LandInstallationEntity.INFRASTRUCTURE, IconType.NA),
     MILITARY_INFRASTRUCTURE("08", "Military Infrastructure", LandInstallationEntity.INFRASTRUCTURE, IconType.FULL_OCTAGON),
     POSTAL_SERVICES_INFRASTRUCTURE("09", "Postal Services Infrastructure", LandInstallationEntity.INFRASTRUCTURE, IconType.FULL_OCTAGON),
     PUBLIC_VENUES_INFRASTRUCTURE("10", "Public Venues Infrastructure", LandInstallationEntity.INFRASTRUCTURE, IconType.FULL_OCTAGON),
-    SPECIAL_NEEDS_INFRASTRUCTURE("11", "Special Needs Infrastructure", LandInstallationEntity.INFRASTRUCTURE, IconType.FULL_OCTAGON),
     TELECOMMUNICATIONS_INFRASTRUCTURE("12", "Telecommunications Infrastructure", LandInstallationEntity.INFRASTRUCTURE, IconType.FULL_OCTAGON),
     TRANSPORTATION_INFRASTRUCTURE("13", "Transportation Infrastructure", LandInstallationEntity.INFRASTRUCTURE, IconType.FULL_OCTAGON),
     WATER_SUPPLY_INFRASTRUCTURE("14", "Water Supply Infrastructure", LandInstallationEntity.INFRASTRUCTURE, IconType.FULL_OCTAGON);
