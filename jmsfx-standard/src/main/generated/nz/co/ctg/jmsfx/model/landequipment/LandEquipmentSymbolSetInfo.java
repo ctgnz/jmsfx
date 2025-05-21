@@ -98,7 +98,7 @@ public class LandEquipmentSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<SectorTwoModifier> getSectorTwoModifiers() {
-        return Collections.emptyList();
+        return Arrays.asList(LandEquipmentSectorTwoModifier.values());
     }
 
     @Override
@@ -143,7 +143,7 @@ public class LandEquipmentSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isSectorTwoModifierPresent() {
-        return false;
+        return true;
     }
 
     @Override
