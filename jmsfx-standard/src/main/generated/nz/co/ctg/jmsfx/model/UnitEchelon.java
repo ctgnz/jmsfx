@@ -13,7 +13,7 @@ public enum UnitEchelon implements AmplifierGroup {
     CORPS_MEF("A", "Corps/MEF"),
     ARMY("B", "Army"),
     ARMY_GROUP_FRONT("C", "Army Group/Front"),
-    REGION_THEATER("D", "Region/Theater"),
+    REGION_THEATRE("D", "Region/Theatre"),
     COMMAND("E", "Command"),
     STAFFEL("F", "Staffel");
     private static final AmplifierGroupType TYPE = AmplifierGroupType.UNIT_ECHELON;

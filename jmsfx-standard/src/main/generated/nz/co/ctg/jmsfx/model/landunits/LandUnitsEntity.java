@@ -18,7 +18,8 @@ public enum LandUnitsEntity implements Entity {
     NAVAL("17", "Naval", IconType.NA),
     NAMED_HEADQUARTERS("18", "Named Headquarters", IconType.NA),
     EMERGENCY_OPERATION("19", "Emergency Operation", IconType.FULL_OCTAGON),
-    LAW_ENFORCEMENT("20", "Law Enforcement", IconType.FULL_OCTAGON);
+    LAW_ENFORCEMENT("20", "Law Enforcement", IconType.FULL_OCTAGON),
+    CYBERSPACE_OPERATION("21", "Cyberspace Operation", IconType.MAIN);
 
     private final String id;
     private final String label;
