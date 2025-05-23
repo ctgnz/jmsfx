@@ -1,15 +1,15 @@
-package nz.co.ctg.jmsfx.server.model;
+package nz.co.ctg.jmsfx.icon.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import nz.co.ctg.jmsfx.model.SymbolSet;
 
-public class SymbolSetData {
+public class SymbolSetDto {
 
     private final SymbolSet symbolSet;
 
-    public @JsonCreator SymbolSetData(@JsonProperty("symbolSet") SymbolSet symbolSet) {
+    public @JsonCreator SymbolSetDto(@JsonProperty("symbolSet") SymbolSet symbolSet) {
         this.symbolSet = symbolSet;
     }
 

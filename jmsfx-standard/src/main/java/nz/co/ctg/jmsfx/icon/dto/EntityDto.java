@@ -1,12 +1,12 @@
-package nz.co.ctg.jmsfx.server.model;
+package nz.co.ctg.jmsfx.icon.dto;
 
 import nz.co.ctg.jmsfx.model.Entity;
 
-public class EntityData<E extends Entity> {
+public class EntityDto<E extends Entity> {
 
     private final E entity;
 
-    public EntityData(E entity) {
+    public EntityDto(E entity) {
         this.entity = entity;
     }
 

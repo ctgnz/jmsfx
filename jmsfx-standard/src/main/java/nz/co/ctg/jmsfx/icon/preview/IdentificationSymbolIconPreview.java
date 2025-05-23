@@ -1,4 +1,4 @@
-package nz.co.ctg.jmsfx.icon;
+package nz.co.ctg.jmsfx.icon.preview;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -8,6 +8,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
 import nz.co.ctg.foxglove.SvgGraphic;
+import nz.co.ctg.jmsfx.icon.IconScale;
+import nz.co.ctg.jmsfx.icon.IconScaleListCell;
+import nz.co.ctg.jmsfx.icon.IdentificationSymbol;
+import nz.co.ctg.jmsfx.icon.ScaleDirection;
 import nz.co.ctg.jmsfx.model.AmplifierGroup;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
 import nz.co.ctg.jmsfx.model.Context;

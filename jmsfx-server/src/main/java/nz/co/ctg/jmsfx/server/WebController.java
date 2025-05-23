@@ -5,8 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import nz.co.ctg.jmsfx.icon.dto.SymbolSetDto;
 import nz.co.ctg.jmsfx.model.SymbolSet;
-import nz.co.ctg.jmsfx.server.model.SymbolSetData;
 
 @Controller
 public class WebController {
@@ -28,7 +28,7 @@ public class WebController {
 
     @GetMapping({"/browse/{symbolSet}"})
     public String browseSymbolSet(@PathVariable SymbolSet symbolSet, Model model) {
-        model.addAttribute("symbolSet", new SymbolSetData(symbolSet));
+        model.addAttribute("symbolSet", new SymbolSetDto(symbolSet));
         model.addAttribute("entities", symbolSet.getSymbolSetInfo().getEntities());
         model.addAttribute("sectorOneMods", symbolSet.getSymbolSetInfo().getSectorOneModifiers());
         model.addAttribute("sectorTwoMods", symbolSet.getSymbolSetInfo().getSectorTwoModifiers());

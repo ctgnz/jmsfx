@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import nz.co.ctg.jmsfx.icon.dto.SymbolSetDto;
 import nz.co.ctg.jmsfx.model.SymbolSet;
-import nz.co.ctg.jmsfx.server.model.SymbolSetData;
 
 @RestController
 @RequestMapping("/info")
 public class IconGeneratorController {
 
     @GetMapping("/symbols")
-    public List<SymbolSetData> getSupportedSymbolSets() {
-        return Arrays.stream(SymbolSet.values()).map(SymbolSetData::new).collect(Collectors.toList());
+    public List<SymbolSetDto> getSupportedSymbolSets() {
+        return Arrays.stream(SymbolSet.values()).map(SymbolSetDto::new).collect(Collectors.toList());
     }
 
 }

@@ -1,11 +1,11 @@
-package nz.co.ctg.jmsfx.server.model;
+package nz.co.ctg.jmsfx.icon.dto;
 
-import nz.co.ctg.jmsfx.model.SectorTwoModifier;
+import nz.co.ctg.jmsfx.model.SectorOneModifier;
 
-public class SectorTwoModifierData<M extends SectorTwoModifier> {
+public class SectorOneModifierDto<M extends SectorOneModifier> {
     private final M modifier;
 
-    public SectorTwoModifierData(M modifier) {
+    public SectorOneModifierDto(M modifier) {
         this.modifier = modifier;
     }
 

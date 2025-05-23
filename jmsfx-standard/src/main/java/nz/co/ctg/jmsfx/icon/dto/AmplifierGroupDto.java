@@ -1,11 +1,11 @@
-package nz.co.ctg.jmsfx.server.model;
+package nz.co.ctg.jmsfx.icon.dto;
 
 import nz.co.ctg.jmsfx.model.AmplifierGroup;
 
-public class AmplifierData<A extends AmplifierGroup> {
+public class AmplifierGroupDto<A extends AmplifierGroup> {
     private final A amplifier;
 
-    public AmplifierData(A amplifier) {
+    public AmplifierGroupDto(A amplifier) {
         this.amplifier = amplifier;
     }
 

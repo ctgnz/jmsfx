@@ -1,12 +1,12 @@
-package nz.co.ctg.jmsfx.server.model;
+package nz.co.ctg.jmsfx.icon.dto;
 
 import nz.co.ctg.jmsfx.model.EntitySubType;
 
-public class EntitySubTypeData<S extends EntitySubType> {
+public class EntitySubTypeDto<S extends EntitySubType> {
 
     private final S entitySubType;
 
-    public EntitySubTypeData(S subType) {
+    public EntitySubTypeDto(S subType) {
         this.entitySubType = subType;
     }
 

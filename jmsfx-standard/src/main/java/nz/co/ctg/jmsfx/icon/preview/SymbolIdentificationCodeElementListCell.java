@@ -1,4 +1,4 @@
-package nz.co.ctg.jmsfx.icon;
+package nz.co.ctg.jmsfx.icon.preview;
 
 import javafx.scene.control.ListCell;
 import nz.co.ctg.jmsfx.model.SymbolIdentificationCodeElement;
