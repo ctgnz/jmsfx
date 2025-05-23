@@ -68,12 +68,12 @@ public class ControlMeasureSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<SectorOneModifier> getSectorOneModifiers() {
-        return Collections.emptyList();
+        return Arrays.asList(ControlMeasureSectorOneModifier.values());
     }
 
     @Override
     public List<SectorTwoModifier> getSectorTwoModifiers() {
-        return Collections.emptyList();
+        return Arrays.asList(ControlMeasureSectorTwoModifier.values());
     }
 
     @Override
@@ -113,12 +113,12 @@ public class ControlMeasureSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isSectorOneModifierPresent() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isSectorTwoModifierPresent() {
-        return false;
+        return true;
     }
 
     @Override

@@ -32,7 +32,10 @@ public enum ControlMeasureEntity implements Entity {
     SUSTAINMENT_AREAS("31", "Sustainment Areas", IconType.NA),
     SUSTAINMENT_POINTS("32", "Sustainment Points", IconType.NA),
     SUSTAINMENT_LINES("33", "Sustainment Lines", IconType.NA),
-    MISSION_TASKS("34", "Mission Tasks", IconType.NA);
+    MISSION_TASKS("34", "Mission Tasks", IconType.NA),
+    SPACE_DEBRIS("35", "Space Debris", IconType.NA),
+    PROTECTION_OF_CULTURAL_PROPERTY("36", "Protection Of Cultural Property", IconType.NA),
+    INTELLIGENCE_AREAS("37", "Intelligence Areas", IconType.NA);
 
     private final String id;
     private final String label;

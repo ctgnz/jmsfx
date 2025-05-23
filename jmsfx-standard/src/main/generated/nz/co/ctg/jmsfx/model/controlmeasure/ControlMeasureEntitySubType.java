@@ -27,7 +27,6 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
     FRIENDLY_AVIATION("01", "Friendly Aviation", ControlMeasureEntityType.DIRECTION_OF_ATTACK, IconType.MAIN),
     FRIENDLY_MAIN_ATTACK_DECISIVE("02", "Friendly Direction of Main Attack", ControlMeasureEntityType.DIRECTION_OF_ATTACK, IconType.MAIN),
     FRIENDLY_SUPPORTING_ATTACK("03", "Friendly Direction of Supporting Attack", ControlMeasureEntityType.DIRECTION_OF_ATTACK, IconType.MAIN),
-    FRIENDLY_PLANNED_ON_ORDER("04", "Friendly Planned or On Order", ControlMeasureEntityType.DIRECTION_OF_ATTACK, IconType.MAIN),
     FEINT("05", "Feint", ControlMeasureEntityType.DIRECTION_OF_ATTACK, IconType.MAIN),
     ENEMY_CONFIRMED("06", "Enemy Confirmed", ControlMeasureEntityType.DIRECTION_OF_ATTACK, IconType.MAIN),
     ENEMY_TEMPLATED_OR_SUSPECTED("07", "Enemy Templated or Suspected", ControlMeasureEntityType.DIRECTION_OF_ATTACK, IconType.MAIN),
@@ -169,13 +168,8 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
     OBSTACLE_BYPASS_DIFFICULT("02", "Difficult", ControlMeasureEntityType.OBSTACLE_BYPASS, IconType.MAIN),
     OBSTACLE_BYPASS_IMPOSSIBLE("03", "Impossible", ControlMeasureEntityType.OBSTACLE_BYPASS, IconType.MAIN),
     MINEFIELD_COMPLETED("01", "Completed", ControlMeasureEntityType.MINEFIELD, IconType.MAIN),
-    MINEFIELD_PLANNED("02", "Planned", ControlMeasureEntityType.MINEFIELD, IconType.MAIN),
-    MINEFIELD_KNOWN_ENEMY("03", "Known Enemy", ControlMeasureEntityType.MINEFIELD, IconType.MAIN),
-    MINEFIELD_SUSPECTED_OR_TEMPLATED_ENEMY("04", "Suspected or Templated Enemy", ControlMeasureEntityType.MINEFIELD, IconType.MAIN),
-    MINEFIELD_DUMMY("05", "Dummy", ControlMeasureEntityType.MINEFIELD, IconType.MAIN),
-    MINEFIELD_DUMMY_DYMANIC("06", "Dummy Minefield, Dymanic", ControlMeasureEntityType.MINEFIELD, IconType.MAIN),
     MINEFIELD_DYNAMIC_DEPICTION("07", "Dynamic Depiction", ControlMeasureEntityType.MINEFIELD, IconType.MAIN),
-    FENCED("01", "Fenced", ControlMeasureEntityType.DECOY_MINED_AREA, IconType.MAIN),
+    MINED_AREA_FENCED("01", "Mined Area, Fenced", ControlMeasureEntityType.MINED_AREA, IconType.MAIN),
     PLANNED("01", "Planned", ControlMeasureEntityType.ROADBLOCKS_CRATERS_BLOWN_BRIDGES, IconType.MAIN),
     EXPLOSIVES_STATE_OF_READINESS_1("02", "Explosives-State of Readiness 1 (Safe)", ControlMeasureEntityType.ROADBLOCKS_CRATERS_BLOWN_BRIDGES, IconType.MAIN),
     EXPLOSIVES_STATE_OF_READINESS_2("03", "Explosives-State of Readiness 2 (armed but passable)", ControlMeasureEntityType.ROADBLOCKS_CRATERS_BLOWN_BRIDGES, IconType.MAIN),
@@ -183,6 +177,7 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
     BIO_TOXIC_INDUSTRIAL_MATERIAL("01", "Toxic Industrial Material", ControlMeasureEntityType.BIOLOGICAL_CONTAMINATED_AREA, IconType.MAIN),
     CHEM_TOXIC_INDUSTRIAL_MATERIAL("01", "Toxic Industrial Material", ControlMeasureEntityType.CHEMICAL_CONTAMINATED_AREA, IconType.MAIN),
     RAD_TOXIC_INDUSTRIAL_MATERIAL("01", "Toxic Industrial Material", ControlMeasureEntityType.RADIOLOGICAL_CONTAMINATED_AREA, IconType.MAIN),
+    MULTIPLE_STRIKE("01", "Multiple Strike", ControlMeasureEntityType.MINIMUM_SAFE_DISTANCE_ZONE, IconType.MAIN),
     ANTIPERSONNEL_MINE_WITH_DIRECTIONAL_EFFECTS("01", "Antipersonnel Mine with Directional Effects", ControlMeasureEntityType.ANTIPERSONNEL_MINE, IconType.MAIN),
     CHEM_TOXIC_INDUSTRIAL_MATERIAL_POINT("01", "Toxic Industrial Material", ControlMeasureEntityType.CHEMICAL_EVENT, IconType.MAIN),
     BIO_TOXIC_INDUSTRIAL_MATERIAL_POINT("01", "Toxic Industrial Material", ControlMeasureEntityType.BIOLOGICAL_EVENT, IconType.MAIN),
@@ -202,6 +197,7 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
     TOWER_LOW("01", "Tower-Low", ControlMeasureEntityType.VERTICAL_OBSTRUCTIONS, IconType.MAIN),
     TOWER_HIGH("02", "Tower-High", ControlMeasureEntityType.VERTICAL_OBSTRUCTIONS, IconType.MAIN),
     OVERHEAD_WIRE("03", "Overhead Wire", ControlMeasureEntityType.VERTICAL_OBSTRUCTIONS, IconType.MAIN),
+    MINE_LINE("01", "Mineline", ControlMeasureEntityType.OBSTACLE_LINE, IconType.MAIN),
     AT_UNDER_CONSTRUCTION("01", "Under Construction", ControlMeasureEntityType.ANTITANK_OBSTACLES, IconType.MAIN),
     AT_COMPLETED("02", "Completed", ControlMeasureEntityType.ANTITANK_OBSTACLES, IconType.MAIN),
     AT_REINFORCED_WITH_MINES("03", "Reinforced-with Antitank Mines", ControlMeasureEntityType.ANTITANK_OBSTACLES, IconType.MAIN),
@@ -215,6 +211,10 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
     SINGLE_CONCERTINA("07", "Single Concertina", ControlMeasureEntityType.WIRE_OBSTACLES, IconType.MAIN),
     DOUBLE_STRAND_CONCERTINA("08", "Double Strand Concertina", ControlMeasureEntityType.WIRE_OBSTACLES, IconType.MAIN),
     TRIPLE_STRAND_CONCERTINA("09", "Triple Strand Concertina", ControlMeasureEntityType.WIRE_OBSTACLES, IconType.MAIN),
+    AMBULANCE_EXCHANGE_POINT("01", "Ambulance Exchange Point", ControlMeasureEntityType.AMBULANCE_POINTS, IconType.MAIN),
+    AMBULANCE_CONTROL_POINT("02", "Ambulance Control Point", ControlMeasureEntityType.AMBULANCE_POINTS, IconType.MAIN),
+    AMBULANCE_LOAD_POINT("03", "Ambulance Load Point", ControlMeasureEntityType.AMBULANCE_POINTS, IconType.MAIN),
+    AMBULANCE_RELAY_POINT("04", "Ambulance Relay Point", ControlMeasureEntityType.AMBULANCE_POINTS, IconType.MAIN),
     NATO_CLASS_1_SUPPLY_POINT("01", "NATO Class I Supply Point", ControlMeasureEntityType.GENERAL_SUPPLY_POINT, IconType.MAIN),
     NATO_CLASS_2_SUPPLY_POINT("02", "NATO Class II Supply Point", ControlMeasureEntityType.GENERAL_SUPPLY_POINT, IconType.MAIN),
     NATO_CLASS_3_SUPPLY_POINT("03", "NATO Class III Supply Point", ControlMeasureEntityType.GENERAL_SUPPLY_POINT, IconType.MAIN),
@@ -237,6 +237,8 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
     ASR_ONE_WAY_TRAFFIC("01", "One Way Traffic", ControlMeasureEntityType.ALTERNATE_SUPPLY_ROUTE, IconType.MAIN),
     ASR_TWO_WAY_TRAFFIC("02", "Two Way Traffic", ControlMeasureEntityType.ALTERNATE_SUPPLY_ROUTE, IconType.MAIN),
     ASR_ALTERNATING_TRAFFIC("03", "Alternating Traffic", ControlMeasureEntityType.ALTERNATE_SUPPLY_ROUTE, IconType.MAIN),
+    ROUTE_ONE_WAY_TRAFFIC("01", "One Way Traffic", ControlMeasureEntityType.ROUTE, IconType.MAIN),
+    ROUTE_ALTERNATING_TRAFFIC("02", "Alternating Traffic", ControlMeasureEntityType.ROUTE, IconType.MAIN),
     TMT_COVER("01", "Cover", ControlMeasureEntityType.SECURITY, IconType.MAIN) {
         @Override
         public String getGraphicIdentifier() {
@@ -254,7 +256,13 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
         public String getGraphicIdentifier() {
             return "25342203.b";
         }
-    };
+    },
+    HMSD_SMALL("01", "Human Made Space Debris, Small", ControlMeasureEntityType.HUMAN_MADE_SPACE_DEBRIS, IconType.MAIN),
+    HMSD_MEDIUM("02", "Human Made Space Debris, Medium", ControlMeasureEntityType.HUMAN_MADE_SPACE_DEBRIS, IconType.MAIN),
+    HMSD_BIG("03", "Human Made Space Debris, Big", ControlMeasureEntityType.HUMAN_MADE_SPACE_DEBRIS, IconType.MAIN),
+    NSD_SMALL("01", "Natural Space Debris, Small", ControlMeasureEntityType.NATURAL_SPACE_DEBRIS, IconType.MAIN),
+    NSD_MEDIUM("02", "Natural Space Debris, Medium", ControlMeasureEntityType.NATURAL_SPACE_DEBRIS, IconType.MAIN),
+    NSD_BIG("03", "Natural Space Debris, Big", ControlMeasureEntityType.NATURAL_SPACE_DEBRIS, IconType.MAIN);
 
     private final String id;
     private final String label;
