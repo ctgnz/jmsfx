@@ -35,6 +35,7 @@ public class GeneratorConfig {
     private String libraryFile;
     private String extensionCountryCode;
     private String extensionSymbolSet;
+    private List<AmplifierValuesConfig> amplifierValues;
     private List<AmplifierGroupConfig> amplifierGroups;
     private Map<String, String> simpleTypes;
     private Map<String, String> dimensionGraphicLocations;
@@ -47,6 +48,10 @@ public class GeneratorConfig {
 
     public Map<String, List<AmplifierGuideConfig>> getAmplifierGuides() {
         return amplifierGuides;
+    }
+
+    public List<AmplifierValuesConfig> getAmplifierValues() {
+        return amplifierValues;
     }
 
     public String getBasePackage() {
@@ -143,6 +148,10 @@ public class GeneratorConfig {
 
     public void setAmplifierGuides(Map<String, List<AmplifierGuideConfig>> amplifierGuides) {
         this.amplifierGuides = amplifierGuides;
+    }
+
+    public void setAmplifierValues(List<AmplifierValuesConfig> amplifierValues) {
+        this.amplifierValues = amplifierValues;
     }
 
     public void setBasePackage(String basePackage) {

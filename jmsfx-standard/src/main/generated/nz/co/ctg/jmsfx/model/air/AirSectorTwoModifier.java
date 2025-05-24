@@ -4,20 +4,27 @@ import nz.co.ctg.jmsfx.model.SymbolSet;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 
 public enum AirSectorTwoModifier implements SectorTwoModifier {
-    NOT_APPLICABLE_2_MOD("00", "Not Applicable", SymbolSet.SS_AIR),
-    BOOM_MOD("04", "Boom-Only", SymbolSet.SS_AIR),
-    DROGUE_MOD("05", "Drogue-Only", SymbolSet.SS_AIR),
-    BOOM_DROGUE_MOD("06", "Boom and Drogue", SymbolSet.SS_AIR),
-    DOWNLINK_MOD("11", "Downlinked", SymbolSet.SS_AIR);
+    NOT_APPLICABLE_2_MOD("00", "Not Applicable", "General", SymbolSet.SS_AIR),
+    BOOM_MOD("04", "Boom-Only", "Re-fueling Capability", SymbolSet.SS_AIR),
+    DROGUE_MOD("05", "Drogue-Only", "Re-fueling Capability", SymbolSet.SS_AIR),
+    BOOM_DROGUE_MOD("06", "Boom and Drogue", "Re-fueling Capability", SymbolSet.SS_AIR),
+    DOWNLINK_MOD("11", "Downlinked", "Track Link Availability", SymbolSet.SS_AIR);
 
     private final String id;
     private final String label;
+    private final String category;
     private final SymbolSet symbolSet;
     
-    private AirSectorTwoModifier(String id, String label, SymbolSet symbolSet) {
+    private AirSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
+        this.category = category;
         this.symbolSet = symbolSet;
+    }
+    
+    @Override
+    public String getCategory() {
+        return category;
     }
     
     @Override

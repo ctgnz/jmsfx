@@ -19,8 +19,18 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamSource;
 
-import com.fasterxml.jackson.core.JsonFactory;
+import org.yaml.snakeyaml.DumperOptions;
+import org.yaml.snakeyaml.DumperOptions.FlowStyle;
+import org.yaml.snakeyaml.DumperOptions.LineBreak;
+import org.yaml.snakeyaml.LoaderOptions;
+
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import nz.co.ctg.jmsfx.generator.model.AmplifierEnum;
 import nz.co.ctg.jmsfx.generator.model.AmplifierGroupTypeEnum;
@@ -48,7 +58,7 @@ public class DomainModelGenerator {
 
     public static void main(String[] args) {
         try {
-            DomainModelGenerator generator = new DomainModelGenerator(args.length > 0 ? args[0] : "/config.json");
+            DomainModelGenerator generator = new DomainModelGenerator(args.length > 0 ? args[0] : "/config.yml");
             generator.generate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -59,7 +69,7 @@ public class DomainModelGenerator {
 
     public DomainModelGenerator(String configFile) {
         try (InputStream inputStream = DomainModelGenerator.class.getResourceAsStream(configFile)) {
-            ObjectMapper mapper = new ObjectMapper(new JsonFactory());
+            ObjectMapper mapper = createObjectMapper();
             config = mapper.readValue(inputStream, GeneratorConfig.class);
             System.out.format("Writing to %s%n", config.getOutputDir());
         } catch (Exception e) {
@@ -93,6 +103,29 @@ public class DomainModelGenerator {
             CTX_SYMBOL_SET = JAXBContext.newInstance(SymbolSet.class);
         }
         return CTX_SYMBOL_SET;
+    }
+
+    private ObjectMapper createObjectMapper() {
+        DumperOptions options = new DumperOptions();
+        options.setPrettyFlow(false);
+        options.setDefaultFlowStyle(FlowStyle.BLOCK);
+        options.setCanonical(false);
+        options.setWidth(480);
+        options.setLineBreak(LineBreak.WIN);
+        LoaderOptions loaderOptions = new LoaderOptions();
+        loaderOptions.setCodePointLimit(16 * 1024 * 1024);
+        YAMLFactory factory = YAMLFactory.builder()
+            .enable(YAMLGenerator.Feature.MINIMIZE_QUOTES)
+            .disable(YAMLGenerator.Feature.WRITE_DOC_START_MARKER)
+            .loaderOptions(loaderOptions)
+            .dumperOptions(options).build();
+        ObjectMapper mapper = new ObjectMapper(factory);
+        mapper.setSerializationInclusion(Include.NON_DEFAULT);
+        mapper.registerModule(new JavaTimeModule());
+        SimpleModule module = new SimpleModule("basic");
+        mapper.registerModule(module);
+        mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+        return mapper;
     }
 
     private void deleteOldSourceFiles() throws IOException {

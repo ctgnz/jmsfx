@@ -495,7 +495,7 @@ public class IdentificationSymbol {
     }
 
     public ObservableList<SectorOneModifier> sectorOneModifiersList() {
-        return sectorOneModifiers;
+        return sectorOneModifiers.sorted(SectorOneModifier.VIEW_ORDER);
     }
 
     public ObjectProperty<SectorTwoModifier> sectorTwoModifierProperty() {

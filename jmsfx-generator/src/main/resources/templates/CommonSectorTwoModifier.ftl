@@ -2,22 +2,29 @@ package ${basePackage};
 
 public enum CommonSectorTwoModifier implements SectorTwoModifier {
 <#list sectorTwoMods as mod>
-    ${mod.id}("1", "${mod.code}", "${mod.label}")<#if mod?is_last>;<#else>,</#if>
+    ${mod.id}("1", "${mod.code}", "${mod.label}", "${mod.category}")<#if mod?is_last>;<#else>,</#if>
 </#list>    
 
     private final String groupId;
     private final String id;
     private final String label;
+    private final String category;
     
-    private CommonSectorTwoModifier(String groupId, String id, String label) {
+    private CommonSectorTwoModifier(String groupId, String id, String label, String category) {
         this.groupId = groupId;
         this.id = id;
         this.label = label;
+        this.category = category;
+    }
+    
+    @Override
+    public String getCategory() {
+        return category;
     }
     
     @Override
     public String getGraphicIdentifier() {
-        return String.format("%s%s%s2", getSymbolSet().getId(), getGroupId(), getId());
+        return String.format("C2%s%s", getGroupId(), getId());
     }
 
     public String getGroupId() {
@@ -36,7 +43,7 @@ public enum CommonSectorTwoModifier implements SectorTwoModifier {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.COMMON;
+        return SymbolSet.SS_COMMON;
     }
     
     @Override

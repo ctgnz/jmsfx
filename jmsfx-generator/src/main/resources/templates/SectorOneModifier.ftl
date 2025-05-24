@@ -5,17 +5,24 @@ import ${basePackage}.SectorOneModifier;
 
 public enum ${symbolSet.baseTypeName}SectorOneModifier implements SectorOneModifier {
 <#list sectorOneMods as mod>
-    ${mod.id}("${mod.code}", "${mod.label}", SymbolSet.${symbolSet.id})<#if mod?is_last>;<#else>,</#if>
+    ${mod.id}("${mod.code}", "${mod.label}", "${mod.category}", SymbolSet.${symbolSet.id})<#if mod?is_last>;<#else>,</#if>
 </#list>    
 
     private final String id;
     private final String label;
+    private final String category;
     private final SymbolSet symbolSet;
     
-    private ${symbolSet.baseTypeName}SectorOneModifier(String id, String label, SymbolSet symbolSet) {
+    private ${symbolSet.baseTypeName}SectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
+        this.category = category;
         this.symbolSet = symbolSet;
+    }
+    
+    @Override
+    public String getCategory() {
+        return category;
     }
     
     @Override

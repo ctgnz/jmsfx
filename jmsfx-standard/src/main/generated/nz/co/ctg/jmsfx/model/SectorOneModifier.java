@@ -1,6 +1,12 @@
 package nz.co.ctg.jmsfx.model;
 
+import java.util.Comparator;
+
 public interface SectorOneModifier extends IconModifier {
+
+    Comparator<SectorOneModifier> VIEW_ORDER = Comparator.comparing(SectorOneModifier::getCategory).thenComparing(SectorOneModifier::getLabel);
+
+    String getCategory();
 
     @Override
     default String getGraphicIdentifier() {
