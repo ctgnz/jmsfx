@@ -9,6 +9,8 @@ import java.util.stream.Stream;
 
 import com.google.common.base.Objects;
 
+import nz.co.ctg.jmsfx.model.amplifier.UnknownAmplifier;
+
 import static java.util.stream.Collectors.toList;
 import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
@@ -16,7 +18,7 @@ public class SymbolIdentificationCode {
     public static final EnumSet<Status> ICON_STATUS = EnumSet.of(Status.FULLY_CAPABLE, Status.DAMAGED, Status.DESTROYED, Status.FULL);
     public static final EnumSet<StandardIdentity> KNOWN_IDENTITIES = EnumSet.of(StandardIdentity.SI_UNKNOWN, StandardIdentity.SI_FRIEND, StandardIdentity.SI_NEUTRAL, StandardIdentity.SI_HOSTILE_FAKER);
     public static final EnumSet<StandardIdentity> UNKNOWN_IDENTITIES = EnumSet.complementOf(KNOWN_IDENTITIES);
-    public static final Version DEFAULT_VERSION = Version.Base;
+    public static final Version DEFAULT_VERSION = Version.CURRENT;
     public static final Context DEFAULT_CONTEXT = Context.REALITY;
     public static final StandardIdentity DEFAULT_STANDARD_ID = StandardIdentity.SI_FRIEND;
     public static final SymbolSet DEFAULT_SYMBOL_SET = SymbolSet.SS_UNKNOWN;

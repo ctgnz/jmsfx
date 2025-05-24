@@ -17,7 +17,7 @@ import nz.co.ctg.jmsfx.model.EntityType;
 import nz.co.ctg.jmsfx.model.SectorOneModifier;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 import nz.co.ctg.jmsfx.model.SymbolSetInfo;
-import nz.co.ctg.jmsfx.model.UnitEchelon;
+import nz.co.ctg.jmsfx.model.amplifier.UnitEchelon;
 
 public class LandUnitsSymbolSetInfo implements SymbolSetInfo {
     public static final SymbolSetInfo INSTANCE = new LandUnitsSymbolSetInfo();
@@ -31,28 +31,28 @@ public class LandUnitsSymbolSetInfo implements SymbolSetInfo {
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
-            new AmplifierGuide("C", Amplifier.Quantity, 205, 192, 200, 80),
-            new AmplifierGuide("F", Amplifier.ReinforcedorReduced, 486, 196, 126, 80),
-            new AmplifierGuide("G", Amplifier.StaffComments, 486, 276, 126, 80),
-            new AmplifierGuide("H", Amplifier.AdditionalInformation, 486, 356, 126, 80),
-            new AmplifierGuide("J", Amplifier.EvaluationRating, 486, 516, 126, 80),
-            new AmplifierGuide("K", Amplifier.CombatEffectiveness, 486, 516, 126, 80),
-            new AmplifierGuide("M", Amplifier.HigherFormation, 486, 436, 126, 80),
-            new AmplifierGuide("P", Amplifier.IFFSIFAIS, 486, 516, 126, 80),
-            new AmplifierGuide("R", Amplifier.MobilityIndicator, 185, 520, 240, 80),
-            new AmplifierGuide("T", Amplifier.UniqueDesignation, 0, 436, 126, 80),
-            new AmplifierGuide("V", Amplifier.TypeofEquipment, 0, 356, 126, 80),
-            new AmplifierGuide("W", Amplifier.DateTimeGroupDTG, 0, 196, 126, 80),
-            new AmplifierGuide("X", Amplifier.AltitudeDepth, 0, 276, 126, 80),
-            new AmplifierGuide("Y", Amplifier.Location, 0, 276, 126, 80),
-            new AmplifierGuide("Z", Amplifier.Speed, 0, 516, 126, 80),
-            new AmplifierGuide("AD", Amplifier.PlatformType, 0, 356, 126, 80),
-            new AmplifierGuide("AE", Amplifier.EquipmentTeardownTime, 0, 356, 126, 80),
-            new AmplifierGuide("AF", Amplifier.CommonIdentifier, 486, 356, 126, 80),
-            new AmplifierGuide("AW", Amplifier.HeadquartersElement, 185, 520, 240, 80),
-            new AmplifierGuide("AH", Amplifier.AreaofUncertaintyIndicator, 130, 600, 350, 80),
-            new AmplifierGuide("AO", Amplifier.EngagementBar, 130, 5, 350, 80),
-            new AmplifierGuide("AR", Amplifier.SpecialDesignator, 0, 196, 126, 80)
+            new AmplifierGuide(Amplifier.C_Quantity, 205, 192, 200, 80),
+            new AmplifierGuide(Amplifier.F_ReinforcedOrReduced, 486, 196, 126, 80),
+            new AmplifierGuide(Amplifier.G_StaffComments, 486, 276, 126, 80),
+            new AmplifierGuide(Amplifier.H_AdditionalInformation, 486, 356, 126, 80),
+            new AmplifierGuide(Amplifier.J_EvaluationRating, 486, 516, 126, 80),
+            new AmplifierGuide(Amplifier.K_CombatEffectiveness, 486, 516, 126, 80),
+            new AmplifierGuide(Amplifier.M_HigherFormation, 486, 436, 126, 80),
+            new AmplifierGuide(Amplifier.P_IffSifAis, 486, 516, 126, 80),
+            new AmplifierGuide(Amplifier.R_MobilityIndicator, 185, 520, 240, 80),
+            new AmplifierGuide(Amplifier.T_UniqueDesignation, 0, 436, 126, 80),
+            new AmplifierGuide(Amplifier.V_TypeOfEquipment, 0, 356, 126, 80),
+            new AmplifierGuide(Amplifier.W_DateTimeGroupDtg, 0, 196, 126, 80),
+            new AmplifierGuide(Amplifier.X_AltitudeDepth, 0, 276, 126, 80),
+            new AmplifierGuide(Amplifier.Y_Location, 0, 276, 126, 80),
+            new AmplifierGuide(Amplifier.Z_Speed, 0, 516, 126, 80),
+            new AmplifierGuide(Amplifier.AD_PlatformType, 0, 356, 126, 80),
+            new AmplifierGuide(Amplifier.AE_EquipmentTeardownTime, 0, 356, 126, 80),
+            new AmplifierGuide(Amplifier.AF_CommonIdentifier, 486, 356, 126, 80),
+            new AmplifierGuide(Amplifier.AW_HeadquartersElement, 185, 520, 240, 80),
+            new AmplifierGuide(Amplifier.AH_AreaOfUncertaintyIndicator, 130, 600, 350, 80),
+            new AmplifierGuide(Amplifier.AO_EngagementBar, 130, 5, 350, 80),
+            new AmplifierGuide(Amplifier.AR_SpecialDesignator, 0, 196, 126, 80)
         );
     }
 

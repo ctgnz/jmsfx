@@ -1,4 +1,7 @@
-package nz.co.ctg.jmsfx.model;
+package nz.co.ctg.jmsfx.model.amplifier;
+
+import nz.co.ctg.jmsfx.model.AmplifierGroup;
+import nz.co.ctg.jmsfx.model.AmplifierGroupType;
 
 public enum UnitEchelon implements AmplifierGroup {
     TEAM_CREW("1", "Team/Crew"),
@@ -16,6 +19,7 @@ public enum UnitEchelon implements AmplifierGroup {
     REGION_THEATRE("D", "Region/Theatre"),
     COMMAND("E", "Command"),
     STAFFEL("F", "Staffel");
+
     private static final AmplifierGroupType TYPE = AmplifierGroupType.UNIT_ECHELON;
 
     private final String id;

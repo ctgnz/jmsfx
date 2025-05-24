@@ -16,7 +16,7 @@ import nz.co.ctg.jmsfx.model.EntityType;
 import nz.co.ctg.jmsfx.model.SectorOneModifier;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 import nz.co.ctg.jmsfx.model.SymbolSetInfo;
-import nz.co.ctg.jmsfx.model.TowedArrayType;
+import nz.co.ctg.jmsfx.model.amplifier.TowedArrayType;
 
 public class SeaSurfaceSymbolSetInfo implements SymbolSetInfo {
     public static final SymbolSetInfo INSTANCE = new SeaSurfaceSymbolSetInfo();

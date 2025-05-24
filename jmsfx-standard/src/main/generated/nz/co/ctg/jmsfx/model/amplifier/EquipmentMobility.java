@@ -1,4 +1,7 @@
-package nz.co.ctg.jmsfx.model;
+package nz.co.ctg.jmsfx.model.amplifier;
+
+import nz.co.ctg.jmsfx.model.AmplifierGroup;
+import nz.co.ctg.jmsfx.model.AmplifierGroupType;
 
 public enum EquipmentMobility implements AmplifierGroup {
     WHEEL_LIMIT_COUNTRY("1", "Wheeled limited cross country"),
@@ -12,6 +15,7 @@ public enum EquipmentMobility implements AmplifierGroup {
     SLED("B", "Sled"),
     BARGE("D", "Barge"),
     AMPHIB("E", "Amphibious");
+
     private static final AmplifierGroupType TYPE = AmplifierGroupType.EQUIPMENT_MOBILITY;
 
     private final String id;

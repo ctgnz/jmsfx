@@ -9,6 +9,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import nz.co.ctg.jmsfx.generator.model.ContextEnum;
 import nz.co.ctg.jmsfx.generator.model.DimensionEnum;
 import nz.co.ctg.jmsfx.generator.model.GeometryEnum;
@@ -17,6 +19,7 @@ import nz.co.ctg.jmsfx.generator.model.StandardIdentityEnum;
 import nz.co.ctg.jmsfx.generator.model.StandardIdentityGroupEnum;
 import nz.co.ctg.jmsfx.generator.model.StatusEnum;
 import nz.co.ctg.jmsfx.generator.model.VersionEnum;
+import nz.co.ctg.jmsfx.generator.schema.Library.Amplifiers.Amplifier;
 import nz.co.ctg.jmsfx.generator.schema.Library.Contexts.Context;
 import nz.co.ctg.jmsfx.generator.schema.Library.Dimensions.Dimension;
 import nz.co.ctg.jmsfx.generator.schema.Library.Geometries.Geometry;
@@ -52,6 +55,11 @@ public class GeneratorConfig {
 
     public List<AmplifierValuesConfig> getAmplifierValues() {
         return amplifierValues;
+    }
+
+    @JsonIgnore
+    public List<AmplifierValuesConfig> getAmplifierValues(Amplifier amplifier) {
+        return amplifierValues.stream().filter(valConfig -> valConfig.getAmplifier().equals(amplifier.getID())).toList();
     }
 
     public String getBasePackage() {

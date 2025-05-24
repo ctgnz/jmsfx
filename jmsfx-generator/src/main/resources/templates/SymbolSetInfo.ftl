@@ -19,10 +19,10 @@ import ${basePackage}.EntityType;
 import ${basePackage}.SectorOneModifier;
 import ${basePackage}.SectorTwoModifier;
 import ${basePackage}.SymbolSetInfo;<#if symbolSet.amplifierPresent>
-import ${basePackage}.${symbolSet.amplifierClass};</#if><#if symbolSet.amplifierTwoPresent>
-import ${basePackage}.${symbolSet.amplifierTwoClass};</#if><#if symbolSet.amplifierThreePresent>
-import ${basePackage}.${symbolSet.amplifierThreeClass};</#if><#if symbolSet.frameAmplifierPresent>
-import ${basePackage}.${symbolSet.frameAmplifierClass};</#if>
+import ${basePackage}.amplifier.${symbolSet.amplifierClass};</#if><#if symbolSet.amplifierTwoPresent>
+import ${basePackage}.amplifier.${symbolSet.amplifierTwoClass};</#if><#if symbolSet.amplifierThreePresent>
+import ${basePackage}.amplifier.${symbolSet.amplifierThreeClass};</#if><#if symbolSet.frameAmplifierPresent>
+import ${basePackage}.amplifier.${symbolSet.frameAmplifierClass};</#if>
 
 public class ${symbolSet.baseTypeName}SymbolSetInfo implements SymbolSetInfo {
     public static final SymbolSetInfo INSTANCE = new ${symbolSet.baseTypeName}SymbolSetInfo();
@@ -38,7 +38,7 @@ public class ${symbolSet.baseTypeName}SymbolSetInfo implements SymbolSetInfo {
 <#if symbolSet.amplifierGuidesPresent>
         return Arrays.asList(
     <#list symbolSet.amplifierGuides as guide>        
-            new AmplifierGuide("${guide.code}", Amplifier.${guide.amplifier}, ${guide.x}, ${guide.y}, ${guide.width}, ${guide.height})<#if guide?is_last><#else>,</#if>
+            new AmplifierGuide(Amplifier.${guide.amplifier}, ${guide.x}, ${guide.y}, ${guide.width}, ${guide.height})<#if guide?is_last><#else>,</#if>
     </#list>
         );
 <#else>

@@ -1,0 +1,55 @@
+package nz.co.ctg.jmsfx.model.amplifier;
+
+import nz.co.ctg.jmsfx.model.AmplifierGroup;
+import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+
+public enum EngagementWeapon implements AmplifierGroup {
+    M("M", "Missile"),
+    BM("BM", "Ballistic Missile"),
+    CM("CM", "Cruise Missile"),
+    GN("GN", "Gun"),
+    T("T", "Torpedo"),
+    A("A", "Attack Aircraft"),
+    C("C", "Combat Air Patrol"),
+    D("D", "Defensive Counter Air"),
+    UW("UW", "Undersea Warfare (USW)/Antisubmarine Warfare (ASW)Engagement"),
+    MW("MW", "Mine Warfare (MW) Engagement"),
+    SW("SW", "Surface Warfare (SUW) Engagement"),
+    EA("EA", "Electronic Attack"),
+    ED("ED", "Electronic Defence"),
+    UV("UV", "Unmanned Vehicle"),
+    CW("CW", "Close in Weapon System"),
+    L3("L3", "Lamps"),
+    VA("VA", "Vertical Launch ASROC");
+
+    private static final AmplifierGroupType TYPE = AmplifierGroupType.ENGAGEMENT_WEAPON;
+
+    private final String id;
+    private final String label;
+    
+    private EngagementWeapon(String id, String label) {
+        this.id = id;
+        this.label = label;
+    }
+    
+    @Override
+    public String getGraphicLocation() {
+        return "NA";
+    }
+    
+    @Override
+    public String getFullId() {
+        return String.format("%s%s", TYPE.getId(), id);
+    }
+    
+    @Override
+    public String getId() {
+        return id;
+    }
+    
+    @Override
+    public String getLabel() {
+        return label;
+    }
+
+}

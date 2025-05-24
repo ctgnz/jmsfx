@@ -1,9 +1,13 @@
-package ${basePackage};
+package ${basePackage}.amplifier;
+
+import nz.co.ctg.jmsfx.model.<#if amplifier.frameAmplifier>Frame</#if>AmplifierGroup;
+import nz.co.ctg.jmsfx.model.AmplifierGroupType;
 
 public enum ${amplifier.typeName} implements <#if amplifier.frameAmplifier>Frame</#if>AmplifierGroup {
 <#list amplifier.values as val>
     ${val.id}("${val.code}", "${val.label}"<#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#if val?is_last>;<#else>,</#if>
-</#list>    
+</#list>
+
     private static final AmplifierGroupType TYPE = AmplifierGroupType.${amplifier.enumId};
 
     private final String id;

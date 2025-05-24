@@ -5,8 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import nz.co.ctg.jmsfx.generator.AmplifierGroupConfig;
+import nz.co.ctg.jmsfx.generator.AmplifierValuesConfig;
 import nz.co.ctg.jmsfx.generator.schema.Library.AmplifierGroups.AmplifierGroup;
 import nz.co.ctg.jmsfx.generator.schema.Library.AmplifierGroups.AmplifierGroup.Amplifiers.Amplifier;
+import nz.co.ctg.jmsfx.generator.schema.Library.Amplifiers.Amplifier.Values;
 import nz.co.ctg.jmsfx.generator.schema.Library.Dimensions.Dimension.SymbolSets.SymbolSetRef;
 
 public class AmplifierGroupTypeEnum extends StandardEnum {
@@ -30,10 +32,25 @@ public class AmplifierGroupTypeEnum extends StandardEnum {
         this.symbolSets = group.getCompatibleSymbolSetIDs().stream().map(id -> (SymbolSetRef) id).map(SymbolSetRef::getID).toArray(size -> new String[size]);
     }
 
+    public AmplifierGroupTypeEnum(AmplifierValuesConfig groupConfig, Values group) {
+        super(groupConfig.getEnumId(), group.getLabel(), groupConfig.getCode());
+        this.typeName = groupConfig.getEnumType();
+        this.graphicLocation = "NA";
+        this.enumId = groupConfig.getEnumId();
+        this.enumDesc = groupConfig.getEnumDesc();
+        this.frameAmplifier = false;
+        this.unknown = false;
+        this.symbolSets = new String[0];
+    }
+
     public void addAmplifier(AmplifierGroup group, Amplifier amplifier) {
         if (!amplifier.getName().equals("EXTENSION")) {
             values.add(new AmplifierGroupEnum(group, amplifier));
         }
+    }
+
+    public void addAmplifier(Values.Value group) {
+        values.add(new AmplifierGroupEnum(group));
     }
 
     public String getEnumDesc() {

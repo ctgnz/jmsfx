@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import nz.co.ctg.jmsfx.model.SymbolSet;
-import nz.co.ctg.jmsfx.model.TowedArrayType;
+import nz.co.ctg.jmsfx.model.amplifier.TowedArrayType;
 import nz.co.ctg.jmsfx.model.seasurface.SeaSurfaceEntity;
 import nz.co.ctg.jmsfx.model.seasurface.SeaSurfaceEntitySubType;
 import nz.co.ctg.jmsfx.model.seasurface.SeaSurfaceEntityType;

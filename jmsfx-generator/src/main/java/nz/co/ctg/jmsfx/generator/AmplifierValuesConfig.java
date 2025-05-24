@@ -3,11 +3,20 @@ package nz.co.ctg.jmsfx.generator;
 public class AmplifierValuesConfig {
     private String amplifier;
     private String valuesId;
+    private String code;
     private String enumType;
     private String enumId;
     private String enumDesc;
 
-     public String getEnumDesc() {
+     public String getAmplifier() {
+        return amplifier;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public String getEnumDesc() {
         return enumDesc;
     }
 
@@ -19,8 +28,16 @@ public class AmplifierValuesConfig {
         return enumType;
     }
 
-    public String getAmplifier() {
-        return amplifier;
+    public String getValuesId() {
+        return valuesId;
+    }
+
+    public void setAmplifier(String graphicLocation) {
+        this.amplifier = graphicLocation;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public void setEnumDesc(String enumDesc) {
@@ -33,14 +50,6 @@ public class AmplifierValuesConfig {
 
     public void setEnumType(String enumType) {
         this.enumType = enumType;
-    }
-
-    public void setAmplifier(String graphicLocation) {
-        this.amplifier = graphicLocation;
-    }
-
-    public String getValuesId() {
-        return valuesId;
     }
 
     public void setValuesId(String valuesId) {

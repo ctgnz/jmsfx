@@ -1,15 +1,13 @@
 package ${basePackage};
 
 public class AmplifierGuide {
-    private final String code;
     private final Amplifier amplifier;
     private final int x;
     private final int y;
     private final int width;
     private final int height;
 
-    public AmplifierGuide(String code, Amplifier amplifier, int x, int y, int width, int height) {
-        this.code = code;
+    public AmplifierGuide(Amplifier amplifier, int x, int y, int width, int height) {
         this.amplifier = amplifier;
         this.x = x;
         this.y = y;
@@ -22,7 +20,7 @@ public class AmplifierGuide {
     }
 
     public String getCode() {
-        return code;
+        return amplifier.getId();
     }
 
     public int getHeight() {

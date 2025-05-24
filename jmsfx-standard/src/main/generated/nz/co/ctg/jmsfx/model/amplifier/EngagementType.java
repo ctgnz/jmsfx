@@ -1,21 +1,26 @@
-package nz.co.ctg.jmsfx.model;
+package nz.co.ctg.jmsfx.model.amplifier;
 
-public enum TowedArrayType implements AmplifierGroup {
-    SHORT_TOWED_ARRAY("1", "Short towed array"),
-    LONG_TOWED_ARRAY("2", "Long towed array");
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.TOWED_ARRAYS;
+import nz.co.ctg.jmsfx.model.AmplifierGroup;
+import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+
+public enum EngagementType implements AmplifierGroup {
+    L("", "Local"),
+    R("R", "Remote"),
+    B("B", "Both");
+
+    private static final AmplifierGroupType TYPE = AmplifierGroupType.ENGAGEMENT_TYPE;
 
     private final String id;
     private final String label;
     
-    private TowedArrayType(String id, String label) {
+    private EngagementType(String id, String label) {
         this.id = id;
         this.label = label;
     }
     
     @Override
     public String getGraphicLocation() {
-        return "Amplifier";
+        return "NA";
     }
     
     @Override

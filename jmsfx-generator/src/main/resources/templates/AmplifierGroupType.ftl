@@ -1,6 +1,7 @@
 package ${basePackage};
 
 import java.util.Arrays;
+import ${basePackage}.amplifier.*;
 
 public enum AmplifierGroupType implements SymbolIdentificationCodeElement {
 <#list amplifierGroups as grp>

@@ -11,17 +11,17 @@ package nz.co.ctg.jmsfx.generator.schema;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlID;
-import javax.xml.bind.annotation.XmlIDREF;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlID;
+import jakarta.xml.bind.annotation.XmlIDREF;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -2772,7 +2772,8 @@ public class Library {
          *       &lt;/sequence>
          *       &lt;attGroup ref="{http://disa.mil/JointMilSyML.xsd}IdentifierAttributeGroup"/>
          *       &lt;attribute name="Type" type="{http://disa.mil/JointMilSyML.xsd}AmplifierType" default="TEXT" />
-         *       &lt;attribute name="Length" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
+         *       &lt;attribute name="MinLength" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
+         *       &lt;attribute name="MaxLength" type="{http://www.w3.org/2001/XMLSchema}int" default="0" />
          *       &lt;attribute name="Note" type="{http://www.w3.org/2001/XMLSchema}string" />
          *     &lt;/restriction>
          *   &lt;/complexContent>
@@ -2791,8 +2792,10 @@ public class Library {
             protected List<Library.Amplifiers.Amplifier.Values> values;
             @XmlAttribute(name = "Type")
             protected AmplifierType type;
-            @XmlAttribute(name = "Length")
-            protected Integer length;
+            @XmlAttribute(name = "MinLength")
+            protected Integer minLength;
+            @XmlAttribute(name = "MaxLength")
+            protected Integer maxLength;
             @XmlAttribute(name = "Note")
             protected String note;
             @XmlAttribute(name = "ID", required = true)
@@ -2852,7 +2855,7 @@ public class Library {
              */
             public AmplifierType getType() {
                 if (type == null) {
-                    return AmplifierType.TEXT;
+                    return AmplifierType.ALPHA;
                 } else {
                     return type;
                 }
@@ -2868,34 +2871,6 @@ public class Library {
              */
             public void setType(AmplifierType value) {
                 this.type = value;
-            }
-
-            /**
-             * Gets the value of the length property.
-             *
-             * @return
-             *     possible object is
-             *     {@link Integer }
-             *
-             */
-            public int getLength() {
-                if (length == null) {
-                    return  0;
-                } else {
-                    return length;
-                }
-            }
-
-            /**
-             * Sets the value of the length property.
-             *
-             * @param value
-             *     allowed object is
-             *     {@link Integer }
-             *
-             */
-            public void setLength(Integer value) {
-                this.length = value;
             }
 
             /**
@@ -2996,6 +2971,56 @@ public class Library {
              */
             public void setLabelAlias(String value) {
                 this.labelAlias = value;
+            }
+
+            /**
+             * Gets the value of the minLength property.
+             *
+             * @return
+             *     possible object is
+             *     {@link Integer }
+             *
+             */
+            public Integer getMinLength() {
+                return minLength;
+            }
+
+
+            /**
+             * Sets the value of the minLength property.
+             *
+             * @param value
+             *     allowed object is
+             *     {@link Integer }
+             *
+             */
+            public void setMinLength(Integer minLength) {
+                this.minLength = minLength;
+            }
+
+            /**
+             * Gets the value of the maxLength property.
+             *
+             * @return
+             *     possible object is
+             *     {@link Integer }
+             *
+             */
+            public Integer getMaxLength() {
+                return maxLength;
+            }
+
+
+            /**
+             * Sets the value of the maxLength property.
+             *
+             * @param value
+             *     allowed object is
+             *     {@link Integer }
+             *
+             */
+            public void setMaxLength(Integer maxLength) {
+                this.maxLength = maxLength;
             }
 
             /**
@@ -3420,6 +3445,8 @@ public class Library {
                 }
 
             }
+
+
 
         }
 

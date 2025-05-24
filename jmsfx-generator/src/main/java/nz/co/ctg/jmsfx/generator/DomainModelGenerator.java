@@ -14,11 +14,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamSource;
 
+import org.apache.commons.lang3.StringUtils;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.DumperOptions.FlowStyle;
 import org.yaml.snakeyaml.DumperOptions.LineBreak;
@@ -41,6 +39,7 @@ import nz.co.ctg.jmsfx.generator.model.SectorOneModEnum;
 import nz.co.ctg.jmsfx.generator.model.SectorTwoModEnum;
 import nz.co.ctg.jmsfx.generator.model.StandardEnum;
 import nz.co.ctg.jmsfx.generator.model.SymbolSetEnum;
+import nz.co.ctg.jmsfx.generator.schema.AmplifierType;
 import nz.co.ctg.jmsfx.generator.schema.DoubleDigitType;
 import nz.co.ctg.jmsfx.generator.schema.Library;
 import nz.co.ctg.jmsfx.generator.schema.Library.Dimensions.Dimension.SymbolSets.SymbolSetRef;
@@ -51,6 +50,9 @@ import nz.co.ctg.jmsfx.generator.schema.SymbolSet.Entities.Entity.EntityTypes.En
 import static java.util.stream.Collectors.toList;
 
 import freemarker.template.Template;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Unmarshaller;
 
 public class DomainModelGenerator {
     private static JAXBContext CTX_LIBRARY;
@@ -140,6 +142,9 @@ public class DomainModelGenerator {
     }
 
     private void generateAmplifierEnum(Map<String, Object> dataModel, Library library) throws Exception {
+        Template typeTemplate = config.getTemplateConfig().getTemplate("AmplifierType.ftl");
+        dataModel.put("amplifierTypes", AmplifierType.values());
+        typeTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getBasePackageDir().resolve("AmplifierType.java"))));
         List<AmplifierEnum> amplifiers = library.getAmplifiers().getAmplifier().stream().map(AmplifierEnum::new).collect(toList());
         dataModel.put("amplifiers", amplifiers);
         Template template = config.getTemplateConfig().getTemplate("Amplifier.ftl");
@@ -149,27 +154,52 @@ public class DomainModelGenerator {
     @SuppressWarnings("unchecked")
     private void generateAmplifierGroupEnums(Map<String, Object> dataModel, Library library) throws Exception {
         List<AmplifierGroupConfig> amplifierGroups = config.getAmplifierGroups();
-        List<AmplifierGroupTypeEnum> amplifierGroupValues = (List<AmplifierGroupTypeEnum>) dataModel.computeIfAbsent("amplifierGroups", key -> new ArrayList<AmplifierGroupTypeEnum>());
+        List<AmplifierGroupTypeEnum> amplifierGroupTypes = (List<AmplifierGroupTypeEnum>) dataModel.computeIfAbsent("amplifierGroups", key -> new ArrayList<AmplifierGroupTypeEnum>());
         library.getAmplifierGroups().getAmplifierGroup().forEach(group -> {
             AmplifierGroupConfig groupConfig = amplifierGroups.stream().filter(config -> config.isForGroup(group.getName())).findAny().orElse(null);
             if (groupConfig != null) {
                 AmplifierGroupTypeEnum amplifierType = (AmplifierGroupTypeEnum) dataModel.computeIfAbsent(groupConfig.getEnumType(), type -> {
                     AmplifierGroupTypeEnum amplifierGroupType = new AmplifierGroupTypeEnum(groupConfig, group);
-                    amplifierGroupValues.add(amplifierGroupType);
+                    amplifierGroupTypes.add(amplifierGroupType);
                     return amplifierGroupType;
                 });
                 group.getAmplifiers().getAmplifier().forEach(amplifier -> amplifierType.addAmplifier(group, amplifier));
             }
         });
+        library.getAmplifiers().getAmplifier().forEach(amplifier -> {
+            if (!amplifier.getValues().isEmpty()) {
+                List<AmplifierValuesConfig> valueConfigs = config.getAmplifierValues(amplifier);
+                amplifier.getValues().forEach(value -> {
+                    AmplifierValuesConfig valueConfig = valueConfigs.stream().filter(config -> StringUtils.equals(value.getID(), config.getValuesId())).findFirst().orElse(null);
+                    if (valueConfig != null) {
+                        AmplifierGroupTypeEnum amplifierType = (AmplifierGroupTypeEnum) dataModel.computeIfAbsent(valueConfig.getEnumType(), type -> {
+                            AmplifierGroupTypeEnum amplifierGroupType = new AmplifierGroupTypeEnum(valueConfig, value);
+                            amplifierGroupTypes.add(amplifierGroupType);
+                            return amplifierGroupType;
+                        });
+                        value.getValue().forEach(amplifierType::addAmplifier);
+                        AmplifierGroupConfig agc = new AmplifierGroupConfig();
+                        agc.setEnumId(valueConfig.getEnumId());
+                        agc.setEnumType(valueConfig.getEnumType());
+                        agc.setEnumDesc(valueConfig.getEnumDesc());
+                        amplifierGroups.add(agc);
+                    }
+                });
+            }
+        });
         Template template = config.getTemplateConfig().getTemplate("AmplifierGroupType.ftl");
         template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getBasePackageDir().resolve("AmplifierGroupType.java"))));
         Template amplifierTemplate = config.getTemplateConfig().getTemplate("AmplifierGroup.ftl");
+        Path amplifierPath = config.getBasePackageDir().resolve("amplifier");
+        if (!Files.exists(amplifierPath)) {
+            Files.createDirectories(amplifierPath);
+        }
         amplifierGroups.forEach(group -> {
             try {
                 AmplifierGroupTypeEnum enumType = (AmplifierGroupTypeEnum) dataModel.get(group.getEnumType());
                 System.out.format("Processing amplifier enum %s%n", enumType.getTypeName());
                 dataModel.put("amplifier", enumType);
-                amplifierTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getBasePackageDir().resolve(enumType.getTypeName() + ".java"))));
+                amplifierTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(amplifierPath.resolve(enumType.getTypeName() + ".java"))));
             } catch (Exception e) {
                 throw new IllegalArgumentException("Unable to create amplifier group enum", e);
             }

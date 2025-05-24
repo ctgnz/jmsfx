@@ -29,23 +29,23 @@ public class CyberspaceDismountedIndividualSymbolSetInfo implements SymbolSetInf
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
-            new AmplifierGuide("C", Amplifier.Quantity, 180, 548, 252, 96),
-            new AmplifierGuide("AV", Amplifier.LeadershipIdentifier, 180, 248, 252, 96),
-            new AmplifierGuide("AB", Amplifier.FeintDummyIndicator, 180, 152, 252, 96),
-            new AmplifierGuide("G", Amplifier.StaffComments, 440, 248, 168, 96),
-            new AmplifierGuide("H", Amplifier.AdditionalInformation, 440, 344, 168, 96),
-            new AmplifierGuide("J", Amplifier.EvaluationRating, 440, 536, 168, 96),
-            new AmplifierGuide("K", Amplifier.CombatEffectiveness, 440, 536, 168, 96),
-            new AmplifierGuide("M", Amplifier.HigherFormation, 440, 440, 168, 96),
-            new AmplifierGuide("P", Amplifier.IFFSIFAIS, 440, 536, 168, 96),
-            new AmplifierGuide("T", Amplifier.UniqueDesignation, 4, 440, 168, 96),
-            new AmplifierGuide("V", Amplifier.TypeofEquipment, 4, 344, 168, 96),
-            new AmplifierGuide("W", Amplifier.DateTimeGroupDTG, 4, 152, 168, 96),
-            new AmplifierGuide("X", Amplifier.AltitudeDepth, 4, 248, 168, 96),
-            new AmplifierGuide("Y", Amplifier.Location, 4, 248, 168, 96),
-            new AmplifierGuide("Z", Amplifier.Speed, 4, 536, 168, 96),
-            new AmplifierGuide("AF", Amplifier.CommonIdentifier, 4, 344, 168, 96),
-            new AmplifierGuide("AS", Amplifier.Country, 440, 152, 168, 96)
+            new AmplifierGuide(Amplifier.C_Quantity, 180, 548, 252, 96),
+            new AmplifierGuide(Amplifier.AV_LeadershipIdentifier, 180, 248, 252, 96),
+            new AmplifierGuide(Amplifier.AB_FeintDummyIndicator, 180, 152, 252, 96),
+            new AmplifierGuide(Amplifier.G_StaffComments, 440, 248, 168, 96),
+            new AmplifierGuide(Amplifier.H_AdditionalInformation, 440, 344, 168, 96),
+            new AmplifierGuide(Amplifier.J_EvaluationRating, 440, 536, 168, 96),
+            new AmplifierGuide(Amplifier.K_CombatEffectiveness, 440, 536, 168, 96),
+            new AmplifierGuide(Amplifier.M_HigherFormation, 440, 440, 168, 96),
+            new AmplifierGuide(Amplifier.P_IffSifAis, 440, 536, 168, 96),
+            new AmplifierGuide(Amplifier.T_UniqueDesignation, 4, 440, 168, 96),
+            new AmplifierGuide(Amplifier.V_TypeOfEquipment, 4, 344, 168, 96),
+            new AmplifierGuide(Amplifier.W_DateTimeGroupDtg, 4, 152, 168, 96),
+            new AmplifierGuide(Amplifier.X_AltitudeDepth, 4, 248, 168, 96),
+            new AmplifierGuide(Amplifier.Y_Location, 4, 248, 168, 96),
+            new AmplifierGuide(Amplifier.Z_Speed, 4, 536, 168, 96),
+            new AmplifierGuide(Amplifier.AF_CommonIdentifier, 4, 344, 168, 96),
+            new AmplifierGuide(Amplifier.AS_Country, 440, 152, 168, 96)
         );
     }
 

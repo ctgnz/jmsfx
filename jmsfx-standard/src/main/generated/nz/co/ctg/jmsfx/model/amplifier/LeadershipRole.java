@@ -1,8 +1,12 @@
-package nz.co.ctg.jmsfx.model;
+package nz.co.ctg.jmsfx.model.amplifier;
+
+import nz.co.ctg.jmsfx.model.AmplifierGroup;
+import nz.co.ctg.jmsfx.model.AmplifierGroupType;
 
 public enum LeadershipRole implements AmplifierGroup {
     LEADER_INDIVIDUAL("1", "Leader"),
     DEPUTY_LEADER_INDIVIDUAL("2", "Deputy Leader");
+
     private static final AmplifierGroupType TYPE = AmplifierGroupType.LEADERSHIP_ROLE;
 
     private final String id;

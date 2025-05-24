@@ -3,8 +3,8 @@ package nz.co.ctg.jmsfx.server.icon;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import nz.co.ctg.jmsfx.model.LeadershipRole;
 import nz.co.ctg.jmsfx.model.SymbolSet;
+import nz.co.ctg.jmsfx.model.amplifier.LeadershipRole;
 import nz.co.ctg.jmsfx.model.dismountedindividual.DismountedIndividualEntity;
 import nz.co.ctg.jmsfx.model.dismountedindividual.DismountedIndividualEntitySubType;
 import nz.co.ctg.jmsfx.model.dismountedindividual.DismountedIndividualEntityType;

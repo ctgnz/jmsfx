@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import nz.co.ctg.jmsfx.model.SymbolSet;
-import nz.co.ctg.jmsfx.model.UnitEchelon;
+import nz.co.ctg.jmsfx.model.amplifier.UnitEchelon;
 import nz.co.ctg.jmsfx.model.landunits.LandUnitsEntity;
 import nz.co.ctg.jmsfx.model.landunits.LandUnitsEntitySubType;
 import nz.co.ctg.jmsfx.model.landunits.LandUnitsEntityType;

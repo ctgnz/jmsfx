@@ -1,7 +1,11 @@
-package nz.co.ctg.jmsfx.model;
+package nz.co.ctg.jmsfx.model.amplifier;
+
+import nz.co.ctg.jmsfx.model.FrameAmplifierGroup;
+import nz.co.ctg.jmsfx.model.AmplifierGroupType;
 
 public enum UnknownAmplifier implements FrameAmplifierGroup {
     NA("0", "Unknown", "FFFF80");
+
     private static final AmplifierGroupType TYPE = AmplifierGroupType.UNKNOWN;
 
     private final String id;

@@ -3,9 +3,9 @@ package nz.co.ctg.jmsfx.server.icon;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import nz.co.ctg.jmsfx.model.EquipmentMobility;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 import nz.co.ctg.jmsfx.model.SymbolSet;
+import nz.co.ctg.jmsfx.model.amplifier.EquipmentMobility;
 import nz.co.ctg.jmsfx.model.landequipment.LandEquipmentEntity;
 import nz.co.ctg.jmsfx.model.landequipment.LandEquipmentEntitySubType;
 import nz.co.ctg.jmsfx.model.landequipment.LandEquipmentEntityType;

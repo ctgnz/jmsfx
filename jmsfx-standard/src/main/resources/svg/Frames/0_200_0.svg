@@ -5,7 +5,7 @@
 	 y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
 <g id="frame">
 	
-		<circle fill="#80E0FF" stroke="#000000" stroke-width="5" stroke-miterlimit="10" stroke-dasharray="5,5" cx="306" cy="396.029" r="144"/>
+		<circle fill="#80E0FF" stroke="#000000" stroke-width="5" stroke-miterlimit="10" stroke-linecap="butt" stroke-dasharray="5,5" cx="306" cy="396.029" r="144"/>
 	<text transform="matrix(1 0 0 1 226.6621 502.3223)" font-family="sans-serif" font-size="288">?</text>
 </g>
 </svg>
