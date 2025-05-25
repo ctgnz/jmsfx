@@ -4,9 +4,9 @@ import nz.co.ctg.jmsfx.model.SymbolSet;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 
 public enum CyberspaceAirSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.SS_CYBERSPACE_AIR),
-    SECURED_MOD("01", "Secured", "General", SymbolSet.SS_CYBERSPACE_AIR),
-    OPEN_MOD("02", "Open", "General", SymbolSet.SS_CYBERSPACE_AIR);
+    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.CYBERSPACE_AIR),
+    SECURED_MOD("01", "Secured", "General", SymbolSet.CYBERSPACE_AIR),
+    OPEN_MOD("02", "Open", "General", SymbolSet.CYBERSPACE_AIR);
 
     private final String id;
     private final String label;

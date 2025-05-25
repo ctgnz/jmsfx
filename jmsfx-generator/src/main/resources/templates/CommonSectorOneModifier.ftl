@@ -43,7 +43,7 @@ public enum CommonSectorOneModifier implements SectorOneModifier {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_COMMON;
+        return SymbolSet.COMMON;
     }
     
     @Override

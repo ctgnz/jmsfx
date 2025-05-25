@@ -4,13 +4,13 @@ import nz.co.ctg.jmsfx.model.SymbolSet;
 import nz.co.ctg.jmsfx.model.SectorOneModifier;
 
 public enum LandInstallationSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.SS_LAND_INSTALLATION),
-    COAL_MOD("06", "Coal", "Electric Power Type", SymbolSet.SS_LAND_INSTALLATION),
-    GEOTHERMAL_MOD("07", "Geothermal", "Electric Power Type", SymbolSet.SS_LAND_INSTALLATION),
-    HYDROELECTRIC_MOD("08", "Hydroelectric", "Electric Power Type", SymbolSet.SS_LAND_INSTALLATION),
-    NATURAL_GAS_MOD("09", "Natural Gas", "Electric Power Type", SymbolSet.SS_LAND_INSTALLATION),
-    CIVILIAN_TELEPHONE_MOD("12", "Civilian Telephone", "Civilian Telecommunications Type", SymbolSet.SS_LAND_INSTALLATION),
-    CIVILIAN_TELEVISION_MOD("13", "Civilian Television", "Civilian Telecommunications Type", SymbolSet.SS_LAND_INSTALLATION);
+    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.LAND_INSTALLATION),
+    COAL_MOD("06", "Coal", "Electric Power Type", SymbolSet.LAND_INSTALLATION),
+    GEOTHERMAL_MOD("07", "Geothermal", "Electric Power Type", SymbolSet.LAND_INSTALLATION),
+    HYDROELECTRIC_MOD("08", "Hydroelectric", "Electric Power Type", SymbolSet.LAND_INSTALLATION),
+    NATURAL_GAS_MOD("09", "Natural Gas", "Electric Power Type", SymbolSet.LAND_INSTALLATION),
+    CIVILIAN_TELEPHONE_MOD("12", "Civilian Telephone", "Civilian Telecommunications Type", SymbolSet.LAND_INSTALLATION),
+    CIVILIAN_TELEVISION_MOD("13", "Civilian Television", "Civilian Telecommunications Type", SymbolSet.LAND_INSTALLATION);
 
     private final String id;
     private final String label;

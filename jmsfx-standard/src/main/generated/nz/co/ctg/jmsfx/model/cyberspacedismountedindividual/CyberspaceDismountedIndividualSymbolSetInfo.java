@@ -29,23 +29,23 @@ public class CyberspaceDismountedIndividualSymbolSetInfo implements SymbolSetInf
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
-            new AmplifierGuide(Amplifier.C_Quantity, 180, 548, 252, 96),
-            new AmplifierGuide(Amplifier.AV_LeadershipIdentifier, 180, 248, 252, 96),
-            new AmplifierGuide(Amplifier.AB_FeintDummyIndicator, 180, 152, 252, 96),
-            new AmplifierGuide(Amplifier.G_StaffComments, 440, 248, 168, 96),
-            new AmplifierGuide(Amplifier.H_AdditionalInformation, 440, 344, 168, 96),
-            new AmplifierGuide(Amplifier.J_EvaluationRating, 440, 536, 168, 96),
-            new AmplifierGuide(Amplifier.K_CombatEffectiveness, 440, 536, 168, 96),
-            new AmplifierGuide(Amplifier.M_HigherFormation, 440, 440, 168, 96),
-            new AmplifierGuide(Amplifier.P_IffSifAis, 440, 536, 168, 96),
-            new AmplifierGuide(Amplifier.T_UniqueDesignation, 4, 440, 168, 96),
-            new AmplifierGuide(Amplifier.V_TypeOfEquipment, 4, 344, 168, 96),
-            new AmplifierGuide(Amplifier.W_DateTimeGroupDtg, 4, 152, 168, 96),
-            new AmplifierGuide(Amplifier.X_AltitudeDepth, 4, 248, 168, 96),
-            new AmplifierGuide(Amplifier.Y_Location, 4, 248, 168, 96),
-            new AmplifierGuide(Amplifier.Z_Speed, 4, 536, 168, 96),
-            new AmplifierGuide(Amplifier.AF_CommonIdentifier, 4, 344, 168, 96),
-            new AmplifierGuide(Amplifier.AS_Country, 440, 152, 168, 96)
+            new AmplifierGuide(Amplifier.C_Quantity, 205, 546, 200, 96),
+            new AmplifierGuide(Amplifier.AV_LeadershipIdentifier, 176, 208, 259, 76),
+            new AmplifierGuide(Amplifier.AB_FeintDummyIndicator, 124, 176, 367, 108),
+            new AmplifierGuide(Amplifier.G_StaffComments, 478, 248, 134, 96),
+            new AmplifierGuide(Amplifier.H_AdditionalInformation, 478, 344, 134, 96),
+            new AmplifierGuide(Amplifier.J_EvaluationRating, 478, 536, 134, 96),
+            new AmplifierGuide(Amplifier.K_CombatEffectiveness, 478, 536, 134, 96),
+            new AmplifierGuide(Amplifier.M_HigherFormation, 478, 440, 134, 96),
+            new AmplifierGuide(Amplifier.P_IffSifAis, 478, 536, 134, 96),
+            new AmplifierGuide(Amplifier.T_UniqueDesignation, 0, 440, 134, 96),
+            new AmplifierGuide(Amplifier.V_TypeOfEquipment, 0, 344, 134, 96),
+            new AmplifierGuide(Amplifier.W_DateTimeGroupDtg, 0, 152, 134, 96),
+            new AmplifierGuide(Amplifier.X_AltitudeDepth, 0, 248, 134, 96),
+            new AmplifierGuide(Amplifier.Y_Location, 0, 248, 134, 96),
+            new AmplifierGuide(Amplifier.Z_Speed, 0, 536, 134, 96),
+            new AmplifierGuide(Amplifier.AF_CommonIdentifier, 0, 344, 134, 96),
+            new AmplifierGuide(Amplifier.AS_Country, 478, 152, 134, 96)
         );
     }
 
@@ -95,11 +95,6 @@ public class CyberspaceDismountedIndividualSymbolSetInfo implements SymbolSetInf
     }
 
     @Override
-    public List<EntitySubType> getSpecialEntitySubTypes() {
-        return Collections.emptyList();
-    }
-
-    @Override
     public boolean isAmplifierPresent() {
         return false;
     }
@@ -137,11 +132,6 @@ public class CyberspaceDismountedIndividualSymbolSetInfo implements SymbolSetInf
     @Override
     public boolean isSectorTwoModifierPresent() {
         return true;
-    }
-
-    @Override
-    public boolean isSpecialEntitySubTypePresent() {
-        return false;
     }
 
 }

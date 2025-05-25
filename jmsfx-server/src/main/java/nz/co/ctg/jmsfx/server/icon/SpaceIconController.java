@@ -16,7 +16,7 @@ import nz.co.ctg.jmsfx.model.space.SpaceSectorTwoModifier;
 public class SpaceIconController extends IconRestController<SpaceEntity, SpaceEntityType, EntitySubType, SpaceSectorOneModifier, SpaceSectorTwoModifier, AmplifierGroup> {
 
     public SpaceIconController() {
-        super(SymbolSet.SS_SPACE);
+        super(SymbolSet.SPACE);
     }
 
 }

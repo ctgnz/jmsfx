@@ -17,7 +17,7 @@ public class LandUnitsIconController extends IconRestController<LandUnitsEntity,
 
 
     public LandUnitsIconController() {
-        super(SymbolSet.SS_LAND_UNIT);
+        super(SymbolSet.LAND_UNIT);
     }
 
 }

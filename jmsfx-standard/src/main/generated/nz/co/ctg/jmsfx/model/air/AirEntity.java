@@ -41,7 +41,7 @@ public enum AirEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_AIR;
+        return SymbolSet.AIR;
     }
 
     @Override

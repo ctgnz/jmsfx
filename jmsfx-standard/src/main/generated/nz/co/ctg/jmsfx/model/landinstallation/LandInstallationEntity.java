@@ -39,7 +39,7 @@ public enum LandInstallationEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_LAND_INSTALLATION;
+        return SymbolSet.LAND_INSTALLATION;
     }
 
     @Override

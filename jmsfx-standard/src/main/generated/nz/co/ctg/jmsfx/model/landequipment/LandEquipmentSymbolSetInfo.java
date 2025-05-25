@@ -31,28 +31,31 @@ public class LandEquipmentSymbolSetInfo implements SymbolSetInfo {
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
-            new AmplifierGuide(Amplifier.C_Quantity, 205, 192, 200, 80),
-            new AmplifierGuide(Amplifier.F_ReinforcedOrReduced, 486, 196, 126, 80),
-            new AmplifierGuide(Amplifier.G_StaffComments, 486, 276, 126, 80),
-            new AmplifierGuide(Amplifier.H_AdditionalInformation, 486, 356, 126, 80),
-            new AmplifierGuide(Amplifier.J_EvaluationRating, 486, 516, 126, 80),
-            new AmplifierGuide(Amplifier.K_CombatEffectiveness, 486, 516, 126, 80),
-            new AmplifierGuide(Amplifier.M_HigherFormation, 486, 436, 126, 80),
-            new AmplifierGuide(Amplifier.P_IffSifAis, 486, 516, 126, 80),
-            new AmplifierGuide(Amplifier.R_MobilityIndicator, 185, 520, 240, 80),
-            new AmplifierGuide(Amplifier.T_UniqueDesignation, 0, 436, 126, 80),
-            new AmplifierGuide(Amplifier.V_TypeOfEquipment, 0, 356, 126, 80),
-            new AmplifierGuide(Amplifier.W_DateTimeGroupDtg, 0, 196, 126, 80),
-            new AmplifierGuide(Amplifier.X_AltitudeDepth, 0, 276, 126, 80),
-            new AmplifierGuide(Amplifier.Y_Location, 0, 276, 126, 80),
-            new AmplifierGuide(Amplifier.Z_Speed, 0, 516, 126, 80),
-            new AmplifierGuide(Amplifier.AD_PlatformType, 0, 356, 126, 80),
-            new AmplifierGuide(Amplifier.AE_EquipmentTeardownTime, 0, 356, 126, 80),
-            new AmplifierGuide(Amplifier.AF_CommonIdentifier, 486, 356, 126, 80),
-            new AmplifierGuide(Amplifier.AW_HeadquartersElement, 185, 520, 240, 80),
-            new AmplifierGuide(Amplifier.AH_AreaOfUncertaintyIndicator, 130, 600, 350, 80),
-            new AmplifierGuide(Amplifier.AO_EngagementBar, 130, 5, 350, 80),
-            new AmplifierGuide(Amplifier.AR_SpecialDesignator, 0, 196, 126, 80)
+            new AmplifierGuide(Amplifier.C_Quantity, 205, 190, 200, 60),
+            new AmplifierGuide(Amplifier.G_StaffComments, 486, 250, 126, 90),
+            new AmplifierGuide(Amplifier.H_AdditionalInformation, 486, 340, 126, 90),
+            new AmplifierGuide(Amplifier.J_EvaluationRating, 486, 520, 126, 90),
+            new AmplifierGuide(Amplifier.K_CombatEffectiveness, 486, 520, 126, 90),
+            new AmplifierGuide(Amplifier.L_SignatureEquipment, 486, 520, 126, 90),
+            new AmplifierGuide(Amplifier.M_HigherFormation, 486, 430, 126, 90),
+            new AmplifierGuide(Amplifier.N_HostileEnemy, 486, 520, 126, 90),
+            new AmplifierGuide(Amplifier.P_IffSifAis, 486, 520, 126, 90),
+            new AmplifierGuide(Amplifier.R_MobilityIndicator, 185, 542, 240, 90),
+            new AmplifierGuide(Amplifier.T_UniqueDesignation, 0, 430, 126, 90),
+            new AmplifierGuide(Amplifier.V_TypeOfEquipment, 0, 340, 126, 90),
+            new AmplifierGuide(Amplifier.W_DateTimeGroupDtg, 0, 160, 126, 90),
+            new AmplifierGuide(Amplifier.X_AltitudeDepth, 0, 250, 126, 90),
+            new AmplifierGuide(Amplifier.Y_Location, 0, 250, 126, 90),
+            new AmplifierGuide(Amplifier.Z_Speed, 0, 520, 126, 90),
+            new AmplifierGuide(Amplifier.AD_PlatformType, 0, 340, 126, 90),
+            new AmplifierGuide(Amplifier.AE_EquipmentTeardownTime, 486, 340, 126, 90),
+            new AmplifierGuide(Amplifier.AF_CommonIdentifier, 0, 340, 126, 90),
+            new AmplifierGuide(Amplifier.AL_OperationalCondition, 142, 632, 328, 80),
+            new AmplifierGuide(Amplifier.AO_EngagementBar, 132, 5, 344, 80),
+            new AmplifierGuide(Amplifier.AS_Country, 486, 160, 126, 90),
+            new AmplifierGuide(Amplifier.Q_DirectionOfMovementIndicator, 123, 83, 364, 193),
+            new AmplifierGuide(Amplifier.S2_OffsetLocationIndicator, 123, 83, 364, 193),
+            new AmplifierGuide(Amplifier.AB_FeintDummyIndicator, 123, 83, 365, 168)
         );
     }
 
@@ -102,11 +105,6 @@ public class LandEquipmentSymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<EntitySubType> getSpecialEntitySubTypes() {
-        return Collections.emptyList();
-    }
-
-    @Override
     public boolean isAmplifierPresent() {
         return true;
     }
@@ -144,11 +142,6 @@ public class LandEquipmentSymbolSetInfo implements SymbolSetInfo {
     @Override
     public boolean isSectorTwoModifierPresent() {
         return true;
-    }
-
-    @Override
-    public boolean isSpecialEntitySubTypePresent() {
-        return false;
     }
 
 }

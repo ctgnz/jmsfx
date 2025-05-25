@@ -16,7 +16,7 @@ import nz.co.ctg.jmsfx.model.minewarfare.MineWarfareEntityType;
 public class MineWarfareIconController extends IconRestController<MineWarfareEntity, MineWarfareEntityType, MineWarfareEntitySubType, SectorOneModifier, SectorTwoModifier, AmplifierGroup> {
 
     public MineWarfareIconController() {
-        super(SymbolSet.SS_MINE_WARFARE);
+        super(SymbolSet.MINE_WARFARE);
     }
 
 }

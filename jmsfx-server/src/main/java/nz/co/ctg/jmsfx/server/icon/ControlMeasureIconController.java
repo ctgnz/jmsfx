@@ -16,7 +16,7 @@ import nz.co.ctg.jmsfx.model.controlmeasure.ControlMeasureEntityType;
 public class ControlMeasureIconController extends IconRestController<ControlMeasureEntity, ControlMeasureEntityType, ControlMeasureEntitySubType, SectorOneModifier, SectorTwoModifier, AmplifierGroup> {
 
     public ControlMeasureIconController() {
-        super(SymbolSet.SS_CONTROL_MEASURE);
+        super(SymbolSet.CONTROL_MEASURE);
     }
 
 }

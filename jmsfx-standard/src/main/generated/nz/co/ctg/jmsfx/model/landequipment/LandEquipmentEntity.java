@@ -52,7 +52,7 @@ public enum LandEquipmentEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_LAND_EQUIPMENT;
+        return SymbolSet.LAND_EQUIPMENT;
     }
 
     @Override

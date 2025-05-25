@@ -38,7 +38,7 @@ public enum LandCivilianEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_LAND_CIVILIAN;
+        return SymbolSet.LAND_CIVILIAN;
     }
 
     @Override

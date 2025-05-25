@@ -29,7 +29,9 @@ public class LandCivilianSymbolSetInfo implements SymbolSetInfo {
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
+            new AmplifierGuide(Amplifier.B_Echelon, 205, 192, 200, 80),
             new AmplifierGuide(Amplifier.C_Quantity, 205, 192, 200, 80),
+            new AmplifierGuide(Amplifier.D_TaskForceIndicator, 205, 192, 200, 80),
             new AmplifierGuide(Amplifier.F_ReinforcedOrReduced, 486, 196, 126, 80),
             new AmplifierGuide(Amplifier.G_StaffComments, 486, 276, 126, 80),
             new AmplifierGuide(Amplifier.H_AdditionalInformation, 486, 356, 126, 80),
@@ -47,10 +49,15 @@ public class LandCivilianSymbolSetInfo implements SymbolSetInfo {
             new AmplifierGuide(Amplifier.AD_PlatformType, 0, 356, 126, 80),
             new AmplifierGuide(Amplifier.AE_EquipmentTeardownTime, 0, 356, 126, 80),
             new AmplifierGuide(Amplifier.AF_CommonIdentifier, 486, 356, 126, 80),
-            new AmplifierGuide(Amplifier.AW_HeadquartersElement, 185, 520, 240, 80),
-            new AmplifierGuide(Amplifier.AH_AreaOfUncertaintyIndicator, 130, 600, 350, 80),
+            new AmplifierGuide(Amplifier.AL_OperationalCondition, 130, 600, 350, 80),
             new AmplifierGuide(Amplifier.AO_EngagementBar, 130, 5, 350, 80),
-            new AmplifierGuide(Amplifier.AR_SpecialDesignator, 0, 196, 126, 80)
+            new AmplifierGuide(Amplifier.AR_SpecialDesignator, 0, 196, 126, 80),
+            new AmplifierGuide(Amplifier.AS_Country, 486, 196, 126, 80),
+            new AmplifierGuide(Amplifier.AW_HeadquartersElement, 185, 520, 240, 80),
+            new AmplifierGuide(Amplifier.Q_DirectionOfMovementIndicator, 123, 83, 364, 193),
+            new AmplifierGuide(Amplifier.S_HeadquartersStaffIndicator, 123, 83, 364, 193),
+            new AmplifierGuide(Amplifier.S2_OffsetLocationIndicator, 123, 83, 364, 193),
+            new AmplifierGuide(Amplifier.AB_FeintDummyIndicator, 123, 83, 364, 193)
         );
     }
 
@@ -100,11 +107,6 @@ public class LandCivilianSymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<EntitySubType> getSpecialEntitySubTypes() {
-        return Collections.emptyList();
-    }
-
-    @Override
     public boolean isAmplifierPresent() {
         return false;
     }
@@ -142,11 +144,6 @@ public class LandCivilianSymbolSetInfo implements SymbolSetInfo {
     @Override
     public boolean isSectorTwoModifierPresent() {
         return true;
-    }
-
-    @Override
-    public boolean isSpecialEntitySubTypePresent() {
-        return false;
     }
 
 }

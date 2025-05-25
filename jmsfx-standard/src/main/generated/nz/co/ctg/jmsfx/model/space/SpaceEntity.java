@@ -40,7 +40,7 @@ public enum SpaceEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_SPACE;
+        return SymbolSet.SPACE;
     }
 
     @Override

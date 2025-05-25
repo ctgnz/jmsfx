@@ -21,7 +21,7 @@ public class SymbolIdentificationCode {
     public static final Version DEFAULT_VERSION = Version.CURRENT;
     public static final Context DEFAULT_CONTEXT = Context.REALITY;
     public static final StandardIdentity DEFAULT_STANDARD_ID = StandardIdentity.SI_FRIEND;
-    public static final SymbolSet DEFAULT_SYMBOL_SET = SymbolSet.SS_UNKNOWN;
+    public static final SymbolSet DEFAULT_SYMBOL_SET = SymbolSet.UNKNOWN;
     public static final Status DEFAULT_STATUS = Status.PRESENT;
     public static final HqtfDummy DEFAULT_HQTF_DUMMY = HqtfDummy.NA;
     public static final UnknownAmplifier DEFAULT_AMPLIFIER = UnknownAmplifier.NA;

@@ -16,7 +16,7 @@ import nz.co.ctg.jmsfx.model.dismountedindividual.DismountedIndividualSectorTwoM
 public class DismountedIndividualIconController extends IconRestController<DismountedIndividualEntity, DismountedIndividualEntityType, DismountedIndividualEntitySubType, DismountedIndividualSectorOneModifier, DismountedIndividualSectorTwoModifier, LeadershipRole> {
 
     public DismountedIndividualIconController() {
-        super(SymbolSet.SS_DISMOUNTED);
+        super(SymbolSet.DISMOUNTED);
     }
 
 }

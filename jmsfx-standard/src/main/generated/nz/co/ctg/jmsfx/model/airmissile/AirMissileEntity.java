@@ -35,7 +35,7 @@ public enum AirMissileEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_AIR_MISSILE;
+        return SymbolSet.AIR_MISSILE;
     }
 
     @Override

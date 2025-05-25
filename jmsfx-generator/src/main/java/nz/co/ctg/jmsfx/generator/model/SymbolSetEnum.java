@@ -22,7 +22,6 @@ public class SymbolSetEnum extends StandardEnum {
     private boolean frameAmplifierPresent = false;
     private boolean sectorOneModifierPresent = false;
     private boolean sectorTwoModifierPresent = false;
-    private boolean specialEntitySubTypePresent = false;
     private String amplifierClass;
     private String amplifierTwoClass;
     private String amplifierThreeClass;
@@ -93,7 +92,10 @@ public class SymbolSetEnum extends StandardEnum {
     }
 
     public boolean isAnyNotPresent() {
-        return !amplifierPresent || ! entityTypePresent || !entitySubTypePresent || !sectorOneModifierPresent || !sectorTwoModifierPresent || !specialEntitySubTypePresent || !isAmplifierGuidesPresent();
+        if (amplifierPresent && entityTypePresent && entitySubTypePresent && sectorOneModifierPresent && sectorTwoModifierPresent) {
+            return !amplifierTwoPresent || !amplifierThreePresent;
+        }
+        return !amplifierPresent || ! entityTypePresent || !entitySubTypePresent || !sectorOneModifierPresent || !sectorTwoModifierPresent || !isAmplifierGuidesPresent();
     }
 
     public boolean isEntitySubTypePresent() {
@@ -114,10 +116,6 @@ public class SymbolSetEnum extends StandardEnum {
 
     public boolean isSectorTwoModifierPresent() {
         return sectorTwoModifierPresent;
-    }
-
-    public boolean isSpecialEntitySubTypePresent() {
-        return specialEntitySubTypePresent;
     }
 
     public void setAmplifierClass(String amplifierClass) {
@@ -167,10 +165,5 @@ public class SymbolSetEnum extends StandardEnum {
     public void setSectorTwoModifierPresent(boolean sectorTwoModifierPresent) {
         this.sectorTwoModifierPresent = sectorTwoModifierPresent;
     }
-
-    public void setSpecialEntitySubTypePresent(boolean specialEntitySubTypePresent) {
-        this.specialEntitySubTypePresent = specialEntitySubTypePresent;
-    }
-
 
 }

@@ -16,7 +16,7 @@ import nz.co.ctg.jmsfx.model.activity.ActivitySectorOneModifier;
 public class ActivityIconController extends IconRestController<ActivityEntity, ActivityEntityType, ActivityEntitySubType, ActivitySectorOneModifier, SectorTwoModifier, AmplifierGroup> {
 
     public ActivityIconController() {
-        super(SymbolSet.SS_ACTIVITY);
+        super(SymbolSet.ACTIVITY);
     }
 
 }

@@ -21,7 +21,7 @@ public class SymbolIdentificationCode {
     public static final Version DEFAULT_VERSION = Version.CURRENT;
     public static final Context DEFAULT_CONTEXT = Context.REALITY;
     public static final StandardIdentity DEFAULT_STANDARD_ID = StandardIdentity.SI_FRIEND;
-    public static final SymbolSet DEFAULT_SYMBOL_SET = SymbolSet.SS_UNKNOWN;
+    public static final SymbolSet DEFAULT_SYMBOL_SET = SymbolSet.UNKNOWN;
     public static final Status DEFAULT_STATUS = Status.PRESENT;
     public static final HqtfDummy DEFAULT_HQTF_DUMMY = HqtfDummy.NA;
     public static final UnknownAmplifier DEFAULT_AMPLIFIER = UnknownAmplifier.NA;
@@ -133,7 +133,7 @@ public class SymbolIdentificationCode {
         }
         return sb.toString();
     }
-    
+
     public List<Entity> getEntities() {
         return symbolSet.getEntities();
     }
@@ -159,13 +159,13 @@ public class SymbolIdentificationCode {
     }
 
     public String getFirstTenDigits() {
-        return String.format("%s%s%s%s%s%s%s", 
-                             version.getId(), 
-                             context.getId(), 
+        return String.format("%s%s%s%s%s%s%s",
+                             version.getId(),
+                             context.getId(),
                              standardIdentity.getId(),
-                             symbolSet != null ? symbolSet.getId() : "00", 
-                             status.getId(), 
-                             hqtfDummy.getId(), 
+                             symbolSet != null ? symbolSet.getId() : "00",
+                             status.getId(),
+                             hqtfDummy.getId(),
                              amplifier != null ? amplifier.getId() : "00");
     }
 
@@ -189,13 +189,13 @@ public class SymbolIdentificationCode {
 
     public String getThirdTenDigits() {
         return String.format("%s%s%s%s%s%s0%s",
-                             getSectorOneModifierType(),
-                             getSectorTwoModifierType(),
-                             getExtensionSymbolSet(),
-                             amplifierTwo != null ? amplifierTwo.getId() : "0",
-                             amplifierThree != null ? amplifierThree.getId() : "0",
-                             frameAmplifier != null ? frameAmplifier.getId() : "0",
-                             getExtensionCountryCode());
+                             getSectorOneModifierType(),                            // 1
+                             getSectorTwoModifierType(),                            // 1
+                             getExtensionSymbolSet(),                               // 1
+                             amplifierTwo != null ? amplifierTwo.getId() : "0",     // 1
+                             amplifierThree != null ? amplifierThree.getId() : "0", // 1
+                             frameAmplifier != null ? frameAmplifier.getId() : "0", // 1
+                             getExtensionCountryCode());                            // 3
     }
 
     public SectorOneModifier getSectorOneModifier() {

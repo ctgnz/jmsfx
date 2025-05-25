@@ -16,7 +16,7 @@ import nz.co.ctg.jmsfx.model.landinstallation.LandInstallationSectorTwoModifier;
 public class LandInstallationIconController extends IconRestController<LandInstallationEntity, LandInstallationEntityType, LandInstallationEntitySubType, LandInstallationSectorOneModifier, LandInstallationSectorTwoModifier, AmplifierGroup> {
 
     public LandInstallationIconController() {
-        super(SymbolSet.SS_LAND_INSTALLATION);
+        super(SymbolSet.LAND_INSTALLATION);
     }
 
 }

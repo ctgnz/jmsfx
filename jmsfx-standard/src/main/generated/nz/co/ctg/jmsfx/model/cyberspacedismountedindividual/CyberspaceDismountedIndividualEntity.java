@@ -40,7 +40,7 @@ public enum CyberspaceDismountedIndividualEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_CYBERSPACE_DISMOUNTED;
+        return SymbolSet.CYBERSPACE_DISMOUNTED;
     }
 
     @Override

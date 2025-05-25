@@ -4,13 +4,13 @@ import nz.co.ctg.jmsfx.model.SymbolSet;
 import nz.co.ctg.jmsfx.model.SectorOneModifier;
 
 public enum SpaceSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.SS_SPACE),
-    LEO_MOD("01", "Low Earth Orbit (LEO)", "Orbit", SymbolSet.SS_SPACE),
-    MEO_MOD("02", "Medium Earth Orbit (MEO)", "Orbit", SymbolSet.SS_SPACE),
-    HEO_MOD("03", "High Earth Orbit (HEO)", "Orbit", SymbolSet.SS_SPACE),
-    GSO_MOD("04", "Geosynchronous Orbit (GSO)", "Orbit", SymbolSet.SS_SPACE),
-    GEO_MOD("05", "Geostationary Orbit (GEO)", "Orbit", SymbolSet.SS_SPACE),
-    MO_MOD("06", "Molniya Orbit (MO)", "Orbit", SymbolSet.SS_SPACE);
+    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.SPACE),
+    LEO_MOD("01", "Low Earth Orbit (LEO)", "Orbit", SymbolSet.SPACE),
+    MEO_MOD("02", "Medium Earth Orbit (MEO)", "Orbit", SymbolSet.SPACE),
+    HEO_MOD("03", "High Earth Orbit (HEO)", "Orbit", SymbolSet.SPACE),
+    GSO_MOD("04", "Geosynchronous Orbit (GSO)", "Orbit", SymbolSet.SPACE),
+    GEO_MOD("05", "Geostationary Orbit (GEO)", "Orbit", SymbolSet.SPACE),
+    MO_MOD("06", "Molniya Orbit (MO)", "Orbit", SymbolSet.SPACE);
 
     private final String id;
     private final String label;

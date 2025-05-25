@@ -4,16 +4,16 @@ import nz.co.ctg.jmsfx.model.SymbolSet;
 import nz.co.ctg.jmsfx.model.SectorOneModifier;
 
 public enum CyberspaceSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.SS_CYBERSPACE),
-    DEFENSIVE_CYBERSPACE("01", "Defensive Cyberspace", "General", SymbolSet.SS_CYBERSPACE),
-    OFFENSIVE_CYBERSPACE("02", "Offensive Cyberspace", "General", SymbolSet.SS_CYBERSPACE),
-    RESPONSE_ACTIONS("03", "Response Actions", "General", SymbolSet.SS_CYBERSPACE),
-    EXTERNAL_DEFENCE_MEASURES("04", "External Defence Measures", "General", SymbolSet.SS_CYBERSPACE),
-    INTERNAL_DEFENCE_MEASURES("05", "Internal Defence Measures", "General", SymbolSet.SS_CYBERSPACE),
-    SOCIAL("06", "Social", "General", SymbolSet.SS_CYBERSPACE),
-    WIRED("07", "Wired", "General", SymbolSet.SS_CYBERSPACE),
-    RADIO_FREQUENCY("08", "Radio Frequency", "General", SymbolSet.SS_CYBERSPACE),
-    OPERATING_SYSTEM("09", "Operating System", "General", SymbolSet.SS_CYBERSPACE);
+    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.CYBERSPACE),
+    DEFENSIVE_CYBERSPACE("01", "Defensive Cyberspace", "General", SymbolSet.CYBERSPACE),
+    OFFENSIVE_CYBERSPACE("02", "Offensive Cyberspace", "General", SymbolSet.CYBERSPACE),
+    RESPONSE_ACTIONS("03", "Response Actions", "General", SymbolSet.CYBERSPACE),
+    EXTERNAL_DEFENCE_MEASURES("04", "External Defence Measures", "General", SymbolSet.CYBERSPACE),
+    INTERNAL_DEFENCE_MEASURES("05", "Internal Defence Measures", "General", SymbolSet.CYBERSPACE),
+    SOCIAL("06", "Social", "General", SymbolSet.CYBERSPACE),
+    WIRED("07", "Wired", "General", SymbolSet.CYBERSPACE),
+    RADIO_FREQUENCY("08", "Radio Frequency", "General", SymbolSet.CYBERSPACE),
+    OPERATING_SYSTEM("09", "Operating System", "General", SymbolSet.CYBERSPACE);
 
     private final String id;
     private final String label;

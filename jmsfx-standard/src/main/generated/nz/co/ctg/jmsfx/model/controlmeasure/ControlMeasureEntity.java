@@ -64,7 +64,7 @@ public enum ControlMeasureEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_CONTROL_MEASURE;
+        return SymbolSet.CONTROL_MEASURE;
     }
 
     @Override

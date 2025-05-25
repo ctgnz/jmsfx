@@ -16,7 +16,7 @@ import nz.co.ctg.jmsfx.model.air.AirSectorTwoModifier;
 public class AirIconController extends IconRestController<AirEntity, AirEntityType, AirEntitySubType, AirSectorOneModifier, AirSectorTwoModifier, AmplifierGroup> {
 
     public AirIconController() {
-        super(SymbolSet.SS_AIR);
+        super(SymbolSet.AIR);
     }
 
 }

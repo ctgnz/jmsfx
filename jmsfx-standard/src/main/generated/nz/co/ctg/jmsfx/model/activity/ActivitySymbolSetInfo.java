@@ -8,6 +8,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 
+import nz.co.ctg.jmsfx.model.Amplifier;
 import nz.co.ctg.jmsfx.model.AmplifierGroup;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
 import nz.co.ctg.jmsfx.model.Entity;
@@ -28,7 +29,17 @@ public class ActivitySymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
-        return Collections.emptyList();        
+        return Arrays.asList(
+            new AmplifierGuide(Amplifier.G_StaffComments, 486, 276, 126, 80),
+            new AmplifierGuide(Amplifier.H_AdditionalInformation, 486, 356, 126, 80),
+            new AmplifierGuide(Amplifier.J_EvaluationRating, 486, 516, 126, 80),
+            new AmplifierGuide(Amplifier.T_UniqueDesignation, 0, 356, 126, 80),
+            new AmplifierGuide(Amplifier.W_DateTimeGroupDtg, 0, 196, 126, 80),
+            new AmplifierGuide(Amplifier.Y_Location, 0, 276, 126, 80),
+            new AmplifierGuide(Amplifier.AS_Country, 486, 196, 126, 80),
+            new AmplifierGuide(Amplifier.Q_DirectionOfMovementIndicator, 123, 83, 364, 193),
+            new AmplifierGuide(Amplifier.S2_OffsetLocationIndicator, 123, 83, 364, 193)
+        );
     }
 
     @Override
@@ -77,11 +88,6 @@ public class ActivitySymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<EntitySubType> getSpecialEntitySubTypes() {
-        return Collections.emptyList();
-    }
-
-    @Override
     public boolean isAmplifierPresent() {
         return false;
     }
@@ -118,11 +124,6 @@ public class ActivitySymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isSectorTwoModifierPresent() {
-        return false;
-    }
-
-    @Override
-    public boolean isSpecialEntitySubTypePresent() {
         return false;
     }
 

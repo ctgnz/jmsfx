@@ -8,6 +8,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 
+import nz.co.ctg.jmsfx.model.Amplifier;
 import nz.co.ctg.jmsfx.model.AmplifierGroup;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
 import nz.co.ctg.jmsfx.model.Entity;
@@ -27,7 +28,25 @@ public class CyberspaceLandInstallationSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
-        return Collections.emptyList();        
+        return Arrays.asList(
+            new AmplifierGuide(Amplifier.G_StaffComments, 486, 276, 126, 80),
+            new AmplifierGuide(Amplifier.H_AdditionalInformation, 486, 356, 126, 80),
+            new AmplifierGuide(Amplifier.J_EvaluationRating, 486, 516, 126, 80),
+            new AmplifierGuide(Amplifier.K_CombatEffectiveness, 486, 516, 126, 80),
+            new AmplifierGuide(Amplifier.M_HigherFormation, 486, 436, 126, 80),
+            new AmplifierGuide(Amplifier.T_UniqueDesignation, 0, 436, 126, 80),
+            new AmplifierGuide(Amplifier.W_DateTimeGroupDtg, 0, 196, 126, 80),
+            new AmplifierGuide(Amplifier.X_AltitudeDepth, 0, 276, 126, 80),
+            new AmplifierGuide(Amplifier.Y_Location, 0, 276, 126, 80),
+            new AmplifierGuide(Amplifier.AE_EquipmentTeardownTime, 486, 356, 126, 80),
+            new AmplifierGuide(Amplifier.AL_OperationalCondition, 130, 600, 350, 80),
+            new AmplifierGuide(Amplifier.AS_Country, 486, 196, 126, 80),
+            new AmplifierGuide(Amplifier.AT_CapacityOfInstallation, 486, 516, 126, 80),
+            new AmplifierGuide(Amplifier.AX_InstallationComposition, 0, 356, 126, 80),
+            new AmplifierGuide(Amplifier.S_HeadquartersStaffIndicator, 123, 83, 364, 193),
+            new AmplifierGuide(Amplifier.S2_OffsetLocationIndicator, 123, 83, 364, 193),
+            new AmplifierGuide(Amplifier.AB_FeintDummyIndicator, 123, 83, 364, 193)
+        );
     }
 
     @Override
@@ -76,11 +95,6 @@ public class CyberspaceLandInstallationSymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<EntitySubType> getSpecialEntitySubTypes() {
-        return Collections.emptyList();
-    }
-
-    @Override
     public boolean isAmplifierPresent() {
         return false;
     }
@@ -118,11 +132,6 @@ public class CyberspaceLandInstallationSymbolSetInfo implements SymbolSetInfo {
     @Override
     public boolean isSectorTwoModifierPresent() {
         return true;
-    }
-
-    @Override
-    public boolean isSpecialEntitySubTypePresent() {
-        return false;
     }
 
 }

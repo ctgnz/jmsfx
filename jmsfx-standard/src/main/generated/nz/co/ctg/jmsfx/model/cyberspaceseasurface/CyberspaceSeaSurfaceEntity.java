@@ -40,7 +40,7 @@ public enum CyberspaceSeaSurfaceEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_CYBERSPACE_SEA_SURFACE;
+        return SymbolSet.CYBERSPACE_SEA_SURFACE;
     }
 
     @Override

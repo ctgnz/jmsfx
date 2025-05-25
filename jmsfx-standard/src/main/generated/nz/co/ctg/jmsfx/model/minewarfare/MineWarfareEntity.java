@@ -48,7 +48,7 @@ public enum MineWarfareEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_MINE_WARFARE;
+        return SymbolSet.MINE_WARFARE;
     }
 
     @Override

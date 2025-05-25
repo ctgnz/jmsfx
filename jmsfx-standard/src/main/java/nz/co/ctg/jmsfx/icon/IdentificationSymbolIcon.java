@@ -81,9 +81,6 @@ public class IdentificationSymbolIcon extends Pane {
         if (symbol.isSectorTwoModifierUsed()) {
             container.getChildren().add(symbol.getSectorTwoModifierGraphic().createGroup());
         }
-        if (symbol.isSpecialSubTypeUsed()) {
-            container.getChildren().add(symbol.getSpecialSubTypeGraphic().createGroup());
-        }
         if (symbol.isAmplifierGuidesVisible()) {
             symbol.getSymbolSet().getAmplifierGuides().forEach(guide -> {
                 Rectangle rect = new Rectangle(guide.getX(), guide.getY(), guide.getWidth(), guide.getHeight());

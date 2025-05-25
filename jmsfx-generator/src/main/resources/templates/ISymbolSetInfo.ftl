@@ -24,8 +24,6 @@ public interface SymbolSetInfo {
 
     <M extends SectorTwoModifier>List<M> getSectorTwoModifiers();
 
-    <E extends EntitySubType> List<E> getSpecialEntitySubTypes();
-
     boolean isAmplifierPresent();
 
     boolean isAmplifierTwoPresent();
@@ -41,7 +39,5 @@ public interface SymbolSetInfo {
     boolean isSectorOneModifierPresent();
 
     boolean isSectorTwoModifierPresent();
-
-    boolean isSpecialEntitySubTypePresent();
 
 }

@@ -50,6 +50,7 @@ public class IdentificationSymbol {
     public static final Color LT_YELLOW = Color.rgb(255, 255, 128);    // FFFF80
     public static final Color BAMBOO_GREEN = Color.rgb(170, 255, 170); // AAFFAA
     public static final Color SALMON_RED = Color.rgb(255, 128, 128);   // FF8080
+    public static final Color CIV_PURPLE = Color.rgb(255, 161, 255);   // FFA1FF
     public static final Color OFF_WHITE = Color.rgb(239, 239, 239);    // EFEFEF
     public static final Color NEARLY_WHITE = Color.rgb(250, 250, 250); // FAFAFA
     private final SymbolIdentificationCode sidc = new SymbolIdentificationCode();
@@ -71,7 +72,6 @@ public class IdentificationSymbol {
     private final ObjectProperty<SectorTwoModifier> sectorTwoModifier;
     private final ObjectProperty<SvgGraphic> frameGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> mainIconGraphic = new SimpleObjectProperty<>();
-    private final ObjectProperty<SvgGraphic> specialSubTypeGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> amplifierGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> amplifierTwoGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> amplifierThreeGraphic = new SimpleObjectProperty<>();
@@ -272,9 +272,6 @@ public class IdentificationSymbol {
         if (isSectorTwoModifierUsed()) {
             container.getContent().addAll(getSectorTwoModifierGraphic().getVisibleContent());
         }
-        if (isSpecialSubTypeUsed()) {
-            container.getContent().addAll(getSpecialSubTypeGraphic().getVisibleContent());
-        }
         Group graphic = container.createGroup();
         graphic.autosize();
         Bounds bounds = graphic.getBoundsInLocal();
@@ -363,10 +360,6 @@ public class IdentificationSymbol {
 
     public SvgGraphic getSectorTwoModifierGraphic() {
         return sectorTwoModifierGraphic.get();
-    }
-
-    public SvgGraphic getSpecialSubTypeGraphic() {
-        return specialSubTypeGraphic.get();
     }
 
     public StandardIdentity getStandardIdentity() {
@@ -464,14 +457,9 @@ public class IdentificationSymbol {
         return mod != null && !mod.isUnknown();
     }
 
-    public boolean isSpecialSubTypeUsed() {
-        EntitySubType subType = getEntitySubType();
-        return subType != null && subType.getIconType() == IconType.SPECIAL;
-    }
-
     public boolean isStatusIconUsed() {
         SymbolSet currentSymbolSet = getSymbolSet();
-        if (currentSymbolSet == SymbolSet.SS_DISMOUNTED || currentSymbolSet == SymbolSet.SS_INTERNAL) {
+        if (currentSymbolSet == SymbolSet.DISMOUNTED || currentSymbolSet == SymbolSet.INTERNAL) {
             return false;
         }
         Status currentStatus = getStatus();
@@ -595,7 +583,6 @@ public class IdentificationSymbol {
         // Graphic location properties only need to be updated after the component parts are changed
         frameGraphic.bind(Bindings.createObjectBinding(() -> loadFrameGraphic(), context, symbolSet, standardIdentity, status, entity));
         mainIconGraphic.bind(Bindings.createObjectBinding(() -> loadMainIconGraphic(), symbolSet, standardIdentity, entity, entityType, entitySubType));
-        specialSubTypeGraphic.bind(Bindings.createObjectBinding(() -> loadSpecialSubTypeGraphic(), entitySubType));
         amplifierGraphic.bind(Bindings.createObjectBinding(() -> loadAmplifierGraphic(), amplifier, standardIdentity));
         amplifierTwoGraphic.bind(Bindings.createObjectBinding(() -> loadAmplifierTwoGraphic(), amplifierTwo, standardIdentity));
         amplifierThreeGraphic.bind(Bindings.createObjectBinding(() -> loadAmplifierThreeGraphic(), amplifierThree, standardIdentity));
@@ -626,7 +613,7 @@ public class IdentificationSymbol {
     }
 
     private String calculateMainIconLocation() {
-        if (getSymbolSet() == SymbolSet.SS_INTERNAL) {
+        if (getSymbolSet() == SymbolSet.INTERNAL) {
             return "/svg/Appendices/98100000.svg";
         }
         MainIconElement mainIconElement = getMainIconElement();
@@ -639,7 +626,7 @@ public class IdentificationSymbol {
     }
 
     private StandardIdentity getStandardIdentityForFrame() {
-        return getSymbolSet() == SymbolSet.SS_INTERNAL ? StandardIdentity.SI_UNKNOWN : getStandardIdentity();
+        return getSymbolSet() == SymbolSet.INTERNAL ? StandardIdentity.SI_UNKNOWN : getStandardIdentity();
     }
 
     private Status getStatusForFrame(StandardIdentity effectiveStandardId) {
@@ -733,16 +720,6 @@ public class IdentificationSymbol {
             SectorTwoModifier sectorTwoMod = getSectorTwoModifier();
             String graphicLocation = sectorTwoMod.getGraphicLocation();
             String filePath = String.format("/svg/Appendices/%s/mod2/%s.svg", graphicLocation, sectorTwoMod.getGraphicIdentifier());
-            return parser.parseFile(filePath);
-        } else {
-            return null;
-        }
-    }
-
-    private SvgGraphic loadSpecialSubTypeGraphic() {
-        if (isSpecialSubTypeUsed()) {
-            EntitySubType subType = getEntitySubType();
-            String filePath = String.format("/svg/Appendices/%s/%s_%s.svg", getSymbolSet().getGraphicLocation(), subType.getGraphicIdentifier(), getStandardIdentity().getGroup().ordinal());
             return parser.parseFile(filePath);
         } else {
             return null;

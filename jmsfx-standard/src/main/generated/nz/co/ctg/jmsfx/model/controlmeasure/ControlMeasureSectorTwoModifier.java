@@ -4,12 +4,12 @@ import nz.co.ctg.jmsfx.model.SymbolSet;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 
 public enum ControlMeasureSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSet.SS_CONTROL_MEASURE),
-    URBAN_MOD("01", "Urban", "Terrain", SymbolSet.SS_CONTROL_MEASURE),
-    WATER_MOD("02", "Water", "Terrain", SymbolSet.SS_CONTROL_MEASURE),
-    GROUND_MOD("03", "Ground", "Terrain", SymbolSet.SS_CONTROL_MEASURE),
-    VEGETATION_MOD("04", "Vegetation", "Terrain", SymbolSet.SS_CONTROL_MEASURE),
-    OBSTACLES_MOD("05", "Obstacles", "Terrain", SymbolSet.SS_CONTROL_MEASURE);
+    UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSet.CONTROL_MEASURE),
+    URBAN_MOD("01", "Urban", "Terrain", SymbolSet.CONTROL_MEASURE),
+    WATER_MOD("02", "Water", "Terrain", SymbolSet.CONTROL_MEASURE),
+    GROUND_MOD("03", "Ground", "Terrain", SymbolSet.CONTROL_MEASURE),
+    VEGETATION_MOD("04", "Vegetation", "Terrain", SymbolSet.CONTROL_MEASURE),
+    OBSTACLES_MOD("05", "Obstacles", "Terrain", SymbolSet.CONTROL_MEASURE);
 
     private final String id;
     private final String label;

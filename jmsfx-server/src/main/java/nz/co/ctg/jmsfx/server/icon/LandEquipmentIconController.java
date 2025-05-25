@@ -16,7 +16,7 @@ import nz.co.ctg.jmsfx.model.landequipment.LandEquipmentSectorOneModifier;
 public class LandEquipmentIconController extends IconRestController<LandEquipmentEntity, LandEquipmentEntityType, LandEquipmentEntitySubType, LandEquipmentSectorOneModifier, SectorTwoModifier, EquipmentMobility> {
 
     public LandEquipmentIconController() {
-        super(SymbolSet.SS_LAND_EQUIPMENT);
+        super(SymbolSet.LAND_EQUIPMENT);
     }
 
 }

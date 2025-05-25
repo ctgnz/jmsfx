@@ -34,7 +34,7 @@ public enum UnknownEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_UNKNOWN;
+        return SymbolSet.UNKNOWN;
     }
 
     @Override

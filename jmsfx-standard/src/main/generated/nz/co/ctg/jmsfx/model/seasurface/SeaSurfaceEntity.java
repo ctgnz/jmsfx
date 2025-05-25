@@ -44,7 +44,7 @@ public enum SeaSurfaceEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_SEA_SURFACE;
+        return SymbolSet.SEA_SURFACE;
     }
 
     @Override

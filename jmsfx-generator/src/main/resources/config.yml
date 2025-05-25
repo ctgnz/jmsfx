@@ -56,25 +56,27 @@ symbolGraphicLocations:
   SS_CYBERSPACE: "Cyberspace"
 amplifierGuides:
   DISMOUNTED:
-    - {code: "C" , x: 180, y: 548, width: 252, height:  96, amplifier: "C_Quantity"}
-    - {code: "AV" , x: 180, y: 248, width: 252, height:  96, amplifier: "AV_LeadershipIdentifier"}
-    - {code: "AB" , x: 180, y: 152, width: 252, height:  96, amplifier: "AB_FeintDummyIndicator"}
-    - {code: "G" , x: 440, y: 248, width: 168, height:  96, amplifier: "G_StaffComments"}
-    - {code: "H" , x: 440, y: 344, width: 168, height:  96, amplifier: "H_AdditionalInformation"}
-    - {code: "J" , x: 440, y: 536, width: 168, height:  96, amplifier: "J_EvaluationRating"}
-    - {code: "K" , x: 440, y: 536, width: 168, height:  96, amplifier: "K_CombatEffectiveness"}
-    - {code: "M" , x: 440, y: 440, width: 168, height:  96, amplifier: "M_HigherFormation"}
-    - {code: "P" , x: 440, y: 536, width: 168, height:  96, amplifier: "P_IffSifAis"}
-    - {code: "T" , x:   4, y: 440, width: 168, height:  96, amplifier: "T_UniqueDesignation"}
-    - {code: "V" , x:   4, y: 344, width: 168, height:  96, amplifier: "V_TypeOfEquipment"}
-    - {code: "W" , x:   4, y: 152, width: 168, height:  96, amplifier: "W_DateTimeGroupDtg"}
-    - {code: "X" , x:   4, y: 248, width: 168, height:  96, amplifier: "X_AltitudeDepth"}
-    - {code: "Y" , x:   4, y: 248, width: 168, height:  96, amplifier: "Y_Location"}
-    - {code: "Z" , x:   4, y: 536, width: 168, height:  96, amplifier: "Z_Speed"}
-    - {code: "AF", x:   4, y: 344, width: 168, height:  96, amplifier: "AF_CommonIdentifier"}
-    - {code: "AS", x: 440, y: 152, width: 168, height:  96, amplifier: "AS_Country"}
+    - {code: "C" , x: 205, y: 546, width: 200, height:  96, amplifier: "C_Quantity"}
+    - {code: "AV" , x: 176, y: 208, width: 259, height:  76, amplifier: "AV_LeadershipIdentifier"}
+    - {code: "AB" , x: 124, y: 176, width: 367, height:  108, amplifier: "AB_FeintDummyIndicator"}
+    - {code: "G" , x: 478, y: 248, width: 134, height:  96, amplifier: "G_StaffComments"}
+    - {code: "H" , x: 478, y: 344, width: 134, height:  96, amplifier: "H_AdditionalInformation"}
+    - {code: "J" , x: 478, y: 536, width: 134, height:  96, amplifier: "J_EvaluationRating"}
+    - {code: "K" , x: 478, y: 536, width: 134, height:  96, amplifier: "K_CombatEffectiveness"}
+    - {code: "M" , x: 478, y: 440, width: 134, height:  96, amplifier: "M_HigherFormation"}
+    - {code: "P" , x: 478, y: 536, width: 134, height:  96, amplifier: "P_IffSifAis"}
+    - {code: "T" , x:   0, y: 440, width: 134, height:  96, amplifier: "T_UniqueDesignation"}
+    - {code: "V" , x:   0, y: 344, width: 134, height:  96, amplifier: "V_TypeOfEquipment"}
+    - {code: "W" , x:   0, y: 152, width: 134, height:  96, amplifier: "W_DateTimeGroupDtg"}
+    - {code: "X" , x:   0, y: 248, width: 134, height:  96, amplifier: "X_AltitudeDepth"}
+    - {code: "Y" , x:   0, y: 248, width: 134, height:  96, amplifier: "Y_Location"}
+    - {code: "Z" , x:   0, y: 536, width: 134, height:  96, amplifier: "Z_Speed"}
+    - {code: "AF", x:   0, y: 344, width: 134, height:  96, amplifier: "AF_CommonIdentifier"}
+    - {code: "AS", x: 478, y: 152, width: 134, height:  96, amplifier: "AS_Country"}
   LAND_UNIT:
+    - {code: "B",  x: 205, y: 192, width: 200, height:  80, amplifier: "B_Echelon"}
     - {code: "C",  x: 205, y: 192, width: 200, height:  80, amplifier: "C_Quantity"}
+    - {code: "D",  x: 205, y: 192, width: 200, height:  80, amplifier: "D_TaskForceIndicator"}
     - {code: "F",  x: 486, y: 196, width: 126, height:  80, amplifier: "F_ReinforcedOrReduced"}
     - {code: "G",  x: 486, y: 276, width: 126, height:  80, amplifier: "G_StaffComments"}
     - {code: "H",  x: 486, y: 356, width: 126, height:  80, amplifier: "H_AdditionalInformation"}
@@ -92,30 +94,157 @@ amplifierGuides:
     - {code: "AD", x:   0, y: 356, width: 126, height:  80, amplifier: "AD_PlatformType"}
     - {code: "AE", x:   0, y: 356, width: 126, height:  80, amplifier: "AE_EquipmentTeardownTime"}
     - {code: "AF", x: 486, y: 356, width: 126, height:  80, amplifier: "AF_CommonIdentifier"}
-    - {code: "AW", x: 185, y: 520, width: 240, height:  80, amplifier: "AW_HeadquartersElement"}
-    - {code: "AH", x: 130, y: 600, width: 350, height:  80, amplifier: "AH_AreaOfUncertaintyIndicator"}
+    - {code: "AL", x: 130, y: 600, width: 350, height:  80, amplifier: "AL_OperationalCondition"}
     - {code: "AO", x: 130, y:   5, width: 350, height:  80, amplifier: "AO_EngagementBar"}
     - {code: "AR", x:   0, y: 196, width: 126, height:  80, amplifier: "AR_SpecialDesignator"}
+    - {code: "AS", x: 486, y: 196, width: 126, height:  80, amplifier: "AS_Country"}
+    - {code: "AW", x: 185, y: 520, width: 240, height:  80, amplifier: "AW_HeadquartersElement"}
+    - {code: "Q",  x: 123.775, y: 83.542, width: 364.550, height: 193.458, amplifier: "Q_DirectionOfMovementIndicator"}
+    - {code: "S",  x: 123.775, y: 83.542, width: 364.550, height: 193.458, amplifier: "S_HeadquartersStaffIndicator"}
+    - {code: "S2", x: 123.775, y: 83.542, width: 364.550, height: 193.458, amplifier: "S2_OffsetLocationIndicator"}
+    - {code: "AB", x: 123.775, y: 83.542, width: 364.550, height: 193.458, amplifier: "AB_FeintDummyIndicator"}
   LAND_EQUIPMENT:
-    - {code: "C",  x: 205, y: 192, width: 200, height:  80, amplifier: "C_Quantity"}
-    - {code: "F",  x: 486, y: 196, width: 126, height:  80, amplifier: "F_ReinforcedOrReduced"}
+    - {code: "C",  x: 205, y: 190, width: 200, height:  60, amplifier: "C_Quantity"}
+    - {code: "G",  x: 486, y: 250, width: 126, height:  90, amplifier: "G_StaffComments"}
+    - {code: "H",  x: 486, y: 340, width: 126, height:  90, amplifier: "H_AdditionalInformation"}
+    - {code: "J",  x: 486, y: 520, width: 126, height:  90, amplifier: "J_EvaluationRating"}
+    - {code: "K",  x: 486, y: 520, width: 126, height:  90, amplifier: "K_CombatEffectiveness"}
+    - {code: "L",  x: 486, y: 520, width: 126, height:  90, amplifier: "L_SignatureEquipment"}
+    - {code: "M",  x: 486, y: 430, width: 126, height:  90, amplifier: "M_HigherFormation"}
+    - {code: "N",  x: 486, y: 520, width: 126, height:  90, amplifier: "N_HostileEnemy"}
+    - {code: "P",  x: 486, y: 520, width: 126, height:  90, amplifier: "P_IffSifAis"}
+    - {code: "R",  x: 185, y: 542, width: 240, height:  90, amplifier: "R_MobilityIndicator"}
+    - {code: "T",  x:   0, y: 430, width: 126, height:  90, amplifier: "T_UniqueDesignation"}
+    - {code: "V",  x:   0, y: 340, width: 126, height:  90, amplifier: "V_TypeOfEquipment"}
+    - {code: "W",  x:   0, y: 160, width: 126, height:  90, amplifier: "W_DateTimeGroupDtg"}
+    - {code: "X",  x:   0, y: 250, width: 126, height:  90, amplifier: "X_AltitudeDepth"}
+    - {code: "Y",  x:   0, y: 250, width: 126, height:  90, amplifier: "Y_Location"}
+    - {code: "Z",  x:   0, y: 520, width: 126, height:  90, amplifier: "Z_Speed"}
+    - {code: "AD", x:   0, y: 340, width: 126, height:  90, amplifier: "AD_PlatformType"}
+    - {code: "AE", x: 486, y: 340, width: 126, height:  90, amplifier: "AE_EquipmentTeardownTime"}
+    - {code: "AF", x:   0, y: 340, width: 126, height:  90, amplifier: "AF_CommonIdentifier"}
+    - {code: "AL", x: 142, y: 632, width: 328, height:  80, amplifier: "AL_OperationalCondition"}
+    - {code: "AO", x: 132, y:   5, width: 344, height:  80, amplifier: "AO_EngagementBar"}
+    - {code: "AS", x: 486, y: 160, width: 126, height:  90, amplifier: "AS_Country"}
+    - {code: "Q",  x: 123.775, y: 83.542, width: 364.550, height: 193.458, amplifier: "Q_DirectionOfMovementIndicator"}
+    - {code: "S2", x: 123.775, y: 83.542, width: 364.550, height: 193.458, amplifier: "S2_OffsetLocationIndicator"}
+    - {code: "AB", x: 123.451, y: 83.640, width: 365.119, height: 168.360, amplifier: "AB_FeintDummyIndicator"}
+  LAND_INSTALLATION:
     - {code: "G",  x: 486, y: 276, width: 126, height:  80, amplifier: "G_StaffComments"}
     - {code: "H",  x: 486, y: 356, width: 126, height:  80, amplifier: "H_AdditionalInformation"}
     - {code: "J",  x: 486, y: 516, width: 126, height:  80, amplifier: "J_EvaluationRating"}
     - {code: "K",  x: 486, y: 516, width: 126, height:  80, amplifier: "K_CombatEffectiveness"}
     - {code: "M",  x: 486, y: 436, width: 126, height:  80, amplifier: "M_HigherFormation"}
-    - {code: "P",  x: 486, y: 516, width: 126, height:  80, amplifier: "P_IffSifAis"}
-    - {code: "R",  x: 185, y: 520, width: 240, height:  80, amplifier: "R_MobilityIndicator"}
     - {code: "T",  x:   0, y: 436, width: 126, height:  80, amplifier: "T_UniqueDesignation"}
-    - {code: "V",  x:   0, y: 356, width: 126, height:  80, amplifier: "V_TypeOfEquipment"}
     - {code: "W",  x:   0, y: 196, width: 126, height:  80, amplifier: "W_DateTimeGroupDtg"}
     - {code: "X",  x:   0, y: 276, width: 126, height:  80, amplifier: "X_AltitudeDepth"}
     - {code: "Y",  x:   0, y: 276, width: 126, height:  80, amplifier: "Y_Location"}
-    - {code: "Z",  x:   0, y: 516, width: 126, height:  80, amplifier: "Z_Speed"}
+    - {code: "AE", x: 486, y: 356, width: 126, height:  80, amplifier: "AE_EquipmentTeardownTime"}
+    - {code: "AL", x: 130, y: 600, width: 350, height:  80, amplifier: "AL_OperationalCondition"}
+    - {code: "AS", x: 486, y: 196, width: 126, height:  80, amplifier: "AS_Country"}
+    - {code: "AT", x: 486, y: 516, width: 126, height:  80, amplifier: "AT_CapacityOfInstallation"}
+    - {code: "AX", x:   0, y: 356, width: 126, height:  80, amplifier: "AX_InstallationComposition"}
+    - {code: "S",  x: 123.775, y: 83.542, width: 364.550, height: 193.458, amplifier: "S_HeadquartersStaffIndicator"}
+    - {code: "S2", x: 123.775, y: 83.542, width: 364.550, height: 193.458, amplifier: "S2_OffsetLocationIndicator"}
+    - {code: "AB", x: 123.775, y: 83.542, width: 364.550, height: 193.458, amplifier: "AB_FeintDummyIndicator"}
+  AIR:
+    - {code: "G",  x: 478, y: 476, width: 134, height:  80, amplifier: "G_StaffComments"}
+    - {code: "H",  x: 478, y: 476, width: 134, height:  80, amplifier: "H_AdditionalInformation"}
+    - {code: "P",  x: 478, y: 236, width: 134, height:  80, amplifier: "P_IffSifAis"}
+    - {code: "T",  x: 478, y: 156, width: 134, height:  80, amplifier: "T_UniqueDesignation"}
+    - {code: "V",  x: 478, y: 316, width: 134, height:  80, amplifier: "V_TypeOfEquipment"}
+    - {code: "X",  x: 478, y: 396, width: 134, height:  80, amplifier: "X_AltitudeDepth"}
+    - {code: "Z",  x: 478, y: 396, width: 134, height:  80, amplifier: "Z_Speed"}
+    - {code: "AL", x: 142, y: 518, width: 328, height:  80, amplifier: "AL_OperationalCondition"}
+    - {code: "AO", x: 132, y: 118, width: 346, height:  80, amplifier: "AO_EngagementBar"}
+    - {code: "AS", x: 478, y: 156, width: 134, height:  80, amplifier: "AS_Country"}
+    - {code: "AJ", x: 16.102, y: 467.497, width: 161.206, height: 91.467, amplifier: "AJ_SpeedLeader"}
+  AIR_MISSILE:
+    - {code: "G",  x: 478, y: 476, width: 134, height:  80, amplifier: "G_StaffComments"}
+    - {code: "H",  x: 478, y: 476, width: 134, height:  80, amplifier: "H_AdditionalInformation"}
+    - {code: "P",  x: 478, y: 236, width: 134, height:  80, amplifier: "P_IffSifAis"}
+    - {code: "T",  x: 478, y: 156, width: 134, height:  80, amplifier: "T_UniqueDesignation"}
+    - {code: "V",  x: 478, y: 316, width: 134, height:  80, amplifier: "V_TypeOfEquipment"}
+    - {code: "X",  x: 478, y: 396, width: 134, height:  80, amplifier: "X_AltitudeDepth"}
+    - {code: "Z",  x: 478, y: 396, width: 134, height:  80, amplifier: "Z_Speed"}
+    - {code: "AL", x: 142, y: 518, width: 328, height:  80, amplifier: "AL_OperationalCondition"}
+    - {code: "AO", x: 132, y: 118, width: 346, height:  80, amplifier: "AO_EngagementBar"}
+    - {code: "AS", x: 478, y: 156, width: 134, height:  80, amplifier: "AS_Country"}
+    - {code: "AJ", x: 16.102, y: 467.497, width: 161.206, height: 91.467, amplifier: "AJ_SpeedLeader"}
+  SPACE:
+    - {code: "G",  x: 478, y: 436, width: 134, height:  80, amplifier: "G_StaffComments"}
+    - {code: "H",  x: 478, y: 436, width: 134, height:  80, amplifier: "H_AdditionalInformation"}
+    - {code: "T",  x: 478, y: 196, width: 134, height:  80, amplifier: "T_UniqueDesignation"}
+    - {code: "V",  x: 478, y: 276, width: 134, height:  80, amplifier: "V_TypeOfEquipment"}
+    - {code: "X",  x: 478, y: 356, width: 134, height:  80, amplifier: "X_AltitudeDepth"}
+    - {code: "Z",  x: 478, y: 356, width: 134, height:  80, amplifier: "Z_Speed"}
+    - {code: "AL", x: 142, y: 518, width: 328, height:  80, amplifier: "AL_OperationalCondition"}
+    - {code: "AO", x: 132, y: 116, width: 346, height:  80, amplifier: "AO_EngagementBar"}
+    - {code: "AS", x: 478, y: 196, width: 134, height:  80, amplifier: "AS_Country"}
+    - {code: "AJ", x: 16.102, y: 467.497, width: 161.206, height: 91.467, amplifier: "AJ_SpeedLeader"}
+  SEA_SURFACE:
+    - {code: "G",  x: 478, y: 440, width: 134, height:  96, amplifier: "G_StaffComments"}
+    - {code: "H",  x: 478, y: 440, width: 134, height:  96, amplifier: "H_AdditionalInformation"}
+    - {code: "P",  x: 478, y: 344, width: 134, height:  96, amplifier: "P_IffSifAis"}
+    - {code: "T",  x: 478, y: 152, width: 134, height:  96, amplifier: "T_UniqueDesignation"}
+    - {code: "V",  x: 478, y: 248, width: 134, height:  96, amplifier: "V_TypeOfEquipment"}
+    - {code: "X",  x: 478, y: 536, width: 134, height:  96, amplifier: "X_AltitudeDepth"}
+    - {code: "Z",  x: 478, y: 536, width: 134, height:  96, amplifier: "Z_Speed"}
+    - {code: "AL", x: 142, y: 542, width: 328, height:  96, amplifier: "AL_OperationalCondition"}
+    - {code: "AO", x: 134, y: 152, width: 344, height:  96, amplifier: "AO_EngagementBar"}
+    - {code: "AQ", x:   0, y: 152, width: 134, height:  96, amplifier: "AQ_GuardedUnit"}
+    - {code: "AR", x:   0, y: 152, width: 134, height:  96, amplifier: "AR_SpecialDesignator"}
+    - {code: "AS", x: 478, y: 152, width: 134, height:  96, amplifier: "AS_Country"}
+    - {code: "AJ", x: 16.102, y: 467.497, width: 161.206, height: 91.467, amplifier: "AJ_SpeedLeader"}
+  SEA_SUBSURFACE:
+    - {code: "G",  x: 478, y: 466, width: 134, height:  96, amplifier: "G_StaffComments"}
+    - {code: "H",  x: 478, y: 466, width: 134, height:  96, amplifier: "H_AdditionalInformation"}
+    - {code: "P",  x: 478, y: 370, width: 134, height:  96, amplifier: "P_IffSifAis"}
+    - {code: "T",  x: 478, y: 178, width: 134, height:  96, amplifier: "T_UniqueDesignation"}
+    - {code: "V",  x: 478, y: 274, width: 134, height:  96, amplifier: "V_TypeOfEquipment"}
+    - {code: "X",  x: 478, y: 370, width: 134, height:  96, amplifier: "X_AltitudeDepth"}
+    - {code: "Y",  x: 478, y: 562, width: 134, height:  96, amplifier: "Y_Location"}
+    - {code: "Z",  x: 478, y: 562, width: 134, height:  96, amplifier: "Z_Speed"}
+    - {code: "AL", x: 142, y: 592, width: 328, height:  96, amplifier: "AL_OperationalCondition"}
+    - {code: "AO", x: 134, y: 178, width: 344, height:  96, amplifier: "AO_EngagementBar"}
+    - {code: "AR", x:   0, y: 178, width: 134, height:  96, amplifier: "AR_SpecialDesignator"}
+    - {code: "AS", x: 478, y: 178, width: 134, height:  96, amplifier: "AS_Country"}
+    - {code: "AJ", x: 16.102, y: 467.497, width: 161.206, height: 91.467, amplifier: "AJ_SpeedLeader"}
+  CYBERSPACE:
+    - {code: "B",  x: 205, y: 192, width: 200, height:  80, amplifier: "B_Echelon"}
+    - {code: "C",  x: 205, y: 192, width: 200, height:  80, amplifier: "C_Quantity"}
+    - {code: "D",  x: 205, y: 192, width: 200, height:  80, amplifier: "D_TaskForceIndicator"}
+    - {code: "F",  x: 486, y: 196, width: 126, height:  80, amplifier: "F_ReinforcedOrReduced"}
+    - {code: "G",  x: 486, y: 276, width: 126, height:  80, amplifier: "G_StaffComments"}
+    - {code: "H",  x: 486, y: 356, width: 126, height:  80, amplifier: "H_AdditionalInformation"}
+    - {code: "K",  x: 486, y: 516, width: 126, height:  80, amplifier: "K_CombatEffectiveness"}
+    - {code: "L",  x: 486, y: 516, width: 126, height:  80, amplifier: "L_SignatureEquipment"}
+    - {code: "M",  x: 486, y: 436, width: 126, height:  80, amplifier: "M_HigherFormation"}
+    - {code: "P",  x: 486, y: 516, width: 126, height:  80, amplifier: "P_IffSifAis"}
+    - {code: "T",  x:   0, y: 436, width: 126, height:  80, amplifier: "T_UniqueDesignation"}
+    - {code: "V",  x:   0, y: 356, width: 126, height:  80, amplifier: "V_TypeOfEquipment"}
+    - {code: "W",  x:   0, y: 196, width: 126, height:  80, amplifier: "W_DateTimeGroupDtg"}
+    - {code: "Y",  x:   0, y: 276, width: 126, height:  80, amplifier: "Y_Location"}
     - {code: "AD", x:   0, y: 356, width: 126, height:  80, amplifier: "AD_PlatformType"}
     - {code: "AE", x:   0, y: 356, width: 126, height:  80, amplifier: "AE_EquipmentTeardownTime"}
     - {code: "AF", x: 486, y: 356, width: 126, height:  80, amplifier: "AF_CommonIdentifier"}
-    - {code: "AW", x: 185, y: 520, width: 240, height:  80, amplifier: "AW_HeadquartersElement"}
-    - {code: "AH", x: 130, y: 600, width: 350, height:  80, amplifier: "AH_AreaOfUncertaintyIndicator"}
+    - {code: "AH", x: 185, y: 520, width: 240, height:  80, amplifier: "AH_AreaOfUncertaintyIndicator"}
+    - {code: "AL", x: 130, y: 600, width: 350, height:  80, amplifier: "AL_OperationalCondition"}
     - {code: "AO", x: 130, y:   5, width: 350, height:  80, amplifier: "AO_EngagementBar"}
     - {code: "AR", x:   0, y: 196, width: 126, height:  80, amplifier: "AR_SpecialDesignator"}
+    - {code: "AS", x: 486, y: 196, width: 126, height:  80, amplifier: "AS_Country"}
+    - {code: "AW", x: 185, y: 520, width: 240, height:  80, amplifier: "AW_HeadquartersElement"}
+    - {code: "AY", x:   0, y: 516, width: 126, height:  80, amplifier: "AY_NetworkIdentifier"}
+    - {code: "S",  x: 123.775, y: 83.542, width: 364.550, height: 193.458, amplifier: "S_HeadquartersStaffIndicator"}
+    - {code: "S2", x: 123.775, y: 83.542, width: 364.550, height: 193.458, amplifier: "S2_OffsetLocationIndicator"}
+    - {code: "AB", x: 123.775, y: 83.542, width: 364.550, height: 193.458, amplifier: "AB_FeintDummyIndicator"}
+  ACTIVITY:
+    - {code: "G",  x: 486, y: 276, width: 126, height:  80, amplifier: "G_StaffComments"}
+    - {code: "H",  x: 486, y: 356, width: 126, height:  80, amplifier: "H_AdditionalInformation"}
+    - {code: "J",  x: 486, y: 516, width: 126, height:  80, amplifier: "J_EvaluationRating"}
+    - {code: "T",  x:   0, y: 356, width: 126, height:  80, amplifier: "T_UniqueDesignation"}
+    - {code: "W",  x:   0, y: 196, width: 126, height:  80, amplifier: "W_DateTimeGroupDtg"}
+    - {code: "Y",  x:   0, y: 276, width: 126, height:  80, amplifier: "Y_Location"}
+    - {code: "AS", x: 486, y: 196, width: 126, height:  80, amplifier: "AS_Country"}
+    - {code: "Q",  x: 123.775, y: 83.542, width: 364.550, height: 193.458, amplifier: "Q_DirectionOfMovementIndicator"}
+    - {code: "S2", x: 123.775, y: 83.542, width: 364.550, height: 193.458, amplifier: "S2_OffsetLocationIndicator"}

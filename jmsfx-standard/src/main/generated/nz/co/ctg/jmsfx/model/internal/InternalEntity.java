@@ -35,7 +35,7 @@ public enum InternalEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_INTERNAL;
+        return SymbolSet.INTERNAL;
     }
 
     @Override

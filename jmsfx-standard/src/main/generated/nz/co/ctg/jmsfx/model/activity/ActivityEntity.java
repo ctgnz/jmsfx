@@ -44,7 +44,7 @@ public enum ActivityEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_ACTIVITY;
+        return SymbolSet.ACTIVITY;
     }
 
     @Override

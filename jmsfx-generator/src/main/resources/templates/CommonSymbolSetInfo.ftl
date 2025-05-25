@@ -61,11 +61,6 @@ public class CommonSymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<EntitySubType> getSpecialEntitySubTypes() {
-        return Collections.emptyList();        
-    }
-
-    @Override
     public boolean isAmplifierPresent() {
         return false;
     }
@@ -103,11 +98,6 @@ public class CommonSymbolSetInfo implements SymbolSetInfo {
     @Override
     public boolean isSectorTwoModifierPresent() {
         return true;
-    }
-
-    @Override
-    public boolean isSpecialEntitySubTypePresent() {
-        return false;
     }
 
 }

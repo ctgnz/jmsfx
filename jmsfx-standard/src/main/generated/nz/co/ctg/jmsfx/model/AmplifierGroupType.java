@@ -5,10 +5,10 @@ import nz.co.ctg.jmsfx.model.amplifier.*;
 
 public enum AmplifierGroupType implements SymbolIdentificationCodeElement {
     UNKNOWN("0", "Unspecified", UnknownAmplifier.class),
-    UNIT_ECHELON("1", "Unit Echelon", UnitEchelon.class, SymbolSet.SS_LAND_UNIT),
-    EQUIPMENT_MOBILITY("3", "Equipment Mobility", EquipmentMobility.class, SymbolSet.SS_LAND_EQUIPMENT),
-    TOWED_ARRAYS("6", "Naval towed array", TowedArrayType.class, SymbolSet.SS_SEA_SURFACE),
-    LEADERSHIP_ROLE("7", "Leadership role", LeadershipRole.class, SymbolSet.SS_DISMOUNTED),
+    UNIT_ECHELON("1", "Unit Echelon", UnitEchelon.class, SymbolSet.LAND_UNIT),
+    EQUIPMENT_MOBILITY("3", "Equipment Mobility", EquipmentMobility.class, SymbolSet.LAND_EQUIPMENT),
+    TOWED_ARRAYS("6", "Naval towed array", TowedArrayType.class, SymbolSet.SEA_SURFACE),
+    LEADERSHIP_ROLE("7", "Leadership role", LeadershipRole.class, SymbolSet.DISMOUNTED),
     REINFORCED("A1", "Reinforced or Reduced", ReinforcedReduced.class),
     RELIABILITY_RATING("A2", "Reliability Rating", ReliabilityRating.class),
     CREDIBILITY_RATING("A3", "Credibility Rating", CredibilityRating.class),

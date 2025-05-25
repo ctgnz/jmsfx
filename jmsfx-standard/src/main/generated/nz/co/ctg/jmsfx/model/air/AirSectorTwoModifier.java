@@ -4,11 +4,11 @@ import nz.co.ctg.jmsfx.model.SymbolSet;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 
 public enum AirSectorTwoModifier implements SectorTwoModifier {
-    NOT_APPLICABLE_2_MOD("00", "Not Applicable", "General", SymbolSet.SS_AIR),
-    BOOM_MOD("04", "Boom-Only", "Re-fueling Capability", SymbolSet.SS_AIR),
-    DROGUE_MOD("05", "Drogue-Only", "Re-fueling Capability", SymbolSet.SS_AIR),
-    BOOM_DROGUE_MOD("06", "Boom and Drogue", "Re-fueling Capability", SymbolSet.SS_AIR),
-    DOWNLINK_MOD("11", "Downlinked", "Track Link Availability", SymbolSet.SS_AIR);
+    NOT_APPLICABLE_2_MOD("00", "Not Applicable", "General", SymbolSet.AIR),
+    BOOM_MOD("04", "Boom-Only", "Re-fueling Capability", SymbolSet.AIR),
+    DROGUE_MOD("05", "Drogue-Only", "Re-fueling Capability", SymbolSet.AIR),
+    BOOM_DROGUE_MOD("06", "Boom and Drogue", "Re-fueling Capability", SymbolSet.AIR),
+    DOWNLINK_MOD("11", "Downlinked", "Track Link Availability", SymbolSet.AIR);
 
     private final String id;
     private final String label;

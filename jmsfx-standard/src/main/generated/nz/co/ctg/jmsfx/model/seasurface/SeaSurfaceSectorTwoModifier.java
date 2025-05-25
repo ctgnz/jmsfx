@@ -4,16 +4,16 @@ import nz.co.ctg.jmsfx.model.SymbolSet;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 
 public enum SeaSurfaceSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSet.SS_SEA_SURFACE),
-    NUCLEAR_MOD("01", "Nuclear Powered", "Ship Propulsion", SymbolSet.SS_SEA_SURFACE),
-    DOCK_MOD("05", "Dock", "Cargo Capacity", SymbolSet.SS_SEA_SURFACE),
-    LOGISTICS_MOD("06", "Logistics", "Cargo Capacity", SymbolSet.SS_SEA_SURFACE),
-    TANK_MOD("07", "Tank", "Cargo Capacity", SymbolSet.SS_SEA_SURFACE),
-    VEHICLE_MOD("08", "Vehicle", "Cargo Capacity", SymbolSet.SS_SEA_SURFACE),
-    FAST_MOD("09", "Fast", "Ship Mobility", SymbolSet.SS_SEA_SURFACE),
-    COMBINE_GEV_MOD("10", "Air-Cushioned (US)", "Ship Mobility", SymbolSet.SS_SEA_SURFACE),
-    PANEURO_GEV_MOD("11", "Air-Cushioned (NATO)", "Ship Mobility", SymbolSet.SS_SEA_SURFACE),
-    HYDROFOIL_MOD("12", "Hydrofoil", "Ship Mobility", SymbolSet.SS_SEA_SURFACE);
+    UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSet.SEA_SURFACE),
+    NUCLEAR_MOD("01", "Nuclear Powered", "Ship Propulsion", SymbolSet.SEA_SURFACE),
+    DOCK_MOD("05", "Dock", "Cargo Capacity", SymbolSet.SEA_SURFACE),
+    LOGISTICS_MOD("06", "Logistics", "Cargo Capacity", SymbolSet.SEA_SURFACE),
+    TANK_MOD("07", "Tank", "Cargo Capacity", SymbolSet.SEA_SURFACE),
+    VEHICLE_MOD("08", "Vehicle", "Cargo Capacity", SymbolSet.SEA_SURFACE),
+    FAST_MOD("09", "Fast", "Ship Mobility", SymbolSet.SEA_SURFACE),
+    COMBINE_GEV_MOD("10", "Air-Cushioned (US)", "Ship Mobility", SymbolSet.SEA_SURFACE),
+    PANEURO_GEV_MOD("11", "Air-Cushioned (NATO)", "Ship Mobility", SymbolSet.SEA_SURFACE),
+    HYDROFOIL_MOD("12", "Hydrofoil", "Ship Mobility", SymbolSet.SEA_SURFACE);
 
     private final String id;
     private final String label;

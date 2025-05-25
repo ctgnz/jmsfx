@@ -16,7 +16,7 @@ import nz.co.ctg.jmsfx.model.airmissile.AirMissileSectorTwoModifier;
 public class AirMissileIconController extends IconRestController<AirMissileEntity, EntityType, EntitySubType, AirMissileSectorOneModifier, AirMissileSectorTwoModifier, AmplifierGroup>{
 
     public AirMissileIconController() {
-        super(SymbolSet.SS_AIR_MISSILE);
+        super(SymbolSet.AIR_MISSILE);
     }
 
 }

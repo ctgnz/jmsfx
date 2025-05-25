@@ -40,7 +40,7 @@ public enum CyberspaceSpaceEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_CYBERSPACE_SPACE;
+        return SymbolSet.CYBERSPACE_SPACE;
     }
 
     @Override

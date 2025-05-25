@@ -16,7 +16,7 @@ import nz.co.ctg.jmsfx.model.internal.InternalEntity;
 public class InternalIconController extends IconRestController<InternalEntity, EntityType, EntitySubType, SectorOneModifier, SectorTwoModifier, AmplifierGroup> {
 
     public InternalIconController() {
-        super(SymbolSet.SS_INTERNAL);
+        super(SymbolSet.INTERNAL);
     }
 
 }

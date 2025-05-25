@@ -20,7 +20,7 @@ public enum Dimension implements SymbolIdentificationCodeElement {
     }
     
     public SymbolSet getDefaultSymbolSet() {
-        return Arrays.stream(SymbolSet.values()).filter(sym -> sym.getDimension() == this).findFirst().orElse(SymbolSet.SS_UNKNOWN);
+        return Arrays.stream(SymbolSet.values()).filter(sym -> sym.getDimension() == this).findFirst().orElse(SymbolSet.UNKNOWN);
     }
 
     public String getFrameId() {

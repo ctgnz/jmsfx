@@ -4,8 +4,8 @@ import nz.co.ctg.jmsfx.model.SymbolSet;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 
 public enum LandCivilianSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSet.SS_LAND_CIVILIAN),
-    LEADER_2_MOD("01", "Leader or Leadership", "Organization", SymbolSet.SS_LAND_CIVILIAN);
+    UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSet.LAND_CIVILIAN),
+    LEADER_2_MOD("01", "Leader or Leadership", "Organization", SymbolSet.LAND_CIVILIAN);
 
     private final String id;
     private final String label;

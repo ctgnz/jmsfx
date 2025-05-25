@@ -67,11 +67,8 @@ public class ${symbolSet.baseTypeName}SymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<EntitySubType> getEntitySubTypes(EntityType entityType) {<#if symbolSet.entitySubTypePresent><#if symbolSet.specialEntitySubTypePresent>
-        List<EntitySubType> subTypes = Lists.newArrayList(ENTITY_SUB_TYPES.get(entityType));
-        subTypes.addAll(getSpecialEntitySubTypes());
-        return subTypes;<#else>
-        return Lists.newArrayList(ENTITY_SUB_TYPES.get(entityType));</#if><#else>
+    public List<EntitySubType> getEntitySubTypes(EntityType entityType) {<#if symbolSet.entitySubTypePresent>
+        return Lists.newArrayList(ENTITY_SUB_TYPES.get(entityType));<#else>
         return Collections.emptyList();</#if>
     }
 
@@ -93,11 +90,6 @@ public class ${symbolSet.baseTypeName}SymbolSetInfo implements SymbolSetInfo {
     @Override
     public List<SectorTwoModifier> getSectorTwoModifiers() {
         return <#if symbolSet.sectorTwoModifierPresent>Arrays.asList(${symbolSet.baseTypeName}SectorTwoModifier.values())<#else>Collections.emptyList()</#if>;
-    }
-
-    @Override
-    public List<EntitySubType> getSpecialEntitySubTypes() {
-        return <#if symbolSet.specialEntitySubTypePresent>Arrays.asList(${symbolSet.baseTypeName}SpecialEntitySubType.values())<#else>Collections.emptyList()</#if>;
     }
 
     @Override
@@ -138,11 +130,6 @@ public class ${symbolSet.baseTypeName}SymbolSetInfo implements SymbolSetInfo {
     @Override
     public boolean isSectorTwoModifierPresent() {
         return ${symbolSet.sectorTwoModifierPresent?c};
-    }
-
-    @Override
-    public boolean isSpecialEntitySubTypePresent() {
-        return ${symbolSet.specialEntitySubTypePresent?c};
     }
 
 }

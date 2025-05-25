@@ -8,6 +8,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 
+import nz.co.ctg.jmsfx.model.Amplifier;
 import nz.co.ctg.jmsfx.model.AmplifierGroup;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
 import nz.co.ctg.jmsfx.model.Entity;
@@ -28,7 +29,21 @@ public class MineWarfareSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
-        return Collections.emptyList();        
+        return Arrays.asList(
+            new AmplifierGuide(Amplifier.G_StaffComments, 478, 466, 134, 96),
+            new AmplifierGuide(Amplifier.H_AdditionalInformation, 478, 466, 134, 96),
+            new AmplifierGuide(Amplifier.P_IffSifAis, 478, 370, 134, 96),
+            new AmplifierGuide(Amplifier.T_UniqueDesignation, 478, 178, 134, 96),
+            new AmplifierGuide(Amplifier.V_TypeOfEquipment, 478, 274, 134, 96),
+            new AmplifierGuide(Amplifier.X_AltitudeDepth, 478, 370, 134, 96),
+            new AmplifierGuide(Amplifier.Y_Location, 478, 562, 134, 96),
+            new AmplifierGuide(Amplifier.Z_Speed, 478, 562, 134, 96),
+            new AmplifierGuide(Amplifier.AL_OperationalCondition, 142, 592, 328, 96),
+            new AmplifierGuide(Amplifier.AO_EngagementBar, 134, 178, 344, 96),
+            new AmplifierGuide(Amplifier.AR_SpecialDesignator, 0, 178, 134, 96),
+            new AmplifierGuide(Amplifier.AS_Country, 478, 178, 134, 96),
+            new AmplifierGuide(Amplifier.AJ_SpeedLeader, 16, 467, 161, 91)
+        );
     }
 
     @Override
@@ -77,11 +92,6 @@ public class MineWarfareSymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<EntitySubType> getSpecialEntitySubTypes() {
-        return Collections.emptyList();
-    }
-
-    @Override
     public boolean isAmplifierPresent() {
         return false;
     }
@@ -118,11 +128,6 @@ public class MineWarfareSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isSectorTwoModifierPresent() {
-        return false;
-    }
-
-    @Override
-    public boolean isSpecialEntitySubTypePresent() {
         return false;
     }
 

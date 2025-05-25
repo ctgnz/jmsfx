@@ -16,7 +16,7 @@ import nz.co.ctg.jmsfx.model.unknown.UnknownEntity;
 public class UnknownIconController extends IconRestController<UnknownEntity, EntityType, EntitySubType, SectorOneModifier, SectorTwoModifier, AmplifierGroup> {
 
     public UnknownIconController() {
-        super(SymbolSet.SS_AIR);
+        super(SymbolSet.AIR);
     }
 
 }

@@ -66,7 +66,7 @@ public enum CommonSectorTwoModifier implements SectorTwoModifier {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_COMMON;
+        return SymbolSet.COMMON;
     }
     
     @Override

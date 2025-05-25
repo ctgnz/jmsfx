@@ -39,7 +39,7 @@ public enum DismountedIndividualEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_DISMOUNTED;
+        return SymbolSet.DISMOUNTED;
     }
 
     @Override

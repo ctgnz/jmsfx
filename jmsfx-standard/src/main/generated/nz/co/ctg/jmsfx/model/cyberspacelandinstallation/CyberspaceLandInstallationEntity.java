@@ -40,7 +40,7 @@ public enum CyberspaceLandInstallationEntity implements Entity {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.SS_CYBERSPACE_LAND_INSTALLATION;
+        return SymbolSet.CYBERSPACE_LAND_INSTALLATION;
     }
 
     @Override

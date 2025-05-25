@@ -16,7 +16,7 @@ import nz.co.ctg.jmsfx.model.seasubsurface.SeaSubsurfaceSectorTwoModifier;
 public class SeaSubsurfaceIconController extends IconRestController<SeaSubsurfaceEntity, SeaSubsurfaceEntityType, SeaSubsurfaceEntitySubType, SeaSubsurfaceSectorOneModifier, SeaSubsurfaceSectorTwoModifier, AmplifierGroup> {
 
     public SeaSubsurfaceIconController() {
-        super(SymbolSet.SS_SEA_SUBSURFACE);
+        super(SymbolSet.SEA_SUBSURFACE);
     }
 
 }

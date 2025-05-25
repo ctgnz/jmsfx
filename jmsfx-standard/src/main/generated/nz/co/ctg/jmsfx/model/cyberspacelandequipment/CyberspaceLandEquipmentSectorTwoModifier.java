@@ -4,9 +4,9 @@ import nz.co.ctg.jmsfx.model.SymbolSet;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 
 public enum CyberspaceLandEquipmentSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.SS_CYBERSPACE_LAND_EQUIPMENT),
-    SECURED_MOD("01", "Secured", "General", SymbolSet.SS_CYBERSPACE_LAND_EQUIPMENT),
-    OPEN_MOD("02", "Open", "General", SymbolSet.SS_CYBERSPACE_LAND_EQUIPMENT);
+    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.CYBERSPACE_LAND_EQUIPMENT),
+    SECURED_MOD("01", "Secured", "General", SymbolSet.CYBERSPACE_LAND_EQUIPMENT),
+    OPEN_MOD("02", "Open", "General", SymbolSet.CYBERSPACE_LAND_EQUIPMENT);
 
     private final String id;
     private final String label;

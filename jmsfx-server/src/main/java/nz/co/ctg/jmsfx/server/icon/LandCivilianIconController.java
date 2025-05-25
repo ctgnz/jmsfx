@@ -16,7 +16,7 @@ import nz.co.ctg.jmsfx.model.landcivilian.LandCivilianSectorTwoModifier;
 public class LandCivilianIconController extends IconRestController<LandCivilianEntity, LandCivilianEntityType, EntitySubType, LandCivilianSectorOneModifier, LandCivilianSectorTwoModifier, AmplifierGroup> {
 
     public LandCivilianIconController() {
-        super(SymbolSet.SS_LAND_CIVILIAN);
+        super(SymbolSet.LAND_CIVILIAN);
     }
 
 }

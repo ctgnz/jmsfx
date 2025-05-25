@@ -4,8 +4,8 @@ import nz.co.ctg.jmsfx.model.SymbolSet;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 
 public enum LandEquipmentSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSet.SS_LAND_EQUIPMENT),
-    TRACTOR_TRAILER_MOD("06", "Tractor Trailer", "Capability", SymbolSet.SS_LAND_EQUIPMENT);
+    UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSet.LAND_EQUIPMENT),
+    TRACTOR_TRAILER_MOD("06", "Tractor Trailer", "Capability", SymbolSet.LAND_EQUIPMENT);
 
     private final String id;
     private final String label;
