@@ -1,14 +1,14 @@
 package nz.co.ctg.jmsfx.model.amplifier;
 
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
-import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum ReinforcedReduced implements AmplifierGroup {
+public enum ReinforcedReduced implements EnumeratedAmplifier {
     REINFORCED("+", "Reinforced"),
     REDUCED("-", "Reduced"),
     REINFORCED_REDUCED("±", "Reinforced and Reduced");
 
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.REINFORCED;
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.REINFORCED;
 
     private final String id;
     private final String label;
@@ -37,5 +37,11 @@ public enum ReinforcedReduced implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+    
+    @Override
+    public boolean isGraphicalIcon() {
+        return true;
+    }
+
 
 }

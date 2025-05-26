@@ -1,9 +1,9 @@
 package nz.co.ctg.jmsfx.model.amplifier;
 
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
-import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum EngagementStage implements AmplifierGroup {
+public enum EngagementStage implements EnumeratedAmplifier {
     ASN("ASN", "Assign/Cover"),
     ENG("ENG", "Engage"),
     MIF("MIF", "Missile in Flight"),
@@ -16,7 +16,7 @@ public enum EngagementStage implements AmplifierGroup {
     MT("MT", "MBE Less Than Threshold"),
     MLT("MLT", "Multiple Engagements");
 
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.ENGAGEMENT_STAGE;
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.ENGAGEMENT_STAGE;
 
     private final String id;
     private final String label;
@@ -45,5 +45,11 @@ public enum EngagementStage implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+    
+    @Override
+    public boolean isGraphicalIcon() {
+        return true;
+    }
+
 
 }

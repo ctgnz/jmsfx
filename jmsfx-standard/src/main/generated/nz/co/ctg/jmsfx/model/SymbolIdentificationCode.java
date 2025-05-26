@@ -50,10 +50,10 @@ public class SymbolIdentificationCode {
     private SymbolSet symbolSet = DEFAULT_SYMBOL_SET;
     private Status status = DEFAULT_STATUS;
     private HqtfDummy hqtfDummy = DEFAULT_HQTF_DUMMY;
-    private AmplifierGroup amplifier = DEFAULT_AMPLIFIER;
-    private AmplifierGroup amplifierTwo = DEFAULT_AMPLIFIER;
-    private AmplifierGroup amplifierThree = DEFAULT_AMPLIFIER;
-    private AmplifierGroup frameAmplifier = DEFAULT_AMPLIFIER;
+    private EnumeratedAmplifier amplifier = DEFAULT_AMPLIFIER;
+    private EnumeratedAmplifier amplifierTwo = DEFAULT_AMPLIFIER;
+    private EnumeratedAmplifier amplifierThree = DEFAULT_AMPLIFIER;
+    private EnumeratedAmplifier frameAmplifier = DEFAULT_AMPLIFIER;
     private Entity entity = getDefaultEntity();
     private EntityType entityType;
     private EntitySubType entitySubType;
@@ -68,35 +68,35 @@ public class SymbolIdentificationCode {
         this.changeSupport.addPropertyChangeListener(listener);
     }
 
-    public AmplifierGroup getAmplifier() {
+    public EnumeratedAmplifier getAmplifier() {
         return amplifier;
     }
 
-    public AmplifierGroup getAmplifierTwo() {
+    public EnumeratedAmplifier getAmplifierTwo() {
         return amplifierTwo;
     }
 
-    public AmplifierGroup getAmplifierThree() {
+    public EnumeratedAmplifier getAmplifierThree() {
         return amplifierThree;
     }
 
-    public AmplifierGroup getFrameAmplifier() {
+    public EnumeratedAmplifier getFrameAmplifier() {
         return frameAmplifier;
     }
 
-    public List<AmplifierGroup> getAmplifierGroups() {
-        List<AmplifierGroup> amplifierGroups = symbolSet.getAmplifierGroups();
-        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), amplifierGroups.stream()).collect(toList());
+    public List<EnumeratedAmplifier> getEnumeratedAmplifiers() {
+        List<EnumeratedAmplifier> EnumeratedAmplifiers = symbolSet.getEnumeratedAmplifiers();
+        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), EnumeratedAmplifiers.stream()).collect(toList());
     }
 
-    public List<AmplifierGroup> getAmplifierTwoGroups() {
-        List<AmplifierGroup> amplifierGroups = symbolSet.getAmplifierTwoGroups();
-        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), amplifierGroups.stream()).collect(toList());
+    public List<EnumeratedAmplifier> getAmplifierTwoGroups() {
+        List<EnumeratedAmplifier> EnumeratedAmplifiers = symbolSet.getAmplifierTwoGroups();
+        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), EnumeratedAmplifiers.stream()).collect(toList());
     }
 
-    public List<AmplifierGroup> getAmplifierThreeGroups() {
-        List<AmplifierGroup> amplifierGroups = symbolSet.getAmplifierThreeGroups();
-        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), amplifierGroups.stream()).collect(toList());
+    public List<EnumeratedAmplifier> getAmplifierThreeGroups() {
+        List<EnumeratedAmplifier> EnumeratedAmplifiers = symbolSet.getAmplifierThreeGroups();
+        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), EnumeratedAmplifiers.stream()).collect(toList());
     }
 
     public Context getContext() {
@@ -133,7 +133,7 @@ public class SymbolIdentificationCode {
         }
         return sb.toString();
     }
-
+    
     public List<Entity> getEntities() {
         return symbolSet.getEntities();
     }
@@ -159,19 +159,19 @@ public class SymbolIdentificationCode {
     }
 
     public String getFirstTenDigits() {
-        return String.format("%s%s%s%s%s%s%s",
-                             version.getId(),
-                             context.getId(),
+        return String.format("%s%s%s%s%s%s%s", 
+                             version.getId(), 
+                             context.getId(), 
                              standardIdentity.getId(),
-                             symbolSet != null ? symbolSet.getId() : "00",
-                             status.getId(),
-                             hqtfDummy.getId(),
+                             symbolSet != null ? symbolSet.getId() : "00", 
+                             status.getId(), 
+                             hqtfDummy.getId(), 
                              amplifier != null ? amplifier.getId() : "00");
     }
 
-    public List<FrameAmplifierGroup> getFrameAmplifierGroups() {
-        List<FrameAmplifierGroup> amplifierGroups = symbolSet.getFrameAmplifierGroups();
-        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), amplifierGroups.stream()).map(FrameAmplifierGroup.class::cast).collect(toList());
+    public List<EnumeratedAmplifier> getFrameEnumeratedAmplifiers() {
+        List<EnumeratedAmplifier> EnumeratedAmplifiers = symbolSet.getFrameEnumeratedAmplifiers();
+        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), EnumeratedAmplifiers.stream()).toList();
     }
 
     public HqtfDummy getHqtfDummy() {
@@ -189,13 +189,13 @@ public class SymbolIdentificationCode {
 
     public String getThirdTenDigits() {
         return String.format("%s%s%s%s%s%s0%s",
-                             getSectorOneModifierType(),                            // 1
-                             getSectorTwoModifierType(),                            // 1
-                             getExtensionSymbolSet(),                               // 1
-                             amplifierTwo != null ? amplifierTwo.getId() : "0",     // 1
-                             amplifierThree != null ? amplifierThree.getId() : "0", // 1
-                             frameAmplifier != null ? frameAmplifier.getId() : "0", // 1
-                             getExtensionCountryCode());                            // 3
+                             getSectorOneModifierType(),
+                             getSectorTwoModifierType(),
+                             getExtensionSymbolSet(),
+                             amplifierTwo != null ? amplifierTwo.getId() : "0",
+                             amplifierThree != null ? amplifierThree.getId() : "0",
+                             frameAmplifier != null ? frameAmplifier.getId() : "0",
+                             getExtensionCountryCode());
     }
 
     public SectorOneModifier getSectorOneModifier() {
@@ -248,20 +248,20 @@ public class SymbolIdentificationCode {
         this.changeSupport.removePropertyChangeListener(listener);
     }
 
-    public void setAmplifier(AmplifierGroup amplifier) {
-        AmplifierGroup oldValue = this.amplifier;
+    public void setAmplifier(EnumeratedAmplifier amplifier) {
+        EnumeratedAmplifier oldValue = this.amplifier;
         this.amplifier = defaultIfNull(amplifier, DEFAULT_AMPLIFIER);
         changeSupport.firePropertyChange("amplifier", oldValue, this.amplifier);
     }
 
-    public void setAmplifierTwo(AmplifierGroup amplifier) {
-        AmplifierGroup oldValue = this.amplifierTwo;
+    public void setAmplifierTwo(EnumeratedAmplifier amplifier) {
+        EnumeratedAmplifier oldValue = this.amplifierTwo;
         this.amplifierTwo = defaultIfNull(amplifier, DEFAULT_AMPLIFIER);
         changeSupport.firePropertyChange("amplifierTwo", oldValue, this.amplifierTwo);
     }
 
-    public void setAmplifierThree(AmplifierGroup amplifier) {
-        AmplifierGroup oldValue = this.amplifierThree;
+    public void setAmplifierThree(EnumeratedAmplifier amplifier) {
+        EnumeratedAmplifier oldValue = this.amplifierThree;
         this.amplifierThree = defaultIfNull(amplifier, DEFAULT_AMPLIFIER);
         changeSupport.firePropertyChange("amplifierThree", oldValue, this.amplifierThree);
     }
@@ -296,8 +296,8 @@ public class SymbolIdentificationCode {
         }
     }
 
-    public void setFrameAmplifier(AmplifierGroup amplifier) {
-        AmplifierGroup oldValue = this.frameAmplifier;
+    public void setFrameAmplifier(EnumeratedAmplifier amplifier) {
+        EnumeratedAmplifier oldValue = this.frameAmplifier;
         this.frameAmplifier = defaultIfNull(amplifier, DEFAULT_AMPLIFIER);
         changeSupport.firePropertyChange("frameAmplifier", oldValue, this.frameAmplifier);
     }

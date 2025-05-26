@@ -1,8 +1,8 @@
 package nz.co.ctg.jmsfx.icon.dto;
 
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
 
-public class AmplifierGroupDto<A extends AmplifierGroup> {
+public class AmplifierGroupDto<A extends EnumeratedAmplifier> {
     private final A amplifier;
 
     public AmplifierGroupDto(A amplifier) {

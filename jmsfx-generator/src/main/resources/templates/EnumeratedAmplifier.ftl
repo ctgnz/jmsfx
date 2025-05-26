@@ -1,14 +1,14 @@
 package ${basePackage}.amplifier;
 
-import nz.co.ctg.jmsfx.model.<#if amplifier.frameAmplifier>Frame</#if>AmplifierGroup;
-import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+import nz.co.ctg.jmsfx.model.<#if amplifier.standard>Standard</#if>EnumeratedAmplifier;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum ${amplifier.typeName} implements <#if amplifier.frameAmplifier>Frame</#if>AmplifierGroup {
+public enum ${amplifier.typeName} implements <#if amplifier.standard>Standard</#if>EnumeratedAmplifier {
 <#list amplifier.values as val>
     ${val.id}("${val.code}", "${val.label}"<#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#if val?is_last>;<#else>,</#if>
 </#list>
 
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.${amplifier.enumId};
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.${amplifier.enumId};
 
     private final String id;
     private final String label;<#if amplifier.frameAmplifier>
@@ -45,7 +45,13 @@ public enum ${amplifier.typeName} implements <#if amplifier.frameAmplifier>Frame
     public String getBackgroundFill() {
         return backgroundFill;
     }
-</#if>    
+</#if>
+    
+    @Override
+    public boolean isGraphicalIcon() {
+        return ${amplifier.frameAmplifier?string("false", "true")};
+    }
+
 <#if amplifier.unknown>
 
     @Override

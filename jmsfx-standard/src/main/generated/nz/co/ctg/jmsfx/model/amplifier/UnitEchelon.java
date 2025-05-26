@@ -1,9 +1,9 @@
 package nz.co.ctg.jmsfx.model.amplifier;
 
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
-import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+import nz.co.ctg.jmsfx.model.StandardEnumeratedAmplifier;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum UnitEchelon implements AmplifierGroup {
+public enum UnitEchelon implements StandardEnumeratedAmplifier {
     TEAM_CREW("1", "Team/Crew"),
     SQUAD("2", "Squad"),
     SEC("3", "Section"),
@@ -20,7 +20,7 @@ public enum UnitEchelon implements AmplifierGroup {
     COMMAND("E", "Command"),
     STAFFEL("F", "Staffel");
 
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.UNIT_ECHELON;
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.UNIT_ECHELON;
 
     private final String id;
     private final String label;
@@ -49,5 +49,11 @@ public enum UnitEchelon implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+    
+    @Override
+    public boolean isGraphicalIcon() {
+        return true;
+    }
+
 
 }

@@ -1,9 +1,9 @@
 package nz.co.ctg.jmsfx.model.amplifier;
 
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
-import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum ReliabilityRating implements AmplifierGroup {
+public enum ReliabilityRating implements EnumeratedAmplifier {
     COMPLETELY("A", "Completely Reliable"),
     USUALLY("B", "Usually Reliable"),
     FAIRLY("C", "Fairly Reliable"),
@@ -11,7 +11,7 @@ public enum ReliabilityRating implements AmplifierGroup {
     UNRELIABLE("E", "Unreliable"),
     REL_CANNOT_BE_JUDGED("F", "Reliability Cannot Be Judged");
 
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.RELIABILITY_RATING;
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.RELIABILITY_RATING;
 
     private final String id;
     private final String label;
@@ -40,5 +40,11 @@ public enum ReliabilityRating implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+    
+    @Override
+    public boolean isGraphicalIcon() {
+        return true;
+    }
+
 
 }

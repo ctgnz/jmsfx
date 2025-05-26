@@ -1,14 +1,14 @@
 package nz.co.ctg.jmsfx.model.amplifier;
 
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
-import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum SigintMobility implements AmplifierGroup {
+public enum SigintMobility implements EnumeratedAmplifier {
     MOBILE_INDICATOR("M", "Mobile"),
     STATIC_INDICATOR("S", "Static"),
     UNCERTAIN_INDICATOR("U", "Uncertain");
 
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.SIGINT_MOBILITY;
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.SIGINT_MOBILITY;
 
     private final String id;
     private final String label;
@@ -37,5 +37,11 @@ public enum SigintMobility implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+    
+    @Override
+    public boolean isGraphicalIcon() {
+        return true;
+    }
+
 
 }

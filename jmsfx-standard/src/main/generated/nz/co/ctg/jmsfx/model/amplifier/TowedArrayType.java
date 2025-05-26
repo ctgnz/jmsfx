@@ -1,13 +1,13 @@
 package nz.co.ctg.jmsfx.model.amplifier;
 
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
-import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+import nz.co.ctg.jmsfx.model.StandardEnumeratedAmplifier;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum TowedArrayType implements AmplifierGroup {
+public enum TowedArrayType implements StandardEnumeratedAmplifier {
     SHORT_TOWED_ARRAY("1", "Short towed array"),
     LONG_TOWED_ARRAY("2", "Long towed array");
 
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.TOWED_ARRAYS;
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.TOWED_ARRAYS;
 
     private final String id;
     private final String label;
@@ -36,5 +36,11 @@ public enum TowedArrayType implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+    
+    @Override
+    public boolean isGraphicalIcon() {
+        return true;
+    }
+
 
 }

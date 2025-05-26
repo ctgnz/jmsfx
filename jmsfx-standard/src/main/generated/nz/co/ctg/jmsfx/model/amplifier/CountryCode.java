@@ -1,9 +1,9 @@
 package nz.co.ctg.jmsfx.model.amplifier;
 
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
-import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum CountryCode implements AmplifierGroup {
+public enum CountryCode implements EnumeratedAmplifier {
     AF("AFG", "Afghanistan"),
     QZ("XQZ", "Akrotiri"),
     AL("ALB", "Albania"),
@@ -285,7 +285,7 @@ public enum CountryCode implements AmplifierGroup {
     ZM("ZMB", "Zambia"),
     ZW("ZWE", "Zimbabwe");
 
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.COUNTRY_CODE;
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.COUNTRY_CODE;
 
     private final String id;
     private final String label;
@@ -314,5 +314,11 @@ public enum CountryCode implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+    
+    @Override
+    public boolean isGraphicalIcon() {
+        return true;
+    }
+
 
 }

@@ -1,7 +1,7 @@
 package nz.co.ctg.jmsfx.icon;
 
 import nz.co.ctg.jmsfx.model.Amplifier;
-import nz.co.ctg.jmsfx.model.FrameAmplifierGroup;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
 
 import javafx.collections.MapChangeListener;
 import javafx.geometry.Bounds;
@@ -52,7 +52,7 @@ public class IdentificationSymbolIcon extends Pane {
         if (symbol.isFrameUsed()) {
             Group frame = symbol.getFrameGraphic().createGroup();
             if (symbol.isFrameAmplifierUsed()) {
-                FrameAmplifierGroup frameAmplifier = symbol.getFrameAmplifier();
+                EnumeratedAmplifier frameAmplifier = symbol.getFrameAmplifier();
                 replaceFill(frame, Color.web(frameAmplifier.getBackgroundFill()));
             }
             container.getChildren().add(frame);

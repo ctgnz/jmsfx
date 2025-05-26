@@ -14,7 +14,7 @@ import nz.co.ctg.jmsfx.icon.dto.EntitySubTypeDto;
 import nz.co.ctg.jmsfx.icon.dto.EntityTypeDto;
 import nz.co.ctg.jmsfx.icon.dto.SectorOneModifierDto;
 import nz.co.ctg.jmsfx.icon.dto.SectorTwoModifierDto;
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
 import nz.co.ctg.jmsfx.model.Entity;
 import nz.co.ctg.jmsfx.model.EntitySubType;
 import nz.co.ctg.jmsfx.model.EntityType;
@@ -25,7 +25,7 @@ import nz.co.ctg.jmsfx.model.SymbolSetInfo;
 
 import static java.util.stream.Collectors.toList;
 
-public abstract class IconRestController<E extends Entity, T extends EntityType, S extends EntitySubType, M extends SectorOneModifier, N extends SectorTwoModifier, A extends AmplifierGroup> {
+public abstract class IconRestController<E extends Entity, T extends EntityType, S extends EntitySubType, M extends SectorOneModifier, N extends SectorTwoModifier, A extends EnumeratedAmplifier> {
     private SymbolSet symbolSet;
     private SymbolSetInfo symbolSetInfo;
     private FoxgloveParser parser = new FoxgloveParser();

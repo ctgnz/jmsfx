@@ -1,12 +1,12 @@
 package nz.co.ctg.jmsfx.model.amplifier;
 
-import nz.co.ctg.jmsfx.model.FrameAmplifierGroup;
-import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+import nz.co.ctg.jmsfx.model.StandardEnumeratedAmplifier;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum UnknownAmplifier implements FrameAmplifierGroup {
+public enum UnknownAmplifier implements StandardEnumeratedAmplifier {
     NA("0", "Unknown", "FFFF80");
 
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.UNKNOWN;
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.UNKNOWN;
 
     private final String id;
     private final String label;
@@ -42,6 +42,12 @@ public enum UnknownAmplifier implements FrameAmplifierGroup {
     public String getBackgroundFill() {
         return backgroundFill;
     }
+    
+    @Override
+    public boolean isGraphicalIcon() {
+        return false;
+    }
+
 
     @Override
     public boolean isUnknown() {

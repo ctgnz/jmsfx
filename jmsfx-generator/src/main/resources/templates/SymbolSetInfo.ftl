@@ -11,7 +11,7 @@ import com.google.common.collect.Multimaps;
 
 </#if>
 <#if symbolSet.amplifierGuidesPresent>import ${basePackage}.Amplifier;
-</#if>import ${basePackage}.AmplifierGroup;
+</#if>import ${basePackage}.EnumeratedAmplifier;
 import ${basePackage}.AmplifierGuide;
 import ${basePackage}.Entity;
 import ${basePackage}.EntitySubType;
@@ -47,17 +47,17 @@ public class ${symbolSet.baseTypeName}SymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<AmplifierGroup> getAmplifiers() {
+    public List<EnumeratedAmplifier> getAmplifiers() {
         return <#if symbolSet.amplifierPresent>Arrays.asList(${symbolSet.amplifierClass}.values())<#else>Collections.emptyList()</#if>;
     }
 
     @Override
-    public List<AmplifierGroup> getAmplifiersTwo() {
+    public List<EnumeratedAmplifier> getAmplifiersTwo() {
         return <#if symbolSet.amplifierTwoPresent>Arrays.asList(${symbolSet.amplifierTwoClass}.values())<#else>Collections.emptyList()</#if>;
     }
 
     @Override
-    public List<AmplifierGroup> getAmplifiersThree() {
+    public List<EnumeratedAmplifier> getAmplifiersThree() {
         return <#if symbolSet.amplifierThreePresent>Arrays.asList(${symbolSet.amplifierThreeClass}.values())<#else>Collections.emptyList()</#if>;
     }
 
@@ -78,7 +78,7 @@ public class ${symbolSet.baseTypeName}SymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<AmplifierGroup> getFrameAmplifiers() {
+    public List<EnumeratedAmplifier> getFrameAmplifiers() {
         return <#if symbolSet.frameAmplifierPresent>Arrays.asList(${symbolSet.frameAmplifierClass}.values())<#else>Collections.emptyList()</#if>;
     }
 

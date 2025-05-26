@@ -1,9 +1,9 @@
 package nz.co.ctg.jmsfx.model.amplifier;
 
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
-import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+import nz.co.ctg.jmsfx.model.StandardEnumeratedAmplifier;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum EquipmentMobility implements AmplifierGroup {
+public enum EquipmentMobility implements StandardEnumeratedAmplifier {
     WHEEL_LIMIT_COUNTRY("1", "Wheeled limited cross country"),
     WHEEL_COUNTRY("2", "Wheeled cross country"),
     TRACKED("3", "Tracked"),
@@ -16,7 +16,7 @@ public enum EquipmentMobility implements AmplifierGroup {
     BARGE("D", "Barge"),
     AMPHIB("E", "Amphibious");
 
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.EQUIPMENT_MOBILITY;
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.EQUIPMENT_MOBILITY;
 
     private final String id;
     private final String label;
@@ -45,5 +45,11 @@ public enum EquipmentMobility implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+    
+    @Override
+    public boolean isGraphicalIcon() {
+        return true;
+    }
+
 
 }

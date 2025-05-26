@@ -3,17 +3,17 @@ package ${basePackage};
 import java.util.Arrays;
 import ${basePackage}.amplifier.*;
 
-public enum AmplifierGroupType implements SymbolIdentificationCodeElement {
-<#list amplifierGroups as grp>
+public enum EnumeratedAmplifierType implements SymbolIdentificationCodeElement {
+<#list enumAmplifierTypes as grp>
     ${grp.enumId}("${grp.code}", "${grp.enumDesc}", ${grp.typeName}.class<#list grp.symbolSets as sym>, SymbolSet.${sym}</#list>)<#if grp?is_last>;<#else>,</#if>
 </#list>    
 
     private final String id;
     private final String label;
-    private final Class<? extends AmplifierGroup> amplifierEnumClass;
+    private final Class<? extends EnumeratedAmplifier> amplifierEnumClass;
     private final SymbolSet[] symbolSets;
     
-    private AmplifierGroupType(String id, String label, Class<? extends AmplifierGroup> amplifierEnumClass, SymbolSet... symbolSets) {
+    private EnumeratedAmplifierType(String id, String label, Class<? extends EnumeratedAmplifier> amplifierEnumClass, SymbolSet... symbolSets) {
         this.id = id;
         this.label = label;
         this.amplifierEnumClass = amplifierEnumClass;
@@ -21,7 +21,7 @@ public enum AmplifierGroupType implements SymbolIdentificationCodeElement {
     }
     
     @SuppressWarnings("unchecked")
-    public <A extends AmplifierGroup> Class<A> getAmplifierEnumClass() {
+    public <A extends EnumeratedAmplifier> Class<A> getAmplifierEnumClass() {
         return (Class<A>) amplifierEnumClass;
     }
     
@@ -44,11 +44,11 @@ public enum AmplifierGroupType implements SymbolIdentificationCodeElement {
     }
 
     @SuppressWarnings("unchecked")
-    public static <A extends AmplifierGroup> Class<A> getAmplifierGroup(SymbolSet symbolSet) {
+    public static <A extends EnumeratedAmplifier> Class<A> getEnumeratedAmplifier(SymbolSet symbolSet) {
         return (Class<A>) Arrays.stream(values())
                         .filter(type -> type.isCompatibleWith(symbolSet))
                         .findFirst()
-                        .map(AmplifierGroupType::getAmplifierEnumClass)
+                        .map(EnumeratedAmplifierType::getAmplifierEnumClass)
                         .orElse(null);
     }
 

@@ -4,24 +4,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import nz.co.ctg.jmsfx.generator.AmplifierGroupConfig;
-import nz.co.ctg.jmsfx.generator.AmplifierValuesConfig;
+import nz.co.ctg.jmsfx.generator.StandardAmplifierConfig;
+import nz.co.ctg.jmsfx.generator.EnumeratedAmplifierConfig;
 import nz.co.ctg.jmsfx.generator.schema.Library.AmplifierGroups.AmplifierGroup;
 import nz.co.ctg.jmsfx.generator.schema.Library.AmplifierGroups.AmplifierGroup.Amplifiers.Amplifier;
 import nz.co.ctg.jmsfx.generator.schema.Library.Amplifiers.Amplifier.Values;
 import nz.co.ctg.jmsfx.generator.schema.Library.Dimensions.Dimension.SymbolSets.SymbolSetRef;
 
-public class AmplifierGroupTypeEnum extends StandardEnum {
-    private final List<AmplifierGroupEnum> values = new ArrayList<>();
+public class EnumeratedAmplifierTypeEnum extends StandardEnum {
+    private final List<EnumeratedAmplifierEnum> values = new ArrayList<>();
     private final String typeName;
     private final String graphicLocation;
     private final String[] symbolSets;
     private final String enumId;
     private final String enumDesc;
+    private final boolean standard;
     private final boolean frameAmplifier;
     private final boolean unknown;
 
-    public AmplifierGroupTypeEnum(AmplifierGroupConfig groupConfig, AmplifierGroup group) {
+    public EnumeratedAmplifierTypeEnum(StandardAmplifierConfig groupConfig, AmplifierGroup group) {
         super(group.getName(), group.getLabel(), Integer.toString(group.getAmplifierGroupCode()));
         this.typeName = groupConfig.getEnumType();
         this.graphicLocation = groupConfig.getGraphicLocation();
@@ -30,9 +31,10 @@ public class AmplifierGroupTypeEnum extends StandardEnum {
         this.frameAmplifier = groupConfig.isFrameAmplifier();
         this.unknown = groupConfig.isUnknown();
         this.symbolSets = group.getCompatibleSymbolSetIDs().stream().map(id -> (SymbolSetRef) id).map(SymbolSetRef::getID).toArray(size -> new String[size]);
+        this.standard = true;
     }
 
-    public AmplifierGroupTypeEnum(AmplifierValuesConfig groupConfig, Values group) {
+    public EnumeratedAmplifierTypeEnum(EnumeratedAmplifierConfig groupConfig, Values group) {
         super(groupConfig.getEnumId(), group.getLabel(), groupConfig.getCode());
         this.typeName = groupConfig.getEnumType();
         this.graphicLocation = "NA";
@@ -41,16 +43,17 @@ public class AmplifierGroupTypeEnum extends StandardEnum {
         this.frameAmplifier = false;
         this.unknown = false;
         this.symbolSets = new String[0];
+        this.standard = false;
     }
 
     public void addAmplifier(AmplifierGroup group, Amplifier amplifier) {
         if (!amplifier.getName().equals("EXTENSION")) {
-            values.add(new AmplifierGroupEnum(group, amplifier));
+            values.add(new EnumeratedAmplifierEnum(group, amplifier));
         }
     }
 
     public void addAmplifier(Values.Value group) {
-        values.add(new AmplifierGroupEnum(group));
+        values.add(new EnumeratedAmplifierEnum(group));
     }
 
     public String getEnumDesc() {
@@ -73,7 +76,7 @@ public class AmplifierGroupTypeEnum extends StandardEnum {
         return typeName;
     }
 
-    public List<AmplifierGroupEnum> getValues() {
+    public List<EnumeratedAmplifierEnum> getValues() {
         return values;
     }
 
@@ -83,6 +86,10 @@ public class AmplifierGroupTypeEnum extends StandardEnum {
 
     public boolean isFrameAmplifier() {
         return frameAmplifier;
+    }
+
+    public boolean isStandard() {
+        return standard;
     }
 
     public boolean isUnknown() {

@@ -1,9 +1,9 @@
 package nz.co.ctg.jmsfx.model.amplifier;
 
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
-import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum EngagementWeapon implements AmplifierGroup {
+public enum EngagementWeapon implements EnumeratedAmplifier {
     M("M", "Missile"),
     BM("BM", "Ballistic Missile"),
     CM("CM", "Cruise Missile"),
@@ -22,7 +22,7 @@ public enum EngagementWeapon implements AmplifierGroup {
     L3("L3", "Lamps"),
     VA("VA", "Vertical Launch ASROC");
 
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.ENGAGEMENT_WEAPON;
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.ENGAGEMENT_WEAPON;
 
     private final String id;
     private final String label;
@@ -51,5 +51,11 @@ public enum EngagementWeapon implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+    
+    @Override
+    public boolean isGraphicalIcon() {
+        return true;
+    }
+
 
 }

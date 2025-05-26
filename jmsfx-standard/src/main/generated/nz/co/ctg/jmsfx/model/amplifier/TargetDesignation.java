@@ -1,14 +1,14 @@
 package nz.co.ctg.jmsfx.model.amplifier;
 
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
-import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum TargetDesignation implements AmplifierGroup {
+public enum TargetDesignation implements EnumeratedAmplifier {
     TA("TA", "Hostile Target"),
     NT("TA", "Hostile Non-Target"),
     EX("EX", "Expired");
 
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.TARGET_DESIGNATION;
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.TARGET_DESIGNATION;
 
     private final String id;
     private final String label;
@@ -37,5 +37,11 @@ public enum TargetDesignation implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+    
+    @Override
+    public boolean isGraphicalIcon() {
+        return true;
+    }
+
 
 }

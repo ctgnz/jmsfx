@@ -38,28 +38,28 @@ public class GeneratorConfig {
     private String libraryFile;
     private String extensionCountryCode;
     private String extensionSymbolSet;
-    private List<AmplifierValuesConfig> amplifierValues;
-    private List<AmplifierGroupConfig> amplifierGroups;
+    private List<EnumeratedAmplifierConfig> enumeratedAmplifiers;
+    private List<StandardAmplifierConfig> standardAmplifiers;
     private Map<String, String> simpleTypes;
     private Map<String, String> dimensionGraphicLocations;
     private Map<String, String> symbolGraphicLocations;
     private Map<String, List<AmplifierGuideConfig>> amplifierGuides;
 
-    public List<AmplifierGroupConfig> getAmplifierGroups() {
-        return amplifierGroups;
+    public List<StandardAmplifierConfig> getStandardAmplifiers() {
+        return standardAmplifiers;
     }
 
     public Map<String, List<AmplifierGuideConfig>> getAmplifierGuides() {
         return amplifierGuides;
     }
 
-    public List<AmplifierValuesConfig> getAmplifierValues() {
-        return amplifierValues;
+    public List<EnumeratedAmplifierConfig> getEnumeratedAmplifiers() {
+        return enumeratedAmplifiers;
     }
 
     @JsonIgnore
-    public List<AmplifierValuesConfig> getAmplifierValues(Amplifier amplifier) {
-        return amplifierValues.stream().filter(valConfig -> valConfig.getAmplifier().equals(amplifier.getID())).toList();
+    public List<EnumeratedAmplifierConfig> getAmplifierValues(Amplifier amplifier) {
+        return enumeratedAmplifiers.stream().filter(valConfig -> valConfig.getAmplifier().equals(amplifier.getID())).toList();
     }
 
     public String getBasePackage() {
@@ -150,16 +150,16 @@ public class GeneratorConfig {
         return new StandardEnumConfig<>(VersionEnum.class, Version.class, "Version", "versions", library -> library.getVersions().getVersion());
     }
 
-    public void setAmplifierGroups(List<AmplifierGroupConfig> amplifierGroups) {
-        this.amplifierGroups = amplifierGroups;
+    public void setStandardAmplifiers(List<StandardAmplifierConfig> amplifierGroups) {
+        this.standardAmplifiers = amplifierGroups;
     }
 
     public void setAmplifierGuides(Map<String, List<AmplifierGuideConfig>> amplifierGuides) {
         this.amplifierGuides = amplifierGuides;
     }
 
-    public void setAmplifierValues(List<AmplifierValuesConfig> amplifierValues) {
-        this.amplifierValues = amplifierValues;
+    public void setEnumeratedAmplifiers(List<EnumeratedAmplifierConfig> amplifierValues) {
+        this.enumeratedAmplifiers = amplifierValues;
     }
 
     public void setBasePackage(String basePackage) {

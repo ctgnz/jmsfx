@@ -6,8 +6,8 @@ extensionCountryCode: "000"
 extensionSymbolSet: "0"
 simpleTypes:
   ISymbolIdentificationCodeElement: "SymbolIdentificationCodeElement"
-  IAmplifierGroup: "AmplifierGroup"
-  IFrameAmplifierGroup: "FrameAmplifierGroup"
+  IEnumeratedAmplifier: "EnumeratedAmplifier"
+  IStandardEnumeratedAmplifier: "StandardEnumeratedAmplifier"
   IMainIconElement: "MainIconElement"
   ISymbolSetInfo: "SymbolSetInfo"
   IEntity: "Entity"
@@ -19,7 +19,7 @@ simpleTypes:
   AmplifierGuide: "AmplifierGuide"
   IconType: "IconType"
   SymbolIdentificationCode: "SymbolIdentificationCode"
-amplifierValues:
+enumeratedAmplifiers:
   - {amplifier: "F", valuesId: "F_VALUES", code: "A1", enumType: "ReinforcedReduced", enumId: "REINFORCED", enumDesc: "Reinforced or Reduced"}
   - {amplifier: "J", valuesId: "RELIABILITY_RATINGS", code: "A2", enumType: "ReliabilityRating", enumId: "RELIABILITY_RATING", enumDesc: "Reliability Rating"}
   - {amplifier: "J", valuesId: "CREDIBILITY_RATINGS", code: "A3", enumType: "CredibilityRating", enumId: "CREDIBILITY_RATING", enumDesc: "Credibility Rating"}
@@ -32,7 +32,7 @@ amplifierValues:
   - {amplifier: "AO1", valuesId: "AO1_VALUES", code: "AA", enumType: "TargetDesignation", enumId: "TARGET_DESIGNATION", enumDesc: "Target Designation"}
   - {amplifier: "AS", valuesId: "AS_VALUES", code: "AB", enumType: "CountryCode", enumId: "COUNTRY_CODE", enumDesc: "Country Codes"}
   - {amplifier: "AX", valuesId: "AX_VALUES", code: "AC", enumType: "InstallationComposition", enumId: "INSTALLATION_COMPOSITION", enumDesc: "Installation Composition"}
-amplifierGroups:
+standardAmplifiers:
   - {enumType: "UnknownAmplifier", enumId: "UNKNOWN", enumDesc: "Unspecified", graphicLocation: "Amplifier", groupIds: [ "NA" ], frameAmplifier: true, unknown: true}
   - {enumType: "UnitEchelon", enumId: "UNIT_ECHELON", enumDesc: "Unit Echelon", graphicLocation: "Echelon", groupIds: [ "ECHELON" ], frameAmplifier: false}
   - {enumType: "EquipmentMobility", enumId: "EQUIPMENT_MOBILITY", enumDesc: "Equipment Mobility", graphicLocation: "Amplifier", groupIds: [ "EQUIP_MOBILITY" ], frameAmplifier: false}

@@ -36,15 +36,15 @@ public enum SymbolSet implements SymbolIdentificationCodeElement {
         return getAmplifierGuides().stream().filter(guide -> guide.getAmplifier() == amplifier).findFirst().orElse(null);
     }
 
-    public <A extends AmplifierGroup> List<A> getAmplifierGroups() {
+    public <A extends EnumeratedAmplifier> List<A> getEnumeratedAmplifiers() {
         return symbolSetInfo.getAmplifiers();
     }
 
-    public <A extends AmplifierGroup> List<A> getAmplifierTwoGroups() {
+    public <A extends EnumeratedAmplifier> List<A> getAmplifierTwoGroups() {
         return symbolSetInfo.getAmplifiersTwo();
     }
 
-    public <A extends AmplifierGroup> List<A> getAmplifierThreeGroups() {
+    public <A extends EnumeratedAmplifier> List<A> getAmplifierThreeGroups() {
         return symbolSetInfo.getAmplifiersThree();
     }
 
@@ -56,7 +56,7 @@ public enum SymbolSet implements SymbolIdentificationCodeElement {
         return symbolSetInfo.getEntities();
     }
 
-    public <A extends AmplifierGroup> List<A> getFrameAmplifierGroups() {
+    public <A extends EnumeratedAmplifier> List<A> getFrameEnumeratedAmplifiers() {
         return symbolSetInfo.getFrameAmplifiers();
     }
 

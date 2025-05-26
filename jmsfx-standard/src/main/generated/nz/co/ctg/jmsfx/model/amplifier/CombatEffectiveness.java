@@ -1,16 +1,16 @@
 package nz.co.ctg.jmsfx.model.amplifier;
 
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
-import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum CombatEffectiveness implements AmplifierGroup {
+public enum CombatEffectiveness implements EnumeratedAmplifier {
     FULLY_OPERATIONAL("FO", "Fully Operational"),
     SUBSTANTIALLY_OPERATIONAL("SO", "Substantially Operational"),
     MARGINALLY_OPERATIONAL("MO", "Marginally Operational"),
     NOT_OPERATIONAL("NO", "Not Operational"),
     UNKNOWN_EFFECTIVENESS("UNK", "Unknown");
 
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.COMBAT_EFFECTIVENESS;
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.COMBAT_EFFECTIVENESS;
 
     private final String id;
     private final String label;
@@ -39,5 +39,11 @@ public enum CombatEffectiveness implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+    
+    @Override
+    public boolean isGraphicalIcon() {
+        return true;
+    }
+
 
 }

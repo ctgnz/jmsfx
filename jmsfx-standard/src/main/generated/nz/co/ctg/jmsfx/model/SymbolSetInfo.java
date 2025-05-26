@@ -6,13 +6,13 @@ public interface SymbolSetInfo {
 
     List<AmplifierGuide> getAmplifierGuides();
 
-    <A extends AmplifierGroup> List<A> getAmplifiers();
+    <A extends EnumeratedAmplifier> List<A> getAmplifiers();
 
-    <A extends AmplifierGroup> List<A> getAmplifiersTwo();
+    <A extends EnumeratedAmplifier> List<A> getAmplifiersTwo();
 
-    <A extends AmplifierGroup> List<A> getAmplifiersThree();
+    <A extends EnumeratedAmplifier> List<A> getAmplifiersThree();
 
-    <A extends AmplifierGroup> List<A> getFrameAmplifiers();
+    <A extends EnumeratedAmplifier> List<A> getFrameAmplifiers();
 
     <E extends Entity> List<E> getEntities();
 

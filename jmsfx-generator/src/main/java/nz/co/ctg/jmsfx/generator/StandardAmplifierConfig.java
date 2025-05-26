@@ -2,16 +2,17 @@ package nz.co.ctg.jmsfx.generator;
 
 import java.util.Arrays;
 
-public class AmplifierGroupConfig {
+public class StandardAmplifierConfig {
     private String enumType;
     private String enumId;
     private String enumDesc;
     private String graphicLocation;
     private String[] groupIds;
+    private boolean standard = true;
     private boolean frameAmplifier;
     private boolean unknown;
 
-     public String getEnumDesc() {
+    public String getEnumDesc() {
         return enumDesc;
     }
 
@@ -69,5 +70,13 @@ public class AmplifierGroupConfig {
 
     public void setUnknown(boolean unknown) {
         this.unknown = unknown;
+    }
+
+    public boolean isStandard() {
+        return standard;
+    }
+
+    public void setStandard(boolean standard) {
+        this.standard = standard;
     }
 }

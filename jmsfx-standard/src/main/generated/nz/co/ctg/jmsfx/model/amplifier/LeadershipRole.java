@@ -1,13 +1,13 @@
 package nz.co.ctg.jmsfx.model.amplifier;
 
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
-import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+import nz.co.ctg.jmsfx.model.StandardEnumeratedAmplifier;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum LeadershipRole implements AmplifierGroup {
+public enum LeadershipRole implements StandardEnumeratedAmplifier {
     LEADER_INDIVIDUAL("1", "Leader"),
     DEPUTY_LEADER_INDIVIDUAL("2", "Deputy Leader");
 
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.LEADERSHIP_ROLE;
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.LEADERSHIP_ROLE;
 
     private final String id;
     private final String label;
@@ -36,5 +36,11 @@ public enum LeadershipRole implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+    
+    @Override
+    public boolean isGraphicalIcon() {
+        return true;
+    }
+
 
 }

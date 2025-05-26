@@ -3,7 +3,7 @@ package nz.co.ctg.jmsfx.model;
 import java.util.Arrays;
 import nz.co.ctg.jmsfx.model.amplifier.*;
 
-public enum AmplifierGroupType implements SymbolIdentificationCodeElement {
+public enum EnumeratedAmplifierType implements SymbolIdentificationCodeElement {
     UNKNOWN("0", "Unspecified", UnknownAmplifier.class),
     UNIT_ECHELON("1", "Unit Echelon", UnitEchelon.class, SymbolSet.LAND_UNIT),
     EQUIPMENT_MOBILITY("3", "Equipment Mobility", EquipmentMobility.class, SymbolSet.LAND_EQUIPMENT),
@@ -24,10 +24,10 @@ public enum AmplifierGroupType implements SymbolIdentificationCodeElement {
 
     private final String id;
     private final String label;
-    private final Class<? extends AmplifierGroup> amplifierEnumClass;
+    private final Class<? extends EnumeratedAmplifier> amplifierEnumClass;
     private final SymbolSet[] symbolSets;
     
-    private AmplifierGroupType(String id, String label, Class<? extends AmplifierGroup> amplifierEnumClass, SymbolSet... symbolSets) {
+    private EnumeratedAmplifierType(String id, String label, Class<? extends EnumeratedAmplifier> amplifierEnumClass, SymbolSet... symbolSets) {
         this.id = id;
         this.label = label;
         this.amplifierEnumClass = amplifierEnumClass;
@@ -35,7 +35,7 @@ public enum AmplifierGroupType implements SymbolIdentificationCodeElement {
     }
     
     @SuppressWarnings("unchecked")
-    public <A extends AmplifierGroup> Class<A> getAmplifierEnumClass() {
+    public <A extends EnumeratedAmplifier> Class<A> getAmplifierEnumClass() {
         return (Class<A>) amplifierEnumClass;
     }
     
@@ -58,11 +58,11 @@ public enum AmplifierGroupType implements SymbolIdentificationCodeElement {
     }
 
     @SuppressWarnings("unchecked")
-    public static <A extends AmplifierGroup> Class<A> getAmplifierGroup(SymbolSet symbolSet) {
+    public static <A extends EnumeratedAmplifier> Class<A> getEnumeratedAmplifier(SymbolSet symbolSet) {
         return (Class<A>) Arrays.stream(values())
                         .filter(type -> type.isCompatibleWith(symbolSet))
                         .findFirst()
-                        .map(AmplifierGroupType::getAmplifierEnumClass)
+                        .map(EnumeratedAmplifierType::getAmplifierEnumClass)
                         .orElse(null);
     }
 

@@ -1,9 +1,9 @@
 package nz.co.ctg.jmsfx.model.amplifier;
 
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
-import nz.co.ctg.jmsfx.model.AmplifierGroupType;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum CredibilityRating implements AmplifierGroup {
+public enum CredibilityRating implements EnumeratedAmplifier {
     CONFIRMED("1", "Confirmed by Other Sources"),
     PROBABLY("2", "Probably True"),
     POSSIBLY("3", "Possibly True"),
@@ -11,7 +11,7 @@ public enum CredibilityRating implements AmplifierGroup {
     IMPROBABLE("5", "Improbable"),
     CRED_CANNOT_BE_JUDGED("6", "Truth Cannot Be Judged");
 
-    private static final AmplifierGroupType TYPE = AmplifierGroupType.CREDIBILITY_RATING;
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.CREDIBILITY_RATING;
 
     private final String id;
     private final String label;
@@ -40,5 +40,11 @@ public enum CredibilityRating implements AmplifierGroup {
     public String getLabel() {
         return label;
     }
+    
+    @Override
+    public boolean isGraphicalIcon() {
+        return true;
+    }
+
 
 }

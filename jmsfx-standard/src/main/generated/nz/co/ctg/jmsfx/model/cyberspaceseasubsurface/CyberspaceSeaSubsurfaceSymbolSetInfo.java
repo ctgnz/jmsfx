@@ -9,7 +9,7 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 
 import nz.co.ctg.jmsfx.model.Amplifier;
-import nz.co.ctg.jmsfx.model.AmplifierGroup;
+import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
 import nz.co.ctg.jmsfx.model.Entity;
 import nz.co.ctg.jmsfx.model.EntitySubType;
@@ -46,17 +46,17 @@ public class CyberspaceSeaSubsurfaceSymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<AmplifierGroup> getAmplifiers() {
+    public List<EnumeratedAmplifier> getAmplifiers() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<AmplifierGroup> getAmplifiersTwo() {
+    public List<EnumeratedAmplifier> getAmplifiersTwo() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<AmplifierGroup> getAmplifiersThree() {
+    public List<EnumeratedAmplifier> getAmplifiersThree() {
         return Collections.emptyList();
     }
 
@@ -76,7 +76,7 @@ public class CyberspaceSeaSubsurfaceSymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<AmplifierGroup> getFrameAmplifiers() {
+    public List<EnumeratedAmplifier> getFrameAmplifiers() {
         return Collections.emptyList();
     }
 

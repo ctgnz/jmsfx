@@ -1,6 +1,6 @@
 package nz.co.ctg.jmsfx.generator;
 
-public class AmplifierValuesConfig {
+public class EnumeratedAmplifierConfig {
     private String amplifier;
     private String valuesId;
     private String code;
