@@ -13,14 +13,16 @@ public enum EnumeratedAmplifierType implements SymbolIdentificationCodeElement {
     RELIABILITY_RATING("A2", "Reliability Rating", ReliabilityRating.class),
     CREDIBILITY_RATING("A3", "Credibility Rating", CredibilityRating.class),
     COMBAT_EFFECTIVENESS("A4", "Combat Effectiveness Values", CombatEffectiveness.class),
-    SIGINT_MOBILITY("A5", "SIGINT Mobility Indicator Values", SigintMobility.class),
-    SPEED_UNIT("A6", "Speed Units", SpeedUnit.class),
-    ENGAGEMENT_TYPE("A7", "Type of Engagement", EngagementType.class),
-    ENGAGEMENT_STAGE("A8", "Engagement Stage Code", EngagementStage.class),
-    ENGAGEMENT_WEAPON("A9", "Engagement Weapon", EngagementWeapon.class),
-    TARGET_DESIGNATION("AA", "Target Designation", TargetDesignation.class),
-    COUNTRY_CODE("AB", "Country Codes", CountryCode.class),
-    INSTALLATION_COMPOSITION("AC", "Installation Composition", InstallationComposition.class);
+    SPEED_UNIT("A5", "Speed Units", SpeedUnit.class),
+    PLATFORM_TYPE("AD", "Platform Type", PlatformType.class),
+    ENGAGEMENT_TYPE("A6", "Type of Engagement", EngagementType.class),
+    ENGAGEMENT_STAGE("A7", "Engagement Stage Code", EngagementStage.class),
+    ENGAGEMENT_WEAPON("A8", "Engagement Weapon", EngagementWeapon.class),
+    TARGET_DESIGNATION("A9", "Target Designation", TargetDesignation.class),
+    GUARDED_UNIT("AC", "Guarded Unit", GuardedUnit.class),
+    SPECIAL_DESIGNATOR("AE", "Special Designator", SpecialDesignator.class),
+    COUNTRY_CODE("AA", "Country Codes", CountryCode.class),
+    INSTALLATION_COMPOSITION("AB", "Installation Composition", InstallationComposition.class);
 
     private final String id;
     private final String label;

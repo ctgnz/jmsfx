@@ -3,17 +3,15 @@ package nz.co.ctg.jmsfx.model.amplifier;
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
-public enum SigintMobility implements EnumeratedAmplifier {
-    MOBILE_INDICATOR("M", "Mobile"),
-    STATIC_INDICATOR("S", "Static"),
-    UNCERTAIN_INDICATOR("U", "Uncertain");
+public enum GuardedUnit implements EnumeratedAmplifier {
+    BG("BG", "Guarded Unit");
 
-    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.SIGINT_MOBILITY;
+    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.GUARDED_UNIT;
 
     private final String id;
     private final String label;
     
-    private SigintMobility(String id, String label) {
+    private GuardedUnit(String id, String label) {
         this.id = id;
         this.label = label;
     }
