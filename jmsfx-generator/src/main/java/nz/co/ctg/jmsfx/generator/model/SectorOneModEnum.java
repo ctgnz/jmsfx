@@ -9,7 +9,7 @@ public class SectorOneModEnum extends StandardEnum {
     private String category;
 
     public SectorOneModEnum(Modifier entity) {
-        super(entity.getID().toString(), entity.getLabel(), entity.getModifierCode().getCodeString());
+        super(entity.getID().toString(), entity.getLabel(), entity.getModifierCode().getCodeString(), null);
         this.category = StringUtils.defaultIfBlank(entity.getCategory(), "General");
     }
 

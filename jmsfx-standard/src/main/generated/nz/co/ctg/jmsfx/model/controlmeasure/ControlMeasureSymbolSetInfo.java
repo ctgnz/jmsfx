@@ -8,14 +8,17 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 
+import nz.co.ctg.jmsfx.model.Amplifier;
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
+import nz.co.ctg.jmsfx.model.GuideType;
 import nz.co.ctg.jmsfx.model.Entity;
 import nz.co.ctg.jmsfx.model.EntitySubType;
 import nz.co.ctg.jmsfx.model.EntityType;
 import nz.co.ctg.jmsfx.model.SectorOneModifier;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 import nz.co.ctg.jmsfx.model.SymbolSetInfo;
+import nz.co.ctg.jmsfx.model.amplifier.UnitEchelon;
 
 public class ControlMeasureSymbolSetInfo implements SymbolSetInfo {
     public static final SymbolSetInfo INSTANCE = new ControlMeasureSymbolSetInfo();
@@ -28,12 +31,35 @@ public class ControlMeasureSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
-        return Collections.emptyList();        
+        return Arrays.asList(
+            new AmplifierGuide(Amplifier.B_Echelon, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.C_Quantity, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.H_AdditionalInformation, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.H1_UnlistedPointInformation, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.N_HostileEnemy, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.Q_DirectionOfMovementIndicator, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.S2_OffsetLocationIndicator, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.T_UniqueDesignation, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.T1_UniqueIdentifierPrimaryPurpose, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.T2_ControllingHeadquarters, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.V_TypeOfEquipment, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.W_DateTimeGroupDtg, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.W1_DateTimeGroupDtgPeriod, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.X_AltitudeDepth, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.Y_Location, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AH_AreaOfUncertaintyIndicator, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AH1_AreaOfUncertaintyIndicatorLongitude, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AM_Distance, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AN_Azimuth, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AP_TargetNumber, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AP1_TargetNumberExtension, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AS_Country, GuideType.SYSTEM)
+        );
     }
 
     @Override
     public List<EnumeratedAmplifier> getAmplifiers() {
-        return Collections.emptyList();
+        return Arrays.asList(UnitEchelon.values());
     }
 
     @Override
@@ -78,7 +104,7 @@ public class ControlMeasureSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isAmplifierPresent() {
-        return false;
+        return true;
     }
 
     @Override

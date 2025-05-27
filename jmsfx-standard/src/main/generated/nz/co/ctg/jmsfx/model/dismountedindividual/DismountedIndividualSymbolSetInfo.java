@@ -11,12 +11,14 @@ import com.google.common.collect.Multimaps;
 import nz.co.ctg.jmsfx.model.Amplifier;
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
+import nz.co.ctg.jmsfx.model.GuideType;
 import nz.co.ctg.jmsfx.model.Entity;
 import nz.co.ctg.jmsfx.model.EntitySubType;
 import nz.co.ctg.jmsfx.model.EntityType;
 import nz.co.ctg.jmsfx.model.SectorOneModifier;
 import nz.co.ctg.jmsfx.model.SectorTwoModifier;
 import nz.co.ctg.jmsfx.model.SymbolSetInfo;
+import nz.co.ctg.jmsfx.model.amplifier.EquipmentMobility;
 import nz.co.ctg.jmsfx.model.amplifier.LeadershipRole;
 
 public class DismountedIndividualSymbolSetInfo implements SymbolSetInfo {
@@ -31,34 +33,38 @@ public class DismountedIndividualSymbolSetInfo implements SymbolSetInfo {
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
-            new AmplifierGuide(Amplifier.C_Quantity, 205, 546, 200, 96),
-            new AmplifierGuide(Amplifier.AV_LeadershipIdentifier, 176, 208, 259, 76),
-            new AmplifierGuide(Amplifier.AB_FeintDummyIndicator, 124, 176, 367, 108),
-            new AmplifierGuide(Amplifier.G_StaffComments, 478, 248, 134, 96),
-            new AmplifierGuide(Amplifier.H_AdditionalInformation, 478, 344, 134, 96),
-            new AmplifierGuide(Amplifier.J_EvaluationRating, 478, 536, 134, 96),
-            new AmplifierGuide(Amplifier.K_CombatEffectiveness, 478, 536, 134, 96),
-            new AmplifierGuide(Amplifier.M_HigherFormation, 478, 440, 134, 96),
-            new AmplifierGuide(Amplifier.P_IffSifAis, 478, 536, 134, 96),
-            new AmplifierGuide(Amplifier.T_UniqueDesignation, 0, 440, 134, 96),
-            new AmplifierGuide(Amplifier.V_TypeOfEquipment, 0, 344, 134, 96),
-            new AmplifierGuide(Amplifier.W_DateTimeGroupDtg, 0, 152, 134, 96),
-            new AmplifierGuide(Amplifier.X_AltitudeDepth, 0, 248, 134, 96),
-            new AmplifierGuide(Amplifier.Y_Location, 0, 248, 134, 96),
-            new AmplifierGuide(Amplifier.Z_Speed, 0, 536, 134, 96),
-            new AmplifierGuide(Amplifier.AF_CommonIdentifier, 0, 344, 134, 96),
-            new AmplifierGuide(Amplifier.AS_Country, 478, 152, 134, 96)
+            new AmplifierGuide(Amplifier.C_Quantity, GuideType.RECTANGLE, 205, 546, 200, 96),
+            new AmplifierGuide(Amplifier.G_StaffComments, GuideType.RECTANGLE, 478, 248, 134, 96),
+            new AmplifierGuide(Amplifier.H_AdditionalInformation, GuideType.RECTANGLE, 478, 344, 134, 96),
+            new AmplifierGuide(Amplifier.J_EvaluationRating, GuideType.RECTANGLE, 478, 536, 134, 96),
+            new AmplifierGuide(Amplifier.K_CombatEffectiveness, GuideType.RECTANGLE, 478, 536, 134, 96),
+            new AmplifierGuide(Amplifier.M_HigherFormation, GuideType.RECTANGLE, 478, 440, 134, 96),
+            new AmplifierGuide(Amplifier.P_IffSifAis, GuideType.RECTANGLE, 478, 536, 134, 96),
+            new AmplifierGuide(Amplifier.Q_DirectionOfMovementIndicator, GuideType.POLYLINE, 304.754, 641.628, 304.754, 702.084, 380.942, 734.447),
+            new AmplifierGuide(Amplifier.S2_OffsetLocationIndicator, GuideType.POLYLINE, 180.082, 470, 180.082, 693.086, 62.332, 757.333),
+            new AmplifierGuide(Amplifier.T_UniqueDesignation, GuideType.RECTANGLE, 0, 440, 134, 96),
+            new AmplifierGuide(Amplifier.V_TypeOfEquipment, GuideType.RECTANGLE, 0, 344, 134, 96),
+            new AmplifierGuide(Amplifier.W_DateTimeGroupDtg, GuideType.RECTANGLE, 0, 152, 134, 96),
+            new AmplifierGuide(Amplifier.X_AltitudeDepth, GuideType.RECTANGLE, 0, 248, 134, 96),
+            new AmplifierGuide(Amplifier.Y_Location, GuideType.RECTANGLE, 0, 248, 134, 96),
+            new AmplifierGuide(Amplifier.Z_Speed, GuideType.RECTANGLE, 0, 536, 134, 96),
+            new AmplifierGuide(Amplifier.AB_FeintDummyIndicator, GuideType.POLYGON, 134, 302, 305, 150, 478, 302),
+            new AmplifierGuide(Amplifier.AF_CommonIdentifier, GuideType.RECTANGLE, 0, 344, 134, 96),
+            new AmplifierGuide(Amplifier.AH_AreaOfUncertaintyIndicator, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AH1_AreaOfUncertaintyIndicatorLongitude, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AS_Country, GuideType.RECTANGLE, 478, 152, 134, 96),
+            new AmplifierGuide(Amplifier.AV_LeadershipIdentifier, GuideType.POLYGON, 150, 302, 305, 205, 460, 302)
         );
     }
 
     @Override
     public List<EnumeratedAmplifier> getAmplifiers() {
-        return Arrays.asList(LeadershipRole.values());
+        return Arrays.asList(EquipmentMobility.values());
     }
 
     @Override
     public List<EnumeratedAmplifier> getAmplifiersTwo() {
-        return Collections.emptyList();
+        return Arrays.asList(LeadershipRole.values());
     }
 
     @Override
@@ -103,7 +109,7 @@ public class DismountedIndividualSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isAmplifierTwoPresent() {
-        return false;
+        return true;
     }
 
     @Override

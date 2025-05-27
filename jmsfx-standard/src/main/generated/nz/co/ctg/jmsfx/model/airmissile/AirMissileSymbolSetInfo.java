@@ -7,6 +7,7 @@ import java.util.List;
 import nz.co.ctg.jmsfx.model.Amplifier;
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
+import nz.co.ctg.jmsfx.model.GuideType;
 import nz.co.ctg.jmsfx.model.Entity;
 import nz.co.ctg.jmsfx.model.EntitySubType;
 import nz.co.ctg.jmsfx.model.EntityType;
@@ -24,17 +25,7 @@ public class AirMissileSymbolSetInfo implements SymbolSetInfo {
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
-            new AmplifierGuide(Amplifier.G_StaffComments, 478, 476, 134, 80),
-            new AmplifierGuide(Amplifier.H_AdditionalInformation, 478, 476, 134, 80),
-            new AmplifierGuide(Amplifier.P_IffSifAis, 478, 236, 134, 80),
-            new AmplifierGuide(Amplifier.T_UniqueDesignation, 478, 156, 134, 80),
-            new AmplifierGuide(Amplifier.V_TypeOfEquipment, 478, 316, 134, 80),
-            new AmplifierGuide(Amplifier.X_AltitudeDepth, 478, 396, 134, 80),
-            new AmplifierGuide(Amplifier.Z_Speed, 478, 396, 134, 80),
-            new AmplifierGuide(Amplifier.AL_OperationalCondition, 142, 518, 328, 80),
-            new AmplifierGuide(Amplifier.AO_EngagementBar, 132, 118, 346, 80),
-            new AmplifierGuide(Amplifier.AS_Country, 478, 156, 134, 80),
-            new AmplifierGuide(Amplifier.AJ_SpeedLeader, 16, 467, 161, 91)
+            new AmplifierGuide(Amplifier.AJ_SpeedLeader, GuideType.LINE, 176.341, 469.248, 17.069, 557.214)
         );
     }
 

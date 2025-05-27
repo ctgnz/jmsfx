@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import nz.co.ctg.jmsfx.generator.StandardAmplifierConfig;
 import nz.co.ctg.jmsfx.generator.EnumeratedAmplifierConfig;
+import nz.co.ctg.jmsfx.generator.StandardAmplifierConfig;
 import nz.co.ctg.jmsfx.generator.schema.Library.AmplifierGroups.AmplifierGroup;
 import nz.co.ctg.jmsfx.generator.schema.Library.AmplifierGroups.AmplifierGroup.Amplifiers.Amplifier;
 import nz.co.ctg.jmsfx.generator.schema.Library.Amplifiers.Amplifier.Values;
@@ -19,15 +19,17 @@ public class EnumeratedAmplifierTypeEnum extends StandardEnum {
     private final String enumId;
     private final String enumDesc;
     private final boolean standard;
+    private final boolean coded;
     private final boolean frameAmplifier;
     private final boolean unknown;
 
     public EnumeratedAmplifierTypeEnum(StandardAmplifierConfig groupConfig, AmplifierGroup group) {
-        super(group.getName(), group.getLabel(), Integer.toString(group.getAmplifierGroupCode()));
+        super(group.getName(), group.getLabel(), Integer.toString(group.getAmplifierGroupCode()), null);
         this.typeName = groupConfig.getEnumType();
         this.graphicLocation = groupConfig.getGraphicLocation();
         this.enumId = groupConfig.getEnumId();
         this.enumDesc = groupConfig.getEnumDesc();
+        this.coded = false;
         this.frameAmplifier = groupConfig.isFrameAmplifier();
         this.unknown = groupConfig.isUnknown();
         this.symbolSets = group.getCompatibleSymbolSetIDs().stream().map(id -> (SymbolSetRef) id).map(SymbolSetRef::getID).toArray(size -> new String[size]);
@@ -35,11 +37,12 @@ public class EnumeratedAmplifierTypeEnum extends StandardEnum {
     }
 
     public EnumeratedAmplifierTypeEnum(EnumeratedAmplifierConfig groupConfig, Values group) {
-        super(groupConfig.getEnumId(), group.getLabel(), groupConfig.getCode());
+        super(groupConfig.getEnumId(), group.getLabel(), groupConfig.getCode(), null);
         this.typeName = groupConfig.getEnumType();
         this.graphicLocation = "NA";
         this.enumId = groupConfig.getEnumId();
         this.enumDesc = groupConfig.getEnumDesc();
+        this.coded = groupConfig.isCoded();
         this.frameAmplifier = false;
         this.unknown = false;
         this.symbolSets = new String[0];
@@ -94,6 +97,10 @@ public class EnumeratedAmplifierTypeEnum extends StandardEnum {
 
     public boolean isUnknown() {
         return unknown;
+    }
+
+    public boolean isCoded() {
+        return coded;
     }
 
 }

@@ -11,6 +11,7 @@ import com.google.common.collect.Multimaps;
 import nz.co.ctg.jmsfx.model.Amplifier;
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
+import nz.co.ctg.jmsfx.model.GuideType;
 import nz.co.ctg.jmsfx.model.Entity;
 import nz.co.ctg.jmsfx.model.EntitySubType;
 import nz.co.ctg.jmsfx.model.EntityType;
@@ -29,19 +30,36 @@ public class CyberspaceSeaSurfaceSymbolSetInfo implements SymbolSetInfo {
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
-            new AmplifierGuide(Amplifier.G_StaffComments, 478, 440, 134, 96),
-            new AmplifierGuide(Amplifier.H_AdditionalInformation, 478, 440, 134, 96),
-            new AmplifierGuide(Amplifier.P_IffSifAis, 478, 344, 134, 96),
-            new AmplifierGuide(Amplifier.T_UniqueDesignation, 478, 152, 134, 96),
-            new AmplifierGuide(Amplifier.V_TypeOfEquipment, 478, 248, 134, 96),
-            new AmplifierGuide(Amplifier.X_AltitudeDepth, 478, 536, 134, 96),
-            new AmplifierGuide(Amplifier.Z_Speed, 478, 536, 134, 96),
-            new AmplifierGuide(Amplifier.AL_OperationalCondition, 142, 542, 328, 96),
-            new AmplifierGuide(Amplifier.AO_EngagementBar, 134, 152, 344, 96),
-            new AmplifierGuide(Amplifier.AQ_GuardedUnit, 0, 152, 134, 96),
-            new AmplifierGuide(Amplifier.AR_SpecialDesignator, 0, 152, 134, 96),
-            new AmplifierGuide(Amplifier.AS_Country, 478, 152, 134, 96),
-            new AmplifierGuide(Amplifier.AJ_SpeedLeader, 16, 467, 161, 91)
+            new AmplifierGuide(Amplifier.B_Echelon, GuideType.RECTANGLE, 205, 192, 200, 80),
+            new AmplifierGuide(Amplifier.C_Quantity, GuideType.RECTANGLE, 205, 192, 200, 80),
+            new AmplifierGuide(Amplifier.D_TaskForceIndicator, GuideType.RECTANGLE, 205, 192, 200, 80),
+            new AmplifierGuide(Amplifier.F_ReinforcedOrReduced, GuideType.RECTANGLE, 486, 196, 126, 80),
+            new AmplifierGuide(Amplifier.G_StaffComments, GuideType.RECTANGLE, 486, 276, 126, 80),
+            new AmplifierGuide(Amplifier.H_AdditionalInformation, GuideType.RECTANGLE, 486, 356, 126, 80),
+            new AmplifierGuide(Amplifier.K_CombatEffectiveness, GuideType.RECTANGLE, 486, 516, 126, 80),
+            new AmplifierGuide(Amplifier.L_SignatureEquipment, GuideType.RECTANGLE, 486, 516, 126, 80),
+            new AmplifierGuide(Amplifier.M_HigherFormation, GuideType.RECTANGLE, 486, 436, 126, 80),
+            new AmplifierGuide(Amplifier.P_IffSifAis, GuideType.RECTANGLE, 486, 516, 126, 80),
+            new AmplifierGuide(Amplifier.S_HeadquartersStaffIndicator, GuideType.LINE, 126.082, 514.75, 126.082, 759.658),
+            new AmplifierGuide(Amplifier.S2_OffsetLocationIndicator, GuideType.LINE, 127.671, 759.934, 0, 792),
+            new AmplifierGuide(Amplifier.T_UniqueDesignation, GuideType.RECTANGLE, 0, 436, 126, 80),
+            new AmplifierGuide(Amplifier.V_TypeOfEquipment, GuideType.RECTANGLE, 0, 356, 126, 80),
+            new AmplifierGuide(Amplifier.W_DateTimeGroupDtg, GuideType.RECTANGLE, 0, 196, 126, 80),
+            new AmplifierGuide(Amplifier.Y_Location, GuideType.RECTANGLE, 0, 276, 126, 80),
+            new AmplifierGuide(Amplifier.AA_NamedC2Headquarters, GuideType.RECTANGLE, 205.444, 346, 200, 98),
+            new AmplifierGuide(Amplifier.AB_FeintDummyIndicator, GuideType.POLYGON, 126.082, 276, 304.754, 80, 486, 276),
+            new AmplifierGuide(Amplifier.AD_PlatformType, GuideType.RECTANGLE, 0, 356, 126, 80),
+            new AmplifierGuide(Amplifier.AE_EquipmentTeardownTime, GuideType.RECTANGLE, 0, 356, 126, 80),
+            new AmplifierGuide(Amplifier.AF_CommonIdentifier, GuideType.RECTANGLE, 486, 356, 126, 80),
+            new AmplifierGuide(Amplifier.AH_AreaOfUncertaintyIndicator, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AH1_AreaOfUncertaintyIndicatorLongitude, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AL_OperationalCondition, GuideType.RECTANGLE, 132, 520, 348, 80),
+            new AmplifierGuide(Amplifier.AO_EngagementBar, GuideType.RECTANGLE, 130, 5, 350, 80),
+            new AmplifierGuide(Amplifier.AO1_TargetDesignation, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AR_SpecialDesignator, GuideType.RECTANGLE, 0, 196, 126, 80),
+            new AmplifierGuide(Amplifier.AS_Country, GuideType.RECTANGLE, 486, 196, 126, 80),
+            new AmplifierGuide(Amplifier.AW_HeadquartersElement, GuideType.RECTANGLE, 185, 520, 240, 80),
+            new AmplifierGuide(Amplifier.AY_NetworkIdentifier, GuideType.RECTANGLE, 0, 516, 126, 80)
         );
     }
 

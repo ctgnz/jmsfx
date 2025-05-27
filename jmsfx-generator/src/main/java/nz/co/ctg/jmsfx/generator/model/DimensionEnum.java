@@ -7,7 +7,7 @@ public class DimensionEnum extends StandardEnum {
     private final String geometry;
 
     public DimensionEnum(Dimension dimension) {
-        super(dimension.getID(), dimension.getLabel(), dimension.getDimensionCode().getCodeString());
+        super(dimension.getID(), dimension.getLabel(), dimension.getDimensionCode().getCodeString(), null);
         this.geometry = dimension.getGeometry().name() + "_GEOMETRY";
     }
 

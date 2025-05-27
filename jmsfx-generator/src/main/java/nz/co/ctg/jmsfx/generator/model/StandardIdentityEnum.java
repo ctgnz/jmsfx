@@ -5,7 +5,7 @@ import nz.co.ctg.jmsfx.generator.schema.Library.StandardIdentities.StandardIdent
 public class StandardIdentityEnum extends StandardEnum {
 
     public StandardIdentityEnum(StandardIdentity identity) {
-        super(identity.getID(), identity.getLabel(), Integer.toString(identity.getStandardIdentityCode()));
+        super(identity.getID(), identity.getLabel(), Integer.toString(identity.getStandardIdentityCode()), null);
     }
 
 }

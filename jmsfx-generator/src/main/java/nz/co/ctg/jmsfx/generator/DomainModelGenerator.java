@@ -141,6 +141,12 @@ public class DomainModelGenerator {
         });
     }
 
+    @SuppressWarnings("unchecked")
+    private String findAmplifier(String code, Map<String, Object> dataModel) {
+        List<AmplifierEnum> amplifiers = (List<AmplifierEnum>) dataModel.get("amplifiers");
+        return amplifiers.stream().filter(amp -> StringUtils.equals(amp.getId(), code)).findFirst().map(AmplifierEnum::getConstantName).orElse(null);
+    }
+
     private void generateAmplifierEnum(Map<String, Object> dataModel, Library library) throws Exception {
         Template typeTemplate = config.getTemplateConfig().getTemplate("AmplifierType.ftl");
         dataModel.put("amplifierTypes", AmplifierType.values());
@@ -149,62 +155,6 @@ public class DomainModelGenerator {
         dataModel.put("amplifiers", amplifiers);
         Template template = config.getTemplateConfig().getTemplate("Amplifier.ftl");
         template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getBasePackageDir().resolve("Amplifier.java"))));
-    }
-
-    @SuppressWarnings("unchecked")
-    private void generateEnumeratedAmplifierEnums(Map<String, Object> dataModel, Library library) throws Exception {
-        List<StandardAmplifierConfig> amplifierGroups = config.getStandardAmplifiers();
-        List<EnumeratedAmplifierTypeEnum> amplifierGroupTypes = (List<EnumeratedAmplifierTypeEnum>) dataModel.computeIfAbsent("enumAmplifierTypes", key -> new ArrayList<EnumeratedAmplifierTypeEnum>());
-        library.getAmplifierGroups().getAmplifierGroup().forEach(group -> {
-            StandardAmplifierConfig groupConfig = amplifierGroups.stream().filter(config -> config.isForGroup(group.getName())).findAny().orElse(null);
-            if (groupConfig != null) {
-                EnumeratedAmplifierTypeEnum amplifierType = (EnumeratedAmplifierTypeEnum) dataModel.computeIfAbsent(groupConfig.getEnumType(), type -> {
-                    EnumeratedAmplifierTypeEnum amplifierGroupType = new EnumeratedAmplifierTypeEnum(groupConfig, group);
-                    amplifierGroupTypes.add(amplifierGroupType);
-                    return amplifierGroupType;
-                });
-                group.getAmplifiers().getAmplifier().forEach(amplifier -> amplifierType.addAmplifier(group, amplifier));
-            }
-        });
-        library.getAmplifiers().getAmplifier().forEach(amplifier -> {
-            if (!amplifier.getValues().isEmpty()) {
-                List<EnumeratedAmplifierConfig> valueConfigs = config.getAmplifierValues(amplifier);
-                amplifier.getValues().forEach(value -> {
-                    EnumeratedAmplifierConfig valueConfig = valueConfigs.stream().filter(config -> StringUtils.equals(value.getID(), config.getValuesId())).findFirst().orElse(null);
-                    if (valueConfig != null) {
-                        EnumeratedAmplifierTypeEnum amplifierType = (EnumeratedAmplifierTypeEnum) dataModel.computeIfAbsent(valueConfig.getEnumType(), type -> {
-                            EnumeratedAmplifierTypeEnum amplifierGroupType = new EnumeratedAmplifierTypeEnum(valueConfig, value);
-                            amplifierGroupTypes.add(amplifierGroupType);
-                            return amplifierGroupType;
-                        });
-                        value.getValue().forEach(amplifierType::addAmplifier);
-                        StandardAmplifierConfig agc = new StandardAmplifierConfig();
-                        agc.setStandard(false);
-                        agc.setEnumId(valueConfig.getEnumId());
-                        agc.setEnumType(valueConfig.getEnumType());
-                        agc.setEnumDesc(valueConfig.getEnumDesc());
-                        amplifierGroups.add(agc);
-                    }
-                });
-            }
-        });
-        Template template = config.getTemplateConfig().getTemplate("EnumeratedAmplifierType.ftl");
-        template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getBasePackageDir().resolve("EnumeratedAmplifierType.java"))));
-        Template amplifierTemplate = config.getTemplateConfig().getTemplate("EnumeratedAmplifier.ftl");
-        Path amplifierPath = config.getBasePackageDir().resolve("amplifier");
-        if (!Files.exists(amplifierPath)) {
-            Files.createDirectories(amplifierPath);
-        }
-        amplifierGroups.forEach(group -> {
-            try {
-                EnumeratedAmplifierTypeEnum enumType = (EnumeratedAmplifierTypeEnum) dataModel.get(group.getEnumType());
-                System.out.format("Processing amplifier enum %s%n", enumType.getTypeName());
-                dataModel.put("amplifier", enumType);
-                amplifierTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(amplifierPath.resolve(enumType.getTypeName() + ".java"))));
-            } catch (Exception e) {
-                throw new IllegalArgumentException("Unable to create amplifier group enum", e);
-            }
-        });
     }
 
     @SuppressWarnings("unchecked")
@@ -320,6 +270,62 @@ public class DomainModelGenerator {
         }
     }
 
+    @SuppressWarnings("unchecked")
+    private void generateEnumeratedAmplifierEnums(Map<String, Object> dataModel, Library library) throws Exception {
+        List<StandardAmplifierConfig> amplifierGroups = config.getStandardAmplifiers();
+        List<EnumeratedAmplifierTypeEnum> amplifierGroupTypes = (List<EnumeratedAmplifierTypeEnum>) dataModel.computeIfAbsent("enumAmplifierTypes", key -> new ArrayList<EnumeratedAmplifierTypeEnum>());
+        library.getAmplifierGroups().getAmplifierGroup().forEach(group -> {
+            StandardAmplifierConfig groupConfig = amplifierGroups.stream().filter(config -> config.isForGroup(group.getName())).findAny().orElse(null);
+            if (groupConfig != null) {
+                EnumeratedAmplifierTypeEnum amplifierType = (EnumeratedAmplifierTypeEnum) dataModel.computeIfAbsent(groupConfig.getEnumType(), type -> {
+                    EnumeratedAmplifierTypeEnum amplifierGroupType = new EnumeratedAmplifierTypeEnum(groupConfig, group);
+                    amplifierGroupTypes.add(amplifierGroupType);
+                    return amplifierGroupType;
+                });
+                group.getAmplifiers().getAmplifier().forEach(amplifier -> amplifierType.addAmplifier(group, amplifier));
+            }
+        });
+        library.getAmplifiers().getAmplifier().forEach(amplifier -> {
+            if (!amplifier.getValues().isEmpty()) {
+                List<EnumeratedAmplifierConfig> valueConfigs = config.getAmplifierValues(amplifier);
+                amplifier.getValues().forEach(value -> {
+                    EnumeratedAmplifierConfig valueConfig = valueConfigs.stream().filter(config -> StringUtils.equals(value.getID(), config.getValuesId())).findFirst().orElse(null);
+                    if (valueConfig != null) {
+                        EnumeratedAmplifierTypeEnum amplifierType = (EnumeratedAmplifierTypeEnum) dataModel.computeIfAbsent(valueConfig.getEnumType(), type -> {
+                            EnumeratedAmplifierTypeEnum amplifierGroupType = new EnumeratedAmplifierTypeEnum(valueConfig, value);
+                            amplifierGroupTypes.add(amplifierGroupType);
+                            return amplifierGroupType;
+                        });
+                        value.getValue().forEach(amplifierType::addAmplifier);
+                        StandardAmplifierConfig agc = new StandardAmplifierConfig();
+                        agc.setStandard(false);
+                        agc.setEnumId(valueConfig.getEnumId());
+                        agc.setEnumType(valueConfig.getEnumType());
+                        agc.setEnumDesc(valueConfig.getEnumDesc());
+                        amplifierGroups.add(agc);
+                    }
+                });
+            }
+        });
+        Template template = config.getTemplateConfig().getTemplate("EnumeratedAmplifierType.ftl");
+        template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getBasePackageDir().resolve("EnumeratedAmplifierType.java"))));
+        Template amplifierTemplate = config.getTemplateConfig().getTemplate("EnumeratedAmplifier.ftl");
+        Path amplifierPath = config.getBasePackageDir().resolve("amplifier");
+        if (!Files.exists(amplifierPath)) {
+            Files.createDirectories(amplifierPath);
+        }
+        amplifierGroups.forEach(group -> {
+            try {
+                EnumeratedAmplifierTypeEnum enumType = (EnumeratedAmplifierTypeEnum) dataModel.get(group.getEnumType());
+                System.out.format("Processing amplifier enum %s%n", enumType.getTypeName());
+                dataModel.put("amplifier", enumType);
+                amplifierTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(amplifierPath.resolve(enumType.getTypeName() + ".java"))));
+            } catch (Exception e) {
+                throw new IllegalArgumentException("Unable to create amplifier group enum", e);
+            }
+        });
+    }
+
     private void generateSimpleTypes(Map<String, Object> dataModel) {
         Map<String, String> simpleTypes = config.getSimpleTypes();
         simpleTypes.keySet().forEach(key -> {
@@ -359,6 +365,9 @@ public class DomainModelGenerator {
                 Files.createDirectories(packagePath);
             }
             SymbolSet symbolSet = parseSymbolSet(config.getInputDir().resolve(symSetDetails.getFileName()));
+            List<AmplifierGuideConfig> amplifierGuides = symbolSet.getAmplifiers().getAmplifierRef().stream().map(AmplifierGuideConfig::new).toList();
+            amplifierGuides.forEach(guide -> guide.setAmplifier(findAmplifier(guide.getCode(), dataModel)));
+            symSetDetails.getAmplifierGuides().addAll(amplifierGuides);
             System.out.format("Processing symbol set %s%n", symbolSet.getLabel());
             generateEntities(packagePath, dataModel, symSetDetails, symbolSet);
         } catch (Exception e) {
@@ -370,13 +379,12 @@ public class DomainModelGenerator {
     @SuppressWarnings("unchecked")
     private void generateSymbolSets(Map<String, Object> dataModel, Library library) throws Exception {
         Map<String, String> symbolGraphicLocations = config.getSymbolGraphicLocations();
-        Map<String, List<AmplifierGuideConfig>> amplifierGuides = config.getAmplifierGuides();
         library.getDimensions().getDimension().forEach(dim -> {
             List<SymbolSetRef> symbolSetRef = dim.getSymbolSets().getSymbolSetRef();
             symbolSetRef.forEach(symSet -> {
                 List<SymbolSetEnum> values = (List<SymbolSetEnum>) dataModel.computeIfAbsent("symbolSets", key -> new ArrayList<SymbolSetEnum>());
                 if (values.stream().noneMatch(sym -> sym.getId().equals(symSet.getID()))) {
-                    SymbolSetEnum symSetEnum = new SymbolSetEnum(dim, symSet, symbolGraphicLocations.get(symSet.getID()), amplifierGuides.get(dim.getID()));
+                    SymbolSetEnum symSetEnum = new SymbolSetEnum(dim, symSet, symbolGraphicLocations.get(symSet.getID()));
                     values.add(symSetEnum);
                     generateSymbolSet(dataModel, symSetEnum);
                 }

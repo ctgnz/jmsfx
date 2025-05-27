@@ -1,14 +1,25 @@
 package nz.co.ctg.jmsfx.generator;
 
+import java.util.Arrays;
+
+import org.apache.commons.lang3.StringUtils;
+
+import nz.co.ctg.jmsfx.generator.schema.GuideType;
+import nz.co.ctg.jmsfx.generator.schema.SymbolSet;
+
 public class AmplifierGuideConfig {
     private String code;
+    private GuideType type;
     private String amplifier;
-    private int x;
-    private int y;
-    private int width;
-    private int height;
+    private double[] points;
 
-    public AmplifierGuideConfig() {
+    public AmplifierGuideConfig(SymbolSet.Amplifiers.AmplifierRef source) {
+        this.code = source.getID();
+        this.type = source.getType();
+        if (type != GuideType.SYSTEM) {
+            String[] split = StringUtils.split(StringUtils.remove(source.getPoints(), " "), ",");
+            this.points = Arrays.stream(split).mapToDouble(val -> Double.parseDouble(val)).toArray();
+        }
     }
 
     public String getAmplifier() {
@@ -19,20 +30,40 @@ public class AmplifierGuideConfig {
         return code;
     }
 
-    public int getHeight() {
-        return height;
+    public double getHeight() {
+        return points[3];
     }
 
-    public int getWidth() {
-        return width;
+    public double getY1() {
+        return points[3];
     }
 
-    public int getX() {
-        return x;
+    public double[] getPoints() {
+        return points;
     }
 
-    public int getY() {
-        return y;
+    public GuideType getType() {
+        return type;
+    }
+
+    public double getWidth() {
+        return points[2];
+    }
+
+    public double getX1() {
+        return points[2];
+    }
+
+    public double getX() {
+        return points[0];
+    }
+
+    public double getY() {
+        return points[1];
+    }
+
+    public boolean isGraphical() {
+        return type != GuideType.SYSTEM;
     }
 
     public void setAmplifier(String amplifier) {
@@ -43,19 +74,11 @@ public class AmplifierGuideConfig {
         this.code = code;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
+    public void setPoints(double[] points) {
+        this.points = points;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void setY(int y) {
-        this.y = y;
+    public void setType(GuideType type) {
+        this.type = type;
     }
 }

@@ -7,8 +7,9 @@ public class EnumeratedAmplifierConfig {
     private String enumType;
     private String enumId;
     private String enumDesc;
+    private boolean coded;
 
-     public String getAmplifier() {
+    public String getAmplifier() {
         return amplifier;
     }
 
@@ -32,12 +33,20 @@ public class EnumeratedAmplifierConfig {
         return valuesId;
     }
 
+    public boolean isCoded() {
+        return coded;
+    }
+
     public void setAmplifier(String graphicLocation) {
         this.amplifier = graphicLocation;
     }
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public void setCoded(boolean coded) {
+        this.coded = coded;
     }
 
     public void setEnumDesc(String enumDesc) {

@@ -43,14 +43,9 @@ public class GeneratorConfig {
     private Map<String, String> simpleTypes;
     private Map<String, String> dimensionGraphicLocations;
     private Map<String, String> symbolGraphicLocations;
-    private Map<String, List<AmplifierGuideConfig>> amplifierGuides;
 
     public List<StandardAmplifierConfig> getStandardAmplifiers() {
         return standardAmplifiers;
-    }
-
-    public Map<String, List<AmplifierGuideConfig>> getAmplifierGuides() {
-        return amplifierGuides;
     }
 
     public List<EnumeratedAmplifierConfig> getEnumeratedAmplifiers() {
@@ -152,10 +147,6 @@ public class GeneratorConfig {
 
     public void setStandardAmplifiers(List<StandardAmplifierConfig> amplifierGroups) {
         this.standardAmplifiers = amplifierGroups;
-    }
-
-    public void setAmplifierGuides(Map<String, List<AmplifierGuideConfig>> amplifierGuides) {
-        this.amplifierGuides = amplifierGuides;
     }
 
     public void setEnumeratedAmplifiers(List<EnumeratedAmplifierConfig> amplifierValues) {

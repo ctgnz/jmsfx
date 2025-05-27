@@ -11,6 +11,7 @@ import com.google.common.collect.Multimaps;
 import nz.co.ctg.jmsfx.model.Amplifier;
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
+import nz.co.ctg.jmsfx.model.GuideType;
 import nz.co.ctg.jmsfx.model.Entity;
 import nz.co.ctg.jmsfx.model.EntitySubType;
 import nz.co.ctg.jmsfx.model.EntityType;
@@ -30,15 +31,17 @@ public class ActivitySymbolSetInfo implements SymbolSetInfo {
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
-            new AmplifierGuide(Amplifier.G_StaffComments, 486, 276, 126, 80),
-            new AmplifierGuide(Amplifier.H_AdditionalInformation, 486, 356, 126, 80),
-            new AmplifierGuide(Amplifier.J_EvaluationRating, 486, 516, 126, 80),
-            new AmplifierGuide(Amplifier.T_UniqueDesignation, 0, 356, 126, 80),
-            new AmplifierGuide(Amplifier.W_DateTimeGroupDtg, 0, 196, 126, 80),
-            new AmplifierGuide(Amplifier.Y_Location, 0, 276, 126, 80),
-            new AmplifierGuide(Amplifier.AS_Country, 486, 196, 126, 80),
-            new AmplifierGuide(Amplifier.Q_DirectionOfMovementIndicator, 123, 83, 364, 193),
-            new AmplifierGuide(Amplifier.S2_OffsetLocationIndicator, 123, 83, 364, 193)
+            new AmplifierGuide(Amplifier.G_StaffComments, GuideType.RECTANGLE, 486, 276, 126, 80),
+            new AmplifierGuide(Amplifier.H_AdditionalInformation, GuideType.RECTANGLE, 486, 356, 126, 80),
+            new AmplifierGuide(Amplifier.J_EvaluationRating, GuideType.RECTANGLE, 486, 516, 126, 80),
+            new AmplifierGuide(Amplifier.Q_DirectionOfMovementIndicator, GuideType.RECTANGLE, 306.602, 518.205, 306.602, 578.661, 210.072, 637.723),
+            new AmplifierGuide(Amplifier.S2_OffsetLocationIndicator, GuideType.RECTANGLE, 126.082, 514.75, 126.082, 759.796, 0, 792),
+            new AmplifierGuide(Amplifier.T_UniqueDesignation, GuideType.RECTANGLE, 0, 356, 126, 80),
+            new AmplifierGuide(Amplifier.W_DateTimeGroupDtg, GuideType.RECTANGLE, 0, 196, 126, 80),
+            new AmplifierGuide(Amplifier.Y_Location, GuideType.RECTANGLE, 0, 276, 126, 80),
+            new AmplifierGuide(Amplifier.AH_AreaOfUncertaintyIndicator, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AH1_AreaOfUncertaintyIndicatorLongitude, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AS_Country, GuideType.RECTANGLE, 486, 196, 126, 80)
         );
     }
 

@@ -12,7 +12,7 @@ public class StandardIdentityGroupEnum extends StandardEnum {
     private final List<String> standardIdCodes;
 
     public StandardIdentityGroupEnum(StandardIdentityGroup identityGroup) {
-        super(identityGroup.getID(), identityGroup.getLabel(), Integer.toString(identityGroup.getStandardIdentityGroupCode()));
+        super(identityGroup.getID(), identityGroup.getLabel(), Integer.toString(identityGroup.getStandardIdentityGroupCode()), null);
         standardIdCodes = identityGroup.getStandardIdentityIDs().stream().map(StandardIdentity.class::cast).map(StandardIdentity::getID).collect(toList());
     }
 

@@ -5,18 +5,20 @@ import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
 public enum ${amplifier.typeName} implements <#if amplifier.standard>Standard</#if>EnumeratedAmplifier {
 <#list amplifier.values as val>
-    ${val.id}("${val.code}", "${val.label}"<#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#if val?is_last>;<#else>,</#if>
+    ${val.id}("${val.code}", "${val.label}"<#if val.remarks??>, "${val.remarks}"</#if><#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#if val?is_last>;<#else>,</#if>
 </#list>
 
     private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.${amplifier.enumId};
 
     private final String id;
-    private final String label;<#if amplifier.frameAmplifier>
+    private final String label;<#if amplifier.coded>
+    private final String code;</#if><#if amplifier.frameAmplifier>
     private final String backgroundFill;</#if>
     
-    private ${amplifier.typeName}(String id, String label<#if amplifier.frameAmplifier>, String backgroundFill</#if>) {
+    private ${amplifier.typeName}(String id, String label<#if amplifier.coded>, String code</#if><#if amplifier.frameAmplifier>, String backgroundFill</#if>) {
         this.id = id;
-        this.label = label;<#if amplifier.frameAmplifier>
+        this.label = label;<#if amplifier.coded>
+        this.code = code;</#if><#if amplifier.frameAmplifier>
         this.backgroundFill = backgroundFill;</#if>
     }
     
@@ -39,6 +41,12 @@ public enum ${amplifier.typeName} implements <#if amplifier.standard>Standard</#
     public String getLabel() {
         return label;
     }
+<#if amplifier.coded>
+
+    public String getCode() {
+        return code;
+    }
+</#if>
 <#if amplifier.frameAmplifier>
 
     @Override

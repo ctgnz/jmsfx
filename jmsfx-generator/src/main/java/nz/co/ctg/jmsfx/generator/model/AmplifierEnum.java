@@ -15,11 +15,15 @@ public class AmplifierEnum extends StandardEnum {
     private final int max;
 
     public AmplifierEnum(Amplifier amplifier) {
-        super(amplifier.getID(), amplifier.getLabel(), CaseUtils.toCamelCase(amplifier.getLabel(), true, ' ', '/', '(', ')'));
+        super(amplifier.getID(), amplifier.getLabel(), CaseUtils.toCamelCase(amplifier.getLabel(), true, ' ', '/', '(', ')'), null);
         this.description = StringUtils.defaultIfBlank(amplifier.getDescription(), "");
         this.type = amplifier.getType();
         this.min = ObjectUtils.defaultIfNull(amplifier.getMinLength(), 0);
         this.max = ObjectUtils.defaultIfNull(amplifier.getMaxLength(), 0);
+    }
+
+    public String getConstantName() {
+        return String.format("%s_%s", id, code);
     }
 
     public String getDescription() {

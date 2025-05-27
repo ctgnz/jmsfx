@@ -3,9 +3,9 @@ package ${basePackage};
 public enum Amplifier  {
 <#list amplifiers as val>
 <#if val.max gt 0>
-    ${val.id}_${val.code}("${val.id}", "${val.label}", AmplifierType.${val.type}, ${val.min}, ${val.max}, "${val.description}")<#if val?is_last>;<#else>,</#if>
+    ${val.constantName}("${val.id}", "${val.label}", AmplifierType.${val.type}, ${val.min}, ${val.max}, "${val.description}")<#if val?is_last>;<#else>,</#if>
 <#else>
-    ${val.id}_${val.code}("${val.id}", "${val.label}", AmplifierType.${val.type}, "${val.description}")<#if val?is_last>;<#else>,</#if>
+    ${val.constantName}("${val.id}", "${val.label}", AmplifierType.${val.type}, "${val.description}")<#if val?is_last>;<#else>,</#if>
 </#if>    
 </#list>    
 

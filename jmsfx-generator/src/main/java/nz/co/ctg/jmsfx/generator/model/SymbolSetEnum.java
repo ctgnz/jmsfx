@@ -1,5 +1,6 @@
 package nz.co.ctg.jmsfx.generator.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
@@ -13,7 +14,7 @@ public class SymbolSetEnum extends StandardEnum {
     private final String dimensionId;
     private final String fileName;
     private final String graphicLocation;
-    private final List<AmplifierGuideConfig> amplifierGuides;
+    private final List<AmplifierGuideConfig> amplifierGuides = new ArrayList<>();
     private boolean entityTypePresent = false;
     private boolean entitySubTypePresent = false;
     private boolean amplifierPresent = false;
@@ -27,10 +28,9 @@ public class SymbolSetEnum extends StandardEnum {
     private String amplifierThreeClass;
     private String frameAmplifierClass;
 
-    public SymbolSetEnum(Dimension dimension, SymbolSetRef symbolSet, String graphicLocation, List<AmplifierGuideConfig> amplifierGuides) {
-        super(symbolSet.getID().toString(), symbolSet.getLabel(), symbolSet.getSymbolSetCode().getCodeString());
+    public SymbolSetEnum(Dimension dimension, SymbolSetRef symbolSet, String graphicLocation) {
+        super(symbolSet.getID().toString(), symbolSet.getLabel(), symbolSet.getSymbolSetCode().getCodeString(), null);
         this.graphicLocation = graphicLocation;
-        this.amplifierGuides = amplifierGuides;
         this.dimensionId = dimension.getID();
         this.fileName = symbolSet.getInstance();
     }

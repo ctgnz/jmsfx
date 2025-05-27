@@ -11,6 +11,7 @@ import com.google.common.collect.Multimaps;
 import nz.co.ctg.jmsfx.model.Amplifier;
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
+import nz.co.ctg.jmsfx.model.GuideType;
 import nz.co.ctg.jmsfx.model.Entity;
 import nz.co.ctg.jmsfx.model.EntitySubType;
 import nz.co.ctg.jmsfx.model.EntityType;
@@ -30,19 +31,22 @@ public class SeaSubsurfaceSymbolSetInfo implements SymbolSetInfo {
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
-            new AmplifierGuide(Amplifier.G_StaffComments, 478, 466, 134, 96),
-            new AmplifierGuide(Amplifier.H_AdditionalInformation, 478, 466, 134, 96),
-            new AmplifierGuide(Amplifier.P_IffSifAis, 478, 370, 134, 96),
-            new AmplifierGuide(Amplifier.T_UniqueDesignation, 478, 178, 134, 96),
-            new AmplifierGuide(Amplifier.V_TypeOfEquipment, 478, 274, 134, 96),
-            new AmplifierGuide(Amplifier.X_AltitudeDepth, 478, 370, 134, 96),
-            new AmplifierGuide(Amplifier.Y_Location, 478, 562, 134, 96),
-            new AmplifierGuide(Amplifier.Z_Speed, 478, 562, 134, 96),
-            new AmplifierGuide(Amplifier.AL_OperationalCondition, 142, 592, 328, 96),
-            new AmplifierGuide(Amplifier.AO_EngagementBar, 134, 178, 344, 96),
-            new AmplifierGuide(Amplifier.AR_SpecialDesignator, 0, 178, 134, 96),
-            new AmplifierGuide(Amplifier.AS_Country, 478, 178, 134, 96),
-            new AmplifierGuide(Amplifier.AJ_SpeedLeader, 16, 467, 161, 91)
+            new AmplifierGuide(Amplifier.G_StaffComments, GuideType.RECTANGLE, 478, 466, 134, 96),
+            new AmplifierGuide(Amplifier.H_AdditionalInformation, GuideType.RECTANGLE, 478, 466, 134, 96),
+            new AmplifierGuide(Amplifier.P_IffSifAis, GuideType.RECTANGLE, 478, 370, 134, 96),
+            new AmplifierGuide(Amplifier.T_UniqueDesignation, GuideType.RECTANGLE, 478, 178, 134, 96),
+            new AmplifierGuide(Amplifier.V_TypeOfEquipment, GuideType.RECTANGLE, 478, 274, 134, 96),
+            new AmplifierGuide(Amplifier.X_AltitudeDepth, GuideType.RECTANGLE, 478, 370, 134, 96),
+            new AmplifierGuide(Amplifier.Y_Location, GuideType.RECTANGLE, 478, 562, 134, 96),
+            new AmplifierGuide(Amplifier.Z_Speed, GuideType.RECTANGLE, 478, 562, 134, 96),
+            new AmplifierGuide(Amplifier.AH_AreaOfUncertaintyIndicator, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AH1_AreaOfUncertaintyIndicatorLongitude, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AJ_SpeedLeader, GuideType.LINE, 197.657, 458.077, 17.069, 557.214),
+            new AmplifierGuide(Amplifier.AL_OperationalCondition, GuideType.RECTANGLE, 142, 592, 328, 96),
+            new AmplifierGuide(Amplifier.AO_EngagementBar, GuideType.RECTANGLE, 134, 178, 344, 96),
+            new AmplifierGuide(Amplifier.AO1_TargetDesignation, GuideType.SYSTEM),
+            new AmplifierGuide(Amplifier.AR_SpecialDesignator, GuideType.RECTANGLE, 0, 178, 134, 96),
+            new AmplifierGuide(Amplifier.AS_Country, GuideType.RECTANGLE, 478, 178, 134, 96)
         );
     }
 

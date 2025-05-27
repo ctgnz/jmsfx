@@ -3,6 +3,8 @@ package nz.co.ctg.jmsfx.icon;
 import nz.co.ctg.jmsfx.model.Amplifier;
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.MapChangeListener;
 import javafx.geometry.Bounds;
 import javafx.geometry.Point2D;
@@ -19,6 +21,7 @@ import javafx.scene.transform.Transform;
 public class IdentificationSymbolIcon extends Pane {
     private final Group container = new Group();
     private final IdentificationSymbol symbol;
+    private final BooleanProperty fillBackground = new SimpleBooleanProperty(false);
 
     protected IdentificationSymbolIcon(IdentificationSymbol symbol) {
         this.symbol = symbol;
@@ -43,12 +46,31 @@ public class IdentificationSymbolIcon extends Pane {
         updateScale(symbol.getScale());
     }
 
+    public BooleanProperty fillBackgroundProperty() {
+        return fillBackground;
+    }
+
     public IdentificationSymbol getSymbol() {
         return symbol;
     }
 
+    public boolean isFillBackground() {
+        return fillBackground.get();
+    }
+
+    public void setFillBackground(boolean fillBackground) {
+        this.fillBackground.set(fillBackground);
+    }
+
     protected void updateIcon() {
         container.getChildren().clear();
+        if (isFillBackground()) {
+            Rectangle bg = new Rectangle(0, 0, 612, 792);
+            bg.setStroke(Color.BLACK);
+            bg.setStrokeWidth(1);
+            bg.setFill(Color.WHITE);
+            container.getChildren().add(bg);
+        }
         if (symbol.isFrameUsed()) {
             Group frame = symbol.getFrameGraphic().createGroup();
             if (symbol.isFrameAmplifierUsed()) {
@@ -83,17 +105,18 @@ public class IdentificationSymbolIcon extends Pane {
         }
         if (symbol.isAmplifierGuidesVisible()) {
             symbol.getSymbolSet().getAmplifierGuides().forEach(guide -> {
-                Rectangle rect = new Rectangle(guide.getX(), guide.getY(), guide.getWidth(), guide.getHeight());
-                rect.setStrokeWidth(2);
-                rect.setStroke(Color.BLUE);
-                rect.setFill(null);
-                container.getChildren().add(rect);
+                Shape shape = guide.getShape();
+                shape.setStrokeWidth(2);
+                shape.setStroke(Color.BLUE);
+                shape.setFill(null);
+                container.getChildren().add(shape);
             });
         }
         symbol.getTextAmplifiers().values().forEach(textAmplifier -> {
             Point2D location = textAmplifier.getLocation();
             Text text = new Text(location.getX(), location.getY(), textAmplifier.getText());
             text.setFont(TextAmplifier.AMPLIFIER_FONT);
+            text.textProperty().bind(textAmplifier.textProperty());
             container.getChildren().add(text);
         });
         symbol.getGraphicAmplifiers().values().forEach(graphicAmplifier -> {

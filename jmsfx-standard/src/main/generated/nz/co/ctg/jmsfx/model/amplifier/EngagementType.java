@@ -5,8 +5,8 @@ import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
 public enum EngagementType implements EnumeratedAmplifier {
     L("", "Local"),
-    R("R", "Remote"),
-    B("B", "Both");
+    R("R:", "Remote"),
+    B("B:", "Both");
 
     private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.ENGAGEMENT_TYPE;
 

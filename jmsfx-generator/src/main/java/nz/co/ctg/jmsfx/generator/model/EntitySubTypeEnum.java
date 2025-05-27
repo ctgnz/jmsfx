@@ -13,7 +13,7 @@ public class EntitySubTypeEnum extends StandardEnum {
     private final String graphic;
 
     public EntitySubTypeEnum(EntityType entityType, EntitySubTypeType entitySubType) {
-        super(entitySubType.getID().toString(), entitySubType.getLabel(), entitySubType.getEntitySubTypeCode().getCodeString());
+        super(entitySubType.getID().toString(), entitySubType.getLabel(), entitySubType.getEntitySubTypeCode().getCodeString(), null);
         iconType = entitySubType.getIcon();
         entityTypeId = entityType.getID();
         graphic = getNonStandardGraphic(entitySubType);

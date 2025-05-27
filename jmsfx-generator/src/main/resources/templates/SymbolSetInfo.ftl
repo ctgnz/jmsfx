@@ -13,7 +13,8 @@ import com.google.common.collect.Multimaps;
 <#if symbolSet.amplifierGuidesPresent>import ${basePackage}.Amplifier;
 </#if>import ${basePackage}.EnumeratedAmplifier;
 import ${basePackage}.AmplifierGuide;
-import ${basePackage}.Entity;
+<#if symbolSet.amplifierGuidesPresent>import ${basePackage}.GuideType;
+</#if>import ${basePackage}.Entity;
 import ${basePackage}.EntitySubType;
 import ${basePackage}.EntityType;
 import ${basePackage}.SectorOneModifier;
@@ -37,8 +38,12 @@ public class ${symbolSet.baseTypeName}SymbolSetInfo implements SymbolSetInfo {
     public List<AmplifierGuide> getAmplifierGuides() {
 <#if symbolSet.amplifierGuidesPresent>
         return Arrays.asList(
-    <#list symbolSet.amplifierGuides as guide>        
-            new AmplifierGuide(Amplifier.${guide.amplifier}, ${guide.x}, ${guide.y}, ${guide.width}, ${guide.height})<#if guide?is_last><#else>,</#if>
+    <#list symbolSet.amplifierGuides as guide>
+        <#if guide.graphical>       
+            new AmplifierGuide(Amplifier.${guide.amplifier}, GuideType.${guide.type}<#list guide.points as pt>, ${pt}</#list>)<#if guide?is_last><#else>,</#if>
+        <#else>
+            new AmplifierGuide(Amplifier.${guide.amplifier}, GuideType.${guide.type})<#if guide?is_last><#else>,</#if>
+        </#if>    
     </#list>
         );
 <#else>

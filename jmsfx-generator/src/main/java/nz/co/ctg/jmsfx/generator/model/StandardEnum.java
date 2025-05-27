@@ -13,11 +13,13 @@ public abstract class StandardEnum {
     protected final String id;
     protected final String label;
     protected final String code;
+    protected final String remarks;
 
-    public StandardEnum(String id, String label, String code) {
+    public StandardEnum(String id, String label, String code, String remarks) {
         this.id = sanitiseId(id);
         this.label = label;
         this.code = code;
+        this.remarks = remarks;
     }
 
     public String getCode() {
@@ -30,6 +32,10 @@ public abstract class StandardEnum {
 
     public String getLabel() {
         return label;
+    }
+
+    public String getRemarks() {
+        return remarks;
     }
 
     protected String sanitiseId(String id) {

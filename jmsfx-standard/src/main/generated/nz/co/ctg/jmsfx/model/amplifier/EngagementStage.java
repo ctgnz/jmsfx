@@ -4,6 +4,7 @@ import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
 
 public enum EngagementStage implements EnumeratedAmplifier {
+    NA("", "Unspecified"),
     ASN("ASN", "Assign/Cover"),
     ENG("ENG", "Engage"),
     MIF("MIF", "Missile in Flight"),

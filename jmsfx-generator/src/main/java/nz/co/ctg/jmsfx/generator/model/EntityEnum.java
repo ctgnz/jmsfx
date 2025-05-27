@@ -10,7 +10,7 @@ public class EntityEnum extends StandardEnum {
     private final IconType iconType;
 
     public EntityEnum(Entity entity) {
-        super(entity.getID().toString(), entity.getLabel(), entity.getEntityCode().getCodeString());
+        super(entity.getID().toString(), entity.getLabel(), entity.getEntityCode().getCodeString(), null);
         iconType = entity.getIcon();
     }
 

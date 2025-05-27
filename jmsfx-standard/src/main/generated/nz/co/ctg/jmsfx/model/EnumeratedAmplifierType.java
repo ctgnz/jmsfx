@@ -5,8 +5,8 @@ import nz.co.ctg.jmsfx.model.amplifier.*;
 
 public enum EnumeratedAmplifierType implements SymbolIdentificationCodeElement {
     UNKNOWN("0", "Unspecified", UnknownAmplifier.class),
-    UNIT_ECHELON("1", "Unit Echelon", UnitEchelon.class, SymbolSet.LAND_UNIT),
-    EQUIPMENT_MOBILITY("3", "Equipment Mobility", EquipmentMobility.class, SymbolSet.LAND_EQUIPMENT),
+    UNIT_ECHELON("1", "Unit Echelon", UnitEchelon.class, SymbolSet.LAND_UNIT, SymbolSet.CONTROL_MEASURE, SymbolSet.CYBERSPACE),
+    EQUIPMENT_MOBILITY("3", "Equipment Mobility", EquipmentMobility.class, SymbolSet.LAND_UNIT, SymbolSet.LAND_EQUIPMENT, SymbolSet.LAND_INSTALLATION, SymbolSet.DISMOUNTED),
     TOWED_ARRAYS("6", "Naval towed array", TowedArrayType.class, SymbolSet.SEA_SURFACE),
     LEADERSHIP_ROLE("7", "Leadership role", LeadershipRole.class, SymbolSet.DISMOUNTED),
     REINFORCED("A1", "Reinforced or Reduced", ReinforcedReduced.class),

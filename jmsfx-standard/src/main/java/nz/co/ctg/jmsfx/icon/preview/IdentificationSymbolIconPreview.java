@@ -11,6 +11,7 @@ import nz.co.ctg.foxglove.SvgGraphic;
 import nz.co.ctg.jmsfx.icon.IconScale;
 import nz.co.ctg.jmsfx.icon.IconScaleListCell;
 import nz.co.ctg.jmsfx.icon.IdentificationSymbol;
+import nz.co.ctg.jmsfx.icon.IdentificationSymbolIcon;
 import nz.co.ctg.jmsfx.icon.ScaleDirection;
 import nz.co.ctg.jmsfx.model.AmplifierGuide;
 import nz.co.ctg.jmsfx.model.Context;
@@ -25,6 +26,7 @@ import nz.co.ctg.jmsfx.model.StandardIdentity;
 import nz.co.ctg.jmsfx.model.Status;
 import nz.co.ctg.jmsfx.model.SymbolIdentificationCode;
 import nz.co.ctg.jmsfx.model.SymbolSet;
+import nz.co.ctg.jmsfx.model.amplifier.CountryCode;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -32,6 +34,7 @@ import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -40,13 +43,13 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -79,6 +82,7 @@ public class IdentificationSymbolIconPreview extends Application {
     private Stage mainStage;
     private FoxgloveParser svgParser = new FoxgloveParser();
     private File lastDirectory;
+    private IdentificationSymbolIcon icon;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -103,8 +107,8 @@ public class IdentificationSymbolIconPreview extends Application {
         symbol.amplifierGuidesVisibleProperty().bind(showGuides.selectedProperty());
 
         amplifiers = new GridPane();
-        amplifiers.setVgap(12);
-        amplifiers.setHgap(6);
+        amplifiers.setVgap(6);
+        amplifiers.setHgap(3);
 
         final Label title = new Label("Amplifiers");
         title.setStyle("-fx-font-weight: bold; -fx-font-size: 12");
@@ -119,7 +123,9 @@ public class IdentificationSymbolIconPreview extends Application {
             newValue.getAmplifierGuides().forEach(guide -> createAmplifierGuide(row, guide));
         });
 
-        return amplifiers;
+        ScrollPane sp = new ScrollPane(amplifiers);
+        sp.setMinWidth(620);
+        return sp;
     }
 
     private void createAmplifierGuide(AtomicInteger row, AmplifierGuide guide) {
@@ -194,19 +200,9 @@ public class IdentificationSymbolIconPreview extends Application {
     }
 
     private Node createButtons() {
-        ComboBox<String> country = new ComboBox<>(FXCollections.observableArrayList("Scotland", "United Kingdom", "USA"));
+        ComboBox<CountryCode> country = new ComboBox<>(FXCollections.observableArrayList(CountryCode.values()));
         country.valueProperty().addListener((obs, oldValue, newValue) -> {
-            switch (newValue) {
-                case "Scotland":
-                    SymbolIdentificationCode.setExtensionCountryCode("684");
-                    break;
-                case "United Kingdom":
-                    SymbolIdentificationCode.setExtensionCountryCode("826");
-                    break;
-                case "USA":
-                    SymbolIdentificationCode.setExtensionCountryCode("840");
-                    break;
-            }
+            SymbolIdentificationCode.setExtensionCountryCode(newValue.getCode());
         });
         country.getSelectionModel().select(0);
 
@@ -382,11 +378,17 @@ public class IdentificationSymbolIconPreview extends Application {
         return gridPane;
     }
 
-    private VBox createSymbol() {
-        symbol = new IdentificationSymbol(svgParser);
-        VBox vBox = new VBox(symbol.createIcon());
-        vBox.setPadding(new Insets(24));
-        return vBox;
+    private Node createSymbol() {
+        this.symbol = new IdentificationSymbol(svgParser);
+        this.icon = symbol.createIcon();
+        icon.setFillBackground(true);
+        symbol.codeProperty().addListener((obs, oldValue, newValue) -> {
+            icon.setLayoutX(icon.getLayoutBounds().getMinX());
+            icon.setLayoutY(icon.getLayoutBounds().getMinY());
+        });
+        Group stack = new Group(icon);
+        BorderPane.setAlignment(stack, Pos.TOP_CENTER);
+        return stack;
     }
 
     private void testModifierEvents(List<Runnable> events, SymbolSet symbolSet) {
