@@ -50,6 +50,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -352,10 +354,18 @@ public class IdentificationSymbolIconPreview extends Application {
         gridPane.add(entity, 1, row++);
 
         gridPane.add(new Label("Entity Type:"), 0, row);
-        gridPane.add(entityType, 1, row++);
+        Button clearEntityType = new Button("X");
+        clearEntityType.setOnAction(evt -> symbol.entityTypeProperty().set(null));
+        clearEntityType.disableProperty().bind(symbol.entityTypeProperty().isNull());
+        HBox.setHgrow(entityType, Priority.ALWAYS);
+        gridPane.add(new HBox(entityType, clearEntityType), 1, row++);
 
         gridPane.add(new Label("Entity Sub-Type:"), 0, row);
-        gridPane.add(entitySubType, 1, row++);
+        Button clearEntitySubType = new Button("X");
+        clearEntitySubType.setOnAction(evt -> symbol.entitySubTypeProperty().set(null));
+        clearEntitySubType.disableProperty().bind(symbol.entitySubTypeProperty().isNull());
+        HBox.setHgrow(entitySubType, Priority.ALWAYS);
+        gridPane.add(new HBox(entitySubType, clearEntitySubType), 1, row++);
 
         gridPane.add(new Label("Sector 1 Mod:"), 0, row);
         gridPane.add(mod1, 1, row++);

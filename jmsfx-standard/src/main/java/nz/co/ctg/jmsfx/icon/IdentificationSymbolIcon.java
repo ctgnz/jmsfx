@@ -73,11 +73,15 @@ public class IdentificationSymbolIcon extends Pane {
         }
         if (symbol.isFrameUsed()) {
             Group frame = symbol.getFrameGraphic().createGroup();
+            container.getChildren().add(frame);
+            if (symbol.isFrameOverlayUsed()) {
+                Group overlay = symbol.getFrameOverlayGraphic().createGroup();
+                container.getChildren().add(overlay);
+            }
             if (symbol.isFrameAmplifierUsed()) {
                 EnumeratedAmplifier frameAmplifier = symbol.getFrameAmplifier();
                 replaceFill(frame, Color.web(frameAmplifier.getBackgroundFill()));
             }
-            container.getChildren().add(frame);
         }
         if (symbol.isStatusIconUsed()) {
             container.getChildren().add(symbol.getStatusGraphic().createGroup());

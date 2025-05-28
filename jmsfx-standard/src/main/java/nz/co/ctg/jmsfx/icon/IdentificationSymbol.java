@@ -70,6 +70,7 @@ public class IdentificationSymbol {
     private final ObjectProperty<SectorOneModifier> sectorOneModifier;
     private final ObjectProperty<SectorTwoModifier> sectorTwoModifier;
     private final ObjectProperty<SvgGraphic> frameGraphic = new SimpleObjectProperty<>();
+    private final ObjectProperty<SvgGraphic> frameOverlayGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> mainIconGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> amplifierGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> amplifierTwoGraphic = new SimpleObjectProperty<>();
@@ -310,6 +311,10 @@ public class IdentificationSymbol {
         return frameGraphic.get();
     }
 
+    public SvgGraphic getFrameOverlayGraphic() {
+        return frameOverlayGraphic.get();
+    }
+
     public GraphicAmplifier getGraphicAmplifier(Amplifier amplifier) {
         return graphicAmplifiers.get(amplifier);
     }
@@ -421,6 +426,10 @@ public class IdentificationSymbol {
 
     public boolean isFrameAmplifierUsed() {
         return !getFrameAmplifier().isUnknown();
+    }
+
+    public boolean isFrameOverlayUsed() {
+        return getContext().ordinal() > 0;
     }
 
     public boolean isFrameUsed() {
@@ -580,31 +589,24 @@ public class IdentificationSymbol {
                                                amplifierTwo, amplifierThree, frameAmplifier));
 
         // Graphic location properties only need to be updated after the component parts are changed
-        frameGraphic.bind(Bindings.createObjectBinding(() -> loadFrameGraphic(), context, symbolSet, standardIdentity, status, entity));
-        mainIconGraphic.bind(Bindings.createObjectBinding(() -> loadMainIconGraphic(), symbolSet, standardIdentity, entity, entityType, entitySubType));
-        amplifierGraphic.bind(Bindings.createObjectBinding(() -> loadAmplifierGraphic(), amplifier, standardIdentity));
-        amplifierTwoGraphic.bind(Bindings.createObjectBinding(() -> loadAmplifierTwoGraphic(), amplifierTwo, standardIdentity));
-        amplifierThreeGraphic.bind(Bindings.createObjectBinding(() -> loadAmplifierThreeGraphic(), amplifierThree, standardIdentity));
-        frameAmplifierGraphic.bind(Bindings.createObjectBinding(() -> loadFrameAmplifierGraphic(), frameAmplifier, standardIdentity));
-        sectorOneModifierGraphic.bind(Bindings.createObjectBinding(() -> loadSectorOneModifierGraphic(), symbolSet, standardIdentity, sectorOneModifier));
-        sectorTwoModifierGraphic.bind(Bindings.createObjectBinding(() -> loadSectorTwoModifierGraphic(), symbolSet, standardIdentity, sectorTwoModifier));
-        statusGraphic.bind(Bindings.createObjectBinding(() -> loadStatusGraphic(), symbolSet, standardIdentity, status));
-        hqtfDummyGraphic.bind(Bindings.createObjectBinding(() -> loadHqtfDummyGraphic(), symbolSet, standardIdentity, hqtfDummy));
+        frameGraphic.bind(Bindings.createObjectBinding(() -> loadFrameGraphic(), code));
+        frameOverlayGraphic.bind(Bindings.createObjectBinding(() -> loadFrameOverlayGraphic(), code));
+        mainIconGraphic.bind(Bindings.createObjectBinding(() -> loadMainIconGraphic(), code));
+        amplifierGraphic.bind(Bindings.createObjectBinding(() -> loadAmplifierGraphic(), code));
+        amplifierTwoGraphic.bind(Bindings.createObjectBinding(() -> loadAmplifierTwoGraphic(), code));
+        amplifierThreeGraphic.bind(Bindings.createObjectBinding(() -> loadAmplifierThreeGraphic(), code));
+        frameAmplifierGraphic.bind(Bindings.createObjectBinding(() -> loadFrameAmplifierGraphic(), code));
+        sectorOneModifierGraphic.bind(Bindings.createObjectBinding(() -> loadSectorOneModifierGraphic(), code));
+        sectorTwoModifierGraphic.bind(Bindings.createObjectBinding(() -> loadSectorTwoModifierGraphic(), code));
+        statusGraphic.bind(Bindings.createObjectBinding(() -> loadStatusGraphic(), code));
+        hqtfDummyGraphic.bind(Bindings.createObjectBinding(() -> loadHqtfDummyGraphic(), code));
     }
 
     private String calculateFrameLocation() {
-        String frameFolder = "Frames";
-        if (getContext() == Context.EXERCISE) {
-            frameFolder += "/Exercise";
-        } else if (getContext() == Context.SIMULATION) {
-            frameFolder += "/Sim";
-        }
         SymbolSet effectiveSymbolSet = getSymbolSet();
         StandardIdentity effectiveStandardId = getStandardIdentityForFrame();
         Status effectiveStatus = getStatusForFrame(effectiveStandardId);
-        return String.format("/svg/%s/%s_%s%s_%s%s.svg",
-                             frameFolder,
-                             getContext().getId(),
+        return String.format("/svg/Frames/0_%s%s_%s%s.svg",
                              effectiveStandardId.getId(),
                              effectiveSymbolSet.getFrameId(),
                              effectiveStatus.getId(),
@@ -678,6 +680,15 @@ public class IdentificationSymbol {
     private SvgGraphic loadFrameGraphic() {
         if (isFrameUsed()) {
             String filePath = calculateFrameLocation();
+            return parser.parseFile(filePath);
+        } else {
+            return null;
+        }
+    }
+
+    private SvgGraphic loadFrameOverlayGraphic() {
+        if (isFrameOverlayUsed()) {
+            String filePath = String.format("/svg/Frames/Overlay/%s.svg", getContext().getId());
             return parser.parseFile(filePath);
         } else {
             return null;

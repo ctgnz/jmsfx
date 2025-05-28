@@ -347,7 +347,7 @@ public class Library {
 
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
-            "remarks", "description", "note", "values"
+            "description", "remarks", "note", "values"
         })
         public static class Amplifier {
 
