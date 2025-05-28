@@ -1,9 +1,5 @@
 package nz.co.ctg.jmsfx.generator;
 
-import java.util.Arrays;
-
-import org.apache.commons.lang3.StringUtils;
-
 import nz.co.ctg.jmsfx.generator.schema.GuideType;
 import nz.co.ctg.jmsfx.generator.schema.SymbolSet;
 
@@ -17,8 +13,7 @@ public class AmplifierGuideConfig {
         this.code = source.getID();
         this.type = source.getType();
         if (type != GuideType.SYSTEM) {
-            String[] split = StringUtils.split(StringUtils.remove(source.getPoints(), " "), ",");
-            this.points = Arrays.stream(split).mapToDouble(val -> Double.parseDouble(val)).toArray();
+            this.points = source.getPoints().stream().mapToDouble(Double::doubleValue).toArray();
         }
     }
 

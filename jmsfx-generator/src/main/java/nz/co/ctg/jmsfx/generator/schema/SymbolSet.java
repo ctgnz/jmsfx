@@ -43,13 +43,13 @@ public class SymbolSet {
             @XmlAttribute(name = "Type", required = true)
             protected GuideType type;
             @XmlAttribute(name = "Points", required = false)
-            protected String points;
+            protected List<Double> points;
 
             public String getID() {
                 return id;
             }
 
-            public String getPoints() {
+            public List<Double> getPoints() {
                 return points;
             }
 
@@ -61,7 +61,7 @@ public class SymbolSet {
                 this.id = value;
             }
 
-            public void setPoints(String points) {
+            public void setPoints(List<Double> points) {
                 this.points = points;
             }
 
