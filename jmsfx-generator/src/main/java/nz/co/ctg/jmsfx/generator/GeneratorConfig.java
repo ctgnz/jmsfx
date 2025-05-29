@@ -37,7 +37,6 @@ public class GeneratorConfig {
     private String basePackage;
     private String libraryFile;
     private String extensionCountryCode;
-    private String extensionSymbolSet;
     private List<EnumeratedAmplifierConfig> enumeratedAmplifiers;
     private List<StandardAmplifierConfig> standardAmplifiers;
     private Map<String, String> simpleTypes;
@@ -83,10 +82,6 @@ public class GeneratorConfig {
 
     public String getExtensionCountryCode() {
         return extensionCountryCode;
-    }
-
-    public String getExtensionSymbolSet() {
-        return extensionSymbolSet;
     }
 
     public StandardEnumConfig<GeometryEnum, Geometry> getGeometry() {
@@ -163,10 +158,6 @@ public class GeneratorConfig {
 
     public void setExtensionCountryCode(String extensionCountryCode) {
         this.extensionCountryCode = extensionCountryCode;
-    }
-
-    public void setExtensionSymbolSet(String extensionSymbolSet) {
-        this.extensionSymbolSet = extensionSymbolSet;
     }
 
     public void setInputDir(Path inputDir) {

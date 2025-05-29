@@ -2,6 +2,7 @@ package nz.co.ctg.jmsfx.model.amplifier;
 
 import nz.co.ctg.jmsfx.model.StandardEnumeratedAmplifier;
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
+import nz.co.ctg.jmsfx.model.Extension;
 
 public enum EquipmentMobility implements StandardEnumeratedAmplifier {
     WHEEL_LIMIT_COUNTRY("1", "Wheeled limited cross country"),
@@ -46,7 +47,23 @@ public enum EquipmentMobility implements StandardEnumeratedAmplifier {
         return label;
     }
     
-    @Override
+    public boolean isDeprecated() {
+        try {
+            return EquipmentMobility.class.getField(name()).getAnnotation(Deprecated.class) != null;
+        } catch (NoSuchFieldException | SecurityException e) {
+            return false;
+        }
+    }
+
+    public boolean isExtension() {
+        try {
+            return EquipmentMobility.class.getField(name()).getAnnotation(Extension.class) != null;
+        } catch (NoSuchFieldException | SecurityException e) {
+            return false;
+        }
+    }
+
+   @Override
     public boolean isGraphicalIcon() {
         return true;
     }

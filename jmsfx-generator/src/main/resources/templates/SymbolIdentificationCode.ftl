@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 import com.google.common.base.Objects;
 
 import nz.co.ctg.jmsfx.model.amplifier.UnknownAmplifier;
+import nz.co.ctg.jmsfx.model.amplifier.CountryCode;
 
 import static java.util.stream.Collectors.toList;
 import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
@@ -25,23 +26,14 @@ public class SymbolIdentificationCode {
     public static final Status DEFAULT_STATUS = Status.PRESENT;
     public static final HqtfDummy DEFAULT_HQTF_DUMMY = HqtfDummy.NA;
     public static final UnknownAmplifier DEFAULT_AMPLIFIER = UnknownAmplifier.NA;
-    private static String extensionCountryCode = "${config.extensionCountryCode}";
-    private static String extensionSymbolSet = "${config.extensionSymbolSet}";
+    private static CountryCode extensionCountryCode = CountryCode.UNDEFINED;
 
-    public static String getExtensionCountryCode() {
+    public static CountryCode getExtensionCountryCode() {
         return extensionCountryCode;
     }
 
-    public static String getExtensionSymbolSet() {
-        return extensionSymbolSet;
-    }
-
-    public static void setExtensionCountryCode(String extensionCountryCode) {
-        SymbolIdentificationCode.extensionCountryCode = extensionCountryCode;
-    }
-
-    public static void setExtensionSymbolSet(String extensionSymbolSet) {
-        SymbolIdentificationCode.extensionSymbolSet = extensionSymbolSet;
+    public static void setExtensionCountryCode(CountryCode countryCode) {
+        extensionCountryCode = countryCode;
     }
 
     private Version version = DEFAULT_VERSION;
@@ -59,6 +51,7 @@ public class SymbolIdentificationCode {
     private EntitySubType entitySubType;
     private SectorOneModifier sectorOneModifier;
     private SectorTwoModifier sectorTwoModifier;
+    private CountryCode countryCode = extensionCountryCode;
     private final PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
 
     public SymbolIdentificationCode() {
@@ -101,6 +94,10 @@ public class SymbolIdentificationCode {
 
     public Context getContext() {
         return context;
+    }
+
+    public CountryCode getCountryCode() {
+        return defaultIfNull(countryCode, extensionCountryCode);
     }
 
     public Entity getDefaultEntity() {
@@ -188,14 +185,13 @@ public class SymbolIdentificationCode {
     }
 
     public String getThirdTenDigits() {
-        return String.format("%s%s%s%s%s%s0%s",
+        return String.format("%s%s%s%s%s%s",
                              getSectorOneModifierType(),
                              getSectorTwoModifierType(),
-                             getExtensionSymbolSet(),
-                             amplifierTwo != null ? amplifierTwo.getId() : "0",
-                             amplifierThree != null ? amplifierThree.getId() : "0",
+                             amplifierTwo != null ? amplifierTwo.getFullId() : "00",
+                             amplifierThree != null ? amplifierThree.getFullId() : "00",
                              frameAmplifier != null ? frameAmplifier.getId() : "0",
-                             getExtensionCountryCode());
+                             getCountryCode().getCode());
     }
 
     public SectorOneModifier getSectorOneModifier() {
@@ -270,6 +266,12 @@ public class SymbolIdentificationCode {
         Context oldValue = this.context;
         this.context = defaultIfNull(context, DEFAULT_CONTEXT);
         changeSupport.firePropertyChange("context", oldValue, this.context);
+    }
+
+    public void setCountryCode(CountryCode countryCode) {
+        CountryCode oldValue = this.countryCode;
+        this.countryCode = defaultIfNull(countryCode, extensionCountryCode);
+        changeSupport.firePropertyChange("countryCode", oldValue, this.countryCode);
     }
 
     public void setEntity(Entity entity) {

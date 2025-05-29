@@ -204,9 +204,12 @@ public class IdentificationSymbolIconPreview extends Application {
     private Node createButtons() {
         ComboBox<CountryCode> country = new ComboBox<>(FXCollections.observableArrayList(CountryCode.values()));
         country.valueProperty().addListener((obs, oldValue, newValue) -> {
-            SymbolIdentificationCode.setExtensionCountryCode(newValue.getCode());
+            SymbolIdentificationCode.setExtensionCountryCode(newValue);
         });
-        country.getSelectionModel().select(0);
+        country.setCellFactory(p -> new SymbolIdentificationCodeElementListCell<>());
+        country.setButtonCell(new SymbolIdentificationCodeElementListCell<>());
+        country.setMaxWidth(300);
+        country.valueProperty().bindBidirectional(symbol.countryCodeProperty());
 
         ComboBox<IconScale> scale = new ComboBox<>(FXCollections.observableArrayList(IconScale.values()));
         scale.setCellFactory(p -> new IconScaleListCell());

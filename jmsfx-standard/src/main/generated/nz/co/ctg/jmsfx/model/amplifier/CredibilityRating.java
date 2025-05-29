@@ -2,6 +2,7 @@ package nz.co.ctg.jmsfx.model.amplifier;
 
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifier;
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
+import nz.co.ctg.jmsfx.model.Extension;
 
 public enum CredibilityRating implements EnumeratedAmplifier {
     CONFIRMED("1", "Confirmed by Other Sources"),
@@ -41,7 +42,23 @@ public enum CredibilityRating implements EnumeratedAmplifier {
         return label;
     }
     
-    @Override
+    public boolean isDeprecated() {
+        try {
+            return CredibilityRating.class.getField(name()).getAnnotation(Deprecated.class) != null;
+        } catch (NoSuchFieldException | SecurityException e) {
+            return false;
+        }
+    }
+
+    public boolean isExtension() {
+        try {
+            return CredibilityRating.class.getField(name()).getAnnotation(Extension.class) != null;
+        } catch (NoSuchFieldException | SecurityException e) {
+            return false;
+        }
+    }
+
+   @Override
     public boolean isGraphicalIcon() {
         return true;
     }

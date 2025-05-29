@@ -12,11 +12,13 @@ public class EnumeratedAmplifierEnum extends StandardEnum {
     public EnumeratedAmplifierEnum(AmplifierGroup group, Amplifier amplifier) {
         super(amplifier.getName(), amplifier.getLabel(), amplifier.getAmplifierCode().getHexValue(), null);
         this.backgroundFill = StringUtils.defaultIfBlank(amplifier.getRemarks(), "");
+        this.extension = amplifier.isExtension();
     }
 
     public EnumeratedAmplifierEnum(Values.Value value) {
         super(value.getName(), value.getLabel(), value.getLabelAlias(), value.getRemarks());
         this.backgroundFill = null;
+        this.extension = value.isExtension();
     }
 
     public String getBackgroundFill() {

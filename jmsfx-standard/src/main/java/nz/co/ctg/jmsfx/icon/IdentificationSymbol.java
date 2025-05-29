@@ -26,6 +26,7 @@ import nz.co.ctg.jmsfx.model.Status;
 import nz.co.ctg.jmsfx.model.SymbolIdentificationCode;
 import nz.co.ctg.jmsfx.model.SymbolSet;
 import nz.co.ctg.jmsfx.model.Version;
+import nz.co.ctg.jmsfx.model.amplifier.CountryCode;
 
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
@@ -69,6 +70,7 @@ public class IdentificationSymbol {
     private final ObjectProperty<EntitySubType> entitySubType;
     private final ObjectProperty<SectorOneModifier> sectorOneModifier;
     private final ObjectProperty<SectorTwoModifier> sectorTwoModifier;
+    private final ObjectProperty<CountryCode> countryCode;
     private final ObjectProperty<SvgGraphic> frameGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> frameOverlayGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> mainIconGraphic = new SimpleObjectProperty<>();
@@ -114,6 +116,7 @@ public class IdentificationSymbol {
             entitySubType = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("entitySubType").build();
             sectorOneModifier = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("sectorOneModifier").build();
             sectorTwoModifier = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("sectorTwoModifier").build();
+            countryCode = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("countryCode").build();
             // only set up the listeners once all default values are set
             addListeners();
         } catch (Exception e) {
@@ -171,6 +174,10 @@ public class IdentificationSymbol {
 
     public ObjectProperty<Context> contextProperty() {
         return context;
+    }
+
+    public ObjectProperty<CountryCode> countryCodeProperty() {
+        return countryCode;
     }
 
     public IdentificationSymbolIcon createIcon() {
@@ -586,7 +593,7 @@ public class IdentificationSymbol {
         code.bind(Bindings.createStringBinding(() -> sidc.toString(),
                                                version, context, standardIdentity, status, hqtfDummy, symbolSet, amplifier,
                                                entity, entityType, entitySubType, sectorOneModifier, sectorTwoModifier,
-                                               amplifierTwo, amplifierThree, frameAmplifier));
+                                               amplifierTwo, amplifierThree, frameAmplifier, countryCode));
 
         // Graphic location properties only need to be updated after the component parts are changed
         frameGraphic.bind(Bindings.createObjectBinding(() -> loadFrameGraphic(), code));
@@ -650,7 +657,7 @@ public class IdentificationSymbol {
     private SvgGraphic loadAmplifierThreeGraphic() {
         EnumeratedAmplifier amplifierGroup = getAmplifierThree();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
-            String filePath = String.format("/svg/%s/%s%s/%s%s.svg", amplifierGroup.getGraphicLocation(), SymbolIdentificationCode.getExtensionCountryCode(), SymbolIdentificationCode.getExtensionSymbolSet(), getStandardIdentityGroupId(), amplifierGroup.getFullId());
+            String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getFullId());
             return parser.parseFile(filePath);
         } else {
             return null;

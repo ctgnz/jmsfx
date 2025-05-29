@@ -91,6 +91,11 @@ public class EnumeratedAmplifierTypeEnum extends StandardEnum {
         return frameAmplifier;
     }
 
+    @Override
+    public boolean isExtension() {
+        return values.stream().anyMatch(EnumeratedAmplifierEnum::isExtension);
+    }
+
     public boolean isStandard() {
         return standard;
     }

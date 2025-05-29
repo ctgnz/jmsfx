@@ -112,8 +112,8 @@ public class Library {
                     protected HexDigit amplifierCode;
                     @XmlElement(name = "Graphics")
                     protected Library.AmplifierGroups.AmplifierGroup.Amplifiers.Amplifier.Graphics graphics;
-                    @XmlAttribute(name = "IsExtension")
-                    protected Boolean isExtension;
+                    @XmlAttribute(name = "Extension")
+                    protected boolean extension;
                     @XmlAttribute(name = "Name", required = true)
                     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
                     @XmlSchemaType(name = "token")
@@ -164,12 +164,8 @@ public class Library {
                         return remarks;
                     }
 
-                    public boolean isIsExtension() {
-                        if (isExtension == null) {
-                            return false;
-                        } else {
-                            return isExtension;
-                        }
+                    public boolean isExtension() {
+                        return extension;
                     }
 
                     public void setAmplifierCode(HexDigit value) {
@@ -180,12 +176,12 @@ public class Library {
                         this.description = value;
                     }
 
-                    public void setGraphics(Library.AmplifierGroups.AmplifierGroup.Amplifiers.Amplifier.Graphics value) {
-                        this.graphics = value;
+                    public void setExtension(boolean value) {
+                        this.extension = value;
                     }
 
-                    public void setIsExtension(Boolean value) {
-                        this.isExtension = value;
+                    public void setGraphics(Library.AmplifierGroups.AmplifierGroup.Amplifiers.Amplifier.Graphics value) {
+                        this.graphics = value;
                     }
 
                     public void setLabel(String value) {
@@ -226,8 +222,8 @@ public class Library {
             @XmlIDREF
             @XmlSchemaType(name = "IDREFS")
             protected List<Object> compatibleSymbolSetIDs;
-            @XmlAttribute(name = "IsExtension")
-            protected Boolean isExtension;
+            @XmlAttribute(name = "Extension")
+            protected boolean extension;
             @XmlAttribute(name = "Name", required = true)
             @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
             @XmlSchemaType(name = "token")
@@ -242,7 +238,6 @@ public class Library {
             protected String labelAlias;
             @XmlAttribute(name = "Description")
             protected String description;
-
             @XmlAttribute(name = "Remarks")
             protected String remarks;
 
@@ -285,12 +280,8 @@ public class Library {
                 return remarks;
             }
 
-            public boolean isIsExtension() {
-                if (isExtension == null) {
-                    return false;
-                } else {
-                    return isExtension;
-                }
+            public boolean isExtension() {
+                return extension;
             }
 
             public void setAmplifierGroupCode(int value) {
@@ -305,8 +296,8 @@ public class Library {
                 this.description = value;
             }
 
-            public void setIsExtension(Boolean value) {
-                this.isExtension = value;
+            public void setExtension(boolean value) {
+                this.extension = value;
             }
 
             public void setLabel(String value) {
@@ -377,6 +368,8 @@ public class Library {
                     protected String description;
                     @XmlAttribute(name = "Remarks")
                     protected String remarks;
+                    @XmlAttribute(name = "Extension")
+                    protected boolean extension;
 
                     public String getDescription() {
                         return description;
@@ -402,8 +395,16 @@ public class Library {
                         return remarks;
                     }
 
+                    public boolean isExtension() {
+                        return extension;
+                    }
+
                     public void setDescription(String value) {
                         this.description = value;
+                    }
+
+                    public void setExtension(boolean extension) {
+                        this.extension = extension;
                     }
 
                     public void setLabel(String value) {
@@ -519,9 +520,12 @@ public class Library {
             @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
             @XmlSchemaType(name = "token")
             protected String labelAlias;
+            @XmlAttribute(name = "Extension")
+            protected boolean extension;
+            @XmlAttribute(name = "Deprecated")
+            protected boolean deprecated;
             @XmlElement(name = "Description")
             protected String description;
-
             @XmlElement(name = "Remarks")
             protected String remarks;
 
@@ -576,8 +580,24 @@ public class Library {
                 return this.values;
             }
 
+            public boolean isDeprecated() {
+                return deprecated;
+            }
+
+            public boolean isExtension() {
+                return extension;
+            }
+
+            public void setDeprecated(boolean deprecated) {
+                this.deprecated = deprecated;
+            }
+
             public void setDescription(String value) {
                 this.description = value;
+            }
+
+            public void setExtension(boolean extension) {
+                this.extension = extension;
             }
 
             public void setID(String value) {
@@ -671,8 +691,8 @@ public class Library {
             @XmlElement(name = "ContextCode")
             @XmlSchemaType(name = "unsignedShort")
             protected int contextCode;
-            @XmlAttribute(name = "IsExtension")
-            protected Boolean isExtension;
+            @XmlAttribute(name = "Extension")
+            protected boolean extension;
             @XmlAttribute(name = "ID", required = true)
             @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
             @XmlID
@@ -719,12 +739,8 @@ public class Library {
                 return remarks;
             }
 
-            public boolean isIsExtension() {
-                if (isExtension == null) {
-                    return false;
-                } else {
-                    return isExtension;
-                }
+            public boolean isExtension() {
+                return extension;
             }
 
             public void setContextCode(int value) {
@@ -735,12 +751,12 @@ public class Library {
                 this.description = value;
             }
 
-            public void setID(String value) {
-                this.id = value;
+            public void setExtension(boolean value) {
+                this.extension = value;
             }
 
-            public void setIsExtension(Boolean value) {
-                this.isExtension = value;
+            public void setID(String value) {
+                this.id = value;
             }
 
             public void setLabel(String value) {
@@ -1260,8 +1276,8 @@ public class Library {
             protected int hqtfDummyCode;
             @XmlElement(name = "Graphics")
             protected Library.HQTFDummies.HQTFDummy.Graphics graphics;
-            @XmlAttribute(name = "IsExtension")
-            protected Boolean isExtension;
+            @XmlAttribute(name = "Extension")
+            protected boolean extension;
             @XmlAttribute(name = "Name", required = true)
             @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
             @XmlSchemaType(name = "token")
@@ -1312,16 +1328,16 @@ public class Library {
                 return remarks;
             }
 
-            public boolean isIsExtension() {
-                if (isExtension == null) {
-                    return false;
-                } else {
-                    return isExtension;
-                }
+            public boolean isExtension() {
+                return extension;
             }
 
             public void setDescription(String value) {
                 this.description = value;
+            }
+
+            public void setExtension(boolean value) {
+                this.extension = value;
             }
 
             public void setGraphics(Library.HQTFDummies.HQTFDummy.Graphics value) {
@@ -1330,10 +1346,6 @@ public class Library {
 
             public void setHQTFDummyCode(int value) {
                 this.hqtfDummyCode = value;
-            }
-
-            public void setIsExtension(Boolean value) {
-                this.isExtension = value;
             }
 
             public void setLabel(String value) {
@@ -1579,8 +1591,8 @@ public class Library {
             @XmlElement(name = "StandardIdentityCode")
             @XmlSchemaType(name = "unsignedShort")
             protected int standardIdentityCode;
-            @XmlAttribute(name = "IsExtension")
-            protected Boolean isExtension;
+            @XmlAttribute(name = "Extension")
+            protected boolean extension;
             @XmlAttribute(name = "ID", required = true)
             @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
             @XmlID
@@ -1627,24 +1639,20 @@ public class Library {
                 return standardIdentityCode;
             }
 
-            public boolean isIsExtension() {
-                if (isExtension == null) {
-                    return false;
-                } else {
-                    return isExtension;
-                }
+            public boolean isExtension() {
+                return extension;
             }
 
             public void setDescription(String value) {
                 this.description = value;
             }
 
-            public void setID(String value) {
-                this.id = value;
+            public void setExtension(boolean value) {
+                this.extension = value;
             }
 
-            public void setIsExtension(Boolean value) {
-                this.isExtension = value;
+            public void setID(String value) {
+                this.id = value;
             }
 
             public void setLabel(String value) {
@@ -1876,8 +1884,8 @@ public class Library {
             protected int statusCode;
             @XmlElement(name = "Graphics")
             protected Library.Statuses.Status.Graphics graphics;
-            @XmlAttribute(name = "IsExtension")
-            protected Boolean isExtension;
+            @XmlAttribute(name = "Extension")
+            protected boolean extension;
             @XmlAttribute(name = "Name", required = true)
             @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
             @XmlSchemaType(name = "token")
@@ -1935,16 +1943,16 @@ public class Library {
                 return statusCode;
             }
 
-            public boolean isIsExtension() {
-                if (isExtension == null) {
-                    return false;
-                } else {
-                    return isExtension;
-                }
+            public boolean isExtension() {
+                return extension;
             }
 
             public void setDescription(String value) {
                 this.description = value;
+            }
+
+            public void setExtension(boolean value) {
+                this.extension = value;
             }
 
             public void setGraphic(String value) {
@@ -1953,10 +1961,6 @@ public class Library {
 
             public void setGraphics(Library.Statuses.Status.Graphics value) {
                 this.graphics = value;
-            }
-
-            public void setIsExtension(Boolean value) {
-                this.isExtension = value;
             }
 
             public void setLabel(String value) {

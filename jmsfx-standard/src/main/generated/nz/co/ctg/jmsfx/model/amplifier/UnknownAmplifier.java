@@ -2,6 +2,7 @@ package nz.co.ctg.jmsfx.model.amplifier;
 
 import nz.co.ctg.jmsfx.model.StandardEnumeratedAmplifier;
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
+import nz.co.ctg.jmsfx.model.Extension;
 
 public enum UnknownAmplifier implements StandardEnumeratedAmplifier {
     NA("0", "Unknown", "FFFF80");
@@ -43,7 +44,23 @@ public enum UnknownAmplifier implements StandardEnumeratedAmplifier {
         return backgroundFill;
     }
     
-    @Override
+    public boolean isDeprecated() {
+        try {
+            return UnknownAmplifier.class.getField(name()).getAnnotation(Deprecated.class) != null;
+        } catch (NoSuchFieldException | SecurityException e) {
+            return false;
+        }
+    }
+
+    public boolean isExtension() {
+        try {
+            return UnknownAmplifier.class.getField(name()).getAnnotation(Extension.class) != null;
+        } catch (NoSuchFieldException | SecurityException e) {
+            return false;
+        }
+    }
+
+   @Override
     public boolean isGraphicalIcon() {
         return false;
     }

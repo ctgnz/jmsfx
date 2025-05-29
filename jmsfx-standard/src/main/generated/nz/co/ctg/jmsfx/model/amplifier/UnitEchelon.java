@@ -2,6 +2,7 @@ package nz.co.ctg.jmsfx.model.amplifier;
 
 import nz.co.ctg.jmsfx.model.StandardEnumeratedAmplifier;
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
+import nz.co.ctg.jmsfx.model.Extension;
 
 public enum UnitEchelon implements StandardEnumeratedAmplifier {
     TEAM_CREW("1", "Team/Crew"),
@@ -18,7 +19,7 @@ public enum UnitEchelon implements StandardEnumeratedAmplifier {
     ARMY_GROUP_FRONT("C", "Army Group/Front"),
     REGION_THEATRE("D", "Region/Theatre"),
     COMMAND("E", "Command"),
-    STAFFEL("F", "Staffel");
+    @Extension STAFFEL("F", "Staffel");
 
     private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.UNIT_ECHELON;
 
@@ -50,7 +51,23 @@ public enum UnitEchelon implements StandardEnumeratedAmplifier {
         return label;
     }
     
-    @Override
+    public boolean isDeprecated() {
+        try {
+            return UnitEchelon.class.getField(name()).getAnnotation(Deprecated.class) != null;
+        } catch (NoSuchFieldException | SecurityException e) {
+            return false;
+        }
+    }
+
+    public boolean isExtension() {
+        try {
+            return UnitEchelon.class.getField(name()).getAnnotation(Extension.class) != null;
+        } catch (NoSuchFieldException | SecurityException e) {
+            return false;
+        }
+    }
+
+   @Override
     public boolean isGraphicalIcon() {
         return true;
     }

@@ -2,10 +2,11 @@ package ${basePackage}.amplifier;
 
 import nz.co.ctg.jmsfx.model.<#if amplifier.standard>Standard</#if>EnumeratedAmplifier;
 import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
+import nz.co.ctg.jmsfx.model.Extension;
 
 public enum ${amplifier.typeName} implements <#if amplifier.standard>Standard</#if>EnumeratedAmplifier {
 <#list amplifier.values as val>
-    ${val.id}("${val.code}", "${val.label}"<#if val.remarks??>, "${val.remarks}"</#if><#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#if val?is_last>;<#else>,</#if>
+    <#if val.extension>@Extension </#if>${val.id}("${val.code}", "${val.label}"<#if val.remarks??>, "${val.remarks}"</#if><#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#if val?is_last>;<#else>,</#if>
 </#list>
 
     private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.${amplifier.enumId};
@@ -55,7 +56,23 @@ public enum ${amplifier.typeName} implements <#if amplifier.standard>Standard</#
     }
 </#if>
     
-    @Override
+    public boolean isDeprecated() {
+        try {
+            return ${amplifier.typeName}.class.getField(name()).getAnnotation(Deprecated.class) != null;
+        } catch (NoSuchFieldException | SecurityException e) {
+            return false;
+        }
+    }
+
+    public boolean isExtension() {
+        try {
+            return ${amplifier.typeName}.class.getField(name()).getAnnotation(Extension.class) != null;
+        } catch (NoSuchFieldException | SecurityException e) {
+            return false;
+        }
+    }
+
+   @Override
     public boolean isGraphicalIcon() {
         return ${amplifier.frameAmplifier?string("false", "true")};
     }

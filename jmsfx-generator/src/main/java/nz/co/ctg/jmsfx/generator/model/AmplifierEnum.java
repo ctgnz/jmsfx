@@ -20,6 +20,7 @@ public class AmplifierEnum extends StandardEnum {
         this.type = amplifier.getType();
         this.min = ObjectUtils.defaultIfNull(amplifier.getMinLength(), 0);
         this.max = ObjectUtils.defaultIfNull(amplifier.getMaxLength(), 0);
+        this.extension = amplifier.isExtension();
     }
 
     public String getConstantName() {

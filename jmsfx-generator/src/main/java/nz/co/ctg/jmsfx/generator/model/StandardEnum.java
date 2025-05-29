@@ -14,6 +14,8 @@ public abstract class StandardEnum {
     protected final String label;
     protected final String code;
     protected final String remarks;
+    protected boolean extension;
+    protected boolean deprecated;
 
     public StandardEnum(String id, String label, String code, String remarks) {
         this.id = sanitiseId(id);
@@ -36,6 +38,22 @@ public abstract class StandardEnum {
 
     public String getRemarks() {
         return remarks;
+    }
+
+    public boolean isDeprecated() {
+        return deprecated;
+    }
+
+    public boolean isExtension() {
+        return extension;
+    }
+
+    public void setDeprecated(boolean deprecated) {
+        this.deprecated = deprecated;
+    }
+
+    public void setExtension(boolean extension) {
+        this.extension = extension;
     }
 
     protected String sanitiseId(String id) {
