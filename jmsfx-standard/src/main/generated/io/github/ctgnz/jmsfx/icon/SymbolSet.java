@@ -2,6 +2,7 @@ package io.github.ctgnz.jmsfx.icon;
 
 import java.util.List;
 
+import io.github.ctgnz.jmsfx.icon.common.CommonSymbolSetInfo;
 import io.github.ctgnz.jmsfx.icon.unknown.UnknownSymbolSetInfo;
 import io.github.ctgnz.jmsfx.icon.air.AirSymbolSetInfo;
 import io.github.ctgnz.jmsfx.icon.airmissile.AirMissileSymbolSetInfo;

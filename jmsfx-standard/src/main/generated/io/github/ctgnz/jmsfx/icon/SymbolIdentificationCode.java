@@ -11,6 +11,9 @@ import com.google.common.base.Objects;
 
 import io.github.ctgnz.jmsfx.icon.amplifier.UnknownAmplifier;
 import io.github.ctgnz.jmsfx.icon.amplifier.CountryCode;
+import io.github.ctgnz.jmsfx.icon.common.CommonSymbolSetInfo;
+import io.github.ctgnz.jmsfx.icon.common.CommonSectorOneModifier;
+import io.github.ctgnz.jmsfx.icon.common.CommonSectorTwoModifier;
 
 import static java.util.stream.Collectors.toList;
 import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;

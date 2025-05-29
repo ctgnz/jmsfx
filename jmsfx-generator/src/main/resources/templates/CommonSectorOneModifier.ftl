@@ -1,4 +1,7 @@
-package ${basePackage};
+package ${basePackage}.common;
+
+import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
+import io.github.ctgnz.jmsfx.icon.SymbolSet;
 
 public enum CommonSectorOneModifier implements SectorOneModifier {
 <#list sectorOneMods as mod>

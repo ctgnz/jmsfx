@@ -1,8 +1,17 @@
-package io.github.ctgnz.jmsfx.icon;
+package io.github.ctgnz.jmsfx.icon.common;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
+import io.github.ctgnz.jmsfx.icon.Entity;
+import io.github.ctgnz.jmsfx.icon.EntitySubType;
+import io.github.ctgnz.jmsfx.icon.EntityType;
+import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifier;
+import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
+import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.icon.SymbolSetInfo;
 
 public class CommonSymbolSetInfo implements SymbolSetInfo {
     public static final SymbolSetInfo INSTANCE = new CommonSymbolSetInfo();

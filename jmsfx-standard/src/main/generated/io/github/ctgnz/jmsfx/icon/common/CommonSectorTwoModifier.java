@@ -1,4 +1,7 @@
-package io.github.ctgnz.jmsfx.icon;
+package io.github.ctgnz.jmsfx.icon.common;
+
+import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.icon.SymbolSet;
 
 public enum CommonSectorTwoModifier implements SectorTwoModifier {
     AIRBORNE_2_MOD("1", "00", "Airborne", "Mobility"),

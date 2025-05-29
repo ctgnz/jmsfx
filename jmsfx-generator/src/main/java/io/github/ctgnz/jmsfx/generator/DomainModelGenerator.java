@@ -45,8 +45,8 @@ import io.github.ctgnz.jmsfx.generator.model.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.generator.schema.AmplifierType;
 import io.github.ctgnz.jmsfx.generator.schema.DoubleDigitType;
 import io.github.ctgnz.jmsfx.generator.schema.Library;
-import io.github.ctgnz.jmsfx.generator.schema.SymbolSet;
 import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension.SymbolSets.SymbolSetRef;
+import io.github.ctgnz.jmsfx.generator.schema.SymbolSet;
 import io.github.ctgnz.jmsfx.generator.schema.SymbolSet.Entities.Entity;
 import io.github.ctgnz.jmsfx.generator.schema.SymbolSet.Entities.Entity.EntityTypes.EntityType;
 import jakarta.xml.bind.JAXBContext;
@@ -85,7 +85,7 @@ public class DomainModelGenerator {
         Library library = parseLibraryFile(config.getInputDir().resolve(config.getLibraryFile()));
         dataModel.put("dimensionGraphics", config.getDimensionGraphicLocations());
         config.getStandardEnums().forEach(enumConfig -> generateStandardEnum(dataModel, library, enumConfig));
-        generateCommonModifiers(config.getBasePackageDir(), dataModel, library);
+        generateCommonModifiers(config.getBasePackageDir().resolve("common"), dataModel, library);
         generateAmplifierEnum(dataModel, library);
         generateEnumeratedAmplifierEnums(dataModel, library);
         generateSymbolSets(dataModel, library);
@@ -159,6 +159,9 @@ public class DomainModelGenerator {
     @SuppressWarnings("unchecked")
     private void generateCommonModifiers(Path packagePath, Map<String, Object> dataModel, Library library) throws Exception {
         System.out.format("Processing common modifiers%n");
+        if (!Files.exists(packagePath)) {
+            Files.createDirectories(packagePath);
+        }
         SymbolSet symbolSet = new SymbolSet();
         symbolSet.setSymbolSetCode(new DoubleDigitType(12, 0));
         symbolSet.setSectorOneModifiers(library.getCommonModifiers().getSectorOneModifiers());
@@ -234,13 +237,6 @@ public class DomainModelGenerator {
                 values.add(new SectorTwoModEnum(mod));
             });
         }
-//        if (symbolSet.getSpecialEntitySubTypes() != null) {
-//            symSetDetails.setSpecialEntitySubTypePresent(true);
-//            symbolSet.getSpecialEntitySubTypes().getEntitySubType().forEach(subType -> {
-//                List<SpecialEntitySubTypeEnum> values = (List<SpecialEntitySubTypeEnum>) dataModel.computeIfAbsent("specialEntitySubTypes", key -> new ArrayList<SpecialEntitySubTypeEnum>());
-//                values.add(new SpecialEntitySubTypeEnum(subType));
-//            });
-//        }
         Template symSetInfoTemplate = config.getTemplateConfig().getTemplate("SymbolSetInfo.ftl");
         symSetInfoTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve(symSetDetails.getBaseTypeName() + "SymbolSetInfo.java"))));
         Template entityTemplate = config.getTemplateConfig().getTemplate("Entity.ftl");

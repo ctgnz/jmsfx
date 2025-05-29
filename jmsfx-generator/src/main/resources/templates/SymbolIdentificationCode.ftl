@@ -11,6 +11,9 @@ import com.google.common.base.Objects;
 
 import ${basePackage}.amplifier.UnknownAmplifier;
 import ${basePackage}.amplifier.CountryCode;
+import ${basePackage}.common.CommonSymbolSetInfo;
+import ${basePackage}.common.CommonSectorOneModifier;
+import ${basePackage}.common.CommonSectorTwoModifier;
 
 import static java.util.stream.Collectors.toList;
 import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;

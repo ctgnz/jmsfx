@@ -1,4 +1,7 @@
-package io.github.ctgnz.jmsfx.icon;
+package io.github.ctgnz.jmsfx.icon.common;
+
+import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
+import io.github.ctgnz.jmsfx.icon.SymbolSet;
 
 public enum CommonSectorOneModifier implements SectorOneModifier {
     UAV_DRONE_MOD("1", "00", "UAV/Drone Equipped/Drone", "Mobility"),

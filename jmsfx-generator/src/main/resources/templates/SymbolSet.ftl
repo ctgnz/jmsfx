@@ -2,6 +2,7 @@ package ${basePackage};
 
 import java.util.List;
 
+import ${basePackage}.common.CommonSymbolSetInfo;
 <#list symbolSets as sym>
 import ${basePackage}.${sym.packageName}.${sym.baseTypeName}SymbolSetInfo;
 </#list>    
