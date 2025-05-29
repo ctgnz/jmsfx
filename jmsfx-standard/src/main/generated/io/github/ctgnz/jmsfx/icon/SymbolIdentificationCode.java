@@ -1,4 +1,4 @@
-package ${basePackage};
+package io.github.ctgnz.jmsfx.icon;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -9,8 +9,8 @@ import java.util.stream.Stream;
 
 import com.google.common.base.Objects;
 
-import ${basePackage}.amplifier.UnknownAmplifier;
-import ${basePackage}.amplifier.CountryCode;
+import io.github.ctgnz.jmsfx.icon.amplifier.UnknownAmplifier;
+import io.github.ctgnz.jmsfx.icon.amplifier.CountryCode;
 
 import static java.util.stream.Collectors.toList;
 import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;

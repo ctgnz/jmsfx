@@ -1,8 +1,8 @@
 package ${basePackage}.amplifier;
 
-import nz.co.ctg.jmsfx.model.<#if amplifier.standard>Standard</#if>EnumeratedAmplifier;
-import nz.co.ctg.jmsfx.model.EnumeratedAmplifierType;
-import nz.co.ctg.jmsfx.model.Extension;
+import ${basePackage}.<#if amplifier.standard>Standard</#if>EnumeratedAmplifier;
+import ${basePackage}.EnumeratedAmplifierType;
+import ${basePackage}.Extension;
 
 public enum ${amplifier.typeName} implements <#if amplifier.standard>Standard</#if>EnumeratedAmplifier {
 <#list amplifier.values as val>
