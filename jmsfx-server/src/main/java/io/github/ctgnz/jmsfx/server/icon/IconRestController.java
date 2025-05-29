@@ -1,5 +1,6 @@
 package io.github.ctgnz.jmsfx.server.icon;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,8 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
-
-import static java.util.stream.Collectors.toList;
 
 import io.github.ctgnz.jmsfx.icon.Entity;
 import io.github.ctgnz.jmsfx.icon.EntitySubType;
@@ -18,58 +17,37 @@ import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
 import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SymbolSetInfo;
 import io.github.ctgnz.jmsfx.icon.dto.AmplifierGroupDto;
-import io.github.ctgnz.jmsfx.icon.dto.EntityDto;
-import io.github.ctgnz.jmsfx.icon.dto.EntitySubTypeDto;
-import io.github.ctgnz.jmsfx.icon.dto.EntityTypeDto;
-import io.github.ctgnz.jmsfx.icon.dto.SectorOneModifierDto;
-import io.github.ctgnz.jmsfx.icon.dto.SectorTwoModifierDto;
+import io.github.ctgnz.jmsfx.icon.dto.SymbolSetDto;
 
 public abstract class IconRestController<E extends Entity, T extends EntityType, S extends EntitySubType, M extends SectorOneModifier, N extends SectorTwoModifier, A extends EnumeratedAmplifier> {
     private SymbolSet symbolSet;
-    private SymbolSetInfo symbolSetInfo;
     private FoxgloveParser parser = new FoxgloveParser();
+    private SymbolSetDto dto;
 
     public IconRestController(SymbolSet symbolSet) {
         this.symbolSet = symbolSet;
-        this.symbolSetInfo = symbolSet.getSymbolSetInfo();
+        this.dto = new SymbolSetDto(symbolSet);
     }
 
     @GetMapping("/modifier/one")
-    public List<SectorOneModifierDto<M>> listSectorOneModifiers() {
-        List<M> modifiers = symbolSetInfo.getSectorOneModifiers();
-        return modifiers.stream().map(SectorOneModifierDto::new).collect(toList());
+    public List<SectorOneModifier> listSectorOneModifiers() {
+        return dto.getSectorOneModifiers();
     }
 
     @GetMapping("/modifier/two")
-    public List<SectorTwoModifierDto<N>> listSectorTwoModifiers() {
-        List<N> modifiers = symbolSetInfo.getSectorTwoModifiers();
-        return modifiers.stream().map(SectorTwoModifierDto::new).collect(toList());
+    public List<SectorTwoModifier> listSectorTwoModifiers() {
+        return dto.getSectorTwoModifiers();
     }
 
     @GetMapping("/amplifier")
     public List<AmplifierGroupDto<A>> listAmplifiers() {
-        List<A> modifiers = symbolSetInfo.getAmplifiers();
-        return modifiers.stream().map(AmplifierGroupDto::new).collect(toList());
+        return Collections.emptyList();
     }
 
     @GetMapping("/entity/list")
-    public List<EntityDto<E>> listEntities() {
-        List<E> entities = symbolSetInfo.getEntities();
-        return entities.stream().map(EntityDto::new).collect(toList());
-    }
-
-    @GetMapping("/entityType/{entity}/list")
-    public List<EntityTypeDto<T>> listEntityTypes(@PathVariable E entity) {
-        List<T> entityTypes = symbolSetInfo.getEntityTypes(entity);
-        return entityTypes.stream().map(EntityTypeDto::new).collect(toList());
-    }
-
-    @GetMapping("/entitySubType/{entityType}/list")
-    public List<EntitySubTypeDto<S>> listEntitySubTypes(@PathVariable T entityType) {
-        List<S> entitySubTypes = symbolSetInfo.getEntitySubTypes(entityType);
-        return entitySubTypes.stream().map(EntitySubTypeDto::new).collect(toList());
+    public List<Entity> listEntities() {
+        return dto.getEntities();
     }
 
     @GetMapping(value = "/symbol/modifier/one/{sectorOneMod}", produces = "image/svg+xml")

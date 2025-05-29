@@ -1,25 +1,45 @@
 package io.github.ctgnz.jmsfx.icon.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import io.github.ctgnz.jmsfx.icon.Entity;
+import io.github.ctgnz.jmsfx.icon.EntityType;
+import io.github.ctgnz.jmsfx.icon.IconType;
 
-public class EntityDto<E extends Entity> {
+public class EntityDto implements Entity {
 
-    private final E entity;
+    private final Entity entity;
+    private final List<EntityType> entityTypes = new ArrayList<>();
 
-    public EntityDto(E entity) {
+    public EntityDto(Entity entity) {
         this.entity = entity;
+        this.entityTypes.addAll(entity.getEntityTypes().stream().map(EntityTypeDto::new).toList());
     }
 
-    public E getEntity() {
+    @Override
+    public Entity getEntity() {
         return entity;
     }
 
-    public String getLabel() {
-        return entity.getLabel();
+    @Override
+    public List<EntityType> getEntityTypes() {
+        return entityTypes;
     }
 
+    @Override
+    public IconType getIconType() {
+        return entity.getIconType();
+    }
+
+    @Override
     public String getId() {
         return entity.getId();
+    }
+
+    @Override
+    public String getLabel() {
+        return entity.getLabel();
     }
 
 }

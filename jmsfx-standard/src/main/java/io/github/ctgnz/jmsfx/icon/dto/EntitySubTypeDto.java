@@ -1,25 +1,39 @@
 package io.github.ctgnz.jmsfx.icon.dto;
 
 import io.github.ctgnz.jmsfx.icon.EntitySubType;
+import io.github.ctgnz.jmsfx.icon.EntityType;
+import io.github.ctgnz.jmsfx.icon.IconType;
 
-public class EntitySubTypeDto<S extends EntitySubType> {
+public class EntitySubTypeDto implements EntitySubType {
 
-    private final S entitySubType;
+    private final EntitySubType entitySubType;
 
-    public EntitySubTypeDto(S subType) {
+    public EntitySubTypeDto(EntitySubType subType) {
         this.entitySubType = subType;
     }
 
-    public S getEntitySubType() {
+    public EntitySubType getEntitySubType() {
         return entitySubType;
     }
 
-    public String getLabel() {
-        return entitySubType.getLabel();
+    @Override
+    public EntityType getEntityType() {
+        return entitySubType.getEntityType();
     }
 
+    @Override
+    public IconType getIconType() {
+        return entitySubType.getIconType();
+    }
+
+    @Override
     public String getId() {
         return entitySubType.getId();
+    }
+
+    @Override
+    public String getLabel() {
+        return entitySubType.getLabel();
     }
 
 }

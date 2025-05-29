@@ -1,24 +1,37 @@
 package io.github.ctgnz.jmsfx.icon.dto;
 
 import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
+import io.github.ctgnz.jmsfx.icon.SymbolSet;
 
-public class SectorOneModifierDto<M extends SectorOneModifier> {
-    private final M modifier;
+public class SectorOneModifierDto implements SectorOneModifier {
+    private final SectorOneModifier modifier;
 
-    public SectorOneModifierDto(M modifier) {
+    public SectorOneModifierDto(SectorOneModifier modifier) {
         this.modifier = modifier;
     }
 
-    public M getModifier() {
-        return modifier;
+    @Override
+    public String getCategory() {
+        return modifier.getCategory();
     }
 
+    @Override
+    public String getId() {
+        return modifier.getId();
+    }
+
+    @Override
     public String getLabel() {
         return modifier.getLabel();
     }
 
-    public String getId() {
-        return modifier.getId();
+    public SectorOneModifier getModifier() {
+        return modifier;
+    }
+
+    @Override
+    public SymbolSet getSymbolSet() {
+        return modifier.getSymbolSet();
     }
 
 }
