@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve" sodipodi:docname="25132000.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs3645"><marker style="overflow:visible" id="TriangleStart" refX="0" refY="0" orient="auto-start-reverse" inkscape:stockid="TriangleStart" markerWidth="5.3244081" markerHeight="6.155385" viewBox="0 0 5.3244081 6.1553851" inkscape:isstock="true" inkscape:collect="always" preserveAspectRatio="xMidYMid"><path transform="scale(0.5)" style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt" d="M 5.77,0 -2.88,5 V -5 Z" id="path135" /></marker></defs><sodipodi:namedview id="namedview3643" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="1.1123737" inkscape:cx="238.22928" inkscape:cy="212.15891" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="Version_1.0" />
+<g id="main" transform="translate(0,32)">
+	
+	
+		
+	
+<path style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:20, 20;stroke-dashoffset:0;stroke-opacity:1" d="M 305.5055,397.296 368.955,265.71163 500.539,202.262 368.955,138.813 305.5055,7.229 242.056,138.813 l -131.584,63.449 131.584,63.45 z" id="path3764" sodipodi:nodetypes="ccccccccc" /><text font-family="sans-serif" font-size="52px" id="text14389" x="275.36295" y="221.70874">TH</text></g>
+<g id="template" display="none">
+	<g display="inline" id="g3630" transform="translate(110.12486,-88.998865)">
+		
+			<rect x="268.64899" y="168.229" fill="none" stroke="#000000" stroke-width="2.4349" stroke-linecap="round" stroke-miterlimit="8" width="73.388" height="72.728996" id="rect3626" />
+		<text transform="translate(290.5845,226.1787)" font-family="sans-serif" font-size="52px" id="text3628">T</text>
+	</g>
+	<g id="points" display="inline">
+		<text transform="translate(398.1719,428.5664)" font-family="sans-serif" font-size="32.3352px" id="text3632">POINT</text>
+		<text transform="translate(398.1719,390.0137)" font-family="sans-serif" font-size="32.3352px" id="text3634">CENTER</text>
+		
+	<path style="fill:none;stroke:#000000;stroke-width:2.79208;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart)" d="M 392.9913,397.39626 313.50721,243.86647" id="path14392" /></g>
+</g>
+<g id="example" display="none">
+	<text id="varTe" display="inline" font-family="sans-serif" font-size="52px" x="399.21783" y="134.51065">9</text>
+</g>
+</svg>
