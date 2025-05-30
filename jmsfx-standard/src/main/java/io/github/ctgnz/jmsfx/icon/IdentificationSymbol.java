@@ -33,6 +33,7 @@ public class IdentificationSymbol {
     public static final Color BAMBOO_GREEN = Color.rgb(170, 255, 170); // AAFFAA
     public static final Color SALMON_RED = Color.rgb(255, 128, 128);   // FF8080
     public static final Color CIV_PURPLE = Color.rgb(255, 161, 255);   // FFA1FF
+    public static final Color HOSTILE_ORANGE = Color.rgb(255, 120, 0); // FF7800
     public static final Color OFF_WHITE = Color.rgb(239, 239, 239);    // EFEFEF
     public static final Color NEARLY_WHITE = Color.rgb(250, 250, 250); // FAFAFA
     private final SymbolIdentificationCode sidc = new SymbolIdentificationCode();

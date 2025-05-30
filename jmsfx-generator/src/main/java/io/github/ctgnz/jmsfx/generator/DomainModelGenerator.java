@@ -393,12 +393,12 @@ public class DomainModelGenerator {
 
     @SuppressWarnings("unchecked")
     private String[] getAmplifierClasses(Map<String, Object> dataModel, SymbolSetEnum symSetDetails) {
-        List<EnumeratedAmplifierTypeEnum> amplifierGroupValues = (List<EnumeratedAmplifierTypeEnum>) dataModel.get("enumAmplifierTypes");
-        return amplifierGroupValues.stream()
-                        .filter(amplifier -> !amplifier.isFrameAmplifier())
-                        .filter(amplifier -> amplifier.isFor(symSetDetails.getId()))
-                        .map(EnumeratedAmplifierTypeEnum::getTypeName)
-                        .toArray(size -> new String[size]);
+        List<EnumeratedAmplifierTypeEnum> enumAmplifiers = (List<EnumeratedAmplifierTypeEnum>) dataModel.get("enumAmplifierTypes");
+        return enumAmplifiers.stream()
+            .filter(amplifier -> !amplifier.isFrameAmplifier())
+            .filter(amplifier -> amplifier.isFor(symSetDetails.getId()))
+            .map(EnumeratedAmplifierTypeEnum::getTypeName)
+            .toArray(size -> new String[size]);
     }
 
     @SuppressWarnings("unchecked")
@@ -434,12 +434,12 @@ public class DomainModelGenerator {
 
     @SuppressWarnings("unchecked")
     private Optional<String> getFrameAmplifierClass(Map<String, Object> dataModel, SymbolSetEnum symSetDetails) {
-        List<EnumeratedAmplifierTypeEnum> amplifierGroupValues = (List<EnumeratedAmplifierTypeEnum>) dataModel.get("enumAmplifierTypes");
-        return amplifierGroupValues.stream()
-                        .filter(EnumeratedAmplifierTypeEnum::isFrameAmplifier)
-                        .filter(amplifier -> amplifier.isFor(symSetDetails.getId()))
-                        .map(EnumeratedAmplifierTypeEnum::getTypeName)
-                        .findFirst();
+        List<EnumeratedAmplifierTypeEnum> enumAmplifiers = (List<EnumeratedAmplifierTypeEnum>) dataModel.get("enumAmplifierTypes");
+        return enumAmplifiers.stream()
+            .filter(EnumeratedAmplifierTypeEnum::isFrameAmplifier)
+            .filter(amplifier -> amplifier.isFor(symSetDetails.getId()))
+            .map(EnumeratedAmplifierTypeEnum::getTypeName)
+            .findFirst();
     }
 
     private Library parseLibraryFile(Path filePath) throws JAXBException, IOException {

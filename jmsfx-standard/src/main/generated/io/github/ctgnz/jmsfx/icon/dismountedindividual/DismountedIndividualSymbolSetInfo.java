@@ -18,7 +18,6 @@ import io.github.ctgnz.jmsfx.icon.EntityType;
 import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSetInfo;
-import io.github.ctgnz.jmsfx.icon.amplifier.EquipmentMobility;
 import io.github.ctgnz.jmsfx.icon.amplifier.LeadershipRole;
 
 public class DismountedIndividualSymbolSetInfo implements SymbolSetInfo {
@@ -59,12 +58,12 @@ public class DismountedIndividualSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public List<EnumeratedAmplifier> getAmplifiers() {
-        return Arrays.asList(EquipmentMobility.values());
+        return Arrays.asList(LeadershipRole.values());
     }
 
     @Override
     public List<EnumeratedAmplifier> getAmplifiersTwo() {
-        return Arrays.asList(LeadershipRole.values());
+        return Collections.emptyList();
     }
 
     @Override
@@ -109,7 +108,7 @@ public class DismountedIndividualSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isAmplifierTwoPresent() {
-        return true;
+        return false;
     }
 
     @Override
