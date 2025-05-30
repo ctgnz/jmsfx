@@ -2,31 +2,47 @@ inputDir: "D:/git/joint-military-symbology-xml/instance"
 outputDir: "D:/git/hallux/hallux-jmsfx/src/main/generated"
 basePackage: "nz.co.ctg.jmsfx.model"
 libraryFile: "Base.xml"
-extensionCountryCode: "826"
-extensionSymbolSet: "0"
+extensionCountryCode: "000"
 simpleTypes:
-    ISymbolIdentificationCodeElement: "SymbolIdentificationCodeElement"
-    IAmplifierGroup: "AmplifierGroup"
-    IFrameAmplifierGroup: "FrameAmplifierGroup"
-    IMainIconElement: "MainIconElement"
-    ISymbolSetInfo: "SymbolSetInfo"
-    IEntity: "Entity"
-    IEntityType: "EntityType"
-    IEntitySubType: "EntitySubType"
-    IIconModifier: "IconModifier"
-    ISectorOneModifier: "SectorOneModifier"
-    ISectorTwoModifier: "SectorTwoModifier"
-    AmplifierGuide: "AmplifierGuide"
-    IconType: "IconType"
-    SymbolIdentificationCode: "SymbolIdentificationCode"
-amplifierGroups:
-  - {enumType: "UnknownAmplifier", enumId: "UNKNOWN", enumDesc: "Unspecified", graphicLocation: "Amplifier", groupIds: [ "NA" ], frameAmplifier: true, unknown: true}
-  - {enumType: "StandardServiceTier", enumId: "SERVICE_TIER", enumDesc: "Nato standard service tiers", graphicLocation: "Extension", groupIds: [ "SERVICE_TIER" ], frameAmplifier: true}
-  - {enumType: "UnitEchelon", enumId: "UNIT_ECHELON", enumDesc: "Unit Echelon", graphicLocation: "Echelon", groupIds: [ "ECHELON_BDE_BELOW", "ECHELON_DIV_ABOVE" ], frameAmplifier: false}
-  - {enumType: "EquipmentMobility", enumId: "EQUIPMENT_MOBILITY", enumDesc: "Equipment Mobility", graphicLocation: "Amplifier", groupIds: [ "EQUIP_MOBILITY_LAND", "EQUIP_MOBILITY_SNOW", "EQUIP_MOBILITY_WATER" ], frameAmplifier: false}
-  - {enumType: "TowedArrayType", enumId: "TOWED_ARRAYS", enumDesc: "Naval towed array", graphicLocation: "Amplifier", groupIds: [ "TOWED_ARRAYS" ], frameAmplifier: false}
-  - {enumType: "LeadershipRole", enumId: "LEADERSHIP_INDICATOR", enumDesc: "Role for dismounted individuals", graphicLocation: "Amplifier", groupIds: [ "LEADERSHIP_INDICATOR", "STAFF_ROLE" ], frameAmplifier: false}
-  - {enumType: "StandardRank", enumId: "RANK", enumDesc: "NATO standard rank scales", graphicLocation: "Extension", groupIds: [ "RANK_ENLISTED", "RANK_WARRANT", "RANK_OFFICER" ], frameAmplifier: false}
+  ISymbolIdentificationCodeElement: "SymbolIdentificationCodeElement"
+  IEnumeratedAmplifier: "EnumeratedAmplifier"
+  IStandardEnumeratedAmplifier: "StandardEnumeratedAmplifier"
+  IMainIconElement: "MainIconElement"
+  ISymbolSetInfo: "SymbolSetInfo"
+  IEntity: "Entity"
+  IEntityType: "EntityType"
+  IEntitySubType: "EntitySubType"
+  IIconModifier: "IconModifier"
+  ISectorOneModifier: "SectorOneModifier"
+  ISectorTwoModifier: "SectorTwoModifier"
+  Extension: "Extension"
+  AmplifierGuide: "AmplifierGuide"
+  GuideType: "GuideType"
+  AmplifierSource: "AmplifierSource"
+  IconType: "IconType"
+  SymbolIdentificationCode: "SymbolIdentificationCode"
+  enumeratedAmplifiers:
+    - {amplifier: "F", valuesId: "F_VALUES", code: "A1", enumType: "ReinforcedReduced", enumId: "REINFORCED", enumDesc: "Reinforced or Reduced"}
+    - {amplifier: "J", valuesId: "RELIABILITY_RATINGS", code: "A2", enumType: "ReliabilityRating", enumId: "RELIABILITY_RATING", enumDesc: "Reliability Rating"}
+    - {amplifier: "J", valuesId: "CREDIBILITY_RATINGS", code: "A3", enumType: "CredibilityRating", enumId: "CREDIBILITY_RATING", enumDesc: "Credibility Rating"}
+    - {amplifier: "K", valuesId: "K_VALUES", code: "A4", enumType: "CombatEffectiveness", enumId: "COMBAT_EFFECTIVENESS", enumDesc: "Combat Effectiveness Values"}
+    - {amplifier: "Z", valuesId: "SPEED_VALUES", code: "A5", enumType: "SpeedUnit", enumId: "SPEED_UNIT", enumDesc: "Speed Units"}
+    - {amplifier: "AO", valuesId: "AO_TYPE_VALUES", code: "A6", enumType: "EngagementType", enumId: "ENGAGEMENT_TYPE", enumDesc: "Type of Engagement"}
+    - {amplifier: "AO", valuesId: "AO_STAGE_VALUES", code: "A7", enumType: "EngagementStage", enumId: "ENGAGEMENT_STAGE", enumDesc: "Engagement Stage Code"}
+    - {amplifier: "AO", valuesId: "AO_WEAPON_VALUES", code: "A8", enumType: "EngagementWeapon", enumId: "ENGAGEMENT_WEAPON", enumDesc: "Engagement Weapon"}
+    - {amplifier: "AO1", valuesId: "AO1_VALUES", code: "A9", enumType: "TargetDesignation", enumId: "TARGET_DESIGNATION", enumDesc: "Target Designation"}
+    - {amplifier: "AS", valuesId: "AS_VALUES", code: "AA", enumType: "CountryCode", enumId: "COUNTRY_CODE", enumDesc: "Country Codes", coded: true}
+    - {amplifier: "AX", valuesId: "AX_VALUES", code: "AB", enumType: "InstallationComposition", enumId: "INSTALLATION_COMPOSITION", enumDesc: "Installation Composition"}
+    - {amplifier: "AQ", valuesId: "AQ_VALUES", code: "AC", enumType: "GuardedUnit", enumId: "GUARDED_UNIT", enumDesc: "Guarded Unit"}
+    - {amplifier: "AD", valuesId: "AD_VALUES", code: "AD", enumType: "PlatformType", enumId: "PLATFORM_TYPE", enumDesc: "Platform Type"}
+    - {amplifier: "AR", valuesId: "AR_VALUES", code: "AE", enumType: "SpecialDesignator", enumId: "SPECIAL_DESIGNATOR", enumDesc: "Special Designator"}
+  standardAmplifiers:
+    - {enumType: "UnknownAmplifier", enumId: "UNKNOWN", enumDesc: "Unspecified", graphicLocation: "Amplifier", groupIds: [ "NA" ], frameAmplifier: true, unknown: true}
+    - {enumType: "UnitEchelon", enumId: "UNIT_ECHELON", enumDesc: "Unit Echelon", graphicLocation: "Echelon", groupIds: [ "ECHELON" ], frameAmplifier: false}
+    - {enumType: "EquipmentMobility", enumId: "EQUIPMENT_MOBILITY", enumDesc: "Equipment Mobility", graphicLocation: "Amplifier", groupIds: [ "EQUIP_MOBILITY" ], frameAmplifier: false}
+    - {enumType: "TowedArrayType", enumId: "TOWED_ARRAYS", enumDesc: "Naval towed array", graphicLocation: "Amplifier", groupIds: [ "TOWED_ARRAYS" ], frameAmplifier: false}
+    - {enumType: "LeadershipRole", enumId: "LEADERSHIP_ROLE", enumDesc: "Leadership role", graphicLocation: "Amplifier", groupIds: [ "LEADERSHIP_INDICATOR" ], frameAmplifier: false}
+    - {enumType: "StandardServiceTier", enumId: "SERVICE_TIER", enumDesc: "Standard service tiers", graphicLocation: "Extension", groupIds: [ "SERVICE_TIER" ], frameAmplifier: true}
 dimensionGraphicLocations:
   INTERNAL: "Internal"
   UNKNOWN: "Unknown"
@@ -40,78 +56,6 @@ dimensionGraphicLocations:
   SEA_SUBSURFACE: "SeaSubsurface"
   ACTIVITY: "Activities"
   CONTROL_MEASURE: "ControlMeasures"
-  METOC: "METOC"
+  CYBERSPACE: "Cyberspace"
 symbolGraphicLocations:
-  SS_ATMOSPHERIC: "METOC/Atmospheric"
-  SS_OCEANIC: "METOC/Oceanographic"
-  SS_SIGINT_AIR: "SigInt"
-  SS_SIGINT_LAND: "SigInt"
-  SS_SIGINT_SPACE: "SigInt"
-  SS_SIGINT_SURFACE: "SigInt"
-  SS_SIGINT_SUBSURFACE: "SigInt"
   SS_CYBERSPACE: "Cyberspace"
-amplifierGuides:
-  DISMOUNTED:
-    - { code: "C" , x: 180, y: 548, width: 252, height:  96, amplifier: "Quantity" }
-    - { code: "D" , x: 180, y: 248, width: 252, height:  96, amplifier: "LeadershipIdentifier" }
-    - { code: "AB" , x: 180, y: 152, width: 252, height:  96, amplifier: "FeintDummyIndicator" }
-    - { code: "G" , x: 440, y: 248, width: 168, height:  96, amplifier: "StaffComments" }
-    - { code: "H" , x: 440, y: 344, width: 168, height:  96, amplifier: "AdditionalInformation" }
-    - { code: "J" , x: 440, y: 536, width: 168, height:  96, amplifier: "EvaluationRating" }
-    - { code: "K" , x: 440, y: 536, width: 168, height:  96, amplifier: "CombatEffectiveness" }
-    - { code: "M" , x: 440, y: 440, width: 168, height:  96, amplifier: "HigherFormation" }
-    - { code: "P" , x: 440, y: 536, width: 168, height:  96, amplifier: "IFFSIFAIS" }
-    - { code: "T" , x:   4, y: 440, width: 168, height:  96, amplifier: "UniqueDesignation" }
-    - { code: "V" , x:   4, y: 344, width: 168, height:  96, amplifier: "Type" }
-    - { code: "W" , x:   4, y: 152, width: 168, height:  96, amplifier: "DateTimeGroupDTG" }
-    - { code: "X" , x:   4, y: 248, width: 168, height:  96, amplifier: "AltitudeDepth" }
-    - { code: "Y" , x:   4, y: 248, width: 168, height:  96, amplifier: "Location" }
-    - { code: "Z" , x:   4, y: 536, width: 168, height:  96, amplifier: "Speed" }
-    - { code: "AF", x:   4, y: 344, width: 168, height:  96, amplifier: "CommonIdentifier" }
-    - { code: "AS", x: 440, y: 152, width: 168, height:  96, amplifier: "Country" }
-  LAND_UNIT:
-    - { code: "C",  x: 205, y: 192, width: 200, height:  80, amplifier: "Quantity" }
-    - { code: "F",  x: 486, y: 196, width: 126, height:  80, amplifier: "ReinforcedOrReduced" }
-    - { code: "G",  x: 486, y: 276, width: 126, height:  80, amplifier: "StaffComments" }
-    - { code: "H",  x: 486, y: 356, width: 126, height:  80, amplifier: "AdditionalInformation" }
-    - { code: "J",  x: 486, y: 516, width: 126, height:  80, amplifier: "EvaluationRating" }
-    - { code: "K",  x: 486, y: 516, width: 126, height:  80, amplifier: "CombatEffectiveness" }
-    - { code: "M",  x: 486, y: 436, width: 126, height:  80, amplifier: "HigherFormation" }
-    - { code: "P",  x: 486, y: 516, width: 126, height:  80, amplifier: "IFFSIFAIS" }
-    - { code: "R",  x: 185, y: 520, width: 240, height:  80, amplifier: "MobilityIndicator" }
-    - { code: "T",  x:   0, y: 436, width: 126, height:  80, amplifier: "UniqueDesignation" }
-    - { code: "V",  x:   0, y: 356, width: 126, height:  80, amplifier: "Type" }
-    - { code: "W",  x:   0, y: 196, width: 126, height:  80, amplifier: "DateTimeGroupDTG" }
-    - { code: "X",  x:   0, y: 276, width: 126, height:  80, amplifier: "AltitudeDepth" }
-    - { code: "Y",  x:   0, y: 276, width: 126, height:  80, amplifier: "Location" }
-    - { code: "Z",  x:   0, y: 516, width: 126, height:  80, amplifier: "Speed" }
-    - { code: "AD", x:   0, y: 356, width: 126, height:  80, amplifier: "PlatformType" }
-    - { code: "AE", x:   0, y: 356, width: 126, height:  80, amplifier: "EquipmentTeardownTime" }
-    - { code: "AF", x: 486, y: 356, width: 126, height:  80, amplifier: "CommonIdentifier" }
-    - { code: "AH", x: 185, y: 520, width: 240, height:  80, amplifier: "HeadquartersElement" }
-    - { code: "AL", x: 130, y: 600, width: 350, height:  80, amplifier: "AreaOfUncertainty" }
-    - { code: "AO", x: 130, y:   5, width: 350, height:  80, amplifier: "EngagementBar" }
-    - { code: "AR", x:   0, y: 196, width: 126, height:  80, amplifier: "SpecialDesignator" }
-  LAND_EQUIPMENT:
-    - { code: "C",  x: 205, y: 192, width: 200, height:  80, amplifier: "Quantity" }
-    - { code: "F",  x: 486, y: 196, width: 126, height:  80, amplifier: "ReinforcedOrReduced" }
-    - { code: "G",  x: 486, y: 276, width: 126, height:  80, amplifier: "StaffComments" }
-    - { code: "H",  x: 486, y: 356, width: 126, height:  80, amplifier: "AdditionalInformation" }
-    - { code: "J",  x: 486, y: 516, width: 126, height:  80, amplifier: "EvaluationRating" }
-    - { code: "K",  x: 486, y: 516, width: 126, height:  80, amplifier: "CombatEffectiveness" }
-    - { code: "M",  x: 486, y: 436, width: 126, height:  80, amplifier: "HigherFormation" }
-    - { code: "P",  x: 486, y: 516, width: 126, height:  80, amplifier: "IFFSIFAIS" }
-    - { code: "R",  x: 185, y: 520, width: 240, height:  80, amplifier: "MobilityIndicator" }
-    - { code: "T",  x:   0, y: 436, width: 126, height:  80, amplifier: "UniqueDesignation" }
-    - { code: "V",  x:   0, y: 356, width: 126, height:  80, amplifier: "Type" }
-    - { code: "W",  x:   0, y: 196, width: 126, height:  80, amplifier: "DateTimeGroupDTG" }
-    - { code: "X",  x:   0, y: 276, width: 126, height:  80, amplifier: "AltitudeDepth" }
-    - { code: "Y",  x:   0, y: 276, width: 126, height:  80, amplifier: "Location" }
-    - { code: "Z",  x:   0, y: 516, width: 126, height:  80, amplifier: "Speed" }
-    - { code: "AD", x:   0, y: 356, width: 126, height:  80, amplifier: "PlatformType" }
-    - { code: "AE", x:   0, y: 356, width: 126, height:  80, amplifier: "EquipmentTeardownTime" }
-    - { code: "AF", x: 486, y: 356, width: 126, height:  80, amplifier: "CommonIdentifier" }
-    - { code: "AH", x: 185, y: 520, width: 240, height:  80, amplifier: "HeadquartersElement" }
-    - { code: "AL", x: 130, y: 600, width: 350, height:  80, amplifier: "AreaOfUncertainty" }
-    - { code: "AO", x: 130, y:   5, width: 350, height:  80, amplifier: "EngagementBar" }
-    - { code: "AR", x:   0, y: 196, width: 126, height:  80, amplifier: "SpecialDesignator" }
