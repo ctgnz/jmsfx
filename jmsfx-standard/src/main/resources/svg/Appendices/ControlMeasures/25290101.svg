@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve" sodipodi:docname="25290101.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs40" /><sodipodi:namedview id="namedview38" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="2.2025" inkscape:cx="190.23837" inkscape:cy="197.95687" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="example" />
+<g id="main" style="display:inline">
+	
+<path style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1" d="M 19.06924,168.89898 H 378.20658" id="path433" /></g>
+<g id="template" display="none">
+	<g id="points" display="inline" transform="translate(0,22)">
+		<g id="g15">
+			<text transform="translate(7.499,241.5)" font-family="sans-serif" font-size="18px" id="text5">PT 1</text>
+			<g id="g13">
+				<g id="g11">
+					<line fill="none" stroke="#000000" stroke-width="3" x1="20.833" y1="223.16701" x2="20.833" y2="183.83299" id="line7" />
+					<polygon points="28.335,186.022 20.857,173.068 13.378,186.022 " id="polygon9" />
+				</g>
+			</g>
+		</g>
+		<g id="g27">
+			<text transform="translate(358.499,239)" font-family="sans-serif" font-size="18px" id="text17">PT 2</text>
+			<g id="g25">
+				<g id="g23">
+					<line fill="none" stroke="#000000" stroke-width="3" x1="378.75" y1="222.66701" x2="378.75" y2="183.33299" id="line19" />
+					<polygon points="386.252,185.522 378.773,172.568 371.295,185.522 " id="polygon21" />
+				</g>
+			</g>
+		</g>
+	</g>
+	<g id="mod1" display="inline" transform="translate(-34.960272,-41.304813)">
+		
+			<rect x="174.08147" y="193.98862" fill="none" stroke="#000000" stroke-width="4.77135" stroke-linecap="round" stroke-miterlimit="8" width="132.14059" height="32.430351" id="rect30" style="fill:#ffffff;fill-opacity:1;stroke-width:3;stroke-dasharray:none" />
+		<text id="varT" transform="translate(178.6323,218.1816)" font-family="sans-serif" font-size="24px">Modifier 1</text>
+	</g>
+<g id="g995" display="inline" transform="translate(-167.69363,-37.406627)">
+		
+			<rect x="170.42659" y="183.24789" fill="none" stroke="#000000" stroke-width="3.35844" stroke-linecap="round" stroke-miterlimit="8" width="46.039898" height="46.115425" id="rect991" style="fill:#ffffff;fill-opacity:1;stroke-width:3;stroke-dasharray:none" />
+		<text id="text993" font-family="sans-serif" font-size="36px" x="179.94653" y="219.39252">N</text>
+	</g><g id="g1005" display="inline" transform="translate(180.09298,-37.406627)">
+		
+			<rect x="170.42659" y="183.24789" fill="none" stroke="#000000" stroke-width="3.35844" stroke-linecap="round" stroke-miterlimit="8" width="46.039898" height="46.115425" id="rect1001" style="fill:#ffffff;fill-opacity:1;stroke-width:3;stroke-dasharray:none" />
+		<text id="text1003" font-family="sans-serif" font-size="36px" x="179.94653" y="219.39252">N</text>
+	</g></g>
+<g id="example" display="none">
+	
+<path style="fill:none;stroke:#00ff00;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1" d="M 79.909194,288.76277 104.88082,196.59478 235.18729,96.254257 352.3269,83.99546" id="path1007" /><circle style="fill:#00ff00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:5;stroke-dasharray:none;stroke-opacity:1" id="path1061" cx="177.0715" cy="140.29512" r="9" /><circle style="fill:#00ff00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:5;stroke-dasharray:none;stroke-opacity:1" id="circle1339" cx="286.03857" cy="90.351875" r="9" /><circle style="display:inline;fill:#00ff00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:5;stroke-dasharray:none;stroke-opacity:1" id="circle1341" cx="92.167976" cy="245.17593" r="9" /></g>
+</svg>

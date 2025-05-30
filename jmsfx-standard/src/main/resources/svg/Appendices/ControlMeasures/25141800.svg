@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve" sodipodi:docname="25141800.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs124" /><sodipodi:namedview id="namedview122" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="2.2025" inkscape:cx="113.50738" inkscape:cy="200.22701" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="example" />
+<g id="main" style="display:inline">
+	<line fill="none" stroke="#000000" stroke-width="9.5864" x1="40.082001" y1="191.5" x2="369.082" y2="191.5" id="line2" />
+	<text font-family="sans-serif" font-size="24px" id="text4" x="37.738251" y="177.7227">HOL</text>
+	<text font-family="sans-serif" font-size="24px" id="text6" x="318.77341" y="176.5">HOL</text>
+</g>
+<g id="points" display="none">
+	<text transform="translate(339.082,278.5)" display="inline" font-family="sans-serif" font-size="24px" id="text9">PT 2</text>
+	<text transform="translate(14.082,278.5)" display="inline" font-family="sans-serif" font-size="24px" id="text11">PT 1</text>
+	<path display="inline" stroke="#000000" stroke-width="0.4335" stroke-linejoin="bevel" stroke-miterlimit="10" d="m 367.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.938,-36.087 10.732,36.166 z" id="path13" />
+	<path display="inline" stroke="#000000" stroke-width="0.4335" stroke-linejoin="bevel" stroke-miterlimit="10" d="m 39.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.94,-36.087 10.732,36.166 z" id="path15" />
+</g>
+<g id="example" display="none">
+	
+		<line display="inline" fill="none" stroke="#808080" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="8" x1="118.765" y1="320.229" x2="118.765" y2="84.172997" id="line18" />
+	
+		<line display="inline" fill="none" stroke="#808080" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="8" x1="281.36301" y1="320.229" x2="281.36301" y2="84.172997" id="line20" />
+	
+	
+	<g display="inline" id="g30" transform="translate(-0.04948292,4.5402938)">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" points="268.167,207.5 294.658,207.5 294.658,224.834 268.167,224.834 " id="polygon26" />
+		<text transform="scale(1.0008496,0.99915108)" fill="#808080" font-family="sans-serif" font-size="17.2013px" id="text28" x="252.46558" y="223.29897" style="stroke-width:1.00085">3  X  1</text>
+	</g>
+	<g display="inline" id="g36" transform="translate(-0.2824861)">
+		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" points="109.833,233.697 109.833,212.5 128.262,212.5 128.262,233.697 " id="polygon32" />
+		<text transform="scale(1.0008496,0.99915108)" fill="#808080" font-family="sans-serif" font-size="17.2013px" id="text34" x="89.994827" y="229.02553" style="stroke-width:1.00085">2  X  3</text>
+	</g>
+	<text transform="matrix(1.0017,0,0,1,33.1587,112.623)" display="inline" id="text52"><tspan x="0" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan38">P</tspan><tspan x="11.464" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan40">L</tspan><tspan x="22.099001" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan42"> </tspan><tspan x="26.995001" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan44">W</tspan><tspan x="44.179001" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan46">I</tspan><tspan x="48.283001" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan48">N</tspan><tspan x="59.75" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan50">D</tspan></text>
+	<text transform="matrix(1.0017,0,0,1,294.6582,112.623)" display="inline" id="text68"><tspan x="0" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan54">P</tspan><tspan x="11.464" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan56">L</tspan><tspan x="22.099001" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan58"> </tspan><tspan x="26.995001" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan60">W</tspan><tspan x="44.178001" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan62">I</tspan><tspan x="48.284" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan64">N</tspan><tspan x="59.75" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan66">D</tspan></text>
+	
+		
+	
+		
+	<path display="inline" fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="8" d="m 120.845,107.71 c 56.905,3.54 105.405,-2.21 158.324,0" id="path74" />
+	
+	<text transform="scale(1.0008496,0.9991511)" display="inline" font-family="sans-serif" font-size="17.2013px" id="text78" x="120.90581" y="100.43386" style="stroke-width:1.00085">HOL</text>
+	<text transform="scale(1.0008496,0.9991511)" display="inline" font-family="sans-serif" font-size="17.2013px" id="text80" x="240.9807" y="100.43386" style="stroke-width:1.00085">HOL</text>
+	
+	
+	
+</g>
+</svg>

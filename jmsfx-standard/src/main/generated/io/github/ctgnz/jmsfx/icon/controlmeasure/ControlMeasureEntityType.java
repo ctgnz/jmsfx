@@ -86,7 +86,7 @@ public enum ControlMeasureEntityType implements EntityType {
     ASSAULT_POSITION("15", "Assault Position", ControlMeasureEntity.MANEUVER_AREAS, IconType.MAIN),
     ATTACK_POSITION("16", "Attack Position", ControlMeasureEntity.MANEUVER_AREAS, IconType.MAIN),
     OBJECTIVE("17", "Objective", ControlMeasureEntity.MANEUVER_AREAS, IconType.MAIN),
-    ENCIRCLEMENT("18", "Encirclement", ControlMeasureEntity.MANEUVER_AREAS, IconType.NA),
+    ENCIRCLEMENT("18", "Encirclement", ControlMeasureEntity.MANEUVER_AREAS, IconType.MAIN),
     PENETRATION_BOX("19", "Penetration Box", ControlMeasureEntity.MANEUVER_AREAS, IconType.MAIN),
     ATTACK_BY_FIRE_POSITION("20", "Attack by Fire Position", ControlMeasureEntity.MANEUVER_AREAS, IconType.MAIN),
     SUPPORT_BY_FIRE("21", "Support by Fire", ControlMeasureEntity.MANEUVER_AREAS, IconType.MAIN),

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve" sodipodi:docname="25330501.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs679" /><sodipodi:namedview id="namedview677" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="2.2025" inkscape:cx="103.51873" inkscape:cy="200.22701" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="Version_1.0" />
+<g id="main">
+	<text font-family="sans-serif" font-size="36px" id="text628" x="103.8159" y="137.18069">ROUTE</text>
+	<path fill="none" stroke="#000000" stroke-width="5" d="M22.8,195.307c50.979,10.195,59.01,8.481,112-3.2   c27.079-5.97,89.124-13.007,118.4-14.399c50.938-2.425,76.974,14.703,128,9.6" id="path630" />
+	<g id="g636">
+		<line fill="none" stroke="#000000" stroke-width="5" x1="102.5" y1="154.5" x2="317.5" y2="154.5" id="line632" />
+		<polygon points="313.854,167.004 335.441,154.539 313.854,142.074   " id="polygon634" />
+	</g>
+</g>
+<g id="template" display="none">
+	<g id="varT" transform="matrix(0.6,0,0,0.6,143.6,44.495983)" display="inline">
+		<rect x="157.006" y="100.826" fill="#ffffff" stroke="#000000" stroke-width="4" width="64.494003" height="63.674" id="rect639" />
+		<text transform="matrix(1.6667,0,0,1.6667,172.6735,155.6116)" font-family="sans-serif" font-size="36px" id="text641">T</text>
+	</g>
+	<g id="points" display="inline">
+		<g transform="translate(10,-3)" id="g650">
+			<text transform="translate(12.4995,287)" font-family="sans-serif" font-size="18px" id="text644">PT 1</text>
+			<polyline fill="none" stroke="#000000" stroke-width="3" points="12.5,202.029 12.5,247.029 32.5,267.029    " id="polyline646" />
+			<polygon stroke="#000000" stroke-width="3" points="16.5,212.029 8.5,212.029 12.5,199.029 " id="polygon648" />
+		</g>
+		<g transform="translate(10,-3)" id="g658">
+			<text transform="translate(185.7735,261)" font-family="sans-serif" font-size="18px" id="text652">PT 2</text>
+			<line fill="none" stroke="#000000" stroke-width="3" x1="208.5" y1="197.02901" x2="208.5" y2="240.5" id="line654" />
+			<polygon stroke="#000000" stroke-width="3" points="212.5,201.029 204.5,201.029 208.5,188.029 " id="polygon656" />
+		</g>
+		<g id="g670">
+			<g transform="matrix(1,0,0,1.1,-12,-47.00003)" id="g664">
+				<polyline fill="none" stroke="#000000" stroke-width="3" points="393.5,222.209 393.5,267.209 373.5,287.209     " id="polyline660" />
+				<polygon stroke="#000000" stroke-width="3" points="397.5,232.209 389.5,232.209 393.5,219.209 " id="polygon662" />
+			</g>
+			<g transform="matrix(0.75,0,0,0.75,184.5,124.5)" id="g668">
+				<text transform="matrix(1.3333,0,0,1.3333,179.0313,206.2657)" font-family="sans-serif" font-size="18px" id="text666">PT N</text>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="example" transform="matrix(0.6,0,0,0.6,151.6,34.8)" display="none">
+	<text id="varTe" font-family="sans-serif" font-size="60.0012px" x="156.65659" y="170.63493" style="stroke-width:1.6667">3</text>
+</g>
+</svg>

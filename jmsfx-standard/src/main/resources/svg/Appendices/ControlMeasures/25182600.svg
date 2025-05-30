@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve" sodipodi:docname="25182600.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs37" /><sodipodi:namedview id="namedview35" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="1.573134" inkscape:cx="324.19361" inkscape:cy="216.12907" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="template" />
+<g id="main">
+	<g id="g12">
+		<line fill="none" stroke="#000000" stroke-width="5" x1="264.25" y1="288.973" x2="344.25" y2="288.973" id="line2" />
+		<line fill="none" stroke="#000000" stroke-width="5" x1="304.25" y1="288.973" x2="304.25" y2="203.973" id="line4" />
+		<line fill="none" stroke="#000000" stroke-width="5" x1="304.25" y1="203.973" x2="354.25" y2="153.973" id="line6" />
+		<line fill="none" stroke="#000000" stroke-width="5" x1="304.25" y1="203.973" x2="254.25" y2="153.973" id="line8" />
+		<circle stroke="#000000" cx="304.25" cy="158.973" r="25" id="circle10" />
+	</g>
+	
+</g>
+<g id="template" display="none" transform="translate(4.4948922,-189.68445)">
+	<g transform="translate(140,140)" display="inline" id="g25">
+		<text transform="translate(244.25,208.9727)" font-family="sans-serif" font-size="24px" id="text21">ANCHOR</text>
+		<text transform="translate(256.25,233.9727)" font-family="sans-serif" font-size="24px" id="text23">POINT</text>
+	</g>
+	<g display="inline" id="g31">
+		<polyline fill="none" stroke="#000000" stroke-width="3" points="392.25,362.473 363.25,397.473 315.25,397.473   " id="polyline27" />
+		<polygon stroke="#000000" stroke-width="3" points="310.25,397.473 324.25,389.473 324.25,405.473 " id="polygon29" />
+	</g>
+<g id="g1045" transform="translate(107.42792,132.59932)"><rect style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" id="rect486" width="41.721127" height="43.519085" x="172.4198" y="132.86476" /><text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:36px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" x="179.754" y="167.71121" id="text374"><tspan sodipodi:role="line" id="tspan372" x="179.754" y="167.71121">H</tspan></text></g><g id="g1065" transform="translate(38.206583,163.61408)"><rect style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" id="rect1051" width="43.150967" height="37.307606" x="145.18501" y="170.35641" /><text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:24px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" x="154.89526" y="197.73483" id="text428"><tspan sodipodi:role="line" id="tspan426" x="154.89526" y="197.73483">W  -</tspan></text></g><g id="g1060" transform="translate(35.060159,146.28605)"><rect style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:2.16171;stroke-dasharray:none;stroke-opacity:1" id="rect1055" width="50.630569" height="37.145893" x="148.41229" y="227.07291" /><text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:24px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" x="154.97171" y="254.39977" id="text432"><tspan sodipodi:role="line" id="tspan430" x="154.97171" y="254.39977">W1</tspan></text></g></g>
+</svg>

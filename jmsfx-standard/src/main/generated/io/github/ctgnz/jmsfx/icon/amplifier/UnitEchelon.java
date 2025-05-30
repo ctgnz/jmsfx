@@ -18,7 +18,8 @@ public enum UnitEchelon implements StandardEnumeratedAmplifier {
     ARMY("B", "Army"),
     ARMY_GROUP_FRONT("C", "Army Group/Front"),
     REGION_THEATRE("D", "Region/Theatre"),
-    COMMAND("E", "Command");
+    COMMAND("E", "Command"),
+    @Extension STAFFEL("F", "Staffel");
 
     private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.UNIT_ECHELON;
 

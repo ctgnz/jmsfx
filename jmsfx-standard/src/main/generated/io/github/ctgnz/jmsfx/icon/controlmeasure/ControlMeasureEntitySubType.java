@@ -52,8 +52,6 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
     AXIS_ADVANCE_FEINT("06", "Feint", ControlMeasureEntityType.AXIS_ADVANCE, IconType.MAIN),
     AXIS_ADVANCE_ENEMY_CONFIRMED("07", "Enemy Confirmed", ControlMeasureEntityType.AXIS_ADVANCE, IconType.MAIN),
     AXIS_ADVANCE_ENEMY_TEMPLATED_SUSPECTED("08", "Enemy Templated or Suspected", ControlMeasureEntityType.AXIS_ADVANCE, IconType.MAIN),
-    FRIENDLY("01", "Friendly", ControlMeasureEntityType.ENCIRCLEMENT, IconType.MAIN),
-    ENEMY("02", "Enemy", ControlMeasureEntityType.ENCIRCLEMENT, IconType.MAIN),
     RECONNAISSANCE_OUTPOST("01", "Reconnaissance Outpost", ControlMeasureEntityType.OBSERVATION_POST_OUTPOST_SPECIFIED, IconType.MAIN),
     FORWARD_OBSERVER_OUTPOST("02", "Forward Observer Outpost", ControlMeasureEntityType.OBSERVATION_POST_OUTPOST_SPECIFIED, IconType.MAIN),
     CBRN_OBSERVATION_OUTPOST("03", "CBRN Observation Outpost", ControlMeasureEntityType.OBSERVATION_POST_OUTPOST_SPECIFIED, IconType.MAIN),
