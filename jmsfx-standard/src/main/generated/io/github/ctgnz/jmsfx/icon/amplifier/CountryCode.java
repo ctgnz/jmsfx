@@ -250,8 +250,6 @@ public enum CountryCode implements EnumeratedAmplifier {
     EG("EGY", "Egypt", "818"),
     GB("GBR", "United Kingdom", "826"),
     UK("UKG", "United Kingdom", "826"),
-    @Extension XA("XAL", "Scotland", "827"),
-    @Extension XY("XCY", "Wales", "828"),
     XI("XXI", "Northern Ireland", "829"),
     GG("GGY", "Guernsey", "831"),
     JE("JEY", "Jersey", "832"),
@@ -309,14 +307,7 @@ public enum CountryCode implements EnumeratedAmplifier {
     X3("XCY", "Entity 3", "983"),
     X4("XKM", "Entity 4", "984"),
     X5("XKN", "Entity 5", "985"),
-    A3("AX3", "Entity 6", "986"),
-    @Extension HX("HRO", "Roman Empire", "990"),
-    @Extension X7("XRU", "Ruritania", "991"),
-    @Extension HD("HDK", "German Empire", "993"),
-    @Extension HW("HWB", "Kingdom of Württemberg", "994"),
-    @Extension HS("HSX", "Kingdom of Saxony", "995"),
-    @Extension HB("HBV", "Kingdom of Bavaria", "996"),
-    @Extension HP("HPR", "Kingdom of Prussia", "997");
+    A3("AX3", "Entity 6", "986");
 
     private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.COUNTRY_CODE;
 
