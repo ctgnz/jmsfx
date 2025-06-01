@@ -8,7 +8,7 @@
 	<line fill="none" stroke="#000000" stroke-width="5" x1="13.75" y1="108.833" x2="390.75" y2="108.833"/>
 	<line fill="none" stroke="#000000" stroke-width="5" x1="13.679" y1="151" x2="390.679" y2="151"/>
 </g>
-<g id="points" display="none">
+<g id="points" display="inline">
 	<g display="inline">
 		<text transform="matrix(1 0 0 1 32.499 210.999)" font-family="sans-serif" font-size="15">PT 2</text>
 		<line fill="none" stroke="#000000" stroke-width="2" x1="13.75" y1="166" x2="13.75" y2="186"/>

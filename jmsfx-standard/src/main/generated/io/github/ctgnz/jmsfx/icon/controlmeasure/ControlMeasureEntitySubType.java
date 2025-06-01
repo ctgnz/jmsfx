@@ -9,37 +9,13 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
     FLY_TO_POINT_WEAPON("02", "Fly-To-Point (Weapon)", ControlMeasureEntityType.FLY_TO_POINT, IconType.MAIN),
     FLY_TO_POINT_NORMAL("03", "Fly-To-Point (Normal)", ControlMeasureEntityType.FLY_TO_POINT, IconType.MAIN),
     POI_LAUNCH_EVENT("01", "Launch Event (Point of Interest)", ControlMeasureEntityType.POINT_OF_INTEREST, IconType.MAIN),
-    FLOT_FRIENDLY_PRESENT("01", "Friendly Present", ControlMeasureEntityType.FORWARD_LINE_OF_TROOPS, IconType.MAIN),
-    FLOT_FRIENDLY_PLANNED_ON_ORDER("02", "Friendly Planned or on Order", ControlMeasureEntityType.FORWARD_LINE_OF_TROOPS, IconType.MAIN),
-    FLOT_ENEMY_KNOWN("03", "Enemy Known", ControlMeasureEntityType.FORWARD_LINE_OF_TROOPS, IconType.MAIN) {
-        @Override
-        public String getGraphicIdentifier() {
-            return "25140103.a";
-        }
-    },
-    FLOT_ENEMY_SUSPECTED_TEMPLATED("04", "Enemy Suspected or Templated", ControlMeasureEntityType.FORWARD_LINE_OF_TROOPS, IconType.MAIN) {
-        @Override
-        public String getGraphicIdentifier() {
-            return "25140104.a";
-        }
-    },
-    FEBA_PROPOSED_ON_ORDER("01", "Proposed or On Order", ControlMeasureEntityType.FORWARD_EDGE_BATTLE_AREA, IconType.MAIN),
     FRIENDLY_AVIATION("01", "Friendly Aviation", ControlMeasureEntityType.DIRECTION_OF_ATTACK, IconType.MAIN),
     FRIENDLY_MAIN_ATTACK_DECISIVE("02", "Friendly Direction of Main Attack", ControlMeasureEntityType.DIRECTION_OF_ATTACK, IconType.MAIN),
     FRIENDLY_SUPPORTING_ATTACK("03", "Friendly Direction of Supporting Attack", ControlMeasureEntityType.DIRECTION_OF_ATTACK, IconType.MAIN),
     FEINT("05", "Feint", ControlMeasureEntityType.DIRECTION_OF_ATTACK, IconType.MAIN),
-    ENEMY_CONFIRMED("06", "Enemy Confirmed", ControlMeasureEntityType.DIRECTION_OF_ATTACK, IconType.MAIN),
-    ENEMY_TEMPLATED_OR_SUSPECTED("07", "Enemy Templated or Suspected", ControlMeasureEntityType.DIRECTION_OF_ATTACK, IconType.MAIN),
-    AREA_FRIENDLY("01", "Friendly", ControlMeasureEntityType.AREA, IconType.MAIN),
-    AREA_FRIENDLY_PLANNED_OR_ON_ORDER("02", "Friendly Planned or On Order", ControlMeasureEntityType.AREA, IconType.MAIN),
-    AREA_ENEMY_KNOWN_OR_CONFIRMED("03", "Enemy Known or Confirmed", ControlMeasureEntityType.AREA, IconType.MAIN),
-    AREA_ENEMY_SUSPECTED("04", "Enemy Suspected", ControlMeasureEntityType.AREA, IconType.MAIN),
-    OCCUPIED_AA_OFFSET_UNIT("01", "Occupied Assembly Area w/ Offset Unit", ControlMeasureEntityType.OCCUPIED_ASSEMBLY_AREA, IconType.NA),
-    OCCUPIED_AA_OFFSET_UNITS("02", "Occupied Assembly Area w/ Offset Units", ControlMeasureEntityType.OCCUPIED_ASSEMBLY_AREA, IconType.NA),
     JTAA("01", "Joint Tactical Action Area (JTAA)", ControlMeasureEntityType.ACTION_AREA, IconType.MAIN),
     SAA("02", "Submarine Action Area (SAA)", ControlMeasureEntityType.ACTION_AREA, IconType.MAIN),
     SGAA("03", "Submarine-Generated Action Area (SGAA)", ControlMeasureEntityType.ACTION_AREA, IconType.MAIN),
-    BP_PLANNED("01", "Battle Position - Planned", ControlMeasureEntityType.BATTLE_POSITION, IconType.MAIN),
     PREPARED_BUT_NOT_OCCUPIED("02", "Battle Position - Prepared (P) but not Occupied", ControlMeasureEntityType.BATTLE_POSITION, IconType.MAIN),
     STRONG_POINT("03", "Strong Point", ControlMeasureEntityType.BATTLE_POSITION, IconType.MAIN),
     CONTAIN("04", "Contain", ControlMeasureEntityType.BATTLE_POSITION, IconType.MAIN),
@@ -48,10 +24,7 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
     AXIS_ADVANCE_ATTACK_HELICOPTER("02", "Attack Helicopter", ControlMeasureEntityType.AXIS_ADVANCE, IconType.MAIN),
     AXIS_ADVANCE_MAIN_ATTACK("03", "Main Attack", ControlMeasureEntityType.AXIS_ADVANCE, IconType.MAIN),
     AXIS_ADVANCE_SUPPORTING_ATTACK("04", "Supporting Attack", ControlMeasureEntityType.AXIS_ADVANCE, IconType.MAIN),
-    AXIS_ADVANCE_SUPPORTING_ATTACK_PLANNED_ON_ORDER("05", "Supporting Attack Planned or On Order", ControlMeasureEntityType.AXIS_ADVANCE, IconType.MAIN),
     AXIS_ADVANCE_FEINT("06", "Feint", ControlMeasureEntityType.AXIS_ADVANCE, IconType.MAIN),
-    AXIS_ADVANCE_ENEMY_CONFIRMED("07", "Enemy Confirmed", ControlMeasureEntityType.AXIS_ADVANCE, IconType.MAIN),
-    AXIS_ADVANCE_ENEMY_TEMPLATED_SUSPECTED("08", "Enemy Templated or Suspected", ControlMeasureEntityType.AXIS_ADVANCE, IconType.MAIN),
     RECONNAISSANCE_OUTPOST("01", "Reconnaissance Outpost", ControlMeasureEntityType.OBSERVATION_POST_OUTPOST_SPECIFIED, IconType.MAIN),
     FORWARD_OBSERVER_OUTPOST("02", "Forward Observer Outpost", ControlMeasureEntityType.OBSERVATION_POST_OUTPOST_SPECIFIED, IconType.MAIN),
     CBRN_OBSERVATION_OUTPOST("03", "CBRN Observation Outpost", ControlMeasureEntityType.OBSERVATION_POST_OUTPOST_SPECIFIED, IconType.MAIN),
@@ -120,7 +93,6 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
         }
     },
     SMOKE_TARGET("06", "Smoke Target", ControlMeasureEntityType.AREA_TARGETS, IconType.MAIN),
-    SMOKE_PLANNED_ON_ORDER("07", "Smoke Planned or On Order", ControlMeasureEntityType.AREA_TARGETS, IconType.MAIN),
     BOMB_AREA("08", "Bomb Area", ControlMeasureEntityType.AREA_TARGETS, IconType.MAIN),
     FSA_IRREGULAR("01", "Irregular", ControlMeasureEntityType.FIRE_SUPPORT_AREA, IconType.MAIN),
     FSA_RECTANGULAR("02", "Rectangular", ControlMeasureEntityType.FIRE_SUPPORT_AREA, IconType.MAIN),
@@ -140,9 +112,6 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
     DA_IRREGULAR("01", "Irregular", ControlMeasureEntityType.DEAD_SPACE_AREA, IconType.MAIN),
     DA_RECTANGULAR("02", "Rectangular", ControlMeasureEntityType.DEAD_SPACE_AREA, IconType.MAIN),
     DA_CIRCULAR("03", "Circular", ControlMeasureEntityType.DEAD_SPACE_AREA, IconType.MAIN),
-    SENSOR_ZONE_IRREGULAR("01", "Irregular", ControlMeasureEntityType.SENSOR_ZONE, IconType.MAIN),
-    SENSOR_ZONE_RECTANGULAR("02", "Rectangular", ControlMeasureEntityType.SENSOR_ZONE, IconType.MAIN),
-    SENSOR_ZONE_CIRCULAR("03", "Circular", ControlMeasureEntityType.SENSOR_ZONE, IconType.MAIN),
     TBA_IRREGULAR("01", "Irregular", ControlMeasureEntityType.TARGET_BUILD_UP_AREA, IconType.MAIN),
     TBA_RECTANGULAR("02", "Rectangular", ControlMeasureEntityType.TARGET_BUILD_UP_AREA, IconType.MAIN),
     TBA_CIRCULAR("03", "Circular", ControlMeasureEntityType.TARGET_BUILD_UP_AREA, IconType.MAIN),

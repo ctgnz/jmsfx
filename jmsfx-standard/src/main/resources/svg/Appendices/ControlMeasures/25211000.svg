@@ -9,7 +9,7 @@
 	<line fill="none" stroke="#000000" stroke-width="10" x1="430.053" y1="363.832" x2="452.053" y2="363.832"/>
 	<line fill="none" stroke="#000000" stroke-width="10" x1="454.053" y1="331.832" x2="454.053" y2="393.332"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="VarH" display="inline">
 		<text transform="matrix(1 0 0 1 293.0537 312.832)" font-family="sans-serif" font-size="36">H</text>
 		<rect x="281.053" y="275.832" fill="none" stroke="#000000" stroke-width="5" width="49.553" height="49.553"/>

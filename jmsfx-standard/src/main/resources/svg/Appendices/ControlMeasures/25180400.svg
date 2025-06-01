@@ -8,7 +8,7 @@
 	<polygon fill="none" stroke="#000000" stroke-width="5" points="234.24,430.6 234.24,360.599 374.24,430.6 374.24,360.599 	"/>
 	<text transform="matrix(1 0 0 1 432.2402 417.5996)" font-family="sans-serif" font-size="60">PUP</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g transform="translate(80 130)" display="inline">
 		<text transform="matrix(1 0 0 1 298.5 428.5986)" font-family="sans-serif" font-size="24">CENTER</text>
 		<text transform="matrix(1 0 0 1 309.5 453.5986)" font-family="sans-serif" font-size="24">POINT</text>

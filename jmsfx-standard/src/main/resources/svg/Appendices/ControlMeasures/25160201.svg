@@ -11,7 +11,7 @@
 		<line fill="none" stroke="#000000" stroke-width="5" x1="377.076" y1="355.13" x2="168.076" y2="478.13"/>
 	</g>
 </g>
-<g id="template" transform="translate(-135 -150)" display="none">
+<g id="template" transform="translate(-135 -150)" display="inline">
 	<text transform="matrix(1 0 0 1 572.8438 516.5283)" display="inline" font-family="sans-serif" font-size="24">CENTER</text>
 	<text transform="matrix(1 0 0 1 583.8438 541.5283)" display="inline" font-family="sans-serif" font-size="24">POINT</text>
 	<g display="inline">

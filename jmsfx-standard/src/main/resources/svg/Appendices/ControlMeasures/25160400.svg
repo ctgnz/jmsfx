@@ -10,7 +10,7 @@
 	<polygon fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-miterlimit="8" points="305.388,395.763 
 		241.274,310.277 369.502,310.277 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="T" display="inline">
 		
 			<rect x="369.652" y="137.628" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-miterlimit="8" width="56.635" height="53.179"/>

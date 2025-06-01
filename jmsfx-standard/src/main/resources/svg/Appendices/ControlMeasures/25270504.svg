@@ -13,7 +13,7 @@
 		</g>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<polygon display="inline" stroke="#000000" stroke-width="5" points="97.837,83.2 104.837,91.2 90.837,91.2 	"/>
 	<polyline display="inline" fill="none" stroke="#000000" stroke-width="2" points="95.837,93.2 95.837,116.2 108.837,127.2 	"/>
 	<polygon display="inline" stroke="#000000" stroke-width="5" points="335.564,360.08 327.906,367.454 327.238,353.47 	"/>

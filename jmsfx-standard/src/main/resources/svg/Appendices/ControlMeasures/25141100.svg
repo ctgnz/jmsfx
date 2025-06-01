@@ -10,7 +10,7 @@
 	<text transform="matrix(1 0 0 1 96 167.668)" font-family="sans-serif" font-size="20">LD/LC</text>
 	<text transform="matrix(1 0 0 1 252.3105 167.668)" font-family="sans-serif" font-size="20">LD/LC</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<text transform="matrix(1 0 0 1 66.5 277.6279)" font-family="sans-serif" font-size="20">PT 1</text>
 		<g>
@@ -32,7 +32,7 @@
 		</g>
 	</g>
 </g>
-<g id="example">
+<g id="example" display="none">
 	<g>
 		
 			<line fill="none" stroke="#808080" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="8" x1="317.354" y1="128.335" x2="317.354" y2="322.475"/>

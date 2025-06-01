@@ -2,12 +2,12 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 
 <svg version="1.1" id="Version_1.0" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve" sodipodi:docname="25141800.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs124" /><sodipodi:namedview id="namedview122" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="2.2025" inkscape:cx="113.50738" inkscape:cy="200.22701" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="example" />
-<g id="main" style="display:inline">
+<g id="main" display="inline">
 	<line fill="none" stroke="#000000" stroke-width="9.5864" x1="40.082001" y1="191.5" x2="369.082" y2="191.5" id="line2" />
 	<text font-family="sans-serif" font-size="24px" id="text4" x="37.738251" y="177.7227">HOL</text>
 	<text font-family="sans-serif" font-size="24px" id="text6" x="318.77341" y="176.5">HOL</text>
 </g>
-<g id="points" display="none">
+<g id="points" display="inline">
 	<text transform="translate(339.082,278.5)" display="inline" font-family="sans-serif" font-size="24px" id="text9">PT 2</text>
 	<text transform="translate(14.082,278.5)" display="inline" font-family="sans-serif" font-size="24px" id="text11">PT 1</text>
 	<path display="inline" stroke="#000000" stroke-width="0.4335" stroke-linejoin="bevel" stroke-miterlimit="10" d="m 367.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.938,-36.087 10.732,36.166 z" id="path13" />

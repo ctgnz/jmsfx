@@ -12,7 +12,7 @@
 	<text transform="matrix(1 0 0 1 66.5195 207.2666)" font-family="sans-serif" font-size="19.5639">MAX ALT:</text>
 	<text transform="matrix(1 0 0 1 66.5195 181.1865)" font-family="sans-serif" font-size="19.5639">MIN ALT:</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	
 		<g id="varAM" transform="matrix(6.12303e-017 1 -1 6.12303e-017 405 -5) translate(240 175) scale(0.742857 0.742857) translate(-240 -175) translate(-83.4615 -235.577) translate(240 175) scale(0.834615 0.834615) translate(-240 -175) translate(240 175) scale(0.806452 0.806452) translate(-240 -175) translate(0 2) translate(0 2) translate(0 2) translate(0 2) translate(0 2) translate(2 0) translate(2 0) translate(2 0) translate(2 0) translate(2 0) translate(2 0) translate(2 0) translate(2 0) translate(2 0) translate(2 0) translate(2 0) translate(2 0) translate(0 2)" display="inline">
 		

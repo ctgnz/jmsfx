@@ -21,7 +21,7 @@
 		<text transform="matrix(1 0 0 1 343.4814 202.3467)" font-family="sans-serif" font-size="20.8061" id="text24">PAA</text>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varT" display="inline" transform="translate(-75.368899,-73.098751)">
 		
 			<rect x="258.0751" y="208.60841" fill="none" stroke="#000000" stroke-width="3.8922" stroke-linecap="round" stroke-miterlimit="8" width="39.220425" height="40.128483" id="rect29" />

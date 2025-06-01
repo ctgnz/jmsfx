@@ -7,7 +7,7 @@
 	<rect x="206" y="295.5" fill="none" stroke="#000000" stroke-width="10" width="200" height="200"/>
 	<text id="varT_1_" transform="matrix(1 0 0 1 276 451.5)" font-family="sans-serif" font-size="150"> </text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varT" display="inline">
 		<rect x="234.25" y="322.648" fill="#FFFFFF" stroke="#000000" stroke-width="7" width="141.5" height="141.5"/>
 		<text transform="matrix(1 0 0 1 260 449)" font-family="sans-serif" font-size="150">T</text>

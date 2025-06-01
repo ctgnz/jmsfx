@@ -9,7 +9,7 @@
 	
 		<line fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="10" x1="327.777" y1="107.943" x2="200.287" y2="292.096"/>
 </g>
-<g id="points" display="none">
+<g id="points" display="inline">
 	<g display="inline">
 		<text transform="matrix(1 0 0 1 110.1323 197.333)" font-family="sans-serif" font-size="24">PT 3</text>
 		<path stroke="#000000" stroke-width="0.2833" stroke-linejoin="bevel" stroke-miterlimit="10" d="M164.999,189.395l40.371-0.371

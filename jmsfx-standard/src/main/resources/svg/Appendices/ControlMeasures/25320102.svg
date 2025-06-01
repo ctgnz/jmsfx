@@ -8,7 +8,7 @@
 	<text font-family="sans-serif" font-size="36px" id="text1006" x="270.5636" y="194.71291">ACP</text>
 	<polygon fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-miterlimit="8" points="305.982,396.5    241.869,311.015 370.097,311.015  " id="polygon1008" />
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW1" display="inline">
 		
 			<rect x="192.107" y="180.33" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-miterlimit="8" width="49.993" height="42.513" id="rect1011" />

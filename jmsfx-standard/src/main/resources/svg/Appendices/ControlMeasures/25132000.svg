@@ -8,7 +8,7 @@
 		
 	
 <path style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:20, 20;stroke-dashoffset:0;stroke-opacity:1" d="M 305.5055,397.296 368.955,265.71163 500.539,202.262 368.955,138.813 305.5055,7.229 242.056,138.813 l -131.584,63.449 131.584,63.45 z" id="path3764" sodipodi:nodetypes="ccccccccc" /><text font-family="sans-serif" font-size="52px" id="text14389" x="275.36295" y="221.70874">TH</text></g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline" id="g3630" transform="translate(110.12486,-88.998865)">
 		
 			<rect x="268.64899" y="168.229" fill="none" stroke="#000000" stroke-width="2.4349" stroke-linecap="round" stroke-miterlimit="8" width="73.388" height="72.728996" id="rect3626" />

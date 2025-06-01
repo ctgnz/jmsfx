@@ -6,7 +6,7 @@
 <g id="main">
 	<polygon fill="none" stroke="#000000" stroke-width="5" points="58,132 58,202 308,202 308,222 383,167 308,112 308,132 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varV" transform="scale(0.75 0.75) translate(96 66)" display="inline">
 		<rect x="28.501" y="128.9" fill="none" stroke="#000000" stroke-width="4.5184" width="48.999" height="50"/>
 		<text transform="matrix(1.3333 0 0 1.3333 41.4993 166.8998)" font-family="sans-serif" font-size="28">V</text>

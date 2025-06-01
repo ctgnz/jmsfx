@@ -13,7 +13,7 @@
 	<line fill="none" stroke="#000000" stroke-width="2" x1="289.273" y1="278.427" x2="275.773" y2="291.927"/>
 	<text transform="matrix(0.8 0 0 0.8 196.5992 239.5328)" font-family="sans-serif" font-size="53.75">RIP</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<line fill="none" stroke="#000000" stroke-width="2" x1="69" y1="279" x2="69" y2="300.25"/>
 		<line fill="none" stroke="#000000" stroke-width="2" x1="68.505" y1="299.277" x2="86.5" y2="315.25"/>

@@ -7,7 +7,7 @@
 	<path fill="none" stroke="#000000" stroke-width="2" d="M101.681,234.966c-0.108-12.348,15.754-26.221,26.583-35.167
 		c32.363-26.734,209.623-64.639,245-36c32.169,26.042,20.952,102.852,9,137c-40.401,115.43-282.561,12.413-280.561-65.909"/>
 </g>
-<g id="template" transform="translate(138 86)" display="none">
+<g id="template" transform="translate(138 86)" display="inline">
 	<rect x="8.58" y="1.249" display="inline" fill="#FFFFFF" stroke="#000000" stroke-width="2" width="27.5" height="26.25"/>
 	<text transform="matrix(1 0 0 1 18.5791 19.998)" display="inline" font-family="sans-serif" font-size="15">T</text>
 </g>

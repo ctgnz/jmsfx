@@ -14,7 +14,7 @@
 	<text transform="matrix(1 0 0 1 110.4263 182.5)" font-family="sans-serif" font-size="20">DTG End:</text>
 	<text transform="matrix(1 0 0 1 133.3179 290.5)" font-family="sans-serif" font-size="48">UA</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varH" display="inline">
 		<rect x="215.426" y="62.5" fill="none" stroke="#000000" stroke-width="2" width="39" height="24"/>
 		<text transform="matrix(1 0 0 1 220.4258 82.5)" font-family="sans-serif" font-size="20">AM</text>

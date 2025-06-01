@@ -8,7 +8,7 @@
 	<circle cx="303.525" cy="393.134" r="44.263"/>
 	<text transform="matrix(1 0 0 1 280.7368 496.502)" font-family="sans-serif" font-size="60">C</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<line fill="none" stroke="#FFFFFF" stroke-width="5" x1="347.787" y1="395.501" x2="316.736" y2="395.501"/>
 		<polygon fill="#FFFFFF" points="318.925,388 305.972,395.478 318.925,402.957 		"/>

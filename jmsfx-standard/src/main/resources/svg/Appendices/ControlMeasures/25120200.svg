@@ -9,7 +9,7 @@
 	<text transform="matrix(1 0 0 1 207.5918 200)" font-family="sans-serif" font-size="36"> </text>
 	<text id="static" transform="matrix(1 0 0 1 111.3696 200)" font-family="sans-serif" font-size="48">NAI</text>
 </g>
-<g id="template" transform="translate(150 118)" display="none">
+<g id="template" transform="translate(150 118)" display="inline">
 	<rect x="44.592" y="39.5" display="inline" fill="#FFFFFF" stroke="#000000" stroke-width="2.4328" width="58.908" height="52"/>
 	<text transform="matrix(1 0 0 1 57.5918 82)" display="inline" font-family="sans-serif" font-size="48">T</text>
 </g>

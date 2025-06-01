@@ -19,7 +19,7 @@
 	</g>
 	<text transform="matrix(1 0 0 1 298.7988 305.5615)" font-family="sans-serif" font-size="28">R</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW" display="inline">
 		
 			<rect x="168.766" y="278.062" fill="none" stroke="#000000" stroke-width="1.9314" stroke-linecap="round" stroke-miterlimit="8" width="54.851" height="46.103"/>

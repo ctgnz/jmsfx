@@ -18,7 +18,7 @@
 		<text transform="matrix(0.5714 0 0 0.5714 240.4925 231.1429)" font-family="sans-serif" font-size="34.9982">N</text>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="155.758" y1="285.867" x2="192.742" y2="204.133"/>
 	<polygon display="inline" stroke="#000000" stroke-width="2" points="194.835,199.797 194.38,220.938 178.607,213.355 	"/>
 	

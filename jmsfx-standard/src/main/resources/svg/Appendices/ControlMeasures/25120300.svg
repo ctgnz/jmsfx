@@ -12,7 +12,7 @@
 <g id="example" display="none">
 	<text id="varT" transform="matrix(1 0 0 1 58.0234 200)" display="inline" font-family="sans-serif" font-size="48">TAI YUKON</text>
 </g>
-<g id="template" transform="translate(150 118)" display="none">
+<g id="template" transform="translate(150 118)" display="inline">
 	<rect x="42.592" y="40.5" display="inline" fill="#FFFFFF" stroke="#000000" stroke-width="2.4328" width="58.908" height="52"/>
 	<text transform="matrix(1 0 0 1 57.5918 84)" display="inline" font-family="sans-serif" font-size="48">T</text>
 </g>

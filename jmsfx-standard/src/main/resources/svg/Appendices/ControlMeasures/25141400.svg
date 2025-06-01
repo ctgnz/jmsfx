@@ -9,7 +9,7 @@
 	<text transform="matrix(1 0 0 1 179.5488 45.7598)" font-family="sans-serif" font-size="20.9978">BL</text>
 	<text transform="matrix(1 0 0 1 179.5488 372.6504)" font-family="sans-serif" font-size="20.9978">BL</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<text transform="matrix(1 0 0 1 57.749 289.7598)" font-family="sans-serif" font-size="20.9978">PT N</text>
 		<line fill="none" stroke="#000000" stroke-width="2" x1="162.532" y1="329.602" x2="114.606" y2="288.01"/>

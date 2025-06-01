@@ -19,7 +19,7 @@
 		<text transform="matrix(1 0 0 1 194.1377 187)" font-family="sans-serif" font-size="35">I</text>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<ellipse stroke="#000000" cx="246.098" cy="204.414" rx="2.985" ry="2.934"/>
 		<text transform="matrix(1 0 0 1 218 232)" font-family="sans-serif" font-size="21">PT. 1</text>

@@ -9,7 +9,7 @@
 	<line fill="none" stroke="#000000" stroke-width="5" x1="178.849" y1="280.414" x2="429.975" y2="510.508"/>
 	<text transform="matrix(1.1335 0 0 1 274.8491 492.4609)" font-family="sans-serif" font-size="72">D</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<g>
 			<line fill="none" stroke="#000000" stroke-width="5" x1="325.057" y1="395.461" x2="456.85" y2="395.461"/>

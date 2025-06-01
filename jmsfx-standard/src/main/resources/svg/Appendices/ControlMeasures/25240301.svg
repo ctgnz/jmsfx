@@ -37,7 +37,7 @@
 	<rect x="155.408" y="107.5" fill="#FFFFFF" width="58.761" height="37.241"/>
 	<text transform="matrix(1 0 0 1 161.1631 135.2705)" font-family="sans-serif" font-size="25.157">NFA</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varT" display="inline">
 		
 			<rect x="153.406" y="149.134" fill="#FFFFFF" stroke="#000000" stroke-width="1.7867" stroke-linecap="round" stroke-miterlimit="8" width="44.561" height="41.703"/>

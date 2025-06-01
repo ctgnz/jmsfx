@@ -10,7 +10,7 @@
 		c14.386,21.652,62.342,55.941,100.707,64.963c38.365,9.021,91.135,1.815,129.5-10.816s91.114-39.716,100.708-64.98
 		c9.593-25.27-2.389-72.209-43.159-86.639C278.68,104.095,163.585,113.138,118.017,118.546"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	
 		<rect x="144.043" y="169.459" display="inline" fill="none" stroke="#000000" stroke-width="2.8097" stroke-linecap="round" stroke-miterlimit="8" width="88.73" height="59.154"/>
 	<text transform="matrix(1 0 0 1 165.7349 211.4805)" display="inline" font-family="sans-serif" font-size="33.8015">AP</text>

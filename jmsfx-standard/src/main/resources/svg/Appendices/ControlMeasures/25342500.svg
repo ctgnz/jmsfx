@@ -11,7 +11,7 @@
 	<line fill="none" stroke="#000000" stroke-width="2" x1="123.387" y1="266.333" x2="135.787" y2="279.133"/>
 	<text transform="matrix(0.8 0 0 0.8 205.3992 269.9992)" font-family="sans-serif" font-size="25">WP</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<line fill="none" stroke="#000000" stroke-width="2" x1="278" y1="105.75" x2="261.75" y2="90.107"/>
 		<line fill="none" stroke="#000000" stroke-width="2" x1="263" y1="90.75" x2="223" y2="90.75"/>

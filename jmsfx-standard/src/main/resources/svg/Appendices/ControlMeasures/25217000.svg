@@ -47,7 +47,7 @@
 			<line fill="none" stroke="#000000" stroke-width="7.0614" stroke-linejoin="round" stroke-miterlimit="10" x1="374.518" y1="303.705" x2="395.834" y2="281.489"/>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varH" display="inline">
 		
 			<rect x="289.529" y="464.848" fill="none" stroke="#000000" stroke-width="2.6447" stroke-linecap="round" stroke-miterlimit="8" width="38.797" height="45.674"/>

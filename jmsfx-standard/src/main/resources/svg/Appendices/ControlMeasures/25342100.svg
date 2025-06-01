@@ -13,7 +13,7 @@
 		<text transform="matrix(0.5714 0 0 0.5714 117.187 189)" font-family="sans-serif" font-size="34.9982">S</text>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="80.25" y1="190.5" x2="48.75" y2="153.75"/>
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="49.332" y1="154.884" x2="48.75" y2="106.5"/>
 	<polygon display="inline" stroke="#000000" stroke-width="2" points="101.317,210.598 74.029,195.865 86.349,183.437 	"/>

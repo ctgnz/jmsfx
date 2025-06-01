@@ -7,7 +7,7 @@
 	<polyline fill="none" stroke="#000000" stroke-width="3" points="155,325.23 205,250.23 305,400.23 405,250.23 455,325.23 	"/>
 	<polyline fill="none" stroke="#000000" stroke-width="3" points="155,375.23 205,300.23 305,450.23 405,300.23 455,375.23 	"/>
 </g>
-<g id="template" transform="scale(0.5 0.5) translate(200 0)" display="none">
+<g id="template" transform="scale(0.5 0.5) translate(200 0)" display="inline">
 	<text transform="matrix(2 0 0 2 360 496.4609)" display="inline" font-family="sans-serif" font-size="12">CENTER</text>
 	<text transform="matrix(2 0 0 2 371 521.4609)" display="inline" font-family="sans-serif" font-size="12">POINT</text>
 	<g transform="scale(1 2) translate(0 -25)" display="inline">

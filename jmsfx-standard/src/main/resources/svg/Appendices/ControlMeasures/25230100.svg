@@ -6,7 +6,7 @@
 <g id="main">
 	<polyline fill="none" stroke="#000000" stroke-width="5" stroke-dasharray="25,15" points="136,403 314.59,271.926 468.79,403 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varA" display="inline">
 		
 			<rect x="252.527" y="399.919" fill="none" stroke="#000000" stroke-width="4.8051" stroke-linecap="round" stroke-miterlimit="8" width="115.614" height="94.679"/>

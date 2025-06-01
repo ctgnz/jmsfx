@@ -13,7 +13,7 @@
 	
 		<ellipse fill="none" stroke="#000000" stroke-width="5.6879" stroke-linejoin="round" stroke-miterlimit="10" cx="307.286" cy="400.126" rx="101" ry="19.75"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1 0 0 1 165.1958 297.5)" display="inline" font-family="sans-serif" font-size="28.2906">P</text>
 	<text transform="matrix(1 0 0 1 183.9517 297.5)" display="inline" font-family="sans-serif" font-size="28.2906">O</text>
 	<text transform="matrix(1 0 0 1 206.0986 297.5)" display="inline" font-family="sans-serif" font-size="28.2906">IN</text>

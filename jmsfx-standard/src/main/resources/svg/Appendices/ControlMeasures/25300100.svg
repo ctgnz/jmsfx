@@ -9,7 +9,7 @@
 	<text transform="matrix(1 0 0 1 240.7383 160.8701)" font-family="sans-serif" font-size="18">ICL</text>
 	<text transform="matrix(1 0 0 1 75.1802 160.8701)" font-family="sans-serif" font-size="18">ICL</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW1_1_" display="inline">
 		
 			<rect x="130.018" y="181.073" fill="none" stroke="#000000" stroke-width="2.0987" stroke-linecap="round" stroke-miterlimit="8" width="48.565" height="37.923"/>

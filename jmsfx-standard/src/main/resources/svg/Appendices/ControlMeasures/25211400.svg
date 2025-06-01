@@ -15,7 +15,7 @@
 		c16.144,0,26.228,5.297,30.276,15.878l-10.268,1.612c-3.31-7.584-10.017-11.381-20.148-11.381
 		c-17.236,0-25.852,7.127-25.852,21.383c0,14.977,8.232,22.463,24.713,22.463C360.604,352.587,368.093,347.991,370.623,338.782z"/>
 </g>
-<g id="template" transform="translate(-510 -230) scale(2.5 2.5)" display="none">
+<g id="template" transform="translate(-510 -230) scale(2.5 2.5)" display="inline">
 	<g transform="translate(163 -77)" display="inline">
 		<text transform="matrix(0.4 0 0 0.4 188.4 377.3047)" font-family="sans-serif" font-size="30">ANCHOR</text>
 		<text transform="matrix(0.4 0 0 0.4 195.4 388.3047)" font-family="sans-serif" font-size="30">POINT</text>

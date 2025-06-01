@@ -6,7 +6,7 @@
 <g id="main" transform="translate(-240 -280) scale(2 2)">
 	<circle fill="none" stroke="#000000" stroke-width="5" cx="272.14" cy="337.305" r="34"/>
 </g>
-<g id="template" transform="translate(60 181)" display="none">
+<g id="template" transform="translate(60 181)" display="inline">
 	<text transform="matrix(1 0 0 1 22.9473 205.2715)" display="inline" font-family="sans-serif" font-size="24">CENTER</text>
 	<text transform="matrix(1 0 0 1 38.9473 229.2715)" display="inline" font-family="sans-serif" font-size="24">POINT</text>
 	<line display="inline" fill="none" stroke="#000000" stroke-width="5" x1="128.283" y1="214.27" x2="217.92" y2="214.572"/>

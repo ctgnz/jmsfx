@@ -11,7 +11,7 @@
 		c-3.438-8.451-10.42-12.683-20.965-12.683c-17.934,0-26.896,7.942-26.896,23.83c0,16.689,8.565,25.032,25.714,25.032
 		C379.379,261.742,387.171,256.621,389.805,246.358z"/>
 </g>
-<g id="template" transform="translate(-360 -290) scale(2.5 2.5)" display="none">
+<g id="template" transform="translate(-360 -290) scale(2.5 2.5)" display="inline">
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="266.5" y1="285.505" x2="266.5" y2="303.505"/>
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="265.55" y1="303.505" x2="291.5" y2="303.505"/>
 	<polygon display="inline" stroke="#000000" stroke-width="2" points="266.5,278.505 274.5,291.505 258.5,291.505 	"/>

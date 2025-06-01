@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve" sodipodi:docname="25343700.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs515" /><sodipodi:namedview id="namedview513" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="2.2025" inkscape:cx="172.53121" inkscape:cy="210.66969" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="g509" />
+<g id="main" transform="translate(-110 -100) scale(1.25 1.25)">
+	
+	
+	<path id="line472" style="fill:none;stroke:#000000;stroke-width:2" d="m 361.96758,197.3824 h -82.17584 c -12.26167,0.22639 -18.0535,2.06237 -18.11338,13.73154 -0.0579,11.28658 -5.97816,14.42137 -19.67431,14.64926 h -78.20893" sodipodi:nodetypes="ccscc" />
+	<line fill="none" stroke="#000000" stroke-width="2" x1="164.53828" y1="225.50613" x2="178.53828" y2="213.50613" id="line474" />
+	<line fill="none" stroke="#000000" stroke-width="2" x1="164.52528" y1="226.23914" x2="176.92528" y2="239.03915" id="line476" />
+	<g id="g1247" transform="translate(89.379581,-80.647094)"><rect style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:0.933121" id="rect689" width="24.497503" height="14.405603" x="206.89281" y="271.03577" /><text font-family="sans-serif" font-size="18px" id="text478" x="206.70064" y="284.78201" style="stroke-width:0.8">EX</text></g>
+</g>
+<g id="template" display="inline" transform="translate(-6.3564132,10.442679)">
+	<g display="inline" id="g489" transform="translate(-63.110098,42.224744)">
+		<line fill="none" stroke="#000000" stroke-width="2" x1="274.98801" y1="103.055" x2="253.957" y2="87.346001" id="line481" />
+		<polygon stroke="#000000" stroke-width="2" points="266.24,104.322 281.998,108.291 273.721,94.308 " id="polygon483" />
+		<line fill="none" stroke="#000000" stroke-width="2" x1="254.97301" y1="87.513" x2="224.5" y2="87.25" id="line485" />
+		<text transform="translate(178.249,90.999)" font-family="sans-serif" font-size="15px" id="text487">PT. 2</text>
+	</g>
+	<g display="inline" id="g499" transform="translate(66.288309,-110.7832)">
+		<line fill="none" stroke="#000000" stroke-width="2" x1="280.76001" y1="263.5" x2="280.76001" y2="289.75" id="line491" />
+		<line fill="none" stroke="#000000" stroke-width="2" x1="281.06299" y1="288.936" x2="263.26001" y2="308.5" id="line493" />
+		<polygon stroke="#000000" stroke-width="2" points="274.51,269.75 287.01,269.75 280.76,254.75 " id="polygon495" />
+		<text transform="translate(218.249,312.249)" font-family="sans-serif" font-size="15px" id="text497">PT. 1</text>
+	</g>
+	<g display="inline" id="g509" transform="translate(62.202046,-76.730988)">
+		<line fill="none" stroke="#000000" stroke-width="2" x1="39.5" y1="266" x2="39.5" y2="292.25" id="line501" />
+		<line fill="none" stroke="#000000" stroke-width="2" x1="39.196999" y1="291.436" x2="57" y2="311" id="line503" />
+		<polygon stroke="#000000" stroke-width="2" points="33.25,272.25 39.5,257.25 45.75,272.25 " id="polygon505" />
+		<text transform="translate(61.999,314.749)" font-family="sans-serif" font-size="15px" id="text507">PT. 3</text>
+	</g>
+</g>
+</svg>

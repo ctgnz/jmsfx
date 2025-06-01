@@ -8,7 +8,7 @@
 		306.754,269.862 428.254,356.5 	"/>
 	<line fill="none" stroke="#000000" stroke-width="5" x1="122.455" y1="354.5" x2="489.544" y2="353.5"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1 0 0 1 247.6074 522.3008)" display="inline" font-family="sans-serif" font-size="27.7759">C</text>
 	<text transform="matrix(1 0 0 1 267.6665 522.3008)" display="inline" font-family="sans-serif" font-size="27.7759">E</text>
 	<text transform="matrix(1 0 0 1 286.0815 522.3008)" display="inline" font-family="sans-serif" font-size="27.7759">N</text>

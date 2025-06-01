@@ -18,7 +18,7 @@
 		</g>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g transform="translate(0 -140)" display="inline">
 		<text transform="matrix(1 0 0 1 262.3115 372.793)" font-family="sans-serif" font-size="24">CENTER</text>
 		<text transform="matrix(1 0 0 1 273.3115 397.793)" font-family="sans-serif" font-size="24">POINT</text>

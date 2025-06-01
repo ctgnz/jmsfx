@@ -9,7 +9,7 @@
 	<line fill="none" stroke="#000000" stroke-width="10" x1="305.5" y1="396" x2="470.5" y2="231"/>
 	<line fill="none" stroke="#000000" stroke-width="10" x1="305.5" y1="396" x2="140.5" y2="231"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="ANCHOR_x25_20POINT" transform="matrix(2 0 0 2 -28 -290) translate(4.5 14.5)" display="inline">
 		<text transform="matrix(0.5 0 0 0.5 193.25 349)" font-family="sans-serif" font-size="24">ANCHOR</text>
 		<text transform="matrix(0.5 0 0 0.5 200.25 360)" font-family="sans-serif" font-size="24">POINT</text>

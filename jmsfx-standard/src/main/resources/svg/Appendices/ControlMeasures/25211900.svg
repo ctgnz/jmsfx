@@ -9,7 +9,7 @@
 	<path d="M304.757,375.625c-11.257,0-20.386,9.129-20.386,20.387c0,11.257,9.129,20.387,20.386,20.387s20.388-9.13,20.388-20.387
 		C325.145,384.753,316.014,375.625,304.757,375.625"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1 0 0 1 388.2344 398.8135)" display="inline" font-family="sans-serif" font-size="29.4278">P</text>
 	<text transform="matrix(1 0 0 1 407.7461 398.8135)" display="inline" font-family="sans-serif" font-size="29.4278">O</text>
 	<text transform="matrix(1 0 0 1 430.7832 398.8135)" display="inline" font-family="sans-serif" font-size="29.4278">IN</text>

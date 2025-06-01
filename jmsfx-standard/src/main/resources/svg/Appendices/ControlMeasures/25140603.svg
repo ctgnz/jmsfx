@@ -9,7 +9,7 @@
 		c0.74-1.162,2.298-1.499,3.451-0.767l35.573,22.656c0.722,0.459,1.157,1.255,1.157,2.109s-0.438,1.65-1.157,2.109l-35.573,22.657
 		c-0.415,0.265-0.882,0.392-1.341,0.392C330.604,208.602,329.795,208.191,329.316,207.443z"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varA" display="inline">
 		<rect x="14.5" y="148.945" fill="#FFFFFF" stroke="#000000" stroke-width="4.7801" width="85" height="69"/>
 		<rect x="34.5" y="162.443" fill="#FFFFFF" stroke="#000000" stroke-width="5" width="43" height="43"/>

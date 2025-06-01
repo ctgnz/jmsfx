@@ -21,7 +21,7 @@
 	<circle fill="#FFFFFF" stroke="#000000" stroke-width="2" cx="252.051" cy="256.953" r="13"/>
 	<circle fill="#FFFFFF" stroke="#000000" stroke-width="2" cx="298.051" cy="256.953" r="13"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varH_1_" transform="translate(21 245)" display="inline">
 		<rect x="167.839" y="90.418" fill="#FFFFFF" stroke="#000000" stroke-width="2" width="28" height="29.75"/>
 		<text transform="matrix(1 0 0 1 173.0884 113.168)" font-family="sans-serif" font-size="20.9989">H</text>

@@ -11,7 +11,7 @@
 		<text transform="matrix(1 0 0 1 170.478 179.1699)" font-family="sans-serif" font-size="21">MFP</text>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW1" display="inline">
 		
 			<rect x="113.783" y="185.586" fill="none" stroke="#000000" stroke-width="2.0987" stroke-linecap="round" stroke-miterlimit="8" width="48.565" height="37.923"/>

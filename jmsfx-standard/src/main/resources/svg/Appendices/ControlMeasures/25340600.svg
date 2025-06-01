@@ -22,7 +22,7 @@
 		<line fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-dasharray="10,10" x1="156" y1="242" x2="106" y2="300"/>
 	<text transform="matrix(1 0 0 1 163.9375 217)" font-family="sans-serif" font-size="40">CATK</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1 0 0 1 143.9409 326.3477)" display="inline" font-family="sans-serif" font-size="20">PT. N-1</text>
 	<text transform="matrix(1 0 0 1 307.5195 303.7813)" display="inline" font-family="sans-serif" font-size="20">PT. 1</text>
 	<text transform="matrix(1 0 0 1 194.3989 281.0098)" display="inline" font-family="sans-serif" font-size="20">PT. 2</text>

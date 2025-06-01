@@ -7,7 +7,7 @@
 	<polygon fill="none" stroke="#000000" stroke-width="5" points="454.193,457.735 154.38,457.735 304.288,307.828 	"/>
 	<circle cx="305.021" cy="396.485" r="12.75"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1.1335 0 0 1 386.2715 340.8291)" display="inline" font-family="sans-serif" font-size="24">CENTER</text>
 	<text transform="matrix(1.1335 0 0 1 386.2715 366.0176)" display="inline" font-family="sans-serif" font-size="24">POINT</text>
 	<g display="inline">

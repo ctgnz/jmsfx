@@ -10,7 +10,7 @@
 		102,356.5 50,356.5 50,265.5 85,250.04 50,231.5 50,171 85.5,155.5 50,136 50,29.5 110.644,47.024 119.5,85.5 142.252,56.157 
 		193.774,71.045 202.5,110 227.096,80.673 275.723,94.725 285,132 307.922,104.029 358,118.5 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW1" display="inline">
 		
 			<rect x="211.023" y="241.482" fill="none" stroke="#000000" stroke-width="2.128" stroke-linecap="round" stroke-miterlimit="8" width="69.797" height="55.604"/>

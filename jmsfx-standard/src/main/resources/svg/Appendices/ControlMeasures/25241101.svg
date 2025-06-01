@@ -12,7 +12,7 @@
 		c-10.274-5.526-20.566-6.969-32.209-9.287C278.914,123.184,254.529,117.468,228.359,117.468"/>
 	<text transform="matrix(1 0 0 1 194.8105 187.2539)" font-family="sans-serif" font-size="24.0048">ATI</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW1" display="inline">
 		
 			<rect x="79.585" y="127.42" fill="none" stroke="#000000" stroke-width="1.8991" stroke-linecap="round" stroke-miterlimit="8" width="43.926" height="34.298"/>

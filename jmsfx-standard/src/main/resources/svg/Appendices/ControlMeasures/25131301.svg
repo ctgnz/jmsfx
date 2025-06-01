@@ -11,7 +11,7 @@
 		S357.059,122.793,305.513,122.793"/>
 	<text transform="matrix(1 0 0 1 299.3608 226.1787)" font-family="sans-serif" font-size="52"> </text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="points" display="inline">
 		<text transform="matrix(1 0 0 1 398.1719 428.5664)" font-family="sans-serif" font-size="32.3352">POINT</text>
 		<text transform="matrix(1 0 0 1 398.1719 390.0137)" font-family="sans-serif" font-size="32.3352">ANCHOR</text>

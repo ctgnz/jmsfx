@@ -41,7 +41,7 @@
 		c12.057,19.187,34.695,55.615,63.351,69.037c28.657,13.426,85.988,36.434,108.605,11.504
 		c22.64-24.926,46.771-120.812,27.164-161.081C310.789,159.691,220.275,113.658,185.582,119.42"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	
 		<rect x="71.693" y="43.699" display="inline" fill="none" stroke="#000000" stroke-width="1.8464" stroke-linecap="round" stroke-miterlimit="8" width="47.139" height="44.185"/>
 	<text transform="matrix(1 0 0 1 87.104 74.4551)" display="inline" font-family="sans-serif" font-size="24">A</text>

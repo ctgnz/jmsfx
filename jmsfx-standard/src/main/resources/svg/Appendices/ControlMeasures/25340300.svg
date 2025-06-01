@@ -16,7 +16,7 @@
 		<text transform="matrix(1 0 0 1 190.3623 205)" font-family="sans-serif" font-size="35">B</text>
 	</g>
 </g>
-<g id="template" transform="translate(-110 -80) scale(1.25 1.25)" display="none">
+<g id="template" transform="translate(-110 -80) scale(1.25 1.25)" display="inline">
 	<text transform="matrix(0.8 0 0 0.8 213.5992 228.7992)" display="inline" font-family="sans-serif" font-size="15">PT. 3</text>
 	<text transform="matrix(0.8 0 0 0.8 341.3992 254.9992)" display="inline" font-family="sans-serif" font-size="15">PT. 2</text>
 	<text transform="matrix(0.8 0 0 0.8 341.3992 201.9992)" display="inline" font-family="sans-serif" font-size="15">PT. 1</text>

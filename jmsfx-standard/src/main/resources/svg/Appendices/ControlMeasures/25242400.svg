@@ -21,7 +21,7 @@
 		<text font-family="sans-serif" font-size="20.8061px" id="text24" x="341.13715" y="202.34669">AMA</text>
 	</g>
 </g>
-<g id="template" display="none" transform="translate(-5.4483541,-27.241771)">
+<g id="template" display="inline" transform="translate(-5.4483541,-27.241771)">
 	<g id="varT" display="inline" transform="translate(-84.449489,-64.018161)">
 		
 			<rect x="258.06482" y="208.59813" fill="none" stroke="#000000" stroke-width="3.87162" stroke-linecap="round" stroke-miterlimit="8" width="38.786968" height="40.149055" id="rect29" style="stroke-width:3;stroke-dasharray:none" />

@@ -6,7 +6,7 @@
 <g id="main">
 	<polygon fill="none" stroke="#000000" stroke-width="5" points="165.443,491.869 305.443,249.37 445.443,491.869 	"/>
 </g>
-<g id="template" transform="translate(-135 -150)" display="none">
+<g id="template" transform="translate(-135 -150)" display="inline">
 	<g display="inline">
 		<line fill="none" stroke="#000000" stroke-width="3" x1="447.963" y1="545.899" x2="613.255" y2="545.025"/>
 		<polygon stroke="#000000" stroke-width="3" points="440.443,546.086 450.278,549.277 450.301,542.43 		"/>

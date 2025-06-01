@@ -6,7 +6,7 @@
 <g id="main" transform="translate(-530 -560) scale(3 3)">
 	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="2" points="278.334,260.666 307.334,318.667 249.334,318.667 	"/>
 </g>
-<g id="template" transform="translate(105 -79)" display="none">
+<g id="template" transform="translate(105 -79)" display="inline">
 	<text transform="matrix(1 0 0 1 112.999 614.0001)" display="inline" font-family="sans-serif" font-size="35.9964">ANCHOR</text>
 	<text transform="matrix(1 0 0 1 130.999 647.0001)" display="inline" font-family="sans-serif" font-size="35.9964">POINT</text>
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="200.001" y1="497.001" x2="200.001" y2="575.001"/>

@@ -8,7 +8,7 @@
 		125.836,169.498 144.543,124.244 163.363,169.355 216.252,169.355 234.92,125.8 255.777,169.639 324.363,169.639 343.03,128.912 
 		362.475,168.86 378.949,168.86 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="points" display="inline">
 		<g>
 			<text transform="matrix(1 0 0 1 7.499 241.5)" font-family="sans-serif" font-size="18">PT 1</text>

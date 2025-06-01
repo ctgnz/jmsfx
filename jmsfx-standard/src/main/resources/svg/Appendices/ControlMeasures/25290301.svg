@@ -6,7 +6,7 @@
 <g id="main">
 	<text transform="matrix(1 0 0 1 21 156.5)" font-family="sans-serif" font-size="60">x x x x x x x x</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<line fill="none" stroke="#000000" stroke-width="2" x1="379" y1="168.5" x2="379" y2="194"/>
 		<line fill="none" stroke="#000000" stroke-width="2" x1="378.983" y1="192.734" x2="355" y2="221"/>

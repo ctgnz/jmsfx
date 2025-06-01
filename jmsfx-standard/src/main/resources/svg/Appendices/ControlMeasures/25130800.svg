@@ -11,7 +11,7 @@
 	<polygon fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-miterlimit="8" points="306.688,396.521 
 		242.575,311.037 370.803,311.037 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="H" display="inline">
 		<text id="varH" transform="matrix(1 0 0 1 296.1626 116.772)" font-family="sans-serif" font-size="24">H</text>
 		

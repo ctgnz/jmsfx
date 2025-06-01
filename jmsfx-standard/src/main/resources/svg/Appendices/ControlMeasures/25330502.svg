@@ -19,7 +19,7 @@
 		</g>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varT" transform="matrix(0.6,0,0,0.6,157.6,38.49599)" display="inline">
 		<rect x="145.34" y="90.825996" fill="#ffffff" stroke="#000000" stroke-width="4" width="64.494003" height="63.674" id="rect1066" />
 		<text transform="matrix(1.6667,0,0,1.6667,161.0068,145.6116)" font-family="sans-serif" font-size="36px" id="text1068">T</text>

@@ -10,7 +10,7 @@
 	<line fill="none" stroke="#000000" stroke-width="5" x1="306.91" y1="312.5" x2="306.91" y2="252.5"/>
 	<line fill="none" stroke="#000000" stroke-width="5" x1="380.796" y1="341.501" x2="436.5" y2="293.5"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1 0 0 1 246.1152 560.7666)" display="inline" font-family="sans-serif" font-size="28.2962">C</text>
 	<text transform="matrix(1 0 0 1 266.5503 560.7666)" display="inline" font-family="sans-serif" font-size="28.2962">E</text>
 	<text transform="matrix(1 0 0 1 285.3101 560.7666)" display="inline" font-family="sans-serif" font-size="28.2962">N</text>

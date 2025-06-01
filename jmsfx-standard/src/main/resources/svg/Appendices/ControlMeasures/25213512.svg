@@ -13,7 +13,7 @@
 		V241.79l24.443,27.726v-126.42H325.498z"/>
 	<text transform="matrix(1.1335 0 0 1 289.1426 411.3828)" font-family="sans-serif" font-size="60">L</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varH" display="inline">
 		<rect x="355.943" y="268.596" fill="#FFFFFF" stroke="#000000" stroke-width="1.8941" width="50.807" height="50.798"/>
 		<text transform="matrix(1.1335 0 0 1 363.2764 308.3789)" font-family="sans-serif" font-size="42">H</text>

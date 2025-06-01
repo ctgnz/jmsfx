@@ -16,7 +16,7 @@
 	
 		<line display="inline" fill="none" stroke="#8C8C8C" stroke-width="5" stroke-miterlimit="10" x1="137.083" y1="345.5" x2="141.375" y2="405"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1 0 0 1 438.2285 462)" display="inline" fill="#010101" font-family="sans-serif" font-size="24">PT 2</text>
 	<text transform="matrix(1 0 0 1 113.2285 462)" display="inline" fill="#010101" font-family="sans-serif" font-size="24">PT 1</text>
 	<path display="inline" fill="#010101" stroke="#010101" stroke-width="0.4335" stroke-linejoin="bevel" stroke-miterlimit="10" d="

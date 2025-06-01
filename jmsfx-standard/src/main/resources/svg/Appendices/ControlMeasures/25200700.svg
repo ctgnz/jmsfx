@@ -10,7 +10,7 @@
 		M191.906,402.313c48.287,0,90.514,11.418,116.279,29.786l131.077-50.307c-60.922-50.379-160.555-81.82-272.368-84.596l0,0
 		L191.906,402.313"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varT" display="inline">
 		
 			<rect x="238.167" y="324.711" fill="#FFFFFF" stroke="#000000" stroke-linecap="round" stroke-miterlimit="8" width="42.167" height="38.384"/>

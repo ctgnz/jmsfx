@@ -8,7 +8,7 @@
 	<line fill="none" stroke="#000000" stroke-width="10" x1="173.961" y1="495.5" x2="440.461" y2="495.5"/>
 	<ellipse stroke="#000000" cx="306.461" cy="392" rx="55" ry="55"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW1" display="inline">
 		
 			<rect x="492.456" y="307.19" fill="none" stroke="#000000" stroke-width="1.721" stroke-linecap="round" stroke-miterlimit="8" width="65.005" height="50.011"/>

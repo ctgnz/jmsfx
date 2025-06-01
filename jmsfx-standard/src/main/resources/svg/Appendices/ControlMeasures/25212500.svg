@@ -36,7 +36,7 @@
 	</g>
 	<text transform="matrix(1 0 0 1 212.0571 568.6738)" font-family="sans-serif" font-size="85.2126">MAD</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1 0 0 1 166.7661 296.7324)" display="inline" font-family="sans-serif" font-size="28.2906">POINT</text>
 	<text transform="matrix(1 0 0 1 166.7661 262.9795)" display="inline" font-family="sans-serif" font-size="28.2906">CENTER</text>
 	<path display="inline" stroke="#000000" stroke-width="0.3409" stroke-linejoin="bevel" stroke-miterlimit="10" d="M298.378,381.41

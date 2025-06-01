@@ -7,7 +7,7 @@
 	<polygon stroke="#000000" stroke-width="5" points="195.667,25 225.666,170 370.666,200 225.666,230 195.667,375 165.667,230 
 		20.667,200 165.667,170 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varH" display="inline">
 		<rect x="238.5" y="86.5" fill="none" stroke="#000000" stroke-width="5" width="79" height="66"/>
 		<text transform="matrix(1 0 0 1 263.166 134.5)" font-family="sans-serif" font-size="35.9982">H</text>

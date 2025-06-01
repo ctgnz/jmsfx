@@ -7,7 +7,7 @@
 	
 		<rect x="110.65" y="183.833" fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="bevel" stroke-miterlimit="10" width="188.306" height="109.021"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varAM1" display="inline">
 		
 			<rect x="153.451" y="115.048" fill="none" stroke="#000000" stroke-width="2.0189" stroke-linecap="round" stroke-miterlimit="8" width="58.025" height="43.608"/>

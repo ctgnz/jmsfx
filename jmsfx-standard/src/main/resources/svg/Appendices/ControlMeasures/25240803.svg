@@ -8,7 +8,7 @@
 		M205.543,46.847c-86.479,0-156.582,67.732-156.582,151.288c0,83.576,70.103,151.309,156.582,151.309
 		c86.48,0,156.581-67.73,156.581-151.309C362.124,114.579,292.023,46.847,205.543,46.847"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varAP" display="inline">
 		
 			<rect x="183.238" y="118.225" fill="none" stroke="#000000" stroke-width="3.2469" stroke-linecap="round" stroke-miterlimit="8" width="54.262" height="35.682"/>

@@ -10,7 +10,7 @@
 		"/>
 	<text id="static" transform="matrix(1 0 0 1 131.3706 208)" font-family="sans-serif" font-size="48">AO</text>
 </g>
-<g id="template" transform="translate(150 118)" display="none">
+<g id="template" transform="translate(150 118)" display="inline">
 	
 		<rect x="66.277" y="47.752" display="inline" fill="none" stroke="#000000" stroke-width="2.6622" stroke-linecap="round" stroke-miterlimit="8" width="44.223" height="49.748"/>
 	<text transform="matrix(1 0 0 1 73.5918 91)" display="inline" font-family="sans-serif" font-size="48">T</text>

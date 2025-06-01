@@ -12,7 +12,7 @@
 	<polygon fill="none" stroke="#000000" stroke-width="5" points="167.882,314.312 167.482,159.511 295.927,161.661 335.927,244.223 
 		309.427,314.312 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varX" transform="translate(148 97)" display="inline">
 		<rect x="-82.236" y="-5.777" fill="#FFFFFF" stroke="#000000" stroke-width="2" width="52" height="46"/>
 		<text transform="matrix(1 0 0 1 -66.2358 26.2227)" font-family="sans-serif" font-size="24">T</text>

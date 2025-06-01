@@ -8,7 +8,7 @@
 	
 		<rect x="268.433" y="258.218" transform="matrix(0.729 0.6845 -0.6845 0.729 348.5139 -121.4117)" fill="#557788" fill-opacity="0.25" stroke="#FFFFFF" stroke-width="5" stroke-miterlimit="8" width="118.325" height="242.474"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1 0 0 1 163.5 514.5)" display="inline" fill="#FFFF00" font-family="sans-serif" font-size="21">CENTER </text>
 	<text transform="matrix(1 0 0 1 163.5 539.7002)" display="inline" fill="#FFFF00" font-family="sans-serif" font-size="21">POINT</text>
 	<g display="inline">

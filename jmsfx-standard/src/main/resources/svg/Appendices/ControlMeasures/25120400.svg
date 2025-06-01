@@ -17,7 +17,7 @@
 <g id="example" display="none">
 	<text id="varH" transform="matrix(1 0 0 1 317.2949 202.5371)" display="inline" font-family="sans-serif" font-size="22.515">570M</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	
 		<rect x="321.496" y="172.549" display="inline" fill="none" stroke="#000000" stroke-width="1.6954" stroke-linecap="round" stroke-miterlimit="8" width="49.847" height="46.794"/>
 	<text transform="matrix(1 0 0 1 337.4551 202.5371)" display="inline" font-family="sans-serif" font-size="22.515">H</text>

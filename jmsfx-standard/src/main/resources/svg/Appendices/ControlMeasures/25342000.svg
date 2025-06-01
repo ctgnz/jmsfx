@@ -11,7 +11,7 @@
 	<line fill="none" stroke="#000000" stroke-width="2" x1="124.587" y1="279.533" x2="136.987" y2="292.333"/>
 	<text transform="matrix(0.8 0 0 0.8 206.5992 284.7992)" font-family="sans-serif" font-size="22.5">R</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<line fill="none" stroke="#000000" stroke-width="2" x1="274.988" y1="103.055" x2="253.957" y2="87.346"/>
 		<polygon stroke="#000000" stroke-width="2" points="281.998,108.291 273.721,94.308 266.24,104.322 		"/>

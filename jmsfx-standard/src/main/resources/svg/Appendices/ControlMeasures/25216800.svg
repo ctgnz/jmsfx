@@ -13,7 +13,7 @@
 	</g>
 	<text transform="matrix(1 0 0 1 216.0117 328.0879)" font-family="sans-serif" font-size="72">RMV</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<g>
 			<line fill="none" stroke="#000000" stroke-width="5" x1="301" y1="488.5" x2="301" y2="363.5"/>

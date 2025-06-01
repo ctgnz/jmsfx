@@ -11,7 +11,7 @@
 	<path stroke="#000000" stroke-width="3" stroke-miterlimit="10" d="M305.741,359.188c-20.039,0-36.31,16.248-36.31,36.312
 		s16.271,36.313,36.31,36.313c20.062,0,36.312-16.249,36.312-36.313S325.803,359.188,305.741,359.188"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<text transform="matrix(1 0 0 1 260.2891 214.6533)" font-family="sans-serif" font-size="30.1374">POINT</text>
 		<text transform="matrix(1 0 0 1 244.6641 179.7832)" font-family="sans-serif" font-size="30.1374">CENTER</text>

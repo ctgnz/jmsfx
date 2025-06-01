@@ -15,7 +15,7 @@
 	<path stroke="#000000" stroke-width="0.2906" stroke-linejoin="bevel" stroke-miterlimit="10" d="M140.795,245.277h34.875v4.849
 		h-34.875V245.277L140.795,245.277z M173.236,235.595l24.232,12.099l-24.232,12.117V235.595L173.236,235.595z"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<path stroke="#000000" stroke-width="0.2906" stroke-linejoin="bevel" stroke-miterlimit="10" d="M304.336,145.279h-12.952
 			c-0.672,0-1.218-0.544-1.218-1.217c0-0.653,0.546-1.198,1.218-1.198h12.952c0.671,0,1.216,0.545,1.216,1.198

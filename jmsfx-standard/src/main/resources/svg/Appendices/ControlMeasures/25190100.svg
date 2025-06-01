@@ -8,7 +8,7 @@
 	<text transform="matrix(1 0 0 1 26 167.668)" font-family="sans-serif" font-size="36">IFF OFF</text>
 	<text transform="matrix(1 0 0 1 255 167.668)" font-family="sans-serif" font-size="36">IFF OFF</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<text transform="matrix(1 0 0 1 20.5 288.6279)" font-family="sans-serif" font-size="24">PT 1</text>
 		<g>

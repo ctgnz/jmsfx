@@ -7,7 +7,7 @@
 	<path d="M16.654,48.911L-5.081,35.772l21.735-13.767V48.911z M18.018,22.004l40.321,13.768L18.017,48.911L18.018,22.004
 		L18.018,22.004z M70.416,40.407l-12.075-4.621l12.075-5.042V40.407z"/>
 </g>
-<g id="template" transform="translate(186 53)" display="none">
+<g id="template" transform="translate(186 53)" display="inline">
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="58.255" y1="404.754" x2="58.255" y2="464.254"/>
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="56.943" y1="464.254" x2="93.255" y2="464.254"/>
 	<polygon display="inline" stroke="#000000" stroke-width="2" points="58.255,389.004 70.504,410.004 46.005,410.004 	"/>

@@ -8,14 +8,14 @@
 
 	
 </defs><sodipodi:namedview id="namedview1452" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="1.5574027" inkscape:cx="145.1134" inkscape:cy="226.65943" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="example" />
-<g id="main" transform="matrix(0.8,0,0,0.8,39.28656,38.390805)" style="display:inline">
+<g id="main" transform="matrix(0.8,0,0,0.8,39.28656,38.390805)" display="inline">
 	<line fill="none" stroke="#000000" stroke-width="8.74948" x1="63.691536" y1="191.95403" x2="337.75397" y2="191.95403" id="line1336" />
     <line fill="none" stroke="#000000" stroke-width="8.74948" x1="337.75397" y1="191.95403" x2="410.75397" y2="149.95403" id="line1573" />
     <line fill="none" stroke="#000000" stroke-width="8.74948" x1="337.75397" y1="191.95403" x2="410.75397" y2="233.95403" id="line1577" />
     <line fill="none" stroke="#000000" stroke-width="8.74948" x1="63.691536" y1="191.95403" x2="-10.691536" y2="149.95403" id="line1585" />
     <line fill="none" stroke="#000000" stroke-width="8.74948" x1="63.691536" y1="191.95403" x2="-10.691536" y2="233.95403" id="line1592" />
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	
 	
 	<g id="g1798" transform="translate(-213.17544,-1.9262946)"><text display="inline" font-family="sans-serif" font-size="24px" id="text1339" x="351.082" y="278.5">PT 2</text><path display="inline" stroke="#000000" stroke-width="0.4335" stroke-linejoin="bevel" stroke-miterlimit="10" d="m 367.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.938,-36.087 10.732,36.166 z" id="path1343" /></g>

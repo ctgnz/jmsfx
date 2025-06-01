@@ -38,7 +38,7 @@
 		<text transform="matrix(0.6667 0 0 0.6667 205.8752 361.2224)" font-family="sans-serif" font-size="35.0036">R</text>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<line fill="none" stroke="#000000" stroke-width="2" x1="168.752" y1="389.755" x2="135.752" y2="377.754"/>
 		<line fill="none" stroke="#000000" stroke-width="2" x1="136.669" y1="378.882" x2="135.752" y2="319.254"/>

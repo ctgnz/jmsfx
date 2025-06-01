@@ -13,7 +13,7 @@
 	
 		<line fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="10" x1="141.123" y1="107.192" x2="278.279" y2="293.865"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<text transform="matrix(1 0 0 1 80.1323 207.333)" font-family="sans-serif" font-size="24">P</text>
 		<text transform="matrix(1 0 0 1 96.2124 207.333)" font-family="sans-serif" font-size="24">T</text>

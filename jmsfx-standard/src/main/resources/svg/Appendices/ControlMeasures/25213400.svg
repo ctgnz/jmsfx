@@ -8,7 +8,7 @@
 	
 		<line fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="bevel" stroke-miterlimit="10" x1="204.27" y1="310.195" x2="406.73" y2="481.807"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1 0 0 1 417.8418 418.9297)" display="inline" font-family="sans-serif" font-size="24.5599">P</text>
 	<text transform="matrix(1 0 0 1 434.2227 418.9297)" display="inline" font-family="sans-serif" font-size="24.5599">O</text>
 	<text transform="matrix(1 0 0 1 453.2285 418.9297)" display="inline" font-family="sans-serif" font-size="24.5599">I</text>

@@ -24,7 +24,7 @@
 		<text transform="matrix(1 0 0 1 343.4814 202.3467)" font-family="sans-serif" font-size="20.8061">PAA</text>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varAM" display="inline">
 		
 			<rect x="257.629" y="218.605" transform="matrix(0.6486 -0.7611 0.7611 0.6486 -88.7413 292.96)" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-miterlimit="8" width="30.578" height="47.972"/>

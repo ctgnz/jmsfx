@@ -11,7 +11,7 @@
 		<polyline points="305,418 224,373 224,463 305,418 386,373 386,463 305,418 		"/>
 	</g>
 </g>
-<g id="template" transform="translate(0 -140)" display="none">
+<g id="template" transform="translate(0 -140)" display="inline">
 	<text transform="matrix(1 0 0 1 257 391)" display="inline" font-family="sans-serif" font-size="24">CENTER</text>
 	<text transform="matrix(1 0 0 1 268 416)" display="inline" font-family="sans-serif" font-size="24">POINT</text>
 	<g display="inline">

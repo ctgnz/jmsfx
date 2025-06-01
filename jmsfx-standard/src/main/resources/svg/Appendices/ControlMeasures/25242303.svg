@@ -9,7 +9,7 @@
 		c86.48,0,156.581-67.73,156.581-151.309C362.124,114.579,292.023,46.847,205.543,46.847"/>
 	<text transform="matrix(1 0 0 1 177.5981 140.0313)" font-family="sans-serif" font-size="24">BKB</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW1" display="inline">
 		
 			<rect x="7.498" y="112.809" fill="none" stroke="#000000" stroke-width="2.5418" stroke-linecap="round" stroke-miterlimit="8" width="44.205" height="34.515"/>

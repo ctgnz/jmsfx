@@ -19,7 +19,7 @@
 		<text transform="matrix(1 0 0 1 188.3623 198)" font-family="sans-serif" font-size="35">D</text>
 	</g>
 </g>
-<g id="template" transform="translate(-60 -30) scale(1 1)" display="none">
+<g id="template" transform="translate(-60 -30) scale(1 1)" display="inline">
 	<text transform="matrix(1 0 0 1 362 342)" display="inline" font-family="sans-serif" font-size="12">PT. 3</text>
 	<text transform="matrix(1 0 0 1 109 333)" display="inline" font-family="sans-serif" font-size="12">PT. 2</text>
 	<text transform="matrix(1 0 0 1 96 124)" display="inline" font-family="sans-serif" font-size="12">PT. 1</text>

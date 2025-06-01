@@ -11,7 +11,7 @@
 	<ellipse cx="305.687" cy="396.937" rx="12.5" ry="5.75"/>
 	<ellipse cx="305.687" cy="520.437" rx="12.5" ry="5.75"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<g>
 			<line fill="none" stroke="#000000" stroke-width="5" x1="420.012" y1="514.687" x2="328.188" y2="419.772"/>

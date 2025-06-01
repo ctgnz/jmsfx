@@ -16,7 +16,7 @@
 		<text transform="matrix(0.5714 0 0 0.5714 205.2213 228.1429)" font-family="sans-serif" font-size="34.9982">I</text>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="214.5" y1="204.75" x2="246" y2="295.75"/>
 	<polygon display="inline" stroke="#000000" stroke-width="2" points="210.738,196.762 229.074,213.838 209.641,221.794 	"/>
 	<text transform="matrix(1 0 0 1 210.25 332.7501)" display="inline" font-family="sans-serif" font-size="20.9989">POINT</text>

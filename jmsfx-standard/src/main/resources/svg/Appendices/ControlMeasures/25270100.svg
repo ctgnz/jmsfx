@@ -11,7 +11,7 @@
 		54.111,143.273 54.111,121.064 72.088,121.064 88.992,78.497 108.174,121.064 144.283,121.064 161.123,78.351 180.391,121.064 
 		216.346,121.064 234.455,75.463 252.434,121.064 288.389,121.064 307.277,77.391 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	
 		<rect x="168.114" y="159.496" display="inline" fill="none" stroke="#000000" stroke-width="2.1924" stroke-linecap="round" stroke-miterlimit="8" width="66.21" height="65.332"/>
 	<text transform="matrix(1 0 0 1 190.6133 204.5869)" display="inline" font-family="sans-serif" font-size="35.078">T</text>

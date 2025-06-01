@@ -11,7 +11,7 @@
 	<text id="varT_1_" transform="matrix(1 0 0 1 75.7344 196.1934)" font-family="sans-serif" font-size="24"> </text>
 	<text id="varT" transform="matrix(1 0 0 1 348.8496 194.584)" font-family="sans-serif" font-size="24"> </text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		
 			<rect x="64.5" y="168.5" fill="none" stroke="#000000" stroke-width="1.8695" stroke-linecap="round" stroke-miterlimit="8" width="39.173" height="38.111"/>

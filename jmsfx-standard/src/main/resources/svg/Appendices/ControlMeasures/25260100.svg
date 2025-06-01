@@ -9,7 +9,7 @@
 	<text transform="matrix(1 0 0 1 289.7383 165.8848)" font-family="sans-serif" font-size="18">FSCL</text>
 	<text transform="matrix(1 0 0 1 140.2402 163.8916)" font-family="sans-serif" font-size="18">FSCL</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW1_1_" display="inline">
 		
 			<rect x="139.018" y="181.073" fill="none" stroke="#000000" stroke-width="2.0987" stroke-linecap="round" stroke-miterlimit="8" width="48.565" height="37.923"/>

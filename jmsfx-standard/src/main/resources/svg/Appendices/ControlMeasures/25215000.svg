@@ -10,7 +10,7 @@
 	<line fill="none" stroke="#000000" stroke-width="10" x1="294" y1="272" x2="294" y2="382"/>
 	<text transform="matrix(1 0 0 1 247.3105 441)" font-family="sans-serif" font-size="70">SS</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<g>
 			<line fill="none" stroke="#000000" stroke-width="5" x1="294" y1="479.5" x2="294" y2="400.5"/>

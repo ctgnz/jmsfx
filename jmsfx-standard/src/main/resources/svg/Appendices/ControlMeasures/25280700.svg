@@ -7,7 +7,7 @@
 	<ellipse fill="none" stroke="#000000" stroke-width="5" cx="309.435" cy="395.614" rx="77.001" ry="54"/>
 	<polyline fill="none" stroke="#000000" stroke-width="5" points="248.195,362.879 306,236.501 370.678,362.879 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="CENTER_x25_20POINT" transform="matrix(2 0 0 2 -160 -58)" display="inline">
 		<text transform="matrix(0.5 0 0 0.5 111.5505 182.4185)" font-family="sans-serif" font-size="24">CENTER</text>
 		<text transform="matrix(0.5 0 0 0.5 117.5505 193.4185)" font-family="sans-serif" font-size="24">POINT</text>

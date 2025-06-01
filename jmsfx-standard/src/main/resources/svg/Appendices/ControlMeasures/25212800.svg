@@ -7,7 +7,7 @@
 	<path d="M255.967,264.643l126.98,0.134l-3.402,2.812H259.508L255.967,264.643z M255.967,264.643l3.509,3.02l35.039,95.971
 		l-3.026,0.01L255.967,264.643z M382.947,264.643l-3.402,2.974l-34.975,96.026h2.994L382.947,264.643z"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varH" display="inline">
 		<rect x="277.817" y="372.5" fill="#FFFFFF" stroke="#000000" stroke-width="2.1866" width="58.683" height="50.799"/>
 		<text transform="matrix(1.1335 0 0 1 288.0264 412.7051)" font-family="sans-serif" font-size="43.2269">H</text>

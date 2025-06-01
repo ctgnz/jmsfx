@@ -10,7 +10,7 @@
 		<polygon points="313.854,167.004 335.441,154.539 313.854,142.074   " id="polygon634" />
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varT" transform="matrix(0.6,0,0,0.6,143.6,44.495983)" display="inline">
 		<rect x="157.006" y="100.826" fill="#ffffff" stroke="#000000" stroke-width="4" width="64.494003" height="63.674" id="rect639" />
 		<text transform="matrix(1.6667,0,0,1.6667,172.6735,155.6116)" font-family="sans-serif" font-size="36px" id="text641">T</text>

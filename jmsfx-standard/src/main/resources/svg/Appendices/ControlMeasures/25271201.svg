@@ -9,7 +9,7 @@
 	
 		<line fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="12" x1="327.777" y1="107.943" x2="200.287" y2="292.096"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<path stroke="#000000" stroke-width="0.2833" stroke-linejoin="bevel" stroke-miterlimit="10" d="M164.999,189.395l40.371-0.371
 			c0.653-0.019,1.188,0.513,1.188,1.168c0.019,0.638-0.517,1.187-1.17,1.187l-40.374,0.39c-0.655,0-1.186-0.514-1.186-1.168

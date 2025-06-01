@@ -5,7 +5,7 @@
 <g id="main">
 	<polygon fill="none" stroke="#000000" stroke-width="5" points="385.596,195.508 267.814,332.918 32.254,293.658 12.624,151.501    91.144,58.098 307.074,77.728  " id="polygon2" />
 	<text transform="matrix(1 0 0 1 207.5918 204)" font-family="sans-serif" font-size="48" id="text4"> </text>
-	<text id="static" font-family="sans-serif" font-size="48px" style="display:inline" x="142.69714" y="200">BC</text>
+	<text id="static" font-family="sans-serif" font-size="48px" display="inline" x="142.69714" y="200">BC</text>
 </g>
 <g id="example" display="none" transform="translate(-26.333712,34.506243)">
 	<text id="varT" display="inline" font-family="sans-serif" font-size="36px" x="79.816818" y="199.09193">LEATHERNECK</text>

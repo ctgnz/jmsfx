@@ -8,7 +8,7 @@
 		<path fill="none" stroke="#000000" stroke-width="2.1894" stroke-linejoin="round" stroke-miterlimit="10" d="M343.711,112.319
 			c-1.663,43.147-3.886,86.59,1.662,129.474c-0.563,15.111-0.839,28.857-0.839,43.706"/>
 	</g>
-	<g id="template" display="none">
+	<g id="template" display="inline">
 		<path display="inline" fill="none" stroke="#808080" stroke-width="2.1894" stroke-linejoin="round" stroke-miterlimit="10" d="
 			M53.716,113.142c33.878,2.469,71.33-0.56,104.105-0.823c61.963,0.543,123.943,2.469,185.905,2.469"/>
 		<path display="inline" fill="none" stroke="#808080" stroke-width="2.1894" stroke-linejoin="round" stroke-miterlimit="10" d="

@@ -20,7 +20,7 @@
 		<path fill="none" stroke="#000000" stroke-width="6.2221" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
 		M242.201,108.372c16.477,0,29.831-12.562,29.831-28.035c0-15.498-13.354-28.036-29.831-28.036"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<text transform="matrix(1 0 0 1 99.8281 60.752)" font-family="sans-serif" font-size="30.9473">PT 1</text>
 		<g>

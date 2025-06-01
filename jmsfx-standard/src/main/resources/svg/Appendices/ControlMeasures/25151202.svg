@@ -12,7 +12,7 @@
 		c46.028,22.236,194.148,31.146,240.177,13.354c46.027-17.794,40.034-93.396,36.03-120.099
 		c-4.003-26.681-26.032-33.347-60.051-40.032C264.052,132.827,195.997,135.048,153.972,139.492"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varT" display="inline">
 		
 			<rect x="189.048" y="184.386" fill="#FFFFFF" stroke="#000000" stroke-width="1.7378" stroke-linecap="round" stroke-miterlimit="8" width="50.452" height="48.114"/>

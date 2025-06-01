@@ -13,7 +13,7 @@
 		<text transform="matrix(1 0 0 1 129.3281 165)" font-family="sans-serif" font-size="35">S</text>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varA" transform="translate(92 -35) translate(2 2)" display="inline">
 		<rect x="-28.749" y="157.5" fill="#FFFFFF" stroke="#000000" stroke-width="2" width="28" height="28"/>
 		<text transform="matrix(1 0 0 1 -23.5005 180.25)" font-family="sans-serif" font-size="26.2487">A</text>

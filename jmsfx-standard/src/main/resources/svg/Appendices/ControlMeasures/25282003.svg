@@ -27,7 +27,7 @@
 	</g>
 	<line fill="none" stroke="#000000" stroke-width="3" x1="167.133" y1="394.452" x2="447.133" y2="394.452"/>
 </g>
-<g id="points" display="none">
+<g id="points" display="inline">
 	<text transform="matrix(1 0 0 1 134.9546 305.9522)" display="inline" font-family="sans-serif" font-size="24">For use on maps of all scales</text>
 	<text transform="matrix(1 0 0 1 174.314 507.8975)" display="inline" font-family="sans-serif" font-size="24">PT. 1</text>
 	<text transform="matrix(1 0 0 1 370.5996 508.0518)" display="inline" font-family="sans-serif" font-size="24">PT. 2</text>

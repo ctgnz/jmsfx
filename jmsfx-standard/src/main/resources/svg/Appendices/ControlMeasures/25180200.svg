@@ -7,7 +7,7 @@
 	<text transform="matrix(1 0 0 1 234.6133 383.5508)" font-family="sans-serif" font-size="72">CCP</text>
 	<circle fill="none" stroke="#000000" stroke-width="5" cx="311.318" cy="397.93" r="125"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varT" transform="translate(0 50)" display="inline">
 		<rect x="277.283" y="364.203" fill="#FFFFFF" stroke="#000000" stroke-width="5" width="64.535" height="62.57"/>
 		<text transform="matrix(1 0 0 1 286.293 422.2031)" font-family="sans-serif" font-size="72">T</text>

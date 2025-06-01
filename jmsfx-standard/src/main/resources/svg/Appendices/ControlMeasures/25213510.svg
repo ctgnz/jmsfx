@@ -14,7 +14,7 @@
 	<line fill="none" stroke="#000000" stroke-width="5" x1="211.836" y1="475.596" x2="399.912" y2="316.652"/>
 	<line fill="none" stroke="#000000" stroke-width="5" x1="399.912" y1="475.596" x2="211.836" y2="316.652"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g transform="translate(-90 -35)" display="inline">
 		<text transform="matrix(1 0 0 1 252.5 304.5)" font-family="sans-serif" font-size="24">CENTER</text>
 		<text transform="matrix(1 0 0 1 252.5 304.5)" fill="none" stroke="#000000" font-family="sans-serif" font-size="24">CENTER</text>

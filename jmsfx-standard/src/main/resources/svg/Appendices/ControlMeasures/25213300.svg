@@ -9,7 +9,7 @@
 	<polygon points="305.674,394.595 198.961,372.129 198.961,417.061 	"/>
 	<polygon points="305.674,394.595 415.195,417.061 415.195,372.129 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1 0 0 1 406.3086 498.0098)" display="inline" font-family="sans-serif" font-size="24.5599">P</text>
 	<text transform="matrix(1 0 0 1 422.6895 498.0098)" display="inline" font-family="sans-serif" font-size="24.5599">O</text>
 	<text transform="matrix(1 0 0 1 441.6953 498.0098)" display="inline" font-family="sans-serif" font-size="24.5599">I</text>

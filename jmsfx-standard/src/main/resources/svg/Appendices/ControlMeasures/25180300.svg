@@ -16,7 +16,7 @@
 		<polyline fill="none" stroke="#000000" stroke-width="5" points="235.75,302.973 305.75,396.973 375.75,302.973 		"/>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g transform="translate(140 140)" display="inline">
 		<text transform="matrix(1 0 0 1 244.25 208.9727)" font-family="sans-serif" font-size="24">ANCHOR</text>
 		<text transform="matrix(1 0 0 1 256.25 233.9727)" font-family="sans-serif" font-size="24">POINT</text>

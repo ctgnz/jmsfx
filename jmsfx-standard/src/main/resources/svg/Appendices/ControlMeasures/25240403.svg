@@ -9,7 +9,7 @@
 		c86.48,0,156.581-67.731,156.581-151.309C340.124,114.579,270.023,46.847,183.543,46.847"/>
 	<text transform="matrix(1 0 0 1 155.9263 111.0313)" font-family="sans-serif" font-size="24">RFA</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varAM" display="inline">
 		
 			<rect x="235.603" y="218.621" transform="matrix(0.6486 -0.7611 0.7611 0.6486 -96.492 276.2242)" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-miterlimit="8" width="30.581" height="47.975"/>

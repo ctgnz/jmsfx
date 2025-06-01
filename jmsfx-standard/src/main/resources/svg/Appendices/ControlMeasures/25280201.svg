@@ -11,7 +11,7 @@
 		<line fill="none" stroke="#000000" stroke-width="5" stroke-dasharray="15,15" x1="370.208" y1="397.852" x2="424.874" y2="398.035"/>
 	<polygon points="421.187,410.527 442.816,398.136 421.271,385.598 	"/>
 </g>
-<g id="template" transform="translate(60 181)" display="none">
+<g id="template" transform="translate(60 181)" display="inline">
 	<text transform="matrix(1 0 0 1 38.876 272.2959)" display="inline" font-family="sans-serif" font-size="24">CENTER</text>
 	<text transform="matrix(1 0 0 1 54.876 296.2959)" display="inline" font-family="sans-serif" font-size="24">POINT</text>
 	<line display="inline" fill="none" stroke="#808080" stroke-width="5" x1="142.222" y1="274.043" x2="220.208" y2="229.852"/>

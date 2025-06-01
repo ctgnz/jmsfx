@@ -8,7 +8,7 @@
 		<rect x="136.75" y="263" fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="bevel" stroke-miterlimit="10" width="337" height="200"/>
 	<rect x="287.248" y="345.007" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 777.7748 403.8488)" width="36" height="35.999"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<line display="inline" fill="none" stroke="#000000" stroke-width="5" x1="194.5" y1="476.5" x2="279.794" y2="388.456"/>
 	<polygon display="inline" points="286.237,399.775 292.307,375.598 268.332,382.43 	"/>
 	<text transform="matrix(1 0 0 1 148.5 498.5)" display="inline" font-family="sans-serif" font-size="21">CENTER</text>

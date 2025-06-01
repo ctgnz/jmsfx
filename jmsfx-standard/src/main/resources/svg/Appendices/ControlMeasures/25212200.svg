@@ -9,7 +9,7 @@
 	<text transform="matrix(1 0 0 1 325.25 263.001)" font-family="sans-serif" font-size="120">T</text>
 	<text transform="matrix(1 0 0 1 213.2505 263.001)" font-family="sans-serif" font-size="120">T</text>
 </g>
-<g id="template" transform="translate(-360 -290) scale(2.5 2.5)" display="none">
+<g id="template" transform="translate(-360 -290) scale(2.5 2.5)" display="inline">
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="266.1" y1="284.305" x2="266.1" y2="302.305"/>
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="265.15" y1="302.305" x2="291.1" y2="302.305"/>
 	<polygon display="inline" stroke="#000000" stroke-width="2" points="266.1,277.305 274.1,290.305 258.1,290.305 	"/>

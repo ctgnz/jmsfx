@@ -9,7 +9,7 @@
 	
 		<line fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="10" x1="404.338" y1="395.698" x2="205.026" y2="395.698"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varX" display="inline">
 		
 			<rect x="233.686" y="416.559" fill="none" stroke="#000000" stroke-width="2.6575" stroke-linecap="round" stroke-miterlimit="8" width="63.287" height="49.613"/>

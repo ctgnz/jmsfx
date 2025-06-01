@@ -13,7 +13,7 @@
 	<path d="M305.915,371.455c-13.813,0-25.014,11.201-25.014,25.017c0,13.813,11.202,25.014,25.014,25.014
 		c13.839,0,25.016-11.201,25.016-25.014C330.931,382.656,319.754,371.455,305.915,371.455"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1 0 0 1 181.2256 254.7559)" display="inline" font-family="sans-serif" font-size="36.1074">C</text>
 	<text transform="matrix(1 0 0 1 207.3018 254.7559)" display="inline" font-family="sans-serif" font-size="36.1074">E</text>
 	<text transform="matrix(1 0 0 1 231.2407 254.7559)" display="inline" font-family="sans-serif" font-size="36.1074">N</text>

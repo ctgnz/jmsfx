@@ -11,7 +11,7 @@
 		c25.385-26.483,52.458-128.368,30.448-171.158C278.496,105.303,176.97,56.409,138.047,62.514"/>
 	<text transform="matrix(1 0 0 1 153.1631 135.2705)" font-family="sans-serif" font-size="25.157">RFA</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW1" display="inline">
 		
 			<rect x="192.285" y="210.488" fill="none" stroke="#000000" stroke-width="1.7867" stroke-linecap="round" stroke-miterlimit="8" width="69.322" height="46.687"/>

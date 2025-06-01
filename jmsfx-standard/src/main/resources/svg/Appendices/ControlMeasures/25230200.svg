@@ -6,7 +6,7 @@
 <g id="main">
 	<polyline fill="none" stroke="#000000" stroke-width="5" stroke-dasharray="25,15" points="136,381 314.59,249.926 468.79,381 	"/>
 </g>
-<g id="template" transform="translate(-275 -290) scale(2 2)" display="none">
+<g id="template" transform="translate(-275 -290) scale(2 2)" display="inline">
 	<text transform="matrix(0.5 0 0 0.5 278.5 312.5)" display="inline" font-family="sans-serif" font-size="24">PT 1</text>
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="295.167" y1="299.278" x2="295.167" y2="282.278"/>
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="205.432" y1="362.487" x2="205.611" y2="345.444"/>

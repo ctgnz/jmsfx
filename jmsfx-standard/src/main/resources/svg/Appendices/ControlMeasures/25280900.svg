@@ -6,7 +6,7 @@
 <g id="main">
 	<polygon points="243.026,332.033 243.026,459.967 370.959,459.967 370.959,332.033 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<path display="inline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.3198" stroke-linejoin="bevel" stroke-miterlimit="10" d="
 		M450.918,400.396H330.98v-5.316h119.938V400.396L450.918,400.396z M333.658,405.734l-26.666-7.995l26.666-7.996V405.734
 		L333.658,405.734z"/>

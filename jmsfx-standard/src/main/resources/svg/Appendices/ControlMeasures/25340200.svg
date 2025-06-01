@@ -14,7 +14,7 @@
 	<rect x="180.052" y="173.534" fill="#FFFFFF" stroke="#FFFFFF" width="35" height="35"/>
 	<text transform="matrix(1 0 0 1 185.4141 203.5332)" font-family="sans-serif" font-size="35">B</text>
 </g>
-<g id="template" transform="translate(-160 -120) scale(1.5 1.5)" display="none">
+<g id="template" transform="translate(-160 -120) scale(1.5 1.5)" display="inline">
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="140.701" y1="218.689" x2="184.701" y2="218.689"/>
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="338.701" y1="162.356" x2="304.701" y2="180.356"/>
 	<polygon display="inline" stroke="#000000" stroke-width="2" points="141.067,218.323 156.067,213.323 156.067,223.323 	"/>

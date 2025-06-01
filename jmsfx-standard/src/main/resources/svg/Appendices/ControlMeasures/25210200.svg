@@ -12,7 +12,7 @@
 		c57.79,0,104.632-44.111,104.632-98.53C411.206,341.536,364.364,297.426,306.574,297.426"/>
 	<circle cx="304.739" cy="396.259" r="44.076"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1 0 0 1 442.2139 390.29)" display="inline" font-family="sans-serif" font-size="26.4544">CENTER </text>
 	<text transform="matrix(1 0 0 1 442.2139 422.0352)" display="inline" font-family="sans-serif" font-size="26.4544">POINT</text>
 	<path display="inline" stroke="#000000" stroke-width="0.3187" stroke-linejoin="bevel" stroke-miterlimit="10" d="M464.69,397.495

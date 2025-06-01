@@ -14,7 +14,7 @@
 		<text transform="matrix(0.6667 0 0 0.6667 246.5518 222)" font-family="sans-serif" font-size="35.0018">P</text>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<text transform="matrix(1 0 0 1 76.4995 136.4991)" font-family="sans-serif" font-size="18.0009">PT. 3</text>
 		<line fill="none" stroke="#000000" stroke-width="2" x1="79.5" y1="180" x2="100.5" y2="145.5"/>

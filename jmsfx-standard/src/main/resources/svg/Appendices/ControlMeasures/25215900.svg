@@ -11,7 +11,7 @@
 	
 		<text transform="matrix(1 0 0 1 227.0117 396.0879)" opacity="0.97" enable-background="new    " font-family="sans-serif" font-size="100">NC</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<g>
 			<line fill="none" stroke="#000000" stroke-width="5" x1="301" y1="446" x2="301" y2="383.5"/>

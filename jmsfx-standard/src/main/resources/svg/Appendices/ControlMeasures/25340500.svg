@@ -20,7 +20,7 @@
 		<text transform="matrix(0.8 0 0 0.8 250.4898 200.4)" font-family="sans-serif" font-size="35">C</text>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<text transform="matrix(1 0 0 1 38.999 130.499)" font-family="sans-serif" font-size="15">PT. 3</text>
 		<line fill="none" stroke="#000000" stroke-width="2" x1="36.5" y1="175.5" x2="59" y2="138"/>

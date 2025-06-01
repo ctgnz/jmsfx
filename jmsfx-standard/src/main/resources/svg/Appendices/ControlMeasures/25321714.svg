@@ -12,7 +12,7 @@
 	<line fill="none" stroke="#000000" stroke-width="6" x1="308.543" y1="138.671" x2="308.543" y2="288.134"/>
 	<line fill="none" stroke="#000000" stroke-width="6" x1="241.31" y1="215.271" x2="370.127" y2="215.271"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW1" display="inline">
 		
 			<rect x="189.827" y="179.935" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-miterlimit="8" width="49.993" height="42.513"/>

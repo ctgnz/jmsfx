@@ -14,7 +14,7 @@
 	<polygon fill="none" stroke="#000000" stroke-width="2" points="190.503,259.485 138.4,259.485 138.4,218.2 190.503,218.2 
 		208.948,237.485 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varT" transform="translate(63 147)" display="inline">
 		<rect x="56.25" y="19.5" fill="#FFFFFF" stroke="#000000" stroke-width="2" width="20" height="20"/>
 		<text transform="matrix(1 0 0 1 61.249 35.749)" font-family="sans-serif" font-size="15">T</text>

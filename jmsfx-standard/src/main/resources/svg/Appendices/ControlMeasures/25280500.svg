@@ -8,7 +8,7 @@
 	<polyline fill="none" stroke="#000000" stroke-width="5" points="278.141,368.776 301.475,394.889 324.808,368.776 	"/>
 	<polyline fill="none" stroke="#000000" stroke-width="5" points="261.308,368.776 240.311,394.889 219.978,368.776 	"/>
 </g>
-<g id="template" transform="translate(60 181)" display="none">
+<g id="template" transform="translate(60 181)" display="inline">
 	<text transform="matrix(1 0 0 1 22.2832 205.2148)" display="inline" font-family="sans-serif" font-size="24">CENTER</text>
 	<text transform="matrix(1 0 0 1 38.2832 229.2148)" display="inline" font-family="sans-serif" font-size="24">POINT</text>
 	<line display="inline" fill="none" stroke="#808080" stroke-width="5" x1="127.619" y1="214.213" x2="217.256" y2="214.516"/>

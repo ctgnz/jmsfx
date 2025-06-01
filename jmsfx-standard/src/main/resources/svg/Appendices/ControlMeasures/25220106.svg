@@ -11,7 +11,7 @@
 		<text transform="matrix(1 0 0 1 195.6011 200.4717)" font-family="sans-serif" font-size="30.4784">O</text>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varH" display="inline">
 		
 			<rect x="309.5" y="99.799" fill="none" stroke="#000000" stroke-width="1.9535" stroke-linecap="round" stroke-miterlimit="8" width="47.003" height="38.491"/>

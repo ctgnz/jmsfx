@@ -7,7 +7,7 @@
 	<polyline fill="none" stroke="#000000" stroke-width="5" points="54.052,246.328 54.052,111.336 324.039,111.336 324.039,246.328 	
 		"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<path stroke="#000000" stroke-width="0.3857" stroke-linejoin="bevel" stroke-miterlimit="10" d="M96.298,148.194l-17.549-14.078
 			c-0.7-0.554-0.819-1.543-0.265-2.241c0.554-0.7,1.566-0.82,2.266-0.265l17.549,14.078c0.698,0.554,0.819,1.566,0.265,2.266

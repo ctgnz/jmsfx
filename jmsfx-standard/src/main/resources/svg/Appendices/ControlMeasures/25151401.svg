@@ -11,7 +11,7 @@
 	<polyline fill="none" stroke="#000000" stroke-width="5.0439" stroke-linejoin="round" stroke-miterlimit="10" points="
 		290.25,114.375 289.98,91.555 350.833,138.75 289.738,174.761 289.738,152.5 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		
 			<rect x="75.025" y="237.641" fill="none" stroke="#000000" stroke-width="2.5125" stroke-linecap="round" stroke-miterlimit="8" width="31.983" height="21.045"/>

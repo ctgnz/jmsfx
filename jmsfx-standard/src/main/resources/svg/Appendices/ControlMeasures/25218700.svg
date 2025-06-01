@@ -8,7 +8,7 @@
 	<polygon points="188.197,294.626 123.144,395.5 253.252,395.5 	"/>
 	<polygon points="426.73,265.805 354.449,395.5 499.014,395.5 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1.0032 0 0 1 252.5322 476.7627)" display="inline" font-family="sans-serif" font-size="24">CENTER</text>
 	<text transform="matrix(1.0032 0 0 1 252.5322 505.5625)" display="inline" font-family="sans-serif" font-size="24">POINT</text>
 	<path display="inline" stroke="#000000" stroke-width="0.2882" stroke-linejoin="bevel" stroke-miterlimit="10" d="

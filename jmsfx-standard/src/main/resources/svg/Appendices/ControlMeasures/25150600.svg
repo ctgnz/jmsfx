@@ -10,7 +10,7 @@
 		c-4.003-26.681-26.032-33.347-60.051-40.032C267.052,108.827,198.997,111.048,156.972,115.492"/>
 	<text id="static" transform="matrix(1 0 0 1 134.0757 206.5234)" font-family="sans-serif" font-size="40">DZ </text>
 </g>
-<g id="template" transform="translate(150 118)" display="none">
+<g id="template" transform="translate(150 118)" display="inline">
 	
 		<rect x="63.277" y="51.752" display="inline" fill="none" stroke="#000000" stroke-width="2.6622" stroke-linecap="round" stroke-miterlimit="8" width="44.223" height="43.748"/>
 	<text transform="matrix(1 0 0 1 73.5918 88.5234)" display="inline" font-family="sans-serif" font-size="40">T</text>

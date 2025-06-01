@@ -15,7 +15,7 @@
 	
 		<line display="inline" fill="none" stroke="#8c8c8c" stroke-width="5" stroke-miterlimit="10" x1="137.08299" y1="345.5" x2="141.375" y2="405" id="line168" />
 </g>
-<g id="template" display="none"><g id="g2882" transform="translate(40.092622,17.676569)"><text fill="#010101" font-family="sans-serif" font-size="18px" id="text159" x="449.33948" y="341.16028">T/AS</text><rect style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.68971;stroke-dasharray:none" id="rect2878" width="59.565228" height="27.104563" x="440.93185" y="322.10605" /></g>
+<g id="template" display="inline"><g id="g2882" transform="translate(40.092622,17.676569)"><text fill="#010101" font-family="sans-serif" font-size="18px" id="text159" x="449.33948" y="341.16028">T/AS</text><rect style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.68971;stroke-dasharray:none" id="rect2878" width="59.565228" height="27.104563" x="440.93185" y="322.10605" /></g>
 	<text transform="translate(438.2285,462)" display="inline" fill="#010101" font-family="sans-serif" font-size="24px" id="text171">PT 2</text>
 	<text transform="translate(113.2285,462)" display="inline" fill="#010101" font-family="sans-serif" font-size="24px" id="text173">PT 1</text>
 	<path display="inline" fill="#010101" stroke="#010101" stroke-width="0.4335" stroke-linejoin="bevel" stroke-miterlimit="10" d="m 466.359,436.701 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.998,-0.001 -1.785,-0.816 -1.785,-1.82 z m -8.966,-17.741 10.938,-36.087 10.732,36.166 z" id="path175" />

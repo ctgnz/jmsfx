@@ -31,7 +31,7 @@
 	
 		<line fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="10" x1="128.119" y1="439.164" x2="486.496" y2="439.164"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1 0 0 1 256.8672 299.8691)" display="inline" font-family="sans-serif" font-size="29.4382">CENTER</text>
 	<text transform="matrix(1 0 0 1 261.8672 335.1953)" display="inline" font-family="sans-serif" font-size="29.4382">POINT </text>
 	<path display="inline" stroke="#000000" stroke-width="0.3547" stroke-linejoin="bevel" stroke-miterlimit="10" d="

@@ -8,7 +8,7 @@
 		<rect x="19.126" y="85.696" fill="none" stroke="#000000" stroke-width="3.8817" stroke-linecap="round" stroke-miterlimit="8" width="328.646" height="238.085"/>
 	<text transform="matrix(1 0 0 1 149.6216 169.3984)" font-family="sans-serif" font-size="24">FFA</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW1" display="inline">
 		
 			<rect x="170.361" y="246.313" fill="none" stroke="#000000" stroke-width="2.8164" stroke-linecap="round" stroke-miterlimit="8" width="44.891" height="30.906"/>

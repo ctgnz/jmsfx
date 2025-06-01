@@ -12,7 +12,7 @@
 		<text transform="matrix(1 0 0 1 190.3623 194)" font-family="sans-serif" font-size="35">D</text>
 	</g>
 </g>
-<g id="template" transform="translate(-250 -190) scale(1.75 1.75)" display="none">
+<g id="template" transform="translate(-250 -190) scale(1.75 1.75)" display="inline">
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="253.714" y1="233.571" x2="243.714" y2="265.571"/>
 	<polygon display="inline" stroke="#000000" stroke-width="2" points="255.989,228.199 258.029,240.561 246.7,236.607 	"/>
 	<g id="CENTER_x25_20POINT" transform="translate(19 -76)" display="inline">

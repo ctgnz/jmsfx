@@ -9,7 +9,7 @@
 	
 		<line fill="none" stroke="#000000" stroke-width="5" stroke-dasharray="15,15" x1="51.194" y1="215.115" x2="356.167" y2="215.203"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<text transform="matrix(1 0 0 1 87.7129 306.7813)" font-family="sans-serif" font-size="24">PT 1</text>
 		<line fill="none" stroke="#000000" stroke-width="5" x1="51.713" y1="236.781" x2="51.713" y2="272.781"/>

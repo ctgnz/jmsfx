@@ -13,7 +13,7 @@
 		<path fill="none" stroke="#000000" stroke-width="10" d="M345.564,363.896c-40.8,23.802-47.6,37.4-64.6,98.602"/>
 	</g>
 </g>
-<g id="template" transform="translate(-135 -150)" display="none">
+<g id="template" transform="translate(-135 -150)" display="inline">
 	<line display="inline" fill="none" stroke="#000000" stroke-width="3" x1="449.988" y1="546.471" x2="615.264" y2="549.014"/>
 	<polygon display="inline" fill="#757575" stroke="#757575" stroke-width="3" points="442.881,546.5 452.648,549.895 
 		452.813,543.05 	"/>

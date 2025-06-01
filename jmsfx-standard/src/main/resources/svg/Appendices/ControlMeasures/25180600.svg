@@ -10,7 +10,7 @@
 	</g>
 	<text transform="matrix(1 0 0 1 251.1611 446.7861)" font-family="sans-serif" font-size="120">T</text>
 </g>
-<g display="none">
+<g id="template" display="inline">
 	<g id="varT" display="inline">
 		
 			<rect x="396.424" y="222.464" fill="none" stroke="#000000" stroke-width="2.4349" stroke-linecap="round" stroke-miterlimit="8" width="73.393" height="72.729"/>

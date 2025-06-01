@@ -7,7 +7,7 @@
 	<path fill="none" stroke="#000000" stroke-width="20" d="M178.259,539.896l100-250l100,250"/>
 	<ellipse stroke="#000000" cx="278.259" cy="514.896" rx="25" ry="25"/>
 </g>
-<g id="template" transform="translate(75 -102.5) translate(175 175) scale(1.56 1.56) translate(-175 -175) translate(0.641026 0) translate(0.641026 0) translate(7.37179 -6.41026)" display="none">
+<g id="template" transform="translate(75 -102.5) translate(175 175) scale(1.56 1.56) translate(-175 -175) translate(0.641026 0) translate(0.641026 0) translate(7.37179 -6.41026)" display="inline">
 	<rect x="212.986" y="295.767" display="inline" fill="none" stroke="#000000" stroke-width="5" width="50" height="50"/>
 	<text transform="matrix(0.641 0 0 0.641 225.9803 333.7666)" display="inline" font-family="sans-serif" font-size="56.1531">X</text>
 </g>

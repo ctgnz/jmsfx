@@ -8,7 +8,7 @@
 		<line fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="10" stroke-dasharray="12" x1="88.943" y1="172.406" x2="317.667" y2="172.406"/>
 	<text transform="matrix(1 0 0 1 142.4224 161.166)" font-family="sans-serif" font-size="18">CFL</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW1" display="inline">
 		
 			<rect x="193.817" y="182.542" fill="none" stroke="#000000" stroke-width="2.0987" stroke-linecap="round" stroke-miterlimit="8" width="48.565" height="37.923"/>

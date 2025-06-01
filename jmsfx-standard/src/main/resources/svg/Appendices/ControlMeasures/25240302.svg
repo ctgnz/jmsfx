@@ -34,7 +34,7 @@
 	<rect x="144.712" y="145.5" fill="#FFFFFF" width="55.288" height="34.661"/>
 	<text transform="matrix(1 0 0 1 149.6216 169.3984)" font-family="sans-serif" font-size="24">NFA</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW1" display="inline">
 		
 			<rect x="170.361" y="246.313" fill="#FFFFFF" stroke="#000000" stroke-width="2.8164" stroke-linecap="round" stroke-miterlimit="8" width="44.891" height="30.906"/>

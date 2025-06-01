@@ -11,7 +11,7 @@
 	<text transform="matrix(1 0 0 1 70.4058 241.7617)" font-family="sans-serif" font-size="23.7276">MAX ALT</text>
 	<text transform="matrix(1 0 0 1 70.4058 209.4707)" font-family="sans-serif" font-size="23.7276">MIN ALT</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varY-Yn" display="inline">
 		
 			<rect x="70.406" y="264.064" fill="none" stroke="#000000" stroke-width="1.7867" stroke-linecap="round" stroke-miterlimit="8" width="84.332" height="41.81"/>

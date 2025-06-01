@@ -29,7 +29,7 @@
 		<text transform="matrix(1 0 0 1 274.9844 213.334)" font-family="sans-serif" font-size="21.0914">3</text>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<text transform="matrix(1 0 0 1 293.9473 121.4727)" font-family="sans-serif" font-size="21.0914">PT 3</text>
 		<path stroke="#000000" stroke-width="0.267" stroke-linejoin="bevel" stroke-miterlimit="10" d="M281.828,123.513l-15.486,10.279

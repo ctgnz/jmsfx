@@ -8,7 +8,7 @@
 		299,565.854 206.295,636.998 242,522.309 149,451.59 263.771,451.854 	"/>
 	<text id="varT" transform="matrix(1 0 0 1 293.1875 516.5)" font-family="sans-serif" font-size="48"> </text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g transform="translate(0 15)" display="inline">
 		<rect x="277" y="370.5" fill="#FFFFFF" stroke="#000000" stroke-width="5" width="50" height="50"/>
 		<text transform="matrix(1 0 0 1 285.6289 411.5)" font-family="sans-serif" font-size="48">T</text>

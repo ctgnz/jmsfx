@@ -7,7 +7,7 @@
 	<polygon fill="none" stroke="#000000" stroke-width="5" stroke-dasharray="12" points="195.667,25 225.666,170 370.666,200 
 		225.666,230 195.667,375 165.667,230 20.667,200 165.667,170 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<g>
 			<line fill="none" stroke="#000000" stroke-width="5" x1="227.166" y1="213.75" x2="311.166" y2="252.25"/>

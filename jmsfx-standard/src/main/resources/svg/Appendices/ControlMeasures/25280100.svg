@@ -6,7 +6,7 @@
 <g id="main">
 	<polyline fill="#FFFFFF" stroke="#000000" stroke-width="5" points="30.75,170.5 60.75,104.5 92.25,169 345.75,169 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<text transform="matrix(1 0 0 1 16.499 240.5)" font-family="sans-serif" font-size="18">PT 1</text>
 		<g>

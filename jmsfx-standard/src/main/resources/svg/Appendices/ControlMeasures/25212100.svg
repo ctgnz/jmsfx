@@ -8,7 +8,7 @@
 	<line fill="none" stroke="#000000" stroke-width="10" x1="305.5" y1="306.5" x2="305.5" y2="145.5"/>
 	<polyline fill="none" stroke="#000000" stroke-width="10" points="160.5,145.5 215.5,85.5 305.5,145.5 395.5,85.5 450.5,145.5 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g transform="translate(113 164)" display="inline">
 		<text transform="matrix(1 0 0 1 295.9512 226.499)" font-family="sans-serif" font-size="24">ANCHOR</text>
 		<text transform="matrix(1 0 0 1 295.9512 226.499)" fill="none" stroke="#000000" font-family="sans-serif" font-size="24">ANCHOR</text>

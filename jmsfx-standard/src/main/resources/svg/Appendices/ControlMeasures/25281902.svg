@@ -7,7 +7,7 @@
 	<line fill="none" stroke="#000000" stroke-width="2" x1="257.2" y1="339.8" x2="285.918" y2="279.741"/>
 	<line fill="none" stroke="#000000" stroke-width="2" x1="285.825" y1="278.929" x2="316.2" y2="339.8"/>
 </g>
-<g id="template" transform="translate(-15 -8) translate(1 0) translate(1 0)" display="none">
+<g id="template" transform="translate(-15 -8) translate(1 0) translate(1 0)" display="inline">
 	<text transform="matrix(1 0 0 1 247.999 537.499)" display="inline" font-family="sans-serif" font-size="30">ANCHOR</text>
 	<text transform="matrix(1 0 0 1 262.999 564.999)" display="inline" font-family="sans-serif" font-size="30">POINT</text>
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="318" y1="432.5" x2="318" y2="505"/>

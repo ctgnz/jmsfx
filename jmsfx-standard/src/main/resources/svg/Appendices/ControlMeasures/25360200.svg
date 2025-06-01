@@ -21,7 +21,7 @@
 	
 	<path id="path2720" style="fill:none;stroke:#002776;stroke-width:4;stroke-linecap:round;stroke-miterlimit:8" transform="translate(0,-1.1827)" d="m 242.575,140.0537 h 128.229 l -5e-4,170.97765 -64.1155,85.48965 -64.113,-85.48965 z" sodipodi:nodetypes="cccccc" />
 <path id="path2722" style="fill:#002776;stroke-width:4;stroke-linecap:round;stroke-miterlimit:8" transform="translate(0,-172.166)" d="m 370.803,311.037 -64.115,85.484 -64.113,-85.484 z" /><path id="path2724" style="fill:#002776;stroke-width:4;stroke-linecap:round;stroke-miterlimit:8" d="m 306.688,394.07989 -64.113,-85.72489 64.113,-84 64.115,84 z" sodipodi:nodetypes="ccccc" /></g></g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="H" display="inline" transform="translate(123.95638,186.25241)">
 		<rect x="278.69901" y="84.545998" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-miterlimit="8" width="56.633999" height="53.196999" id="rect11" /><text id="varH" font-family="sans-serif" font-size="36px" x="293.48962" y="124.23141">H</text>
 		

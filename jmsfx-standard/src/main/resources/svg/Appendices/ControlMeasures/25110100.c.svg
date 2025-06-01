@@ -12,7 +12,7 @@
 			c1.934,5.777,0.272,11.556-0.831,17.326c0.271,8.808-2.774,37.139,2.494,52.819c-0.56,15.951-1.663,31.903-2.494,47.862
 			c1.103,38.506,0.831,20.354,0.831,54.457"/>
 	</g>
-	<g id="template" display="none">
+	<g id="template" display="inline">
 		<path display="inline" fill="none" stroke="#808080" stroke-width="2.1894" stroke-linejoin="round" stroke-miterlimit="10" d="
 			M53.716,113.142c33.878,2.469,71.33-0.56,104.105-0.823c61.963,0.543,123.943,2.469,185.905,2.469"/>
 		<path display="inline" fill="none" stroke="#808080" stroke-width="2.1894" stroke-linejoin="round" stroke-miterlimit="10" d="

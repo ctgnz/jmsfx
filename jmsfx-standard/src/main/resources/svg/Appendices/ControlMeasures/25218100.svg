@@ -19,7 +19,7 @@
 	<polygon stroke="#000000" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="10" points="451.749,306.515 
 		360.352,429.859 305.507,382.594 244.198,431.336 235.075,419.318 395.266,300.214 385.122,243.243 410.727,233.84 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<path display="inline" stroke="#000000" stroke-width="0.281" stroke-linejoin="bevel" stroke-miterlimit="10" d="M303.269,487.531
 		v-35.122c0-0.632,0.562-1.124,1.193-1.124c0.632,0,1.195,0.492,1.195,1.124v35.122c0,0.701-0.563,1.193-1.195,1.193
 		C303.831,488.725,303.269,488.232,303.269,487.531L303.269,487.531z M297.438,454.8l7.024-23.464l7.024,23.464H297.438z"/>

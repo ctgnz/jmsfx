@@ -4,7 +4,7 @@
 <svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
 <polygon id="main" stroke="#000000" points="307,247 207,397 407,397 "/>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<line display="inline" fill="none" stroke="#000000" stroke-width="3" x1="307" y1="412" x2="307" y2="459"/>
 	<polygon display="inline" stroke="#000000" points="307,399 297,413 317,413 	"/>
 	<text transform="matrix(1 0 0 1 258.7871 477)" display="inline" font-family="sans-serif" font-size="22">ANCHOR</text>

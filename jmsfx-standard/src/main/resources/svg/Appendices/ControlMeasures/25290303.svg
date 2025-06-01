@@ -12,7 +12,7 @@
 	<text transform="matrix(1 0 0 1 79.519 139.75)" font-family="sans-serif" font-size="48">X</text>
 	<text transform="matrix(1 0 0 1 49.4995 139.499)" font-family="sans-serif" font-size="48">X</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<text transform="matrix(1 0 0 1 86.9995 223.499)" font-family="sans-serif" font-size="30">PT 2</text>
 		<line fill="none" stroke="#000000" stroke-width="2" x1="36.465" y1="177.393" x2="77" y2="208.5"/>

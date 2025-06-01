@@ -7,7 +7,7 @@
 	<polyline fill="none" stroke="#000000" stroke-width="5" points="234.717,278.878 160.688,342.5 435.654,342.5 361.627,406.125 	
 		"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<text transform="matrix(0.9973 0 0 1 427.3262 431.0664)" font-family="sans-serif" font-size="24">P</text>
 		<text transform="matrix(0.9973 0 0 1 443.3623 431.0664)" font-family="sans-serif" font-size="24">T</text>

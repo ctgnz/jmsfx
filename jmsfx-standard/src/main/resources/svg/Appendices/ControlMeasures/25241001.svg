@@ -10,7 +10,7 @@
 		C74.809,130.731,137.02,135.9,182.289,130.731"/>
 	<text transform="matrix(1 0 0 1 136.4883 178.3994)" font-family="sans-serif" font-size="32">FSA</text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW1" display="inline">
 		
 			<rect x="201.831" y="203.739" fill="none" stroke="#000000" stroke-width="2.3396" stroke-linecap="round" stroke-miterlimit="8" width="54.112" height="42.276"/>

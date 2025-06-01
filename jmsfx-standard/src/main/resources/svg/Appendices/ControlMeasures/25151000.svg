@@ -185,7 +185,7 @@
 		374.216,170.517 378.077,168.809 376.538,165.812 350.641,176.512 349.079,176.934 347.919,178.223 347.919,179.508 
 		347.919,179.932 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	
 		<rect x="171.798" y="166.309" display="inline" fill="#FFFFFF" stroke="#000000" stroke-width="1.7378" stroke-linecap="round" stroke-miterlimit="8" width="65.004" height="54.273"/>
 	<text transform="matrix(1 0 0 1 192.2388 207.7764)" display="inline" font-family="sans-serif" font-size="36">T</text>

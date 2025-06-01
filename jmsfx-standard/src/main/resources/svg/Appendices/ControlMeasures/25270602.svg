@@ -9,7 +9,7 @@
 	<polygon stroke="#000000" stroke-width="5" points="335.5,95.5 335.5,65.5 370.5,80.5 	"/>
 	<polygon stroke="#000000" stroke-width="5" points="335.5,335.5 335.5,305.5 370.5,320.5 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<polyline display="inline" fill="none" stroke="#000000" stroke-width="3" points="378.5,90.5 378.5,120.5 358.5,140.5 	"/>
 	<polyline display="inline" fill="none" stroke="#000000" stroke-width="3" points="378.5,310.5 378.5,280.5 358.5,260.5 	"/>
 	<polygon display="inline" stroke="#000000" stroke-width="3" points="374.5,95.5 378.5,85.5 382.5,95.5 	"/>

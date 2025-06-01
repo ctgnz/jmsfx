@@ -8,7 +8,7 @@
 		255.9,114.667 165.9,159.667 	"/>
 	<polyline fill="none" stroke="#000000" stroke-width="5" points="165.9,159.667 255.9,204.667 165.9,249.667 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		<text transform="matrix(1 0 0 1 10.9004 346.667)" font-family="sans-serif" font-size="24">PT 2</text>
 		<polygon display="none" stroke="#000000" stroke-width="3" points="130.9,381.667 141.9,383.667 134.9,374.667 		"/>

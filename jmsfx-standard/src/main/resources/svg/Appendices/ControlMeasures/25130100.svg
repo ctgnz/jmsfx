@@ -9,7 +9,7 @@
 	<polygon fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-miterlimit="8" points="305.323,396.479 
 		241.209,310.994 369.438,310.994 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varH" display="inline">
 		<text id="H" transform="matrix(1 0 0 1 294.7974 116.7295)" font-family="sans-serif" font-size="24">H</text>
 		

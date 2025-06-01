@@ -5,7 +5,7 @@
 	 y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
 <polygon id="main" fill="none" stroke="#000000" stroke-width="5" points="427.73,265.805 500.014,395.5 124.143,395.5 
 	189.197,294.626 249.712,388.461 304.85,236.984 367.281,389.11 "/>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1.0032 0 0 1 253.5317 475.9629)" display="inline" font-family="sans-serif" font-size="24">CENTER</text>
 	<text transform="matrix(1.0032 0 0 1 253.5317 504.7627)" display="inline" font-family="sans-serif" font-size="24">POINT</text>
 	<path display="inline" stroke="#000000" stroke-width="0.2882" stroke-linejoin="bevel" stroke-miterlimit="10" d="M304.27,453.144

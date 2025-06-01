@@ -11,7 +11,7 @@
 	<text id="varT_1_" transform="matrix(1 0 0 1 271.9307 179.4258)" font-family="sans-serif" font-size="36"> </text>
 	<text transform="matrix(1 0 0 1 127.0864 179.4258)" font-family="sans-serif" font-size="36">SAA - </text>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g display="inline">
 		
 			<rect x="227.495" y="217.74" fill="none" stroke="#000000" stroke-width="1.721" stroke-linecap="round" stroke-miterlimit="8" width="59.303" height="45.625"/>

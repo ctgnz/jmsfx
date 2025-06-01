@@ -9,7 +9,7 @@
 	<text transform="matrix(1 0 0 1 230.6504 531)" font-family="sans-serif" font-size="100">RC</text>
 	<text transform="matrix(1 0 0 1 252 449)" font-family="sans-serif" font-size="120">O</text>
 </g>
-<g id="template" transform="translate(0 -140)" display="none">
+<g id="template" transform="translate(0 -140)" display="inline">
 	<text transform="matrix(1 0 0 1 252 391)" display="inline" font-family="sans-serif" font-size="24">CENTER</text>
 	<text transform="matrix(1 0 0 1 263 416)" display="inline" font-family="sans-serif" font-size="24">POINT</text>
 	<g display="inline">

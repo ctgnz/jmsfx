@@ -8,7 +8,7 @@
 		84.549,228.941 105.641,180.941 167.459,180.941 187.822,230.396 207.74,180.941 278.361,180.941 295.459,226.761 313.507,180.941 
 		356.154,180.941 	"/>
 </g>
-<g id="template" transform="translate(-300 -160) scale(2 2)" display="none">
+<g id="template" transform="translate(-300 -160) scale(2 2)" display="inline">
 	<text transform="matrix(0.5 0 0 0.5 180.0293 133.0054)" display="inline" font-family="sans-serif" font-size="24">PT 1</text>
 	<text transform="matrix(0.5 0 0 0.5 275.0293 133.5054)" display="inline" font-family="sans-serif" font-size="24">PT 2</text>
 	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="161.029" y1="165.005" x2="161.029" y2="142.005"/>

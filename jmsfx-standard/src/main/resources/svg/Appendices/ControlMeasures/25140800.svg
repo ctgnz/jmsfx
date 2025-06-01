@@ -11,7 +11,7 @@
 		<line fill="none" stroke="#000000" stroke-width="5" x1="89.819" y1="152.5" x2="332.161" y2="152.5"/>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varT" display="inline">
 		<g>
 			<text transform="matrix(1 0 0 1 193.3193 202.7227)" font-family="sans-serif" font-size="36">T</text>

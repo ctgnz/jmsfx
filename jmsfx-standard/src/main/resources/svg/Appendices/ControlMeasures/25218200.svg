@@ -27,7 +27,7 @@
 	<polygon stroke="#000000" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="10" points="353.279,278.813 
 		353.279,308.902 328.784,330.154 280.144,330.154 255.58,308.902 255.58,278.813 280.144,257.5 328.784,257.5 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<path display="inline" stroke="#000000" stroke-width="0.281" stroke-linejoin="bevel" stroke-miterlimit="10" d="M303.269,463.531
 		v-35.122c0-0.632,0.562-1.124,1.193-1.124c0.632,0,1.195,0.492,1.195,1.124v35.122c0,0.701-0.563,1.193-1.195,1.193
 		C303.831,464.725,303.269,464.232,303.269,463.531L303.269,463.531z M297.438,430.8l7.024-23.464l7.024,23.464H297.438z"/>

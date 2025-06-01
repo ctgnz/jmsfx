@@ -25,7 +25,7 @@
 	
 		<line fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="10" x1="319.072" y1="321.996" x2="403.355" y2="251.753"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<path display="inline" stroke="#000000" stroke-width="0.281" stroke-linejoin="bevel" stroke-miterlimit="10" d="M303.269,476.531
 		v-35.122c0-0.632,0.562-1.124,1.193-1.124c0.632,0,1.195,0.492,1.195,1.124v35.122c0,0.701-0.563,1.193-1.195,1.193
 		C303.831,477.725,303.269,477.232,303.269,476.531L303.269,476.531z M297.438,443.8l7.024-23.464l7.024,23.464H297.438z"/>

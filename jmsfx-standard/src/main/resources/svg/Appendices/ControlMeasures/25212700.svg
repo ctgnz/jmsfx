@@ -9,7 +9,7 @@
 	
 		<line fill="none" stroke="#000000" stroke-width="5.6879" stroke-linejoin="round" stroke-miterlimit="10" x1="200.19" y1="395.953" x2="411.19" y2="395.953"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<text transform="matrix(1 0 0 1 167.1099 298.5732)" display="inline" font-family="sans-serif" font-size="28.2906">P</text>
 	<text transform="matrix(1 0 0 1 185.8657 298.5732)" display="inline" font-family="sans-serif" font-size="28.2906">O</text>
 	<text transform="matrix(1 0 0 1 208.0127 298.5732)" display="inline" font-family="sans-serif" font-size="28.2906">IN</text>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve" sodipodi:docname="25343500.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs57" /><sodipodi:namedview id="namedview55" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="2.2025" inkscape:cx="150.7378" inkscape:cy="222.02043" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="example" />
+<g id="main" transform="translate(-110 -110) scale(1.25 1.25)">
+	<path fill="none" stroke="#000000" stroke-width="1.32069" d="m 279.50971,250.25777 c 0,-50.7064 73.05292,-62.85998 76.81593,3.41445" id="path2" style="stroke-width:2;stroke-dasharray:none" sodipodi:nodetypes="cc" />
+	<line fill="none" stroke="#000000" stroke-width="2" x1="280.30078" y1="250.11441" x2="197.3008" y2="250.11441" id="line4" />
+	<line fill="none" stroke="#000000" stroke-width="2" x1="179.56526" y1="250.11441" x2="100.56527" y2="250.11441" id="line6" />
+	
+	<path id="line10" style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2" d="m 345.02046,251.01453 11.3677,14.00664 11.36764,-14.00664 z" sodipodi:nodetypes="cccc" />
+	<text font-family="sans-serif" font-size="18px" id="text12" x="181.93224" y="256.65619" style="stroke-width:0.8">E</text>
+</g>
+<g id="template" display="inline">
+	
+	<g id="points" display="inline">
+		<g id="g28" transform="translate(9.3103731,38.525681)">
+			<line fill="none" stroke="#000000" stroke-width="2" x1="267.98801" y1="103.055" x2="246.957" y2="87.346001" id="line20" />
+			<polygon stroke="#000000" stroke-width="2" points="266.721,94.308 259.24,104.322 274.998,108.291 " id="polygon22" />
+			<line fill="none" stroke="#000000" stroke-width="2" x1="247.97301" y1="87.513" x2="217.5" y2="87.25" id="line24" />
+			<text transform="translate(171.249,90.999)" font-family="sans-serif" font-size="15px" id="text26">PT. 4</text>
+		</g>
+		<g id="g38" transform="translate(-34.052213,-44.948922)">
+			<line fill="none" stroke="#000000" stroke-width="2" x1="273.76001" y1="263.5" x2="273.76001" y2="289.75" id="line30" />
+			<line fill="none" stroke="#000000" stroke-width="2" x1="274.06299" y1="288.936" x2="256.26001" y2="308.5" id="line32" />
+			<polygon stroke="#000000" stroke-width="2" points="273.76,254.75 267.51,269.75 280.01,269.75 " id="polygon34" />
+			<text transform="translate(211.249,312.249)" font-family="sans-serif" font-size="15px" id="text36">PT. 2</text>
+		</g>
+		<g id="g48" transform="translate(-16.799092,-47.673099)">
+			<line fill="none" stroke="#000000" stroke-width="2" x1="32.5" y1="266" x2="32.5" y2="292.25" id="line40" />
+			<line fill="none" stroke="#000000" stroke-width="2" x1="32.196999" y1="291.436" x2="50" y2="311" id="line42" />
+			<polygon stroke="#000000" stroke-width="2" points="32.5,257.25 38.75,272.25 26.25,272.25 " id="polygon44" />
+			<text transform="translate(54.999,314.749)" font-family="sans-serif" font-size="15px" id="text46">PT. 1</text>
+		</g>
+	<g id="g1032" transform="translate(61.298849,-29.538649)">
+			<line fill="none" stroke="#000000" stroke-width="2" x1="273.76001" y1="263.5" x2="273.76001" y2="289.75" id="line1024" />
+			<line fill="none" stroke="#000000" stroke-width="2" x1="274.06299" y1="288.936" x2="256.26001" y2="308.5" id="line1026" />
+			<polygon stroke="#000000" stroke-width="2" points="267.51,269.75 280.01,269.75 273.76,254.75 " id="polygon1028" />
+			<text transform="translate(211.249,312.249)" font-family="sans-serif" font-size="15px" id="text1030">PT. 3</text>
+		</g></g>
+</g>
+<g id="example" transform="translate(149,138)" display="none">
+	
+<g id="g1369" transform="translate(-217.56892,-126.15481)"><polyline id="_x3C_path_x3E_" display="inline" fill="#ff8080" stroke="#000000" stroke-width="3" stroke-linecap="square" points="   354.154,238.297 392.451,200 354.154,161.703 315.856,200 354.154,238.297  " /><path display="inline" fill="none" stroke="#000000" stroke-width="3" d="m 341.879,210.184 c -5.068,0 -9.177,-4.424 -9.177,-9.879 0,-5.456 4.108,-9.879 9.177,-9.879" id="path1230" /><path display="inline" fill="none" stroke="#000000" stroke-width="3" d="m 366.429,190.425 c 5.068,0 9.177,4.423 9.177,9.879 0,5.456 -4.108,9.879 -9.177,9.879" id="path1232" /><line display="inline" fill="none" stroke="#000000" stroke-width="3" x1="341.879" y1="190.425" x2="366.42899" y2="190.425" id="line1234" /><line display="inline" fill="none" stroke="#000000" stroke-width="3" x1="341.879" y1="210.18401" x2="366.42899" y2="210.18401" id="line1236" /></g></g>
+</svg>

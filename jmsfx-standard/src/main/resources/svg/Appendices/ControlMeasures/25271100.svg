@@ -7,7 +7,7 @@
 	<polyline fill="none" stroke="#000000" stroke-width="5" points="100.5,33 150.5,83 150.5,283 100.5,333 	"/>
 	<polyline fill="none" stroke="#000000" stroke-width="5" points="260.5,33 210.5,83 210.5,283 260.5,333 	"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varW1" display="inline">
 		
 			<rect x="186.587" y="325.271" fill="none" stroke="#000000" stroke-width="1.7867" stroke-linecap="round" stroke-miterlimit="8" width="53.726" height="43.237"/>

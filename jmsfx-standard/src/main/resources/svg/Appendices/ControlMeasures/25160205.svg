@@ -40,7 +40,7 @@
 		</g>
 	</g>
 </g>
-<g id="template" transform="translate(-135 -150)" display="none">
+<g id="template" transform="translate(-135 -150)" display="inline">
 	<line display="inline" fill="none" stroke="#000000" stroke-width="3" x1="450.535" y1="546.221" x2="615.812" y2="548.565"/>
 	<polygon display="inline" stroke="#000000" stroke-width="3" points="443.013,546.262 452.783,549.645 452.939,542.798 	"/>
 	<text transform="matrix(1 0 0 1 574.1737 517.9976)" display="inline" font-family="sans-serif" font-size="24">CENTER</text>

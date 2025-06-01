@@ -30,7 +30,7 @@
 		</g>
 	</g>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varA" transform="translate(135 114)" display="inline">
 		<rect x="53.25" y="115" fill="#FFFFFF" stroke="#000000" stroke-width="2" width="25" height="25"/>
 		<text transform="matrix(1 0 0 1 57.1348 136.1133)" font-family="sans-serif" font-size="25">A</text>

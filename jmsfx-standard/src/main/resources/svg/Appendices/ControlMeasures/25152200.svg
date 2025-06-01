@@ -13,7 +13,7 @@
 	<line fill="none" stroke="#000000" stroke-width="2" x1="154.61" y1="114.319" x2="154.61" y2="154.319"/>
 	<line fill="none" stroke="#000000" stroke-width="2" x1="154.562" y1="270.798" x2="154.61" y2="230.318"/>
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varA" transform="matrix(1.25 0 0 1.25 -53.75 48.75)" display="inline">
 		<rect x="71.288" y="105.855" fill="#FFFFFF" stroke="#000000" stroke-width="2" width="22" height="21"/>
 		<text transform="matrix(0.8 0 0 0.8 77.2875 120.8547)" font-family="sans-serif" font-size="15">A</text>

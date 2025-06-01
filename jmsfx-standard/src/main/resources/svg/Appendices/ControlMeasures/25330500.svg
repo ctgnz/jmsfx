@@ -6,7 +6,7 @@
 	<text font-family="sans-serif" font-size="36px" id="text765" x="100.8159" y="151.18069">ROUTE</text>
 	<path fill="none" stroke="#000000" stroke-width="5" d="M22.8,195.307c50.979,10.195,59.01,8.481,112-3.2   c27.079-5.97,89.124-13.007,118.4-14.399c50.938-2.425,76.974,14.703,128,9.6" id="path767" />
 </g>
-<g id="template" display="none">
+<g id="template" display="inline">
 	<g id="varT" transform="matrix(0.6,0,0,0.6,135.6,32.495578)" display="inline">
 		<rect x="172.006" y="144.16" fill="#ffffff" stroke="#000000" stroke-width="4" width="64.494003" height="63.674" id="rect770" />
 		<text transform="matrix(1.6667,0,0,1.6667,187.6735,198.9449)" font-family="sans-serif" font-size="36px" id="text772">T</text>
