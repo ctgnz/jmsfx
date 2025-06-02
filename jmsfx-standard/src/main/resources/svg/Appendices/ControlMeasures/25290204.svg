@@ -1,44 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
-<g id="main">
-	<polyline fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" points="24.081,180.941 61.276,180.941 
-		84.549,228.941 105.641,180.941 167.459,180.941 187.822,230.396 207.74,180.941 278.361,180.941 295.459,226.761 313.507,180.941 
-		356.154,180.941 	"/>
-</g>
-<g id="template" transform="translate(-300 -160) scale(2 2)" display="inline">
-	<text transform="matrix(0.5 0 0 0.5 180.0293 133.0054)" display="inline" font-family="sans-serif" font-size="24">PT 1</text>
-	<text transform="matrix(0.5 0 0 0.5 275.0293 133.5054)" display="inline" font-family="sans-serif" font-size="24">PT 2</text>
-	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="161.029" y1="165.005" x2="161.029" y2="142.005"/>
-	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="160.786" y1="142.874" x2="177.029" y2="131.005"/>
-	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="329.029" y1="165.505" x2="329.029" y2="139.505"/>
-	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="329.47" y1="140.374" x2="305.029" y2="130.505"/>
-	<polygon display="inline" stroke="#000000" stroke-width="2" points="161.029,166.985 165.029,152.985 157.029,152.985 	"/>
-	<polygon display="inline" stroke="#000000" stroke-width="2" points="329.029,167.485 333.029,153.485 325.029,153.485 	"/>
-</g>
-<g id="example" display="none">
-	
-		<polyline id="_x3C_path_x3E_" display="inline" fill="#FF8080" stroke="#808080" stroke-width="5" stroke-linecap="square" points="
-		187.37,362.405 238.37,311.405 187.37,260.405 136.37,311.405 187.37,362.405 	"/>
-	<g id="symbol" display="inline">
-		<path fill="none" stroke="#808080" stroke-width="5" d="M171.024,324.966c-6.75,0-12.222-5.89-12.222-13.155
-			s5.472-13.155,12.222-13.155"/>
-		<path fill="none" stroke="#808080" stroke-width="5" d="M203.716,298.655c6.75,0,12.222,5.89,12.222,13.155
-			c0,7.265-5.472,13.155-12.222,13.155"/>
-		<line fill="none" stroke="#808080" stroke-width="5" x1="171.024" y1="298.655" x2="203.716" y2="298.655"/>
-		<line fill="none" stroke="#808080" stroke-width="5" x1="171.024" y1="324.966" x2="203.716" y2="324.966"/>
-	</g>
-	<text transform="matrix(1 0 0 1 183.5 254.5)" display="inline" font-family="sans-serif" font-size="18">II</text>
-	<g display="inline">
-		<g>
-			<line fill="none" stroke="#000000" stroke-width="3" x1="365.058" y1="101.01" x2="365.058" y2="242.496"/>
-			<g>
-				<polygon points="353.948,234.07 365.058,238.79 376.167,234.07 365.058,260.405 				"/>
-			</g>
-		</g>
-	</g>
-	<text transform="matrix(1 0 0 1 315.0586 66.0107)" display="inline" enable-background="new    "><tspan x="0" y="0" font-family="sans-serif" font-size="24">Toward</tspan><tspan x="0" y="28.8" font-family="sans-serif" font-size="24">Enemy</tspan></text>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00" preserveAspectRatio="xMidYMid meet">
+   <svg:g id="main" font-style="normal">
+      <svg:polyline points="24.081000,180.941000 61.276000,180.941000 84.549000,228.941000 105.641000,180.941000 167.459000,180.941000 187.822000,230.396000 207.740000,180.941000 278.361000,180.941000 295.459000,226.761000 313.507000,180.941000 356.154000,180.941000" fill="none" stroke="#000000" stroke-miterlimit="10.0" stroke-width="4.0" font-style="normal"/>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal" transform="translate(-300 -160) scale(2 2)">
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(0.5 0 0 0.5 180.0293 133.0054)">PT 1</svg:text>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(0.5 0 0 0.5 275.0293 133.5054)">PT 2</svg:text>
+      <svg:line x1="161.029" y1="165.005" x2="161.029" y2="142.005" fill="none" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      <svg:line x1="160.786" y1="142.874" x2="177.029" y2="131.005" fill="none" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      <svg:line x1="329.029" y1="165.505" x2="329.029" y2="139.505" fill="none" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      <svg:line x1="329.47" y1="140.374" x2="305.029" y2="130.505" fill="none" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      <svg:polygon points="161.029000,166.985000 165.029000,152.985000 157.029000,152.985000" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      <svg:polygon points="329.029000,167.485000 333.029000,153.485000 325.029000,153.485000" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+   </svg:g>
+   <svg:g id="example" display="none" font-style="normal">
+      <svg:polyline id="_x3C_path_x3E_" points="187.370000,362.405000 238.370000,311.405000 187.370000,260.405000 136.370000,311.405000 187.370000,362.405000" fill="#FF8080" stroke="#808080" stroke-linecap="square" stroke-width="5.0" display="inline" font-style="normal"/>
+      <svg:g id="symbol" display="inline" font-style="normal">
+         <svg:path d="M171.024,324.966c-6.75,0-12.222-5.89-12.222-13.155    s5.472-13.155,12.222-13.155" fill="none" stroke="#808080" stroke-width="5.0" font-style="normal"/>
+         <svg:path d="M203.716,298.655c6.75,0,12.222,5.89,12.222,13.155    c0,7.265-5.472,13.155-12.222,13.155" fill="none" stroke="#808080" stroke-width="5.0" font-style="normal"/>
+         <svg:line x1="171.024" y1="298.655" x2="203.716" y2="298.655" fill="none" stroke="#808080" stroke-width="5.0" font-style="normal"/>
+         <svg:line x1="171.024" y1="324.966" x2="203.716" y2="324.966" fill="none" stroke="#808080" stroke-width="5.0" font-style="normal"/>
+      </svg:g>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="18" font-style="normal" transform="matrix(1 0 0 1 183.5 254.5)">II</svg:text>
+      <svg:g display="inline" font-style="normal">
+         <svg:g font-style="normal">
+            <svg:line x1="365.058" y1="101.01" x2="365.058" y2="242.496" fill="none" stroke="#000000" stroke-width="3.0" font-style="normal"/>
+            <svg:g font-style="normal">
+               <svg:polygon points="353.948000,234.070000 365.058000,238.790000 376.167000,234.070000 365.058000,260.405000" font-style="normal"/>
+            </svg:g>
+         </svg:g>
+      </svg:g>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" enable-background="new    " display="inline" font-style="normal" transform="matrix(1 0 0 1 315.0586 66.0107)">
+         <svg:tspan x="0" y="0" font-family="sans-serif" font-size="24" font-style="normal">Toward</svg:tspan>
+         <svg:tspan x="0" y="28.8" font-family="sans-serif" font-size="24" font-style="normal">Enemy</svg:tspan>
+      </svg:text>
+   </svg:g>
+</svg:svg>

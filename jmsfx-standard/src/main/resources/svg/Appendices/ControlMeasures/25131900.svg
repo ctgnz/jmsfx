@@ -1,37 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
-<g id="main">
-	
-		<line fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round" stroke-miterlimit="10" x1="186.231" y1="475.5" x2="425.572" y2="317.81"/>
-	
-		<line fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round" stroke-miterlimit="10" x1="167.751" y1="396.658" x2="444.082" y2="396.658"/>
-	<text id="varT" transform="matrix(1 0 0 1 449.5078 408.6914)" font-family="sans-serif" font-size="36"> </text>
-</g>
-<g id="template" display="inline">
-	<g display="inline">
-		
-			<rect x="454.508" y="363.434" fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="10" width="57" height="60.098"/>
-		<text transform="matrix(1 0 0 1 471.5078 408.6914)" font-family="sans-serif" font-size="36">T</text>
-	</g>
-	<g id="points" display="inline">
-		<g>
-			<text transform="matrix(1 0 0 1 259.2969 278.0361)" font-family="sans-serif" font-size="30.1374">POINT</text>
-			<text transform="matrix(1 0 0 1 243.6719 243.166)" font-family="sans-serif" font-size="30.1374">CENTER</text>
-		</g>
-		<g>
-			<g>
-				
-					<line fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="10" x1="305.52" y1="369.78" x2="305.52" y2="283.531"/>
-				<path d="M309.363,378.637c1.873-6.199,3.598-10.229,5.594-15.203H296.04c0.846,1.781,3.723,9.004,5.594,15.203
-					c2.005,6.637,3.376,12.653,3.866,16.555C305.989,391.29,307.361,385.273,309.363,378.637z"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g id="example" display="none">
-	<text id="varTe" transform="matrix(1 0 0 1 448.5078 408.6914)" display="inline" font-family="sans-serif" font-size="36">JOINT</text>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00">
+   <svg:defs id="defs4583" font-style="normal"/>
+   <svg:g id="main" font-style="normal">
+      <svg:line id="line4550" x1="186.231" y1="475.5" x2="425.572" y2="317.81" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="7.0" font-style="normal"/>
+      <svg:line id="line4552" x1="167.751" y1="396.658" x2="444.082" y2="396.658" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="7.0" font-style="normal"/>
+      <svg:text id="varT" x="0.0" y="0.0" dx="0.0" dy="0.0" font-family="sans-serif" font-size="36" font-style="normal" transform="matrix(1 0 0 1 449.5078 408.6914)"/>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:g id="g4560" display="inline" font-style="normal">
+         <svg:rect id="rect4556" rx="0.0" ry="0.0" x="454.508" y="363.434" width="57.0" height="60.098" fill="none" stroke="#0000FF" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0" font-style="normal"/>
+         <svg:text id="text4558" x="0.0" y="0.0" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="36" font-style="normal" transform="matrix(1 0 0 1 471.5078 408.6914)">T</svg:text>
+      </svg:g>
+      <svg:g id="points" display="inline" font-style="normal">
+         <svg:g id="g4566" font-style="normal">
+            <svg:text id="text4562" x="0.0" y="0.0" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="30.1374" font-style="normal" transform="matrix(1 0 0 1 259.2969 278.0361)">POINT</svg:text>
+            <svg:text id="text4564" x="0.0" y="0.0" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="30.1374" font-style="normal" transform="matrix(1 0 0 1 243.6719 243.166)">CENTER</svg:text>
+         </svg:g>
+         <svg:g id="g4574" font-style="normal">
+            <svg:g id="g4572" font-style="normal">
+               <svg:line id="line4568" x1="305.52" y1="369.78" x2="305.52" y2="283.531" fill="none" stroke="#0000FF" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0" font-style="normal"/>
+               <svg:path id="path4570" d="M309.363,378.637c1.873-6.199,3.598-10.229,5.594-15.203H296.04c0.846,1.781,3.723,9.004,5.594,15.203      c2.005,6.637,3.376,12.653,3.866,16.555C305.989,391.29,307.361,385.273,309.363,378.637z" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-style="normal"/>
+            </svg:g>
+         </svg:g>
+      </svg:g>
+   </svg:g>
+   <svg:g id="example" display="none" font-style="normal">
+      <svg:text id="varTe" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="36" font-style="normal" transform="matrix(1 0 0 1 448.5078 408.6914)">JOINT</svg:text>
+   </svg:g>
+</svg:svg>

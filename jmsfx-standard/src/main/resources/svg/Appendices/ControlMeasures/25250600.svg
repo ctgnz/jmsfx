@@ -1,32 +1,22 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve" sodipodi:docname="25250600.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs41" /><sodipodi:namedview id="namedview39" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="1.1123737" inkscape:cx="209.46198" inkscape:cy="396.44949" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="Version_1.0" />
-<g id="main">
-	
-		<line fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="10" x1="304.789" y1="295.935" x2="304.789" y2="495.434" id="line2" />
-	
-		<line fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="10" x1="404.338" y1="395.698" x2="205.026" y2="395.698" id="line4" />
-<text font-family="sans-serif" font-size="36px" id="text19" x="311.50781" y="362.14401">KNP</text></g>
-<g id="template" display="inline">
-	
-	
-	
-	<g id="points" display="inline">
-		<path stroke="#000000" stroke-width="0.4252" stroke-linejoin="bevel" stroke-miterlimit="10" d="m 235.52,339.6 38.323,28.915 c 0.796,0.581 0.955,1.699 0.345,2.47 -0.585,0.796 -1.701,0.956 -2.471,0.346 l -38.322,-28.914 c -0.771,-0.588 -0.931,-1.703 -0.346,-2.471 0.587,-0.8 1.702,-0.959 2.471,-0.346 z m 40.848,19.716 21.871,29.818 -34.681,-12.862 z" id="path22" />
-		<text transform="translate(191.2778,333.7969)" font-family="sans-serif" font-size="26.7877px" id="text24">P</text>
-		<text transform="translate(209.145,333.7969)" font-family="sans-serif" font-size="26.7877px" id="text26">T</text>
-		<text transform="translate(225.3198,333.7969)" font-family="sans-serif" font-size="26.7877px" id="text28"> </text>
-		<text transform="translate(232.9497,333.7969)" font-family="sans-serif" font-size="26.7877px" id="text30">1</text>
-	</g>
-<g id="varT" display="inline" transform="translate(79.110102,-26.070375)">
-		
-			<rect x="336.457" y="321.32898" fill="none" stroke="#000000" stroke-width="2.42146" stroke-linecap="round" stroke-miterlimit="8" width="54.630322" height="55.511044" id="rect12" style="stroke-width:3;stroke-dasharray:none" />
-		<text font-family="sans-serif" font-size="36px" id="text14" x="352.68036" y="362.17142">T</text>
-	</g></g>
-<g id="example" display="none">
-	<text id="varTe" display="inline" font-family="sans-serif" font-size="36px" x="420.1889" y="336.10983">99</text>
-	
-	
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00">
+   <svg:defs id="defs41" font-style="normal"/>
+   <svg:g id="main" font-style="normal">
+      <svg:line id="line2" x1="304.789" y1="295.935" x2="304.789" y2="495.434" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0" font-style="normal"/>
+      <svg:line id="line4" x1="404.338" y1="395.698" x2="205.026" y2="395.698" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0" font-style="normal"/>
+      <svg:text id="text19" x="311.50781" y="362.14401" dx="0.0" dy="0.0" font-family="sans-serif" font-size="36px" font-style="normal">KNP</svg:text>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:g id="points" display="inline" font-style="normal">
+         <svg:path id="path22" d="m 235.52,339.6 38.323,28.915 c 0.796,0.581 0.955,1.699 0.345,2.47 -0.585,0.796 -1.701,0.956 -2.471,0.346 l -38.322,-28.914 c -0.771,-0.588 -0.931,-1.703 -0.346,-2.471 0.587,-0.8 1.702,-0.959 2.471,-0.346 z m 40.848,19.716 21.871,29.818 -34.681,-12.862 z" fill="#FFFFFF" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.4252" font-style="normal"/>
+         <svg:text id="text24" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="26.7877px" font-style="normal" transform="translate(191.2778,333.7969)">PT 1</svg:text>
+      </svg:g>
+      <svg:g id="varT" display="inline" font-style="normal" transform="translate(79.110102,-26.070375)">
+         <svg:rect id="rect12" rx="0.0" ry="0.0" x="336.457" y="321.32898" width="54.630322" height="55.511044" style="stroke-width:3;stroke-dasharray:none" fill="none" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="2.42146" font-style="normal"/>
+         <svg:text id="text14" x="352.68036" y="362.17142" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="36px" font-style="normal">T</svg:text>
+      </svg:g>
+   </svg:g>
+   <svg:g id="example" display="none" font-style="normal">
+      <svg:text id="varTe" x="420.1889" y="336.10983" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="36px" font-style="normal">99</svg:text>
+   </svg:g>
+</svg:svg>

@@ -1,37 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
-<g id="main">
-	<path fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
-		M228.359,117.468c-36.691,0.892-60.847-10.18-78.3,10.881c-14.547,34.28-8.052,14.643-2.241,88.196
-		c0.228,3.932,3.59,7.329,4.482,11.07c0.664,3.039-0.456,6.971,2.241,9.117c3.342,2.678,13.863,3.74,13.863,3.74
-		c59.063-0.531,118.125,0,177.169-1.785c7.611-0.17,20.813-7.502,20.813-7.502c17.893-21.594,23.492-66.242-4.688-80.692
-		c-1.575-1.785-2.241-4.102-4.481-5.545c-1.784-1.235-4.688-0.893-6.933-1.786c-17.909-7.14,3.569-1.063-13.883-5.527
-		c-10.274-5.526-20.566-6.969-32.209-9.287C278.914,123.184,254.529,117.468,228.359,117.468"/>
-	<text transform="matrix(1 0 0 1 194.8105 187.2539)" font-family="sans-serif" font-size="24.0048">ATI</text>
-</g>
-<g id="template" display="inline">
-	<g id="varW1" display="inline">
-		
-			<rect x="79.585" y="127.42" fill="none" stroke="#000000" stroke-width="1.8991" stroke-linecap="round" stroke-miterlimit="8" width="43.926" height="34.298"/>
-		<text transform="matrix(1 0 0 1 86.0708 152.2988)" font-family="sans-serif" font-size="20.3585">W1</text>
-	</g>
-	<g id="varW" display="inline">
-		<text transform="matrix(1 0 0 1 70.562 152.2588)" font-family="serif" font-size="21.5739">-</text>
-		
-			<rect x="34.139" y="127.666" fill="none" stroke="#000000" stroke-width="1.8991" stroke-linecap="round" stroke-miterlimit="8" width="33.918" height="34.317"/>
-		<text transform="matrix(1 0 0 1 40.7886 152.6152)" font-family="sans-serif" font-size="20.3585">W</text>
-	</g>
-	<g id="varT" display="inline">
-		
-			<rect x="256.241" y="156.773" fill="none" stroke="#000000" stroke-width="1.8991" stroke-linecap="round" stroke-miterlimit="8" width="45.712" height="45.198"/>
-		<text transform="matrix(1 0 0 1 272.0723 187.3438)" font-family="sans-serif" font-size="24.0048">T</text>
-	</g>
-</g>
-<g id="example" display="none">
-	<text id="varWeW1e_1_" transform="matrix(1 0 0 1 4 138.6152)" display="inline" enable-background="new    "><tspan x="0" y="0" font-family="sans-serif" font-size="18">020300ZDEC08 - </tspan><tspan x="0" y="21.6" font-family="sans-serif" font-size="18">090500ZDEC08 </tspan></text>
-	<text id="varTe" transform="matrix(1 0 0 1 239.0723 187.3438)" display="inline" font-family="sans-serif" font-size="24.0048">MND(N)</text>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00" preserveAspectRatio="xMidYMid meet">
+   <svg:g id="main" font-style="normal">
+      <svg:path d="   M228.359,117.468c-36.691,0.892-60.847-10.18-78.3,10.881c-14.547,34.28-8.052,14.643-2.241,88.196   c0.228,3.932,3.59,7.329,4.482,11.07c0.664,3.039-0.456,6.971,2.241,9.117c3.342,2.678,13.863,3.74,13.863,3.74   c59.063-0.531,118.125,0,177.169-1.785c7.611-0.17,20.813-7.502,20.813-7.502c17.893-21.594,23.492-66.242-4.688-80.692   c-1.575-1.785-2.241-4.102-4.481-5.545c-1.784-1.235-4.688-0.893-6.933-1.786c-17.909-7.14,3.569-1.063-13.883-5.527   c-10.274-5.526-20.566-6.969-32.209-9.287C278.914,123.184,254.529,117.468,228.359,117.468" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0" font-style="normal"/>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" font-family="sans-serif" font-size="24.0048" font-style="normal" transform="matrix(1 0 0 1 194.8105 187.2539)">ATI</svg:text>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:g id="varW1" display="inline" font-style="normal">
+         <svg:rect rx="0.0" ry="0.0" x="79.585" y="127.42" width="43.926" height="34.298" fill="none" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="1.8991" font-style="normal"/>
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.3585" font-style="normal" transform="matrix(1 0 0 1 86.0708 152.2988)">W1</svg:text>
+      </svg:g>
+      <svg:g id="varW" display="inline" font-style="normal">
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="serif" font-size="21.5739" font-style="normal" transform="matrix(1 0 0 1 70.562 152.2588)">-</svg:text>
+         <svg:rect rx="0.0" ry="0.0" x="34.139" y="127.666" width="33.918" height="34.317" fill="none" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="1.8991" font-style="normal"/>
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.3585" font-style="normal" transform="matrix(1 0 0 1 40.7886 152.6152)">W</svg:text>
+      </svg:g>
+      <svg:g id="varT" display="inline" font-style="normal">
+         <svg:rect rx="0.0" ry="0.0" x="256.241" y="156.773" width="45.712" height="45.198" fill="none" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="1.8991" font-style="normal"/>
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24.0048" font-style="normal" transform="matrix(1 0 0 1 272.0723 187.3438)">T</svg:text>
+      </svg:g>
+   </svg:g>
+   <svg:g id="example" display="none" font-style="normal">
+      <svg:text id="varWeW1e_1_" x="0.0" y="0.0" dx="0.0" dy="0.0" enable-background="new    " display="inline" font-style="normal" transform="matrix(1 0 0 1 4 138.6152)">
+         <svg:tspan x="0" y="0" font-family="sans-serif" font-size="18" font-style="normal">020300ZDEC08 - </svg:tspan>
+         <svg:tspan x="0" y="21.6" font-family="sans-serif" font-size="18" font-style="normal">090500ZDEC08 </svg:tspan>
+      </svg:text>
+      <svg:text id="varTe" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="24.0048" font-style="normal" transform="matrix(1 0 0 1 239.0723 187.3438)">MND(N)</svg:text>
+   </svg:g>
+</svg:svg>

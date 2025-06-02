@@ -1,31 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
-<g id="main" transform="translate(-160 -170) scale(1.75 1.75)">
-	<path fill="none" stroke="#000000" stroke-width="2" d="M152.622,220.067c13.174-104.438,162.599-86.175,158,10.4
-		c-3.446,72.352-109.576,99.648-149.2,29.6"/>
-	<line fill="none" stroke="#000000" stroke-width="2" x1="161.286" y1="260" x2="161.286" y2="285"/>
-	<line fill="none" stroke="#000000" stroke-width="2" x1="160.299" y1="259.815" x2="181.702" y2="259.827"/>
-	<g transform="translate(186 43) translate(-1 0) translate(-1 0) translate(1 0) translate(1 0) translate(1 0)">
-		<rect x="113.571" y="171.857" fill="#FFFFFF" stroke="#FFFFFF" width="14.286" height="20"/>
-		<text transform="matrix(0.5714 0 0 0.5714 117.187 189)" font-family="sans-serif" font-size="34.9982">S</text>
-	</g>
-</g>
-<g id="template" display="inline">
-	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="80.25" y1="190.5" x2="48.75" y2="153.75"/>
-	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="49.332" y1="154.884" x2="48.75" y2="106.5"/>
-	<polygon display="inline" stroke="#000000" stroke-width="2" points="101.317,210.598 74.029,195.865 86.349,183.437 	"/>
-	<ellipse display="inline" stroke="#000000" cx="247.346" cy="223.665" rx="2.985" ry="2.933"/>
-	<g id="_x3C_group_x3E_" transform="translate(112 168)" display="inline">
-		<text transform="matrix(1 0 0 1 110 80.25)" font-family="sans-serif" font-size="20.9989">PT. 1</text>
-		<text transform="matrix(1 0 0 1 45.2495 104.75)" font-family="sans-serif" font-size="20.9989">(CENTER POINT)</text>
-	</g>
-	<g id="_x3C_group_x3E__1_" transform="translate(-247 25)" display="inline">
-		<text transform="matrix(1 0 0 1 267.7495 22)" font-family="sans-serif" font-size="20.9989">PT. 2</text>
-		<text transform="matrix(1 0 0 1 255.4995 67.5)" font-family="sans-serif" font-size="20.9989">POINT)</text>
-		<text transform="matrix(1 0 0 1 251.9995 43)" font-family="sans-serif" font-size="20.9989">(START</text>
-	</g>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00" preserveAspectRatio="xMidYMid meet">
+   <svg:g id="main" font-style="normal" transform="translate(-160 -170) scale(1.75 1.75)">
+      <svg:path d="M152.622,220.067c13.174-104.438,162.599-86.175,158,10.4   c-3.446,72.352-109.576,99.648-149.2,29.6" fill="none" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+      <svg:line x1="161.286" y1="260.0" x2="161.286" y2="285.0" fill="none" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+      <svg:line x1="160.299" y1="259.815" x2="181.702" y2="259.827" fill="none" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+      <svg:g font-style="normal" transform="translate(186 43) translate(-1 0) translate(-1 0) translate(1 0) translate(1 0) translate(1 0)">
+         <svg:rect rx="0.0" ry="0.0" x="113.571" y="171.857" width="14.286" height="20.0" fill="#FFFFFF" stroke="#FFFFFF" font-style="normal"/>
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" font-family="sans-serif" font-size="34.9982" font-style="normal" transform="matrix(0.5714 0 0 0.5714 117.187 189)">S</svg:text>
+      </svg:g>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:line x1="80.25" y1="190.5" x2="48.75" y2="153.75" fill="none" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      <svg:line x1="49.332" y1="154.884" x2="48.75" y2="106.5" fill="none" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      <svg:polygon points="101.317000,210.598000 74.029000,195.865000 86.349000,183.437000" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      <svg:ellipse cx="247.346" cy="223.665" rx="2.985" ry="2.933" stroke="#000000" display="inline" font-style="normal"/>
+      <svg:g id="_x3C_group_x3E_" display="inline" font-style="normal" transform="translate(112 168)">
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989" font-style="normal" transform="matrix(1 0 0 1 110 80.25)">PT. 1</svg:text>
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989" font-style="normal" transform="matrix(1 0 0 1 45.2495 104.75)">(CENTER POINT)</svg:text>
+      </svg:g>
+      <svg:g id="_x3C_group_x3E__1_" display="inline" font-style="normal" transform="translate(-247 25)">
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989" font-style="normal" transform="matrix(1 0 0 1 267.7495 22)">PT. 2</svg:text>
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989" font-style="normal" transform="matrix(1 0 0 1 255.4995 67.5)">POINT)</svg:text>
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989" font-style="normal" transform="matrix(1 0 0 1 251.9995 43)">(START</svg:text>
+      </svg:g>
+   </svg:g>
+</svg:svg>

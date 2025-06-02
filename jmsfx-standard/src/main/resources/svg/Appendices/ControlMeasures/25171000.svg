@@ -1,44 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
-<g id="main" transform="translate(-290 -280) scale(2 2)">
-	<text transform="matrix(0.5 0 0 0.5 174.3938 222.5581)" font-family="sans-serif" font-size="24">MIN ALT:</text>
-	<text transform="matrix(0.5 0 0 0.5 174.5647 246.3232)" font-family="sans-serif" font-size="24">MAX ALT:</text>
-	<text transform="matrix(0.5 0 0 0.5 173.5408 277.1113)" font-family="sans-serif" font-size="24">TIME FROM:</text>
-	<text transform="matrix(0.5 0 0 0.5 174.9646 300.1699)" font-family="sans-serif" font-size="24">TIME TO:</text>
-	<text transform="matrix(0.5 0 0 0.5 175.8821 182.1113)" font-family="sans-serif" font-size="24">ROZ</text>
-	<polygon fill="none" stroke="#000000" stroke-width="5" points="167.882,314.312 167.482,159.511 295.927,161.661 335.927,244.223 
-		309.427,314.312 	"/>
-</g>
-<g id="template" display="inline">
-	<g id="varX" transform="translate(148 97)" display="inline">
-		<rect x="-82.236" y="-5.777" fill="#FFFFFF" stroke="#000000" stroke-width="2" width="52" height="46"/>
-		<text transform="matrix(1 0 0 1 -66.2358 26.2227)" font-family="sans-serif" font-size="24">T</text>
-	</g>
-	<g id="varH" transform="translate(107 112)" display="inline">
-		<rect x="80.764" y="17.223" fill="#FFFFFF" stroke="#000000" stroke-width="2" width="52" height="46"/>
-		<text transform="matrix(1 0 0 1 96.7637 49.2227)" font-family="sans-serif" font-size="24">X</text>
-	</g>
-	<g id="VarX1" transform="translate(38 129) translate(1 0) translate(1 0)" display="inline">
-		<rect x="153.764" y="54.223" fill="#FFFFFF" stroke="#000000" stroke-width="2" width="52" height="46"/>
-		<text transform="matrix(1 0 0 1 161.7637 86.2227)" font-family="sans-serif" font-size="24">X1</text>
-	</g>
-	<g id="varW1" transform="translate(-85 160)" display="inline">
-		<rect x="280.764" y="131.223" fill="#FFFFFF" stroke="#000000" stroke-width="2" width="52" height="46"/>
-		<text transform="matrix(1 0 0 1 288.7637 165.2227)" font-family="sans-serif" font-size="24">W1</text>
-	</g>
-	<g id="varW" transform="translate(-16 155) translate(1 0) translate(1 0) translate(1 0)" display="inline">
-		<rect x="238.764" y="82.223" fill="#FFFFFF" stroke="#000000" stroke-width="2" width="52" height="46"/>
-		<text transform="matrix(1 0 0 1 252.7637 116.2227)" font-family="sans-serif" font-size="24">W</text>
-	</g>
-</g>
-<g id="example" display="none">
-	<text id="varXe" transform="matrix(1 0 0 1 167.7637 165.1162)" display="inline" font-family="sans-serif" font-size="21">2700FT AGL</text>
-	<text id="varX1e" transform="matrix(1 0 0 1 165.7637 212.6465)" display="inline" font-family="sans-serif" font-size="21">21000FT AGL</text>
-	<text id="varW1e" transform="matrix(1 0 0 1 165.7637 321.2227)" display="inline" font-family="sans-serif" font-size="21">032400ZJUL08</text>
-	<text id="varWe" transform="matrix(1 0 0 1 197.7637 274.2227)" display="inline" font-family="sans-serif" font-size="21">030001ZJUL08</text>
-	<text id="varTe" transform="matrix(1 0 0 1 61.7642 123.2227)" display="inline" font-family="sans-serif" font-size="21">11 ADA BDE</text>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00" preserveAspectRatio="xMidYMid meet">
+   <svg:g id="main" font-style="normal" transform="translate(-290 -280) scale(2 2)">
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(0.5 0 0 0.5 174.3938 222.5581)">MIN ALT:</svg:text>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(0.5 0 0 0.5 174.5647 246.3232)">MAX ALT:</svg:text>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(0.5 0 0 0.5 173.5408 277.1113)">TIME FROM:</svg:text>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(0.5 0 0 0.5 174.9646 300.1699)">TIME TO:</svg:text>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(0.5 0 0 0.5 175.8821 182.1113)">ROZ</svg:text>
+      <svg:polygon points="167.882000,314.312000 167.482000,159.511000 295.927000,161.661000 335.927000,244.223000 309.427000,314.312000" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:g id="varX" display="inline" font-style="normal" transform="translate(148 97)">
+         <svg:rect rx="0.0" ry="0.0" x="-82.236" y="-5.777" width="52.0" height="46.0" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.0" font-style="normal"/>
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 -66.2358 26.2227)">T</svg:text>
+      </svg:g>
+      <svg:g id="varH" display="inline" font-style="normal" transform="translate(107 112)">
+         <svg:rect rx="0.0" ry="0.0" x="80.764" y="17.223" width="52.0" height="46.0" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.0" font-style="normal"/>
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 96.7637 49.2227)">X</svg:text>
+      </svg:g>
+      <svg:g id="VarX1" display="inline" font-style="normal" transform="translate(38 129) translate(1 0) translate(1 0)">
+         <svg:rect rx="0.0" ry="0.0" x="153.764" y="54.223" width="52.0" height="46.0" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.0" font-style="normal"/>
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 161.7637 86.2227)">X1</svg:text>
+      </svg:g>
+      <svg:g id="varW1" display="inline" font-style="normal" transform="translate(-85 160)">
+         <svg:rect rx="0.0" ry="0.0" x="280.764" y="131.223" width="52.0" height="46.0" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.0" font-style="normal"/>
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 288.7637 165.2227)">W1</svg:text>
+      </svg:g>
+      <svg:g id="varW" display="inline" font-style="normal" transform="translate(-16 155) translate(1 0) translate(1 0) translate(1 0)">
+         <svg:rect rx="0.0" ry="0.0" x="238.764" y="82.223" width="52.0" height="46.0" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.0" font-style="normal"/>
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 252.7637 116.2227)">W</svg:text>
+      </svg:g>
+   </svg:g>
+   <svg:g id="example" display="none" font-style="normal">
+      <svg:text id="varXe" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="21" font-style="normal" transform="matrix(1 0 0 1 167.7637 165.1162)">2700FT AGL</svg:text>
+      <svg:text id="varX1e" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="21" font-style="normal" transform="matrix(1 0 0 1 165.7637 212.6465)">21000FT AGL</svg:text>
+      <svg:text id="varW1e" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="21" font-style="normal" transform="matrix(1 0 0 1 165.7637 321.2227)">032400ZJUL08</svg:text>
+      <svg:text id="varWe" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="21" font-style="normal" transform="matrix(1 0 0 1 197.7637 274.2227)">030001ZJUL08</svg:text>
+      <svg:text id="varTe" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="21" font-style="normal" transform="matrix(1 0 0 1 61.7642 123.2227)">11 ADA BDE</svg:text>
+   </svg:g>
+</svg:svg>

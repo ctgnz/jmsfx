@@ -1,29 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
-<g id="main">
-	<g>
-		<line fill="none" stroke="#000000" stroke-width="5" x1="264.25" y1="288.973" x2="344.25" y2="288.973"/>
-		<line fill="none" stroke="#000000" stroke-width="5" x1="304.25" y1="288.973" x2="304.25" y2="203.973"/>
-		<line fill="none" stroke="#000000" stroke-width="5" x1="304.25" y1="203.973" x2="354.25" y2="153.973"/>
-		<line fill="none" stroke="#000000" stroke-width="5" x1="304.25" y1="203.973" x2="254.25" y2="153.973"/>
-		<circle stroke="#000000" cx="304.25" cy="158.973" r="25"/>
-	</g>
-	<g>
-		<rect x="235.75" y="121.973" fill="none" stroke="#000000" stroke-width="5" width="140" height="180"/>
-		<polyline fill="none" stroke="#000000" stroke-width="5" points="235.75,302.973 305.75,396.973 375.75,302.973 		"/>
-	</g>
-</g>
-<g id="template" display="inline">
-	<g transform="translate(140 140)" display="inline">
-		<text transform="matrix(1 0 0 1 244.25 208.9727)" font-family="sans-serif" font-size="24">ANCHOR</text>
-		<text transform="matrix(1 0 0 1 256.25 233.9727)" font-family="sans-serif" font-size="24">POINT</text>
-	</g>
-	<g display="inline">
-		<polyline fill="none" stroke="#000000" stroke-width="3" points="392.25,362.473 363.25,397.473 315.25,397.473 		"/>
-		<polygon stroke="#000000" stroke-width="3" points="310.25,397.473 324.25,389.473 324.25,405.473 		"/>
-	</g>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00" preserveAspectRatio="xMidYMid meet">
+   <svg:g id="main" font-style="normal">
+      <svg:g font-style="normal">
+         <svg:line x1="264.25" y1="288.973" x2="344.25" y2="288.973" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+         <svg:line x1="304.25" y1="288.973" x2="304.25" y2="203.973" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+         <svg:line x1="304.25" y1="203.973" x2="354.25" y2="153.973" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+         <svg:line x1="304.25" y1="203.973" x2="254.25" y2="153.973" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+         <svg:circle cx="304.25" cy="158.973" r="25.0" stroke="#000000" font-style="normal"/>
+      </svg:g>
+      <svg:g font-style="normal">
+         <svg:rect rx="0.0" ry="0.0" x="235.75" y="121.973" width="140.0" height="180.0" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+         <svg:polyline points="235.750000,302.973000 305.750000,396.973000 375.750000,302.973000" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+      </svg:g>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:g display="inline" font-style="normal" transform="translate(140 140)">
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 244.25 208.9727)">ANCHOR</svg:text>
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 256.25 233.9727)">POINT</svg:text>
+      </svg:g>
+      <svg:g display="inline" font-style="normal">
+         <svg:polyline points="392.250000,362.473000 363.250000,397.473000 315.250000,397.473000" fill="none" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+         <svg:polygon points="310.250000,397.473000 324.250000,389.473000 324.250000,405.473000" fill="#FFFFFF" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+      </svg:g>
+   </svg:g>
+</svg:svg>

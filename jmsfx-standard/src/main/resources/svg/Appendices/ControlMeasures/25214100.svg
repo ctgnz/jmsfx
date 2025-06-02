@@ -1,22 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
-<g id="main">
-	<line fill="none" stroke="#000000" stroke-width="5" x1="161.5" y1="416.5" x2="443.5" y2="416.5"/>
-	<line fill="none" stroke="#000000" stroke-width="5" x1="161.5" y1="315.5" x2="161.5" y2="514.5"/>
-	<line fill="none" stroke="#000000" stroke-width="5" x1="302.5" y1="317" x2="302.5" y2="516"/>
-	<line fill="none" stroke="#000000" stroke-width="5" x1="443.5" y1="317" x2="443.5" y2="516"/>
-</g>
-<g id="template" display="inline">
-	<text transform="matrix(1.1335 0 0 1 327.5 297.0938)" display="inline" font-family="sans-serif" font-size="24">CENTER</text>
-	<text transform="matrix(1.1335 0 0 1 327.5 322.2822)" display="inline" font-family="sans-serif" font-size="24">POINT</text>
-	<g display="inline">
-		<g>
-			<line fill="none" stroke="#000000" stroke-width="5" x1="359.5" y1="330.5" x2="317" y2="398"/>
-			<polygon points="308.361,388.251 307.407,413.162 329.458,401.534 			"/>
-		</g>
-	</g>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00" preserveAspectRatio="xMidYMid meet">
+   <svg:g id="main" font-style="normal">
+      <svg:line x1="161.5" y1="416.5" x2="443.5" y2="416.5" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+      <svg:line x1="161.5" y1="315.5" x2="161.5" y2="514.5" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+      <svg:line x1="302.5" y1="317.0" x2="302.5" y2="516.0" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+      <svg:line x1="443.5" y1="317.0" x2="443.5" y2="516.0" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1.1335 0 0 1 327.5 297.0938)">CENTER</svg:text>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1.1335 0 0 1 327.5 322.2822)">POINT</svg:text>
+      <svg:g display="inline" font-style="normal">
+         <svg:g font-style="normal">
+            <svg:line x1="359.5" y1="330.5" x2="317.0" y2="398.0" fill="none" stroke="#0000FF" stroke-width="5.0" font-style="normal"/>
+            <svg:polygon points="308.361000,388.251000 307.407000,413.162000 329.458000,401.534000" fill="#0000FF" font-style="normal"/>
+         </svg:g>
+      </svg:g>
+   </svg:g>
+</svg:svg>

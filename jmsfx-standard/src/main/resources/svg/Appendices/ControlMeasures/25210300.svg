@@ -1,30 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
-<g id="main">
-	
-		<polyline fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
-		386.167,339 386.167,484.5 230.167,484.5 230.167,339 211.667,338.5 211.667,302 250.667,302 250.667,320 288.167,320 288.251,302 
-		327.417,302 327.167,321.008 365.167,321 366.167,303.167 403.667,303.167 403.667,338.5 386.167,339 	"/>
-	
-		<rect x="292.167" y="423.5" fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-miterlimit="10" width="32" height="61"/>
-</g>
-<g id="template" transform="translate(150 118)" display="inline">
-	<g display="inline">
-		
-			<rect x="5.983" y="179" fill="none" stroke="#000000" stroke-width="2.6622" stroke-linecap="round" stroke-miterlimit="8" width="44.223" height="43.748"/>
-		<text transform="matrix(1 0 0 1 15.8638 215.7715)" font-family="sans-serif" font-size="40">T</text>
-	</g>
-	<g display="inline">
-		
-			<line fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="bevel" stroke-miterlimit="10" x1="142.144" y1="155.921" x2="151.783" y2="244.684"/>
-		<polygon points="140.284,238.458 155.5,277.698 161.942,236.106 		"/>
-	</g>
-	<text transform="matrix(1 0 0 1 50.2056 152.8994)" display="inline" font-family="sans-serif" font-size="25.1329">CENTER POINT</text>
-</g>
-<g id="example" display="none">
-	<text id="varTe" transform="matrix(1 0 0 1 107.938 333.7715)" display="inline" font-family="sans-serif" font-size="40">3FLT</text>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00" preserveAspectRatio="xMidYMid meet">
+   <svg:g id="main" font-style="normal">
+      <svg:polyline points="386.167000,339.000000 386.167000,484.500000 230.167000,484.500000 230.167000,339.000000 211.667000,338.500000 211.667000,302.000000 250.667000,302.000000 250.667000,320.000000 288.167000,320.000000 288.251000,302.000000 327.417000,302.000000 327.167000,321.008000 365.167000,321.000000 366.167000,303.167000 403.667000,303.167000 403.667000,338.500000 386.167000,339.000000" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0" font-style="normal"/>
+      <svg:rect rx="0.0" ry="0.0" x="292.167" y="423.5" width="32.0" height="61.0" fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10.0" stroke-width="5.0" font-style="normal"/>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal" transform="translate(150 118)">
+      <svg:g display="inline" font-style="normal">
+         <svg:rect rx="0.0" ry="0.0" x="5.983" y="179.0" width="44.223" height="43.748" fill="none" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="2.6622" font-style="normal"/>
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="40" font-style="normal" transform="matrix(1 0 0 1 15.8638 215.7715)">T</svg:text>
+      </svg:g>
+      <svg:g display="inline" font-style="normal">
+         <svg:line x1="142.144" y1="155.921" x2="151.783" y2="244.684" fill="none" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="5.0" font-style="normal"/>
+         <svg:polygon points="140.284000,238.458000 155.500000,277.698000 161.942000,236.106000" fill="#0000FF" font-style="normal"/>
+      </svg:g>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="25.1329" font-style="normal" transform="matrix(1 0 0 1 50.2056 152.8994)">CENTER POINT</svg:text>
+   </svg:g>
+   <svg:g id="example" display="none" font-style="normal">
+      <svg:text id="varTe" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="40" font-style="normal" transform="matrix(1 0 0 1 107.938 333.7715)">3FLT</svg:text>
+   </svg:g>
+</svg:svg>

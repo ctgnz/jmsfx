@@ -1,53 +1,51 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve" sodipodi:docname="25330502.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs1106" /><sodipodi:namedview id="namedview1104" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="2.2025" inkscape:cx="151.64586" inkscape:cy="200.22701" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="Version_1.0" />
-<g id="main">
-	<text font-family="sans-serif" font-size="36px" id="text1043" x="107.8159" y="125.1807">ROUTE</text>
-	<path fill="none" stroke="#000000" stroke-width="5" d="M22.8,195.307c50.979,10.195,59.01,8.481,112-3.2   c27.079-5.97,89.124-13.007,118.4-14.399c50.938-2.425,76.974,14.703,128,9.6" id="path1045" />
-	<g id="g1063">
-		<g id="g1055">
-			<g id="g1053">
-				<line fill="none" stroke="#000000" stroke-width="5" x1="98.5" y1="150.5" x2="313.5" y2="150.5" id="line1047" />
-				<polygon points="309.853,163.004 331.441,150.539 309.853,138.074     " id="polygon1049" />
-				<polygon points="102.147,137.996 80.558,150.461 102.147,162.925     " id="polygon1051" />
-			</g>
-		</g>
-		<g id="g1061">
-			<rect x="174.5" y="132.898" fill="#FFFFFF" width="70.704" height="33.204" id="rect1057" />
-			<text transform="matrix(1 0 0 1 183.1284 158.7832)" font-family="sans-serif" font-size="30" id="text1059">ALT</text>
-		</g>
-	</g>
-</g>
-<g id="template" display="inline">
-	<g id="varT" transform="matrix(0.6,0,0,0.6,157.6,38.49599)" display="inline">
-		<rect x="145.34" y="90.825996" fill="#ffffff" stroke="#000000" stroke-width="4" width="64.494003" height="63.674" id="rect1066" />
-		<text transform="matrix(1.6667,0,0,1.6667,161.0068,145.6116)" font-family="sans-serif" font-size="36px" id="text1068">T</text>
-	</g>
-	<g id="points" display="inline">
-		<g transform="translate(10,-3)" id="g1077">
-			<text transform="translate(12.4995,287)" font-family="sans-serif" font-size="18px" id="text1071">PT 1</text>
-			<polyline fill="none" stroke="#000000" stroke-width="3" points="12.5,202.029 12.5,247.029 32.5,267.029    " id="polyline1073" />
-			<polygon stroke="#000000" stroke-width="3" points="12.5,199.029 16.5,212.029 8.5,212.029 " id="polygon1075" />
-		</g>
-		<g transform="translate(10,-3)" id="g1085">
-			<text transform="translate(185.7735,261)" font-family="sans-serif" font-size="18px" id="text1079">PT 2</text>
-			<line fill="none" stroke="#000000" stroke-width="3" x1="208.5" y1="197.02901" x2="208.5" y2="240.5" id="line1081" />
-			<polygon stroke="#000000" stroke-width="3" points="208.5,188.029 212.5,201.029 204.5,201.029 " id="polygon1083" />
-		</g>
-		<g id="g1097">
-			<g transform="matrix(1,0,0,1.1,-12,-47.00003)" id="g1091">
-				<polyline fill="none" stroke="#000000" stroke-width="3" points="393.5,222.209 393.5,267.209 373.5,287.209     " id="polyline1087" />
-				<polygon stroke="#000000" stroke-width="3" points="393.5,219.209 397.5,232.209 389.5,232.209 " id="polygon1089" />
-			</g>
-			<g transform="matrix(0.75,0,0,0.75,184.5,124.5)" id="g1095">
-				<text transform="matrix(1.3333,0,0,1.3333,179.0313,206.2657)" font-family="sans-serif" font-size="18px" id="text1093">PT N</text>
-			</g>
-		</g>
-	</g>
-</g>
-<g id="example" transform="matrix(0.6,0,0,0.6,123.6,34.8)" display="none">
-	
-		<text id="varTe" display="inline" font-family="sans-serif" font-size="60.0012px" x="214.99059" y="150.63493" style="stroke-width:1.6667">3</text>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00">
+   <svg:defs id="defs1106" font-style="normal"/>
+   <svg:g id="main" font-style="normal">
+      <svg:text id="text1043" x="107.8159" y="125.1807" dx="0.0" dy="0.0" font-family="sans-serif" font-size="36px" font-style="normal">ROUTE</svg:text>
+      <svg:path id="path1045" d="M22.8,195.307c50.979,10.195,59.01,8.481,112-3.2   c27.079-5.97,89.124-13.007,118.4-14.399c50.938-2.425,76.974,14.703,128,9.6" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+      <svg:g id="g1063" font-style="normal">
+         <svg:g id="g1055" font-style="normal">
+            <svg:g id="g1053" font-style="normal">
+               <svg:line id="line1047" x1="98.5" y1="150.5" x2="313.5" y2="150.5" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+               <svg:polygon id="polygon1049" points="309.853000,163.004000 331.441000,150.539000 309.853000,138.074000" font-style="normal"/>
+               <svg:polygon id="polygon1051" points="102.147000,137.996000 80.558000,150.461000 102.147000,162.925000" font-style="normal"/>
+            </svg:g>
+         </svg:g>
+         <svg:g id="g1061" font-style="normal">
+            <svg:rect id="rect1057" rx="0.0" ry="0.0" x="174.5" y="132.898" width="70.704" height="33.204" fill="#FFFFFF" font-style="normal"/>
+            <svg:text id="text1059" x="0.0" y="0.0" dx="0.0" dy="0.0" font-family="sans-serif" font-size="30" font-style="normal" transform="matrix(1 0 0 1 183.1284 158.7832)">ALT</svg:text>
+         </svg:g>
+      </svg:g>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:g id="varT" display="inline" font-style="normal" transform="matrix(0.6,0,0,0.6,157.6,38.49599)">
+         <svg:rect id="rect1066" rx="0.0" ry="0.0" x="145.34" y="90.825996" width="64.494003" height="63.674" fill="#FFFFFF" stroke="#0000FF" stroke-width="4.0" font-style="normal"/>
+         <svg:text id="text1068" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="36px" font-style="normal" transform="matrix(1.6667,0,0,1.6667,161.0068,145.6116)">T</svg:text>
+      </svg:g>
+      <svg:g id="points" display="inline" font-style="normal">
+         <svg:g id="g1077" font-style="normal" transform="translate(10,-3)">
+            <svg:text id="text1071" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18px" font-style="normal" transform="translate(12.4995,287)">PT 1</svg:text>
+            <svg:polyline id="polyline1073" points="12.500000,202.029000 12.500000,247.029000 32.500000,267.029000" fill="none" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+            <svg:polygon id="polygon1075" points="12.500000,199.029000 16.500000,212.029000 8.500000,212.029000" fill="#FFFFFF" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+         </svg:g>
+         <svg:g id="g1085" font-style="normal" transform="translate(10,-3)">
+            <svg:text id="text1079" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18px" font-style="normal" transform="translate(185.7735,261)">PT 2</svg:text>
+            <svg:line id="line1081" x1="208.5" y1="197.02901" x2="208.5" y2="240.5" fill="none" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+            <svg:polygon id="polygon1083" points="208.500000,188.029000 212.500000,201.029000 204.500000,201.029000" fill="#FFFFFF" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+         </svg:g>
+         <svg:g id="g1097" font-style="normal">
+            <svg:g id="g1091" font-style="normal" transform="matrix(1,0,0,1.1,-12,-47.00003)">
+               <svg:polyline id="polyline1087" points="393.500000,222.209000 393.500000,267.209000 373.500000,287.209000" fill="none" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+               <svg:polygon id="polygon1089" points="393.500000,219.209000 397.500000,232.209000 389.500000,232.209000" fill="#FFFFFF" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+            </svg:g>
+            <svg:g id="g1095" font-style="normal" transform="matrix(0.75,0,0,0.75,184.5,124.5)">
+               <svg:text id="text1093" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18px" font-style="normal" transform="matrix(1.3333,0,0,1.3333,179.0313,206.2657)">PT N</svg:text>
+            </svg:g>
+         </svg:g>
+      </svg:g>
+   </svg:g>
+   <svg:g id="example" display="none" font-style="normal" transform="matrix(0.6,0,0,0.6,123.6,34.8)">
+      <svg:text id="varTe" x="214.99059" y="150.63493" dx="0.0" dy="0.0" style="stroke-width:1.6667" display="inline" font-family="sans-serif" font-size="60.0012px" font-style="normal">3</svg:text>
+   </svg:g>
+</svg:svg>

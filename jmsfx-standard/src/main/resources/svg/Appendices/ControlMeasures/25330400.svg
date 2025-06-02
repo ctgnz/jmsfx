@@ -1,42 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
-<g id="main">
-	<text transform="matrix(1 0 0 1 124.8159 151.1807)" font-family="sans-serif" font-size="36">ASR</text>
-	<path fill="none" stroke="#000000" stroke-width="5" d="M22.8,195.307c50.979,10.195,59.01,8.481,112-3.2
-		c27.079-5.97,89.124-13.007,118.4-14.399c50.938-2.425,76.974,14.703,128,9.6"/>
-</g>
-<g id="template" display="inline">
-	<g id="varT" transform="scale(0.6 0.6) translate(206 58)" display="inline">
-		<rect x="172.006" y="144.16" fill="#FFFFFF" stroke="#000000" stroke-width="4" width="64.494" height="63.674"/>
-		<text transform="matrix(1.6667 0 0 1.6667 187.6735 198.9449)" font-family="sans-serif" font-size="36">T</text>
-	</g>
-	<g id="points" display="inline">
-		<g transform="translate(10 -3)">
-			<text transform="matrix(1 0 0 1 12.4995 287)" font-family="sans-serif" font-size="18">PT 1</text>
-			<polyline fill="none" stroke="#000000" stroke-width="3" points="12.5,202.029 12.5,247.029 32.5,267.029 			"/>
-			<polygon stroke="#000000" stroke-width="3" points="8.5,212.029 12.5,199.029 16.5,212.029 			"/>
-		</g>
-		<g transform="translate(10 -3)">
-			<text transform="matrix(1 0 0 1 185.7735 261)" font-family="sans-serif" font-size="18">PT 2</text>
-			<line fill="none" stroke="#000000" stroke-width="3" x1="208.5" y1="197.029" x2="208.5" y2="240.5"/>
-			<polygon stroke="#000000" stroke-width="3" points="204.5,201.029 208.5,188.029 212.5,201.029 			"/>
-		</g>
-		<g>
-			<g transform="scale(1 1.1) translate(-12 -42.7273)">
-				<polyline fill="none" stroke="#000000" stroke-width="3" points="393.5,222.209 393.5,267.209 373.5,287.209 				"/>
-				<polygon stroke="#000000" stroke-width="3" points="389.5,232.209 393.5,219.209 397.5,232.209 				"/>
-			</g>
-			<g transform="scale(0.75 0.75) translate(246 166)">
-				<text transform="matrix(1.3333 0 0 1.3333 179.0313 206.2657)" font-family="sans-serif" font-size="18">PT N</text>
-			</g>
-		</g>
-	</g>
-</g>
-<g id="example" transform="scale(0.6 0.6) translate(206 58)" display="none">
-	
-		<text id="varTe" transform="matrix(1.6667 0 0 1.6667 156.0068 193.9449)" display="inline" font-family="sans-serif" font-size="36">DONKEY</text>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00" preserveAspectRatio="xMidYMid meet">
+   <svg:g id="main" font-style="normal">
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" font-family="sans-serif" font-size="36" font-style="normal" transform="matrix(1 0 0 1 124.8159 151.1807)">ASR</svg:text>
+      <svg:path d="M22.8,195.307c50.979,10.195,59.01,8.481,112-3.2   c27.079-5.97,89.124-13.007,118.4-14.399c50.938-2.425,76.974,14.703,128,9.6" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:g id="varT" display="inline" font-style="normal" transform="scale(0.6 0.6) translate(206 58)">
+         <svg:rect rx="0.0" ry="0.0" x="172.006" y="144.16" width="64.494" height="63.674" fill="#FFFFFF" stroke="#0000FF" stroke-width="4.0" font-style="normal"/>
+         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="36" font-style="normal" transform="matrix(1.6667 0 0 1.6667 187.6735 198.9449)">T</svg:text>
+      </svg:g>
+      <svg:g id="points" display="inline" font-style="normal">
+         <svg:g font-style="normal" transform="translate(10 -3)">
+            <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18" font-style="normal" transform="matrix(1 0 0 1 12.4995 287)">PT 1</svg:text>
+            <svg:polyline points="12.500000,202.029000 12.500000,247.029000 32.500000,267.029000" fill="none" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+            <svg:polygon points="8.500000,212.029000 12.500000,199.029000 16.500000,212.029000" fill="#FFFFFF" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+         </svg:g>
+         <svg:g font-style="normal" transform="translate(10 -3)">
+            <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18" font-style="normal" transform="matrix(1 0 0 1 185.7735 261)">PT 2</svg:text>
+            <svg:line x1="208.5" y1="197.029" x2="208.5" y2="240.5" fill="none" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+            <svg:polygon points="204.500000,201.029000 208.500000,188.029000 212.500000,201.029000" fill="#FFFFFF" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+         </svg:g>
+         <svg:g font-style="normal">
+            <svg:g font-style="normal" transform="scale(1 1.1) translate(-12 -42.7273)">
+               <svg:polyline points="393.500000,222.209000 393.500000,267.209000 373.500000,287.209000" fill="none" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+               <svg:polygon points="389.500000,232.209000 393.500000,219.209000 397.500000,232.209000" fill="#FFFFFF" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+            </svg:g>
+            <svg:g font-style="normal" transform="scale(0.75 0.75) translate(246 166)">
+               <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18" font-style="normal" transform="matrix(1.3333 0 0 1.3333 179.0313 206.2657)">PT N</svg:text>
+            </svg:g>
+         </svg:g>
+      </svg:g>
+   </svg:g>
+   <svg:g id="example" display="none" font-style="normal" transform="scale(0.6 0.6) translate(206 58)">
+      <svg:text id="varTe" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="36" font-style="normal" transform="matrix(1.6667 0 0 1.6667 156.0068 193.9449)">DONKEY</svg:text>
+   </svg:g>
+</svg:svg>

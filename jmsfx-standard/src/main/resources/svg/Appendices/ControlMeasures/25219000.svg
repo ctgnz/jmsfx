@@ -1,18 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
-<g id="main">
-	<polyline fill="none" stroke="#000000" stroke-width="3" points="155,325.23 205,250.23 305,400.23 405,250.23 455,325.23 	"/>
-	<polyline fill="none" stroke="#000000" stroke-width="3" points="155,375.23 205,300.23 305,450.23 405,300.23 455,375.23 	"/>
-</g>
-<g id="template" transform="scale(0.5 0.5) translate(200 0)" display="inline">
-	<text transform="matrix(2 0 0 2 360 496.4609)" display="inline" font-family="sans-serif" font-size="12">CENTER</text>
-	<text transform="matrix(2 0 0 2 371 521.4609)" display="inline" font-family="sans-serif" font-size="12">POINT</text>
-	<g transform="scale(1 2) translate(0 -25)" display="inline">
-		<line fill="none" stroke="#000000" stroke-width="3" x1="410" y1="298.568" x2="410" y2="408.568"/>
-		<polygon stroke="#000000" points="410,414.568 396,384.568 424,384.568 		"/>
-	</g>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00" preserveAspectRatio="xMidYMid meet">
+   <svg:g id="main" font-style="normal">
+      <svg:polyline points="155.000000,325.230000 205.000000,250.230000 305.000000,400.230000 405.000000,250.230000 455.000000,325.230000" fill="none" stroke="#000000" stroke-width="3.0" font-style="normal"/>
+      <svg:polyline points="155.000000,375.230000 205.000000,300.230000 305.000000,450.230000 405.000000,300.230000 455.000000,375.230000" fill="none" stroke="#000000" stroke-width="3.0" font-style="normal"/>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal" transform="scale(0.5 0.5) translate(200 0)">
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="12" font-style="normal" transform="matrix(2 0 0 2 360 496.4609)">CENTER</svg:text>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="12" font-style="normal" transform="matrix(2 0 0 2 371 521.4609)">POINT</svg:text>
+      <svg:g display="inline" font-style="normal" transform="scale(1 2) translate(0 -25)">
+         <svg:line x1="410.0" y1="298.568" x2="410.0" y2="408.568" fill="none" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+         <svg:polygon points="410.000000,414.568000 396.000000,384.568000 424.000000,384.568000" fill="#FFFFFF" stroke="#0000FF" font-style="normal"/>
+      </svg:g>
+   </svg:g>
+</svg:svg>

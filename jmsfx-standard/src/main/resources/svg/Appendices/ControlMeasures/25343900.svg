@@ -1,29 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve" sodipodi:docname="25343900.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs39" /><sodipodi:namedview id="namedview37" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="1.10125" inkscape:cx="157.09421" inkscape:cy="276.04994" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="g436" />
-<g id="main" transform="matrix(1.75,0,0,1.75,-247.24177,-173.62089)">
-	<path fill="none" stroke="#000000" stroke-width="2" d="m 181.336,222.638 c 13.174,-104.438 162.599,-86.176 158,10.4 -3.446,72.352 -109.576,99.648 -149.2,29.6" id="path2" />
-	
-	<path id="path423" style="fill:none;stroke:#000000;stroke-width:2" d="m 198.83765,211.26027 -17.24187,10.83494 -17.51492,-12.77329" sodipodi:nodetypes="ccc" /><path id="line6" style="fill:none;stroke:#000000;stroke-width:2" d="m 180.06153,278.59473 10.41414,-16.15893 23.06401,3.58021" sodipodi:nodetypes="ccc" />
-	<g transform="translate(173,50)" id="g12">
-		<rect x="155.571" y="167.714" fill="#ffffff" stroke="#ffffff" width="20" height="20" id="rect8" />
-		<text font-family="sans-serif" font-size="19.998px" id="text10" x="144.66492" y="184.8571" style="stroke-width:0.5714">LOC</text>
-	</g>
-</g>
-<g id="template" display="inline">
-	<ellipse display="inline" stroke="#000000" cx="208.44382" cy="224.84563" rx="2.984" ry="2.934" id="ellipse15" />
-	
-	
-	<g id="g436" transform="translate(-20.54703,-26.325882)"><line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="81" y1="220.74899" x2="56.189999" y2="181.40601" id="line17" /><line display="inline" fill="none" stroke="#000000" stroke-width="1.84689" x1="56.5" y1="182.24899" x2="56.5" y2="125.54095" id="line19" /><polygon display="inline" stroke="#000000" stroke-width="2" points="87.669,224.311 69.553,216.924 82.71,205.385 " id="polygon21" /></g>
-	<g id="_x3C_group_x3E__1_" transform="translate(56,40)" display="inline">
-		<text transform="translate(-27.5005,5.75)" font-family="sans-serif" font-size="20.9989px" id="text23">PT. 2</text>
-		<text transform="translate(-41.5005,30.25)" font-family="sans-serif" font-size="20.9989px" id="text25">(START</text>
-		<text transform="translate(-39.7505,56.5)" font-family="sans-serif" font-size="20.9989px" id="text27">POINT)</text>
-	</g>
-	<g id="_x3C_group_x3E_" transform="translate(-29.399598,157.30554)" display="inline">
-		<text transform="translate(213.749,90.5)" font-family="sans-serif" font-size="20.9989px" id="text30">PT. 1</text>
-		<text transform="translate(148.9995,109.75)" font-family="sans-serif" font-size="20.9989px" id="text32">(CENTER POINT)</text>
-	</g>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00">
+   <svg:defs id="defs39" font-style="normal"/>
+   <svg:g id="main" font-style="normal" transform="matrix(1.75,0,0,1.75,-247.24177,-173.62089)">
+      <svg:path id="path2" d="m 181.336,222.638 c 13.174,-104.438 162.599,-86.176 158,10.4 -3.446,72.352 -109.576,99.648 -149.2,29.6" fill="none" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+      <svg:path id="path423" d="m 198.83765,211.26027 -17.24187,10.83494 -17.51492,-12.77329" style="fill:none;stroke:#000000;stroke-width:2" font-style="normal"/>
+      <svg:path id="line6" d="m 180.06153,278.59473 10.41414,-16.15893 23.06401,3.58021" style="fill:none;stroke:#000000;stroke-width:2" font-style="normal"/>
+      <svg:g id="g12" font-style="normal" transform="translate(173,50)">
+         <svg:rect id="rect8" rx="0.0" ry="0.0" x="155.571" y="167.714" width="20.0" height="20.0" fill="#FFFFFF" stroke="#FFFFFF" font-style="normal"/>
+         <svg:text id="text10" x="144.66492" y="184.8571" dx="0.0" dy="0.0" style="stroke-width:0.5714" font-family="sans-serif" font-size="19.998px" font-style="normal">LOC</svg:text>
+      </svg:g>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:ellipse id="ellipse15" cx="208.44382" cy="224.84563" rx="2.984" ry="2.934" stroke="#000000" display="inline" font-style="normal"/>
+      <svg:g id="g436" font-style="normal" transform="translate(-20.54703,-26.325882)">
+         <svg:line id="line17" x1="81.0" y1="220.74899" x2="56.189999" y2="181.40601" fill="none" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+         <svg:line id="line19" x1="56.5" y1="182.24899" x2="56.5" y2="125.54095" fill="none" stroke="#0000FF" stroke-width="1.84689" display="inline" font-style="normal"/>
+         <svg:polygon id="polygon21" points="87.669000,224.311000 69.553000,216.924000 82.710000,205.385000" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      </svg:g>
+      <svg:g id="_x3C_group_x3E__1_" display="inline" font-style="normal" transform="translate(56,40)">
+         <svg:text id="text23" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989px" font-style="normal" transform="translate(-27.5005,5.75)">PT. 2</svg:text>
+         <svg:text id="text25" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989px" font-style="normal" transform="translate(-41.5005,30.25)">(START</svg:text>
+         <svg:text id="text27" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989px" font-style="normal" transform="translate(-39.7505,56.5)">POINT)</svg:text>
+      </svg:g>
+      <svg:g id="_x3C_group_x3E_" display="inline" font-style="normal" transform="translate(-29.399598,157.30554)">
+         <svg:text id="text30" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989px" font-style="normal" transform="translate(213.749,90.5)">PT. 1</svg:text>
+         <svg:text id="text32" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989px" font-style="normal" transform="translate(148.9995,109.75)">(CENTER POINT)</svg:text>
+      </svg:g>
+   </svg:g>
+</svg:svg>

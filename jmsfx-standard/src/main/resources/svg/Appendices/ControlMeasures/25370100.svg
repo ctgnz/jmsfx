@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve" sodipodi:docname="25120500.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs18" /><sodipodi:namedview id="namedview16" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="2.2025" inkscape:cx="113.50738" inkscape:cy="200.22701" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="Version_1.0" />
-<g id="main">
-	<polygon fill="none" stroke="#000000" stroke-width="5" points="385.596,195.508 267.814,332.918 32.254,293.658 12.624,151.501    91.144,58.098 307.074,77.728  " id="polygon2" />
-	<text transform="matrix(1 0 0 1 207.5918 204)" font-family="sans-serif" font-size="48" id="text4"> </text>
-	<text id="static" font-family="sans-serif" font-size="48px" display="inline" x="115.9094" y="162.31555">HT</text>
-</g>
-<g id="example" display="none" transform="translate(-29.057889,9.5346198)">
-	<g id="varHe"><text id="text979" display="inline" font-family="sans-serif" font-size="24px" x="100.70218" y="183.65494">FATHER MURPHY</text><text id="text299" display="inline" font-family="sans-serif" font-size="24px" x="100.70218" y="183.65494" transform="translate(0,22)">CONTROL</text></g>
-</g>
-<g id="template" transform="translate(150,118)" display="none">
-	
-	<g id="varH" transform="translate(-114.41544,14.528944)"><rect x="50.231487" y="40.420986" display="inline" fill="#ffffff" stroke="#000000" stroke-width="2.27477" width="51.347527" height="52.158028" id="rect10" /><text display="inline" font-family="sans-serif" font-size="48px" id="text12" x="57.870094" y="83.949219">H</text></g>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00">
+   <svg:defs id="defs18" font-style="normal"/>
+   <svg:g id="main" font-style="normal">
+      <svg:polygon id="polygon2" points="385.596000,195.508000 267.814000,332.918000 32.254000,293.658000 12.624000,151.501000 91.144000,58.098000 307.074000,77.728000" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+      <svg:text id="text4" x="0.0" y="0.0" dx="0.0" dy="0.0" font-family="sans-serif" font-size="48" font-style="normal" transform="matrix(1 0 0 1 207.5918 204)"/>
+      <svg:text id="static" x="115.9094" y="162.31555" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="48px" font-style="normal">HT</svg:text>
+   </svg:g>
+   <svg:g id="example" display="none" font-style="normal" transform="translate(-29.057889,9.5346198)">
+      <svg:g id="varHe" font-style="normal">
+         <svg:text id="text979" x="100.70218" y="183.65494" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="24px" font-style="normal">FATHER MURPHY</svg:text>
+         <svg:text id="text299" x="100.70218" y="183.65494" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="24px" font-style="normal" transform="translate(0,22)">CONTROL</svg:text>
+      </svg:g>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal" transform="translate(150,118)">
+      <svg:g id="varH" font-style="normal" transform="translate(-114.41544,14.528944)">
+         <svg:rect id="rect10" rx="0.0" ry="0.0" x="50.231487" y="40.420986" width="51.347527" height="52.158028" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.27477" display="inline" font-style="normal"/>
+         <svg:text id="text12" x="57.870094" y="83.949219" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="48px" font-style="normal">H</svg:text>
+      </svg:g>
+   </svg:g>
+</svg:svg>

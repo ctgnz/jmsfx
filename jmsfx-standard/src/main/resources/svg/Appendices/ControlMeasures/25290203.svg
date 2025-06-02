@@ -1,53 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
-<g id="main" transform="scale(0.8 0.8)">
-	<g>
-		<polygon stroke="#000000" stroke-width="2" points="50.308,292.983 67.308,256.985 33.307,256.985 		"/>
-		<polygon stroke="#000000" stroke-width="2" points="162.878,292.985 179.88,256.985 145.879,256.985 		"/>
-		<polygon stroke="#000000" stroke-width="2" points="106.593,292.983 123.593,256.985 89.594,256.985 		"/>
-		<polygon stroke="#000000" stroke-width="2" points="219.166,292.983 236.165,256.985 202.166,256.985 		"/>
-		<polygon stroke="#000000" stroke-width="2" points="275.45,292.983 292.45,256.985 258.451,256.985 		"/>
-		<polygon stroke="#000000" stroke-width="2" points="331.737,292.983 348.737,256.985 314.738,256.985 		"/>
-		<polygon stroke="#000000" stroke-width="2" points="388.022,292.983 405.023,256.985 371.023,256.985 		"/>
-		<polygon stroke="#000000" stroke-width="2" points="444.308,292.983 461.309,256.985 427.308,256.985 		"/>
-	</g>
-	<line fill="none" stroke="#000000" stroke-width="2" x1="21.308" y1="255.789" x2="477.307" y2="255.789"/>
-	<g>
-		<circle stroke="#000000" stroke-width="2" cx="472.616" cy="277.88" r="12.5"/>
-		<circle stroke="#000000" stroke-width="2" cx="414.731" cy="277.88" r="12.5"/>
-		<circle stroke="#000000" stroke-width="2" cx="358.673" cy="277.88" r="12.5"/>
-		<circle stroke="#000000" stroke-width="2" cx="302.615" cy="277.88" r="12.5"/>
-		<circle stroke="#000000" stroke-width="2" cx="246.365" cy="277.88" r="12.5"/>
-		<circle stroke="#000000" stroke-width="2" cx="190.115" cy="277.88" r="12.5"/>
-		<circle stroke="#000000" stroke-width="2" cx="134.154" cy="277.88" r="12.5"/>
-		<circle stroke="#000000" stroke-width="2" cx="76.923" cy="277.88" r="12.5"/>
-	</g>
-</g>
-<g id="points" display="inline">
-	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="17.6" y1="198.599" x2="17.6" y2="179.4"/>
-	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="17.267" y1="180.066" x2="38.4" y2="169"/>
-	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="382.4" y1="197" x2="382.4" y2="178.599"/>
-	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="382.666" y1="179.267" x2="361.6" y2="170.599"/>
-	<polygon display="inline" stroke="#000000" stroke-width="2" points="17.6,201.478 23.2,187.879 12,187.879 	"/>
-	<polygon display="inline" stroke="#000000" stroke-width="2" points="382.4,200.678 388,187.079 376.8,187.079 	"/>
-	<text transform="matrix(1 0 0 1 331.2002 172.9999)" display="inline" font-family="sans-serif" font-size="12">PT 2</text>
-	<text transform="matrix(1 0 0 1 40.8003 172.2001)" display="inline" font-family="sans-serif" font-size="12">PT 1</text>
-</g>
-<g id="example" display="none">
-	
-		<polyline id="_x3C_path_x3E_" display="inline" fill="#FF8080" stroke="#808080" stroke-width="5" stroke-linecap="square" points="
-		196.37,366.405 247.37,315.405 196.37,264.405 145.37,315.405 196.37,366.405 	"/>
-	<g id="symbol" display="inline">
-		<path fill="none" stroke="#808080" stroke-width="5" d="M180.024,328.966c-6.75,0-12.222-5.89-12.222-13.155
-			s5.472-13.155,12.222-13.155"/>
-		<path fill="none" stroke="#808080" stroke-width="5" d="M212.716,302.655c6.75,0,12.222,5.89,12.222,13.155
-			c0,7.265-5.472,13.155-12.222,13.155"/>
-		<line fill="none" stroke="#808080" stroke-width="5" x1="180.024" y1="302.655" x2="212.716" y2="302.655"/>
-		<line fill="none" stroke="#808080" stroke-width="5" x1="180.024" y1="328.966" x2="212.716" y2="328.966"/>
-	</g>
-	<text transform="matrix(1 0 0 1 192.5 258.4999)" display="inline" font-family="sans-serif" font-size="18">II</text>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00" preserveAspectRatio="xMidYMid meet">
+   <svg:g id="main" font-style="normal" transform="scale(0.8 0.8)">
+      <svg:g font-style="normal">
+         <svg:polygon points="50.308000,292.983000 67.308000,256.985000 33.307000,256.985000" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+         <svg:polygon points="162.878000,292.985000 179.880000,256.985000 145.879000,256.985000" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+         <svg:polygon points="106.593000,292.983000 123.593000,256.985000 89.594000,256.985000" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+         <svg:polygon points="219.166000,292.983000 236.165000,256.985000 202.166000,256.985000" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+         <svg:polygon points="275.450000,292.983000 292.450000,256.985000 258.451000,256.985000" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+         <svg:polygon points="331.737000,292.983000 348.737000,256.985000 314.738000,256.985000" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+         <svg:polygon points="388.022000,292.983000 405.023000,256.985000 371.023000,256.985000" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+         <svg:polygon points="444.308000,292.983000 461.309000,256.985000 427.308000,256.985000" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+      </svg:g>
+      <svg:line x1="21.308" y1="255.789" x2="477.307" y2="255.789" fill="none" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+      <svg:g font-style="normal">
+         <svg:circle cx="472.616" cy="277.88" r="12.5" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+         <svg:circle cx="414.731" cy="277.88" r="12.5" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+         <svg:circle cx="358.673" cy="277.88" r="12.5" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+         <svg:circle cx="302.615" cy="277.88" r="12.5" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+         <svg:circle cx="246.365" cy="277.88" r="12.5" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+         <svg:circle cx="190.115" cy="277.88" r="12.5" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+         <svg:circle cx="134.154" cy="277.88" r="12.5" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+         <svg:circle cx="76.923" cy="277.88" r="12.5" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+      </svg:g>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:line x1="17.6" y1="198.599" x2="17.6" y2="179.4" fill="none" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      <svg:line x1="17.267" y1="180.066" x2="38.4" y2="169.0" fill="none" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      <svg:line x1="382.4" y1="197.0" x2="382.4" y2="178.599" fill="none" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      <svg:line x1="382.666" y1="179.267" x2="361.6" y2="170.599" fill="none" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      <svg:polygon points="17.600000,201.478000 23.200000,187.879000 12.000000,187.879000" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      <svg:polygon points="382.400000,200.678000 388.000000,187.079000 376.800000,187.079000" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="12" font-style="normal" transform="matrix(1 0 0 1 331.2002 172.9999)">PT 2</svg:text>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="12" font-style="normal" transform="matrix(1 0 0 1 40.8003 172.2001)">PT 1</svg:text>
+   </svg:g>
+   <svg:g id="example" display="none" font-style="normal">
+      <svg:polyline id="_x3C_path_x3E_" points="196.370000,366.405000 247.370000,315.405000 196.370000,264.405000 145.370000,315.405000 196.370000,366.405000" fill="#FF8080" stroke="#808080" stroke-linecap="square" stroke-width="5.0" display="inline" font-style="normal"/>
+      <svg:g id="symbol" display="inline" font-style="normal">
+         <svg:path d="M180.024,328.966c-6.75,0-12.222-5.89-12.222-13.155    s5.472-13.155,12.222-13.155" fill="none" stroke="#808080" stroke-width="5.0" font-style="normal"/>
+         <svg:path d="M212.716,302.655c6.75,0,12.222,5.89,12.222,13.155    c0,7.265-5.472,13.155-12.222,13.155" fill="none" stroke="#808080" stroke-width="5.0" font-style="normal"/>
+         <svg:line x1="180.024" y1="302.655" x2="212.716" y2="302.655" fill="none" stroke="#808080" stroke-width="5.0" font-style="normal"/>
+         <svg:line x1="180.024" y1="328.966" x2="212.716" y2="328.966" fill="none" stroke="#808080" stroke-width="5.0" font-style="normal"/>
+      </svg:g>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="18" font-style="normal" transform="matrix(1 0 0 1 192.5 258.4999)">II</svg:text>
+   </svg:g>
+</svg:svg>

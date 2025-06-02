@@ -1,40 +1,37 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve" sodipodi:docname="25242400.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs59" /><sodipodi:namedview id="namedview57" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="2.2025" inkscape:cx="103.51873" inkscape:cy="200.22701" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="Version_1.0" />
-<g id="main">
-	
-	<path style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none" d="M 38.138479,174.80136 135.30079,36.322361 318.72872,62.202043 365.94779,195.23269 261.521,348.24064 82.633371,345.51646 Z" id="path319" /><g id="g8">
-		<rect x="182.408" y="334.189" fill="#FFFFFF" width="49.307" height="29.188" id="rect4" />
-		<text font-family="sans-serif" font-size="20.8061px" id="text6" x="184.07117" y="355.668">AMA</text>
-	</g>
-	<g id="g14">
-		<rect x="182.571" y="31.189" fill="#FFFFFF" width="49.307" height="29.188" id="rect10" />
-		<text font-family="sans-serif" font-size="20.8061px" id="text12" x="184.23416" y="52.667999">AMA</text>
-	</g>
-	<g id="g20">
-		<rect x="24.307" y="183.551" fill="#FFFFFF" width="49.307" height="29.188" id="rect16" />
-		<text font-family="sans-serif" font-size="20.8061px" id="text18" x="25.970165" y="205.0293">AMA</text>
-	</g>
-	<g id="g26">
-		<rect x="339.473" y="180.869" fill="#FFFFFF" width="49.309" height="29.188" id="rect22" />
-		<text font-family="sans-serif" font-size="20.8061px" id="text24" x="341.13715" y="202.34669">AMA</text>
-	</g>
-</g>
-<g id="template" display="inline" transform="translate(-5.4483541,-27.241771)">
-	<g id="varT" display="inline" transform="translate(-84.449489,-64.018161)">
-		
-			<rect x="258.06482" y="208.59813" fill="none" stroke="#000000" stroke-width="3.87162" stroke-linecap="round" stroke-miterlimit="8" width="38.786968" height="40.149055" id="rect29" style="stroke-width:3;stroke-dasharray:none" />
-		<text font-family="sans-serif" font-size="36px" id="text31" x="266.36652" y="241.75957">T</text>
-	</g>
-	
-<g id="varW" display="inline" transform="translate(-98.021741,-30.419977)">
-		
-			<rect x="257.629" y="218.605" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-miterlimit="8" width="30.577999" height="30.577999" id="rect1059" />
-		<text font-family="sans-serif" font-size="19.2665px" id="text1061" x="263.39294" y="240.89786">W  -</text>
-	</g><g id="varW1" display="inline" transform="translate(-98.021741,3.1580221)">
-		
-			<rect x="257.629" y="218.605" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-miterlimit="8" width="47.972" height="30.577999" id="rect1065" />
-		<text font-family="sans-serif" font-size="19.2665px" id="text1067" x="266.55835" y="240.92137">W1</text>
-	</g></g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00">
+   <svg:defs id="defs59" font-style="normal"/>
+   <svg:g id="main" font-style="normal">
+      <svg:path id="path319" d="M 38.138479,174.80136 135.30079,36.322361 318.72872,62.202043 365.94779,195.23269 261.521,348.24064 82.633371,345.51646 Z" style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none" font-style="normal"/>
+      <svg:g id="g8" font-style="normal">
+         <svg:rect id="rect4" rx="0.0" ry="0.0" x="182.408" y="334.189" width="49.307" height="29.188" fill="#FFFFFF" font-style="normal"/>
+         <svg:text id="text6" x="184.07117" y="355.668" dx="0.0" dy="0.0" font-family="sans-serif" font-size="20.8061px" font-style="normal">AMA</svg:text>
+      </svg:g>
+      <svg:g id="g14" font-style="normal">
+         <svg:rect id="rect10" rx="0.0" ry="0.0" x="182.571" y="31.189" width="49.307" height="29.188" fill="#FFFFFF" font-style="normal"/>
+         <svg:text id="text12" x="184.23416" y="52.667999" dx="0.0" dy="0.0" font-family="sans-serif" font-size="20.8061px" font-style="normal">AMA</svg:text>
+      </svg:g>
+      <svg:g id="g20" font-style="normal">
+         <svg:rect id="rect16" rx="0.0" ry="0.0" x="24.307" y="183.551" width="49.307" height="29.188" fill="#FFFFFF" font-style="normal"/>
+         <svg:text id="text18" x="25.970165" y="205.0293" dx="0.0" dy="0.0" font-family="sans-serif" font-size="20.8061px" font-style="normal">AMA</svg:text>
+      </svg:g>
+      <svg:g id="g26" font-style="normal">
+         <svg:rect id="rect22" rx="0.0" ry="0.0" x="339.473" y="180.869" width="49.309" height="29.188" fill="#FFFFFF" font-style="normal"/>
+         <svg:text id="text24" x="341.13715" y="202.34669" dx="0.0" dy="0.0" font-family="sans-serif" font-size="20.8061px" font-style="normal">AMA</svg:text>
+      </svg:g>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal" transform="translate(-5.4483541,-27.241771)">
+      <svg:g id="varT" display="inline" font-style="normal" transform="translate(-84.449489,-64.018161)">
+         <svg:rect id="rect29" rx="0.0" ry="0.0" x="258.06482" y="208.59813" width="38.786968" height="40.149055" style="stroke-width:3;stroke-dasharray:none" fill="none" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="3.87162" font-style="normal"/>
+         <svg:text id="text31" x="266.36652" y="241.75957" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="36px" font-style="normal">T</svg:text>
+      </svg:g>
+      <svg:g id="varW" display="inline" font-style="normal" transform="translate(-98.021741,-30.419977)">
+         <svg:rect id="rect1059" rx="0.0" ry="0.0" x="257.629" y="218.605" width="30.577999" height="30.577999" fill="none" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="3.0" font-style="normal"/>
+         <svg:text id="text1061" x="263.39294" y="240.89786" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="19.2665px" font-style="normal">W  -</svg:text>
+      </svg:g>
+      <svg:g id="varW1" display="inline" font-style="normal" transform="translate(-98.021741,3.1580221)">
+         <svg:rect id="rect1065" rx="0.0" ry="0.0" x="257.629" y="218.605" width="47.972" height="30.577999" fill="none" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="3.0" font-style="normal"/>
+         <svg:text id="text1067" x="266.55835" y="240.92137" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="19.2665px" font-style="normal">W1</svg:text>
+      </svg:g>
+   </svg:g>
+</svg:svg>

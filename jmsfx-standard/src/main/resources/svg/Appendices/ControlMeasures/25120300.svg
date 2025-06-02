@@ -1,19 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
-<g id="main">
-	<polygon fill="none" stroke="#000000" stroke-width="5" points="385.596,195.508 267.814,332.918 32.254,293.658 12.624,151.501 
-		91.144,58.098 307.074,77.728 	"/>
-	<text transform="matrix(1 0 0 1 207.5918 204)" font-family="sans-serif" font-size="48"> </text>
-	<text id="static" transform="matrix(1 0 0 1 111.3691 200)" font-family="sans-serif" font-size="48">TAI</text>
-</g>
-<g id="example" display="none">
-	<text id="varT" transform="matrix(1 0 0 1 58.0234 200)" display="inline" font-family="sans-serif" font-size="48">TAI YUKON</text>
-</g>
-<g id="template" transform="translate(150 118)" display="inline">
-	<rect x="42.592" y="40.5" display="inline" fill="#FFFFFF" stroke="#000000" stroke-width="2.4328" width="58.908" height="52"/>
-	<text transform="matrix(1 0 0 1 57.5918 84)" display="inline" font-family="sans-serif" font-size="48">T</text>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00">
+   <svg:defs id="defs420" font-style="normal"/>
+   <svg:g id="main" font-style="normal">
+      <svg:polygon id="polygon404" points="385.596000,195.508000 267.814000,332.918000 32.254000,293.658000 12.624000,151.501000 91.144000,58.098000 307.074000,77.728000" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+      <svg:text id="text406" x="0.0" y="0.0" dx="0.0" dy="0.0" font-family="sans-serif" font-size="48" font-style="normal" transform="matrix(1 0 0 1 207.5918 204)"/>
+      <svg:text id="static" x="0.0" y="0.0" dx="0.0" dy="0.0" font-family="sans-serif" font-size="48" font-style="normal" transform="matrix(1 0 0 1 111.3691 200)">TAI</svg:text>
+   </svg:g>
+   <svg:g id="example" display="none" font-style="normal">
+      <svg:text id="varT" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="48" font-style="normal" transform="matrix(1 0 0 1 58.0234 200)">TAI YUKON</svg:text>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal" transform="translate(150 118)">
+      <svg:rect id="rect412" rx="0.0" ry="0.0" x="42.592" y="40.5" width="58.908" height="52.0" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.4328" display="inline" font-style="normal"/>
+      <svg:text id="text414" x="0.0" y="0.0" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" display="inline" font-family="sans-serif" font-size="48" font-style="normal" transform="matrix(1 0 0 1 57.5918 84)">T</svg:text>
+   </svg:g>
+</svg:svg>

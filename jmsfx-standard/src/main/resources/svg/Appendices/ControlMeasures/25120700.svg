@@ -1,13 +1,33 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve" sodipodi:docname="25120700.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs744" /><sodipodi:namedview id="namedview742" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="2.2025" inkscape:cx="113.50738" inkscape:cy="200.22701" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="Version_1.0" />
-<g id="main"><polygon fill="none" stroke="#000000" stroke-width="5" points="32.254,293.658 12.624,151.501 91.144,58.098 307.074,77.728 385.596,195.508 267.814,332.918 " id="polygon729" display="inline" /></g><g id="template" display="inline">
-	
-	
-	<g id="H"><rect style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2.19691;stroke-opacity:1" id="rect1389" width="35.671425" height="40.665749" x="109.51956" y="159.46278" /><text font-family="sans-serif" font-size="48px" x="109.32011" y="197.24487" id="text463">H</text></g><g id="T" transform="translate(0,-1.3620911)"><rect style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2.19691;stroke-opacity:1" id="rect1384" width="35.671425" height="40.665749" x="154.92252" y="160.82487" /><text id="text732" font-family="sans-serif" font-size="48px" x="157.96916" y="198.60696">T</text></g>
-	<g id="W" transform="translate(9.0805902,9.0805902)"><rect style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.50801;stroke-opacity:1" id="rect1391" width="26.371674" height="25.917643" x="137.32494" y="201.79712" /><text id="text734" font-family="sans-serif" font-size="24px" x="138.64554" y="223.48055">W</text></g>
-	<g id="W1" transform="translate(9.0805902,12.896716)"><rect style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.84749;stroke-opacity:1" id="rect1387" width="40.107105" height="25.578161" x="137.49467" y="225.57639" /><text id="text736" font-family="sans-serif" font-size="24px" x="138.79237" y="247.11937">W1</text></g>
-	<g id="N" transform="translate(-27.241771,4.5402951)"><rect style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.88911;stroke-opacity:1" id="rect818" width="30.984894" height="34.61713" x="32.634682" y="177.01605" /><text id="text738" font-family="sans-serif" font-size="36px" x="34.627129" y="207.41153">N</text></g>
-<g id="Na" transform="translate(306.01589,-39.046538)" display="inline"><rect style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.88911;stroke-opacity:1" id="rect1378" width="30.984894" height="34.61713" x="32.634682" y="177.01605" /><text id="text1380" font-family="sans-serif" font-size="36px" x="34.627129" y="207.41153">N</text></g></g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00">
+   <svg:defs id="defs744" font-style="normal"/>
+   <svg:g id="main" style="display:inline" font-style="normal">
+      <svg:polygon id="polygon729" points="91.144000,58.098000 307.074000,77.728000 385.596000,195.508000 267.814000,332.918000 32.254000,293.658000 12.624000,151.501000" fill="none" stroke="#000000" stroke-width="5.0" display="inline" font-style="normal"/>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:g id="H" font-style="normal">
+         <svg:rect id="rect1389" rx="0.0" ry="0.0" x="109.51956" y="159.46278" width="35.671425" height="40.665749" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:2.19691;stroke-opacity:1" font-style="normal"/>
+         <svg:text id="text463" x="109.32011" y="197.24487" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="48px" font-style="normal">H</svg:text>
+      </svg:g>
+      <svg:g id="T" font-style="normal" transform="translate(0,-1.3620911)">
+         <svg:rect id="rect1384" rx="0.0" ry="0.0" x="154.92252" y="160.82487" width="35.671425" height="40.665749" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:2.19691;stroke-opacity:1" font-style="normal"/>
+         <svg:text id="text732" x="157.96916" y="198.60696" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="48px" font-style="normal">T</svg:text>
+      </svg:g>
+      <svg:g id="W" font-style="normal" transform="translate(9.0805902,9.0805902)">
+         <svg:rect id="rect1391" rx="0.0" ry="0.0" x="137.32494" y="201.79712" width="26.371674" height="25.917643" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:1.50801;stroke-opacity:1" font-style="normal"/>
+         <svg:text id="text734" x="138.64554" y="223.48055" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal">W</svg:text>
+      </svg:g>
+      <svg:g id="W1" font-style="normal" transform="translate(9.0805902,12.896716)">
+         <svg:rect id="rect1387" rx="0.0" ry="0.0" x="137.49467" y="225.57639" width="40.107105" height="25.578161" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:1.84749;stroke-opacity:1" font-style="normal"/>
+         <svg:text id="text736" x="138.79237" y="247.11937" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal">W1</svg:text>
+      </svg:g>
+      <svg:g id="N" font-style="normal" transform="translate(-27.241771,4.5402951)">
+         <svg:rect id="rect818" rx="0.0" ry="0.0" x="32.634682" y="177.01605" width="30.984894" height="34.61713" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:1.88911;stroke-opacity:1" font-style="normal"/>
+         <svg:text id="text738" x="34.627129" y="207.41153" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="36px" font-style="normal">N</svg:text>
+      </svg:g>
+      <svg:g id="Na" display="inline" font-style="normal" transform="translate(306.01589,-39.046538)">
+         <svg:rect id="rect1378" rx="0.0" ry="0.0" x="32.634682" y="177.01605" width="30.984894" height="34.61713" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:1.88911;stroke-opacity:1" font-style="normal"/>
+         <svg:text id="text1380" x="34.627129" y="207.41153" dx="0.0" dy="0.0" style="stroke:none;stroke-opacity:1;fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="36px" font-style="normal">N</svg:text>
+      </svg:g>
+   </svg:g>
+</svg:svg>

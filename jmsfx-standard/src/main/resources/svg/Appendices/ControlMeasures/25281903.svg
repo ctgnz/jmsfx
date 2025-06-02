@@ -1,15 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
-<g id="main" transform="translate(-530 -560) scale(3 3)">
-	<polygon fill="#FFFFFF" stroke="#000000" stroke-width="2" points="278.334,260.666 307.334,318.667 249.334,318.667 	"/>
-</g>
-<g id="template" transform="translate(105 -79)" display="inline">
-	<text transform="matrix(1 0 0 1 112.999 614.0001)" display="inline" font-family="sans-serif" font-size="35.9964">ANCHOR</text>
-	<text transform="matrix(1 0 0 1 130.999 647.0001)" display="inline" font-family="sans-serif" font-size="35.9964">POINT</text>
-	<line display="inline" fill="none" stroke="#000000" stroke-width="2" x1="200.001" y1="497.001" x2="200.001" y2="575.001"/>
-	<polygon display="inline" stroke="#000000" stroke-width="2" points="200,475.151 217.695,508.151 182.306,508.151 	"/>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00" preserveAspectRatio="xMidYMid meet">
+   <svg:g id="main" font-style="normal" transform="translate(-530 -560) scale(3 3)">
+      <svg:polygon points="278.334000,260.666000 307.334000,318.667000 249.334000,318.667000" fill="#FFFFFF" stroke="#000000" stroke-width="2.0" font-style="normal"/>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal" transform="translate(105 -79)">
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="35.9964" font-style="normal" transform="matrix(1 0 0 1 112.999 614.0001)">ANCHOR</svg:text>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="35.9964" font-style="normal" transform="matrix(1 0 0 1 130.999 647.0001)">POINT</svg:text>
+      <svg:line x1="200.001" y1="497.001" x2="200.001" y2="575.001" fill="none" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+      <svg:polygon points="200.000000,475.151000 217.695000,508.151000 182.306000,508.151000" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
+   </svg:g>
+</svg:svg>

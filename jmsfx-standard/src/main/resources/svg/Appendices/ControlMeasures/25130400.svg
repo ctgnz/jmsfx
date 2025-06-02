@@ -1,27 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
-<g id="main" transform="translate(0 -90)">
-	<g>
-		<line fill="none" stroke="#000000" stroke-width="5" x1="179.786" y1="410.5" x2="179.786" y2="355.5"/>
-		<line fill="none" stroke="#000000" stroke-width="5" x1="431.214" y1="410.5" x2="431.214" y2="355.5"/>
-		<line fill="none" stroke="#000000" stroke-width="5" x1="380.93" y1="410.5" x2="380.93" y2="355.5"/>
-		<line fill="none" stroke="#000000" stroke-width="5" x1="230.071" y1="410.5" x2="230.071" y2="355.5"/>
-		<line fill="none" stroke="#000000" stroke-width="5" x1="280.357" y1="410.5" x2="280.357" y2="355.5"/>
-		<line fill="none" stroke="#000000" stroke-width="5" x1="330.643" y1="410.5" x2="330.643" y2="355.5"/>
-	</g>
-	<line fill="none" stroke="#000000" stroke-width="10" x1="124.5" y1="410.5" x2="486.5" y2="410.5"/>
-	<line fill="none" stroke="#000000" stroke-width="10" x1="129.5" y1="410.5" x2="129.5" y2="492.5"/>
-	<line fill="none" stroke="#000000" stroke-width="10" x1="481.5" y1="410.5" x2="481.5" y2="492.5"/>
-</g>
-<g id="template" transform="translate(0 15)" display="inline">
-	<text transform="matrix(1 0 0 1 251.2051 477.793)" display="inline" font-family="sans-serif" font-size="24">CENTER</text>
-	<text transform="matrix(1 0 0 1 262.2051 502.793)" display="inline" font-family="sans-serif" font-size="24">POINT</text>
-	<g transform="translate(0 50)" display="inline">
-		<line fill="none" stroke="#000000" stroke-width="5" x1="303.5" y1="277.475" x2="303.5" y2="403.5"/>
-		<polygon stroke="#000000" points="303.05,262.099 310.447,276.905 296.452,277.28 		"/>
-	</g>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00">
+   <svg:defs id="defs3442" font-style="normal"/>
+   <svg:g id="main" font-style="normal" transform="translate(0 -90)">
+      <svg:g id="g3419" font-style="normal">
+         <svg:line id="line3407" x1="179.786" y1="410.5" x2="179.786" y2="355.5" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+         <svg:line id="line3409" x1="431.214" y1="410.5" x2="431.214" y2="355.5" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+         <svg:line id="line3411" x1="380.93" y1="410.5" x2="380.93" y2="355.5" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+         <svg:line id="line3413" x1="230.071" y1="410.5" x2="230.071" y2="355.5" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+         <svg:line id="line3415" x1="280.357" y1="410.5" x2="280.357" y2="355.5" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+         <svg:line id="line3417" x1="330.643" y1="410.5" x2="330.643" y2="355.5" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+      </svg:g>
+      <svg:line id="line3421" x1="124.5" y1="410.5" x2="486.5" y2="410.5" fill="none" stroke="#000000" stroke-width="10.0" font-style="normal"/>
+      <svg:line id="line3423" x1="129.5" y1="410.5" x2="129.5" y2="492.5" fill="none" stroke="#000000" stroke-width="10.0" font-style="normal"/>
+      <svg:line id="line3425" x1="481.5" y1="410.5" x2="481.5" y2="492.5" fill="none" stroke="#000000" stroke-width="10.0" font-style="normal"/>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal" transform="translate(0 15)">
+      <svg:text id="text3428" x="0.0" y="0.0" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" display="inline" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 251.2051 477.793)">CENTER</svg:text>
+      <svg:text id="text3430" x="0.0" y="0.0" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" display="inline" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 262.2051 502.793)">POINT</svg:text>
+      <svg:g id="g3436" display="inline" font-style="normal" transform="translate(0 50)">
+         <svg:line id="line3432" x1="303.5" y1="277.475" x2="303.5" y2="403.5" fill="none" stroke="#0000FF" stroke-width="5.0" font-style="normal"/>
+         <svg:polygon id="polygon3434" points="303.050000,262.099000 310.447000,276.905000 296.452000,277.280000" style="fill:#0000ff;fill-opacity:1" fill="#FFFFFF" stroke="#0000FF" font-style="normal"/>
+      </svg:g>
+   </svg:g>
+</svg:svg>

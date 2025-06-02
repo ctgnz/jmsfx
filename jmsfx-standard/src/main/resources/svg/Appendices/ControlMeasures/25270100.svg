@@ -1,32 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
-<g id="main">
-	<polygon fill="none" stroke="#000000" stroke-width="5" points="324.497,121.064 342.472,121.064 342.472,138.297 386.32,157.15 
-		342.472,176.159 342.472,214.021 386.32,233.007 342.472,250 342.472,275.979 324.497,275.979 306.518,322.018 288.387,275.979 
-		252.434,275.979 234.455,322.018 216.346,275.979 180.391,275.979 162.261,322.018 144.283,275.979 108.174,275.979 
-		90.197,322.018 72.088,275.979 54.111,275.979 54.111,256.991 10.264,237.982 54.111,218.977 54.111,180.982 10.109,162.127 
-		54.111,143.273 54.111,121.064 72.088,121.064 88.992,78.497 108.174,121.064 144.283,121.064 161.123,78.351 180.391,121.064 
-		216.346,121.064 234.455,75.463 252.434,121.064 288.389,121.064 307.277,77.391 	"/>
-</g>
-<g id="template" display="inline">
-	
-		<rect x="168.114" y="159.496" display="inline" fill="none" stroke="#000000" stroke-width="2.1924" stroke-linecap="round" stroke-miterlimit="8" width="66.21" height="65.332"/>
-	<text transform="matrix(1 0 0 1 190.6133 204.5869)" display="inline" font-family="sans-serif" font-size="35.078">T</text>
-</g>
-<g id="example" display="none">
-	<text id="varTe_1_" transform="matrix(1 0 0 1 118.6133 164.5869)" display="inline" font-family="sans-serif" font-size="35.078">3-4 CAV</text>
-	<polygon display="inline" fill="none" stroke="#00FF00" stroke-width="5" points="324.497,121.064 342.472,121.064 
-		342.472,138.297 386.32,157.15 342.472,176.159 342.472,214.021 386.32,233.007 342.472,250 342.472,275.979 324.497,275.979 
-		306.518,322.018 288.387,275.979 252.434,275.979 234.455,322.018 216.346,275.979 180.391,275.979 162.261,322.018 
-		144.283,275.979 108.174,275.979 90.197,322.018 72.088,275.979 54.111,275.979 54.111,256.991 10.264,237.982 54.111,218.977 
-		54.111,180.982 10.109,162.127 54.111,143.273 54.111,121.064 72.088,121.064 88.992,78.497 108.174,121.064 144.283,121.064 
-		161.123,78.351 180.391,121.064 216.346,121.064 234.455,75.463 252.434,121.064 288.389,121.064 307.277,77.391 	"/>
-	
-		<line display="inline" fill="none" stroke="#808080" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="8" x1="142.643" y1="198.35" x2="267.165" y2="198.35"/>
-	
-		<line display="inline" fill="none" stroke="#808080" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="8" x1="267.165" y1="145.071" x2="267.165" y2="251.626"/>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00" preserveAspectRatio="xMidYMid meet">
+   <svg:g id="main" font-style="normal">
+      <svg:polygon points="324.497000,121.064000 342.472000,121.064000 342.472000,138.297000 386.320000,157.150000 342.472000,176.159000 342.472000,214.021000 386.320000,233.007000 342.472000,250.000000 342.472000,275.979000 324.497000,275.979000 306.518000,322.018000 288.387000,275.979000 252.434000,275.979000 234.455000,322.018000 216.346000,275.979000 180.391000,275.979000 162.261000,322.018000 144.283000,275.979000 108.174000,275.979000 90.197000,322.018000 72.088000,275.979000 54.111000,275.979000 54.111000,256.991000 10.264000,237.982000 54.111000,218.977000 54.111000,180.982000 10.109000,162.127000 54.111000,143.273000 54.111000,121.064000 72.088000,121.064000 88.992000,78.497000 108.174000,121.064000 144.283000,121.064000 161.123000,78.351000 180.391000,121.064000 216.346000,121.064000 234.455000,75.463000 252.434000,121.064000 288.389000,121.064000 307.277000,77.391000" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:rect rx="0.0" ry="0.0" x="168.114" y="159.496" width="66.21" height="65.332" fill="none" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="2.1924" display="inline" font-style="normal"/>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="35.078" font-style="normal" transform="matrix(1 0 0 1 190.6133 204.5869)">T</svg:text>
+   </svg:g>
+   <svg:g id="example" display="none" font-style="normal">
+      <svg:text id="varTe_1_" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="35.078" font-style="normal" transform="matrix(1 0 0 1 118.6133 164.5869)">3-4 CAV</svg:text>
+      <svg:polygon points="324.497000,121.064000 342.472000,121.064000 342.472000,138.297000 386.320000,157.150000 342.472000,176.159000 342.472000,214.021000 386.320000,233.007000 342.472000,250.000000 342.472000,275.979000 324.497000,275.979000 306.518000,322.018000 288.387000,275.979000 252.434000,275.979000 234.455000,322.018000 216.346000,275.979000 180.391000,275.979000 162.261000,322.018000 144.283000,275.979000 108.174000,275.979000 90.197000,322.018000 72.088000,275.979000 54.111000,275.979000 54.111000,256.991000 10.264000,237.982000 54.111000,218.977000 54.111000,180.982000 10.109000,162.127000 54.111000,143.273000 54.111000,121.064000 72.088000,121.064000 88.992000,78.497000 108.174000,121.064000 144.283000,121.064000 161.123000,78.351000 180.391000,121.064000 216.346000,121.064000 234.455000,75.463000 252.434000,121.064000 288.389000,121.064000 307.277000,77.391000" fill="none" stroke="#00FF00" stroke-width="5.0" display="inline" font-style="normal"/>
+      <svg:line x1="142.643" y1="198.35" x2="267.165" y2="198.35" fill="none" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0" display="inline" font-style="normal"/>
+      <svg:line x1="267.165" y1="145.071" x2="267.165" y2="251.626" fill="none" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0" display="inline" font-style="normal"/>
+   </svg:g>
+</svg:svg>

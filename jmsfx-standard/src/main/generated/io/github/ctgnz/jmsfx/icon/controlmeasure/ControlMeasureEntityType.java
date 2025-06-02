@@ -49,7 +49,7 @@ public enum ControlMeasureEntityType implements EntityType {
     KEY_TERRAIN("21", "Key Terrain", ControlMeasureEntity.COMMAND_CONTROL_POINTS, IconType.MAIN),
     CONTROL_POINT("22", "Control Point", ControlMeasureEntity.COMMAND_CONTROL_POINTS, IconType.MAIN),
     VITAL_GROUND("23", "Vital Ground", ControlMeasureEntity.COMMAND_CONTROL_POINTS, IconType.MAIN),
-    FORWARD_LINE_OF_TROOPS("01", "Forward Line of Troops", ControlMeasureEntity.MANEUVER_LINES, IconType.NA),
+    FORWARD_LINE_OF_TROOPS("01", "Forward Line of Troops", ControlMeasureEntity.MANEUVER_LINES, IconType.MAIN),
     PHASE_LINE("03", "Phase Line", ControlMeasureEntity.MANEUVER_LINES, IconType.MAIN),
     FORWARD_EDGE_BATTLE_AREA("04", "Forward Edge of the Battle Area", ControlMeasureEntity.MANEUVER_LINES, IconType.MAIN),
     PRINCIPAL_DIRECTION_OF_FIRE("05", "Principal Direction of Fire", ControlMeasureEntity.MANEUVER_LINES, IconType.MAIN),

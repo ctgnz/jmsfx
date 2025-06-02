@@ -1,45 +1,66 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve" sodipodi:docname="25142000.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs475" /><sodipodi:namedview id="namedview473" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="2.2025" inkscape:cx="151.64586" inkscape:cy="200.68104" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="example" />
-<g id="main" display="inline">
-	<line fill="none" stroke="#000000" stroke-width="9.5864" x1="40.082001" y1="191.5" x2="369.082" y2="191.5" id="line353" />
-	<text font-family="sans-serif" font-size="24px" id="text355" x="37.738251" y="177.7227">NAI</text>
-	<text font-family="sans-serif" font-size="24px" id="text357" x="289.90417" y="177.86209">NAI</text>
-</g>
-<g id="template" display="inline">
-	<text transform="translate(339.082,278.5)" display="inline" font-family="sans-serif" font-size="24px" id="text360">PT 2</text>
-	<text transform="translate(14.082,278.5)" display="inline" font-family="sans-serif" font-size="24px" id="text362">PT 1</text>
-	<path display="inline" stroke="#000000" stroke-width="0.4335" stroke-linejoin="bevel" stroke-miterlimit="10" d="m 367.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.938,-36.087 10.732,36.166 z" id="path364" />
-	<path display="inline" stroke="#000000" stroke-width="0.4335" stroke-linejoin="bevel" stroke-miterlimit="10" d="m 39.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.94,-36.087 10.732,36.166 z" id="path366" />
-<g id="g1255" transform="translate(-1.816118,-51.305335)"><rect style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none" id="rect529" width="62.291325" height="26.422995" x="89.62619" y="207.67386" /><text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:24px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" x="92.271851" y="228.2213" id="text1195"><tspan sodipodi:role="line" id="tspan1193" x="92.271851" y="228.2213">T/AS</tspan></text></g><g id="g1263" transform="translate(245.62997,-49.943246)"><rect style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none" id="rect1257" width="62.291325" height="26.422995" x="89.62619" y="207.67386" /><text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:24px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" x="92.271851" y="228.2213" id="text1261"><tspan sodipodi:role="line" id="tspan1259" x="92.271851" y="228.2213">T/AS</tspan></text></g></g>
-<g id="example" display="none">
-	
-		<line display="inline" fill="none" stroke="#808080" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="8" x1="118.765" y1="320.229" x2="118.765" y2="84.172997" id="line369" />
-	
-		<line display="inline" fill="none" stroke="#808080" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="8" x1="281.36301" y1="320.229" x2="281.36301" y2="84.172997" id="line371" />
-	
-	
-	<g display="inline" id="g381">
-		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" points="268.167,207.5 294.658,207.5 294.658,224.834 268.167,224.834 " id="polygon377" />
-		<text transform="scale(1.0008496,0.99915108)" fill="#808080" font-family="sans-serif" font-size="17.2013px" id="text379" x="252.46558" y="223.29897" style="stroke-width:1.00085">3  X  1</text>
-	</g>
-	<g display="inline" id="g387" transform="translate(0,-6.9315)">
-		<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" points="128.262,212.5 128.262,233.697 109.833,233.697 109.833,212.5 " id="polygon383" />
-		<text transform="scale(1.0008496,0.99915108)" fill="#808080" font-family="sans-serif" font-size="17.2013px" id="text385" x="89.994827" y="229.02553" style="stroke-width:1.00085">2  X  3</text>
-	</g>
-	<text transform="matrix(1.0017,0,0,1,33.1587,112.623)" display="inline" id="text403"><tspan x="0" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan389">P</tspan><tspan x="11.464" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan391">L</tspan><tspan x="22.099001" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan393"> </tspan><tspan x="26.995001" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan395">W</tspan><tspan x="44.179001" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan397">I</tspan><tspan x="48.283001" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan399">N</tspan><tspan x="59.75" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan401">D</tspan></text>
-	<text transform="matrix(1.0017,0,0,1,294.6582,112.623)" display="inline" id="text419"><tspan x="0" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan405">P</tspan><tspan x="11.464" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan407">L</tspan><tspan x="22.099001" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan409"> </tspan><tspan x="26.995001" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan411">W</tspan><tspan x="44.178001" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan413">I</tspan><tspan x="48.284" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan415">N</tspan><tspan x="59.75" y="0" fill="#7f7f7f" font-family="sans-serif" font-size="17.1867px" id="tspan417">D</tspan></text>
-	
-		
-	
-		
-	<path display="inline" fill="none" stroke="#000000" stroke-width="5" stroke-linejoin="round" stroke-miterlimit="8" d="m 120.845,107.71 c 56.905,3.54 105.405,-2.21 158.324,0" id="path425" />
-	
-	
-	
-	
-	
-	
-<g id="g1271" transform="translate(0,-1.3619944)"><text transform="scale(1.0008496,0.9991511)" display="inline" font-family="sans-serif" font-size="17.2013px" id="text429" x="86.871704" y="80.894005" style="stroke-width:1.00085">NAI</text><text transform="scale(1.0008496,0.99915112)" display="inline" font-family="sans-serif" font-size="16px" id="text1265" x="121.43485" y="80.13195" style="stroke-width:1.00085">1/03 GBR</text></g><g id="g1275"><text transform="scale(1.0008496,0.99915108)" display="inline" font-family="sans-serif" font-size="17.2013px" id="text431" x="245.11206" y="79.530754" style="stroke-width:1.00085">NAI</text><text transform="scale(1.0008496,0.99915112)" display="inline" font-family="sans-serif" font-size="16px" id="text1267" x="282.84595" y="78.768799" style="stroke-width:1.00085">1/03 GBR</text></g></g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00">
+   <svg:defs id="defs475" font-style="normal"/>
+   <svg:g id="main" display="inline" font-style="normal">
+      <svg:line id="line353" x1="40.082001" y1="191.5" x2="369.082" y2="191.5" fill="none" stroke="#000000" stroke-width="9.5864" font-style="normal"/>
+      <svg:text id="text355" x="37.738251" y="177.7227" dx="0.0" dy="0.0" font-family="sans-serif" font-size="24px" font-style="normal">NAI</svg:text>
+      <svg:text id="text357" x="289.90417" y="177.86209" dx="0.0" dy="0.0" font-family="sans-serif" font-size="24px" font-style="normal">NAI</svg:text>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:text id="text360" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="24px" font-style="normal" transform="translate(339.082,278.5)">PT 2</svg:text>
+      <svg:text id="text362" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="24px" font-style="normal" transform="translate(14.082,278.5)">PT 1</svg:text>
+      <svg:path id="path364" d="m 367.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.938,-36.087 10.732,36.166 z" fill="#0000FF" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.4335" display="inline" font-style="normal"/>
+      <svg:path id="path366" d="m 39.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.94,-36.087 10.732,36.166 z" fill="#0000FF" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.4335" display="inline" font-style="normal"/>
+      <svg:g id="g1255" font-style="normal" transform="translate(-1.816118,-51.305335)">
+         <svg:rect id="rect529" rx="0.0" ry="0.0" x="89.62619" y="207.67386" width="62.291325" height="26.422995" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none" font-style="normal"/>
+         <svg:text id="text1195" xml:space="preserve" x="92.271851" y="228.2213" dx="0.0" dy="0.0" style="font-style:normal;font-weight:normal;font-size:24px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" fill="#0000FF" font-style="normal">
+            <svg:tspan id="tspan1193" x="92.271851" y="228.2213" font-style="normal">T/AS</svg:tspan>
+         </svg:text>
+      </svg:g>
+      <svg:g id="g1263" font-style="normal" transform="translate(245.62997,-49.943246)">
+         <svg:rect id="rect1257" rx="0.0" ry="0.0" x="89.62619" y="207.67386" width="62.291325" height="26.422995" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none" font-style="normal"/>
+         <svg:text id="text1261" xml:space="preserve" x="92.271851" y="228.2213" dx="0.0" dy="0.0" style="font-style:normal;font-weight:normal;font-size:24px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" fill="#0000FF" font-style="normal">
+            <svg:tspan id="tspan1259" x="92.271851" y="228.2213" font-style="normal">T/AS</svg:tspan>
+         </svg:text>
+      </svg:g>
+   </svg:g>
+   <svg:g id="example" display="none" font-style="normal">
+      <svg:line id="line369" x1="118.765" y1="320.229" x2="118.765" y2="84.172997" fill="none" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0" display="inline" font-style="normal"/>
+      <svg:line id="line371" x1="281.36301" y1="320.229" x2="281.36301" y2="84.172997" fill="none" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0" display="inline" font-style="normal"/>
+      <svg:g id="g381" display="inline" font-style="normal">
+         <svg:polygon id="polygon377" points="268.167000,207.500000 294.658000,207.500000 294.658000,224.834000 268.167000,224.834000" clip-rule="evenodd" fill="#FFFFFF" fill-rule="evenodd" font-style="normal"/>
+         <svg:text id="text379" x="252.46558" y="223.29897" dx="0.0" dy="0.0" style="stroke-width:1.00085" fill="#808080" font-family="sans-serif" font-size="17.2013px" font-style="normal" transform="scale(1.0008496,0.99915108)">3  X  1</svg:text>
+      </svg:g>
+      <svg:g id="g387" display="inline" font-style="normal" transform="translate(0,-6.9315)">
+         <svg:polygon id="polygon383" points="128.262000,212.500000 128.262000,233.697000 109.833000,233.697000 109.833000,212.500000" clip-rule="evenodd" fill="#FFFFFF" fill-rule="evenodd" font-style="normal"/>
+         <svg:text id="text385" x="89.994827" y="229.02553" dx="0.0" dy="0.0" style="stroke-width:1.00085" fill="#808080" font-family="sans-serif" font-size="17.2013px" font-style="normal" transform="scale(1.0008496,0.99915108)">2  X  3</svg:text>
+      </svg:g>
+      <svg:text id="text403" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-style="normal" transform="matrix(1.0017,0,0,1,33.1587,112.623)">
+         <svg:tspan id="tspan389" x="0" y="0" fill="#7F7F7F" font-family="sans-serif" font-size="17.1867px" font-style="normal">P</svg:tspan>
+         <svg:tspan id="tspan391" x="11.464" y="0" fill="#7F7F7F" font-family="sans-serif" font-size="17.1867px" font-style="normal">L</svg:tspan>
+         <svg:tspan id="tspan393" x="22.099001" y="0" fill="#7F7F7F" font-family="sans-serif" font-size="17.1867px" font-style="normal"> </svg:tspan>
+         <svg:tspan id="tspan395" x="26.995001" y="0" fill="#7F7F7F" font-family="sans-serif" font-size="17.1867px" font-style="normal">W</svg:tspan>
+         <svg:tspan id="tspan397" x="44.179001" y="0" fill="#7F7F7F" font-family="sans-serif" font-size="17.1867px" font-style="normal">I</svg:tspan>
+         <svg:tspan id="tspan399" x="48.283001" y="0" fill="#7F7F7F" font-family="sans-serif" font-size="17.1867px" font-style="normal">N</svg:tspan>
+         <svg:tspan id="tspan401" x="59.75" y="0" fill="#7F7F7F" font-family="sans-serif" font-size="17.1867px" font-style="normal">D</svg:tspan>
+      </svg:text>
+      <svg:text id="text419" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-style="normal" transform="matrix(1.0017,0,0,1,294.6582,112.623)">
+         <svg:tspan id="tspan405" x="0" y="0" fill="#7F7F7F" font-family="sans-serif" font-size="17.1867px" font-style="normal">P</svg:tspan>
+         <svg:tspan id="tspan407" x="11.464" y="0" fill="#7F7F7F" font-family="sans-serif" font-size="17.1867px" font-style="normal">L</svg:tspan>
+         <svg:tspan id="tspan409" x="22.099001" y="0" fill="#7F7F7F" font-family="sans-serif" font-size="17.1867px" font-style="normal"> </svg:tspan>
+         <svg:tspan id="tspan411" x="26.995001" y="0" fill="#7F7F7F" font-family="sans-serif" font-size="17.1867px" font-style="normal">W</svg:tspan>
+         <svg:tspan id="tspan413" x="44.178001" y="0" fill="#7F7F7F" font-family="sans-serif" font-size="17.1867px" font-style="normal">I</svg:tspan>
+         <svg:tspan id="tspan415" x="48.284" y="0" fill="#7F7F7F" font-family="sans-serif" font-size="17.1867px" font-style="normal">N</svg:tspan>
+         <svg:tspan id="tspan417" x="59.75" y="0" fill="#7F7F7F" font-family="sans-serif" font-size="17.1867px" font-style="normal">D</svg:tspan>
+      </svg:text>
+      <svg:path id="path425" d="m 120.845,107.71 c 56.905,3.54 105.405,-2.21 158.324,0" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0" display="inline" font-style="normal"/>
+      <svg:g id="g1271" font-style="normal" transform="translate(0,-1.3619944)">
+         <svg:text id="text429" x="86.871704" y="80.894005" dx="0.0" dy="0.0" style="stroke-width:1.00085" display="inline" font-family="sans-serif" font-size="17.2013px" font-style="normal" transform="scale(1.0008496,0.9991511)">NAI</svg:text>
+         <svg:text id="text1265" x="121.43485" y="80.13195" dx="0.0" dy="0.0" style="stroke-width:1.00085" display="inline" font-family="sans-serif" font-size="16px" font-style="normal" transform="scale(1.0008496,0.99915112)">1/03 GBR</svg:text>
+      </svg:g>
+      <svg:g id="g1275" font-style="normal">
+         <svg:text id="text431" x="245.11206" y="79.530754" dx="0.0" dy="0.0" style="stroke-width:1.00085" display="inline" font-family="sans-serif" font-size="17.2013px" font-style="normal" transform="scale(1.0008496,0.99915108)">NAI</svg:text>
+         <svg:text id="text1267" x="282.84595" y="78.768799" dx="0.0" dy="0.0" style="stroke-width:1.00085" display="inline" font-family="sans-serif" font-size="16px" font-style="normal" transform="scale(1.0008496,0.99915112)">1/03 GBR</svg:text>
+      </svg:g>
+   </svg:g>
+</svg:svg>

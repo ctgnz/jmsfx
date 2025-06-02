@@ -1,13 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
-<polygon id="main" stroke="#000000" points="307,247 207,397 407,397 "/>
-<g id="template" display="inline">
-	<line display="inline" fill="none" stroke="#000000" stroke-width="3" x1="307" y1="412" x2="307" y2="459"/>
-	<polygon display="inline" stroke="#000000" points="307,399 297,413 317,413 	"/>
-	<text transform="matrix(1 0 0 1 258.7871 477)" display="inline" font-family="sans-serif" font-size="22">ANCHOR</text>
-	<text transform="matrix(1 0 0 1 272.812 497)" display="inline" font-family="sans-serif" font-size="22">POINT</text>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00" preserveAspectRatio="xMidYMid meet">
+   <svg:polygon id="main" points="307.000000,247.000000 207.000000,397.000000 407.000000,397.000000" stroke="#000000" font-style="normal"/>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:line x1="307.0" y1="412.0" x2="307.0" y2="459.0" fill="none" stroke="#0000FF" stroke-width="3.0" display="inline" font-style="normal"/>
+      <svg:polygon points="307.000000,399.000000 297.000000,413.000000 317.000000,413.000000" fill="#FFFFFF" stroke="#0000FF" display="inline" font-style="normal"/>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="22" font-style="normal" transform="matrix(1 0 0 1 258.7871 477)">ANCHOR</svg:text>
+      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="22" font-style="normal" transform="matrix(1 0 0 1 272.812 497)">POINT</svg:text>
+   </svg:g>
+</svg:svg>

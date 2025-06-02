@@ -1,53 +1,59 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve" sodipodi:docname="25142100.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs1454">
-	
-
-	
-
-	
-</defs><sodipodi:namedview id="namedview1452" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="1.5574027" inkscape:cx="145.1134" inkscape:cy="226.65943" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="example" />
-<g id="main" transform="matrix(0.8,0,0,0.8,39.28656,38.390805)" display="inline">
-	<line fill="none" stroke="#000000" stroke-width="8.74948" x1="63.691536" y1="191.95403" x2="337.75397" y2="191.95403" id="line1336" />
-    <line fill="none" stroke="#000000" stroke-width="8.74948" x1="337.75397" y1="191.95403" x2="410.75397" y2="149.95403" id="line1573" />
-    <line fill="none" stroke="#000000" stroke-width="8.74948" x1="337.75397" y1="191.95403" x2="410.75397" y2="233.95403" id="line1577" />
-    <line fill="none" stroke="#000000" stroke-width="8.74948" x1="63.691536" y1="191.95403" x2="-10.691536" y2="149.95403" id="line1585" />
-    <line fill="none" stroke="#000000" stroke-width="8.74948" x1="63.691536" y1="191.95403" x2="-10.691536" y2="233.95403" id="line1592" />
-</g>
-<g id="template" display="inline">
-	
-	
-	<g id="g1798" transform="translate(-213.17544,-1.9262946)"><text display="inline" font-family="sans-serif" font-size="24px" id="text1339" x="351.082" y="278.5">PT 2</text><path display="inline" stroke="#000000" stroke-width="0.4335" stroke-linejoin="bevel" stroke-miterlimit="10" d="m 367.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.938,-36.087 10.732,36.166 z" id="path1343" /></g>
-	<g id="g1794" transform="translate(48.157102,-1.9262841)"><text transform="translate(14.082,278.5)" display="inline" font-family="sans-serif" font-size="24px" id="text1341">PT 1</text><path display="inline" stroke="#000000" stroke-width="0.4335" stroke-linejoin="bevel" stroke-miterlimit="10" d="m 39.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.94,-36.087 10.732,36.166 z" id="path1345" /></g>
-<g id="g2238" transform="translate(3.8525682,46.230818)"><rect style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:1.86064" id="rect1862" width="95.030006" height="14.126083" x="152.17644" y="139.33455" /><rect style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.83582" id="rect1860" width="73.362976" height="56.668514" x="163.00995" y="118.06332" /><text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:48px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" x="182.16483" y="163.8468" id="text1802"><tspan sodipodi:role="line" id="tspan1800" x="182.16483" y="163.8468">B</tspan></text></g><g id="g1869" transform="translate(-16.052367,21.189125)"><rect style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:2" id="rect1864" width="32.74683" height="32.104736" x="116.86124" y="105.94563" /><text xml:space="preserve" style="font-style:normal;font-weight:normal;font-size:24px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" x="124.21707" y="130.72261" id="text1806"><tspan sodipodi:role="line" id="tspan1804" x="124.21707" y="130.72261">H</tspan></text></g><g id="g2244" transform="translate(-116.86124,-1.9262946)"><text display="inline" font-family="sans-serif" font-size="24px" id="text2240" x="331.082" y="278.5">PT 3</text><path display="inline" stroke="#000000" stroke-width="0.4335" stroke-linejoin="bevel" stroke-miterlimit="10" d="m 367.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.938,-36.087 10.732,36.166 z" id="path2242" /></g><g id="g2250" transform="translate(-61.641096,-1.9262946)"><text display="inline" font-family="sans-serif" font-size="24px" id="text2246" x="357.082" y="278.5">PT N</text><path display="inline" stroke="#000000" stroke-width="0.4335" stroke-linejoin="bevel" stroke-miterlimit="10" d="m 367.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.938,-36.087 10.732,36.166 z" id="path2248" /></g></g>
-<g id="example" display="none" transform="translate(-35.957303,-101.45096)">
-	
-		
-	
-		
-	<g id="g2330" transform="matrix(0.8,0,0,0.8,75.243863,139.84176)">
-	<line fill="none" stroke="#000000" stroke-width="8.74948" x1="63.691536" y1="191.95403" x2="337.75397" y2="191.95403" id="line2320" />
-    <line fill="none" stroke="#000000" stroke-width="8.74948" x1="337.75397" y1="191.95403" x2="410.75397" y2="149.95403" id="line2322" />
-    <line fill="none" stroke="#000000" stroke-width="8.74948" x1="337.75397" y1="191.95403" x2="410.75397" y2="233.95403" id="line2324" />
-    <line fill="none" stroke="#000000" stroke-width="8.74948" x1="63.691536" y1="191.95403" x2="-10.691536" y2="149.95403" id="line2326" />
-    <line fill="none" stroke="#000000" stroke-width="8.74948" x1="63.691536" y1="191.95403" x2="-10.691536" y2="233.95403" id="line2328" />
-</g><text transform="matrix(1.0017,0,0,1,128.2622,258.3125)" display="inline" font-family="sans-serif" font-size="17.1867px" id="text1352">SMALL</text>
-	<text transform="scale(1.0008496,0.99915112)" display="inline" font-family="sans-serif" font-size="17.2013px" id="text1354" x="127.59898" y="276.70764" style="stroke-width:1.00085">DITCHES</text>
-	
-	
-	
-	
-	
-		
-	
-		
-	
-	
-	
-	
-	
-	
-	
-<g id="g2318" transform="translate(14.620454,-35.989636)"><rect style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-opacity:1" id="rect2306" width="87.966972" height="23.757504" x="177.21812" y="317.51587" /><circle style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.60491;stroke-opacity:1" id="path2304" cx="192.62846" cy="329.39462" r="6.6185436" /><circle style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.60491;stroke-opacity:1" id="circle2310" cx="220.62846" cy="329.39462" r="6.6185436" /><circle style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.60491;stroke-opacity:1" id="circle2312" cx="248.62846" cy="329.39462" r="6.6185436" /></g></g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00">
+   <svg:defs id="defs1454" font-style="normal"/>
+   <svg:g id="main" display="inline" font-style="normal" transform="matrix(0.8,0,0,0.8,39.28656,38.390805)">
+      <svg:line id="line1336" x1="63.691536" y1="191.95403" x2="337.75397" y2="191.95403" fill="none" stroke="#000000" stroke-width="8.74948" font-style="normal"/>
+      <svg:line id="line1573" x1="337.75397" y1="191.95403" x2="410.75397" y2="149.95403" fill="none" stroke="#000000" stroke-width="8.74948" font-style="normal"/>
+      <svg:line id="line1577" x1="337.75397" y1="191.95403" x2="410.75397" y2="233.95403" fill="none" stroke="#000000" stroke-width="8.74948" font-style="normal"/>
+      <svg:line id="line1585" x1="63.691536" y1="191.95403" x2="-10.691536" y2="149.95403" fill="none" stroke="#000000" stroke-width="8.74948" font-style="normal"/>
+      <svg:line id="line1592" x1="63.691536" y1="191.95403" x2="-10.691536" y2="233.95403" fill="none" stroke="#000000" stroke-width="8.74948" font-style="normal"/>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:g id="g1798" font-style="normal" transform="translate(-213.17544,-1.9262946)">
+         <svg:text id="text1339" x="351.082" y="278.5" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="24px" font-style="normal">PT 2</svg:text>
+         <svg:path id="path1343" d="m 367.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.938,-36.087 10.732,36.166 z" fill="#0000FF" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.4335" display="inline" font-style="normal"/>
+      </svg:g>
+      <svg:g id="g1794" font-style="normal" transform="translate(48.157102,-1.9262841)">
+         <svg:text id="text1341" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="24px" font-style="normal" transform="translate(14.082,278.5)">PT 1</svg:text>
+         <svg:path id="path1345" d="m 39.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.94,-36.087 10.732,36.166 z" fill="#0000FF" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.4335" display="inline" font-style="normal"/>
+      </svg:g>
+      <svg:g id="g2238" font-style="normal" transform="translate(3.8525682,46.230818)">
+         <svg:rect id="rect1862" rx="0.0" ry="0.0" x="152.17644" y="139.33455" width="95.030006" height="14.126083" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:1.86064" font-style="normal"/>
+         <svg:rect id="rect1860" rx="0.0" ry="0.0" x="163.00995" y="118.06332" width="73.362976" height="56.668514" style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.83582" font-style="normal"/>
+         <svg:text id="text1802" xml:space="preserve" x="182.16483" y="163.8468" dx="0.0" dy="0.0" style="font-style:normal;font-weight:normal;font-size:48px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" fill="#0000FF" font-style="normal">
+            <svg:tspan id="tspan1800" x="182.16483" y="163.8468" font-style="normal">B</svg:tspan>
+         </svg:text>
+      </svg:g>
+      <svg:g id="g1869" font-style="normal" transform="translate(-16.052367,21.189125)">
+         <svg:rect id="rect1864" rx="0.0" ry="0.0" x="116.86124" y="105.94563" width="32.74683" height="32.104736" style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:2" font-style="normal"/>
+         <svg:text id="text1806" xml:space="preserve" x="124.21707" y="130.72261" dx="0.0" dy="0.0" style="font-style:normal;font-weight:normal;font-size:24px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" fill="#0000FF" font-style="normal">
+            <svg:tspan id="tspan1804" x="124.21707" y="130.72261" font-style="normal">H</svg:tspan>
+         </svg:text>
+      </svg:g>
+      <svg:g id="g2244" font-style="normal" transform="translate(-116.86124,-1.9262946)">
+         <svg:text id="text2240" x="331.082" y="278.5" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="24px" font-style="normal">PT 3</svg:text>
+         <svg:path id="path2242" d="m 367.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.938,-36.087 10.732,36.166 z" fill="#0000FF" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.4335" display="inline" font-style="normal"/>
+      </svg:g>
+      <svg:g id="g2250" font-style="normal" transform="translate(-61.641096,-1.9262946)">
+         <svg:text id="text2246" x="357.082" y="278.5" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="24px" font-style="normal">PT N</svg:text>
+         <svg:path id="path2248" d="m 367.213,253.201 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.999,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.967,-17.741 10.938,-36.087 10.732,36.166 z" fill="#0000FF" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.4335" display="inline" font-style="normal"/>
+      </svg:g>
+   </svg:g>
+   <svg:g id="example" display="none" font-style="normal" transform="translate(-35.957303,-101.45096)">
+      <svg:g id="g2330" font-style="normal" transform="matrix(0.8,0,0,0.8,75.243863,139.84176)">
+         <svg:line id="line2320" x1="63.691536" y1="191.95403" x2="337.75397" y2="191.95403" fill="none" stroke="#000000" stroke-width="8.74948" font-style="normal"/>
+         <svg:line id="line2322" x1="337.75397" y1="191.95403" x2="410.75397" y2="149.95403" fill="none" stroke="#000000" stroke-width="8.74948" font-style="normal"/>
+         <svg:line id="line2324" x1="337.75397" y1="191.95403" x2="410.75397" y2="233.95403" fill="none" stroke="#000000" stroke-width="8.74948" font-style="normal"/>
+         <svg:line id="line2326" x1="63.691536" y1="191.95403" x2="-10.691536" y2="149.95403" fill="none" stroke="#000000" stroke-width="8.74948" font-style="normal"/>
+         <svg:line id="line2328" x1="63.691536" y1="191.95403" x2="-10.691536" y2="233.95403" fill="none" stroke="#000000" stroke-width="8.74948" font-style="normal"/>
+      </svg:g>
+      <svg:text id="text1352" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="17.1867px" font-style="normal" transform="matrix(1.0017,0,0,1,128.2622,258.3125)">SMALL</svg:text>
+      <svg:text id="text1354" x="127.59898" y="276.70764" dx="0.0" dy="0.0" style="stroke-width:1.00085" display="inline" font-family="sans-serif" font-size="17.2013px" font-style="normal" transform="scale(1.0008496,0.99915112)">DITCHES</svg:text>
+      <svg:g id="g2318" font-style="normal" transform="translate(14.620454,-35.989636)">
+         <svg:rect id="rect2306" rx="0.0" ry="0.0" x="177.21812" y="317.51587" width="87.966972" height="23.757504" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2;stroke-opacity:1" font-style="normal"/>
+         <svg:circle id="path2304" cx="192.62846" cy="329.39462" r="6.6185436" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.60491;stroke-opacity:1" font-style="normal"/>
+         <svg:circle id="circle2310" cx="220.62846" cy="329.39462" r="6.6185436" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.60491;stroke-opacity:1" font-style="normal"/>
+         <svg:circle id="circle2312" cx="248.62846" cy="329.39462" r="6.6185436" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.60491;stroke-opacity:1" font-style="normal"/>
+      </svg:g>
+   </svg:g>
+</svg:svg>

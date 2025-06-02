@@ -1,25 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
-<g id="main">
-	
-		<line fill="none" stroke="#000000" stroke-width="6.0593" stroke-linejoin="round" stroke-miterlimit="10" x1="196.81" y1="286.567" x2="414.672" y2="504.428"/>
-	
-		<line fill="none" stroke="#000000" stroke-width="6.0593" stroke-linejoin="round" stroke-miterlimit="10" x1="196.81" y1="504.428" x2="414.672" y2="286.567"/>
-	<path stroke="#000000" stroke-width="3" stroke-miterlimit="10" d="M305.741,359.188c-20.039,0-36.31,16.248-36.31,36.312
-		s16.271,36.313,36.31,36.313c20.062,0,36.312-16.249,36.312-36.313S325.803,359.188,305.741,359.188"/>
-</g>
-<g id="template" display="inline">
-	<g display="inline">
-		<text transform="matrix(1 0 0 1 260.2891 214.6533)" font-family="sans-serif" font-size="30.1374">POINT</text>
-		<text transform="matrix(1 0 0 1 244.6641 179.7832)" font-family="sans-serif" font-size="30.1374">CENTER</text>
-	</g>
-	
-		<line display="inline" fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round" stroke-miterlimit="10" x1="305.512" y1="357.397" x2="305.512" y2="226"/>
-	<path display="inline" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.3116" stroke-linejoin="bevel" stroke-miterlimit="10" d="
-		M308.529,357.397v20.051h-6.058v-20.051H308.529L308.529,357.397z M314.589,375.211l-9.077,22.289l-9.078-22.289H314.589
-		L314.589,375.211z"/>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00">
+   <svg:defs id="defs4277" font-style="normal"/>
+   <svg:g id="main" font-style="normal">
+      <svg:line id="line4256" x1="196.81" y1="286.567" x2="414.672" y2="504.428" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="6.0593" font-style="normal"/>
+      <svg:line id="line4258" x1="196.81" y1="504.428" x2="414.672" y2="286.567" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="6.0593" font-style="normal"/>
+      <svg:path id="path4260" d="M305.741,359.188c-20.039,0-36.31,16.248-36.31,36.312   s16.271,36.313,36.31,36.313c20.062,0,36.312-16.249,36.312-36.313S325.803,359.188,305.741,359.188" stroke="#000000" stroke-miterlimit="10.0" stroke-width="3.0" font-style="normal"/>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:g id="g4267" display="inline" font-style="normal">
+         <svg:text id="text4263" x="0.0" y="0.0" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="30.1374" font-style="normal" transform="matrix(1 0 0 1 260.2891 214.6533)">POINT</svg:text>
+         <svg:text id="text4265" x="0.0" y="0.0" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="30.1374" font-style="normal" transform="matrix(1 0 0 1 244.6641 179.7832)">CENTER</svg:text>
+      </svg:g>
+      <svg:line id="line4269" x1="305.512" y1="357.397" x2="305.512" y2="226.0" fill="none" stroke="#0000FF" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="7.0" display="inline" font-style="normal"/>
+      <svg:path id="path4271" d="   M308.529,357.397v20.051h-6.058v-20.051H308.529L308.529,357.397z M314.589,375.211l-9.077,22.289l-9.078-22.289H314.589   L314.589,375.211z" fill="#0000FF" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3116" display="inline" font-style="normal"/>
+   </svg:g>
+</svg:svg>
