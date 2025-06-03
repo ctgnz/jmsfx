@@ -6,13 +6,13 @@ public interface SymbolSetInfo {
 
     List<AmplifierGuide> getAmplifierGuides();
 
-    <A extends EnumeratedAmplifier> List<A> getAmplifiers();
+    <A extends ListAmplifier> List<A> getAmplifiers();
 
-    <A extends EnumeratedAmplifier> List<A> getAmplifiersTwo();
+    <A extends ListAmplifier> List<A> getAmplifiersTwo();
 
-    <A extends EnumeratedAmplifier> List<A> getAmplifiersThree();
+    <A extends ListAmplifier> List<A> getAmplifiersThree();
 
-    <A extends EnumeratedAmplifier> List<A> getFrameAmplifiers();
+    <A extends ListAmplifier> List<A> getFrameAmplifiers();
 
     <E extends Entity> List<E> getEntities();
 
@@ -31,7 +31,7 @@ public interface SymbolSetInfo {
     boolean isAmplifierThreePresent();
 
     boolean isFrameAmplifierPresent();
-
+    
     boolean isEntitySubTypePresent();
 
     boolean isEntityTypePresent();
@@ -39,5 +39,7 @@ public interface SymbolSetInfo {
     boolean isSectorOneModifierPresent();
 
     boolean isSectorTwoModifierPresent();
+
+    boolean isFramedIcon();
 
 }

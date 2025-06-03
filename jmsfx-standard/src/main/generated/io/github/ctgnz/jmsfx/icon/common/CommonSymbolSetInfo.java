@@ -8,7 +8,7 @@ import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
 import io.github.ctgnz.jmsfx.icon.Entity;
 import io.github.ctgnz.jmsfx.icon.EntitySubType;
 import io.github.ctgnz.jmsfx.icon.EntityType;
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifier;
+import io.github.ctgnz.jmsfx.icon.ListAmplifier;
 import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSetInfo;
@@ -25,17 +25,17 @@ public class CommonSymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<EnumeratedAmplifier> getAmplifiers() {
+    public List<ListAmplifier> getAmplifiers() {
         return Collections.emptyList();        
     }
 
     @Override
-    public List<EnumeratedAmplifier> getAmplifiersTwo() {
+    public List<ListAmplifier> getAmplifiersTwo() {
         return Collections.emptyList();        
     }
 
     @Override
-    public List<EnumeratedAmplifier> getAmplifiersThree() {
+    public List<ListAmplifier> getAmplifiersThree() {
         return Collections.emptyList();        
     }
 
@@ -55,7 +55,7 @@ public class CommonSymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<EnumeratedAmplifier> getFrameAmplifiers() {
+    public List<ListAmplifier> getFrameAmplifiers() {
         return Collections.emptyList();        
     }
 
@@ -107,6 +107,11 @@ public class CommonSymbolSetInfo implements SymbolSetInfo {
     @Override
     public boolean isSectorTwoModifierPresent() {
         return true;
+    }
+
+    @Override
+    public boolean isFramedIcon() {
+        return false;
     }
 
 }

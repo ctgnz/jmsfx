@@ -84,7 +84,7 @@ public enum LandEquipmentEntityType implements EntityType {
     LASER("10", "Laser", LandEquipmentEntity.OTHER_EQUIPMENT, IconType.FULL_OCTAGON),
     PSYCHOLOGICAL_OPERATIONS("11", "Psychological Operations (PSYOPS)", LandEquipmentEntity.OTHER_EQUIPMENT, IconType.FULL_OCTAGON),
     SUSTAINMENT_SHIPMENTS("12", "Sustainment Shipments", LandEquipmentEntity.OTHER_EQUIPMENT, IconType.MAIN),
-    TENT("13", "Tent", LandEquipmentEntity.OTHER_EQUIPMENT, IconType.FULL_OCTAGON),
+    TENT("13", "Tent", LandEquipmentEntity.OTHER_EQUIPMENT, IconType.NA),
     UNIT_DEPLOYMENT_SHIPMENTS("14", "Unit Deployment Shipments", LandEquipmentEntity.OTHER_EQUIPMENT, IconType.MAIN),
     EMERGENCY_MEDICAL_OPERATION("15", "Emergency Medical Operation", LandEquipmentEntity.OTHER_EQUIPMENT, IconType.FULL_OCTAGON),
     LAND_MINE("01", "Land Mine", LandEquipmentEntity.LAND_MINES, IconType.FULL_OCTAGON),
@@ -102,7 +102,7 @@ public enum LandEquipmentEntityType implements EntityType {
     private final LandEquipmentEntity entity;
     private final IconType iconType;
     
-    private LandEquipmentEntityType(String id, String label, LandEquipmentEntity entity, IconType iconType) {
+    LandEquipmentEntityType(String id, String label, LandEquipmentEntity entity, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entity = entity;

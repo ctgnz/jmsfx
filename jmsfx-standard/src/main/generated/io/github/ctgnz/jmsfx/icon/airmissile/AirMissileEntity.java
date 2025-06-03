@@ -12,7 +12,7 @@ public enum AirMissileEntity implements Entity {
     private final String label;
     private final IconType iconType;
     
-    private AirMissileEntity(String id, String label, IconType iconType) {
+    AirMissileEntity(String id, String label, IconType iconType) {
         this.id = id;
         this.label = label;
         this.iconType = iconType;

@@ -18,6 +18,9 @@ public class SymbolSetDto {
     private final List<Entity> entities = new ArrayList<>();
     private final List<SectorOneModifier> sectorOne = new ArrayList<>();
     private final List<SectorTwoModifier> sectorTwo = new ArrayList<>();
+    private final List<ListAmplifierValue<?>> amplifier1 = new ArrayList<>();
+    private final List<ListAmplifierValue<?>> amplifier2 = new ArrayList<>();
+    private final List<ListAmplifierValue<?>> amplifier3 = new ArrayList<>();
 
     public @JsonCreator SymbolSetDto(@JsonProperty("symbolSet") SymbolSet symbolSet) {
         this.symbolSet = symbolSet;
@@ -25,10 +28,41 @@ public class SymbolSetDto {
         this.entities.addAll(symbolSetInfo.getEntities().stream().map(EntityDto::new).toList());
         this.sectorOne.addAll(symbolSetInfo.getSectorOneModifiers().stream().map(SectorOneModifierDto::new).toList());
         this.sectorTwo.addAll(symbolSetInfo.getSectorTwoModifiers().stream().map(SectorTwoModifierDto::new).toList());
+        this.amplifier1.addAll(symbolSetInfo.getAmplifiers());
+        this.amplifier2.addAll(symbolSetInfo.getAmplifiersTwo());
+        this.amplifier3.addAll(symbolSetInfo.getAmplifiersThree());
+    }
+
+    public List<ListAmplifierValue<?>> getAmplifier1() {
+        return amplifier1;
+    }
+
+    public List<ListAmplifierValue<?>> getAmplifier2() {
+        return amplifier2;
+    }
+
+    public List<ListAmplifierValue<?>> getAmplifier3() {
+        return amplifier3;
+    }
+
+    public String getAmplifierGuideTemplateLocation() {
+        return String.format("/svg/Amplifier/%s.svg", symbolSet.getDimension().name());
+    }
+
+    public String getDimensionId() {
+        return symbolSet.getDimension().getId();
     }
 
     public List<Entity> getEntities() {
         return entities;
+    }
+
+    public String getFrameId() {
+        return symbolSet.getFrameId();
+    }
+
+    public String getFrameLocation(StandardIdentityDto identity, StatusDto status, boolean civilianEntity) {
+        return String.format("/svg/Frames/0_%s%s_%s%s.svg", identity.getId(), symbolSet.getFrameId(), status.getFrameId(identity), civilianEntity ? "c" : "");
     }
 
     public String getId() {
@@ -53,6 +87,14 @@ public class SymbolSetDto {
 
     public SymbolSet getSymbolSet() {
         return symbolSet;
+    }
+
+    public boolean isAmplifierGuidesPresent() {
+        return !symbolSet.getSymbolSetInfo().getAmplifierGuides().isEmpty();
+    }
+
+    public boolean isFramedIcon() {
+        return symbolSet.getSymbolSetInfo().isFramedIcon();
     }
 
 }

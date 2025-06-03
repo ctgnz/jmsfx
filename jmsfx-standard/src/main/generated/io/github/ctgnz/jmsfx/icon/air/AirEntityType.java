@@ -30,7 +30,7 @@ public enum AirEntityType implements EntityType {
     private final AirEntity entity;
     private final IconType iconType;
     
-    private AirEntityType(String id, String label, AirEntity entity, IconType iconType) {
+    AirEntityType(String id, String label, AirEntity entity, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entity = entity;

@@ -27,7 +27,7 @@ public enum LandInstallationEntityType implements EntityType {
     WHITE_LIST_LOCATION("18", "White List Location", LandInstallationEntity.INSTALLATION, IconType.MAIN),
     TENTED_CAMP("19", "Tented Camp", LandInstallationEntity.INSTALLATION, IconType.FULL_OCTAGON),
     WAREHOUSE_STORAGE_FACILITY("20", "Warehouse/Storage Facility", LandInstallationEntity.INSTALLATION, IconType.FULL_OCTAGON),
-    LAW_ENFORCEMENT("21", "Law Enforcement", LandInstallationEntity.INSTALLATION, IconType.FULL_OCTAGON),
+    LAW_ENFORCEMENT("21", "Law Enforcement", LandInstallationEntity.INSTALLATION, IconType.NA),
     EMERGENCY_OPERATION("22", "Emergency Operation", LandInstallationEntity.INSTALLATION, IconType.FULL_OCTAGON),
     HOUSE("23", "House", LandInstallationEntity.INSTALLATION, IconType.MAIN),
     AGRICULTURE_FOOD_INFRASTRUCTURE("01", "Agriculture and Food Infrastructure", LandInstallationEntity.INFRASTRUCTURE, IconType.FULL_OCTAGON),
@@ -48,7 +48,7 @@ public enum LandInstallationEntityType implements EntityType {
     private final LandInstallationEntity entity;
     private final IconType iconType;
     
-    private LandInstallationEntityType(String id, String label, LandInstallationEntity entity, IconType iconType) {
+    LandInstallationEntityType(String id, String label, LandInstallationEntity entity, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entity = entity;

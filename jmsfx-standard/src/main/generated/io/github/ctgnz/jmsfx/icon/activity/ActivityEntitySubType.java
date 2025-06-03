@@ -23,7 +23,6 @@ public enum ActivityEntitySubType implements EntitySubType {
     SMUGGLING("19", "Smuggling", ActivityEntityType.CRIMINAL_ACTIVITY_INCIDENT, IconType.MAIN),
     DEAD_BODY("21", "Dead Body", ActivityEntityType.CRIMINAL_ACTIVITY_INCIDENT, IconType.FULL_OCTAGON),
     SABOTAGE("22", "Sabotage", ActivityEntityType.CRIMINAL_ACTIVITY_INCIDENT, IconType.MAIN),
-    SUSPICIOUS_ACTIVITY("23", "Suspicious Activity", ActivityEntityType.CRIMINAL_ACTIVITY_INCIDENT, IconType.FULL_OCTAGON),
     BOMB_THREAT("01", "Bomb Threat", ActivityEntityType.BOMB_BOMBING, IconType.FULL_OCTAGON),
     IED_EXPLOSION("01", "IED Explosion", ActivityEntityType.IED_EVENT, IconType.FULL_OCTAGON),
     PREMATURE_IED_EXPLOSION("02", "Premature IED Explosion", ActivityEntityType.IED_EVENT, IconType.FULL_OCTAGON),
@@ -63,7 +62,7 @@ public enum ActivityEntitySubType implements EntitySubType {
     private final ActivityEntityType entityType;
     private final IconType iconType;
     
-    private ActivityEntitySubType(String id, String label, ActivityEntityType entityType, IconType iconType) {
+    ActivityEntitySubType(String id, String label, ActivityEntityType entityType, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entityType = entityType;

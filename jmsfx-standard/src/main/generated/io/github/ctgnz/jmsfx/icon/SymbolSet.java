@@ -46,16 +46,16 @@ public enum SymbolSet implements SymbolIdentificationCodeElement {
     SEA_SUBSURFACE("35", "Sea Subsurface", Dimension.SEA_SUBSURFACE, null, SeaSubsurfaceSymbolSetInfo.INSTANCE),
     MINE_WARFARE("36", "Mine Warfare", Dimension.SEA_SUBSURFACE, null, MineWarfareSymbolSetInfo.INSTANCE),
     ACTIVITY("40", "Activity", Dimension.ACTIVITY, null, ActivitySymbolSetInfo.INSTANCE),
-    CYBERSPACE("60", "Cyberspace", Dimension.CYBERSPACE, null, CyberspaceSymbolSetInfo.INSTANCE),
-    CYBERSPACE_SPACE("61", "Cyberspace Space", Dimension.SPACE, null, CyberspaceSpaceSymbolSetInfo.INSTANCE),
-    CYBERSPACE_AIR("62", "Cyberspace Air", Dimension.AIR, null, CyberspaceAirSymbolSetInfo.INSTANCE),
-    CYBERSPACE_LAND_UNIT("63", "Cyberspace Land Unit", Dimension.LAND_UNIT, null, CyberspaceLandUnitSymbolSetInfo.INSTANCE),
-    CYBERSPACE_LAND_EQUIPMENT("64", "Cyberspace Land Equipment", Dimension.LAND_EQUIPMENT, null, CyberspaceLandEquipmentSymbolSetInfo.INSTANCE),
-    CYBERSPACE_LAND_INSTALLATION("65", "Cyberspace Land Installation", Dimension.LAND_INSTALLATION, null, CyberspaceLandInstallationSymbolSetInfo.INSTANCE),
-    CYBERSPACE_DISMOUNTED("66", "Cyberspace Dismounted Individual", Dimension.DISMOUNTED, null, CyberspaceDismountedIndividualSymbolSetInfo.INSTANCE),
-    CYBERSPACE_SEA_SURFACE("67", "Cyberspace Sea Surface", Dimension.SEA_SURFACE, null, CyberspaceSeaSurfaceSymbolSetInfo.INSTANCE),
-    CYBERSPACE_SEA_SUBSURFACE("68", "Cyberspace Sea Subsurface", Dimension.SEA_SUBSURFACE, null, CyberspaceSeaSubsurfaceSymbolSetInfo.INSTANCE),
-    INTERNAL("98", "Internal", Dimension.INTERNAL, null, InternalSymbolSetInfo.INSTANCE);
+    CYBERSPACE("60", "Cyberspace", Dimension.CYBERSPACE, "Cyberspace", CyberspaceSymbolSetInfo.INSTANCE),
+    CYBERSPACE_SPACE("61", "Cyberspace Space", Dimension.SPACE, "Cyberspace", CyberspaceSpaceSymbolSetInfo.INSTANCE),
+    CYBERSPACE_AIR("62", "Cyberspace Air", Dimension.AIR, "Cyberspace", CyberspaceAirSymbolSetInfo.INSTANCE),
+    CYBERSPACE_LAND_UNIT("63", "Cyberspace Land Unit", Dimension.LAND_UNIT, "Cyberspace", CyberspaceLandUnitSymbolSetInfo.INSTANCE),
+    CYBERSPACE_LAND_EQUIPMENT("64", "Cyberspace Land Equipment", Dimension.LAND_EQUIPMENT, "Cyberspace", CyberspaceLandEquipmentSymbolSetInfo.INSTANCE),
+    CYBERSPACE_LAND_INSTALLATION("65", "Cyberspace Land Installation", Dimension.LAND_INSTALLATION, "Cyberspace", CyberspaceLandInstallationSymbolSetInfo.INSTANCE),
+    CYBERSPACE_DISMOUNTED("66", "Cyberspace Dismounted Individual", Dimension.DISMOUNTED, "Cyberspace", CyberspaceDismountedIndividualSymbolSetInfo.INSTANCE),
+    CYBERSPACE_SEA_SURFACE("67", "Cyberspace Sea Surface", Dimension.SEA_SURFACE, "Cyberspace", CyberspaceSeaSurfaceSymbolSetInfo.INSTANCE),
+    CYBERSPACE_SEA_SUBSURFACE("68", "Cyberspace Sea Subsurface", Dimension.SEA_SUBSURFACE, "Cyberspace", CyberspaceSeaSubsurfaceSymbolSetInfo.INSTANCE),
+    INTERNAL("98", "Internal", Dimension.INTERNAL, "", InternalSymbolSetInfo.INSTANCE);
 
     private final String id;
     private final String label;
@@ -63,7 +63,7 @@ public enum SymbolSet implements SymbolIdentificationCodeElement {
     private final String graphicLocation;
     private final SymbolSetInfo symbolSetInfo;
     
-    private SymbolSet(String id, String label, Dimension dimension, String graphicLocation, SymbolSetInfo symbolSetInfo) {
+    SymbolSet(String id, String label, Dimension dimension, String graphicLocation, SymbolSetInfo symbolSetInfo) {
         this.id = id;
         this.label = label;
         this.dimension = dimension;
@@ -79,15 +79,15 @@ public enum SymbolSet implements SymbolIdentificationCodeElement {
         return getAmplifierGuides().stream().filter(guide -> guide.getAmplifier() == amplifier).findFirst().orElse(null);
     }
 
-    public <A extends EnumeratedAmplifier> List<A> getEnumeratedAmplifiers() {
+    public <A extends ListAmplifier> List<A> getListAmplifiers() {
         return symbolSetInfo.getAmplifiers();
     }
 
-    public <A extends EnumeratedAmplifier> List<A> getAmplifierTwoGroups() {
+    public <A extends ListAmplifier> List<A> getAmplifierTwoGroups() {
         return symbolSetInfo.getAmplifiersTwo();
     }
 
-    public <A extends EnumeratedAmplifier> List<A> getAmplifierThreeGroups() {
+    public <A extends ListAmplifier> List<A> getAmplifierThreeGroups() {
         return symbolSetInfo.getAmplifiersThree();
     }
 
@@ -99,7 +99,7 @@ public enum SymbolSet implements SymbolIdentificationCodeElement {
         return symbolSetInfo.getEntities();
     }
 
-    public <A extends EnumeratedAmplifier> List<A> getFrameEnumeratedAmplifiers() {
+    public <A extends ListAmplifier> List<A> getFrameListAmplifiers() {
         return symbolSetInfo.getFrameAmplifiers();
     }
 

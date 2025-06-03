@@ -3,10 +3,13 @@ outputDir: "D:/git/jmsfx/jmsfx-standard/src/main/generated"
 basePackage: "io.github.ctgnz.jmsfx.icon"
 libraryFile: "Base.xml"
 extensionCountryCode: "000"
+unframedSymbolSets:
+  - INTERNAL
+  - CONTROL_MEASURE
 simpleTypes:
   ISymbolIdentificationCodeElement: "SymbolIdentificationCodeElement"
-  IEnumeratedAmplifier: "EnumeratedAmplifier"
-  IStandardEnumeratedAmplifier: "StandardEnumeratedAmplifier"
+  IListAmplifier: "ListAmplifier"
+  IStandardAmplifier: "StandardAmplifier"
   IMainIconElement: "MainIconElement"
   ISymbolSetInfo: "SymbolSetInfo"
   IEntity: "Entity"
@@ -57,4 +60,16 @@ dimensionGraphicLocations:
   CONTROL_MEASURE: "ControlMeasures"
   CYBERSPACE: "Cyberspace"
 symbolGraphicLocations:
-  SS_CYBERSPACE: "Cyberspace"
+  CYBERSPACE: "Cyberspace"
+  CYBERSPACE_AIR: "Cyberspace"
+  CYBERSPACE_SPACE: "Cyberspace"
+  CYBERSPACE_LAND_UNIT: "Cyberspace"
+  CYBERSPACE_LAND_EQUIPMENT: "Cyberspace"
+  CYBERSPACE_LAND_INSTALLATION: "Cyberspace"
+  CYBERSPACE_DISMOUNTED: "Cyberspace"
+  CYBERSPACE_SEA_SURFACE: "Cyberspace"
+  CYBERSPACE_SEA_SUBSURFACE: "Cyberspace"
+  INTERNAL: ""
+entitySymbolSets:
+  END_POINT: CYBERSPACE_LAND_EQUIPMENT
+  WEARABLE: CYBERSPACE_LAND_EQUIPMENT

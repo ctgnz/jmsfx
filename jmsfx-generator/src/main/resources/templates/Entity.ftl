@@ -13,14 +13,19 @@ import ${basePackage}.IconType;
 
 public enum ${symbolSet.baseTypeName}Entity implements Entity {
 <#list entities as ent>
-    ${ent.id}("${ent.code}", "${ent.label}", IconType.${ent.iconType})<#if ent?is_last>;<#else>,</#if>
-</#list>    
+    ${ent.id}("${ent.code}", "${ent.label}", IconType.${ent.iconType})<#if ent.baseSymbolSet??> {
+        @Override
+        public SymbolSet getBaseSymbolSet() {
+            return SymbolSet.${ent.baseSymbolSet};
+        }
+    }</#if><#sep>,
+</#list>;
 
     private final String id;
     private final String label;
     private final IconType iconType;
     
-    private ${symbolSet.baseTypeName}Entity(String id, String label, IconType iconType) {
+    ${symbolSet.baseTypeName}Entity(String id, String label, IconType iconType) {
         this.id = id;
         this.label = label;
         this.iconType = iconType;
@@ -46,6 +51,13 @@ public enum ${symbolSet.baseTypeName}Entity implements Entity {
         return SymbolSet.${symbolSet.id};
     }
 
+<#if symbolSet.baseSymbolSet??>
+    @Override
+    public SymbolSet getBaseSymbolSet() {
+        return SymbolSet.${symbolSet.baseSymbolSet};
+    }
+
+</#if>    
 <#if entityTypes??>        
     @Override
     public List<EntityType> getEntityTypes() {

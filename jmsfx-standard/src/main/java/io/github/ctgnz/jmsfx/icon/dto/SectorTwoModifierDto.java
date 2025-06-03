@@ -10,13 +10,13 @@ public class SectorTwoModifierDto implements SectorTwoModifier {
         this.modifier = modifier;
     }
 
-    public SectorTwoModifier getModifier() {
-        return modifier;
+    @Override
+    public String getCategory() {
+        return modifier.getCategory();
     }
 
-    @Override
-    public String getLabel() {
-        return modifier.getLabel();
+    public String getFullGraphicLocation() {
+        return String.format("/svg/Appendices/%s/mod2/%s.svg", modifier.getGraphicLocation(), modifier.getGraphicIdentifier());
     }
 
     @Override
@@ -25,13 +25,21 @@ public class SectorTwoModifierDto implements SectorTwoModifier {
     }
 
     @Override
+    public String getLabel() {
+        return modifier.getLabel();
+    }
+
+    public SectorTwoModifier getModifier() {
+        return modifier;
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return modifier.getSymbolSet();
     }
 
     @Override
-    public String getCategory() {
-        return modifier.getCategory();
+    public boolean isUnknown() {
+        return modifier.isUnknown();
     }
-
 }

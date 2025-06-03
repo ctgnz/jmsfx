@@ -10,16 +10,26 @@ import io.github.ctgnz.jmsfx.icon.IconType;
 public enum CyberspaceLandEquipmentEntity implements Entity {
     UNSPECIFIED("00", "Unspecified", IconType.NA),
     MISSION_FORCE("11", "Mission Force", IconType.NA),
-    CYBERSPACE_UNIT("12", "Cyberspace Unit", IconType.NA),
+    CYBERSPACE_UNIT("12", "Cyberspace Unit", IconType.MAIN),
     THREAT_ACTOR("13", "Threat Actor", IconType.MAIN),
-    END_POINT("18", "End Point", IconType.MAIN),
-    WEARABLE("19", "Wearable", IconType.MAIN);
+    END_POINT("18", "End Point", IconType.MAIN) {
+        @Override
+        public SymbolSet getBaseSymbolSet() {
+            return SymbolSet.CYBERSPACE_LAND_EQUIPMENT;
+        }
+    },
+    WEARABLE("19", "Wearable", IconType.MAIN) {
+        @Override
+        public SymbolSet getBaseSymbolSet() {
+            return SymbolSet.CYBERSPACE_LAND_EQUIPMENT;
+        }
+    };
 
     private final String id;
     private final String label;
     private final IconType iconType;
     
-    private CyberspaceLandEquipmentEntity(String id, String label, IconType iconType) {
+    CyberspaceLandEquipmentEntity(String id, String label, IconType iconType) {
         this.id = id;
         this.label = label;
         this.iconType = iconType;
@@ -43,6 +53,11 @@ public enum CyberspaceLandEquipmentEntity implements Entity {
     @Override
     public SymbolSet getSymbolSet() {
         return SymbolSet.CYBERSPACE_LAND_EQUIPMENT;
+    }
+
+    @Override
+    public SymbolSet getBaseSymbolSet() {
+        return SymbolSet.CYBERSPACE;
     }
 
     @Override

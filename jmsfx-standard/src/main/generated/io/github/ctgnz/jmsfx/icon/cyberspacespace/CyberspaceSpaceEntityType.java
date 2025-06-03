@@ -24,7 +24,7 @@ public enum CyberspaceSpaceEntityType implements EntityType {
     private final CyberspaceSpaceEntity entity;
     private final IconType iconType;
     
-    private CyberspaceSpaceEntityType(String id, String label, CyberspaceSpaceEntity entity, IconType iconType) {
+    CyberspaceSpaceEntityType(String id, String label, CyberspaceSpaceEntity entity, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entity = entity;

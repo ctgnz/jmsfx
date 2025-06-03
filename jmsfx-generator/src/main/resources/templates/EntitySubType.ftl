@@ -19,7 +19,7 @@ public enum ${symbolSet.baseTypeName}EntitySubType implements EntitySubType {
     private final ${symbolSet.baseTypeName}EntityType entityType;
     private final IconType iconType;
     
-    private ${symbolSet.baseTypeName}EntitySubType(String id, String label, ${symbolSet.baseTypeName}EntityType entityType, IconType iconType) {
+    ${symbolSet.baseTypeName}EntitySubType(String id, String label, ${symbolSet.baseTypeName}EntityType entityType, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entityType = entityType;

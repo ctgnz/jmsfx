@@ -22,7 +22,7 @@ public enum SeaSubsurfaceEntity implements Entity {
     private final String label;
     private final IconType iconType;
     
-    private SeaSubsurfaceEntity(String id, String label, IconType iconType) {
+    SeaSubsurfaceEntity(String id, String label, IconType iconType) {
         this.id = id;
         this.label = label;
         this.iconType = iconType;

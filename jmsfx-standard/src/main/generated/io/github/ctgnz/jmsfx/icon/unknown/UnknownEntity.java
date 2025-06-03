@@ -11,7 +11,7 @@ public enum UnknownEntity implements Entity {
     private final String label;
     private final IconType iconType;
     
-    private UnknownEntity(String id, String label, IconType iconType) {
+    UnknownEntity(String id, String label, IconType iconType) {
         this.id = id;
         this.label = label;
         this.iconType = iconType;

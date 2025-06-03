@@ -34,7 +34,7 @@ public enum SeaSurfaceEntityType implements EntityType {
     private final SeaSurfaceEntity entity;
     private final IconType iconType;
     
-    private SeaSurfaceEntityType(String id, String label, SeaSurfaceEntity entity, IconType iconType) {
+    SeaSurfaceEntityType(String id, String label, SeaSurfaceEntity entity, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entity = entity;

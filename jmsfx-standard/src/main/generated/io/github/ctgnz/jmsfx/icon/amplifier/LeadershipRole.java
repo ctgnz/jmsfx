@@ -1,14 +1,14 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.StandardEnumeratedAmplifier;
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifierType;
+import io.github.ctgnz.jmsfx.icon.StandardAmplifier;
+import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum LeadershipRole implements StandardEnumeratedAmplifier {
+public enum LeadershipRole implements StandardAmplifier {
     LEADER_INDIVIDUAL("1", "Leader"),
     DEPUTY_LEADER_INDIVIDUAL("2", "Deputy Leader");
 
-    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.LEADERSHIP_ROLE;
+    private static final ListAmplifierType TYPE = ListAmplifierType.LEADERSHIP_ROLE;
 
     private final String id;
     private final String label;
@@ -24,11 +24,6 @@ public enum LeadershipRole implements StandardEnumeratedAmplifier {
     }
     
     @Override
-    public String getFullId() {
-        return String.format("%s%s", TYPE.getId(), id);
-    }
-    
-    @Override
     public String getId() {
         return id;
     }
@@ -36,6 +31,11 @@ public enum LeadershipRole implements StandardEnumeratedAmplifier {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public ListAmplifierType getType() {
+        return TYPE;
     }
     
     public boolean isDeprecated() {
@@ -54,10 +54,9 @@ public enum LeadershipRole implements StandardEnumeratedAmplifier {
         }
     }
 
-   @Override
+    @Override
     public boolean isGraphicalIcon() {
         return true;
     }
-
 
 }

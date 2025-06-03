@@ -14,7 +14,7 @@ public enum SeaSubsurfaceEntitySubType implements EntitySubType {
     private final SeaSubsurfaceEntityType entityType;
     private final IconType iconType;
     
-    private SeaSubsurfaceEntitySubType(String id, String label, SeaSubsurfaceEntityType entityType, IconType iconType) {
+    SeaSubsurfaceEntitySubType(String id, String label, SeaSubsurfaceEntityType entityType, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entityType = entityType;

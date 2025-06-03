@@ -828,6 +828,8 @@ public class Library {
                     protected String description;
                     @XmlAttribute(name = "Remarks")
                     protected String remarks;
+                    @XmlAttribute(name = "Base", required = false)
+                    protected String baseSymbolSet;
 
                     public String getDescription() {
                         return description;
@@ -875,6 +877,14 @@ public class Library {
 
                     public void setSymbolSetCode(DoubleDigitType value) {
                         this.symbolSetCode = value;
+                    }
+
+                    public String getBaseSymbolSet() {
+                        return baseSymbolSet;
+                    }
+
+                    public void setBaseSymbolSet(String baseSymbolSet) {
+                        this.baseSymbolSet = baseSymbolSet;
                     }
 
                 }

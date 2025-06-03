@@ -11,7 +11,7 @@ import com.google.common.collect.Multimaps;
 
 </#if>
 <#if symbolSet.amplifierGuidesPresent>import ${basePackage}.Amplifier;
-</#if>import ${basePackage}.EnumeratedAmplifier;
+</#if>import ${basePackage}.ListAmplifier;
 import ${basePackage}.AmplifierGuide;
 <#if symbolSet.amplifierGuidesPresent>import ${basePackage}.GuideType;
 </#if>import ${basePackage}.Entity;
@@ -52,17 +52,17 @@ public class ${symbolSet.baseTypeName}SymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<EnumeratedAmplifier> getAmplifiers() {
+    public List<ListAmplifier> getAmplifiers() {
         return <#if symbolSet.amplifierPresent>Arrays.asList(${symbolSet.amplifierClass}.values())<#else>Collections.emptyList()</#if>;
     }
 
     @Override
-    public List<EnumeratedAmplifier> getAmplifiersTwo() {
+    public List<ListAmplifier> getAmplifiersTwo() {
         return <#if symbolSet.amplifierTwoPresent>Arrays.asList(${symbolSet.amplifierTwoClass}.values())<#else>Collections.emptyList()</#if>;
     }
 
     @Override
-    public List<EnumeratedAmplifier> getAmplifiersThree() {
+    public List<ListAmplifier> getAmplifiersThree() {
         return <#if symbolSet.amplifierThreePresent>Arrays.asList(${symbolSet.amplifierThreeClass}.values())<#else>Collections.emptyList()</#if>;
     }
 
@@ -83,7 +83,7 @@ public class ${symbolSet.baseTypeName}SymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<EnumeratedAmplifier> getFrameAmplifiers() {
+    public List<ListAmplifier> getFrameAmplifiers() {
         return <#if symbolSet.frameAmplifierPresent>Arrays.asList(${symbolSet.frameAmplifierClass}.values())<#else>Collections.emptyList()</#if>;
     }
 
@@ -135,6 +135,11 @@ public class ${symbolSet.baseTypeName}SymbolSetInfo implements SymbolSetInfo {
     @Override
     public boolean isSectorTwoModifierPresent() {
         return ${symbolSet.sectorTwoModifierPresent?c};
+    }
+
+    @Override
+    public boolean isFramedIcon() {
+        return ${symbolSet.useFrame?c};
     }
 
 }

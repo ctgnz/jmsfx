@@ -40,4 +40,11 @@ public enum ${symbolSet.baseTypeName}SectorOneModifier implements SectorOneModif
         return symbolSet;
     }
     
+<#if symbolSet.baseSymbolSet??>
+    @Override
+    public SymbolSet getBaseSymbolSet() {
+        return SymbolSet.${symbolSet.baseSymbolSet};
+    }
+
+</#if>    
 }

@@ -21,7 +21,7 @@ public enum SymbolSet implements SymbolIdentificationCodeElement {
     private final String graphicLocation;
     private final SymbolSetInfo symbolSetInfo;
     
-    private SymbolSet(String id, String label, Dimension dimension, String graphicLocation, SymbolSetInfo symbolSetInfo) {
+    SymbolSet(String id, String label, Dimension dimension, String graphicLocation, SymbolSetInfo symbolSetInfo) {
         this.id = id;
         this.label = label;
         this.dimension = dimension;
@@ -37,15 +37,15 @@ public enum SymbolSet implements SymbolIdentificationCodeElement {
         return getAmplifierGuides().stream().filter(guide -> guide.getAmplifier() == amplifier).findFirst().orElse(null);
     }
 
-    public <A extends EnumeratedAmplifier> List<A> getEnumeratedAmplifiers() {
+    public <A extends ListAmplifier> List<A> getListAmplifiers() {
         return symbolSetInfo.getAmplifiers();
     }
 
-    public <A extends EnumeratedAmplifier> List<A> getAmplifierTwoGroups() {
+    public <A extends ListAmplifier> List<A> getAmplifierTwoGroups() {
         return symbolSetInfo.getAmplifiersTwo();
     }
 
-    public <A extends EnumeratedAmplifier> List<A> getAmplifierThreeGroups() {
+    public <A extends ListAmplifier> List<A> getAmplifierThreeGroups() {
         return symbolSetInfo.getAmplifiersThree();
     }
 
@@ -57,7 +57,7 @@ public enum SymbolSet implements SymbolIdentificationCodeElement {
         return symbolSetInfo.getEntities();
     }
 
-    public <A extends EnumeratedAmplifier> List<A> getFrameEnumeratedAmplifiers() {
+    public <A extends ListAmplifier> List<A> getFrameListAmplifiers() {
         return symbolSetInfo.getFrameAmplifiers();
     }
 

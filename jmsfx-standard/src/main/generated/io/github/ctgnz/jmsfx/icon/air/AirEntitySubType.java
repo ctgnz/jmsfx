@@ -43,7 +43,7 @@ public enum AirEntitySubType implements EntitySubType {
     private final AirEntityType entityType;
     private final IconType iconType;
     
-    private AirEntitySubType(String id, String label, AirEntityType entityType, IconType iconType) {
+    AirEntitySubType(String id, String label, AirEntityType entityType, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entityType = entityType;

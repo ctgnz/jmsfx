@@ -47,4 +47,9 @@ public enum CyberspaceAirSectorOneModifier implements SectorOneModifier {
         return symbolSet;
     }
     
+    @Override
+    public SymbolSet getBaseSymbolSet() {
+        return SymbolSet.CYBERSPACE;
+    }
+
 }

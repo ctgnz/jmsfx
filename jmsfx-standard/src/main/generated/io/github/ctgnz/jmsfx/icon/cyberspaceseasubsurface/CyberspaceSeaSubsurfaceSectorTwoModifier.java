@@ -40,4 +40,9 @@ public enum CyberspaceSeaSubsurfaceSectorTwoModifier implements SectorTwoModifie
         return symbolSet;
     }
     
+    @Override
+    public SymbolSet getBaseSymbolSet() {
+        return SymbolSet.CYBERSPACE;
+    }
+
 }

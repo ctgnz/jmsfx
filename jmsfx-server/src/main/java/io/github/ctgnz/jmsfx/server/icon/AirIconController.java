@@ -3,7 +3,7 @@ package io.github.ctgnz.jmsfx.server.icon;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifier;
+import io.github.ctgnz.jmsfx.icon.ListAmplifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.air.AirEntity;
 import io.github.ctgnz.jmsfx.icon.air.AirEntitySubType;
@@ -13,7 +13,7 @@ import io.github.ctgnz.jmsfx.icon.air.AirSectorTwoModifier;
 
 @RestController
 @RequestMapping("/Air")
-public class AirIconController extends IconRestController<AirEntity, AirEntityType, AirEntitySubType, AirSectorOneModifier, AirSectorTwoModifier, EnumeratedAmplifier> {
+public class AirIconController extends IconRestController<AirEntity, AirEntityType, AirEntitySubType, AirSectorOneModifier, AirSectorTwoModifier, ListAmplifier> {
 
     public AirIconController() {
         super(SymbolSet.AIR);

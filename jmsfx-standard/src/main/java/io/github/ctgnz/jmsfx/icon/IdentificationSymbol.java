@@ -44,10 +44,10 @@ public class IdentificationSymbol {
     private final ObjectProperty<SymbolSet> symbolSet;
     private final ObjectProperty<Status> status;
     private final ObjectProperty<HqtfDummy> hqtfDummy;
-    private final ObjectProperty<EnumeratedAmplifier> amplifier;
-    private final ObjectProperty<EnumeratedAmplifier> amplifierTwo;
-    private final ObjectProperty<EnumeratedAmplifier> amplifierThree;
-    private final ObjectProperty<EnumeratedAmplifier> frameAmplifier;
+    private final ObjectProperty<ListAmplifier> amplifier;
+    private final ObjectProperty<ListAmplifier> amplifierTwo;
+    private final ObjectProperty<ListAmplifier> amplifierThree;
+    private final ObjectProperty<ListAmplifier> frameAmplifier;
     private final ObjectProperty<Entity> entity;
     private final ObjectProperty<EntityType> entityType;
     private final ObjectProperty<EntitySubType> entitySubType;
@@ -66,10 +66,10 @@ public class IdentificationSymbol {
     private final ObjectProperty<SvgGraphic> statusGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> hqtfDummyGraphic = new SimpleObjectProperty<>();
     private final StringProperty code = new SimpleStringProperty(sidc.toString());
-    private final ObservableList<EnumeratedAmplifier> amplifiers = FXCollections.observableArrayList(sidc.getEnumeratedAmplifiers());
-    private final ObservableList<EnumeratedAmplifier> amplifiersTwo = FXCollections.observableArrayList(sidc.getAmplifierTwoGroups());
-    private final ObservableList<EnumeratedAmplifier> amplifiersThree = FXCollections.observableArrayList(sidc.getAmplifierThreeGroups());
-    private final ObservableList<EnumeratedAmplifier> frameAmplifiers = FXCollections.observableArrayList(sidc.getFrameEnumeratedAmplifiers());
+    private final ObservableList<ListAmplifier> amplifiers = FXCollections.observableArrayList(sidc.getListAmplifiers());
+    private final ObservableList<ListAmplifier> amplifiersTwo = FXCollections.observableArrayList(sidc.getAmplifierTwoGroups());
+    private final ObservableList<ListAmplifier> amplifiersThree = FXCollections.observableArrayList(sidc.getAmplifierThreeGroups());
+    private final ObservableList<ListAmplifier> frameAmplifiers = FXCollections.observableArrayList(sidc.getFrameListAmplifiers());
     private final ObservableList<Entity> entities = FXCollections.observableArrayList(sidc.getEntities());
     private final ObservableList<EntityType> entityTypes = FXCollections.observableArrayList();
     private final ObservableList<EntitySubType> entitySubTypes = FXCollections.observableArrayList();
@@ -123,7 +123,7 @@ public class IdentificationSymbol {
         return textAmplifier;
     }
 
-    public ObservableList<EnumeratedAmplifier> amplifierGroupsList() {
+    public ObservableList<ListAmplifier> amplifierGroupsList() {
         return amplifiers;
     }
 
@@ -131,23 +131,23 @@ public class IdentificationSymbol {
         return amplifierGuidesVisible;
     }
 
-    public ObjectProperty<EnumeratedAmplifier> amplifierProperty() {
+    public ObjectProperty<ListAmplifier> amplifierProperty() {
         return amplifier;
     }
 
-    public ObservableList<EnumeratedAmplifier> amplifierThreeGroupsList() {
+    public ObservableList<ListAmplifier> amplifierThreeGroupsList() {
         return amplifiersThree;
     }
 
-    public ObjectProperty<EnumeratedAmplifier> amplifierThreeProperty() {
+    public ObjectProperty<ListAmplifier> amplifierThreeProperty() {
         return amplifierThree;
     }
 
-    public ObservableList<EnumeratedAmplifier> amplifierTwoGroupsList() {
+    public ObservableList<ListAmplifier> amplifierTwoGroupsList() {
         return amplifiersTwo;
     }
 
-    public ObjectProperty<EnumeratedAmplifier> amplifierTwoProperty() {
+    public ObjectProperty<ListAmplifier> amplifierTwoProperty() {
         return amplifierTwo;
     }
 
@@ -191,15 +191,15 @@ public class IdentificationSymbol {
         return entityTypes;
     }
 
-    public ObservableList<EnumeratedAmplifier> frameAmplifierGroupsList() {
+    public ObservableList<ListAmplifier> frameAmplifierGroupsList() {
         return frameAmplifiers;
     }
 
-    public ObjectProperty<EnumeratedAmplifier> frameAmplifierProperty() {
+    public ObjectProperty<ListAmplifier> frameAmplifierProperty() {
         return frameAmplifier;
     }
 
-    public EnumeratedAmplifier getAmplifier() {
+    public ListAmplifier getAmplifier() {
         return amplifier.get();
     }
 
@@ -207,7 +207,7 @@ public class IdentificationSymbol {
         return amplifierGraphic.get();
     }
 
-    public EnumeratedAmplifier getAmplifierThree() {
+    public ListAmplifier getAmplifierThree() {
         return amplifierThree.get();
     }
 
@@ -215,7 +215,7 @@ public class IdentificationSymbol {
         return amplifierThreeGraphic.get();
     }
 
-    public EnumeratedAmplifier getAmplifierTwo() {
+    public ListAmplifier getAmplifierTwo() {
         return amplifierTwo.get();
     }
 
@@ -233,7 +233,7 @@ public class IdentificationSymbol {
         if (isFrameUsed()) {
             SvgGraphic frame = getFrameGraphic();
             if (isFrameAmplifierUsed()) {
-                EnumeratedAmplifier frameAmplifier = getFrameAmplifier();
+                ListAmplifier frameAmplifier = getFrameAmplifier();
                 replaceFill(frame, Color.web(frameAmplifier.getBackgroundFill()));
             }
             container.getContent().addAll(frame.getVisibleContent());
@@ -289,7 +289,7 @@ public class IdentificationSymbol {
         return entityType.get();
     }
 
-    public EnumeratedAmplifier getFrameAmplifier() {
+    public ListAmplifier getFrameAmplifier() {
         return frameAmplifier.get();
     }
 
@@ -542,7 +542,7 @@ public class IdentificationSymbol {
     private void addListeners() {
         // Observable lists can't be bound directly, so update these values when the appropriate property changes
         symbolSet.addListener((obs, oldValue, newValue) -> {
-            amplifiers.setAll(sidc.getEnumeratedAmplifiers());
+            amplifiers.setAll(sidc.getListAmplifiers());
             amplifier.set(sidc.getAmplifier());
 
             amplifiersTwo.setAll(sidc.getAmplifierTwoGroups());
@@ -551,7 +551,7 @@ public class IdentificationSymbol {
             amplifiersThree.setAll(sidc.getAmplifierThreeGroups());
             amplifierThree.set(sidc.getAmplifierThree());
 
-            frameAmplifiers.setAll(sidc.getFrameEnumeratedAmplifiers());
+            frameAmplifiers.setAll(sidc.getFrameListAmplifiers());
             frameAmplifier.set(sidc.getFrameAmplifier());
 
             sectorOneModifiers.setAll(sidc.getSectorOneModifiers());
@@ -582,14 +582,14 @@ public class IdentificationSymbol {
         frameGraphic.bind(Bindings.createObjectBinding(() -> loadFrameGraphic(), code));
         frameOverlayGraphic.bind(Bindings.createObjectBinding(() -> loadFrameOverlayGraphic(), code));
         mainIconGraphic.bind(Bindings.createObjectBinding(() -> loadMainIconGraphic(), code));
-        amplifierGraphic.bind(Bindings.createObjectBinding(() -> loadAmplifierGraphic(), code));
-        amplifierTwoGraphic.bind(Bindings.createObjectBinding(() -> loadAmplifierTwoGraphic(), code));
-        amplifierThreeGraphic.bind(Bindings.createObjectBinding(() -> loadAmplifierThreeGraphic(), code));
-        frameAmplifierGraphic.bind(Bindings.createObjectBinding(() -> loadFrameAmplifierGraphic(), code));
-        sectorOneModifierGraphic.bind(Bindings.createObjectBinding(() -> loadSectorOneModifierGraphic(), code));
-        sectorTwoModifierGraphic.bind(Bindings.createObjectBinding(() -> loadSectorTwoModifierGraphic(), code));
-        statusGraphic.bind(Bindings.createObjectBinding(() -> loadStatusGraphic(), code));
-        hqtfDummyGraphic.bind(Bindings.createObjectBinding(() -> loadHqtfDummyGraphic(), code));
+        amplifierGraphic.bind(Bindings.createObjectBinding(() -> loadAmplifierGraphic(), code, amplifier));
+        amplifierTwoGraphic.bind(Bindings.createObjectBinding(() -> loadAmplifierTwoGraphic(), code, amplifierTwo));
+        amplifierThreeGraphic.bind(Bindings.createObjectBinding(() -> loadAmplifierThreeGraphic(), code, amplifierThree));
+        frameAmplifierGraphic.bind(Bindings.createObjectBinding(() -> loadFrameAmplifierGraphic(), code, frameAmplifier));
+        sectorOneModifierGraphic.bind(Bindings.createObjectBinding(() -> loadSectorOneModifierGraphic(), code, sectorOneModifier));
+        sectorTwoModifierGraphic.bind(Bindings.createObjectBinding(() -> loadSectorTwoModifierGraphic(), code, sectorTwoModifier));
+        statusGraphic.bind(Bindings.createObjectBinding(() -> loadStatusGraphic(), code, status));
+        hqtfDummyGraphic.bind(Bindings.createObjectBinding(() -> loadHqtfDummyGraphic(), code, hqtfDummy));
     }
 
     private String calculateFrameLocation() {
@@ -628,7 +628,7 @@ public class IdentificationSymbol {
     }
 
     private SvgGraphic loadAmplifierGraphic() {
-        EnumeratedAmplifier amplifierGroup = getAmplifier();
+        ListAmplifier amplifierGroup = getAmplifier();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
             String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getFullId());
             return parser.parseFile(filePath);
@@ -638,7 +638,7 @@ public class IdentificationSymbol {
     }
 
     private SvgGraphic loadAmplifierThreeGraphic() {
-        EnumeratedAmplifier amplifierGroup = getAmplifierThree();
+        ListAmplifier amplifierGroup = getAmplifierThree();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
             String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getFullId());
             return parser.parseFile(filePath);
@@ -648,7 +648,7 @@ public class IdentificationSymbol {
     }
 
     private SvgGraphic loadAmplifierTwoGraphic() {
-        EnumeratedAmplifier amplifierGroup = getAmplifierTwo();
+        ListAmplifier amplifierGroup = getAmplifierTwo();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
             String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getFullId());
             return parser.parseFile(filePath);
@@ -658,7 +658,7 @@ public class IdentificationSymbol {
     }
 
     private SvgGraphic loadFrameAmplifierGraphic() {
-        EnumeratedAmplifier amplifierGroup = getFrameAmplifier();
+        ListAmplifier amplifierGroup = getFrameAmplifier();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
             String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getId());
             return parser.parseFile(filePath);

@@ -1,6 +1,7 @@
 package io.github.ctgnz.jmsfx.icon;
 
 import java.util.Arrays;
+import java.util.List;
 
 public enum Dimension implements SymbolIdentificationCodeElement {
     UNKNOWN("00", "Unknown", Geometry.POINT_GEOMETRY, "Unknown"),
@@ -53,6 +54,10 @@ public enum Dimension implements SymbolIdentificationCodeElement {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    public List<SymbolSet> getSymbolSets() {
+        return Arrays.stream(SymbolSet.values()).filter(sym -> sym.getDimension() == this).toList();
     }
 
 }

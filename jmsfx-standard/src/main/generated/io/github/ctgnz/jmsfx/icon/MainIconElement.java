@@ -10,6 +10,10 @@ public interface MainIconElement extends SymbolIdentificationCodeElement {
         return getEntity().getSymbolSet();
     }
     
+    default SymbolSet getBaseSymbolSet() {
+        return getEntity().getBaseSymbolSet();
+    }
+    
     Entity getEntity();
 
     default boolean isCivilian() {

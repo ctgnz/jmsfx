@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifier;
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifierType;
+import io.github.ctgnz.jmsfx.icon.ListAmplifier;
+import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum CredibilityRating implements EnumeratedAmplifier {
+public enum CredibilityRating implements ListAmplifier {
     CONFIRMED("1", "Confirmed by Other Sources"),
     PROBABLY("2", "Probably True"),
     POSSIBLY("3", "Possibly True"),
@@ -12,7 +12,7 @@ public enum CredibilityRating implements EnumeratedAmplifier {
     IMPROBABLE("5", "Improbable"),
     CRED_CANNOT_BE_JUDGED("6", "Truth Cannot Be Judged");
 
-    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.CREDIBILITY_RATING;
+    private static final ListAmplifierType TYPE = ListAmplifierType.CREDIBILITY_RATING;
 
     private final String id;
     private final String label;
@@ -28,11 +28,6 @@ public enum CredibilityRating implements EnumeratedAmplifier {
     }
     
     @Override
-    public String getFullId() {
-        return String.format("%s%s", TYPE.getId(), id);
-    }
-    
-    @Override
     public String getId() {
         return id;
     }
@@ -40,6 +35,11 @@ public enum CredibilityRating implements EnumeratedAmplifier {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public ListAmplifierType getType() {
+        return TYPE;
     }
     
     public boolean isDeprecated() {
@@ -58,10 +58,9 @@ public enum CredibilityRating implements EnumeratedAmplifier {
         }
     }
 
-   @Override
+    @Override
     public boolean isGraphicalIcon() {
         return true;
     }
-
 
 }

@@ -11,7 +11,7 @@ public enum ActivityEntityType implements EntityType {
     CRIMINAL_ACTIVITY_INCIDENT("01", "Criminal Activity Incident", ActivityEntity.INCIDENT, IconType.FULL_OCTAGON),
     BOMB_BOMBING("02", "Bomb/Bombing", ActivityEntity.INCIDENT, IconType.MAIN),
     IED_EVENT("03", "IED Event", ActivityEntity.INCIDENT, IconType.MAIN),
-    SHOOTING("04", "Shooting", ActivityEntity.INCIDENT, IconType.FULL_OCTAGON),
+    SHOOTING("04", "Shooting", ActivityEntity.INCIDENT, IconType.NA),
     ILLEGAL_DRUG_OPERATION("05", "Illegal Drug Operation", ActivityEntity.INCIDENT, IconType.MAIN),
     EXPLOSION("06", "Explosion", ActivityEntity.INCIDENT, IconType.FULL_OCTAGON),
     HOUSE("07", "House", ActivityEntity.INCIDENT, IconType.MAIN),
@@ -47,7 +47,7 @@ public enum ActivityEntityType implements EntityType {
     private final ActivityEntity entity;
     private final IconType iconType;
     
-    private ActivityEntityType(String id, String label, ActivityEntity entity, IconType iconType) {
+    ActivityEntityType(String id, String label, ActivityEntity entity, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entity = entity;

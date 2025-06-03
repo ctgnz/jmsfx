@@ -24,7 +24,7 @@ public enum CyberspaceLandUnitEntityType implements EntityType {
     private final CyberspaceLandUnitEntity entity;
     private final IconType iconType;
     
-    private CyberspaceLandUnitEntityType(String id, String label, CyberspaceLandUnitEntity entity, IconType iconType) {
+    CyberspaceLandUnitEntityType(String id, String label, CyberspaceLandUnitEntity entity, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entity = entity;

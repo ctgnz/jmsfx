@@ -140,14 +140,15 @@ public enum LandUnitsEntityType implements EntityType {
     POLICE("07", "Police", LandUnitsEntity.LAW_ENFORCEMENT, IconType.MAIN),
     UNITED_STATES_SECRET_SERVICE_USSS("09", "United States Secret Service (USSS)", LandUnitsEntity.LAW_ENFORCEMENT, IconType.MAIN),
     TRANSPORTATION_SECURITY_ADMINISTRATION_TSA("10", "Transportation Security Administration (TSA)", LandUnitsEntity.LAW_ENFORCEMENT, IconType.MAIN),
-    COAST_GUARD("11", "Coast Guard", LandUnitsEntity.LAW_ENFORCEMENT, IconType.FULL_OCTAGON);
+    COAST_GUARD("11", "Coast Guard", LandUnitsEntity.LAW_ENFORCEMENT, IconType.FULL_OCTAGON),
+    INTERNAL_SECURITY_FORCE("13", "Internal Security Force", LandUnitsEntity.LAW_ENFORCEMENT, IconType.MAIN);
 
     private final String id;
     private final String label;
     private final LandUnitsEntity entity;
     private final IconType iconType;
     
-    private LandUnitsEntityType(String id, String label, LandUnitsEntity entity, IconType iconType) {
+    LandUnitsEntityType(String id, String label, LandUnitsEntity entity, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entity = entity;

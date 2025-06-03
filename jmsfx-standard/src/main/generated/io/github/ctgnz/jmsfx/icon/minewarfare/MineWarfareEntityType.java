@@ -39,7 +39,7 @@ public enum MineWarfareEntityType implements EntityType {
     private final MineWarfareEntity entity;
     private final IconType iconType;
     
-    private MineWarfareEntityType(String id, String label, MineWarfareEntity entity, IconType iconType) {
+    MineWarfareEntityType(String id, String label, MineWarfareEntity entity, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entity = entity;

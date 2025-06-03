@@ -15,6 +15,7 @@ public class SymbolSetEnum extends StandardEnum {
     private final String fileName;
     private final String graphicLocation;
     private final List<AmplifierGuideConfig> amplifierGuides = new ArrayList<>();
+    private boolean useFrame = true;
     private boolean entityTypePresent = false;
     private boolean entitySubTypePresent = false;
     private boolean amplifierPresent = false;
@@ -27,12 +28,14 @@ public class SymbolSetEnum extends StandardEnum {
     private String amplifierTwoClass;
     private String amplifierThreeClass;
     private String frameAmplifierClass;
+    private String baseSymbolSet;
 
     public SymbolSetEnum(Dimension dimension, SymbolSetRef symbolSet, String graphicLocation) {
         super(symbolSet.getID().toString(), symbolSet.getLabel(), symbolSet.getSymbolSetCode().getCodeString(), null);
         this.graphicLocation = graphicLocation;
         this.dimensionId = dimension.getID();
         this.fileName = symbolSet.getInstance();
+        this.baseSymbolSet = symbolSet.getBaseSymbolSet();
     }
 
     public String getAmplifierClass() {
@@ -49,6 +52,10 @@ public class SymbolSetEnum extends StandardEnum {
 
     public String getAmplifierTwoClass() {
         return amplifierTwoClass;
+    }
+
+    public String getBaseSymbolSet() {
+        return baseSymbolSet;
     }
 
     public String getBaseTypeName() {
@@ -118,6 +125,10 @@ public class SymbolSetEnum extends StandardEnum {
         return sectorTwoModifierPresent;
     }
 
+    public boolean isUseFrame() {
+        return useFrame;
+    }
+
     public void setAmplifierClass(String amplifierClass) {
         this.amplifierClass = amplifierClass;
     }
@@ -142,6 +153,10 @@ public class SymbolSetEnum extends StandardEnum {
         this.amplifierTwoPresent = amplifierTwoPresent;
     }
 
+    public void setBaseSymbolSet(String baseSymbolSet) {
+        this.baseSymbolSet = baseSymbolSet;
+    }
+
     public void setEntitySubTypePresent(boolean entitySubTypePresent) {
         this.entitySubTypePresent = entitySubTypePresent;
     }
@@ -164,6 +179,10 @@ public class SymbolSetEnum extends StandardEnum {
 
     public void setSectorTwoModifierPresent(boolean sectorTwoModifierPresent) {
         this.sectorTwoModifierPresent = sectorTwoModifierPresent;
+    }
+
+    public void setUseFrame(boolean useFrame) {
+        this.useFrame = useFrame;
     }
 
 }

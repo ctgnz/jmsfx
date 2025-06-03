@@ -40,4 +40,9 @@ public enum CyberspaceLandInstallationSectorTwoModifier implements SectorTwoModi
         return symbolSet;
     }
     
+    @Override
+    public SymbolSet getBaseSymbolSet() {
+        return SymbolSet.CYBERSPACE;
+    }
+
 }

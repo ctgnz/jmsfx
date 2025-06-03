@@ -21,7 +21,7 @@ public enum ActivityEntity implements Entity {
     private final String label;
     private final IconType iconType;
     
-    private ActivityEntity(String id, String label, IconType iconType) {
+    ActivityEntity(String id, String label, IconType iconType) {
         this.id = id;
         this.label = label;
         this.iconType = iconType;

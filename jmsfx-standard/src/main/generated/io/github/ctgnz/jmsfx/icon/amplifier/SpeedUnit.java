@@ -1,16 +1,16 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifier;
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifierType;
+import io.github.ctgnz.jmsfx.icon.ListAmplifier;
+import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum SpeedUnit implements EnumeratedAmplifier {
+public enum SpeedUnit implements ListAmplifier {
     KPH("KPH", "Kilometers Per Hour"),
     MPS("MPS", "Meters Per Second"),
     KTS("KTS", "Nautical Miles Per Hour (Knots)"),
     MPH("MPH", "Statute Miles Per Hour");
 
-    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.SPEED_UNIT;
+    private static final ListAmplifierType TYPE = ListAmplifierType.SPEED_UNIT;
 
     private final String id;
     private final String label;
@@ -26,11 +26,6 @@ public enum SpeedUnit implements EnumeratedAmplifier {
     }
     
     @Override
-    public String getFullId() {
-        return String.format("%s%s", TYPE.getId(), id);
-    }
-    
-    @Override
     public String getId() {
         return id;
     }
@@ -38,6 +33,11 @@ public enum SpeedUnit implements EnumeratedAmplifier {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public ListAmplifierType getType() {
+        return TYPE;
     }
     
     public boolean isDeprecated() {
@@ -56,10 +56,9 @@ public enum SpeedUnit implements EnumeratedAmplifier {
         }
     }
 
-   @Override
+    @Override
     public boolean isGraphicalIcon() {
         return true;
     }
-
 
 }

@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifier;
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifierType;
+import io.github.ctgnz.jmsfx.icon.ListAmplifier;
+import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum ReliabilityRating implements EnumeratedAmplifier {
+public enum ReliabilityRating implements ListAmplifier {
     COMPLETELY("A", "Completely Reliable"),
     USUALLY("B", "Usually Reliable"),
     FAIRLY("C", "Fairly Reliable"),
@@ -12,7 +12,7 @@ public enum ReliabilityRating implements EnumeratedAmplifier {
     UNRELIABLE("E", "Unreliable"),
     REL_CANNOT_BE_JUDGED("F", "Reliability Cannot Be Judged");
 
-    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.RELIABILITY_RATING;
+    private static final ListAmplifierType TYPE = ListAmplifierType.RELIABILITY_RATING;
 
     private final String id;
     private final String label;
@@ -28,11 +28,6 @@ public enum ReliabilityRating implements EnumeratedAmplifier {
     }
     
     @Override
-    public String getFullId() {
-        return String.format("%s%s", TYPE.getId(), id);
-    }
-    
-    @Override
     public String getId() {
         return id;
     }
@@ -40,6 +35,11 @@ public enum ReliabilityRating implements EnumeratedAmplifier {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public ListAmplifierType getType() {
+        return TYPE;
     }
     
     public boolean isDeprecated() {
@@ -58,10 +58,9 @@ public enum ReliabilityRating implements EnumeratedAmplifier {
         }
     }
 
-   @Override
+    @Override
     public boolean isGraphicalIcon() {
         return true;
     }
-
 
 }

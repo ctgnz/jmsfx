@@ -36,22 +36,16 @@ public class GeneratorConfig {
     private String basePackage;
     private String libraryFile;
     private String extensionCountryCode;
-    private List<EnumeratedAmplifierConfig> enumeratedAmplifiers;
+    private List<String> unframedSymbolSets;
+    private List<ListAmplifierConfig> enumeratedAmplifiers;
     private List<StandardAmplifierConfig> standardAmplifiers;
     private Map<String, String> simpleTypes;
     private Map<String, String> dimensionGraphicLocations;
     private Map<String, String> symbolGraphicLocations;
-
-    public List<StandardAmplifierConfig> getStandardAmplifiers() {
-        return standardAmplifiers;
-    }
-
-    public List<EnumeratedAmplifierConfig> getEnumeratedAmplifiers() {
-        return enumeratedAmplifiers;
-    }
+    private Map<String, String> entitySymbolSets;
 
     @JsonIgnore
-    public List<EnumeratedAmplifierConfig> getAmplifierValues(Amplifier amplifier) {
+    public List<ListAmplifierConfig> getAmplifierValues(Amplifier amplifier) {
         return enumeratedAmplifiers.stream().filter(valConfig -> valConfig.getAmplifier().equals(amplifier.getID())).toList();
     }
 
@@ -77,6 +71,14 @@ public class GeneratorConfig {
 
     public Map<String, String> getDimensionGraphicLocations() {
         return dimensionGraphicLocations;
+    }
+
+    public Map<String, String> getEntitySymbolSets() {
+        return entitySymbolSets;
+    }
+
+    public List<ListAmplifierConfig> getEnumeratedAmplifiers() {
+        return enumeratedAmplifiers;
     }
 
     public String getExtensionCountryCode() {
@@ -107,6 +109,10 @@ public class GeneratorConfig {
         return simpleTypes;
     }
 
+    public List<StandardAmplifierConfig> getStandardAmplifiers() {
+        return standardAmplifiers;
+    }
+
     public List<StandardEnumConfig<?, ?>> getStandardEnums() {
         return Arrays.asList(getGeometry(), getDimension(), getContext(), getHqtfDummy(), getStatus(), getStandardIdentity(), getStandardIdentityGroup(), getVersion());
     }
@@ -135,16 +141,12 @@ public class GeneratorConfig {
         return configuration;
     }
 
+    public List<String> getUnframedSymbolSets() {
+        return unframedSymbolSets;
+    }
+
     public StandardEnumConfig<VersionEnum, Version> getVersion() {
         return new StandardEnumConfig<>(VersionEnum.class, Version.class, "Version", "versions", library -> library.getVersions().getVersion());
-    }
-
-    public void setStandardAmplifiers(List<StandardAmplifierConfig> amplifierGroups) {
-        this.standardAmplifiers = amplifierGroups;
-    }
-
-    public void setEnumeratedAmplifiers(List<EnumeratedAmplifierConfig> amplifierValues) {
-        this.enumeratedAmplifiers = amplifierValues;
     }
 
     public void setBasePackage(String basePackage) {
@@ -153,6 +155,14 @@ public class GeneratorConfig {
 
     public void setDimensionGraphicLocations(Map<String, String> dimensionGraphicLocations) {
         this.dimensionGraphicLocations = dimensionGraphicLocations;
+    }
+
+    public void setEntitySymbolSets(Map<String, String> entitySymbolSets) {
+        this.entitySymbolSets = entitySymbolSets;
+    }
+
+    public void setEnumeratedAmplifiers(List<ListAmplifierConfig> amplifierValues) {
+        this.enumeratedAmplifiers = amplifierValues;
     }
 
     public void setExtensionCountryCode(String extensionCountryCode) {
@@ -175,7 +185,15 @@ public class GeneratorConfig {
         this.simpleTypes = simpleTypes;
     }
 
+    public void setStandardAmplifiers(List<StandardAmplifierConfig> amplifierGroups) {
+        this.standardAmplifiers = amplifierGroups;
+    }
+
     public void setSymbolGraphicLocations(Map<String, String> symbolGraphicLocations) {
         this.symbolGraphicLocations = symbolGraphicLocations;
+    }
+
+    public void setUnframedSymbolSets(List<String> unframedSymbolSets) {
+        this.unframedSymbolSets = unframedSymbolSets;
     }
 }

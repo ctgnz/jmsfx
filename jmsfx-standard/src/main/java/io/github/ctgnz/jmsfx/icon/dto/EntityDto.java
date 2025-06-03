@@ -3,6 +3,8 @@ package io.github.ctgnz.jmsfx.icon.dto;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
+
 import io.github.ctgnz.jmsfx.icon.Entity;
 import io.github.ctgnz.jmsfx.icon.EntityType;
 import io.github.ctgnz.jmsfx.icon.IconType;
@@ -27,6 +29,18 @@ public class EntityDto implements Entity {
         return entityTypes;
     }
 
+    public String getGraphicLocation(StandardIdentityDto identity) {
+        String graphicLocation = getSymbolSet().getGraphicLocation();
+        if (StringUtils.isBlank(graphicLocation)) {
+            return "/svg/Appendices/98100000.svg";
+        }
+        if (entity.isFullFrameIcon()) {
+            return String.format("/svg/Appendices/%s/%s_%s.svg", graphicLocation, entity.getGraphicIdentifier(), identity.getGroup().ordinal());
+        } else {
+            return String.format("/svg/Appendices/%s/%s.svg", graphicLocation, entity.getGraphicIdentifier());
+        }
+    }
+
     @Override
     public IconType getIconType() {
         return entity.getIconType();
@@ -42,4 +56,8 @@ public class EntityDto implements Entity {
         return entity.getLabel();
     }
 
+    @Override
+    public boolean isUnknown() {
+        return entity.isUnknown();
+    }
 }

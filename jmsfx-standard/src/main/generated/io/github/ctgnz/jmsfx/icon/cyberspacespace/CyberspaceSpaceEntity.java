@@ -10,14 +10,14 @@ import io.github.ctgnz.jmsfx.icon.IconType;
 public enum CyberspaceSpaceEntity implements Entity {
     UNSPECIFIED("00", "Unspecified", IconType.NA),
     MISSION_FORCE("11", "Mission Force", IconType.NA),
-    CYBERSPACE_UNIT("12", "Cyberspace Unit", IconType.NA),
+    CYBERSPACE_UNIT("12", "Cyberspace Unit", IconType.MAIN),
     THREAT_ACTOR("13", "Threat Actor", IconType.MAIN);
 
     private final String id;
     private final String label;
     private final IconType iconType;
     
-    private CyberspaceSpaceEntity(String id, String label, IconType iconType) {
+    CyberspaceSpaceEntity(String id, String label, IconType iconType) {
         this.id = id;
         this.label = label;
         this.iconType = iconType;
@@ -41,6 +41,11 @@ public enum CyberspaceSpaceEntity implements Entity {
     @Override
     public SymbolSet getSymbolSet() {
         return SymbolSet.CYBERSPACE_SPACE;
+    }
+
+    @Override
+    public SymbolSet getBaseSymbolSet() {
+        return SymbolSet.CYBERSPACE;
     }
 
     @Override

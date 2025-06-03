@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifier;
+import io.github.ctgnz.jmsfx.icon.ListAmplifier;
 import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
 import io.github.ctgnz.jmsfx.icon.Entity;
 import io.github.ctgnz.jmsfx.icon.EntitySubType;
@@ -26,17 +26,17 @@ public class InternalSymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<EnumeratedAmplifier> getAmplifiers() {
+    public List<ListAmplifier> getAmplifiers() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<EnumeratedAmplifier> getAmplifiersTwo() {
+    public List<ListAmplifier> getAmplifiersTwo() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<EnumeratedAmplifier> getAmplifiersThree() {
+    public List<ListAmplifier> getAmplifiersThree() {
         return Collections.emptyList();
     }
 
@@ -56,7 +56,7 @@ public class InternalSymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<EnumeratedAmplifier> getFrameAmplifiers() {
+    public List<ListAmplifier> getFrameAmplifiers() {
         return Collections.emptyList();
     }
 
@@ -107,6 +107,11 @@ public class InternalSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isSectorTwoModifierPresent() {
+        return false;
+    }
+
+    @Override
+    public boolean isFramedIcon() {
         return false;
     }
 

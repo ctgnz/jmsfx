@@ -15,6 +15,10 @@ public class SectorOneModifierDto implements SectorOneModifier {
         return modifier.getCategory();
     }
 
+    public String getFullGraphicLocation() {
+        return String.format("/svg/Appendices/%s/mod1/%s.svg", modifier.getGraphicLocation(), modifier.getGraphicIdentifier());
+    }
+
     @Override
     public String getId() {
         return modifier.getId();
@@ -34,4 +38,8 @@ public class SectorOneModifierDto implements SectorOneModifier {
         return modifier.getSymbolSet();
     }
 
+    @Override
+    public boolean isUnknown() {
+        return modifier.isUnknown();
+    }
 }

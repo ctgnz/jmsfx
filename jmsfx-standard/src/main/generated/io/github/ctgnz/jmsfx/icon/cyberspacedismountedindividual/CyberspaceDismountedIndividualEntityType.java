@@ -24,7 +24,7 @@ public enum CyberspaceDismountedIndividualEntityType implements EntityType {
     private final CyberspaceDismountedIndividualEntity entity;
     private final IconType iconType;
     
-    private CyberspaceDismountedIndividualEntityType(String id, String label, CyberspaceDismountedIndividualEntity entity, IconType iconType) {
+    CyberspaceDismountedIndividualEntityType(String id, String label, CyberspaceDismountedIndividualEntity entity, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entity = entity;

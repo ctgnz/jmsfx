@@ -22,6 +22,7 @@ public class SymbolIdentificationCode {
     public static final EnumSet<Status> ICON_STATUS = EnumSet.of(Status.FULLY_CAPABLE, Status.DAMAGED, Status.DESTROYED, Status.FULL);
     public static final EnumSet<StandardIdentity> KNOWN_IDENTITIES = EnumSet.of(StandardIdentity.SI_UNKNOWN, StandardIdentity.SI_FRIEND, StandardIdentity.SI_NEUTRAL, StandardIdentity.SI_HOSTILE_FAKER);
     public static final EnumSet<StandardIdentity> UNKNOWN_IDENTITIES = EnumSet.complementOf(KNOWN_IDENTITIES);
+    public static final EnumSet<StandardIdentity> HOSTILE_IDENTITIES = EnumSet.of(StandardIdentity.SI_SUSPECT_JOKER, StandardIdentity.SI_HOSTILE_FAKER);
     public static final Version DEFAULT_VERSION = Version.CURRENT;
     public static final Context DEFAULT_CONTEXT = Context.REALITY;
     public static final StandardIdentity DEFAULT_STANDARD_ID = StandardIdentity.SI_FRIEND;
@@ -45,10 +46,10 @@ public class SymbolIdentificationCode {
     private SymbolSet symbolSet = DEFAULT_SYMBOL_SET;
     private Status status = DEFAULT_STATUS;
     private HqtfDummy hqtfDummy = DEFAULT_HQTF_DUMMY;
-    private EnumeratedAmplifier amplifier = DEFAULT_AMPLIFIER;
-    private EnumeratedAmplifier amplifierTwo = DEFAULT_AMPLIFIER;
-    private EnumeratedAmplifier amplifierThree = DEFAULT_AMPLIFIER;
-    private EnumeratedAmplifier frameAmplifier = DEFAULT_AMPLIFIER;
+    private ListAmplifier amplifier = DEFAULT_AMPLIFIER;
+    private ListAmplifier amplifierTwo = DEFAULT_AMPLIFIER;
+    private ListAmplifier amplifierThree = DEFAULT_AMPLIFIER;
+    private ListAmplifier frameAmplifier = DEFAULT_AMPLIFIER;
     private Entity entity = getDefaultEntity();
     private EntityType entityType;
     private EntitySubType entitySubType;
@@ -64,35 +65,35 @@ public class SymbolIdentificationCode {
         this.changeSupport.addPropertyChangeListener(listener);
     }
 
-    public EnumeratedAmplifier getAmplifier() {
+    public ListAmplifier getAmplifier() {
         return amplifier;
     }
 
-    public EnumeratedAmplifier getAmplifierTwo() {
+    public ListAmplifier getAmplifierTwo() {
         return amplifierTwo;
     }
 
-    public EnumeratedAmplifier getAmplifierThree() {
+    public ListAmplifier getAmplifierThree() {
         return amplifierThree;
     }
 
-    public EnumeratedAmplifier getFrameAmplifier() {
+    public ListAmplifier getFrameAmplifier() {
         return frameAmplifier;
     }
 
-    public List<EnumeratedAmplifier> getEnumeratedAmplifiers() {
-        List<EnumeratedAmplifier> EnumeratedAmplifiers = symbolSet.getEnumeratedAmplifiers();
-        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), EnumeratedAmplifiers.stream()).collect(toList());
+    public List<ListAmplifier> getListAmplifiers() {
+        List<ListAmplifier> ListAmplifiers = symbolSet.getListAmplifiers();
+        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), ListAmplifiers.stream()).collect(toList());
     }
 
-    public List<EnumeratedAmplifier> getAmplifierTwoGroups() {
-        List<EnumeratedAmplifier> EnumeratedAmplifiers = symbolSet.getAmplifierTwoGroups();
-        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), EnumeratedAmplifiers.stream()).collect(toList());
+    public List<ListAmplifier> getAmplifierTwoGroups() {
+        List<ListAmplifier> ListAmplifiers = symbolSet.getAmplifierTwoGroups();
+        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), ListAmplifiers.stream()).collect(toList());
     }
 
-    public List<EnumeratedAmplifier> getAmplifierThreeGroups() {
-        List<EnumeratedAmplifier> EnumeratedAmplifiers = symbolSet.getAmplifierThreeGroups();
-        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), EnumeratedAmplifiers.stream()).collect(toList());
+    public List<ListAmplifier> getAmplifierThreeGroups() {
+        List<ListAmplifier> ListAmplifiers = symbolSet.getAmplifierThreeGroups();
+        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), ListAmplifiers.stream()).collect(toList());
     }
 
     public Context getContext() {
@@ -169,9 +170,9 @@ public class SymbolIdentificationCode {
                              amplifier != null ? amplifier.getId() : "00");
     }
 
-    public List<EnumeratedAmplifier> getFrameEnumeratedAmplifiers() {
-        List<EnumeratedAmplifier> EnumeratedAmplifiers = symbolSet.getFrameEnumeratedAmplifiers();
-        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), EnumeratedAmplifiers.stream()).toList();
+    public List<ListAmplifier> getFrameListAmplifiers() {
+        List<ListAmplifier> ListAmplifiers = symbolSet.getFrameListAmplifiers();
+        return Stream.concat(Stream.of(DEFAULT_AMPLIFIER), ListAmplifiers.stream()).toList();
     }
 
     public HqtfDummy getHqtfDummy() {
@@ -247,20 +248,20 @@ public class SymbolIdentificationCode {
         this.changeSupport.removePropertyChangeListener(listener);
     }
 
-    public void setAmplifier(EnumeratedAmplifier amplifier) {
-        EnumeratedAmplifier oldValue = this.amplifier;
+    public void setAmplifier(ListAmplifier amplifier) {
+        ListAmplifier oldValue = this.amplifier;
         this.amplifier = defaultIfNull(amplifier, DEFAULT_AMPLIFIER);
         changeSupport.firePropertyChange("amplifier", oldValue, this.amplifier);
     }
 
-    public void setAmplifierTwo(EnumeratedAmplifier amplifier) {
-        EnumeratedAmplifier oldValue = this.amplifierTwo;
+    public void setAmplifierTwo(ListAmplifier amplifier) {
+        ListAmplifier oldValue = this.amplifierTwo;
         this.amplifierTwo = defaultIfNull(amplifier, DEFAULT_AMPLIFIER);
         changeSupport.firePropertyChange("amplifierTwo", oldValue, this.amplifierTwo);
     }
 
-    public void setAmplifierThree(EnumeratedAmplifier amplifier) {
-        EnumeratedAmplifier oldValue = this.amplifierThree;
+    public void setAmplifierThree(ListAmplifier amplifier) {
+        ListAmplifier oldValue = this.amplifierThree;
         this.amplifierThree = defaultIfNull(amplifier, DEFAULT_AMPLIFIER);
         changeSupport.firePropertyChange("amplifierThree", oldValue, this.amplifierThree);
     }
@@ -301,8 +302,8 @@ public class SymbolIdentificationCode {
         }
     }
 
-    public void setFrameAmplifier(EnumeratedAmplifier amplifier) {
-        EnumeratedAmplifier oldValue = this.frameAmplifier;
+    public void setFrameAmplifier(ListAmplifier amplifier) {
+        ListAmplifier oldValue = this.frameAmplifier;
         this.frameAmplifier = defaultIfNull(amplifier, DEFAULT_AMPLIFIER);
         changeSupport.firePropertyChange("frameAmplifier", oldValue, this.frameAmplifier);
     }

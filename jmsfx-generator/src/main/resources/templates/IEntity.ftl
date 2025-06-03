@@ -5,6 +5,10 @@ import java.util.List;
 
 public interface Entity extends MainIconElement {
 
+    default SymbolSet getBaseSymbolSet() {
+        return getSymbolSet();
+    }
+    
     @Override
     default Entity getEntity() {
         return (Entity) this;
@@ -12,7 +16,7 @@ public interface Entity extends MainIconElement {
     
     @Override
     default String getGraphicIdentifier() {
-        return String.format("%s%s0000", getSymbolSet().getId(), getId());
+        return String.format("%s%s0000", getBaseSymbolSet().getId(), getId());
     }
  
     default List<EntityType> getEntityTypes() {

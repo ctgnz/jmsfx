@@ -9,7 +9,7 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 
 import io.github.ctgnz.jmsfx.icon.Amplifier;
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifier;
+import io.github.ctgnz.jmsfx.icon.ListAmplifier;
 import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
 import io.github.ctgnz.jmsfx.icon.GuideType;
 import io.github.ctgnz.jmsfx.icon.Entity;
@@ -47,17 +47,17 @@ public class SpaceSymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<EnumeratedAmplifier> getAmplifiers() {
+    public List<ListAmplifier> getAmplifiers() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<EnumeratedAmplifier> getAmplifiersTwo() {
+    public List<ListAmplifier> getAmplifiersTwo() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<EnumeratedAmplifier> getAmplifiersThree() {
+    public List<ListAmplifier> getAmplifiersThree() {
         return Collections.emptyList();
     }
 
@@ -77,7 +77,7 @@ public class SpaceSymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<EnumeratedAmplifier> getFrameAmplifiers() {
+    public List<ListAmplifier> getFrameAmplifiers() {
         return Collections.emptyList();
     }
 
@@ -128,6 +128,11 @@ public class SpaceSymbolSetInfo implements SymbolSetInfo {
 
     @Override
     public boolean isSectorTwoModifierPresent() {
+        return true;
+    }
+
+    @Override
+    public boolean isFramedIcon() {
         return true;
     }
 

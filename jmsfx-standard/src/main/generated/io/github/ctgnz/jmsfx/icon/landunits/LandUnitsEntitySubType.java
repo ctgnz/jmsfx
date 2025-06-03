@@ -57,7 +57,7 @@ public enum LandUnitsEntitySubType implements EntitySubType {
     private final LandUnitsEntityType entityType;
     private final IconType iconType;
     
-    private LandUnitsEntitySubType(String id, String label, LandUnitsEntityType entityType, IconType iconType) {
+    LandUnitsEntitySubType(String id, String label, LandUnitsEntityType entityType, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entityType = entityType;

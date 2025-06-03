@@ -76,7 +76,7 @@ public class IdentificationSymbolIcon extends Pane {
                 container.getChildren().add(overlay);
             }
             if (symbol.isFrameAmplifierUsed()) {
-                EnumeratedAmplifier frameAmplifier = symbol.getFrameAmplifier();
+                ListAmplifier frameAmplifier = symbol.getFrameAmplifier();
                 replaceFill(frame, Color.web(frameAmplifier.getBackgroundFill()));
             }
         }

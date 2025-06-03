@@ -1,15 +1,15 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifier;
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifierType;
+import io.github.ctgnz.jmsfx.icon.ListAmplifier;
+import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum TargetDesignation implements EnumeratedAmplifier {
+public enum TargetDesignation implements ListAmplifier {
     TA("TA", "Hostile Target"),
     NT("TA", "Hostile Non-Target"),
     EX("EX", "Expired");
 
-    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.TARGET_DESIGNATION;
+    private static final ListAmplifierType TYPE = ListAmplifierType.TARGET_DESIGNATION;
 
     private final String id;
     private final String label;
@@ -25,11 +25,6 @@ public enum TargetDesignation implements EnumeratedAmplifier {
     }
     
     @Override
-    public String getFullId() {
-        return String.format("%s%s", TYPE.getId(), id);
-    }
-    
-    @Override
     public String getId() {
         return id;
     }
@@ -37,6 +32,11 @@ public enum TargetDesignation implements EnumeratedAmplifier {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public ListAmplifierType getType() {
+        return TYPE;
     }
     
     public boolean isDeprecated() {
@@ -55,10 +55,9 @@ public enum TargetDesignation implements EnumeratedAmplifier {
         }
     }
 
-   @Override
+    @Override
     public boolean isGraphicalIcon() {
         return true;
     }
-
 
 }

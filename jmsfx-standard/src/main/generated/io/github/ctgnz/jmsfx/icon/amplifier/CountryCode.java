@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifier;
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifierType;
+import io.github.ctgnz.jmsfx.icon.ListAmplifier;
+import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum CountryCode implements EnumeratedAmplifier {
+public enum CountryCode implements ListAmplifier {
     UNDEFINED("UNDEFINED", "Undefined", "000"),
     AF("AFG", "Afghanistan", "004"),
     AL("ALB", "Albania", "008"),
@@ -318,7 +318,7 @@ public enum CountryCode implements EnumeratedAmplifier {
     @Extension HB("HBV", "Kingdom of Bavaria", "996"),
     @Extension HP("HPR", "Kingdom of Prussia", "997");
 
-    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.COUNTRY_CODE;
+    private static final ListAmplifierType TYPE = ListAmplifierType.COUNTRY_CODE;
 
     private final String id;
     private final String label;
@@ -336,11 +336,6 @@ public enum CountryCode implements EnumeratedAmplifier {
     }
     
     @Override
-    public String getFullId() {
-        return String.format("%s%s", TYPE.getId(), id);
-    }
-    
-    @Override
     public String getId() {
         return id;
     }
@@ -348,6 +343,11 @@ public enum CountryCode implements EnumeratedAmplifier {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public ListAmplifierType getType() {
+        return TYPE;
     }
 
     public String getCode() {
@@ -370,10 +370,9 @@ public enum CountryCode implements EnumeratedAmplifier {
         }
     }
 
-   @Override
+    @Override
     public boolean isGraphicalIcon() {
         return true;
     }
-
 
 }

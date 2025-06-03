@@ -1,6 +1,7 @@
 package ${basePackage};
 
 import java.util.Arrays;
+import java.util.List;
 
 public enum Dimension implements SymbolIdentificationCodeElement {
 <#list dimensions as dim>
@@ -43,6 +44,10 @@ public enum Dimension implements SymbolIdentificationCodeElement {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    public List<SymbolSet> getSymbolSets() {
+        return Arrays.stream(SymbolSet.values()).filter(sym -> sym.getDimension() == this).toList();
     }
 
 }

@@ -1,13 +1,13 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifier;
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifierType;
+import io.github.ctgnz.jmsfx.icon.ListAmplifier;
+import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum GuardedUnit implements EnumeratedAmplifier {
+public enum GuardedUnit implements ListAmplifier {
     BG("BG", "Guarded Unit");
 
-    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.GUARDED_UNIT;
+    private static final ListAmplifierType TYPE = ListAmplifierType.GUARDED_UNIT;
 
     private final String id;
     private final String label;
@@ -23,11 +23,6 @@ public enum GuardedUnit implements EnumeratedAmplifier {
     }
     
     @Override
-    public String getFullId() {
-        return String.format("%s%s", TYPE.getId(), id);
-    }
-    
-    @Override
     public String getId() {
         return id;
     }
@@ -35,6 +30,11 @@ public enum GuardedUnit implements EnumeratedAmplifier {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public ListAmplifierType getType() {
+        return TYPE;
     }
     
     public boolean isDeprecated() {
@@ -53,10 +53,9 @@ public enum GuardedUnit implements EnumeratedAmplifier {
         }
     }
 
-   @Override
+    @Override
     public boolean isGraphicalIcon() {
         return true;
     }
-
 
 }

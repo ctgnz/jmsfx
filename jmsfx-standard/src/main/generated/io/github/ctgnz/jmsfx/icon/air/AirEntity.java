@@ -18,7 +18,7 @@ public enum AirEntity implements Entity {
     private final String label;
     private final IconType iconType;
     
-    private AirEntity(String id, String label, IconType iconType) {
+    AirEntity(String id, String label, IconType iconType) {
         this.id = id;
         this.label = label;
         this.iconType = iconType;

@@ -44,7 +44,7 @@ public enum SpaceEntityType implements EntityType {
     private final SpaceEntity entity;
     private final IconType iconType;
     
-    private SpaceEntityType(String id, String label, SpaceEntity entity, IconType iconType) {
+    SpaceEntityType(String id, String label, SpaceEntity entity, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entity = entity;

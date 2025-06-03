@@ -31,6 +31,15 @@ public class EntityTypeDto implements EntityType {
         return entityType;
     }
 
+    public String getGraphicLocation(StandardIdentityDto identity) {
+        String graphicLocation = getSymbolSet().getGraphicLocation();
+        if (entityType.isFullFrameIcon()) {
+            return String.format("/svg/Appendices/%s/%s_%s.svg", graphicLocation, entityType.getGraphicIdentifier(), identity.getGroup().ordinal());
+        } else {
+            return String.format("/svg/Appendices/%s/%s.svg", graphicLocation, entityType.getGraphicIdentifier());
+        }
+    }
+
     @Override
     public IconType getIconType() {
         return entityType.getIconType();
@@ -46,4 +55,8 @@ public class EntityTypeDto implements EntityType {
         return entityType.getLabel();
     }
 
+    @Override
+    public boolean isUnknown() {
+        return entityType.isUnknown();
+    }
 }

@@ -76,6 +76,7 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
     RFA_CIRCULAR("03", "Circular", ControlMeasureEntityType.RESTRICTED_FIRE_AREA, IconType.MAIN),
     PAA_RECTANGULAR("01", "Rectangular", ControlMeasureEntityType.POSITION_AREA_FOR_ARTILLERY_PAA, IconType.MAIN),
     PAA_CIRCULAR("02", "Circular", ControlMeasureEntityType.POSITION_AREA_FOR_ARTILLERY_PAA, IconType.MAIN),
+    PAA_IRREGULAR("03", "Irregular", ControlMeasureEntityType.POSITION_AREA_FOR_ARTILLERY_PAA, IconType.MAIN),
     POINT_SINGLE_TARGET("01", "Point or Single Target", ControlMeasureEntityType.POINT_TARGETS, IconType.MAIN),
     NUCLEAR_TARGET("02", "Nuclear Target", ControlMeasureEntityType.POINT_TARGETS, IconType.MAIN),
     TARGET_RECORDED("03", "Target-Recorded", ControlMeasureEntityType.POINT_TARGETS, IconType.MAIN),
@@ -236,7 +237,7 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
     private final ControlMeasureEntityType entityType;
     private final IconType iconType;
     
-    private ControlMeasureEntitySubType(String id, String label, ControlMeasureEntityType entityType, IconType iconType) {
+    ControlMeasureEntitySubType(String id, String label, ControlMeasureEntityType entityType, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entityType = entityType;

@@ -14,12 +14,12 @@ import io.github.ctgnz.jmsfx.icon.Context;
 import io.github.ctgnz.jmsfx.icon.Entity;
 import io.github.ctgnz.jmsfx.icon.EntitySubType;
 import io.github.ctgnz.jmsfx.icon.EntityType;
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifier;
 import io.github.ctgnz.jmsfx.icon.HqtfDummy;
 import io.github.ctgnz.jmsfx.icon.IconScale;
 import io.github.ctgnz.jmsfx.icon.IconScaleListCell;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbolIcon;
+import io.github.ctgnz.jmsfx.icon.ListAmplifier;
 import io.github.ctgnz.jmsfx.icon.ScaleDirection;
 import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
@@ -250,28 +250,28 @@ public class IdentificationSymbolIconPreview extends Application {
         hqtfDummy.setMaxWidth(300);
         hqtfDummy.valueProperty().bindBidirectional(symbol.hqtfDummyProperty());
 
-        ComboBox<EnumeratedAmplifier> amplifier = new ComboBox<>(symbol.amplifierGroupsList());
+        ComboBox<ListAmplifier> amplifier = new ComboBox<>(symbol.amplifierGroupsList());
         amplifier.setCellFactory(p -> new SymbolIdentificationCodeElementListCell<>());
         amplifier.setButtonCell(new SymbolIdentificationCodeElementListCell<>());
         amplifier.setMaxWidth(300);
         amplifier.valueProperty().bindBidirectional(symbol.amplifierProperty());
         amplifier.disableProperty().bind(Bindings.size(symbol.amplifierGroupsList()).lessThan(2));
 
-        ComboBox<EnumeratedAmplifier> amplifierTwo = new ComboBox<>(symbol.amplifierTwoGroupsList());
+        ComboBox<ListAmplifier> amplifierTwo = new ComboBox<>(symbol.amplifierTwoGroupsList());
         amplifierTwo.setCellFactory(p -> new SymbolIdentificationCodeElementListCell<>());
         amplifierTwo.setButtonCell(new SymbolIdentificationCodeElementListCell<>());
         amplifierTwo.setMaxWidth(300);
         amplifierTwo.valueProperty().bindBidirectional(symbol.amplifierTwoProperty());
         amplifierTwo.disableProperty().bind(Bindings.size(symbol.amplifierTwoGroupsList()).lessThan(2));
 
-        ComboBox<EnumeratedAmplifier> amplifierThree = new ComboBox<>(symbol.amplifierThreeGroupsList());
+        ComboBox<ListAmplifier> amplifierThree = new ComboBox<>(symbol.amplifierThreeGroupsList());
         amplifierThree.setCellFactory(p -> new SymbolIdentificationCodeElementListCell<>());
         amplifierThree.setButtonCell(new SymbolIdentificationCodeElementListCell<>());
         amplifierThree.setMaxWidth(300);
         amplifierThree.valueProperty().bindBidirectional(symbol.amplifierThreeProperty());
         amplifierThree.disableProperty().bind(Bindings.size(symbol.amplifierThreeGroupsList()).lessThan(2));
 
-        ComboBox<EnumeratedAmplifier> frameAmplifier = new ComboBox<>(symbol.frameAmplifierGroupsList());
+        ComboBox<ListAmplifier> frameAmplifier = new ComboBox<>(symbol.frameAmplifierGroupsList());
         frameAmplifier.setCellFactory(p -> new SymbolIdentificationCodeElementListCell<>());
         frameAmplifier.setButtonCell(new SymbolIdentificationCodeElementListCell<>());
         frameAmplifier.setMaxWidth(300);
@@ -405,7 +405,7 @@ public class IdentificationSymbolIconPreview extends Application {
     }
 
     private void testModifierEvents(List<Runnable> events, SymbolSet symbolSet) {
-        symbolSet.getEnumeratedAmplifiers().forEach(amplifier -> {
+        symbolSet.getListAmplifiers().forEach(amplifier -> {
             events.add(() -> {
                 System.out.format("\t\tAmplifier: %s%n", amplifier.getLabel());
                 symbol.amplifierProperty().set(amplifier);

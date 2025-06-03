@@ -428,7 +428,7 @@ public enum ControlMeasureEntityType implements EntityType {
     private final ControlMeasureEntity entity;
     private final IconType iconType;
     
-    private ControlMeasureEntityType(String id, String label, ControlMeasureEntity entity, IconType iconType) {
+    ControlMeasureEntityType(String id, String label, ControlMeasureEntity entity, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entity = entity;

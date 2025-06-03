@@ -18,7 +18,7 @@ public enum DismountedIndividualEntityType implements EntityType {
     private final DismountedIndividualEntity entity;
     private final IconType iconType;
     
-    private DismountedIndividualEntityType(String id, String label, DismountedIndividualEntity entity, IconType iconType) {
+    DismountedIndividualEntityType(String id, String label, DismountedIndividualEntity entity, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entity = entity;

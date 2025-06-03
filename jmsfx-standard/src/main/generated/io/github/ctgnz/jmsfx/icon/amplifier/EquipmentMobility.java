@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.StandardEnumeratedAmplifier;
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifierType;
+import io.github.ctgnz.jmsfx.icon.StandardAmplifier;
+import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum EquipmentMobility implements StandardEnumeratedAmplifier {
+public enum EquipmentMobility implements StandardAmplifier {
     WHEEL_LIMIT_COUNTRY("1", "Wheeled limited cross country"),
     WHEEL_COUNTRY("2", "Wheeled cross country"),
     TRACKED("3", "Tracked"),
@@ -17,7 +17,7 @@ public enum EquipmentMobility implements StandardEnumeratedAmplifier {
     BARGE("D", "Barge"),
     AMPHIB("E", "Amphibious");
 
-    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.EQUIPMENT_MOBILITY;
+    private static final ListAmplifierType TYPE = ListAmplifierType.EQUIPMENT_MOBILITY;
 
     private final String id;
     private final String label;
@@ -33,11 +33,6 @@ public enum EquipmentMobility implements StandardEnumeratedAmplifier {
     }
     
     @Override
-    public String getFullId() {
-        return String.format("%s%s", TYPE.getId(), id);
-    }
-    
-    @Override
     public String getId() {
         return id;
     }
@@ -45,6 +40,11 @@ public enum EquipmentMobility implements StandardEnumeratedAmplifier {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public ListAmplifierType getType() {
+        return TYPE;
     }
     
     public boolean isDeprecated() {
@@ -63,10 +63,9 @@ public enum EquipmentMobility implements StandardEnumeratedAmplifier {
         }
     }
 
-   @Override
+    @Override
     public boolean isGraphicalIcon() {
         return true;
     }
-
 
 }

@@ -24,7 +24,7 @@ public enum CyberspaceSeaSurfaceEntityType implements EntityType {
     private final CyberspaceSeaSurfaceEntity entity;
     private final IconType iconType;
     
-    private CyberspaceSeaSurfaceEntityType(String id, String label, CyberspaceSeaSurfaceEntity entity, IconType iconType) {
+    CyberspaceSeaSurfaceEntityType(String id, String label, CyberspaceSeaSurfaceEntity entity, IconType iconType) {
         this.id = id;
         this.label = label;
         this.entity = entity;

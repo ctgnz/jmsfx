@@ -1,14 +1,14 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.StandardEnumeratedAmplifier;
-import io.github.ctgnz.jmsfx.icon.EnumeratedAmplifierType;
+import io.github.ctgnz.jmsfx.icon.StandardAmplifier;
+import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum TowedArrayType implements StandardEnumeratedAmplifier {
+public enum TowedArrayType implements StandardAmplifier {
     SHORT_TOWED_ARRAY("1", "Short towed array"),
     LONG_TOWED_ARRAY("2", "Long towed array");
 
-    private static final EnumeratedAmplifierType TYPE = EnumeratedAmplifierType.TOWED_ARRAYS;
+    private static final ListAmplifierType TYPE = ListAmplifierType.TOWED_ARRAYS;
 
     private final String id;
     private final String label;
@@ -24,11 +24,6 @@ public enum TowedArrayType implements StandardEnumeratedAmplifier {
     }
     
     @Override
-    public String getFullId() {
-        return String.format("%s%s", TYPE.getId(), id);
-    }
-    
-    @Override
     public String getId() {
         return id;
     }
@@ -36,6 +31,11 @@ public enum TowedArrayType implements StandardEnumeratedAmplifier {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public ListAmplifierType getType() {
+        return TYPE;
     }
     
     public boolean isDeprecated() {
@@ -54,10 +54,9 @@ public enum TowedArrayType implements StandardEnumeratedAmplifier {
         }
     }
 
-   @Override
+    @Override
     public boolean isGraphicalIcon() {
         return true;
     }
-
 
 }

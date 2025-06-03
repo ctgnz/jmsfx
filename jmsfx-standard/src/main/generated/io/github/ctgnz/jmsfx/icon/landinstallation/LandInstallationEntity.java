@@ -16,7 +16,7 @@ public enum LandInstallationEntity implements Entity {
     private final String label;
     private final IconType iconType;
     
-    private LandInstallationEntity(String id, String label, IconType iconType) {
+    LandInstallationEntity(String id, String label, IconType iconType) {
         this.id = id;
         this.label = label;
         this.iconType = iconType;

@@ -47,4 +47,9 @@ public enum CyberspaceDismountedIndividualSectorOneModifier implements SectorOne
         return symbolSet;
     }
     
+    @Override
+    public SymbolSet getBaseSymbolSet() {
+        return SymbolSet.CYBERSPACE;
+    }
+
 }
