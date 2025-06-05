@@ -1,34 +1,33 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.StandardAmplifier;
+import io.github.ctgnz.jmsfx.IStandardAmplifier;
 import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum UnknownAmplifier implements StandardAmplifier {
+public enum UnknownAmplifier implements IStandardAmplifier {
     NA("0", "Unknown", "FFFF80");
 
     private static final ListAmplifierType TYPE = ListAmplifierType.UNKNOWN;
-
     private final String id;
     private final String label;
     private final String backgroundFill;
-    
-    private UnknownAmplifier(String id, String label, String backgroundFill) {
+
+    UnknownAmplifier(String id, String label, String backgroundFill) {
         this.id = id;
         this.label = label;
         this.backgroundFill = backgroundFill;
     }
-    
+
     @Override
     public String getGraphicLocation() {
         return "Amplifier";
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -43,7 +42,7 @@ public enum UnknownAmplifier implements StandardAmplifier {
     public String getBackgroundFill() {
         return backgroundFill;
     }
-    
+
     public boolean isDeprecated() {
         try {
             return UnknownAmplifier.class.getField(name()).getAnnotation(Deprecated.class) != null;

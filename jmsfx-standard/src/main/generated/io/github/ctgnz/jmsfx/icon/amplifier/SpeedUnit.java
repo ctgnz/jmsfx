@@ -1,35 +1,34 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.ListAmplifier;
+import io.github.ctgnz.jmsfx.IListAmplifier;
 import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum SpeedUnit implements ListAmplifier {
+public enum SpeedUnit implements IListAmplifier {
     KPH("KPH", "Kilometers Per Hour"),
     MPS("MPS", "Meters Per Second"),
     KTS("KTS", "Nautical Miles Per Hour (Knots)"),
     MPH("MPH", "Statute Miles Per Hour");
 
     private static final ListAmplifierType TYPE = ListAmplifierType.SPEED_UNIT;
-
     private final String id;
     private final String label;
-    
-    private SpeedUnit(String id, String label) {
+
+    SpeedUnit(String id, String label) {
         this.id = id;
         this.label = label;
     }
-    
+
     @Override
     public String getGraphicLocation() {
         return "NA";
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -39,7 +38,7 @@ public enum SpeedUnit implements ListAmplifier {
     public ListAmplifierType getType() {
         return TYPE;
     }
-    
+
     public boolean isDeprecated() {
         try {
             return SpeedUnit.class.getField(name()).getAnnotation(Deprecated.class) != null;

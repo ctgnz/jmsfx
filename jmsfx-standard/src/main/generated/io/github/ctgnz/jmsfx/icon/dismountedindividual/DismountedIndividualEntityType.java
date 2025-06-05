@@ -2,53 +2,52 @@ package io.github.ctgnz.jmsfx.icon.dismountedindividual;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.icon.Entity;
-import io.github.ctgnz.jmsfx.icon.EntityType;
-import io.github.ctgnz.jmsfx.icon.EntitySubType;
-import io.github.ctgnz.jmsfx.icon.IconType;
+import io.github.ctgnz.jmsfx.IEntity;
+import io.github.ctgnz.jmsfx.IEntitySubType;
+import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.icon.GraphicType;
 
-public enum DismountedIndividualEntityType implements EntityType {
-    TASK("02", "Activity/Task", DismountedIndividualEntity.MILITARY, IconType.NA),
-    LETHAL_WEAPONS("03", "Lethal Weapons", DismountedIndividualEntity.MILITARY, IconType.NA),
-    NON_LETHAL_WEAPONS("04", "Non-Lethal Weapons", DismountedIndividualEntity.MILITARY, IconType.NA),
-    TASK2("01", "Activity", DismountedIndividualEntity.CIVILIAN2, IconType.NA);
+public enum DismountedIndividualEntityType implements IEntityType {
+    TASK("02", "Activity/Task", DismountedIndividualEntity.MILITARY, GraphicType.NA),
+    LETHAL_WEAPONS("03", "Lethal Weapons", DismountedIndividualEntity.MILITARY, GraphicType.NA),
+    NON_LETHAL_WEAPONS("04", "Non-Lethal Weapons", DismountedIndividualEntity.MILITARY, GraphicType.NA),
+    TASK2("01", "Activity", DismountedIndividualEntity.CIVILIAN2, GraphicType.NA);
 
     private final String id;
     private final String label;
     private final DismountedIndividualEntity entity;
-    private final IconType iconType;
-    
-    DismountedIndividualEntityType(String id, String label, DismountedIndividualEntity entity, IconType iconType) {
+    private final GraphicType graphicType;
+
+    DismountedIndividualEntityType(String id, String label, DismountedIndividualEntity entity, GraphicType graphicType) {
         this.id = id;
         this.label = label;
         this.entity = entity;
-        this.iconType = iconType;
+        this.graphicType = graphicType;
     }
-    
 
     @Override
-    public IconType getIconType() {
-        return iconType;
+    public GraphicType getGraphicType() {
+        return graphicType;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
 
     @Override
-    public Entity getEntity() {
+    public IEntity getEntity() {
         return entity;
     }
-    
-   @Override
-    public List<EntitySubType> getEntitySubTypes() {
+
+    @Override
+    public List<IEntitySubType> getEntitySubTypes() {
         return DismountedIndividualSymbolSetInfo.INSTANCE.getEntitySubTypes(this);
-    }    
+    }
 
 }

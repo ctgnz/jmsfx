@@ -1,6 +1,8 @@
 package io.github.ctgnz.jmsfx.icon;
 
-public enum Version implements SymbolIdentificationCodeElement {
+import io.github.ctgnz.jmsfx.IVersion;
+
+public enum Version implements IVersion {
     ORIGINAL("10", "APP-6(D)/MIL-STD-2525D October 2017"),
     MS2525D1("11", "MIL-STD-2525D Chg 1 August 2018"),
     MS2525E("13", "MIL-STD-2525E December 2022"),
@@ -8,17 +10,17 @@ public enum Version implements SymbolIdentificationCodeElement {
 
     private final String id;
     private final String label;
-    
-    private Version(String id, String label) {
+
+    Version(String id, String label) {
         this.id = id;
         this.label = label;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;

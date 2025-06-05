@@ -1,40 +1,41 @@
 package io.github.ctgnz.jmsfx.icon.airmissile;
 
-import io.github.ctgnz.jmsfx.icon.Entity;
+import io.github.ctgnz.jmsfx.IEntity;
+import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.icon.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.IconType;
 
-public enum AirMissileEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", IconType.NA),
-    MISSILE("11", "Missile", IconType.MAIN);
+public enum AirMissileEntity implements IEntity {
+    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
+    MISSILE("11", "Missile", GraphicType.MAIN);
 
     private final String id;
     private final String label;
-    private final IconType iconType;
-    
-    AirMissileEntity(String id, String label, IconType iconType) {
+    private final GraphicType graphicType;
+
+    AirMissileEntity(String id, String label, GraphicType graphicType) {
         this.id = id;
         this.label = label;
-        this.iconType = iconType;
+        this.graphicType = graphicType;
     }
-    
+
     @Override
-    public IconType getIconType() {
-        return iconType;
+    public GraphicType getGraphicType() {
+        return graphicType;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
 
     @Override
-    public SymbolSet getSymbolSet() {
+    public ISymbolSet getSymbolSet() {
         return SymbolSet.AIR_MISSILE;
     }
 
@@ -42,5 +43,5 @@ public enum AirMissileEntity implements Entity {
     public boolean isCivilian() {
         return name().contains("CIVILIAN");
     }
-    
+
 }

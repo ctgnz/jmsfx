@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.landunits;
 
+import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
 
-public enum LandUnitsSectorTwoModifier implements SectorTwoModifier {
+public enum LandUnitsSectorTwoModifier implements ISectorTwoModifier {
     UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSet.LAND_UNIT),
     ARCTIC_MOD("02", "Arctic", "Mobility", SymbolSet.LAND_UNIT),
     BATTLE_DAMAGE_REPAIR_MOD("03", "Battle Damage Repair", "Capability", SymbolSet.LAND_UNIT),
@@ -77,24 +77,24 @@ public enum LandUnitsSectorTwoModifier implements SectorTwoModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private LandUnitsSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    LandUnitsSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -104,5 +104,5 @@ public enum LandUnitsSectorTwoModifier implements SectorTwoModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

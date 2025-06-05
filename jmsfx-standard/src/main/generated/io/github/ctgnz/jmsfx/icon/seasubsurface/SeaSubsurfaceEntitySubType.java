@@ -1,45 +1,44 @@
 package io.github.ctgnz.jmsfx.icon.seasubsurface;
 
-import io.github.ctgnz.jmsfx.icon.EntitySubType;
-import io.github.ctgnz.jmsfx.icon.EntityType;
-import io.github.ctgnz.jmsfx.icon.IconType;
+import io.github.ctgnz.jmsfx.IEntitySubType;
+import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.icon.GraphicType;
 
-public enum SeaSubsurfaceEntitySubType implements EntitySubType {
-    SUBMARINE_SURFACED("01", "Submarine-Surfaced", SeaSubsurfaceEntityType.SUBMARINE, IconType.MAIN),
-    SUBMARINE_SNORKELING("02", "Submarine-Snorkeling", SeaSubsurfaceEntityType.SUBMARINE, IconType.MAIN),
-    SUBMARINE_BOTTOMED("03", "Submarine-Bottomed", SeaSubsurfaceEntityType.SUBMARINE, IconType.MAIN);
+public enum SeaSubsurfaceEntitySubType implements IEntitySubType {
+    SUBMARINE_SURFACED("01", "Submarine-Surfaced", SeaSubsurfaceEntityType.SUBMARINE, GraphicType.MAIN),
+    SUBMARINE_SNORKELING("02", "Submarine-Snorkeling", SeaSubsurfaceEntityType.SUBMARINE, GraphicType.MAIN),
+    SUBMARINE_BOTTOMED("03", "Submarine-Bottomed", SeaSubsurfaceEntityType.SUBMARINE, GraphicType.MAIN);
 
     private final String id;
     private final String label;
     private final SeaSubsurfaceEntityType entityType;
-    private final IconType iconType;
-    
-    SeaSubsurfaceEntitySubType(String id, String label, SeaSubsurfaceEntityType entityType, IconType iconType) {
+    private final GraphicType graphicType;
+
+    SeaSubsurfaceEntitySubType(String id, String label, SeaSubsurfaceEntityType entityType, GraphicType graphicType) {
         this.id = id;
         this.label = label;
         this.entityType = entityType;
-        this.iconType = iconType;
+        this.graphicType = graphicType;
     }
-    
 
     @Override
-    public IconType getIconType() {
-        return iconType;
+    public GraphicType getGraphicType() {
+        return graphicType;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
 
     @Override
-    public EntityType getEntityType() {
+    public IEntityType getEntityType() {
         return entityType;
     }
-    
+
 }

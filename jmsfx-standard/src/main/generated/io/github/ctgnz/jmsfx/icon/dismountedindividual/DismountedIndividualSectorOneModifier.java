@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.dismountedindividual;
 
+import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
 
-public enum DismountedIndividualSectorOneModifier implements SectorOneModifier {
+public enum DismountedIndividualSectorOneModifier implements ISectorOneModifier {
     UNSPECIFIED_ONE_MOD("00", "Unspecified", "General", SymbolSet.DISMOUNTED),
     NGO_MOD("07", "Non-Governmental Organization Member", "Organization", SymbolSet.DISMOUNTED),
     FAO_MOD("11", "Field Artillery Observer", "Task", SymbolSet.DISMOUNTED),
@@ -34,24 +34,24 @@ public enum DismountedIndividualSectorOneModifier implements SectorOneModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private DismountedIndividualSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    DismountedIndividualSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -61,5 +61,5 @@ public enum DismountedIndividualSectorOneModifier implements SectorOneModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

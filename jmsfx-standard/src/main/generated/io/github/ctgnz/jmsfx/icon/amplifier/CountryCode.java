@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.ListAmplifier;
+import io.github.ctgnz.jmsfx.IListAmplifier;
 import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum CountryCode implements ListAmplifier {
+public enum CountryCode implements IListAmplifier {
     UNDEFINED("UNDEFINED", "Undefined", "000"),
     AF("AFG", "Afghanistan", "004"),
     AL("ALB", "Albania", "008"),
@@ -319,27 +319,26 @@ public enum CountryCode implements ListAmplifier {
     @Extension HP("HPR", "Kingdom of Prussia", "997");
 
     private static final ListAmplifierType TYPE = ListAmplifierType.COUNTRY_CODE;
-
     private final String id;
     private final String label;
     private final String code;
-    
-    private CountryCode(String id, String label, String code) {
+
+    CountryCode(String id, String label, String code) {
         this.id = id;
         this.label = label;
         this.code = code;
     }
-    
+
     @Override
     public String getGraphicLocation() {
         return "NA";
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -353,7 +352,7 @@ public enum CountryCode implements ListAmplifier {
     public String getCode() {
         return code;
     }
-    
+
     public boolean isDeprecated() {
         try {
             return CountryCode.class.getField(name()).getAnnotation(Deprecated.class) != null;

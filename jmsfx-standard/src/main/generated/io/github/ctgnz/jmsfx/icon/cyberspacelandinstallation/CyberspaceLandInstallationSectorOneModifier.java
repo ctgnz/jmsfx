@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.cyberspacelandinstallation;
 
+import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
 
-public enum CyberspaceLandInstallationSectorOneModifier implements SectorOneModifier {
+public enum CyberspaceLandInstallationSectorOneModifier implements ISectorOneModifier {
     UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.CYBERSPACE_LAND_INSTALLATION),
     DEFENSIVE_CYBERSPACE("01", "Defensive Cyberspace", "General", SymbolSet.CYBERSPACE_LAND_INSTALLATION),
     OFFENSIVE_CYBERSPACE("02", "Offensive Cyberspace", "General", SymbolSet.CYBERSPACE_LAND_INSTALLATION),
@@ -19,24 +19,24 @@ public enum CyberspaceLandInstallationSectorOneModifier implements SectorOneModi
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private CyberspaceLandInstallationSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    CyberspaceLandInstallationSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -46,7 +46,7 @@ public enum CyberspaceLandInstallationSectorOneModifier implements SectorOneModi
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
     @Override
     public SymbolSet getBaseSymbolSet() {
         return SymbolSet.CYBERSPACE;

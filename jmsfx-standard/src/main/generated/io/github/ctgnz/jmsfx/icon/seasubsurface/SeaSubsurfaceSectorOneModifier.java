@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.seasubsurface;
 
+import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
 
-public enum SeaSubsurfaceSectorOneModifier implements SectorOneModifier {
+public enum SeaSubsurfaceSectorOneModifier implements ISectorOneModifier {
     UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.SEA_SUBSURFACE),
     AUXILIARY_MOD("02", "Auxiliary", "Mission Area", SymbolSet.SEA_SUBSURFACE),
     POSSIBLE_SUBMARINE_LOW_1_MOD("13", "Possible Submarine Low 1", "Submarine Confidence", SymbolSet.SEA_SUBSURFACE),
@@ -18,24 +18,24 @@ public enum SeaSubsurfaceSectorOneModifier implements SectorOneModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private SeaSubsurfaceSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    SeaSubsurfaceSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -45,5 +45,5 @@ public enum SeaSubsurfaceSectorOneModifier implements SectorOneModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

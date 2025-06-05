@@ -1,30 +1,30 @@
-package ${basePackage}.common;
+package ${commonPackage};
 
-import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import ${basePackage}.ISectorOneModifier;
+import ${iconPackage}.SymbolSet;
 
-public enum CommonSectorOneModifier implements SectorOneModifier {
+public enum CommonSectorOneModifier implements ISectorOneModifier {
 <#list sectorOneMods as mod>
-    ${mod.id}("1", "${mod.code}", "${mod.label}", "${mod.category}")<#if mod?is_last>;<#else>,</#if>
-</#list>    
+    ${mod.id}("1", "${mod.code}", "${mod.label}", "${mod.category}")<#sep>,
+</#list>;
 
     private final String groupId;
     private final String id;
     private final String label;
     private final String category;
-    
-    private CommonSectorOneModifier(String groupId, String id, String label, String category) {
+
+    CommonSectorOneModifier(String groupId, String id, String label, String category) {
         this.groupId = groupId;
         this.id = id;
         this.label = label;
         this.category = category;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getGraphicIdentifier() {
         return String.format("C1%s%s", getGroupId(), getId());
@@ -33,12 +33,12 @@ public enum CommonSectorOneModifier implements SectorOneModifier {
     public String getGroupId() {
         return groupId;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -48,10 +48,10 @@ public enum CommonSectorOneModifier implements SectorOneModifier {
     public SymbolSet getSymbolSet() {
         return SymbolSet.COMMON;
     }
-    
+
     @Override
     public boolean isUnknown() {
         return false;
     }
-    
+
 }

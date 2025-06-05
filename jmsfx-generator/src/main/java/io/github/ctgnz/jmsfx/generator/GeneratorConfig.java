@@ -14,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import freemarker.template.Configuration;
 import io.github.ctgnz.jmsfx.generator.model.ContextEnum;
 import io.github.ctgnz.jmsfx.generator.model.DimensionEnum;
-import io.github.ctgnz.jmsfx.generator.model.GeometryEnum;
 import io.github.ctgnz.jmsfx.generator.model.HqtfDummyEnum;
 import io.github.ctgnz.jmsfx.generator.model.StandardIdentityEnum;
 import io.github.ctgnz.jmsfx.generator.model.StandardIdentityGroupEnum;
@@ -23,7 +22,6 @@ import io.github.ctgnz.jmsfx.generator.model.VersionEnum;
 import io.github.ctgnz.jmsfx.generator.schema.Library.Amplifiers.Amplifier;
 import io.github.ctgnz.jmsfx.generator.schema.Library.Contexts.Context;
 import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension;
-import io.github.ctgnz.jmsfx.generator.schema.Library.Geometries.Geometry;
 import io.github.ctgnz.jmsfx.generator.schema.Library.HQTFDummies.HQTFDummy;
 import io.github.ctgnz.jmsfx.generator.schema.Library.StandardIdentities.StandardIdentity;
 import io.github.ctgnz.jmsfx.generator.schema.Library.StandardIdentityGroups.StandardIdentityGroup;
@@ -34,15 +32,29 @@ public class GeneratorConfig {
     private Path inputDir;
     private Path outputDir;
     private String basePackage;
+    private String iconPackage;
+    private String commonPackage;
+    private String amplifierPackage;
     private String libraryFile;
     private String extensionCountryCode;
     private List<String> unframedSymbolSets;
     private List<ListAmplifierConfig> enumeratedAmplifiers;
     private List<StandardAmplifierConfig> standardAmplifiers;
-    private Map<String, String> simpleTypes;
     private Map<String, String> dimensionGraphicLocations;
     private Map<String, String> symbolGraphicLocations;
     private Map<String, String> entitySymbolSets;
+
+    public String getAmplifierPackage() {
+        return amplifierPackage;
+    }
+
+    public Path getAmplifierPackageDir() throws IOException {
+        Path packageDir = outputDir.resolve(amplifierPackage.replaceAll("\\.", "/"));
+        if (Files.notExists(packageDir)) {
+            Files.createDirectories(packageDir);
+        }
+        return packageDir;
+    }
 
     @JsonIgnore
     public List<ListAmplifierConfig> getAmplifierValues(Amplifier amplifier) {
@@ -55,6 +67,18 @@ public class GeneratorConfig {
 
     public Path getBasePackageDir() throws IOException {
         Path packageDir = outputDir.resolve(basePackage.replaceAll("\\.", "/"));
+        if (Files.notExists(packageDir)) {
+            Files.createDirectories(packageDir);
+        }
+        return packageDir;
+    }
+
+    public String getCommonPackage() {
+        return commonPackage;
+    }
+
+    public Path getCommonPackageDir() throws IOException {
+        Path packageDir = outputDir.resolve(commonPackage.replaceAll("\\.", "/"));
         if (Files.notExists(packageDir)) {
             Files.createDirectories(packageDir);
         }
@@ -85,12 +109,20 @@ public class GeneratorConfig {
         return extensionCountryCode;
     }
 
-    public StandardEnumConfig<GeometryEnum, Geometry> getGeometry() {
-        return new StandardEnumConfig<>(GeometryEnum.class, Geometry.class, "Geometry", "geometries", library -> library.getGeometries().getGeometry());
-    }
-
     public StandardEnumConfig<HqtfDummyEnum, HQTFDummy> getHqtfDummy() {
         return new StandardEnumConfig<>(HqtfDummyEnum.class, HQTFDummy.class, "HqtfDummy", "hqtfDummies", library -> library.getHQTFDummies().getHQTFDummy());
+    }
+
+    public String getIconPackage() {
+        return iconPackage;
+    }
+
+    public Path getIconPackageDir() throws IOException {
+        Path packageDir = outputDir.resolve(iconPackage.replaceAll("\\.", "/"));
+        if (Files.notExists(packageDir)) {
+            Files.createDirectories(packageDir);
+        }
+        return packageDir;
     }
 
     public Path getInputDir() {
@@ -105,16 +137,12 @@ public class GeneratorConfig {
         return outputDir;
     }
 
-    public Map<String, String> getSimpleTypes() {
-        return simpleTypes;
-    }
-
     public List<StandardAmplifierConfig> getStandardAmplifiers() {
         return standardAmplifiers;
     }
 
     public List<StandardEnumConfig<?, ?>> getStandardEnums() {
-        return Arrays.asList(getGeometry(), getDimension(), getContext(), getHqtfDummy(), getStatus(), getStandardIdentity(), getStandardIdentityGroup(), getVersion());
+        return Arrays.asList(getDimension(), getContext(), getHqtfDummy(), getStatus(), getStandardIdentity(), getStandardIdentityGroup(), getVersion());
     }
 
     public StandardEnumConfig<StandardIdentityEnum, StandardIdentity> getStandardIdentity() {
@@ -149,8 +177,16 @@ public class GeneratorConfig {
         return new StandardEnumConfig<>(VersionEnum.class, Version.class, "Version", "versions", library -> library.getVersions().getVersion());
     }
 
+    public void setAmplifierPackage(String amplifierPackage) {
+        this.amplifierPackage = amplifierPackage;
+    }
+
     public void setBasePackage(String basePackage) {
         this.basePackage = basePackage;
+    }
+
+    public void setCommonPackage(String commonPackage) {
+        this.commonPackage = commonPackage;
     }
 
     public void setDimensionGraphicLocations(Map<String, String> dimensionGraphicLocations) {
@@ -169,6 +205,10 @@ public class GeneratorConfig {
         this.extensionCountryCode = extensionCountryCode;
     }
 
+    public void setIconPackage(String iconPackage) {
+        this.iconPackage = iconPackage;
+    }
+
     public void setInputDir(Path inputDir) {
         this.inputDir = inputDir;
     }
@@ -179,10 +219,6 @@ public class GeneratorConfig {
 
     public void setOutputDir(Path outputDir) {
         this.outputDir = outputDir;
-    }
-
-    public void setSimpleTypes(Map<String, String> simpleTypes) {
-        this.simpleTypes = simpleTypes;
     }
 
     public void setStandardAmplifiers(List<StandardAmplifierConfig> amplifierGroups) {

@@ -2,17 +2,17 @@ package io.github.ctgnz.jmsfx.generator.model;
 
 import org.apache.commons.lang3.StringUtils;
 
-import io.github.ctgnz.jmsfx.generator.schema.IconType;
+import io.github.ctgnz.jmsfx.generator.schema.GraphicType;
 import io.github.ctgnz.jmsfx.generator.schema.SymbolSet.Entities.Entity;
 
 public class EntityEnum extends StandardEnum {
 
-    private final IconType iconType;
+    private final GraphicType graphicType;
     private String baseSymbolSet;
 
     public EntityEnum(Entity entity) {
         super(entity.getID().toString(), entity.getLabel(), entity.getEntityCode().getCodeString(), null);
-        iconType = entity.getIcon();
+        graphicType = entity.getIcon();
     }
 
     public String getBaseSymbolSet() {
@@ -23,8 +23,8 @@ public class EntityEnum extends StandardEnum {
         return StringUtils.deleteWhitespace(label);
     }
 
-    public IconType getIconType() {
-        return iconType;
+    public GraphicType getGraphicType() {
+        return graphicType;
     }
 
     public void setBaseSymbolSet(String baseSymbolSet) {

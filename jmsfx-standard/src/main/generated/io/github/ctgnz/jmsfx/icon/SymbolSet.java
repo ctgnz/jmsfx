@@ -2,7 +2,15 @@ package io.github.ctgnz.jmsfx.icon;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.icon.common.CommonSymbolSetInfo;
+import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
+
+import io.github.ctgnz.jmsfx.IAmplifier;
+import io.github.ctgnz.jmsfx.IEntity;
+import io.github.ctgnz.jmsfx.IListAmplifier;
+import io.github.ctgnz.jmsfx.ISectorOneModifier;
+import io.github.ctgnz.jmsfx.ISectorTwoModifier;
+import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.ISymbolSetInfo;
 import io.github.ctgnz.jmsfx.icon.unknown.UnknownSymbolSetInfo;
 import io.github.ctgnz.jmsfx.icon.air.AirSymbolSetInfo;
 import io.github.ctgnz.jmsfx.icon.airmissile.AirMissileSymbolSetInfo;
@@ -27,10 +35,9 @@ import io.github.ctgnz.jmsfx.icon.cyberspacedismountedindividual.CyberspaceDismo
 import io.github.ctgnz.jmsfx.icon.cyberspaceseasurface.CyberspaceSeaSurfaceSymbolSetInfo;
 import io.github.ctgnz.jmsfx.icon.cyberspaceseasubsurface.CyberspaceSeaSubsurfaceSymbolSetInfo;
 import io.github.ctgnz.jmsfx.icon.internal.InternalSymbolSetInfo;
+import io.github.ctgnz.jmsfx.icon.common.CommonSymbolSetInfo;
 
-import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
-
-public enum SymbolSet implements SymbolIdentificationCodeElement {
+public enum SymbolSet implements ISymbolSet {
     COMMON("C", "Common", Dimension.INTERNAL, "Common", CommonSymbolSetInfo.INSTANCE),
     UNKNOWN("00", "Unknown", Dimension.UNKNOWN, null, UnknownSymbolSetInfo.INSTANCE),
     AIR("01", "Air", Dimension.AIR, null, AirSymbolSetInfo.INSTANCE),
@@ -61,52 +68,57 @@ public enum SymbolSet implements SymbolIdentificationCodeElement {
     private final String label;
     private final Dimension dimension;
     private final String graphicLocation;
-    private final SymbolSetInfo symbolSetInfo;
-    
-    SymbolSet(String id, String label, Dimension dimension, String graphicLocation, SymbolSetInfo symbolSetInfo) {
+    private final ISymbolSetInfo symbolSetInfo;
+
+    SymbolSet(String id, String label, Dimension dimension, String graphicLocation, ISymbolSetInfo symbolSetInfo) {
         this.id = id;
         this.label = label;
         this.dimension = dimension;
         this.graphicLocation = graphicLocation;
         this.symbolSetInfo = symbolSetInfo;
     }
-    
+
+    @Override
+    public AmplifierGuide getAmplifierGuide(IAmplifier amplifier) {
+        return getAmplifierGuides().stream().filter(guide -> guide.getAmplifier() == amplifier).findFirst().orElse(null);
+    }
+
+    @Override
     public List<AmplifierGuide> getAmplifierGuides() {
         return symbolSetInfo.getAmplifierGuides();
     }
 
-    public AmplifierGuide getAmplifierGuide(Amplifier amplifier) {
-        return getAmplifierGuides().stream().filter(guide -> guide.getAmplifier() == amplifier).findFirst().orElse(null);
-    }
-
-    public <A extends ListAmplifier> List<A> getListAmplifiers() {
-        return symbolSetInfo.getAmplifiers();
-    }
-
-    public <A extends ListAmplifier> List<A> getAmplifierTwoGroups() {
-        return symbolSetInfo.getAmplifiersTwo();
-    }
-
-    public <A extends ListAmplifier> List<A> getAmplifierThreeGroups() {
+    @Override
+    public <A extends IListAmplifier> List<A> getAmplifierThreeGroups() {
         return symbolSetInfo.getAmplifiersThree();
     }
 
+    @Override
+    public <A extends IListAmplifier> List<A> getAmplifierTwoGroups() {
+        return symbolSetInfo.getAmplifiersTwo();
+    }
+
+    @Override
     public Dimension getDimension() {
         return dimension;
     }
 
-    public <E extends Entity> List<E> getEntities() {
+    @Override
+    public <E extends IEntity> List<E> getEntities() {
         return symbolSetInfo.getEntities();
     }
 
-    public <A extends ListAmplifier> List<A> getFrameListAmplifiers() {
-        return symbolSetInfo.getFrameAmplifiers();
-    }
-
+    @Override
     public String getFrameId() {
         return dimension.getFrameId();
     }
 
+    @Override
+    public <A extends IListAmplifier> List<A> getFrameListAmplifiers() {
+        return symbolSetInfo.getFrameAmplifiers();
+    }
+
+    @Override
     public String getGraphicLocation() {
         return defaultIfNull(graphicLocation, dimension.getGraphicLocation());
     }
@@ -121,15 +133,23 @@ public enum SymbolSet implements SymbolIdentificationCodeElement {
         return label;
     }
 
-    public <M extends SectorOneModifier> List<M> getSectorOneModifiers() {
+    @Override
+    public <A extends IListAmplifier> List<A> getListAmplifiers() {
+        return symbolSetInfo.getAmplifiers();
+    }
+
+    @Override
+    public <M extends ISectorOneModifier> List<M> getSectorOneModifiers() {
         return symbolSetInfo.getSectorOneModifiers();
     }
 
-    public <M extends SectorTwoModifier> List<M> getSectorTwoModifiers() {
+    @Override
+    public <M extends ISectorTwoModifier> List<M> getSectorTwoModifiers() {
         return symbolSetInfo.getSectorTwoModifiers();
     }
 
-    public SymbolSetInfo getSymbolSetInfo() {
+    @Override
+    public ISymbolSetInfo getSymbolSetInfo() {
         return symbolSetInfo;
     }
 

@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.controlmeasure;
 
+import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
 
-public enum ControlMeasureSectorTwoModifier implements SectorTwoModifier {
+public enum ControlMeasureSectorTwoModifier implements ISectorTwoModifier {
     UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSet.CONTROL_MEASURE),
     URBAN_MOD("01", "Urban", "Terrain", SymbolSet.CONTROL_MEASURE),
     WATER_MOD("02", "Water", "Terrain", SymbolSet.CONTROL_MEASURE),
@@ -15,24 +15,24 @@ public enum ControlMeasureSectorTwoModifier implements SectorTwoModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private ControlMeasureSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    ControlMeasureSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -42,5 +42,5 @@ public enum ControlMeasureSectorTwoModifier implements SectorTwoModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

@@ -1,6 +1,8 @@
 package io.github.ctgnz.jmsfx.icon;
 
-public enum Amplifier  {
+import io.github.ctgnz.jmsfx.IAmplifier;
+
+public enum Amplifier implements IAmplifier {
     A_SymbolIcon("A", "Symbol Icon", AmplifierType.GRAPHIC, "The innermost part of a symbol that represents a joint military object."),
     B_Echelon("B", "Echelon", AmplifierType.GRAPHIC, "A graphic amplifier in a unit symbol that identifies command level."),
     C_Quantity("C", "Quantity", AmplifierType.ALPHANUMERIC, 1, 19, "A text amplifier in an equipment symbol that identifies the number of items present."),
@@ -63,10 +65,6 @@ public enum Amplifier  {
     private final String description;
     private final int min;
     private final int max;
-    
-    Amplifier(String id, String label, AmplifierType type, String description) {
-        this(id, label, type, 0, 0, description);
-    }
 
     Amplifier(String id, String label, AmplifierType type, int min, int max, String description) {
         this.id = id;
@@ -76,27 +74,37 @@ public enum Amplifier  {
         this.max = max;
         this.description = description;
     }
-    
+
+    Amplifier(String id, String label, AmplifierType type, String description) {
+        this(id, label, type, 0, 0, description);
+    }
+
+    @Override
     public String getDescription() {
         return description;
     }
 
+    @Override
     public String getId() {
         return id;
     }
-    
+
+    @Override
     public String getLabel() {
         return label;
     }
 
+    @Override
     public int getMax() {
         return max;
     }
 
+    @Override
     public int getMin() {
         return min;
     }
 
+    @Override
     public AmplifierType getType() {
         return type;
     }

@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.air;
 
+import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
 
-public enum AirSectorTwoModifier implements SectorTwoModifier {
+public enum AirSectorTwoModifier implements ISectorTwoModifier {
     NOT_APPLICABLE_2_MOD("00", "Not Applicable", "General", SymbolSet.AIR),
     BOOM_MOD("04", "Boom-Only", "Re-fueling Capability", SymbolSet.AIR),
     DROGUE_MOD("05", "Drogue-Only", "Re-fueling Capability", SymbolSet.AIR),
@@ -14,24 +14,24 @@ public enum AirSectorTwoModifier implements SectorTwoModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private AirSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    AirSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -41,5 +41,5 @@ public enum AirSectorTwoModifier implements SectorTwoModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

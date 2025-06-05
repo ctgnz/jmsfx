@@ -2,63 +2,64 @@ package io.github.ctgnz.jmsfx.icon.minewarfare;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.icon.Entity;
-import io.github.ctgnz.jmsfx.icon.EntityType;
+import io.github.ctgnz.jmsfx.IEntity;
+import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.icon.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.IconType;
 
-public enum MineWarfareEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", IconType.NA),
-    SEA_MINE_GENERAL("11", "Sea Mine-General", IconType.FULL_OCTAGON),
-    UNEXPLODED_ORDNANCE("12", "Unexploded Ordnance", IconType.FULL_OCTAGON),
-    SEA_MINE_DECOY("13", "Sea Mine Decoy", IconType.FULL_OCTAGON),
-    MINE_LIKE_CONTACT_MILCO("14", "Mine-Like Contact (MILCO)", IconType.NA),
-    MINE_LIKE_ECHO_MILEC_GENERAL("15", "Mine-Like Echo (MILEC)-General", IconType.FULL_OCTAGON),
-    NEGATIVE_REACQUISITION_GENERAL("16", "Negative Reacquisition-General", IconType.FULL_OCTAGON),
-    OBSTRUCTOR("17", "Obstructor", IconType.FULL_OCTAGON),
-    GENERAL_MINE_ANCHOR("18", "General Mine Anchor", IconType.FULL_OCTAGON),
-    NON_MINE_MINE_LIKE_NMLO_GENERAL("19", "Non-Mine Mine-Like Object (NMLO)-General", IconType.FULL_OCTAGON),
-    ENVIRONMENTAL_REPORT_LOCATION("20", "Environmental Report Location", IconType.FULL_OCTAGON),
-    DIVE_REPORT_LOCATION("21", "Dive Report Location", IconType.FULL_OCTAGON);
+public enum MineWarfareEntity implements IEntity {
+    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
+    SEA_MINE_GENERAL("11", "Sea Mine-General", GraphicType.FULL_OCTAGON),
+    UNEXPLODED_ORDNANCE("12", "Unexploded Ordnance", GraphicType.FULL_OCTAGON),
+    SEA_MINE_DECOY("13", "Sea Mine Decoy", GraphicType.FULL_OCTAGON),
+    MINE_LIKE_CONTACT_MILCO("14", "Mine-Like Contact (MILCO)", GraphicType.NA),
+    MINE_LIKE_ECHO_MILEC_GENERAL("15", "Mine-Like Echo (MILEC)-General", GraphicType.FULL_OCTAGON),
+    NEGATIVE_REACQUISITION_GENERAL("16", "Negative Reacquisition-General", GraphicType.FULL_OCTAGON),
+    OBSTRUCTOR("17", "Obstructor", GraphicType.FULL_OCTAGON),
+    GENERAL_MINE_ANCHOR("18", "General Mine Anchor", GraphicType.FULL_OCTAGON),
+    NON_MINE_MINE_LIKE_NMLO_GENERAL("19", "Non-Mine Mine-Like Object (NMLO)-General", GraphicType.FULL_OCTAGON),
+    ENVIRONMENTAL_REPORT_LOCATION("20", "Environmental Report Location", GraphicType.FULL_OCTAGON),
+    DIVE_REPORT_LOCATION("21", "Dive Report Location", GraphicType.FULL_OCTAGON);
 
     private final String id;
     private final String label;
-    private final IconType iconType;
-    
-    MineWarfareEntity(String id, String label, IconType iconType) {
+    private final GraphicType graphicType;
+
+    MineWarfareEntity(String id, String label, GraphicType graphicType) {
         this.id = id;
         this.label = label;
-        this.iconType = iconType;
+        this.graphicType = graphicType;
     }
-    
+
     @Override
-    public IconType getIconType() {
-        return iconType;
+    public GraphicType getGraphicType() {
+        return graphicType;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
 
     @Override
-    public SymbolSet getSymbolSet() {
+    public ISymbolSet getSymbolSet() {
         return SymbolSet.MINE_WARFARE;
     }
 
     @Override
-    public List<EntityType> getEntityTypes() {
+    public List<IEntityType> getEntityTypes() {
         return MineWarfareSymbolSetInfo.INSTANCE.getEntityTypes(this);
-    }    
-    
+    }
+
     @Override
     public boolean isCivilian() {
         return name().contains("CIVILIAN");
     }
-    
+
 }

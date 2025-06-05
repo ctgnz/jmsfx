@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.seasubsurface;
 
+import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
 
-public enum SeaSubsurfaceSectorTwoModifier implements SectorTwoModifier {
+public enum SeaSubsurfaceSectorTwoModifier implements ISectorTwoModifier {
     UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSet.SEA_SUBSURFACE),
     AIR_INDEPENDENT_PROPULSION_MOD("01", "Air Independent Propulsion", "Ship Propulsion", SymbolSet.SEA_SUBSURFACE),
     DIESEL_ELECTRIC_GENERAL_MOD("02", "Diesel Electric General", "Ship Propulsion", SymbolSet.SEA_SUBSURFACE),
@@ -23,24 +23,24 @@ public enum SeaSubsurfaceSectorTwoModifier implements SectorTwoModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private SeaSubsurfaceSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    SeaSubsurfaceSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -50,5 +50,5 @@ public enum SeaSubsurfaceSectorTwoModifier implements SectorTwoModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

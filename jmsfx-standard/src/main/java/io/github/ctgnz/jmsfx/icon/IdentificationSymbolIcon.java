@@ -1,5 +1,7 @@
 package io.github.ctgnz.jmsfx.icon;
 
+import io.github.ctgnz.jmsfx.IAmplifier;
+import io.github.ctgnz.jmsfx.IListAmplifier;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.MapChangeListener;
@@ -26,15 +28,15 @@ public class IdentificationSymbolIcon extends Pane {
         symbol.scaleProperty().addListener((obs, oldValue, newValue) -> updateScale(newValue));
         symbol.codeProperty().addListener((obs, oldValue, newValue) -> updateIcon());
         symbol.amplifierGuidesVisibleProperty().addListener((obs, oldValue, newValue) -> updateIcon());
-        symbol.getTextAmplifiers().addListener((MapChangeListener<Amplifier, TextAmplifier>) change -> {
-            TextAmplifier newAmplifier = change.getValueAdded();
+        symbol.getTextAmplifiers().addListener((MapChangeListener<IAmplifier, TextAmplifierValue>) change -> {
+            TextAmplifierValue newAmplifier = change.getValueAdded();
             if (newAmplifier != null) {
                 newAmplifier.locationProperty().addListener((obs, oldValue, newValue) -> updateIcon());
             }
             updateIcon();
         });
-        symbol.getGraphicAmplifiers().addListener((MapChangeListener<Amplifier, GraphicAmplifier>) change -> {
-            GraphicAmplifier newGraphic = change.getValueAdded();
+        symbol.getGraphicAmplifiers().addListener((MapChangeListener<IAmplifier, GraphicAmplifierValue>) change -> {
+            GraphicAmplifierValue newGraphic = change.getValueAdded();
             if (newGraphic != null) {
                 newGraphic.transformProperty().addListener((obs, oldValue, newValue) -> updateIcon());
             }
@@ -76,7 +78,7 @@ public class IdentificationSymbolIcon extends Pane {
                 container.getChildren().add(overlay);
             }
             if (symbol.isFrameAmplifierUsed()) {
-                ListAmplifier frameAmplifier = symbol.getFrameAmplifier();
+                IListAmplifier frameAmplifier = symbol.getFrameAmplifier();
                 replaceFill(frame, Color.web(frameAmplifier.getBackgroundFill()));
             }
         }
@@ -116,7 +118,7 @@ public class IdentificationSymbolIcon extends Pane {
         symbol.getTextAmplifiers().values().forEach(textAmplifier -> {
             Point2D location = textAmplifier.getLocation();
             Text text = new Text(location.getX(), location.getY(), textAmplifier.getText());
-            text.setFont(TextAmplifier.AMPLIFIER_FONT);
+            text.setFont(TextAmplifierValue.AMPLIFIER_FONT);
             text.textProperty().bind(textAmplifier.textProperty());
             container.getChildren().add(text);
         });

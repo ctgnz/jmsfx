@@ -2,42 +2,48 @@ package io.github.ctgnz.jmsfx.icon;
 
 import java.util.Arrays;
 
-public enum StandardIdentityGroup implements SymbolIdentificationCodeElement {
-    SIG_UNKNOWN("1", "Unknown", StandardIdentity.SI_PENDING, StandardIdentity.SI_UNKNOWN),
-    SIG_FRIEND("3", "Friend", StandardIdentity.SI_ASSUMED_FRIEND, StandardIdentity.SI_FRIEND),
-    SIG_NEUTRAL("4", "Neutral", StandardIdentity.SI_NEUTRAL),
-    SIG_HOSTILE("6", "Hostile", StandardIdentity.SI_HOSTILE_FAKER, StandardIdentity.SI_SUSPECT_JOKER);
+import io.github.ctgnz.jmsfx.IStandardIdentity;
+import io.github.ctgnz.jmsfx.IStandardIdentityGroup;
 
-    public static StandardIdentityGroup forId(StandardIdentity id) {
-        return Arrays.stream(StandardIdentityGroup.values()).filter(grp -> grp.owns(id)).findFirst().orElse(null);
-    }
+public enum StandardIdentityGroup implements IStandardIdentityGroup {
+    SIG_UNKNOWN("1", "Unknown", "_0"),
+    SIG_FRIEND("3", "Friend", "_1"),
+    SIG_NEUTRAL("4", "Neutral", "_2"),
+    SIG_HOSTILE("6", "Hostile", "_3");
 
     private final String id;
     private final String label;
-    private final StandardIdentity[] identities;
-    
-    private StandardIdentityGroup(String id, String label, StandardIdentity... identities) {
+    private final String graphicSuffix;
+
+    StandardIdentityGroup(String id, String label, String graphicSuffix) {
         this.id = id;
         this.label = label;
-        this.identities = identities;
+        this.graphicSuffix = graphicSuffix;
     }
-    
+
+    @Override
+    public String getGraphicSuffix() {
+        return graphicSuffix;
+    }
+
     @Override
     public String getId() {
         return id;
     }
-    
+
+    @Override
     public StandardIdentity[] getIdentities() {
-        return identities;
+        return Arrays.stream(StandardIdentity.values()).filter(this::owns).toArray(size -> new StandardIdentity[size]);
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
-    
-    public boolean owns(StandardIdentity id) {
-        return Arrays.stream(identities).anyMatch(ident -> ident == id);
+
+    @Override
+    public boolean owns(IStandardIdentity id) {
+        return id.getGroup() == this;
     }
-    
+
 }

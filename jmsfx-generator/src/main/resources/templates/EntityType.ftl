@@ -1,64 +1,63 @@
-package ${basePackage}.${symbolSet.packageName};
+package ${iconPackage}.${symbolSet.packageName};
 
-<#if entitySubTypes??>        
+<#if entitySubTypes??>
 import java.util.List;
 
 </#if>
-import ${basePackage}.Entity;
-import ${basePackage}.EntityType;
-<#if entitySubTypes??>        
-import ${basePackage}.EntitySubType;
+import ${basePackage}.IEntity;
+<#if entitySubTypes??>
+import ${basePackage}.IEntitySubType;
 </#if>
-import ${basePackage}.IconType;
+import ${basePackage}.IEntityType;
+import ${iconPackage}.GraphicType;
 
-public enum ${symbolSet.baseTypeName}EntityType implements EntityType {
+public enum ${symbolSet.baseTypeName}EntityType implements IEntityType {
 <#list entityTypes as entType>
-    ${entType.id}("${entType.code}", "${entType.label}", ${symbolSet.baseTypeName}Entity.${entType.entityId}, IconType.${entType.iconType})<#if entType.graphic??> {
+    ${entType.id}("${entType.code}", "${entType.label}", ${symbolSet.baseTypeName}Entity.${entType.entityId}, GraphicType.${entType.graphicType})<#if entType.graphic??> {
         @Override
         public String getGraphicIdentifier() {
             return "${entType.graphic}";
         }
-    }</#if><#if entType?is_last>;<#else>,</#if>
-</#list>    
+    }</#if><#sep>,
+</#list>;
 
     private final String id;
     private final String label;
     private final ${symbolSet.baseTypeName}Entity entity;
-    private final IconType iconType;
-    
-    ${symbolSet.baseTypeName}EntityType(String id, String label, ${symbolSet.baseTypeName}Entity entity, IconType iconType) {
+    private final GraphicType graphicType;
+
+    ${symbolSet.baseTypeName}EntityType(String id, String label, ${symbolSet.baseTypeName}Entity entity, GraphicType graphicType) {
         this.id = id;
         this.label = label;
         this.entity = entity;
-        this.iconType = iconType;
+        this.graphicType = graphicType;
     }
-    
 
     @Override
-    public IconType getIconType() {
-        return iconType;
+    public GraphicType getGraphicType() {
+        return graphicType;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
 
     @Override
-    public Entity getEntity() {
+    public IEntity getEntity() {
         return entity;
     }
-    
-<#if entitySubTypes??>        
-   @Override
-    public List<EntitySubType> getEntitySubTypes() {
-        return ${symbolSet.baseTypeName}SymbolSetInfo.INSTANCE.getEntitySubTypes(this);
-    }    
+<#if entitySubTypes??>
 
-</#if>        
+    @Override
+    public List<IEntitySubType> getEntitySubTypes() {
+        return ${symbolSet.baseTypeName}SymbolSetInfo.INSTANCE.getEntitySubTypes(this);
+    }
+</#if>
+
 }

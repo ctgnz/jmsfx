@@ -1,50 +1,49 @@
-package ${basePackage}.${symbolSet.packageName};
+package ${iconPackage}.${symbolSet.packageName};
 
-import ${basePackage}.EntitySubType;
-import ${basePackage}.EntityType;
-import ${basePackage}.IconType;
+import ${basePackage}.IEntitySubType;
+import ${basePackage}.IEntityType;
+import ${iconPackage}.GraphicType;
 
-public enum ${symbolSet.baseTypeName}EntitySubType implements EntitySubType {
+public enum ${symbolSet.baseTypeName}EntitySubType implements IEntitySubType {
 <#list entitySubTypes as subType>
-    ${subType.id}("${subType.code}", "${subType.label}", ${symbolSet.baseTypeName}EntityType.${subType.entityTypeId}, IconType.${subType.iconType})<#if subType.graphic??> {
+    ${subType.id}("${subType.code}", "${subType.label}", ${symbolSet.baseTypeName}EntityType.${subType.entityTypeId}, GraphicType.${subType.graphicType})<#if subType.graphic??> {
         @Override
         public String getGraphicIdentifier() {
             return "${subType.graphic}";
         }
-    }</#if><#if subType?is_last>;<#else>,</#if>
-</#list>    
+    }</#if><#sep>,
+</#list>;
 
     private final String id;
     private final String label;
     private final ${symbolSet.baseTypeName}EntityType entityType;
-    private final IconType iconType;
-    
-    ${symbolSet.baseTypeName}EntitySubType(String id, String label, ${symbolSet.baseTypeName}EntityType entityType, IconType iconType) {
+    private final GraphicType graphicType;
+
+    ${symbolSet.baseTypeName}EntitySubType(String id, String label, ${symbolSet.baseTypeName}EntityType entityType, GraphicType graphicType) {
         this.id = id;
         this.label = label;
         this.entityType = entityType;
-        this.iconType = iconType;
+        this.graphicType = graphicType;
     }
-    
 
     @Override
-    public IconType getIconType() {
-        return iconType;
+    public GraphicType getGraphicType() {
+        return graphicType;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
 
     @Override
-    public EntityType getEntityType() {
+    public IEntityType getEntityType() {
         return entityType;
     }
-    
+
 }

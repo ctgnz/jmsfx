@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.cyberspaceair;
 
+import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
 
-public enum CyberspaceAirSectorOneModifier implements SectorOneModifier {
+public enum CyberspaceAirSectorOneModifier implements ISectorOneModifier {
     UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.CYBERSPACE_AIR),
     DEFENSIVE_CYBERSPACE("01", "Defensive Cyberspace", "General", SymbolSet.CYBERSPACE_AIR),
     OFFENSIVE_CYBERSPACE("02", "Offensive Cyberspace", "General", SymbolSet.CYBERSPACE_AIR),
@@ -19,24 +19,24 @@ public enum CyberspaceAirSectorOneModifier implements SectorOneModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private CyberspaceAirSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    CyberspaceAirSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -46,7 +46,7 @@ public enum CyberspaceAirSectorOneModifier implements SectorOneModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
     @Override
     public SymbolSet getBaseSymbolSet() {
         return SymbolSet.CYBERSPACE;

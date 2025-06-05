@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.landcivilian;
 
+import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
 
-public enum LandCivilianSectorOneModifier implements SectorOneModifier {
+public enum LandCivilianSectorOneModifier implements ISectorOneModifier {
     UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.LAND_CIVILIAN),
     MURDER_VICTIMS_MOD("03", "Murder Victims", "Crime", SymbolSet.LAND_CIVILIAN),
     DISPLACED_MOD("09", "Displaced Person(s), Refugee(s) and Evacuee(s)", "Organization", SymbolSet.LAND_CIVILIAN),
@@ -24,24 +24,24 @@ public enum LandCivilianSectorOneModifier implements SectorOneModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private LandCivilianSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    LandCivilianSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -51,5 +51,5 @@ public enum LandCivilianSectorOneModifier implements SectorOneModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

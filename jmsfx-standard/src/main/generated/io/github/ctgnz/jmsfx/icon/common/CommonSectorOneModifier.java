@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.common;
 
-import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
+import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
 
-public enum CommonSectorOneModifier implements SectorOneModifier {
+public enum CommonSectorOneModifier implements ISectorOneModifier {
     UAV_DRONE_MOD("1", "00", "UAV/Drone Equipped/Drone", "Mobility"),
     ROBOTIC_MOD("1", "01", "Robotic", "Mobility"),
     FIXED_WING_MOD("1", "02", "Fixed Wing", "Mobility"),
@@ -67,19 +67,19 @@ public enum CommonSectorOneModifier implements SectorOneModifier {
     private final String id;
     private final String label;
     private final String category;
-    
-    private CommonSectorOneModifier(String groupId, String id, String label, String category) {
+
+    CommonSectorOneModifier(String groupId, String id, String label, String category) {
         this.groupId = groupId;
         this.id = id;
         this.label = label;
         this.category = category;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getGraphicIdentifier() {
         return String.format("C1%s%s", getGroupId(), getId());
@@ -88,12 +88,12 @@ public enum CommonSectorOneModifier implements SectorOneModifier {
     public String getGroupId() {
         return groupId;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -103,10 +103,10 @@ public enum CommonSectorOneModifier implements SectorOneModifier {
     public SymbolSet getSymbolSet() {
         return SymbolSet.COMMON;
     }
-    
+
     @Override
     public boolean isUnknown() {
         return false;
     }
-    
+
 }

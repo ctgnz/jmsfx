@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.space;
 
+import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
 
-public enum SpaceSectorOneModifier implements SectorOneModifier {
+public enum SpaceSectorOneModifier implements ISectorOneModifier {
     UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.SPACE),
     LEO_MOD("01", "Low Earth Orbit (LEO)", "Orbit", SymbolSet.SPACE),
     MEO_MOD("02", "Medium Earth Orbit (MEO)", "Orbit", SymbolSet.SPACE),
@@ -16,24 +16,24 @@ public enum SpaceSectorOneModifier implements SectorOneModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private SpaceSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    SpaceSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -43,5 +43,5 @@ public enum SpaceSectorOneModifier implements SectorOneModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

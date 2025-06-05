@@ -1,21 +1,22 @@
-package ${basePackage}.${symbolSet.packageName};
+package ${iconPackage}.${symbolSet.packageName};
 
-<#if entityTypes??>        
+<#if entityTypes??>
 import java.util.List;
 
 </#if>
-import ${basePackage}.Entity;
-<#if entityTypes??>        
-import ${basePackage}.EntityType;
+import ${basePackage}.IEntity;
+<#if entityTypes??>
+import ${basePackage}.IEntityType;
 </#if>
-import ${basePackage}.SymbolSet;
-import ${basePackage}.IconType;
+import ${basePackage}.ISymbolSet;
+import ${iconPackage}.GraphicType;
+import ${iconPackage}.SymbolSet;
 
-public enum ${symbolSet.baseTypeName}Entity implements Entity {
+public enum ${symbolSet.baseTypeName}Entity implements IEntity {
 <#list entities as ent>
-    ${ent.id}("${ent.code}", "${ent.label}", IconType.${ent.iconType})<#if ent.baseSymbolSet??> {
+    ${ent.id}("${ent.code}", "${ent.label}", GraphicType.${ent.graphicType})<#if ent.baseSymbolSet??> {
         @Override
-        public SymbolSet getBaseSymbolSet() {
+        public ISymbolSet getBaseSymbolSet() {
             return SymbolSet.${ent.baseSymbolSet};
         }
     }</#if><#sep>,
@@ -23,51 +24,51 @@ public enum ${symbolSet.baseTypeName}Entity implements Entity {
 
     private final String id;
     private final String label;
-    private final IconType iconType;
-    
-    ${symbolSet.baseTypeName}Entity(String id, String label, IconType iconType) {
+    private final GraphicType graphicType;
+
+    ${symbolSet.baseTypeName}Entity(String id, String label, GraphicType graphicType) {
         this.id = id;
         this.label = label;
-        this.iconType = iconType;
+        this.graphicType = graphicType;
     }
-    
+
     @Override
-    public IconType getIconType() {
-        return iconType;
+    public GraphicType getGraphicType() {
+        return graphicType;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
 
     @Override
-    public SymbolSet getSymbolSet() {
+    public ISymbolSet getSymbolSet() {
         return SymbolSet.${symbolSet.id};
     }
-
 <#if symbolSet.baseSymbolSet??>
+
     @Override
-    public SymbolSet getBaseSymbolSet() {
+    public ISymbolSet getBaseSymbolSet() {
         return SymbolSet.${symbolSet.baseSymbolSet};
     }
-
-</#if>    
-<#if entityTypes??>        
-    @Override
-    public List<EntityType> getEntityTypes() {
-        return ${symbolSet.baseTypeName}SymbolSetInfo.INSTANCE.getEntityTypes(this);
-    }    
-    
 </#if>
+<#if entityTypes??>
+
+    @Override
+    public List<IEntityType> getEntityTypes() {
+        return ${symbolSet.baseTypeName}SymbolSetInfo.INSTANCE.getEntityTypes(this);
+    }
+</#if>
+
     @Override
     public boolean isCivilian() {
         return name().contains("CIVILIAN");
     }
-    
+
 }

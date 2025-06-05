@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.dto.SymbolSetDto;
+import io.github.ctgnz.jmsfx.icon.model.SymbolSetAdapter;
 
 @RestController
 @RequestMapping("/info")
 public class IconGeneratorController {
 
     @GetMapping("/symbols")
-    public List<SymbolSetDto> getSupportedSymbolSets() {
-        return Arrays.stream(SymbolSet.values()).map(SymbolSetDto::new).collect(Collectors.toList());
+    public List<SymbolSetAdapter> getSupportedSymbolSets() {
+        return Arrays.stream(SymbolSet.values()).map(SymbolSetAdapter::new).collect(Collectors.toList());
     }
 
 }

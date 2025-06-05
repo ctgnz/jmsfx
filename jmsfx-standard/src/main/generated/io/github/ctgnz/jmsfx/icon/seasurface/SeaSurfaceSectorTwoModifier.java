@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.seasurface;
 
+import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
 
-public enum SeaSurfaceSectorTwoModifier implements SectorTwoModifier {
+public enum SeaSurfaceSectorTwoModifier implements ISectorTwoModifier {
     UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSet.SEA_SURFACE),
     NUCLEAR_MOD("01", "Nuclear Powered", "Ship Propulsion", SymbolSet.SEA_SURFACE),
     DOCK_MOD("05", "Dock", "Cargo Capacity", SymbolSet.SEA_SURFACE),
@@ -19,24 +19,24 @@ public enum SeaSurfaceSectorTwoModifier implements SectorTwoModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private SeaSurfaceSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    SeaSurfaceSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -46,5 +46,5 @@ public enum SeaSurfaceSectorTwoModifier implements SectorTwoModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

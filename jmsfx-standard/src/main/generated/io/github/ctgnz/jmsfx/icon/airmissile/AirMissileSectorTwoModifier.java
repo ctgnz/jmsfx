@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.airmissile;
 
+import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
 
-public enum AirMissileSectorTwoModifier implements SectorTwoModifier {
+public enum AirMissileSectorTwoModifier implements ISectorTwoModifier {
     UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSet.AIR_MISSILE),
     AIR_DEST_MOD("01", "Air", "Missile Destination", SymbolSet.AIR_MISSILE),
     SURFACE_DEST_MOD("02", "Surface", "Missile Destination", SymbolSet.AIR_MISSILE),
@@ -25,24 +25,24 @@ public enum AirMissileSectorTwoModifier implements SectorTwoModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private AirMissileSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    AirMissileSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -52,5 +52,5 @@ public enum AirMissileSectorTwoModifier implements SectorTwoModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

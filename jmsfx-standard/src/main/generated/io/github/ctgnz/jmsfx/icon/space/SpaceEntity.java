@@ -2,55 +2,56 @@ package io.github.ctgnz.jmsfx.icon.space;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.icon.Entity;
-import io.github.ctgnz.jmsfx.icon.EntityType;
+import io.github.ctgnz.jmsfx.IEntity;
+import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.icon.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.IconType;
 
-public enum SpaceEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", IconType.NA),
-    MILITARY("11", "Military", IconType.MAIN),
-    CIVILIAN("12", "Civilian", IconType.MAIN),
-    MANUAL_TRACK("13", "Manual Track", IconType.FULL_OCTAGON);
+public enum SpaceEntity implements IEntity {
+    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
+    MILITARY("11", "Military", GraphicType.MAIN),
+    CIVILIAN("12", "Civilian", GraphicType.MAIN),
+    MANUAL_TRACK("13", "Manual Track", GraphicType.FULL_OCTAGON);
 
     private final String id;
     private final String label;
-    private final IconType iconType;
-    
-    SpaceEntity(String id, String label, IconType iconType) {
+    private final GraphicType graphicType;
+
+    SpaceEntity(String id, String label, GraphicType graphicType) {
         this.id = id;
         this.label = label;
-        this.iconType = iconType;
+        this.graphicType = graphicType;
     }
-    
+
     @Override
-    public IconType getIconType() {
-        return iconType;
+    public GraphicType getGraphicType() {
+        return graphicType;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
 
     @Override
-    public SymbolSet getSymbolSet() {
+    public ISymbolSet getSymbolSet() {
         return SymbolSet.SPACE;
     }
 
     @Override
-    public List<EntityType> getEntityTypes() {
+    public List<IEntityType> getEntityTypes() {
         return SpaceSymbolSetInfo.INSTANCE.getEntityTypes(this);
-    }    
-    
+    }
+
     @Override
     public boolean isCivilian() {
         return name().contains("CIVILIAN");
     }
-    
+
 }

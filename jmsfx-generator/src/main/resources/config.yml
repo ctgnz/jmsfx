@@ -1,29 +1,14 @@
 inputDir: "D:/git/joint-military-symbology-xml/instance"
 outputDir: "D:/git/jmsfx/jmsfx-standard/src/main/generated"
-basePackage: "io.github.ctgnz.jmsfx.icon"
+basePackage: "io.github.ctgnz.jmsfx"
+iconPackage: "io.github.ctgnz.jmsfx.icon"
+commonPackage: "io.github.ctgnz.jmsfx.icon.common"
+amplifierPackage: "io.github.ctgnz.jmsfx.icon.amplifier"
 libraryFile: "Base.xml"
 extensionCountryCode: "000"
 unframedSymbolSets:
   - INTERNAL
   - CONTROL_MEASURE
-simpleTypes:
-  ISymbolIdentificationCodeElement: "SymbolIdentificationCodeElement"
-  IListAmplifier: "ListAmplifier"
-  IStandardAmplifier: "StandardAmplifier"
-  IMainIconElement: "MainIconElement"
-  ISymbolSetInfo: "SymbolSetInfo"
-  IEntity: "Entity"
-  IEntityType: "EntityType"
-  IEntitySubType: "EntitySubType"
-  IIconModifier: "IconModifier"
-  ISectorOneModifier: "SectorOneModifier"
-  ISectorTwoModifier: "SectorTwoModifier"
-  Extension: "Extension"
-  AmplifierGuide: "AmplifierGuide"
-  GuideType: "GuideType"
-  AmplifierSource: "AmplifierSource"
-  IconType: "IconType"
-  SymbolIdentificationCode: "SymbolIdentificationCode"
 enumeratedAmplifiers:
   - {amplifier: "F", valuesId: "F_VALUES", code: "A1", enumType: "ReinforcedReduced", enumId: "REINFORCED", enumDesc: "Reinforced or Reduced"}
   - {amplifier: "J", valuesId: "RELIABILITY_RATINGS", code: "A2", enumType: "ReliabilityRating", enumId: "RELIABILITY_RATING", enumDesc: "Reliability Rating"}

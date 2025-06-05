@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.activity;
 
+import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
 
-public enum ActivitySectorOneModifier implements SectorOneModifier {
+public enum ActivitySectorOneModifier implements ISectorOneModifier {
     UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.ACTIVITY),
     HOUSE_TO_HOUSE_MOD("04", "House-to-House", "Psychological Operations", SymbolSet.ACTIVITY),
     MURDER_MOD("06", "Murder", "Crime", SymbolSet.ACTIVITY),
@@ -23,24 +23,24 @@ public enum ActivitySectorOneModifier implements SectorOneModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private ActivitySectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    ActivitySectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -50,5 +50,5 @@ public enum ActivitySectorOneModifier implements SectorOneModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

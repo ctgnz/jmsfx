@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.landinstallation;
 
+import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
 
-public enum LandInstallationSectorOneModifier implements SectorOneModifier {
+public enum LandInstallationSectorOneModifier implements ISectorOneModifier {
     UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.LAND_INSTALLATION),
     COAL_MOD("06", "Coal", "Electric Power Type", SymbolSet.LAND_INSTALLATION),
     GEOTHERMAL_MOD("07", "Geothermal", "Electric Power Type", SymbolSet.LAND_INSTALLATION),
@@ -16,24 +16,24 @@ public enum LandInstallationSectorOneModifier implements SectorOneModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private LandInstallationSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    LandInstallationSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -43,5 +43,5 @@ public enum LandInstallationSectorOneModifier implements SectorOneModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

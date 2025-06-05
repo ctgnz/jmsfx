@@ -1,42 +1,48 @@
-package ${basePackage};
+package ${iconPackage};
 
 import java.util.Arrays;
 
-public enum StandardIdentityGroup implements SymbolIdentificationCodeElement {
-<#list identityGroups as ident>
-    ${ident.id}("${ident.code}", "${ident.label}"<#list ident.standardIdCodes as idCode>, StandardIdentity.${idCode}</#list>)<#if ident?is_last>;<#else>,</#if>
-</#list>    
+import ${basePackage}.IStandardIdentity;
+import ${basePackage}.IStandardIdentityGroup;
 
-    public static StandardIdentityGroup forId(StandardIdentity id) {
-        return Arrays.stream(StandardIdentityGroup.values()).filter(grp -> grp.owns(id)).findFirst().orElse(null);
-    }
+public enum StandardIdentityGroup implements IStandardIdentityGroup {
+<#list identityGroups as ident>
+    ${ident.id}("${ident.code}", "${ident.label}", "${ident.graphicSuffix}")<#sep>,
+</#list>;
 
     private final String id;
     private final String label;
-    private final StandardIdentity[] identities;
-    
-    private StandardIdentityGroup(String id, String label, StandardIdentity... identities) {
+    private final String graphicSuffix;
+
+    StandardIdentityGroup(String id, String label, String graphicSuffix) {
         this.id = id;
         this.label = label;
-        this.identities = identities;
+        this.graphicSuffix = graphicSuffix;
     }
-    
+
+    @Override
+    public String getGraphicSuffix() {
+        return graphicSuffix;
+    }
+
     @Override
     public String getId() {
         return id;
     }
-    
+
+    @Override
     public StandardIdentity[] getIdentities() {
-        return identities;
+        return Arrays.stream(StandardIdentity.values()).filter(this::owns).toArray(size -> new StandardIdentity[size]);
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
-    
-    public boolean owns(StandardIdentity id) {
-        return Arrays.stream(identities).anyMatch(ident -> ident == id);
+
+    @Override
+    public boolean owns(IStandardIdentity id) {
+        return id.getGroup() == this;
     }
-    
+
 }

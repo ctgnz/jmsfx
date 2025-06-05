@@ -2,67 +2,68 @@ package io.github.ctgnz.jmsfx.icon.landequipment;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.icon.Entity;
-import io.github.ctgnz.jmsfx.icon.EntityType;
+import io.github.ctgnz.jmsfx.IEntity;
+import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.icon.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.IconType;
 
-public enum LandEquipmentEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", IconType.NA),
-    WEAPON_SYSTEM("11", "Weapon/Weapon System", IconType.FULL_OCTAGON),
-    VEHICLE("12", "Vehicle", IconType.FULL_OCTAGON),
-    ENGINEER_VEHICLES_EQUIPMENT("13", "Engineer Vehicles and Equipment", IconType.FULL_OCTAGON),
-    UTILITY_VEHICLES("14", "Utility Vehicles", IconType.NA),
-    TRAIN("15", "Train", IconType.NA),
-    CIVILIAN_VEHICLE("16", "Civilian Vehicle", IconType.NA),
-    LAW_ENFORCEMENT("17", "Law Enforcement", IconType.FULL_OCTAGON),
-    PACK_ANIMALS("18", "Pack Animals", IconType.FULL_OCTAGON),
-    MISSILE_SUPPORT("19", "Missile Support", IconType.FULL_OCTAGON),
-    OTHER_EQUIPMENT("20", "Other Equipment", IconType.NA),
-    LAND_MINES("21", "Land Mines", IconType.NA),
-    SENSORS("22", "Sensors", IconType.NA),
-    EMERGENCY_OPERATION("23", "Emergency Operation", IconType.FULL_OCTAGON),
-    MANUAL_TRACK("24", "Manual Track", IconType.FULL_OCTAGON),
-    ROTARY_WING("25", "Rotary Wing", IconType.MAIN_1);
+public enum LandEquipmentEntity implements IEntity {
+    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
+    WEAPON_SYSTEM("11", "Weapon/Weapon System", GraphicType.FULL_OCTAGON),
+    VEHICLE("12", "Vehicle", GraphicType.FULL_OCTAGON),
+    ENGINEER_VEHICLES_EQUIPMENT("13", "Engineer Vehicles and Equipment", GraphicType.FULL_OCTAGON),
+    UTILITY_VEHICLES("14", "Utility Vehicles", GraphicType.NA),
+    TRAIN("15", "Train", GraphicType.NA),
+    CIVILIAN_VEHICLE("16", "Civilian Vehicle", GraphicType.NA),
+    LAW_ENFORCEMENT("17", "Law Enforcement", GraphicType.FULL_OCTAGON),
+    PACK_ANIMALS("18", "Pack Animals", GraphicType.FULL_OCTAGON),
+    MISSILE_SUPPORT("19", "Missile Support", GraphicType.FULL_OCTAGON),
+    OTHER_EQUIPMENT("20", "Other Equipment", GraphicType.NA),
+    LAND_MINES("21", "Land Mines", GraphicType.NA),
+    SENSORS("22", "Sensors", GraphicType.NA),
+    EMERGENCY_OPERATION("23", "Emergency Operation", GraphicType.FULL_OCTAGON),
+    MANUAL_TRACK("24", "Manual Track", GraphicType.FULL_OCTAGON),
+    ROTARY_WING("25", "Rotary Wing", GraphicType.MAIN_1);
 
     private final String id;
     private final String label;
-    private final IconType iconType;
-    
-    LandEquipmentEntity(String id, String label, IconType iconType) {
+    private final GraphicType graphicType;
+
+    LandEquipmentEntity(String id, String label, GraphicType graphicType) {
         this.id = id;
         this.label = label;
-        this.iconType = iconType;
+        this.graphicType = graphicType;
     }
-    
+
     @Override
-    public IconType getIconType() {
-        return iconType;
+    public GraphicType getGraphicType() {
+        return graphicType;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
 
     @Override
-    public SymbolSet getSymbolSet() {
+    public ISymbolSet getSymbolSet() {
         return SymbolSet.LAND_EQUIPMENT;
     }
 
     @Override
-    public List<EntityType> getEntityTypes() {
+    public List<IEntityType> getEntityTypes() {
         return LandEquipmentSymbolSetInfo.INSTANCE.getEntityTypes(this);
-    }    
-    
+    }
+
     @Override
     public boolean isCivilian() {
         return name().contains("CIVILIAN");
     }
-    
+
 }

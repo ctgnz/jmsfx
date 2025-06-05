@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.air;
 
+import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
 
-public enum AirSectorOneModifier implements SectorOneModifier {
+public enum AirSectorOneModifier implements ISectorOneModifier {
     NOT_APPLICABLE_MOD("00", "Not Applicable", "General", SymbolSet.AIR),
     BOMBER_MOD("02", "Bomber", "Military Aircraft Type", SymbolSet.AIR),
     FIGHTER_MOD("04", "Fighter", "Military Aircraft Type", SymbolSet.AIR),
@@ -37,24 +37,24 @@ public enum AirSectorOneModifier implements SectorOneModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private AirSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    AirSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -64,5 +64,5 @@ public enum AirSectorOneModifier implements SectorOneModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

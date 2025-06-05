@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.controlmeasure;
 
+import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
 
-public enum ControlMeasureSectorOneModifier implements SectorOneModifier {
+public enum ControlMeasureSectorOneModifier implements ISectorOneModifier {
     UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.CONTROL_MEASURE),
     STANDARD_ON_ROAD_MOBILITY_MOD("01", "Standard Mobility/On-Road Mobility", "Mobility", SymbolSet.CONTROL_MEASURE),
     HIGH_OFF_ROAD_MOBILITY_MOD("02", "High Mobility/Off-Road Mobility", "Mobility", SymbolSet.CONTROL_MEASURE),
@@ -61,24 +61,24 @@ public enum ControlMeasureSectorOneModifier implements SectorOneModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private ControlMeasureSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    ControlMeasureSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -88,5 +88,5 @@ public enum ControlMeasureSectorOneModifier implements SectorOneModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

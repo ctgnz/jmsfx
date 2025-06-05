@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.landinstallation;
 
+import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
 
-public enum LandInstallationSectorTwoModifier implements SectorTwoModifier {
+public enum LandInstallationSectorTwoModifier implements ISectorTwoModifier {
     UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSet.LAND_INSTALLATION),
     BIOLOGICAL_2_MOD("01", "Biological", "No Category Listed", SymbolSet.LAND_INSTALLATION),
     CHEMICAL_2_MOD("02", "Chemical", "No Category Listed", SymbolSet.LAND_INSTALLATION),
@@ -18,24 +18,24 @@ public enum LandInstallationSectorTwoModifier implements SectorTwoModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private LandInstallationSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    LandInstallationSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -45,5 +45,5 @@ public enum LandInstallationSectorTwoModifier implements SectorTwoModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

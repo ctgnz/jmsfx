@@ -1,48 +1,36 @@
 inputDir: "D:/git/joint-military-symbology-xml/instance"
 outputDir: "D:/git/hallux/hallux-jmsfx/src/main/generated"
-basePackage: "nz.co.ctg.jmsfx.model"
+basePackage: "nz.co.ctg.jmsfx"
+iconPackage: "nz.co.ctg.jmsfx.model"
+commonPackage: "nz.co.ctg.jmsfx.model.common"
+amplifierPackage: "nz.co.ctg.jmsfx.model.amplifier"
 libraryFile: "Base.xml"
 extensionCountryCode: "000"
-simpleTypes:
-  ISymbolIdentificationCodeElement: "SymbolIdentificationCodeElement"
-  IListAmplifier: "ListAmplifier"
-  IStandardAmplifier: "StandardAmplifier"
-  IMainIconElement: "MainIconElement"
-  ISymbolSetInfo: "SymbolSetInfo"
-  IEntity: "Entity"
-  IEntityType: "EntityType"
-  IEntitySubType: "EntitySubType"
-  IIconModifier: "IconModifier"
-  ISectorOneModifier: "SectorOneModifier"
-  ISectorTwoModifier: "SectorTwoModifier"
-  Extension: "Extension"
-  AmplifierGuide: "AmplifierGuide"
-  GuideType: "GuideType"
-  AmplifierSource: "AmplifierSource"
-  IconType: "IconType"
-  SymbolIdentificationCode: "SymbolIdentificationCode"
-  enumeratedAmplifiers:
-    - {amplifier: "F", valuesId: "F_VALUES", code: "A1", enumType: "ReinforcedReduced", enumId: "REINFORCED", enumDesc: "Reinforced or Reduced"}
-    - {amplifier: "J", valuesId: "RELIABILITY_RATINGS", code: "A2", enumType: "ReliabilityRating", enumId: "RELIABILITY_RATING", enumDesc: "Reliability Rating"}
-    - {amplifier: "J", valuesId: "CREDIBILITY_RATINGS", code: "A3", enumType: "CredibilityRating", enumId: "CREDIBILITY_RATING", enumDesc: "Credibility Rating"}
-    - {amplifier: "K", valuesId: "K_VALUES", code: "A4", enumType: "CombatEffectiveness", enumId: "COMBAT_EFFECTIVENESS", enumDesc: "Combat Effectiveness Values"}
-    - {amplifier: "Z", valuesId: "SPEED_VALUES", code: "A5", enumType: "SpeedUnit", enumId: "SPEED_UNIT", enumDesc: "Speed Units"}
-    - {amplifier: "AO", valuesId: "AO_TYPE_VALUES", code: "A6", enumType: "EngagementType", enumId: "ENGAGEMENT_TYPE", enumDesc: "Type of Engagement"}
-    - {amplifier: "AO", valuesId: "AO_STAGE_VALUES", code: "A7", enumType: "EngagementStage", enumId: "ENGAGEMENT_STAGE", enumDesc: "Engagement Stage Code"}
-    - {amplifier: "AO", valuesId: "AO_WEAPON_VALUES", code: "A8", enumType: "EngagementWeapon", enumId: "ENGAGEMENT_WEAPON", enumDesc: "Engagement Weapon"}
-    - {amplifier: "AO1", valuesId: "AO1_VALUES", code: "A9", enumType: "TargetDesignation", enumId: "TARGET_DESIGNATION", enumDesc: "Target Designation"}
-    - {amplifier: "AS", valuesId: "AS_VALUES", code: "AA", enumType: "CountryCode", enumId: "COUNTRY_CODE", enumDesc: "Country Codes", coded: true}
-    - {amplifier: "AX", valuesId: "AX_VALUES", code: "AB", enumType: "InstallationComposition", enumId: "INSTALLATION_COMPOSITION", enumDesc: "Installation Composition"}
-    - {amplifier: "AQ", valuesId: "AQ_VALUES", code: "AC", enumType: "GuardedUnit", enumId: "GUARDED_UNIT", enumDesc: "Guarded Unit"}
-    - {amplifier: "AD", valuesId: "AD_VALUES", code: "AD", enumType: "PlatformType", enumId: "PLATFORM_TYPE", enumDesc: "Platform Type"}
-    - {amplifier: "AR", valuesId: "AR_VALUES", code: "AE", enumType: "SpecialDesignator", enumId: "SPECIAL_DESIGNATOR", enumDesc: "Special Designator"}
-  standardAmplifiers:
-    - {enumType: "UnknownAmplifier", enumId: "UNKNOWN", enumDesc: "Unspecified", graphicLocation: "Amplifier", groupIds: [ "NA" ], frameAmplifier: true, unknown: true}
-    - {enumType: "UnitEchelon", enumId: "UNIT_ECHELON", enumDesc: "Unit Echelon", graphicLocation: "Echelon", groupIds: [ "ECHELON" ], frameAmplifier: false}
-    - {enumType: "EquipmentMobility", enumId: "EQUIPMENT_MOBILITY", enumDesc: "Equipment Mobility", graphicLocation: "Amplifier", groupIds: [ "EQUIP_MOBILITY" ], frameAmplifier: false}
-    - {enumType: "TowedArrayType", enumId: "TOWED_ARRAYS", enumDesc: "Naval towed array", graphicLocation: "Amplifier", groupIds: [ "TOWED_ARRAYS" ], frameAmplifier: false}
-    - {enumType: "LeadershipRole", enumId: "LEADERSHIP_ROLE", enumDesc: "Leadership role", graphicLocation: "Amplifier", groupIds: [ "LEADERSHIP_INDICATOR" ], frameAmplifier: false}
-    - {enumType: "StandardServiceTier", enumId: "SERVICE_TIER", enumDesc: "Standard service tiers", graphicLocation: "Extension", groupIds: [ "SERVICE_TIER" ], frameAmplifier: true}
+unframedSymbolSets:
+  - INTERNAL
+  - CONTROL_MEASURE
+enumeratedAmplifiers:
+  - {amplifier: "F", valuesId: "F_VALUES", code: "A1", enumType: "ReinforcedReduced", enumId: "REINFORCED", enumDesc: "Reinforced or Reduced"}
+  - {amplifier: "J", valuesId: "RELIABILITY_RATINGS", code: "A2", enumType: "ReliabilityRating", enumId: "RELIABILITY_RATING", enumDesc: "Reliability Rating"}
+  - {amplifier: "J", valuesId: "CREDIBILITY_RATINGS", code: "A3", enumType: "CredibilityRating", enumId: "CREDIBILITY_RATING", enumDesc: "Credibility Rating"}
+  - {amplifier: "K", valuesId: "K_VALUES", code: "A4", enumType: "CombatEffectiveness", enumId: "COMBAT_EFFECTIVENESS", enumDesc: "Combat Effectiveness Values"}
+  - {amplifier: "Z", valuesId: "SPEED_VALUES", code: "A5", enumType: "SpeedUnit", enumId: "SPEED_UNIT", enumDesc: "Speed Units"}
+  - {amplifier: "AO", valuesId: "AO_TYPE_VALUES", code: "A6", enumType: "EngagementType", enumId: "ENGAGEMENT_TYPE", enumDesc: "Type of Engagement"}
+  - {amplifier: "AO", valuesId: "AO_STAGE_VALUES", code: "A7", enumType: "EngagementStage", enumId: "ENGAGEMENT_STAGE", enumDesc: "Engagement Stage Code"}
+  - {amplifier: "AO", valuesId: "AO_WEAPON_VALUES", code: "A8", enumType: "EngagementWeapon", enumId: "ENGAGEMENT_WEAPON", enumDesc: "Engagement Weapon"}
+  - {amplifier: "AO1", valuesId: "AO1_VALUES", code: "A9", enumType: "TargetDesignation", enumId: "TARGET_DESIGNATION", enumDesc: "Target Designation"}
+  - {amplifier: "AS", valuesId: "AS_VALUES", code: "AA", enumType: "CountryCode", enumId: "COUNTRY_CODE", enumDesc: "Country Codes", coded: true}
+  - {amplifier: "AX", valuesId: "AX_VALUES", code: "AB", enumType: "InstallationComposition", enumId: "INSTALLATION_COMPOSITION", enumDesc: "Installation Composition"}
+  - {amplifier: "AQ", valuesId: "AQ_VALUES", code: "AC", enumType: "GuardedUnit", enumId: "GUARDED_UNIT", enumDesc: "Guarded Unit"}
+  - {amplifier: "AD", valuesId: "AD_VALUES", code: "AD", enumType: "PlatformType", enumId: "PLATFORM_TYPE", enumDesc: "Platform Type"}
+  - {amplifier: "AR", valuesId: "AR_VALUES", code: "AE", enumType: "SpecialDesignator", enumId: "SPECIAL_DESIGNATOR", enumDesc: "Special Designator"}
+standardAmplifiers:
+  - {enumType: "UnknownAmplifier", enumId: "UNKNOWN", enumDesc: "Unspecified", graphicLocation: "Amplifier", groupIds: [ "NA" ], frameAmplifier: true, unknown: true}
+  - {enumType: "UnitEchelon", enumId: "UNIT_ECHELON", enumDesc: "Unit Echelon", graphicLocation: "Echelon", groupIds: [ "ECHELON" ], frameAmplifier: false}
+  - {enumType: "EquipmentMobility", enumId: "EQUIPMENT_MOBILITY", enumDesc: "Equipment Mobility", graphicLocation: "Amplifier", groupIds: [ "EQUIP_MOBILITY" ], frameAmplifier: false}
+  - {enumType: "TowedArrayType", enumId: "TOWED_ARRAYS", enumDesc: "Naval towed array", graphicLocation: "Amplifier", groupIds: [ "TOWED_ARRAYS" ], frameAmplifier: false}
+  - {enumType: "LeadershipRole", enumId: "LEADERSHIP_ROLE", enumDesc: "Leadership role", graphicLocation: "Amplifier", groupIds: [ "LEADERSHIP_INDICATOR" ], frameAmplifier: false}
+  - {enumType: "StandardServiceTier", enumId: "SERVICE_TIER", enumDesc: "Standard service tiers", graphicLocation: "Extension", groupIds: [ "SERVICE_TIER" ], frameAmplifier: true}
 dimensionGraphicLocations:
   INTERNAL: "Internal"
   UNKNOWN: "Unknown"
@@ -58,4 +46,16 @@ dimensionGraphicLocations:
   CONTROL_MEASURE: "ControlMeasures"
   CYBERSPACE: "Cyberspace"
 symbolGraphicLocations:
-  SS_CYBERSPACE: "Cyberspace"
+  CYBERSPACE: "Cyberspace"
+  CYBERSPACE_AIR: "Cyberspace"
+  CYBERSPACE_SPACE: "Cyberspace"
+  CYBERSPACE_LAND_UNIT: "Cyberspace"
+  CYBERSPACE_LAND_EQUIPMENT: "Cyberspace"
+  CYBERSPACE_LAND_INSTALLATION: "Cyberspace"
+  CYBERSPACE_DISMOUNTED: "Cyberspace"
+  CYBERSPACE_SEA_SURFACE: "Cyberspace"
+  CYBERSPACE_SEA_SUBSURFACE: "Cyberspace"
+  INTERNAL: ""
+entitySymbolSets:
+  END_POINT: CYBERSPACE_LAND_EQUIPMENT
+  WEARABLE: CYBERSPACE_LAND_EQUIPMENT

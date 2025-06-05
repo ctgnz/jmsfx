@@ -8,24 +8,24 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 
+import io.github.ctgnz.jmsfx.IEntity;
+import io.github.ctgnz.jmsfx.IEntitySubType;
+import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.IListAmplifier;
+import io.github.ctgnz.jmsfx.ISectorOneModifier;
+import io.github.ctgnz.jmsfx.ISectorTwoModifier;
+import io.github.ctgnz.jmsfx.ISymbolSetInfo;
 import io.github.ctgnz.jmsfx.icon.Amplifier;
-import io.github.ctgnz.jmsfx.icon.ListAmplifier;
 import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
 import io.github.ctgnz.jmsfx.icon.GuideType;
-import io.github.ctgnz.jmsfx.icon.Entity;
-import io.github.ctgnz.jmsfx.icon.EntitySubType;
-import io.github.ctgnz.jmsfx.icon.EntityType;
-import io.github.ctgnz.jmsfx.icon.SectorOneModifier;
-import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
-import io.github.ctgnz.jmsfx.icon.SymbolSetInfo;
 import io.github.ctgnz.jmsfx.icon.amplifier.UnitEchelon;
 import io.github.ctgnz.jmsfx.icon.amplifier.EquipmentMobility;
 
-public class LandUnitsSymbolSetInfo implements SymbolSetInfo {
-    public static final SymbolSetInfo INSTANCE = new LandUnitsSymbolSetInfo();
-    private static final List<Entity> ENTITIES = Arrays.asList(LandUnitsEntity.values());
-    private static final Multimap<Entity, EntityType> ENTITY_TYPES = Multimaps.index(Arrays.asList(LandUnitsEntityType.values()), EntityType::getEntity);
-    private static final Multimap<EntityType, EntitySubType> ENTITY_SUB_TYPES = Multimaps.index(Arrays.asList(LandUnitsEntitySubType.values()), EntitySubType::getEntityType);
+public class LandUnitsSymbolSetInfo implements ISymbolSetInfo {
+    public static final ISymbolSetInfo INSTANCE = new LandUnitsSymbolSetInfo();
+    private static final List<IEntity> ENTITIES = Arrays.asList(LandUnitsEntity.values());
+    private static final Multimap<IEntity, IEntityType> ENTITY_TYPES = Multimaps.index(Arrays.asList(LandUnitsEntityType.values()), IEntityType::getEntity);
+    private static final Multimap<IEntityType, IEntitySubType> ENTITY_SUB_TYPES = Multimaps.index(Arrays.asList(LandUnitsEntitySubType.values()), IEntitySubType::getEntityType);
 
     private LandUnitsSymbolSetInfo() {
     }
@@ -70,47 +70,47 @@ public class LandUnitsSymbolSetInfo implements SymbolSetInfo {
     }
 
     @Override
-    public List<ListAmplifier> getAmplifiers() {
+    public List<IListAmplifier> getAmplifiers() {
         return Arrays.asList(UnitEchelon.values());
     }
 
     @Override
-    public List<ListAmplifier> getAmplifiersTwo() {
+    public List<IListAmplifier> getAmplifiersTwo() {
         return Arrays.asList(EquipmentMobility.values());
     }
 
     @Override
-    public List<ListAmplifier> getAmplifiersThree() {
+    public List<IListAmplifier> getAmplifiersThree() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<Entity> getEntities() {
+    public List<IEntity> getEntities() {
         return ENTITIES;
     }
 
     @Override
-    public List<EntitySubType> getEntitySubTypes(EntityType entityType) {
+    public List<IEntitySubType> getEntitySubTypes(IEntityType entityType) {
         return Lists.newArrayList(ENTITY_SUB_TYPES.get(entityType));
     }
 
     @Override
-    public List<EntityType> getEntityTypes(Entity entity) {
+    public List<IEntityType> getEntityTypes(IEntity entity) {
         return Lists.newArrayList(ENTITY_TYPES.get(entity));
     }
 
     @Override
-    public List<ListAmplifier> getFrameAmplifiers() {
+    public List<IListAmplifier> getFrameAmplifiers() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<SectorOneModifier> getSectorOneModifiers() {
+    public List<ISectorOneModifier> getSectorOneModifiers() {
         return Arrays.asList(LandUnitsSectorOneModifier.values());
     }
 
     @Override
-    public List<SectorTwoModifier> getSectorTwoModifiers() {
+    public List<ISectorTwoModifier> getSectorTwoModifiers() {
         return Arrays.asList(LandUnitsSectorTwoModifier.values());
     }
 

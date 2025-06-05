@@ -186,7 +186,7 @@ public class SymbolSet {
                     @XmlAttribute(name = "Standard")
                     protected StandardType standard;
                     @XmlAttribute(name = "Icon")
-                    protected IconType icon;
+                    protected GraphicType icon;
                     @XmlAttribute(name = "IsCivilian")
                     protected Boolean isCivilian;
 
@@ -277,9 +277,9 @@ public class SymbolSet {
                         }
                     }
 
-                    public IconType getIcon() {
+                    public GraphicType getIcon() {
                         if (icon == null) {
-                            return IconType.MAIN;
+                            return GraphicType.MAIN;
                         } else {
                             return icon;
                         }
@@ -405,7 +405,7 @@ public class SymbolSet {
                         this.graphic = value;
                     }
 
-                    public void setIcon(IconType value) {
+                    public void setIcon(GraphicType value) {
                         this.icon = value;
                     }
 
@@ -520,7 +520,7 @@ public class SymbolSet {
             @XmlAttribute(name = "Standard")
             protected StandardType standard;
             @XmlAttribute(name = "Icon")
-            protected IconType icon;
+            protected GraphicType icon;
             @XmlAttribute(name = "IsCivilian")
             protected Boolean isCivilian;
 
@@ -611,9 +611,9 @@ public class SymbolSet {
                 }
             }
 
-            public IconType getIcon() {
+            public GraphicType getIcon() {
                 if (icon == null) {
-                    return IconType.MAIN;
+                    return GraphicType.MAIN;
                 } else {
                     return icon;
                 }
@@ -739,7 +739,7 @@ public class SymbolSet {
                 this.graphic = value;
             }
 
-            public void setIcon(IconType value) {
+            public void setIcon(GraphicType value) {
                 this.icon = value;
             }
 

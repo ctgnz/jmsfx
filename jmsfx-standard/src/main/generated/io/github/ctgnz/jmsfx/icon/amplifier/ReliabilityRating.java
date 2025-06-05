@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.ListAmplifier;
+import io.github.ctgnz.jmsfx.IListAmplifier;
 import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum ReliabilityRating implements ListAmplifier {
+public enum ReliabilityRating implements IListAmplifier {
     COMPLETELY("A", "Completely Reliable"),
     USUALLY("B", "Usually Reliable"),
     FAIRLY("C", "Fairly Reliable"),
@@ -13,25 +13,24 @@ public enum ReliabilityRating implements ListAmplifier {
     REL_CANNOT_BE_JUDGED("F", "Reliability Cannot Be Judged");
 
     private static final ListAmplifierType TYPE = ListAmplifierType.RELIABILITY_RATING;
-
     private final String id;
     private final String label;
-    
-    private ReliabilityRating(String id, String label) {
+
+    ReliabilityRating(String id, String label) {
         this.id = id;
         this.label = label;
     }
-    
+
     @Override
     public String getGraphicLocation() {
         return "NA";
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -41,7 +40,7 @@ public enum ReliabilityRating implements ListAmplifier {
     public ListAmplifierType getType() {
         return TYPE;
     }
-    
+
     public boolean isDeprecated() {
         try {
             return ReliabilityRating.class.getField(name()).getAnnotation(Deprecated.class) != null;

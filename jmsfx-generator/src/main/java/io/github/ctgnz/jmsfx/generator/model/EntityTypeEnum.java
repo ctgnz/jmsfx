@@ -2,19 +2,19 @@ package io.github.ctgnz.jmsfx.generator.model;
 
 import org.apache.commons.lang3.StringUtils;
 
-import io.github.ctgnz.jmsfx.generator.schema.IconType;
+import io.github.ctgnz.jmsfx.generator.schema.GraphicType;
 import io.github.ctgnz.jmsfx.generator.schema.SymbolSet.Entities.Entity;
 import io.github.ctgnz.jmsfx.generator.schema.SymbolSet.Entities.Entity.EntityTypes.EntityType;
 
 public class EntityTypeEnum extends StandardEnum {
 
     private final String entityId;
-    private final IconType iconType;
+    private final GraphicType graphicType;
     private final String graphic;
 
     public EntityTypeEnum(Entity entity, EntityType entityType) {
         super(entityType.getID().toString(), entityType.getLabel(), entityType.getEntityTypeCode().getCodeString(), null);
-        this.iconType = entityType.getIcon();
+        this.graphicType = entityType.getIcon();
         this.entityId = entity.getID();
         this.graphic = getNonStandardGraphic(entityType);
     }
@@ -31,8 +31,8 @@ public class EntityTypeEnum extends StandardEnum {
         return graphic;
     }
 
-    public IconType getIconType() {
-        return iconType;
+    public GraphicType getGraphicType() {
+        return graphicType;
     }
 
     private String getNonStandardGraphic(EntityType entityType) {

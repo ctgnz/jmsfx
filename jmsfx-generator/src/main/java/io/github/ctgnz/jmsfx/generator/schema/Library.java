@@ -1620,6 +1620,8 @@ public class Library {
             protected String description;
             @XmlAttribute(name = "Remarks")
             protected String remarks;
+            @XmlAttribute(name = "GroupID")
+            protected String groupID;
 
             public String getDescription() {
                 return description;
@@ -1681,6 +1683,14 @@ public class Library {
                 this.standardIdentityCode = value;
             }
 
+            public String getGroupID() {
+                return groupID;
+            }
+
+            public void setGroupID(String groupID) {
+                this.groupID = groupID;
+            }
+
         }
 
         @XmlElement(name = "StandardIdentity", required = true)
@@ -1710,10 +1720,6 @@ public class Library {
             @XmlElement(name = "StandardIdentityGroupCode")
             @XmlSchemaType(name = "unsignedShort")
             protected int standardIdentityGroupCode;
-            @XmlAttribute(name = "StandardIdentityIDs", required = true)
-            @XmlIDREF
-            @XmlSchemaType(name = "IDREFS")
-            protected List<Object> standardIdentityIDs;
             @XmlAttribute(name = "GraphicSuffix", required = true)
             @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
             @XmlSchemaType(name = "token")
@@ -1766,13 +1772,6 @@ public class Library {
 
             public int getStandardIdentityGroupCode() {
                 return standardIdentityGroupCode;
-            }
-
-            public List<Object> getStandardIdentityIDs() {
-                if (standardIdentityIDs == null) {
-                    standardIdentityIDs = new ArrayList<>();
-                }
-                return this.standardIdentityIDs;
             }
 
             public void setDescription(String value) {

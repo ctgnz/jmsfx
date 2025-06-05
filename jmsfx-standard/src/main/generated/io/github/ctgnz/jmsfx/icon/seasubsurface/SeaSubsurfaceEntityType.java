@@ -2,60 +2,59 @@ package io.github.ctgnz.jmsfx.icon.seasubsurface;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.icon.Entity;
-import io.github.ctgnz.jmsfx.icon.EntityType;
-import io.github.ctgnz.jmsfx.icon.EntitySubType;
-import io.github.ctgnz.jmsfx.icon.IconType;
+import io.github.ctgnz.jmsfx.IEntity;
+import io.github.ctgnz.jmsfx.IEntitySubType;
+import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.icon.GraphicType;
 
-public enum SeaSubsurfaceEntityType implements EntityType {
-    SUBMARINE("01", "Submarine", SeaSubsurfaceEntity.MILITARY, IconType.MAIN),
-    OTHER_SUBMERSIBLE("02", "Other Submersible", SeaSubsurfaceEntity.MILITARY, IconType.MAIN),
-    NONSUBMARINE("03", "Nonsubmarine", SeaSubsurfaceEntity.MILITARY, IconType.FULL_OCTAGON),
-    AUV_UUV("04", "Autonomous Underwater Vehicle (AUV)/Unmanned Underwater Vehicle (UUV)", SeaSubsurfaceEntity.MILITARY, IconType.MAIN),
-    DIVER("05", "Diver", SeaSubsurfaceEntity.MILITARY, IconType.MAIN),
-    SUBMERSIBLE_CIV("01", "Submersible", SeaSubsurfaceEntity.CIVILIAN, IconType.MAIN),
-    AUV_UUV_CIV("02", "Autonomous Underwater Vehicle (AUV)/ Underwater Vehicle (UUV)", SeaSubsurfaceEntity.CIVILIAN, IconType.FULL_OCTAGON),
-    DIVER_CIV("03", "Diver", SeaSubsurfaceEntity.CIVILIAN, IconType.MAIN),
-    TORPEDO("01", "Torpedo", SeaSubsurfaceEntity.WEAPON, IconType.MAIN),
-    IMPROVISED_EXPLOSIVE_DEVICE_IED("02", "Improvised Explosive Device (IED)", SeaSubsurfaceEntity.WEAPON, IconType.MAIN),
-    DECOY("03", "Decoy", SeaSubsurfaceEntity.WEAPON, IconType.MAIN);
+public enum SeaSubsurfaceEntityType implements IEntityType {
+    SUBMARINE("01", "Submarine", SeaSubsurfaceEntity.MILITARY, GraphicType.MAIN),
+    OTHER_SUBMERSIBLE("02", "Other Submersible", SeaSubsurfaceEntity.MILITARY, GraphicType.MAIN),
+    NONSUBMARINE("03", "Nonsubmarine", SeaSubsurfaceEntity.MILITARY, GraphicType.FULL_OCTAGON),
+    AUV_UUV("04", "Autonomous Underwater Vehicle (AUV)/Unmanned Underwater Vehicle (UUV)", SeaSubsurfaceEntity.MILITARY, GraphicType.MAIN),
+    DIVER("05", "Diver", SeaSubsurfaceEntity.MILITARY, GraphicType.MAIN),
+    SUBMERSIBLE_CIV("01", "Submersible", SeaSubsurfaceEntity.CIVILIAN, GraphicType.MAIN),
+    AUV_UUV_CIV("02", "Autonomous Underwater Vehicle (AUV)/ Underwater Vehicle (UUV)", SeaSubsurfaceEntity.CIVILIAN, GraphicType.FULL_OCTAGON),
+    DIVER_CIV("03", "Diver", SeaSubsurfaceEntity.CIVILIAN, GraphicType.MAIN),
+    TORPEDO("01", "Torpedo", SeaSubsurfaceEntity.WEAPON, GraphicType.MAIN),
+    IMPROVISED_EXPLOSIVE_DEVICE_IED("02", "Improvised Explosive Device (IED)", SeaSubsurfaceEntity.WEAPON, GraphicType.MAIN),
+    DECOY("03", "Decoy", SeaSubsurfaceEntity.WEAPON, GraphicType.MAIN);
 
     private final String id;
     private final String label;
     private final SeaSubsurfaceEntity entity;
-    private final IconType iconType;
-    
-    SeaSubsurfaceEntityType(String id, String label, SeaSubsurfaceEntity entity, IconType iconType) {
+    private final GraphicType graphicType;
+
+    SeaSubsurfaceEntityType(String id, String label, SeaSubsurfaceEntity entity, GraphicType graphicType) {
         this.id = id;
         this.label = label;
         this.entity = entity;
-        this.iconType = iconType;
+        this.graphicType = graphicType;
     }
-    
 
     @Override
-    public IconType getIconType() {
-        return iconType;
+    public GraphicType getGraphicType() {
+        return graphicType;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
 
     @Override
-    public Entity getEntity() {
+    public IEntity getEntity() {
         return entity;
     }
-    
-   @Override
-    public List<EntitySubType> getEntitySubTypes() {
+
+    @Override
+    public List<IEntitySubType> getEntitySubTypes() {
         return SeaSubsurfaceSymbolSetInfo.INSTANCE.getEntitySubTypes(this);
-    }    
+    }
 
 }

@@ -1,40 +1,41 @@
 package io.github.ctgnz.jmsfx.icon.internal;
 
-import io.github.ctgnz.jmsfx.icon.Entity;
+import io.github.ctgnz.jmsfx.IEntity;
+import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.icon.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.IconType;
 
-public enum InternalEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", IconType.NA),
-    INVALID("10", "Invalid Symbol", IconType.FULL_OCTAGON);
+public enum InternalEntity implements IEntity {
+    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
+    INVALID("10", "Invalid Symbol", GraphicType.FULL_OCTAGON);
 
     private final String id;
     private final String label;
-    private final IconType iconType;
-    
-    InternalEntity(String id, String label, IconType iconType) {
+    private final GraphicType graphicType;
+
+    InternalEntity(String id, String label, GraphicType graphicType) {
         this.id = id;
         this.label = label;
-        this.iconType = iconType;
+        this.graphicType = graphicType;
     }
-    
+
     @Override
-    public IconType getIconType() {
-        return iconType;
+    public GraphicType getGraphicType() {
+        return graphicType;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
 
     @Override
-    public SymbolSet getSymbolSet() {
+    public ISymbolSet getSymbolSet() {
         return SymbolSet.INTERNAL;
     }
 
@@ -42,5 +43,5 @@ public enum InternalEntity implements Entity {
     public boolean isCivilian() {
         return name().contains("CIVILIAN");
     }
-    
+
 }

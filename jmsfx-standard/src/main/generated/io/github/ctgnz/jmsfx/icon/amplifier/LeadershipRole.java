@@ -1,33 +1,32 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.StandardAmplifier;
+import io.github.ctgnz.jmsfx.IStandardAmplifier;
 import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum LeadershipRole implements StandardAmplifier {
+public enum LeadershipRole implements IStandardAmplifier {
     LEADER_INDIVIDUAL("1", "Leader"),
     DEPUTY_LEADER_INDIVIDUAL("2", "Deputy Leader");
 
     private static final ListAmplifierType TYPE = ListAmplifierType.LEADERSHIP_ROLE;
-
     private final String id;
     private final String label;
-    
-    private LeadershipRole(String id, String label) {
+
+    LeadershipRole(String id, String label) {
         this.id = id;
         this.label = label;
     }
-    
+
     @Override
     public String getGraphicLocation() {
         return "Amplifier";
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -37,7 +36,7 @@ public enum LeadershipRole implements StandardAmplifier {
     public ListAmplifierType getType() {
         return TYPE;
     }
-    
+
     public boolean isDeprecated() {
         try {
             return LeadershipRole.class.getField(name()).getAnnotation(Deprecated.class) != null;

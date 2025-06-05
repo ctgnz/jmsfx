@@ -2,59 +2,60 @@ package io.github.ctgnz.jmsfx.icon.activity;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.icon.Entity;
-import io.github.ctgnz.jmsfx.icon.EntityType;
+import io.github.ctgnz.jmsfx.IEntity;
+import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.icon.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.IconType;
 
-public enum ActivityEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", IconType.NA),
-    INCIDENT("11", "Incident", IconType.NA),
-    CIVIL_DISTURBANCE("12", "Civil Disturbance", IconType.FULL_OCTAGON),
-    OPERATION("13", "Operation", IconType.NA),
-    HAZARD_MATERIALS("15", "Hazard Materials", IconType.NA),
-    TRANSPORTATION_INCIDENT("16", "Transportation Incident", IconType.FULL_OCTAGON),
-    NATURAL_EVENT("17", "Natural Event", IconType.MAIN),
-    INDIVIDUAL("18", "Individual", IconType.NA);
+public enum ActivityEntity implements IEntity {
+    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
+    INCIDENT("11", "Incident", GraphicType.NA),
+    CIVIL_DISTURBANCE("12", "Civil Disturbance", GraphicType.FULL_OCTAGON),
+    OPERATION("13", "Operation", GraphicType.NA),
+    HAZARD_MATERIALS("15", "Hazard Materials", GraphicType.NA),
+    TRANSPORTATION_INCIDENT("16", "Transportation Incident", GraphicType.FULL_OCTAGON),
+    NATURAL_EVENT("17", "Natural Event", GraphicType.MAIN),
+    INDIVIDUAL("18", "Individual", GraphicType.NA);
 
     private final String id;
     private final String label;
-    private final IconType iconType;
-    
-    ActivityEntity(String id, String label, IconType iconType) {
+    private final GraphicType graphicType;
+
+    ActivityEntity(String id, String label, GraphicType graphicType) {
         this.id = id;
         this.label = label;
-        this.iconType = iconType;
+        this.graphicType = graphicType;
     }
-    
+
     @Override
-    public IconType getIconType() {
-        return iconType;
+    public GraphicType getGraphicType() {
+        return graphicType;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
 
     @Override
-    public SymbolSet getSymbolSet() {
+    public ISymbolSet getSymbolSet() {
         return SymbolSet.ACTIVITY;
     }
 
     @Override
-    public List<EntityType> getEntityTypes() {
+    public List<IEntityType> getEntityTypes() {
         return ActivitySymbolSetInfo.INSTANCE.getEntityTypes(this);
-    }    
-    
+    }
+
     @Override
     public boolean isCivilian() {
         return name().contains("CIVILIAN");
     }
-    
+
 }

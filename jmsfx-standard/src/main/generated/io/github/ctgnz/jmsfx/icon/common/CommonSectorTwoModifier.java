@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.common;
 
-import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
 
-public enum CommonSectorTwoModifier implements SectorTwoModifier {
+public enum CommonSectorTwoModifier implements ISectorTwoModifier {
     AIRBORNE_2_MOD("1", "00", "Airborne", "Mobility"),
     BICYCLE_EQUIPPED_2_MOD("1", "01", "Bicycle Equipped", "Mobility"),
     RAILROAD_RAILWAY_2_MOD("1", "02", "Railroad/Railway", "Mobility"),
@@ -35,19 +35,19 @@ public enum CommonSectorTwoModifier implements SectorTwoModifier {
     private final String id;
     private final String label;
     private final String category;
-    
-    private CommonSectorTwoModifier(String groupId, String id, String label, String category) {
+
+    CommonSectorTwoModifier(String groupId, String id, String label, String category) {
         this.groupId = groupId;
         this.id = id;
         this.label = label;
         this.category = category;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getGraphicIdentifier() {
         return String.format("C2%s%s", getGroupId(), getId());
@@ -56,12 +56,12 @@ public enum CommonSectorTwoModifier implements SectorTwoModifier {
     public String getGroupId() {
         return groupId;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -71,10 +71,10 @@ public enum CommonSectorTwoModifier implements SectorTwoModifier {
     public SymbolSet getSymbolSet() {
         return SymbolSet.COMMON;
     }
-    
+
     @Override
     public boolean isUnknown() {
         return false;
     }
-    
+
 }

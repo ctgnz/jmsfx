@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.StandardAmplifier;
+import io.github.ctgnz.jmsfx.IStandardAmplifier;
 import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum EquipmentMobility implements StandardAmplifier {
+public enum EquipmentMobility implements IStandardAmplifier {
     WHEEL_LIMIT_COUNTRY("1", "Wheeled limited cross country"),
     WHEEL_COUNTRY("2", "Wheeled cross country"),
     TRACKED("3", "Tracked"),
@@ -18,25 +18,24 @@ public enum EquipmentMobility implements StandardAmplifier {
     AMPHIB("E", "Amphibious");
 
     private static final ListAmplifierType TYPE = ListAmplifierType.EQUIPMENT_MOBILITY;
-
     private final String id;
     private final String label;
-    
-    private EquipmentMobility(String id, String label) {
+
+    EquipmentMobility(String id, String label) {
         this.id = id;
         this.label = label;
     }
-    
+
     @Override
     public String getGraphicLocation() {
         return "Amplifier";
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -46,7 +45,7 @@ public enum EquipmentMobility implements StandardAmplifier {
     public ListAmplifierType getType() {
         return TYPE;
     }
-    
+
     public boolean isDeprecated() {
         try {
             return EquipmentMobility.class.getField(name()).getAnnotation(Deprecated.class) != null;

@@ -1,52 +1,51 @@
 package io.github.ctgnz.jmsfx.icon.landcivilian;
 
-import io.github.ctgnz.jmsfx.icon.Entity;
-import io.github.ctgnz.jmsfx.icon.EntityType;
-import io.github.ctgnz.jmsfx.icon.IconType;
+import io.github.ctgnz.jmsfx.IEntity;
+import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.icon.GraphicType;
 
-public enum LandCivilianEntityType implements EntityType {
-    ENVIRONMENTAL_PROTECTION("01", "Environmental Protection", LandCivilianEntity.CIVILIAN, IconType.MAIN),
-    GOVERNMENT_ORGANIZATION("02", "Government Organization", LandCivilianEntity.CIVILIAN, IconType.MAIN),
-    INDIVIDUAL("03", "Individual", LandCivilianEntity.CIVILIAN, IconType.MAIN),
-    GROUP("04", "Group", LandCivilianEntity.CIVILIAN, IconType.MAIN),
-    KILLING_VICTIM("05", "Individual Victim Killed by Criminal Activity", LandCivilianEntity.CIVILIAN, IconType.MAIN),
-    KILLING_VICTIMS("06", "Group of Victims Killed by Criminal Activity", LandCivilianEntity.CIVILIAN, IconType.MAIN),
-    VICTIM_ATTEMPTED_CRIME("07", "Victim of an Attempted Crime", LandCivilianEntity.CIVILIAN, IconType.MAIN),
-    SPY("08", "Spy", LandCivilianEntity.CIVILIAN, IconType.MAIN),
-    COMPOSITE_LOSS("09", "Composite Loss", LandCivilianEntity.CIVILIAN, IconType.MAIN),
-    EMERGENCY_MEDICAL_OPERATION("10", "Emergency Medical Operation", LandCivilianEntity.CIVILIAN, IconType.FULL_OCTAGON);
+public enum LandCivilianEntityType implements IEntityType {
+    ENVIRONMENTAL_PROTECTION("01", "Environmental Protection", LandCivilianEntity.CIVILIAN, GraphicType.MAIN),
+    GOVERNMENT_ORGANIZATION("02", "Government Organization", LandCivilianEntity.CIVILIAN, GraphicType.MAIN),
+    INDIVIDUAL("03", "Individual", LandCivilianEntity.CIVILIAN, GraphicType.MAIN),
+    GROUP("04", "Group", LandCivilianEntity.CIVILIAN, GraphicType.MAIN),
+    KILLING_VICTIM("05", "Individual Victim Killed by Criminal Activity", LandCivilianEntity.CIVILIAN, GraphicType.MAIN),
+    KILLING_VICTIMS("06", "Group of Victims Killed by Criminal Activity", LandCivilianEntity.CIVILIAN, GraphicType.MAIN),
+    VICTIM_ATTEMPTED_CRIME("07", "Victim of an Attempted Crime", LandCivilianEntity.CIVILIAN, GraphicType.MAIN),
+    SPY("08", "Spy", LandCivilianEntity.CIVILIAN, GraphicType.MAIN),
+    COMPOSITE_LOSS("09", "Composite Loss", LandCivilianEntity.CIVILIAN, GraphicType.MAIN),
+    EMERGENCY_MEDICAL_OPERATION("10", "Emergency Medical Operation", LandCivilianEntity.CIVILIAN, GraphicType.FULL_OCTAGON);
 
     private final String id;
     private final String label;
     private final LandCivilianEntity entity;
-    private final IconType iconType;
-    
-    LandCivilianEntityType(String id, String label, LandCivilianEntity entity, IconType iconType) {
+    private final GraphicType graphicType;
+
+    LandCivilianEntityType(String id, String label, LandCivilianEntity entity, GraphicType graphicType) {
         this.id = id;
         this.label = label;
         this.entity = entity;
-        this.iconType = iconType;
+        this.graphicType = graphicType;
     }
-    
 
     @Override
-    public IconType getIconType() {
-        return iconType;
+    public GraphicType getGraphicType() {
+        return graphicType;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
 
     @Override
-    public Entity getEntity() {
+    public IEntity getEntity() {
         return entity;
     }
-    
+
 }

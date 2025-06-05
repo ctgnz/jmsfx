@@ -1,34 +1,33 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.icon.ListAmplifier;
+import io.github.ctgnz.jmsfx.IListAmplifier;
 import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum EngagementType implements ListAmplifier {
+public enum EngagementType implements IListAmplifier {
     L("", "Local"),
     R("R:", "Remote"),
     B("B:", "Both");
 
     private static final ListAmplifierType TYPE = ListAmplifierType.ENGAGEMENT_TYPE;
-
     private final String id;
     private final String label;
-    
-    private EngagementType(String id, String label) {
+
+    EngagementType(String id, String label) {
         this.id = id;
         this.label = label;
     }
-    
+
     @Override
     public String getGraphicLocation() {
         return "NA";
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -38,7 +37,7 @@ public enum EngagementType implements ListAmplifier {
     public ListAmplifierType getType() {
         return TYPE;
     }
-    
+
     public boolean isDeprecated() {
         try {
             return EngagementType.class.getField(name()).getAnnotation(Deprecated.class) != null;

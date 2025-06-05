@@ -1,9 +1,12 @@
 package io.github.ctgnz.jmsfx.icon;
 
 import java.util.Arrays;
+
+import io.github.ctgnz.jmsfx.ICodeElement;
+import io.github.ctgnz.jmsfx.IListAmplifier;
 import io.github.ctgnz.jmsfx.icon.amplifier.*;
 
-public enum ListAmplifierType implements SymbolIdentificationCodeElement {
+public enum ListAmplifierType implements ICodeElement {
     UNKNOWN("0", "Unspecified", UnknownAmplifier.class),
     UNIT_ECHELON("1", "Unit Echelon", UnitEchelon.class, SymbolSet.LAND_UNIT, SymbolSet.CONTROL_MEASURE, SymbolSet.CYBERSPACE),
     EQUIPMENT_MOBILITY("3", "Equipment Mobility", EquipmentMobility.class, SymbolSet.LAND_UNIT, SymbolSet.LAND_EQUIPMENT, SymbolSet.LAND_INSTALLATION),
@@ -24,48 +27,48 @@ public enum ListAmplifierType implements SymbolIdentificationCodeElement {
     COUNTRY_CODE("AA", "Country Codes", CountryCode.class),
     INSTALLATION_COMPOSITION("AB", "Installation Composition", InstallationComposition.class);
 
-    private final String id;
-    private final String label;
-    private final Class<? extends ListAmplifier> amplifierEnumClass;
-    private final SymbolSet[] symbolSets;
-    
-    private ListAmplifierType(String id, String label, Class<? extends ListAmplifier> amplifierEnumClass, SymbolSet... symbolSets) {
-        this.id = id;
-        this.label = label;
-        this.amplifierEnumClass = amplifierEnumClass;
-        this.symbolSets = symbolSets;
-    }
-    
     @SuppressWarnings("unchecked")
-    public <A extends ListAmplifier> Class<A> getAmplifierEnumClass() {
-        return (Class<A>) amplifierEnumClass;
-    }
-    
-    @Override
-    public String getId() {
-        return id;
-    }
-    
-    @Override
-    public String getLabel() {
-        return label;
-    }
-    
-    public SymbolSet[] getSymbolSets() {
-        return symbolSets;
-    }
-    
-    public boolean isCompatibleWith(SymbolSet symbolSet) {
-        return Arrays.stream(symbolSets).anyMatch(sym -> sym == symbolSet);
-    }
-
-    @SuppressWarnings("unchecked")
-    public static <A extends ListAmplifier> Class<A> getListAmplifier(SymbolSet symbolSet) {
+    public static <A extends IListAmplifier> Class<A> getListAmplifier(SymbolSet symbolSet) {
         return (Class<A>) Arrays.stream(values())
                         .filter(type -> type.isCompatibleWith(symbolSet))
                         .findFirst()
                         .map(ListAmplifierType::getAmplifierEnumClass)
                         .orElse(null);
+    }
+
+    private final String id;
+    private final String label;
+    private final Class<? extends IListAmplifier> amplifierEnumClass;
+    private final SymbolSet[] symbolSets;
+
+    ListAmplifierType(String id, String label, Class<? extends IListAmplifier> amplifierEnumClass, SymbolSet... symbolSets) {
+        this.id = id;
+        this.label = label;
+        this.amplifierEnumClass = amplifierEnumClass;
+        this.symbolSets = symbolSets;
+    }
+
+    @SuppressWarnings("unchecked")
+    public <A extends IListAmplifier> Class<A> getAmplifierEnumClass() {
+        return (Class<A>) amplifierEnumClass;
+    }
+
+    @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public String getLabel() {
+        return label;
+    }
+
+    public SymbolSet[] getSymbolSets() {
+        return symbolSets;
+    }
+
+    public boolean isCompatibleWith(SymbolSet symbolSet) {
+        return Arrays.stream(symbolSets).anyMatch(sym -> sym == symbolSet);
     }
 
 }

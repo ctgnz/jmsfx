@@ -1,6 +1,8 @@
 package io.github.ctgnz.jmsfx.icon;
 
-public enum Context implements SymbolIdentificationCodeElement {
+import io.github.ctgnz.jmsfx.IContext;
+
+public enum Context implements IContext {
     REALITY("0", "Reality"),
     EXERCISE("1", "Exercise"),
     SIMULATION("2", "Simulation"),
@@ -13,19 +15,25 @@ public enum Context implements SymbolIdentificationCodeElement {
 
     private final String id;
     private final String label;
-    
-    private Context(String id, String label) {
+
+    Context(String id, String label) {
         this.id = id;
         this.label = label;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
     }
+
+    @Override
+    public boolean isReality() {
+        return ordinal() == 0;
+    }
+
 }

@@ -1,23 +1,18 @@
 package io.github.ctgnz.jmsfx.generator.model;
 
-import static java.util.stream.Collectors.toList;
-
-import io.github.ctgnz.jmsfx.generator.schema.Library.StandardIdentities.StandardIdentity;
 import io.github.ctgnz.jmsfx.generator.schema.Library.StandardIdentityGroups.StandardIdentityGroup;
-
-import java.util.List;
 
 public class StandardIdentityGroupEnum extends StandardEnum {
 
-    private final List<String> standardIdCodes;
+    private final String graphicSuffix;
 
     public StandardIdentityGroupEnum(StandardIdentityGroup identityGroup) {
         super(identityGroup.getID(), identityGroup.getLabel(), Integer.toString(identityGroup.getStandardIdentityGroupCode()), null);
-        standardIdCodes = identityGroup.getStandardIdentityIDs().stream().map(StandardIdentity.class::cast).map(StandardIdentity::getID).collect(toList());
+        this.graphicSuffix = identityGroup.getGraphicSuffix();
     }
 
-    public List<String> getStandardIdCodes() {
-        return standardIdCodes;
+    public String getGraphicSuffix() {
+        return graphicSuffix;
     }
 
 }

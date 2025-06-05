@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.dismountedindividual;
 
+import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.SectorTwoModifier;
 
-public enum DismountedIndividualSectorTwoModifier implements SectorTwoModifier {
+public enum DismountedIndividualSectorTwoModifier implements ISectorTwoModifier {
     UNSPECIFIED_TWO_MOD("00", "Unspecified", "General", SymbolSet.DISMOUNTED),
     VIDEO_IMAGERY_MOD("03", "Video Imagery (Combat Camera)", "Task", SymbolSet.DISMOUNTED),
     J1_MOD("04", "J1", "Functional Staff Area", SymbolSet.DISMOUNTED),
@@ -45,24 +45,24 @@ public enum DismountedIndividualSectorTwoModifier implements SectorTwoModifier {
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
-    
-    private DismountedIndividualSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
+
+    DismountedIndividualSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
         this.symbolSet = symbolSet;
     }
-    
+
     @Override
     public String getCategory() {
         return category;
     }
-    
+
     @Override
     public String getId() {
         return id;
     }
-    
+
     @Override
     public String getLabel() {
         return label;
@@ -72,5 +72,5 @@ public enum DismountedIndividualSectorTwoModifier implements SectorTwoModifier {
     public SymbolSet getSymbolSet() {
         return symbolSet;
     }
-    
+
 }

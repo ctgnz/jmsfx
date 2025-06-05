@@ -9,6 +9,20 @@ import nz.co.ctg.foxglove.ISvgStylable;
 import nz.co.ctg.foxglove.SvgGraphic;
 import nz.co.ctg.foxglove.type.ViewBox;
 
+import io.github.ctgnz.jmsfx.IAmplifier;
+import io.github.ctgnz.jmsfx.IContext;
+import io.github.ctgnz.jmsfx.IEntity;
+import io.github.ctgnz.jmsfx.IEntitySubType;
+import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.IHqtfDummy;
+import io.github.ctgnz.jmsfx.IListAmplifier;
+import io.github.ctgnz.jmsfx.IMainElement;
+import io.github.ctgnz.jmsfx.ISectorOneModifier;
+import io.github.ctgnz.jmsfx.ISectorTwoModifier;
+import io.github.ctgnz.jmsfx.IStandardIdentity;
+import io.github.ctgnz.jmsfx.IStatus;
+import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.IVersion;
 import io.github.ctgnz.jmsfx.icon.amplifier.CountryCode;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
@@ -36,23 +50,23 @@ public class IdentificationSymbol {
     public static final Color HOSTILE_ORANGE = Color.rgb(255, 120, 0); // FF7800
     public static final Color OFF_WHITE = Color.rgb(239, 239, 239);    // EFEFEF
     public static final Color NEARLY_WHITE = Color.rgb(250, 250, 250); // FAFAFA
-    private final SymbolIdentificationCode sidc = new SymbolIdentificationCode();
+    private final SymbolIdentificationCode sidc = SymbolIdentificationCode.builder().build();
     private final ObjectProperty<IconScale> scale = new SimpleObjectProperty<>(IconScale.Medium);
-    private final ObjectProperty<Version> version;
-    private final ObjectProperty<Context> context;
-    private final ObjectProperty<StandardIdentity> standardIdentity;
-    private final ObjectProperty<SymbolSet> symbolSet;
-    private final ObjectProperty<Status> status;
-    private final ObjectProperty<HqtfDummy> hqtfDummy;
-    private final ObjectProperty<ListAmplifier> amplifier;
-    private final ObjectProperty<ListAmplifier> amplifierTwo;
-    private final ObjectProperty<ListAmplifier> amplifierThree;
-    private final ObjectProperty<ListAmplifier> frameAmplifier;
-    private final ObjectProperty<Entity> entity;
-    private final ObjectProperty<EntityType> entityType;
-    private final ObjectProperty<EntitySubType> entitySubType;
-    private final ObjectProperty<SectorOneModifier> sectorOneModifier;
-    private final ObjectProperty<SectorTwoModifier> sectorTwoModifier;
+    private final ObjectProperty<IVersion> version;
+    private final ObjectProperty<IContext> context;
+    private final ObjectProperty<IStandardIdentity> standardIdentity;
+    private final ObjectProperty<ISymbolSet> symbolSet;
+    private final ObjectProperty<IStatus> status;
+    private final ObjectProperty<IHqtfDummy> hqtfDummy;
+    private final ObjectProperty<IListAmplifier> amplifier;
+    private final ObjectProperty<IListAmplifier> amplifierTwo;
+    private final ObjectProperty<IListAmplifier> amplifierThree;
+    private final ObjectProperty<IListAmplifier> frameAmplifier;
+    private final ObjectProperty<IEntity> entity;
+    private final ObjectProperty<IEntityType> entityType;
+    private final ObjectProperty<IEntitySubType> entitySubType;
+    private final ObjectProperty<ISectorOneModifier> sectorOneModifier;
+    private final ObjectProperty<ISectorTwoModifier> sectorTwoModifier;
     private final ObjectProperty<CountryCode> countryCode;
     private final ObjectProperty<SvgGraphic> frameGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> frameOverlayGraphic = new SimpleObjectProperty<>();
@@ -66,17 +80,17 @@ public class IdentificationSymbol {
     private final ObjectProperty<SvgGraphic> statusGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> hqtfDummyGraphic = new SimpleObjectProperty<>();
     private final StringProperty code = new SimpleStringProperty(sidc.toString());
-    private final ObservableList<ListAmplifier> amplifiers = FXCollections.observableArrayList(sidc.getListAmplifiers());
-    private final ObservableList<ListAmplifier> amplifiersTwo = FXCollections.observableArrayList(sidc.getAmplifierTwoGroups());
-    private final ObservableList<ListAmplifier> amplifiersThree = FXCollections.observableArrayList(sidc.getAmplifierThreeGroups());
-    private final ObservableList<ListAmplifier> frameAmplifiers = FXCollections.observableArrayList(sidc.getFrameListAmplifiers());
-    private final ObservableList<Entity> entities = FXCollections.observableArrayList(sidc.getEntities());
-    private final ObservableList<EntityType> entityTypes = FXCollections.observableArrayList();
-    private final ObservableList<EntitySubType> entitySubTypes = FXCollections.observableArrayList();
-    private final ObservableList<SectorOneModifier> sectorOneModifiers = FXCollections.observableArrayList(sidc.getSectorOneModifiers());
-    private final ObservableList<SectorTwoModifier> sectorTwoModifiers = FXCollections.observableArrayList(sidc.getSectorTwoModifiers());
-    private final ObservableMap<Amplifier, TextAmplifier> textAmplifiers = FXCollections.observableHashMap();
-    private final ObservableMap<Amplifier, GraphicAmplifier> graphicAmplifiers = FXCollections.observableHashMap();
+    private final ObservableList<IListAmplifier> amplifiers = FXCollections.observableArrayList(sidc.getListAmplifiers());
+    private final ObservableList<IListAmplifier> amplifiersTwo = FXCollections.observableArrayList(sidc.getAmplifierTwoGroups());
+    private final ObservableList<IListAmplifier> amplifiersThree = FXCollections.observableArrayList(sidc.getAmplifierThreeGroups());
+    private final ObservableList<IListAmplifier> frameAmplifiers = FXCollections.observableArrayList(sidc.getFrameListAmplifiers());
+    private final ObservableList<IEntity> entities = FXCollections.observableArrayList(sidc.getEntities());
+    private final ObservableList<IEntityType> entityTypes = FXCollections.observableArrayList();
+    private final ObservableList<IEntitySubType> entitySubTypes = FXCollections.observableArrayList();
+    private final ObservableList<ISectorOneModifier> sectorOneModifiers = FXCollections.observableArrayList(sidc.getSectorOneModifiers());
+    private final ObservableList<ISectorTwoModifier> sectorTwoModifiers = FXCollections.observableArrayList(sidc.getSectorTwoModifiers());
+    private final ObservableMap<IAmplifier, TextAmplifierValue> textAmplifiers = FXCollections.observableHashMap();
+    private final ObservableMap<IAmplifier, GraphicAmplifierValue> graphicAmplifiers = FXCollections.observableHashMap();
     private final BooleanProperty amplifierGuidesVisible = new SimpleBooleanProperty(false);
     private final FoxgloveParser parser;
 
@@ -107,23 +121,23 @@ public class IdentificationSymbol {
         }
     }
 
-    public GraphicAmplifier addGraphicAmplifier(Amplifier amplifier, SvgGraphic graphic, ScaleDirection scaleDirection, Pos attachment) {
+    public GraphicAmplifierValue addGraphicAmplifier(IAmplifier amplifier, SvgGraphic graphic, ScaleDirection scaleDirection, Pos attachment) {
         return graphicAmplifiers.computeIfAbsent(amplifier, key -> {
             AmplifierGuide guide = getSymbolSet().getAmplifierGuide(amplifier);
-            return new GraphicAmplifier(guide, graphic, scaleDirection, attachment);
+            return new GraphicAmplifierValue(guide, graphic, scaleDirection, attachment);
         });
     }
 
-    public TextAmplifier addTextAmplifier(Amplifier amplifier, Pos attachment, String text) {
-        TextAmplifier textAmplifier = textAmplifiers.computeIfAbsent(amplifier, key -> {
+    public TextAmplifierValue addTextAmplifier(IAmplifier amplifier, Pos attachment, String text) {
+        TextAmplifierValue textAmplifier = textAmplifiers.computeIfAbsent(amplifier, key -> {
             AmplifierGuide guide = getSymbolSet().getAmplifierGuide(amplifier);
-            return new TextAmplifier(guide, attachment, text);
+            return new TextAmplifierValue(guide, attachment, text);
         });
         textAmplifier.setText(text);
         return textAmplifier;
     }
 
-    public ObservableList<ListAmplifier> amplifierGroupsList() {
+    public ObservableList<IListAmplifier> amplifierGroupsList() {
         return amplifiers;
     }
 
@@ -131,23 +145,23 @@ public class IdentificationSymbol {
         return amplifierGuidesVisible;
     }
 
-    public ObjectProperty<ListAmplifier> amplifierProperty() {
+    public ObjectProperty<IListAmplifier> amplifierProperty() {
         return amplifier;
     }
 
-    public ObservableList<ListAmplifier> amplifierThreeGroupsList() {
+    public ObservableList<IListAmplifier> amplifierThreeGroupsList() {
         return amplifiersThree;
     }
 
-    public ObjectProperty<ListAmplifier> amplifierThreeProperty() {
+    public ObjectProperty<IListAmplifier> amplifierThreeProperty() {
         return amplifierThree;
     }
 
-    public ObservableList<ListAmplifier> amplifierTwoGroupsList() {
+    public ObservableList<IListAmplifier> amplifierTwoGroupsList() {
         return amplifiersTwo;
     }
 
-    public ObjectProperty<ListAmplifier> amplifierTwoProperty() {
+    public ObjectProperty<IListAmplifier> amplifierTwoProperty() {
         return amplifierTwo;
     }
 
@@ -155,7 +169,7 @@ public class IdentificationSymbol {
         return code;
     }
 
-    public ObjectProperty<Context> contextProperty() {
+    public ObjectProperty<IContext> contextProperty() {
         return context;
     }
 
@@ -167,39 +181,39 @@ public class IdentificationSymbol {
         return new IdentificationSymbolIcon(this);
     }
 
-    public ObservableList<Entity> entitiesList() {
+    public ObservableList<IEntity> entitiesList() {
         return entities;
     }
 
-    public ObjectProperty<Entity> entityProperty() {
+    public ObjectProperty<IEntity> entityProperty() {
         return entity;
     }
 
-    public ObjectProperty<EntitySubType> entitySubTypeProperty() {
+    public ObjectProperty<IEntitySubType> entitySubTypeProperty() {
         return entitySubType;
     }
 
-    public ObservableList<EntitySubType> entitySubTypesList() {
+    public ObservableList<IEntitySubType> entitySubTypesList() {
         return entitySubTypes;
     }
 
-    public ObjectProperty<EntityType> entityTypeProperty() {
+    public ObjectProperty<IEntityType> entityTypeProperty() {
         return entityType;
     }
 
-    public ObservableList<EntityType> entityTypesList() {
+    public ObservableList<IEntityType> entityTypesList() {
         return entityTypes;
     }
 
-    public ObservableList<ListAmplifier> frameAmplifierGroupsList() {
+    public ObservableList<IListAmplifier> frameAmplifierGroupsList() {
         return frameAmplifiers;
     }
 
-    public ObjectProperty<ListAmplifier> frameAmplifierProperty() {
+    public ObjectProperty<IListAmplifier> frameAmplifierProperty() {
         return frameAmplifier;
     }
 
-    public ListAmplifier getAmplifier() {
+    public IListAmplifier getAmplifier() {
         return amplifier.get();
     }
 
@@ -207,7 +221,7 @@ public class IdentificationSymbol {
         return amplifierGraphic.get();
     }
 
-    public ListAmplifier getAmplifierThree() {
+    public IListAmplifier getAmplifierThree() {
         return amplifierThree.get();
     }
 
@@ -215,7 +229,7 @@ public class IdentificationSymbol {
         return amplifierThreeGraphic.get();
     }
 
-    public ListAmplifier getAmplifierTwo() {
+    public IListAmplifier getAmplifierTwo() {
         return amplifierTwo.get();
     }
 
@@ -233,7 +247,7 @@ public class IdentificationSymbol {
         if (isFrameUsed()) {
             SvgGraphic frame = getFrameGraphic();
             if (isFrameAmplifierUsed()) {
-                ListAmplifier frameAmplifier = getFrameAmplifier();
+                IListAmplifier frameAmplifier = getFrameAmplifier();
                 replaceFill(frame, Color.web(frameAmplifier.getBackgroundFill()));
             }
             container.getContent().addAll(frame.getVisibleContent());
@@ -273,23 +287,23 @@ public class IdentificationSymbol {
         return container;
     }
 
-    public Context getContext() {
+    public IContext getContext() {
         return context.get();
     }
 
-    public Entity getEntity() {
+    public IEntity getEntity() {
         return entity.get();
     }
 
-    public EntitySubType getEntitySubType() {
+    public IEntitySubType getEntitySubType() {
         return entitySubType.get();
     }
 
-    public EntityType getEntityType() {
+    public IEntityType getEntityType() {
         return entityType.get();
     }
 
-    public ListAmplifier getFrameAmplifier() {
+    public IListAmplifier getFrameAmplifier() {
         return frameAmplifier.get();
     }
 
@@ -305,15 +319,15 @@ public class IdentificationSymbol {
         return frameOverlayGraphic.get();
     }
 
-    public GraphicAmplifier getGraphicAmplifier(Amplifier amplifier) {
+    public GraphicAmplifierValue getGraphicAmplifier(IAmplifier amplifier) {
         return graphicAmplifiers.get(amplifier);
     }
 
-    public ObservableMap<Amplifier, GraphicAmplifier> getGraphicAmplifiers() {
+    public ObservableMap<IAmplifier, GraphicAmplifierValue> getGraphicAmplifiers() {
         return graphicAmplifiers;
     }
 
-    public HqtfDummy getHqtfDummy() {
+    public IHqtfDummy getHqtfDummy() {
         return hqtfDummy.get();
     }
 
@@ -321,9 +335,9 @@ public class IdentificationSymbol {
         return hqtfDummyGraphic.get();
     }
 
-    public MainIconElement getMainIconElement() {
-        EntitySubType subType = entitySubType.get();
-        if (subType != null && subType.getIconType() != IconType.SPECIAL) {
+    public IMainElement getMainIconElement() {
+        IEntitySubType subType = entitySubType.get();
+        if (subType != null) {
             return subType;
         }
         if (entityType.get() != null) {
@@ -340,7 +354,7 @@ public class IdentificationSymbol {
         return scale.get();
     }
 
-    public SectorOneModifier getSectorOneModifier() {
+    public ISectorOneModifier getSectorOneModifier() {
         return sectorOneModifier.get();
     }
 
@@ -348,7 +362,7 @@ public class IdentificationSymbol {
         return sectorOneModifierGraphic.get();
     }
 
-    public SectorTwoModifier getSectorTwoModifier() {
+    public ISectorTwoModifier getSectorTwoModifier() {
         return sectorTwoModifier.get();
     }
 
@@ -356,16 +370,16 @@ public class IdentificationSymbol {
         return sectorTwoModifierGraphic.get();
     }
 
-    public StandardIdentity getStandardIdentity() {
+    public IStandardIdentity getStandardIdentity() {
         return standardIdentity.get();
     }
 
     public String getStandardIdentityGroupId() {
-        StandardIdentity stdId = getStandardIdentity();
+        IStandardIdentity stdId = getStandardIdentity();
         return stdId.getGroup() != null ? stdId.getGroup().getId() : "0";
     }
 
-    public Status getStatus() {
+    public IStatus getStatus() {
         return status.get();
     }
 
@@ -373,23 +387,23 @@ public class IdentificationSymbol {
         return statusGraphic.get();
     }
 
-    public SymbolSet getSymbolSet() {
+    public ISymbolSet getSymbolSet() {
         return symbolSet.get();
     }
 
-    public TextAmplifier getTextAmplifier(Amplifier amplifier) {
+    public TextAmplifierValue getTextAmplifier(IAmplifier amplifier) {
         return textAmplifiers.get(amplifier);
     }
 
-    public ObservableMap<Amplifier, TextAmplifier> getTextAmplifiers() {
+    public ObservableMap<IAmplifier, TextAmplifierValue> getTextAmplifiers() {
         return textAmplifiers;
     }
 
-    public Version getVersion() {
+    public IVersion getVersion() {
         return version.get();
     }
 
-    public ObjectProperty<HqtfDummy> hqtfDummyProperty() {
+    public ObjectProperty<IHqtfDummy> hqtfDummyProperty() {
         return hqtfDummy;
     }
 
@@ -410,7 +424,7 @@ public class IdentificationSymbol {
     }
 
     public boolean isCivilianEntity() {
-        Entity selectedEntity = getEntity();
+        IEntity selectedEntity = getEntity();
         return selectedEntity != null && selectedEntity.isCivilian();
     }
 
@@ -419,25 +433,25 @@ public class IdentificationSymbol {
     }
 
     public boolean isFrameOverlayUsed() {
-        return getContext().ordinal() > 0;
+        return !getContext().isReality();
     }
 
     public boolean isFrameUsed() {
-        SymbolSet selectedSymbolSet = getSymbolSet();
-        return selectedSymbolSet != null && selectedSymbolSet.getDimension().getGeometry() == Geometry.POINT_GEOMETRY;
+        ISymbolSet selectedSymbolSet = getSymbolSet();
+        return selectedSymbolSet != null && selectedSymbolSet.getDimension().getGeometryType() == GeometryType.POINT_GEOMETRY;
     }
 
     public boolean isHqtfDummyIconUsed() {
-        HqtfDummy currentHqtfDummy = getHqtfDummy();
+        IHqtfDummy currentHqtfDummy = getHqtfDummy();
         return currentHqtfDummy != null && currentHqtfDummy != HqtfDummy.NA;
     }
 
-    public boolean isKnownIdentity(StandardIdentity stdIdentity) {
-        return SymbolIdentificationCode.KNOWN_IDENTITIES.contains(stdIdentity);
+    public boolean isKnownIdentity(IStandardIdentity stdIdentity) {
+        return Library.getKnownIdentities().contains(stdIdentity);
     }
 
     public boolean isMainIconUsed() {
-        MainIconElement mainIconElement = getMainIconElement();
+        IMainElement mainIconElement = getMainIconElement();
         return mainIconElement != null && mainIconElement.isGraphicalIcon();
     }
 
@@ -446,29 +460,29 @@ public class IdentificationSymbol {
     }
 
     public boolean isSectorOneModifierUsed() {
-        SectorOneModifier mod = getSectorOneModifier();
+        ISectorOneModifier mod = getSectorOneModifier();
         return mod != null && !mod.isUnknown();
     }
 
     public boolean isSectorTwoModifierUsed() {
-        SectorTwoModifier mod = getSectorTwoModifier();
+        ISectorTwoModifier mod = getSectorTwoModifier();
         return mod != null && !mod.isUnknown();
     }
 
     public boolean isStatusIconUsed() {
-        SymbolSet currentSymbolSet = getSymbolSet();
+        ISymbolSet currentSymbolSet = getSymbolSet();
         if (currentSymbolSet == SymbolSet.DISMOUNTED || currentSymbolSet == SymbolSet.INTERNAL) {
             return false;
         }
-        Status currentStatus = getStatus();
-        return SymbolIdentificationCode.ICON_STATUS.contains(currentStatus) && isReality() && isFrameUsed();
+        IStatus currentStatus = getStatus();
+        return Library.getIconStatusValues().contains(currentStatus) && isReality() && isFrameUsed();
     }
 
-    public void removeGraphicAmplifier(Amplifier amplifier) {
+    public void removeGraphicAmplifier(IAmplifier amplifier) {
         graphicAmplifiers.remove(amplifier);
     }
 
-    public void removeTextAmplifier(Amplifier amplifier) {
+    public void removeTextAmplifier(IAmplifier amplifier) {
         textAmplifiers.remove(amplifier);
     }
 
@@ -476,19 +490,19 @@ public class IdentificationSymbol {
         return scale;
     }
 
-    public ObjectProperty<SectorOneModifier> sectorOneModifierProperty() {
+    public ObjectProperty<ISectorOneModifier> sectorOneModifierProperty() {
         return sectorOneModifier;
     }
 
-    public ObservableList<SectorOneModifier> sectorOneModifiersList() {
-        return sectorOneModifiers.sorted(SectorOneModifier.VIEW_ORDER);
+    public ObservableList<ISectorOneModifier> sectorOneModifiersList() {
+        return sectorOneModifiers.sorted(ISectorOneModifier.VIEW_ORDER);
     }
 
-    public ObjectProperty<SectorTwoModifier> sectorTwoModifierProperty() {
+    public ObjectProperty<ISectorTwoModifier> sectorTwoModifierProperty() {
         return sectorTwoModifier;
     }
 
-    public ObservableList<SectorTwoModifier> sectorTwoModifiersList() {
+    public ObservableList<ISectorTwoModifier> sectorTwoModifiersList() {
         return sectorTwoModifiers;
     }
 
@@ -500,15 +514,15 @@ public class IdentificationSymbol {
         scale.set(iconScale);
     }
 
-    public ObjectProperty<StandardIdentity> standardIdentityProperty() {
+    public ObjectProperty<IStandardIdentity> standardIdentityProperty() {
         return standardIdentity;
     }
 
-    public ObjectProperty<Status> statusProperty() {
+    public ObjectProperty<IStatus> statusProperty() {
         return status;
     }
 
-    public ObjectProperty<SymbolSet> symbolSetProperty() {
+    public ObjectProperty<ISymbolSet> symbolSetProperty() {
         return symbolSet;
     }
 
@@ -535,7 +549,7 @@ public class IdentificationSymbol {
                         .toString();
     }
 
-    public ObjectProperty<Version> versionProperty() {
+    public ObjectProperty<IVersion> versionProperty() {
         return version;
     }
 
@@ -593,9 +607,9 @@ public class IdentificationSymbol {
     }
 
     private String calculateFrameLocation() {
-        SymbolSet effectiveSymbolSet = getSymbolSet();
-        StandardIdentity effectiveStandardId = getStandardIdentityForFrame();
-        Status effectiveStatus = getStatusForFrame(effectiveStandardId);
+        ISymbolSet effectiveSymbolSet = getSymbolSet();
+        IStandardIdentity effectiveStandardId = getStandardIdentityForFrame();
+        IStatus effectiveStatus = getStatusForFrame(effectiveStandardId);
         return String.format("/svg/Frames/0_%s%s_%s%s.svg",
                              effectiveStandardId.getId(),
                              effectiveSymbolSet.getFrameId(),
@@ -607,20 +621,20 @@ public class IdentificationSymbol {
         if (getSymbolSet() == SymbolSet.INTERNAL) {
             return "/svg/Appendices/98100000.svg";
         }
-        MainIconElement mainIconElement = getMainIconElement();
+        IMainElement mainIconElement = getMainIconElement();
         String graphicLocation = getSymbolSet().getGraphicLocation();
         if (mainIconElement.isFullFrameIcon()) {
-            return String.format("/svg/Appendices/%s/%s_%s.svg", graphicLocation, mainIconElement.getGraphicIdentifier(), getStandardIdentity().getGroup().ordinal());
+            return String.format("/svg/Appendices/%s/%s%s.svg", graphicLocation, mainIconElement.getGraphicIdentifier(), getStandardIdentity().getGroup().getGraphicSuffix());
         } else {
             return String.format("/svg/Appendices/%s/%s.svg", graphicLocation, mainIconElement.getGraphicIdentifier());
         }
     }
 
-    private StandardIdentity getStandardIdentityForFrame() {
+    private IStandardIdentity getStandardIdentityForFrame() {
         return getSymbolSet() == SymbolSet.INTERNAL ? StandardIdentity.SI_UNKNOWN : getStandardIdentity();
     }
 
-    private Status getStatusForFrame(StandardIdentity effectiveStandardId) {
+    private IStatus getStatusForFrame(IStandardIdentity effectiveStandardId) {
         if (!isKnownIdentity(effectiveStandardId)) {
             return Status.PRESENT;
         }
@@ -628,7 +642,7 @@ public class IdentificationSymbol {
     }
 
     private SvgGraphic loadAmplifierGraphic() {
-        ListAmplifier amplifierGroup = getAmplifier();
+        IListAmplifier amplifierGroup = getAmplifier();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
             String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getFullId());
             return parser.parseFile(filePath);
@@ -638,7 +652,7 @@ public class IdentificationSymbol {
     }
 
     private SvgGraphic loadAmplifierThreeGraphic() {
-        ListAmplifier amplifierGroup = getAmplifierThree();
+        IListAmplifier amplifierGroup = getAmplifierThree();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
             String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getFullId());
             return parser.parseFile(filePath);
@@ -648,7 +662,7 @@ public class IdentificationSymbol {
     }
 
     private SvgGraphic loadAmplifierTwoGraphic() {
-        ListAmplifier amplifierGroup = getAmplifierTwo();
+        IListAmplifier amplifierGroup = getAmplifierTwo();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
             String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getFullId());
             return parser.parseFile(filePath);
@@ -658,7 +672,7 @@ public class IdentificationSymbol {
     }
 
     private SvgGraphic loadFrameAmplifierGraphic() {
-        ListAmplifier amplifierGroup = getFrameAmplifier();
+        IListAmplifier amplifierGroup = getFrameAmplifier();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
             String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getId());
             return parser.parseFile(filePath);
@@ -705,7 +719,7 @@ public class IdentificationSymbol {
 
     private SvgGraphic loadSectorOneModifierGraphic() {
         if (isSectorOneModifierUsed()) {
-            SectorOneModifier sectorOneMod = getSectorOneModifier();
+            ISectorOneModifier sectorOneMod = getSectorOneModifier();
             String graphicLocation = sectorOneMod.getGraphicLocation();
             String filePath = String.format("/svg/Appendices/%s/mod1/%s.svg", graphicLocation, sectorOneMod.getGraphicIdentifier());
             return parser.parseFile(filePath);
@@ -716,7 +730,7 @@ public class IdentificationSymbol {
 
     private SvgGraphic loadSectorTwoModifierGraphic() {
         if (isSectorTwoModifierUsed()) {
-            SectorTwoModifier sectorTwoMod = getSectorTwoModifier();
+            ISectorTwoModifier sectorTwoMod = getSectorTwoModifier();
             String graphicLocation = sectorTwoMod.getGraphicLocation();
             String filePath = String.format("/svg/Appendices/%s/mod2/%s.svg", graphicLocation, sectorTwoMod.getGraphicIdentifier());
             return parser.parseFile(filePath);
