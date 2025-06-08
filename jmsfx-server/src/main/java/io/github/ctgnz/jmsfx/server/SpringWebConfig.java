@@ -24,23 +24,14 @@ public class SpringWebConfig implements ApplicationContextAware, WebMvcConfigure
 
     private ApplicationContext applicationContext;
 
-
     public SpringWebConfig() {
     }
-
 
     @Override
     public void setApplicationContext(final ApplicationContext applicationContext)
             throws BeansException {
         this.applicationContext = applicationContext;
     }
-
-
-
-    /* ******************************************************************* */
-    /*  GENERAL CONFIGURATION ARTIFACTS                                    */
-    /*  Static Resources, i18n Messages, Formatters (Conversion Service)   */
-    /* ******************************************************************* */
 
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {

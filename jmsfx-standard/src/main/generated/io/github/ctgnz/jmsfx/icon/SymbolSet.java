@@ -6,9 +6,9 @@ import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
 import io.github.ctgnz.jmsfx.IAmplifier;
 import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
+import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
 import io.github.ctgnz.jmsfx.ISymbolSet;
 import io.github.ctgnz.jmsfx.ISymbolSetInfo;
 import io.github.ctgnz.jmsfx.icon.unknown.UnknownSymbolSetInfo;

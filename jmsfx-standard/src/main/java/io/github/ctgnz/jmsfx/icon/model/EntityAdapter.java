@@ -1,27 +1,32 @@
 package io.github.ctgnz.jmsfx.icon.model;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.commons.lang3.StringUtils;
 
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.ISymbolSet;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-public class EntityAdapter implements IEntity {
+public class EntityAdapter extends MainIconAdapter implements IEntity {
+    private final ObjectProperty<ISymbolSet> symbolSet = new SimpleObjectProperty<>();
+    private final ObservableList<IEntityType> entityTypes = FXCollections.observableArrayList();
 
-    private final IEntity model;
-    private final List<IEntityType> entityTypes = new ArrayList<>();
+    public EntityAdapter() {
+    }
 
     public EntityAdapter(IEntity entity) {
-        this.model = entity;
-        this.entityTypes.addAll(entity.getEntityTypes().stream().map(EntityTypeAdapter::new).toList());
+        super(entity);
+        this.graphicType.set(entity.getGraphicType());
+        this.unknown.set(entity.isUnknown());
+        this.entityTypes.addAll(entity.getEntityTypes().stream().map(this::adaptEntityType).toList());
     }
 
     @Override
     public IEntity getEntity() {
-        return model;
+        return this;
     }
 
     @Override
@@ -29,39 +34,28 @@ public class EntityAdapter implements IEntity {
         return entityTypes;
     }
 
-    public String getGraphicLocation(StandardIdentityAdapter identity) {
-        String graphicLocation = getSymbolSet().getGraphicLocation();
-        if (StringUtils.isBlank(graphicLocation)) {
-            return "/svg/Appendices/98100000.svg";
-        }
-        if (model.isFullFrameIcon()) {
-            return String.format("/svg/Appendices/%s/%s%s.svg", graphicLocation, model.getGraphicIdentifier(), identity.getGroup().getGraphicSuffix());
-        } else {
-            return String.format("/svg/Appendices/%s/%s.svg", graphicLocation, model.getGraphicIdentifier());
-        }
+    @Override
+    public ISymbolSet getSymbolSet() {
+        return symbolSet.get();
+    }
+
+    public ObjectProperty<ISymbolSet> symbolSetProperty() {
+        return symbolSet;
     }
 
     @Override
-    public GraphicType getGraphicType() {
-        return model.getGraphicType();
+    public String toString() {
+        return getLabel();
     }
 
-    @Override
-    public String getId() {
-        return model.getId();
+    protected EntityTypeAdapter adaptEntityType(IEntityType type) {
+        EntityTypeAdapter adapter = new EntityTypeAdapter(type);
+        adapter.setEntity(this);
+        return adapter;
     }
 
-    @Override
-    public String getLabel() {
-        return model.getLabel();
+    protected void setSymbolSet(SymbolSetAdapter symbolSet) {
+        this.symbolSet.set(symbolSet);
     }
 
-    public IEntity getModel() {
-        return model;
-    }
-
-    @Override
-    public boolean isUnknown() {
-        return model.isUnknown();
-    }
 }

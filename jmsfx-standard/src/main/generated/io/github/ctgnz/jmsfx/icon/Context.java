@@ -32,6 +32,11 @@ public enum Context implements IContext {
     }
 
     @Override
+    public String getOverlayGraphicLocation() {
+        return String.format("/svg/Frames/Overlay/%s.svg", id);
+    }
+
+    @Override
     public boolean isReality() {
         return ordinal() == 0;
     }

@@ -5,8 +5,12 @@ import java.util.Comparator;
 public interface ISectorTwoModifier extends IModifierElement {
 
     Comparator<ISectorTwoModifier> VIEW_ORDER = Comparator.comparing(ISectorTwoModifier::getCategory).thenComparing(ISectorTwoModifier::getLabel);
-    
+
     String getCategory();
+
+    default String getFullGraphicLocation() {
+        return String.format("/svg/Appendices/%s/mod2/%s.svg", getGraphicLocation(), getGraphicIdentifier());
+    }
 
     @Override
     default String getGraphicIdentifier() {

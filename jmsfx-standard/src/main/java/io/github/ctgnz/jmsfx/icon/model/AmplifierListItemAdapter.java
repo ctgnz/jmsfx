@@ -1,32 +1,73 @@
 package io.github.ctgnz.jmsfx.icon.model;
 
+import io.github.ctgnz.jmsfx.IAmplifierList;
 import io.github.ctgnz.jmsfx.IAmplifierListItem;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
-public class AmplifierListItemAdapter<A extends IAmplifierListItem> {
-    private final A model;
+public class AmplifierListItemAdapter<A extends IAmplifierListItem> extends CodeElementAdapter implements IAmplifierListItem {
+    private final ObjectProperty<IAmplifierList> amplifierList = new SimpleObjectProperty<>();
+    private final StringProperty fullId = new SimpleStringProperty();
+    private final StringProperty graphicLocation = new SimpleStringProperty();
+    private final BooleanProperty graphicalIcon = new SimpleBooleanProperty();
+
+    public AmplifierListItemAdapter() {
+    }
 
     public AmplifierListItemAdapter(A amplifier) {
-        this.model = amplifier;
+        super(amplifier);
+        this.fullId.set(amplifier.getFullId());
+        this.graphicLocation.set(amplifier.getGraphicLocation());
+        this.graphicalIcon.set(amplifier.isGraphicalIcon());
     }
 
+    public ObjectProperty<IAmplifierList> amplifierListProperty() {
+        return amplifierList;
+    }
+
+    public StringProperty fullIdProperty() {
+        return fullId;
+    }
+
+    @Override
+    public IAmplifierList getAmplifierList() {
+        return amplifierList.get();
+    }
+
+    @Override
     public String getFullId() {
-        return model.getFullId();
+        return fullId.get();
     }
 
-    public String getGraphicLocation(StandardIdentityAdapter identity) {
-        return String.format("/svg/%s/%s%s.svg", model.getGraphicLocation(), identity.getGroup().getId(), model.getFullId());
+    @Override
+    public String getGraphicLocation() {
+        return graphicLocation.get();
     }
 
-    public String getId() {
-        return model.getId();
+    public BooleanProperty graphicalIconProperty() {
+        return graphicalIcon;
     }
 
-    public String getLabel() {
-        return model.getLabel();
+    public StringProperty graphicLocationProperty() {
+        return graphicLocation;
     }
 
-    public A getModel() {
-        return model;
+    @Override
+    public boolean isGraphicalIcon() {
+        return graphicalIcon.get();
+    }
+
+    @Override
+    public String toString() {
+        return getLabel();
+    }
+
+    protected void setAmplifierList(AmplifierListAdapter<A> amplifierList) {
+        this.amplifierList.set(amplifierList);
     }
 
 }

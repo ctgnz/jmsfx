@@ -1,10 +1,9 @@
 package io.github.ctgnz.jmsfx.icon;
 
 import java.util.Arrays;
-import java.util.Objects;
+import java.util.List;
 
 import io.github.ctgnz.jmsfx.IStatus;
-import io.github.ctgnz.jmsfx.ISymbolSet;
 
 public enum Status implements IStatus {
     PRESENT("0", "Present", false),
@@ -27,8 +26,8 @@ public enum Status implements IStatus {
     }
 
     @Override
-    public String[] getDimensionIds() {
-        return dimensionIds;
+    public List<String> getDimensionIds() {
+        return Arrays.asList(dimensionIds);
     }
 
     @Override
@@ -47,8 +46,8 @@ public enum Status implements IStatus {
     }
 
     @Override
-    public boolean isSupported(ISymbolSet symbolSet) {
-        return Arrays.stream(dimensionIds).anyMatch(dim -> Objects.equals(dim, symbolSet.getDimension().getName()));
+    public boolean isPresent() {
+        return this == PRESENT;
     }
 
 }

@@ -14,6 +14,10 @@ public interface IAmplifierListItem extends ICodeElement {
 
     String getGraphicLocation();
 
+    default String getGraphicLocation(IStandardIdentity identity) {
+        return String.format("/svg/%s/%s%s.svg", getGraphicLocation(), identity.getGroupId(), getFullId());
+    }
+
     boolean isGraphicalIcon();
-    
+
 }

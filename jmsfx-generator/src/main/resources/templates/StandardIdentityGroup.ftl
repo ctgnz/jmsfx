@@ -1,6 +1,7 @@
 package ${iconPackage};
 
 import java.util.Arrays;
+import java.util.List;
 
 import ${basePackage}.IStandardIdentity;
 import ${basePackage}.IStandardIdentityGroup;
@@ -31,8 +32,8 @@ public enum StandardIdentityGroup implements IStandardIdentityGroup {
     }
 
     @Override
-    public StandardIdentity[] getIdentities() {
-        return Arrays.stream(StandardIdentity.values()).filter(this::owns).toArray(size -> new StandardIdentity[size]);
+    public List<IStandardIdentity> getIdentities() {
+        return Arrays.stream(StandardIdentity.values()).filter(this::owns).map(IStandardIdentity.class::cast).toList();
     }
 
     @Override

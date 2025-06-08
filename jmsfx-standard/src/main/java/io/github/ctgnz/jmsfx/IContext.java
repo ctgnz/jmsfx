@@ -4,4 +4,6 @@ public interface IContext extends ICodeElement {
 
     boolean isReality();
 
+    String getOverlayGraphicLocation();
+
 }

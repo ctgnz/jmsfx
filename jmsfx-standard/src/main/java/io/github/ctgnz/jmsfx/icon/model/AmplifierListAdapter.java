@@ -8,80 +8,81 @@ import java.util.List;
 import io.github.ctgnz.jmsfx.IAmplifier;
 import io.github.ctgnz.jmsfx.IAmplifierList;
 import io.github.ctgnz.jmsfx.IAmplifierListItem;
-import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
+import io.github.ctgnz.jmsfx.ISymbolSet;
 import io.github.ctgnz.jmsfx.icon.AmplifierList;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-public class AmplifierListAdapter<A extends IAmplifierListItem> implements IAmplifierList {
+public class AmplifierListAdapter<A extends IAmplifierListItem> extends CodeElementAdapter implements IAmplifierList {
+    private final ObjectProperty<IAmplifier> amplifier = new SimpleObjectProperty<>();
+    private final ObjectProperty<Class<A>> valueClass = new SimpleObjectProperty<>();
+    private ObservableList<ISymbolSet> symbolSets = FXCollections.observableArrayList();
+    private ObservableList<AmplifierListItemAdapter<A>> values = FXCollections.observableArrayList();
 
-    private final AmplifierList model;
-    private List<AmplifierListItemAdapter<A>> values;
+    public AmplifierListAdapter() {
+    }
 
-    public AmplifierListAdapter(AmplifierList amplifierType) {
-        this.model = amplifierType;
-        this.values = loadValues();
+    public AmplifierListAdapter(AmplifierList amplifierList) {
+        super(amplifierList);
+        this.amplifier.set(amplifierList.getAmplifier());
+        this.valueClass.set(amplifierList.getValueClass());
+        this.values.setAll(loadValues());
+        values.forEach(val -> val.setAmplifierList(this));
+    }
+
+    public ObjectProperty<IAmplifier> amplifierProperty() {
+        return amplifier;
     }
 
     @Override
     public IAmplifier getAmplifier() {
-        return model.getAmplifier();
+        return amplifier.get();
     }
 
-    public Class<A> getAmplifierClass() {
-        return model.getValueClass();
-    }
-
-    public AmplifierList getModel() {
-        return model;
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<A> getItems() {
+        return (List<A>) values;
     }
 
     @Override
-    public String getId() {
-        return model.getId();
-    }
-
-    @Override
-    public String getLabel() {
-        return model.getLabel();
-    }
-
-    @Override
-    public SymbolSet[] getSymbolSets() {
-        return model.getSymbolSets();
+    public List<ISymbolSet> getSymbolSets() {
+        return symbolSets;
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public Class<A> getValueClass() {
-        return model.getValueClass();
+        return valueClass.get();
     }
 
-    public List<AmplifierListItemAdapter<A>> getValues() {
+    public ObservableList<AmplifierListItemAdapter<A>> getValues() {
         return values;
     }
 
     @Override
-    public boolean isCompatibleWith(SymbolSet symbolSet) {
-        return model.isCompatibleWith(symbolSet);
-    }
-
-    public boolean isStandardAmplifier() {
-        return IStandardAmplifierItem.class.isAssignableFrom(model.getValueClass());
+    public boolean isUnknown() {
+        return values.isEmpty() ? false : values.getFirst().isUnknown();
     }
 
     @Override
-    public boolean isUnknown() {
-        return values.get(0).getModel().isUnknown();
+    public String toString() {
+        return getLabel();
+    }
+
+    public ObjectProperty<Class<A>> valueClassProperty() {
+        return valueClass;
     }
 
     @SuppressWarnings("unchecked")
     protected List<AmplifierListItemAdapter<A>> loadValues() {
         try {
-            Class<A> amplifierClass = getAmplifierClass();
-            A[] vals = (A[]) amplifierClass.getMethod("values").invoke(getAmplifierClass());
+            Class<A> amplifierClass = getValueClass();
+            A[] vals = (A[]) amplifierClass.getMethod("values").invoke(amplifierClass);
             return Arrays.stream(vals).map(AmplifierListItemAdapter::new).toList();
         } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException | SecurityException e) {
-            e.printStackTrace();
             return Collections.emptyList();
         }
     }

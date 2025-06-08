@@ -2,52 +2,47 @@ package io.github.ctgnz.jmsfx.icon.model;
 
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.IStandardIdentity;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 
-public class EntitySubTypeAdapter implements IEntitySubType {
+public class EntitySubTypeAdapter extends MainIconAdapter implements IEntitySubType {
+    private final ObjectProperty<IEntityType> entityType = new SimpleObjectProperty<>();
 
-    private final IEntitySubType model;
-
-    public EntitySubTypeAdapter(IEntitySubType subType) {
-        this.model = subType;
+    public EntitySubTypeAdapter() {
     }
 
-    public IEntitySubType getModel() {
-        return model;
+    public EntitySubTypeAdapter(IEntitySubType subType) {
+        super(subType);
+    }
+
+    public ObjectProperty<IEntityType> entityTypeProperty() {
+        return entityType;
     }
 
     @Override
     public IEntityType getEntityType() {
-        return model.getEntityType();
+        return entityType.get();
     }
 
-    public String getGraphicLocation(StandardIdentityAdapter identity) {
+    @Override
+    public String getGraphicLocation(IStandardIdentity identity) {
         String graphicLocation = getSymbolSet().getGraphicLocation();
-        if (model.isFullFrameIcon()) {
-            return String.format("/svg/Appendices/%s/%s%s.svg", graphicLocation, model.getGraphicIdentifier(), identity.getGroup().getGraphicSuffix());
+        String graphicIdentifier = getGraphicIdentifier();
+        if (isFullFrameIcon()) {
+            return String.format("/svg/Appendices/%s/%s%s.svg", graphicLocation, graphicIdentifier, identity.getGroup().getGraphicSuffix());
         } else {
-            return String.format("/svg/Appendices/%s/%s.svg", graphicLocation, model.getGraphicIdentifier());
+            return String.format("/svg/Appendices/%s/%s.svg", graphicLocation, graphicIdentifier);
         }
     }
 
     @Override
-    public GraphicType getGraphicType() {
-        return model.getGraphicType();
+    public String toString() {
+        return getLabel();
     }
 
-    @Override
-    public String getId() {
-        return model.getId();
-    }
-
-    @Override
-    public String getLabel() {
-        return model.getLabel();
-    }
-
-    @Override
-    public boolean isUnknown() {
-        return model.isUnknown();
+    protected void setEntityType(EntityTypeAdapter entityType) {
+        this.entityType.set(entityType);
     }
 
 }

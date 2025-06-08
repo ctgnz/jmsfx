@@ -43,11 +43,11 @@ $(document).ready(function() {
                 <div class="accordion" id="entityBrowser">
                     <div class="accordion-item entity bg-light" th:each="entity,entityStat : ${symbolSet.entities}">
                         <div th:if="${#lists.isEmpty(entity.entityTypes)}">
-                            <img class="jms-icon" alt="Icon for ${entity.label}" th:attr="src='/' + ${symbolSet.path} + '/symbol/entity/'+${entity.entity}" />
+                            <img class="jms-icon" alt="Icon for ${entity.label}" th:attr="src='/' + ${symbolSet.path} + '/symbol/entity/'+${entity.id}" />
                             <span class="entity" th:text="${entity.label}"></span>
                         </div>
                         <h2 th:unless="${#lists.isEmpty(entity.entityTypes)}" class="d-flex accordion-header clearfix" th:attr="id='entity-heading-' + ${entityStat.count}">
-                          <img class="jms-icon" th:attr="src='/' + ${symbolSet.path} + '/symbol/entity/'+${entity.entity},alt='Icon for entity ' + ${entity.label},title='Icon for entity ' + ${entity.label}" />
+                          <img class="jms-icon" th:attr="src='/' + ${symbolSet.path} + '/symbol/entity/'+${entity.id},alt='Icon for entity ' + ${entity.label},title='Icon for entity ' + ${entity.label}" />
                           <button th:text="${entity.label}" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false"
                                   th:attr="data-bs-target='#entity-collapse-' + ${entityStat.count},aria-controls='entity-collapse-' + ${entityStat.count}">
                             Entity
@@ -58,11 +58,11 @@ $(document).ready(function() {
                             <div class="accordion" th:attr="id='entityTypeBrowser' + ${entityStat.count}">
                                 <div class="accordion-item col-md-10 offset-md-1" th:each="entityType,entityTypeStat : ${entity.entityTypes}">
                                     <div th:if="${#lists.isEmpty(entityType.entitySubTypes)}" class="clearfix">
-                                        <img class="jms-icon" th:attr="src='/' + ${symbolSet.path} + '/symbol/'+${entityType.entityType},alt='Icon for entity type' + ${entityType.label}" />
+                                        <img class="jms-icon" th:attr="src='/' + ${symbolSet.path} + '/symbol/'+${entityType.id},alt='Icon for entity type' + ${entityType.label}" />
                                         <span class="entity-type" th:text="${entityType.label}"></span>
                                     </div>
                                     <h2 th:unless="${#lists.isEmpty(entityType.entitySubTypes)}" class="d-flex accordion-header clearfix" th:attr="id='entity-type-heading-' + ${entityStat.count}">
-                                        <img class="jms-icon" alt="Icon for ${entityType.label}" th:attr="src='/' + ${symbolSet.path} + '/symbol/'+${entityType.entityType}" />
+                                        <img class="jms-icon" alt="Icon for ${entityType.label}" th:attr="src='/' + ${symbolSet.path} + '/symbol/'+${entityType.id}" />
                                         <button th:text="${entityType.label}" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false"
                                                 th:attr="data-bs-target='#entity-type-collapse-' + ${entityStat.count} + '-' + ${entityTypeStat.count},aria-controls='entity-type-collapse-' + ${entityTypeStat.count}">
                                           Entity Type
@@ -72,7 +72,7 @@ $(document).ready(function() {
                                          th:attr="id='entity-type-collapse-' + ${entityStat.count} + '-' + ${entityTypeStat.count},aria-labelledby='entity-type-heading-' + ${entityTypeStat.count}">
                                         <ul class="list-group entity-type col-md-10 offset-md-1">
                                             <li class="list-group-item" th:each="entitySubType : ${entityType.entitySubTypes}">
-                                                <img class="jms-icon" alt="Icon for ${entitySubType.label}" th:attr="src='/' + ${symbolSet.path} + '/symbol/'+${entityType.entityType}+'/'+${entitySubType.entitySubType}" />
+                                                <img class="jms-icon" alt="Icon for ${entitySubType.label}" th:attr="src='/' + ${symbolSet.path} + '/symbol/'+${entityType.id}+'/'+${entitySubType.id}" />
                                                 <span th:text="${entitySubType.label}" class="entity-subtype">Entity Sub Type</span>
                                             </li>
                                         </ul>
@@ -89,7 +89,7 @@ $(document).ready(function() {
 		                <h5 class="p-3">Sector One Modifiers</h5>
 		                <ul class="list-group entity col-md-12">
 		                    <li class="list-group-item" th:each="sectorOneMod : ${symbolSet.sectorOneModifiers}">
-		                        <img class="jms-icon" alt="Icon for ${sectorOneMod.label}" th:attr="src='/' + ${symbolSet.path} + '/symbol/modifier/one/'+${sectorOneMod.modifier}" />
+		                        <img class="jms-icon" alt="Icon for ${sectorOneMod.label}" th:attr="src='/' + ${symbolSet.path} + '/symbol/modifier/one/'+${sectorOneMod.id}" />
 		                        <span th:text="${sectorOneMod.label}" class="entity">Sector One Modifier</span>
 		                    </li>
 		                </ul>
@@ -98,7 +98,7 @@ $(document).ready(function() {
 		                <h5 class="p-3">Sector Two Modifiers</h5>
 		                <ul class="list-group entity col-md-12">
 		                    <li class="list-group-item" th:each="sectorTwoMod : ${symbolSet.sectorTwoModifiers}">
-		                        <img class="jms-icon" alt="Icon for ${sectorTwoMod.label}" th:attr="src='/' + ${symbolSet.path} + '/symbol/modifier/two/'+${sectorTwoMod.modifier}" />
+		                        <img class="jms-icon" alt="Icon for ${sectorTwoMod.label}" th:attr="src='/' + ${symbolSet.path} + '/symbol/modifier/two/'+${sectorTwoMod.id}" />
 		                        <span th:text="${sectorTwoMod.label}" class="entity">Sector Two Modifier</span>
 		                    </li>
 		                </ul>

@@ -10,12 +10,12 @@ import nz.co.ctg.foxglove.SvgGraphic;
 import nz.co.ctg.foxglove.type.ViewBox;
 
 import io.github.ctgnz.jmsfx.IAmplifier;
+import io.github.ctgnz.jmsfx.IAmplifierListItem;
 import io.github.ctgnz.jmsfx.IContext;
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
 import io.github.ctgnz.jmsfx.IHqtfDummy;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
 import io.github.ctgnz.jmsfx.IMainElement;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
@@ -376,7 +376,7 @@ public class IdentificationSymbol {
 
     public String getStandardIdentityGroupId() {
         IStandardIdentity stdId = getStandardIdentity();
-        return stdId.getGroup() != null ? stdId.getGroup().getId() : "0";
+        return stdId.getGroup() != null ? stdId.getGroupId() : "0";
     }
 
     public IStatus getStatus() {

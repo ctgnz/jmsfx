@@ -1,10 +1,14 @@
 package ${iconPackage};
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import ${basePackage}.IAmplifier;
 import ${basePackage}.IAmplifierList;
 import ${basePackage}.IAmplifierListItem;
+import ${basePackage}.ISymbolSet;
 import ${amplifierPackage}.*;
 
 public enum AmplifierList implements IAmplifierList {
@@ -44,22 +48,32 @@ public enum AmplifierList implements IAmplifierList {
         return id;
     }
 
+    @SuppressWarnings("unchecked")
+    @Override
+    public <A extends IAmplifierListItem> List<A> getItems() {
+        try {
+            Class<A> amplifierClass = getValueClass();
+            A[] vals = (A[]) amplifierClass.getMethod("values").invoke(amplifierClass);
+            return Arrays.asList(vals);
+        } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException | SecurityException e) {
+            return Collections.emptyList();
+        }
+    }
+
     @Override
     public String getLabel() {
         return label;
     }
 
-    public SymbolSet[] getSymbolSets() {
-        return symbolSets;
+    @Override
+    public List<ISymbolSet> getSymbolSets() {
+        return Arrays.asList(symbolSets);
     }
 
+    @Override
     @SuppressWarnings("unchecked")
     public <A extends IAmplifierListItem> Class<A> getValueClass() {
         return (Class<A>) valueClass;
-    }
-
-    public boolean isCompatibleWith(SymbolSet symbolSet) {
-        return Arrays.stream(symbolSets).anyMatch(sym -> sym == symbolSet);
     }
 
 }

@@ -1,8 +1,10 @@
 package io.github.ctgnz.jmsfx;
 
+import java.util.List;
+
 public interface IStandardIdentityGroup extends ICodeElement {
 
-    IStandardIdentity[] getIdentities();
+    List<IStandardIdentity> getIdentities();
 
     String getGraphicSuffix();
 

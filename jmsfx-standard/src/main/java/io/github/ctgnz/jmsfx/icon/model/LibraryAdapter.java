@@ -1,81 +1,79 @@
 package io.github.ctgnz.jmsfx.icon.model;
 
-import java.util.List;
-import java.util.Map;
-
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 
+import io.github.ctgnz.jmsfx.IStandardIdentity;
 import io.github.ctgnz.jmsfx.icon.Amplifier;
 import io.github.ctgnz.jmsfx.icon.AmplifierList;
 import io.github.ctgnz.jmsfx.icon.Context;
 import io.github.ctgnz.jmsfx.icon.Dimension;
 import io.github.ctgnz.jmsfx.icon.HqtfDummy;
-import io.github.ctgnz.jmsfx.icon.StandardIdentity;
+import io.github.ctgnz.jmsfx.icon.StandardIdentityGroup;
 import io.github.ctgnz.jmsfx.icon.Status;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.Version;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class LibraryAdapter {
-    private final List<VersionAdapter> version;
-    private final List<ContextAdapter> context;
-    private final List<StandardIdentityAdapter> standardIdentity;
-    private final List<DimensionAdapter> dimension;
-    private final List<StatusAdapter> status;
-    private final List<HqtfDummyAdapter> hqtfDummy;
-    private final List<AmplifierAdapter> amplifiers;
-    private final List<AmplifierListAdapter<?>> listAmplifiers;
-    private final Map<SymbolSet, SymbolSetAdapter> symbolSets;
+    private final ObservableList<VersionAdapter> version = FXCollections.observableArrayList();
+    private final ObservableList<ContextAdapter> context = FXCollections.observableArrayList();
+    private final ObservableList<StandardIdentityGroupAdapter> standardIdentityGroup = FXCollections.observableArrayList();
+    private final ObservableList<DimensionAdapter> dimension = FXCollections.observableArrayList();
+    private final ObservableList<StatusAdapter> status = FXCollections.observableArrayList();
+    private final ObservableList<HqtfDummyAdapter> hqtfDummy = FXCollections.observableArrayList();
+    private final ObservableList<AmplifierAdapter> amplifiers = FXCollections.observableArrayList();
+    private final ObservableList<AmplifierListAdapter<?>> listAmplifiers = FXCollections.observableArrayList();
+    private final ObservableList<SymbolSetAdapter> symbolSets = FXCollections.observableArrayList();
 
     public LibraryAdapter() {
-        this.version = Lists.transform(Lists.newArrayList(Version.values()), VersionAdapter::new);
-        this.context = Lists.transform(Lists.newArrayList(Context.values()), ContextAdapter::new);
-        this.standardIdentity = Lists.transform(Lists.newArrayList(StandardIdentity.values()), StandardIdentityAdapter::new);
-        this.dimension = Lists.transform(Lists.newArrayList(Dimension.values()), DimensionAdapter::new);
-        this.status = Lists.transform(Lists.newArrayList(Status.values()), StatusAdapter::new);
-        this.hqtfDummy = Lists.transform(Lists.newArrayList(HqtfDummy.values()), HqtfDummyAdapter::new);
-        this.amplifiers = Lists.transform(Lists.newArrayList(Amplifier.values()), AmplifierAdapter::new);
-        this.listAmplifiers = Lists.transform(Lists.newArrayList(AmplifierList.values()), AmplifierListAdapter::new);
-        this.symbolSets = Maps.uniqueIndex(dimension.stream().flatMap(DimensionAdapter::streamSymbolSets).toList(), SymbolSetAdapter::getModel);
+        this.version.setAll(Lists.transform(Lists.newArrayList(Version.values()), VersionAdapter::new));
+        this.context.setAll(Lists.transform(Lists.newArrayList(Context.values()), ContextAdapter::new));
+        this.standardIdentityGroup.setAll(Lists.transform(Lists.newArrayList(StandardIdentityGroup.values()), StandardIdentityGroupAdapter::new));
+        this.dimension.setAll(Lists.transform(Lists.newArrayList(Dimension.values()), DimensionAdapter::new));
+        this.status.setAll(Lists.transform(Lists.newArrayList(Status.values()), StatusAdapter::new));
+        this.hqtfDummy.setAll(Lists.transform(Lists.newArrayList(HqtfDummy.values()), HqtfDummyAdapter::new));
+        this.amplifiers.setAll(Lists.transform(Lists.newArrayList(Amplifier.values()), AmplifierAdapter::new));
+        this.listAmplifiers.setAll(Lists.transform(Lists.newArrayList(AmplifierList.values()), AmplifierListAdapter::new));
+        this.symbolSets.setAll(dimension.stream().flatMap(DimensionAdapter::streamSymbolSets).toList());
     }
 
-    public List<AmplifierAdapter> getAmplifiers() {
+    public ObservableList<AmplifierAdapter> getAmplifiers() {
         return amplifiers;
     }
 
-    public List<ContextAdapter> getContext() {
+    public ObservableList<ContextAdapter> getContext() {
         return context;
     }
 
-    public List<DimensionAdapter> getDimension() {
+    public ObservableList<DimensionAdapter> getDimension() {
         return dimension;
     }
 
-    public List<HqtfDummyAdapter> getHqtfDummy() {
+    public ObservableList<HqtfDummyAdapter> getHqtfDummy() {
         return hqtfDummy;
     }
 
-    public List<AmplifierListAdapter<?>> getListAmplifiers() {
+    public ObservableList<AmplifierListAdapter<?>> getListAmplifiers() {
         return listAmplifiers;
     }
 
-    public List<StandardIdentityAdapter> getStandardIdentity() {
-        return standardIdentity;
+    public ObservableList<IStandardIdentity> getStandardIdentity() {
+        return FXCollections.observableArrayList(standardIdentityGroup.stream().flatMap(StandardIdentityGroupAdapter::streamIdentities).toList());
     }
 
-    public List<StatusAdapter> getStatus() {
+    public ObservableList<StandardIdentityGroupAdapter> getStandardIdentityGroup() {
+        return standardIdentityGroup;
+    }
+
+    public ObservableList<StatusAdapter> getStatus() {
         return status;
     }
 
-    public SymbolSetAdapter getSymbolSet(SymbolSet symbolSet) {
-        return symbolSets.computeIfAbsent(symbolSet, SymbolSetAdapter::new);
-    }
-
-    public Map<SymbolSet, SymbolSetAdapter> getSymbolSets() {
+    public ObservableList<SymbolSetAdapter> getSymbolSets() {
         return symbolSets;
     }
 
-    public List<VersionAdapter> getVersion() {
+    public ObservableList<VersionAdapter> getVersion() {
         return version;
     }
 

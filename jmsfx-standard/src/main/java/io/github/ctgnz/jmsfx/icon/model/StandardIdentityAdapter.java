@@ -2,42 +2,63 @@ package io.github.ctgnz.jmsfx.icon.model;
 
 import io.github.ctgnz.jmsfx.IStandardIdentity;
 import io.github.ctgnz.jmsfx.IStandardIdentityGroup;
-import io.github.ctgnz.jmsfx.icon.Library;
 import io.github.ctgnz.jmsfx.icon.StandardIdentity;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleObjectProperty;
 
-public class StandardIdentityAdapter implements IStandardIdentity {
+public class StandardIdentityAdapter extends CodeElementAdapter implements IStandardIdentity {
 
-    private final StandardIdentity model;
+    private final ObjectProperty<IStandardIdentityGroup> group = new SimpleObjectProperty<>();
+    private final BooleanProperty confirmed = new SimpleBooleanProperty();
+    private final BooleanProperty hostile = new SimpleBooleanProperty();
 
-    public StandardIdentityAdapter(StandardIdentity identity) {
-        this.model = identity;
+    public StandardIdentityAdapter() {
+    }
+
+    public StandardIdentityAdapter(StandardIdentity identity, StandardIdentityGroupAdapter groupAdapter) {
+        super(identity);
+        this.group.set(groupAdapter);
+        this.confirmed.set(identity.isConfirmed());
+        this.hostile.set(identity.isHostile());
+    }
+
+    public BooleanProperty confirmedProperty() {
+        return confirmed;
     }
 
     @Override
     public IStandardIdentityGroup getGroup() {
-        return model.getGroup();
+        return group.get();
     }
 
     @Override
-    public String getId() {
-        return model.getId();
+    public String getGroupId() {
+        return getGroup().getId();
+    }
+
+    public ObjectProperty<IStandardIdentityGroup> groupProperty() {
+        return group;
+    }
+
+    public BooleanProperty hostileProperty() {
+        return hostile;
     }
 
     @Override
-    public String getLabel() {
-        return model.getLabel();
-    }
-
-    public StandardIdentity getModel() {
-        return model;
-    }
-
     public boolean isConfirmed() {
-        return Library.getKnownIdentities().contains(model);
+        return confirmed.get();
     }
 
+    @Override
     public boolean isHostile() {
-        return Library.getHostileIdentities().contains(model);
+        return hostile.get();
+    }
+
+    @Override
+    public String toString() {
+        return getLabel();
     }
 
 }

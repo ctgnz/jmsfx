@@ -1,65 +1,56 @@
 package io.github.ctgnz.jmsfx.icon.model;
 
+import java.util.List;
+
 import io.github.ctgnz.jmsfx.IStatus;
-import io.github.ctgnz.jmsfx.ISymbolSet;
-import io.github.ctgnz.jmsfx.icon.Library;
 import io.github.ctgnz.jmsfx.icon.Status;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-public class StatusAdapter implements IStatus {
+public class StatusAdapter extends CodeElementAdapter implements IStatus {
 
-    private final Status model;
+    private final BooleanProperty operationalCondition = new SimpleBooleanProperty();
+    private final BooleanProperty present = new SimpleBooleanProperty();
+    private final ObservableList<String> dimensionIds = FXCollections.observableArrayList();
+
+    public StatusAdapter() {
+    }
 
     public StatusAdapter(Status status) {
-        this.model = status;
+        super(status);
+        this.operationalCondition.set(status.isOperationalCondition());
+        this.present.set(status.isPresent());
+        this.dimensionIds.setAll(status.getDimensionIds());
     }
 
     @Override
-    public String[] getDimensionIds() {
-        return model.getDimensionIds();
-    }
-
-    public String getFrameId(StandardIdentityAdapter identity) {
-        return Library.getKnownIdentities().contains(identity.getModel()) ? model.getId() : Status.PRESENT.getId();
-    }
-
-    public String getGraphicLocation(StandardIdentityAdapter identity, SymbolSetAdapter symbolSet) {
-        return String.format("/svg/OCA/0%s%s%s2.svg", identity.getGroup().getId(), symbolSet.getFrameId(), getModel().getId());
-    }
-
-    @Override
-    public String getId() {
-        return model.getId();
-    }
-
-    @Override
-    public String getLabel() {
-        return model.getLabel();
-    }
-
-    public Status getModel() {
-        return model;
-    }
-
-    public boolean isFrameStatus() {
-        return !model.isOperationalCondition();
+    public List<String> getDimensionIds() {
+        return dimensionIds;
     }
 
     @Override
     public boolean isOperationalCondition() {
-        return model.isOperationalCondition();
-    }
-
-    public boolean isPresent() {
-        return model == Status.PRESENT;
+        return operationalCondition.get();
     }
 
     @Override
-    public boolean isSupported(ISymbolSet symbolSet) {
-        return model.isSupported(symbolSet);
+    public boolean isPresent() {
+        return present.get();
     }
 
-    public boolean isSupported(SymbolSetAdapter symbolSet) {
-        return model.isSupported(symbolSet.getModel());
+    public BooleanProperty operationalConditionProperty() {
+        return operationalCondition;
+    }
+
+    public BooleanProperty presentProperty() {
+        return present;
+    }
+
+    @Override
+    public String toString() {
+        return getLabel();
     }
 
 }

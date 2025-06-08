@@ -28,6 +28,11 @@ public enum StandardIdentity implements IStandardIdentity {
     }
 
     @Override
+    public String getGroupId() {
+        return group.getId();
+    }
+
+    @Override
     public String getId() {
         return id;
     }
@@ -35,6 +40,16 @@ public enum StandardIdentity implements IStandardIdentity {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public boolean isConfirmed() {
+        return Library.getKnownIdentities().contains(this);
+    }
+
+    @Override
+    public boolean isHostile() {
+        return Library.getHostileIdentities().contains(this);
     }
 
 }

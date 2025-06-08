@@ -1,6 +1,7 @@
 package io.github.ctgnz.jmsfx.icon;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 import io.github.ctgnz.jmsfx.IHqtfDummy;
@@ -18,16 +19,16 @@ public enum HqtfDummy implements IHqtfDummy {
 
     private final String id;
     private final String label;
-    private final String[] dimensionIds;
+    private final List<String> dimensionIds;
 
     HqtfDummy(String id, String label, String... dimensionIds) {
         this.id = id;
         this.label = label;
-        this.dimensionIds = dimensionIds;
+        this.dimensionIds = Arrays.asList(dimensionIds);
     }
 
     @Override
-    public String[] getDimensionIds() {
+    public List<String> getDimensionIds() {
         return dimensionIds;
     }
 
@@ -43,7 +44,7 @@ public enum HqtfDummy implements IHqtfDummy {
 
     @Override
     public boolean isSupported(ISymbolSet symbolSet) {
-        return Arrays.stream(dimensionIds).anyMatch(dim -> Objects.equals(dim, symbolSet.getDimension().getName()));
+        return dimensionIds.stream().anyMatch(dim -> Objects.equals(dim, symbolSet.getDimension().getName()));
     }
 
 }

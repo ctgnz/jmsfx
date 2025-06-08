@@ -1,6 +1,7 @@
 package io.github.ctgnz.jmsfx.icon;
 
 import java.util.Arrays;
+import java.util.List;
 
 import io.github.ctgnz.jmsfx.IStandardIdentity;
 import io.github.ctgnz.jmsfx.IStandardIdentityGroup;
@@ -32,8 +33,8 @@ public enum StandardIdentityGroup implements IStandardIdentityGroup {
     }
 
     @Override
-    public StandardIdentity[] getIdentities() {
-        return Arrays.stream(StandardIdentity.values()).filter(this::owns).toArray(size -> new StandardIdentity[size]);
+    public List<IStandardIdentity> getIdentities() {
+        return Arrays.stream(StandardIdentity.values()).filter(this::owns).map(IStandardIdentity.class::cast).toList();
     }
 
     @Override

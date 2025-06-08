@@ -6,9 +6,9 @@ import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
 import ${basePackage}.IAmplifier;
 import ${basePackage}.IEntity;
-import ${basePackage}.IStandardAmplifierItem;
 import ${basePackage}.ISectorOneModifier;
 import ${basePackage}.ISectorTwoModifier;
+import ${basePackage}.IStandardAmplifierItem;
 import ${basePackage}.ISymbolSet;
 import ${basePackage}.ISymbolSetInfo;
 <#list symbolSets as sym>

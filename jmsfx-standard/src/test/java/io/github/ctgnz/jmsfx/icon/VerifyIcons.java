@@ -7,11 +7,11 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.github.ctgnz.jmsfx.icon.model.AmplifierListAdapter;
 import io.github.ctgnz.jmsfx.icon.model.EntityAdapter;
 import io.github.ctgnz.jmsfx.icon.model.EntitySubTypeAdapter;
 import io.github.ctgnz.jmsfx.icon.model.EntityTypeAdapter;
 import io.github.ctgnz.jmsfx.icon.model.LibraryAdapter;
-import io.github.ctgnz.jmsfx.icon.model.AmplifierListAdapter;
 import io.github.ctgnz.jmsfx.icon.model.SectorOneModifierAdapter;
 import io.github.ctgnz.jmsfx.icon.model.SectorTwoModifierAdapter;
 import io.github.ctgnz.jmsfx.icon.model.StatusAdapter;
@@ -54,7 +54,7 @@ public class VerifyIcons {
         library.getStatus().forEach(status -> {
             System.out.format("  [%s] %s%n", status.getId(), status.getLabel());
             if (status.isOperationalCondition()) {
-                library.getSymbolSets().values().stream().filter(sym -> status.isSupported(sym)).forEach(symbolSet -> {
+                library.getSymbolSets().stream().filter(sym -> status.isSupported(sym)).forEach(symbolSet -> {
                     library.getStandardIdentity().forEach(identity -> {
                         String location = status.getGraphicLocation(identity, symbolSet);
                         if (!isGraphicPresent(location)) {
@@ -67,7 +67,7 @@ public class VerifyIcons {
         System.out.println("HQ/TF/Dummy");
         library.getHqtfDummy().forEach(dummy -> {
             System.out.format("  [%s] %s%n", dummy.getId(), dummy.getLabel());
-            library.getSymbolSets().values().stream().filter(sym -> dummy.isSupported(sym)).forEach(symbolSet -> {
+            library.getSymbolSets().stream().filter(sym -> dummy.isSupported(sym)).forEach(symbolSet -> {
                 library.getStandardIdentity().forEach(identity -> {
                     String location = dummy.getGraphicLocation(identity, symbolSet);
                     if (!isGraphicPresent(location)) {

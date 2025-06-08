@@ -1,44 +1,63 @@
 package io.github.ctgnz.jmsfx.icon.model;
 
+import java.util.List;
+import java.util.stream.Stream;
+
+import org.apache.commons.lang3.StringUtils;
+
 import io.github.ctgnz.jmsfx.IStandardIdentity;
 import io.github.ctgnz.jmsfx.IStandardIdentityGroup;
+import io.github.ctgnz.jmsfx.icon.StandardIdentity;
 import io.github.ctgnz.jmsfx.icon.StandardIdentityGroup;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-public class StandardIdentityGroupAdapter implements IStandardIdentityGroup {
+public class StandardIdentityGroupAdapter extends CodeElementAdapter implements IStandardIdentityGroup {
 
-    private final StandardIdentityGroup model;
+    private final StringProperty graphicSuffix = new SimpleStringProperty();
+    private final ObservableList<IStandardIdentity> identities = FXCollections.observableArrayList();
 
-    public StandardIdentityGroupAdapter(StandardIdentityGroup identity) {
-        this.model = identity;
+    public StandardIdentityGroupAdapter() {
+    }
+
+    public StandardIdentityGroupAdapter(StandardIdentityGroup identityGroup) {
+        super(identityGroup);
+        this.graphicSuffix.set(identityGroup.getGraphicSuffix());
+        this.identities.setAll(identityGroup.getIdentities().stream().map(StandardIdentity.class::cast).map(this::createIdentityAdapter).toList());
     }
 
     @Override
     public String getGraphicSuffix() {
-        return model.getGraphicSuffix();
-    }
-
-    public StandardIdentityGroup getGroup() {
-        return model;
+        return graphicSuffix.get();
     }
 
     @Override
-    public String getId() {
-        return model.getId();
+    public List<IStandardIdentity> getIdentities() {
+        return identities;
     }
 
-    @Override
-    public IStandardIdentity[] getIdentities() {
-        return model.getIdentities();
-    }
-
-    @Override
-    public String getLabel() {
-        return model.getLabel();
+    public StringProperty graphicSuffixProperty() {
+        return graphicSuffix;
     }
 
     @Override
     public boolean owns(IStandardIdentity id) {
-        return model.owns(id);
+        return StringUtils.equals(id.getGroupId(), getId());
+    }
+
+    @Override
+    public String toString() {
+        return getLabel();
+    }
+
+    protected StandardIdentityAdapter createIdentityAdapter(StandardIdentity id) {
+        return new StandardIdentityAdapter(id, this);
+    }
+
+    protected Stream<IStandardIdentity> streamIdentities() {
+        return identities.stream();
     }
 
 }

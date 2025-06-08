@@ -2,35 +2,46 @@ package io.github.ctgnz.jmsfx.icon.model;
 
 import io.github.ctgnz.jmsfx.IContext;
 import io.github.ctgnz.jmsfx.icon.Context;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
-public class ContextAdapter implements IContext {
+public class ContextAdapter extends CodeElementAdapter implements IContext {
 
-    private final Context model;
+    private final StringProperty overlayGraphicLocation = new SimpleStringProperty();
+    private final BooleanProperty reality = new SimpleBooleanProperty();
+
+    public ContextAdapter() {
+    }
 
     public ContextAdapter(Context context) {
-        this.model = context;
+        super(context);
+        this.overlayGraphicLocation.set(String.format("/svg/Frames/Overlay/%s.svg", context.getId()));
+        this.reality.set(context.isReality());
     }
 
     @Override
-    public String getId() {
-        return model.getId();
-    }
-
-    @Override
-    public String getLabel() {
-        return model.getLabel();
-    }
-
-    public Context getModel() {
-        return model;
-    }
-
     public String getOverlayGraphicLocation() {
-        return String.format("/svg/Frames/Overlay/%s.svg", model.getId());
+        return overlayGraphicLocation.get();
     }
 
+    @Override
     public boolean isReality() {
-        return model == Context.REALITY;
+        return reality.get();
+    }
+
+    public StringProperty overlayGraphicLocationProperty() {
+        return overlayGraphicLocation;
+    }
+
+    public BooleanProperty realityProperty() {
+        return reality;
+    }
+
+    @Override
+    public String toString() {
+        return getLabel();
     }
 
 }

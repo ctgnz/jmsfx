@@ -4,4 +4,10 @@ public interface IStandardIdentity extends ICodeElement {
 
     IStandardIdentityGroup getGroup();
 
+    String getGroupId();
+
+    boolean isConfirmed();
+
+    boolean isHostile();
+
 }

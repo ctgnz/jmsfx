@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
 
+import io.github.ctgnz.jmsfx.IAmplifierList;
+import io.github.ctgnz.jmsfx.IAmplifierListItem;
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.model.AmplifierListItemAdapter;
 import io.github.ctgnz.jmsfx.icon.model.SymbolSetAdapter;
 
 public abstract class IconRestController<E extends IEntity, T extends IEntityType, S extends IEntitySubType, M extends ISectorOneModifier, N extends ISectorTwoModifier, A extends IAmplifierListItem> {
@@ -41,7 +41,7 @@ public abstract class IconRestController<E extends IEntity, T extends IEntityTyp
     }
 
     @GetMapping("/amplifier")
-    public List<AmplifierListItemAdapter<A>> listAmplifiers() {
+    public List<IAmplifierList> listAmplifiers() {
         return Collections.emptyList();
     }
 

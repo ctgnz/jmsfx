@@ -1,11 +1,30 @@
 package io.github.ctgnz.jmsfx;
 
+import java.util.List;
+import java.util.Objects;
+
 public interface IStatus extends ICodeElement {
 
-    String[] getDimensionIds();
+    List<String> getDimensionIds();
+
+    default String getGraphicLocation(IStandardIdentity identity, ISymbolSet symbolSet) {
+        return String.format("/svg/OCA/0%s%s%s2.svg", identity.getGroupId(), symbolSet.getFrameId(), getId());
+    }
+
+    default boolean isFrameStatus() {
+        return !isOperationalCondition();
+    }
 
     boolean isOperationalCondition();
 
-    boolean isSupported(ISymbolSet symbolSet);
+    boolean isPresent();
+
+    default String getFrameId(IStandardIdentity identity) {
+        return identity.isConfirmed() ? getId() : "0";
+    }
+
+    default boolean isSupported(ISymbolSet symbolSet) {
+        return getDimensionIds().stream().anyMatch(dim -> Objects.equals(dim, symbolSet.getDimension().getName()));
+    }
 
 }

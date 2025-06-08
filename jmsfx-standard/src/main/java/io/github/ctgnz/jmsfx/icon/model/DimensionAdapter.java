@@ -10,58 +10,70 @@ import io.github.ctgnz.jmsfx.ISymbolSet;
 import io.github.ctgnz.jmsfx.icon.Dimension;
 import io.github.ctgnz.jmsfx.icon.GeometryType;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-public class DimensionAdapter implements IDimension {
+public class DimensionAdapter extends CodeElementAdapter implements IDimension {
 
-    private final Dimension model;
-    private final List<SymbolSetAdapter> symbolSets;
+    private final ObjectProperty<ISymbolSet> defaultSymbolSet = new SimpleObjectProperty<>();
+    private final ObjectProperty<GeometryType> geometryType = new SimpleObjectProperty<>();
+    private final StringProperty frameId = new SimpleStringProperty();
+    private final StringProperty graphicLocation = new SimpleStringProperty();
+    private final StringProperty name = new SimpleStringProperty();
+    private final ObservableList<SymbolSetAdapter> symbolSets = FXCollections.observableArrayList();
+
+    public DimensionAdapter() {
+    }
 
     public DimensionAdapter(Dimension dimension) {
-        this.model = dimension;
-        this.symbolSets = Lists.transform(dimension.getSymbolSets(), symbol -> new SymbolSetAdapter((SymbolSet) symbol));
+        super(dimension);
+        this.symbolSets.setAll(Lists.transform(dimension.getSymbolSets(), symbol -> new SymbolSetAdapter((SymbolSet) symbol)));
+        this.defaultSymbolSet.set(dimension.getDefaultSymbolSet());
+        this.geometryType.set(dimension.getGeometryType());
+        this.frameId.set(dimension.getFrameId());
+        this.graphicLocation.set(dimension.getGraphicLocation());
+        this.name.set(dimension.name());
+    }
+
+    public ObjectProperty<ISymbolSet> defaultSymbolSetProperty() {
+        return defaultSymbolSet;
+    }
+
+    public StringProperty frameIdProperty() {
+        return frameId;
+    }
+
+    public ObjectProperty<GeometryType> geometryTypeProperty() {
+        return geometryType;
     }
 
     @Override
     public ISymbolSet getDefaultSymbolSet() {
-        return model.getDefaultSymbolSet();
-    }
-
-    public Dimension getModel() {
-        return model;
+        return defaultSymbolSet.get();
     }
 
     @Override
     public String getFrameId() {
-        return model.getFrameId();
-    }
-
-    public GeometryType getGeometry() {
-        return model.getGeometryType();
+        return frameId.get();
     }
 
     @Override
     public GeometryType getGeometryType() {
-        return model.getGeometryType();
+        return geometryType.get();
     }
 
     @Override
     public String getGraphicLocation() {
-        return model.getGraphicLocation();
-    }
-
-    @Override
-    public String getId() {
-        return model.getId();
-    }
-
-    @Override
-    public String getLabel() {
-        return model.getLabel();
+        return graphicLocation.get();
     }
 
     @Override
     public String getName() {
-        return model.name();
+        return name.get();
     }
 
     public List<SymbolSetAdapter> getSymbolSetAdapters() {
@@ -71,6 +83,19 @@ public class DimensionAdapter implements IDimension {
     @Override
     public List<ISymbolSet> getSymbolSets() {
         return symbolSets.stream().map(ISymbolSet.class::cast).toList();
+    }
+
+    public StringProperty graphicLocationProperty() {
+        return graphicLocation;
+    }
+
+    public StringProperty nameProperty() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return getLabel();
     }
 
     protected Stream<SymbolSetAdapter> streamSymbolSets() {

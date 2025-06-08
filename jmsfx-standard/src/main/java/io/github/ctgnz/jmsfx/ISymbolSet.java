@@ -7,17 +7,21 @@ import io.github.ctgnz.jmsfx.icon.Dimension;
 
 public interface ISymbolSet extends ICodeElement {
 
-    List<AmplifierGuide> getAmplifierGuides();
-
     AmplifierGuide getAmplifierGuide(IAmplifier amplifier);
+
+    List<AmplifierGuide> getAmplifierGuides();
 
     <A extends IStandardAmplifierItem> List<A> getAmplifierList();
 
-    <A extends IStandardAmplifierItem> List<A> getAmplifierListTwo();
-
     <A extends IStandardAmplifierItem> List<A> getAmplifierListThree();
 
+    <A extends IStandardAmplifierItem> List<A> getAmplifierListTwo();
+
     Dimension getDimension();
+
+    default String getDimensionId() {
+        return getDimension().getId();
+    }
 
     <E extends IEntity> List<E> getEntities();
 

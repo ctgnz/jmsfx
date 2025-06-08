@@ -8,6 +8,10 @@ public interface ISectorOneModifier extends IModifierElement {
 
     String getCategory();
 
+    default String getFullGraphicLocation() {
+        return String.format("/svg/Appendices/%s/mod1/%s.svg", getGraphicLocation(), getGraphicIdentifier());
+    }
+
     @Override
     default String getGraphicIdentifier() {
         return String.format("%s%s1", getBaseSymbolSet().getId(), getId());

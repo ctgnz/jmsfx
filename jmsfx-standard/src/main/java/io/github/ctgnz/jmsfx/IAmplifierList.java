@@ -1,15 +1,24 @@
 package io.github.ctgnz.jmsfx;
 
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import java.util.List;
+import java.util.Objects;
 
 public interface IAmplifierList extends ICodeElement {
 
     IAmplifier getAmplifier();
 
-    SymbolSet[] getSymbolSets();
+    <A extends IAmplifierListItem> List<A> getItems();
+
+    List<ISymbolSet> getSymbolSets();
 
     <A extends IAmplifierListItem> Class<A> getValueClass();
 
-    boolean isCompatibleWith(SymbolSet symbolSet);
+    default boolean isCompatibleWith(ISymbolSet symbolSet) {
+        return getSymbolSets().stream().anyMatch(sym -> Objects.equals(sym, symbolSet));
+    }
+
+    default boolean isStandardAmplifier() {
+        return IStandardAmplifierItem.class.isAssignableFrom(getValueClass());
+    }
 
 }
