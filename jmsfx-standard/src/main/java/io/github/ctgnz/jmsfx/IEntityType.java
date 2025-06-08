@@ -13,5 +13,5 @@ public interface IEntityType extends IMainElement {
     default List<IEntitySubType> getEntitySubTypes() {
         return Collections.emptyList();
     }
-    
+
 }

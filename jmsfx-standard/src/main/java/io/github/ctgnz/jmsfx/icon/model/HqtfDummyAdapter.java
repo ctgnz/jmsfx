@@ -6,47 +6,47 @@ import io.github.ctgnz.jmsfx.icon.HqtfDummy;
 
 public class HqtfDummyAdapter implements IHqtfDummy {
 
-    private final HqtfDummy hqtfDummy;
+    private final HqtfDummy model;
 
     public HqtfDummyAdapter(HqtfDummy hqtfDummy) {
-        this.hqtfDummy = hqtfDummy;
+        this.model = hqtfDummy;
     }
 
     @Override
     public String[] getDimensionIds() {
-        return hqtfDummy.getDimensionIds();
+        return model.getDimensionIds();
     }
 
     public String getGraphicLocation(StandardIdentityAdapter identity, SymbolSetAdapter symbolSet) {
-        return String.format("/svg/HQTFFD/%s%s%s.svg", identity.getGroup().getId(), symbolSet.getDimensionId(), getHqtfDummy().getId());
-    }
-
-    public HqtfDummy getHqtfDummy() {
-        return hqtfDummy;
+        return String.format("/svg/HQTFFD/%s%s%s.svg", identity.getGroup().getId(), symbolSet.getDimensionId(), getModel().getId());
     }
 
     @Override
     public String getId() {
-        return hqtfDummy.getId();
+        return model.getId();
     }
 
     @Override
     public String getLabel() {
-        return hqtfDummy.getLabel();
+        return model.getLabel();
+    }
+
+    public HqtfDummy getModel() {
+        return model;
     }
 
     @Override
     public boolean isSupported(ISymbolSet symbolSet) {
-        return hqtfDummy.isSupported(symbolSet);
+        return model.isSupported(symbolSet);
     }
 
     public boolean isSupported(SymbolSetAdapter symbolSet) {
-        return hqtfDummy.isSupported(symbolSet.getSymbolSet());
+        return model.isSupported(symbolSet.getModel());
     }
 
     @Override
     public boolean isUnknown() {
-        return hqtfDummy == HqtfDummy.NA;
+        return model == HqtfDummy.NA;
     }
 
 }

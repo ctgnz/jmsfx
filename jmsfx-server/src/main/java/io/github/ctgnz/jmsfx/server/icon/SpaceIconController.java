@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IListAmplifier;
+import io.github.ctgnz.jmsfx.IAmplifierListItem;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.space.SpaceEntity;
 import io.github.ctgnz.jmsfx.icon.space.SpaceEntityType;
@@ -13,7 +13,7 @@ import io.github.ctgnz.jmsfx.icon.space.SpaceSectorTwoModifier;
 
 @RestController
 @RequestMapping("/Space")
-public class SpaceIconController extends IconRestController<SpaceEntity, SpaceEntityType, IEntitySubType, SpaceSectorOneModifier, SpaceSectorTwoModifier, IListAmplifier> {
+public class SpaceIconController extends IconRestController<SpaceEntity, SpaceEntityType, IEntitySubType, SpaceSectorOneModifier, SpaceSectorTwoModifier, IAmplifierListItem> {
 
     public SpaceIconController() {
         super(SymbolSet.SPACE);

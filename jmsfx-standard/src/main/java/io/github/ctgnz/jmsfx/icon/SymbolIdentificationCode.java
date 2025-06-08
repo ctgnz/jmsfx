@@ -8,25 +8,25 @@ import java.util.stream.Stream;
 
 import com.google.common.base.Objects;
 
+import static java.util.stream.Collectors.toList;
+import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
+
 import io.github.ctgnz.jmsfx.IContext;
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
 import io.github.ctgnz.jmsfx.IHqtfDummy;
-import io.github.ctgnz.jmsfx.IListAmplifier;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
+import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
 import io.github.ctgnz.jmsfx.IStandardIdentity;
 import io.github.ctgnz.jmsfx.IStatus;
 import io.github.ctgnz.jmsfx.ISymbolSet;
 import io.github.ctgnz.jmsfx.IVersion;
 import io.github.ctgnz.jmsfx.icon.amplifier.CountryCode;
-import io.github.ctgnz.jmsfx.icon.common.CommonSymbolSetInfo;
 import io.github.ctgnz.jmsfx.icon.common.CommonSectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.common.CommonSectorTwoModifier;
-
-import static java.util.stream.Collectors.toList;
-import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
+import io.github.ctgnz.jmsfx.icon.common.CommonSymbolSetInfo;
 
 public class SymbolIdentificationCode {
 
@@ -37,10 +37,10 @@ public class SymbolIdentificationCode {
         private ISymbolSet symbolSet = Library.getDefaultSymbolSet();
         private IStatus status = Library.getDefaultStatus();
         private IHqtfDummy hqtfDummy = Library.getDefaultHqtfDummy();
-        private IListAmplifier amplifier = Library.getDefaultAmplifier();
-        private IListAmplifier amplifier2 = Library.getDefaultAmplifier();
-        private IListAmplifier amplifier3 = Library.getDefaultAmplifier();
-        private IListAmplifier frameAmplifier = Library.getDefaultAmplifier();
+        private IStandardAmplifierItem amplifier = Library.getDefaultAmplifier();
+        private IStandardAmplifierItem amplifier2 = Library.getDefaultAmplifier();
+        private IStandardAmplifierItem amplifier3 = Library.getDefaultAmplifier();
+        private IStandardAmplifierItem frameAmplifier = Library.getDefaultAmplifier();
         private CountryCode countryCode = Library.getExtensionCountryCode();
         private IEntity entity;
         private IEntityType entityType;
@@ -104,22 +104,22 @@ public class SymbolIdentificationCode {
             return this;
         }
 
-        public Builder amplifier(IListAmplifier amplifier) {
+        public Builder amplifier(IStandardAmplifierItem amplifier) {
             this.amplifier = amplifier;
             return this;
         }
 
-        public Builder amplifier2(IListAmplifier amplifier2) {
+        public Builder amplifier2(IStandardAmplifierItem amplifier2) {
             this.amplifier2 = amplifier2;
             return this;
         }
 
-        public Builder amplifier3(IListAmplifier amplifier3) {
+        public Builder amplifier3(IStandardAmplifierItem amplifier3) {
             this.amplifier3 = amplifier3;
             return this;
         }
 
-        public Builder frameAmplifier(IListAmplifier frameAmplifier) {
+        public Builder frameAmplifier(IStandardAmplifierItem frameAmplifier) {
             this.frameAmplifier = frameAmplifier;
             return this;
         }
@@ -165,10 +165,10 @@ public class SymbolIdentificationCode {
     private ISymbolSet symbolSet;
     private IStatus status;
     private IHqtfDummy hqtfDummy;
-    private IListAmplifier amplifier;
-    private IListAmplifier amplifierTwo;
-    private IListAmplifier amplifierThree;
-    private IListAmplifier frameAmplifier;
+    private IStandardAmplifierItem amplifier;
+    private IStandardAmplifierItem amplifierTwo;
+    private IStandardAmplifierItem amplifierThree;
+    private IStandardAmplifierItem frameAmplifier;
     private IEntity entity;
     private IEntityType entityType;
     private IEntitySubType entitySubType;
@@ -184,25 +184,25 @@ public class SymbolIdentificationCode {
         this.changeSupport.addPropertyChangeListener(listener);
     }
 
-    public IListAmplifier getAmplifier() {
+    public IStandardAmplifierItem getAmplifier() {
         return amplifier;
     }
 
-    public IListAmplifier getAmplifierThree() {
+    public IStandardAmplifierItem getAmplifierThree() {
         return amplifierThree;
     }
 
-    public List<IListAmplifier> getAmplifierThreeGroups() {
-        List<IListAmplifier> listAmplifiers = symbolSet.getAmplifierThreeGroups();
+    public List<IStandardAmplifierItem> getAmplifierThreeGroups() {
+        List<IStandardAmplifierItem> listAmplifiers = symbolSet.getAmplifierListThree();
         return Stream.concat(Stream.of(Library.getDefaultAmplifier()), listAmplifiers.stream()).collect(toList());
     }
 
-    public IListAmplifier getAmplifierTwo() {
+    public IStandardAmplifierItem getAmplifierTwo() {
         return amplifierTwo;
     }
 
-    public List<IListAmplifier> getAmplifierTwoGroups() {
-        List<IListAmplifier> listAmplifiers = symbolSet.getAmplifierTwoGroups();
+    public List<IStandardAmplifierItem> getAmplifierTwoGroups() {
+        List<IStandardAmplifierItem> listAmplifiers = symbolSet.getAmplifierListTwo();
         return Stream.concat(Stream.of(Library.getDefaultAmplifier()), listAmplifiers.stream()).collect(toList());
     }
 
@@ -276,12 +276,12 @@ public class SymbolIdentificationCode {
                              amplifier != null ? amplifier.getId() : "00");
     }
 
-    public IListAmplifier getFrameAmplifier() {
+    public IStandardAmplifierItem getFrameAmplifier() {
         return frameAmplifier;
     }
 
-    public List<IListAmplifier> getFrameListAmplifiers() {
-        List<IListAmplifier> listAmplifiers = symbolSet.getFrameListAmplifiers();
+    public List<IStandardAmplifierItem> getFrameListAmplifiers() {
+        List<IStandardAmplifierItem> listAmplifiers = symbolSet.getFrameAmplifierList();
         return Stream.concat(Stream.of(Library.getDefaultAmplifier()), listAmplifiers.stream()).toList();
     }
 
@@ -289,8 +289,8 @@ public class SymbolIdentificationCode {
         return hqtfDummy;
     }
 
-    public List<IListAmplifier> getListAmplifiers() {
-        List<IListAmplifier> listAmplifiers = symbolSet.getListAmplifiers();
+    public List<IStandardAmplifierItem> getListAmplifiers() {
+        List<IStandardAmplifierItem> listAmplifiers = symbolSet.getAmplifierList();
         return Stream.concat(Stream.of(Library.getDefaultAmplifier()), listAmplifiers.stream()).collect(toList());
     }
 
@@ -363,20 +363,20 @@ public class SymbolIdentificationCode {
         this.changeSupport.removePropertyChangeListener(listener);
     }
 
-    public void setAmplifier(IListAmplifier amplifier) {
-        IListAmplifier oldValue = this.amplifier;
+    public void setAmplifier(IStandardAmplifierItem amplifier) {
+        IStandardAmplifierItem oldValue = this.amplifier;
         this.amplifier = defaultIfNull(amplifier, Library.getDefaultAmplifier());
         changeSupport.firePropertyChange("amplifier", oldValue, this.amplifier);
     }
 
-    public void setAmplifierThree(IListAmplifier amplifier) {
-        IListAmplifier oldValue = this.amplifierThree;
+    public void setAmplifierThree(IStandardAmplifierItem amplifier) {
+        IStandardAmplifierItem oldValue = this.amplifierThree;
         this.amplifierThree = defaultIfNull(amplifier, Library.getDefaultAmplifier());
         changeSupport.firePropertyChange("amplifierThree", oldValue, this.amplifierThree);
     }
 
-    public void setAmplifierTwo(IListAmplifier amplifier) {
-        IListAmplifier oldValue = this.amplifierTwo;
+    public void setAmplifierTwo(IStandardAmplifierItem amplifier) {
+        IStandardAmplifierItem oldValue = this.amplifierTwo;
         this.amplifierTwo = defaultIfNull(amplifier, Library.getDefaultAmplifier());
         changeSupport.firePropertyChange("amplifierTwo", oldValue, this.amplifierTwo);
     }
@@ -417,8 +417,8 @@ public class SymbolIdentificationCode {
         }
     }
 
-    public void setFrameAmplifier(IListAmplifier amplifier) {
-        IListAmplifier oldValue = this.frameAmplifier;
+    public void setFrameAmplifier(IStandardAmplifierItem amplifier) {
+        IStandardAmplifierItem oldValue = this.frameAmplifier;
         this.frameAmplifier = defaultIfNull(amplifier, Library.getDefaultAmplifier());
         changeSupport.firePropertyChange("frameAmplifier", oldValue, this.frameAmplifier);
     }

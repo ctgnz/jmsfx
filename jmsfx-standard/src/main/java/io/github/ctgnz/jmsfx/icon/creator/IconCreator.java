@@ -14,7 +14,7 @@ import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
 import io.github.ctgnz.jmsfx.IHqtfDummy;
-import io.github.ctgnz.jmsfx.IListAmplifier;
+import io.github.ctgnz.jmsfx.IAmplifierListItem;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.IStandardIdentity;
@@ -255,28 +255,28 @@ public class IconCreator extends Application {
         hqtfDummy.setMaxWidth(300);
         hqtfDummy.valueProperty().bindBidirectional(symbol.hqtfDummyProperty());
 
-        ComboBox<IListAmplifier> amplifier = new ComboBox<>(symbol.amplifierGroupsList());
+        ComboBox<IAmplifierListItem> amplifier = new ComboBox<>(symbol.amplifierGroupsList());
         amplifier.setCellFactory(p -> new CodeElementListCell<>());
         amplifier.setButtonCell(new CodeElementListCell<>());
         amplifier.setMaxWidth(300);
         amplifier.valueProperty().bindBidirectional(symbol.amplifierProperty());
         amplifier.disableProperty().bind(Bindings.size(symbol.amplifierGroupsList()).lessThan(2));
 
-        ComboBox<IListAmplifier> amplifierTwo = new ComboBox<>(symbol.amplifierTwoGroupsList());
+        ComboBox<IAmplifierListItem> amplifierTwo = new ComboBox<>(symbol.amplifierTwoGroupsList());
         amplifierTwo.setCellFactory(p -> new CodeElementListCell<>());
         amplifierTwo.setButtonCell(new CodeElementListCell<>());
         amplifierTwo.setMaxWidth(300);
         amplifierTwo.valueProperty().bindBidirectional(symbol.amplifierTwoProperty());
         amplifierTwo.disableProperty().bind(Bindings.size(symbol.amplifierTwoGroupsList()).lessThan(2));
 
-        ComboBox<IListAmplifier> amplifierThree = new ComboBox<>(symbol.amplifierThreeGroupsList());
+        ComboBox<IAmplifierListItem> amplifierThree = new ComboBox<>(symbol.amplifierThreeGroupsList());
         amplifierThree.setCellFactory(p -> new CodeElementListCell<>());
         amplifierThree.setButtonCell(new CodeElementListCell<>());
         amplifierThree.setMaxWidth(300);
         amplifierThree.valueProperty().bindBidirectional(symbol.amplifierThreeProperty());
         amplifierThree.disableProperty().bind(Bindings.size(symbol.amplifierThreeGroupsList()).lessThan(2));
 
-        ComboBox<IListAmplifier> frameAmplifier = new ComboBox<>(symbol.frameAmplifierGroupsList());
+        ComboBox<IAmplifierListItem> frameAmplifier = new ComboBox<>(symbol.frameAmplifierGroupsList());
         frameAmplifier.setCellFactory(p -> new CodeElementListCell<>());
         frameAmplifier.setButtonCell(new CodeElementListCell<>());
         frameAmplifier.setMaxWidth(300);
@@ -410,7 +410,7 @@ public class IconCreator extends Application {
     }
 
     private void testModifierEvents(List<Runnable> events, SymbolSet symbolSet) {
-        symbolSet.getListAmplifiers().forEach(amplifier -> {
+        symbolSet.getAmplifierList().forEach(amplifier -> {
             events.add(() -> {
                 System.out.format("\t\tAmplifier: %s%n", amplifier.getLabel());
                 symbol.amplifierProperty().set(amplifier);

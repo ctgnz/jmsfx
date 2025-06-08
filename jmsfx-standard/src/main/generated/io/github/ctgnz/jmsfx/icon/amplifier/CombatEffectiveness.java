@@ -1,23 +1,28 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IListAmplifier;
-import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
+import io.github.ctgnz.jmsfx.IAmplifierList;
+import io.github.ctgnz.jmsfx.IAmplifierListItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierList;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum CombatEffectiveness implements IListAmplifier {
+public enum CombatEffectiveness implements IAmplifierListItem {
     FULLY_OPERATIONAL("FO", "Fully Operational"),
     SUBSTANTIALLY_OPERATIONAL("SO", "Substantially Operational"),
     MARGINALLY_OPERATIONAL("MO", "Marginally Operational"),
     NOT_OPERATIONAL("NO", "Not Operational"),
     UNKNOWN_EFFECTIVENESS("UNK", "Unknown");
 
-    private static final ListAmplifierType TYPE = ListAmplifierType.COMBAT_EFFECTIVENESS;
     private final String id;
     private final String label;
 
     CombatEffectiveness(String id, String label) {
         this.id = id;
         this.label = label;
+    }
+
+    @Override
+    public IAmplifierList getAmplifierList() {
+        return AmplifierList.COMBAT_EFFECTIVENESS;
     }
 
     @Override
@@ -33,11 +38,6 @@ public enum CombatEffectiveness implements IListAmplifier {
     @Override
     public String getLabel() {
         return label;
-    }
-
-    @Override
-    public ListAmplifierType getType() {
-        return TYPE;
     }
 
     public boolean isDeprecated() {

@@ -2,14 +2,14 @@ package io.github.ctgnz.jmsfx;
 
 public interface IEntitySubType extends IMainElement {
 
-	@Override    
+	@Override
     default IEntity getEntity() {
         return getEntityType().getEntity();
     }
-    
+
     IEntityType getEntityType();
 
-	@Override    
+	@Override
     default String getGraphicIdentifier() {
         return String.format("%s%s%s%s", getBaseSymbolSet().getId(), getEntity().getId(), getEntityType().getId(), getId());
     }

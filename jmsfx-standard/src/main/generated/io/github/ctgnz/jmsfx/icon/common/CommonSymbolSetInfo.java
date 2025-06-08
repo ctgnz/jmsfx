@@ -7,7 +7,7 @@ import java.util.List;
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.IListAmplifier;
+import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.ISymbolSetInfo;
@@ -25,17 +25,17 @@ public class CommonSymbolSetInfo implements ISymbolSetInfo {
     }
 
     @Override
-    public List<IListAmplifier> getAmplifiers() {
+    public List<IStandardAmplifierItem> getAmplifiers() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IListAmplifier> getAmplifiersTwo() {
+    public List<IStandardAmplifierItem> getAmplifiersTwo() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IListAmplifier> getAmplifiersThree() {
+    public List<IStandardAmplifierItem> getAmplifiersThree() {
         return Collections.emptyList();
     }
 
@@ -55,7 +55,7 @@ public class CommonSymbolSetInfo implements ISymbolSetInfo {
     }
 
     @Override
-    public List<IListAmplifier> getFrameAmplifiers() {
+    public List<IStandardAmplifierItem> getFrameAmplifiers() {
         return Collections.emptyList();
     }
 

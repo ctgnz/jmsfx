@@ -6,44 +6,44 @@ import io.github.ctgnz.jmsfx.icon.AmplifierType;
 
 public class AmplifierAdapter implements IAmplifier {
 
-    private final Amplifier amplifier;
+    private final Amplifier model;
 
     public AmplifierAdapter(Amplifier amplifier) {
-        this.amplifier = amplifier;
+        this.model = amplifier;
     }
 
-    public Amplifier getAmplifier() {
-        return amplifier;
+    public Amplifier getModel() {
+        return model;
     }
 
     @Override
     public String getDescription() {
-        return amplifier.getDescription();
+        return model.getDescription();
     }
 
     @Override
     public String getId() {
-        return amplifier.getId();
+        return model.getId();
     }
 
     @Override
     public String getLabel() {
-        return amplifier.getLabel();
+        return model.getLabel();
     }
 
     @Override
     public int getMax() {
-        return amplifier.getMax();
+        return model.getMax();
     }
 
     @Override
     public int getMin() {
-        return amplifier.getMin();
+        return model.getMin();
     }
 
     @Override
     public AmplifierType getType() {
-        return amplifier.getType();
+        return model.getType();
     }
 
 }

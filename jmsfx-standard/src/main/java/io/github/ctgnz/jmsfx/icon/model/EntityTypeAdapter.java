@@ -9,17 +9,17 @@ import io.github.ctgnz.jmsfx.IEntityType;
 import io.github.ctgnz.jmsfx.icon.GraphicType;
 
 public class EntityTypeAdapter implements IEntityType {
-    private final IEntityType entityType;
+    private final IEntityType model;
     private final List<IEntitySubType> entitySubTypes = new ArrayList<>();
 
     public EntityTypeAdapter(IEntityType entityType) {
-        this.entityType = entityType;
+        this.model = entityType;
         this.entitySubTypes.addAll(entityType.getEntitySubTypes().stream().map(EntitySubTypeAdapter::new).toList());
     }
 
     @Override
     public IEntity getEntity() {
-        return entityType.getEntity();
+        return model.getEntity();
     }
 
     @Override
@@ -27,36 +27,36 @@ public class EntityTypeAdapter implements IEntityType {
         return entitySubTypes;
     }
 
-    public IEntityType getEntityType() {
-        return entityType;
-    }
-
     public String getGraphicLocation(StandardIdentityAdapter identity) {
         String graphicLocation = getSymbolSet().getGraphicLocation();
-        if (entityType.isFullFrameIcon()) {
-            return String.format("/svg/Appendices/%s/%s%s.svg", graphicLocation, entityType.getGraphicIdentifier(), identity.getGroup().getGraphicSuffix());
+        if (model.isFullFrameIcon()) {
+            return String.format("/svg/Appendices/%s/%s%s.svg", graphicLocation, model.getGraphicIdentifier(), identity.getGroup().getGraphicSuffix());
         } else {
-            return String.format("/svg/Appendices/%s/%s.svg", graphicLocation, entityType.getGraphicIdentifier());
+            return String.format("/svg/Appendices/%s/%s.svg", graphicLocation, model.getGraphicIdentifier());
         }
     }
 
     @Override
     public GraphicType getGraphicType() {
-        return entityType.getGraphicType();
+        return model.getGraphicType();
     }
 
     @Override
     public String getId() {
-        return entityType.getId();
+        return model.getId();
     }
 
     @Override
     public String getLabel() {
-        return entityType.getLabel();
+        return model.getLabel();
+    }
+
+    public IEntityType getModel() {
+        return model;
     }
 
     @Override
     public boolean isUnknown() {
-        return entityType.isUnknown();
+        return model.isUnknown();
     }
 }

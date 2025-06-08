@@ -15,7 +15,7 @@ import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
 import io.github.ctgnz.jmsfx.IHqtfDummy;
-import io.github.ctgnz.jmsfx.IListAmplifier;
+import io.github.ctgnz.jmsfx.IAmplifierListItem;
 import io.github.ctgnz.jmsfx.IMainElement;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
@@ -58,10 +58,10 @@ public class IdentificationSymbol {
     private final ObjectProperty<ISymbolSet> symbolSet;
     private final ObjectProperty<IStatus> status;
     private final ObjectProperty<IHqtfDummy> hqtfDummy;
-    private final ObjectProperty<IListAmplifier> amplifier;
-    private final ObjectProperty<IListAmplifier> amplifierTwo;
-    private final ObjectProperty<IListAmplifier> amplifierThree;
-    private final ObjectProperty<IListAmplifier> frameAmplifier;
+    private final ObjectProperty<IAmplifierListItem> amplifier;
+    private final ObjectProperty<IAmplifierListItem> amplifierTwo;
+    private final ObjectProperty<IAmplifierListItem> amplifierThree;
+    private final ObjectProperty<IAmplifierListItem> frameAmplifier;
     private final ObjectProperty<IEntity> entity;
     private final ObjectProperty<IEntityType> entityType;
     private final ObjectProperty<IEntitySubType> entitySubType;
@@ -80,10 +80,10 @@ public class IdentificationSymbol {
     private final ObjectProperty<SvgGraphic> statusGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> hqtfDummyGraphic = new SimpleObjectProperty<>();
     private final StringProperty code = new SimpleStringProperty(sidc.toString());
-    private final ObservableList<IListAmplifier> amplifiers = FXCollections.observableArrayList(sidc.getListAmplifiers());
-    private final ObservableList<IListAmplifier> amplifiersTwo = FXCollections.observableArrayList(sidc.getAmplifierTwoGroups());
-    private final ObservableList<IListAmplifier> amplifiersThree = FXCollections.observableArrayList(sidc.getAmplifierThreeGroups());
-    private final ObservableList<IListAmplifier> frameAmplifiers = FXCollections.observableArrayList(sidc.getFrameListAmplifiers());
+    private final ObservableList<IAmplifierListItem> amplifiers = FXCollections.observableArrayList(sidc.getListAmplifiers());
+    private final ObservableList<IAmplifierListItem> amplifiersTwo = FXCollections.observableArrayList(sidc.getAmplifierTwoGroups());
+    private final ObservableList<IAmplifierListItem> amplifiersThree = FXCollections.observableArrayList(sidc.getAmplifierThreeGroups());
+    private final ObservableList<IAmplifierListItem> frameAmplifiers = FXCollections.observableArrayList(sidc.getFrameListAmplifiers());
     private final ObservableList<IEntity> entities = FXCollections.observableArrayList(sidc.getEntities());
     private final ObservableList<IEntityType> entityTypes = FXCollections.observableArrayList();
     private final ObservableList<IEntitySubType> entitySubTypes = FXCollections.observableArrayList();
@@ -137,7 +137,7 @@ public class IdentificationSymbol {
         return textAmplifier;
     }
 
-    public ObservableList<IListAmplifier> amplifierGroupsList() {
+    public ObservableList<IAmplifierListItem> amplifierGroupsList() {
         return amplifiers;
     }
 
@@ -145,23 +145,23 @@ public class IdentificationSymbol {
         return amplifierGuidesVisible;
     }
 
-    public ObjectProperty<IListAmplifier> amplifierProperty() {
+    public ObjectProperty<IAmplifierListItem> amplifierProperty() {
         return amplifier;
     }
 
-    public ObservableList<IListAmplifier> amplifierThreeGroupsList() {
+    public ObservableList<IAmplifierListItem> amplifierThreeGroupsList() {
         return amplifiersThree;
     }
 
-    public ObjectProperty<IListAmplifier> amplifierThreeProperty() {
+    public ObjectProperty<IAmplifierListItem> amplifierThreeProperty() {
         return amplifierThree;
     }
 
-    public ObservableList<IListAmplifier> amplifierTwoGroupsList() {
+    public ObservableList<IAmplifierListItem> amplifierTwoGroupsList() {
         return amplifiersTwo;
     }
 
-    public ObjectProperty<IListAmplifier> amplifierTwoProperty() {
+    public ObjectProperty<IAmplifierListItem> amplifierTwoProperty() {
         return amplifierTwo;
     }
 
@@ -205,15 +205,15 @@ public class IdentificationSymbol {
         return entityTypes;
     }
 
-    public ObservableList<IListAmplifier> frameAmplifierGroupsList() {
+    public ObservableList<IAmplifierListItem> frameAmplifierGroupsList() {
         return frameAmplifiers;
     }
 
-    public ObjectProperty<IListAmplifier> frameAmplifierProperty() {
+    public ObjectProperty<IAmplifierListItem> frameAmplifierProperty() {
         return frameAmplifier;
     }
 
-    public IListAmplifier getAmplifier() {
+    public IAmplifierListItem getAmplifier() {
         return amplifier.get();
     }
 
@@ -221,7 +221,7 @@ public class IdentificationSymbol {
         return amplifierGraphic.get();
     }
 
-    public IListAmplifier getAmplifierThree() {
+    public IAmplifierListItem getAmplifierThree() {
         return amplifierThree.get();
     }
 
@@ -229,7 +229,7 @@ public class IdentificationSymbol {
         return amplifierThreeGraphic.get();
     }
 
-    public IListAmplifier getAmplifierTwo() {
+    public IAmplifierListItem getAmplifierTwo() {
         return amplifierTwo.get();
     }
 
@@ -247,7 +247,7 @@ public class IdentificationSymbol {
         if (isFrameUsed()) {
             SvgGraphic frame = getFrameGraphic();
             if (isFrameAmplifierUsed()) {
-                IListAmplifier frameAmplifier = getFrameAmplifier();
+                IAmplifierListItem frameAmplifier = getFrameAmplifier();
                 replaceFill(frame, Color.web(frameAmplifier.getBackgroundFill()));
             }
             container.getContent().addAll(frame.getVisibleContent());
@@ -303,7 +303,7 @@ public class IdentificationSymbol {
         return entityType.get();
     }
 
-    public IListAmplifier getFrameAmplifier() {
+    public IAmplifierListItem getFrameAmplifier() {
         return frameAmplifier.get();
     }
 
@@ -642,7 +642,7 @@ public class IdentificationSymbol {
     }
 
     private SvgGraphic loadAmplifierGraphic() {
-        IListAmplifier amplifierGroup = getAmplifier();
+        IAmplifierListItem amplifierGroup = getAmplifier();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
             String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getFullId());
             return parser.parseFile(filePath);
@@ -652,7 +652,7 @@ public class IdentificationSymbol {
     }
 
     private SvgGraphic loadAmplifierThreeGraphic() {
-        IListAmplifier amplifierGroup = getAmplifierThree();
+        IAmplifierListItem amplifierGroup = getAmplifierThree();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
             String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getFullId());
             return parser.parseFile(filePath);
@@ -662,7 +662,7 @@ public class IdentificationSymbol {
     }
 
     private SvgGraphic loadAmplifierTwoGraphic() {
-        IListAmplifier amplifierGroup = getAmplifierTwo();
+        IAmplifierListItem amplifierGroup = getAmplifierTwo();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
             String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getFullId());
             return parser.parseFile(filePath);
@@ -672,7 +672,7 @@ public class IdentificationSymbol {
     }
 
     private SvgGraphic loadFrameAmplifierGraphic() {
-        IListAmplifier amplifierGroup = getFrameAmplifier();
+        IAmplifierListItem amplifierGroup = getFrameAmplifier();
         if (!amplifierGroup.isUnknown() && amplifierGroup.isGraphicalIcon()) {
             String filePath = String.format("/svg/%s/%s%s.svg", amplifierGroup.getGraphicLocation(), getStandardIdentityGroupId(), amplifierGroup.getId());
             return parser.parseFile(filePath);

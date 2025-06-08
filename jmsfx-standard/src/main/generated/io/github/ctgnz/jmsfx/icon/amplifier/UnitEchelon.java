@@ -1,10 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IStandardAmplifier;
-import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
+import io.github.ctgnz.jmsfx.IAmplifierList;
+import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierList;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum UnitEchelon implements IStandardAmplifier {
+public enum UnitEchelon implements IStandardAmplifierItem {
     TEAM_CREW("1", "Team/Crew"),
     SQUAD("2", "Squad"),
     SEC("3", "Section"),
@@ -21,13 +22,17 @@ public enum UnitEchelon implements IStandardAmplifier {
     COMMAND("E", "Command"),
     @Extension STAFFEL("F", "Staffel");
 
-    private static final ListAmplifierType TYPE = ListAmplifierType.UNIT_ECHELON;
     private final String id;
     private final String label;
 
     UnitEchelon(String id, String label) {
         this.id = id;
         this.label = label;
+    }
+
+    @Override
+    public IAmplifierList getAmplifierList() {
+        return AmplifierList.UNIT_ECHELON;
     }
 
     @Override
@@ -43,11 +48,6 @@ public enum UnitEchelon implements IStandardAmplifier {
     @Override
     public String getLabel() {
         return label;
-    }
-
-    @Override
-    public ListAmplifierType getType() {
-        return TYPE;
     }
 
     public boolean isDeprecated() {

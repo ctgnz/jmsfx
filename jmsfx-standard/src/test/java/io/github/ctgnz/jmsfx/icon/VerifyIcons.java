@@ -11,7 +11,7 @@ import io.github.ctgnz.jmsfx.icon.model.EntityAdapter;
 import io.github.ctgnz.jmsfx.icon.model.EntitySubTypeAdapter;
 import io.github.ctgnz.jmsfx.icon.model.EntityTypeAdapter;
 import io.github.ctgnz.jmsfx.icon.model.LibraryAdapter;
-import io.github.ctgnz.jmsfx.icon.model.ListAmplifierAdapter;
+import io.github.ctgnz.jmsfx.icon.model.AmplifierListAdapter;
 import io.github.ctgnz.jmsfx.icon.model.SectorOneModifierAdapter;
 import io.github.ctgnz.jmsfx.icon.model.SectorTwoModifierAdapter;
 import io.github.ctgnz.jmsfx.icon.model.StatusAdapter;
@@ -171,7 +171,7 @@ public class VerifyIcons {
             });
         });
         System.out.println("Standard Amplifiers");
-        library.getListAmplifiers().stream().filter(ListAmplifierAdapter::isStandardAmplifier).forEach(amp -> {
+        library.getListAmplifiers().stream().filter(AmplifierListAdapter::isStandardAmplifier).forEach(amp -> {
             System.out.format("  [%s] %s%n", amp.getId(), amp.getLabel());
             amp.getValues().forEach(value -> {
                 System.out.format("    [%s] %s%n", value.getFullId(), value.getLabel());

@@ -4,7 +4,7 @@ import java.util.EnumSet;
 
 import io.github.ctgnz.jmsfx.IContext;
 import io.github.ctgnz.jmsfx.IHqtfDummy;
-import io.github.ctgnz.jmsfx.IListAmplifier;
+import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
 import io.github.ctgnz.jmsfx.IStandardIdentity;
 import io.github.ctgnz.jmsfx.IStatus;
 import io.github.ctgnz.jmsfx.ISymbolSet;
@@ -23,10 +23,10 @@ public class Library {
     private static final ISymbolSet DEFAULT_SYMBOL_SET = SymbolSet.UNKNOWN;
     private static final IStatus DEFAULT_STATUS = Status.PRESENT;
     private static final IHqtfDummy DEFAULT_HQTF_DUMMY = HqtfDummy.NA;
-    private static final IListAmplifier DEFAULT_AMPLIFIER = UnknownAmplifier.NA;
+    private static final IStandardAmplifierItem DEFAULT_AMPLIFIER = UnknownAmplifier.NA;
     private static CountryCode extensionCountryCode = CountryCode.UNDEFINED;
 
-    public static IListAmplifier getDefaultAmplifier() {
+    public static IStandardAmplifierItem getDefaultAmplifier() {
         return DEFAULT_AMPLIFIER;
     }
 

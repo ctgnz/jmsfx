@@ -5,24 +5,24 @@ import io.github.ctgnz.jmsfx.icon.Version;
 
 public class VersionAdapter implements IVersion {
 
-    private final Version version;
+    private final Version model;
 
     public VersionAdapter(Version version) {
-        this.version = version;
+        this.model = version;
     }
 
     @Override
     public String getId() {
-        return version.getId();
+        return model.getId();
     }
 
     @Override
     public String getLabel() {
-        return version.getLabel();
+        return model.getLabel();
     }
 
-    public Version getVersion() {
-        return version;
+    public Version getModel() {
+        return model;
     }
 
 }

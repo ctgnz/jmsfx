@@ -1,21 +1,26 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IListAmplifier;
-import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
+import io.github.ctgnz.jmsfx.IAmplifierList;
+import io.github.ctgnz.jmsfx.IAmplifierListItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierList;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum ReinforcedReduced implements IListAmplifier {
+public enum ReinforcedReduced implements IAmplifierListItem {
     REINFORCED("+", "Reinforced"),
     REDUCED("-", "Reduced"),
     REINFORCED_REDUCED("±", "Reinforced and Reduced");
 
-    private static final ListAmplifierType TYPE = ListAmplifierType.REINFORCED;
     private final String id;
     private final String label;
 
     ReinforcedReduced(String id, String label) {
         this.id = id;
         this.label = label;
+    }
+
+    @Override
+    public IAmplifierList getAmplifierList() {
+        return AmplifierList.REINFORCED;
     }
 
     @Override
@@ -31,11 +36,6 @@ public enum ReinforcedReduced implements IListAmplifier {
     @Override
     public String getLabel() {
         return label;
-    }
-
-    @Override
-    public ListAmplifierType getType() {
-        return TYPE;
     }
 
     public boolean isDeprecated() {

@@ -8,13 +8,13 @@ public interface ISymbolSetInfo {
 
     List<AmplifierGuide> getAmplifierGuides();
 
-    <A extends IListAmplifier> List<A> getAmplifiers();
+    <A extends IStandardAmplifierItem> List<A> getAmplifiers();
 
-    <A extends IListAmplifier> List<A> getAmplifiersTwo();
+    <A extends IStandardAmplifierItem> List<A> getAmplifiersTwo();
 
-    <A extends IListAmplifier> List<A> getAmplifiersThree();
+    <A extends IStandardAmplifierItem> List<A> getAmplifiersThree();
 
-    <A extends IListAmplifier> List<A> getFrameAmplifiers();
+    <A extends IStandardAmplifierItem> List<A> getFrameAmplifiers();
 
     <E extends IEntity> List<E> getEntities();
 
@@ -33,7 +33,7 @@ public interface ISymbolSetInfo {
     boolean isAmplifierThreePresent();
 
     boolean isFrameAmplifierPresent();
-    
+
     boolean isEntitySubTypePresent();
 
     boolean isEntityTypePresent();

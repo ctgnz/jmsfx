@@ -25,11 +25,11 @@ enumeratedAmplifiers:
   - {amplifier: "AD", valuesId: "AD_VALUES", code: "AD", enumType: "PlatformType", enumId: "PLATFORM_TYPE", enumDesc: "Platform Type"}
   - {amplifier: "AR", valuesId: "AR_VALUES", code: "AE", enumType: "SpecialDesignator", enumId: "SPECIAL_DESIGNATOR", enumDesc: "Special Designator"}
 standardAmplifiers:
-  - {enumType: "UnknownAmplifier", enumId: "UNKNOWN", enumDesc: "Unspecified", graphicLocation: "Amplifier", groupIds: [ "NA" ], frameAmplifier: true, unknown: true}
-  - {enumType: "UnitEchelon", enumId: "UNIT_ECHELON", enumDesc: "Unit Echelon", graphicLocation: "Echelon", groupIds: [ "ECHELON" ], frameAmplifier: false}
-  - {enumType: "EquipmentMobility", enumId: "EQUIPMENT_MOBILITY", enumDesc: "Equipment Mobility", graphicLocation: "Amplifier", groupIds: [ "EQUIP_MOBILITY" ], frameAmplifier: false}
-  - {enumType: "TowedArrayType", enumId: "TOWED_ARRAYS", enumDesc: "Naval towed array", graphicLocation: "Amplifier", groupIds: [ "TOWED_ARRAYS" ], frameAmplifier: false}
-  - {enumType: "LeadershipRole", enumId: "LEADERSHIP_ROLE", enumDesc: "Leadership role", graphicLocation: "Amplifier", groupIds: [ "LEADERSHIP_INDICATOR" ], frameAmplifier: false}
+  - {enumType: "UnknownAmplifier", enumId: "UNKNOWN", enumDesc: "Unspecified", graphicLocation: "Amplifier", xmlId: "NA", frameAmplifier: true, unknown: true}
+  - {enumType: "UnitEchelon", enumId: "UNIT_ECHELON", enumDesc: "Unit Echelon", graphicLocation: "Echelon", xmlId: "ECHELON", frameAmplifier: false}
+  - {enumType: "EquipmentMobility", enumId: "EQUIPMENT_MOBILITY", enumDesc: "Equipment Mobility", graphicLocation: "Amplifier", xmlId: "EQUIP_MOBILITY", frameAmplifier: false}
+  - {enumType: "TowedArrayType", enumId: "TOWED_ARRAYS", enumDesc: "Naval towed array", graphicLocation: "Amplifier", xmlId: "TOWED_ARRAYS", frameAmplifier: false}
+  - {enumType: "LeadershipRole", enumId: "LEADERSHIP_ROLE", enumDesc: "Leadership role", graphicLocation: "Amplifier", xmlId: "LEADERSHIP_INDICATOR", frameAmplifier: false}
 dimensionGraphicLocations:
   INTERNAL: "Internal"
   UNKNOWN: "Unknown"

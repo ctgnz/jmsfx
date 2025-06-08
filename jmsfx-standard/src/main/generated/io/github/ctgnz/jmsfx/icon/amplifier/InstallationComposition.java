@@ -1,10 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IListAmplifier;
-import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
+import io.github.ctgnz.jmsfx.IAmplifierList;
+import io.github.ctgnz.jmsfx.IAmplifierListItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierList;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum InstallationComposition implements IListAmplifier {
+public enum InstallationComposition implements IAmplifierListItem {
     DEVELOPMENT("DEVELOP", "Development"),
     RESEARCH("RSRCH", "Research"),
     PRODUCTION("PROD", "Production"),
@@ -12,13 +13,17 @@ public enum InstallationComposition implements IListAmplifier {
     STORAGE("STORE", "Storage"),
     UTILITY("UTIL", "Utility");
 
-    private static final ListAmplifierType TYPE = ListAmplifierType.INSTALLATION_COMPOSITION;
     private final String id;
     private final String label;
 
     InstallationComposition(String id, String label) {
         this.id = id;
         this.label = label;
+    }
+
+    @Override
+    public IAmplifierList getAmplifierList() {
+        return AmplifierList.INSTALLATION_COMPOSITION;
     }
 
     @Override
@@ -34,11 +39,6 @@ public enum InstallationComposition implements IListAmplifier {
     @Override
     public String getLabel() {
         return label;
-    }
-
-    @Override
-    public ListAmplifierType getType() {
-        return TYPE;
     }
 
     public boolean isDeprecated() {

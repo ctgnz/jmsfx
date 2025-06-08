@@ -11,17 +11,17 @@ public interface ISymbolSet extends ICodeElement {
 
     AmplifierGuide getAmplifierGuide(IAmplifier amplifier);
 
-    <A extends IListAmplifier> List<A> getListAmplifiers();
+    <A extends IStandardAmplifierItem> List<A> getAmplifierList();
 
-    <A extends IListAmplifier> List<A> getAmplifierTwoGroups();
+    <A extends IStandardAmplifierItem> List<A> getAmplifierListTwo();
 
-    <A extends IListAmplifier> List<A> getAmplifierThreeGroups();
+    <A extends IStandardAmplifierItem> List<A> getAmplifierListThree();
 
     Dimension getDimension();
 
     <E extends IEntity> List<E> getEntities();
 
-    <A extends IListAmplifier> List<A> getFrameListAmplifiers();
+    <A extends IStandardAmplifierItem> List<A> getFrameAmplifierList();
 
     String getFrameId();
 

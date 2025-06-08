@@ -13,7 +13,7 @@ import com.google.common.collect.Multimaps;
 import ${basePackage}.IEntity;
 import ${basePackage}.IEntitySubType;
 import ${basePackage}.IEntityType;
-import ${basePackage}.IListAmplifier;
+import ${basePackage}.IStandardAmplifierItem;
 import ${basePackage}.ISectorOneModifier;
 import ${basePackage}.ISectorTwoModifier;
 import ${basePackage}.ISymbolSetInfo;<#if symbolSet.amplifierGuidesPresent>
@@ -52,17 +52,17 @@ public class ${symbolSet.baseTypeName}SymbolSetInfo implements ISymbolSetInfo {
     }
 
     @Override
-    public List<IListAmplifier> getAmplifiers() {
+    public List<IStandardAmplifierItem> getAmplifiers() {
         return <#if symbolSet.amplifierPresent>Arrays.asList(${symbolSet.amplifierClass}.values())<#else>Collections.emptyList()</#if>;
     }
 
     @Override
-    public List<IListAmplifier> getAmplifiersTwo() {
+    public List<IStandardAmplifierItem> getAmplifiersTwo() {
         return <#if symbolSet.amplifierTwoPresent>Arrays.asList(${symbolSet.amplifierTwoClass}.values())<#else>Collections.emptyList()</#if>;
     }
 
     @Override
-    public List<IListAmplifier> getAmplifiersThree() {
+    public List<IStandardAmplifierItem> getAmplifiersThree() {
         return <#if symbolSet.amplifierThreePresent>Arrays.asList(${symbolSet.amplifierThreeClass}.values())<#else>Collections.emptyList()</#if>;
     }
 
@@ -83,7 +83,7 @@ public class ${symbolSet.baseTypeName}SymbolSetInfo implements ISymbolSetInfo {
     }
 
     @Override
-    public List<IListAmplifier> getFrameAmplifiers() {
+    public List<IStandardAmplifierItem> getFrameAmplifiers() {
         return <#if symbolSet.frameAmplifierPresent>Arrays.asList(${symbolSet.frameAmplifierClass}.values())<#else>Collections.emptyList()</#if>;
     }
 

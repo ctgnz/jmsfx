@@ -1,10 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IListAmplifier;
-import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
+import io.github.ctgnz.jmsfx.IAmplifierList;
+import io.github.ctgnz.jmsfx.IAmplifierListItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierList;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum CredibilityRating implements IListAmplifier {
+public enum CredibilityRating implements IAmplifierListItem {
     CONFIRMED("1", "Confirmed by Other Sources"),
     PROBABLY("2", "Probably True"),
     POSSIBLY("3", "Possibly True"),
@@ -12,13 +13,17 @@ public enum CredibilityRating implements IListAmplifier {
     IMPROBABLE("5", "Improbable"),
     CRED_CANNOT_BE_JUDGED("6", "Truth Cannot Be Judged");
 
-    private static final ListAmplifierType TYPE = ListAmplifierType.CREDIBILITY_RATING;
     private final String id;
     private final String label;
 
     CredibilityRating(String id, String label) {
         this.id = id;
         this.label = label;
+    }
+
+    @Override
+    public IAmplifierList getAmplifierList() {
+        return AmplifierList.CREDIBILITY_RATING;
     }
 
     @Override
@@ -34,11 +39,6 @@ public enum CredibilityRating implements IListAmplifier {
     @Override
     public String getLabel() {
         return label;
-    }
-
-    @Override
-    public ListAmplifierType getType() {
-        return TYPE;
     }
 
     public boolean isDeprecated() {

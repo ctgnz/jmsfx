@@ -6,7 +6,7 @@ import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
 import io.github.ctgnz.jmsfx.IAmplifier;
 import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IListAmplifier;
+import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.ISymbolSet;
@@ -89,13 +89,18 @@ public enum SymbolSet implements ISymbolSet {
     }
 
     @Override
-    public <A extends IListAmplifier> List<A> getAmplifierThreeGroups() {
-        return symbolSetInfo.getAmplifiersThree();
+    public <A extends IStandardAmplifierItem> List<A> getAmplifierList() {
+        return symbolSetInfo.getAmplifiers();
     }
 
     @Override
-    public <A extends IListAmplifier> List<A> getAmplifierTwoGroups() {
+    public <A extends IStandardAmplifierItem> List<A> getAmplifierListTwo() {
         return symbolSetInfo.getAmplifiersTwo();
+    }
+
+    @Override
+    public <A extends IStandardAmplifierItem> List<A> getAmplifierListThree() {
+        return symbolSetInfo.getAmplifiersThree();
     }
 
     @Override
@@ -114,7 +119,7 @@ public enum SymbolSet implements ISymbolSet {
     }
 
     @Override
-    public <A extends IListAmplifier> List<A> getFrameListAmplifiers() {
+    public <A extends IStandardAmplifierItem> List<A> getFrameAmplifierList() {
         return symbolSetInfo.getFrameAmplifiers();
     }
 
@@ -131,11 +136,6 @@ public enum SymbolSet implements ISymbolSet {
     @Override
     public String getLabel() {
         return label;
-    }
-
-    @Override
-    public <A extends IListAmplifier> List<A> getListAmplifiers() {
-        return symbolSetInfo.getAmplifiers();
     }
 
     @Override

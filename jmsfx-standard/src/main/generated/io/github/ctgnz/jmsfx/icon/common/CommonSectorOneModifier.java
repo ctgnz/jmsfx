@@ -10,7 +10,7 @@ public enum CommonSectorOneModifier implements ISectorOneModifier {
     ROTARY_WING_MOD("1", "03", "Rotary Wing", "Mobility"),
     TILT_ROTOR_MOD("1", "04", "Tilt Rotor", "Mobility"),
     VSTOL_VTOL_MOD("1", "05", "VSTOL/VTOL or Helicopter Equipped", "Capability"),
-    ATTACK_MOD("1", "06", "Attack of Attack/Strike", "Capability"),
+    ATTACK_MOD("1", "06", "Attack or Attack/Strike", "Capability"),
     ARMOURED_MOD("1", "07", "Armoured", "Capability"),
     BALLISTIC_MISSILE_MOD("1", "08", "Ballistic Missile/Ballistic Missile Defence Shooter", "Capability"),
     BRIDGE_MOD("1", "09", "Bridge/Bridging", "Capability"),

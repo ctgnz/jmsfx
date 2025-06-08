@@ -1,15 +1,15 @@
 package ${iconPackage}.amplifier;
 
-import ${basePackage}.<#if amplifier.standard>IStandardAmplifier<#else>IListAmplifier</#if>;
-import ${iconPackage}.ListAmplifierType;
+import ${basePackage}.IAmplifierList;
+import ${basePackage}.<#if amplifier.standard>IStandardAmplifierItem<#else>IAmplifierListItem</#if>;
+import ${iconPackage}.AmplifierList;
 import ${iconPackage}.Extension;
 
-public enum ${amplifier.typeName} implements <#if amplifier.standard>IStandardAmplifier<#else>IListAmplifier</#if> {
+public enum ${amplifier.typeName} implements <#if amplifier.standard>IStandardAmplifierItem<#else>IAmplifierListItem</#if> {
 <#list amplifier.values as val>
     <#if val.extension>@Extension </#if>${val.id}("${val.code}", "${val.label}"<#if val.remarks??>, "${val.remarks}"</#if><#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#sep>,
 </#list>;
 
-    private static final ListAmplifierType TYPE = ListAmplifierType.${amplifier.enumId};
     private final String id;
     private final String label;<#if amplifier.coded>
     private final String code;</#if><#if amplifier.frameAmplifier>
@@ -20,6 +20,11 @@ public enum ${amplifier.typeName} implements <#if amplifier.standard>IStandardAm
         this.label = label;<#if amplifier.coded>
         this.code = code;</#if><#if amplifier.frameAmplifier>
         this.backgroundFill = backgroundFill;</#if>
+    }
+
+    @Override
+    public IAmplifierList getAmplifierList() {
+        return AmplifierList.${amplifier.enumId};
     }
 
     @Override
@@ -35,11 +40,6 @@ public enum ${amplifier.typeName} implements <#if amplifier.standard>IStandardAm
     @Override
     public String getLabel() {
         return label;
-    }
-
-    @Override
-    public ListAmplifierType getType() {
-        return TYPE;
     }
 <#if amplifier.coded>
 

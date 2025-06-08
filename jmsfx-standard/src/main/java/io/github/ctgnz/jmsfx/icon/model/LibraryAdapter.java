@@ -7,10 +7,10 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 import io.github.ctgnz.jmsfx.icon.Amplifier;
+import io.github.ctgnz.jmsfx.icon.AmplifierList;
 import io.github.ctgnz.jmsfx.icon.Context;
 import io.github.ctgnz.jmsfx.icon.Dimension;
 import io.github.ctgnz.jmsfx.icon.HqtfDummy;
-import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
 import io.github.ctgnz.jmsfx.icon.StandardIdentity;
 import io.github.ctgnz.jmsfx.icon.Status;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
@@ -24,7 +24,7 @@ public class LibraryAdapter {
     private final List<StatusAdapter> status;
     private final List<HqtfDummyAdapter> hqtfDummy;
     private final List<AmplifierAdapter> amplifiers;
-    private final List<ListAmplifierAdapter> listAmplifiers;
+    private final List<AmplifierListAdapter<?>> listAmplifiers;
     private final Map<SymbolSet, SymbolSetAdapter> symbolSets;
 
     public LibraryAdapter() {
@@ -35,8 +35,8 @@ public class LibraryAdapter {
         this.status = Lists.transform(Lists.newArrayList(Status.values()), StatusAdapter::new);
         this.hqtfDummy = Lists.transform(Lists.newArrayList(HqtfDummy.values()), HqtfDummyAdapter::new);
         this.amplifiers = Lists.transform(Lists.newArrayList(Amplifier.values()), AmplifierAdapter::new);
-        this.listAmplifiers = Lists.transform(Lists.newArrayList(ListAmplifierType.values()), ListAmplifierAdapter::new);
-        this.symbolSets = Maps.uniqueIndex(dimension.stream().flatMap(DimensionAdapter::streamSymbolSets).toList(), SymbolSetAdapter::getSymbolSet);
+        this.listAmplifiers = Lists.transform(Lists.newArrayList(AmplifierList.values()), AmplifierListAdapter::new);
+        this.symbolSets = Maps.uniqueIndex(dimension.stream().flatMap(DimensionAdapter::streamSymbolSets).toList(), SymbolSetAdapter::getModel);
     }
 
     public List<AmplifierAdapter> getAmplifiers() {
@@ -55,7 +55,7 @@ public class LibraryAdapter {
         return hqtfDummy;
     }
 
-    public List<ListAmplifierAdapter> getListAmplifiers() {
+    public List<AmplifierListAdapter<?>> getListAmplifiers() {
         return listAmplifiers;
     }
 

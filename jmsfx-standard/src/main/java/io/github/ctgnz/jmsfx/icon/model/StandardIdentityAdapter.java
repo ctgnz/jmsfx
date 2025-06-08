@@ -7,37 +7,37 @@ import io.github.ctgnz.jmsfx.icon.StandardIdentity;
 
 public class StandardIdentityAdapter implements IStandardIdentity {
 
-    private final StandardIdentity identity;
+    private final StandardIdentity model;
 
     public StandardIdentityAdapter(StandardIdentity identity) {
-        this.identity = identity;
+        this.model = identity;
     }
 
     @Override
     public IStandardIdentityGroup getGroup() {
-        return identity.getGroup();
+        return model.getGroup();
     }
 
     @Override
     public String getId() {
-        return identity.getId();
-    }
-
-    public StandardIdentity getIdentity() {
-        return identity;
+        return model.getId();
     }
 
     @Override
     public String getLabel() {
-        return identity.getLabel();
+        return model.getLabel();
+    }
+
+    public StandardIdentity getModel() {
+        return model;
     }
 
     public boolean isConfirmed() {
-        return Library.getKnownIdentities().contains(identity);
+        return Library.getKnownIdentities().contains(model);
     }
 
     public boolean isHostile() {
-        return Library.getHostileIdentities().contains(identity);
+        return Library.getHostileIdentities().contains(model);
     }
 
 }

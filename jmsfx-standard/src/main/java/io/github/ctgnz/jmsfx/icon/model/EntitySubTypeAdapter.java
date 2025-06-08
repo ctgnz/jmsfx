@@ -6,48 +6,48 @@ import io.github.ctgnz.jmsfx.icon.GraphicType;
 
 public class EntitySubTypeAdapter implements IEntitySubType {
 
-    private final IEntitySubType entitySubType;
+    private final IEntitySubType model;
 
     public EntitySubTypeAdapter(IEntitySubType subType) {
-        this.entitySubType = subType;
+        this.model = subType;
     }
 
-    public IEntitySubType getEntitySubType() {
-        return entitySubType;
+    public IEntitySubType getModel() {
+        return model;
     }
 
     @Override
     public IEntityType getEntityType() {
-        return entitySubType.getEntityType();
+        return model.getEntityType();
     }
 
     public String getGraphicLocation(StandardIdentityAdapter identity) {
         String graphicLocation = getSymbolSet().getGraphicLocation();
-        if (entitySubType.isFullFrameIcon()) {
-            return String.format("/svg/Appendices/%s/%s%s.svg", graphicLocation, entitySubType.getGraphicIdentifier(), identity.getGroup().getGraphicSuffix());
+        if (model.isFullFrameIcon()) {
+            return String.format("/svg/Appendices/%s/%s%s.svg", graphicLocation, model.getGraphicIdentifier(), identity.getGroup().getGraphicSuffix());
         } else {
-            return String.format("/svg/Appendices/%s/%s.svg", graphicLocation, entitySubType.getGraphicIdentifier());
+            return String.format("/svg/Appendices/%s/%s.svg", graphicLocation, model.getGraphicIdentifier());
         }
     }
 
     @Override
     public GraphicType getGraphicType() {
-        return entitySubType.getGraphicType();
+        return model.getGraphicType();
     }
 
     @Override
     public String getId() {
-        return entitySubType.getId();
+        return model.getId();
     }
 
     @Override
     public String getLabel() {
-        return entitySubType.getLabel();
+        return model.getLabel();
     }
 
     @Override
     public boolean isUnknown() {
-        return entitySubType.isUnknown();
+        return model.isUnknown();
     }
 
 }

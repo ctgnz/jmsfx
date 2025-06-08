@@ -6,39 +6,39 @@ import io.github.ctgnz.jmsfx.icon.StandardIdentityGroup;
 
 public class StandardIdentityGroupAdapter implements IStandardIdentityGroup {
 
-    private final StandardIdentityGroup identity;
+    private final StandardIdentityGroup model;
 
     public StandardIdentityGroupAdapter(StandardIdentityGroup identity) {
-        this.identity = identity;
-    }
-
-    public StandardIdentityGroup getGroup() {
-        return identity;
-    }
-
-    @Override
-    public String getId() {
-        return identity.getId();
-    }
-
-    @Override
-    public String getLabel() {
-        return identity.getLabel();
-    }
-
-    @Override
-    public IStandardIdentity[] getIdentities() {
-        return identity.getIdentities();
+        this.model = identity;
     }
 
     @Override
     public String getGraphicSuffix() {
-        return identity.getGraphicSuffix();
+        return model.getGraphicSuffix();
+    }
+
+    public StandardIdentityGroup getGroup() {
+        return model;
+    }
+
+    @Override
+    public String getId() {
+        return model.getId();
+    }
+
+    @Override
+    public IStandardIdentity[] getIdentities() {
+        return model.getIdentities();
+    }
+
+    @Override
+    public String getLabel() {
+        return model.getLabel();
     }
 
     @Override
     public boolean owns(IStandardIdentity id) {
-        return identity.owns(id);
+        return model.owns(id);
     }
 
 }

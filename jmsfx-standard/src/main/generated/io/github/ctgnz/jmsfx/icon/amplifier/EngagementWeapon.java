@@ -1,10 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IListAmplifier;
-import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
+import io.github.ctgnz.jmsfx.IAmplifierList;
+import io.github.ctgnz.jmsfx.IAmplifierListItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierList;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum EngagementWeapon implements IListAmplifier {
+public enum EngagementWeapon implements IAmplifierListItem {
     NA("", "Unspecified"),
     M("-M", "Missile"),
     BM("-BM", "Ballistic Missile"),
@@ -24,13 +25,17 @@ public enum EngagementWeapon implements IListAmplifier {
     L3("-L3", "Lamps"),
     VA("-VA", "Vertical Launch ASROC");
 
-    private static final ListAmplifierType TYPE = ListAmplifierType.ENGAGEMENT_WEAPON;
     private final String id;
     private final String label;
 
     EngagementWeapon(String id, String label) {
         this.id = id;
         this.label = label;
+    }
+
+    @Override
+    public IAmplifierList getAmplifierList() {
+        return AmplifierList.ENGAGEMENT_WEAPON;
     }
 
     @Override
@@ -46,11 +51,6 @@ public enum EngagementWeapon implements IListAmplifier {
     @Override
     public String getLabel() {
         return label;
-    }
-
-    @Override
-    public ListAmplifierType getType() {
-        return TYPE;
     }
 
     public boolean isDeprecated() {

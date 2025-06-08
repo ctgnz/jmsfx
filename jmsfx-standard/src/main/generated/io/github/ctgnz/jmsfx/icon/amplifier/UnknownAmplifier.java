@@ -1,13 +1,13 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IStandardAmplifier;
-import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
+import io.github.ctgnz.jmsfx.IAmplifierList;
+import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierList;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum UnknownAmplifier implements IStandardAmplifier {
+public enum UnknownAmplifier implements IStandardAmplifierItem {
     NA("0", "Unknown", "FFFF80");
 
-    private static final ListAmplifierType TYPE = ListAmplifierType.UNKNOWN;
     private final String id;
     private final String label;
     private final String backgroundFill;
@@ -16,6 +16,11 @@ public enum UnknownAmplifier implements IStandardAmplifier {
         this.id = id;
         this.label = label;
         this.backgroundFill = backgroundFill;
+    }
+
+    @Override
+    public IAmplifierList getAmplifierList() {
+        return AmplifierList.UNKNOWN;
     }
 
     @Override
@@ -31,11 +36,6 @@ public enum UnknownAmplifier implements IStandardAmplifier {
     @Override
     public String getLabel() {
         return label;
-    }
-
-    @Override
-    public ListAmplifierType getType() {
-        return TYPE;
     }
 
     @Override

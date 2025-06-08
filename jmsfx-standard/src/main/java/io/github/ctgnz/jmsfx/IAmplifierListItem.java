@@ -1,8 +1,8 @@
 package io.github.ctgnz.jmsfx;
 
-import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
+public interface IAmplifierListItem extends ICodeElement {
 
-public interface IListAmplifier extends ICodeElement {
+    IAmplifierList getAmplifierList();
 
     default String getBackgroundFill() {
         return "";
@@ -13,8 +13,6 @@ public interface IListAmplifier extends ICodeElement {
     }
 
     String getGraphicLocation();
-
-    ListAmplifierType getType();
 
     boolean isGraphicalIcon();
     

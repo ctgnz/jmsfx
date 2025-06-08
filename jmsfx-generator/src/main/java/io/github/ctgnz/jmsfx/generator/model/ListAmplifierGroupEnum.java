@@ -11,8 +11,8 @@ import io.github.ctgnz.jmsfx.generator.schema.Library.AmplifierGroups.AmplifierG
 import io.github.ctgnz.jmsfx.generator.schema.Library.Amplifiers.Amplifier.Values;
 import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension.SymbolSets.SymbolSetRef;
 
-public class ListAmplifierTypeEnum extends StandardEnum {
-    private final List<ListAmplifierEnum> values = new ArrayList<>();
+public class ListAmplifierGroupEnum extends StandardEnum {
+    private final List<ListAmplifierElementEnum> values = new ArrayList<>();
     private final String typeName;
     private final String graphicLocation;
     private final String[] symbolSets;
@@ -22,21 +22,9 @@ public class ListAmplifierTypeEnum extends StandardEnum {
     private final boolean coded;
     private final boolean frameAmplifier;
     private final boolean unknown;
+    private String amplifierId;
 
-    public ListAmplifierTypeEnum(StandardAmplifierConfig groupConfig, AmplifierGroup group) {
-        super(group.getName(), group.getLabel(), Integer.toString(group.getAmplifierGroupCode()), null);
-        this.typeName = groupConfig.getEnumType();
-        this.graphicLocation = groupConfig.getGraphicLocation();
-        this.enumId = groupConfig.getEnumId();
-        this.enumDesc = groupConfig.getEnumDesc();
-        this.coded = false;
-        this.frameAmplifier = groupConfig.isFrameAmplifier();
-        this.unknown = groupConfig.isUnknown();
-        this.symbolSets = group.getCompatibleSymbolSetIDs().stream().map(id -> (SymbolSetRef) id).map(SymbolSetRef::getID).toArray(size -> new String[size]);
-        this.standard = true;
-    }
-
-    public ListAmplifierTypeEnum(ListAmplifierConfig groupConfig, Values group) {
+    public ListAmplifierGroupEnum(ListAmplifierConfig groupConfig, Values group) {
         super(groupConfig.getEnumId(), group.getLabel(), groupConfig.getCode(), null);
         this.typeName = groupConfig.getEnumType();
         this.graphicLocation = "NA";
@@ -49,14 +37,31 @@ public class ListAmplifierTypeEnum extends StandardEnum {
         this.standard = false;
     }
 
+    public ListAmplifierGroupEnum(StandardAmplifierConfig groupConfig, AmplifierGroup group) {
+        super(group.getName(), group.getLabel(), Integer.toString(group.getAmplifierGroupCode()), null);
+        this.typeName = groupConfig.getEnumType();
+        this.graphicLocation = groupConfig.getGraphicLocation();
+        this.enumId = groupConfig.getEnumId();
+        this.enumDesc = groupConfig.getEnumDesc();
+        this.coded = false;
+        this.frameAmplifier = groupConfig.isFrameAmplifier();
+        this.unknown = groupConfig.isUnknown();
+        this.symbolSets = group.getCompatibleSymbolSetIDs().stream().map(id -> (SymbolSetRef) id).map(SymbolSetRef::getID).toArray(size -> new String[size]);
+        this.standard = true;
+    }
+
     public void addAmplifier(AmplifierGroup group, Amplifier amplifier) {
         if (!amplifier.getName().equals("EXTENSION")) {
-            values.add(new ListAmplifierEnum(group, amplifier));
+            values.add(new ListAmplifierElementEnum(group, amplifier));
         }
     }
 
     public void addAmplifier(Values.Value group) {
-        values.add(new ListAmplifierEnum(group));
+        values.add(new ListAmplifierElementEnum(group));
+    }
+
+    public String getAmplifierId() {
+        return amplifierId;
     }
 
     public String getEnumDesc() {
@@ -79,8 +84,17 @@ public class ListAmplifierTypeEnum extends StandardEnum {
         return typeName;
     }
 
-    public List<ListAmplifierEnum> getValues() {
+    public List<ListAmplifierElementEnum> getValues() {
         return values;
+    }
+
+    public boolean isCoded() {
+        return coded;
+    }
+
+    @Override
+    public boolean isExtension() {
+        return values.stream().anyMatch(ListAmplifierElementEnum::isExtension);
     }
 
     public boolean isFor(String symbolSetId) {
@@ -91,11 +105,6 @@ public class ListAmplifierTypeEnum extends StandardEnum {
         return frameAmplifier;
     }
 
-    @Override
-    public boolean isExtension() {
-        return values.stream().anyMatch(ListAmplifierEnum::isExtension);
-    }
-
     public boolean isStandard() {
         return standard;
     }
@@ -104,8 +113,8 @@ public class ListAmplifierTypeEnum extends StandardEnum {
         return unknown;
     }
 
-    public boolean isCoded() {
-        return coded;
+    public void setAmplifierId(String amplifierId) {
+        this.amplifierId = amplifierId;
     }
 
 }

@@ -4,7 +4,7 @@ import java.util.EnumSet;
 
 import ${basePackage}.IContext;
 import ${basePackage}.IHqtfDummy;
-import ${basePackage}.IListAmplifier;
+import ${basePackage}.IStandardAmplifierItem;
 import ${basePackage}.IStandardIdentity;
 import ${basePackage}.IStatus;
 import ${basePackage}.ISymbolSet;
@@ -23,10 +23,10 @@ public class Library {
     private static final ISymbolSet DEFAULT_SYMBOL_SET = SymbolSet.UNKNOWN;
     private static final IStatus DEFAULT_STATUS = Status.PRESENT;
     private static final IHqtfDummy DEFAULT_HQTF_DUMMY = HqtfDummy.NA;
-    private static final IListAmplifier DEFAULT_AMPLIFIER = UnknownAmplifier.NA;
+    private static final IStandardAmplifierItem DEFAULT_AMPLIFIER = UnknownAmplifier.NA;
     private static CountryCode extensionCountryCode = CountryCode.UNDEFINED;
 
-    public static IListAmplifier getDefaultAmplifier() {
+    public static IStandardAmplifierItem getDefaultAmplifier() {
         return DEFAULT_AMPLIFIER;
     }
 

@@ -13,55 +13,55 @@ import io.github.ctgnz.jmsfx.icon.SymbolSet;
 
 public class DimensionAdapter implements IDimension {
 
-    private final Dimension dimension;
+    private final Dimension model;
     private final List<SymbolSetAdapter> symbolSets;
 
     public DimensionAdapter(Dimension dimension) {
-        this.dimension = dimension;
+        this.model = dimension;
         this.symbolSets = Lists.transform(dimension.getSymbolSets(), symbol -> new SymbolSetAdapter((SymbolSet) symbol));
     }
 
     @Override
     public ISymbolSet getDefaultSymbolSet() {
-        return dimension.getDefaultSymbolSet();
+        return model.getDefaultSymbolSet();
     }
 
-    public Dimension getDimension() {
-        return dimension;
+    public Dimension getModel() {
+        return model;
     }
 
     @Override
     public String getFrameId() {
-        return dimension.getFrameId();
+        return model.getFrameId();
     }
 
     public GeometryType getGeometry() {
-        return dimension.getGeometryType();
+        return model.getGeometryType();
     }
 
     @Override
     public GeometryType getGeometryType() {
-        return dimension.getGeometryType();
+        return model.getGeometryType();
     }
 
     @Override
     public String getGraphicLocation() {
-        return dimension.getGraphicLocation();
+        return model.getGraphicLocation();
     }
 
     @Override
     public String getId() {
-        return dimension.getId();
+        return model.getId();
     }
 
     @Override
     public String getLabel() {
-        return dimension.getLabel();
+        return model.getLabel();
     }
 
     @Override
     public String getName() {
-        return dimension.name();
+        return model.name();
     }
 
     public List<SymbolSetAdapter> getSymbolSetAdapters() {

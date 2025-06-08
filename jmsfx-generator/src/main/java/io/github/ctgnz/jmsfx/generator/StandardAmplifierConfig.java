@@ -1,13 +1,13 @@
 package io.github.ctgnz.jmsfx.generator;
 
-import java.util.Arrays;
+import org.apache.commons.lang3.StringUtils;
 
 public class StandardAmplifierConfig {
     private String enumType;
     private String enumId;
     private String enumDesc;
     private String graphicLocation;
-    private String[] groupIds;
+    private String xmlId;
     private boolean standard = true;
     private boolean frameAmplifier;
     private boolean unknown;
@@ -28,16 +28,20 @@ public class StandardAmplifierConfig {
         return graphicLocation;
     }
 
-    public String[] getGroupIds() {
-        return groupIds;
+    public String getXmlId() {
+        return xmlId;
     }
 
     public boolean isForGroup(String name) {
-        return Arrays.stream(groupIds).anyMatch(group -> group.equals(name));
+        return StringUtils.equals(name, xmlId);
     }
 
     public boolean isFrameAmplifier() {
         return frameAmplifier;
+    }
+
+    public boolean isStandard() {
+        return standard;
     }
 
     public boolean isUnknown() {
@@ -64,19 +68,15 @@ public class StandardAmplifierConfig {
         this.graphicLocation = graphicLocation;
     }
 
-    public void setGroupIds(String[] groupIds) {
-        this.groupIds = groupIds;
+    public void setStandard(boolean standard) {
+        this.standard = standard;
     }
 
     public void setUnknown(boolean unknown) {
         this.unknown = unknown;
     }
 
-    public boolean isStandard() {
-        return standard;
-    }
-
-    public void setStandard(boolean standard) {
-        this.standard = standard;
+    public void setXmlId(String xmlId) {
+        this.xmlId = xmlId;
     }
 }

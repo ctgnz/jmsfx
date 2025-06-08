@@ -1,20 +1,25 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IStandardAmplifier;
-import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
+import io.github.ctgnz.jmsfx.IAmplifierList;
+import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierList;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum TowedArrayType implements IStandardAmplifier {
+public enum TowedArrayType implements IStandardAmplifierItem {
     SHORT_TOWED_ARRAY("1", "Short towed array"),
     LONG_TOWED_ARRAY("2", "Long towed array");
 
-    private static final ListAmplifierType TYPE = ListAmplifierType.TOWED_ARRAYS;
     private final String id;
     private final String label;
 
     TowedArrayType(String id, String label) {
         this.id = id;
         this.label = label;
+    }
+
+    @Override
+    public IAmplifierList getAmplifierList() {
+        return AmplifierList.TOWED_ARRAYS;
     }
 
     @Override
@@ -30,11 +35,6 @@ public enum TowedArrayType implements IStandardAmplifier {
     @Override
     public String getLabel() {
         return label;
-    }
-
-    @Override
-    public ListAmplifierType getType() {
-        return TYPE;
     }
 
     public boolean isDeprecated() {

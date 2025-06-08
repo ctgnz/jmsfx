@@ -1,20 +1,25 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IListAmplifier;
-import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
+import io.github.ctgnz.jmsfx.IAmplifierList;
+import io.github.ctgnz.jmsfx.IAmplifierListItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierList;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum PlatformType implements IListAmplifier {
+public enum PlatformType implements IAmplifierListItem {
     ELNOT("ELNOT", "Electronic Intelligence Notation"),
     CENOT("CENOT", "Communications Intelligence Notation");
 
-    private static final ListAmplifierType TYPE = ListAmplifierType.PLATFORM_TYPE;
     private final String id;
     private final String label;
 
     PlatformType(String id, String label) {
         this.id = id;
         this.label = label;
+    }
+
+    @Override
+    public IAmplifierList getAmplifierList() {
+        return AmplifierList.PLATFORM_TYPE;
     }
 
     @Override
@@ -30,11 +35,6 @@ public enum PlatformType implements IListAmplifier {
     @Override
     public String getLabel() {
         return label;
-    }
-
-    @Override
-    public ListAmplifierType getType() {
-        return TYPE;
     }
 
     public boolean isDeprecated() {

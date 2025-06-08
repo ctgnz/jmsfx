@@ -12,15 +12,15 @@ import nz.co.ctg.foxglove.FoxgloveParser;
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.IListAmplifier;
+import io.github.ctgnz.jmsfx.IAmplifierListItem;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.model.ListAmplifierValueAdapter;
+import io.github.ctgnz.jmsfx.icon.model.AmplifierListItemAdapter;
 import io.github.ctgnz.jmsfx.icon.model.SymbolSetAdapter;
 
-public abstract class IconRestController<E extends IEntity, T extends IEntityType, S extends IEntitySubType, M extends ISectorOneModifier, N extends ISectorTwoModifier, A extends IListAmplifier> {
+public abstract class IconRestController<E extends IEntity, T extends IEntityType, S extends IEntitySubType, M extends ISectorOneModifier, N extends ISectorTwoModifier, A extends IAmplifierListItem> {
     private SymbolSet symbolSet;
     private FoxgloveParser parser = new FoxgloveParser();
     private SymbolSetAdapter dto;
@@ -41,7 +41,7 @@ public abstract class IconRestController<E extends IEntity, T extends IEntityTyp
     }
 
     @GetMapping("/amplifier")
-    public List<ListAmplifierValueAdapter<A>> listAmplifiers() {
+    public List<AmplifierListItemAdapter<A>> listAmplifiers() {
         return Collections.emptyList();
     }
 

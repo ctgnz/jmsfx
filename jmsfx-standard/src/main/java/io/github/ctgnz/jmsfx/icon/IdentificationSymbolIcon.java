@@ -1,7 +1,7 @@
 package io.github.ctgnz.jmsfx.icon;
 
 import io.github.ctgnz.jmsfx.IAmplifier;
-import io.github.ctgnz.jmsfx.IListAmplifier;
+import io.github.ctgnz.jmsfx.IAmplifierListItem;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.MapChangeListener;
@@ -78,7 +78,7 @@ public class IdentificationSymbolIcon extends Pane {
                 container.getChildren().add(overlay);
             }
             if (symbol.isFrameAmplifierUsed()) {
-                IListAmplifier frameAmplifier = symbol.getFrameAmplifier();
+                IAmplifierListItem frameAmplifier = symbol.getFrameAmplifier();
                 replaceFill(frame, Color.web(frameAmplifier.getBackgroundFill()));
             }
         }

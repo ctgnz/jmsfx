@@ -8,9 +8,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.github.ctgnz.jmsfx.IAmplifier;
 import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IListAmplifier;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
+import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
 import io.github.ctgnz.jmsfx.ISymbolSet;
 import io.github.ctgnz.jmsfx.ISymbolSetInfo;
 import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
@@ -19,16 +19,16 @@ import io.github.ctgnz.jmsfx.icon.SymbolSet;
 
 public class SymbolSetAdapter implements ISymbolSet {
 
-    private final SymbolSet symbolSet;
+    private final SymbolSet model;
     private final List<IEntity> entities = new ArrayList<>();
     private final List<ISectorOneModifier> sectorOne = new ArrayList<>();
     private final List<ISectorTwoModifier> sectorTwo = new ArrayList<>();
-    private final List<ListAmplifierValueAdapter<?>> amplifier1 = new ArrayList<>();
-    private final List<ListAmplifierValueAdapter<?>> amplifier2 = new ArrayList<>();
-    private final List<ListAmplifierValueAdapter<?>> amplifier3 = new ArrayList<>();
+    private final List<AmplifierListItemAdapter<?>> amplifier1 = new ArrayList<>();
+    private final List<AmplifierListItemAdapter<?>> amplifier2 = new ArrayList<>();
+    private final List<AmplifierListItemAdapter<?>> amplifier3 = new ArrayList<>();
 
     public @JsonCreator SymbolSetAdapter(@JsonProperty("symbolSet") SymbolSet symbolSet) {
-        this.symbolSet = symbolSet;
+        this.model = symbolSet;
         ISymbolSetInfo symbolSetInfo = symbolSet.getSymbolSetInfo();
         this.entities.addAll(symbolSetInfo.getEntities().stream().map(EntityAdapter::new).toList());
         this.sectorOne.addAll(symbolSetInfo.getSectorOneModifiers().stream().map(SectorOneModifierAdapter::new).toList());
@@ -38,49 +38,54 @@ public class SymbolSetAdapter implements ISymbolSet {
         this.amplifier3.addAll(symbolSetInfo.getAmplifiersThree());
     }
 
-    public List<ListAmplifierValueAdapter<?>> getAmplifier1() {
+    public List<AmplifierListItemAdapter<?>> getAmplifier1() {
         return amplifier1;
     }
 
-    public List<ListAmplifierValueAdapter<?>> getAmplifier2() {
+    public List<AmplifierListItemAdapter<?>> getAmplifier2() {
         return amplifier2;
     }
 
-    public List<ListAmplifierValueAdapter<?>> getAmplifier3() {
+    public List<AmplifierListItemAdapter<?>> getAmplifier3() {
         return amplifier3;
     }
 
     @Override
     public AmplifierGuide getAmplifierGuide(IAmplifier amplifier) {
-        return symbolSet.getAmplifierGuide(amplifier);
+        return model.getAmplifierGuide(amplifier);
     }
 
     @Override
     public List<AmplifierGuide> getAmplifierGuides() {
-        return symbolSet.getAmplifierGuides();
+        return model.getAmplifierGuides();
     }
 
     public String getAmplifierGuideTemplateLocation() {
-        return String.format("/svg/Amplifier/%s.svg", symbolSet.getDimension().getName());
+        return String.format("/svg/Amplifier/%s.svg", model.getDimension().getName());
     }
 
     @Override
-    public <A extends IListAmplifier> List<A> getAmplifierThreeGroups() {
-        return symbolSet.getAmplifierThreeGroups();
+    public <A extends IStandardAmplifierItem> List<A> getAmplifierList() {
+        return model.getAmplifierList();
     }
 
     @Override
-    public <A extends IListAmplifier> List<A> getAmplifierTwoGroups() {
-        return symbolSet.getAmplifierTwoGroups();
+    public <A extends IStandardAmplifierItem> List<A> getAmplifierListThree() {
+        return model.getAmplifierListThree();
+    }
+
+    @Override
+    public <A extends IStandardAmplifierItem> List<A> getAmplifierListTwo() {
+        return model.getAmplifierListTwo();
     }
 
     @Override
     public Dimension getDimension() {
-        return symbolSet.getDimension();
+        return model.getDimension();
     }
 
     public String getDimensionId() {
-        return symbolSet.getDimension().getId();
+        return model.getDimension().getId();
     }
 
     @Override
@@ -89,37 +94,36 @@ public class SymbolSetAdapter implements ISymbolSet {
     }
 
     @Override
-    public String getFrameId() {
-        return symbolSet.getFrameId();
+    public <A extends IStandardAmplifierItem> List<A> getFrameAmplifierList() {
+        return model.getFrameAmplifierList();
     }
 
     @Override
-    public <A extends IListAmplifier> List<A> getFrameListAmplifiers() {
-        return symbolSet.getFrameListAmplifiers();
+    public String getFrameId() {
+        return model.getFrameId();
     }
 
     public String getFrameLocation(StandardIdentityAdapter identity, StatusAdapter status, boolean civilianEntity) {
-        return String.format("/svg/Frames/0_%s%s_%s%s.svg", identity.getId(), symbolSet.getFrameId(), status.getFrameId(identity), civilianEntity ? "c" : "");
+        return String.format("/svg/Frames/0_%s%s_%s%s.svg", identity.getId(), model.getFrameId(), status.getFrameId(identity), civilianEntity ? "c" : "");
     }
 
     @Override
     public String getGraphicLocation() {
-        return symbolSet.getGraphicLocation();
+        return model.getGraphicLocation();
     }
 
     @Override
     public String getId() {
-        return symbolSet.name();
+        return model.name();
     }
 
     @Override
     public String getLabel() {
-        return symbolSet.getLabel();
+        return model.getLabel();
     }
 
-    @Override
-    public <A extends IListAmplifier> List<A> getListAmplifiers() {
-        return symbolSet.getListAmplifiers();
+    public SymbolSet getModel() {
+        return model;
     }
 
     public String getPath() {
@@ -136,21 +140,17 @@ public class SymbolSetAdapter implements ISymbolSet {
         return sectorTwo;
     }
 
-    public SymbolSet getSymbolSet() {
-        return symbolSet;
-    }
-
     @Override
     public ISymbolSetInfo getSymbolSetInfo() {
-        return symbolSet.getSymbolSetInfo();
+        return model.getSymbolSetInfo();
     }
 
     public boolean isAmplifierGuidesPresent() {
-        return !symbolSet.getSymbolSetInfo().getAmplifierGuides().isEmpty();
+        return !model.getSymbolSetInfo().getAmplifierGuides().isEmpty();
     }
 
     public boolean isFramedIcon() {
-        return symbolSet.getSymbolSetInfo().isFramedIcon();
+        return model.getSymbolSetInfo().isFramedIcon();
     }
 
 }

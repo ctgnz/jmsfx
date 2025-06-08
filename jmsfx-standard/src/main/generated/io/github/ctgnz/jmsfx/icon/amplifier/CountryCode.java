@@ -1,10 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IListAmplifier;
-import io.github.ctgnz.jmsfx.icon.ListAmplifierType;
+import io.github.ctgnz.jmsfx.IAmplifierList;
+import io.github.ctgnz.jmsfx.IAmplifierListItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierList;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum CountryCode implements IListAmplifier {
+public enum CountryCode implements IAmplifierListItem {
     UNDEFINED("UNDEFINED", "Undefined", "000"),
     AF("AFG", "Afghanistan", "004"),
     AL("ALB", "Albania", "008"),
@@ -318,7 +319,6 @@ public enum CountryCode implements IListAmplifier {
     @Extension HB("HBV", "Kingdom of Bavaria", "996"),
     @Extension HP("HPR", "Kingdom of Prussia", "997");
 
-    private static final ListAmplifierType TYPE = ListAmplifierType.COUNTRY_CODE;
     private final String id;
     private final String label;
     private final String code;
@@ -327,6 +327,11 @@ public enum CountryCode implements IListAmplifier {
         this.id = id;
         this.label = label;
         this.code = code;
+    }
+
+    @Override
+    public IAmplifierList getAmplifierList() {
+        return AmplifierList.COUNTRY_CODE;
     }
 
     @Override
@@ -342,11 +347,6 @@ public enum CountryCode implements IListAmplifier {
     @Override
     public String getLabel() {
         return label;
-    }
-
-    @Override
-    public ListAmplifierType getType() {
-        return TYPE;
     }
 
     public String getCode() {

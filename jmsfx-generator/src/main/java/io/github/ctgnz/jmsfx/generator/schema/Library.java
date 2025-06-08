@@ -524,6 +524,8 @@ public class Library {
             protected boolean extension;
             @XmlAttribute(name = "Deprecated")
             protected boolean deprecated;
+            @XmlAttribute(name = "AmplifierGroup")
+            protected String amplifierGroup;
             @XmlElement(name = "Description")
             protected String description;
             @XmlElement(name = "Remarks")
@@ -630,6 +632,14 @@ public class Library {
 
             public void setType(AmplifierType value) {
                 this.type = value;
+            }
+
+            public String getAmplifierGroup() {
+                return amplifierGroup;
+            }
+
+            public void setAmplifierGroup(String amplifierGroup) {
+                this.amplifierGroup = amplifierGroup;
             }
 
         }

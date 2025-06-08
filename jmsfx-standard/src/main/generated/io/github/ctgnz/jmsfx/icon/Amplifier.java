@@ -15,7 +15,7 @@ public enum Amplifier implements IAmplifier {
     K_CombatEffectiveness("K", "Combat Effectiveness", AmplifierType.LIST, 2, 3, "A text amplifier for units and installations that indicates unit effectiveness or installation capability."),
     L_SignatureEquipment("L", "Signature Equipment", AmplifierType.ALPHANUMERIC, 1, 1, "A text amplifier for hostile equipment, '!' indicates detectable electronic signatures."),
     M_HigherFormation("M", "Higher Formation", AmplifierType.ALPHANUMERIC, 1, 21, "A text amplifier for units that indicates number or title of higher echelon command (corps are designated by Roman numerals)."),
-    N_HostileEnemy("N", "Hostile (Enemy)", AmplifierType.GRAPHIC, "A text amplifier for equipment, letters 'ENY' denote hostile symbols."),
+    N_HostileEnemy("N", "Hostile (Enemy)", AmplifierType.ALPHA, "A text amplifier for equipment, letters 'ENY' denote hostile symbols."),
     P_IffSifAis("P", "IFF/SIF/AIS", AmplifierType.ALPHANUMERIC, 8, 17, "A text amplifier displaying IFF/SIF/AIS identification modes and codes."),
     Q_DirectionOfMovementIndicator("Q", "Direction of Movement Indicator", AmplifierType.GRAPHIC, "A graphic amplifier for units and equipment that identifies the direction of movement or intended movement of an object."),
     R_MobilityIndicator("R", "Mobility Indicator", AmplifierType.GRAPHIC, "A graphic amplifier for units and equipment that identifies the direction of movement or intended movement of an object."),

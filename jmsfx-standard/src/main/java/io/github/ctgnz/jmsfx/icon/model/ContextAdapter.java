@@ -5,32 +5,32 @@ import io.github.ctgnz.jmsfx.icon.Context;
 
 public class ContextAdapter implements IContext {
 
-    private final Context context;
+    private final Context model;
 
     public ContextAdapter(Context context) {
-        this.context = context;
-    }
-
-    public Context getContext() {
-        return context;
+        this.model = context;
     }
 
     @Override
     public String getId() {
-        return context.getId();
+        return model.getId();
     }
 
     @Override
     public String getLabel() {
-        return context.getLabel();
+        return model.getLabel();
     }
 
-    public boolean isReality() {
-        return context == Context.REALITY;
+    public Context getModel() {
+        return model;
     }
 
     public String getOverlayGraphicLocation() {
-        return String.format("/svg/Frames/Overlay/%s.svg", context.getId());
+        return String.format("/svg/Frames/Overlay/%s.svg", model.getId());
+    }
+
+    public boolean isReality() {
+        return model == Context.REALITY;
     }
 
 }
