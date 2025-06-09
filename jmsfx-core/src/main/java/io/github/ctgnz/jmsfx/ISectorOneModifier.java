@@ -6,8 +6,6 @@ public interface ISectorOneModifier extends IModifierElement {
 
     Comparator<ISectorOneModifier> VIEW_ORDER = Comparator.comparing(ISectorOneModifier::getCategory).thenComparing(ISectorOneModifier::getLabel);
 
-    String getCategory();
-
     default String getFullGraphicLocation() {
         return String.format("/svg/Appendices/%s/mod1/%s.svg", getGraphicLocation(), getGraphicIdentifier());
     }

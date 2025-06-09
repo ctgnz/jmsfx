@@ -47,11 +47,6 @@ public class StandardIdentityGroupAdapter extends CodeElementAdapter implements 
         return StringUtils.equals(id.getGroupId(), getId());
     }
 
-    @Override
-    public String toString() {
-        return getLabel();
-    }
-
     protected StandardIdentityAdapter createIdentityAdapter(StandardIdentity id) {
         return new StandardIdentityAdapter(id, this);
     }

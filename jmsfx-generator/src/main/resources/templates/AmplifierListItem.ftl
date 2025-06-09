@@ -1,11 +1,11 @@
 package ${iconPackage}.amplifier;
 
 import ${basePackage}.IAmplifierList;
-import ${basePackage}.<#if amplifier.standard>IStandardAmplifierItem<#else>IAmplifierListItem</#if>;
+import ${basePackage}.<#if amplifier.standard>IStandardAmplifierItem<#elseif amplifier.country>ICountryCode<#else>IAmplifierListItem</#if>;
 import ${iconPackage}.AmplifierList;
 import ${iconPackage}.Extension;
 
-public enum ${amplifier.typeName} implements <#if amplifier.standard>IStandardAmplifierItem<#else>IAmplifierListItem</#if> {
+public enum ${amplifier.typeName} implements <#if amplifier.standard>IStandardAmplifierItem<#elseif amplifier.country>ICountryCode<#else>IAmplifierListItem</#if> {
 <#list amplifier.values as val>
     <#if val.extension>@Extension </#if>${val.id}("${val.code}", "${val.label}"<#if val.remarks??>, "${val.remarks}"</#if><#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#sep>,
 </#list>;

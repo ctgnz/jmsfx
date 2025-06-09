@@ -92,4 +92,9 @@ public enum AmplifierList implements IAmplifierList {
         return (Class<A>) valueClass;
     }
 
+    @Override
+    public boolean isUnknown() {
+        return this == UNKNOWN;
+    }
+
 }

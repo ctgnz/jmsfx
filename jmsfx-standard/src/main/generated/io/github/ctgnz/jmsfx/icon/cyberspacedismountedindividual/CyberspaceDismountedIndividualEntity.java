@@ -51,7 +51,7 @@ public enum CyberspaceDismountedIndividualEntity implements IEntity {
 
     @Override
     public List<IEntityType> getEntityTypes() {
-        return CyberspaceDismountedIndividualSymbolSetInfo.INSTANCE.getEntityTypes(this);
+        return CyberspaceDismountedIndividualSymbolSet.INSTANCE.getEntityTypes(this);
     }
 
     @Override

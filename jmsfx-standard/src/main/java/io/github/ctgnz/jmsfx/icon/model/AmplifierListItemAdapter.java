@@ -18,11 +18,12 @@ public class AmplifierListItemAdapter<A extends IAmplifierListItem> extends Code
     public AmplifierListItemAdapter() {
     }
 
-    public AmplifierListItemAdapter(A amplifier) {
-        super(amplifier);
-        this.fullId.set(amplifier.getFullId());
-        this.graphicLocation.set(amplifier.getGraphicLocation());
-        this.graphicalIcon.set(amplifier.isGraphicalIcon());
+    public AmplifierListItemAdapter(A amplifierList) {
+        super(amplifierList);
+        this.amplifierList.set(amplifierList.getAmplifierList());
+        this.fullId.set(amplifierList.getFullId());
+        this.graphicLocation.set(amplifierList.getGraphicLocation());
+        this.graphicalIcon.set(amplifierList.isGraphicalIcon());
     }
 
     public ObjectProperty<IAmplifierList> amplifierListProperty() {

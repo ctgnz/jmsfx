@@ -17,7 +17,7 @@ public class ContextAdapter extends CodeElementAdapter implements IContext {
 
     public ContextAdapter(Context context) {
         super(context);
-        this.overlayGraphicLocation.set(String.format("/svg/Frames/Overlay/%s.svg", context.getId()));
+        this.overlayGraphicLocation.set(context.getOverlayGraphicLocation());
         this.reality.set(context.isReality());
     }
 
@@ -37,11 +37,6 @@ public class ContextAdapter extends CodeElementAdapter implements IContext {
 
     public BooleanProperty realityProperty() {
         return reality;
-    }
-
-    @Override
-    public String toString() {
-        return getLabel();
     }
 
 }

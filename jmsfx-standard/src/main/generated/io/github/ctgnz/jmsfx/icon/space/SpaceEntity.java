@@ -46,7 +46,7 @@ public enum SpaceEntity implements IEntity {
 
     @Override
     public List<IEntityType> getEntityTypes() {
-        return SpaceSymbolSetInfo.INSTANCE.getEntityTypes(this);
+        return SpaceSymbolSet.INSTANCE.getEntityTypes(this);
     }
 
     @Override

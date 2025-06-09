@@ -47,7 +47,7 @@ public enum DismountedIndividualEntityType implements IEntityType {
 
     @Override
     public List<IEntitySubType> getEntitySubTypes() {
-        return DismountedIndividualSymbolSetInfo.INSTANCE.getEntitySubTypes(this);
+        return DismountedIndividualSymbolSet.INSTANCE.getEntitySubTypes(this);
     }
 
 }

@@ -26,13 +26,13 @@ import ${iconPackage}.amplifier.${symbolSet.amplifierThreeClass};</#if><#if symb
 import ${iconPackage}.amplifier.${symbolSet.amplifierTwoClass};</#if><#if symbolSet.frameAmplifierPresent>
 import ${iconPackage}.amplifier.${symbolSet.frameAmplifierClass};</#if>
 
-public class ${symbolSet.baseTypeName}SymbolSetInfo implements ISymbolSetInfo {
-    public static final ISymbolSetInfo INSTANCE = new ${symbolSet.baseTypeName}SymbolSetInfo();
+public class ${symbolSet.baseTypeName}SymbolSet implements ISymbolSetInfo {
+    public static final ISymbolSetInfo INSTANCE = new ${symbolSet.baseTypeName}SymbolSet();
     private static final List<IEntity> ENTITIES = Arrays.asList(${symbolSet.baseTypeName}Entity.values());<#if symbolSet.entityTypePresent>
     private static final Multimap<IEntity, IEntityType> ENTITY_TYPES = Multimaps.index(Arrays.asList(${symbolSet.baseTypeName}EntityType.values()), IEntityType::getEntity);</#if><#if symbolSet.entitySubTypePresent>
     private static final Multimap<IEntityType, IEntitySubType> ENTITY_SUB_TYPES = Multimaps.index(Arrays.asList(${symbolSet.baseTypeName}EntitySubType.values()), IEntitySubType::getEntityType);</#if>
 
-    private ${symbolSet.baseTypeName}SymbolSetInfo() {
+    private ${symbolSet.baseTypeName}SymbolSet() {
     }
 
     @Override

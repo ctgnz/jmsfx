@@ -47,7 +47,7 @@ public enum AirEntity implements IEntity {
 
     @Override
     public List<IEntityType> getEntityTypes() {
-        return AirSymbolSetInfo.INSTANCE.getEntityTypes(this);
+        return AirSymbolSet.INSTANCE.getEntityTypes(this);
     }
 
     @Override

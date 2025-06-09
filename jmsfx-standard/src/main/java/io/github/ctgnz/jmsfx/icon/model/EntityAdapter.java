@@ -12,6 +12,7 @@ import javafx.collections.ObservableList;
 
 public class EntityAdapter extends MainIconAdapter implements IEntity {
     private final ObjectProperty<ISymbolSet> symbolSet = new SimpleObjectProperty<>();
+    private final ObjectProperty<ISymbolSet> baseSymbolSet = new SimpleObjectProperty<>();
     private final ObservableList<IEntityType> entityTypes = FXCollections.observableArrayList();
 
     public EntityAdapter() {
@@ -19,6 +20,8 @@ public class EntityAdapter extends MainIconAdapter implements IEntity {
 
     public EntityAdapter(IEntity entity) {
         super(entity);
+        this.symbolSet.set(entity.getSymbolSet());
+        this.baseSymbolSet.set(entity.getBaseSymbolSet());
         this.graphicType.set(entity.getGraphicType());
         this.unknown.set(entity.isUnknown());
         this.entityTypes.addAll(entity.getEntityTypes().stream().map(this::adaptEntityType).toList());
@@ -32,6 +35,11 @@ public class EntityAdapter extends MainIconAdapter implements IEntity {
     @Override
     public List<IEntityType> getEntityTypes() {
         return entityTypes;
+    }
+
+    @Override
+    public ISymbolSet getBaseSymbolSet() {
+        return baseSymbolSet.get();
     }
 
     @Override

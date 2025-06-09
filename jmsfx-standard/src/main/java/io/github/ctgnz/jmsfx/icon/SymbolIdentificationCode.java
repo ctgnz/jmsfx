@@ -12,6 +12,7 @@ import static java.util.stream.Collectors.toList;
 import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
 import io.github.ctgnz.jmsfx.IContext;
+import io.github.ctgnz.jmsfx.ICountryCode;
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
@@ -23,141 +24,8 @@ import io.github.ctgnz.jmsfx.IStandardIdentity;
 import io.github.ctgnz.jmsfx.IStatus;
 import io.github.ctgnz.jmsfx.ISymbolSet;
 import io.github.ctgnz.jmsfx.IVersion;
-import io.github.ctgnz.jmsfx.icon.amplifier.CountryCode;
-import io.github.ctgnz.jmsfx.icon.common.CommonSectorOneModifier;
-import io.github.ctgnz.jmsfx.icon.common.CommonSectorTwoModifier;
-import io.github.ctgnz.jmsfx.icon.common.CommonSymbolSetInfo;
 
 public class SymbolIdentificationCode {
-
-    public static final class Builder {
-        private IVersion version = Library.getDefaultVersion();
-        private IContext context = Library.getDefaultContext();
-        private IStandardIdentity standardId = Library.getDefaultStandardIdentity();
-        private ISymbolSet symbolSet = Library.getDefaultSymbolSet();
-        private IStatus status = Library.getDefaultStatus();
-        private IHqtfDummy hqtfDummy = Library.getDefaultHqtfDummy();
-        private IStandardAmplifierItem amplifier = Library.getDefaultAmplifier();
-        private IStandardAmplifierItem amplifier2 = Library.getDefaultAmplifier();
-        private IStandardAmplifierItem amplifier3 = Library.getDefaultAmplifier();
-        private IStandardAmplifierItem frameAmplifier = Library.getDefaultAmplifier();
-        private CountryCode countryCode = Library.getExtensionCountryCode();
-        private IEntity entity;
-        private IEntityType entityType;
-        private IEntitySubType entitySubType;
-        private ISectorOneModifier sectorOneModifier;
-        private ISectorTwoModifier sectorTwoModifier;
-
-        public Builder(ISymbolSet symbolSet) {
-            this.symbolSet = symbolSet;
-            this.entity = symbolSet.getEntities().get(0);
-        }
-
-        public SymbolIdentificationCode build() {
-            SymbolIdentificationCode code = new SymbolIdentificationCode();
-            code.setVersion(version);
-            code.setContext(context);
-            code.setStandardIdentity(standardId);
-            code.setSymbolSet(symbolSet);
-            code.setStatus(status);
-            code.setHqtfDummy(hqtfDummy);
-            code.setAmplifier(amplifier);
-            code.setAmplifierTwo(amplifier2);
-            code.setAmplifierThree(amplifier3);
-            code.setFrameAmplifier(frameAmplifier);
-            code.setCountryCode(countryCode);
-            code.setEntity(entity);
-            code.setEntityType(entityType);
-            code.setEntitySubType(entitySubType);
-            code.setSectorOneModifier(sectorOneModifier);
-            code.setSectorTwoModifier(sectorTwoModifier);
-            return code;
-        }
-
-        public Builder with(IVersion version) {
-            this.version = version;
-            return this;
-        }
-
-        public Builder with(IContext context) {
-            this.context = context;
-            return this;
-        }
-
-        public Builder with(IStandardIdentity standardId) {
-            this.standardId = standardId;
-            return this;
-        }
-
-        public Builder with(IStatus status) {
-            this.status = status;
-            return this;
-        }
-
-        public Builder with(IHqtfDummy hqtfDummy) {
-            this.hqtfDummy = hqtfDummy;
-            return this;
-        }
-
-        public Builder with(CountryCode countryCode) {
-            this.countryCode = countryCode;
-            return this;
-        }
-
-        public Builder amplifier(IStandardAmplifierItem amplifier) {
-            this.amplifier = amplifier;
-            return this;
-        }
-
-        public Builder amplifier2(IStandardAmplifierItem amplifier2) {
-            this.amplifier2 = amplifier2;
-            return this;
-        }
-
-        public Builder amplifier3(IStandardAmplifierItem amplifier3) {
-            this.amplifier3 = amplifier3;
-            return this;
-        }
-
-        public Builder frameAmplifier(IStandardAmplifierItem frameAmplifier) {
-            this.frameAmplifier = frameAmplifier;
-            return this;
-        }
-
-        public Builder entity(IEntity entity) {
-            this.entity = entity;
-            return this;
-        }
-
-        public Builder entityType(IEntityType entityType) {
-            this.entityType = entityType;
-            return this;
-        }
-
-        public Builder entitySubType(IEntitySubType entitySubType) {
-            this.entitySubType = entitySubType;
-            return this;
-        }
-
-        public Builder sectorOneModifier(ISectorOneModifier sectorOneModifier) {
-            this.sectorOneModifier = sectorOneModifier;
-            return this;
-        }
-
-        public Builder sectorTwoModifier(ISectorTwoModifier sectorTwoModifier) {
-            this.sectorTwoModifier = sectorTwoModifier;
-            return this;
-        }
-
-    }
-
-    public static Builder builder() {
-        return new Builder(Library.getDefaultSymbolSet());
-    }
-
-    public static Builder builder(ISymbolSet symbolSet) {
-        return new Builder(symbolSet);
-    }
 
     private IVersion version;
     private IContext context;
@@ -174,7 +42,7 @@ public class SymbolIdentificationCode {
     private IEntitySubType entitySubType;
     private ISectorOneModifier sectorOneModifier;
     private ISectorTwoModifier sectorTwoModifier;
-    private CountryCode countryCode = Library.getExtensionCountryCode();
+    private ICountryCode countryCode = Library.getExtensionCountryCode();
     private final PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
 
     protected SymbolIdentificationCode() {
@@ -192,7 +60,7 @@ public class SymbolIdentificationCode {
         return amplifierThree;
     }
 
-    public List<IStandardAmplifierItem> getAmplifierThreeGroups() {
+    public List<IStandardAmplifierItem> getAmplifierThreeItems() {
         List<IStandardAmplifierItem> listAmplifiers = symbolSet.getAmplifierListThree();
         return Stream.concat(Stream.of(Library.getDefaultAmplifier()), listAmplifiers.stream()).collect(toList());
     }
@@ -201,7 +69,7 @@ public class SymbolIdentificationCode {
         return amplifierTwo;
     }
 
-    public List<IStandardAmplifierItem> getAmplifierTwoGroups() {
+    public List<IStandardAmplifierItem> getAmplifierTwoItems() {
         List<IStandardAmplifierItem> listAmplifiers = symbolSet.getAmplifierListTwo();
         return Stream.concat(Stream.of(Library.getDefaultAmplifier()), listAmplifiers.stream()).collect(toList());
     }
@@ -210,7 +78,7 @@ public class SymbolIdentificationCode {
         return context;
     }
 
-    public CountryCode getCountryCode() {
+    public ICountryCode getCountryCode() {
         return defaultIfNull(countryCode, Library.getExtensionCountryCode());
     }
 
@@ -308,14 +176,7 @@ public class SymbolIdentificationCode {
     }
 
     public List<ISectorOneModifier> getSectorOneModifiers() {
-        return Stream.concat(symbolSet.getSectorOneModifiers().stream(), CommonSymbolSetInfo.INSTANCE.getSectorOneModifiers().stream()).toList();
-    }
-
-    public String getSectorOneModifierType() {
-        if (getSectorOneModifier() instanceof CommonSectorOneModifier commonMod) {
-            return commonMod.getGroupId();
-        }
-        return "0";
+        return symbolSet.getSectorOneModifiers();
     }
 
     public ISectorTwoModifier getSectorTwoModifier() {
@@ -323,14 +184,7 @@ public class SymbolIdentificationCode {
     }
 
     public List<ISectorTwoModifier> getSectorTwoModifiers() {
-        return Stream.concat(symbolSet.getSectorTwoModifiers().stream(), CommonSymbolSetInfo.INSTANCE.getSectorTwoModifiers().stream()).toList();
-    }
-
-    public String getSectorTwoModifierType() {
-        if (getSectorTwoModifier() instanceof CommonSectorTwoModifier commonMod) {
-            return commonMod.getGroupId();
-        }
-        return "0";
+        return symbolSet.getSectorTwoModifiers();
     }
 
     public IStandardIdentity getStandardIdentity() {
@@ -347,8 +201,8 @@ public class SymbolIdentificationCode {
 
     public String getThirdTenDigits() {
         return String.format("%s%s%s%s%s%s",
-                             getSectorOneModifierType(),
-                             getSectorTwoModifierType(),
+                             getSectorOneModifier() != null ? getSectorOneModifier().getGroupId() : "0",
+                             getSectorTwoModifier() != null ? getSectorTwoModifier().getGroupId() : "0",
                              amplifierTwo != null ? amplifierTwo.getFullId() : "00",
                              amplifierThree != null ? amplifierThree.getFullId() : "00",
                              frameAmplifier != null ? frameAmplifier.getId() : "0",
@@ -387,8 +241,8 @@ public class SymbolIdentificationCode {
         changeSupport.firePropertyChange("context", oldValue, this.context);
     }
 
-    public void setCountryCode(CountryCode countryCode) {
-        CountryCode oldValue = this.countryCode;
+    public void setCountryCode(ICountryCode countryCode) {
+        ICountryCode oldValue = this.countryCode;
         this.countryCode = defaultIfNull(countryCode, Library.getExtensionCountryCode());
         changeSupport.firePropertyChange("countryCode", oldValue, this.countryCode);
     }
@@ -482,7 +336,7 @@ public class SymbolIdentificationCode {
     }
 
     private IEntity getDefaultEntity() {
-        return symbolSet.getEntities().get(0);
+        return symbolSet.getEntities().getFirst();
     }
 
     private ISectorOneModifier getDefaultSectorOneModifier() {

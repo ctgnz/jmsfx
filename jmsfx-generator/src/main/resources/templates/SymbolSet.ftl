@@ -2,8 +2,6 @@ package ${iconPackage};
 
 import java.util.List;
 
-import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
-
 import ${basePackage}.IAmplifier;
 import ${basePackage}.IAmplifierGuide;
 import ${basePackage}.IEntity;
@@ -13,14 +11,14 @@ import ${basePackage}.IStandardAmplifierItem;
 import ${basePackage}.ISymbolSet;
 import ${basePackage}.ISymbolSetInfo;
 <#list symbolSets as sym>
-import ${iconPackage}.${sym.packageName}.${sym.baseTypeName}SymbolSetInfo;
+import ${iconPackage}.${sym.packageName}.${sym.baseTypeName}SymbolSet;
 </#list>
-import ${commonPackage}.CommonSymbolSetInfo;
+import ${commonPackage}.CommonSymbolSet;
 
 public enum SymbolSet implements ISymbolSet {
-    COMMON("C", "Common", Dimension.INTERNAL, "Common", CommonSymbolSetInfo.INSTANCE),
+    COMMON("C", "Common", Dimension.INTERNAL, "Common", CommonSymbolSet.INSTANCE),
 <#list symbolSets as sym>
-    ${sym.id}("${sym.code}", "${sym.label}", Dimension.${sym.dimensionId}, <#if sym.graphicLocation??>"${sym.graphicLocation}", <#else>null, </#if>${sym.baseTypeName}SymbolSetInfo.INSTANCE)<#sep>,
+    ${sym.id}("${sym.code}", "${sym.label}", Dimension.${sym.dimensionId}, <#if sym.graphicLocation??>"${sym.graphicLocation}", </#if>${sym.baseTypeName}SymbolSet.INSTANCE)<#sep>,
 </#list>;
 
     private final String id;
@@ -29,6 +27,10 @@ public enum SymbolSet implements ISymbolSet {
     private final String graphicLocation;
     private final ISymbolSetInfo symbolSetInfo;
 
+    SymbolSet(String id, String label, Dimension dimension, ISymbolSetInfo symbolSetInfo) {
+        this(id, label, dimension, dimension.getGraphicLocation(), symbolSetInfo);
+    }
+    
     SymbolSet(String id, String label, Dimension dimension, String graphicLocation, ISymbolSetInfo symbolSetInfo) {
         this.id = id;
         this.label = label;
@@ -84,7 +86,7 @@ public enum SymbolSet implements ISymbolSet {
 
     @Override
     public String getGraphicLocation() {
-        return defaultIfNull(graphicLocation, dimension.getGraphicLocation());
+        return graphicLocation;
     }
 
     @Override

@@ -50,7 +50,7 @@ public enum SeaSurfaceEntity implements IEntity {
 
     @Override
     public List<IEntityType> getEntityTypes() {
-        return SeaSurfaceSymbolSetInfo.INSTANCE.getEntityTypes(this);
+        return SeaSurfaceSymbolSet.INSTANCE.getEntityTypes(this);
     }
 
     @Override

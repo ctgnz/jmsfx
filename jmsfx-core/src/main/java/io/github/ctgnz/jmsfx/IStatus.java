@@ -1,7 +1,6 @@
 package io.github.ctgnz.jmsfx;
 
 import java.util.List;
-import java.util.Objects;
 
 public interface IStatus extends ICodeElement {
 
@@ -24,7 +23,7 @@ public interface IStatus extends ICodeElement {
     }
 
     default boolean isSupported(ISymbolSet symbolSet) {
-        return getDimensionIds().stream().anyMatch(dim -> Objects.equals(dim, symbolSet.getDimension().getName()));
+        return getDimensionIds().isEmpty() || getDimensionIds().contains(symbolSet.getDimension().getName());
     }
 
 }

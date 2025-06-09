@@ -19,6 +19,7 @@ public class ListAmplifierGroupEnum extends StandardEnum {
     private final String enumId;
     private final String enumDesc;
     private final boolean standard;
+    private final boolean country;
     private final boolean coded;
     private final boolean frameAmplifier;
     private final boolean unknown;
@@ -35,6 +36,7 @@ public class ListAmplifierGroupEnum extends StandardEnum {
         this.unknown = false;
         this.symbolSets = new String[0];
         this.standard = false;
+        this.country = "CountryCode".equals(groupConfig.getEnumType());
     }
 
     public ListAmplifierGroupEnum(StandardAmplifierConfig groupConfig, AmplifierGroup group) {
@@ -48,6 +50,7 @@ public class ListAmplifierGroupEnum extends StandardEnum {
         this.unknown = groupConfig.isUnknown();
         this.symbolSets = group.getCompatibleSymbolSetIDs().stream().map(id -> (SymbolSetRef) id).map(SymbolSetRef::getID).toArray(size -> new String[size]);
         this.standard = true;
+        this.country = false;
     }
 
     public void addAmplifier(AmplifierGroup group, Amplifier amplifier) {
@@ -115,6 +118,10 @@ public class ListAmplifierGroupEnum extends StandardEnum {
 
     public void setAmplifierId(String amplifierId) {
         this.amplifierId = amplifierId;
+    }
+
+    public boolean isCountry() {
+        return country;
     }
 
 }

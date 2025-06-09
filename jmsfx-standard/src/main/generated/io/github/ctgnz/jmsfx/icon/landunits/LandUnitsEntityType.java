@@ -177,7 +177,7 @@ public enum LandUnitsEntityType implements IEntityType {
 
     @Override
     public List<IEntitySubType> getEntitySubTypes() {
-        return LandUnitsSymbolSetInfo.INSTANCE.getEntitySubTypes(this);
+        return LandUnitsSymbolSet.INSTANCE.getEntitySubTypes(this);
     }
 
 }

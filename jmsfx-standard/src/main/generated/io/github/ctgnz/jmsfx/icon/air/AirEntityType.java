@@ -59,7 +59,7 @@ public enum AirEntityType implements IEntityType {
 
     @Override
     public List<IEntitySubType> getEntitySubTypes() {
-        return AirSymbolSetInfo.INSTANCE.getEntitySubTypes(this);
+        return AirSymbolSet.INSTANCE.getEntitySubTypes(this);
     }
 
 }

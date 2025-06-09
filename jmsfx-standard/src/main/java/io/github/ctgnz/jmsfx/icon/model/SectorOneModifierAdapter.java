@@ -67,4 +67,8 @@ public class SectorOneModifierAdapter extends CodeElementAdapter implements ISec
         return unknown;
     }
 
+    protected void setSymbolSet(SymbolSetAdapter symbolSet) {
+        this.symbolSet.set(symbolSet);
+    }
+
 }

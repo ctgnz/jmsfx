@@ -12,9 +12,4 @@ public class VersionAdapter extends CodeElementAdapter implements IVersion {
         super(version);
     }
 
-    @Override
-    public String toString() {
-        return getLabel();
-    }
-
 }

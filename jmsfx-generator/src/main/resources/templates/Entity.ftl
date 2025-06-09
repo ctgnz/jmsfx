@@ -62,7 +62,7 @@ public enum ${symbolSet.baseTypeName}Entity implements IEntity {
 
     @Override
     public List<IEntityType> getEntityTypes() {
-        return ${symbolSet.baseTypeName}SymbolSetInfo.INSTANCE.getEntityTypes(this);
+        return ${symbolSet.baseTypeName}SymbolSet.INSTANCE.getEntityTypes(this);
     }
 </#if>
 

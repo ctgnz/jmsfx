@@ -51,7 +51,7 @@ public enum CyberspaceSeaSurfaceEntity implements IEntity {
 
     @Override
     public List<IEntityType> getEntityTypes() {
-        return CyberspaceSeaSurfaceSymbolSetInfo.INSTANCE.getEntityTypes(this);
+        return CyberspaceSeaSurfaceSymbolSet.INSTANCE.getEntityTypes(this);
     }
 
     @Override

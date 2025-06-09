@@ -56,7 +56,7 @@ public enum ${symbolSet.baseTypeName}EntityType implements IEntityType {
 
     @Override
     public List<IEntitySubType> getEntitySubTypes() {
-        return ${symbolSet.baseTypeName}SymbolSetInfo.INSTANCE.getEntitySubTypes(this);
+        return ${symbolSet.baseTypeName}SymbolSet.INSTANCE.getEntitySubTypes(this);
     }
 </#if>
 

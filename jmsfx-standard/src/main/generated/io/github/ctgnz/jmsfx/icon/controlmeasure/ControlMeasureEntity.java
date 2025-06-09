@@ -70,7 +70,7 @@ public enum ControlMeasureEntity implements IEntity {
 
     @Override
     public List<IEntityType> getEntityTypes() {
-        return ControlMeasureSymbolSetInfo.INSTANCE.getEntityTypes(this);
+        return ControlMeasureSymbolSet.INSTANCE.getEntityTypes(this);
     }
 
     @Override

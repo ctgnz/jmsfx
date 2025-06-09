@@ -1,9 +1,12 @@
 package io.github.ctgnz.jmsfx.icon.common;
 
+import org.apache.commons.lang3.StringUtils;
+
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
 
 public enum CommonSectorTwoModifier implements ISectorTwoModifier {
+    UNSPECIFIED_2_MOD("0", "00", "Unspecified", "General"),
     AIRBORNE_2_MOD("1", "00", "Airborne", "Mobility"),
     BICYCLE_EQUIPPED_2_MOD("1", "01", "Bicycle Equipped", "Mobility"),
     RAILROAD_RAILWAY_2_MOD("1", "02", "Railroad/Railway", "Mobility"),
@@ -53,6 +56,7 @@ public enum CommonSectorTwoModifier implements ISectorTwoModifier {
         return String.format("C2%s%s", getGroupId(), getId());
     }
 
+    @Override
     public String getGroupId() {
         return groupId;
     }
@@ -74,7 +78,7 @@ public enum CommonSectorTwoModifier implements ISectorTwoModifier {
 
     @Override
     public boolean isUnknown() {
-        return false;
+        return StringUtils.equals("0", groupId) && StringUtils.equals("00", id);
     }
 
 }

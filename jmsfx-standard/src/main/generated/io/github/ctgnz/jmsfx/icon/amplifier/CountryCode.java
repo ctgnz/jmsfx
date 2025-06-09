@@ -1,11 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
 import io.github.ctgnz.jmsfx.IAmplifierList;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
+import io.github.ctgnz.jmsfx.ICountryCode;
 import io.github.ctgnz.jmsfx.icon.AmplifierList;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum CountryCode implements IAmplifierListItem {
+public enum CountryCode implements ICountryCode {
     UNDEFINED("UNDEFINED", "Undefined", "000"),
     AF("AFG", "Afghanistan", "004"),
     AL("ALB", "Albania", "008"),

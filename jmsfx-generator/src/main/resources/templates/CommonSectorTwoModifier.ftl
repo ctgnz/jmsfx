@@ -1,11 +1,13 @@
 package ${commonPackage};
 
+import org.apache.commons.lang3.StringUtils;
+
 import ${basePackage}.ISectorTwoModifier;
 import ${iconPackage}.SymbolSet;
 
 public enum CommonSectorTwoModifier implements ISectorTwoModifier {
 <#list sectorTwoMods as mod>
-    ${mod.id}("1", "${mod.code}", "${mod.label}", "${mod.category}")<#sep>,
+    ${mod.id}("${mod.groupId}", "${mod.code}", "${mod.label}", "${mod.category}")<#sep>,
 </#list>;
 
     private final String groupId;
@@ -30,6 +32,7 @@ public enum CommonSectorTwoModifier implements ISectorTwoModifier {
         return String.format("C2%s%s", getGroupId(), getId());
     }
 
+    @Override
     public String getGroupId() {
         return groupId;
     }
@@ -51,7 +54,7 @@ public enum CommonSectorTwoModifier implements ISectorTwoModifier {
 
     @Override
     public boolean isUnknown() {
-        return false;
+        return StringUtils.equals("0", groupId) && StringUtils.equals("00", id);
     }
 
 }

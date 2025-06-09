@@ -2,10 +2,8 @@ package io.github.ctgnz.jmsfx.icon;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 import io.github.ctgnz.jmsfx.IHqtfDummy;
-import io.github.ctgnz.jmsfx.ISymbolSet;
 
 public enum HqtfDummy implements IHqtfDummy {
     NA("0", "Not Applicable"),
@@ -43,8 +41,8 @@ public enum HqtfDummy implements IHqtfDummy {
     }
 
     @Override
-    public boolean isSupported(ISymbolSet symbolSet) {
-        return dimensionIds.stream().anyMatch(dim -> Objects.equals(dim, symbolSet.getDimension().getName()));
+    public boolean isUnknown() {
+        return this == NA;
     }
 
 }

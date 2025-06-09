@@ -457,7 +457,7 @@ public enum ControlMeasureEntityType implements IEntityType {
 
     @Override
     public List<IEntitySubType> getEntitySubTypes() {
-        return ControlMeasureSymbolSetInfo.INSTANCE.getEntitySubTypes(this);
+        return ControlMeasureSymbolSet.INSTANCE.getEntitySubTypes(this);
     }
 
 }

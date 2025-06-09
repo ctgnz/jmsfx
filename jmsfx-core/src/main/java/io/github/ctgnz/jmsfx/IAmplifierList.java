@@ -14,7 +14,7 @@ public interface IAmplifierList extends ICodeElement {
     <A extends IAmplifierListItem> Class<A> getValueClass();
 
     default boolean isCompatibleWith(ISymbolSet symbolSet) {
-        return getSymbolSets().stream().anyMatch(sym -> Objects.equals(sym, symbolSet));
+        return getSymbolSets().isEmpty() || getSymbolSets().stream().anyMatch(sym -> Objects.equals(sym, symbolSet));
     }
 
     default boolean isStandardAmplifier() {

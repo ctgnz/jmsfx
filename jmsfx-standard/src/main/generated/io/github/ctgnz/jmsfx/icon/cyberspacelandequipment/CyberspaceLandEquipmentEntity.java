@@ -63,7 +63,7 @@ public enum CyberspaceLandEquipmentEntity implements IEntity {
 
     @Override
     public List<IEntityType> getEntityTypes() {
-        return CyberspaceLandEquipmentSymbolSetInfo.INSTANCE.getEntityTypes(this);
+        return CyberspaceLandEquipmentSymbolSet.INSTANCE.getEntityTypes(this);
     }
 
     @Override

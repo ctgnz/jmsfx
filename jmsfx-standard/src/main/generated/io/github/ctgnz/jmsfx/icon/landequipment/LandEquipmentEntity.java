@@ -58,7 +58,7 @@ public enum LandEquipmentEntity implements IEntity {
 
     @Override
     public List<IEntityType> getEntityTypes() {
-        return LandEquipmentSymbolSetInfo.INSTANCE.getEntityTypes(this);
+        return LandEquipmentSymbolSet.INSTANCE.getEntityTypes(this);
     }
 
     @Override

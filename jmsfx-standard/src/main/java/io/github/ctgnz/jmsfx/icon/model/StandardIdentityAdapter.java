@@ -56,9 +56,4 @@ public class StandardIdentityAdapter extends CodeElementAdapter implements IStan
         return hostile.get();
     }
 
-    @Override
-    public String toString() {
-        return getLabel();
-    }
-
 }

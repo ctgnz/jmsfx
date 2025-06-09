@@ -50,7 +50,7 @@ public enum ActivityEntity implements IEntity {
 
     @Override
     public List<IEntityType> getEntityTypes() {
-        return ActivitySymbolSetInfo.INSTANCE.getEntityTypes(this);
+        return ActivitySymbolSet.INSTANCE.getEntityTypes(this);
     }
 
     @Override

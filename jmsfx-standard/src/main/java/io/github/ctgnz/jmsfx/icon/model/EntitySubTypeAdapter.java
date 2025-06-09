@@ -14,6 +14,7 @@ public class EntitySubTypeAdapter extends MainIconAdapter implements IEntitySubT
 
     public EntitySubTypeAdapter(IEntitySubType subType) {
         super(subType);
+        this.entityType.set(subType.getEntityType());
     }
 
     public ObjectProperty<IEntityType> entityTypeProperty() {

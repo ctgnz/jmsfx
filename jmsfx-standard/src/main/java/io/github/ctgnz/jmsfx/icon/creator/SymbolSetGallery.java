@@ -1,0 +1,127 @@
+package io.github.ctgnz.jmsfx.icon.creator;
+
+import java.util.Arrays;
+
+import org.apache.commons.lang3.StringUtils;
+
+import nz.co.ctg.foxglove.FoxgloveParser;
+
+import io.github.ctgnz.jmsfx.ICodeElement;
+import io.github.ctgnz.jmsfx.icon.HqtfDummy;
+import io.github.ctgnz.jmsfx.icon.IconScale;
+import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
+import io.github.ctgnz.jmsfx.icon.StandardIdentity;
+import io.github.ctgnz.jmsfx.icon.Status;
+import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Label;
+import javafx.scene.control.TitledPane;
+import javafx.scene.control.Tooltip;
+import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
+
+public class SymbolSetGallery extends VBox {
+    private SymbolSet symbolSet;
+    private FoxgloveParser parser;
+
+    public SymbolSetGallery(FoxgloveParser parser, SymbolSet symbolSet) {
+        this.parser = parser;
+        this.symbolSet = symbolSet;
+        getChildren().add(createFrames());
+        getChildren().add(createStatus());
+        getChildren().add(createHqtfDummy());
+        getChildren().add(createMainIcons());
+        getChildren().add(createSector1());
+        getChildren().add(createSector2());
+    }
+
+    private Node createFrames() {
+        TilePane flowPane = new TilePane();
+        Arrays.stream(StandardIdentity.values()).forEach(stdId -> {
+            IdentificationSymbol symbol = createDefaultSymbol(flowPane, stdId);
+            symbol.getCode().setStandardIdentity(stdId);
+        });
+        TitledPane framePane = new TitledPane("Frames", flowPane);
+        framePane.setCollapsible(false);
+        return framePane;
+    }
+
+    private Node createHqtfDummy() {
+        TilePane flowPane = new TilePane();
+        Arrays.stream(HqtfDummy.values()).filter(status -> status.isSupported(symbolSet)).forEach(hqtfDummy -> {
+            IdentificationSymbol symbol = createDefaultSymbol(flowPane, hqtfDummy);
+            symbol.getCode().setHqtfDummy(hqtfDummy);
+        });
+        TitledPane hqtfDummyPane = new TitledPane("HQ/TF/Dummy/Feint", flowPane);
+        hqtfDummyPane.setCollapsible(false);
+        return hqtfDummyPane;
+    }
+
+    private Node createMainIcons() {
+        TilePane flowPane = new TilePane();
+        symbolSet.getEntities().forEach(entity -> {
+            IdentificationSymbol entitySymbol = createDefaultSymbol(flowPane, entity);
+            entitySymbol.getCode().setEntity(entity);
+            entity.getEntityTypes().forEach(entityType -> {
+                IdentificationSymbol entityTypeSymbol = createDefaultSymbol(flowPane, entityType);
+                entityTypeSymbol.getCode().setEntityType(entityType);
+                entityType.getEntitySubTypes().forEach(subType -> {
+                    IdentificationSymbol subTypeSymbol = createDefaultSymbol(flowPane, subType);
+                    subTypeSymbol.getCode().setEntitySubType(subType);
+                });
+            });
+        });
+        TitledPane mainIconPane = new TitledPane("Main Icons", flowPane);
+        mainIconPane.setCollapsible(false);
+        return mainIconPane;
+    }
+
+    private Node createSector1() {
+        TilePane flowPane = new TilePane();
+        TitledPane mod1Pane = new TitledPane("Sector 1 Modifiers", flowPane);
+        symbolSet.getSectorOneModifiers().forEach(mod -> {
+            IdentificationSymbol symbol = createDefaultSymbol(flowPane, mod);
+            symbol.getCode().setSectorOneModifier(mod);
+        });
+        mod1Pane.setCollapsible(false);
+        return mod1Pane;
+    }
+
+    private Node createSector2() {
+        TilePane flowPane = new TilePane();
+        symbolSet.getSectorTwoModifiers().forEach(mod -> {
+            IdentificationSymbol symbol = createDefaultSymbol(flowPane, mod);
+            symbol.getCode().setSectorTwoModifier(mod);
+        });
+        TitledPane mod2Pane = new TitledPane("Sector 2 Modifiers", flowPane);
+        mod2Pane.setCollapsible(false);
+        return mod2Pane;
+    }
+
+    private Node createStatus() {
+        TilePane flowPane = new TilePane();
+        Arrays.stream(Status.values()).filter(status -> status.isSupported(symbolSet)).forEach(status -> {
+            IdentificationSymbol symbol = createDefaultSymbol(flowPane, status);
+            symbol.getCode().setStatus(status);
+        });
+        TitledPane statusPane = new TitledPane("Status", flowPane);
+        statusPane.setCollapsible(false);
+        return statusPane;
+    }
+
+    protected IdentificationSymbol createDefaultSymbol(TilePane tilePane, ICodeElement element) {
+        IdentificationSymbol symbol = new IdentificationSymbol(parser);
+        symbol.getCode().setSymbolSet(symbolSet);
+        symbol.setScale(IconScale.MediumSmall);
+        Label label = new Label(StringUtils.abbreviate(element.getLabel(), 24), symbol.createIcon());
+        label.setTooltip(new Tooltip(element.getLabel()));
+        label.setContentDisplay(ContentDisplay.TOP);
+        TilePane.setAlignment(label, Pos.BOTTOM_CENTER);
+        tilePane.getChildren().add(label);
+        return symbol;
+    }
+
+
+}

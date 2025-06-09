@@ -48,9 +48,4 @@ public class StatusAdapter extends CodeElementAdapter implements IStatus {
         return present;
     }
 
-    @Override
-    public String toString() {
-        return getLabel();
-    }
-
 }

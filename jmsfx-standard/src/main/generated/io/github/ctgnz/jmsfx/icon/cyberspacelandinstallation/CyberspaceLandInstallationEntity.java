@@ -51,7 +51,7 @@ public enum CyberspaceLandInstallationEntity implements IEntity {
 
     @Override
     public List<IEntityType> getEntityTypes() {
-        return CyberspaceLandInstallationSymbolSetInfo.INSTANCE.getEntityTypes(this);
+        return CyberspaceLandInstallationSymbolSet.INSTANCE.getEntityTypes(this);
     }
 
     @Override

@@ -22,10 +22,12 @@ public class ModifiersType {
 
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "modifierCode"
+        "extensionCode", "modifierCode"
     })
     public static class Modifier {
 
+        @XmlElement(name = "ExtensionCode")
+        protected String extensionCode;
         @XmlElement(name = "ModifierCode", required = true)
         protected DoubleDigitType modifierCode;
         @XmlAttribute(name = "Category")
@@ -164,6 +166,14 @@ public class ModifiersType {
 
         public void setStandard(StandardType value) {
             this.standard = value;
+        }
+
+        public String getExtensionCode() {
+            return extensionCode;
+        }
+
+        public void setExtensionCode(String extensionCode) {
+            this.extensionCode = extensionCode;
         }
 
     }

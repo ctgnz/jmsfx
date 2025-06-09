@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface ISymbolSetInfo {
 
-    List<IAmplifierGuide> getAmplifierGuides();
+    <G extends IAmplifierGuide> List<G> getAmplifierGuides();
 
     <A extends IStandardAmplifierItem> List<A> getAmplifiers();
 

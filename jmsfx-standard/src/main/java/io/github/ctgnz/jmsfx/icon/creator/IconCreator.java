@@ -1,9 +1,6 @@
 package io.github.ctgnz.jmsfx.icon.creator;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
@@ -12,6 +9,7 @@ import nz.co.ctg.foxglove.SvgGraphic;
 import io.github.ctgnz.jmsfx.IAmplifierGuide;
 import io.github.ctgnz.jmsfx.IAmplifierListItem;
 import io.github.ctgnz.jmsfx.IContext;
+import io.github.ctgnz.jmsfx.ICountryCode;
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
@@ -34,7 +32,6 @@ import io.github.ctgnz.jmsfx.icon.Status;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.amplifier.CountryCode;
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
@@ -43,8 +40,10 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ProgressBar;
@@ -207,7 +206,7 @@ public class IconCreator extends Application {
     }
 
     private Node createButtons() {
-        ComboBox<CountryCode> country = new ComboBox<>(FXCollections.observableArrayList(CountryCode.values()));
+        ComboBox<ICountryCode> country = new ComboBox<>(FXCollections.observableArrayList(CountryCode.values()));
         country.valueProperty().addListener((obs, oldValue, newValue) -> {
             Library.setExtensionCountryCode(newValue);
         });
@@ -382,7 +381,16 @@ public class IconCreator extends Application {
         gridPane.add(mod2, 1, row++);
 
         Button showAll = new Button("Show All");
-        showAll.setOnAction(evt -> testParseAll());
+        showAll.setOnAction(evt -> {
+            Dialog<String> dialog = new Dialog<>();
+            dialog.getDialogPane().setContent(new IconGallery(mainStage));
+            dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
+            dialog.setOnShown(e2 -> {
+                Stage window = (Stage) dialog.getDialogPane().getScene().getWindow();
+                window.setMaximized(true);
+            });
+            dialog.show();
+        });
         gridPane.add(showAll, 1, row++);
 
         showAllProgress = new ProgressBar();
@@ -407,100 +415,6 @@ public class IconCreator extends Application {
         Group stack = new Group(icon);
         BorderPane.setAlignment(stack, Pos.TOP_CENTER);
         return stack;
-    }
-
-    private void testModifierEvents(List<Runnable> events, SymbolSet symbolSet) {
-        symbolSet.getAmplifierList().forEach(amplifier -> {
-            events.add(() -> {
-                System.out.format("\t\tAmplifier: %s%n", amplifier.getLabel());
-                symbol.amplifierProperty().set(amplifier);
-            });
-        });
-        events.add(() -> {
-            symbol.amplifierProperty().set(null);
-        });
-        symbolSet.getSectorOneModifiers().forEach(mod -> {
-            events.add(() -> {
-                if (!mod.isUnknown()) {
-                    System.out.format("\t\tMod 1: %s%n", mod.getLabel());
-                    symbol.sectorOneModifierProperty().set(mod);
-                }
-            });
-        });
-        events.add(() -> {
-            symbol.sectorOneModifierProperty().set(null);
-        });
-        symbolSet.getSectorTwoModifiers().forEach(mod -> {
-            events.add(() -> {
-                if (!mod.isUnknown()) {
-                    System.out.format("\t\tMod 2: %s%n", mod.getLabel());
-                    symbol.sectorTwoModifierProperty().set(mod);
-                }
-            });
-        });
-        events.add(() -> {
-            symbol.sectorTwoModifierProperty().set(null);
-        });
-    }
-
-    private void testParseAll() {
-        System.out.println("Collecting combinations");
-        List<Runnable> events = new ArrayList<>();
-        Arrays.stream(SymbolSet.values()).forEach(symbolSet -> {
-            events.add(() -> {
-                symbol.symbolSetProperty().set(symbolSet);
-            });
-            Arrays.stream(Context.values()).forEach(ctx -> {
-                events.add(() -> {
-                    symbol.contextProperty().set(ctx);
-                });
-                Arrays.stream(StandardIdentity.values()).forEach(stdId -> {
-                    events.add(() -> {
-                        symbol.standardIdentityProperty().set(stdId);
-                    });
-                });
-            });
-            events.add(() -> {
-                symbol.contextProperty().set(Context.REALITY);
-                symbol.standardIdentityProperty().set(StandardIdentity.SI_FRIEND);
-            });
-            testModifierEvents(events, symbolSet);
-            symbolSet.getEntities().forEach(entity -> {
-                events.add(() -> {
-                    System.out.format("\tEntity: %s%n", entity.getLabel());
-                    symbol.entityProperty().set(entity);
-                });
-                entity.getEntityTypes().forEach(entityType -> {
-                    events.add(() -> {
-                        System.out.format("\t\tEntity Type: %s%n", entityType.getLabel());
-                        symbol.entityTypeProperty().set(entityType);
-                    });
-                    entityType.getEntitySubTypes().forEach(subType -> {
-                        events.add(() -> {
-                            System.out.format("\t\t\tEntity Sub-Type: %s%n", subType.getLabel());
-                            symbol.entitySubTypeProperty().set(subType);
-                        });
-                    });
-                });
-            });
-        });
-        final AtomicInteger showAllCounter = new AtomicInteger(0);
-        final double totalEvents = events.size();
-        new Thread(() -> {
-            System.out.println("Starting show");
-            Platform.runLater(() -> showAllProgress.setVisible(true));
-            events.forEach(action -> {
-                Platform.runLater(() -> {
-                    showAllProgress.setProgress(showAllCounter.incrementAndGet() / totalEvents);
-                });
-                Platform.runLater(action);
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                }
-            });
-            Platform.runLater(() -> showAllProgress.setVisible(false));
-        }).start();
     }
 
 }

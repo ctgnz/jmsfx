@@ -19,6 +19,7 @@ public class EntityTypeAdapter extends MainIconAdapter implements IEntityType {
 
     public EntityTypeAdapter(IEntityType entityType) {
         super(entityType);
+        this.entity.set(entityType.getEntity());
         this.entitySubTypes.addAll(entityType.getEntitySubTypes().stream().map(this::adaptSubType).toList());
     }
 

@@ -2,10 +2,8 @@ package ${iconPackage};
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 import ${basePackage}.IHqtfDummy;
-import ${basePackage}.ISymbolSet;
 
 public enum HqtfDummy implements IHqtfDummy {
 <#list hqtfDummies as dummy>
@@ -38,8 +36,8 @@ public enum HqtfDummy implements IHqtfDummy {
     }
 
     @Override
-    public boolean isSupported(ISymbolSet symbolSet) {
-        return dimensionIds.stream().anyMatch(dim -> Objects.equals(dim, symbolSet.getDimension().getName()));
+    public boolean isUnknown() {
+        return this == NA;
     }
 
 }

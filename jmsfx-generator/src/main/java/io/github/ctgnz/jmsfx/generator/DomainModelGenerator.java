@@ -87,8 +87,6 @@ public class DomainModelGenerator {
         dataModel.put("commonPackage", config.getCommonPackage());
         Library library = parseLibraryFile(config.getInputDir().resolve(config.getLibraryFile()));
         dataModel.put("dimensionGraphics", config.getDimensionGraphicLocations());
-        Template template = config.getTemplateConfig().getTemplate("Library.ftl");
-        template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getIconPackageDir().resolve("Library.java"))));
         config.getStandardEnums().forEach(enumConfig -> generateStandardEnum(dataModel, library, enumConfig));
         generateCommonModifiers(config.getCommonPackageDir(), dataModel, library);
         generateAmplifierEnum(dataModel, library);
@@ -169,8 +167,8 @@ public class DomainModelGenerator {
         symbolSet.setSectorTwoModifiers(library.getCommonModifiers().getSectorTwoModifiers());
         dataModel.remove("sectorOneMods");
         dataModel.remove("sectorTwoMods");
-        Template symSetInfoTemplate = config.getTemplateConfig().getTemplate("CommonSymbolSetInfo.ftl");
-        symSetInfoTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve("CommonSymbolSetInfo.java"))));
+        Template symSetInfoTemplate = config.getTemplateConfig().getTemplate("CommonSymbolSet.ftl");
+        symSetInfoTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve("CommonSymbolSet.java"))));
         symbolSet.getSectorOneModifiers().getModifier().forEach(mod -> {
             List<SectorOneModEnum> values = (List<SectorOneModEnum>) dataModel.computeIfAbsent("sectorOneMods", key -> new ArrayList<SectorOneModEnum>());
             values.add(new SectorOneModEnum(mod));
@@ -247,7 +245,7 @@ public class DomainModelGenerator {
             symSetDetails.setUseFrame(false);
         }
         Template symSetInfoTemplate = config.getTemplateConfig().getTemplate("SymbolSetInfo.ftl");
-        symSetInfoTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve(symSetDetails.getBaseTypeName() + "SymbolSetInfo.java"))));
+        symSetInfoTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve(symSetDetails.getBaseTypeName() + "SymbolSet.java"))));
         Template entityTemplate = config.getTemplateConfig().getTemplate("Entity.ftl");
         entityTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve(symSetDetails.getBaseTypeName() + "Entity.java"))));
         if (dataModel.containsKey("entityTypes")) {

@@ -54,7 +54,7 @@ public enum MineWarfareEntity implements IEntity {
 
     @Override
     public List<IEntityType> getEntityTypes() {
-        return MineWarfareSymbolSetInfo.INSTANCE.getEntityTypes(this);
+        return MineWarfareSymbolSet.INSTANCE.getEntityTypes(this);
     }
 
     @Override

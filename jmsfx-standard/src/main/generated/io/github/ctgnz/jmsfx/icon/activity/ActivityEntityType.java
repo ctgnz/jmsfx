@@ -76,7 +76,7 @@ public enum ActivityEntityType implements IEntityType {
 
     @Override
     public List<IEntitySubType> getEntitySubTypes() {
-        return ActivitySymbolSetInfo.INSTANCE.getEntitySubTypes(this);
+        return ActivitySymbolSet.INSTANCE.getEntitySubTypes(this);
     }
 
 }

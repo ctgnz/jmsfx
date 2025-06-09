@@ -10,7 +10,9 @@ import io.github.ctgnz.jmsfx.IAmplifierList;
 import io.github.ctgnz.jmsfx.IAmplifierListItem;
 import io.github.ctgnz.jmsfx.ISymbolSet;
 import io.github.ctgnz.jmsfx.icon.AmplifierList;
+import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,6 +20,7 @@ import javafx.collections.ObservableList;
 public class AmplifierListAdapter<A extends IAmplifierListItem> extends CodeElementAdapter implements IAmplifierList {
     private final ObjectProperty<IAmplifier> amplifier = new SimpleObjectProperty<>();
     private final ObjectProperty<Class<A>> valueClass = new SimpleObjectProperty<>();
+    private final BooleanProperty unknown = new SimpleBooleanProperty();
     private ObservableList<ISymbolSet> symbolSets = FXCollections.observableArrayList();
     private ObservableList<AmplifierListItemAdapter<A>> values = FXCollections.observableArrayList();
 
@@ -28,6 +31,7 @@ public class AmplifierListAdapter<A extends IAmplifierListItem> extends CodeElem
         super(amplifierList);
         this.amplifier.set(amplifierList.getAmplifier());
         this.valueClass.set(amplifierList.getValueClass());
+        this.unknown.set(amplifierList.isUnknown());
         this.values.setAll(loadValues());
         values.forEach(val -> val.setAmplifierList(this));
     }
@@ -64,7 +68,7 @@ public class AmplifierListAdapter<A extends IAmplifierListItem> extends CodeElem
 
     @Override
     public boolean isUnknown() {
-        return values.isEmpty() ? false : values.getFirst().isUnknown();
+        return unknown.get();
     }
 
     @Override

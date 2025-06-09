@@ -51,7 +51,7 @@ public enum CyberspaceAirEntity implements IEntity {
 
     @Override
     public List<IEntityType> getEntityTypes() {
-        return CyberspaceAirSymbolSetInfo.INSTANCE.getEntityTypes(this);
+        return CyberspaceAirSymbolSet.INSTANCE.getEntityTypes(this);
     }
 
     @Override

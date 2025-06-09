@@ -33,4 +33,9 @@ public class CodeElementAdapter {
         return label;
     }
 
+    @Override
+    public String toString() {
+        return getLabel();
+    }
+
 }

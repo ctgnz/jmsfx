@@ -26,6 +26,10 @@ public interface ISymbolSet extends ICodeElement {
 
     String getFrameId();
 
+    default String getFrameLocation(IStandardIdentity identity, IStatus status, boolean civilianEntity) {
+        return String.format("/svg/Frames/0_%s%s_%s%s.svg", identity.getId(), getFrameId(), status.getFrameId(identity), civilianEntity ? "c" : "");
+    }
+
     String getGraphicLocation();
 
     <M extends ISectorOneModifier> List<M> getSectorOneModifiers();

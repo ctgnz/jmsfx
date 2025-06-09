@@ -1,6 +1,7 @@
 package io.github.ctgnz.jmsfx;
 
 import java.util.List;
+import java.util.Objects;
 
 public interface IHqtfDummy extends ICodeElement {
 
@@ -10,6 +11,8 @@ public interface IHqtfDummy extends ICodeElement {
         return String.format("/svg/HQTFFD/%s%s%s.svg", identity.getGroupId(), symbolSet.getDimensionId(), getId());
     }
 
-    boolean isSupported(ISymbolSet symbolSet);
+    default boolean isSupported(ISymbolSet symbolSet) {
+        return getDimensionIds().isEmpty() || getDimensionIds().stream().anyMatch(dim -> Objects.equals(dim, symbolSet.getDimension().getName()));
+    }
 
 }
