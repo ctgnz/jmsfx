@@ -32,6 +32,7 @@ public class GeneratorConfig {
     private Path inputDir;
     private Path outputDir;
     private String basePackage;
+    private String typePackage;
     private String iconPackage;
     private String commonPackage;
     private String amplifierPackage;
@@ -63,14 +64,6 @@ public class GeneratorConfig {
 
     public String getBasePackage() {
         return basePackage;
-    }
-
-    public Path getBasePackageDir() throws IOException {
-        Path packageDir = outputDir.resolve(basePackage.replaceAll("\\.", "/"));
-        if (Files.notExists(packageDir)) {
-            Files.createDirectories(packageDir);
-        }
-        return packageDir;
     }
 
     public String getCommonPackage() {
@@ -169,6 +162,10 @@ public class GeneratorConfig {
         return configuration;
     }
 
+    public String getTypePackage() {
+        return typePackage;
+    }
+
     public List<String> getUnframedSymbolSets() {
         return unframedSymbolSets;
     }
@@ -227,6 +224,10 @@ public class GeneratorConfig {
 
     public void setSymbolGraphicLocations(Map<String, String> symbolGraphicLocations) {
         this.symbolGraphicLocations = symbolGraphicLocations;
+    }
+
+    public void setTypePackage(String typePackage) {
+        this.typePackage = typePackage;
     }
 
     public void setUnframedSymbolSets(List<String> unframedSymbolSets) {

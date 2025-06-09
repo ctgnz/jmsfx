@@ -2,7 +2,7 @@ package io.github.ctgnz.jmsfx.icon.seasubsurface;
 
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum SeaSubsurfaceEntitySubType implements IEntitySubType {
     SUBMARINE_SURFACED("01", "Submarine-Surfaced", SeaSubsurfaceEntityType.SUBMARINE, GraphicType.MAIN),

@@ -5,7 +5,7 @@ import java.util.List;
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum LandUnitsEntityType implements IEntityType {
     BROADCAST_TRANSMITTER_ANTENNAE("01", "Broadcast Transmitter Antennae", LandUnitsEntity.COMMAND_AND_CONTROL, GraphicType.FULL_OCTAGON),

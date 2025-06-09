@@ -2,14 +2,11 @@ package io.github.ctgnz.jmsfx;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
-import io.github.ctgnz.jmsfx.icon.Dimension;
-
 public interface ISymbolSet extends ICodeElement {
 
-    AmplifierGuide getAmplifierGuide(IAmplifier amplifier);
+    IAmplifierGuide getAmplifierGuide(IAmplifier amplifier);
 
-    List<AmplifierGuide> getAmplifierGuides();
+    List<IAmplifierGuide> getAmplifierGuides();
 
     <A extends IStandardAmplifierItem> List<A> getAmplifierList();
 
@@ -17,7 +14,7 @@ public interface ISymbolSet extends ICodeElement {
 
     <A extends IStandardAmplifierItem> List<A> getAmplifierListTwo();
 
-    Dimension getDimension();
+    IDimension getDimension();
 
     default String getDimensionId() {
         return getDimension().getId();

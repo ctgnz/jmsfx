@@ -11,7 +11,7 @@ import ${basePackage}.IStandardAmplifierItem;
 import ${basePackage}.ISectorOneModifier;
 import ${basePackage}.ISectorTwoModifier;
 import ${basePackage}.ISymbolSetInfo;
-import ${iconPackage}.AmplifierGuide;
+import ${basePackage}.IAmplifierGuide;
 
 public class CommonSymbolSetInfo implements ISymbolSetInfo {
     public static final ISymbolSetInfo INSTANCE = new CommonSymbolSetInfo();
@@ -20,7 +20,7 @@ public class CommonSymbolSetInfo implements ISymbolSetInfo {
     }
 
     @Override
-    public List<AmplifierGuide> getAmplifierGuides() {
+    public List<IAmplifierGuide> getAmplifierGuides() {
         return Collections.emptyList();
     }
 

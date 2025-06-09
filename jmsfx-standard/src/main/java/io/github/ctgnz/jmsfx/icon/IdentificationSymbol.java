@@ -10,6 +10,7 @@ import nz.co.ctg.foxglove.SvgGraphic;
 import nz.co.ctg.foxglove.type.ViewBox;
 
 import io.github.ctgnz.jmsfx.IAmplifier;
+import io.github.ctgnz.jmsfx.IAmplifierGuide;
 import io.github.ctgnz.jmsfx.IAmplifierListItem;
 import io.github.ctgnz.jmsfx.IContext;
 import io.github.ctgnz.jmsfx.IEntity;
@@ -24,6 +25,7 @@ import io.github.ctgnz.jmsfx.IStatus;
 import io.github.ctgnz.jmsfx.ISymbolSet;
 import io.github.ctgnz.jmsfx.IVersion;
 import io.github.ctgnz.jmsfx.icon.amplifier.CountryCode;
+import io.github.ctgnz.jmsfx.types.GeometryType;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
@@ -123,14 +125,14 @@ public class IdentificationSymbol {
 
     public GraphicAmplifierValue addGraphicAmplifier(IAmplifier amplifier, SvgGraphic graphic, ScaleDirection scaleDirection, Pos attachment) {
         return graphicAmplifiers.computeIfAbsent(amplifier, key -> {
-            AmplifierGuide guide = getSymbolSet().getAmplifierGuide(amplifier);
+            IAmplifierGuide guide = getSymbolSet().getAmplifierGuide(amplifier);
             return new GraphicAmplifierValue(guide, graphic, scaleDirection, attachment);
         });
     }
 
     public TextAmplifierValue addTextAmplifier(IAmplifier amplifier, Pos attachment, String text) {
         TextAmplifierValue textAmplifier = textAmplifiers.computeIfAbsent(amplifier, key -> {
-            AmplifierGuide guide = getSymbolSet().getAmplifierGuide(amplifier);
+            IAmplifierGuide guide = getSymbolSet().getAmplifierGuide(amplifier);
             return new TextAmplifierValue(guide, attachment, text);
         });
         textAmplifier.setText(text);

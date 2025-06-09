@@ -2,7 +2,7 @@ package io.github.ctgnz.jmsfx.icon.cyberspacedismountedindividual;
 
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum CyberspaceDismountedIndividualEntityType implements IEntityType {
     COMBAT_MISSION_TEAM("01", "Combat Mission Team", CyberspaceDismountedIndividualEntity.MISSION_FORCE, GraphicType.MAIN),

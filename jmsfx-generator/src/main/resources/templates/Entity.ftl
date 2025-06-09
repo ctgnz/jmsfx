@@ -9,7 +9,7 @@ import ${basePackage}.IEntity;
 import ${basePackage}.IEntityType;
 </#if>
 import ${basePackage}.ISymbolSet;
-import ${iconPackage}.GraphicType;
+import ${typePackage}.GraphicType;
 import ${iconPackage}.SymbolSet;
 
 public enum ${symbolSet.baseTypeName}Entity implements IEntity {

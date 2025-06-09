@@ -5,7 +5,7 @@ import java.util.List;
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum ActivityEntityType implements IEntityType {
     CRIMINAL_ACTIVITY_INCIDENT("01", "Criminal Activity Incident", ActivityEntity.INCIDENT, GraphicType.FULL_OCTAGON),

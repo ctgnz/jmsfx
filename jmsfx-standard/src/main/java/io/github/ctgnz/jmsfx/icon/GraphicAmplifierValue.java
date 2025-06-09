@@ -2,6 +2,7 @@ package io.github.ctgnz.jmsfx.icon;
 
 import nz.co.ctg.foxglove.SvgGraphic;
 
+import io.github.ctgnz.jmsfx.IAmplifierGuide;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
@@ -16,13 +17,13 @@ import javafx.scene.transform.Transform;
 
 public class GraphicAmplifierValue {
     protected static final Font AMPLIFIER_FONT = Font.font("sans-serif", FontWeight.NORMAL, FontPosture.REGULAR, 60);
-    private final AmplifierGuide guide;
+    private final IAmplifierGuide guide;
     private final ObjectProperty<SvgGraphic> graphic;
     private final ObjectProperty<Pos> attachment;
     private final ObjectProperty<ScaleDirection> scaleDirection;
     private final ObjectProperty<Transform> transform;
 
-    public GraphicAmplifierValue(AmplifierGuide guide, SvgGraphic graphic, ScaleDirection scaleDirection, Pos attachment) {
+    public GraphicAmplifierValue(IAmplifierGuide guide, SvgGraphic graphic, ScaleDirection scaleDirection, Pos attachment) {
         this.guide = guide;
         this.graphic = new SimpleObjectProperty<>(graphic);
         this.attachment = new SimpleObjectProperty<>(attachment);
@@ -43,7 +44,7 @@ public class GraphicAmplifierValue {
         return graphic.get();
     }
 
-    public AmplifierGuide getGuide() {
+    public IAmplifierGuide getGuide() {
         return guide;
     }
 

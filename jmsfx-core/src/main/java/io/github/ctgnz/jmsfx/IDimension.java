@@ -2,7 +2,7 @@ package io.github.ctgnz.jmsfx;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.icon.GeometryType;
+import io.github.ctgnz.jmsfx.types.GeometryType;
 
 public interface IDimension extends ICodeElement {
 

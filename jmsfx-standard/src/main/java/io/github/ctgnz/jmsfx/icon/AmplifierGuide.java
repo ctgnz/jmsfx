@@ -1,13 +1,15 @@
 package io.github.ctgnz.jmsfx.icon;
 
 import io.github.ctgnz.jmsfx.IAmplifier;
+import io.github.ctgnz.jmsfx.IAmplifierGuide;
+import io.github.ctgnz.jmsfx.types.GuideType;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Polyline;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class AmplifierGuide {
+public class AmplifierGuide implements IAmplifierGuide {
     private final Amplifier amplifier;
     private final GuideType type;
     private final double[] points;
@@ -20,38 +22,47 @@ public class AmplifierGuide {
         this.shape = createShape();
     }
 
+    @Override
     public IAmplifier getAmplifier() {
         return amplifier;
     }
 
+    @Override
     public String getCode() {
         return amplifier.getId();
     }
 
+    @Override
     public double getHeight() {
         return shape.getLayoutBounds().getHeight();
     }
 
+    @Override
     public double[] getPoints() {
         return points;
     }
 
+    @Override
     public Shape getShape() {
         return shape;
     }
 
+    @Override
     public GuideType getType() {
         return type;
     }
 
+    @Override
     public double getWidth() {
         return shape.getLayoutBounds().getWidth();
     }
 
+    @Override
     public double getX() {
         return shape.getLayoutBounds().getMinX();
     }
 
+    @Override
     public double getY() {
         return shape.getLayoutBounds().getMinY();
     }

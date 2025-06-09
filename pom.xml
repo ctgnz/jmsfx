@@ -38,6 +38,7 @@
     </distributionManagement>
     
 	<modules>
+		<module>jmsfx-core</module>
 		<module>jmsfx-generator</module>
 		<module>jmsfx-standard</module>
 		<module>jmsfx-server</module>

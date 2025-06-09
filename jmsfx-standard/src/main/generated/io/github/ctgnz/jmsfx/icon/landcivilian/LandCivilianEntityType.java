@@ -2,7 +2,7 @@ package io.github.ctgnz.jmsfx.icon.landcivilian;
 
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum LandCivilianEntityType implements IEntityType {
     ENVIRONMENTAL_PROTECTION("01", "Environmental Protection", LandCivilianEntity.CIVILIAN, GraphicType.MAIN),

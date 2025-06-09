@@ -1,6 +1,7 @@
 inputDir: "D:/git/joint-military-symbology-xml/instance"
 outputDir: "D:/git/jmsfx/jmsfx-standard/src/main/generated"
 basePackage: "io.github.ctgnz.jmsfx"
+typePackage: "io.github.ctgnz.jmsfx.types"
 iconPackage: "io.github.ctgnz.jmsfx.icon"
 commonPackage: "io.github.ctgnz.jmsfx.icon.common"
 amplifierPackage: "io.github.ctgnz.jmsfx.icon.amplifier"

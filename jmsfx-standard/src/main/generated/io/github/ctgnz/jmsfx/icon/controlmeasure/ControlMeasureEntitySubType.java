@@ -2,7 +2,7 @@ package io.github.ctgnz.jmsfx.icon.controlmeasure;
 
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum ControlMeasureEntitySubType implements IEntitySubType {
     FLY_TO_POINT_SONOBUOY("01", "Fly-To-Point (Sonobuoy)", ControlMeasureEntityType.FLY_TO_POINT, GraphicType.MAIN),

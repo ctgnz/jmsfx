@@ -5,6 +5,7 @@ import java.util.List;
 
 import io.github.ctgnz.jmsfx.IDimension;
 import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.types.GeometryType;
 
 public enum Dimension implements IDimension {
     UNKNOWN("00", "Unknown", GeometryType.POINT_GEOMETRY, "Unknown"),

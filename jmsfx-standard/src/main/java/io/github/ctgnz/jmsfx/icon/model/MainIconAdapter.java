@@ -1,7 +1,7 @@
 package io.github.ctgnz.jmsfx.icon.model;
 
 import io.github.ctgnz.jmsfx.IMainElement;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;

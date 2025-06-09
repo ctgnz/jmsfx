@@ -2,7 +2,7 @@ package io.github.ctgnz.jmsfx.icon.landequipment;
 
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum LandEquipmentEntitySubType implements IEntitySubType {
     SINGLE_SHOT_RIFLE("01", "Single Shot Rifle", LandEquipmentEntityType.RIFLE, GraphicType.FULL_OCTAGON),

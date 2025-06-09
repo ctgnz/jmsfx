@@ -5,7 +5,7 @@ import java.util.List;
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntityType;
 import io.github.ctgnz.jmsfx.ISymbolSet;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
 
 public enum LandInstallationEntity implements IEntity {

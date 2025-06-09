@@ -1,6 +1,7 @@
 package io.github.ctgnz.jmsfx.icon;
 
 import io.github.ctgnz.jmsfx.IAmplifier;
+import io.github.ctgnz.jmsfx.types.AmplifierType;
 
 public enum Amplifier implements IAmplifier {
     A_SymbolIcon("A", "Symbol Icon", AmplifierType.GRAPHIC, "The innermost part of a symbol that represents a joint military object."),

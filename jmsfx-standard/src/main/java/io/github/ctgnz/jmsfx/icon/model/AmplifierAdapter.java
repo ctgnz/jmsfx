@@ -2,7 +2,7 @@ package io.github.ctgnz.jmsfx.icon.model;
 
 import io.github.ctgnz.jmsfx.IAmplifier;
 import io.github.ctgnz.jmsfx.icon.Amplifier;
-import io.github.ctgnz.jmsfx.icon.AmplifierType;
+import io.github.ctgnz.jmsfx.types.AmplifierType;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;

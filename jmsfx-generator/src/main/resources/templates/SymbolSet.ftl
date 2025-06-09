@@ -5,6 +5,7 @@ import java.util.List;
 import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
 import ${basePackage}.IAmplifier;
+import ${basePackage}.IAmplifierGuide;
 import ${basePackage}.IEntity;
 import ${basePackage}.ISectorOneModifier;
 import ${basePackage}.ISectorTwoModifier;
@@ -37,12 +38,12 @@ public enum SymbolSet implements ISymbolSet {
     }
 
     @Override
-    public AmplifierGuide getAmplifierGuide(IAmplifier amplifier) {
+    public IAmplifierGuide getAmplifierGuide(IAmplifier amplifier) {
         return getAmplifierGuides().stream().filter(guide -> guide.getAmplifier() == amplifier).findFirst().orElse(null);
     }
 
     @Override
-    public List<AmplifierGuide> getAmplifierGuides() {
+    public List<IAmplifierGuide> getAmplifierGuides() {
         return symbolSetInfo.getAmplifierGuides();
     }
 

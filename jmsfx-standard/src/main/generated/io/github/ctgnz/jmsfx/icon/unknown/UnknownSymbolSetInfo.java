@@ -11,7 +11,7 @@ import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.ISymbolSetInfo;
-import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
+import io.github.ctgnz.jmsfx.IAmplifierGuide;
 
 public class UnknownSymbolSetInfo implements ISymbolSetInfo {
     public static final ISymbolSetInfo INSTANCE = new UnknownSymbolSetInfo();
@@ -21,7 +21,7 @@ public class UnknownSymbolSetInfo implements ISymbolSetInfo {
     }
 
     @Override
-    public List<AmplifierGuide> getAmplifierGuides() {
+    public List<IAmplifierGuide> getAmplifierGuides() {
         return Collections.emptyList();
     }
 

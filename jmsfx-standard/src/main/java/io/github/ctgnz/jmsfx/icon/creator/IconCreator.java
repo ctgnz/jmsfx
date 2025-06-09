@@ -9,18 +9,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 import nz.co.ctg.foxglove.FoxgloveParser;
 import nz.co.ctg.foxglove.SvgGraphic;
 
+import io.github.ctgnz.jmsfx.IAmplifierGuide;
+import io.github.ctgnz.jmsfx.IAmplifierListItem;
 import io.github.ctgnz.jmsfx.IContext;
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
 import io.github.ctgnz.jmsfx.IHqtfDummy;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.IStandardIdentity;
 import io.github.ctgnz.jmsfx.IStatus;
 import io.github.ctgnz.jmsfx.ISymbolSet;
-import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
 import io.github.ctgnz.jmsfx.icon.Context;
 import io.github.ctgnz.jmsfx.icon.HqtfDummy;
 import io.github.ctgnz.jmsfx.icon.IconScale;
@@ -135,7 +135,7 @@ public class IconCreator extends Application {
         return sp;
     }
 
-    private void createAmplifierGuide(AtomicInteger row, AmplifierGuide guide) {
+    private void createAmplifierGuide(AtomicInteger row, IAmplifierGuide guide) {
         int rowIndex = row.getAndIncrement();
 
         ComboBox<String> guideSelect = new ComboBox<>(FXCollections.observableArrayList("None", "Text", "Graphic"));

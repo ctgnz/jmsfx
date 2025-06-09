@@ -11,9 +11,10 @@ import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.ISymbolSetInfo;
+import io.github.ctgnz.jmsfx.IAmplifierGuide;
+import io.github.ctgnz.jmsfx.types.GuideType;
 import io.github.ctgnz.jmsfx.icon.Amplifier;
 import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
-import io.github.ctgnz.jmsfx.icon.GuideType;
 
 public class AirMissileSymbolSetInfo implements ISymbolSetInfo {
     public static final ISymbolSetInfo INSTANCE = new AirMissileSymbolSetInfo();
@@ -23,7 +24,7 @@ public class AirMissileSymbolSetInfo implements ISymbolSetInfo {
     }
 
     @Override
-    public List<AmplifierGuide> getAmplifierGuides() {
+    public List<IAmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
             new AmplifierGuide(Amplifier.AJ_SpeedLeader, GuideType.LINE, 176.341, 469.248, 17.069, 557.214)
         );

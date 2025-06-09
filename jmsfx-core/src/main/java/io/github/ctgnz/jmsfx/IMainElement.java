@@ -1,6 +1,6 @@
 package io.github.ctgnz.jmsfx;
 
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public interface IMainElement extends ICodeElement {
 

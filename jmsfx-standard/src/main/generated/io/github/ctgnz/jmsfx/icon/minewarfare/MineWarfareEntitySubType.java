@@ -2,7 +2,7 @@ package io.github.ctgnz.jmsfx.icon.minewarfare;
 
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum MineWarfareEntitySubType implements IEntitySubType {
     EXERCISE_MINE_BOTTOM("01", "Exercise Mine-Bottom", MineWarfareEntityType.EXERCISE_MINE_GENERAL, GraphicType.FULL_OCTAGON),

@@ -2,7 +2,7 @@ package io.github.ctgnz.jmsfx.icon.seasurface;
 
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum SeaSurfaceEntitySubType implements IEntitySubType {
     BB("01", "Battleship", SeaSurfaceEntityType.SURF_COMBAT_LINE, GraphicType.MAIN),

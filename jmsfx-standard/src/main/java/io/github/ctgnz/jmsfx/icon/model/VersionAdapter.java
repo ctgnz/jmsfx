@@ -9,6 +9,7 @@ public class VersionAdapter extends CodeElementAdapter implements IVersion {
     }
 
     public VersionAdapter(Version version) {
+        super(version);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package ${iconPackage};
 
 import ${basePackage}.IAmplifier;
+import ${typePackage}.AmplifierType;
 
 public enum Amplifier implements IAmplifier {
 <#list amplifiers as val>

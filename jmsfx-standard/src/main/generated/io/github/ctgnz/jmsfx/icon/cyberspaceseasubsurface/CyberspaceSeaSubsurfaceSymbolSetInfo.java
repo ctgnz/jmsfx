@@ -15,9 +15,10 @@ import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.ISymbolSetInfo;
+import io.github.ctgnz.jmsfx.IAmplifierGuide;
+import io.github.ctgnz.jmsfx.types.GuideType;
 import io.github.ctgnz.jmsfx.icon.Amplifier;
 import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
-import io.github.ctgnz.jmsfx.icon.GuideType;
 
 public class CyberspaceSeaSubsurfaceSymbolSetInfo implements ISymbolSetInfo {
     public static final ISymbolSetInfo INSTANCE = new CyberspaceSeaSubsurfaceSymbolSetInfo();
@@ -28,7 +29,7 @@ public class CyberspaceSeaSubsurfaceSymbolSetInfo implements ISymbolSetInfo {
     }
 
     @Override
-    public List<AmplifierGuide> getAmplifierGuides() {
+    public List<IAmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
             new AmplifierGuide(Amplifier.B_Echelon, GuideType.RECTANGLE, 205, 192, 200, 80),
             new AmplifierGuide(Amplifier.C_Quantity, GuideType.RECTANGLE, 205, 192, 200, 80),

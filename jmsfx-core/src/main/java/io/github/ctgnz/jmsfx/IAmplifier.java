@@ -1,6 +1,6 @@
 package io.github.ctgnz.jmsfx;
 
-import io.github.ctgnz.jmsfx.icon.AmplifierType;
+import io.github.ctgnz.jmsfx.types.AmplifierType;
 
 public interface IAmplifier extends ICodeElement {
 

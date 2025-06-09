@@ -82,6 +82,7 @@ public class DomainModelGenerator {
         Map<String, Object> dataModel = new HashMap<>();
         dataModel.put("basePackage", config.getBasePackage());
         dataModel.put("iconPackage", config.getIconPackage());
+        dataModel.put("typePackage", config.getTypePackage());
         dataModel.put("amplifierPackage", config.getAmplifierPackage());
         dataModel.put("commonPackage", config.getCommonPackage());
         Library library = parseLibraryFile(config.getInputDir().resolve(config.getLibraryFile()));

@@ -16,10 +16,11 @@ import ${basePackage}.IEntityType;
 import ${basePackage}.IStandardAmplifierItem;
 import ${basePackage}.ISectorOneModifier;
 import ${basePackage}.ISectorTwoModifier;
-import ${basePackage}.ISymbolSetInfo;<#if symbolSet.amplifierGuidesPresent>
-import ${iconPackage}.Amplifier;</#if>
-import ${iconPackage}.AmplifierGuide;<#if symbolSet.amplifierGuidesPresent>
-import ${iconPackage}.GuideType;</#if><#if symbolSet.amplifierPresent>
+import ${basePackage}.ISymbolSetInfo;
+import ${basePackage}.IAmplifierGuide;<#if symbolSet.amplifierGuidesPresent>
+import ${typePackage}.GuideType;
+import ${iconPackage}.Amplifier;
+import ${iconPackage}.AmplifierGuide;</#if><#if symbolSet.amplifierPresent>
 import ${iconPackage}.amplifier.${symbolSet.amplifierClass};</#if><#if symbolSet.amplifierThreePresent>
 import ${iconPackage}.amplifier.${symbolSet.amplifierThreeClass};</#if><#if symbolSet.amplifierTwoPresent>
 import ${iconPackage}.amplifier.${symbolSet.amplifierTwoClass};</#if><#if symbolSet.frameAmplifierPresent>
@@ -35,7 +36,7 @@ public class ${symbolSet.baseTypeName}SymbolSetInfo implements ISymbolSetInfo {
     }
 
     @Override
-    public List<AmplifierGuide> getAmplifierGuides() {
+    public List<IAmplifierGuide> getAmplifierGuides() {
 <#if symbolSet.amplifierGuidesPresent>
         return Arrays.asList(
     <#list symbolSet.amplifierGuides as guide>

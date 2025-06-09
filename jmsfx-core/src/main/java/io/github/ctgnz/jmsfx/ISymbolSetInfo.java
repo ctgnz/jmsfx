@@ -2,11 +2,9 @@ package io.github.ctgnz.jmsfx;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
-
 public interface ISymbolSetInfo {
 
-    List<AmplifierGuide> getAmplifierGuides();
+    List<IAmplifierGuide> getAmplifierGuides();
 
     <A extends IStandardAmplifierItem> List<A> getAmplifiers();
 

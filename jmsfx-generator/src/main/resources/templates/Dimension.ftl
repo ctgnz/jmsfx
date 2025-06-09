@@ -5,6 +5,7 @@ import java.util.List;
 
 import ${basePackage}.IDimension;
 import ${basePackage}.ISymbolSet;
+import ${typePackage}.GeometryType;
 
 public enum Dimension implements IDimension {
 <#list dimensions as dim>

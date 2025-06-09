@@ -2,7 +2,7 @@ package io.github.ctgnz.jmsfx.icon.airmissile;
 
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.ISymbolSet;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
 
 public enum AirMissileEntity implements IEntity {

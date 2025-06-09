@@ -2,7 +2,7 @@ package ${iconPackage}.${symbolSet.packageName};
 
 import ${basePackage}.IEntitySubType;
 import ${basePackage}.IEntityType;
-import ${iconPackage}.GraphicType;
+import ${typePackage}.GraphicType;
 
 public enum ${symbolSet.baseTypeName}EntitySubType implements IEntitySubType {
 <#list entitySubTypes as subType>

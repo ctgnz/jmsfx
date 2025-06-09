@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.github.ctgnz.jmsfx.IAmplifier;
+import io.github.ctgnz.jmsfx.IAmplifierGuide;
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
@@ -14,7 +15,6 @@ import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
 import io.github.ctgnz.jmsfx.IStandardIdentity;
 import io.github.ctgnz.jmsfx.ISymbolSet;
 import io.github.ctgnz.jmsfx.ISymbolSetInfo;
-import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
 import io.github.ctgnz.jmsfx.icon.Dimension;
 import io.github.ctgnz.jmsfx.icon.SymbolSet;
 import javafx.beans.property.BooleanProperty;
@@ -34,7 +34,7 @@ public class SymbolSetAdapter extends CodeElementAdapter implements ISymbolSet {
     private final ObservableList<IStandardAmplifierItem> amplifier2 = FXCollections.observableArrayList();
     private final ObservableList<IStandardAmplifierItem> amplifier3 = FXCollections.observableArrayList();
     private final ObservableList<IStandardAmplifierItem> frameAmplifiers = FXCollections.observableArrayList();
-    private final ObservableList<AmplifierGuide> amplifierGuides = FXCollections.observableArrayList();
+    private final ObservableList<IAmplifierGuide> amplifierGuides = FXCollections.observableArrayList();
     private final ObjectProperty<ISymbolSetInfo> symbolSetInfo = new SimpleObjectProperty<>();
     private final ObjectProperty<Dimension> dimension = new SimpleObjectProperty<>();
     private final StringProperty frameId = new SimpleStringProperty();
@@ -91,13 +91,13 @@ public class SymbolSetAdapter extends CodeElementAdapter implements ISymbolSet {
 
     @Override
     @JsonIgnore
-    public AmplifierGuide getAmplifierGuide(IAmplifier amplifier) {
+    public IAmplifierGuide getAmplifierGuide(IAmplifier amplifier) {
         return amplifierGuides.stream().filter(guide -> guide.getAmplifier() == amplifier).findFirst().orElse(null);
     }
 
     @Override
     @JsonIgnore
-    public ObservableList<AmplifierGuide> getAmplifierGuides() {
+    public ObservableList<IAmplifierGuide> getAmplifierGuides() {
         return amplifierGuides;
     }
 

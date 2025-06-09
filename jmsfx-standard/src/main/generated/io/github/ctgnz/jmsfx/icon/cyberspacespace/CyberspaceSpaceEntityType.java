@@ -2,7 +2,7 @@ package io.github.ctgnz.jmsfx.icon.cyberspacespace;
 
 import io.github.ctgnz.jmsfx.IEntity;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum CyberspaceSpaceEntityType implements IEntityType {
     COMBAT_MISSION_TEAM("01", "Combat Mission Team", CyberspaceSpaceEntity.MISSION_FORCE, GraphicType.MAIN),

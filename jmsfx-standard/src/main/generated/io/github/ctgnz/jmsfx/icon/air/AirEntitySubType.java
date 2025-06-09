@@ -2,7 +2,7 @@ package io.github.ctgnz.jmsfx.icon.air;
 
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum AirEntitySubType implements IEntitySubType {
     MEDEVAC("01", "Medical Evacuation (MEDEVAC)", AirEntityType.FIXED_WING, GraphicType.MAIN),

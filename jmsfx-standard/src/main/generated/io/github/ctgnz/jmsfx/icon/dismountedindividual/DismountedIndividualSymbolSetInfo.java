@@ -15,9 +15,10 @@ import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.ISymbolSetInfo;
+import io.github.ctgnz.jmsfx.IAmplifierGuide;
+import io.github.ctgnz.jmsfx.types.GuideType;
 import io.github.ctgnz.jmsfx.icon.Amplifier;
 import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
-import io.github.ctgnz.jmsfx.icon.GuideType;
 import io.github.ctgnz.jmsfx.icon.amplifier.LeadershipRole;
 
 public class DismountedIndividualSymbolSetInfo implements ISymbolSetInfo {
@@ -30,7 +31,7 @@ public class DismountedIndividualSymbolSetInfo implements ISymbolSetInfo {
     }
 
     @Override
-    public List<AmplifierGuide> getAmplifierGuides() {
+    public List<IAmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
             new AmplifierGuide(Amplifier.C_Quantity, GuideType.RECTANGLE, 205, 546, 200, 96),
             new AmplifierGuide(Amplifier.G_StaffComments, GuideType.RECTANGLE, 478, 248, 134, 96),

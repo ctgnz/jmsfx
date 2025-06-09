@@ -2,7 +2,7 @@ package io.github.ctgnz.jmsfx.icon.dismountedindividual;
 
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum DismountedIndividualEntitySubType implements IEntitySubType {
     EOD("01", "Explosive Ordnance Disposal", DismountedIndividualEntityType.TASK, GraphicType.MAIN),

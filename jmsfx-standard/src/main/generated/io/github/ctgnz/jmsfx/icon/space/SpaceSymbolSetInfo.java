@@ -15,9 +15,10 @@ import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
 import io.github.ctgnz.jmsfx.ISectorOneModifier;
 import io.github.ctgnz.jmsfx.ISectorTwoModifier;
 import io.github.ctgnz.jmsfx.ISymbolSetInfo;
+import io.github.ctgnz.jmsfx.IAmplifierGuide;
+import io.github.ctgnz.jmsfx.types.GuideType;
 import io.github.ctgnz.jmsfx.icon.Amplifier;
 import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
-import io.github.ctgnz.jmsfx.icon.GuideType;
 
 public class SpaceSymbolSetInfo implements ISymbolSetInfo {
     public static final ISymbolSetInfo INSTANCE = new SpaceSymbolSetInfo();
@@ -28,7 +29,7 @@ public class SpaceSymbolSetInfo implements ISymbolSetInfo {
     }
 
     @Override
-    public List<AmplifierGuide> getAmplifierGuides() {
+    public List<IAmplifierGuide> getAmplifierGuides() {
         return Arrays.asList(
             new AmplifierGuide(Amplifier.G_StaffComments, GuideType.RECTANGLE, 478, 436, 134, 80),
             new AmplifierGuide(Amplifier.H_AdditionalInformation, GuideType.RECTANGLE, 478, 436, 134, 80),

@@ -2,7 +2,7 @@ package io.github.ctgnz.jmsfx.icon.landunits;
 
 import io.github.ctgnz.jmsfx.IEntitySubType;
 import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.icon.GraphicType;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum LandUnitsEntitySubType implements IEntitySubType {
     RECONNAISSANCE_LIAISON_ELEMENT("01", "Reconnaissance and Liaison Element", LandUnitsEntityType.LIAISON, GraphicType.FULL_FRAME),
