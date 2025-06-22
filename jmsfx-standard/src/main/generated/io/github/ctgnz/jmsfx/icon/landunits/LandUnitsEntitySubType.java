@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.landunits;
 
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum LandUnitsEntitySubType implements IEntitySubType {
+public enum LandUnitsEntitySubType implements EntitySubType {
     RECONNAISSANCE_LIAISON_ELEMENT("01", "Reconnaissance and Liaison Element", LandUnitsEntityType.LIAISON, GraphicType.FULL_FRAME),
     BROADCAST_TRANSMITTER_ANTENNAE_PSYOPS("01", "Broadcast Transmitter Antennae (PSYOPS)", LandUnitsEntityType.PSYCHOLOGICAL_OPERATIONS_MISO, GraphicType.FULL_OCTAGON),
     SIGNAL_RADIO("01", "Radio", LandUnitsEntityType.SIGNAL, GraphicType.FULL_FRAME),
@@ -80,7 +80,7 @@ public enum LandUnitsEntitySubType implements IEntitySubType {
     }
 
     @Override
-    public IEntityType getEntityType() {
+    public EntityType getEntityType() {
         return entityType;
     }
 

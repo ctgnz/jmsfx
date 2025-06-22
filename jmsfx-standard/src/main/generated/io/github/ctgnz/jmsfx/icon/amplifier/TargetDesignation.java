@@ -1,11 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IAmplifierList;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
-import io.github.ctgnz.jmsfx.icon.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierListItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum TargetDesignation implements IAmplifierListItem {
+public enum TargetDesignation implements AmplifierListItem {
     TA("TA", "Hostile Target"),
     NT("TA", "Hostile Non-Target"),
     EX("EX", "Expired");
@@ -19,8 +19,8 @@ public enum TargetDesignation implements IAmplifierListItem {
     }
 
     @Override
-    public IAmplifierList getAmplifierList() {
-        return AmplifierList.TARGET_DESIGNATION;
+    public AmplifierList getAmplifierList() {
+        return AmplifierListEnum.TARGET_DESIGNATION;
     }
 
     @Override

@@ -20,7 +20,7 @@ enumeratedAmplifiers:
   - {amplifier: "AO", valuesId: "AO_STAGE_VALUES", code: "A7", enumType: "EngagementStage", enumId: "ENGAGEMENT_STAGE", enumDesc: "Engagement Stage Code"}
   - {amplifier: "AO", valuesId: "AO_WEAPON_VALUES", code: "A8", enumType: "EngagementWeapon", enumId: "ENGAGEMENT_WEAPON", enumDesc: "Engagement Weapon"}
   - {amplifier: "AO1", valuesId: "AO1_VALUES", code: "A9", enumType: "TargetDesignation", enumId: "TARGET_DESIGNATION", enumDesc: "Target Designation"}
-  - {amplifier: "AS", valuesId: "AS_VALUES", code: "AA", enumType: "CountryCode", enumId: "COUNTRY_CODE", enumDesc: "Country Codes", coded: true}
+  - {amplifier: "AS", valuesId: "AS_VALUES", code: "AA", enumType: "NatoCountryCode", enumId: "COUNTRY_CODE", enumDesc: "Country Codes", coded: true}
   - {amplifier: "AX", valuesId: "AX_VALUES", code: "AB", enumType: "InstallationComposition", enumId: "INSTALLATION_COMPOSITION", enumDesc: "Installation Composition"}
   - {amplifier: "AQ", valuesId: "AQ_VALUES", code: "AC", enumType: "GuardedUnit", enumId: "GUARDED_UNIT", enumDesc: "Guarded Unit"}
   - {amplifier: "AD", valuesId: "AD_VALUES", code: "AD", enumType: "PlatformType", enumId: "PLATFORM_TYPE", enumDesc: "Platform Type"}

@@ -10,91 +10,80 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 </#if>
 
-import ${basePackage}.IEntity;
-import ${basePackage}.IEntitySubType;
-import ${basePackage}.IEntityType;
-import ${basePackage}.IStandardAmplifierItem;
-import ${basePackage}.ISectorOneModifier;
-import ${basePackage}.ISectorTwoModifier;
-import ${basePackage}.ISymbolSetInfo;
-import ${basePackage}.IAmplifierGuide;<#if symbolSet.amplifierGuidesPresent>
-import ${typePackage}.GuideType;
-import ${iconPackage}.Amplifier;
-import ${iconPackage}.AmplifierGuide;</#if><#if symbolSet.amplifierPresent>
+import ${basePackage}.Entity;
+import ${basePackage}.EntitySubType;
+import ${basePackage}.EntityType;
+import ${basePackage}.StandardAmplifierItem;
+import ${basePackage}.SectorOneModifier;
+import ${basePackage}.SectorTwoModifier;
+import ${basePackage}.SymbolSetInfo;
+import ${basePackage}.AmplifierGuide;<#if symbolSet.amplifierPresent>
 import ${iconPackage}.amplifier.${symbolSet.amplifierClass};</#if><#if symbolSet.amplifierThreePresent>
 import ${iconPackage}.amplifier.${symbolSet.amplifierThreeClass};</#if><#if symbolSet.amplifierTwoPresent>
 import ${iconPackage}.amplifier.${symbolSet.amplifierTwoClass};</#if><#if symbolSet.frameAmplifierPresent>
 import ${iconPackage}.amplifier.${symbolSet.frameAmplifierClass};</#if>
 
-public class ${symbolSet.baseTypeName}SymbolSet implements ISymbolSetInfo {
-    public static final ISymbolSetInfo INSTANCE = new ${symbolSet.baseTypeName}SymbolSet();
-    private static final List<IEntity> ENTITIES = Arrays.asList(${symbolSet.baseTypeName}Entity.values());<#if symbolSet.entityTypePresent>
-    private static final Multimap<IEntity, IEntityType> ENTITY_TYPES = Multimaps.index(Arrays.asList(${symbolSet.baseTypeName}EntityType.values()), IEntityType::getEntity);</#if><#if symbolSet.entitySubTypePresent>
-    private static final Multimap<IEntityType, IEntitySubType> ENTITY_SUB_TYPES = Multimaps.index(Arrays.asList(${symbolSet.baseTypeName}EntitySubType.values()), IEntitySubType::getEntityType);</#if>
+public class ${symbolSet.baseTypeName}SymbolSet implements SymbolSetInfo {
+    public static final SymbolSetInfo INSTANCE = new ${symbolSet.baseTypeName}SymbolSet();
+    private static final List<Entity> ENTITIES = Arrays.asList(${symbolSet.baseTypeName}Entity.values());<#if symbolSet.entityTypePresent>
+    private static final Multimap<Entity, EntityType> ENTITY_TYPES = Multimaps.index(Arrays.asList(${symbolSet.baseTypeName}EntityType.values()), EntityType::getEntity);</#if><#if symbolSet.entitySubTypePresent>
+    private static final Multimap<EntityType, EntitySubType> ENTITY_SUB_TYPES = Multimaps.index(Arrays.asList(${symbolSet.baseTypeName}EntitySubType.values()), EntitySubType::getEntityType);</#if>
 
     private ${symbolSet.baseTypeName}SymbolSet() {
     }
 
     @Override
-    public List<IAmplifierGuide> getAmplifierGuides() {
+    public List<AmplifierGuide> getAmplifierGuides() {
 <#if symbolSet.amplifierGuidesPresent>
-        return Arrays.asList(
-    <#list symbolSet.amplifierGuides as guide>
-        <#if guide.graphical>
-            new AmplifierGuide(Amplifier.${guide.amplifier}, GuideType.${guide.type}<#list guide.points as pt>, ${pt}</#list>)<#if guide?is_last><#else>,</#if>
-        <#else>
-            new AmplifierGuide(Amplifier.${guide.amplifier}, GuideType.${guide.type})<#if guide?is_last><#else>,</#if>
-        </#if>
-    </#list>
-        );
+        return Arrays.asList(${symbolSet.baseTypeName}AmplifierGuide.values());
 <#else>
         return Collections.emptyList();
 </#if>
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiers() {
+    public List<StandardAmplifierItem> getAmplifiers() {
         return <#if symbolSet.amplifierPresent>Arrays.asList(${symbolSet.amplifierClass}.values())<#else>Collections.emptyList()</#if>;
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiersTwo() {
+    public List<StandardAmplifierItem> getAmplifiersTwo() {
         return <#if symbolSet.amplifierTwoPresent>Arrays.asList(${symbolSet.amplifierTwoClass}.values())<#else>Collections.emptyList()</#if>;
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiersThree() {
+    public List<StandardAmplifierItem> getAmplifiersThree() {
         return <#if symbolSet.amplifierThreePresent>Arrays.asList(${symbolSet.amplifierThreeClass}.values())<#else>Collections.emptyList()</#if>;
     }
 
     @Override
-    public List<IEntity> getEntities() {
+    public List<Entity> getEntities() {
         return ENTITIES;
     }
 
     @Override
-    public List<IEntitySubType> getEntitySubTypes(IEntityType entityType) {<#if symbolSet.entitySubTypePresent>
+    public List<EntitySubType> getEntitySubTypes(EntityType entityType) {<#if symbolSet.entitySubTypePresent>
         return Lists.newArrayList(ENTITY_SUB_TYPES.get(entityType));<#else>
         return Collections.emptyList();</#if>
     }
 
     @Override
-    public List<IEntityType> getEntityTypes(IEntity entity) {
+    public List<EntityType> getEntityTypes(Entity entity) {
         return <#if symbolSet.entityTypePresent>Lists.newArrayList(ENTITY_TYPES.get(entity))<#else>Collections.emptyList()</#if>;
     }
 
     @Override
-    public List<IStandardAmplifierItem> getFrameAmplifiers() {
+    public List<StandardAmplifierItem> getFrameAmplifiers() {
         return <#if symbolSet.frameAmplifierPresent>Arrays.asList(${symbolSet.frameAmplifierClass}.values())<#else>Collections.emptyList()</#if>;
     }
 
     @Override
-    public List<ISectorOneModifier> getSectorOneModifiers() {
+    public List<SectorOneModifier> getSectorOneModifiers() {
         return <#if symbolSet.sectorOneModifierPresent>Arrays.asList(${symbolSet.baseTypeName}SectorOneModifier.values())<#else>Collections.emptyList()</#if>;
     }
 
     @Override
-    public List<ISectorTwoModifier> getSectorTwoModifiers() {
+    public List<SectorTwoModifier> getSectorTwoModifiers() {
         return <#if symbolSet.sectorTwoModifierPresent>Arrays.asList(${symbolSet.baseTypeName}SectorTwoModifier.values())<#else>Collections.emptyList()</#if>;
     }
 

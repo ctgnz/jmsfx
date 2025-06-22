@@ -2,13 +2,13 @@ package io.github.ctgnz.jmsfx.icon.landequipment;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.types.GraphicType;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum LandEquipmentEntity implements IEntity {
+public enum LandEquipmentEntity implements Entity {
     UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     WEAPON_SYSTEM("11", "Weapon/Weapon System", GraphicType.FULL_OCTAGON),
     VEHICLE("12", "Vehicle", GraphicType.FULL_OCTAGON),
@@ -52,12 +52,12 @@ public enum LandEquipmentEntity implements IEntity {
     }
 
     @Override
-    public ISymbolSet getSymbolSet() {
-        return SymbolSet.LAND_EQUIPMENT;
+    public SymbolSet getSymbolSet() {
+        return SymbolSetEnum.LAND_EQUIPMENT;
     }
 
     @Override
-    public List<IEntityType> getEntityTypes() {
+    public List<EntityType> getEntityTypes() {
         return LandEquipmentSymbolSet.INSTANCE.getEntityTypes(this);
     }
 

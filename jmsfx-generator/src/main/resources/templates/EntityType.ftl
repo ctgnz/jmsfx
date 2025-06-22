@@ -4,14 +4,14 @@ package ${iconPackage}.${symbolSet.packageName};
 import java.util.List;
 
 </#if>
-import ${basePackage}.IEntity;
+import ${basePackage}.Entity;
 <#if entitySubTypes??>
-import ${basePackage}.IEntitySubType;
+import ${basePackage}.EntitySubType;
 </#if>
-import ${basePackage}.IEntityType;
+import ${basePackage}.EntityType;
 import ${typePackage}.GraphicType;
 
-public enum ${symbolSet.baseTypeName}EntityType implements IEntityType {
+public enum ${symbolSet.baseTypeName}EntityType implements EntityType {
 <#list entityTypes as entType>
     ${entType.id}("${entType.code}", "${entType.label}", ${symbolSet.baseTypeName}Entity.${entType.entityId}, GraphicType.${entType.graphicType})<#if entType.graphic??> {
         @Override
@@ -49,13 +49,13 @@ public enum ${symbolSet.baseTypeName}EntityType implements IEntityType {
     }
 
     @Override
-    public IEntity getEntity() {
+    public Entity getEntity() {
         return entity;
     }
 <#if entitySubTypes??>
 
     @Override
-    public List<IEntitySubType> getEntitySubTypes() {
+    public List<EntitySubType> getEntitySubTypes() {
         return ${symbolSet.baseTypeName}SymbolSet.INSTANCE.getEntitySubTypes(this);
     }
 </#if>

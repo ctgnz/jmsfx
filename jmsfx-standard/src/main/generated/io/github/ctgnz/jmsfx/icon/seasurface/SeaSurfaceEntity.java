@@ -2,13 +2,13 @@ package io.github.ctgnz.jmsfx.icon.seasurface;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.types.GraphicType;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum SeaSurfaceEntity implements IEntity {
+public enum SeaSurfaceEntity implements Entity {
     UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     MILITARY("11", "Military", GraphicType.MAIN),
     MILITARY_COMBAT("12", "Military Combatant", GraphicType.MAIN),
@@ -44,12 +44,12 @@ public enum SeaSurfaceEntity implements IEntity {
     }
 
     @Override
-    public ISymbolSet getSymbolSet() {
-        return SymbolSet.SEA_SURFACE;
+    public SymbolSet getSymbolSet() {
+        return SymbolSetEnum.SEA_SURFACE;
     }
 
     @Override
-    public List<IEntityType> getEntityTypes() {
+    public List<EntityType> getEntityTypes() {
         return SeaSurfaceSymbolSet.INSTANCE.getEntityTypes(this);
     }
 

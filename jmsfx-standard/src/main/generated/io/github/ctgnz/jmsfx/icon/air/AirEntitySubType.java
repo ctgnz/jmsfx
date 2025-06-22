@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.air;
 
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum AirEntitySubType implements IEntitySubType {
+public enum AirEntitySubType implements EntitySubType {
     MEDEVAC("01", "Medical Evacuation (MEDEVAC)", AirEntityType.FIXED_WING, GraphicType.MAIN),
     ATTACK_STRIKE("02", "Attack/Strike", AirEntityType.FIXED_WING, GraphicType.MAIN),
     BOMBER("03", "Bomber", AirEntityType.FIXED_WING, GraphicType.MAIN),
@@ -66,7 +66,7 @@ public enum AirEntitySubType implements IEntitySubType {
     }
 
     @Override
-    public IEntityType getEntityType() {
+    public EntityType getEntityType() {
         return entityType;
     }
 

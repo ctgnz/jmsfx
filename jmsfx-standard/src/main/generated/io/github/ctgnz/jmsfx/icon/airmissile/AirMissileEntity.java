@@ -1,11 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.airmissile;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.types.GraphicType;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum AirMissileEntity implements IEntity {
+public enum AirMissileEntity implements Entity {
     UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     MISSILE("11", "Missile", GraphicType.MAIN);
 
@@ -35,8 +35,8 @@ public enum AirMissileEntity implements IEntity {
     }
 
     @Override
-    public ISymbolSet getSymbolSet() {
-        return SymbolSet.AIR_MISSILE;
+    public SymbolSet getSymbolSet() {
+        return SymbolSetEnum.AIR_MISSILE;
     }
 
     @Override

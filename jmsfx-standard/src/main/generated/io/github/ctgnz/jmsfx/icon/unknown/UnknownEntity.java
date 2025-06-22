@@ -1,11 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.unknown;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.types.GraphicType;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum UnknownEntity implements IEntity {
+public enum UnknownEntity implements Entity {
     UNSPECIFIED("00", "Unspecified", GraphicType.NA);
 
     private final String id;
@@ -34,8 +34,8 @@ public enum UnknownEntity implements IEntity {
     }
 
     @Override
-    public ISymbolSet getSymbolSet() {
-        return SymbolSet.UNKNOWN;
+    public SymbolSet getSymbolSet() {
+        return SymbolSetEnum.UNKNOWN;
     }
 
     @Override

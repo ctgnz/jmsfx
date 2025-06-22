@@ -2,12 +2,12 @@ package io.github.ctgnz.jmsfx.icon.air;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum AirEntityType implements IEntityType {
+public enum AirEntityType implements EntityType {
     FIXED_WING("01", "Fixed-Wing", AirEntity.MILITARY, GraphicType.MAIN),
     ROTARY_WING("02", "Rotary-Wing", AirEntity.MILITARY, GraphicType.MAIN),
     UAV("03", "Unmanned Aircraft (UA)/Unmanned Aerial Vehicle (UAV)/Unmanned Aircraft System (UAS)/Remote Piloted Vehicle (RPV)", AirEntity.MILITARY, GraphicType.MAIN),
@@ -53,12 +53,12 @@ public enum AirEntityType implements IEntityType {
     }
 
     @Override
-    public IEntity getEntity() {
+    public Entity getEntity() {
         return entity;
     }
 
     @Override
-    public List<IEntitySubType> getEntitySubTypes() {
+    public List<EntitySubType> getEntitySubTypes() {
         return AirSymbolSet.INSTANCE.getEntitySubTypes(this);
     }
 

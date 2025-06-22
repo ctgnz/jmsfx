@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.cyberspacelandinstallation;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum CyberspaceLandInstallationEntityType implements IEntityType {
+public enum CyberspaceLandInstallationEntityType implements EntityType {
     COMBAT_MISSION_TEAM("01", "Combat Mission Team", CyberspaceLandInstallationEntity.MISSION_FORCE, GraphicType.MAIN),
     NATIONAL_MISSION_TEAM("02", "National Mission Team", CyberspaceLandInstallationEntity.MISSION_FORCE, GraphicType.MAIN),
     CYBER_PROTECTION_TEAM("03", "Cyber Protection Team", CyberspaceLandInstallationEntity.MISSION_FORCE, GraphicType.MAIN),
@@ -47,7 +47,7 @@ public enum CyberspaceLandInstallationEntityType implements IEntityType {
     }
 
     @Override
-    public IEntity getEntity() {
+    public Entity getEntity() {
         return entity;
     }
 

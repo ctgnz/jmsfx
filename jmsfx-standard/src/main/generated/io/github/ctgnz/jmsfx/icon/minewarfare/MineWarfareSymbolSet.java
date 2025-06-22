@@ -8,71 +8,71 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
-import io.github.ctgnz.jmsfx.ISectorOneModifier;
-import io.github.ctgnz.jmsfx.ISectorTwoModifier;
-import io.github.ctgnz.jmsfx.ISymbolSetInfo;
-import io.github.ctgnz.jmsfx.IAmplifierGuide;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.StandardAmplifierItem;
+import io.github.ctgnz.jmsfx.SectorOneModifier;
+import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.SymbolSetInfo;
+import io.github.ctgnz.jmsfx.AmplifierGuide;
 
-public class MineWarfareSymbolSet implements ISymbolSetInfo {
-    public static final ISymbolSetInfo INSTANCE = new MineWarfareSymbolSet();
-    private static final List<IEntity> ENTITIES = Arrays.asList(MineWarfareEntity.values());
-    private static final Multimap<IEntity, IEntityType> ENTITY_TYPES = Multimaps.index(Arrays.asList(MineWarfareEntityType.values()), IEntityType::getEntity);
-    private static final Multimap<IEntityType, IEntitySubType> ENTITY_SUB_TYPES = Multimaps.index(Arrays.asList(MineWarfareEntitySubType.values()), IEntitySubType::getEntityType);
+public class MineWarfareSymbolSet implements SymbolSetInfo {
+    public static final SymbolSetInfo INSTANCE = new MineWarfareSymbolSet();
+    private static final List<Entity> ENTITIES = Arrays.asList(MineWarfareEntity.values());
+    private static final Multimap<Entity, EntityType> ENTITY_TYPES = Multimaps.index(Arrays.asList(MineWarfareEntityType.values()), EntityType::getEntity);
+    private static final Multimap<EntityType, EntitySubType> ENTITY_SUB_TYPES = Multimaps.index(Arrays.asList(MineWarfareEntitySubType.values()), EntitySubType::getEntityType);
 
     private MineWarfareSymbolSet() {
     }
 
     @Override
-    public List<IAmplifierGuide> getAmplifierGuides() {
+    public List<AmplifierGuide> getAmplifierGuides() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiers() {
+    public List<StandardAmplifierItem> getAmplifiers() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiersTwo() {
+    public List<StandardAmplifierItem> getAmplifiersTwo() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiersThree() {
+    public List<StandardAmplifierItem> getAmplifiersThree() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IEntity> getEntities() {
+    public List<Entity> getEntities() {
         return ENTITIES;
     }
 
     @Override
-    public List<IEntitySubType> getEntitySubTypes(IEntityType entityType) {
+    public List<EntitySubType> getEntitySubTypes(EntityType entityType) {
         return Lists.newArrayList(ENTITY_SUB_TYPES.get(entityType));
     }
 
     @Override
-    public List<IEntityType> getEntityTypes(IEntity entity) {
+    public List<EntityType> getEntityTypes(Entity entity) {
         return Lists.newArrayList(ENTITY_TYPES.get(entity));
     }
 
     @Override
-    public List<IStandardAmplifierItem> getFrameAmplifiers() {
+    public List<StandardAmplifierItem> getFrameAmplifiers() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<ISectorOneModifier> getSectorOneModifiers() {
+    public List<SectorOneModifier> getSectorOneModifiers() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<ISectorTwoModifier> getSectorTwoModifiers() {
+    public List<SectorTwoModifier> getSectorTwoModifiers() {
         return Collections.emptyList();
     }
 

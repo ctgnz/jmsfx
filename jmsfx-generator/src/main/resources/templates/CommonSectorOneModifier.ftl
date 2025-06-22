@@ -2,10 +2,11 @@ package ${commonPackage};
 
 import org.apache.commons.lang3.StringUtils;
 
-import ${basePackage}.ISectorOneModifier;
-import ${iconPackage}.SymbolSet;
+import ${basePackage}.SectorOneModifier;
+import ${basePackage}.SymbolSet;
+import ${iconPackage}.SymbolSetEnum;
 
-public enum CommonSectorOneModifier implements ISectorOneModifier {
+public enum CommonSectorOneModifier implements SectorOneModifier {
 <#list sectorOneMods as mod>
     ${mod.id}("${mod.groupId}", "${mod.code}", "${mod.label}", "${mod.category}")<#sep>,
 </#list>;
@@ -49,7 +50,7 @@ public enum CommonSectorOneModifier implements ISectorOneModifier {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.COMMON;
+        return SymbolSetEnum.COMMON;
     }
 
     @Override

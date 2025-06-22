@@ -1,11 +1,11 @@
 package ${iconPackage}.amplifier;
 
-import ${basePackage}.IAmplifierList;
-import ${basePackage}.<#if amplifier.standard>IStandardAmplifierItem<#elseif amplifier.country>ICountryCode<#else>IAmplifierListItem</#if>;
-import ${iconPackage}.AmplifierList;
+import ${basePackage}.AmplifierList;
+import ${basePackage}.<#if amplifier.standard>StandardAmplifierItem<#elseif amplifier.country>CountryCode<#else>AmplifierListItem</#if>;
+import ${iconPackage}.AmplifierListEnum;
 import ${iconPackage}.Extension;
 
-public enum ${amplifier.typeName} implements <#if amplifier.standard>IStandardAmplifierItem<#elseif amplifier.country>ICountryCode<#else>IAmplifierListItem</#if> {
+public enum ${amplifier.typeName} implements <#if amplifier.standard>StandardAmplifierItem<#elseif amplifier.country>CountryCode<#else>AmplifierListItem</#if> {
 <#list amplifier.values as val>
     <#if val.extension>@Extension </#if>${val.id}("${val.code}", "${val.label}"<#if val.remarks??>, "${val.remarks}"</#if><#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#sep>,
 </#list>;
@@ -23,8 +23,8 @@ public enum ${amplifier.typeName} implements <#if amplifier.standard>IStandardAm
     }
 
     @Override
-    public IAmplifierList getAmplifierList() {
-        return AmplifierList.${amplifier.enumId};
+    public AmplifierList getAmplifierList() {
+        return AmplifierListEnum.${amplifier.enumId};
     }
 
     @Override

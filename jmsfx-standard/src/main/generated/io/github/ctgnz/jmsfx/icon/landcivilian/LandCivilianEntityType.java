@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.landcivilian;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum LandCivilianEntityType implements IEntityType {
+public enum LandCivilianEntityType implements EntityType {
     ENVIRONMENTAL_PROTECTION("01", "Environmental Protection", LandCivilianEntity.CIVILIAN, GraphicType.MAIN),
     GOVERNMENT_ORGANIZATION("02", "Government Organization", LandCivilianEntity.CIVILIAN, GraphicType.MAIN),
     INDIVIDUAL("03", "Individual", LandCivilianEntity.CIVILIAN, GraphicType.MAIN),
@@ -44,7 +44,7 @@ public enum LandCivilianEntityType implements IEntityType {
     }
 
     @Override
-    public IEntity getEntity() {
+    public Entity getEntity() {
         return entity;
     }
 

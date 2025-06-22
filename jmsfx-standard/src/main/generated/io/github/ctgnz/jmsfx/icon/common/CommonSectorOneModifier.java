@@ -2,10 +2,11 @@ package io.github.ctgnz.jmsfx.icon.common;
 
 import org.apache.commons.lang3.StringUtils;
 
-import io.github.ctgnz.jmsfx.ISectorOneModifier;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.SectorOneModifier;
+import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum CommonSectorOneModifier implements ISectorOneModifier {
+public enum CommonSectorOneModifier implements SectorOneModifier {
     UNSPECIFIED_MOD("0", "00", "Unspecified", "General"),
     UAV_DRONE_MOD("1", "00", "UAV/Drone Equipped/Drone", "Mobility"),
     ROBOTIC_MOD("1", "01", "Robotic", "Mobility"),
@@ -105,7 +106,7 @@ public enum CommonSectorOneModifier implements ISectorOneModifier {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.COMMON;
+        return SymbolSetEnum.COMMON;
     }
 
     @Override

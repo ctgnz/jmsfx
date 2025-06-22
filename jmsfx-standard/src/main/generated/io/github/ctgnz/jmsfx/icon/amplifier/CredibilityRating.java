@@ -1,11 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IAmplifierList;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
-import io.github.ctgnz.jmsfx.icon.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierListItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum CredibilityRating implements IAmplifierListItem {
+public enum CredibilityRating implements AmplifierListItem {
     CONFIRMED("1", "Confirmed by Other Sources"),
     PROBABLY("2", "Probably True"),
     POSSIBLY("3", "Possibly True"),
@@ -22,8 +22,8 @@ public enum CredibilityRating implements IAmplifierListItem {
     }
 
     @Override
-    public IAmplifierList getAmplifierList() {
-        return AmplifierList.CREDIBILITY_RATING;
+    public AmplifierList getAmplifierList() {
+        return AmplifierListEnum.CREDIBILITY_RATING;
     }
 
     @Override

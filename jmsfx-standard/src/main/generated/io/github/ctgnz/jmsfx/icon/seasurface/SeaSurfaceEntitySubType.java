@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.seasurface;
 
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum SeaSurfaceEntitySubType implements IEntitySubType {
+public enum SeaSurfaceEntitySubType implements EntitySubType {
     BB("01", "Battleship", SeaSurfaceEntityType.SURF_COMBAT_LINE, GraphicType.MAIN),
     CA("02", "Cruiser", SeaSurfaceEntityType.SURF_COMBAT_LINE, GraphicType.MAIN),
     DD("03", "Destroyer", SeaSurfaceEntityType.SURF_COMBAT_LINE, GraphicType.MAIN),
@@ -100,7 +100,7 @@ public enum SeaSurfaceEntitySubType implements IEntitySubType {
     }
 
     @Override
-    public IEntityType getEntityType() {
+    public EntityType getEntityType() {
         return entityType;
     }
 

@@ -1,11 +1,12 @@
 package ${iconPackage}.${symbolSet.packageName};
 
-import ${basePackage}.ISectorOneModifier;
-import ${iconPackage}.SymbolSet;
+import ${basePackage}.SectorOneModifier;
+import ${basePackage}.SymbolSet;
+import ${iconPackage}.SymbolSetEnum;
 
-public enum ${symbolSet.baseTypeName}SectorOneModifier implements ISectorOneModifier {
+public enum ${symbolSet.baseTypeName}SectorOneModifier implements SectorOneModifier {
 <#list sectorOneMods as mod>
-    ${mod.id}("${mod.code}", "${mod.label}", "${mod.category}", SymbolSet.${symbolSet.id})<#sep>,
+    ${mod.id}("${mod.code}", "${mod.label}", "${mod.category}", SymbolSetEnum.${symbolSet.id})<#sep>,
 </#list>;
 
     private final String id;
@@ -13,7 +14,7 @@ public enum ${symbolSet.baseTypeName}SectorOneModifier implements ISectorOneModi
     private final String category;
     private final SymbolSet symbolSet;
 
-    ${symbolSet.baseTypeName}SectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
+    ${symbolSet.baseTypeName}SectorOneModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
@@ -43,7 +44,7 @@ public enum ${symbolSet.baseTypeName}SectorOneModifier implements ISectorOneModi
 
     @Override
     public SymbolSet getBaseSymbolSet() {
-        return SymbolSet.${symbolSet.baseSymbolSet};
+        return SymbolSetEnum.${symbolSet.baseSymbolSet};
     }
 </#if>
 

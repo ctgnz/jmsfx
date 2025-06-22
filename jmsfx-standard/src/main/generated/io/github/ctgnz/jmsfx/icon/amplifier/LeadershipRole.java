@@ -1,11 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IAmplifierList;
-import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
-import io.github.ctgnz.jmsfx.icon.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.StandardAmplifierItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum LeadershipRole implements IStandardAmplifierItem {
+public enum LeadershipRole implements StandardAmplifierItem {
     LEADER_INDIVIDUAL("1", "Leader"),
     DEPUTY_LEADER_INDIVIDUAL("2", "Deputy Leader");
 
@@ -18,8 +18,8 @@ public enum LeadershipRole implements IStandardAmplifierItem {
     }
 
     @Override
-    public IAmplifierList getAmplifierList() {
-        return AmplifierList.LEADERSHIP_ROLE;
+    public AmplifierList getAmplifierList() {
+        return AmplifierListEnum.LEADERSHIP_ROLE;
     }
 
     @Override

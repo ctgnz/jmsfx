@@ -1,19 +1,20 @@
 package io.github.ctgnz.jmsfx.icon.cyberspaceseasubsurface;
 
-import io.github.ctgnz.jmsfx.ISectorTwoModifier;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum CyberspaceSeaSubsurfaceSectorTwoModifier implements ISectorTwoModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.CYBERSPACE_SEA_SUBSURFACE),
-    SECURED_MOD("01", "Secured", "General", SymbolSet.CYBERSPACE_SEA_SUBSURFACE),
-    OPEN_MOD("02", "Open", "General", SymbolSet.CYBERSPACE_SEA_SUBSURFACE);
+public enum CyberspaceSeaSubsurfaceSectorTwoModifier implements SectorTwoModifier {
+    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.CYBERSPACE_SEA_SUBSURFACE),
+    SECURED_MOD("01", "Secured", "General", SymbolSetEnum.CYBERSPACE_SEA_SUBSURFACE),
+    OPEN_MOD("02", "Open", "General", SymbolSetEnum.CYBERSPACE_SEA_SUBSURFACE);
 
     private final String id;
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
 
-    CyberspaceSeaSubsurfaceSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
+    CyberspaceSeaSubsurfaceSectorTwoModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
@@ -42,7 +43,7 @@ public enum CyberspaceSeaSubsurfaceSectorTwoModifier implements ISectorTwoModifi
 
     @Override
     public SymbolSet getBaseSymbolSet() {
-        return SymbolSet.CYBERSPACE;
+        return SymbolSetEnum.CYBERSPACE;
     }
 
 }

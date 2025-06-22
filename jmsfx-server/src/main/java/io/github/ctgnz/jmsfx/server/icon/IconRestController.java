@@ -9,44 +9,44 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
 
-import io.github.ctgnz.jmsfx.IAmplifierList;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.ISectorOneModifier;
-import io.github.ctgnz.jmsfx.ISectorTwoModifier;
+import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierListItem;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.SectorOneModifier;
+import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.model.SymbolSetAdapter;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.icon.model.SymbolSetImpl;
 
-public abstract class IconRestController<E extends IEntity, T extends IEntityType, S extends IEntitySubType, M extends ISectorOneModifier, N extends ISectorTwoModifier, A extends IAmplifierListItem> {
-    private SymbolSet symbolSet;
+public abstract class IconRestController<E extends Entity, T extends EntityType, S extends EntitySubType, M extends SectorOneModifier, N extends SectorTwoModifier, A extends AmplifierListItem> {
+    private SymbolSetEnum symbolSet;
     private FoxgloveParser parser = new FoxgloveParser();
-    private SymbolSetAdapter dto;
+    private SymbolSetImpl dto;
 
-    public IconRestController(SymbolSet symbolSet) {
+    public IconRestController(SymbolSetEnum symbolSet) {
         this.symbolSet = symbolSet;
-        this.dto = new SymbolSetAdapter(symbolSet);
+        this.dto = new SymbolSetImpl(symbolSet);
     }
 
     @GetMapping("/modifier/one")
-    public List<ISectorOneModifier> listSectorOneModifiers() {
+    public List<SectorOneModifier> listSectorOneModifiers() {
         return dto.getSectorOneModifiers();
     }
 
     @GetMapping("/modifier/two")
-    public List<ISectorTwoModifier> listSectorTwoModifiers() {
+    public List<SectorTwoModifier> listSectorTwoModifiers() {
         return dto.getSectorTwoModifiers();
     }
 
     @GetMapping("/amplifier")
-    public List<IAmplifierList> listAmplifiers() {
+    public List<AmplifierList> listAmplifiers() {
         return Collections.emptyList();
     }
 
     @GetMapping("/entity/list")
-    public List<IEntity> listEntities() {
+    public List<Entity> listEntities() {
         return dto.getEntities();
     }
 

@@ -2,13 +2,13 @@ package io.github.ctgnz.jmsfx.icon.controlmeasure;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.types.GraphicType;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum ControlMeasureEntity implements IEntity {
+public enum ControlMeasureEntity implements Entity {
     UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     COMMAND_CONTROL_LINES("11", "Command and Control Lines", GraphicType.NA),
     COMMAND_CONTROL_AREAS("12", "Command and Control Areas", GraphicType.NA),
@@ -64,12 +64,12 @@ public enum ControlMeasureEntity implements IEntity {
     }
 
     @Override
-    public ISymbolSet getSymbolSet() {
-        return SymbolSet.CONTROL_MEASURE;
+    public SymbolSet getSymbolSet() {
+        return SymbolSetEnum.CONTROL_MEASURE;
     }
 
     @Override
-    public List<IEntityType> getEntityTypes() {
+    public List<EntityType> getEntityTypes() {
         return ControlMeasureSymbolSet.INSTANCE.getEntityTypes(this);
     }
 

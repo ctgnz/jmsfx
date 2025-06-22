@@ -1,26 +1,27 @@
 package io.github.ctgnz.jmsfx.icon.cyberspacelandinstallation;
 
-import io.github.ctgnz.jmsfx.ISectorOneModifier;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.SectorOneModifier;
+import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum CyberspaceLandInstallationSectorOneModifier implements ISectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.CYBERSPACE_LAND_INSTALLATION),
-    DEFENSIVE_CYBERSPACE("01", "Defensive Cyberspace", "General", SymbolSet.CYBERSPACE_LAND_INSTALLATION),
-    OFFENSIVE_CYBERSPACE("02", "Offensive Cyberspace", "General", SymbolSet.CYBERSPACE_LAND_INSTALLATION),
-    RESPONSE_ACTIONS("03", "Response Actions", "General", SymbolSet.CYBERSPACE_LAND_INSTALLATION),
-    EXTERNAL_DEFENCE_MEASURES("04", "External Defence Measures", "General", SymbolSet.CYBERSPACE_LAND_INSTALLATION),
-    INTERNAL_DEFENCE_MEASURES("05", "Internal Defence Measures", "General", SymbolSet.CYBERSPACE_LAND_INSTALLATION),
-    SOCIAL("06", "Social", "General", SymbolSet.CYBERSPACE_LAND_INSTALLATION),
-    WIRED("07", "Wired", "General", SymbolSet.CYBERSPACE_LAND_INSTALLATION),
-    RADIO_FREQUENCY("08", "Radio Frequency", "General", SymbolSet.CYBERSPACE_LAND_INSTALLATION),
-    OPERATING_SYSTEM("09", "Operating System", "General", SymbolSet.CYBERSPACE_LAND_INSTALLATION);
+public enum CyberspaceLandInstallationSectorOneModifier implements SectorOneModifier {
+    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.CYBERSPACE_LAND_INSTALLATION),
+    DEFENSIVE_CYBERSPACE("01", "Defensive Cyberspace", "General", SymbolSetEnum.CYBERSPACE_LAND_INSTALLATION),
+    OFFENSIVE_CYBERSPACE("02", "Offensive Cyberspace", "General", SymbolSetEnum.CYBERSPACE_LAND_INSTALLATION),
+    RESPONSE_ACTIONS("03", "Response Actions", "General", SymbolSetEnum.CYBERSPACE_LAND_INSTALLATION),
+    EXTERNAL_DEFENCE_MEASURES("04", "External Defence Measures", "General", SymbolSetEnum.CYBERSPACE_LAND_INSTALLATION),
+    INTERNAL_DEFENCE_MEASURES("05", "Internal Defence Measures", "General", SymbolSetEnum.CYBERSPACE_LAND_INSTALLATION),
+    SOCIAL("06", "Social", "General", SymbolSetEnum.CYBERSPACE_LAND_INSTALLATION),
+    WIRED("07", "Wired", "General", SymbolSetEnum.CYBERSPACE_LAND_INSTALLATION),
+    RADIO_FREQUENCY("08", "Radio Frequency", "General", SymbolSetEnum.CYBERSPACE_LAND_INSTALLATION),
+    OPERATING_SYSTEM("09", "Operating System", "General", SymbolSetEnum.CYBERSPACE_LAND_INSTALLATION);
 
     private final String id;
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
 
-    CyberspaceLandInstallationSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
+    CyberspaceLandInstallationSectorOneModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
@@ -49,7 +50,7 @@ public enum CyberspaceLandInstallationSectorOneModifier implements ISectorOneMod
 
     @Override
     public SymbolSet getBaseSymbolSet() {
-        return SymbolSet.CYBERSPACE;
+        return SymbolSetEnum.CYBERSPACE;
     }
 
 }

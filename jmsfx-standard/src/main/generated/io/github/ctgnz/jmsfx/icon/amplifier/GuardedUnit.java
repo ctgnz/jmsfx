@@ -1,11 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IAmplifierList;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
-import io.github.ctgnz.jmsfx.icon.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierListItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum GuardedUnit implements IAmplifierListItem {
+public enum GuardedUnit implements AmplifierListItem {
     BG("BG", "Guarded Unit");
 
     private final String id;
@@ -17,8 +17,8 @@ public enum GuardedUnit implements IAmplifierListItem {
     }
 
     @Override
-    public IAmplifierList getAmplifierList() {
-        return AmplifierList.GUARDED_UNIT;
+    public AmplifierList getAmplifierList() {
+        return AmplifierListEnum.GUARDED_UNIT;
     }
 
     @Override

@@ -6,31 +6,31 @@ import java.util.concurrent.atomic.AtomicInteger;
 import nz.co.ctg.foxglove.FoxgloveParser;
 import nz.co.ctg.foxglove.SvgGraphic;
 
-import io.github.ctgnz.jmsfx.IAmplifierGuide;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
-import io.github.ctgnz.jmsfx.IContext;
-import io.github.ctgnz.jmsfx.ICountryCode;
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.IHqtfDummy;
-import io.github.ctgnz.jmsfx.ISectorOneModifier;
-import io.github.ctgnz.jmsfx.ISectorTwoModifier;
-import io.github.ctgnz.jmsfx.IStandardIdentity;
-import io.github.ctgnz.jmsfx.IStatus;
-import io.github.ctgnz.jmsfx.ISymbolSet;
-import io.github.ctgnz.jmsfx.icon.Context;
-import io.github.ctgnz.jmsfx.icon.HqtfDummy;
+import io.github.ctgnz.jmsfx.AmplifierGuide;
+import io.github.ctgnz.jmsfx.AmplifierListItem;
+import io.github.ctgnz.jmsfx.Context;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.HqtfDummy;
+import io.github.ctgnz.jmsfx.CountryCode;
+import io.github.ctgnz.jmsfx.SectorOneModifier;
+import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.StandardIdentity;
+import io.github.ctgnz.jmsfx.Status;
+import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.ContextEnum;
+import io.github.ctgnz.jmsfx.icon.HqtfDummyEnum;
 import io.github.ctgnz.jmsfx.icon.IconScale;
 import io.github.ctgnz.jmsfx.icon.IconScaleListCell;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbolIcon;
 import io.github.ctgnz.jmsfx.icon.Library;
 import io.github.ctgnz.jmsfx.icon.ScaleDirection;
-import io.github.ctgnz.jmsfx.icon.StandardIdentity;
-import io.github.ctgnz.jmsfx.icon.Status;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.amplifier.CountryCode;
+import io.github.ctgnz.jmsfx.icon.StandardIdentityEnum;
+import io.github.ctgnz.jmsfx.icon.StatusEnum;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.icon.amplifier.NatoCountryCode;
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
@@ -134,7 +134,7 @@ public class IconCreator extends Application {
         return sp;
     }
 
-    private void createAmplifierGuide(AtomicInteger row, IAmplifierGuide guide) {
+    private void createAmplifierGuide(AtomicInteger row, AmplifierGuide guide) {
         int rowIndex = row.getAndIncrement();
 
         ComboBox<String> guideSelect = new ComboBox<>(FXCollections.observableArrayList("None", "Text", "Graphic"));
@@ -206,7 +206,7 @@ public class IconCreator extends Application {
     }
 
     private Node createButtons() {
-        ComboBox<ICountryCode> country = new ComboBox<>(FXCollections.observableArrayList(CountryCode.values()));
+        ComboBox<CountryCode> country = new ComboBox<>(FXCollections.observableArrayList(NatoCountryCode.values()));
         country.valueProperty().addListener((obs, oldValue, newValue) -> {
             Library.setExtensionCountryCode(newValue);
         });
@@ -224,92 +224,92 @@ public class IconCreator extends Application {
         // this is only a one-way binding from a read-only property
         sidc.textProperty().bind(symbol.codeProperty());
 
-        ComboBox<IContext> context = new ComboBox<>(FXCollections.observableArrayList(Context.values()));
+        ComboBox<Context> context = new ComboBox<>(FXCollections.observableArrayList(ContextEnum.values()));
         context.setCellFactory(p -> new CodeElementListCell<>());
         context.setButtonCell(new CodeElementListCell<>());
         context.setMaxWidth(300);
         context.valueProperty().bindBidirectional(symbol.contextProperty());
 
-        ComboBox<IStandardIdentity> stdIdentity = new ComboBox<>(FXCollections.observableArrayList(StandardIdentity.values()));
+        ComboBox<StandardIdentity> stdIdentity = new ComboBox<>(FXCollections.observableArrayList(StandardIdentityEnum.values()));
         stdIdentity.setCellFactory(p -> new CodeElementListCell<>());
         stdIdentity.setButtonCell(new CodeElementListCell<>());
         stdIdentity.setMaxWidth(300);
         stdIdentity.valueProperty().bindBidirectional(symbol.standardIdentityProperty());
 
-        ComboBox<ISymbolSet> symbolSet = new ComboBox<>(FXCollections.observableArrayList(SymbolSet.values()));
+        ComboBox<SymbolSet> symbolSet = new ComboBox<>(FXCollections.observableArrayList(SymbolSetEnum.values()));
         symbolSet.setCellFactory(p -> new CodeElementListCell<>());
         symbolSet.setButtonCell(new CodeElementListCell<>());
         symbolSet.setMaxWidth(300);
         symbolSet.valueProperty().bindBidirectional(symbol.symbolSetProperty());
 
-        ComboBox<IStatus> status = new ComboBox<>(FXCollections.observableArrayList(Status.values()));
+        ComboBox<Status> status = new ComboBox<>(FXCollections.observableArrayList(StatusEnum.values()));
         status.setCellFactory(p -> new CodeElementListCell<>());
         status.setButtonCell(new CodeElementListCell<>());
         status.setMaxWidth(300);
         status.valueProperty().bindBidirectional(symbol.statusProperty());
 
-        ComboBox<IHqtfDummy> hqtfDummy = new ComboBox<>(FXCollections.observableArrayList(HqtfDummy.values()));
+        ComboBox<HqtfDummy> hqtfDummy = new ComboBox<>(FXCollections.observableArrayList(HqtfDummyEnum.values()));
         hqtfDummy.setCellFactory(p -> new CodeElementListCell<>());
         hqtfDummy.setButtonCell(new CodeElementListCell<>());
         hqtfDummy.setMaxWidth(300);
         hqtfDummy.valueProperty().bindBidirectional(symbol.hqtfDummyProperty());
 
-        ComboBox<IAmplifierListItem> amplifier = new ComboBox<>(symbol.amplifierGroupsList());
+        ComboBox<AmplifierListItem> amplifier = new ComboBox<>(symbol.amplifierGroupsList());
         amplifier.setCellFactory(p -> new CodeElementListCell<>());
         amplifier.setButtonCell(new CodeElementListCell<>());
         amplifier.setMaxWidth(300);
         amplifier.valueProperty().bindBidirectional(symbol.amplifierProperty());
         amplifier.disableProperty().bind(Bindings.size(symbol.amplifierGroupsList()).lessThan(2));
 
-        ComboBox<IAmplifierListItem> amplifierTwo = new ComboBox<>(symbol.amplifierTwoGroupsList());
+        ComboBox<AmplifierListItem> amplifierTwo = new ComboBox<>(symbol.amplifierTwoGroupsList());
         amplifierTwo.setCellFactory(p -> new CodeElementListCell<>());
         amplifierTwo.setButtonCell(new CodeElementListCell<>());
         amplifierTwo.setMaxWidth(300);
         amplifierTwo.valueProperty().bindBidirectional(symbol.amplifierTwoProperty());
         amplifierTwo.disableProperty().bind(Bindings.size(symbol.amplifierTwoGroupsList()).lessThan(2));
 
-        ComboBox<IAmplifierListItem> amplifierThree = new ComboBox<>(symbol.amplifierThreeGroupsList());
+        ComboBox<AmplifierListItem> amplifierThree = new ComboBox<>(symbol.amplifierThreeGroupsList());
         amplifierThree.setCellFactory(p -> new CodeElementListCell<>());
         amplifierThree.setButtonCell(new CodeElementListCell<>());
         amplifierThree.setMaxWidth(300);
         amplifierThree.valueProperty().bindBidirectional(symbol.amplifierThreeProperty());
         amplifierThree.disableProperty().bind(Bindings.size(symbol.amplifierThreeGroupsList()).lessThan(2));
 
-        ComboBox<IAmplifierListItem> frameAmplifier = new ComboBox<>(symbol.frameAmplifierGroupsList());
+        ComboBox<AmplifierListItem> frameAmplifier = new ComboBox<>(symbol.frameAmplifierGroupsList());
         frameAmplifier.setCellFactory(p -> new CodeElementListCell<>());
         frameAmplifier.setButtonCell(new CodeElementListCell<>());
         frameAmplifier.setMaxWidth(300);
         frameAmplifier.valueProperty().bindBidirectional(symbol.frameAmplifierProperty());
         frameAmplifier.disableProperty().bind(Bindings.size(symbol.frameAmplifierGroupsList()).lessThan(2));
 
-        ComboBox<IEntity> entity = new ComboBox<>(symbol.entitiesList());
+        ComboBox<Entity> entity = new ComboBox<>(symbol.entitiesList());
         entity.setCellFactory(p -> new CodeElementListCell<>());
         entity.setButtonCell(new CodeElementListCell<>());
         entity.setMaxWidth(300);
         entity.valueProperty().bindBidirectional(symbol.entityProperty());
 
-        ComboBox<IEntityType> entityType = new ComboBox<>(symbol.entityTypesList());
+        ComboBox<EntityType> entityType = new ComboBox<>(symbol.entityTypesList());
         entityType.setCellFactory(p -> new CodeElementListCell<>());
         entityType.setButtonCell(new CodeElementListCell<>());
         entityType.setMaxWidth(300);
         entityType.disableProperty().bind(Bindings.isEmpty(symbol.entityTypesList()));
         entityType.valueProperty().bindBidirectional(symbol.entityTypeProperty());
 
-        ComboBox<IEntitySubType> entitySubType = new ComboBox<>(symbol.entitySubTypesList());
+        ComboBox<EntitySubType> entitySubType = new ComboBox<>(symbol.entitySubTypesList());
         entitySubType.setCellFactory(p -> new CodeElementListCell<>());
         entitySubType.setButtonCell(new CodeElementListCell<>());
         entitySubType.setMaxWidth(300);
         entitySubType.disableProperty().bind(Bindings.isEmpty(symbol.entitySubTypesList()));
         entitySubType.valueProperty().bindBidirectional(symbol.entitySubTypeProperty());
 
-        ComboBox<ISectorOneModifier> mod1 = new ComboBox<>(symbol.sectorOneModifiersList());
+        ComboBox<SectorOneModifier> mod1 = new ComboBox<>(symbol.sectorOneModifiersList());
         mod1.setCellFactory(p -> new CodeElementListCell<>());
         mod1.setButtonCell(new CodeElementListCell<>());
         mod1.setMaxWidth(300);
         mod1.disableProperty().bind(Bindings.isEmpty(symbol.sectorOneModifiersList()));
         mod1.valueProperty().bindBidirectional(symbol.sectorOneModifierProperty());
 
-        ComboBox<ISectorTwoModifier> mod2 = new ComboBox<>(symbol.sectorTwoModifiersList());
+        ComboBox<SectorTwoModifier> mod2 = new ComboBox<>(symbol.sectorTwoModifiersList());
         mod2.setCellFactory(p -> new CodeElementListCell<>());
         mod2.setButtonCell(new CodeElementListCell<>());
         mod2.setMaxWidth(300);

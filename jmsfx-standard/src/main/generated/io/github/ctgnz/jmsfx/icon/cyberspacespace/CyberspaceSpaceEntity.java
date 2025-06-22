@@ -2,13 +2,13 @@ package io.github.ctgnz.jmsfx.icon.cyberspacespace;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.types.GraphicType;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum CyberspaceSpaceEntity implements IEntity {
+public enum CyberspaceSpaceEntity implements Entity {
     UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     MISSION_FORCE("11", "Mission Force", GraphicType.NA),
     CYBERSPACE_UNIT("12", "Cyberspace Unit", GraphicType.MAIN),
@@ -40,17 +40,17 @@ public enum CyberspaceSpaceEntity implements IEntity {
     }
 
     @Override
-    public ISymbolSet getSymbolSet() {
-        return SymbolSet.CYBERSPACE_SPACE;
+    public SymbolSet getSymbolSet() {
+        return SymbolSetEnum.CYBERSPACE_SPACE;
     }
 
     @Override
-    public ISymbolSet getBaseSymbolSet() {
-        return SymbolSet.CYBERSPACE;
+    public SymbolSet getBaseSymbolSet() {
+        return SymbolSetEnum.CYBERSPACE;
     }
 
     @Override
-    public List<IEntityType> getEntityTypes() {
+    public List<EntityType> getEntityTypes() {
         return CyberspaceSpaceSymbolSet.INSTANCE.getEntityTypes(this);
     }
 

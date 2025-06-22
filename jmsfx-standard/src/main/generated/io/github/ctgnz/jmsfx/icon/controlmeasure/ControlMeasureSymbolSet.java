@@ -8,98 +8,72 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
-import io.github.ctgnz.jmsfx.ISectorOneModifier;
-import io.github.ctgnz.jmsfx.ISectorTwoModifier;
-import io.github.ctgnz.jmsfx.ISymbolSetInfo;
-import io.github.ctgnz.jmsfx.IAmplifierGuide;
-import io.github.ctgnz.jmsfx.types.GuideType;
-import io.github.ctgnz.jmsfx.icon.Amplifier;
-import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.StandardAmplifierItem;
+import io.github.ctgnz.jmsfx.SectorOneModifier;
+import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.SymbolSetInfo;
+import io.github.ctgnz.jmsfx.AmplifierGuide;
 import io.github.ctgnz.jmsfx.icon.amplifier.UnitEchelon;
 
-public class ControlMeasureSymbolSet implements ISymbolSetInfo {
-    public static final ISymbolSetInfo INSTANCE = new ControlMeasureSymbolSet();
-    private static final List<IEntity> ENTITIES = Arrays.asList(ControlMeasureEntity.values());
-    private static final Multimap<IEntity, IEntityType> ENTITY_TYPES = Multimaps.index(Arrays.asList(ControlMeasureEntityType.values()), IEntityType::getEntity);
-    private static final Multimap<IEntityType, IEntitySubType> ENTITY_SUB_TYPES = Multimaps.index(Arrays.asList(ControlMeasureEntitySubType.values()), IEntitySubType::getEntityType);
+public class ControlMeasureSymbolSet implements SymbolSetInfo {
+    public static final SymbolSetInfo INSTANCE = new ControlMeasureSymbolSet();
+    private static final List<Entity> ENTITIES = Arrays.asList(ControlMeasureEntity.values());
+    private static final Multimap<Entity, EntityType> ENTITY_TYPES = Multimaps.index(Arrays.asList(ControlMeasureEntityType.values()), EntityType::getEntity);
+    private static final Multimap<EntityType, EntitySubType> ENTITY_SUB_TYPES = Multimaps.index(Arrays.asList(ControlMeasureEntitySubType.values()), EntitySubType::getEntityType);
 
     private ControlMeasureSymbolSet() {
     }
 
     @Override
-    public List<IAmplifierGuide> getAmplifierGuides() {
-        return Arrays.asList(
-            new AmplifierGuide(Amplifier.B_Echelon, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.C_Quantity, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.H_AdditionalInformation, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.H1_UnlistedPointInformation, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.N_HostileEnemy, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.Q_DirectionOfMovementIndicator, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.S2_OffsetLocationIndicator, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.T_UniqueDesignation, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.T1_UniqueIdentifierPrimaryPurpose, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.T2_ControllingHeadquarters, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.V_TypeOfEquipment, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.W_DateTimeGroupDtg, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.W1_DateTimeGroupDtgPeriod, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.X_AltitudeDepth, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.Y_Location, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.AH_AreaOfUncertaintyIndicator, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.AH1_AreaOfUncertaintyIndicatorLongitude, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.AM_Distance, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.AN_Azimuth, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.AP_TargetNumber, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.AP1_TargetNumberExtension, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.AS_Country, GuideType.SYSTEM)
-        );
+    public List<AmplifierGuide> getAmplifierGuides() {
+        return Arrays.asList(ControlMeasureAmplifierGuide.values());
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiers() {
+    public List<StandardAmplifierItem> getAmplifiers() {
         return Arrays.asList(UnitEchelon.values());
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiersTwo() {
+    public List<StandardAmplifierItem> getAmplifiersTwo() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiersThree() {
+    public List<StandardAmplifierItem> getAmplifiersThree() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IEntity> getEntities() {
+    public List<Entity> getEntities() {
         return ENTITIES;
     }
 
     @Override
-    public List<IEntitySubType> getEntitySubTypes(IEntityType entityType) {
+    public List<EntitySubType> getEntitySubTypes(EntityType entityType) {
         return Lists.newArrayList(ENTITY_SUB_TYPES.get(entityType));
     }
 
     @Override
-    public List<IEntityType> getEntityTypes(IEntity entity) {
+    public List<EntityType> getEntityTypes(Entity entity) {
         return Lists.newArrayList(ENTITY_TYPES.get(entity));
     }
 
     @Override
-    public List<IStandardAmplifierItem> getFrameAmplifiers() {
+    public List<StandardAmplifierItem> getFrameAmplifiers() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<ISectorOneModifier> getSectorOneModifiers() {
+    public List<SectorOneModifier> getSectorOneModifiers() {
         return Arrays.asList(ControlMeasureSectorOneModifier.values());
     }
 
     @Override
-    public List<ISectorTwoModifier> getSectorTwoModifiers() {
+    public List<SectorTwoModifier> getSectorTwoModifiers() {
         return Arrays.asList(ControlMeasureSectorTwoModifier.values());
     }
 

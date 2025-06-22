@@ -4,74 +4,69 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
-import io.github.ctgnz.jmsfx.ISectorOneModifier;
-import io.github.ctgnz.jmsfx.ISectorTwoModifier;
-import io.github.ctgnz.jmsfx.ISymbolSetInfo;
-import io.github.ctgnz.jmsfx.IAmplifierGuide;
-import io.github.ctgnz.jmsfx.types.GuideType;
-import io.github.ctgnz.jmsfx.icon.Amplifier;
-import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.StandardAmplifierItem;
+import io.github.ctgnz.jmsfx.SectorOneModifier;
+import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.SymbolSetInfo;
+import io.github.ctgnz.jmsfx.AmplifierGuide;
 
-public class AirMissileSymbolSet implements ISymbolSetInfo {
-    public static final ISymbolSetInfo INSTANCE = new AirMissileSymbolSet();
-    private static final List<IEntity> ENTITIES = Arrays.asList(AirMissileEntity.values());
+public class AirMissileSymbolSet implements SymbolSetInfo {
+    public static final SymbolSetInfo INSTANCE = new AirMissileSymbolSet();
+    private static final List<Entity> ENTITIES = Arrays.asList(AirMissileEntity.values());
 
     private AirMissileSymbolSet() {
     }
 
     @Override
-    public List<IAmplifierGuide> getAmplifierGuides() {
-        return Arrays.asList(
-            new AmplifierGuide(Amplifier.AJ_SpeedLeader, GuideType.LINE, 176.341, 469.248, 17.069, 557.214)
-        );
+    public List<AmplifierGuide> getAmplifierGuides() {
+        return Arrays.asList(AirMissileAmplifierGuide.values());
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiers() {
+    public List<StandardAmplifierItem> getAmplifiers() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiersTwo() {
+    public List<StandardAmplifierItem> getAmplifiersTwo() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiersThree() {
+    public List<StandardAmplifierItem> getAmplifiersThree() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IEntity> getEntities() {
+    public List<Entity> getEntities() {
         return ENTITIES;
     }
 
     @Override
-    public List<IEntitySubType> getEntitySubTypes(IEntityType entityType) {
+    public List<EntitySubType> getEntitySubTypes(EntityType entityType) {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IEntityType> getEntityTypes(IEntity entity) {
+    public List<EntityType> getEntityTypes(Entity entity) {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IStandardAmplifierItem> getFrameAmplifiers() {
+    public List<StandardAmplifierItem> getFrameAmplifiers() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<ISectorOneModifier> getSectorOneModifiers() {
+    public List<SectorOneModifier> getSectorOneModifiers() {
         return Arrays.asList(AirMissileSectorOneModifier.values());
     }
 
     @Override
-    public List<ISectorTwoModifier> getSectorTwoModifiers() {
+    public List<SectorTwoModifier> getSectorTwoModifiers() {
         return Arrays.asList(AirMissileSectorTwoModifier.values());
     }
 

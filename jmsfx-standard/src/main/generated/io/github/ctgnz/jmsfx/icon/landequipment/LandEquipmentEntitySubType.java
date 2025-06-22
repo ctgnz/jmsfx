@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.landequipment;
 
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum LandEquipmentEntitySubType implements IEntitySubType {
+public enum LandEquipmentEntitySubType implements EntitySubType {
     SINGLE_SHOT_RIFLE("01", "Single Shot Rifle", LandEquipmentEntityType.RIFLE, GraphicType.FULL_OCTAGON),
     SEMIAUTOMATIC_RIFLE("02", "Semiautomatic Rifle", LandEquipmentEntityType.RIFLE, GraphicType.FULL_OCTAGON),
     AUTOMATIC_RIFLE("03", "Automatic Rifle", LandEquipmentEntityType.RIFLE, GraphicType.FULL_OCTAGON),
@@ -114,7 +114,7 @@ public enum LandEquipmentEntitySubType implements IEntitySubType {
     }
 
     @Override
-    public IEntityType getEntityType() {
+    public EntityType getEntityType() {
         return entityType;
     }
 

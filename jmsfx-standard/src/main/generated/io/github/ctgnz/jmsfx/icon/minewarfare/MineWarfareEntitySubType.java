@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.minewarfare;
 
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum MineWarfareEntitySubType implements IEntitySubType {
+public enum MineWarfareEntitySubType implements EntitySubType {
     EXERCISE_MINE_BOTTOM("01", "Exercise Mine-Bottom", MineWarfareEntityType.EXERCISE_MINE_GENERAL, GraphicType.FULL_OCTAGON),
     EXERCISE_MINE_MOORED("02", "Exercise Mine-Moored", MineWarfareEntityType.EXERCISE_MINE_GENERAL, GraphicType.FULL_OCTAGON),
     EXERCISE_MINE_FLOATING("03", "Exercise Mine-Floating", MineWarfareEntityType.EXERCISE_MINE_GENERAL, GraphicType.FULL_OCTAGON),
@@ -63,7 +63,7 @@ public enum MineWarfareEntitySubType implements IEntitySubType {
     }
 
     @Override
-    public IEntityType getEntityType() {
+    public EntityType getEntityType() {
         return entityType;
     }
 

@@ -5,27 +5,27 @@ import java.util.stream.Stream;
 
 import org.apache.commons.lang3.StringUtils;
 
-import io.github.ctgnz.jmsfx.IStandardIdentity;
-import io.github.ctgnz.jmsfx.IStandardIdentityGroup;
-import io.github.ctgnz.jmsfx.icon.StandardIdentity;
-import io.github.ctgnz.jmsfx.icon.StandardIdentityGroup;
+import io.github.ctgnz.jmsfx.StandardIdentity;
+import io.github.ctgnz.jmsfx.StandardIdentityGroup;
+import io.github.ctgnz.jmsfx.icon.StandardIdentityEnum;
+import io.github.ctgnz.jmsfx.icon.StandardIdentityGroupEnum;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class StandardIdentityGroupAdapter extends CodeElementAdapter implements IStandardIdentityGroup {
+public class StandardIdentityGroupAdapter extends CodeElementImpl implements StandardIdentityGroup {
 
     private final StringProperty graphicSuffix = new SimpleStringProperty();
-    private final ObservableList<IStandardIdentity> identities = FXCollections.observableArrayList();
+    private final ObservableList<StandardIdentity> identities = FXCollections.observableArrayList();
 
     public StandardIdentityGroupAdapter() {
     }
 
-    public StandardIdentityGroupAdapter(StandardIdentityGroup identityGroup) {
+    public StandardIdentityGroupAdapter(StandardIdentityGroupEnum identityGroup) {
         super(identityGroup);
         this.graphicSuffix.set(identityGroup.getGraphicSuffix());
-        this.identities.setAll(identityGroup.getIdentities().stream().map(StandardIdentity.class::cast).map(this::createIdentityAdapter).toList());
+        this.identities.setAll(identityGroup.getIdentities().stream().map(StandardIdentityEnum.class::cast).map(this::createIdentityAdapter).toList());
     }
 
     @Override
@@ -34,7 +34,7 @@ public class StandardIdentityGroupAdapter extends CodeElementAdapter implements 
     }
 
     @Override
-    public List<IStandardIdentity> getIdentities() {
+    public List<StandardIdentity> getIdentities() {
         return identities;
     }
 
@@ -43,15 +43,15 @@ public class StandardIdentityGroupAdapter extends CodeElementAdapter implements 
     }
 
     @Override
-    public boolean owns(IStandardIdentity id) {
+    public boolean owns(StandardIdentity id) {
         return StringUtils.equals(id.getGroupId(), getId());
     }
 
-    protected StandardIdentityAdapter createIdentityAdapter(StandardIdentity id) {
-        return new StandardIdentityAdapter(id, this);
+    protected StandardIdentityImpl createIdentityAdapter(StandardIdentityEnum id) {
+        return new StandardIdentityImpl(id, this);
     }
 
-    protected Stream<IStandardIdentity> streamIdentities() {
+    protected Stream<StandardIdentity> streamIdentities() {
         return identities.stream();
     }
 

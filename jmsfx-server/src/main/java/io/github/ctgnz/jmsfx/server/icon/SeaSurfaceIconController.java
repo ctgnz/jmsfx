@@ -3,7 +3,7 @@ package io.github.ctgnz.jmsfx.server.icon;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.icon.amplifier.TowedArrayType;
 import io.github.ctgnz.jmsfx.icon.seasurface.SeaSurfaceEntity;
 import io.github.ctgnz.jmsfx.icon.seasurface.SeaSurfaceEntitySubType;
@@ -16,7 +16,7 @@ import io.github.ctgnz.jmsfx.icon.seasurface.SeaSurfaceSectorTwoModifier;
 public class SeaSurfaceIconController extends IconRestController<SeaSurfaceEntity, SeaSurfaceEntityType, SeaSurfaceEntitySubType, SeaSurfaceSectorOneModifier, SeaSurfaceSectorTwoModifier, TowedArrayType> {
 
     public SeaSurfaceIconController() {
-        super(SymbolSet.SEA_SURFACE);
+        super(SymbolSetEnum.SEA_SURFACE);
     }
 
 }

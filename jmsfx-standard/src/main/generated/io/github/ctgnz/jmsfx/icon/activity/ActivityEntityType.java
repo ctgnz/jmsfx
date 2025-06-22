@@ -2,12 +2,12 @@ package io.github.ctgnz.jmsfx.icon.activity;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum ActivityEntityType implements IEntityType {
+public enum ActivityEntityType implements EntityType {
     CRIMINAL_ACTIVITY_INCIDENT("01", "Criminal Activity Incident", ActivityEntity.INCIDENT, GraphicType.FULL_OCTAGON),
     BOMB_BOMBING("02", "Bomb/Bombing", ActivityEntity.INCIDENT, GraphicType.MAIN),
     IED_EVENT("03", "IED Event", ActivityEntity.INCIDENT, GraphicType.MAIN),
@@ -70,12 +70,12 @@ public enum ActivityEntityType implements IEntityType {
     }
 
     @Override
-    public IEntity getEntity() {
+    public Entity getEntity() {
         return entity;
     }
 
     @Override
-    public List<IEntitySubType> getEntitySubTypes() {
+    public List<EntitySubType> getEntitySubTypes() {
         return ActivitySymbolSet.INSTANCE.getEntitySubTypes(this);
     }
 

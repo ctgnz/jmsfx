@@ -1,23 +1,24 @@
 package io.github.ctgnz.jmsfx.icon.space;
 
-import io.github.ctgnz.jmsfx.ISectorOneModifier;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.SectorOneModifier;
+import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum SpaceSectorOneModifier implements ISectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.SPACE),
-    LEO_MOD("01", "Low Earth Orbit (LEO)", "Orbit", SymbolSet.SPACE),
-    MEO_MOD("02", "Medium Earth Orbit (MEO)", "Orbit", SymbolSet.SPACE),
-    HEO_MOD("03", "High Earth Orbit (HEO)", "Orbit", SymbolSet.SPACE),
-    GSO_MOD("04", "Geosynchronous Orbit (GSO)", "Orbit", SymbolSet.SPACE),
-    GEO_MOD("05", "Geostationary Orbit (GEO)", "Orbit", SymbolSet.SPACE),
-    MO_MOD("06", "Molniya Orbit (MO)", "Orbit", SymbolSet.SPACE);
+public enum SpaceSectorOneModifier implements SectorOneModifier {
+    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.SPACE),
+    LEO_MOD("01", "Low Earth Orbit (LEO)", "Orbit", SymbolSetEnum.SPACE),
+    MEO_MOD("02", "Medium Earth Orbit (MEO)", "Orbit", SymbolSetEnum.SPACE),
+    HEO_MOD("03", "High Earth Orbit (HEO)", "Orbit", SymbolSetEnum.SPACE),
+    GSO_MOD("04", "Geosynchronous Orbit (GSO)", "Orbit", SymbolSetEnum.SPACE),
+    GEO_MOD("05", "Geostationary Orbit (GEO)", "Orbit", SymbolSetEnum.SPACE),
+    MO_MOD("06", "Molniya Orbit (MO)", "Orbit", SymbolSetEnum.SPACE);
 
     private final String id;
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
 
-    SpaceSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
+    SpaceSectorOneModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;

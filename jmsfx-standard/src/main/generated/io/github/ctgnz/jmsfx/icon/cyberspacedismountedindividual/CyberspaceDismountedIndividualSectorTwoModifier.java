@@ -1,19 +1,20 @@
 package io.github.ctgnz.jmsfx.icon.cyberspacedismountedindividual;
 
-import io.github.ctgnz.jmsfx.ISectorTwoModifier;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum CyberspaceDismountedIndividualSectorTwoModifier implements ISectorTwoModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.CYBERSPACE_DISMOUNTED),
-    SECURED_MOD("01", "Secured", "General", SymbolSet.CYBERSPACE_DISMOUNTED),
-    OPEN_MOD("02", "Open", "General", SymbolSet.CYBERSPACE_DISMOUNTED);
+public enum CyberspaceDismountedIndividualSectorTwoModifier implements SectorTwoModifier {
+    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.CYBERSPACE_DISMOUNTED),
+    SECURED_MOD("01", "Secured", "General", SymbolSetEnum.CYBERSPACE_DISMOUNTED),
+    OPEN_MOD("02", "Open", "General", SymbolSetEnum.CYBERSPACE_DISMOUNTED);
 
     private final String id;
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
 
-    CyberspaceDismountedIndividualSectorTwoModifier(String id, String label, String category, SymbolSet symbolSet) {
+    CyberspaceDismountedIndividualSectorTwoModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
@@ -42,7 +43,7 @@ public enum CyberspaceDismountedIndividualSectorTwoModifier implements ISectorTw
 
     @Override
     public SymbolSet getBaseSymbolSet() {
-        return SymbolSet.CYBERSPACE;
+        return SymbolSetEnum.CYBERSPACE;
     }
 
 }

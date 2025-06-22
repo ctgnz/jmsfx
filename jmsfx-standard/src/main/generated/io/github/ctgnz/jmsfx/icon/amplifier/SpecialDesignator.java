@@ -1,11 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IAmplifierList;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
-import io.github.ctgnz.jmsfx.icon.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierListItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum SpecialDesignator implements IAmplifierListItem {
+public enum SpecialDesignator implements AmplifierListItem {
     NRT("NRT", "Non-Real Time"),
     SIG("SIG", "Tactically Significant Tracks");
 
@@ -18,8 +18,8 @@ public enum SpecialDesignator implements IAmplifierListItem {
     }
 
     @Override
-    public IAmplifierList getAmplifierList() {
-        return AmplifierList.SPECIAL_DESIGNATOR;
+    public AmplifierList getAmplifierList() {
+        return AmplifierListEnum.SPECIAL_DESIGNATOR;
     }
 
     @Override

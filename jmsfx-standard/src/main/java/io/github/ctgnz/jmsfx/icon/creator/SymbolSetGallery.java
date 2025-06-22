@@ -6,13 +6,13 @@ import org.apache.commons.lang3.StringUtils;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
 
-import io.github.ctgnz.jmsfx.ICodeElement;
-import io.github.ctgnz.jmsfx.icon.HqtfDummy;
+import io.github.ctgnz.jmsfx.CodeElement;
+import io.github.ctgnz.jmsfx.icon.HqtfDummyEnum;
 import io.github.ctgnz.jmsfx.icon.IconScale;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
-import io.github.ctgnz.jmsfx.icon.StandardIdentity;
-import io.github.ctgnz.jmsfx.icon.Status;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.StandardIdentityEnum;
+import io.github.ctgnz.jmsfx.icon.StatusEnum;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.ContentDisplay;
@@ -23,10 +23,10 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 
 public class SymbolSetGallery extends VBox {
-    private SymbolSet symbolSet;
+    private SymbolSetEnum symbolSet;
     private FoxgloveParser parser;
 
-    public SymbolSetGallery(FoxgloveParser parser, SymbolSet symbolSet) {
+    public SymbolSetGallery(FoxgloveParser parser, SymbolSetEnum symbolSet) {
         this.parser = parser;
         this.symbolSet = symbolSet;
         getChildren().add(createFrames());
@@ -39,7 +39,7 @@ public class SymbolSetGallery extends VBox {
 
     private Node createFrames() {
         TilePane flowPane = new TilePane();
-        Arrays.stream(StandardIdentity.values()).forEach(stdId -> {
+        Arrays.stream(StandardIdentityEnum.values()).forEach(stdId -> {
             IdentificationSymbol symbol = createDefaultSymbol(flowPane, stdId);
             symbol.getCode().setStandardIdentity(stdId);
         });
@@ -50,7 +50,7 @@ public class SymbolSetGallery extends VBox {
 
     private Node createHqtfDummy() {
         TilePane flowPane = new TilePane();
-        Arrays.stream(HqtfDummy.values()).filter(status -> status.isSupported(symbolSet)).forEach(hqtfDummy -> {
+        Arrays.stream(HqtfDummyEnum.values()).filter(status -> status.isSupported(symbolSet)).forEach(hqtfDummy -> {
             IdentificationSymbol symbol = createDefaultSymbol(flowPane, hqtfDummy);
             symbol.getCode().setHqtfDummy(hqtfDummy);
         });
@@ -102,7 +102,7 @@ public class SymbolSetGallery extends VBox {
 
     private Node createStatus() {
         TilePane flowPane = new TilePane();
-        Arrays.stream(Status.values()).filter(status -> status.isSupported(symbolSet)).forEach(status -> {
+        Arrays.stream(StatusEnum.values()).filter(status -> status.isSupported(symbolSet)).forEach(status -> {
             IdentificationSymbol symbol = createDefaultSymbol(flowPane, status);
             symbol.getCode().setStatus(status);
         });
@@ -111,7 +111,7 @@ public class SymbolSetGallery extends VBox {
         return statusPane;
     }
 
-    protected IdentificationSymbol createDefaultSymbol(TilePane tilePane, ICodeElement element) {
+    protected IdentificationSymbol createDefaultSymbol(TilePane tilePane, CodeElement element) {
         IdentificationSymbol symbol = new IdentificationSymbol(parser);
         symbol.getCode().setSymbolSet(symbolSet);
         symbol.setScale(IconScale.MediumSmall);

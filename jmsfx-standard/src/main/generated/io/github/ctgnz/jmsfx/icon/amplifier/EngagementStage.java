@@ -1,11 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IAmplifierList;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
-import io.github.ctgnz.jmsfx.icon.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierListItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum EngagementStage implements IAmplifierListItem {
+public enum EngagementStage implements AmplifierListItem {
     NA("", "Unspecified"),
     ASN("ASN", "Assign/Cover"),
     ENG("ENG", "Engage"),
@@ -28,8 +28,8 @@ public enum EngagementStage implements IAmplifierListItem {
     }
 
     @Override
-    public IAmplifierList getAmplifierList() {
-        return AmplifierList.ENGAGEMENT_STAGE;
+    public AmplifierList getAmplifierList() {
+        return AmplifierListEnum.ENGAGEMENT_STAGE;
     }
 
     @Override

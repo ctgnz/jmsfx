@@ -151,8 +151,8 @@ public class DomainModelGenerator {
     private void generateAmplifierEnum(Map<String, Object> dataModel, Library library) throws Exception {
         List<AmplifierEnum> amplifiers = library.getAmplifiers().getAmplifier().stream().map(AmplifierEnum::new).collect(toList());
         dataModel.put("amplifiers", amplifiers);
-        Template template = config.getTemplateConfig().getTemplate("Amplifier.ftl");
-        template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getIconPackageDir().resolve("Amplifier.java"))));
+        Template template = config.getTemplateConfig().getTemplate("AmplifierEnum.ftl");
+        template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getIconPackageDir().resolve("AmplifierEnum.java"))));
     }
 
     @SuppressWarnings("unchecked")
@@ -270,6 +270,10 @@ public class DomainModelGenerator {
             Template s2ModTemplate = config.getTemplateConfig().getTemplate("SectorTwoModifier.ftl");
             s2ModTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve(symSetDetails.getBaseTypeName() + "SectorTwoModifier.java"))));
         }
+        if (symSetDetails.isAmplifierGuidesPresent()) {
+            Template template = config.getTemplateConfig().getTemplate("AmplifierGuide.ftl");
+            template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve(symSetDetails.getBaseTypeName() + "AmplifierGuide.java"))));
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -316,8 +320,8 @@ public class DomainModelGenerator {
                 typeEnum.setAmplifierId(amplifierEnum.getConstantName());
             }
         });
-        Template template = config.getTemplateConfig().getTemplate("AmplifierList.ftl");
-        template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getIconPackageDir().resolve("AmplifierList.java"))));
+        Template template = config.getTemplateConfig().getTemplate("AmplifierListEnum.ftl");
+        template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getIconPackageDir().resolve("AmplifierListEnum.java"))));
         Template amplifierTemplate = config.getTemplateConfig().getTemplate("AmplifierListItem.ftl");
         Path amplifierPath = config.getAmplifierPackageDir();
         if (!Files.exists(amplifierPath)) {
@@ -387,8 +391,8 @@ public class DomainModelGenerator {
         });
         List<SymbolSetEnum> values = (List<SymbolSetEnum>) dataModel.get("symbolSets");
         Collections.sort(values, StandardEnum.getStandardOrder());
-        Template template = config.getTemplateConfig().getTemplate("SymbolSet.ftl");
-        template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getIconPackageDir().resolve("SymbolSet.java"))));
+        Template template = config.getTemplateConfig().getTemplate("SymbolSetEnum.ftl");
+        template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getIconPackageDir().resolve("SymbolSetEnum.java"))));
     }
 
     @SuppressWarnings("unchecked")

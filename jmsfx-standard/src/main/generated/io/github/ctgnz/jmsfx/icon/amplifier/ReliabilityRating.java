@@ -1,11 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IAmplifierList;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
-import io.github.ctgnz.jmsfx.icon.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierListItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum ReliabilityRating implements IAmplifierListItem {
+public enum ReliabilityRating implements AmplifierListItem {
     COMPLETELY("A", "Completely Reliable"),
     USUALLY("B", "Usually Reliable"),
     FAIRLY("C", "Fairly Reliable"),
@@ -22,8 +22,8 @@ public enum ReliabilityRating implements IAmplifierListItem {
     }
 
     @Override
-    public IAmplifierList getAmplifierList() {
-        return AmplifierList.RELIABILITY_RATING;
+    public AmplifierList getAmplifierList() {
+        return AmplifierListEnum.RELIABILITY_RATING;
     }
 
     @Override

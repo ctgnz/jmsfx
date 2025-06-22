@@ -1,11 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IAmplifierList;
-import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
-import io.github.ctgnz.jmsfx.icon.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.StandardAmplifierItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum UnitEchelon implements IStandardAmplifierItem {
+public enum UnitEchelon implements StandardAmplifierItem {
     TEAM_CREW("1", "Team/Crew"),
     SQUAD("2", "Squad"),
     SEC("3", "Section"),
@@ -31,8 +31,8 @@ public enum UnitEchelon implements IStandardAmplifierItem {
     }
 
     @Override
-    public IAmplifierList getAmplifierList() {
-        return AmplifierList.UNIT_ECHELON;
+    public AmplifierList getAmplifierList() {
+        return AmplifierListEnum.UNIT_ECHELON;
     }
 
     @Override

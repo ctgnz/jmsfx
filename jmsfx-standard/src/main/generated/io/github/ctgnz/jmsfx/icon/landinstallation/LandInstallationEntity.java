@@ -2,13 +2,13 @@ package io.github.ctgnz.jmsfx.icon.landinstallation;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.types.GraphicType;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum LandInstallationEntity implements IEntity {
+public enum LandInstallationEntity implements Entity {
     UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     INSTALLATION("11", "Installation", GraphicType.MAIN),
     INFRASTRUCTURE("12", "Infrastructure", GraphicType.NA);
@@ -39,12 +39,12 @@ public enum LandInstallationEntity implements IEntity {
     }
 
     @Override
-    public ISymbolSet getSymbolSet() {
-        return SymbolSet.LAND_INSTALLATION;
+    public SymbolSet getSymbolSet() {
+        return SymbolSetEnum.LAND_INSTALLATION;
     }
 
     @Override
-    public List<IEntityType> getEntityTypes() {
+    public List<EntityType> getEntityTypes() {
         return LandInstallationSymbolSet.INSTANCE.getEntityTypes(this);
     }
 

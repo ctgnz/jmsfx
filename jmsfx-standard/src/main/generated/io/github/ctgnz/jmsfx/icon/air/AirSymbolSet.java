@@ -8,89 +8,71 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
-import io.github.ctgnz.jmsfx.ISectorOneModifier;
-import io.github.ctgnz.jmsfx.ISectorTwoModifier;
-import io.github.ctgnz.jmsfx.ISymbolSetInfo;
-import io.github.ctgnz.jmsfx.IAmplifierGuide;
-import io.github.ctgnz.jmsfx.types.GuideType;
-import io.github.ctgnz.jmsfx.icon.Amplifier;
-import io.github.ctgnz.jmsfx.icon.AmplifierGuide;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.StandardAmplifierItem;
+import io.github.ctgnz.jmsfx.SectorOneModifier;
+import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.SymbolSetInfo;
+import io.github.ctgnz.jmsfx.AmplifierGuide;
 
-public class AirSymbolSet implements ISymbolSetInfo {
-    public static final ISymbolSetInfo INSTANCE = new AirSymbolSet();
-    private static final List<IEntity> ENTITIES = Arrays.asList(AirEntity.values());
-    private static final Multimap<IEntity, IEntityType> ENTITY_TYPES = Multimaps.index(Arrays.asList(AirEntityType.values()), IEntityType::getEntity);
-    private static final Multimap<IEntityType, IEntitySubType> ENTITY_SUB_TYPES = Multimaps.index(Arrays.asList(AirEntitySubType.values()), IEntitySubType::getEntityType);
+public class AirSymbolSet implements SymbolSetInfo {
+    public static final SymbolSetInfo INSTANCE = new AirSymbolSet();
+    private static final List<Entity> ENTITIES = Arrays.asList(AirEntity.values());
+    private static final Multimap<Entity, EntityType> ENTITY_TYPES = Multimaps.index(Arrays.asList(AirEntityType.values()), EntityType::getEntity);
+    private static final Multimap<EntityType, EntitySubType> ENTITY_SUB_TYPES = Multimaps.index(Arrays.asList(AirEntitySubType.values()), EntitySubType::getEntityType);
 
     private AirSymbolSet() {
     }
 
     @Override
-    public List<IAmplifierGuide> getAmplifierGuides() {
-        return Arrays.asList(
-            new AmplifierGuide(Amplifier.G_StaffComments, GuideType.RECTANGLE, 478, 476, 134, 80),
-            new AmplifierGuide(Amplifier.H_AdditionalInformation, GuideType.RECTANGLE, 478, 476, 134, 80),
-            new AmplifierGuide(Amplifier.P_IffSifAis, GuideType.RECTANGLE, 478, 236, 134, 80),
-            new AmplifierGuide(Amplifier.T_UniqueDesignation, GuideType.RECTANGLE, 478, 156, 134, 80),
-            new AmplifierGuide(Amplifier.V_TypeOfEquipment, GuideType.RECTANGLE, 478, 316, 134, 80),
-            new AmplifierGuide(Amplifier.X_AltitudeDepth, GuideType.RECTANGLE, 478, 396, 134, 80),
-            new AmplifierGuide(Amplifier.Z_Speed, GuideType.RECTANGLE, 478, 396, 134, 80),
-            new AmplifierGuide(Amplifier.AH_AreaOfUncertaintyIndicator, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.AH1_AreaOfUncertaintyIndicatorLongitude, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.AJ_SpeedLeader, GuideType.LINE, 176.341, 469.248, 17.069, 557.214),
-            new AmplifierGuide(Amplifier.AL_OperationalCondition, GuideType.RECTANGLE, 142, 518, 328, 80),
-            new AmplifierGuide(Amplifier.AO_EngagementBar, GuideType.RECTANGLE, 132, 118, 346, 80),
-            new AmplifierGuide(Amplifier.AO1_TargetDesignation, GuideType.SYSTEM),
-            new AmplifierGuide(Amplifier.AS_Country, GuideType.RECTANGLE, 478, 156, 134, 80)
-        );
+    public List<AmplifierGuide> getAmplifierGuides() {
+        return Arrays.asList(AirAmplifierGuide.values());
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiers() {
+    public List<StandardAmplifierItem> getAmplifiers() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiersTwo() {
+    public List<StandardAmplifierItem> getAmplifiersTwo() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiersThree() {
+    public List<StandardAmplifierItem> getAmplifiersThree() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IEntity> getEntities() {
+    public List<Entity> getEntities() {
         return ENTITIES;
     }
 
     @Override
-    public List<IEntitySubType> getEntitySubTypes(IEntityType entityType) {
+    public List<EntitySubType> getEntitySubTypes(EntityType entityType) {
         return Lists.newArrayList(ENTITY_SUB_TYPES.get(entityType));
     }
 
     @Override
-    public List<IEntityType> getEntityTypes(IEntity entity) {
+    public List<EntityType> getEntityTypes(Entity entity) {
         return Lists.newArrayList(ENTITY_TYPES.get(entity));
     }
 
     @Override
-    public List<IStandardAmplifierItem> getFrameAmplifiers() {
+    public List<StandardAmplifierItem> getFrameAmplifiers() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<ISectorOneModifier> getSectorOneModifiers() {
+    public List<SectorOneModifier> getSectorOneModifiers() {
         return Arrays.asList(AirSectorOneModifier.values());
     }
 
     @Override
-    public List<ISectorTwoModifier> getSectorTwoModifiers() {
+    public List<SectorTwoModifier> getSectorTwoModifiers() {
         return Arrays.asList(AirSectorTwoModifier.values());
     }
 

@@ -5,9 +5,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import io.github.ctgnz.jmsfx.ISymbolSet;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.model.SymbolSetAdapter;
+import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.icon.model.SymbolSetImpl;
 
 @Controller
 public class WebController {
@@ -28,8 +28,8 @@ public class WebController {
     }
 
     @GetMapping({"/browse/{symbolSet}"})
-    public String browseSymbolSet(@PathVariable ISymbolSet symbolSet, Model model) {
-        model.addAttribute("symbolSet", new SymbolSetAdapter((SymbolSet) symbolSet));
+    public String browseSymbolSet(@PathVariable SymbolSet symbolSet, Model model) {
+        model.addAttribute("symbolSet", new SymbolSetImpl((SymbolSetEnum) symbolSet));
         return "entity-list :: entities";
     }
 

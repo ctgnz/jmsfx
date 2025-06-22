@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.space;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum SpaceEntityType implements IEntityType {
+public enum SpaceEntityType implements EntityType {
     SPACE_VEHICLE("01", "Space Vehicle", SpaceEntity.MILITARY, GraphicType.MAIN),
     RE_ENTRY_VEHICLE("02", "Re-Entry Vehicle", SpaceEntity.MILITARY, GraphicType.MAIN),
     PLANET_LANDER("03", "Planet Lander", SpaceEntity.MILITARY, GraphicType.MAIN),
@@ -67,7 +67,7 @@ public enum SpaceEntityType implements IEntityType {
     }
 
     @Override
-    public IEntity getEntity() {
+    public Entity getEntity() {
         return entity;
     }
 

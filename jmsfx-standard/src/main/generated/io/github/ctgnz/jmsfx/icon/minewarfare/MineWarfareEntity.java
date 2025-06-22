@@ -2,13 +2,13 @@ package io.github.ctgnz.jmsfx.icon.minewarfare;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.types.GraphicType;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum MineWarfareEntity implements IEntity {
+public enum MineWarfareEntity implements Entity {
     UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     SEA_MINE_GENERAL("11", "Sea Mine-General", GraphicType.FULL_OCTAGON),
     UNEXPLODED_ORDNANCE("12", "Unexploded Ordnance", GraphicType.FULL_OCTAGON),
@@ -48,12 +48,12 @@ public enum MineWarfareEntity implements IEntity {
     }
 
     @Override
-    public ISymbolSet getSymbolSet() {
-        return SymbolSet.MINE_WARFARE;
+    public SymbolSet getSymbolSet() {
+        return SymbolSetEnum.MINE_WARFARE;
     }
 
     @Override
-    public List<IEntityType> getEntityTypes() {
+    public List<EntityType> getEntityTypes() {
         return MineWarfareSymbolSet.INSTANCE.getEntityTypes(this);
     }
 

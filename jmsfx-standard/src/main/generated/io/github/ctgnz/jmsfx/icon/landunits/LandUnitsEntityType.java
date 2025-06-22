@@ -2,12 +2,12 @@ package io.github.ctgnz.jmsfx.icon.landunits;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum LandUnitsEntityType implements IEntityType {
+public enum LandUnitsEntityType implements EntityType {
     BROADCAST_TRANSMITTER_ANTENNAE("01", "Broadcast Transmitter Antennae", LandUnitsEntity.COMMAND_AND_CONTROL, GraphicType.FULL_OCTAGON),
     CIVIL_AFFAIRS("02", "Civil Affairs", LandUnitsEntity.COMMAND_AND_CONTROL, GraphicType.MAIN),
     CIVIL_MILITARY_COOPERATION("03", "Civil-Military Cooperation", LandUnitsEntity.COMMAND_AND_CONTROL, GraphicType.MAIN),
@@ -171,12 +171,12 @@ public enum LandUnitsEntityType implements IEntityType {
     }
 
     @Override
-    public IEntity getEntity() {
+    public Entity getEntity() {
         return entity;
     }
 
     @Override
-    public List<IEntitySubType> getEntitySubTypes() {
+    public List<EntitySubType> getEntitySubTypes() {
         return LandUnitsSymbolSet.INSTANCE.getEntitySubTypes(this);
     }
 

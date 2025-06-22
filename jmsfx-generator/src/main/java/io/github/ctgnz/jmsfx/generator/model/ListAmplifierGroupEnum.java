@@ -36,7 +36,7 @@ public class ListAmplifierGroupEnum extends StandardEnum {
         this.unknown = false;
         this.symbolSets = new String[0];
         this.standard = false;
-        this.country = "CountryCode".equals(groupConfig.getEnumType());
+        this.country = "NatoCountryCode".equals(groupConfig.getEnumType());
     }
 
     public ListAmplifierGroupEnum(StandardAmplifierConfig groupConfig, AmplifierGroup group) {

@@ -2,12 +2,12 @@ package io.github.ctgnz.jmsfx.icon.dismountedindividual;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum DismountedIndividualEntityType implements IEntityType {
+public enum DismountedIndividualEntityType implements EntityType {
     TASK("02", "Activity/Task", DismountedIndividualEntity.MILITARY, GraphicType.NA),
     LETHAL_WEAPONS("03", "Lethal Weapons", DismountedIndividualEntity.MILITARY, GraphicType.NA),
     NON_LETHAL_WEAPONS("04", "Non-Lethal Weapons", DismountedIndividualEntity.MILITARY, GraphicType.NA),
@@ -41,12 +41,12 @@ public enum DismountedIndividualEntityType implements IEntityType {
     }
 
     @Override
-    public IEntity getEntity() {
+    public Entity getEntity() {
         return entity;
     }
 
     @Override
-    public List<IEntitySubType> getEntitySubTypes() {
+    public List<EntitySubType> getEntitySubTypes() {
         return DismountedIndividualSymbolSet.INSTANCE.getEntitySubTypes(this);
     }
 

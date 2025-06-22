@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.dismountedindividual;
 
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum DismountedIndividualEntitySubType implements IEntitySubType {
+public enum DismountedIndividualEntitySubType implements EntitySubType {
     EOD("01", "Explosive Ordnance Disposal", DismountedIndividualEntityType.TASK, GraphicType.MAIN),
     FO("02", "Field Artillery Observer", DismountedIndividualEntityType.TASK, GraphicType.MAIN),
     JFS("03", "Joint Fire Support", DismountedIndividualEntityType.TASK, GraphicType.MAIN),
@@ -77,7 +77,7 @@ public enum DismountedIndividualEntitySubType implements IEntitySubType {
     }
 
     @Override
-    public IEntityType getEntityType() {
+    public EntityType getEntityType() {
         return entityType;
     }
 

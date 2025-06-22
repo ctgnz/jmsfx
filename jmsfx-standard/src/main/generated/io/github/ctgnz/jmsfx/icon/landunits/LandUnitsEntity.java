@@ -2,13 +2,13 @@ package io.github.ctgnz.jmsfx.icon.landunits;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.types.GraphicType;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum LandUnitsEntity implements IEntity {
+public enum LandUnitsEntity implements Entity {
     UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     COMMAND_AND_CONTROL("11", "Command and Control", GraphicType.MAIN),
     MOVEMENT_AND_MANEUVER("12", "Movement and Maneuver", GraphicType.NA),
@@ -48,12 +48,12 @@ public enum LandUnitsEntity implements IEntity {
     }
 
     @Override
-    public ISymbolSet getSymbolSet() {
-        return SymbolSet.LAND_UNIT;
+    public SymbolSet getSymbolSet() {
+        return SymbolSetEnum.LAND_UNIT;
     }
 
     @Override
-    public List<IEntityType> getEntityTypes() {
+    public List<EntityType> getEntityTypes() {
         return LandUnitsSymbolSet.INSTANCE.getEntityTypes(this);
     }
 

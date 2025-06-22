@@ -3,58 +3,58 @@ package io.github.ctgnz.jmsfx.icon;
 import java.util.EnumSet;
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IContext;
-import io.github.ctgnz.jmsfx.ICountryCode;
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.IHqtfDummy;
-import io.github.ctgnz.jmsfx.ISectorOneModifier;
-import io.github.ctgnz.jmsfx.ISectorTwoModifier;
-import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
-import io.github.ctgnz.jmsfx.IStandardIdentity;
-import io.github.ctgnz.jmsfx.IStatus;
-import io.github.ctgnz.jmsfx.ISymbolSet;
-import io.github.ctgnz.jmsfx.IVersion;
-import io.github.ctgnz.jmsfx.icon.amplifier.CountryCode;
+import io.github.ctgnz.jmsfx.Context;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.HqtfDummy;
+import io.github.ctgnz.jmsfx.CountryCode;
+import io.github.ctgnz.jmsfx.SectorOneModifier;
+import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.StandardAmplifierItem;
+import io.github.ctgnz.jmsfx.StandardIdentity;
+import io.github.ctgnz.jmsfx.Status;
+import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.Version;
+import io.github.ctgnz.jmsfx.icon.amplifier.NatoCountryCode;
 import io.github.ctgnz.jmsfx.icon.amplifier.UnknownAmplifier;
 import io.github.ctgnz.jmsfx.icon.common.CommonSymbolSet;
 
 public class Library {
     public static final class CodeBuilder {
-        private IVersion version = getDefaultVersion();
-        private IContext context = getDefaultContext();
-        private IStandardIdentity standardId = getDefaultStandardIdentity();
-        private ISymbolSet symbolSet = getDefaultSymbolSet();
-        private IStatus status = getDefaultStatus();
-        private IHqtfDummy hqtfDummy = getDefaultHqtfDummy();
-        private IStandardAmplifierItem amplifier = getDefaultAmplifier();
-        private IStandardAmplifierItem amplifier2 = getDefaultAmplifier();
-        private IStandardAmplifierItem amplifier3 = getDefaultAmplifier();
-        private IStandardAmplifierItem frameAmplifier = getDefaultAmplifier();
-        private ICountryCode countryCode = getExtensionCountryCode();
-        private IEntity entity;
-        private IEntityType entityType;
-        private IEntitySubType entitySubType;
-        private ISectorOneModifier sectorOneModifier;
-        private ISectorTwoModifier sectorTwoModifier;
+        private Version version = getDefaultVersion();
+        private Context context = getDefaultContext();
+        private StandardIdentity standardId = getDefaultStandardIdentity();
+        private SymbolSet symbolSet = getDefaultSymbolSet();
+        private Status status = getDefaultStatus();
+        private HqtfDummy hqtfDummy = getDefaultHqtfDummy();
+        private StandardAmplifierItem amplifier = getDefaultAmplifier();
+        private StandardAmplifierItem amplifier2 = getDefaultAmplifier();
+        private StandardAmplifierItem amplifier3 = getDefaultAmplifier();
+        private StandardAmplifierItem frameAmplifier = getDefaultAmplifier();
+        private CountryCode countryCode = getExtensionCountryCode();
+        private Entity entity;
+        private EntityType entityType;
+        private EntitySubType entitySubType;
+        private SectorOneModifier sectorOneModifier;
+        private SectorTwoModifier sectorTwoModifier;
 
-        public CodeBuilder(ISymbolSet symbolSet) {
+        public CodeBuilder(SymbolSet symbolSet) {
             this.symbolSet = symbolSet;
             this.entity = symbolSet.getEntities().get(0);
         }
 
-        public CodeBuilder amplifier(IStandardAmplifierItem amplifier) {
+        public CodeBuilder amplifier(StandardAmplifierItem amplifier) {
             this.amplifier = amplifier;
             return this;
         }
 
-        public CodeBuilder amplifier2(IStandardAmplifierItem amplifier2) {
+        public CodeBuilder amplifier2(StandardAmplifierItem amplifier2) {
             this.amplifier2 = amplifier2;
             return this;
         }
 
-        public CodeBuilder amplifier3(IStandardAmplifierItem amplifier3) {
+        public CodeBuilder amplifier3(StandardAmplifierItem amplifier3) {
             this.amplifier3 = amplifier3;
             return this;
         }
@@ -80,129 +80,129 @@ public class Library {
             return code;
         }
 
-        public CodeBuilder entity(IEntity entity) {
+        public CodeBuilder entity(Entity entity) {
             this.entity = entity;
             return this;
         }
 
-        public CodeBuilder entitySubType(IEntitySubType entitySubType) {
+        public CodeBuilder entitySubType(EntitySubType entitySubType) {
             this.entitySubType = entitySubType;
             return this;
         }
 
-        public CodeBuilder entityType(IEntityType entityType) {
+        public CodeBuilder entityType(EntityType entityType) {
             this.entityType = entityType;
             return this;
         }
 
-        public CodeBuilder frameAmplifier(IStandardAmplifierItem frameAmplifier) {
+        public CodeBuilder frameAmplifier(StandardAmplifierItem frameAmplifier) {
             this.frameAmplifier = frameAmplifier;
             return this;
         }
 
-        public CodeBuilder sectorOneModifier(ISectorOneModifier sectorOneModifier) {
+        public CodeBuilder sectorOneModifier(SectorOneModifier sectorOneModifier) {
             this.sectorOneModifier = sectorOneModifier;
             return this;
         }
 
-        public CodeBuilder sectorTwoModifier(ISectorTwoModifier sectorTwoModifier) {
+        public CodeBuilder sectorTwoModifier(SectorTwoModifier sectorTwoModifier) {
             this.sectorTwoModifier = sectorTwoModifier;
             return this;
         }
 
-        public CodeBuilder with(IContext context) {
+        public CodeBuilder with(Context context) {
             this.context = context;
             return this;
         }
 
-        public CodeBuilder with(ICountryCode countryCode) {
+        public CodeBuilder with(CountryCode countryCode) {
             this.countryCode = countryCode;
             return this;
         }
 
-        public CodeBuilder with(IHqtfDummy hqtfDummy) {
+        public CodeBuilder with(HqtfDummy hqtfDummy) {
             this.hqtfDummy = hqtfDummy;
             return this;
         }
 
-        public CodeBuilder with(IStandardIdentity standardId) {
+        public CodeBuilder with(StandardIdentity standardId) {
             this.standardId = standardId;
             return this;
         }
 
-        public CodeBuilder with(IStatus status) {
+        public CodeBuilder with(Status status) {
             this.status = status;
             return this;
         }
 
-        public CodeBuilder with(IVersion version) {
+        public CodeBuilder with(Version version) {
             this.version = version;
             return this;
         }
 
     }
 
-    private static final EnumSet<StandardIdentity> KNOWN_IDENTITIES = EnumSet.of(StandardIdentity.SI_UNKNOWN, StandardIdentity.SI_FRIEND, StandardIdentity.SI_NEUTRAL, StandardIdentity.SI_HOSTILE_FAKER);
-    private static final EnumSet<StandardIdentity> HOSTILE_IDENTITIES = EnumSet.of(StandardIdentity.SI_SUSPECT_JOKER, StandardIdentity.SI_HOSTILE_FAKER);
-    private static ICountryCode extensionCountryCode = CountryCode.UNDEFINED;
+    private static final EnumSet<StandardIdentityEnum> KNOWN_IDENTITIES = EnumSet.of(StandardIdentityEnum.SI_UNKNOWN, StandardIdentityEnum.SI_FRIEND, StandardIdentityEnum.SI_NEUTRAL, StandardIdentityEnum.SI_HOSTILE_FAKER);
+    private static final EnumSet<StandardIdentityEnum> HOSTILE_IDENTITIES = EnumSet.of(StandardIdentityEnum.SI_SUSPECT_JOKER, StandardIdentityEnum.SI_HOSTILE_FAKER);
+    private static CountryCode extensionCountryCode = NatoCountryCode.UNDEFINED;
 
     public static CodeBuilder code() {
         return new CodeBuilder(getDefaultSymbolSet());
     }
 
-    public static CodeBuilder code(ISymbolSet symbolSet) {
+    public static CodeBuilder code(SymbolSet symbolSet) {
         return new CodeBuilder(symbolSet);
     }
 
-    public static List<ISectorOneModifier> getCommonSectorOneModifiers() {
+    public static List<SectorOneModifier> getCommonSectorOneModifiers() {
         return CommonSymbolSet.INSTANCE.getSectorOneModifiers();
     }
 
-    public static List<ISectorTwoModifier> getCommonSectorTwoModifiers() {
+    public static List<SectorTwoModifier> getCommonSectorTwoModifiers() {
         return CommonSymbolSet.INSTANCE.getSectorTwoModifiers();
     }
 
-    public static IStandardAmplifierItem getDefaultAmplifier() {
+    public static StandardAmplifierItem getDefaultAmplifier() {
         return UnknownAmplifier.NA;
     }
 
-    public static IContext getDefaultContext() {
-        return Context.REALITY;
+    public static Context getDefaultContext() {
+        return ContextEnum.REALITY;
     }
 
-    public static IHqtfDummy getDefaultHqtfDummy() {
-        return HqtfDummy.NA;
+    public static HqtfDummy getDefaultHqtfDummy() {
+        return HqtfDummyEnum.NA;
     }
 
-    public static IStandardIdentity getDefaultStandardIdentity() {
-        return StandardIdentity.SI_FRIEND;
+    public static StandardIdentity getDefaultStandardIdentity() {
+        return StandardIdentityEnum.SI_FRIEND;
     }
 
-    public static IStatus getDefaultStatus() {
-        return Status.PRESENT;
+    public static Status getDefaultStatus() {
+        return StatusEnum.PRESENT;
     }
 
-    public static ISymbolSet getDefaultSymbolSet() {
-        return SymbolSet.UNKNOWN;
+    public static SymbolSet getDefaultSymbolSet() {
+        return SymbolSetEnum.UNKNOWN;
     }
 
-    public static IVersion getDefaultVersion() {
-        return Version.CURRENT;
+    public static Version getDefaultVersion() {
+        return VersionEnum.CURRENT;
     }
 
-    public static ICountryCode getExtensionCountryCode() {
+    public static CountryCode getExtensionCountryCode() {
         return extensionCountryCode;
     }
 
-    public static EnumSet<StandardIdentity> getHostileIdentities() {
+    public static EnumSet<StandardIdentityEnum> getHostileIdentities() {
         return HOSTILE_IDENTITIES;
     }
 
-    public static EnumSet<StandardIdentity> getKnownIdentities() {
+    public static EnumSet<StandardIdentityEnum> getKnownIdentities() {
         return KNOWN_IDENTITIES;
     }
 
-    public static void setExtensionCountryCode(ICountryCode countryCode) {
+    public static void setExtensionCountryCode(CountryCode countryCode) {
         extensionCountryCode = countryCode;
     }
 

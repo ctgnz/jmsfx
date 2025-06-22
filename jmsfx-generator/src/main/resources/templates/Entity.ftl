@@ -4,20 +4,20 @@ package ${iconPackage}.${symbolSet.packageName};
 import java.util.List;
 
 </#if>
-import ${basePackage}.IEntity;
+import ${basePackage}.Entity;
 <#if entityTypes??>
-import ${basePackage}.IEntityType;
+import ${basePackage}.EntityType;
 </#if>
-import ${basePackage}.ISymbolSet;
+import ${basePackage}.SymbolSet;
 import ${typePackage}.GraphicType;
-import ${iconPackage}.SymbolSet;
+import ${iconPackage}.SymbolSetEnum;
 
-public enum ${symbolSet.baseTypeName}Entity implements IEntity {
+public enum ${symbolSet.baseTypeName}Entity implements Entity {
 <#list entities as ent>
     ${ent.id}("${ent.code}", "${ent.label}", GraphicType.${ent.graphicType})<#if ent.baseSymbolSet??> {
         @Override
-        public ISymbolSet getBaseSymbolSet() {
-            return SymbolSet.${ent.baseSymbolSet};
+        public SymbolSet getBaseSymbolSet() {
+            return SymbolSetEnum.${ent.baseSymbolSet};
         }
     }</#if><#sep>,
 </#list>;
@@ -48,20 +48,20 @@ public enum ${symbolSet.baseTypeName}Entity implements IEntity {
     }
 
     @Override
-    public ISymbolSet getSymbolSet() {
-        return SymbolSet.${symbolSet.id};
+    public SymbolSet getSymbolSet() {
+        return SymbolSetEnum.${symbolSet.id};
     }
 <#if symbolSet.baseSymbolSet??>
 
     @Override
-    public ISymbolSet getBaseSymbolSet() {
-        return SymbolSet.${symbolSet.baseSymbolSet};
+    public SymbolSet getBaseSymbolSet() {
+        return SymbolSetEnum.${symbolSet.baseSymbolSet};
     }
 </#if>
 <#if entityTypes??>
 
     @Override
-    public List<IEntityType> getEntityTypes() {
+    public List<EntityType> getEntityTypes() {
         return ${symbolSet.baseTypeName}SymbolSet.INSTANCE.getEntityTypes(this);
     }
 </#if>

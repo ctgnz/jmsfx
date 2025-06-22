@@ -1,26 +1,27 @@
 package io.github.ctgnz.jmsfx.icon.airmissile;
 
-import io.github.ctgnz.jmsfx.ISectorOneModifier;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.SectorOneModifier;
+import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum AirMissileSectorOneModifier implements ISectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSet.AIR_MISSILE),
-    AIR_MOD("01", "Air", "Launch Origin", SymbolSet.AIR_MISSILE),
-    SURFACE_MOD("02", "Surface", "Launch Origin", SymbolSet.AIR_MISSILE),
-    SUB_MOD("03", "Subsurface", "Launch Origin", SymbolSet.AIR_MISSILE),
-    SPACE_MOD("04", "Space", "Launch Origin", SymbolSet.AIR_MISSILE),
-    AB_MOD("05", "Anti-Ballistic", "Missile Class", SymbolSet.AIR_MISSILE),
-    BALLISTIC_MOD("06", "Ballistic", "Missile Class", SymbolSet.AIR_MISSILE),
-    CRUISE_MOD("07", "Cruise", "Missile Class", SymbolSet.AIR_MISSILE),
-    INTERCEPTOR_MOD("08", "Interceptor", "Missile Class", SymbolSet.AIR_MISSILE),
-    HYPERSONIC_MOD("09", "Interceptor", "Missile Class", SymbolSet.AIR_MISSILE);
+public enum AirMissileSectorOneModifier implements SectorOneModifier {
+    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.AIR_MISSILE),
+    AIR_MOD("01", "Air", "Launch Origin", SymbolSetEnum.AIR_MISSILE),
+    SURFACE_MOD("02", "Surface", "Launch Origin", SymbolSetEnum.AIR_MISSILE),
+    SUB_MOD("03", "Subsurface", "Launch Origin", SymbolSetEnum.AIR_MISSILE),
+    SPACE_MOD("04", "Space", "Launch Origin", SymbolSetEnum.AIR_MISSILE),
+    AB_MOD("05", "Anti-Ballistic", "Missile Class", SymbolSetEnum.AIR_MISSILE),
+    BALLISTIC_MOD("06", "Ballistic", "Missile Class", SymbolSetEnum.AIR_MISSILE),
+    CRUISE_MOD("07", "Cruise", "Missile Class", SymbolSetEnum.AIR_MISSILE),
+    INTERCEPTOR_MOD("08", "Interceptor", "Missile Class", SymbolSetEnum.AIR_MISSILE),
+    HYPERSONIC_MOD("09", "Interceptor", "Missile Class", SymbolSetEnum.AIR_MISSILE);
 
     private final String id;
     private final String label;
     private final String category;
     private final SymbolSet symbolSet;
 
-    AirMissileSectorOneModifier(String id, String label, String category, SymbolSet symbolSet) {
+    AirMissileSectorOneModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;

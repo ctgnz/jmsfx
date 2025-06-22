@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.landinstallation;
 
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum LandInstallationEntitySubType implements IEntitySubType {
+public enum LandInstallationEntitySubType implements EntitySubType {
     BRIDGE("01", "Bridge", LandInstallationEntityType.ENGINEERING_EQUIPMENT_PRODUCTION, GraphicType.MAIN),
     DISPLACED_PERSONS_CAMP("01", "Displaced Persons / Refugee / Evacuees Camp", LandInstallationEntityType.TENTED_CAMP, GraphicType.FULL_OCTAGON),
     TRAINING_CAMP("02", "Training Camp", LandInstallationEntityType.TENTED_CAMP, GraphicType.FULL_OCTAGON),
@@ -83,7 +83,7 @@ public enum LandInstallationEntitySubType implements IEntitySubType {
     }
 
     @Override
-    public IEntityType getEntityType() {
+    public EntityType getEntityType() {
         return entityType;
     }
 

@@ -2,12 +2,12 @@ package io.github.ctgnz.jmsfx.icon.landinstallation;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum LandInstallationEntityType implements IEntityType {
+public enum LandInstallationEntityType implements EntityType {
     AMMUNITION_EXPLOSIVES_ASSEMBLY("02", "Ammunition and Explosives/Assembly", LandInstallationEntity.INSTALLATION, GraphicType.FULL_OCTAGON),
     AMMUNITION_CACHE("03", "Ammunition Cache", LandInstallationEntity.INSTALLATION, GraphicType.FULL_FRAME),
     ARMAMENT_PRODUCTION("04", "Armament Production", LandInstallationEntity.INSTALLATION, GraphicType.FULL_OCTAGON),
@@ -71,12 +71,12 @@ public enum LandInstallationEntityType implements IEntityType {
     }
 
     @Override
-    public IEntity getEntity() {
+    public Entity getEntity() {
         return entity;
     }
 
     @Override
-    public List<IEntitySubType> getEntitySubTypes() {
+    public List<EntitySubType> getEntitySubTypes() {
         return LandInstallationSymbolSet.INSTANCE.getEntitySubTypes(this);
     }
 

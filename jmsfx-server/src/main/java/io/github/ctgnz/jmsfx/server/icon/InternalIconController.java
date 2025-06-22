@@ -3,20 +3,20 @@ package io.github.ctgnz.jmsfx.server.icon;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
-import io.github.ctgnz.jmsfx.ISectorOneModifier;
-import io.github.ctgnz.jmsfx.ISectorTwoModifier;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.AmplifierListItem;
+import io.github.ctgnz.jmsfx.SectorOneModifier;
+import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.icon.internal.InternalEntity;
 
 @RestController
 @RequestMapping("/Internal")
-public class InternalIconController extends IconRestController<InternalEntity, IEntityType, IEntitySubType, ISectorOneModifier, ISectorTwoModifier, IAmplifierListItem> {
+public class InternalIconController extends IconRestController<InternalEntity, EntityType, EntitySubType, SectorOneModifier, SectorTwoModifier, AmplifierListItem> {
 
     public InternalIconController() {
-        super(SymbolSet.INTERNAL);
+        super(SymbolSetEnum.INTERNAL);
     }
 
 }

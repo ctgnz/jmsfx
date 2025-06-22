@@ -1,6 +1,6 @@
 package io.github.ctgnz.jmsfx.icon;
 
-import io.github.ctgnz.jmsfx.IAmplifierGuide;
+import io.github.ctgnz.jmsfx.AmplifierGuide;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
@@ -16,12 +16,12 @@ import javafx.scene.text.Text;
 
 public class TextAmplifierValue {
     protected static final Font AMPLIFIER_FONT = Font.font("sans-serif", FontWeight.NORMAL, FontPosture.REGULAR, 60);
-    private final IAmplifierGuide guide;
+    private final AmplifierGuide guide;
     private final ObjectProperty<Pos> attachment;
     private final ObjectProperty<Point2D> location;
     private final StringProperty text;
 
-    public TextAmplifierValue(IAmplifierGuide guide, Pos initialAttachment, String initialText) {
+    public TextAmplifierValue(AmplifierGuide guide, Pos initialAttachment, String initialText) {
         this.guide = guide;
         this.attachment = new SimpleObjectProperty<>(initialAttachment);
         this.text = new SimpleStringProperty(initialText);
@@ -37,7 +37,7 @@ public class TextAmplifierValue {
         return attachment.get();
     }
 
-    public IAmplifierGuide getGuide() {
+    public AmplifierGuide getGuide() {
         return guide;
     }
 

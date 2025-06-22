@@ -7,10 +7,10 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.icon.model.AmplifierListAdapter;
-import io.github.ctgnz.jmsfx.icon.model.EntitySubTypeAdapter;
-import io.github.ctgnz.jmsfx.icon.model.LibraryAdapter;
-import io.github.ctgnz.jmsfx.icon.model.StatusAdapter;
+import io.github.ctgnz.jmsfx.icon.model.AmplifierListImpl;
+import io.github.ctgnz.jmsfx.icon.model.EntitySubTypeImpl;
+import io.github.ctgnz.jmsfx.icon.model.LibraryImpl;
+import io.github.ctgnz.jmsfx.icon.model.StatusImpl;
 
 public class VerifyIcons {
 
@@ -27,7 +27,7 @@ public class VerifyIcons {
 
     public void verify() throws Exception {
         this.usedPaths = new ArrayList<>();
-        LibraryAdapter library = new LibraryAdapter();
+        LibraryImpl library = new LibraryImpl();
         System.out.println("Version");
         library.getVersion().forEach(version -> {
             System.out.format("  [%s] %s%n", version.getId(), version.getLabel());
@@ -84,7 +84,7 @@ public class VerifyIcons {
                         }
                     }
                     library.getStandardIdentity().forEach(identity -> {
-                        library.getStatus().stream().filter(StatusAdapter::isFrameStatus).forEach(status -> {
+                        library.getStatus().stream().filter(StatusImpl::isFrameStatus).forEach(status -> {
                             if (identity.isConfirmed() || status.isPresent()) {
                                 String location = symSet.getFrameLocation(identity, status, false);
                                 if (!isGraphicPresent(location)) {
@@ -124,7 +124,7 @@ public class VerifyIcons {
                             System.out.format("        %s%n", subType.getLabel());
                             if (subType.isGraphicalIcon()) {
                                 library.getStandardIdentity().forEach(identity -> {
-                                    String location = ((EntitySubTypeAdapter) subType).getGraphicLocation(identity);
+                                    String location = ((EntitySubTypeImpl) subType).getGraphicLocation(identity);
                                     if (!isGraphicPresent(location)) {
                                         System.out.format("      [%s] Missing entity icon: %s (%s) (%s)%n", symSet.getLabel(), subType.getLabel(), identity.getLabel(), location);
                                     }
@@ -167,7 +167,7 @@ public class VerifyIcons {
             });
         });
         System.out.println("Standard Amplifiers");
-        library.getListAmplifiers().stream().filter(AmplifierListAdapter::isStandardAmplifier).forEach(amp -> {
+        library.getListAmplifiers().stream().filter(AmplifierListImpl::isStandardAmplifier).forEach(amp -> {
             System.out.format("  [%s] %s%n", amp.getId(), amp.getLabel());
             amp.getValues().forEach(value -> {
                 System.out.format("    [%s] %s%n", value.getFullId(), value.getLabel());

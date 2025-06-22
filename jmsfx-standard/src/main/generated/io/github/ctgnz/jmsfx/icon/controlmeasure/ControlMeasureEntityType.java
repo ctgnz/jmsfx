@@ -2,12 +2,12 @@ package io.github.ctgnz.jmsfx.icon.controlmeasure;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum ControlMeasureEntityType implements IEntityType {
+public enum ControlMeasureEntityType implements EntityType {
     BOUNDARY("01", "Boundary", ControlMeasureEntity.COMMAND_CONTROL_LINES, GraphicType.MAIN) {
         @Override
         public String getGraphicIdentifier() {
@@ -451,12 +451,12 @@ public enum ControlMeasureEntityType implements IEntityType {
     }
 
     @Override
-    public IEntity getEntity() {
+    public Entity getEntity() {
         return entity;
     }
 
     @Override
-    public List<IEntitySubType> getEntitySubTypes() {
+    public List<EntitySubType> getEntitySubTypes() {
         return ControlMeasureSymbolSet.INSTANCE.getEntitySubTypes(this);
     }
 

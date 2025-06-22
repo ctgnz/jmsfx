@@ -1,11 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IAmplifierList;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
-import io.github.ctgnz.jmsfx.icon.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierListItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum CombatEffectiveness implements IAmplifierListItem {
+public enum CombatEffectiveness implements AmplifierListItem {
     FULLY_OPERATIONAL("FO", "Fully Operational"),
     SUBSTANTIALLY_OPERATIONAL("SO", "Substantially Operational"),
     MARGINALLY_OPERATIONAL("MO", "Marginally Operational"),
@@ -21,8 +21,8 @@ public enum CombatEffectiveness implements IAmplifierListItem {
     }
 
     @Override
-    public IAmplifierList getAmplifierList() {
-        return AmplifierList.COMBAT_EFFECTIVENESS;
+    public AmplifierList getAmplifierList() {
+        return AmplifierListEnum.COMBAT_EFFECTIVENESS;
     }
 
     @Override

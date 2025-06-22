@@ -2,13 +2,13 @@ package io.github.ctgnz.jmsfx.icon.cyberspaceseasurface;
 
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.types.GraphicType;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum CyberspaceSeaSurfaceEntity implements IEntity {
+public enum CyberspaceSeaSurfaceEntity implements Entity {
     UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     MISSION_FORCE("11", "Mission Force", GraphicType.NA),
     CYBERSPACE_UNIT("12", "Cyberspace Unit", GraphicType.MAIN),
@@ -40,17 +40,17 @@ public enum CyberspaceSeaSurfaceEntity implements IEntity {
     }
 
     @Override
-    public ISymbolSet getSymbolSet() {
-        return SymbolSet.CYBERSPACE_SEA_SURFACE;
+    public SymbolSet getSymbolSet() {
+        return SymbolSetEnum.CYBERSPACE_SEA_SURFACE;
     }
 
     @Override
-    public ISymbolSet getBaseSymbolSet() {
-        return SymbolSet.CYBERSPACE;
+    public SymbolSet getBaseSymbolSet() {
+        return SymbolSetEnum.CYBERSPACE;
     }
 
     @Override
-    public List<IEntityType> getEntityTypes() {
+    public List<EntityType> getEntityTypes() {
         return CyberspaceSeaSurfaceSymbolSet.INSTANCE.getEntityTypes(this);
     }
 

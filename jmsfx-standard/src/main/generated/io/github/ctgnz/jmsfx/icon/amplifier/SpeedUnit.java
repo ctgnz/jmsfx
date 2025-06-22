@@ -1,11 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IAmplifierList;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
-import io.github.ctgnz.jmsfx.icon.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierListItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum SpeedUnit implements IAmplifierListItem {
+public enum SpeedUnit implements AmplifierListItem {
     KPH("KPH", "Kilometers Per Hour"),
     MPS("MPS", "Meters Per Second"),
     KTS("KTS", "Nautical Miles Per Hour (Knots)"),
@@ -20,8 +20,8 @@ public enum SpeedUnit implements IAmplifierListItem {
     }
 
     @Override
-    public IAmplifierList getAmplifierList() {
-        return AmplifierList.SPEED_UNIT;
+    public AmplifierList getAmplifierList() {
+        return AmplifierListEnum.SPEED_UNIT;
     }
 
     @Override

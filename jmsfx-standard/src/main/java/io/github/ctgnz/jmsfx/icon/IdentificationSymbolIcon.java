@@ -1,7 +1,7 @@
 package io.github.ctgnz.jmsfx.icon;
 
-import io.github.ctgnz.jmsfx.IAmplifier;
-import io.github.ctgnz.jmsfx.IAmplifierListItem;
+import io.github.ctgnz.jmsfx.Amplifier;
+import io.github.ctgnz.jmsfx.AmplifierListItem;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.MapChangeListener;
@@ -28,14 +28,14 @@ public class IdentificationSymbolIcon extends Pane {
         symbol.scaleProperty().addListener((obs, oldValue, newValue) -> updateScale(newValue));
         symbol.codeProperty().addListener((obs, oldValue, newValue) -> updateIcon());
         symbol.amplifierGuidesVisibleProperty().addListener((obs, oldValue, newValue) -> updateIcon());
-        symbol.getTextAmplifiers().addListener((MapChangeListener<IAmplifier, TextAmplifierValue>) change -> {
+        symbol.getTextAmplifiers().addListener((MapChangeListener<Amplifier, TextAmplifierValue>) change -> {
             TextAmplifierValue newAmplifier = change.getValueAdded();
             if (newAmplifier != null) {
                 newAmplifier.locationProperty().addListener((obs, oldValue, newValue) -> updateIcon());
             }
             updateIcon();
         });
-        symbol.getGraphicAmplifiers().addListener((MapChangeListener<IAmplifier, GraphicAmplifierValue>) change -> {
+        symbol.getGraphicAmplifiers().addListener((MapChangeListener<Amplifier, GraphicAmplifierValue>) change -> {
             GraphicAmplifierValue newGraphic = change.getValueAdded();
             if (newGraphic != null) {
                 newGraphic.transformProperty().addListener((obs, oldValue, newValue) -> updateIcon());
@@ -78,7 +78,7 @@ public class IdentificationSymbolIcon extends Pane {
                 container.getChildren().add(overlay);
             }
             if (symbol.isFrameAmplifierUsed()) {
-                IAmplifierListItem frameAmplifier = symbol.getFrameAmplifier();
+                AmplifierListItem frameAmplifier = symbol.getFrameAmplifier();
                 replaceFill(frame, Color.web(frameAmplifier.getBackgroundFill()));
             }
         }

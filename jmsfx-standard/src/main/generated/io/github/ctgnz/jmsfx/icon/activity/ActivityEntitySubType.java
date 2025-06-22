@@ -1,10 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.activity;
 
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
-public enum ActivityEntitySubType implements IEntitySubType {
+public enum ActivityEntitySubType implements EntitySubType {
     ARREST("01", "Arrest", ActivityEntityType.CRIMINAL_ACTIVITY_INCIDENT, GraphicType.FULL_OCTAGON),
     ATTEMPTED_CRIMINAL_ACTIVITY("03", "Attempted Criminal Activity", ActivityEntityType.CRIMINAL_ACTIVITY_INCIDENT, GraphicType.MAIN),
     DRIVE_BY_SHOOTING("04", "Drive-by Shooting", ActivityEntityType.CRIMINAL_ACTIVITY_INCIDENT, GraphicType.FULL_OCTAGON),
@@ -85,7 +85,7 @@ public enum ActivityEntitySubType implements IEntitySubType {
     }
 
     @Override
-    public IEntityType getEntityType() {
+    public EntityType getEntityType() {
         return entityType;
     }
 

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
 
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -15,7 +15,7 @@ public class IconGallery extends TabPane {
 
     public IconGallery(Stage mainStage) {
         setMaxWidth(mainStage.getWidth());
-        Arrays.stream(SymbolSet.values()).forEach(sym -> {
+        Arrays.stream(SymbolSetEnum.values()).forEach(sym -> {
             SymbolSetGallery gallery = new SymbolSetGallery(parser, sym);
             gallery.setMinWidth(mainStage.getWidth());
             Tab tab = new Tab(sym.getLabel(), new ScrollPane(gallery));

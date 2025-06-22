@@ -4,69 +4,69 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.IEntitySubType;
-import io.github.ctgnz.jmsfx.IEntityType;
-import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
-import io.github.ctgnz.jmsfx.ISectorOneModifier;
-import io.github.ctgnz.jmsfx.ISectorTwoModifier;
-import io.github.ctgnz.jmsfx.ISymbolSetInfo;
-import io.github.ctgnz.jmsfx.IAmplifierGuide;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.StandardAmplifierItem;
+import io.github.ctgnz.jmsfx.SectorOneModifier;
+import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.SymbolSetInfo;
+import io.github.ctgnz.jmsfx.AmplifierGuide;
 import io.github.ctgnz.jmsfx.icon.unknown.UnknownEntity;
 
-public class CommonSymbolSet implements ISymbolSetInfo {
-    public static final ISymbolSetInfo INSTANCE = new CommonSymbolSet();
+public class CommonSymbolSet implements SymbolSetInfo {
+    public static final SymbolSetInfo INSTANCE = new CommonSymbolSet();
 
     CommonSymbolSet() {
     }
 
     @Override
-    public List<IAmplifierGuide> getAmplifierGuides() {
+    public List<AmplifierGuide> getAmplifierGuides() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiers() {
+    public List<StandardAmplifierItem> getAmplifiers() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiersTwo() {
+    public List<StandardAmplifierItem> getAmplifiersTwo() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IStandardAmplifierItem> getAmplifiersThree() {
+    public List<StandardAmplifierItem> getAmplifiersThree() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IEntity> getEntities() {
+    public List<Entity> getEntities() {
         return Collections.singletonList(UnknownEntity.UNSPECIFIED);
     }
 
     @Override
-    public List<IEntitySubType> getEntitySubTypes(IEntityType entityType) {
+    public List<EntitySubType> getEntitySubTypes(EntityType entityType) {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IEntityType> getEntityTypes(IEntity entity) {
+    public List<EntityType> getEntityTypes(Entity entity) {
         return Collections.emptyList();
     }
 
     @Override
-    public List<IStandardAmplifierItem> getFrameAmplifiers() {
+    public List<StandardAmplifierItem> getFrameAmplifiers() {
         return Collections.emptyList();
     }
 
     @Override
-    public List<ISectorOneModifier> getSectorOneModifiers() {
+    public List<SectorOneModifier> getSectorOneModifiers() {
         return Arrays.asList(CommonSectorOneModifier.values());
     }
 
     @Override
-    public List<ISectorTwoModifier> getSectorTwoModifiers() {
+    public List<SectorTwoModifier> getSectorTwoModifiers() {
         return Arrays.asList(CommonSectorTwoModifier.values());
     }
 

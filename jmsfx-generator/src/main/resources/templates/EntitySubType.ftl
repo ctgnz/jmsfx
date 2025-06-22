@@ -1,10 +1,10 @@
 package ${iconPackage}.${symbolSet.packageName};
 
-import ${basePackage}.IEntitySubType;
-import ${basePackage}.IEntityType;
+import ${basePackage}.EntitySubType;
+import ${basePackage}.EntityType;
 import ${typePackage}.GraphicType;
 
-public enum ${symbolSet.baseTypeName}EntitySubType implements IEntitySubType {
+public enum ${symbolSet.baseTypeName}EntitySubType implements EntitySubType {
 <#list entitySubTypes as subType>
     ${subType.id}("${subType.code}", "${subType.label}", ${symbolSet.baseTypeName}EntityType.${subType.entityTypeId}, GraphicType.${subType.graphicType})<#if subType.graphic??> {
         @Override
@@ -42,7 +42,7 @@ public enum ${symbolSet.baseTypeName}EntitySubType implements IEntitySubType {
     }
 
     @Override
-    public IEntityType getEntityType() {
+    public EntityType getEntityType() {
         return entityType;
     }
 

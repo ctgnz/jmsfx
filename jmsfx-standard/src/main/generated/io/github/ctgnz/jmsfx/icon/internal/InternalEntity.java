@@ -1,11 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.internal;
 
-import io.github.ctgnz.jmsfx.IEntity;
-import io.github.ctgnz.jmsfx.ISymbolSet;
+import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.types.GraphicType;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum InternalEntity implements IEntity {
+public enum InternalEntity implements Entity {
     UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     INVALID("10", "Invalid Symbol", GraphicType.FULL_OCTAGON);
 
@@ -35,8 +35,8 @@ public enum InternalEntity implements IEntity {
     }
 
     @Override
-    public ISymbolSet getSymbolSet() {
-        return SymbolSet.INTERNAL;
+    public SymbolSet getSymbolSet() {
+        return SymbolSetEnum.INTERNAL;
     }
 
     @Override

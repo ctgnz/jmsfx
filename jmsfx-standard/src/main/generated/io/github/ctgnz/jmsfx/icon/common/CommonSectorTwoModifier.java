@@ -2,10 +2,11 @@ package io.github.ctgnz.jmsfx.icon.common;
 
 import org.apache.commons.lang3.StringUtils;
 
-import io.github.ctgnz.jmsfx.ISectorTwoModifier;
-import io.github.ctgnz.jmsfx.icon.SymbolSet;
+import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum CommonSectorTwoModifier implements ISectorTwoModifier {
+public enum CommonSectorTwoModifier implements SectorTwoModifier {
     UNSPECIFIED_2_MOD("0", "00", "Unspecified", "General"),
     AIRBORNE_2_MOD("1", "00", "Airborne", "Mobility"),
     BICYCLE_EQUIPPED_2_MOD("1", "01", "Bicycle Equipped", "Mobility"),
@@ -73,7 +74,7 @@ public enum CommonSectorTwoModifier implements ISectorTwoModifier {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return SymbolSet.COMMON;
+        return SymbolSetEnum.COMMON;
     }
 
     @Override

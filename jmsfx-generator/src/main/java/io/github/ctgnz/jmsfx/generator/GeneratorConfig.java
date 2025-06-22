@@ -79,11 +79,11 @@ public class GeneratorConfig {
     }
 
     public StandardEnumConfig<ContextEnum, Context> getContext() {
-        return new StandardEnumConfig<>(ContextEnum.class, Context.class, "Context", "contexts", library -> library.getContexts().getContext());
+        return new StandardEnumConfig<>(ContextEnum.class, Context.class, "ContextEnum", "contexts", library -> library.getContexts().getContext());
     }
 
     public StandardEnumConfig<DimensionEnum, Dimension> getDimension() {
-        return new StandardEnumConfig<>(DimensionEnum.class, Dimension.class, "Dimension", "dimensions", library -> library.getDimensions().getDimension());
+        return new StandardEnumConfig<>(DimensionEnum.class, Dimension.class, "DimensionEnum", "dimensions", library -> library.getDimensions().getDimension());
     }
 
     public Map<String, String> getDimensionGraphicLocations() {
@@ -103,7 +103,7 @@ public class GeneratorConfig {
     }
 
     public StandardEnumConfig<HqtfDummyEnum, HQTFDummy> getHqtfDummy() {
-        return new StandardEnumConfig<>(HqtfDummyEnum.class, HQTFDummy.class, "HqtfDummy", "hqtfDummies", library -> library.getHQTFDummies().getHQTFDummy());
+        return new StandardEnumConfig<>(HqtfDummyEnum.class, HQTFDummy.class, "HqtfDummyEnum", "hqtfDummies", library -> library.getHQTFDummies().getHQTFDummy());
     }
 
     public String getIconPackage() {
@@ -139,17 +139,17 @@ public class GeneratorConfig {
     }
 
     public StandardEnumConfig<StandardIdentityEnum, StandardIdentity> getStandardIdentity() {
-        return new StandardEnumConfig<>(StandardIdentityEnum.class, StandardIdentity.class, "StandardIdentity", "identities",
+        return new StandardEnumConfig<>(StandardIdentityEnum.class, StandardIdentity.class, "StandardIdentityEnum", "identities",
                                         library -> library.getStandardIdentities().getStandardIdentity());
     }
 
     public StandardEnumConfig<StandardIdentityGroupEnum, StandardIdentityGroup> getStandardIdentityGroup() {
-        return new StandardEnumConfig<>(StandardIdentityGroupEnum.class, StandardIdentityGroup.class, "StandardIdentityGroup", "identityGroups",
+        return new StandardEnumConfig<>(StandardIdentityGroupEnum.class, StandardIdentityGroup.class, "StandardIdentityGroupEnum", "identityGroups",
                                         library -> library.getStandardIdentityGroups().getStandardIdentityGroup());
     }
 
     public StandardEnumConfig<StatusEnum, Status> getStatus() {
-        return new StandardEnumConfig<>(StatusEnum.class, Status.class, "Status", "statuses", library -> library.getStatuses().getStatus());
+        return new StandardEnumConfig<>(StatusEnum.class, Status.class, "StatusEnum", "statuses", library -> library.getStatuses().getStatus());
     }
 
     public Map<String, String> getSymbolGraphicLocations() {
@@ -171,7 +171,7 @@ public class GeneratorConfig {
     }
 
     public StandardEnumConfig<VersionEnum, Version> getVersion() {
-        return new StandardEnumConfig<>(VersionEnum.class, Version.class, "Version", "versions", library -> library.getVersions().getVersion());
+        return new StandardEnumConfig<>(VersionEnum.class, Version.class, "VersionEnum", "versions", library -> library.getVersions().getVersion());
     }
 
     public void setAmplifierPackage(String amplifierPackage) {

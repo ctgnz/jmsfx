@@ -1,11 +1,11 @@
 package io.github.ctgnz.jmsfx.icon.amplifier;
 
-import io.github.ctgnz.jmsfx.IAmplifierList;
-import io.github.ctgnz.jmsfx.IStandardAmplifierItem;
-import io.github.ctgnz.jmsfx.icon.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.StandardAmplifierItem;
+import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
 import io.github.ctgnz.jmsfx.icon.Extension;
 
-public enum EquipmentMobility implements IStandardAmplifierItem {
+public enum EquipmentMobility implements StandardAmplifierItem {
     WHEEL_LIMIT_COUNTRY("1", "Wheeled limited cross country"),
     WHEEL_COUNTRY("2", "Wheeled cross country"),
     TRACKED("3", "Tracked"),
@@ -27,8 +27,8 @@ public enum EquipmentMobility implements IStandardAmplifierItem {
     }
 
     @Override
-    public IAmplifierList getAmplifierList() {
-        return AmplifierList.EQUIPMENT_MOBILITY;
+    public AmplifierList getAmplifierList() {
+        return AmplifierListEnum.EQUIPMENT_MOBILITY;
     }
 
     @Override
