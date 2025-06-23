@@ -2,6 +2,8 @@ package io.github.ctgnz.jmsfx;
 
 import java.util.List;
 
+import io.github.ctgnz.jmsfx.types.GeometryType;
+
 public interface SymbolSet extends CodeElement {
 
     AmplifierGuide getAmplifierGuide(Amplifier amplifier);
@@ -37,5 +39,9 @@ public interface SymbolSet extends CodeElement {
     <M extends SectorTwoModifier> List<M> getSectorTwoModifiers();
 
     SymbolSetInfo getSymbolSetInfo();
+
+    default boolean isPointGeometry() {
+        return getDimension().getGeometryType() == GeometryType.POINT_GEOMETRY;
+    }
 
 }

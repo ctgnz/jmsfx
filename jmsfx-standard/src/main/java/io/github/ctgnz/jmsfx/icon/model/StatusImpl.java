@@ -13,6 +13,7 @@ public class StatusImpl extends CodeElementImpl implements Status {
 
     private final BooleanProperty operationalCondition = new SimpleBooleanProperty();
     private final BooleanProperty present = new SimpleBooleanProperty();
+    private final BooleanProperty planned = new SimpleBooleanProperty();
     private final ObservableList<String> dimensionIds = FXCollections.observableArrayList();
 
     public StatusImpl() {
@@ -22,6 +23,7 @@ public class StatusImpl extends CodeElementImpl implements Status {
         super(status);
         this.operationalCondition.set(status.isOperationalCondition());
         this.present.set(status.isPresent());
+        this.planned.set(status.isPlanned());
         this.dimensionIds.setAll(status.getDimensionIds());
     }
 
@@ -33,6 +35,11 @@ public class StatusImpl extends CodeElementImpl implements Status {
     @Override
     public boolean isOperationalCondition() {
         return operationalCondition.get();
+    }
+
+    @Override
+    public boolean isPlanned() {
+        return planned.get();
     }
 
     @Override

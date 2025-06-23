@@ -5,7 +5,6 @@ import java.util.stream.Stream;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import nz.co.ctg.foxglove.FoxgloveParser;
 import nz.co.ctg.foxglove.ISvgContent;
 import nz.co.ctg.foxglove.ISvgStylable;
 import nz.co.ctg.foxglove.SvgGraphic;
@@ -20,6 +19,7 @@ import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.HqtfDummy;
+import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.MainElement;
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
@@ -46,15 +46,15 @@ import javafx.scene.Group;
 import javafx.scene.paint.Color;
 
 public class IdentificationSymbol {
-    public static final Color CRYSTAL_BLUE = Color.rgb(128, 224, 255); // 80E0FF
-    public static final Color LT_YELLOW = Color.rgb(255, 255, 128);    // FFFF80
-    public static final Color BAMBOO_GREEN = Color.rgb(170, 255, 170); // AAFFAA
-    public static final Color SALMON_RED = Color.rgb(255, 128, 128);   // FF8080
-    public static final Color CIV_PURPLE = Color.rgb(255, 161, 255);   // FFA1FF
-    public static final Color HOSTILE_ORANGE = Color.rgb(255, 120, 0); // FF7800
-    public static final Color OFF_WHITE = Color.rgb(239, 239, 239);    // EFEFEF
-    public static final Color NEARLY_WHITE = Color.rgb(250, 250, 250); // FAFAFA
-    private final SymbolIdentificationCode sidc = Library.code().build();
+    public static final Color CRYSTAL_BLUE = Color.rgb(128, 224, 255);    // 80E0FF
+    public static final Color LIGHTISH_YELLOW = Color.rgb(255, 255, 128); // FFFF80
+    public static final Color BAMBOO_GREEN = Color.rgb(170, 255, 170);    // AAFFAA
+    public static final Color SALMON_RED = Color.rgb(255, 128, 128);      // FF8080
+    public static final Color CIVILIAN_PURPLE = Color.rgb(255, 161, 255); // FFA1FF
+    public static final Color HOSTILE_ORANGE = Color.rgb(255, 120, 0);    // FF7800
+    public static final Color OFF_WHITE = Color.rgb(239, 239, 239);       // EFEFEF
+    public static final Color NEARLY_WHITE = Color.rgb(250, 250, 250);    // FAFAFA
+    private final SymbolIdentificationCode sidc = StaticIconLibrary.code().build();
     private final ObjectProperty<IconScale> scale = new SimpleObjectProperty<>(IconScale.Medium);
     private final ObjectProperty<Version> version;
     private final ObjectProperty<Context> context;
@@ -93,16 +93,14 @@ public class IdentificationSymbol {
     private final ObservableList<EntitySubType> entitySubTypes = FXCollections.observableArrayList();
     private final ObservableList<SectorOneModifier> sectorOneModifiers = FXCollections.observableArrayList(sidc.getSectorOneModifiers());
     private final ObservableList<SectorTwoModifier> sectorTwoModifiers = FXCollections.observableArrayList(sidc.getSectorTwoModifiers());
-    private final ObservableList<SectorOneModifier> commonSectorOneModifiers = FXCollections.observableArrayList(Library.getCommonSectorOneModifiers());
-    private final ObservableList<SectorTwoModifier> commonSectorTwoModifiers = FXCollections.observableArrayList(Library.getCommonSectorTwoModifiers());
     private final ObservableMap<Amplifier, TextAmplifierValue> textAmplifiers = FXCollections.observableHashMap();
     private final ObservableMap<Amplifier, GraphicAmplifierValue> graphicAmplifiers = FXCollections.observableHashMap();
     private final BooleanProperty amplifierTemplateVisible = new SimpleBooleanProperty(false);
-    private final FoxgloveParser parser;
+    private final IconLibrary library;
 
     @SuppressWarnings("unchecked")
-    public IdentificationSymbol(FoxgloveParser parser) {
-        this.parser = parser;
+    public IdentificationSymbol(IconLibrary library) {
+        this.library = library;
         try {
             version = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("version").build();
             context = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("context").build();
@@ -342,9 +340,8 @@ public class IdentificationSymbol {
     }
 
     public MainElement getMainIconElement() {
-        EntitySubType subType = entitySubType.get();
-        if (subType != null) {
-            return subType;
+        if (entitySubType.get() != null) {
+            return entitySubType.get();
         }
         if (entityType.get() != null) {
             return entityType.get();
@@ -374,6 +371,10 @@ public class IdentificationSymbol {
 
     public SvgGraphic getSectorTwoModifierGraphic() {
         return sectorTwoModifierGraphic.get();
+    }
+
+    public String getSIDC() {
+        return sidc.toString();
     }
 
     public StandardIdentity getStandardIdentity() {
@@ -468,10 +469,6 @@ public class IdentificationSymbol {
     }
 
     public boolean isStatusIconUsed() {
-        SymbolSet currentSymbolSet = getSymbolSet();
-        if (currentSymbolSet == SymbolSetEnum.DISMOUNTED || currentSymbolSet == SymbolSetEnum.INTERNAL) {
-            return false;
-        }
         return getStatus().isOperationalCondition() && getContext().isReality() && isFrameUsed();
     }
 
@@ -507,8 +504,44 @@ public class IdentificationSymbol {
         amplifierTemplateVisible.set(visible);
     }
 
+    public void setEntity(Entity entity) {
+        sidc.setEntity(entity);
+    }
+
+    public void setEntitySubType(EntitySubType entitySubType) {
+        sidc.setEntitySubType(entitySubType);
+    }
+
+    public void setEntityType(EntityType entityType) {
+        sidc.setEntityType(entityType);
+    }
+
+    public void setHqtfDummy(HqtfDummy hqtfDummy) {
+        sidc.setHqtfDummy(hqtfDummy);
+    }
+
     public void setScale(IconScale iconScale) {
         scale.set(iconScale);
+    }
+
+    public void setSectorOneModifier(SectorOneModifier sectorOneModifier) {
+        sidc.setSectorOneModifier(sectorOneModifier);
+    }
+
+    public void setSectorTwoModifier(SectorTwoModifier sectorTwoModifier) {
+        sidc.setSectorTwoModifier(sectorTwoModifier);
+    }
+
+    public void setStandardIdentity(StandardIdentity standardId) {
+        sidc.setStandardIdentity(standardId);
+    }
+
+    public void setStatus(Status status) {
+        sidc.setStatus(status);
+    }
+
+    public void setSymbolSet(SymbolSet symbolSet) {
+        sidc.setSymbolSet(symbolSet);
     }
 
     public ObjectProperty<StandardIdentity> standardIdentityProperty() {
@@ -565,10 +598,10 @@ public class IdentificationSymbol {
             frameAmplifiers.setAll(sidc.getFrameListAmplifiers());
             frameAmplifier.set(sidc.getFrameAmplifier());
 
-            sectorOneModifiers.setAll(Stream.concat(sidc.getSectorOneModifiers().stream(), commonSectorOneModifiers.stream()).toList());
+            sectorOneModifiers.setAll(Stream.concat(sidc.getSectorOneModifiers().stream(), library.getCommonSectorOneModifiers().stream()).toList());
             sectorOneModifier.set(sidc.getSectorOneModifier());
 
-            sectorTwoModifiers.setAll(Stream.concat(sidc.getSectorTwoModifiers().stream(), commonSectorTwoModifiers.stream()).toList());
+            sectorTwoModifiers.setAll(Stream.concat(sidc.getSectorTwoModifiers().stream(), library.getCommonSectorTwoModifiers().stream()).toList());
             sectorTwoModifier.set(sidc.getSectorTwoModifier());
 
             entities.setAll(sidc.getEntities());
@@ -603,112 +636,56 @@ public class IdentificationSymbol {
         hqtfDummyGraphic.bind(Bindings.createObjectBinding(this::loadHqtfDummyGraphic, code, hqtfDummy));
     }
 
-    private StandardIdentity getStandardIdentityForFrame() {
-        return getSymbolSet() == SymbolSetEnum.INTERNAL ? StandardIdentityEnum.SI_UNKNOWN : getStandardIdentity();
-    }
-
-    private Status getStatusForFrame(StandardIdentity effectiveStandardId) {
-        if (!effectiveStandardId.isConfirmed()) {
-            return StatusEnum.PRESENT;
+    private Status getStatusForFrame() {
+        if (!getStandardIdentity().isConfirmed()) {
+            return library.getDefaultStatus();
         }
-        return status.get() == StatusEnum.PLANNED ? StatusEnum.PLANNED : StatusEnum.PRESENT;
+        Status currentStatus = status.get();
+        return currentStatus.isPlanned() ? currentStatus : library.getDefaultStatus();
     }
 
     private SvgGraphic loadAmplifierGraphic() {
-        AmplifierListItem amplifierItem = getAmplifier();
-        if (!amplifierItem.isUnknown() && amplifierItem.isGraphicalIcon()) {
-            return parser.parseFile(amplifierItem.getGraphicLocation(getStandardIdentity()));
-        } else {
-            return null;
-        }
+        return library.loadAmplifierGraphic(getAmplifier(), getStandardIdentity());
     }
 
     private SvgGraphic loadAmplifierThreeGraphic() {
-        AmplifierListItem amplifierItem = getAmplifierThree();
-        if (!amplifierItem.isUnknown() && amplifierItem.isGraphicalIcon()) {
-            return parser.parseFile(amplifierItem.getGraphicLocation(getStandardIdentity()));
-        } else {
-            return null;
-        }
+        return library.loadAmplifierGraphic(getAmplifierThree(), getStandardIdentity());
     }
 
     private SvgGraphic loadAmplifierTwoGraphic() {
-        AmplifierListItem amplifierItem = getAmplifierTwo();
-        if (!amplifierItem.isUnknown() && amplifierItem.isGraphicalIcon()) {
-            return parser.parseFile(amplifierItem.getGraphicLocation(getStandardIdentity()));
-        } else {
-            return null;
-        }
+        return library.loadAmplifierGraphic(getAmplifierTwo(), getStandardIdentity());
     }
 
     private SvgGraphic loadFrameAmplifierGraphic() {
-        AmplifierListItem amplifierItem = getFrameAmplifier();
-        if (!amplifierItem.isUnknown() && amplifierItem.isGraphicalIcon()) {
-            return parser.parseFile(amplifierItem.getGraphicLocation(getStandardIdentity()));
-        } else {
-            return null;
-        }
+        return library.loadAmplifierGraphic(getFrameAmplifier(), getStandardIdentity());
     }
 
     private SvgGraphic loadFrameGraphic() {
-        if (isFrameUsed()) {
-            SymbolSet effectiveSymbolSet = getSymbolSet();
-            StandardIdentity effectiveStandardId = getStandardIdentityForFrame();
-            Status effectiveStatus = getStatusForFrame(effectiveStandardId);
-            String filePath = effectiveSymbolSet.getFrameLocation(effectiveStandardId, effectiveStatus, isCivilianEntity());
-            return parser.parseFile(filePath);
-        } else {
-            return null;
-        }
+        return library.loadFrameGraphic(getSymbolSet(), getStandardIdentity(), getStatusForFrame(), isCivilianEntity());
     }
 
     private SvgGraphic loadFrameOverlayGraphic() {
-        if (isFrameOverlayUsed()) {
-            return parser.parseFile(getContext().getOverlayGraphicLocation());
-        } else {
-            return null;
-        }
+        return library.loadFrameOverlayGraphic(getContext());
     }
 
     private SvgGraphic loadHqtfDummyGraphic() {
-        if (isHqtfDummyIconUsed()) {
-            return parser.parseFile(getHqtfDummy().getGraphicLocation(getStandardIdentity(), getSymbolSet()));
-        } else {
-            return null;
-        }
+        return library.loadHqtfDummyGraphic(getHqtfDummy(), getStandardIdentity(), getSymbolSet());
     }
 
     private SvgGraphic loadMainIconGraphic() {
-        if (isMainIconUsed()) {
-            String filePath = getMainIconElement().getGraphicLocation(getStandardIdentity());
-            return parser.parseFile(filePath);
-        } else {
-            return null;
-        }
+        return library.loadMainIconGraphic(getMainIconElement(), getStandardIdentity());
     }
 
     private SvgGraphic loadSectorOneModifierGraphic() {
-        if (isSectorOneModifierUsed()) {
-            return parser.parseFile(getSectorOneModifier().getFullGraphicLocation());
-        } else {
-            return null;
-        }
+        return library.loadSectorOneModifierGraphic(getSectorOneModifier());
     }
 
     private SvgGraphic loadSectorTwoModifierGraphic() {
-        if (isSectorTwoModifierUsed()) {
-            return parser.parseFile(getSectorTwoModifier().getFullGraphicLocation());
-        } else {
-            return null;
-        }
+        return library.loadSectorTwoModifierGraphic(getSectorTwoModifier());
     }
 
     private SvgGraphic loadStatusGraphic() {
-        if (isStatusIconUsed()) {
-            return parser.parseFile(getStatus().getGraphicLocation(getStandardIdentity(), getSymbolSet()));
-        } else {
-            return null;
-        }
+        return library.loadStatusGraphic(getStatus(), isStatusIconUsed(), getStandardIdentity(), getSymbolSet());
     }
 
     private void replaceFill(ISvgContent graphic, Color fill) {

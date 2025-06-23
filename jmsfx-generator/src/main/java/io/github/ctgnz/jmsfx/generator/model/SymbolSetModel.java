@@ -9,7 +9,7 @@ import io.github.ctgnz.jmsfx.generator.AmplifierGuideConfig;
 import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension;
 import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension.SymbolSets.SymbolSetRef;
 
-public class SymbolSetEnum extends StandardEnum {
+public class SymbolSetModel extends StandardEnumModel {
 
     private final String dimensionId;
     private final String fileName;
@@ -30,7 +30,7 @@ public class SymbolSetEnum extends StandardEnum {
     private String frameAmplifierClass;
     private String baseSymbolSet;
 
-    public SymbolSetEnum(Dimension dimension, SymbolSetRef symbolSet, String graphicLocation) {
+    public SymbolSetModel(Dimension dimension, SymbolSetRef symbolSet, String graphicLocation) {
         super(symbolSet.getID().toString(), symbolSet.getLabel(), symbolSet.getSymbolSetCode().getCodeString(), null);
         this.graphicLocation = graphicLocation;
         this.dimensionId = dimension.getID();

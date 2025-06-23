@@ -33,15 +33,15 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import static java.util.stream.Collectors.toList;
 
 import freemarker.template.Template;
-import io.github.ctgnz.jmsfx.generator.model.AmplifierEnum;
-import io.github.ctgnz.jmsfx.generator.model.EntityEnum;
-import io.github.ctgnz.jmsfx.generator.model.EntitySubTypeEnum;
-import io.github.ctgnz.jmsfx.generator.model.EntityTypeEnum;
-import io.github.ctgnz.jmsfx.generator.model.ListAmplifierGroupEnum;
-import io.github.ctgnz.jmsfx.generator.model.SectorOneModEnum;
-import io.github.ctgnz.jmsfx.generator.model.SectorTwoModEnum;
-import io.github.ctgnz.jmsfx.generator.model.StandardEnum;
-import io.github.ctgnz.jmsfx.generator.model.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.generator.model.AmplifierModel;
+import io.github.ctgnz.jmsfx.generator.model.EntityModel;
+import io.github.ctgnz.jmsfx.generator.model.EntitySubTypeModel;
+import io.github.ctgnz.jmsfx.generator.model.EntityTypeModel;
+import io.github.ctgnz.jmsfx.generator.model.ListAmplifierModel;
+import io.github.ctgnz.jmsfx.generator.model.SectorOneModifierModel;
+import io.github.ctgnz.jmsfx.generator.model.SectorTwoModifierModel;
+import io.github.ctgnz.jmsfx.generator.model.StandardEnumModel;
+import io.github.ctgnz.jmsfx.generator.model.SymbolSetModel;
 import io.github.ctgnz.jmsfx.generator.schema.DoubleDigitType;
 import io.github.ctgnz.jmsfx.generator.schema.Library;
 import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension.SymbolSets.SymbolSetRef;
@@ -144,12 +144,12 @@ public class DomainModelGenerator {
 
     @SuppressWarnings("unchecked")
     private String findAmplifier(String code, Map<String, Object> dataModel) {
-        List<AmplifierEnum> amplifiers = (List<AmplifierEnum>) dataModel.get("amplifiers");
-        return amplifiers.stream().filter(amp -> StringUtils.equals(amp.getId(), code)).findFirst().map(AmplifierEnum::getConstantName).orElse(null);
+        List<AmplifierModel> amplifiers = (List<AmplifierModel>) dataModel.get("amplifiers");
+        return amplifiers.stream().filter(amp -> StringUtils.equals(amp.getId(), code)).findFirst().map(AmplifierModel::getConstantName).orElse(null);
     }
 
     private void generateAmplifierEnum(Map<String, Object> dataModel, Library library) throws Exception {
-        List<AmplifierEnum> amplifiers = library.getAmplifiers().getAmplifier().stream().map(AmplifierEnum::new).collect(toList());
+        List<AmplifierModel> amplifiers = library.getAmplifiers().getAmplifier().stream().map(AmplifierModel::new).collect(toList());
         dataModel.put("amplifiers", amplifiers);
         Template template = config.getTemplateConfig().getTemplate("AmplifierEnum.ftl");
         template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getIconPackageDir().resolve("AmplifierEnum.java"))));
@@ -170,12 +170,12 @@ public class DomainModelGenerator {
         Template symSetInfoTemplate = config.getTemplateConfig().getTemplate("CommonSymbolSet.ftl");
         symSetInfoTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve("CommonSymbolSet.java"))));
         symbolSet.getSectorOneModifiers().getModifier().forEach(mod -> {
-            List<SectorOneModEnum> values = (List<SectorOneModEnum>) dataModel.computeIfAbsent("sectorOneMods", key -> new ArrayList<SectorOneModEnum>());
-            values.add(new SectorOneModEnum(mod));
+            List<SectorOneModifierModel> values = (List<SectorOneModifierModel>) dataModel.computeIfAbsent("sectorOneMods", key -> new ArrayList<SectorOneModifierModel>());
+            values.add(new SectorOneModifierModel(mod));
         });
         symbolSet.getSectorTwoModifiers().getModifier().forEach(mod -> {
-            List<SectorTwoModEnum> values = (List<SectorTwoModEnum>) dataModel.computeIfAbsent("sectorTwoMods", key -> new ArrayList<SectorTwoModEnum>());
-            values.add(new SectorTwoModEnum(mod));
+            List<SectorTwoModifierModel> values = (List<SectorTwoModifierModel>) dataModel.computeIfAbsent("sectorTwoMods", key -> new ArrayList<SectorTwoModifierModel>());
+            values.add(new SectorTwoModifierModel(mod));
         });
         Template s1ModTemplate = config.getTemplateConfig().getTemplate("CommonSectorOneModifier.ftl");
         s1ModTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve("CommonSectorOneModifier.java"))));
@@ -184,7 +184,7 @@ public class DomainModelGenerator {
     }
 
     @SuppressWarnings("unchecked")
-    private void generateEntities(Path packagePath, Map<String, Object> dataModel, SymbolSetEnum symSetDetails, SymbolSet symbolSet) throws Exception {
+    private void generateEntities(Path packagePath, Map<String, Object> dataModel, SymbolSetModel symSetDetails, SymbolSet symbolSet) throws Exception {
         System.out.format("  Adding entities for symbol set %s%n", symbolSet.getLabel());
         dataModel.put("symbolSet", symSetDetails);
         dataModel.remove("entities");
@@ -195,8 +195,8 @@ public class DomainModelGenerator {
         dataModel.remove("sectorTwoMods");
         symbolSet.getEntities().getEntity().forEach(entity -> {
             try {
-                List<EntityEnum> values = (List<EntityEnum>) dataModel.computeIfAbsent("entities", key -> new ArrayList<EntityEnum>());
-                EntityEnum entityValue = new EntityEnum(entity);
+                List<EntityModel> values = (List<EntityModel>) dataModel.computeIfAbsent("entities", key -> new ArrayList<EntityModel>());
+                EntityModel entityValue = new EntityModel(entity);
                 if (config.getEntitySymbolSets().containsKey(entityValue.getId())) {
                     entityValue.setBaseSymbolSet(config.getEntitySymbolSets().get(entityValue.getId()));
                 }
@@ -229,16 +229,16 @@ public class DomainModelGenerator {
             System.out.format("  Adding sector 1 modifiers for symbol set %s%n", symbolSet.getLabel());
             symSetDetails.setSectorOneModifierPresent(true);
             symbolSet.getSectorOneModifiers().getModifier().forEach(mod -> {
-                List<SectorOneModEnum> values = (List<SectorOneModEnum>) dataModel.computeIfAbsent("sectorOneMods", key -> new ArrayList<SectorOneModEnum>());
-                values.add(new SectorOneModEnum(mod));
+                List<SectorOneModifierModel> values = (List<SectorOneModifierModel>) dataModel.computeIfAbsent("sectorOneMods", key -> new ArrayList<SectorOneModifierModel>());
+                values.add(new SectorOneModifierModel(mod));
             });
         }
         if (symbolSet.getSectorTwoModifiers() != null) {
             System.out.format("  Adding sector 2 modifiers for symbol set %s%n", symbolSet.getLabel());
             symSetDetails.setSectorTwoModifierPresent(true);
             symbolSet.getSectorTwoModifiers().getModifier().forEach(mod -> {
-                List<SectorTwoModEnum> values = (List<SectorTwoModEnum>) dataModel.computeIfAbsent("sectorTwoMods", key -> new ArrayList<SectorTwoModEnum>());
-                values.add(new SectorTwoModEnum(mod));
+                List<SectorTwoModifierModel> values = (List<SectorTwoModifierModel>) dataModel.computeIfAbsent("sectorTwoMods", key -> new ArrayList<SectorTwoModifierModel>());
+                values.add(new SectorTwoModifierModel(mod));
             });
         }
         if (config.getUnframedSymbolSets().contains(symSetDetails.getId())) {
@@ -279,13 +279,13 @@ public class DomainModelGenerator {
     @SuppressWarnings("unchecked")
     private void generateListAmplifierEnums(Map<String, Object> dataModel, Library library) throws Exception {
         List<StandardAmplifierConfig> amplifierTypeConfigs = config.getStandardAmplifiers();
-        List<AmplifierEnum> amplifiers = (List<AmplifierEnum>) dataModel.get("amplifiers");
-        List<ListAmplifierGroupEnum> amplifierGroups = (List<ListAmplifierGroupEnum>) dataModel.computeIfAbsent("amplifierGroups", key -> new ArrayList<ListAmplifierGroupEnum>());
+        List<AmplifierModel> amplifiers = (List<AmplifierModel>) dataModel.get("amplifiers");
+        List<ListAmplifierModel> amplifierGroups = (List<ListAmplifierModel>) dataModel.computeIfAbsent("amplifierGroups", key -> new ArrayList<ListAmplifierModel>());
         library.getAmplifierGroups().getAmplifierGroup().forEach(group -> {
             StandardAmplifierConfig groupConfig = amplifierTypeConfigs.stream().filter(config -> config.isForGroup(group.getName())).findAny().orElse(null);
             if (groupConfig != null) {
-                ListAmplifierGroupEnum amplifierType = (ListAmplifierGroupEnum) dataModel.computeIfAbsent(groupConfig.getEnumType(), type -> {
-                    ListAmplifierGroupEnum amplifierTypeEnum = new ListAmplifierGroupEnum(groupConfig, group);
+                ListAmplifierModel amplifierType = (ListAmplifierModel) dataModel.computeIfAbsent(groupConfig.getEnumType(), type -> {
+                    ListAmplifierModel amplifierTypeEnum = new ListAmplifierModel(groupConfig, group);
                     amplifierGroups.add(amplifierTypeEnum);
                     return amplifierTypeEnum;
                 });
@@ -293,14 +293,14 @@ public class DomainModelGenerator {
             }
         });
         library.getAmplifiers().getAmplifier().forEach(amplifier -> {
-            AmplifierEnum amplifierEnum = amplifiers.stream().filter(amp -> StringUtils.equals(amp.getId(), amplifier.getID())).findFirst().orElse(null);
+            AmplifierModel amplifierEnum = amplifiers.stream().filter(amp -> StringUtils.equals(amp.getId(), amplifier.getID())).findFirst().orElse(null);
             if (!amplifier.getValues().isEmpty()) {
                 List<ListAmplifierConfig> valueConfigs = config.getAmplifierValues(amplifier);
                 amplifier.getValues().forEach(value -> {
                     ListAmplifierConfig valueConfig = valueConfigs.stream().filter(config -> StringUtils.equals(value.getID(), config.getValuesId())).findFirst().orElse(null);
                     if (valueConfig != null) {
-                        ListAmplifierGroupEnum amplifierType = (ListAmplifierGroupEnum) dataModel.computeIfAbsent(valueConfig.getEnumType(), type -> {
-                            ListAmplifierGroupEnum amplifierTypeEnum = new ListAmplifierGroupEnum(valueConfig, value);
+                        ListAmplifierModel amplifierType = (ListAmplifierModel) dataModel.computeIfAbsent(valueConfig.getEnumType(), type -> {
+                            ListAmplifierModel amplifierTypeEnum = new ListAmplifierModel(valueConfig, value);
                             amplifierTypeEnum.setAmplifierId(amplifierEnum.getConstantName());
                             amplifierGroups.add(amplifierTypeEnum);
                             return amplifierTypeEnum;
@@ -316,7 +316,7 @@ public class DomainModelGenerator {
                 });
             }
             if (StringUtils.isNotBlank(amplifier.getAmplifierGroup())) {
-                ListAmplifierGroupEnum typeEnum = amplifierGroups.stream().filter(type -> StringUtils.equals(type.getId(), amplifier.getAmplifierGroup())).findFirst().orElse(null);
+                ListAmplifierModel typeEnum = amplifierGroups.stream().filter(type -> StringUtils.equals(type.getId(), amplifier.getAmplifierGroup())).findFirst().orElse(null);
                 typeEnum.setAmplifierId(amplifierEnum.getConstantName());
             }
         });
@@ -329,7 +329,7 @@ public class DomainModelGenerator {
         }
         amplifierTypeConfigs.forEach(group -> {
             try {
-                ListAmplifierGroupEnum enumType = (ListAmplifierGroupEnum) dataModel.get(group.getEnumType());
+                ListAmplifierModel enumType = (ListAmplifierModel) dataModel.get(group.getEnumType());
                 System.out.format("Processing amplifier enum %s%n", enumType.getTypeName());
                 dataModel.put("amplifier", enumType);
                 amplifierTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(amplifierPath.resolve(enumType.getTypeName() + ".java"))));
@@ -340,7 +340,7 @@ public class DomainModelGenerator {
     }
 
     @SuppressWarnings("unchecked")
-    private <E extends StandardEnum, V> void generateStandardEnum(Map<String, Object> dataModel, Library library, StandardEnumConfig<E, V> enumConfig) {
+    private <E extends StandardEnumModel, V> void generateStandardEnum(Map<String, Object> dataModel, Library library, StandardEnumConfig<E, V> enumConfig) {
         try {
             System.out.format("Processing standard enum %s%n", enumConfig.getTypeName());
             enumConfig.getValues(library).forEach(value -> {
@@ -348,7 +348,7 @@ public class DomainModelGenerator {
                 values.add(enumConfig.createEnumModel(value));
             });
             List<E> values = (List<E>) dataModel.get(enumConfig.getTemplateParameterName());
-            Collections.sort(values, StandardEnum.getStandardOrder());
+            Collections.sort(values, StandardEnumModel.getStandardOrder());
             Template template = config.getTemplateConfig().getTemplate(enumConfig.getTypeName() + ".ftl");
             template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getIconPackageDir().resolve(enumConfig.getTypeName() + ".java"))));
         } catch (Exception e) {
@@ -356,7 +356,7 @@ public class DomainModelGenerator {
         }
     }
 
-    private void generateSymbolSet(Map<String, Object> dataModel, SymbolSetEnum symSetDetails) {
+    private void generateSymbolSet(Map<String, Object> dataModel, SymbolSetModel symSetDetails) {
         try {
             String packageName = symSetDetails.getPackageName();
             Path packagePath = config.getIconPackageDir().resolve(packageName);
@@ -381,51 +381,51 @@ public class DomainModelGenerator {
         library.getDimensions().getDimension().forEach(dim -> {
             List<SymbolSetRef> symbolSetRef = dim.getSymbolSets().getSymbolSetRef();
             symbolSetRef.forEach(symSet -> {
-                List<SymbolSetEnum> values = (List<SymbolSetEnum>) dataModel.computeIfAbsent("symbolSets", key -> new ArrayList<SymbolSetEnum>());
+                List<SymbolSetModel> values = (List<SymbolSetModel>) dataModel.computeIfAbsent("symbolSets", key -> new ArrayList<SymbolSetModel>());
                 if (values.stream().noneMatch(sym -> sym.getId().equals(symSet.getID()))) {
-                    SymbolSetEnum symSetEnum = new SymbolSetEnum(dim, symSet, symbolGraphicLocations.get(symSet.getID()));
+                    SymbolSetModel symSetEnum = new SymbolSetModel(dim, symSet, symbolGraphicLocations.get(symSet.getID()));
                     values.add(symSetEnum);
                     generateSymbolSet(dataModel, symSetEnum);
                 }
             });
         });
-        List<SymbolSetEnum> values = (List<SymbolSetEnum>) dataModel.get("symbolSets");
-        Collections.sort(values, StandardEnum.getStandardOrder());
+        List<SymbolSetModel> values = (List<SymbolSetModel>) dataModel.get("symbolSets");
+        Collections.sort(values, StandardEnumModel.getStandardOrder());
         Template template = config.getTemplateConfig().getTemplate("SymbolSetEnum.ftl");
         template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getIconPackageDir().resolve("SymbolSetEnum.java"))));
     }
 
     @SuppressWarnings("unchecked")
-    private String[] getAmplifierClasses(Map<String, Object> dataModel, SymbolSetEnum symSetDetails) {
-        List<ListAmplifierGroupEnum> enumAmplifiers = (List<ListAmplifierGroupEnum>) dataModel.get("amplifierGroups");
+    private String[] getAmplifierClasses(Map<String, Object> dataModel, SymbolSetModel symSetDetails) {
+        List<ListAmplifierModel> enumAmplifiers = (List<ListAmplifierModel>) dataModel.get("amplifierGroups");
         return enumAmplifiers.stream()
             .filter(amplifier -> !amplifier.isFrameAmplifier())
             .filter(amplifier -> amplifier.isFor(symSetDetails.getId()))
-            .map(ListAmplifierGroupEnum::getTypeName)
+            .map(ListAmplifierModel::getTypeName)
             .toArray(size -> new String[size]);
     }
 
     @SuppressWarnings("unchecked")
-    private void getEntitySubTypes(Path packagePath, Map<String, Object> dataModel, EntityTypeEnum entityTypeValue, EntityType entityType, SymbolSetEnum symSetDetails) throws Exception {
+    private void getEntitySubTypes(Path packagePath, Map<String, Object> dataModel, EntityTypeModel entityTypeValue, EntityType entityType, SymbolSetModel symSetDetails) throws Exception {
         System.out.format("      Adding entity sub-types for entity type %s%n", entityTypeValue.getLabel());
         symSetDetails.setEntitySubTypePresent(true);
         dataModel.put("entityType", entityTypeValue);
         entityType.getEntitySubTypes().getEntitySubType().forEach(entitySubType -> {
-            List<EntitySubTypeEnum> values = (List<EntitySubTypeEnum>) dataModel.computeIfAbsent("entitySubTypes", key -> new ArrayList<EntitySubTypeEnum>());
-            EntitySubTypeEnum entitySubTypeValue = new EntitySubTypeEnum(entityType, entitySubType);
+            List<EntitySubTypeModel> values = (List<EntitySubTypeModel>) dataModel.computeIfAbsent("entitySubTypes", key -> new ArrayList<EntitySubTypeModel>());
+            EntitySubTypeModel entitySubTypeValue = new EntitySubTypeModel(entityType, entitySubType);
             values.add(entitySubTypeValue);
         });
     }
 
     @SuppressWarnings("unchecked")
-    private void getEntityTypes(Path packagePath, Map<String, Object> dataModel, Entity entity, EntityEnum entityValue, SymbolSetEnum symSetDetails) throws Exception {
+    private void getEntityTypes(Path packagePath, Map<String, Object> dataModel, Entity entity, EntityModel entityValue, SymbolSetModel symSetDetails) throws Exception {
         System.out.format("    Adding entity types for entity %s%n", entityValue.getLabel());
         symSetDetails.setEntityTypePresent(true);
         dataModel.put("entity", entityValue);
         entity.getEntityTypes().getEntityType().forEach(entityType -> {
             try {
-                List<EntityTypeEnum> values = (List<EntityTypeEnum>) dataModel.computeIfAbsent("entityTypes", key -> new ArrayList<EntityTypeEnum>());
-                EntityTypeEnum entityTypeValue = new EntityTypeEnum(entity, entityType);
+                List<EntityTypeModel> values = (List<EntityTypeModel>) dataModel.computeIfAbsent("entityTypes", key -> new ArrayList<EntityTypeModel>());
+                EntityTypeModel entityTypeValue = new EntityTypeModel(entity, entityType);
                 values.add(entityTypeValue);
                 if (entityType.getEntitySubTypes() != null && entityType.getEntitySubTypes().getEntitySubType() != null) {
                     getEntitySubTypes(packagePath, dataModel, entityTypeValue, entityType, symSetDetails);
@@ -437,12 +437,12 @@ public class DomainModelGenerator {
     }
 
     @SuppressWarnings("unchecked")
-    private Optional<String> getFrameAmplifierClass(Map<String, Object> dataModel, SymbolSetEnum symSetDetails) {
-        List<ListAmplifierGroupEnum> enumAmplifiers = (List<ListAmplifierGroupEnum>) dataModel.get("amplifierGroups");
+    private Optional<String> getFrameAmplifierClass(Map<String, Object> dataModel, SymbolSetModel symSetDetails) {
+        List<ListAmplifierModel> enumAmplifiers = (List<ListAmplifierModel>) dataModel.get("amplifierGroups");
         return enumAmplifiers.stream()
-            .filter(ListAmplifierGroupEnum::isFrameAmplifier)
+            .filter(ListAmplifierModel::isFrameAmplifier)
             .filter(amplifier -> amplifier.isFor(symSetDetails.getId()))
-            .map(ListAmplifierGroupEnum::getTypeName)
+            .map(ListAmplifierModel::getTypeName)
             .findFirst();
     }
 

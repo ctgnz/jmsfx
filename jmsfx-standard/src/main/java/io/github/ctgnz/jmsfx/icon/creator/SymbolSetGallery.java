@@ -4,9 +4,8 @@ import java.util.Arrays;
 
 import org.apache.commons.lang3.StringUtils;
 
-import nz.co.ctg.foxglove.FoxgloveParser;
-
 import io.github.ctgnz.jmsfx.CodeElement;
+import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.icon.HqtfDummyEnum;
 import io.github.ctgnz.jmsfx.icon.IconScale;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
@@ -24,10 +23,10 @@ import javafx.scene.layout.VBox;
 
 public class SymbolSetGallery extends VBox {
     private SymbolSetEnum symbolSet;
-    private FoxgloveParser parser;
+    private IconLibrary library;
 
-    public SymbolSetGallery(FoxgloveParser parser, SymbolSetEnum symbolSet) {
-        this.parser = parser;
+    public SymbolSetGallery(IconLibrary library, SymbolSetEnum symbolSet) {
+        this.library = library;
         this.symbolSet = symbolSet;
         getChildren().add(createFrames());
         getChildren().add(createStatus());
@@ -41,7 +40,7 @@ public class SymbolSetGallery extends VBox {
         TilePane flowPane = new TilePane();
         Arrays.stream(StandardIdentityEnum.values()).forEach(stdId -> {
             IdentificationSymbol symbol = createDefaultSymbol(flowPane, stdId);
-            symbol.getCode().setStandardIdentity(stdId);
+            symbol.setStandardIdentity(stdId);
         });
         TitledPane framePane = new TitledPane("Frames", flowPane);
         framePane.setCollapsible(false);
@@ -52,7 +51,7 @@ public class SymbolSetGallery extends VBox {
         TilePane flowPane = new TilePane();
         Arrays.stream(HqtfDummyEnum.values()).filter(status -> status.isSupported(symbolSet)).forEach(hqtfDummy -> {
             IdentificationSymbol symbol = createDefaultSymbol(flowPane, hqtfDummy);
-            symbol.getCode().setHqtfDummy(hqtfDummy);
+            symbol.setHqtfDummy(hqtfDummy);
         });
         TitledPane hqtfDummyPane = new TitledPane("HQ/TF/Dummy/Feint", flowPane);
         hqtfDummyPane.setCollapsible(false);
@@ -63,13 +62,13 @@ public class SymbolSetGallery extends VBox {
         TilePane flowPane = new TilePane();
         symbolSet.getEntities().forEach(entity -> {
             IdentificationSymbol entitySymbol = createDefaultSymbol(flowPane, entity);
-            entitySymbol.getCode().setEntity(entity);
+            entitySymbol.setEntity(entity);
             entity.getEntityTypes().forEach(entityType -> {
                 IdentificationSymbol entityTypeSymbol = createDefaultSymbol(flowPane, entityType);
-                entityTypeSymbol.getCode().setEntityType(entityType);
+                entityTypeSymbol.setEntityType(entityType);
                 entityType.getEntitySubTypes().forEach(subType -> {
                     IdentificationSymbol subTypeSymbol = createDefaultSymbol(flowPane, subType);
-                    subTypeSymbol.getCode().setEntitySubType(subType);
+                    subTypeSymbol.setEntitySubType(subType);
                 });
             });
         });
@@ -83,7 +82,7 @@ public class SymbolSetGallery extends VBox {
         TitledPane mod1Pane = new TitledPane("Sector 1 Modifiers", flowPane);
         symbolSet.getSectorOneModifiers().forEach(mod -> {
             IdentificationSymbol symbol = createDefaultSymbol(flowPane, mod);
-            symbol.getCode().setSectorOneModifier(mod);
+            symbol.setSectorOneModifier(mod);
         });
         mod1Pane.setCollapsible(false);
         return mod1Pane;
@@ -93,7 +92,7 @@ public class SymbolSetGallery extends VBox {
         TilePane flowPane = new TilePane();
         symbolSet.getSectorTwoModifiers().forEach(mod -> {
             IdentificationSymbol symbol = createDefaultSymbol(flowPane, mod);
-            symbol.getCode().setSectorTwoModifier(mod);
+            symbol.setSectorTwoModifier(mod);
         });
         TitledPane mod2Pane = new TitledPane("Sector 2 Modifiers", flowPane);
         mod2Pane.setCollapsible(false);
@@ -104,7 +103,7 @@ public class SymbolSetGallery extends VBox {
         TilePane flowPane = new TilePane();
         Arrays.stream(StatusEnum.values()).filter(status -> status.isSupported(symbolSet)).forEach(status -> {
             IdentificationSymbol symbol = createDefaultSymbol(flowPane, status);
-            symbol.getCode().setStatus(status);
+            symbol.setStatus(status);
         });
         TitledPane statusPane = new TitledPane("Status", flowPane);
         statusPane.setCollapsible(false);
@@ -112,8 +111,8 @@ public class SymbolSetGallery extends VBox {
     }
 
     protected IdentificationSymbol createDefaultSymbol(TilePane tilePane, CodeElement element) {
-        IdentificationSymbol symbol = new IdentificationSymbol(parser);
-        symbol.getCode().setSymbolSet(symbolSet);
+        IdentificationSymbol symbol = new IdentificationSymbol(library);
+        symbol.setSymbolSet(symbolSet);
         symbol.setScale(IconScale.MediumSmall);
         Label label = new Label(StringUtils.abbreviate(element.getLabel(), 24), symbol.createIcon());
         label.setTooltip(new Tooltip(element.getLabel()));

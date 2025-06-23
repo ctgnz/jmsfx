@@ -17,6 +17,7 @@ import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.HqtfDummy;
+import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.StandardAmplifierItem;
@@ -42,10 +43,13 @@ public class SymbolIdentificationCode {
     private EntitySubType entitySubType;
     private SectorOneModifier sectorOneModifier;
     private SectorTwoModifier sectorTwoModifier;
-    private CountryCode countryCode = Library.getExtensionCountryCode();
+    private CountryCode countryCode;
     private final PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
+    private IconLibrary library;
 
-    protected SymbolIdentificationCode() {
+    protected SymbolIdentificationCode(IconLibrary library) {
+        this.library = library;
+        this.countryCode = library.getExtensionCountryCode();
     }
 
     public void addPropertyChangeListener(PropertyChangeListener listener) {
@@ -62,7 +66,7 @@ public class SymbolIdentificationCode {
 
     public List<StandardAmplifierItem> getAmplifierThreeItems() {
         List<StandardAmplifierItem> listAmplifiers = symbolSet.getAmplifierListThree();
-        return Stream.concat(Stream.of(Library.getDefaultAmplifier()), listAmplifiers.stream()).collect(toList());
+        return Stream.concat(Stream.of(library.getDefaultAmplifier()), listAmplifiers.stream()).collect(toList());
     }
 
     public StandardAmplifierItem getAmplifierTwo() {
@@ -71,7 +75,7 @@ public class SymbolIdentificationCode {
 
     public List<StandardAmplifierItem> getAmplifierTwoItems() {
         List<StandardAmplifierItem> listAmplifiers = symbolSet.getAmplifierListTwo();
-        return Stream.concat(Stream.of(Library.getDefaultAmplifier()), listAmplifiers.stream()).collect(toList());
+        return Stream.concat(Stream.of(library.getDefaultAmplifier()), listAmplifiers.stream()).collect(toList());
     }
 
     public Context getContext() {
@@ -79,7 +83,7 @@ public class SymbolIdentificationCode {
     }
 
     public CountryCode getCountryCode() {
-        return defaultIfNull(countryCode, Library.getExtensionCountryCode());
+        return defaultIfNull(countryCode, library.getExtensionCountryCode());
     }
 
     public String getDescription() {
@@ -150,7 +154,7 @@ public class SymbolIdentificationCode {
 
     public List<StandardAmplifierItem> getFrameListAmplifiers() {
         List<StandardAmplifierItem> listAmplifiers = symbolSet.getFrameAmplifierList();
-        return Stream.concat(Stream.of(Library.getDefaultAmplifier()), listAmplifiers.stream()).toList();
+        return Stream.concat(Stream.of(library.getDefaultAmplifier()), listAmplifiers.stream()).toList();
     }
 
     public HqtfDummy getHqtfDummy() {
@@ -159,7 +163,7 @@ public class SymbolIdentificationCode {
 
     public List<StandardAmplifierItem> getListAmplifiers() {
         List<StandardAmplifierItem> listAmplifiers = symbolSet.getAmplifierList();
-        return Stream.concat(Stream.of(Library.getDefaultAmplifier()), listAmplifiers.stream()).collect(toList());
+        return Stream.concat(Stream.of(library.getDefaultAmplifier()), listAmplifiers.stream()).collect(toList());
     }
 
     public String getSecondTenDigits() {
@@ -219,31 +223,31 @@ public class SymbolIdentificationCode {
 
     public void setAmplifier(StandardAmplifierItem amplifier) {
         StandardAmplifierItem oldValue = this.amplifier;
-        this.amplifier = defaultIfNull(amplifier, Library.getDefaultAmplifier());
+        this.amplifier = defaultIfNull(amplifier, library.getDefaultAmplifier());
         changeSupport.firePropertyChange("amplifier", oldValue, this.amplifier);
     }
 
     public void setAmplifierThree(StandardAmplifierItem amplifier) {
         StandardAmplifierItem oldValue = this.amplifierThree;
-        this.amplifierThree = defaultIfNull(amplifier, Library.getDefaultAmplifier());
+        this.amplifierThree = defaultIfNull(amplifier, library.getDefaultAmplifier());
         changeSupport.firePropertyChange("amplifierThree", oldValue, this.amplifierThree);
     }
 
     public void setAmplifierTwo(StandardAmplifierItem amplifier) {
         StandardAmplifierItem oldValue = this.amplifierTwo;
-        this.amplifierTwo = defaultIfNull(amplifier, Library.getDefaultAmplifier());
+        this.amplifierTwo = defaultIfNull(amplifier, library.getDefaultAmplifier());
         changeSupport.firePropertyChange("amplifierTwo", oldValue, this.amplifierTwo);
     }
 
     public void setContext(Context context) {
         Context oldValue = this.context;
-        this.context = defaultIfNull(context, Library.getDefaultContext());
+        this.context = defaultIfNull(context, library.getDefaultContext());
         changeSupport.firePropertyChange("context", oldValue, this.context);
     }
 
     public void setCountryCode(CountryCode countryCode) {
         CountryCode oldValue = this.countryCode;
-        this.countryCode = defaultIfNull(countryCode, Library.getExtensionCountryCode());
+        this.countryCode = defaultIfNull(countryCode, library.getExtensionCountryCode());
         changeSupport.firePropertyChange("countryCode", oldValue, this.countryCode);
     }
 
@@ -273,13 +277,13 @@ public class SymbolIdentificationCode {
 
     public void setFrameAmplifier(StandardAmplifierItem amplifier) {
         StandardAmplifierItem oldValue = this.frameAmplifier;
-        this.frameAmplifier = defaultIfNull(amplifier, Library.getDefaultAmplifier());
+        this.frameAmplifier = defaultIfNull(amplifier, library.getDefaultAmplifier());
         changeSupport.firePropertyChange("frameAmplifier", oldValue, this.frameAmplifier);
     }
 
     public void setHqtfDummy(HqtfDummy hqtfDummy) {
         HqtfDummy oldValue = this.hqtfDummy;
-        this.hqtfDummy = defaultIfNull(hqtfDummy, Library.getDefaultHqtfDummy());
+        this.hqtfDummy = defaultIfNull(hqtfDummy, library.getDefaultHqtfDummy());
         changeSupport.firePropertyChange("hqtfDummy", oldValue, this.hqtfDummy);
     }
 
@@ -297,24 +301,24 @@ public class SymbolIdentificationCode {
 
     public void setStandardIdentity(StandardIdentity standardIdentity) {
         StandardIdentity oldValue = this.standardIdentity;
-        this.standardIdentity = defaultIfNull(standardIdentity, Library.getDefaultStandardIdentity());
+        this.standardIdentity = defaultIfNull(standardIdentity, library.getDefaultStandardIdentity());
         changeSupport.firePropertyChange("standardIdentity", oldValue, this.standardIdentity);
     }
 
     public void setStatus(Status status) {
         Status oldValue = this.status;
-        this.status = defaultIfNull(status, Library.getDefaultStatus());
+        this.status = defaultIfNull(status, library.getDefaultStatus());
         changeSupport.firePropertyChange("status", oldValue, this.status);
     }
 
     public void setSymbolSet(SymbolSet symbolSet) {
         SymbolSet oldValue = this.symbolSet;
-        this.symbolSet = defaultIfNull(symbolSet, Library.getDefaultSymbolSet());
+        this.symbolSet = defaultIfNull(symbolSet, library.getDefaultSymbolSet());
         if (!Objects.equal(oldValue, symbolSet)) {
-            this.amplifier = Library.getDefaultAmplifier();
-            this.amplifierTwo = Library.getDefaultAmplifier();
-            this.amplifierThree = Library.getDefaultAmplifier();
-            this.frameAmplifier = Library.getDefaultAmplifier();
+            this.amplifier = library.getDefaultAmplifier();
+            this.amplifierTwo = library.getDefaultAmplifier();
+            this.amplifierThree = library.getDefaultAmplifier();
+            this.frameAmplifier = library.getDefaultAmplifier();
             this.sectorOneModifier = getDefaultSectorOneModifier();
             this.sectorTwoModifier = getDefaultSectorTwoModifier();
             this.entity = getDefaultEntity();
@@ -326,7 +330,7 @@ public class SymbolIdentificationCode {
 
     public void setVersion(Version version) {
         Version oldValue = this.version;
-        this.version = defaultIfNull(version, Library.getDefaultVersion());
+        this.version = defaultIfNull(version, library.getDefaultVersion());
         changeSupport.firePropertyChange("version", oldValue, this.version);
     }
 

@@ -46,6 +46,11 @@ public enum StatusEnum implements Status {
     }
 
     @Override
+    public boolean isPlanned() {
+        return this == PLANNED;
+    }
+
+    @Override
     public boolean isPresent() {
         return this == PRESENT;
     }

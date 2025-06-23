@@ -5,12 +5,12 @@ import org.apache.commons.lang3.StringUtils;
 import io.github.ctgnz.jmsfx.generator.schema.GraphicType;
 import io.github.ctgnz.jmsfx.generator.schema.SymbolSet.Entities.Entity;
 
-public class EntityEnum extends StandardEnum {
+public class EntityModel extends StandardEnumModel {
 
     private final GraphicType graphicType;
     private String baseSymbolSet;
 
-    public EntityEnum(Entity entity) {
+    public EntityModel(Entity entity) {
         super(entity.getID().toString(), entity.getLabel(), entity.getEntityCode().getCodeString(), null);
         graphicType = entity.getIcon();
     }

@@ -9,11 +9,11 @@ import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension.Symbo
 import io.github.ctgnz.jmsfx.generator.schema.Library.Statuses.Status;
 import io.github.ctgnz.jmsfx.generator.schema.Library.Statuses.Status.Graphics.Graphic;
 
-public class StatusEnum extends StandardEnum {
+public class StatusModel extends StandardEnumModel {
 
     private final Set<String> dimensions;
 
-    public StatusEnum(Status status) {
+    public StatusModel(Status status) {
         super(status.getName(), status.getLabel(), Integer.toString(status.getStatusCode()), null);
         if (status.getGraphics() != null) {
             this.dimensions = status.getGraphics().getGraphic().stream().map(Graphic::getDimensionID).map(SymbolSetRef.class::cast).map(SymbolSetRef::getID).collect(Collectors.toSet());

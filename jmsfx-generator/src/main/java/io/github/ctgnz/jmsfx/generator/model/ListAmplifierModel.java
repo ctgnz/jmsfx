@@ -11,8 +11,8 @@ import io.github.ctgnz.jmsfx.generator.schema.Library.AmplifierGroups.AmplifierG
 import io.github.ctgnz.jmsfx.generator.schema.Library.Amplifiers.Amplifier.Values;
 import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension.SymbolSets.SymbolSetRef;
 
-public class ListAmplifierGroupEnum extends StandardEnum {
-    private final List<ListAmplifierElementEnum> values = new ArrayList<>();
+public class ListAmplifierModel extends StandardEnumModel {
+    private final List<ListAmplifierItemModel> values = new ArrayList<>();
     private final String typeName;
     private final String graphicLocation;
     private final String[] symbolSets;
@@ -25,7 +25,7 @@ public class ListAmplifierGroupEnum extends StandardEnum {
     private final boolean unknown;
     private String amplifierId;
 
-    public ListAmplifierGroupEnum(ListAmplifierConfig groupConfig, Values group) {
+    public ListAmplifierModel(ListAmplifierConfig groupConfig, Values group) {
         super(groupConfig.getEnumId(), group.getLabel(), groupConfig.getCode(), null);
         this.typeName = groupConfig.getEnumType();
         this.graphicLocation = "NA";
@@ -39,7 +39,7 @@ public class ListAmplifierGroupEnum extends StandardEnum {
         this.country = "NatoCountryCode".equals(groupConfig.getEnumType());
     }
 
-    public ListAmplifierGroupEnum(StandardAmplifierConfig groupConfig, AmplifierGroup group) {
+    public ListAmplifierModel(StandardAmplifierConfig groupConfig, AmplifierGroup group) {
         super(group.getName(), group.getLabel(), Integer.toString(group.getAmplifierGroupCode()), null);
         this.typeName = groupConfig.getEnumType();
         this.graphicLocation = groupConfig.getGraphicLocation();
@@ -55,12 +55,12 @@ public class ListAmplifierGroupEnum extends StandardEnum {
 
     public void addAmplifier(AmplifierGroup group, Amplifier amplifier) {
         if (!amplifier.getName().equals("EXTENSION")) {
-            values.add(new ListAmplifierElementEnum(group, amplifier));
+            values.add(new ListAmplifierItemModel(group, amplifier));
         }
     }
 
     public void addAmplifier(Values.Value group) {
-        values.add(new ListAmplifierElementEnum(group));
+        values.add(new ListAmplifierItemModel(group));
     }
 
     public String getAmplifierId() {
@@ -87,7 +87,7 @@ public class ListAmplifierGroupEnum extends StandardEnum {
         return typeName;
     }
 
-    public List<ListAmplifierElementEnum> getValues() {
+    public List<ListAmplifierItemModel> getValues() {
         return values;
     }
 
@@ -97,7 +97,7 @@ public class ListAmplifierGroupEnum extends StandardEnum {
 
     @Override
     public boolean isExtension() {
-        return values.stream().anyMatch(ListAmplifierElementEnum::isExtension);
+        return values.stream().anyMatch(ListAmplifierItemModel::isExtension);
     }
 
     public boolean isFor(String symbolSetId) {

@@ -4,10 +4,10 @@ import java.util.Comparator;
 
 import org.apache.commons.lang3.RegExUtils;
 
-public abstract class StandardEnum {
+public abstract class StandardEnumModel {
 
-    public static <E extends StandardEnum> Comparator<E> getStandardOrder() {
-        return Comparator.comparing(StandardEnum::getCode);
+    public static <E extends StandardEnumModel> Comparator<E> getStandardOrder() {
+        return Comparator.comparing(StandardEnumModel::getCode);
     }
 
     protected final String id;
@@ -17,7 +17,7 @@ public abstract class StandardEnum {
     protected boolean extension;
     protected boolean deprecated;
 
-    public StandardEnum(String id, String label, String code, String remarks) {
+    public StandardEnumModel(String id, String label, String code, String remarks) {
         this.id = sanitiseId(id);
         this.label = label;
         this.code = code;

@@ -9,11 +9,12 @@ import nz.co.ctg.foxglove.SvgGraphic;
 import io.github.ctgnz.jmsfx.AmplifierGuide;
 import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.Context;
+import io.github.ctgnz.jmsfx.CountryCode;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.HqtfDummy;
-import io.github.ctgnz.jmsfx.CountryCode;
+import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.StandardIdentity;
@@ -25,9 +26,9 @@ import io.github.ctgnz.jmsfx.icon.IconScale;
 import io.github.ctgnz.jmsfx.icon.IconScaleListCell;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbolIcon;
-import io.github.ctgnz.jmsfx.icon.Library;
 import io.github.ctgnz.jmsfx.icon.ScaleDirection;
 import io.github.ctgnz.jmsfx.icon.StandardIdentityEnum;
+import io.github.ctgnz.jmsfx.icon.StaticIconLibrary;
 import io.github.ctgnz.jmsfx.icon.StatusEnum;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.icon.amplifier.NatoCountryCode;
@@ -89,6 +90,7 @@ public class IconCreator extends Application {
     private FoxgloveParser svgParser = new FoxgloveParser();
     private File lastDirectory;
     private IdentificationSymbolIcon icon;
+    private IconLibrary library = StaticIconLibrary.instance();
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -208,7 +210,7 @@ public class IconCreator extends Application {
     private Node createButtons() {
         ComboBox<CountryCode> country = new ComboBox<>(FXCollections.observableArrayList(NatoCountryCode.values()));
         country.valueProperty().addListener((obs, oldValue, newValue) -> {
-            Library.setExtensionCountryCode(newValue);
+            library.setExtensionCountryCode(newValue);
         });
         country.setCellFactory(p -> new CodeElementListCell<>());
         country.setButtonCell(new CodeElementListCell<>());
@@ -220,7 +222,7 @@ public class IconCreator extends Application {
         scale.setButtonCell(new IconScaleListCell());
         scale.valueProperty().bindBidirectional(symbol.scaleProperty());
 
-        Text sidc = new Text(symbol.getCode().toString());
+        Text sidc = new Text(symbol.getSIDC());
         // this is only a one-way binding from a read-only property
         sidc.textProperty().bind(symbol.codeProperty());
 
@@ -383,7 +385,7 @@ public class IconCreator extends Application {
         Button showAll = new Button("Show All");
         showAll.setOnAction(evt -> {
             Dialog<String> dialog = new Dialog<>();
-            dialog.getDialogPane().setContent(new IconGallery(mainStage));
+            dialog.getDialogPane().setContent(new IconGallery(library, mainStage));
             dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
             dialog.setOnShown(e2 -> {
                 Stage window = (Stage) dialog.getDialogPane().getScene().getWindow();
@@ -405,7 +407,7 @@ public class IconCreator extends Application {
     }
 
     private Node createSymbol() {
-        this.symbol = new IdentificationSymbol(svgParser);
+        this.symbol = new IdentificationSymbol(library);
         this.icon = symbol.createIcon();
         icon.setFillBackground(true);
         symbol.codeProperty().addListener((obs, oldValue, newValue) -> {

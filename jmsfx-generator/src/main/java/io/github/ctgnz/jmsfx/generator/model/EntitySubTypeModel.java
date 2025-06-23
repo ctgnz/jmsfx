@@ -2,29 +2,29 @@ package io.github.ctgnz.jmsfx.generator.model;
 
 import org.apache.commons.lang3.StringUtils;
 
+import io.github.ctgnz.jmsfx.generator.schema.EntitySubTypeType;
 import io.github.ctgnz.jmsfx.generator.schema.GraphicType;
-import io.github.ctgnz.jmsfx.generator.schema.SymbolSet.Entities.Entity;
 import io.github.ctgnz.jmsfx.generator.schema.SymbolSet.Entities.Entity.EntityTypes.EntityType;
 
-public class EntityTypeEnum extends StandardEnum {
+public class EntitySubTypeModel extends StandardEnumModel {
 
-    private final String entityId;
+    private final String entityTypeId;
     private final GraphicType graphicType;
     private final String graphic;
 
-    public EntityTypeEnum(Entity entity, EntityType entityType) {
-        super(entityType.getID().toString(), entityType.getLabel(), entityType.getEntityTypeCode().getCodeString(), null);
-        this.graphicType = entityType.getIcon();
-        this.entityId = entity.getID();
-        this.graphic = getNonStandardGraphic(entityType);
+    public EntitySubTypeModel(EntityType entityType, EntitySubTypeType entitySubType) {
+        super(entitySubType.getID().toString(), entitySubType.getLabel(), entitySubType.getEntitySubTypeCode().getCodeString(), null);
+        graphicType = entitySubType.getIcon();
+        entityTypeId = entityType.getID();
+        graphic = getNonStandardGraphic(entitySubType);
     }
 
     public String getBaseTypeName() {
         return StringUtils.deleteWhitespace(label);
     }
 
-    public String getEntityId() {
-        return entityId;
+    public String getEntityTypeId() {
+        return entityTypeId;
     }
 
     public String getGraphic() {
@@ -35,8 +35,8 @@ public class EntityTypeEnum extends StandardEnum {
         return graphicType;
     }
 
-    private String getNonStandardGraphic(EntityType entityType) {
-        String graphic = entityType.getGraphic();
+    private String getNonStandardGraphic(EntitySubTypeType entitySubType) {
+        String graphic = entitySubType.getGraphic();
         // graphic filename should be e.g. 10111200.svg, so if there
         // is more than one dot it is a non-standard name
         if (graphic.indexOf('.') != graphic.lastIndexOf('.')) {

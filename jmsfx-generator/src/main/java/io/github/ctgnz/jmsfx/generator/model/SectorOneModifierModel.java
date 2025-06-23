@@ -4,12 +4,12 @@ import org.apache.commons.lang3.StringUtils;
 
 import io.github.ctgnz.jmsfx.generator.schema.ModifiersType.Modifier;
 
-public class SectorOneModEnum extends StandardEnum {
+public class SectorOneModifierModel extends StandardEnumModel {
 
     private final String groupId;
     private final String category;
 
-    public SectorOneModEnum(Modifier modifier) {
+    public SectorOneModifierModel(Modifier modifier) {
         super(modifier.getID().toString(), modifier.getLabel(), modifier.getModifierCode().getCodeString(), null);
         this.groupId = modifier.getExtensionCode();
         this.category = StringUtils.defaultIfBlank(modifier.getCategory(), "General");

@@ -16,6 +16,8 @@ public interface Status extends CodeElement {
 
     boolean isOperationalCondition();
 
+    boolean isPlanned();
+
     boolean isPresent();
 
     default String getFrameId(StandardIdentity identity) {

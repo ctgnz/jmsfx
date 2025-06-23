@@ -10,11 +10,11 @@ import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension.Symbo
 import io.github.ctgnz.jmsfx.generator.schema.Library.HQTFDummies.HQTFDummy;
 import io.github.ctgnz.jmsfx.generator.schema.Library.HQTFDummies.HQTFDummy.Graphics.Graphic;
 
-public class HqtfDummyEnum extends StandardEnum {
+public class HqtfDummyModel extends StandardEnumModel {
 
     private final Set<String> dimensions;
 
-    public HqtfDummyEnum(HQTFDummy dummy) {
+    public HqtfDummyModel(HQTFDummy dummy) {
         super(dummy.getName(), dummy.getLabel(), Integer.toString(dummy.getHQTFDummyCode()), null);
         if (dummy.getGraphics() != null) {
             this.dimensions = dummy.getGraphics().getGraphic().stream().map(Graphic::getDimensionID).map(SymbolSetRef.class::cast).map(SymbolSetRef::getID).collect(toSet());

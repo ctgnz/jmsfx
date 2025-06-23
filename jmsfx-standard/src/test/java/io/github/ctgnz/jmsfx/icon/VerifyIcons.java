@@ -7,10 +7,11 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.icon.model.AmplifierListImpl;
+import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.icon.model.EntitySubTypeImpl;
-import io.github.ctgnz.jmsfx.icon.model.LibraryImpl;
-import io.github.ctgnz.jmsfx.icon.model.StatusImpl;
+import io.github.ctgnz.jmsfx.icon.model.DynamicIconLibrary;
+import io.github.ctgnz.jmsfx.icon.model.SymbolSetImpl;
 
 public class VerifyIcons {
 
@@ -27,7 +28,7 @@ public class VerifyIcons {
 
     public void verify() throws Exception {
         this.usedPaths = new ArrayList<>();
-        LibraryImpl library = new LibraryImpl();
+        DynamicIconLibrary library = new DynamicIconLibrary();
         System.out.println("Version");
         library.getVersion().forEach(version -> {
             System.out.format("  [%s] %s%n", version.getId(), version.getLabel());
@@ -74,7 +75,8 @@ public class VerifyIcons {
         });
         library.getDimension().forEach(dimension -> {
             System.out.format("%s%n", dimension.getLabel());
-            dimension.getSymbolSetAdapters().forEach(symSet -> {
+            dimension.getSymbolSets().forEach(ss -> {
+                SymbolSetImpl symSet = (SymbolSetImpl) ss;
                 System.out.format("  %s%n", symSet.getLabel());
                 if (symSet.isFramedIcon()) {
                     if (symSet.isAmplifierGuidesPresent()) {
@@ -84,7 +86,7 @@ public class VerifyIcons {
                         }
                     }
                     library.getStandardIdentity().forEach(identity -> {
-                        library.getStatus().stream().filter(StatusImpl::isFrameStatus).forEach(status -> {
+                        library.getStatus().stream().filter(Status::isFrameStatus).forEach(status -> {
                             if (identity.isConfirmed() || status.isPresent()) {
                                 String location = symSet.getFrameLocation(identity, status, false);
                                 if (!isGraphicPresent(location)) {
@@ -162,14 +164,14 @@ public class VerifyIcons {
         System.out.println("List Amplifiers");
         library.getListAmplifiers().stream().filter(amp -> !amp.isStandardAmplifier()).forEach(amp -> {
             System.out.format("  [%s] %s%n", amp.getId(), amp.getLabel());
-            amp.getValues().forEach(value -> {
+            amp.getItems().forEach(value -> {
                 System.out.format("    [%s] %s%n", value.getFullId(), value.getLabel());
             });
         });
         System.out.println("Standard Amplifiers");
-        library.getListAmplifiers().stream().filter(AmplifierListImpl::isStandardAmplifier).forEach(amp -> {
+        library.getListAmplifiers().stream().filter(AmplifierList::isStandardAmplifier).forEach(amp -> {
             System.out.format("  [%s] %s%n", amp.getId(), amp.getLabel());
-            amp.getValues().forEach(value -> {
+            amp.getItems().forEach(value -> {
                 System.out.format("    [%s] %s%n", value.getFullId(), value.getLabel());
                 if (!amp.isUnknown()) {
                     library.getStandardIdentity().forEach(identity -> {

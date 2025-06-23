@@ -4,10 +4,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.function.Function;
 
-import io.github.ctgnz.jmsfx.generator.model.StandardEnum;
+import io.github.ctgnz.jmsfx.generator.model.StandardEnumModel;
 import io.github.ctgnz.jmsfx.generator.schema.Library;
 
-public class StandardEnumConfig<E extends StandardEnum, V> {
+public class StandardEnumConfig<E extends StandardEnumModel, V> {
     private String typeName;
     private String templateParameterName;
     private Class<E> enumType;
