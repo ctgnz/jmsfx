@@ -28,8 +28,7 @@ public enum DismountedIndividualSectorOneModifier implements SectorOneModifier {
     PLATOON_MOD("50", "Platoon/Detachment", "Echelon", SymbolSetEnum.DISMOUNTED),
     COMPANY_MOD("51", "Company", "Echelon", SymbolSetEnum.DISMOUNTED),
     BATTALION_MOD("52", "Battalion", "Echelon", SymbolSetEnum.DISMOUNTED),
-    REGIMENT_MOD("53", "Regiment/Group", "Echelon", SymbolSetEnum.DISMOUNTED),
-    STAFFEL_MOD("54", "Staffel", "Echelon", SymbolSetEnum.DISMOUNTED);
+    REGIMENT_MOD("53", "Regiment/Group", "Echelon", SymbolSetEnum.DISMOUNTED);
 
     private final String id;
     private final String label;

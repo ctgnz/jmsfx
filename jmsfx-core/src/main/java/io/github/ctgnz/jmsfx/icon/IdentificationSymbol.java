@@ -30,7 +30,6 @@ import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.Version;
-import io.github.ctgnz.jmsfx.types.GeometryType;
 import io.github.ctgnz.jmsfx.types.GraphicAmplifierValue;
 import io.github.ctgnz.jmsfx.types.IconScale;
 import io.github.ctgnz.jmsfx.types.ScaleDirection;
@@ -108,7 +107,6 @@ public class IdentificationSymbol {
         initDefaults();
         // only set up the listeners once all default values are set
         addListeners();
-        this.symbolSet.set(library.getDefaultSymbolSet());
     }
 
     public GraphicAmplifierValue addGraphicAmplifier(Amplifier amplifier, SvgGraphic graphic, ScaleDirection scaleDirection, Pos attachment) {
@@ -204,7 +202,7 @@ public class IdentificationSymbol {
     }
 
     public AmplifierListItem getAmplifier() {
-        return amplifier.get();
+        return defaultIfNull(amplifier.get(), library.getDefaultAmplifier());
     }
 
     public SvgGraphic getAmplifierGraphic() {
@@ -217,7 +215,7 @@ public class IdentificationSymbol {
     }
 
     public AmplifierListItem getAmplifierThree() {
-        return amplifierThree.get();
+        return defaultIfNull(amplifierThree.get(), library.getDefaultAmplifier());
     }
 
     public SvgGraphic getAmplifierThreeGraphic() {
@@ -230,7 +228,7 @@ public class IdentificationSymbol {
     }
 
     public AmplifierListItem getAmplifierTwo() {
-        return amplifierTwo.get();
+        return defaultIfNull(amplifierTwo.get(), library.getDefaultAmplifier());
     }
 
     public SvgGraphic getAmplifierTwoGraphic() {
@@ -293,7 +291,7 @@ public class IdentificationSymbol {
     }
 
     public Context getContext() {
-        return context.get();
+        return defaultIfNull(context.get(), library.getDefaultContext());
     }
 
     public CountryCode getCountryCode() {
@@ -328,7 +326,7 @@ public class IdentificationSymbol {
     }
 
     public Entity getEntity() {
-        return entity.get();
+        return defaultIfNull(entity.get(), library.getDefaultEntity());
     }
 
     public EntitySubType getEntitySubType() {
@@ -359,7 +357,7 @@ public class IdentificationSymbol {
     }
 
     public AmplifierListItem getFrameAmplifier() {
-        return frameAmplifier.get();
+        return defaultIfNull(frameAmplifier.get(), library.getDefaultAmplifier());
     }
 
     public SvgGraphic getFrameAmplifierGraphic() {
@@ -388,7 +386,7 @@ public class IdentificationSymbol {
     }
 
     public HqtfDummy getHqtfDummy() {
-        return hqtfDummy.get();
+        return defaultIfNull(hqtfDummy.get(), library.getDefaultHqtfDummy());
     }
 
     public SvgGraphic getHqtfDummyGraphic() {
@@ -402,7 +400,7 @@ public class IdentificationSymbol {
         if (entityType.get() != null) {
             return entityType.get();
         }
-        return entity.get();
+        return getEntity();
     }
 
     public SvgGraphic getMainIconGraphic() {
@@ -423,7 +421,7 @@ public class IdentificationSymbol {
     }
 
     public SectorOneModifier getSectorOneModifier() {
-        return sectorOneModifier.get();
+        return defaultIfNull(sectorOneModifier.get(), library.getDefaultSectorOneModifier());
     }
 
     public SvgGraphic getSectorOneModifierGraphic() {
@@ -435,7 +433,7 @@ public class IdentificationSymbol {
     }
 
     public SectorTwoModifier getSectorTwoModifier() {
-        return sectorTwoModifier.get();
+        return defaultIfNull(sectorTwoModifier.get(), library.getDefaultSectorTwoModifier());
     }
 
     public SvgGraphic getSectorTwoModifierGraphic() {
@@ -447,7 +445,7 @@ public class IdentificationSymbol {
     }
 
     public StandardIdentity getStandardIdentity() {
-        return standardIdentity.get();
+        return defaultIfNull(standardIdentity.get(), library.getDefaultStandardIdentity());
     }
 
     public String getStandardIdentityGroupId() {
@@ -456,7 +454,7 @@ public class IdentificationSymbol {
     }
 
     public Status getStatus() {
-        return status.get();
+        return defaultIfNull(status.get(), library.getDefaultStatus());
     }
 
     public SvgGraphic getStatusGraphic() {
@@ -464,7 +462,7 @@ public class IdentificationSymbol {
     }
 
     public SymbolSet getSymbolSet() {
-        return symbolSet.get();
+        return defaultIfNull(symbolSet.get(), library.getDefaultSymbolSet());
     }
 
     public TextAmplifierValue getTextAmplifier(Amplifier amplifier) {
@@ -486,7 +484,7 @@ public class IdentificationSymbol {
     }
 
     public Version getVersion() {
-        return version.get();
+        return defaultIfNull(version.get(), library.getDefaultVersion());
     }
 
     public ObjectProperty<HqtfDummy> hqtfDummyProperty() {
@@ -510,8 +508,7 @@ public class IdentificationSymbol {
     }
 
     public boolean isCivilianEntity() {
-        Entity selectedEntity = getEntity();
-        return selectedEntity != null && selectedEntity.isCivilian();
+        return getEntity().isCivilian();
     }
 
     public boolean isFrameAmplifierUsed() {
@@ -523,28 +520,23 @@ public class IdentificationSymbol {
     }
 
     public boolean isFrameUsed() {
-        SymbolSet selectedSymbolSet = getSymbolSet();
-        return selectedSymbolSet != null && selectedSymbolSet.getDimension().getGeometryType() == GeometryType.POINT_GEOMETRY;
+        return getSymbolSet().isPointGeometry();
     }
 
     public boolean isHqtfDummyIconUsed() {
-        HqtfDummy currentHqtfDummy = getHqtfDummy();
-        return currentHqtfDummy != null && !currentHqtfDummy.isUnknown();
+        return !getHqtfDummy().isUnknown();
     }
 
     public boolean isMainIconUsed() {
-        MainElement mainIconElement = getMainIconElement();
-        return mainIconElement != null && mainIconElement.isGraphicalIcon();
+        return getMainIconElement().isGraphicalIcon();
     }
 
     public boolean isSectorOneModifierUsed() {
-        SectorOneModifier mod = getSectorOneModifier();
-        return mod != null && !mod.isUnknown();
+        return !getSectorOneModifier().isUnknown();
     }
 
     public boolean isSectorTwoModifierUsed() {
-        SectorTwoModifier mod = getSectorTwoModifier();
-        return mod != null && !mod.isUnknown();
+        return !getSectorTwoModifier().isUnknown();
     }
 
     public boolean isStatusIconUsed() {
@@ -683,34 +675,31 @@ public class IdentificationSymbol {
         this.amplifierThree.set(library.getDefaultAmplifier());
         this.frameAmplifier.set(library.getDefaultAmplifier());
         this.countryCode.set(library.getExtensionCountryCode());
-        this.entity.set(library.getDefaultEntity());
-        this.sectorOneModifier.set(library.getDefaultSectorOneModifier());
-        this.sectorTwoModifier.set(library.getDefaultSectorTwoModifier());
     }
 
     private void addListeners() {
         // Observable lists can't be bound directly, so update these values when the appropriate property changes
         symbolSet.addListener((obs, oldValue, newValue) -> {
             amplifiers.setAll(getAmplifierItems());
-            amplifier.set(getAmplifier());
+            amplifier.set(library.getDefaultAmplifier());
 
             amplifiersTwo.setAll(getAmplifierTwoItems());
-            amplifierTwo.set(getAmplifierTwo());
+            amplifierTwo.set(library.getDefaultAmplifier());
 
             amplifiersThree.setAll(getAmplifierThreeItems());
-            amplifierThree.set(getAmplifierThree());
+            amplifierThree.set(library.getDefaultAmplifier());
 
             frameAmplifiers.setAll(getFrameListAmplifiers());
-            frameAmplifier.set(getFrameAmplifier());
+            frameAmplifier.set(library.getDefaultAmplifier());
 
             sectorOneModifiers.setAll(Stream.concat(getSectorOneModifiers().stream(), library.getCommonSectorOneModifiers().stream()).toList());
-            sectorOneModifier.set(getSectorOneModifier());
+            sectorOneModifier.set(library.getDefaultSectorOneModifier());
 
             sectorTwoModifiers.setAll(Stream.concat(getSectorTwoModifiers().stream(), library.getCommonSectorTwoModifiers().stream()).toList());
-            sectorTwoModifier.set(getSectorTwoModifier());
+            sectorTwoModifier.set(library.getDefaultSectorTwoModifier());
 
             entities.setAll(getSymbolSet().getEntities());
-            entity.set(getEntity());
+            entity.set(library.getDefaultEntity());
 
             textAmplifiers.clear();
         });
@@ -720,6 +709,7 @@ public class IdentificationSymbol {
         entityType.addListener((obs, oldValue, newValue) -> {
             entitySubTypes.setAll(getEntitySubTypes());
         });
+        this.symbolSet.set(library.getDefaultSymbolSet());
 
         // Code value should be updated after a change in any of the symbol properties
         code.bind(Bindings.createStringBinding(this::toString,

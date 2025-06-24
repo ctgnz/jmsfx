@@ -2,7 +2,6 @@ package io.github.ctgnz.jmsfx.icon.amplifier;
 
 import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.StandardAmplifierItem;
-import io.github.ctgnz.jmsfx.Extension;
 import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
 
 public enum UnitEchelon implements StandardAmplifierItem {
@@ -10,17 +9,17 @@ public enum UnitEchelon implements StandardAmplifierItem {
     SQUAD("2", "Squad"),
     SEC("3", "Section"),
     PLT_DETACHMENT("4", "Platoon/Detachment"),
-    CPY_BTY_TRP("5", "Company/Battery/Troop"),
-    BN_SQUADRON("6", "Battalion/Squadron"),
-    REGT_GRP("7", "Regiment/Group"),
-    BDE("8", "Brigade"),
-    DIV("9", "Division"),
-    CORPS_MEF("A", "Corps/MEF"),
-    ARMY("B", "Army"),
-    ARMY_GROUP_FRONT("C", "Army Group/Front"),
-    REGION_THEATRE("D", "Region/Theatre"),
-    COMMAND("E", "Command"),
-    @Extension STAFFEL("F", "Staffel");
+    STAFFEL("5", "Staffel"),
+    CPY_BTY_TRP("6", "Company/Battery/Troop"),
+    BN_SQUADRON("7", "Battalion/Squadron"),
+    REGT_GRP("8", "Regiment/Group"),
+    BDE("9", "Brigade"),
+    DIV("A", "Division"),
+    CORPS_MEF("B", "Corps/MEF"),
+    ARMY("C", "Army"),
+    ARMY_GROUP_FRONT("D", "Army Group/Front"),
+    REGION_THEATRE("E", "Region/Theatre"),
+    COMMAND("F", "Command");
 
     private final String id;
     private final String label;
