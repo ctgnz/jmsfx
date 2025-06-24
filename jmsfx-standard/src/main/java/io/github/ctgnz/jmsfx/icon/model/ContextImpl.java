@@ -1,5 +1,8 @@
 package io.github.ctgnz.jmsfx.icon.model;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import io.github.ctgnz.jmsfx.Context;
 import io.github.ctgnz.jmsfx.icon.ContextEnum;
 import javafx.beans.property.BooleanProperty;
@@ -22,8 +25,26 @@ public class ContextImpl extends CodeElementImpl implements Context {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof ContextImpl rhs) {
+            return new EqualsBuilder()
+                .append(getId(), rhs.getId())
+                .isEquals();
+        }
+        return super.equals(obj);
+    }
+
+    @Override
     public String getOverlayGraphicLocation() {
         return overlayGraphicLocation.get();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(6619, 9173).append(getId()).toHashCode();
     }
 
     @Override

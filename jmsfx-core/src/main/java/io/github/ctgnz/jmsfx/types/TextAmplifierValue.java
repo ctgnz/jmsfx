@@ -1,4 +1,4 @@
-package io.github.ctgnz.jmsfx.icon;
+package io.github.ctgnz.jmsfx.types;
 
 import io.github.ctgnz.jmsfx.AmplifierGuide;
 import javafx.beans.binding.Bindings;
@@ -15,7 +15,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 public class TextAmplifierValue {
-    protected static final Font AMPLIFIER_FONT = Font.font("sans-serif", FontWeight.NORMAL, FontPosture.REGULAR, 60);
+    public static final Font AMPLIFIER_FONT = Font.font("sans-serif", FontWeight.NORMAL, FontPosture.REGULAR, 60);
     private final AmplifierGuide guide;
     private final ObjectProperty<Pos> attachment;
     private final ObjectProperty<Point2D> location;

@@ -2,6 +2,9 @@ package io.github.ctgnz.jmsfx.icon.model;
 
 import java.util.List;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
@@ -28,6 +31,19 @@ public class EntityTypeImpl extends MainIconImpl implements EntityType {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof EntityTypeImpl rhs) {
+            return new EqualsBuilder()
+                .append(getId(), rhs.getId())
+                .isEquals();
+        }
+        return super.equals(obj);
+    }
+
+    @Override
     public Entity getEntity() {
         return entity.get();
     }
@@ -35,6 +51,11 @@ public class EntityTypeImpl extends MainIconImpl implements EntityType {
     @Override
     public List<EntitySubType> getEntitySubTypes() {
         return entitySubTypes;
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(9371, 1741).append(getId()).toHashCode();
     }
 
     @Override

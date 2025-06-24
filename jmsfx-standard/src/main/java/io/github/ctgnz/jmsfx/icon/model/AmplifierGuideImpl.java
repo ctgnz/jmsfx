@@ -2,6 +2,9 @@ package io.github.ctgnz.jmsfx.icon.model;
 
 import java.util.Arrays;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import io.github.ctgnz.jmsfx.Amplifier;
 import io.github.ctgnz.jmsfx.AmplifierGuide;
 import io.github.ctgnz.jmsfx.types.GuideType;
@@ -34,6 +37,19 @@ public class AmplifierGuideImpl implements AmplifierGuide {
         this.code.set(model.getCode());
         this.shape.set(createShape(model.getPoints()));
         Arrays.stream(model.getPoints()).forEach(points::add);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof AmplifierGuideImpl rhs) {
+            return new EqualsBuilder()
+                .append(getCode(), rhs.getCode())
+                .isEquals();
+        }
+        return super.equals(obj);
     }
 
     @Override
@@ -81,6 +97,15 @@ public class AmplifierGuideImpl implements AmplifierGuide {
         return getShape().getLayoutBounds().getMinY();
     }
 
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(6449, 9461).append(getCode()).toHashCode();
+    }
+
+    protected void setSymbolSet(SymbolSetImpl symbolSet) {
+        this.symbolSet.set(symbolSet);
+    }
+
     private Shape createShape(double[] points) {
         return switch (type.get()) {
             case LINE -> new Line(points[0], points[1], points[2], points[3]);
@@ -89,10 +114,6 @@ public class AmplifierGuideImpl implements AmplifierGuide {
             case RECTANGLE -> new Rectangle(points[0], points[1], points[2], points[3]);
             default -> new Rectangle(0, 0, 0, 0);
         };
-    }
-
-    protected void setSymbolSet(SymbolSetImpl symbolSet) {
-        this.symbolSet.set(symbolSet);
     }
 
 }

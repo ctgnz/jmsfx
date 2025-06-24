@@ -1,14 +1,16 @@
 package io.github.ctgnz.jmsfx.icon;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Stream;
-
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 
 import nz.co.ctg.foxglove.ISvgContent;
 import nz.co.ctg.foxglove.ISvgStylable;
 import nz.co.ctg.foxglove.SvgGraphic;
 import nz.co.ctg.foxglove.type.ViewBox;
+
+import static java.util.stream.Collectors.toList;
+import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
 import io.github.ctgnz.jmsfx.Amplifier;
 import io.github.ctgnz.jmsfx.AmplifierGuide;
@@ -23,11 +25,16 @@ import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.MainElement;
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.Version;
 import io.github.ctgnz.jmsfx.types.GeometryType;
+import io.github.ctgnz.jmsfx.types.GraphicAmplifierValue;
+import io.github.ctgnz.jmsfx.types.IconScale;
+import io.github.ctgnz.jmsfx.types.ScaleDirection;
+import io.github.ctgnz.jmsfx.types.TextAmplifierValue;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
@@ -36,7 +43,6 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.beans.property.adapter.JavaBeanObjectPropertyBuilder;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
@@ -54,24 +60,23 @@ public class IdentificationSymbol {
     public static final Color HOSTILE_ORANGE = Color.rgb(255, 120, 0);    // FF7800
     public static final Color OFF_WHITE = Color.rgb(239, 239, 239);       // EFEFEF
     public static final Color NEARLY_WHITE = Color.rgb(250, 250, 250);    // FAFAFA
-    private final SymbolIdentificationCode sidc = StaticIconLibrary.code().build();
     private final ObjectProperty<IconScale> scale = new SimpleObjectProperty<>(IconScale.Medium);
-    private final ObjectProperty<Version> version;
-    private final ObjectProperty<Context> context;
-    private final ObjectProperty<StandardIdentity> standardIdentity;
-    private final ObjectProperty<SymbolSet> symbolSet;
-    private final ObjectProperty<Status> status;
-    private final ObjectProperty<HqtfDummy> hqtfDummy;
-    private final ObjectProperty<AmplifierListItem> amplifier;
-    private final ObjectProperty<AmplifierListItem> amplifierTwo;
-    private final ObjectProperty<AmplifierListItem> amplifierThree;
-    private final ObjectProperty<AmplifierListItem> frameAmplifier;
-    private final ObjectProperty<Entity> entity;
-    private final ObjectProperty<EntityType> entityType;
-    private final ObjectProperty<EntitySubType> entitySubType;
-    private final ObjectProperty<SectorOneModifier> sectorOneModifier;
-    private final ObjectProperty<SectorTwoModifier> sectorTwoModifier;
-    private final ObjectProperty<CountryCode> countryCode;
+    private final ObjectProperty<Version> version = new SimpleObjectProperty<>();
+    private final ObjectProperty<Context> context = new SimpleObjectProperty<>();
+    private final ObjectProperty<StandardIdentity> standardIdentity = new SimpleObjectProperty<>();
+    private final ObjectProperty<SymbolSet> symbolSet = new SimpleObjectProperty<>();
+    private final ObjectProperty<Status> status = new SimpleObjectProperty<>();
+    private final ObjectProperty<HqtfDummy> hqtfDummy = new SimpleObjectProperty<>();
+    private final ObjectProperty<AmplifierListItem> amplifier = new SimpleObjectProperty<>();
+    private final ObjectProperty<AmplifierListItem> amplifierTwo = new SimpleObjectProperty<>();
+    private final ObjectProperty<AmplifierListItem> amplifierThree = new SimpleObjectProperty<>();
+    private final ObjectProperty<AmplifierListItem> frameAmplifier = new SimpleObjectProperty<>();
+    private final ObjectProperty<Entity> entity = new SimpleObjectProperty<>();
+    private final ObjectProperty<EntityType> entityType = new SimpleObjectProperty<>();
+    private final ObjectProperty<EntitySubType> entitySubType = new SimpleObjectProperty<>();
+    private final ObjectProperty<SectorOneModifier> sectorOneModifier = new SimpleObjectProperty<>();
+    private final ObjectProperty<SectorTwoModifier> sectorTwoModifier = new SimpleObjectProperty<>();
+    private final ObjectProperty<CountryCode> countryCode = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> frameGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> frameOverlayGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> mainIconGraphic = new SimpleObjectProperty<>();
@@ -83,46 +88,27 @@ public class IdentificationSymbol {
     private final ObjectProperty<SvgGraphic> sectorTwoModifierGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> statusGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> hqtfDummyGraphic = new SimpleObjectProperty<>();
-    private final StringProperty code = new SimpleStringProperty(sidc.toString());
-    private final ObservableList<AmplifierListItem> amplifiers = FXCollections.observableArrayList(sidc.getListAmplifiers());
-    private final ObservableList<AmplifierListItem> amplifiersTwo = FXCollections.observableArrayList(sidc.getAmplifierTwoItems());
-    private final ObservableList<AmplifierListItem> amplifiersThree = FXCollections.observableArrayList(sidc.getAmplifierThreeItems());
-    private final ObservableList<AmplifierListItem> frameAmplifiers = FXCollections.observableArrayList(sidc.getFrameListAmplifiers());
-    private final ObservableList<Entity> entities = FXCollections.observableArrayList(sidc.getEntities());
+    private final StringProperty code = new SimpleStringProperty();
+    private final ObservableList<AmplifierListItem> amplifiers = FXCollections.observableArrayList();
+    private final ObservableList<AmplifierListItem> amplifiersTwo = FXCollections.observableArrayList();
+    private final ObservableList<AmplifierListItem> amplifiersThree = FXCollections.observableArrayList();
+    private final ObservableList<AmplifierListItem> frameAmplifiers = FXCollections.observableArrayList();
+    private final ObservableList<Entity> entities = FXCollections.observableArrayList();
     private final ObservableList<EntityType> entityTypes = FXCollections.observableArrayList();
     private final ObservableList<EntitySubType> entitySubTypes = FXCollections.observableArrayList();
-    private final ObservableList<SectorOneModifier> sectorOneModifiers = FXCollections.observableArrayList(sidc.getSectorOneModifiers());
-    private final ObservableList<SectorTwoModifier> sectorTwoModifiers = FXCollections.observableArrayList(sidc.getSectorTwoModifiers());
+    private final ObservableList<SectorOneModifier> sectorOneModifiers = FXCollections.observableArrayList();
+    private final ObservableList<SectorTwoModifier> sectorTwoModifiers = FXCollections.observableArrayList();
     private final ObservableMap<Amplifier, TextAmplifierValue> textAmplifiers = FXCollections.observableHashMap();
     private final ObservableMap<Amplifier, GraphicAmplifierValue> graphicAmplifiers = FXCollections.observableHashMap();
     private final BooleanProperty amplifierTemplateVisible = new SimpleBooleanProperty(false);
     private final IconLibrary library;
 
-    @SuppressWarnings("unchecked")
     public IdentificationSymbol(IconLibrary library) {
         this.library = library;
-        try {
-            version = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("version").build();
-            context = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("context").build();
-            standardIdentity = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("standardIdentity").build();
-            symbolSet = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("symbolSet").build();
-            status = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("status").build();
-            hqtfDummy = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("hqtfDummy").build();
-            amplifier = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("amplifier").build();
-            amplifierTwo = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("amplifierTwo").build();
-            amplifierThree = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("amplifierThree").build();
-            frameAmplifier = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("frameAmplifier").build();
-            entity = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("entity").build();
-            entityType = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("entityType").build();
-            entitySubType = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("entitySubType").build();
-            sectorOneModifier = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("sectorOneModifier").build();
-            sectorTwoModifier = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("sectorTwoModifier").build();
-            countryCode = JavaBeanObjectPropertyBuilder.create().bean(sidc).name("countryCode").build();
-            // only set up the listeners once all default values are set
-            addListeners();
-        } catch (Exception e) {
-            throw new RuntimeException("Unable to create symbol", e);
-        }
+        initDefaults();
+        // only set up the listeners once all default values are set
+        addListeners();
+        this.symbolSet.set(library.getDefaultSymbolSet());
     }
 
     public GraphicAmplifierValue addGraphicAmplifier(Amplifier amplifier, SvgGraphic graphic, ScaleDirection scaleDirection, Pos attachment) {
@@ -225,12 +211,22 @@ public class IdentificationSymbol {
         return amplifierGraphic.get();
     }
 
+    public List<StandardAmplifierItem> getAmplifierItems() {
+        List<StandardAmplifierItem> listAmplifiers = getSymbolSet().getAmplifierList();
+        return Stream.concat(Stream.of(library.getDefaultAmplifier()), listAmplifiers.stream()).collect(toList());
+    }
+
     public AmplifierListItem getAmplifierThree() {
         return amplifierThree.get();
     }
 
     public SvgGraphic getAmplifierThreeGraphic() {
         return amplifierThreeGraphic.get();
+    }
+
+    public List<StandardAmplifierItem> getAmplifierThreeItems() {
+        List<StandardAmplifierItem> listAmplifiers = getSymbolSet().getAmplifierListThree();
+        return Stream.concat(Stream.of(library.getDefaultAmplifier()), listAmplifiers.stream()).collect(toList());
     }
 
     public AmplifierListItem getAmplifierTwo() {
@@ -241,13 +237,18 @@ public class IdentificationSymbol {
         return amplifierTwoGraphic.get();
     }
 
-    public SymbolIdentificationCode getCode() {
-        return sidc;
+    public List<StandardAmplifierItem> getAmplifierTwoItems() {
+        List<StandardAmplifierItem> listAmplifiers = getSymbolSet().getAmplifierListTwo();
+        return Stream.concat(Stream.of(library.getDefaultAmplifier()), listAmplifiers.stream()).collect(toList());
+    }
+
+    public String getCode() {
+        return toString();
     }
 
     public SvgGraphic getCombinedGraphic() {
         SvgGraphic container = new SvgGraphic();
-        container.setTitle(sidc.getDescription());
+        container.setTitle(getDescription());
         if (isFrameUsed()) {
             SvgGraphic frame = getFrameGraphic();
             if (isFrameAmplifierUsed()) {
@@ -295,6 +296,37 @@ public class IdentificationSymbol {
         return context.get();
     }
 
+    public CountryCode getCountryCode() {
+        return defaultIfNull(countryCode.get(), library.getExtensionCountryCode());
+    }
+
+    public String getDescription() {
+        StringBuilder sb = new StringBuilder();
+        if (entityType.get() != null) {
+            sb.append(entityType.get().getLabel());
+        } else if (entity.get() != null) {
+            sb.append(entity.get().getLabel());
+        }
+        if (entitySubType.get() != null) {
+            sb.append(" (");
+            sb.append(entitySubType.get().getLabel());
+            sb.append(")");
+        }
+        if (sectorOneModifier.get() != null && !sectorOneModifier.get().isUnknown()) {
+            sb.append(" ");
+            sb.append(sectorOneModifier.get().getLabel());
+        }
+        if (sectorTwoModifier.get() != null && !sectorTwoModifier.get().isUnknown()) {
+            sb.append(" ");
+            sb.append(sectorTwoModifier.get().getLabel());
+        }
+        if (amplifier.get() != null && !amplifier.get().isUnknown()) {
+            sb.append(" ");
+            sb.append(amplifier.get().getLabel());
+        }
+        return sb.toString();
+    }
+
     public Entity getEntity() {
         return entity.get();
     }
@@ -303,8 +335,27 @@ public class IdentificationSymbol {
         return entitySubType.get();
     }
 
+    public List<EntitySubType> getEntitySubTypes() {
+        return entityType.get() != null ? entityType.get().getEntitySubTypes() : Collections.emptyList();
+    }
+
     public EntityType getEntityType() {
         return entityType.get();
+    }
+
+    public List<EntityType> getEntityTypes() {
+        return entity.get().getEntityTypes();
+    }
+
+    public String getFirstTenDigits() {
+        return String.format("%s%s%s%s%s%s%s",
+            version.get().getId(),
+            context.get().getId(),
+            standardIdentity.get().getId(),
+            symbolSet.get() != null ? symbolSet.get().getId() : "00",
+            status.get().getId(),
+            hqtfDummy.get().getId(),
+            amplifier.get() != null ? amplifier.get().getId() : "00");
     }
 
     public AmplifierListItem getFrameAmplifier() {
@@ -317,6 +368,11 @@ public class IdentificationSymbol {
 
     public SvgGraphic getFrameGraphic() {
         return frameGraphic.get();
+    }
+
+    public List<StandardAmplifierItem> getFrameListAmplifiers() {
+        List<StandardAmplifierItem> listAmplifiers = getSymbolSet().getFrameAmplifierList();
+        return Stream.concat(Stream.of(library.getDefaultAmplifier()), listAmplifiers.stream()).toList();
     }
 
     public SvgGraphic getFrameOverlayGraphic() {
@@ -357,12 +413,25 @@ public class IdentificationSymbol {
         return scale.get();
     }
 
+    public String getSecondTenDigits() {
+        return String.format("%s%s%s%s%s",
+            entity.get() != null ? entity.get().getId() : "00",
+            entityType.get() != null ? entityType.get().getId() : "00",
+            entitySubType.get() != null ? entitySubType.get().getId() : "00",
+            sectorOneModifier.get() != null ? sectorOneModifier.get().getId() : "00",
+            sectorTwoModifier.get() != null ? sectorTwoModifier.get().getId() : "00");
+    }
+
     public SectorOneModifier getSectorOneModifier() {
         return sectorOneModifier.get();
     }
 
     public SvgGraphic getSectorOneModifierGraphic() {
         return sectorOneModifierGraphic.get();
+    }
+
+    public List<SectorOneModifier> getSectorOneModifiers() {
+        return getSymbolSet().getSectorOneModifiers();
     }
 
     public SectorTwoModifier getSectorTwoModifier() {
@@ -373,8 +442,8 @@ public class IdentificationSymbol {
         return sectorTwoModifierGraphic.get();
     }
 
-    public String getSIDC() {
-        return sidc.toString();
+    public List<SectorTwoModifier> getSectorTwoModifiers() {
+        return getSymbolSet().getSectorTwoModifiers();
     }
 
     public StandardIdentity getStandardIdentity() {
@@ -404,6 +473,16 @@ public class IdentificationSymbol {
 
     public ObservableMap<Amplifier, TextAmplifierValue> getTextAmplifiers() {
         return textAmplifiers;
+    }
+
+    public String getThirdTenDigits() {
+        return String.format("%s%s%s%s%s%s",
+            getSectorOneModifier() != null ? getSectorOneModifier().getGroupId() : "0",
+            getSectorTwoModifier() != null ? getSectorTwoModifier().getGroupId() : "0",
+            amplifierTwo.get() != null ? amplifierTwo.get().getFullId() : "00",
+            amplifierThree.get() != null ? amplifierThree.get().getFullId() : "00",
+            frameAmplifier.get() != null ? frameAmplifier.get().getId() : "0",
+            getCountryCode().getCode());
     }
 
     public Version getVersion() {
@@ -500,24 +579,48 @@ public class IdentificationSymbol {
         return sectorTwoModifiers.sorted(SectorTwoModifier.VIEW_ORDER);
     }
 
+    public void setAmplifier(StandardAmplifierItem amplifier) {
+        this.amplifier.set(amplifier);
+    }
+
     public void setAmplifierTemplateVisible(boolean visible) {
         amplifierTemplateVisible.set(visible);
     }
 
+    public void setAmplifierThree(StandardAmplifierItem amplifier) {
+        this.amplifierThree.set(amplifier);
+    }
+
+    public void setAmplifierTwo(StandardAmplifierItem amplifier) {
+        this.amplifierTwo.set(amplifier);
+    }
+
+    public void setContext(Context context) {
+        this.context.set(context);
+    }
+
+    public void setCountryCode(CountryCode countryCode) {
+        this.countryCode.set(countryCode);
+    }
+
     public void setEntity(Entity entity) {
-        sidc.setEntity(entity);
+        this.entity.set(entity);
     }
 
     public void setEntitySubType(EntitySubType entitySubType) {
-        sidc.setEntitySubType(entitySubType);
+        this.entitySubType.set(entitySubType);
     }
 
     public void setEntityType(EntityType entityType) {
-        sidc.setEntityType(entityType);
+        this.entityType.set(entityType);
+    }
+
+    public void setFrameAmplifier(StandardAmplifierItem amplifier) {
+        this.frameAmplifier.set(amplifier);
     }
 
     public void setHqtfDummy(HqtfDummy hqtfDummy) {
-        sidc.setHqtfDummy(hqtfDummy);
+        this.hqtfDummy.set(hqtfDummy);
     }
 
     public void setScale(IconScale iconScale) {
@@ -525,23 +628,27 @@ public class IdentificationSymbol {
     }
 
     public void setSectorOneModifier(SectorOneModifier sectorOneModifier) {
-        sidc.setSectorOneModifier(sectorOneModifier);
+        this.sectorOneModifier.set(sectorOneModifier);
     }
 
     public void setSectorTwoModifier(SectorTwoModifier sectorTwoModifier) {
-        sidc.setSectorTwoModifier(sectorTwoModifier);
+        this.sectorTwoModifier.set(sectorTwoModifier);
     }
 
     public void setStandardIdentity(StandardIdentity standardId) {
-        sidc.setStandardIdentity(standardId);
+        this.standardIdentity.set(standardId);
     }
 
     public void setStatus(Status status) {
-        sidc.setStatus(status);
+        this.status.set(status);
     }
 
     public void setSymbolSet(SymbolSet symbolSet) {
-        sidc.setSymbolSet(symbolSet);
+        this.symbolSet.set(symbolSet);
+    }
+
+    public void setVersion(Version version) {
+        this.version.set(version);
     }
 
     public ObjectProperty<StandardIdentity> standardIdentityProperty() {
@@ -558,66 +665,64 @@ public class IdentificationSymbol {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-            .append("sidc", sidc)
-            .append("scale", scale.get())
-            .append("version", version.get())
-            .append("context", context.get())
-            .append("standardIdentity", standardIdentity.get())
-            .append("symbolSet", symbolSet.get())
-            .append("status", status.get())
-            .append("hqtfDummy", hqtfDummy.get())
-            .append("amplifier", amplifier.get())
-            .append("amplifierTwo", amplifierTwo.get())
-            .append("amplifierThree", amplifierThree.get())
-            .append("frameAmplifier", frameAmplifier.get())
-            .append("entity", entity.get())
-            .append("entityType", entityType.get())
-            .append("entitySubType", entitySubType.get())
-            .append("sectorOneModifier", sectorOneModifier.get())
-            .append("sectorTwoModifier", sectorTwoModifier.get())
-            .toString();
+        return String.format("%s %s %s", getFirstTenDigits(), getSecondTenDigits(), getThirdTenDigits());
     }
 
     public ObjectProperty<Version> versionProperty() {
         return version;
     }
 
+    protected void initDefaults() {
+        this.version.set(library.getDefaultVersion());
+        this.context.set(library.getDefaultContext());
+        this.standardIdentity.set(library.getDefaultStandardIdentity());
+        this.status.set(library.getDefaultStatus());
+        this.hqtfDummy.set(library.getDefaultHqtfDummy());
+        this.amplifier.set(library.getDefaultAmplifier());
+        this.amplifierTwo.set(library.getDefaultAmplifier());
+        this.amplifierThree.set(library.getDefaultAmplifier());
+        this.frameAmplifier.set(library.getDefaultAmplifier());
+        this.countryCode.set(library.getExtensionCountryCode());
+        this.entity.set(library.getDefaultEntity());
+        this.sectorOneModifier.set(library.getDefaultSectorOneModifier());
+        this.sectorTwoModifier.set(library.getDefaultSectorTwoModifier());
+    }
+
     private void addListeners() {
         // Observable lists can't be bound directly, so update these values when the appropriate property changes
         symbolSet.addListener((obs, oldValue, newValue) -> {
-            amplifiers.setAll(sidc.getListAmplifiers());
-            amplifier.set(sidc.getAmplifier());
+            amplifiers.setAll(getAmplifierItems());
+            amplifier.set(getAmplifier());
 
-            amplifiersTwo.setAll(sidc.getAmplifierTwoItems());
-            amplifierTwo.set(sidc.getAmplifierTwo());
+            amplifiersTwo.setAll(getAmplifierTwoItems());
+            amplifierTwo.set(getAmplifierTwo());
 
-            amplifiersThree.setAll(sidc.getAmplifierThreeItems());
-            amplifierThree.set(sidc.getAmplifierThree());
+            amplifiersThree.setAll(getAmplifierThreeItems());
+            amplifierThree.set(getAmplifierThree());
 
-            frameAmplifiers.setAll(sidc.getFrameListAmplifiers());
-            frameAmplifier.set(sidc.getFrameAmplifier());
+            frameAmplifiers.setAll(getFrameListAmplifiers());
+            frameAmplifier.set(getFrameAmplifier());
 
-            sectorOneModifiers.setAll(Stream.concat(sidc.getSectorOneModifiers().stream(), library.getCommonSectorOneModifiers().stream()).toList());
-            sectorOneModifier.set(sidc.getSectorOneModifier());
+            sectorOneModifiers.setAll(Stream.concat(getSectorOneModifiers().stream(), library.getCommonSectorOneModifiers().stream()).toList());
+            sectorOneModifier.set(getSectorOneModifier());
 
-            sectorTwoModifiers.setAll(Stream.concat(sidc.getSectorTwoModifiers().stream(), library.getCommonSectorTwoModifiers().stream()).toList());
-            sectorTwoModifier.set(sidc.getSectorTwoModifier());
+            sectorTwoModifiers.setAll(Stream.concat(getSectorTwoModifiers().stream(), library.getCommonSectorTwoModifiers().stream()).toList());
+            sectorTwoModifier.set(getSectorTwoModifier());
 
-            entities.setAll(sidc.getEntities());
-            entity.set(sidc.getEntity());
+            entities.setAll(getSymbolSet().getEntities());
+            entity.set(getEntity());
 
             textAmplifiers.clear();
         });
         entity.addListener((obs, oldValue, newValue) -> {
-            entityTypes.setAll(sidc.getEntityTypes());
+            entityTypes.setAll(getEntityTypes());
         });
         entityType.addListener((obs, oldValue, newValue) -> {
-            entitySubTypes.setAll(sidc.getEntitySubTypes());
+            entitySubTypes.setAll(getEntitySubTypes());
         });
 
         // Code value should be updated after a change in any of the symbol properties
-        code.bind(Bindings.createStringBinding(sidc::toString,
+        code.bind(Bindings.createStringBinding(this::toString,
                                                version, context, standardIdentity, status, hqtfDummy, symbolSet, amplifier,
                                                entity, entityType, entitySubType, sectorOneModifier, sectorTwoModifier,
                                                amplifierTwo, amplifierThree, frameAmplifier, countryCode));

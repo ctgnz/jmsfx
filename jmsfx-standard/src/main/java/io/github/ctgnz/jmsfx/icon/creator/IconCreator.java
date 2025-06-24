@@ -22,16 +22,15 @@ import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.ContextEnum;
 import io.github.ctgnz.jmsfx.icon.HqtfDummyEnum;
-import io.github.ctgnz.jmsfx.icon.IconScale;
-import io.github.ctgnz.jmsfx.icon.IconScaleListCell;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbolIcon;
-import io.github.ctgnz.jmsfx.icon.ScaleDirection;
 import io.github.ctgnz.jmsfx.icon.StandardIdentityEnum;
-import io.github.ctgnz.jmsfx.icon.StaticIconLibrary;
+import io.github.ctgnz.jmsfx.icon.StandardIconLibrary;
 import io.github.ctgnz.jmsfx.icon.StatusEnum;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.icon.amplifier.NatoCountryCode;
+import io.github.ctgnz.jmsfx.types.IconScale;
+import io.github.ctgnz.jmsfx.types.ScaleDirection;
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
@@ -90,7 +89,7 @@ public class IconCreator extends Application {
     private FoxgloveParser svgParser = new FoxgloveParser();
     private File lastDirectory;
     private IdentificationSymbolIcon icon;
-    private IconLibrary library = StaticIconLibrary.instance();
+    private IconLibrary library = StandardIconLibrary.instance();
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -222,7 +221,7 @@ public class IconCreator extends Application {
         scale.setButtonCell(new IconScaleListCell());
         scale.valueProperty().bindBidirectional(symbol.scaleProperty());
 
-        Text sidc = new Text(symbol.getSIDC());
+        Text sidc = new Text(symbol.getCode());
         // this is only a one-way binding from a read-only property
         sidc.textProperty().bind(symbol.codeProperty());
 

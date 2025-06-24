@@ -2,6 +2,9 @@ package io.github.ctgnz.jmsfx.icon.model;
 
 import java.util.List;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.SymbolSet;
@@ -28,6 +31,24 @@ public class EntityImpl extends MainIconImpl implements Entity {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof EntityImpl rhs) {
+            return new EqualsBuilder()
+                .append(getId(), rhs.getId())
+                .isEquals();
+        }
+        return super.equals(obj);
+    }
+
+    @Override
+    public SymbolSet getBaseSymbolSet() {
+        return baseSymbolSet.get();
+    }
+
+    @Override
     public Entity getEntity() {
         return this;
     }
@@ -38,13 +59,13 @@ public class EntityImpl extends MainIconImpl implements Entity {
     }
 
     @Override
-    public SymbolSet getBaseSymbolSet() {
-        return baseSymbolSet.get();
+    public SymbolSet getSymbolSet() {
+        return symbolSet.get();
     }
 
     @Override
-    public SymbolSet getSymbolSet() {
-        return symbolSet.get();
+    public int hashCode() {
+        return new HashCodeBuilder(3217, 7127).append(getId()).toHashCode();
     }
 
     public ObjectProperty<SymbolSet> symbolSetProperty() {

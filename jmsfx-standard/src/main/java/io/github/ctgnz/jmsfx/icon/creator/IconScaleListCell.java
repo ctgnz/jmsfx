@@ -1,5 +1,6 @@
-package io.github.ctgnz.jmsfx.icon;
+package io.github.ctgnz.jmsfx.icon.creator;
 
+import io.github.ctgnz.jmsfx.types.IconScale;
 import javafx.scene.control.ListCell;
 
 public class IconScaleListCell extends ListCell<IconScale> {

@@ -2,6 +2,9 @@ package io.github.ctgnz.jmsfx.icon;
 
 import io.github.ctgnz.jmsfx.Amplifier;
 import io.github.ctgnz.jmsfx.AmplifierListItem;
+import io.github.ctgnz.jmsfx.types.GraphicAmplifierValue;
+import io.github.ctgnz.jmsfx.types.IconScale;
+import io.github.ctgnz.jmsfx.types.TextAmplifierValue;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.MapChangeListener;

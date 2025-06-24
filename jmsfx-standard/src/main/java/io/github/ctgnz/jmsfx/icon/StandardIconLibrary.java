@@ -8,6 +8,7 @@ import nz.co.ctg.foxglove.SvgGraphic;
 import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.Context;
 import io.github.ctgnz.jmsfx.CountryCode;
+import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.HqtfDummy;
 import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.MainElement;
@@ -23,28 +24,20 @@ import io.github.ctgnz.jmsfx.icon.amplifier.UnknownAmplifier;
 import io.github.ctgnz.jmsfx.icon.common.CommonSectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.common.CommonSectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.common.CommonSymbolSet;
+import io.github.ctgnz.jmsfx.icon.unknown.UnknownEntity;
 
-public class StaticIconLibrary implements IconLibrary {
-    private static final StaticIconLibrary INSTANCE = new StaticIconLibrary();
+public class StandardIconLibrary implements IconLibrary {
+    private static final StandardIconLibrary INSTANCE = new StandardIconLibrary();
 
-    public static CodeBuilder code() {
-        return new CodeBuilder(instance(), instance().getDefaultSymbolSet());
-    }
-
-    public static CodeBuilder code(SymbolSet symbolSet) {
-        return new CodeBuilder(instance(), symbolSet);
-    }
-
-    public static StaticIconLibrary instance() {
+    public static StandardIconLibrary instance() {
         return INSTANCE;
     }
 
     private final FoxgloveParser parser = new FoxgloveParser();
     private CountryCode extensionCountryCode = NatoCountryCode.UNDEFINED;
 
-    public StaticIconLibrary() {
+    public StandardIconLibrary() {
     }
-
     @Override
     public List<SectorOneModifier> getCommonSectorOneModifiers() {
         return CommonSymbolSet.INSTANCE.getSectorOneModifiers();
@@ -63,6 +56,11 @@ public class StaticIconLibrary implements IconLibrary {
     @Override
     public Context getDefaultContext() {
         return ContextEnum.REALITY;
+    }
+
+    @Override
+    public Entity getDefaultEntity() {
+        return UnknownEntity.UNSPECIFIED;
     }
 
     @Override
@@ -105,10 +103,6 @@ public class StaticIconLibrary implements IconLibrary {
         return extensionCountryCode;
     }
 
-    public FoxgloveParser getParser() {
-        return parser;
-    }
-
     @Override
     public SvgGraphic loadAmplifierGraphic(AmplifierListItem amplifierItem, StandardIdentity identity) {
         if (!amplifierItem.isUnknown() && amplifierItem.isGraphicalIcon()) {
@@ -120,7 +114,7 @@ public class StaticIconLibrary implements IconLibrary {
 
     @Override
     public SvgGraphic loadFrameGraphic(SymbolSet symbolSet, StandardIdentity identity, Status status, boolean civilianEntity) {
-        if (symbolSet.isPointGeometry()) {
+        if (symbolSet != null && symbolSet.isPointGeometry()) {
             String filePath = symbolSet.getFrameLocation(identity, status, civilianEntity);
             return parser.parseFile(filePath);
         } else {
@@ -185,7 +179,7 @@ public class StaticIconLibrary implements IconLibrary {
 
     @Override
     public void setExtensionCountryCode(CountryCode countryCode) {
-        extensionCountryCode = countryCode;
+        this.extensionCountryCode = countryCode;
     }
 
 }

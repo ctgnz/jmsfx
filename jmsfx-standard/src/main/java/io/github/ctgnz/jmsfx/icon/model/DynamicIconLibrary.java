@@ -16,6 +16,7 @@ import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.Context;
 import io.github.ctgnz.jmsfx.CountryCode;
 import io.github.ctgnz.jmsfx.Dimension;
+import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.HqtfDummy;
 import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.MainElement;
@@ -42,7 +43,7 @@ import javafx.collections.ObservableList;
 public class DynamicIconLibrary implements IconLibrary {
     private final ObservableList<Version> version = FXCollections.observableArrayList();
     private final ObservableList<Context> context = FXCollections.observableArrayList();
-    private final ObservableList<StandardIdentityGroupAdapter> standardIdentityGroup = FXCollections.observableArrayList();
+    private final ObservableList<StandardIdentityGroupImpl> standardIdentityGroup = FXCollections.observableArrayList();
     private final ObservableList<Dimension> dimension = FXCollections.observableArrayList();
     private final ObservableList<Status> status = FXCollections.observableArrayList();
     private final ObservableList<HqtfDummy> hqtfDummy = FXCollections.observableArrayList();
@@ -58,7 +59,7 @@ public class DynamicIconLibrary implements IconLibrary {
         this.parser = new FoxgloveParser();
         this.version.setAll(Lists.transform(Lists.newArrayList(VersionEnum.values()), VersionImpl::new));
         this.context.setAll(Lists.transform(Lists.newArrayList(ContextEnum.values()), ContextImpl::new));
-        this.standardIdentityGroup.setAll(Lists.transform(Lists.newArrayList(StandardIdentityGroupEnum.values()), StandardIdentityGroupAdapter::new));
+        this.standardIdentityGroup.setAll(Lists.transform(Lists.newArrayList(StandardIdentityGroupEnum.values()), StandardIdentityGroupImpl::new));
         this.dimension.setAll(Lists.transform(Lists.newArrayList(DimensionEnum.values()), DimensionImpl::new));
         this.status.setAll(Lists.transform(Lists.newArrayList(StatusEnum.values()), StatusImpl::new));
         this.hqtfDummy.setAll(Lists.transform(Lists.newArrayList(HqtfDummyEnum.values()), HqtfDummyImpl::new));
@@ -101,6 +102,11 @@ public class DynamicIconLibrary implements IconLibrary {
     @Override
     public Context getDefaultContext() {
         return context.getFirst();
+    }
+
+    @Override
+    public Entity getDefaultEntity() {
+        return getDefaultSymbolSet().getEntities().getFirst();
     }
 
     @Override
@@ -156,10 +162,10 @@ public class DynamicIconLibrary implements IconLibrary {
     }
 
     public ObservableList<StandardIdentity> getStandardIdentity() {
-        return FXCollections.observableArrayList(standardIdentityGroup.stream().flatMap(StandardIdentityGroupAdapter::streamIdentities).toList());
+        return FXCollections.observableArrayList(standardIdentityGroup.stream().flatMap(StandardIdentityGroupImpl::streamIdentities).toList());
     }
 
-    public ObservableList<StandardIdentityGroupAdapter> getStandardIdentityGroup() {
+    public ObservableList<StandardIdentityGroupImpl> getStandardIdentityGroup() {
         return standardIdentityGroup;
     }
 

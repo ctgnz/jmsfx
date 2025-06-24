@@ -2,6 +2,9 @@ package io.github.ctgnz.jmsfx.icon.model;
 
 import java.util.List;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.icon.StatusEnum;
 import javafx.beans.property.BooleanProperty;
@@ -28,8 +31,26 @@ public class StatusImpl extends CodeElementImpl implements Status {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof StatusImpl rhs) {
+            return new EqualsBuilder()
+                .append(getId(), rhs.getId())
+                .isEquals();
+        }
+        return super.equals(obj);
+    }
+
+    @Override
     public List<String> getDimensionIds() {
         return dimensionIds;
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(3329, 9239).append(getId()).toHashCode();
     }
 
     @Override

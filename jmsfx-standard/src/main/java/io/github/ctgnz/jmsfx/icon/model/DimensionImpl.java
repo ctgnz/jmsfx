@@ -3,6 +3,9 @@ package io.github.ctgnz.jmsfx.icon.model;
 import java.util.List;
 import java.util.stream.Stream;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import io.github.ctgnz.jmsfx.Dimension;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.DimensionEnum;
@@ -43,6 +46,19 @@ public class DimensionImpl extends CodeElementImpl implements Dimension {
 
     public ObjectProperty<SymbolSet> defaultSymbolSetProperty() {
         return defaultSymbolSet;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof DimensionImpl rhs) {
+            return new EqualsBuilder()
+                .append(getId(), rhs.getId())
+                .isEquals();
+        }
+        return super.equals(obj);
     }
 
     public StringProperty frameIdProperty() {
@@ -89,6 +105,11 @@ public class DimensionImpl extends CodeElementImpl implements Dimension {
 
     public StringProperty graphicLocationProperty() {
         return graphicLocation;
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(9883, 3907).append(getId()).toHashCode();
     }
 
     public StringProperty nameProperty() {

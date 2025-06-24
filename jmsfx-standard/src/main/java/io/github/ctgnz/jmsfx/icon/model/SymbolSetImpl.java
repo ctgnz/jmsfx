@@ -2,6 +2,9 @@ package io.github.ctgnz.jmsfx.icon.model;
 
 import java.util.List;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import io.github.ctgnz.jmsfx.Amplifier;
 import io.github.ctgnz.jmsfx.AmplifierGuide;
 import io.github.ctgnz.jmsfx.Dimension;
@@ -78,6 +81,19 @@ public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
 
     public ObjectProperty<Dimension> dimensionProperty() {
         return dimension;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof SymbolSetImpl rhs) {
+            return new EqualsBuilder()
+                .append(getId(), rhs.getId())
+                .isEquals();
+        }
+        return super.equals(obj);
     }
 
     public BooleanProperty framedIconProperty() {
@@ -183,6 +199,11 @@ public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
 
     public StringProperty graphicLocationProperty() {
         return graphicLocation;
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(9643, 3491).append(getId()).toHashCode();
     }
 
     public boolean isAmplifierGuidesPresent() {

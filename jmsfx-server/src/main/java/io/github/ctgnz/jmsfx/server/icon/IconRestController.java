@@ -17,7 +17,7 @@ import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
-import io.github.ctgnz.jmsfx.icon.StaticIconLibrary;
+import io.github.ctgnz.jmsfx.icon.StandardIconLibrary;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.icon.model.SymbolSetImpl;
 
@@ -89,7 +89,7 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
     }
 
     private String createGraphic(E entity, T entityType, S entitySubType, M sectorOneMod, N sectorTwoMod, A amplifier) throws Exception {
-        IdentificationSymbol symbol = new IdentificationSymbol(StaticIconLibrary.instance());
+        IdentificationSymbol symbol = new IdentificationSymbol(StandardIconLibrary.instance());
         symbol.symbolSetProperty().set(symbolSet);
         symbol.entityProperty().set(entity);
         symbol.entityTypeProperty().set(entityType);

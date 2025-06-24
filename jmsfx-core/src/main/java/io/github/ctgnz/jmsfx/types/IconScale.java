@@ -1,4 +1,4 @@
-package io.github.ctgnz.jmsfx.icon;
+package io.github.ctgnz.jmsfx.types;
 
 import static java.util.Arrays.stream;
 import static java.util.stream.Collectors.joining;

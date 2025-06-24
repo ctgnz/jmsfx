@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.StandardIdentityGroup;
@@ -14,18 +16,31 @@ import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class StandardIdentityGroupAdapter extends CodeElementImpl implements StandardIdentityGroup {
+public class StandardIdentityGroupImpl extends CodeElementImpl implements StandardIdentityGroup {
 
     private final StringProperty graphicSuffix = new SimpleStringProperty();
     private final ObservableList<StandardIdentity> identities = FXCollections.observableArrayList();
 
-    public StandardIdentityGroupAdapter() {
+    public StandardIdentityGroupImpl() {
     }
 
-    public StandardIdentityGroupAdapter(StandardIdentityGroupEnum identityGroup) {
+    public StandardIdentityGroupImpl(StandardIdentityGroupEnum identityGroup) {
         super(identityGroup);
         this.graphicSuffix.set(identityGroup.getGraphicSuffix());
         this.identities.setAll(identityGroup.getIdentities().stream().map(StandardIdentityEnum.class::cast).map(this::createIdentityAdapter).toList());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof StandardIdentityGroupImpl rhs) {
+            return new EqualsBuilder()
+                .append(getId(), rhs.getId())
+                .isEquals();
+        }
+        return super.equals(obj);
     }
 
     @Override
@@ -40,6 +55,11 @@ public class StandardIdentityGroupAdapter extends CodeElementImpl implements Sta
 
     public StringProperty graphicSuffixProperty() {
         return graphicSuffix;
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(3163, 3617).append(getId()).toHashCode();
     }
 
     @Override

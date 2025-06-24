@@ -1,5 +1,8 @@
 package io.github.ctgnz.jmsfx.icon.model;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.StandardIdentityGroup;
 import io.github.ctgnz.jmsfx.icon.StandardIdentityEnum;
@@ -17,7 +20,7 @@ public class StandardIdentityImpl extends CodeElementImpl implements StandardIde
     public StandardIdentityImpl() {
     }
 
-    public StandardIdentityImpl(StandardIdentityEnum identity, StandardIdentityGroupAdapter groupAdapter) {
+    public StandardIdentityImpl(StandardIdentityEnum identity, StandardIdentityGroupImpl groupAdapter) {
         super(identity);
         this.group.set(groupAdapter);
         this.confirmed.set(identity.isConfirmed());
@@ -26,6 +29,19 @@ public class StandardIdentityImpl extends CodeElementImpl implements StandardIde
 
     public BooleanProperty confirmedProperty() {
         return confirmed;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof StandardIdentityImpl rhs) {
+            return new EqualsBuilder()
+                .append(getId(), rhs.getId())
+                .isEquals();
+        }
+        return super.equals(obj);
     }
 
     @Override
@@ -40,6 +56,11 @@ public class StandardIdentityImpl extends CodeElementImpl implements StandardIde
 
     public ObjectProperty<StandardIdentityGroup> groupProperty() {
         return group;
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(1447, 7451).append(getId()).toHashCode();
     }
 
     public BooleanProperty hostileProperty() {

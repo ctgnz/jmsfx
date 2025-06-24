@@ -1,5 +1,8 @@
 package io.github.ctgnz.jmsfx.icon.model;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import javafx.beans.property.BooleanProperty;
@@ -31,6 +34,19 @@ public class SectorTwoModifierImpl extends CodeElementImpl implements SectorTwoM
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof SectorTwoModifierImpl rhs) {
+            return new EqualsBuilder()
+                .append(getId(), rhs.getId())
+                .isEquals();
+        }
+        return super.equals(obj);
+    }
+
+    @Override
     public String getCategory() {
         return category.get();
     }
@@ -47,6 +63,11 @@ public class SectorTwoModifierImpl extends CodeElementImpl implements SectorTwoM
 
     public StringProperty graphicIdentifierProperty() {
         return graphicIdentifier;
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(7297, 7933).append(getId()).toHashCode();
     }
 
     @Override

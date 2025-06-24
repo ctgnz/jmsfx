@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import io.github.ctgnz.jmsfx.Amplifier;
 import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.AmplifierListItem;
@@ -41,6 +44,19 @@ public class AmplifierListImpl<A extends AmplifierListItem> extends CodeElementI
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof AmplifierListImpl<?> rhs) {
+            return new EqualsBuilder()
+                .append(getId(), rhs.getId())
+                .isEquals();
+        }
+        return super.equals(obj);
+    }
+
+    @Override
     public Amplifier getAmplifier() {
         return amplifier.get();
     }
@@ -64,6 +80,11 @@ public class AmplifierListImpl<A extends AmplifierListItem> extends CodeElementI
 
     public ObservableList<AmplifierListItemImpl<A>> getValues() {
         return values;
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(4877, 7789).append(getId()).toHashCode();
     }
 
     @Override

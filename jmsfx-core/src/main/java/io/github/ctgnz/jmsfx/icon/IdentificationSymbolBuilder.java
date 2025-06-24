@@ -15,7 +15,7 @@ import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.Version;
 
-public final class CodeBuilder {
+public final class IdentificationSymbolBuilder {
     private IconLibrary library;
     private Version version;
     private Context context;
@@ -34,29 +34,29 @@ public final class CodeBuilder {
     private SectorOneModifier sectorOneModifier;
     private SectorTwoModifier sectorTwoModifier;
 
-    public CodeBuilder(IconLibrary library, SymbolSet symbolSet) {
+    public IdentificationSymbolBuilder(IconLibrary library, SymbolSet symbolSet) {
         this.library = library;
         this.symbolSet = symbolSet;
         initDefaults();
     }
 
-    public CodeBuilder amplifier(StandardAmplifierItem amplifier) {
+    public IdentificationSymbolBuilder amplifier(StandardAmplifierItem amplifier) {
         this.amplifier = amplifier;
         return this;
     }
 
-    public CodeBuilder amplifier2(StandardAmplifierItem amplifier2) {
+    public IdentificationSymbolBuilder amplifier2(StandardAmplifierItem amplifier2) {
         this.amplifier2 = amplifier2;
         return this;
     }
 
-    public CodeBuilder amplifier3(StandardAmplifierItem amplifier3) {
+    public IdentificationSymbolBuilder amplifier3(StandardAmplifierItem amplifier3) {
         this.amplifier3 = amplifier3;
         return this;
     }
 
-    public SymbolIdentificationCode build() {
-        SymbolIdentificationCode code = new SymbolIdentificationCode(library);
+    public IdentificationSymbol build() {
+        IdentificationSymbol code = new IdentificationSymbol(library);
         code.setVersion(version);
         code.setContext(context);
         code.setStandardIdentity(standardId);
@@ -76,62 +76,62 @@ public final class CodeBuilder {
         return code;
     }
 
-    public CodeBuilder entity(Entity entity) {
+    public IdentificationSymbolBuilder entity(Entity entity) {
         this.entity = entity;
         return this;
     }
 
-    public CodeBuilder entitySubType(EntitySubType entitySubType) {
+    public IdentificationSymbolBuilder entitySubType(EntitySubType entitySubType) {
         this.entitySubType = entitySubType;
         return this;
     }
 
-    public CodeBuilder entityType(EntityType entityType) {
+    public IdentificationSymbolBuilder entityType(EntityType entityType) {
         this.entityType = entityType;
         return this;
     }
 
-    public CodeBuilder frameAmplifier(StandardAmplifierItem frameAmplifier) {
+    public IdentificationSymbolBuilder frameAmplifier(StandardAmplifierItem frameAmplifier) {
         this.frameAmplifier = frameAmplifier;
         return this;
     }
 
-    public CodeBuilder sectorOneModifier(SectorOneModifier sectorOneModifier) {
+    public IdentificationSymbolBuilder sectorOneModifier(SectorOneModifier sectorOneModifier) {
         this.sectorOneModifier = sectorOneModifier;
         return this;
     }
 
-    public CodeBuilder sectorTwoModifier(SectorTwoModifier sectorTwoModifier) {
+    public IdentificationSymbolBuilder sectorTwoModifier(SectorTwoModifier sectorTwoModifier) {
         this.sectorTwoModifier = sectorTwoModifier;
         return this;
     }
 
-    public CodeBuilder with(Context context) {
+    public IdentificationSymbolBuilder with(Context context) {
         this.context = context;
         return this;
     }
 
-    public CodeBuilder with(CountryCode countryCode) {
+    public IdentificationSymbolBuilder with(CountryCode countryCode) {
         this.countryCode = countryCode;
         return this;
     }
 
-    public CodeBuilder with(HqtfDummy hqtfDummy) {
+    public IdentificationSymbolBuilder with(HqtfDummy hqtfDummy) {
         this.hqtfDummy = hqtfDummy;
         return this;
     }
 
-    public CodeBuilder with(StandardIdentity standardId) {
+    public IdentificationSymbolBuilder with(StandardIdentity standardId) {
         this.standardId = standardId;
         return this;
     }
 
-    public CodeBuilder with(Status status) {
+    public IdentificationSymbolBuilder with(Status status) {
         this.status = status;
         return this;
     }
 
-    public CodeBuilder with(Version version) {
+    public IdentificationSymbolBuilder with(Version version) {
         this.version = version;
         return this;
     }

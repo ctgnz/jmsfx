@@ -1,5 +1,8 @@
 package io.github.ctgnz.jmsfx.icon.model;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.StandardAmplifierItem;
@@ -31,6 +34,19 @@ public class StandardAmplifierItemImpl<A extends StandardAmplifierItem> extends 
         return amplifierList;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof StandardAmplifierItemImpl<?> rhs) {
+            return new EqualsBuilder()
+                .append(getId(), rhs.getId())
+                .isEquals();
+        }
+        return super.equals(obj);
+    }
+
     public StringProperty fullIdProperty() {
         return fullId;
     }
@@ -56,6 +72,11 @@ public class StandardAmplifierItemImpl<A extends StandardAmplifierItem> extends 
 
     public StringProperty graphicLocationProperty() {
         return graphicLocation;
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(4271, 1733).append(getId()).toHashCode();
     }
 
     @Override
