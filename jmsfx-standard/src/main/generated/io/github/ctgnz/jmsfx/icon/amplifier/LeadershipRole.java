@@ -3,7 +3,6 @@ package io.github.ctgnz.jmsfx.icon.amplifier;
 import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
-import io.github.ctgnz.jmsfx.icon.Extension;
 
 public enum LeadershipRole implements StandardAmplifierItem {
     LEADER_INDIVIDUAL("1", "Leader"),
@@ -37,20 +36,9 @@ public enum LeadershipRole implements StandardAmplifierItem {
         return label;
     }
 
-    public boolean isDeprecated() {
-        try {
-            return LeadershipRole.class.getField(name()).getAnnotation(Deprecated.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
-    }
-
-    public boolean isExtension() {
-        try {
-            return LeadershipRole.class.getField(name()).getAnnotation(Extension.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

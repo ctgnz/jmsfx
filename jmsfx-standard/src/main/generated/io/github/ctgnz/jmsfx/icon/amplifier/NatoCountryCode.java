@@ -2,8 +2,8 @@ package io.github.ctgnz.jmsfx.icon.amplifier;
 
 import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.CountryCode;
+import io.github.ctgnz.jmsfx.Extension;
 import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
-import io.github.ctgnz.jmsfx.icon.Extension;
 
 public enum NatoCountryCode implements CountryCode {
     UNDEFINED("UNDEFINED", "Undefined", "000"),
@@ -353,20 +353,9 @@ public enum NatoCountryCode implements CountryCode {
         return code;
     }
 
-    public boolean isDeprecated() {
-        try {
-            return NatoCountryCode.class.getField(name()).getAnnotation(Deprecated.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
-    }
-
-    public boolean isExtension() {
-        try {
-            return NatoCountryCode.class.getField(name()).getAnnotation(Extension.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
-import io.github.ctgnz.jmsfx.icon.model.SymbolSetImpl;
+import io.github.ctgnz.jmsfx.icon.editor.SymbolSetImpl;
 
 @Controller
 public class WebController {

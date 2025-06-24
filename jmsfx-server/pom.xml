@@ -30,6 +30,11 @@
 	        <artifactId>jmsfx-standard</artifactId>
 	        <version>1.1.7-SNAPSHOT</version>
 	    </dependency>
+	    <dependency>
+	        <groupId>io.github.ctgnz</groupId>
+	        <artifactId>jmsfx-editor</artifactId>
+	        <version>1.1.7-SNAPSHOT</version>
+	    </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>

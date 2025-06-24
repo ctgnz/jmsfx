@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
-import io.github.ctgnz.jmsfx.icon.model.SymbolSetImpl;
+import io.github.ctgnz.jmsfx.icon.editor.SymbolSetImpl;
 
 @RestController
 @RequestMapping("/info")

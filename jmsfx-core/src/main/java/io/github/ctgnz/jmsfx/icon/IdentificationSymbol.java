@@ -741,14 +741,6 @@ public class IdentificationSymbol {
         hqtfDummyGraphic.bind(Bindings.createObjectBinding(this::loadHqtfDummyGraphic, code, hqtfDummy));
     }
 
-    private Status getStatusForFrame() {
-        if (!getStandardIdentity().isConfirmed()) {
-            return library.getDefaultStatus();
-        }
-        Status currentStatus = status.get();
-        return currentStatus.isPlanned() ? currentStatus : library.getDefaultStatus();
-    }
-
     private SvgGraphic loadAmplifierGraphic() {
         return library.loadAmplifierGraphic(getAmplifier(), getStandardIdentity());
     }
@@ -766,7 +758,12 @@ public class IdentificationSymbol {
     }
 
     private SvgGraphic loadFrameGraphic() {
-        return library.loadFrameGraphic(getSymbolSet(), getStandardIdentity(), getStatusForFrame(), isCivilianEntity());
+        StandardIdentity effectiveIdentity = getStandardIdentity();
+        Status effectiveStatus = status.get();
+        if (!effectiveIdentity.isConfirmed() || !effectiveStatus.isPlanned()) {
+            effectiveStatus = library.getDefaultStatus();
+        }
+        return library.loadFrameGraphic(getSymbolSet(), effectiveIdentity, effectiveStatus, isCivilianEntity());
     }
 
     private SvgGraphic loadFrameOverlayGraphic() {

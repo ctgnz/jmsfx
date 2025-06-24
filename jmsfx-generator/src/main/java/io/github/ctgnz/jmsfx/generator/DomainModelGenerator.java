@@ -37,7 +37,7 @@ import io.github.ctgnz.jmsfx.generator.model.AmplifierModel;
 import io.github.ctgnz.jmsfx.generator.model.EntityModel;
 import io.github.ctgnz.jmsfx.generator.model.EntitySubTypeModel;
 import io.github.ctgnz.jmsfx.generator.model.EntityTypeModel;
-import io.github.ctgnz.jmsfx.generator.model.ListAmplifierModel;
+import io.github.ctgnz.jmsfx.generator.model.AmplifierListModel;
 import io.github.ctgnz.jmsfx.generator.model.SectorOneModifierModel;
 import io.github.ctgnz.jmsfx.generator.model.SectorTwoModifierModel;
 import io.github.ctgnz.jmsfx.generator.model.StandardEnumModel;
@@ -280,12 +280,12 @@ public class DomainModelGenerator {
     private void generateListAmplifierEnums(Map<String, Object> dataModel, Library library) throws Exception {
         List<StandardAmplifierConfig> amplifierTypeConfigs = config.getStandardAmplifiers();
         List<AmplifierModel> amplifiers = (List<AmplifierModel>) dataModel.get("amplifiers");
-        List<ListAmplifierModel> amplifierGroups = (List<ListAmplifierModel>) dataModel.computeIfAbsent("amplifierGroups", key -> new ArrayList<ListAmplifierModel>());
+        List<AmplifierListModel> amplifierGroups = (List<AmplifierListModel>) dataModel.computeIfAbsent("amplifierGroups", key -> new ArrayList<AmplifierListModel>());
         library.getAmplifierGroups().getAmplifierGroup().forEach(group -> {
             StandardAmplifierConfig groupConfig = amplifierTypeConfigs.stream().filter(config -> config.isForGroup(group.getName())).findAny().orElse(null);
             if (groupConfig != null) {
-                ListAmplifierModel amplifierType = (ListAmplifierModel) dataModel.computeIfAbsent(groupConfig.getEnumType(), type -> {
-                    ListAmplifierModel amplifierTypeEnum = new ListAmplifierModel(groupConfig, group);
+                AmplifierListModel amplifierType = (AmplifierListModel) dataModel.computeIfAbsent(groupConfig.getEnumType(), type -> {
+                    AmplifierListModel amplifierTypeEnum = new AmplifierListModel(groupConfig, group);
                     amplifierGroups.add(amplifierTypeEnum);
                     return amplifierTypeEnum;
                 });
@@ -299,8 +299,8 @@ public class DomainModelGenerator {
                 amplifier.getValues().forEach(value -> {
                     ListAmplifierConfig valueConfig = valueConfigs.stream().filter(config -> StringUtils.equals(value.getID(), config.getValuesId())).findFirst().orElse(null);
                     if (valueConfig != null) {
-                        ListAmplifierModel amplifierType = (ListAmplifierModel) dataModel.computeIfAbsent(valueConfig.getEnumType(), type -> {
-                            ListAmplifierModel amplifierTypeEnum = new ListAmplifierModel(valueConfig, value);
+                        AmplifierListModel amplifierType = (AmplifierListModel) dataModel.computeIfAbsent(valueConfig.getEnumType(), type -> {
+                            AmplifierListModel amplifierTypeEnum = new AmplifierListModel(valueConfig, value);
                             amplifierTypeEnum.setAmplifierId(amplifierEnum.getConstantName());
                             amplifierGroups.add(amplifierTypeEnum);
                             return amplifierTypeEnum;
@@ -316,7 +316,7 @@ public class DomainModelGenerator {
                 });
             }
             if (StringUtils.isNotBlank(amplifier.getAmplifierGroup())) {
-                ListAmplifierModel typeEnum = amplifierGroups.stream().filter(type -> StringUtils.equals(type.getId(), amplifier.getAmplifierGroup())).findFirst().orElse(null);
+                AmplifierListModel typeEnum = amplifierGroups.stream().filter(type -> StringUtils.equals(type.getId(), amplifier.getAmplifierGroup())).findFirst().orElse(null);
                 typeEnum.setAmplifierId(amplifierEnum.getConstantName());
             }
         });
@@ -329,7 +329,7 @@ public class DomainModelGenerator {
         }
         amplifierTypeConfigs.forEach(group -> {
             try {
-                ListAmplifierModel enumType = (ListAmplifierModel) dataModel.get(group.getEnumType());
+                AmplifierListModel enumType = (AmplifierListModel) dataModel.get(group.getEnumType());
                 System.out.format("Processing amplifier enum %s%n", enumType.getTypeName());
                 dataModel.put("amplifier", enumType);
                 amplifierTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(amplifierPath.resolve(enumType.getTypeName() + ".java"))));
@@ -397,11 +397,11 @@ public class DomainModelGenerator {
 
     @SuppressWarnings("unchecked")
     private String[] getAmplifierClasses(Map<String, Object> dataModel, SymbolSetModel symSetDetails) {
-        List<ListAmplifierModel> enumAmplifiers = (List<ListAmplifierModel>) dataModel.get("amplifierGroups");
+        List<AmplifierListModel> enumAmplifiers = (List<AmplifierListModel>) dataModel.get("amplifierGroups");
         return enumAmplifiers.stream()
             .filter(amplifier -> !amplifier.isFrameAmplifier())
             .filter(amplifier -> amplifier.isFor(symSetDetails.getId()))
-            .map(ListAmplifierModel::getTypeName)
+            .map(AmplifierListModel::getTypeName)
             .toArray(size -> new String[size]);
     }
 
@@ -438,11 +438,11 @@ public class DomainModelGenerator {
 
     @SuppressWarnings("unchecked")
     private Optional<String> getFrameAmplifierClass(Map<String, Object> dataModel, SymbolSetModel symSetDetails) {
-        List<ListAmplifierModel> enumAmplifiers = (List<ListAmplifierModel>) dataModel.get("amplifierGroups");
+        List<AmplifierListModel> enumAmplifiers = (List<AmplifierListModel>) dataModel.get("amplifierGroups");
         return enumAmplifiers.stream()
-            .filter(ListAmplifierModel::isFrameAmplifier)
+            .filter(AmplifierListModel::isFrameAmplifier)
             .filter(amplifier -> amplifier.isFor(symSetDetails.getId()))
-            .map(ListAmplifierModel::getTypeName)
+            .map(AmplifierListModel::getTypeName)
             .findFirst();
     }
 

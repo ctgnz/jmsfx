@@ -3,7 +3,6 @@ package io.github.ctgnz.jmsfx.icon.amplifier;
 import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
-import io.github.ctgnz.jmsfx.icon.Extension;
 
 public enum CombatEffectiveness implements AmplifierListItem {
     FULLY_OPERATIONAL("FO", "Fully Operational"),
@@ -40,20 +39,9 @@ public enum CombatEffectiveness implements AmplifierListItem {
         return label;
     }
 
-    public boolean isDeprecated() {
-        try {
-            return CombatEffectiveness.class.getField(name()).getAnnotation(Deprecated.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
-    }
-
-    public boolean isExtension() {
-        try {
-            return CombatEffectiveness.class.getField(name()).getAnnotation(Extension.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

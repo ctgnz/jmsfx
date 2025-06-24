@@ -18,6 +18,24 @@ public interface AmplifierListItem extends CodeElement {
         return String.format("/svg/%s/%s%s.svg", getGraphicLocation(), identity.getGroupId(), getFullId());
     }
 
+    default boolean isDeprecated() {
+        try {
+            return getClass().getField(getName()).getAnnotation(Deprecated.class) != null;
+        } catch (NoSuchFieldException | SecurityException e) {
+            return false;
+        }
+    }
+
+    default boolean isExtension() {
+        try {
+            return getClass().getField(getName()).getAnnotation(Extension.class) != null;
+        } catch (NoSuchFieldException | SecurityException e) {
+            return false;
+        }
+    }
+
     boolean isGraphicalIcon();
+
+    String getName();
 
 }

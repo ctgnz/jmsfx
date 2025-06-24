@@ -2,8 +2,8 @@ package io.github.ctgnz.jmsfx.icon.amplifier;
 
 import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.StandardAmplifierItem;
+import io.github.ctgnz.jmsfx.Extension;
 import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
-import io.github.ctgnz.jmsfx.icon.Extension;
 
 public enum UnitEchelon implements StandardAmplifierItem {
     TEAM_CREW("1", "Team/Crew"),
@@ -50,20 +50,9 @@ public enum UnitEchelon implements StandardAmplifierItem {
         return label;
     }
 
-    public boolean isDeprecated() {
-        try {
-            return UnitEchelon.class.getField(name()).getAnnotation(Deprecated.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
-    }
-
-    public boolean isExtension() {
-        try {
-            return UnitEchelon.class.getField(name()).getAnnotation(Extension.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

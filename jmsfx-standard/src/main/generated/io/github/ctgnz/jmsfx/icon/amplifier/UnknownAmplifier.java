@@ -3,7 +3,6 @@ package io.github.ctgnz.jmsfx.icon.amplifier;
 import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
-import io.github.ctgnz.jmsfx.icon.Extension;
 
 public enum UnknownAmplifier implements StandardAmplifierItem {
     NA("0", "Unknown", "FFFF80");
@@ -43,20 +42,9 @@ public enum UnknownAmplifier implements StandardAmplifierItem {
         return backgroundFill;
     }
 
-    public boolean isDeprecated() {
-        try {
-            return UnknownAmplifier.class.getField(name()).getAnnotation(Deprecated.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
-    }
-
-    public boolean isExtension() {
-        try {
-            return UnknownAmplifier.class.getField(name()).getAnnotation(Extension.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

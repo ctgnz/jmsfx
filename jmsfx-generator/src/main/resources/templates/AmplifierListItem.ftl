@@ -1,9 +1,9 @@
 package ${iconPackage}.amplifier;
 
 import ${basePackage}.AmplifierList;
-import ${basePackage}.<#if amplifier.standard>StandardAmplifierItem<#elseif amplifier.country>CountryCode<#else>AmplifierListItem</#if>;
+import ${basePackage}.<#if amplifier.standard>StandardAmplifierItem<#elseif amplifier.country>CountryCode<#else>AmplifierListItem</#if>;<#if amplifier.extension>
+import ${basePackage}.Extension;</#if>
 import ${iconPackage}.AmplifierListEnum;
-import ${iconPackage}.Extension;
 
 public enum ${amplifier.typeName} implements <#if amplifier.standard>StandardAmplifierItem<#elseif amplifier.country>CountryCode<#else>AmplifierListItem</#if> {
 <#list amplifier.values as val>
@@ -55,20 +55,9 @@ public enum ${amplifier.typeName} implements <#if amplifier.standard>StandardAmp
     }
 </#if>
 
-    public boolean isDeprecated() {
-        try {
-            return ${amplifier.typeName}.class.getField(name()).getAnnotation(Deprecated.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
-    }
-
-    public boolean isExtension() {
-        try {
-            return ${amplifier.typeName}.class.getField(name()).getAnnotation(Extension.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

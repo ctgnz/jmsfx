@@ -3,7 +3,6 @@ package io.github.ctgnz.jmsfx.icon.amplifier;
 import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
-import io.github.ctgnz.jmsfx.icon.Extension;
 
 public enum PlatformType implements AmplifierListItem {
     ELNOT("ELNOT", "Electronic Intelligence Notation"),
@@ -37,20 +36,9 @@ public enum PlatformType implements AmplifierListItem {
         return label;
     }
 
-    public boolean isDeprecated() {
-        try {
-            return PlatformType.class.getField(name()).getAnnotation(Deprecated.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
-    }
-
-    public boolean isExtension() {
-        try {
-            return PlatformType.class.getField(name()).getAnnotation(Extension.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

@@ -3,7 +3,6 @@ package io.github.ctgnz.jmsfx.icon.amplifier;
 import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
-import io.github.ctgnz.jmsfx.icon.Extension;
 
 public enum EquipmentMobility implements StandardAmplifierItem {
     WHEEL_LIMIT_COUNTRY("1", "Wheeled limited cross country"),
@@ -46,20 +45,9 @@ public enum EquipmentMobility implements StandardAmplifierItem {
         return label;
     }
 
-    public boolean isDeprecated() {
-        try {
-            return EquipmentMobility.class.getField(name()).getAnnotation(Deprecated.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
-    }
-
-    public boolean isExtension() {
-        try {
-            return EquipmentMobility.class.getField(name()).getAnnotation(Extension.class) != null;
-        } catch (NoSuchFieldException | SecurityException e) {
-            return false;
-        }
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override
