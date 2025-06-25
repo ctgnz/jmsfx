@@ -10,7 +10,7 @@ import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum CommonEntity implements Entity {
     UNSPECIFIED("00", "Unspecified", GraphicType.NA),
-    INVALID("10", "Invalid Symbol", GraphicType.FULL_OCTAGON);
+    INVALID("10", "Invalid Symbol", GraphicType.FULL_FRAME);
 
     private final String id;
     private final String label;

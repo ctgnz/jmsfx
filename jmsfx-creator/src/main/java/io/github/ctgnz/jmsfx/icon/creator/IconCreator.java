@@ -94,7 +94,7 @@ public class IconCreator extends Application {
     private final ObservableList<AmplifierListItem> amplifiersTwo = FXCollections.observableArrayList(Arrays.asList(library.getDefaultAmplifier()));
     private final ObservableList<AmplifierListItem> amplifiersThree = FXCollections.observableArrayList(Arrays.asList(library.getDefaultAmplifier()));
     private final ObservableList<AmplifierListItem> frameAmplifiers = FXCollections.observableArrayList(Arrays.asList(library.getDefaultAmplifier()));
-    private final ObservableList<Entity> entities = FXCollections.observableArrayList(Arrays.asList(library.getDefaultEntity()));
+    private final ObservableList<Entity> entities = FXCollections.observableArrayList(library.getDefaultSymbolSet().getEntities());
     private final ObservableList<EntityType> entityTypes = FXCollections.observableArrayList(Arrays.asList(library.getDefaultEntityType()));
     private final ObservableList<EntitySubType> entitySubTypes = FXCollections.observableArrayList(Arrays.asList(library.getDefaultEntitySubType()));
     private final ObservableList<SectorOneModifier> sectorOneModifiers = FXCollections.observableArrayList(library.getCommonSectorOneModifiers());
