@@ -15,8 +15,8 @@ import freemarker.template.Configuration;
 import io.github.ctgnz.jmsfx.generator.model.ContextModel;
 import io.github.ctgnz.jmsfx.generator.model.DimensionModel;
 import io.github.ctgnz.jmsfx.generator.model.HqtfDummyModel;
-import io.github.ctgnz.jmsfx.generator.model.StandardIdentityModel;
 import io.github.ctgnz.jmsfx.generator.model.StandardIdentityGroupModel;
+import io.github.ctgnz.jmsfx.generator.model.StandardIdentityModel;
 import io.github.ctgnz.jmsfx.generator.model.StatusModel;
 import io.github.ctgnz.jmsfx.generator.model.VersionModel;
 import io.github.ctgnz.jmsfx.generator.schema.Library.Amplifiers.Amplifier;
@@ -31,13 +31,14 @@ import io.github.ctgnz.jmsfx.generator.schema.Library.Versions.Version;
 public class GeneratorConfig {
     private Path inputDir;
     private Path outputDir;
-    private String basePackage;
-    private String typePackage;
+    private String basePackage = "io.github.ctgnz.jmsfx";
+    private String typePackage = "io.github.ctgnz.jmsfx.types";
     private String iconPackage;
     private String commonPackage;
     private String amplifierPackage;
-    private String libraryFile;
-    private String extensionCountryCode;
+    private String libraryPrefix;
+    private String libraryFile = "Base.xml";
+    private String extensionCountryCode = "000";
     private List<String> unframedSymbolSets;
     private List<ListAmplifierConfig> enumeratedAmplifiers;
     private List<StandardAmplifierConfig> standardAmplifiers;
@@ -82,6 +83,10 @@ public class GeneratorConfig {
         return new StandardEnumConfig<>(ContextModel.class, Context.class, "ContextEnum", "contexts", library -> library.getContexts().getContext());
     }
 
+    public String getCountryCodeClass() {
+        return enumeratedAmplifiers.stream().filter(amp -> amp.getEnumId().equals("COUNTRY_CODE")).findFirst().map(ListAmplifierConfig::getEnumType).orElse("NatoCountryCode");
+    }
+
     public StandardEnumConfig<DimensionModel, Dimension> getDimension() {
         return new StandardEnumConfig<>(DimensionModel.class, Dimension.class, "DimensionEnum", "dimensions", library -> library.getDimensions().getDimension());
     }
@@ -124,6 +129,10 @@ public class GeneratorConfig {
 
     public String getLibraryFile() {
         return libraryFile;
+    }
+
+    public String getLibraryPrefix() {
+        return libraryPrefix;
     }
 
     public Path getOutputDir() {
@@ -212,6 +221,10 @@ public class GeneratorConfig {
 
     public void setLibraryFile(String libraryFile) {
         this.libraryFile = libraryFile;
+    }
+
+    public void setLibraryPrefix(String libraryPrefix) {
+        this.libraryPrefix = libraryPrefix;
     }
 
     public void setOutputDir(Path outputDir) {

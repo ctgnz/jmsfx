@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.icon.editor.SymbolSetImpl;
+import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 @RestController
 @RequestMapping("/info")

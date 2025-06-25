@@ -1,12 +1,9 @@
 inputDir: "D:/git/joint-military-symbology-xml/instance"
-outputDir: "D:/git/jmsfx/jmsfx-standard/src/main/generated"
-basePackage: "io.github.ctgnz.jmsfx"
-typePackage: "io.github.ctgnz.jmsfx.types"
-iconPackage: "io.github.ctgnz.jmsfx.icon"
-commonPackage: "io.github.ctgnz.jmsfx.icon.common"
-amplifierPackage: "io.github.ctgnz.jmsfx.icon.amplifier"
-libraryFile: "Base.xml"
-extensionCountryCode: "000"
+outputDir: "D:/git/jmsfx/jmsfx-standard/src/main/java"
+iconPackage: "io.github.ctgnz.jmsfx.standard"
+commonPackage: "io.github.ctgnz.jmsfx.standard.common"
+amplifierPackage: "io.github.ctgnz.jmsfx.standard.amplifier"
+libraryPrefix: "Standard"
 unframedSymbolSets:
   - CONTROL_MEASURE
 enumeratedAmplifiers:
@@ -53,7 +50,6 @@ symbolGraphicLocations:
   CYBERSPACE_DISMOUNTED: "Cyberspace"
   CYBERSPACE_SEA_SURFACE: "Cyberspace"
   CYBERSPACE_SEA_SUBSURFACE: "Cyberspace"
-  INTERNAL: ""
 entitySymbolSets:
   END_POINT: CYBERSPACE_LAND_EQUIPMENT
   WEARABLE: CYBERSPACE_LAND_EQUIPMENT

@@ -23,7 +23,7 @@ import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbolIcon;
-import io.github.ctgnz.jmsfx.icon.StandardIconLibrary;
+import io.github.ctgnz.jmsfx.standard.StandardIconLibrary;
 import io.github.ctgnz.jmsfx.types.IconScale;
 import io.github.ctgnz.jmsfx.types.ScaleDirection;
 import javafx.application.Application;

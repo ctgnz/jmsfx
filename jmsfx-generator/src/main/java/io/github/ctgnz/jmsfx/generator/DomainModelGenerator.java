@@ -90,6 +90,7 @@ public class DomainModelGenerator {
         generateAmplifierEnum(dataModel, library);
         generateListAmplifierEnums(dataModel, library);
         generateSymbolSets(dataModel, library);
+        generateLibrary(dataModel, library);
     }
 
     public synchronized JAXBContext getLibraryContext() throws JAXBException {
@@ -251,6 +252,13 @@ public class DomainModelGenerator {
             Template template = config.getTemplateConfig().getTemplate("AmplifierGuide.ftl");
             template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve(symSetDetails.getBaseTypeName() + "AmplifierGuide.java"))));
         }
+    }
+
+    private void generateLibrary(Map<String, Object> dataModel, Library library) throws Exception {
+        dataModel.put("countryCodeClass", config.getCountryCodeClass());
+        dataModel.put("libraryPrefix", config.getLibraryPrefix());
+        Template template = config.getTemplateConfig().getTemplate("IconLibrary.ftl");
+        template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getIconPackageDir().resolve(config.getLibraryPrefix() + "IconLibrary.java"))));
     }
 
     @SuppressWarnings("unchecked")

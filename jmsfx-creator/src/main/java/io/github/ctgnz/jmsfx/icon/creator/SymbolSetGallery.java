@@ -6,11 +6,11 @@ import org.apache.commons.lang3.StringUtils;
 
 import io.github.ctgnz.jmsfx.CodeElement;
 import io.github.ctgnz.jmsfx.IconLibrary;
-import io.github.ctgnz.jmsfx.icon.HqtfDummyEnum;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
-import io.github.ctgnz.jmsfx.icon.StandardIdentityEnum;
-import io.github.ctgnz.jmsfx.icon.StatusEnum;
-import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.standard.HqtfDummyEnum;
+import io.github.ctgnz.jmsfx.standard.StandardIdentityEnum;
+import io.github.ctgnz.jmsfx.standard.StatusEnum;
+import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.types.IconScale;
 import javafx.geometry.Pos;
 import javafx.scene.Node;

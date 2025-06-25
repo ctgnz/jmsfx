@@ -4,12 +4,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.github.ctgnz.jmsfx.AmplifierListItem;
-import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
-import io.github.ctgnz.jmsfx.icon.landinstallation.LandInstallationEntity;
-import io.github.ctgnz.jmsfx.icon.landinstallation.LandInstallationEntitySubType;
-import io.github.ctgnz.jmsfx.icon.landinstallation.LandInstallationEntityType;
-import io.github.ctgnz.jmsfx.icon.landinstallation.LandInstallationSectorOneModifier;
-import io.github.ctgnz.jmsfx.icon.landinstallation.LandInstallationSectorTwoModifier;
+import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.standard.landinstallation.LandInstallationEntity;
+import io.github.ctgnz.jmsfx.standard.landinstallation.LandInstallationEntitySubType;
+import io.github.ctgnz.jmsfx.standard.landinstallation.LandInstallationEntityType;
+import io.github.ctgnz.jmsfx.standard.landinstallation.LandInstallationSectorOneModifier;
+import io.github.ctgnz.jmsfx.standard.landinstallation.LandInstallationSectorTwoModifier;
 
 @RestController
 @RequestMapping("/LandInstallation")

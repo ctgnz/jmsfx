@@ -7,9 +7,9 @@ import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
-import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
-import io.github.ctgnz.jmsfx.icon.cyberspace.CyberspaceEntity;
-import io.github.ctgnz.jmsfx.icon.cyberspace.CyberspaceEntityType;
+import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.standard.cyberspace.CyberspaceEntity;
+import io.github.ctgnz.jmsfx.standard.cyberspace.CyberspaceEntityType;
 
 @RestController
 @RequestMapping("/Cyberspace")

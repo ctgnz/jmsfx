@@ -12,6 +12,7 @@ import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.icon.editor.DynamicIconLibrary;
 import io.github.ctgnz.jmsfx.icon.editor.EntitySubTypeImpl;
 import io.github.ctgnz.jmsfx.icon.editor.SymbolSetImpl;
+import io.github.ctgnz.jmsfx.standard.StandardIconLibrary;
 
 public class VerifyIcons {
 

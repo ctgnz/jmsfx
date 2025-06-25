@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
-import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
-import io.github.ctgnz.jmsfx.icon.minewarfare.MineWarfareEntity;
-import io.github.ctgnz.jmsfx.icon.minewarfare.MineWarfareEntitySubType;
-import io.github.ctgnz.jmsfx.icon.minewarfare.MineWarfareEntityType;
+import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.standard.minewarfare.MineWarfareEntity;
+import io.github.ctgnz.jmsfx.standard.minewarfare.MineWarfareEntitySubType;
+import io.github.ctgnz.jmsfx.standard.minewarfare.MineWarfareEntityType;
 
 @RestController
 @RequestMapping("/MineWarfare")

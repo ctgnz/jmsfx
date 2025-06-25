@@ -17,9 +17,9 @@ import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
-import io.github.ctgnz.jmsfx.icon.StandardIconLibrary;
-import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.icon.editor.SymbolSetImpl;
+import io.github.ctgnz.jmsfx.standard.StandardIconLibrary;
+import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public abstract class IconRestController<E extends Entity, T extends EntityType, S extends EntitySubType, M extends SectorOneModifier, N extends SectorTwoModifier, A extends AmplifierListItem> {
     private SymbolSetEnum symbolSet;

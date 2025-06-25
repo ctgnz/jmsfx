@@ -3,7 +3,7 @@ package io.github.ctgnz.jmsfx.icon.creator;
 import java.util.Arrays;
 
 import io.github.ctgnz.jmsfx.IconLibrary;
-import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;

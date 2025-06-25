@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
-import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
-import io.github.ctgnz.jmsfx.icon.activity.ActivityEntity;
-import io.github.ctgnz.jmsfx.icon.activity.ActivityEntitySubType;
-import io.github.ctgnz.jmsfx.icon.activity.ActivityEntityType;
-import io.github.ctgnz.jmsfx.icon.activity.ActivitySectorOneModifier;
+import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.standard.activity.ActivityEntity;
+import io.github.ctgnz.jmsfx.standard.activity.ActivityEntitySubType;
+import io.github.ctgnz.jmsfx.standard.activity.ActivityEntityType;
+import io.github.ctgnz.jmsfx.standard.activity.ActivitySectorOneModifier;
 
 @RestController
 @RequestMapping("/Activity")
