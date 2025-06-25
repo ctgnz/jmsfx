@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum ActivitySectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.ACTIVITY),
     HOUSE_TO_HOUSE_MOD("04", "House-to-House", "Psychological Operations", SymbolSetEnum.ACTIVITY),
     MURDER_MOD("06", "Murder", "Crime", SymbolSetEnum.ACTIVITY),
     WRITTEN_PSYCHOLOGICAL_OPERATIONS_MOD("09", "Written Psychological Operations", "Psychological Operations", SymbolSetEnum.ACTIVITY),

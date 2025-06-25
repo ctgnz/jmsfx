@@ -26,7 +26,7 @@ public class StandardEnumConfig<E extends StandardEnumModel, V> {
         try {
             return enumType.getConstructor(valueType).newInstance(value);
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e) {
-            throw new IllegalArgumentException("Unable to create enum model");
+            throw new IllegalArgumentException("Unable to create enum model", e);
         }
     }
 

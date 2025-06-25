@@ -17,6 +17,8 @@ import io.github.ctgnz.jmsfx.Context;
 import io.github.ctgnz.jmsfx.CountryCode;
 import io.github.ctgnz.jmsfx.Dimension;
 import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.HqtfDummy;
 import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.MainElement;
@@ -107,6 +109,16 @@ public class DynamicIconLibrary implements IconLibrary {
     @Override
     public Entity getDefaultEntity() {
         return getDefaultSymbolSet().getEntities().getFirst();
+    }
+
+    @Override
+    public EntitySubType getDefaultEntitySubType() {
+        return getDefaultEntityType().getEntitySubTypes().getFirst();
+    }
+
+    @Override
+    public EntityType getDefaultEntityType() {
+        return getDefaultEntity().getEntityTypes().getFirst();
     }
 
     @Override

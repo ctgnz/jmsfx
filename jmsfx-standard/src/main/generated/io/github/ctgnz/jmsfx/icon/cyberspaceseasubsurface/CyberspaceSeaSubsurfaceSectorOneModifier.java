@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum CyberspaceSeaSubsurfaceSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.CYBERSPACE_SEA_SUBSURFACE),
     DEFENSIVE_CYBERSPACE("01", "Defensive Cyberspace", "General", SymbolSetEnum.CYBERSPACE_SEA_SUBSURFACE),
     OFFENSIVE_CYBERSPACE("02", "Offensive Cyberspace", "General", SymbolSetEnum.CYBERSPACE_SEA_SUBSURFACE),
     RESPONSE_ACTIONS("03", "Response Actions", "General", SymbolSetEnum.CYBERSPACE_SEA_SUBSURFACE),

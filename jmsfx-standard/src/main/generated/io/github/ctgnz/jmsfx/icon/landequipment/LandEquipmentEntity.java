@@ -9,7 +9,6 @@ import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum LandEquipmentEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     WEAPON_SYSTEM("11", "Weapon/Weapon System", GraphicType.FULL_OCTAGON),
     VEHICLE("12", "Vehicle", GraphicType.FULL_OCTAGON),
     ENGINEER_VEHICLES_EQUIPMENT("13", "Engineer Vehicles and Equipment", GraphicType.FULL_OCTAGON),

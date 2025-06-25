@@ -14,10 +14,8 @@ import ${basePackage}.SymbolSetInfo;
 <#list symbolSets as sym>
 import ${iconPackage}.${sym.packageName}.${sym.baseTypeName}SymbolSet;
 </#list>
-import ${commonPackage}.CommonSymbolSet;
 
 public enum SymbolSetEnum implements SymbolSet {
-    COMMON("C", "Common", DimensionEnum.INTERNAL, "Common", CommonSymbolSet.INSTANCE),
 <#list symbolSets as sym>
     ${sym.id}("${sym.code}", "${sym.label}", DimensionEnum.${sym.dimensionId}, <#if sym.graphicLocation??>"${sym.graphicLocation}", </#if>${sym.baseTypeName}SymbolSet.INSTANCE)<#sep>,
 </#list>;

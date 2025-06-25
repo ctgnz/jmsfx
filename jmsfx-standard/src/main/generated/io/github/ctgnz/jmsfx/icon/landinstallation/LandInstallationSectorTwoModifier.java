@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum LandInstallationSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSetEnum.LAND_INSTALLATION),
     BIOLOGICAL_2_MOD("01", "Biological", "No Category Listed", SymbolSetEnum.LAND_INSTALLATION),
     CHEMICAL_2_MOD("02", "Chemical", "No Category Listed", SymbolSetEnum.LAND_INSTALLATION),
     NUCLEAR_2_MOD("03", "Nuclear", "No Category Listed", SymbolSetEnum.LAND_INSTALLATION),

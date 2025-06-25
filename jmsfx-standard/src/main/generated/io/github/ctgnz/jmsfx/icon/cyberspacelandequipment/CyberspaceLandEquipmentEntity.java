@@ -9,7 +9,6 @@ import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum CyberspaceLandEquipmentEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     MISSION_FORCE("11", "Mission Force", GraphicType.NA),
     CYBERSPACE_UNIT("12", "Cyberspace Unit", GraphicType.MAIN),
     THREAT_ACTOR("13", "Threat Actor", GraphicType.MAIN),

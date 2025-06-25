@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum SeaSurfaceSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.SEA_SURFACE),
     OWN_MOD("01", "Own Ship", "Mission Area", SymbolSetEnum.SEA_SURFACE),
     AA_MOD("02", "Antiair Warfare", "Mission Area", SymbolSetEnum.SEA_SURFACE),
     MD_MOD("08", "Missile Defense", "Mission Area", SymbolSetEnum.SEA_SURFACE),

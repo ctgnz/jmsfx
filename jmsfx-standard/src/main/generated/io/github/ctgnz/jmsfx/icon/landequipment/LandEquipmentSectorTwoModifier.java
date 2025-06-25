@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum LandEquipmentSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSetEnum.LAND_EQUIPMENT),
     TRACTOR_TRAILER_MOD("06", "Tractor Trailer", "Capability", SymbolSetEnum.LAND_EQUIPMENT);
 
     private final String id;

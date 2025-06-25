@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum SeaSubsurfaceSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.SEA_SUBSURFACE),
     AUXILIARY_MOD("02", "Auxiliary", "Mission Area", SymbolSetEnum.SEA_SUBSURFACE),
     POSSIBLE_SUBMARINE_LOW_1_MOD("13", "Possible Submarine Low 1", "Submarine Confidence", SymbolSetEnum.SEA_SUBSURFACE),
     POSSIBLE_SUBMARINE_LOW_2_MOD("14", "Possible Submarine Low 2", "Submarine Confidence", SymbolSetEnum.SEA_SUBSURFACE),

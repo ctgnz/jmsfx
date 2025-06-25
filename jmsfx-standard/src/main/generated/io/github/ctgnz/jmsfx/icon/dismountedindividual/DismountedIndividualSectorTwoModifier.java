@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum DismountedIndividualSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_TWO_MOD("00", "Unspecified", "General", SymbolSetEnum.DISMOUNTED),
     VIDEO_IMAGERY_MOD("03", "Video Imagery (Combat Camera)", "Task", SymbolSetEnum.DISMOUNTED),
     J1_MOD("04", "J1", "Functional Staff Area", SymbolSetEnum.DISMOUNTED),
     J2_MOD("05", "J2", "Functional Staff Area", SymbolSetEnum.DISMOUNTED),

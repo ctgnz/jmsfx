@@ -33,16 +33,15 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import static java.util.stream.Collectors.toList;
 
 import freemarker.template.Template;
+import io.github.ctgnz.jmsfx.generator.model.AmplifierListModel;
 import io.github.ctgnz.jmsfx.generator.model.AmplifierModel;
 import io.github.ctgnz.jmsfx.generator.model.EntityModel;
 import io.github.ctgnz.jmsfx.generator.model.EntitySubTypeModel;
 import io.github.ctgnz.jmsfx.generator.model.EntityTypeModel;
-import io.github.ctgnz.jmsfx.generator.model.AmplifierListModel;
 import io.github.ctgnz.jmsfx.generator.model.SectorOneModifierModel;
 import io.github.ctgnz.jmsfx.generator.model.SectorTwoModifierModel;
 import io.github.ctgnz.jmsfx.generator.model.StandardEnumModel;
 import io.github.ctgnz.jmsfx.generator.model.SymbolSetModel;
-import io.github.ctgnz.jmsfx.generator.schema.DoubleDigitType;
 import io.github.ctgnz.jmsfx.generator.schema.Library;
 import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension.SymbolSets.SymbolSetRef;
 import io.github.ctgnz.jmsfx.generator.schema.SymbolSet;
@@ -88,7 +87,6 @@ public class DomainModelGenerator {
         Library library = parseLibraryFile(config.getInputDir().resolve(config.getLibraryFile()));
         dataModel.put("dimensionGraphics", config.getDimensionGraphicLocations());
         config.getStandardEnums().forEach(enumConfig -> generateStandardEnum(dataModel, library, enumConfig));
-        generateCommonModifiers(config.getCommonPackageDir(), dataModel, library);
         generateAmplifierEnum(dataModel, library);
         generateListAmplifierEnums(dataModel, library);
         generateSymbolSets(dataModel, library);
@@ -153,34 +151,6 @@ public class DomainModelGenerator {
         dataModel.put("amplifiers", amplifiers);
         Template template = config.getTemplateConfig().getTemplate("AmplifierEnum.ftl");
         template.process(dataModel, new OutputStreamWriter(Files.newOutputStream(config.getIconPackageDir().resolve("AmplifierEnum.java"))));
-    }
-
-    @SuppressWarnings("unchecked")
-    private void generateCommonModifiers(Path packagePath, Map<String, Object> dataModel, Library library) throws Exception {
-        System.out.format("Processing common modifiers%n");
-        if (!Files.exists(packagePath)) {
-            Files.createDirectories(packagePath);
-        }
-        SymbolSet symbolSet = new SymbolSet();
-        symbolSet.setSymbolSetCode(new DoubleDigitType(12, 0));
-        symbolSet.setSectorOneModifiers(library.getCommonModifiers().getSectorOneModifiers());
-        symbolSet.setSectorTwoModifiers(library.getCommonModifiers().getSectorTwoModifiers());
-        dataModel.remove("sectorOneMods");
-        dataModel.remove("sectorTwoMods");
-        Template symSetInfoTemplate = config.getTemplateConfig().getTemplate("CommonSymbolSet.ftl");
-        symSetInfoTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve("CommonSymbolSet.java"))));
-        symbolSet.getSectorOneModifiers().getModifier().forEach(mod -> {
-            List<SectorOneModifierModel> values = (List<SectorOneModifierModel>) dataModel.computeIfAbsent("sectorOneMods", key -> new ArrayList<SectorOneModifierModel>());
-            values.add(new SectorOneModifierModel(mod));
-        });
-        symbolSet.getSectorTwoModifiers().getModifier().forEach(mod -> {
-            List<SectorTwoModifierModel> values = (List<SectorTwoModifierModel>) dataModel.computeIfAbsent("sectorTwoMods", key -> new ArrayList<SectorTwoModifierModel>());
-            values.add(new SectorTwoModifierModel(mod));
-        });
-        Template s1ModTemplate = config.getTemplateConfig().getTemplate("CommonSectorOneModifier.ftl");
-        s1ModTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve("CommonSectorOneModifier.java"))));
-        Template s2ModTemplate = config.getTemplateConfig().getTemplate("CommonSectorTwoModifier.ftl");
-        s2ModTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve("CommonSectorTwoModifier.java"))));
     }
 
     @SuppressWarnings("unchecked")
@@ -262,13 +232,20 @@ public class DomainModelGenerator {
             entitySubTypeTemplate.process(dataModel,
                                           new OutputStreamWriter(Files.newOutputStream(packagePath.resolve(symSetDetails.getBaseTypeName() + "SpecialEntitySubType.java"))));
         }
-        if (dataModel.containsKey("sectorOneMods")) {
-            Template s1ModTemplate = config.getTemplateConfig().getTemplate("SectorOneModifier.ftl");
-            s1ModTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve(symSetDetails.getBaseTypeName() + "SectorOneModifier.java"))));
-        }
-        if (dataModel.containsKey("sectorTwoMods")) {
-            Template s2ModTemplate = config.getTemplateConfig().getTemplate("SectorTwoModifier.ftl");
-            s2ModTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve(symSetDetails.getBaseTypeName() + "SectorTwoModifier.java"))));
+        if (symSetDetails.isCommon()) {
+            Template s1ModTemplate = config.getTemplateConfig().getTemplate("CommonSectorOneModifier.ftl");
+            s1ModTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve("CommonSectorOneModifier.java"))));
+            Template s2ModTemplate = config.getTemplateConfig().getTemplate("CommonSectorTwoModifier.ftl");
+            s2ModTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve("CommonSectorTwoModifier.java"))));
+        } else {
+            if (dataModel.containsKey("sectorOneMods")) {
+                Template s1ModTemplate = config.getTemplateConfig().getTemplate("SectorOneModifier.ftl");
+                s1ModTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve(symSetDetails.getBaseTypeName() + "SectorOneModifier.java"))));
+            }
+            if (dataModel.containsKey("sectorTwoMods")) {
+                Template s2ModTemplate = config.getTemplateConfig().getTemplate("SectorTwoModifier.ftl");
+                s2ModTemplate.process(dataModel, new OutputStreamWriter(Files.newOutputStream(packagePath.resolve(symSetDetails.getBaseTypeName() + "SectorTwoModifier.java"))));
+            }
         }
         if (symSetDetails.isAmplifierGuidesPresent()) {
             Template template = config.getTemplateConfig().getTemplate("AmplifierGuide.ftl");

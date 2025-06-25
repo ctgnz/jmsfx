@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum SpaceSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSetEnum.SPACE),
     OPTICAL_MOD("01", "Optical", "Sensor", SymbolSetEnum.SPACE),
     INFRARED_MOD("02", "Infrared", "Sensor", SymbolSetEnum.SPACE),
     RADAR_MOD("03", "Radar", "Sensor", SymbolSetEnum.SPACE),

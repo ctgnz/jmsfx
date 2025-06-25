@@ -8,7 +8,6 @@ amplifierPackage: "io.github.ctgnz.jmsfx.icon.amplifier"
 libraryFile: "Base.xml"
 extensionCountryCode: "000"
 unframedSymbolSets:
-  - INTERNAL
   - CONTROL_MEASURE
 enumeratedAmplifiers:
   - {amplifier: "F", valuesId: "F_VALUES", code: "A1", enumType: "ReinforcedReduced", enumId: "REINFORCED", enumDesc: "Reinforced or Reduced"}
@@ -32,8 +31,7 @@ standardAmplifiers:
   - {enumType: "TowedArrayType", enumId: "TOWED_ARRAYS", enumDesc: "Naval towed array", graphicLocation: "Amplifier", xmlId: "TOWED_ARRAYS", frameAmplifier: false}
   - {enumType: "LeadershipRole", enumId: "LEADERSHIP_ROLE", enumDesc: "Leadership role", graphicLocation: "Amplifier", xmlId: "LEADERSHIP_INDICATOR", frameAmplifier: false}
 dimensionGraphicLocations:
-  INTERNAL: "Internal"
-  UNKNOWN: "Unknown"
+  COMMON: "Common"
   AIR: "Air"
   SPACE: "Space"
   LAND_UNIT: "Land"

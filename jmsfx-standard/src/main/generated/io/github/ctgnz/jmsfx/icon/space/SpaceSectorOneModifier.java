@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum SpaceSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.SPACE),
     LEO_MOD("01", "Low Earth Orbit (LEO)", "Orbit", SymbolSetEnum.SPACE),
     MEO_MOD("02", "Medium Earth Orbit (MEO)", "Orbit", SymbolSetEnum.SPACE),
     HEO_MOD("03", "High Earth Orbit (HEO)", "Orbit", SymbolSetEnum.SPACE),

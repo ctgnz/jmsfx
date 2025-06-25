@@ -105,6 +105,10 @@ public class SymbolSetModel extends StandardEnumModel {
         return !amplifierPresent || ! entityTypePresent || !entitySubTypePresent || !sectorOneModifierPresent || !sectorTwoModifierPresent || !isAmplifierGuidesPresent();
     }
 
+    public boolean isCommon() {
+        return "COMMON".equals(getId());
+    }
+
     public boolean isEntitySubTypePresent() {
         return entitySubTypePresent;
     }

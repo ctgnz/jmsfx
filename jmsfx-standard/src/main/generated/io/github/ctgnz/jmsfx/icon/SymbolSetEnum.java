@@ -11,7 +11,7 @@ import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.SymbolSetInfo;
-import io.github.ctgnz.jmsfx.icon.unknown.UnknownSymbolSet;
+import io.github.ctgnz.jmsfx.icon.common.CommonSymbolSet;
 import io.github.ctgnz.jmsfx.icon.air.AirSymbolSet;
 import io.github.ctgnz.jmsfx.icon.airmissile.AirMissileSymbolSet;
 import io.github.ctgnz.jmsfx.icon.space.SpaceSymbolSet;
@@ -34,12 +34,9 @@ import io.github.ctgnz.jmsfx.icon.cyberspacelandinstallation.CyberspaceLandInsta
 import io.github.ctgnz.jmsfx.icon.cyberspacedismountedindividual.CyberspaceDismountedIndividualSymbolSet;
 import io.github.ctgnz.jmsfx.icon.cyberspaceseasurface.CyberspaceSeaSurfaceSymbolSet;
 import io.github.ctgnz.jmsfx.icon.cyberspaceseasubsurface.CyberspaceSeaSubsurfaceSymbolSet;
-import io.github.ctgnz.jmsfx.icon.internal.InternalSymbolSet;
-import io.github.ctgnz.jmsfx.icon.common.CommonSymbolSet;
 
 public enum SymbolSetEnum implements SymbolSet {
-    COMMON("C", "Common", DimensionEnum.INTERNAL, "Common", CommonSymbolSet.INSTANCE),
-    UNKNOWN("00", "Unknown", DimensionEnum.UNKNOWN, UnknownSymbolSet.INSTANCE),
+    COMMON("00", "Common", DimensionEnum.COMMON, CommonSymbolSet.INSTANCE),
     AIR("01", "Air", DimensionEnum.AIR, AirSymbolSet.INSTANCE),
     AIR_MISSILE("02", "Air Missile", DimensionEnum.AIR, AirMissileSymbolSet.INSTANCE),
     SPACE("05", "Space", DimensionEnum.SPACE, SpaceSymbolSet.INSTANCE),
@@ -61,8 +58,7 @@ public enum SymbolSetEnum implements SymbolSet {
     CYBERSPACE_LAND_INSTALLATION("65", "Cyberspace Land Installation", DimensionEnum.LAND_INSTALLATION, "Cyberspace", CyberspaceLandInstallationSymbolSet.INSTANCE),
     CYBERSPACE_DISMOUNTED("66", "Cyberspace Dismounted Individual", DimensionEnum.DISMOUNTED, "Cyberspace", CyberspaceDismountedIndividualSymbolSet.INSTANCE),
     CYBERSPACE_SEA_SURFACE("67", "Cyberspace Sea Surface", DimensionEnum.SEA_SURFACE, "Cyberspace", CyberspaceSeaSurfaceSymbolSet.INSTANCE),
-    CYBERSPACE_SEA_SUBSURFACE("68", "Cyberspace Sea Subsurface", DimensionEnum.SEA_SUBSURFACE, "Cyberspace", CyberspaceSeaSubsurfaceSymbolSet.INSTANCE),
-    INTERNAL("98", "Internal", DimensionEnum.INTERNAL, "", InternalSymbolSet.INSTANCE);
+    CYBERSPACE_SEA_SUBSURFACE("68", "Cyberspace Sea Subsurface", DimensionEnum.SEA_SUBSURFACE, "Cyberspace", CyberspaceSeaSubsurfaceSymbolSet.INSTANCE);
 
     private final String id;
     private final String label;

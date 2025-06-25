@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum CyberspaceAirSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.CYBERSPACE_AIR),
     SECURED_MOD("01", "Secured", "General", SymbolSetEnum.CYBERSPACE_AIR),
     OPEN_MOD("02", "Open", "General", SymbolSetEnum.CYBERSPACE_AIR);
 

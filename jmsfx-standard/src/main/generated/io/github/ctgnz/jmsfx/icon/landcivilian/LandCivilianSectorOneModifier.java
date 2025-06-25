@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum LandCivilianSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.LAND_CIVILIAN),
     MURDER_VICTIMS_MOD("03", "Murder Victims", "Crime", SymbolSetEnum.LAND_CIVILIAN),
     DISPLACED_MOD("09", "Displaced Person(s), Refugee(s) and Evacuee(s)", "Organization", SymbolSetEnum.LAND_CIVILIAN),
     FOREIGN_FIGHTER_MOD("10", "Foreign Fighter(s)", "Organization", SymbolSetEnum.LAND_CIVILIAN),

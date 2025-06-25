@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum SeaSubsurfaceSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSetEnum.SEA_SUBSURFACE),
     AIR_INDEPENDENT_PROPULSION_MOD("01", "Air Independent Propulsion", "Ship Propulsion", SymbolSetEnum.SEA_SUBSURFACE),
     DIESEL_ELECTRIC_GENERAL_MOD("02", "Diesel Electric General", "Ship Propulsion", SymbolSetEnum.SEA_SUBSURFACE),
     DIESEL___TYPE_1_MOD("03", "Diesel - Type 1", "Ship Propulsion", SymbolSetEnum.SEA_SUBSURFACE),

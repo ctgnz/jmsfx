@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum AirMissileSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.AIR_MISSILE),
     AIR_MOD("01", "Air", "Launch Origin", SymbolSetEnum.AIR_MISSILE),
     SURFACE_MOD("02", "Surface", "Launch Origin", SymbolSetEnum.AIR_MISSILE),
     SUB_MOD("03", "Subsurface", "Launch Origin", SymbolSetEnum.AIR_MISSILE),

@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum LandEquipmentSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.LAND_EQUIPMENT),
     EARLY_WARNING_RADAR_MOD("03", "Early Warning Radar", "Sensor Type", SymbolSetEnum.LAND_EQUIPMENT),
     INTRUSION_MOD("04", "Intrusion", "Sensor Type", SymbolSetEnum.LAND_EQUIPMENT),
     UPGRADED_EARLY_WARNING_RADAR_MOD("07", "Upgraded Early Warning Radar", "Sensor Type", SymbolSetEnum.LAND_EQUIPMENT),

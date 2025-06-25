@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum AirSectorTwoModifier implements SectorTwoModifier {
-    NOT_APPLICABLE_2_MOD("00", "Not Applicable", "General", SymbolSetEnum.AIR),
     BOOM_MOD("04", "Boom-Only", "Re-fueling Capability", SymbolSetEnum.AIR),
     DROGUE_MOD("05", "Drogue-Only", "Re-fueling Capability", SymbolSetEnum.AIR),
     BOOM_DROGUE_MOD("06", "Boom and Drogue", "Re-fueling Capability", SymbolSetEnum.AIR),

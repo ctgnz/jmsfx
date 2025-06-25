@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Multimap;
+import com.google.common.collect.Multimaps;
+
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
@@ -12,12 +16,14 @@ import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.SymbolSetInfo;
 import io.github.ctgnz.jmsfx.AmplifierGuide;
-import io.github.ctgnz.jmsfx.icon.unknown.UnknownEntity;
 
 public class CommonSymbolSet implements SymbolSetInfo {
     public static final SymbolSetInfo INSTANCE = new CommonSymbolSet();
+    private static final List<Entity> ENTITIES = Arrays.asList(CommonEntity.values());
+    private static final Multimap<Entity, EntityType> ENTITY_TYPES = Multimaps.index(Arrays.asList(CommonEntityType.values()), EntityType::getEntity);
+    private static final Multimap<EntityType, EntitySubType> ENTITY_SUB_TYPES = Multimaps.index(Arrays.asList(CommonEntitySubType.values()), EntitySubType::getEntityType);
 
-    CommonSymbolSet() {
+    private CommonSymbolSet() {
     }
 
     @Override
@@ -42,17 +48,17 @@ public class CommonSymbolSet implements SymbolSetInfo {
 
     @Override
     public List<Entity> getEntities() {
-        return Collections.singletonList(UnknownEntity.UNSPECIFIED);
+        return ENTITIES;
     }
 
     @Override
     public List<EntitySubType> getEntitySubTypes(EntityType entityType) {
-        return Collections.emptyList();
+        return Lists.newArrayList(ENTITY_SUB_TYPES.get(entityType));
     }
 
     @Override
     public List<EntityType> getEntityTypes(Entity entity) {
-        return Collections.emptyList();
+        return Lists.newArrayList(ENTITY_TYPES.get(entity));
     }
 
     @Override
@@ -87,12 +93,12 @@ public class CommonSymbolSet implements SymbolSetInfo {
 
     @Override
     public boolean isEntitySubTypePresent() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEntityTypePresent() {
-        return false;
+        return true;
     }
 
     @Override
@@ -112,7 +118,7 @@ public class CommonSymbolSet implements SymbolSetInfo {
 
     @Override
     public boolean isFramedIcon() {
-        return false;
+        return true;
     }
 
 }

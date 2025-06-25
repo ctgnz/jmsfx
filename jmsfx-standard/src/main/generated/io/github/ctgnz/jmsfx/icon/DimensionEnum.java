@@ -8,7 +8,7 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.types.GeometryType;
 
 public enum DimensionEnum implements Dimension {
-    UNKNOWN("00", "Unknown", GeometryType.POINT_GEOMETRY, "Unknown"),
+    COMMON("00", "Common", GeometryType.POINT_GEOMETRY, "Common"),
     AIR("01", "Air", GeometryType.POINT_GEOMETRY, "Air"),
     SPACE("05", "Space", GeometryType.POINT_GEOMETRY, "Space"),
     LAND_UNIT("10", "Land Unit", GeometryType.POINT_GEOMETRY, "Land"),
@@ -19,8 +19,7 @@ public enum DimensionEnum implements Dimension {
     SEA_SURFACE("30", "Sea Surface", GeometryType.POINT_GEOMETRY, "SeaSurface"),
     SEA_SUBSURFACE("35", "Sea Subsurface", GeometryType.POINT_GEOMETRY, "SeaSubsurface"),
     ACTIVITY("40", "Activities", GeometryType.POINT_GEOMETRY, "Activities"),
-    CYBERSPACE("60", "Cyberspace", GeometryType.POINT_GEOMETRY, "Cyberspace"),
-    INTERNAL("98", "Internal", GeometryType.POINT_GEOMETRY, "Internal");
+    CYBERSPACE("60", "Cyberspace", GeometryType.POINT_GEOMETRY, "Cyberspace");
 
     private final String id;
     private final String label;
@@ -36,7 +35,7 @@ public enum DimensionEnum implements Dimension {
 
     @Override
     public SymbolSet getDefaultSymbolSet() {
-        return Arrays.stream(SymbolSetEnum.values()).filter(sym -> sym.getDimension() == this).findFirst().orElse(SymbolSetEnum.UNKNOWN);
+        return Arrays.stream(SymbolSetEnum.values()).filter(sym -> sym.getDimension() == this).findFirst().orElse(SymbolSetEnum.COMMON);
     }
 
     @Override

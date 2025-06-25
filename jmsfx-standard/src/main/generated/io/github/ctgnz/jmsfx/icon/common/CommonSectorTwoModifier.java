@@ -7,7 +7,7 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum CommonSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_2_MOD("0", "00", "Unspecified", "General"),
+    UNSPECIFIED_2_MOD("0", "00", "Unspecified", "AAA"),
     AIRBORNE_2_MOD("1", "00", "Airborne", "Mobility"),
     BICYCLE_EQUIPPED_2_MOD("1", "01", "Bicycle Equipped", "Mobility"),
     RAILROAD_RAILWAY_2_MOD("1", "02", "Railroad/Railway", "Mobility"),

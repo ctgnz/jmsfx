@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum LandInstallationSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.LAND_INSTALLATION),
     COAL_MOD("06", "Coal", "Electric Power Type", SymbolSetEnum.LAND_INSTALLATION),
     GEOTHERMAL_MOD("07", "Geothermal", "Electric Power Type", SymbolSetEnum.LAND_INSTALLATION),
     HYDROELECTRIC_MOD("08", "Hydroelectric", "Electric Power Type", SymbolSetEnum.LAND_INSTALLATION),

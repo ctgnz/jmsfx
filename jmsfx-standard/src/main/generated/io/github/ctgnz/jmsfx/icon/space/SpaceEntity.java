@@ -9,7 +9,6 @@ import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum SpaceEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     MILITARY("11", "Military", GraphicType.MAIN),
     CIVILIAN("12", "Civilian", GraphicType.MAIN),
     MANUAL_TRACK("13", "Manual Track", GraphicType.FULL_OCTAGON);

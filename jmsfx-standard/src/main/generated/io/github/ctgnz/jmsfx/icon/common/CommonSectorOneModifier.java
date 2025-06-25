@@ -7,7 +7,7 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum CommonSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("0", "00", "Unspecified", "General"),
+    UNSPECIFIED_MOD("0", "00", "Unspecified", "AAA"),
     UAV_DRONE_MOD("1", "00", "UAV/Drone Equipped/Drone", "Mobility"),
     ROBOTIC_MOD("1", "01", "Robotic", "Mobility"),
     FIXED_WING_MOD("1", "02", "Fixed Wing", "Mobility"),

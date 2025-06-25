@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum CyberspaceSeaSurfaceSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.CYBERSPACE_SEA_SURFACE),
     SECURED_MOD("01", "Secured", "General", SymbolSetEnum.CYBERSPACE_SEA_SURFACE),
     OPEN_MOD("02", "Open", "General", SymbolSetEnum.CYBERSPACE_SEA_SURFACE);
 

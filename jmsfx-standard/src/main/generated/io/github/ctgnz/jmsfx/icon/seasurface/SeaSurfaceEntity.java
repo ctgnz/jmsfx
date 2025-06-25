@@ -9,7 +9,6 @@ import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum SeaSurfaceEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     MILITARY("11", "Military", GraphicType.MAIN),
     MILITARY_COMBAT("12", "Military Combatant", GraphicType.MAIN),
     MILITARY_NON_COMBAT("13", "Military Noncombatant", GraphicType.MAIN),

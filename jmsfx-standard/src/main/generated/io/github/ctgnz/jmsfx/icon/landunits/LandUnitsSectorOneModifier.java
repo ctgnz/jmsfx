@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum LandUnitsSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.LAND_UNIT),
     TACTICAL_SATELLITE_MOD("01", "Tactical Satellite", "Mobility", SymbolSetEnum.LAND_UNIT),
     AREA_MOD("02", "Area", "Capability", SymbolSetEnum.LAND_UNIT),
     BORDER_MOD("05", "Border", "Capability", SymbolSetEnum.LAND_UNIT),

@@ -1,23 +1,24 @@
-package io.github.ctgnz.jmsfx.icon.landcivilian;
+package io.github.ctgnz.jmsfx.icon.common;
 
 import java.util.List;
 
 import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
-import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.types.GraphicType;
-import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
-public enum LandCivilianEntity implements Entity {
-    CIVILIAN("11", "Civilian", GraphicType.MAIN);
+public enum CommonEntityType implements EntityType {
+    UNSPECIFIED_TYPE("00", "Unspecified", CommonEntity.UNSPECIFIED, GraphicType.NA);
 
     private final String id;
     private final String label;
+    private final CommonEntity entity;
     private final GraphicType graphicType;
 
-    LandCivilianEntity(String id, String label, GraphicType graphicType) {
+    CommonEntityType(String id, String label, CommonEntity entity, GraphicType graphicType) {
         this.id = id;
         this.label = label;
+        this.entity = entity;
         this.graphicType = graphicType;
     }
 
@@ -37,18 +38,13 @@ public enum LandCivilianEntity implements Entity {
     }
 
     @Override
-    public SymbolSet getSymbolSet() {
-        return SymbolSetEnum.LAND_CIVILIAN;
+    public Entity getEntity() {
+        return entity;
     }
 
     @Override
-    public List<EntityType> getEntityTypes() {
-        return LandCivilianSymbolSet.INSTANCE.getEntityTypes(this);
-    }
-
-    @Override
-    public boolean isCivilian() {
-        return name().contains("CIVILIAN");
+    public List<EntitySubType> getEntitySubTypes() {
+        return CommonSymbolSet.INSTANCE.getEntitySubTypes(this);
     }
 
 }

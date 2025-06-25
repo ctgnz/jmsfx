@@ -43,7 +43,6 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.geometry.Bounds;
 import javafx.geometry.Pos;
@@ -88,15 +87,6 @@ public class IdentificationSymbol {
     private final ObjectProperty<SvgGraphic> statusGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> hqtfDummyGraphic = new SimpleObjectProperty<>();
     private final StringProperty code = new SimpleStringProperty();
-    private final ObservableList<AmplifierListItem> amplifiers = FXCollections.observableArrayList();
-    private final ObservableList<AmplifierListItem> amplifiersTwo = FXCollections.observableArrayList();
-    private final ObservableList<AmplifierListItem> amplifiersThree = FXCollections.observableArrayList();
-    private final ObservableList<AmplifierListItem> frameAmplifiers = FXCollections.observableArrayList();
-    private final ObservableList<Entity> entities = FXCollections.observableArrayList();
-    private final ObservableList<EntityType> entityTypes = FXCollections.observableArrayList();
-    private final ObservableList<EntitySubType> entitySubTypes = FXCollections.observableArrayList();
-    private final ObservableList<SectorOneModifier> sectorOneModifiers = FXCollections.observableArrayList();
-    private final ObservableList<SectorTwoModifier> sectorTwoModifiers = FXCollections.observableArrayList();
     private final ObservableMap<Amplifier, TextAmplifierValue> textAmplifiers = FXCollections.observableHashMap();
     private final ObservableMap<Amplifier, GraphicAmplifierValue> graphicAmplifiers = FXCollections.observableHashMap();
     private final BooleanProperty amplifierTemplateVisible = new SimpleBooleanProperty(false);
@@ -125,10 +115,6 @@ public class IdentificationSymbol {
         return textAmplifier;
     }
 
-    public ObservableList<AmplifierListItem> amplifierGroupsList() {
-        return amplifiers;
-    }
-
     public BooleanProperty amplifierGuidesVisibleProperty() {
         return amplifierTemplateVisible;
     }
@@ -137,16 +123,8 @@ public class IdentificationSymbol {
         return amplifier;
     }
 
-    public ObservableList<AmplifierListItem> amplifierThreeGroupsList() {
-        return amplifiersThree;
-    }
-
     public ObjectProperty<AmplifierListItem> amplifierThreeProperty() {
         return amplifierThree;
-    }
-
-    public ObservableList<AmplifierListItem> amplifierTwoGroupsList() {
-        return amplifiersTwo;
     }
 
     public ObjectProperty<AmplifierListItem> amplifierTwoProperty() {
@@ -169,10 +147,6 @@ public class IdentificationSymbol {
         return new IdentificationSymbolIcon(this);
     }
 
-    public ObservableList<Entity> entitiesList() {
-        return entities;
-    }
-
     public ObjectProperty<Entity> entityProperty() {
         return entity;
     }
@@ -181,20 +155,8 @@ public class IdentificationSymbol {
         return entitySubType;
     }
 
-    public ObservableList<EntitySubType> entitySubTypesList() {
-        return entitySubTypes;
-    }
-
     public ObjectProperty<EntityType> entityTypeProperty() {
         return entityType;
-    }
-
-    public ObservableList<EntityType> entityTypesList() {
-        return entityTypes;
-    }
-
-    public ObservableList<AmplifierListItem> frameAmplifierGroupsList() {
-        return frameAmplifiers;
     }
 
     public ObjectProperty<AmplifierListItem> frameAmplifierProperty() {
@@ -394,10 +356,10 @@ public class IdentificationSymbol {
     }
 
     public MainElement getMainIconElement() {
-        if (entitySubType.get() != null) {
+        if (entitySubType.get() != null && !entitySubType.get().isUnknown()) {
             return entitySubType.get();
         }
-        if (entityType.get() != null) {
+        if (entityType.get() != null && !entityType.get().isUnknown()) {
             return entityType.get();
         }
         return getEntity();
@@ -428,20 +390,12 @@ public class IdentificationSymbol {
         return sectorOneModifierGraphic.get();
     }
 
-    public List<SectorOneModifier> getSectorOneModifiers() {
-        return getSymbolSet().getSectorOneModifiers();
-    }
-
     public SectorTwoModifier getSectorTwoModifier() {
         return defaultIfNull(sectorTwoModifier.get(), library.getDefaultSectorTwoModifier());
     }
 
     public SvgGraphic getSectorTwoModifierGraphic() {
         return sectorTwoModifierGraphic.get();
-    }
-
-    public List<SectorTwoModifier> getSectorTwoModifiers() {
-        return getSymbolSet().getSectorTwoModifiers();
     }
 
     public StandardIdentity getStandardIdentity() {
@@ -559,16 +513,8 @@ public class IdentificationSymbol {
         return sectorOneModifier;
     }
 
-    public ObservableList<SectorOneModifier> sectorOneModifiersList() {
-        return sectorOneModifiers.sorted(SectorOneModifier.VIEW_ORDER);
-    }
-
     public ObjectProperty<SectorTwoModifier> sectorTwoModifierProperty() {
         return sectorTwoModifier;
-    }
-
-    public ObservableList<SectorTwoModifier> sectorTwoModifiersList() {
-        return sectorTwoModifiers.sorted(SectorTwoModifier.VIEW_ORDER);
     }
 
     public void setAmplifier(StandardAmplifierItem amplifier) {
@@ -670,45 +616,25 @@ public class IdentificationSymbol {
         this.standardIdentity.set(library.getDefaultStandardIdentity());
         this.status.set(library.getDefaultStatus());
         this.hqtfDummy.set(library.getDefaultHqtfDummy());
-        this.amplifier.set(library.getDefaultAmplifier());
-        this.amplifierTwo.set(library.getDefaultAmplifier());
-        this.amplifierThree.set(library.getDefaultAmplifier());
-        this.frameAmplifier.set(library.getDefaultAmplifier());
         this.countryCode.set(library.getExtensionCountryCode());
     }
 
     private void addListeners() {
         // Observable lists can't be bound directly, so update these values when the appropriate property changes
         symbolSet.addListener((obs, oldValue, newValue) -> {
-            amplifiers.setAll(getAmplifierItems());
             amplifier.set(library.getDefaultAmplifier());
-
-            amplifiersTwo.setAll(getAmplifierTwoItems());
             amplifierTwo.set(library.getDefaultAmplifier());
-
-            amplifiersThree.setAll(getAmplifierThreeItems());
             amplifierThree.set(library.getDefaultAmplifier());
-
-            frameAmplifiers.setAll(getFrameListAmplifiers());
             frameAmplifier.set(library.getDefaultAmplifier());
-
-            sectorOneModifiers.setAll(Stream.concat(getSectorOneModifiers().stream(), library.getCommonSectorOneModifiers().stream()).toList());
             sectorOneModifier.set(library.getDefaultSectorOneModifier());
-
-            sectorTwoModifiers.setAll(Stream.concat(getSectorTwoModifiers().stream(), library.getCommonSectorTwoModifiers().stream()).toList());
             sectorTwoModifier.set(library.getDefaultSectorTwoModifier());
-
-            entities.setAll(getSymbolSet().getEntities());
+            entitySubType.set(library.getDefaultEntitySubType());
+            entityType.set(library.getDefaultEntityType());
             entity.set(library.getDefaultEntity());
-
             textAmplifiers.clear();
+            graphicAmplifiers.clear();
         });
-        entity.addListener((obs, oldValue, newValue) -> {
-            entityTypes.setAll(getEntityTypes());
-        });
-        entityType.addListener((obs, oldValue, newValue) -> {
-            entitySubTypes.setAll(getEntitySubTypes());
-        });
+        // set initial symbol set value here to initialize the remaining default values
         this.symbolSet.set(library.getDefaultSymbolSet());
 
         // Code value should be updated after a change in any of the symbol properties

@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum CyberspaceLandUnitSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.CYBERSPACE_LAND_UNIT),
     SECURED_MOD("01", "Secured", "General", SymbolSetEnum.CYBERSPACE_LAND_UNIT),
     OPEN_MOD("02", "Open", "General", SymbolSetEnum.CYBERSPACE_LAND_UNIT);
 

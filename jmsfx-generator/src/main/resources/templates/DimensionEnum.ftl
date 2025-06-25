@@ -26,7 +26,7 @@ public enum DimensionEnum implements Dimension {
 
     @Override
     public SymbolSet getDefaultSymbolSet() {
-        return Arrays.stream(SymbolSetEnum.values()).filter(sym -> sym.getDimension() == this).findFirst().orElse(SymbolSetEnum.UNKNOWN);
+        return Arrays.stream(SymbolSetEnum.values()).filter(sym -> sym.getDimension() == this).findFirst().orElse(SymbolSetEnum.COMMON);
     }
 
     @Override

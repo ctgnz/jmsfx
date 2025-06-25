@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum LandCivilianSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSetEnum.LAND_CIVILIAN),
     LEADER_2_MOD("01", "Leader or Leadership", "Organization", SymbolSetEnum.LAND_CIVILIAN);
 
     private final String id;

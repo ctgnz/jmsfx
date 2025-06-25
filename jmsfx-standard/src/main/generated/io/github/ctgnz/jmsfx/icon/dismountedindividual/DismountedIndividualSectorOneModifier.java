@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum DismountedIndividualSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_ONE_MOD("00", "Unspecified", "General", SymbolSetEnum.DISMOUNTED),
     NGO_MOD("07", "Non-Governmental Organization Member", "Organization", SymbolSetEnum.DISMOUNTED),
     FAO_MOD("11", "Field Artillery Observer", "Task", SymbolSetEnum.DISMOUNTED),
     JOINT_FIRE_SUPPORT_MOD("12", "Joint Fire Support", "Task", SymbolSetEnum.DISMOUNTED),

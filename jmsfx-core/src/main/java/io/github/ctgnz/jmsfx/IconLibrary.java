@@ -18,6 +18,10 @@ public interface IconLibrary {
 
     Entity getDefaultEntity();
 
+    EntitySubType getDefaultEntitySubType();
+
+    EntityType getDefaultEntityType();
+
     HqtfDummy getDefaultHqtfDummy();
 
     SectorOneModifier getDefaultSectorOneModifier();

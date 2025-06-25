@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum AirSectorOneModifier implements SectorOneModifier {
-    NOT_APPLICABLE_MOD("00", "Not Applicable", "General", SymbolSetEnum.AIR),
     BOMBER_MOD("02", "Bomber", "Military Aircraft Type", SymbolSetEnum.AIR),
     FIGHTER_MOD("04", "Fighter", "Military Aircraft Type", SymbolSetEnum.AIR),
     INTERCEPTOR_MOD("05", "Interceptor", "Military Aircraft Type", SymbolSetEnum.AIR),

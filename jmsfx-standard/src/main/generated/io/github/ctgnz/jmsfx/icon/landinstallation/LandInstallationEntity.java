@@ -9,7 +9,6 @@ import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum LandInstallationEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     INSTALLATION("11", "Installation", GraphicType.MAIN),
     INFRASTRUCTURE("12", "Infrastructure", GraphicType.NA);
 

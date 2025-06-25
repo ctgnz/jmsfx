@@ -9,7 +9,6 @@ import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum ActivityEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     INCIDENT("11", "Incident", GraphicType.NA),
     CIVIL_DISTURBANCE("12", "Civil Disturbance", GraphicType.FULL_OCTAGON),
     OPERATION("13", "Operation", GraphicType.NA),

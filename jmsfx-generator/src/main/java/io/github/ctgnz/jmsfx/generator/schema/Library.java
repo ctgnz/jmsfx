@@ -21,7 +21,6 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "drawRules",
     "labelRules",
     "amplifiers",
-    "commonModifiers",
     "versions",
     "contexts",
     "standardIdentities",
@@ -652,36 +651,6 @@ public class Library {
                 amplifier = new ArrayList<>();
             }
             return this.amplifier;
-        }
-
-    }
-
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "sectorOneModifiers",
-        "sectorTwoModifiers",
-    })
-    public static class CommonModifiers {
-
-        @XmlElement(name = "SectorOneModifiers")
-        protected ModifiersType sectorOneModifiers;
-        @XmlElement(name = "SectorTwoModifiers")
-        protected ModifiersType sectorTwoModifiers;
-
-        public ModifiersType getSectorOneModifiers() {
-            return sectorOneModifiers;
-        }
-
-        public ModifiersType getSectorTwoModifiers() {
-            return sectorTwoModifiers;
-        }
-
-        public void setSectorOneModifiers(ModifiersType value) {
-            this.sectorOneModifiers = value;
-        }
-
-        public void setSectorTwoModifiers(ModifiersType value) {
-            this.sectorTwoModifiers = value;
         }
 
     }
@@ -2112,16 +2081,18 @@ public class Library {
         }
 
     }
+
     @XmlElement(name = "Geometries", required = true)
     protected Library.Geometries geometries;
+
     @XmlElement(name = "DrawRules", required = true)
     protected Library.DrawRules drawRules;
+
     @XmlElement(name = "LabelRules", required = true)
     protected Library.LabelRules labelRules;
+
     @XmlElement(name = "Amplifiers", required = true)
     protected Library.Amplifiers amplifiers;
-    @XmlElement(name = "CommonModifiers", required = true)
-    protected Library.CommonModifiers commonModifiers;
 
     @XmlElement(name = "Versions", required = true)
     protected Library.Versions versions;
@@ -2174,10 +2145,6 @@ public class Library {
 
     public Library.Amplifiers getAmplifiers() {
         return amplifiers;
-    }
-
-    public Library.CommonModifiers getCommonModifiers() {
-        return commonModifiers;
     }
 
     public Library.Contexts getContexts() {
@@ -2250,10 +2217,6 @@ public class Library {
 
     public void setAmplifiers(Library.Amplifiers value) {
         this.amplifiers = value;
-    }
-
-    public void setCommonModifiers(Library.CommonModifiers commonModifiers) {
-        this.commonModifiers = commonModifiers;
     }
 
     public void setContexts(Library.Contexts value) {

@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum ControlMeasureSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.CONTROL_MEASURE),
     STANDARD_ON_ROAD_MOBILITY_MOD("01", "Standard Mobility/On-Road Mobility", "Mobility", SymbolSetEnum.CONTROL_MEASURE),
     HIGH_OFF_ROAD_MOBILITY_MOD("02", "High Mobility/Off-Road Mobility", "Mobility", SymbolSetEnum.CONTROL_MEASURE),
     TRACKED_MOD("03", "Tracked", "Mobility", SymbolSetEnum.CONTROL_MEASURE),

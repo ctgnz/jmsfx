@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum LandUnitsSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSetEnum.LAND_UNIT),
     ARCTIC_MOD("02", "Arctic", "Mobility", SymbolSetEnum.LAND_UNIT),
     BATTLE_DAMAGE_REPAIR_MOD("03", "Battle Damage Repair", "Capability", SymbolSetEnum.LAND_UNIT),
     CASUALTY_STAGING_MOD("05", "Casualty Staging", "Close Range and Support", SymbolSetEnum.LAND_UNIT),

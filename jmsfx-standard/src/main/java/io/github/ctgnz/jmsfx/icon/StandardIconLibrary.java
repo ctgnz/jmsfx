@@ -1,5 +1,6 @@
 package io.github.ctgnz.jmsfx.icon;
 
+import java.util.Arrays;
 import java.util.List;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
@@ -9,6 +10,8 @@ import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.Context;
 import io.github.ctgnz.jmsfx.CountryCode;
 import io.github.ctgnz.jmsfx.Entity;
+import io.github.ctgnz.jmsfx.EntitySubType;
+import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.HqtfDummy;
 import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.MainElement;
@@ -21,10 +24,11 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.Version;
 import io.github.ctgnz.jmsfx.icon.amplifier.NatoCountryCode;
 import io.github.ctgnz.jmsfx.icon.amplifier.UnknownAmplifier;
+import io.github.ctgnz.jmsfx.icon.common.CommonEntity;
+import io.github.ctgnz.jmsfx.icon.common.CommonEntitySubType;
+import io.github.ctgnz.jmsfx.icon.common.CommonEntityType;
 import io.github.ctgnz.jmsfx.icon.common.CommonSectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.common.CommonSectorTwoModifier;
-import io.github.ctgnz.jmsfx.icon.common.CommonSymbolSet;
-import io.github.ctgnz.jmsfx.icon.unknown.UnknownEntity;
 
 public class StandardIconLibrary implements IconLibrary {
     private static final StandardIconLibrary INSTANCE = new StandardIconLibrary();
@@ -38,14 +42,15 @@ public class StandardIconLibrary implements IconLibrary {
 
     public StandardIconLibrary() {
     }
+
     @Override
     public List<SectorOneModifier> getCommonSectorOneModifiers() {
-        return CommonSymbolSet.INSTANCE.getSectorOneModifiers();
+        return Arrays.asList(CommonSectorOneModifier.values());
     }
 
     @Override
     public List<SectorTwoModifier> getCommonSectorTwoModifiers() {
-        return CommonSymbolSet.INSTANCE.getSectorTwoModifiers();
+        return Arrays.asList(CommonSectorTwoModifier.values());
     }
 
     @Override
@@ -60,7 +65,17 @@ public class StandardIconLibrary implements IconLibrary {
 
     @Override
     public Entity getDefaultEntity() {
-        return UnknownEntity.UNSPECIFIED;
+        return CommonEntity.UNSPECIFIED;
+    }
+
+    @Override
+    public EntitySubType getDefaultEntitySubType() {
+        return CommonEntitySubType.UNSPECIFIED_SUB_TYPE;
+    }
+
+    @Override
+    public EntityType getDefaultEntityType() {
+        return CommonEntityType.UNSPECIFIED_TYPE;
     }
 
     @Override
@@ -90,7 +105,7 @@ public class StandardIconLibrary implements IconLibrary {
 
     @Override
     public SymbolSet getDefaultSymbolSet() {
-        return SymbolSetEnum.UNKNOWN;
+        return SymbolSetEnum.COMMON;
     }
 
     @Override

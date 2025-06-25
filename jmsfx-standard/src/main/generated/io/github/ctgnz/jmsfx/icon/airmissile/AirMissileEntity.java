@@ -6,7 +6,6 @@ import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum AirMissileEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     MISSILE("11", "Missile", GraphicType.MAIN);
 
     private final String id;

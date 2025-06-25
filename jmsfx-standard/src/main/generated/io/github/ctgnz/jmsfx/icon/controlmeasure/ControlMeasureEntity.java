@@ -9,7 +9,6 @@ import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum ControlMeasureEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     COMMAND_CONTROL_LINES("11", "Command and Control Lines", GraphicType.NA),
     COMMAND_CONTROL_AREAS("12", "Command and Control Areas", GraphicType.NA),
     COMMAND_CONTROL_POINTS("13", "Command and Control Points", GraphicType.NA),

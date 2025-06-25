@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum ControlMeasureSectorTwoModifier implements SectorTwoModifier {
-    UNSPECIFIED_2_MOD("00", "Unspecified", "General", SymbolSetEnum.CONTROL_MEASURE),
     URBAN_MOD("01", "Urban", "Terrain", SymbolSetEnum.CONTROL_MEASURE),
     WATER_MOD("02", "Water", "Terrain", SymbolSetEnum.CONTROL_MEASURE),
     GROUND_MOD("03", "Ground", "Terrain", SymbolSetEnum.CONTROL_MEASURE),

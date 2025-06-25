@@ -9,7 +9,6 @@ import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum LandUnitsEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     COMMAND_AND_CONTROL("11", "Command and Control", GraphicType.MAIN),
     MOVEMENT_AND_MANEUVER("12", "Movement and Maneuver", GraphicType.NA),
     FIRES("13", "Fires", GraphicType.NA),

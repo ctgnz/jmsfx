@@ -9,7 +9,6 @@ import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
 
 public enum MineWarfareEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
     SEA_MINE_GENERAL("11", "Sea Mine-General", GraphicType.FULL_OCTAGON),
     UNEXPLODED_ORDNANCE("12", "Unexploded Ordnance", GraphicType.FULL_OCTAGON),
     SEA_MINE_DECOY("13", "Sea Mine Decoy", GraphicType.FULL_OCTAGON),
