@@ -12,7 +12,6 @@ import io.github.ctgnz.jmsfx.Amplifier;
 import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
@@ -27,7 +26,7 @@ public class StandardAmplifierImpl<A extends StandardAmplifierItem> extends Code
     public StandardAmplifierImpl() {
     }
 
-    public StandardAmplifierImpl(AmplifierListEnum amplifierList) {
+    public StandardAmplifierImpl(AmplifierList amplifierList) {
         super(amplifierList);
         this.amplifier.set(amplifierList.getAmplifier());
         this.valueClass.set(amplifierList.getValueClass());

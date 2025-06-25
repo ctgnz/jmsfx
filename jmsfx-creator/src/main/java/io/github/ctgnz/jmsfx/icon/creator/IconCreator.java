@@ -21,15 +21,9 @@ import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.ContextEnum;
-import io.github.ctgnz.jmsfx.icon.HqtfDummyEnum;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbolIcon;
 import io.github.ctgnz.jmsfx.icon.StandardIconLibrary;
-import io.github.ctgnz.jmsfx.icon.StandardIdentityEnum;
-import io.github.ctgnz.jmsfx.icon.StatusEnum;
-import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
-import io.github.ctgnz.jmsfx.icon.amplifier.NatoCountryCode;
 import io.github.ctgnz.jmsfx.types.IconScale;
 import io.github.ctgnz.jmsfx.types.ScaleDirection;
 import javafx.application.Application;
@@ -216,7 +210,7 @@ public class IconCreator extends Application {
     }
 
     private Node createButtons() {
-        ComboBox<CountryCode> country = new ComboBox<>(FXCollections.observableArrayList(NatoCountryCode.values()));
+        ComboBox<CountryCode> country = new ComboBox<>(library.getCountryCodes());
         country.valueProperty().addListener((obs, oldValue, newValue) -> {
             library.setExtensionCountryCode(newValue);
         });
@@ -234,31 +228,31 @@ public class IconCreator extends Application {
         // this is only a one-way binding from a read-only property
         sidc.textProperty().bind(symbol.codeProperty());
 
-        ComboBox<Context> context = new ComboBox<>(FXCollections.observableArrayList(ContextEnum.values()));
+        ComboBox<Context> context = new ComboBox<>(library.getContexts());
         context.setCellFactory(p -> new CodeElementListCell<>());
         context.setButtonCell(new CodeElementListCell<>());
         context.setMaxWidth(300);
         context.valueProperty().bindBidirectional(symbol.contextProperty());
 
-        ComboBox<StandardIdentity> stdIdentity = new ComboBox<>(FXCollections.observableArrayList(StandardIdentityEnum.values()));
+        ComboBox<StandardIdentity> stdIdentity = new ComboBox<>(library.getStandardIdentities());
         stdIdentity.setCellFactory(p -> new CodeElementListCell<>());
         stdIdentity.setButtonCell(new CodeElementListCell<>());
         stdIdentity.setMaxWidth(300);
         stdIdentity.valueProperty().bindBidirectional(symbol.standardIdentityProperty());
 
-        ComboBox<SymbolSet> symbolSet = new ComboBox<>(FXCollections.observableArrayList(SymbolSetEnum.values()));
+        ComboBox<SymbolSet> symbolSet = new ComboBox<>(library.getSymbolSets());
         symbolSet.setCellFactory(p -> new CodeElementListCell<>());
         symbolSet.setButtonCell(new CodeElementListCell<>());
         symbolSet.setMaxWidth(300);
         symbolSet.valueProperty().bindBidirectional(symbol.symbolSetProperty());
 
-        ComboBox<Status> status = new ComboBox<>(FXCollections.observableArrayList(StatusEnum.values()));
+        ComboBox<Status> status = new ComboBox<>(library.getStatuses());
         status.setCellFactory(p -> new CodeElementListCell<>());
         status.setButtonCell(new CodeElementListCell<>());
         status.setMaxWidth(300);
         status.valueProperty().bindBidirectional(symbol.statusProperty());
 
-        ComboBox<HqtfDummy> hqtfDummy = new ComboBox<>(FXCollections.observableArrayList(HqtfDummyEnum.values()));
+        ComboBox<HqtfDummy> hqtfDummy = new ComboBox<>(library.getHqtfDummys());
         hqtfDummy.setCellFactory(p -> new CodeElementListCell<>());
         hqtfDummy.setButtonCell(new CodeElementListCell<>());
         hqtfDummy.setMaxWidth(300);

@@ -1,14 +1,18 @@
 package io.github.ctgnz.jmsfx.icon;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.stream.Stream;
+
+import org.apache.commons.lang3.ObjectUtils;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
 import nz.co.ctg.foxglove.SvgGraphic;
 
+import io.github.ctgnz.jmsfx.Amplifier;
+import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.Context;
 import io.github.ctgnz.jmsfx.CountryCode;
+import io.github.ctgnz.jmsfx.Dimension;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
@@ -19,6 +23,7 @@ import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.StandardIdentity;
+import io.github.ctgnz.jmsfx.StandardIdentityGroup;
 import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.Version;
@@ -29,6 +34,8 @@ import io.github.ctgnz.jmsfx.icon.common.CommonEntitySubType;
 import io.github.ctgnz.jmsfx.icon.common.CommonEntityType;
 import io.github.ctgnz.jmsfx.icon.common.CommonSectorOneModifier;
 import io.github.ctgnz.jmsfx.icon.common.CommonSectorTwoModifier;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class StandardIconLibrary implements IconLibrary {
     private static final StandardIconLibrary INSTANCE = new StandardIconLibrary();
@@ -38,19 +45,34 @@ public class StandardIconLibrary implements IconLibrary {
     }
 
     private final FoxgloveParser parser = new FoxgloveParser();
-    private CountryCode extensionCountryCode = NatoCountryCode.UNDEFINED;
+    private CountryCode extensionCountryCode = CountryCode.UNDEFINED;
 
     public StandardIconLibrary() {
     }
 
     @Override
-    public List<SectorOneModifier> getCommonSectorOneModifiers() {
-        return Arrays.asList(CommonSectorOneModifier.values());
+    public ObservableList<Amplifier> getAmplifiers() {
+        return FXCollections.observableArrayList(AmplifierEnum.values());
     }
 
     @Override
-    public List<SectorTwoModifier> getCommonSectorTwoModifiers() {
-        return Arrays.asList(CommonSectorTwoModifier.values());
+    public ObservableList<SectorOneModifier> getCommonSectorOneModifiers() {
+        return FXCollections.observableArrayList(CommonSectorOneModifier.values());
+    }
+
+    @Override
+    public ObservableList<SectorTwoModifier> getCommonSectorTwoModifiers() {
+        return FXCollections.observableArrayList(CommonSectorTwoModifier.values());
+    }
+
+    @Override
+    public ObservableList<Context> getContexts() {
+        return FXCollections.observableArrayList(ContextEnum.values());
+    }
+
+    @Override
+    public ObservableList<CountryCode> getCountryCodes() {
+        return FXCollections.observableArrayList(Stream.concat(Stream.of(CountryCode.UNDEFINED), Stream.of(NatoCountryCode.values())).toList());
     }
 
     @Override
@@ -114,8 +136,48 @@ public class StandardIconLibrary implements IconLibrary {
     }
 
     @Override
+    public ObservableList<Dimension> getDimensions() {
+        return FXCollections.observableArrayList(DimensionEnum.values());
+    }
+
+    @Override
     public CountryCode getExtensionCountryCode() {
         return extensionCountryCode;
+    }
+
+    @Override
+    public ObservableList<HqtfDummy> getHqtfDummys() {
+        return FXCollections.observableArrayList(HqtfDummyEnum.values());
+    }
+
+    @Override
+    public ObservableList<AmplifierList> getListAmplifiers() {
+        return FXCollections.observableArrayList(AmplifierListEnum.values());
+    }
+
+    @Override
+    public ObservableList<StandardIdentity> getStandardIdentities() {
+        return FXCollections.observableArrayList(StandardIdentityEnum.values());
+    }
+
+    @Override
+    public ObservableList<StandardIdentityGroup> getStandardIdentityGroups() {
+        return FXCollections.observableArrayList(StandardIdentityGroupEnum.values());
+    }
+
+    @Override
+    public ObservableList<Status> getStatuses() {
+        return FXCollections.observableArrayList(StatusEnum.values());
+    }
+
+    @Override
+    public ObservableList<SymbolSet> getSymbolSets() {
+        return FXCollections.observableArrayList(SymbolSetEnum.values());
+    }
+
+    @Override
+    public ObservableList<Version> getVersions() {
+        return FXCollections.observableArrayList(VersionEnum.values());
     }
 
     @Override
@@ -194,7 +256,7 @@ public class StandardIconLibrary implements IconLibrary {
 
     @Override
     public void setExtensionCountryCode(CountryCode countryCode) {
-        this.extensionCountryCode = countryCode;
+        this.extensionCountryCode = ObjectUtils.defaultIfNull(countryCode, CountryCode.UNDEFINED);
     }
 
 }

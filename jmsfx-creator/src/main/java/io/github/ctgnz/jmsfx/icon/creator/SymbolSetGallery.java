@@ -18,22 +18,19 @@ import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.control.Tooltip;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 
-public class SymbolSetGallery extends VBox {
+public class SymbolSetGallery extends BorderPane {
     private SymbolSetEnum symbolSet;
     private IconLibrary library;
 
     public SymbolSetGallery(IconLibrary library, SymbolSetEnum symbolSet) {
         this.library = library;
         this.symbolSet = symbolSet;
-        getChildren().add(createFrames());
-        getChildren().add(createStatus());
-        getChildren().add(createHqtfDummy());
-        getChildren().add(createMainIcons());
-        getChildren().add(createSector1());
-        getChildren().add(createSector2());
+        setCenter(new VBox(createFrames(), createStatus(), createHqtfDummy(), createSector1(), createSector2()));
+        setRight(createMainIcons());
     }
 
     private Node createFrames() {
@@ -73,6 +70,7 @@ public class SymbolSetGallery extends VBox {
             });
         });
         TitledPane mainIconPane = new TitledPane("Main Icons", flowPane);
+        mainIconPane.minWidthProperty().bind(widthProperty().divide(2));
         mainIconPane.setCollapsible(false);
         return mainIconPane;
     }

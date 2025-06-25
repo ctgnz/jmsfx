@@ -1,16 +1,21 @@
 package io.github.ctgnz.jmsfx;
 
-import java.util.List;
-
 import nz.co.ctg.foxglove.SvgGraphic;
 
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbolBuilder;
+import javafx.collections.ObservableList;
 
 public interface IconLibrary {
 
-    List<SectorOneModifier> getCommonSectorOneModifiers();
+    ObservableList<Amplifier> getAmplifiers();
 
-    List<SectorTwoModifier> getCommonSectorTwoModifiers();
+    ObservableList<SectorOneModifier> getCommonSectorOneModifiers();
+
+    ObservableList<SectorTwoModifier> getCommonSectorTwoModifiers();
+
+    ObservableList<Context> getContexts();
+
+    ObservableList<CountryCode> getCountryCodes();
 
     StandardAmplifierItem getDefaultAmplifier();
 
@@ -36,7 +41,23 @@ public interface IconLibrary {
 
     Version getDefaultVersion();
 
+    ObservableList<Dimension> getDimensions();
+
     CountryCode getExtensionCountryCode();
+
+    ObservableList<HqtfDummy> getHqtfDummys();
+
+    ObservableList<AmplifierList> getListAmplifiers();
+
+    ObservableList<StandardIdentity> getStandardIdentities();
+
+    ObservableList<StandardIdentityGroup> getStandardIdentityGroups();
+
+    ObservableList<Status> getStatuses();
+
+    ObservableList<SymbolSet> getSymbolSets();
+
+    ObservableList<Version> getVersions();
 
     SvgGraphic loadAmplifierGraphic(AmplifierListItem amplifierItem, StandardIdentity identity);
 

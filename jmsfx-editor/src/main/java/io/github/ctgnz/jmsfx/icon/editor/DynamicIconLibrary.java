@@ -1,6 +1,5 @@
 package io.github.ctgnz.jmsfx.icon.editor;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.apache.commons.lang3.StringUtils;
@@ -26,74 +25,73 @@ import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.StandardIdentity;
+import io.github.ctgnz.jmsfx.StandardIdentityGroup;
 import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.Version;
-import io.github.ctgnz.jmsfx.icon.AmplifierEnum;
-import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
-import io.github.ctgnz.jmsfx.icon.ContextEnum;
-import io.github.ctgnz.jmsfx.icon.DimensionEnum;
-import io.github.ctgnz.jmsfx.icon.HqtfDummyEnum;
-import io.github.ctgnz.jmsfx.icon.StandardIdentityGroupEnum;
-import io.github.ctgnz.jmsfx.icon.StatusEnum;
-import io.github.ctgnz.jmsfx.icon.SymbolSetEnum;
-import io.github.ctgnz.jmsfx.icon.VersionEnum;
-import io.github.ctgnz.jmsfx.icon.amplifier.NatoCountryCode;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class DynamicIconLibrary implements IconLibrary {
-    private final ObservableList<Version> version = FXCollections.observableArrayList();
-    private final ObservableList<Context> context = FXCollections.observableArrayList();
-    private final ObservableList<StandardIdentityGroupImpl> standardIdentityGroup = FXCollections.observableArrayList();
-    private final ObservableList<Dimension> dimension = FXCollections.observableArrayList();
-    private final ObservableList<Status> status = FXCollections.observableArrayList();
-    private final ObservableList<HqtfDummy> hqtfDummy = FXCollections.observableArrayList();
+    private final ObservableList<Version> versions = FXCollections.observableArrayList();
+    private final ObservableList<Context> contexts = FXCollections.observableArrayList();
+    private final ObservableList<StandardIdentityGroup> standardIdentityGroups = FXCollections.observableArrayList();
+    private final ObservableList<Dimension> dimensions = FXCollections.observableArrayList();
+    private final ObservableList<Status> statuses = FXCollections.observableArrayList();
+    private final ObservableList<HqtfDummy> hqtfDummys = FXCollections.observableArrayList();
     private final ObservableList<Amplifier> amplifiers = FXCollections.observableArrayList();
     private final ObservableList<AmplifierList> listAmplifiers = FXCollections.observableArrayList();
     private final ObservableList<SymbolSet> symbolSets = FXCollections.observableArrayList();
-    private final ObservableList<SectorOneModifier> commonSectorOne = FXCollections.observableArrayList();
-    private final ObservableList<SectorTwoModifier> commonSectorTwo = FXCollections.observableArrayList();
-    private CountryCode countryCode = NatoCountryCode.UNDEFINED;
-    private final FoxgloveParser parser;
+    private final ObservableList<SectorOneModifier> commonSectorOneModifiers = FXCollections.observableArrayList();
+    private final ObservableList<SectorTwoModifier> commonSectorTwoModifiers = FXCollections.observableArrayList();
+    private CountryCode countryCode = CountryCode.UNDEFINED;
+    private final FoxgloveParser parser = new FoxgloveParser();
 
     public DynamicIconLibrary() {
-        this.parser = new FoxgloveParser();
-        this.version.setAll(Lists.transform(Lists.newArrayList(VersionEnum.values()), VersionImpl::new));
-        this.context.setAll(Lists.transform(Lists.newArrayList(ContextEnum.values()), ContextImpl::new));
-        this.standardIdentityGroup.setAll(Lists.transform(Lists.newArrayList(StandardIdentityGroupEnum.values()), StandardIdentityGroupImpl::new));
-        this.dimension.setAll(Lists.transform(Lists.newArrayList(DimensionEnum.values()), DimensionImpl::new));
-        this.status.setAll(Lists.transform(Lists.newArrayList(StatusEnum.values()), StatusImpl::new));
-        this.hqtfDummy.setAll(Lists.transform(Lists.newArrayList(HqtfDummyEnum.values()), HqtfDummyImpl::new));
-        this.amplifiers.setAll(Lists.transform(Lists.newArrayList(AmplifierEnum.values()), AmplifierImpl::new));
-        this.listAmplifiers.setAll(Lists.transform(Lists.newArrayList(AmplifierListEnum.values()), AmplifierListImpl::new));
-        this.symbolSets.setAll(dimension.stream().map(DimensionImpl.class::cast).flatMap(DimensionImpl::streamSymbolSets).toList());
-        getSymbolSet(SymbolSetEnum.COMMON.getId()).ifPresent(symSet -> {
-           this.commonSectorOne.setAll(symSet.getSectorOneModifiers());
-           this.commonSectorTwo.setAll(symSet.getSectorTwoModifiers());
-        });
+    }
+
+    public DynamicIconLibrary(IconLibrary staticLibrary) {
+        this.versions.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getVersions()), VersionImpl::new));
+        this.contexts.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getContexts()), ContextImpl::new));
+        this.standardIdentityGroups.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getStandardIdentityGroups()), StandardIdentityGroupImpl::new));
+        this.dimensions.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getDimensions()), DimensionImpl::new));
+        this.statuses.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getStatuses()), StatusImpl::new));
+        this.hqtfDummys.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getHqtfDummys()), HqtfDummyImpl::new));
+        this.amplifiers.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getAmplifiers()), AmplifierImpl::new));
+        this.listAmplifiers.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getListAmplifiers()), AmplifierListImpl::new));
+        this.symbolSets.setAll(dimensions.stream().map(DimensionImpl.class::cast).flatMap(DimensionImpl::streamSymbolSets).toList());
+        SymbolSet symSet = getDefaultSymbolSet();
+        this.commonSectorOneModifiers.setAll(symSet.getSectorOneModifiers());
+        this.commonSectorTwoModifiers.setAll(symSet.getSectorTwoModifiers());
     }
 
     public Optional<Amplifier> getAmplifier(String amplifierId) {
         return amplifiers.stream().filter(amp -> StringUtils.equals(amplifierId, amp.getId())).map(Amplifier.class::cast).findFirst();
     }
 
+    @Override
     public ObservableList<Amplifier> getAmplifiers() {
         return amplifiers;
     }
 
     @Override
-    public List<SectorOneModifier> getCommonSectorOneModifiers() {
-        return commonSectorOne;
+    public ObservableList<SectorOneModifier> getCommonSectorOneModifiers() {
+        return commonSectorOneModifiers;
     }
 
     @Override
-    public List<SectorTwoModifier> getCommonSectorTwoModifiers() {
-        return commonSectorTwo;
+    public ObservableList<SectorTwoModifier> getCommonSectorTwoModifiers() {
+        return commonSectorTwoModifiers;
     }
 
-    public ObservableList<Context> getContext() {
-        return context;
+    @Override
+    public ObservableList<Context> getContexts() {
+        return contexts;
+    }
+
+    @Override
+    public ObservableList<CountryCode> getCountryCodes() {
+        return FXCollections.observableArrayList(CountryCode.UNDEFINED); // TODO: add full list
     }
 
     @Override
@@ -103,7 +101,7 @@ public class DynamicIconLibrary implements IconLibrary {
 
     @Override
     public Context getDefaultContext() {
-        return context.getFirst();
+        return contexts.getFirst();
     }
 
     @Override
@@ -123,7 +121,7 @@ public class DynamicIconLibrary implements IconLibrary {
 
     @Override
     public HqtfDummy getDefaultHqtfDummy() {
-        return hqtfDummy.getFirst();
+        return hqtfDummys.getFirst();
     }
 
     @Override
@@ -138,12 +136,12 @@ public class DynamicIconLibrary implements IconLibrary {
 
     @Override
     public StandardIdentity getDefaultStandardIdentity() {
-        return getStandardIdentity().getFirst();
+        return getStandardIdentities().getFirst();
     }
 
     @Override
     public Status getDefaultStatus() {
-        return status.getFirst();
+        return statuses.getFirst();
     }
 
     @Override
@@ -153,11 +151,12 @@ public class DynamicIconLibrary implements IconLibrary {
 
     @Override
     public Version getDefaultVersion() {
-        return version.getFirst();
+        return versions.getFirst();
     }
 
-    public ObservableList<Dimension> getDimension() {
-        return dimension;
+    @Override
+    public ObservableList<Dimension> getDimensions() {
+        return dimensions;
     }
 
     @Override
@@ -165,36 +164,43 @@ public class DynamicIconLibrary implements IconLibrary {
         return countryCode;
     }
 
-    public ObservableList<HqtfDummy> getHqtfDummy() {
-        return hqtfDummy;
+    @Override
+    public ObservableList<HqtfDummy> getHqtfDummys() {
+        return hqtfDummys;
     }
 
+    @Override
     public ObservableList<AmplifierList> getListAmplifiers() {
         return listAmplifiers;
     }
 
-    public ObservableList<StandardIdentity> getStandardIdentity() {
-        return FXCollections.observableArrayList(standardIdentityGroup.stream().flatMap(StandardIdentityGroupImpl::streamIdentities).toList());
+    @Override
+    public ObservableList<StandardIdentity> getStandardIdentities() {
+        return FXCollections.observableArrayList(standardIdentityGroups.stream().map(StandardIdentityGroupImpl.class::cast).flatMap(StandardIdentityGroupImpl::streamIdentities).toList());
     }
 
-    public ObservableList<StandardIdentityGroupImpl> getStandardIdentityGroup() {
-        return standardIdentityGroup;
+    @Override
+    public ObservableList<StandardIdentityGroup> getStandardIdentityGroups() {
+        return standardIdentityGroups;
     }
 
-    public ObservableList<Status> getStatus() {
-        return status;
+    @Override
+    public ObservableList<Status> getStatuses() {
+        return statuses;
     }
 
     public Optional<SymbolSet> getSymbolSet(String symbolSetId) {
         return symbolSets.stream().filter(sym -> StringUtils.equals(symbolSetId, sym.getId())).map(SymbolSet.class::cast).findFirst();
     }
 
+    @Override
     public ObservableList<SymbolSet> getSymbolSets() {
         return symbolSets;
     }
 
-    public ObservableList<Version> getVersion() {
-        return version;
+    @Override
+    public ObservableList<Version> getVersions() {
+        return versions;
     }
 
     @Override

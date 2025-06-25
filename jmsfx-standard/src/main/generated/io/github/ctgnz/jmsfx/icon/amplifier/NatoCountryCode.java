@@ -5,7 +5,6 @@ import io.github.ctgnz.jmsfx.CountryCode;
 import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
 
 public enum NatoCountryCode implements CountryCode {
-    UNDEFINED("UNDEFINED", "Undefined", "000"),
     AF("AFG", "Afghanistan", "004"),
     AL("ALB", "Albania", "008"),
     AQ("ATA", "Antarctica", "010"),
