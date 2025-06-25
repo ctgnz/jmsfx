@@ -6,7 +6,6 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import io.github.ctgnz.jmsfx.Status;
-import io.github.ctgnz.jmsfx.icon.StatusEnum;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
@@ -22,7 +21,7 @@ public class StatusImpl extends CodeElementImpl implements Status {
     public StatusImpl() {
     }
 
-    public StatusImpl(StatusEnum status) {
+    public StatusImpl(Status status) {
         super(status);
         this.operationalCondition.set(status.isOperationalCondition());
         this.present.set(status.isPresent());

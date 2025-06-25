@@ -12,7 +12,6 @@ import io.github.ctgnz.jmsfx.Amplifier;
 import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.AmplifierListEnum;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -30,7 +29,7 @@ public class AmplifierListImpl<A extends AmplifierListItem> extends CodeElementI
     public AmplifierListImpl() {
     }
 
-    public AmplifierListImpl(AmplifierListEnum amplifierList) {
+    public AmplifierListImpl(AmplifierList amplifierList) {
         super(amplifierList);
         this.amplifier.set(amplifierList.getAmplifier());
         this.valueClass.set(amplifierList.getValueClass());

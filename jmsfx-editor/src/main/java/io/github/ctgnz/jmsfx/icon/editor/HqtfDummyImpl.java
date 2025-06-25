@@ -6,7 +6,6 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import io.github.ctgnz.jmsfx.HqtfDummy;
-import io.github.ctgnz.jmsfx.icon.HqtfDummyEnum;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
@@ -20,9 +19,9 @@ public class HqtfDummyImpl extends CodeElementImpl implements HqtfDummy {
     public HqtfDummyImpl() {
     }
 
-    public HqtfDummyImpl(HqtfDummyEnum hqtfDummy) {
+    public HqtfDummyImpl(HqtfDummy hqtfDummy) {
         super(hqtfDummy);
-        this.unknown.set(hqtfDummy == HqtfDummyEnum.NA);
+        this.unknown.set(hqtfDummy.isUnknown());
         this.dimensionIds.setAll(hqtfDummy.getDimensionIds());
     }
 

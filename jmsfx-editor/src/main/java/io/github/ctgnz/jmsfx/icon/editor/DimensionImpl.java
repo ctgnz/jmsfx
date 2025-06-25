@@ -8,7 +8,6 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import io.github.ctgnz.jmsfx.Dimension;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.DimensionEnum;
 import io.github.ctgnz.jmsfx.types.GeometryType;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -29,14 +28,14 @@ public class DimensionImpl extends CodeElementImpl implements Dimension {
     public DimensionImpl() {
     }
 
-    public DimensionImpl(DimensionEnum dimension) {
+    public DimensionImpl(Dimension dimension) {
         super(dimension);
         dimension.getSymbolSets().stream().map(SymbolSetImpl::new).forEach(this::addSymbolSet);
         this.defaultSymbolSet.set(symbolSets.getFirst());
         this.geometryType.set(dimension.getGeometryType());
         this.frameId.set(dimension.getFrameId());
         this.graphicLocation.set(dimension.getGraphicLocation());
-        this.name.set(dimension.name());
+        this.name.set(dimension.getName());
     }
 
     public void addSymbolSet(SymbolSetImpl symbolSet) {

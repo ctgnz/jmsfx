@@ -4,14 +4,13 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import io.github.ctgnz.jmsfx.Version;
-import io.github.ctgnz.jmsfx.icon.VersionEnum;
 
 public class VersionImpl extends CodeElementImpl implements Version {
 
     public VersionImpl() {
     }
 
-    public VersionImpl(VersionEnum version) {
+    public VersionImpl(Version version) {
         super(version);
     }
 

@@ -4,7 +4,6 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import io.github.ctgnz.jmsfx.Amplifier;
-import io.github.ctgnz.jmsfx.icon.AmplifierEnum;
 import io.github.ctgnz.jmsfx.types.AmplifierType;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
@@ -22,7 +21,7 @@ public class AmplifierImpl extends CodeElementImpl implements Amplifier {
     public AmplifierImpl() {
     }
 
-    public AmplifierImpl(AmplifierEnum amplifier) {
+    public AmplifierImpl(Amplifier amplifier) {
         super(amplifier);
         this.type.set(amplifier.getType());
         this.description.set(amplifier.getDescription());

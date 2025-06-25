@@ -5,7 +5,6 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.StandardIdentityGroup;
-import io.github.ctgnz.jmsfx.icon.StandardIdentityEnum;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -20,7 +19,7 @@ public class StandardIdentityImpl extends CodeElementImpl implements StandardIde
     public StandardIdentityImpl() {
     }
 
-    public StandardIdentityImpl(StandardIdentityEnum identity, StandardIdentityGroupImpl groupAdapter) {
+    public StandardIdentityImpl(StandardIdentity identity, StandardIdentityGroup groupAdapter) {
         super(identity);
         this.group.set(groupAdapter);
         this.confirmed.set(identity.isConfirmed());

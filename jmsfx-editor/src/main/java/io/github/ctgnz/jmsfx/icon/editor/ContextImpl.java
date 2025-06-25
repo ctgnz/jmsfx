@@ -4,7 +4,6 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import io.github.ctgnz.jmsfx.Context;
-import io.github.ctgnz.jmsfx.icon.ContextEnum;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -18,7 +17,7 @@ public class ContextImpl extends CodeElementImpl implements Context {
     public ContextImpl() {
     }
 
-    public ContextImpl(ContextEnum context) {
+    public ContextImpl(Context context) {
         super(context);
         this.overlayGraphicLocation.set(context.getOverlayGraphicLocation());
         this.reality.set(context.isReality());

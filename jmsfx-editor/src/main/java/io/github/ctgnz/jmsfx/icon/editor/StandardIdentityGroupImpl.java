@@ -10,7 +10,6 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.StandardIdentityGroup;
 import io.github.ctgnz.jmsfx.icon.StandardIdentityEnum;
-import io.github.ctgnz.jmsfx.icon.StandardIdentityGroupEnum;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -24,7 +23,7 @@ public class StandardIdentityGroupImpl extends CodeElementImpl implements Standa
     public StandardIdentityGroupImpl() {
     }
 
-    public StandardIdentityGroupImpl(StandardIdentityGroupEnum identityGroup) {
+    public StandardIdentityGroupImpl(StandardIdentityGroup identityGroup) {
         super(identityGroup);
         this.graphicSuffix.set(identityGroup.getGraphicSuffix());
         this.identities.setAll(identityGroup.getIdentities().stream().map(StandardIdentityEnum.class::cast).map(this::createIdentityAdapter).toList());
