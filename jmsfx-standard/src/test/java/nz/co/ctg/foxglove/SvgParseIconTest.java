@@ -11,16 +11,15 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class SvgParseIconTest {
 
-    @Test @Ignore
+    @Test
     public void testJmsfxIcons() throws Exception {
         AtomicInteger count = new AtomicInteger(0);
         FoxgloveParser parser = new FoxgloveParser();
-        URI uri = new File("D:/git/jmsfx/jmsfx-model/src/main/resources/svg").toURI();
+        URI uri = new File("D:/git/jmsfx/jmsfx-standard/src/main/resources/svg").toURI();
         Files.walkFileTree(Paths.get(uri), new SimpleFileVisitor<Path>() {
             @Override
             public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
@@ -38,6 +37,7 @@ public class SvgParseIconTest {
                 return super.visitFile(file, attrs);
             }
         });
+        System.out.format("%d parsed%n", count.get());
     }
 
 }
