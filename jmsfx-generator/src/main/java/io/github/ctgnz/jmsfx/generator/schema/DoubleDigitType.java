@@ -37,10 +37,14 @@ public class DoubleDigitType {
 
     @SuppressWarnings("unchecked")
     public String getCodeString() {
-        List<Serializable> codeDigits = getContent();
-        JAXBElement<Integer> firstDigit = (JAXBElement<Integer>) codeDigits.get(1);
-        JAXBElement<Integer> secondDigit = (JAXBElement<Integer>) codeDigits.get(3);
-        return String.format("%d%d", firstDigit.getValue(), secondDigit.getValue());
+        try {
+            List<Serializable> codeDigits = getContent();
+            JAXBElement<Integer> firstDigit = (JAXBElement<Integer>) codeDigits.get(1);
+            JAXBElement<Integer> secondDigit = (JAXBElement<Integer>) codeDigits.get(3);
+            return String.format("%X%X", firstDigit.getValue(), secondDigit.getValue());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public List<Serializable> getContent() {

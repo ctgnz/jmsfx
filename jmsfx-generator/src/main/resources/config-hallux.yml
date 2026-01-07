@@ -1,8 +1,8 @@
 inputDir: "D:/git/joint-military-symbology-xml/instance"
-outputDir: "D:/git/hallux/hallux-jmsfx/src/main/java"
-iconPackage: "nz.co.ctg.jmsfx.model"
-commonPackage: "nz.co.ctg.jmsfx.model.common"
-amplifierPackage: "nz.co.ctg.jmsfx.model.amplifier"
+outputDir: "D:/git/hallux/jmsfx-hallux/src/main/java"
+iconPackage: "nz.co.ctg.hallux.jmsfx"
+commonPackage: "nz.co.ctg.hallux.jmsfx.common"
+amplifierPackage: "nz.co.ctg.hallux.jmsfx.amplifier"
 libraryPrefix: "Hallux"
 unframedSymbolSets:
   - CONTROL_MEASURE
@@ -25,9 +25,11 @@ standardAmplifiers:
   - {enumType: "UnknownAmplifier", enumId: "UNKNOWN", enumDesc: "Unspecified", graphicLocation: "Amplifier", xmlId: "NA", frameAmplifier: true, unknown: true}
   - {enumType: "UnitEchelon", enumId: "UNIT_ECHELON", enumDesc: "Unit Echelon", graphicLocation: "Echelon", xmlId: "ECHELON", frameAmplifier: false}
   - {enumType: "EquipmentMobility", enumId: "EQUIPMENT_MOBILITY", enumDesc: "Equipment Mobility", graphicLocation: "Amplifier", xmlId: "EQUIP_MOBILITY", frameAmplifier: false}
-  - {enumType: "TowedArrayType", enumId: "TOWED_ARRAYS", enumDesc: "Naval towed array", graphicLocation: "Amplifier", xmlId: "TOWED_ARRAYS", frameAmplifier: false}
-  - {enumType: "LeadershipRole", enumId: "LEADERSHIP_ROLE", enumDesc: "Leadership role", graphicLocation: "Amplifier", xmlId: "LEADERSHIP_INDICATOR", frameAmplifier: false}
-  - {enumType: "StandardServiceTier", enumId: "SERVICE_TIER", enumDesc: "Standard service tiers", graphicLocation: "Extension", xmlId: "SERVICE_TIER", frameAmplifier: true}
+  - {enumType: "TowedArrayType", enumId: "TOWED_ARRAYS", enumDesc: "Naval Towed Array Types", graphicLocation: "Amplifier", xmlId: "TOWED_ARRAYS", frameAmplifier: false}
+  - {enumType: "LeadershipRole", enumId: "LEADERSHIP_ROLE", enumDesc: "Leadership Role", graphicLocation: "Amplifier", xmlId: "LEADERSHIP_INDICATOR", frameAmplifier: false}
+  - {enumType: "StaffRole", enumId: "STAFF_ROLE", enumDesc: "NATO Staff Role", graphicLocation: "Amplifier", xmlId: "STAFF_ROLE", frameAmplifier: false}
+  - {enumType: "ServiceTier", enumId: "SERVICE_TIER", enumDesc: "Service Tiers", graphicLocation: "Amplifier", xmlId: "SERVICE_TIER", frameAmplifier: true}
+  - {enumType: "NatoRank", enumId: "NATO_RANK", enumDesc: "NATO Standard Ranks", graphicLocation: "Amplifier", xmlId: "NATO_RANK", frameAmplifier: false}
 dimensionGraphicLocations:
   COMMON: "Common"
   AIR: "Air"
