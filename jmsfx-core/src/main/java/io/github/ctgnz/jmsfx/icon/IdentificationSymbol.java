@@ -1,5 +1,8 @@
 package io.github.ctgnz.jmsfx.icon;
 
+import static java.util.stream.Collectors.toList;
+import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
@@ -8,9 +11,6 @@ import nz.co.ctg.foxglove.ISvgContent;
 import nz.co.ctg.foxglove.ISvgStylable;
 import nz.co.ctg.foxglove.SvgGraphic;
 import nz.co.ctg.foxglove.type.ViewBox;
-
-import static java.util.stream.Collectors.toList;
-import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
 import io.github.ctgnz.jmsfx.Amplifier;
 import io.github.ctgnz.jmsfx.AmplifierGuide;
@@ -103,6 +103,13 @@ public class IdentificationSymbol {
         return graphicAmplifiers.computeIfAbsent(amplifier, key -> {
             AmplifierGuide guide = getSymbolSet().getAmplifierGuide(amplifier);
             return new GraphicAmplifierValue(guide, graphic, scaleDirection, attachment);
+        });
+    }
+
+    public GraphicAmplifierValue addOverlayAmplifier(Amplifier amplifier, SvgGraphic graphic) {
+        return graphicAmplifiers.computeIfAbsent(amplifier, key -> {
+            AmplifierGuide guide = getSymbolSet().getAmplifierGuide(amplifier);
+            return new GraphicAmplifierValue(guide, graphic, ScaleDirection.Original, Pos.TOP_LEFT);
         });
     }
 
