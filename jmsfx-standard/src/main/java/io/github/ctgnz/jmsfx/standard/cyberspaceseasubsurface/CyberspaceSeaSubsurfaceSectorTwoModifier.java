@@ -2,18 +2,19 @@ package io.github.ctgnz.jmsfx.standard.cyberspaceseasubsurface;
 
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum CyberspaceSeaSubsurfaceSectorTwoModifier implements SectorTwoModifier {
-    SECURED_MOD("01", "Secured", "General", SymbolSetEnum.CYBERSPACE_SEA_SUBSURFACE),
-    OPEN_MOD("02", "Open", "General", SymbolSetEnum.CYBERSPACE_SEA_SUBSURFACE);
+    SECURED("01", "Secured", ModifierCategory.None, SymbolSetEnum.CYBERSPACE_SEA_SUBSURFACE),
+    OPEN("02", "Open", ModifierCategory.None, SymbolSetEnum.CYBERSPACE_SEA_SUBSURFACE);
 
     private final String id;
     private final String label;
-    private final String category;
+    private final ModifierCategory category;
     private final SymbolSet symbolSet;
 
-    CyberspaceSeaSubsurfaceSectorTwoModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
+    CyberspaceSeaSubsurfaceSectorTwoModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
@@ -21,7 +22,7 @@ public enum CyberspaceSeaSubsurfaceSectorTwoModifier implements SectorTwoModifie
     }
 
     @Override
-    public String getCategory() {
+    public ModifierCategory getCategory() {
         return category;
     }
 

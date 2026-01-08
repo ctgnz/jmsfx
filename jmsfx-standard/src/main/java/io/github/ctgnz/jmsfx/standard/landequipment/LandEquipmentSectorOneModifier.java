@@ -2,22 +2,22 @@ package io.github.ctgnz.jmsfx.standard.landequipment;
 
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum LandEquipmentSectorOneModifier implements SectorOneModifier {
-    UNSPECIFIED_MOD("00", "Unspecified", "General", SymbolSetEnum.LAND_EQUIPMENT),
-    EARLY_WARNING_RADAR_MOD("03", "Early Warning Radar", "Sensor Type", SymbolSetEnum.LAND_EQUIPMENT),
-    INTRUSION_MOD("04", "Intrusion", "Sensor Type", SymbolSetEnum.LAND_EQUIPMENT),
-    UPGRADED_EARLY_WARNING_RADAR_MOD("07", "Upgraded Early Warning Radar", "Sensor Type", SymbolSetEnum.LAND_EQUIPMENT),
-    MULTI_PURPOSE_BLADE_MOD("12", "Multi Purpose Blade", "Engineer Equipment", SymbolSetEnum.LAND_EQUIPMENT),
-    TANK_WIDTH_MINE_PLOW_MOD("13", "Tank Width Mine Plow", "Engineer Equipment", SymbolSetEnum.LAND_EQUIPMENT);
+    EARLY_WARNING_RADAR("03", "Early Warning Radar", ModifierCategory.SensorType, SymbolSetEnum.LAND_EQUIPMENT),
+    INTRUSION("04", "Intrusion", ModifierCategory.SensorType, SymbolSetEnum.LAND_EQUIPMENT),
+    UPGRADED_EARLY_WARNING_RADAR("07", "Upgraded Early Warning Radar", ModifierCategory.SensorType, SymbolSetEnum.LAND_EQUIPMENT),
+    MULTI_PURPOSE_BLADE("12", "Multi Purpose Blade", ModifierCategory.EngineerEquipment, SymbolSetEnum.LAND_EQUIPMENT),
+    TANK_WIDTH_MINE_PLOW("13", "Tank Width Mine Plow", ModifierCategory.EngineerEquipment, SymbolSetEnum.LAND_EQUIPMENT);
 
     private final String id;
     private final String label;
-    private final String category;
+    private final ModifierCategory category;
     private final SymbolSet symbolSet;
 
-    LandEquipmentSectorOneModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
+    LandEquipmentSectorOneModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
@@ -25,7 +25,7 @@ public enum LandEquipmentSectorOneModifier implements SectorOneModifier {
     }
 
     @Override
-    public String getCategory() {
+    public ModifierCategory getCategory() {
         return category;
     }
 

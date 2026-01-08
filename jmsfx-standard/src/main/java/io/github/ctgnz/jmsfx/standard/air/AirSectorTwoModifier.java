@@ -2,20 +2,21 @@ package io.github.ctgnz.jmsfx.standard.air;
 
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum AirSectorTwoModifier implements SectorTwoModifier {
-    BOOM_MOD("04", "Boom-Only", "Re-fueling Capability", SymbolSetEnum.AIR),
-    DROGUE_MOD("05", "Drogue-Only", "Re-fueling Capability", SymbolSetEnum.AIR),
-    BOOM_DROGUE_MOD("06", "Boom and Drogue", "Re-fueling Capability", SymbolSetEnum.AIR),
-    DOWNLINK_MOD("11", "Downlinked", "Track Link Availability", SymbolSetEnum.AIR);
+    BOOM("04", "Boom-Only", ModifierCategory.RefuelingCapability, SymbolSetEnum.AIR),
+    DROGUE("05", "Drogue-Only", ModifierCategory.RefuelingCapability, SymbolSetEnum.AIR),
+    BOOM_DROGUE("06", "Boom and Drogue", ModifierCategory.RefuelingCapability, SymbolSetEnum.AIR),
+    DOWNLINK("11", "Downlinked", ModifierCategory.TrackLinkAvailability, SymbolSetEnum.AIR);
 
     private final String id;
     private final String label;
-    private final String category;
+    private final ModifierCategory category;
     private final SymbolSet symbolSet;
 
-    AirSectorTwoModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
+    AirSectorTwoModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
@@ -23,7 +24,7 @@ public enum AirSectorTwoModifier implements SectorTwoModifier {
     }
 
     @Override
-    public String getCategory() {
+    public ModifierCategory getCategory() {
         return category;
     }
 

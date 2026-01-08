@@ -107,12 +107,12 @@ public class StandardIconLibrary implements IconLibrary {
 
     @Override
     public SectorOneModifier getDefaultSectorOneModifier() {
-        return CommonSectorOneModifier.UNSPECIFIED_MOD;
+        return CommonSectorOneModifier.UNSPECIFIED;
     }
 
     @Override
     public SectorTwoModifier getDefaultSectorTwoModifier() {
-        return CommonSectorTwoModifier.UNSPECIFIED_2_MOD;
+        return CommonSectorTwoModifier.UNSPECIFIED;
     }
 
     @Override

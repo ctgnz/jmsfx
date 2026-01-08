@@ -2,51 +2,52 @@ package io.github.ctgnz.jmsfx.standard.dismountedindividual;
 
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum DismountedIndividualSectorTwoModifier implements SectorTwoModifier {
-    VIDEO_IMAGERY_MOD("03", "Video Imagery (Combat Camera)", "Task", SymbolSetEnum.DISMOUNTED),
-    J1_MOD("04", "J1", "Functional Staff Area", SymbolSetEnum.DISMOUNTED),
-    J2_MOD("05", "J2", "Functional Staff Area", SymbolSetEnum.DISMOUNTED),
-    J3_MOD("06", "J3", "Functional Staff Area", SymbolSetEnum.DISMOUNTED),
-    J4_MOD("07", "J4", "Functional Staff Area", SymbolSetEnum.DISMOUNTED),
-    J5_MOD("08", "J5", "Functional Staff Area", SymbolSetEnum.DISMOUNTED),
-    J6_MOD("09", "J6", "Functional Staff Area", SymbolSetEnum.DISMOUNTED),
-    J7_MOD("10", "J7", "Functional Staff Area", SymbolSetEnum.DISMOUNTED),
-    J8_MOD("11", "J8", "Functional Staff Area", SymbolSetEnum.DISMOUNTED),
-    J9_MOD("12", "J9", "Functional Staff Area", SymbolSetEnum.DISMOUNTED),
-    OF01_MOD("14", "OF-1", "Rank", SymbolSetEnum.DISMOUNTED),
-    OF02_MOD("15", "OF-2", "Rank", SymbolSetEnum.DISMOUNTED),
-    OF03_MOD("16", "OF-3", "Rank", SymbolSetEnum.DISMOUNTED),
-    OF04_MOD("17", "OF-4", "Rank", SymbolSetEnum.DISMOUNTED),
-    OF05_MOD("18", "OF-5", "Rank", SymbolSetEnum.DISMOUNTED),
-    OF06_MOD("19", "OF-6", "Rank", SymbolSetEnum.DISMOUNTED),
-    OF07_MOD("20", "OF-7", "Rank", SymbolSetEnum.DISMOUNTED),
-    OF08_MOD("21", "OF-8", "Rank", SymbolSetEnum.DISMOUNTED),
-    OF09_MOD("22", "OF-9", "Rank", SymbolSetEnum.DISMOUNTED),
-    OF10_MOD("23", "OF-10", "Rank", SymbolSetEnum.DISMOUNTED),
-    OFD_MOD("24", "OF-D", "Rank", SymbolSetEnum.DISMOUNTED),
-    OR1_MOD("25", "OR-1", "Rank", SymbolSetEnum.DISMOUNTED),
-    OR2_MOD("26", "OR-2", "Rank", SymbolSetEnum.DISMOUNTED),
-    OR3_MOD("27", "OR-3", "Rank", SymbolSetEnum.DISMOUNTED),
-    OR4_MOD("28", "OR-4", "Rank", SymbolSetEnum.DISMOUNTED),
-    OR5_MOD("29", "OR-5", "Rank", SymbolSetEnum.DISMOUNTED),
-    OR6_MOD("30", "OR-6", "Rank", SymbolSetEnum.DISMOUNTED),
-    OR7_MOD("31", "OR-7", "Rank", SymbolSetEnum.DISMOUNTED),
-    OR8_MOD("32", "OR-8", "Rank", SymbolSetEnum.DISMOUNTED),
-    OR9_MOD("33", "OR-9", "Rank", SymbolSetEnum.DISMOUNTED),
-    WO1_MOD("34", "WO-1", "Rank", SymbolSetEnum.DISMOUNTED),
-    WO2_MOD("35", "WO-2", "Rank", SymbolSetEnum.DISMOUNTED),
-    WO3_MOD("36", "WO-3", "Rank", SymbolSetEnum.DISMOUNTED),
-    WO4_MOD("37", "WO-4", "Rank", SymbolSetEnum.DISMOUNTED),
-    WO5_MOD("38", "WO-5", "Rank", SymbolSetEnum.DISMOUNTED);
+    VIDEO_IMAGERY("03", "Video Imagery (Combat Camera)", ModifierCategory.Task, SymbolSetEnum.DISMOUNTED),
+    J1("04", "J1", ModifierCategory.FunctionalStaffArea, SymbolSetEnum.DISMOUNTED),
+    J2("05", "J2", ModifierCategory.FunctionalStaffArea, SymbolSetEnum.DISMOUNTED),
+    J3("06", "J3", ModifierCategory.FunctionalStaffArea, SymbolSetEnum.DISMOUNTED),
+    J4("07", "J4", ModifierCategory.FunctionalStaffArea, SymbolSetEnum.DISMOUNTED),
+    J5("08", "J5", ModifierCategory.FunctionalStaffArea, SymbolSetEnum.DISMOUNTED),
+    J6("09", "J6", ModifierCategory.FunctionalStaffArea, SymbolSetEnum.DISMOUNTED),
+    J7("10", "J7", ModifierCategory.FunctionalStaffArea, SymbolSetEnum.DISMOUNTED),
+    J8("11", "J8", ModifierCategory.FunctionalStaffArea, SymbolSetEnum.DISMOUNTED),
+    J9("12", "J9", ModifierCategory.FunctionalStaffArea, SymbolSetEnum.DISMOUNTED),
+    OF01("14", "OF-1", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OF02("15", "OF-2", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OF03("16", "OF-3", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OF04("17", "OF-4", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OF05("18", "OF-5", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OF06("19", "OF-6", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OF07("20", "OF-7", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OF08("21", "OF-8", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OF09("22", "OF-9", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OF10("23", "OF-10", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OFD("24", "OF-D", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OR1("25", "OR-1", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OR2("26", "OR-2", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OR3("27", "OR-3", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OR4("28", "OR-4", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OR5("29", "OR-5", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OR6("30", "OR-6", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OR7("31", "OR-7", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OR8("32", "OR-8", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    OR9("33", "OR-9", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    WO1("34", "WO-1", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    WO2("35", "WO-2", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    WO3("36", "WO-3", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    WO4("37", "WO-4", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED),
+    WO5("38", "WO-5", ModifierCategory.Rank, SymbolSetEnum.DISMOUNTED);
 
     private final String id;
     private final String label;
-    private final String category;
+    private final ModifierCategory category;
     private final SymbolSet symbolSet;
 
-    DismountedIndividualSectorTwoModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
+    DismountedIndividualSectorTwoModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
@@ -54,7 +55,7 @@ public enum DismountedIndividualSectorTwoModifier implements SectorTwoModifier {
     }
 
     @Override
-    public String getCategory() {
+    public ModifierCategory getCategory() {
         return category;
     }
 

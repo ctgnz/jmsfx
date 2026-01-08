@@ -5,6 +5,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -15,7 +16,7 @@ import javafx.beans.property.StringProperty;
 public class SectorOneModifierImpl extends CodeElementImpl implements SectorOneModifier {
     private final ObjectProperty<SymbolSet> symbolSet = new SimpleObjectProperty<>();
     protected final BooleanProperty unknown = new SimpleBooleanProperty();
-    protected final StringProperty category = new SimpleStringProperty();
+    protected final ObjectProperty<ModifierCategory> category = new SimpleObjectProperty<>();
     protected final StringProperty graphicIdentifier = new SimpleStringProperty();
 
     public SectorOneModifierImpl() {
@@ -29,7 +30,7 @@ public class SectorOneModifierImpl extends CodeElementImpl implements SectorOneM
         this.graphicIdentifier.set(modifier.getGraphicIdentifier());
     }
 
-    public StringProperty categoryProperty() {
+    public ObjectProperty<ModifierCategory> categoryProperty() {
         return category;
     }
 
@@ -47,7 +48,7 @@ public class SectorOneModifierImpl extends CodeElementImpl implements SectorOneM
     }
 
     @Override
-    public String getCategory() {
+    public ModifierCategory getCategory() {
         return category.get();
     }
 

@@ -2,22 +2,23 @@ package io.github.ctgnz.jmsfx.standard.space;
 
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum SpaceSectorOneModifier implements SectorOneModifier {
-    LEO_MOD("01", "Low Earth Orbit (LEO)", "Orbit", SymbolSetEnum.SPACE),
-    MEO_MOD("02", "Medium Earth Orbit (MEO)", "Orbit", SymbolSetEnum.SPACE),
-    HEO_MOD("03", "High Earth Orbit (HEO)", "Orbit", SymbolSetEnum.SPACE),
-    GSO_MOD("04", "Geosynchronous Orbit (GSO)", "Orbit", SymbolSetEnum.SPACE),
-    GEO_MOD("05", "Geostationary Orbit (GEO)", "Orbit", SymbolSetEnum.SPACE),
-    MO_MOD("06", "Molniya Orbit (MO)", "Orbit", SymbolSetEnum.SPACE);
+    LEO("01", "Low Earth Orbit (LEO)", ModifierCategory.Orbit, SymbolSetEnum.SPACE),
+    MEO("02", "Medium Earth Orbit (MEO)", ModifierCategory.Orbit, SymbolSetEnum.SPACE),
+    HEO("03", "High Earth Orbit (HEO)", ModifierCategory.Orbit, SymbolSetEnum.SPACE),
+    GSO("04", "Geosynchronous Orbit (GSO)", ModifierCategory.Orbit, SymbolSetEnum.SPACE),
+    GEO("05", "Geostationary Orbit (GEO)", ModifierCategory.Orbit, SymbolSetEnum.SPACE),
+    MO("06", "Molniya Orbit (MO)", ModifierCategory.Orbit, SymbolSetEnum.SPACE);
 
     private final String id;
     private final String label;
-    private final String category;
+    private final ModifierCategory category;
     private final SymbolSet symbolSet;
 
-    SpaceSectorOneModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
+    SpaceSectorOneModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
@@ -25,7 +26,7 @@ public enum SpaceSectorOneModifier implements SectorOneModifier {
     }
 
     @Override
-    public String getCategory() {
+    public ModifierCategory getCategory() {
         return category;
     }
 

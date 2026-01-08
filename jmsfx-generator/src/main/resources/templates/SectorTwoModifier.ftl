@@ -2,19 +2,20 @@ package ${iconPackage}.${symbolSet.packageName};
 
 import ${basePackage}.SectorTwoModifier;
 import ${basePackage}.SymbolSet;
+import ${typePackage}.ModifierCategory;
 import ${iconPackage}.SymbolSetEnum;
 
 public enum ${symbolSet.baseTypeName}SectorTwoModifier implements SectorTwoModifier {
 <#list sectorTwoMods as mod>
-    ${mod.id}("${mod.code}", "${mod.label}", "${mod.category}", SymbolSetEnum.${symbolSet.id})<#sep>,
+    ${mod.id}("${mod.code}", "${mod.label}", ModifierCategory.${mod.category}, SymbolSetEnum.${symbolSet.id})<#sep>,
 </#list>;
 
     private final String id;
     private final String label;
-    private final String category;
+    private final ModifierCategory category;
     private final SymbolSet symbolSet;
 
-    ${symbolSet.baseTypeName}SectorTwoModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
+    ${symbolSet.baseTypeName}SectorTwoModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
@@ -22,7 +23,7 @@ public enum ${symbolSet.baseTypeName}SectorTwoModifier implements SectorTwoModif
     }
 
     @Override
-    public String getCategory() {
+    public ModifierCategory getCategory() {
         return category;
     }
 

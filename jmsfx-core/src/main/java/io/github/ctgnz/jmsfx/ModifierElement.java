@@ -1,12 +1,14 @@
 package io.github.ctgnz.jmsfx;
 
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
+
 public interface ModifierElement extends CodeElement {
 
     default SymbolSet getBaseSymbolSet() {
         return getSymbolSet();
     }
 
-    String getCategory();
+    ModifierCategory getCategory();
 
     String getGraphicIdentifier();
 

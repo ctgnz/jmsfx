@@ -4,19 +4,20 @@ import org.apache.commons.lang3.StringUtils;
 
 import ${basePackage}.SectorTwoModifier;
 import ${basePackage}.SymbolSet;
+import ${typePackage}.ModifierCategory;
 import ${iconPackage}.SymbolSetEnum;
 
 public enum CommonSectorTwoModifier implements SectorTwoModifier {
 <#list sectorTwoMods as mod>
-    ${mod.id}("${mod.groupId}", "${mod.code}", "${mod.label}", "${mod.category}")<#sep>,
+    ${mod.id}("${mod.groupId}", "${mod.code}", "${mod.label}", ModifierCategory.${mod.category})<#sep>,
 </#list>;
 
     private final String groupId;
     private final String id;
     private final String label;
-    private final String category;
+    private final ModifierCategory category;
 
-    CommonSectorTwoModifier(String groupId, String id, String label, String category) {
+    CommonSectorTwoModifier(String groupId, String id, String label, ModifierCategory category) {
         this.groupId = groupId;
         this.id = id;
         this.label = label;
@@ -24,7 +25,7 @@ public enum CommonSectorTwoModifier implements SectorTwoModifier {
     }
 
     @Override
-    public String getCategory() {
+    public ModifierCategory getCategory() {
         return category;
     }
 

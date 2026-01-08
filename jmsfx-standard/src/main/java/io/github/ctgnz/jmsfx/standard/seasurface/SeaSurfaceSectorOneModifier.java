@@ -2,23 +2,24 @@ package io.github.ctgnz.jmsfx.standard.seasurface;
 
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum SeaSurfaceSectorOneModifier implements SectorOneModifier {
-    OWN_MOD("01", "Own Ship", "Mission Area", SymbolSetEnum.SEA_SURFACE),
-    AA_MOD("02", "Antiair Warfare", "Mission Area", SymbolSetEnum.SEA_SURFACE),
-    MD_MOD("08", "Missile Defense", "Mission Area", SymbolSetEnum.SEA_SURFACE),
-    RMV_MOD("11", "Remote Multi-Mission Vehicle (USV-only)", "Mission Area", SymbolSetEnum.SEA_SURFACE),
-    TORPEDO_MOD("17", "Torpedo", "Weapons Capability", SymbolSetEnum.SEA_SURFACE),
-    LRST_MOD("21", "Ballistic Missile Defense, Long-Range Surveillance and Track (LRST)", "Mission Area", SymbolSetEnum.SEA_SURFACE),
-    SEA_BASED_X_MOD("22", "Sea-Base X-Band", "Mission Area", SymbolSetEnum.SEA_SURFACE);
+    OWN("01", "Own Ship", ModifierCategory.MissionArea, SymbolSetEnum.SEA_SURFACE),
+    AA("02", "Antiair Warfare", ModifierCategory.MissionArea, SymbolSetEnum.SEA_SURFACE),
+    MD("08", "Missile Defense", ModifierCategory.MissionArea, SymbolSetEnum.SEA_SURFACE),
+    RMV("11", "Remote Multi-Mission Vehicle (USV-only)", ModifierCategory.MissionArea, SymbolSetEnum.SEA_SURFACE),
+    TORPEDO("17", "Torpedo", ModifierCategory.WeaponsCapability, SymbolSetEnum.SEA_SURFACE),
+    LRST("21", "Ballistic Missile Defense, Long-Range Surveillance and Track (LRST)", ModifierCategory.MissionArea, SymbolSetEnum.SEA_SURFACE),
+    SEA_BASED_X("22", "Sea-Base X-Band", ModifierCategory.MissionArea, SymbolSetEnum.SEA_SURFACE);
 
     private final String id;
     private final String label;
-    private final String category;
+    private final ModifierCategory category;
     private final SymbolSet symbolSet;
 
-    SeaSurfaceSectorOneModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
+    SeaSurfaceSectorOneModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
@@ -26,7 +27,7 @@ public enum SeaSurfaceSectorOneModifier implements SectorOneModifier {
     }
 
     @Override
-    public String getCategory() {
+    public ModifierCategory getCategory() {
         return category;
     }
 

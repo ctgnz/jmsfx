@@ -2,22 +2,23 @@ package io.github.ctgnz.jmsfx.standard.landinstallation;
 
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum LandInstallationSectorOneModifier implements SectorOneModifier {
-    COAL_MOD("06", "Coal", "Electric Power Type", SymbolSetEnum.LAND_INSTALLATION),
-    GEOTHERMAL_MOD("07", "Geothermal", "Electric Power Type", SymbolSetEnum.LAND_INSTALLATION),
-    HYDROELECTRIC_MOD("08", "Hydroelectric", "Electric Power Type", SymbolSetEnum.LAND_INSTALLATION),
-    NATURAL_GAS_MOD("09", "Natural Gas", "Electric Power Type", SymbolSetEnum.LAND_INSTALLATION),
-    CIVILIAN_TELEPHONE_MOD("12", "Civilian Telephone", "Civilian Telecommunications Type", SymbolSetEnum.LAND_INSTALLATION),
-    CIVILIAN_TELEVISION_MOD("13", "Civilian Television", "Civilian Telecommunications Type", SymbolSetEnum.LAND_INSTALLATION);
+    COAL("06", "Coal", ModifierCategory.ElectricPowerType, SymbolSetEnum.LAND_INSTALLATION),
+    GEOTHERMAL("07", "Geothermal", ModifierCategory.ElectricPowerType, SymbolSetEnum.LAND_INSTALLATION),
+    HYDROELECTRIC("08", "Hydroelectric", ModifierCategory.ElectricPowerType, SymbolSetEnum.LAND_INSTALLATION),
+    NATURAL_GAS("09", "Natural Gas", ModifierCategory.ElectricPowerType, SymbolSetEnum.LAND_INSTALLATION),
+    CIVILIAN_TELEPHONE("12", "Civilian Telephone", ModifierCategory.CivilianTelecommunicationsType, SymbolSetEnum.LAND_INSTALLATION),
+    CIVILIAN_TELEVISION("13", "Civilian Television", ModifierCategory.CivilianTelecommunicationsType, SymbolSetEnum.LAND_INSTALLATION);
 
     private final String id;
     private final String label;
-    private final String category;
+    private final ModifierCategory category;
     private final SymbolSet symbolSet;
 
-    LandInstallationSectorOneModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
+    LandInstallationSectorOneModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
@@ -25,7 +26,7 @@ public enum LandInstallationSectorOneModifier implements SectorOneModifier {
     }
 
     @Override
-    public String getCategory() {
+    public ModifierCategory getCategory() {
         return category;
     }
 

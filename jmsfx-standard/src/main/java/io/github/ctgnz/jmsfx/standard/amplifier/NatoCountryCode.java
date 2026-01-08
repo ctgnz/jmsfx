@@ -1,8 +1,12 @@
 package io.github.ctgnz.jmsfx.standard.amplifier;
 
+import java.util.Arrays;
+import java.util.Map;
+
+import com.google.common.collect.Maps;
+
 import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.CountryCode;
-import io.github.ctgnz.jmsfx.Extension;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum NatoCountryCode implements CountryCode {
@@ -81,7 +85,7 @@ public enum NatoCountryCode implements CountryCode {
     GS("SGS", "South Georgia and the South Sandwich Islands", "239"),
     FJ("FJI", "Fiji", "242"),
     FI("FIN", "Finland", "246"),
-    SF("FIN", "Finland", "246"),
+    SF("SUO", "Finland", "246"),
     AX("ALA", "Åland Islands", "248"),
     FX("FXX", "France, Metropolitan", "249"),
     FR("FRA", "France", "250"),
@@ -250,8 +254,6 @@ public enum NatoCountryCode implements CountryCode {
     EG("EGY", "Egypt", "818"),
     GB("GBR", "United Kingdom", "826"),
     UK("UKG", "United Kingdom", "826"),
-    @Extension XA("XAL", "Scotland", "827"),
-    @Extension XY("XCY", "Wales", "828"),
     XI("XXI", "Northern Ireland", "829"),
     GG("GGY", "Guernsey", "831"),
     JE("JEY", "Jersey", "832"),
@@ -309,14 +311,13 @@ public enum NatoCountryCode implements CountryCode {
     X3("XCY", "Entity 3", "983"),
     X4("XKM", "Entity 4", "984"),
     X5("XKN", "Entity 5", "985"),
-    A3("AX3", "Entity 6", "986"),
-    @Extension HX("HRO", "Roman Empire", "990"),
-    @Extension X7("XRU", "Ruritania", "991"),
-    @Extension HD("HDK", "German Empire", "993"),
-    @Extension HW("HWB", "Kingdom of Württemberg", "994"),
-    @Extension HS("HSX", "Kingdom of Saxony", "995"),
-    @Extension HB("HBV", "Kingdom of Bavaria", "996"),
-    @Extension HP("HPR", "Kingdom of Prussia", "997");
+    A3("AX3", "Entity 6", "986");
+
+    private static final Map<String, NatoCountryCode> CODES = Maps.uniqueIndex(Arrays.asList(values()), NatoCountryCode::getId);
+
+    public static NatoCountryCode valueOfCode(String code) {
+        return CODES.get(code);
+    }
 
     private final String id;
     private final String label;
@@ -348,6 +349,7 @@ public enum NatoCountryCode implements CountryCode {
         return label;
     }
 
+    @Override
     public String getCode() {
         return code;
     }

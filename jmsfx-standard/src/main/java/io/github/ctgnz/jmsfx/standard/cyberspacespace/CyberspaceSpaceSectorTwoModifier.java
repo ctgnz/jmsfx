@@ -2,18 +2,19 @@ package io.github.ctgnz.jmsfx.standard.cyberspacespace;
 
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum CyberspaceSpaceSectorTwoModifier implements SectorTwoModifier {
-    SECURED_MOD("01", "Secured", "General", SymbolSetEnum.CYBERSPACE_SPACE),
-    OPEN_MOD("02", "Open", "General", SymbolSetEnum.CYBERSPACE_SPACE);
+    SECURED("01", "Secured", ModifierCategory.None, SymbolSetEnum.CYBERSPACE_SPACE),
+    OPEN("02", "Open", ModifierCategory.None, SymbolSetEnum.CYBERSPACE_SPACE);
 
     private final String id;
     private final String label;
-    private final String category;
+    private final ModifierCategory category;
     private final SymbolSet symbolSet;
 
-    CyberspaceSpaceSectorTwoModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
+    CyberspaceSpaceSectorTwoModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
@@ -21,7 +22,7 @@ public enum CyberspaceSpaceSectorTwoModifier implements SectorTwoModifier {
     }
 
     @Override
-    public String getCategory() {
+    public ModifierCategory getCategory() {
         return category;
     }
 

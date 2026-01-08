@@ -2,25 +2,26 @@ package io.github.ctgnz.jmsfx.standard.airmissile;
 
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum AirMissileSectorOneModifier implements SectorOneModifier {
-    AIR_MOD("01", "Air", "Launch Origin", SymbolSetEnum.AIR_MISSILE),
-    SURFACE_MOD("02", "Surface", "Launch Origin", SymbolSetEnum.AIR_MISSILE),
-    SUB_MOD("03", "Subsurface", "Launch Origin", SymbolSetEnum.AIR_MISSILE),
-    SPACE_MOD("04", "Space", "Launch Origin", SymbolSetEnum.AIR_MISSILE),
-    AB_MOD("05", "Anti-Ballistic", "Missile Class", SymbolSetEnum.AIR_MISSILE),
-    BALLISTIC_MOD("06", "Ballistic", "Missile Class", SymbolSetEnum.AIR_MISSILE),
-    CRUISE_MOD("07", "Cruise", "Missile Class", SymbolSetEnum.AIR_MISSILE),
-    INTERCEPTOR_MOD("08", "Interceptor", "Missile Class", SymbolSetEnum.AIR_MISSILE),
-    HYPERSONIC_MOD("09", "Interceptor", "Missile Class", SymbolSetEnum.AIR_MISSILE);
+    AIR("01", "Air", ModifierCategory.LaunchOrigin, SymbolSetEnum.AIR_MISSILE),
+    SURFACE("02", "Surface", ModifierCategory.LaunchOrigin, SymbolSetEnum.AIR_MISSILE),
+    SUB("03", "Subsurface", ModifierCategory.LaunchOrigin, SymbolSetEnum.AIR_MISSILE),
+    SPACE("04", "Space", ModifierCategory.LaunchOrigin, SymbolSetEnum.AIR_MISSILE),
+    AB("05", "Anti-Ballistic", ModifierCategory.MissileClass, SymbolSetEnum.AIR_MISSILE),
+    BALLISTIC("06", "Ballistic", ModifierCategory.MissileClass, SymbolSetEnum.AIR_MISSILE),
+    CRUISE("07", "Cruise", ModifierCategory.MissileClass, SymbolSetEnum.AIR_MISSILE),
+    INTERCEPTOR("08", "Interceptor", ModifierCategory.MissileClass, SymbolSetEnum.AIR_MISSILE),
+    HYPERSONIC("09", "Interceptor", ModifierCategory.MissileClass, SymbolSetEnum.AIR_MISSILE);
 
     private final String id;
     private final String label;
-    private final String category;
+    private final ModifierCategory category;
     private final SymbolSet symbolSet;
 
-    AirMissileSectorOneModifier(String id, String label, String category, SymbolSetEnum symbolSet) {
+    AirMissileSectorOneModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
         this.id = id;
         this.label = label;
         this.category = category;
@@ -28,7 +29,7 @@ public enum AirMissileSectorOneModifier implements SectorOneModifier {
     }
 
     @Override
-    public String getCategory() {
+    public ModifierCategory getCategory() {
         return category;
     }
 
