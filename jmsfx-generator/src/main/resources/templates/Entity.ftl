@@ -1,11 +1,11 @@
 package ${iconPackage}.${symbolSet.packageName};
 
-<#if entityTypes??>
+<#if symbolSet.entityTypePresent>
 import java.util.List;
 
 </#if>
 import ${basePackage}.Entity;
-<#if entityTypes??>
+<#if symbolSet.entityTypePresent>
 import ${basePackage}.EntityType;
 </#if>
 import ${basePackage}.SymbolSet;
@@ -13,7 +13,7 @@ import ${typePackage}.GraphicType;
 import ${iconPackage}.SymbolSetEnum;
 
 public enum ${symbolSet.baseTypeName}Entity implements Entity {
-<#list entities as ent>
+<#list symbolSet.entities as ent>
     ${ent.id}("${ent.code}", "${ent.label}", GraphicType.${ent.graphicType})<#if ent.baseSymbolSet??> {
         @Override
         public SymbolSet getBaseSymbolSet() {
@@ -58,7 +58,7 @@ public enum ${symbolSet.baseTypeName}Entity implements Entity {
         return SymbolSetEnum.${symbolSet.baseSymbolSet};
     }
 </#if>
-<#if entityTypes??>
+<#if symbolSet.entityTypePresent>
 
     @Override
     public List<EntityType> getEntityTypes() {

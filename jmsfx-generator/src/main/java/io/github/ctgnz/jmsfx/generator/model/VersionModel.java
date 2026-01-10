@@ -1,11 +1,18 @@
 package io.github.ctgnz.jmsfx.generator.model;
 
-import io.github.ctgnz.jmsfx.generator.schema.Library.Versions.Version;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class VersionModel extends StandardEnumModel {
+import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-    public VersionModel(Version version) {
-        super(version.getName(), version.getDescription(), version.getVersionCode().getCodeString(), null);
+@YamlFlowStyle
+@YamlForceQuote(properties = { "code", "label", "remarks" })
+@JsonPropertyOrder({
+    "code", "id", "extension", "deprecated", "label", "remarks"
+})
+public class VersionModel extends AbstractModel {
+
+    public VersionModel() {
     }
 
 }

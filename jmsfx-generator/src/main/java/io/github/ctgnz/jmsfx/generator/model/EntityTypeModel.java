@@ -1,30 +1,54 @@
 package io.github.ctgnz.jmsfx.generator.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
 import org.apache.commons.lang3.StringUtils;
 
-import io.github.ctgnz.jmsfx.generator.schema.GraphicType;
-import io.github.ctgnz.jmsfx.generator.schema.SymbolSet.Entities.Entity;
-import io.github.ctgnz.jmsfx.generator.schema.SymbolSet.Entities.Entity.EntityTypes.EntityType;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
-public class EntityTypeModel extends StandardEnumModel {
+import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-    private final String entityId;
-    private final GraphicType graphicType;
-    private final String graphic;
+@JsonIgnoreProperties({ "id", "label", "code", "extension", "deprecated", "remarks"})
+@JsonPropertyOrder({ "details", "entitySubTypes"})
+public class EntityTypeModel extends AbstractModel {
+    @YamlFlowStyle
+    @YamlForceQuote(properties = { "code", "label", "remarks" })
+    public record Details(String code, String id, GraphicType graphicType, String graphic, boolean extension, boolean deprecated, String label, String remarks) {}
 
-    public EntityTypeModel(Entity entity, EntityType entityType) {
-        super(entityType.getID().toString(), entityType.getLabel(), entityType.getEntityTypeCode().getCodeString(), null);
-        this.graphicType = entityType.getIcon();
-        this.entityId = entity.getID();
-        this.graphic = getNonStandardGraphic(entityType);
+    private @JsonBackReference EntityModel entity;
+    private final @JsonManagedReference List<EntitySubTypeModel> entitySubTypes = new ArrayList<>();
+    private @JsonIgnore GraphicType graphicType;
+    private @JsonIgnore String graphic;
+
+    public EntityTypeModel() {
     }
 
+    public void addEntitySubType(EntitySubTypeModel subType) {
+        subType.setEntityType(this);
+        entitySubTypes.add(subType);
+    }
+
+    @JsonIgnore
     public String getBaseTypeName() {
         return StringUtils.deleteWhitespace(label);
     }
 
+    public EntityModel getEntity() {
+        return entity;
+    }
+
+    @JsonIgnore
     public String getEntityId() {
-        return entityId;
+        return entity.getId();
     }
 
     public String getGraphic() {
@@ -35,14 +59,29 @@ public class EntityTypeModel extends StandardEnumModel {
         return graphicType;
     }
 
-    private String getNonStandardGraphic(EntityType entityType) {
-        String graphic = entityType.getGraphic();
-        // graphic filename should be e.g. 10111200.svg, so if there
-        // is more than one dot it is a non-standard name
-        if (graphic.indexOf('.') != graphic.lastIndexOf('.')) {
-            return graphic.substring(0, graphic.lastIndexOf('.'));
-        }
-        return null;
+    public void setEntity(EntityModel entity) {
+        this.entity = entity;
+    }
+
+    protected Stream<EntitySubTypeModel> streamEntitySubTypes() {
+        return entitySubTypes.stream();
+    }
+
+    @JsonGetter("details")
+    private Details getDetails() {
+        return new Details(code, id, graphicType, graphic, extension, deprecated, label, remarks);
+    }
+
+    @JsonSetter("details")
+    private void setDetails(Details details) {
+        this.id = details.id;
+        this.code = details.code;
+        this.extension = details.extension;
+        this.deprecated = details.deprecated;
+        this.label = details.label;
+        this.remarks = details.remarks;
+        this.graphic = details.graphic;
+        this.graphicType = details.graphicType;
     }
 
 }

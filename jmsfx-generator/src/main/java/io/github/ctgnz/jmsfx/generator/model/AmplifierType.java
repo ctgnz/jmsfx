@@ -1,4 +1,4 @@
-package io.github.ctgnz.jmsfx.generator.schema;
+package io.github.ctgnz.jmsfx.generator.model;
 
 import jakarta.xml.bind.annotation.XmlEnum;
 import jakarta.xml.bind.annotation.XmlType;

@@ -1,28 +1,27 @@
 package io.github.ctgnz.jmsfx.generator.model;
 
-import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import io.github.ctgnz.jmsfx.generator.schema.Library.AmplifierGroups.AmplifierGroup;
-import io.github.ctgnz.jmsfx.generator.schema.Library.AmplifierGroups.AmplifierGroup.Amplifiers.Amplifier;
-import io.github.ctgnz.jmsfx.generator.schema.Library.Amplifiers.Amplifier.Values;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-public class AmplifierListItemModel extends StandardEnumModel {
-    private final String backgroundFill;
+@YamlFlowStyle
+@YamlForceQuote(properties = { "id", "code", "label", "remarks" })
+@JsonPropertyOrder({
+    "code", "id", "extension", "deprecated", "label", "backgroundFill", "remarks"
+})
+public class AmplifierListItemModel extends AbstractModel {
+    private String backgroundFill;
 
-    public AmplifierListItemModel(AmplifierGroup group, Amplifier amplifier) {
-        super(amplifier.getName(), amplifier.getLabel(), amplifier.getAmplifierCode().getHexValue(), null);
-        this.backgroundFill = StringUtils.defaultIfBlank(amplifier.getRemarks(), "");
-        this.extension = amplifier.isExtension();
-    }
-
-    public AmplifierListItemModel(Values.Value value) {
-        super(value.getName(), value.getLabel(), value.getLabelAlias(), value.getRemarks());
-        this.backgroundFill = null;
-        this.extension = value.isExtension();
+    public AmplifierListItemModel() {
     }
 
     public String getBackgroundFill() {
         return backgroundFill;
+    }
+
+    public void setBackgroundFill(String backgroundFill) {
+        this.backgroundFill = backgroundFill;
     }
 
 }

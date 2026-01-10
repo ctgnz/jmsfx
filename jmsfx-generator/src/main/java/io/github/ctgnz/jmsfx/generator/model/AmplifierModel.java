@@ -1,29 +1,26 @@
 package io.github.ctgnz.jmsfx.generator.model;
 
-import org.apache.commons.lang3.ObjectUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.text.CaseUtils;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import io.github.ctgnz.jmsfx.generator.schema.AmplifierType;
-import io.github.ctgnz.jmsfx.generator.schema.Library.Amplifiers.Amplifier;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-public class AmplifierModel extends StandardEnumModel {
+@YamlFlowStyle
+@YamlForceQuote(properties = { "id", "code", "label", "remarks" })
+@JsonPropertyOrder({
+    "id", "type", "min", "max", "code", "extension", "deprecated", "label", "description", "remarks"
+})
+public class AmplifierModel extends AbstractModel {
 
-    private final String description;
-    private final AmplifierType type;
-    private final int min;
-    private final int max;
+    private String description;
+    private AmplifierType type;
+    private int min;
+    private int max;
 
-    public AmplifierModel(Amplifier amplifier) {
-        super(amplifier.getID(), amplifier.getLabel(), CaseUtils.toCamelCase(amplifier.getLabel(), true, ' ', '/', '(', ')'), null);
-        this.description = StringUtils.defaultIfBlank(amplifier.getDescription(), "");
-        this.type = amplifier.getType();
-        this.min = ObjectUtils.defaultIfNull(amplifier.getMinLength(), 0);
-        this.max = ObjectUtils.defaultIfNull(amplifier.getMaxLength(), 0);
-        this.extension = amplifier.isExtension();
+    public AmplifierModel() {
     }
 
     @JsonCreator
@@ -42,6 +39,7 @@ public class AmplifierModel extends StandardEnumModel {
         this.max = max;
     }
 
+    @JsonIgnore
     public String getConstantName() {
         return String.format("%s_%s", id, code);
     }
@@ -60,6 +58,22 @@ public class AmplifierModel extends StandardEnumModel {
 
     public AmplifierType getType() {
         return type;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setMax(int max) {
+        this.max = max;
+    }
+
+    public void setMin(int min) {
+        this.min = min;
+    }
+
+    public void setType(AmplifierType type) {
+        this.type = type;
     }
 
 }

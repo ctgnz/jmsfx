@@ -6,7 +6,7 @@ import ${typePackage}.ModifierCategory;
 import ${iconPackage}.SymbolSetEnum;
 
 public enum ${symbolSet.baseTypeName}SectorTwoModifier implements SectorTwoModifier {
-<#list sectorTwoMods as mod>
+<#list symbolSet.sectorTwoMods as mod>
     ${mod.id}("${mod.code}", "${mod.label}", ModifierCategory.${mod.category}, SymbolSetEnum.${symbolSet.id})<#sep>,
 </#list>;
 

@@ -5,44 +5,64 @@ import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 
-import io.github.ctgnz.jmsfx.generator.AmplifierGuideConfig;
-import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension;
-import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension.SymbolSets.SymbolSetRef;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
-public class SymbolSetModel extends StandardEnumModel {
+import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-    private final String dimensionId;
-    private final String fileName;
-    private final String graphicLocation;
-    private final List<AmplifierGuideConfig> amplifierGuides = new ArrayList<>();
-    private boolean useFrame = true;
-    private boolean entityTypePresent = false;
-    private boolean entitySubTypePresent = false;
-    private boolean amplifierPresent = false;
-    private boolean amplifierTwoPresent = false;
-    private boolean amplifierThreePresent = false;
-    private boolean frameAmplifierPresent = false;
-    private boolean sectorOneModifierPresent = false;
-    private boolean sectorTwoModifierPresent = false;
-    private String amplifierClass;
-    private String amplifierTwoClass;
-    private String amplifierThreeClass;
-    private String frameAmplifierClass;
-    private String baseSymbolSet;
+@JsonIgnoreProperties({ "id", "label", "code", "extension", "deprecated", "remarks"})
+@JsonPropertyOrder({ "details", "config", "amplifierGuides", "entities", "sectorOneMods", "sectorTwoMods" })
+public class SymbolSetModel extends AbstractModel {
+    @YamlFlowStyle
+    @YamlForceQuote(properties = { "code", "label", "remarks" })
+    public record Details(String code, String dimensionId, String id, boolean extension, boolean deprecated, String label, String remarks) {}
 
-    public SymbolSetModel(Dimension dimension, SymbolSetRef symbolSet, String graphicLocation) {
-        super(symbolSet.getID().toString(), symbolSet.getLabel(), symbolSet.getSymbolSetCode().getCodeString(), null);
-        this.graphicLocation = graphicLocation;
-        this.dimensionId = dimension.getID();
-        this.fileName = symbolSet.getInstance();
-        this.baseSymbolSet = symbolSet.getBaseSymbolSet();
+    @YamlFlowStyle
+    @YamlForceQuote(properties = { "graphicLocation", "baseSymbolSet" })
+    public record Config(String graphicLocation, String baseSymbolSet, boolean useFrame, String frameAmplifierClass, String amplifierClass, String amplifierTwoClass, String amplifierThreeClass) {}
+
+    private @JsonIgnore String dimensionId;
+    private @JsonIgnore String fileName;
+    private @JsonIgnore String graphicLocation;
+    private @JsonIgnore boolean useFrame = true;
+    private @JsonIgnore String amplifierClass;
+    private @JsonIgnore String amplifierTwoClass;
+    private @JsonIgnore String amplifierThreeClass;
+    private @JsonIgnore String frameAmplifierClass;
+    private @JsonIgnore String baseSymbolSet;
+    private final @JsonManagedReference List<AmplifierGuideModel> amplifierGuides = new ArrayList<>();
+    private final @JsonManagedReference List<EntityModel> entities = new ArrayList<>();
+    private final @JsonManagedReference List<SectorOneModifierModel> sectorOneMods = new ArrayList<>();
+    private final @JsonManagedReference List<SectorTwoModifierModel> sectorTwoMods = new ArrayList<>();
+
+    public SymbolSetModel() {
+    }
+
+    public void addEntity(EntityModel entity) {
+        entity.setSymbolSet(this);
+        entities.add(entity);
+    }
+
+    public void addSectorOneMod(SectorOneModifierModel modifier) {
+        modifier.setSymbolSet(this);
+        sectorOneMods.add(modifier);
+    }
+
+    public void addSectorTwoMod(SectorTwoModifierModel modifier) {
+        modifier.setSymbolSet(this);
+        sectorTwoMods.add(modifier);
     }
 
     public String getAmplifierClass() {
         return amplifierClass;
     }
 
-    public List<AmplifierGuideConfig> getAmplifierGuides() {
+    public List<AmplifierGuideModel> getAmplifierGuides() {
         return amplifierGuides;
     }
 
@@ -58,6 +78,7 @@ public class SymbolSetModel extends StandardEnumModel {
         return baseSymbolSet;
     }
 
+    @JsonIgnore
     public String getBaseTypeName() {
         return StringUtils.remove(StringUtils.deleteWhitespace(label), '-');
     }
@@ -66,6 +87,21 @@ public class SymbolSetModel extends StandardEnumModel {
         return dimensionId;
     }
 
+    public List<EntityModel> getEntities() {
+        return entities;
+    }
+
+    @JsonIgnore
+    public List<EntitySubTypeModel> getEntitySubTypes() {
+        return entities.stream().flatMap(EntityModel::streamEntitySubTypes).toList();
+    }
+
+    @JsonIgnore
+    public List<EntityTypeModel> getEntityTypes() {
+        return entities.stream().flatMap(EntityModel::streamEntityTypes).toList();
+    }
+
+    @JsonIgnore
     public String getFileName() {
         return fileName;
     }
@@ -78,55 +114,75 @@ public class SymbolSetModel extends StandardEnumModel {
         return graphicLocation;
     }
 
+    @JsonIgnore
     public String getPackageName() {
         return StringUtils.remove(StringUtils.deleteWhitespace(label).toLowerCase(), '-');
     }
 
+    public List<SectorOneModifierModel> getSectorOneMods() {
+        return sectorOneMods;
+    }
+
+    public List<SectorTwoModifierModel> getSectorTwoMods() {
+        return sectorTwoMods;
+    }
+
+    @JsonIgnore
     public boolean isAmplifierGuidesPresent() {
         return amplifierGuides != null && !amplifierGuides.isEmpty();
     }
 
+    @JsonIgnore
     public boolean isAmplifierPresent() {
-        return amplifierPresent;
+        return StringUtils.isNotBlank(amplifierClass);
     }
 
+    @JsonIgnore
     public boolean isAmplifierThreePresent() {
-        return amplifierThreePresent;
+        return StringUtils.isNotBlank(amplifierThreeClass);
     }
 
+    @JsonIgnore
     public boolean isAmplifierTwoPresent() {
-        return amplifierTwoPresent;
+        return StringUtils.isNotBlank(amplifierTwoClass);
     }
 
+    @JsonIgnore
     public boolean isAnyNotPresent() {
-        if (amplifierPresent && entityTypePresent && entitySubTypePresent && sectorOneModifierPresent && sectorTwoModifierPresent) {
-            return !amplifierTwoPresent || !amplifierThreePresent;
+        if (isAmplifierPresent() && isEntityTypePresent() && isEntitySubTypePresent() && isSectorOneModifierPresent() && isSectorTwoModifierPresent()) {
+            return !isAmplifierTwoPresent() || !isAmplifierThreePresent();
         }
-        return !amplifierPresent || ! entityTypePresent || !entitySubTypePresent || !sectorOneModifierPresent || !sectorTwoModifierPresent || !isAmplifierGuidesPresent();
+        return !isAmplifierPresent() || !isEntityTypePresent() || !isEntitySubTypePresent() || !isSectorOneModifierPresent() || !isSectorTwoModifierPresent() || !isAmplifierGuidesPresent();
     }
 
+    @JsonIgnore
     public boolean isCommon() {
         return "COMMON".equals(getId());
     }
 
+    @JsonIgnore
     public boolean isEntitySubTypePresent() {
-        return entitySubTypePresent;
+        return !getEntitySubTypes().isEmpty();
     }
 
+    @JsonIgnore
     public boolean isEntityTypePresent() {
-        return entityTypePresent;
+        return !getEntityTypes().isEmpty();
     }
 
+    @JsonIgnore
     public boolean isFrameAmplifierPresent() {
-        return frameAmplifierPresent;
+        return StringUtils.isNotBlank(frameAmplifierClass);
     }
 
+    @JsonIgnore
     public boolean isSectorOneModifierPresent() {
-        return sectorOneModifierPresent;
+        return !sectorOneMods.isEmpty();
     }
 
+    @JsonIgnore
     public boolean isSectorTwoModifierPresent() {
-        return sectorTwoModifierPresent;
+        return !sectorTwoMods.isEmpty();
     }
 
     public boolean isUseFrame() {
@@ -137,56 +193,56 @@ public class SymbolSetModel extends StandardEnumModel {
         this.amplifierClass = amplifierClass;
     }
 
-    public void setAmplifierPresent(boolean amplifierPresent) {
-        this.amplifierPresent = amplifierPresent;
-    }
-
     public void setAmplifierThreeClass(String amplifierThreeClass) {
         this.amplifierThreeClass = amplifierThreeClass;
-    }
-
-    public void setAmplifierThreePresent(boolean amplifierThreePresent) {
-        this.amplifierThreePresent = amplifierThreePresent;
     }
 
     public void setAmplifierTwoClass(String amplifierTwoClass) {
         this.amplifierTwoClass = amplifierTwoClass;
     }
 
-    public void setAmplifierTwoPresent(boolean amplifierTwoPresent) {
-        this.amplifierTwoPresent = amplifierTwoPresent;
-    }
-
     public void setBaseSymbolSet(String baseSymbolSet) {
         this.baseSymbolSet = baseSymbolSet;
-    }
-
-    public void setEntitySubTypePresent(boolean entitySubTypePresent) {
-        this.entitySubTypePresent = entitySubTypePresent;
-    }
-
-    public void setEntityTypePresent(boolean entityTypePresent) {
-        this.entityTypePresent = entityTypePresent;
     }
 
     public void setFrameAmplifierClass(String amplifierFourClass) {
         this.frameAmplifierClass = amplifierFourClass;
     }
 
-    public void setFrameAmplifierPresent(boolean frameAmplifierPresent) {
-        this.frameAmplifierPresent = frameAmplifierPresent;
-    }
-
-    public void setSectorOneModifierPresent(boolean sectorOneModifierPresent) {
-        this.sectorOneModifierPresent = sectorOneModifierPresent;
-    }
-
-    public void setSectorTwoModifierPresent(boolean sectorTwoModifierPresent) {
-        this.sectorTwoModifierPresent = sectorTwoModifierPresent;
-    }
-
     public void setUseFrame(boolean useFrame) {
         this.useFrame = useFrame;
+    }
+
+    @JsonGetter("config")
+    private Config getConfig() {
+        return new Config(graphicLocation, baseSymbolSet, useFrame, frameAmplifierClass, amplifierClass, amplifierTwoClass, amplifierThreeClass);
+    }
+
+    @JsonGetter("details")
+    private Details getDetails() {
+        return new Details(code, dimensionId, id, extension, deprecated, label, remarks);
+    }
+
+    @JsonSetter("config")
+    private void setConfig(Config config) {
+        this.graphicLocation = config.graphicLocation;
+        this.baseSymbolSet = config.baseSymbolSet;
+        this.useFrame = config.useFrame;
+        this.frameAmplifierClass = config.frameAmplifierClass;
+        this.amplifierClass = config.amplifierClass;
+        this.amplifierTwoClass = config.amplifierTwoClass;
+        this.amplifierThreeClass = config.amplifierThreeClass;
+    }
+
+    @JsonSetter("details")
+    private void setDetails(Details details) {
+        this.id = details.id;
+        this.code = details.code;
+        this.extension = details.extension;
+        this.deprecated = details.deprecated;
+        this.label = details.label;
+        this.remarks = details.remarks;
+        this.dimensionId = details.dimensionId;
     }
 
 }

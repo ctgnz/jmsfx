@@ -1,19 +1,21 @@
 package io.github.ctgnz.jmsfx.generator.model;
 
-import org.apache.commons.lang3.RegExUtils;
-import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import io.github.ctgnz.jmsfx.generator.schema.ModifiersType.Modifier;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-public class SectorOneModifierModel extends StandardEnumModel {
+@YamlFlowStyle
+@YamlForceQuote(properties = { "code", "label", "remarks" })
+@JsonPropertyOrder({ "groupId", "code", "category", "id", "extension", "deprecated", "label", "remarks" })
+public class SectorOneModifierModel extends AbstractModel {
 
-    private final String groupId;
-    private final String category;
+    private @JsonBackReference SymbolSetModel symbolSet;
+    private String groupId;
+    private String category;
 
-    public SectorOneModifierModel(Modifier modifier) {
-        super(modifier.getID().toString(), modifier.getLabel(), modifier.getModifierCode().getCodeString(), null);
-        this.groupId = modifier.getExtensionCode();
-        this.category = RegExUtils.removeAll(StringUtils.defaultIfBlank(modifier.getCategory(), "None"), "\\s");
+    public SectorOneModifierModel() {
     }
 
     public String getCategory() {
@@ -22,6 +24,22 @@ public class SectorOneModifierModel extends StandardEnumModel {
 
     public String getGroupId() {
         return groupId;
+    }
+
+    public SymbolSetModel getSymbolSet() {
+        return symbolSet;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public void setSymbolSet(SymbolSetModel symbolSet) {
+        this.symbolSet = symbolSet;
     }
 
 }

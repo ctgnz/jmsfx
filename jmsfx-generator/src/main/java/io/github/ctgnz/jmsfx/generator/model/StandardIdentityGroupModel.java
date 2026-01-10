@@ -1,18 +1,28 @@
 package io.github.ctgnz.jmsfx.generator.model;
 
-import io.github.ctgnz.jmsfx.generator.schema.Library.StandardIdentityGroups.StandardIdentityGroup;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class StandardIdentityGroupModel extends StandardEnumModel {
+import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-    private final String graphicSuffix;
+@YamlFlowStyle
+@YamlForceQuote(properties = { "code", "label", "remarks" })
+@JsonPropertyOrder({
+    "code", "id", "graphicSuffix", "extension", "deprecated", "label", "remarks"
+})
+public class StandardIdentityGroupModel extends AbstractModel {
 
-    public StandardIdentityGroupModel(StandardIdentityGroup identityGroup) {
-        super(identityGroup.getID(), identityGroup.getLabel(), Integer.toString(identityGroup.getStandardIdentityGroupCode()), null);
-        this.graphicSuffix = identityGroup.getGraphicSuffix();
+    private String graphicSuffix;
+
+    public StandardIdentityGroupModel() {
     }
 
     public String getGraphicSuffix() {
         return graphicSuffix;
+    }
+
+    public void setGraphicSuffix(String graphicSuffix) {
+        this.graphicSuffix = graphicSuffix;
     }
 
 }

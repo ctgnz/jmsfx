@@ -4,20 +4,23 @@ import java.util.Comparator;
 
 import org.apache.commons.lang3.RegExUtils;
 
-public abstract class StandardEnumModel {
+public abstract class AbstractModel {
 
-    public static <E extends StandardEnumModel> Comparator<E> getStandardOrder() {
-        return Comparator.comparing(StandardEnumModel::getCode);
+    public static <E extends AbstractModel> Comparator<E> getStandardOrder() {
+        return Comparator.comparing(AbstractModel::getCode);
     }
 
-    protected final String id;
-    protected final String label;
-    protected final String code;
-    protected final String remarks;
+    protected String id;
+    protected String label;
+    protected String code;
+    protected String remarks;
     protected boolean extension;
     protected boolean deprecated;
 
-    public StandardEnumModel(String id, String label, String code, String remarks) {
+    public AbstractModel() {
+    }
+
+    public AbstractModel(String id, String label, String code, String remarks) {
         this.id = sanitiseId(id);
         this.label = label;
         this.code = code;

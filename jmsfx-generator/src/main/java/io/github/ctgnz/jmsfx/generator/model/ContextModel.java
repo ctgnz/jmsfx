@@ -1,11 +1,18 @@
 package io.github.ctgnz.jmsfx.generator.model;
 
-import io.github.ctgnz.jmsfx.generator.schema.Library.Contexts.Context;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class ContextModel extends StandardEnumModel {
+import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-    public ContextModel(Context context) {
-        super(context.getID(), context.getLabel(), Integer.toString(context.getContextCode()), null);
+@YamlFlowStyle
+@YamlForceQuote(properties = { "code", "label", "remarks" })
+@JsonPropertyOrder({
+    "code", "id", "extension", "deprecated", "label", "remarks"
+})
+public class ContextModel extends AbstractModel {
+
+    public ContextModel() {
     }
 
 }

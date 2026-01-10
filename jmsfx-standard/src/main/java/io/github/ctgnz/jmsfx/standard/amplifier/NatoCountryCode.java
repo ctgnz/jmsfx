@@ -1,13 +1,12 @@
 package io.github.ctgnz.jmsfx.standard.amplifier;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import com.google.common.collect.Maps;
-
 import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.CountryCode;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
+
+import java.util.Arrays;
+import java.util.Map;
+import com.google.common.collect.Maps;
 
 public enum NatoCountryCode implements CountryCode {
     AF("AFG", "Afghanistan", "004"),
@@ -85,7 +84,7 @@ public enum NatoCountryCode implements CountryCode {
     GS("SGS", "South Georgia and the South Sandwich Islands", "239"),
     FJ("FJI", "Fiji", "242"),
     FI("FIN", "Finland", "246"),
-    SF("SUO", "Finland", "246"),
+    SF("SUO", "Suomi (Finland)", "246"),
     AX("ALA", "Åland Islands", "248"),
     FX("FXX", "France, Metropolitan", "249"),
     FR("FRA", "France", "250"),
@@ -349,7 +348,6 @@ public enum NatoCountryCode implements CountryCode {
         return label;
     }
 
-    @Override
     public String getCode() {
         return code;
     }

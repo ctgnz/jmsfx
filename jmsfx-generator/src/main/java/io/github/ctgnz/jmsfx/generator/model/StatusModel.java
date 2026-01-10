@@ -1,29 +1,34 @@
 package io.github.ctgnz.jmsfx.generator.model;
 
-import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.stream.Collectors;
 
-import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension.SymbolSets.SymbolSetRef;
-import io.github.ctgnz.jmsfx.generator.schema.Library.Statuses.Status;
-import io.github.ctgnz.jmsfx.generator.schema.Library.Statuses.Status.Graphics.Graphic;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
-public class StatusModel extends StandardEnumModel {
+import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-    private final Set<String> dimensions;
+@YamlFlowStyle
+@YamlForceQuote(properties = { "code", "label", "remarks" })
+@JsonPropertyOrder({
+    "code", "id", "extension", "deprecated", "label", "remarks", "dimensions"
+})
+public class StatusModel extends AbstractModel {
 
-    public StatusModel(Status status) {
-        super(status.getName(), status.getLabel(), Integer.toString(status.getStatusCode()), null);
-        if (status.getGraphics() != null) {
-            this.dimensions = status.getGraphics().getGraphic().stream().map(Graphic::getDimensionID).map(SymbolSetRef.class::cast).map(SymbolSetRef::getID).collect(Collectors.toSet());
-        } else {
-            this.dimensions = Collections.emptySet();
-        }
+    private final Set<String> dimensions = new TreeSet<>();
+
+    public StatusModel() {
     }
 
     public Set<String> getDimensions() {
         return new TreeSet<>(dimensions);
+    }
+
+    @JsonSetter("dimensions")
+    protected void loadDimensions(List<String> dimensions) {
+        this.dimensions.addAll(dimensions);
     }
 
 }

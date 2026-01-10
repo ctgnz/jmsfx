@@ -5,7 +5,7 @@ import ${basePackage}.EntityType;
 import ${typePackage}.GraphicType;
 
 public enum ${symbolSet.baseTypeName}EntitySubType implements EntitySubType {
-<#list entitySubTypes as subType>
+<#list symbolSet.entitySubTypes as subType>
     ${subType.id}("${subType.code}", "${subType.label}", ${symbolSet.baseTypeName}EntityType.${subType.entityTypeId}, GraphicType.${subType.graphicType})<#if subType.graphic??> {
         @Override
         public String getGraphicIdentifier() {

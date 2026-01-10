@@ -1,18 +1,37 @@
 package io.github.ctgnz.jmsfx.generator.model;
 
-import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class DimensionModel extends StandardEnumModel {
+import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-    private final String geometry;
+@YamlFlowStyle
+@YamlForceQuote(properties = { "code", "label", "remarks", "graphicLocation" })
+@JsonPropertyOrder({
+    "code", "id", "geometry", "graphicLocation", "extension", "deprecated", "label", "remarks"
+})
+public class DimensionModel extends AbstractModel {
 
-    public DimensionModel(Dimension dimension) {
-        super(dimension.getID(), dimension.getLabel(), dimension.getDimensionCode().getCodeString(), null);
-        this.geometry = dimension.getGeometry().name() + "_GEOMETRY";
+    private String geometry;
+    private String graphicLocation;
+
+    public DimensionModel() {
     }
 
     public String getGeometry() {
         return geometry;
+    }
+
+    public String getGraphicLocation() {
+        return graphicLocation;
+    }
+
+    public void setGeometry(String geometry) {
+        this.geometry = geometry;
+    }
+
+    public void setGraphicLocation(String graphicLocation) {
+        this.graphicLocation = graphicLocation;
     }
 
 }

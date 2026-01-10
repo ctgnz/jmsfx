@@ -1,30 +1,34 @@
 package io.github.ctgnz.jmsfx.generator.model;
 
-import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import static java.util.stream.Collectors.toSet;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
-import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension.SymbolSets.SymbolSetRef;
-import io.github.ctgnz.jmsfx.generator.schema.Library.HQTFDummies.HQTFDummy;
-import io.github.ctgnz.jmsfx.generator.schema.Library.HQTFDummies.HQTFDummy.Graphics.Graphic;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-public class HqtfDummyModel extends StandardEnumModel {
+@YamlFlowStyle
+@YamlForceQuote(properties = { "code", "label", "remarks" })
+@JsonPropertyOrder({
+    "code", "id", "extension", "deprecated", "label", "remarks", "dimensions"
+})
+public class HqtfDummyModel extends AbstractModel {
 
-    private final Set<String> dimensions;
+    private final Set<String> dimensions = new TreeSet<>();
 
-    public HqtfDummyModel(HQTFDummy dummy) {
-        super(dummy.getName(), dummy.getLabel(), Integer.toString(dummy.getHQTFDummyCode()), null);
-        if (dummy.getGraphics() != null) {
-            this.dimensions = dummy.getGraphics().getGraphic().stream().map(Graphic::getDimensionID).map(SymbolSetRef.class::cast).map(SymbolSetRef::getID).collect(toSet());
-        } else {
-            this.dimensions = Collections.emptySortedSet();
-        }
+    public HqtfDummyModel() {
     }
 
     public Set<String> getDimensions() {
         return new TreeSet<>(dimensions);
+    }
+
+    @JsonSetter("dimensions")
+    protected void loadDimensions(List<String> dimensions) {
+        this.dimensions.addAll(dimensions);
     }
 
 }

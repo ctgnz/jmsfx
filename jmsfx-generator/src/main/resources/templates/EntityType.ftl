@@ -1,18 +1,18 @@
 package ${iconPackage}.${symbolSet.packageName};
 
-<#if entitySubTypes??>
+<#if symbolSet.entitySubTypePresent>
 import java.util.List;
 
 </#if>
 import ${basePackage}.Entity;
-<#if entitySubTypes??>
+<#if symbolSet.entitySubTypePresent>
 import ${basePackage}.EntitySubType;
 </#if>
 import ${basePackage}.EntityType;
 import ${typePackage}.GraphicType;
 
 public enum ${symbolSet.baseTypeName}EntityType implements EntityType {
-<#list entityTypes as entType>
+<#list symbolSet.entityTypes as entType>
     ${entType.id}("${entType.code}", "${entType.label}", ${symbolSet.baseTypeName}Entity.${entType.entityId}, GraphicType.${entType.graphicType})<#if entType.graphic??> {
         @Override
         public String getGraphicIdentifier() {
@@ -52,7 +52,7 @@ public enum ${symbolSet.baseTypeName}EntityType implements EntityType {
     public Entity getEntity() {
         return entity;
     }
-<#if entitySubTypes??>
+<#if symbolSet.entitySubTypePresent>
 
     @Override
     public List<EntitySubType> getEntitySubTypes() {

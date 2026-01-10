@@ -4,63 +4,40 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import io.github.ctgnz.jmsfx.generator.ListAmplifierConfig;
-import io.github.ctgnz.jmsfx.generator.StandardAmplifierConfig;
-import io.github.ctgnz.jmsfx.generator.schema.Library.AmplifierGroups.AmplifierGroup;
-import io.github.ctgnz.jmsfx.generator.schema.Library.AmplifierGroups.AmplifierGroup.Amplifiers.Amplifier;
-import io.github.ctgnz.jmsfx.generator.schema.Library.Amplifiers.Amplifier.Values;
-import io.github.ctgnz.jmsfx.generator.schema.Library.Dimensions.Dimension.SymbolSets.SymbolSetRef;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
-public class AmplifierListModel extends StandardEnumModel {
+import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
+
+@JsonIgnoreProperties({ "id", "label", "code", "extension", "deprecated", "remarks"})
+@JsonPropertyOrder({ "details", "config", "values" })
+public class AmplifierListModel extends AbstractModel {
+    @YamlFlowStyle
+    @YamlForceQuote(properties = { "code", "label", "remarks" })
+    public record Details(String code, String id, boolean extension, boolean deprecated, String label, String amplifierId, String remarks) {}
+
+    @YamlFlowStyle
+    @YamlForceQuote(properties = { "graphicLocation", "baseSymbolSet", "enumDesc" })
+    public record Config(String typeName, String graphicLocation, boolean standard, boolean country, boolean coded, boolean frameAmplifier, boolean unknown, String enumId, String enumDesc, String[] symbolSets) {}
+
     private final List<AmplifierListItemModel> values = new ArrayList<>();
-    private final String typeName;
-    private final String graphicLocation;
-    private final String[] symbolSets;
-    private final String enumId;
-    private final String enumDesc;
-    private final boolean standard;
-    private final boolean country;
-    private final boolean coded;
-    private final boolean frameAmplifier;
-    private final boolean unknown;
-    private String amplifierId;
+    private @JsonIgnore String typeName;
+    private @JsonIgnore String graphicLocation;
+    private @JsonIgnore final List<String> symbolSets = new ArrayList<String>();
+    private @JsonIgnore String enumId;
+    private @JsonIgnore String enumDesc;
+    private @JsonIgnore boolean standard;
+    private @JsonIgnore boolean country;
+    private @JsonIgnore boolean coded;
+    private @JsonIgnore boolean frameAmplifier;
+    private @JsonIgnore boolean unknown;
+    private @JsonIgnore String amplifierId;
 
-    public AmplifierListModel(ListAmplifierConfig groupConfig, Values group) {
-        super(groupConfig.getEnumId(), group.getLabel(), groupConfig.getCode(), null);
-        this.typeName = groupConfig.getEnumType();
-        this.graphicLocation = "NA";
-        this.enumId = groupConfig.getEnumId();
-        this.enumDesc = groupConfig.getEnumDesc();
-        this.coded = groupConfig.isCoded();
-        this.frameAmplifier = false;
-        this.unknown = false;
-        this.symbolSets = new String[0];
-        this.standard = false;
-        this.country = "NatoCountryCode".equals(groupConfig.getEnumType());
-    }
-
-    public AmplifierListModel(StandardAmplifierConfig groupConfig, AmplifierGroup group) {
-        super(group.getName(), group.getLabel(), Integer.toString(group.getAmplifierGroupCode()), null);
-        this.typeName = groupConfig.getEnumType();
-        this.graphicLocation = groupConfig.getGraphicLocation();
-        this.enumId = groupConfig.getEnumId();
-        this.enumDesc = groupConfig.getEnumDesc();
-        this.coded = false;
-        this.frameAmplifier = groupConfig.isFrameAmplifier();
-        this.unknown = groupConfig.isUnknown();
-        this.symbolSets = group.getCompatibleSymbolSetIDs().stream().map(id -> (SymbolSetRef) id).map(SymbolSetRef::getID).toArray(size -> new String[size]);
-        this.standard = true;
-        this.country = false;
-    }
-
-    public void addAmplifier(AmplifierGroup group, Amplifier amplifier) {
-        if (!amplifier.getName().equals("EXTENSION")) {
-            values.add(new AmplifierListItemModel(group, amplifier));
-        }
-    }
-
-    public void addAmplifier(Values.Value group) {
-        values.add(new AmplifierListItemModel(group));
+    public AmplifierListModel() {
     }
 
     public String getAmplifierId() {
@@ -79,7 +56,7 @@ public class AmplifierListModel extends StandardEnumModel {
         return graphicLocation;
     }
 
-    public String[] getSymbolSets() {
+    public List<String> getSymbolSets() {
         return symbolSets;
     }
 
@@ -100,12 +77,13 @@ public class AmplifierListModel extends StandardEnumModel {
     }
 
     @Override
+    @JsonIgnore
     public boolean isExtension() {
         return values.stream().anyMatch(AmplifierListItemModel::isExtension);
     }
 
     public boolean isFor(String symbolSetId) {
-        return Arrays.stream(symbolSets).anyMatch(id -> id.equals(symbolSetId));
+        return symbolSets.stream().anyMatch(id -> id.equals(symbolSetId));
     }
 
     public boolean isFrameAmplifier() {
@@ -122,6 +100,43 @@ public class AmplifierListModel extends StandardEnumModel {
 
     public void setAmplifierId(String amplifierId) {
         this.amplifierId = amplifierId;
+    }
+
+    @JsonGetter("config")
+    private Config getConfig() {
+        return new Config(typeName, graphicLocation, standard, country, coded, frameAmplifier, unknown, enumId, enumDesc, symbolSets.toArray(size -> new String[size]));
+    }
+
+    @JsonGetter("details")
+    private Details getDetails() {
+        return new Details(code, id, extension, deprecated, label, amplifierId, remarks);
+    }
+
+    @JsonSetter("config")
+    private void setConfig(Config config) {
+        this.typeName = config.typeName;
+        this.graphicLocation = config.graphicLocation;
+        this.standard = config.standard;
+        this.country = config.country;
+        this.coded = config.coded;
+        this.frameAmplifier = config.frameAmplifier;
+        this.unknown = config.unknown;
+        this.enumId = config.enumId;
+        this.enumDesc = config.enumDesc;
+        if (config.symbolSets != null) {
+            Arrays.stream(config.symbolSets).forEach(symbolSets::add);
+        }
+    }
+
+    @JsonSetter("details")
+    private void setDetails(Details details) {
+        this.id = details.id;
+        this.code = details.code;
+        this.extension = details.extension;
+        this.deprecated = details.deprecated;
+        this.label = details.label;
+        this.remarks = details.remarks;
+        this.amplifierId = details.amplifierId;
     }
 
 }

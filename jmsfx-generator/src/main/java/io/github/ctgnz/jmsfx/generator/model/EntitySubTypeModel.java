@@ -2,29 +2,38 @@ package io.github.ctgnz.jmsfx.generator.model;
 
 import org.apache.commons.lang3.StringUtils;
 
-import io.github.ctgnz.jmsfx.generator.schema.EntitySubTypeType;
-import io.github.ctgnz.jmsfx.generator.schema.GraphicType;
-import io.github.ctgnz.jmsfx.generator.schema.SymbolSet.Entities.Entity.EntityTypes.EntityType;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-public class EntitySubTypeModel extends StandardEnumModel {
+import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-    private final String entityTypeId;
-    private final GraphicType graphicType;
-    private final String graphic;
+@YamlFlowStyle
+@YamlForceQuote(properties = { "code", "label", "remarks" })
+@JsonPropertyOrder({
+    "code", "id", "graphicType", "graphic", "extension", "deprecated", "label", "remarks"
+})
+public class EntitySubTypeModel extends AbstractModel {
+    private @JsonBackReference EntityTypeModel entityType;
+    private GraphicType graphicType;
+    private String graphic;
 
-    public EntitySubTypeModel(EntityType entityType, EntitySubTypeType entitySubType) {
-        super(entitySubType.getID().toString(), entitySubType.getLabel(), entitySubType.getEntitySubTypeCode().getCodeString(), null);
-        graphicType = entitySubType.getIcon();
-        entityTypeId = entityType.getID();
-        graphic = getNonStandardGraphic(entitySubType);
+    public EntitySubTypeModel() {
     }
 
+    @JsonIgnore
     public String getBaseTypeName() {
         return StringUtils.deleteWhitespace(label);
     }
 
+    public EntityTypeModel getEntityType() {
+        return entityType;
+    }
+
+    @JsonIgnore
     public String getEntityTypeId() {
-        return entityTypeId;
+        return entityType.getId();
     }
 
     public String getGraphic() {
@@ -35,14 +44,16 @@ public class EntitySubTypeModel extends StandardEnumModel {
         return graphicType;
     }
 
-    private String getNonStandardGraphic(EntitySubTypeType entitySubType) {
-        String graphic = entitySubType.getGraphic();
-        // graphic filename should be e.g. 10111200.svg, so if there
-        // is more than one dot it is a non-standard name
-        if (graphic.indexOf('.') != graphic.lastIndexOf('.')) {
-            return graphic.substring(0, graphic.lastIndexOf('.'));
-        }
-        return null;
+    public void setEntityType(EntityTypeModel entityType) {
+        this.entityType = entityType;
+    }
+
+    public void setGraphic(String graphic) {
+        this.graphic = graphic;
+    }
+
+    public void setGraphicType(GraphicType graphicType) {
+        this.graphicType = graphicType;
     }
 
 }

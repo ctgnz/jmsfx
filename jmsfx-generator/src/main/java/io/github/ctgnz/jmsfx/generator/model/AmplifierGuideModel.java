@@ -1,20 +1,19 @@
-package io.github.ctgnz.jmsfx.generator;
+package io.github.ctgnz.jmsfx.generator.model;
 
-import io.github.ctgnz.jmsfx.generator.schema.GuideType;
-import io.github.ctgnz.jmsfx.generator.schema.SymbolSet;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class AmplifierGuideConfig {
+import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+
+@YamlFlowStyle
+public class AmplifierGuideModel {
+    private @JsonBackReference SymbolSetModel symbolSet;
     private String code;
     private GuideType type;
     private String amplifier;
     private double[] points;
 
-    public AmplifierGuideConfig(SymbolSet.Amplifiers.AmplifierRef source) {
-        this.code = source.getID();
-        this.type = source.getType();
-        if (type != GuideType.SYSTEM) {
-            this.points = source.getPoints().stream().mapToDouble(Double::doubleValue).toArray();
-        }
+    public AmplifierGuideModel() {
     }
 
     public String getAmplifier() {
@@ -25,11 +24,8 @@ public class AmplifierGuideConfig {
         return code;
     }
 
+    @JsonIgnore
     public double getHeight() {
-        return points[3];
-    }
-
-    public double getY1() {
         return points[3];
     }
 
@@ -37,26 +33,40 @@ public class AmplifierGuideConfig {
         return points;
     }
 
+    public SymbolSetModel getSymbolSet() {
+        return symbolSet;
+    }
+
     public GuideType getType() {
         return type;
     }
 
+    @JsonIgnore
     public double getWidth() {
         return points[2];
     }
 
-    public double getX1() {
-        return points[2];
-    }
-
+    @JsonIgnore
     public double getX() {
         return points[0];
     }
 
+    @JsonIgnore
+    public double getX1() {
+        return points[2];
+    }
+
+    @JsonIgnore
     public double getY() {
         return points[1];
     }
 
+    @JsonIgnore
+    public double getY1() {
+        return points[3];
+    }
+
+    @JsonIgnore
     public boolean isGraphical() {
         return type != GuideType.SYSTEM;
     }
@@ -71,6 +81,10 @@ public class AmplifierGuideConfig {
 
     public void setPoints(double[] points) {
         this.points = points;
+    }
+
+    public void setSymbolSet(SymbolSetModel symbolSet) {
+        this.symbolSet = symbolSet;
     }
 
     public void setType(GuideType type) {

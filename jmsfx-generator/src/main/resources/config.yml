@@ -1,55 +1,6 @@
-inputDir: "D:/git/joint-military-symbology-xml/instance"
+modelFilePath: "/model-standard.yml"
 outputDir: "D:/git/jmsfx/jmsfx-standard/src/main/java"
 iconPackage: "io.github.ctgnz.jmsfx.standard"
 commonPackage: "io.github.ctgnz.jmsfx.standard.common"
 amplifierPackage: "io.github.ctgnz.jmsfx.standard.amplifier"
 libraryPrefix: "Standard"
-unframedSymbolSets:
-  - CONTROL_MEASURE
-enumeratedAmplifiers:
-  - {amplifier: "F", valuesId: "F_VALUES", code: "A1", enumType: "ReinforcedReduced", enumId: "REINFORCED", enumDesc: "Reinforced or Reduced"}
-  - {amplifier: "J", valuesId: "RELIABILITY_RATINGS", code: "A2", enumType: "ReliabilityRating", enumId: "RELIABILITY_RATING", enumDesc: "Reliability Rating"}
-  - {amplifier: "J", valuesId: "CREDIBILITY_RATINGS", code: "A3", enumType: "CredibilityRating", enumId: "CREDIBILITY_RATING", enumDesc: "Credibility Rating"}
-  - {amplifier: "K", valuesId: "K_VALUES", code: "A4", enumType: "CombatEffectiveness", enumId: "COMBAT_EFFECTIVENESS", enumDesc: "Combat Effectiveness Values"}
-  - {amplifier: "Z", valuesId: "SPEED_VALUES", code: "A5", enumType: "SpeedUnit", enumId: "SPEED_UNIT", enumDesc: "Speed Units"}
-  - {amplifier: "AO", valuesId: "AO_TYPE_VALUES", code: "A6", enumType: "EngagementType", enumId: "ENGAGEMENT_TYPE", enumDesc: "Type of Engagement"}
-  - {amplifier: "AO", valuesId: "AO_STAGE_VALUES", code: "A7", enumType: "EngagementStage", enumId: "ENGAGEMENT_STAGE", enumDesc: "Engagement Stage Code"}
-  - {amplifier: "AO", valuesId: "AO_WEAPON_VALUES", code: "A8", enumType: "EngagementWeapon", enumId: "ENGAGEMENT_WEAPON", enumDesc: "Engagement Weapon"}
-  - {amplifier: "AO1", valuesId: "AO1_VALUES", code: "A9", enumType: "TargetDesignation", enumId: "TARGET_DESIGNATION", enumDesc: "Target Designation"}
-  - {amplifier: "AS", valuesId: "AS_VALUES", code: "AA", enumType: "NatoCountryCode", enumId: "COUNTRY_CODE", enumDesc: "Country Codes", coded: true}
-  - {amplifier: "AX", valuesId: "AX_VALUES", code: "AB", enumType: "InstallationComposition", enumId: "INSTALLATION_COMPOSITION", enumDesc: "Installation Composition"}
-  - {amplifier: "AQ", valuesId: "AQ_VALUES", code: "AC", enumType: "GuardedUnit", enumId: "GUARDED_UNIT", enumDesc: "Guarded Unit"}
-  - {amplifier: "AD", valuesId: "AD_VALUES", code: "AD", enumType: "PlatformType", enumId: "PLATFORM_TYPE", enumDesc: "Platform Type"}
-  - {amplifier: "AR", valuesId: "AR_VALUES", code: "AE", enumType: "SpecialDesignator", enumId: "SPECIAL_DESIGNATOR", enumDesc: "Special Designator"}
-standardAmplifiers:
-  - {enumType: "UnknownAmplifier", enumId: "UNKNOWN", enumDesc: "Unspecified", graphicLocation: "Amplifier", xmlId: "NA", frameAmplifier: true, unknown: true}
-  - {enumType: "UnitEchelon", enumId: "UNIT_ECHELON", enumDesc: "Unit Echelon", graphicLocation: "Echelon", xmlId: "ECHELON", frameAmplifier: false}
-  - {enumType: "EquipmentMobility", enumId: "EQUIPMENT_MOBILITY", enumDesc: "Equipment Mobility", graphicLocation: "Amplifier", xmlId: "EQUIP_MOBILITY", frameAmplifier: false}
-  - {enumType: "TowedArrayType", enumId: "TOWED_ARRAYS", enumDesc: "Naval towed array", graphicLocation: "Amplifier", xmlId: "TOWED_ARRAYS", frameAmplifier: false}
-  - {enumType: "LeadershipRole", enumId: "LEADERSHIP_ROLE", enumDesc: "Leadership role", graphicLocation: "Amplifier", xmlId: "LEADERSHIP_INDICATOR", frameAmplifier: false}
-dimensionGraphicLocations:
-  COMMON: "Common"
-  AIR: "Air"
-  SPACE: "Space"
-  LAND_UNIT: "Land"
-  LAND_EQUIPMENT: "Land"
-  LAND_INSTALLATION: "Land"
-  DISMOUNTED: "Dismounted"
-  SEA_SURFACE: "SeaSurface"
-  SEA_SUBSURFACE: "SeaSubsurface"
-  ACTIVITY: "Activities"
-  CONTROL_MEASURE: "ControlMeasures"
-  CYBERSPACE: "Cyberspace"
-symbolGraphicLocations:
-  CYBERSPACE: "Cyberspace"
-  CYBERSPACE_AIR: "Cyberspace"
-  CYBERSPACE_SPACE: "Cyberspace"
-  CYBERSPACE_LAND_UNIT: "Cyberspace"
-  CYBERSPACE_LAND_EQUIPMENT: "Cyberspace"
-  CYBERSPACE_LAND_INSTALLATION: "Cyberspace"
-  CYBERSPACE_DISMOUNTED: "Cyberspace"
-  CYBERSPACE_SEA_SURFACE: "Cyberspace"
-  CYBERSPACE_SEA_SUBSURFACE: "Cyberspace"
-entitySymbolSets:
-  END_POINT: CYBERSPACE_LAND_EQUIPMENT
-  WEARABLE: CYBERSPACE_LAND_EQUIPMENT
