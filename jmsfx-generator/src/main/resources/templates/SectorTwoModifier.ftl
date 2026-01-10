@@ -7,19 +7,17 @@ import ${iconPackage}.SymbolSetEnum;
 
 public enum ${symbolSet.baseTypeName}SectorTwoModifier implements SectorTwoModifier {
 <#list symbolSet.sectorTwoMods as mod>
-    ${mod.id}("${mod.code}", "${mod.label}", ModifierCategory.${mod.category}, SymbolSetEnum.${symbolSet.id})<#sep>,
+    ${mod.id}("${mod.code}", "${mod.label}", ModifierCategory.${mod.category})<#sep>,
 </#list>;
 
     private final String id;
     private final String label;
     private final ModifierCategory category;
-    private final SymbolSet symbolSet;
 
-    ${symbolSet.baseTypeName}SectorTwoModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
+    ${symbolSet.baseTypeName}SectorTwoModifier(String id, String label, ModifierCategory category) {
         this.id = id;
         this.label = label;
         this.category = category;
-        this.symbolSet = symbolSet;
     }
 
     @Override
@@ -39,7 +37,7 @@ public enum ${symbolSet.baseTypeName}SectorTwoModifier implements SectorTwoModif
 
     @Override
     public SymbolSet getSymbolSet() {
-        return symbolSet;
+        return SymbolSetEnum.${symbolSet.id};
     }
 <#if symbolSet.baseSymbolSet??>
 

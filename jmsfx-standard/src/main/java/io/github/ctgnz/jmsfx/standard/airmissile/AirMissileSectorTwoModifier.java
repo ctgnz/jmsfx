@@ -6,32 +6,30 @@ import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum AirMissileSectorTwoModifier implements SectorTwoModifier {
-    AIR_DEST("01", "Air", ModifierCategory.MissileDestination, SymbolSetEnum.AIR_MISSILE),
-    SURFACE_DEST("02", "Surface", ModifierCategory.MissileDestination, SymbolSetEnum.AIR_MISSILE),
-    SUB_DEST("03", "Subsurface", ModifierCategory.MissileDestination, SymbolSetEnum.AIR_MISSILE),
-    SPACE_DEST("04", "Space", ModifierCategory.MissileDestination, SymbolSetEnum.AIR_MISSILE),
-    LAUNCHED("05", "Launched", ModifierCategory.MissileStatus, SymbolSetEnum.AIR_MISSILE),
-    PATRIOT("07", "Patriot", ModifierCategory.MissileType, SymbolSetEnum.AIR_MISSILE),
-    SM2("08", "Standard Missile-2 (SM-2)", ModifierCategory.MissileType, SymbolSetEnum.AIR_MISSILE),
-    SM6("09", "Standard Missile-6 (SM-6)", ModifierCategory.MissileType, SymbolSetEnum.AIR_MISSILE),
-    ESSM("10", "Evolved Sea Sparrow Missile (ESSM)", ModifierCategory.MissileType, SymbolSetEnum.AIR_MISSILE),
-    RAM("11", "Rolling Airframe Missile (RAM)", ModifierCategory.MissileType, SymbolSetEnum.AIR_MISSILE),
-    SHORT("12", "Short Range", ModifierCategory.MissileRange, SymbolSetEnum.AIR_MISSILE),
-    MED("13", "Medium Range", ModifierCategory.MissileRange, SymbolSetEnum.AIR_MISSILE),
-    INTER("14", "Intermediate Range", ModifierCategory.MissileRange, SymbolSetEnum.AIR_MISSILE),
-    LONG("15", "Long Range", ModifierCategory.MissileRange, SymbolSetEnum.AIR_MISSILE),
-    INTERCONT("16", "Intercontinental", ModifierCategory.MissileRange, SymbolSetEnum.AIR_MISSILE);
+    AIR_DEST("01", "Air", ModifierCategory.MissileDestination),
+    SURFACE_DEST("02", "Surface", ModifierCategory.MissileDestination),
+    SUB_DEST("03", "Subsurface", ModifierCategory.MissileDestination),
+    SPACE_DEST("04", "Space", ModifierCategory.MissileDestination),
+    LAUNCHED("05", "Launched", ModifierCategory.MissileStatus),
+    PATRIOT("07", "Patriot", ModifierCategory.MissileType),
+    SM2("08", "Standard Missile-2 (SM-2)", ModifierCategory.MissileType),
+    SM6("09", "Standard Missile-6 (SM-6)", ModifierCategory.MissileType),
+    ESSM("10", "Evolved Sea Sparrow Missile (ESSM)", ModifierCategory.MissileType),
+    RAM("11", "Rolling Airframe Missile (RAM)", ModifierCategory.MissileType),
+    SHORT("12", "Short Range", ModifierCategory.MissileRange),
+    MED("13", "Medium Range", ModifierCategory.MissileRange),
+    INTER("14", "Intermediate Range", ModifierCategory.MissileRange),
+    LONG("15", "Long Range", ModifierCategory.MissileRange),
+    INTERCONT("16", "Intercontinental", ModifierCategory.MissileRange);
 
     private final String id;
     private final String label;
     private final ModifierCategory category;
-    private final SymbolSet symbolSet;
 
-    AirMissileSectorTwoModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
+    AirMissileSectorTwoModifier(String id, String label, ModifierCategory category) {
         this.id = id;
         this.label = label;
         this.category = category;
-        this.symbolSet = symbolSet;
     }
 
     @Override
@@ -51,7 +49,7 @@ public enum AirMissileSectorTwoModifier implements SectorTwoModifier {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return symbolSet;
+        return SymbolSetEnum.AIR_MISSILE;
     }
 
 }

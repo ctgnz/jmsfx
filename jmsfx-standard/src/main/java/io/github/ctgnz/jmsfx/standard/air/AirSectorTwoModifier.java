@@ -6,21 +6,19 @@ import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum AirSectorTwoModifier implements SectorTwoModifier {
-    BOOM("04", "Boom-Only", ModifierCategory.RefuelingCapability, SymbolSetEnum.AIR),
-    DROGUE("05", "Drogue-Only", ModifierCategory.RefuelingCapability, SymbolSetEnum.AIR),
-    BOOM_DROGUE("06", "Boom and Drogue", ModifierCategory.RefuelingCapability, SymbolSetEnum.AIR),
-    DOWNLINK("11", "Downlinked", ModifierCategory.TrackLinkAvailability, SymbolSetEnum.AIR);
+    BOOM("04", "Boom-Only", ModifierCategory.RefuelingCapability),
+    DROGUE("05", "Drogue-Only", ModifierCategory.RefuelingCapability),
+    BOOM_DROGUE("06", "Boom and Drogue", ModifierCategory.RefuelingCapability),
+    DOWNLINK("11", "Downlinked", ModifierCategory.TrackLinkAvailability);
 
     private final String id;
     private final String label;
     private final ModifierCategory category;
-    private final SymbolSet symbolSet;
 
-    AirSectorTwoModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
+    AirSectorTwoModifier(String id, String label, ModifierCategory category) {
         this.id = id;
         this.label = label;
         this.category = category;
-        this.symbolSet = symbolSet;
     }
 
     @Override
@@ -40,7 +38,7 @@ public enum AirSectorTwoModifier implements SectorTwoModifier {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return symbolSet;
+        return SymbolSetEnum.AIR;
     }
 
 }

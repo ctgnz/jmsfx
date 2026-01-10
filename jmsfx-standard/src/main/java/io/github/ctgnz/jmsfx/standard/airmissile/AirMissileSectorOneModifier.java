@@ -6,26 +6,24 @@ import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum AirMissileSectorOneModifier implements SectorOneModifier {
-    AIR("01", "Air", ModifierCategory.LaunchOrigin, SymbolSetEnum.AIR_MISSILE),
-    SURFACE("02", "Surface", ModifierCategory.LaunchOrigin, SymbolSetEnum.AIR_MISSILE),
-    SUB("03", "Subsurface", ModifierCategory.LaunchOrigin, SymbolSetEnum.AIR_MISSILE),
-    SPACE("04", "Space", ModifierCategory.LaunchOrigin, SymbolSetEnum.AIR_MISSILE),
-    AB("05", "Anti-Ballistic", ModifierCategory.MissileClass, SymbolSetEnum.AIR_MISSILE),
-    BALLISTIC("06", "Ballistic", ModifierCategory.MissileClass, SymbolSetEnum.AIR_MISSILE),
-    CRUISE("07", "Cruise", ModifierCategory.MissileClass, SymbolSetEnum.AIR_MISSILE),
-    INTERCEPTOR("08", "Interceptor", ModifierCategory.MissileClass, SymbolSetEnum.AIR_MISSILE),
-    HYPERSONIC("09", "Interceptor", ModifierCategory.MissileClass, SymbolSetEnum.AIR_MISSILE);
+    AIR("01", "Air", ModifierCategory.LaunchOrigin),
+    SURFACE("02", "Surface", ModifierCategory.LaunchOrigin),
+    SUB("03", "Subsurface", ModifierCategory.LaunchOrigin),
+    SPACE("04", "Space", ModifierCategory.LaunchOrigin),
+    AB("05", "Anti-Ballistic", ModifierCategory.MissileClass),
+    BALLISTIC("06", "Ballistic", ModifierCategory.MissileClass),
+    CRUISE("07", "Cruise", ModifierCategory.MissileClass),
+    INTERCEPTOR("08", "Interceptor", ModifierCategory.MissileClass),
+    HYPERSONIC("09", "Interceptor", ModifierCategory.MissileClass);
 
     private final String id;
     private final String label;
     private final ModifierCategory category;
-    private final SymbolSet symbolSet;
 
-    AirMissileSectorOneModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
+    AirMissileSectorOneModifier(String id, String label, ModifierCategory category) {
         this.id = id;
         this.label = label;
         this.category = category;
-        this.symbolSet = symbolSet;
     }
 
     @Override
@@ -45,7 +43,7 @@ public enum AirMissileSectorOneModifier implements SectorOneModifier {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return symbolSet;
+        return SymbolSetEnum.AIR_MISSILE;
     }
 
 }

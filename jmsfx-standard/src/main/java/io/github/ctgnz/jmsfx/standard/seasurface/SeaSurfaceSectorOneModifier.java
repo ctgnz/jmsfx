@@ -6,24 +6,22 @@ import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum SeaSurfaceSectorOneModifier implements SectorOneModifier {
-    OWN("01", "Own Ship", ModifierCategory.MissionArea, SymbolSetEnum.SEA_SURFACE),
-    AA("02", "Antiair Warfare", ModifierCategory.MissionArea, SymbolSetEnum.SEA_SURFACE),
-    MD("08", "Missile Defense", ModifierCategory.MissionArea, SymbolSetEnum.SEA_SURFACE),
-    RMV("11", "Remote Multi-Mission Vehicle (USV-only)", ModifierCategory.MissionArea, SymbolSetEnum.SEA_SURFACE),
-    TORPEDO("17", "Torpedo", ModifierCategory.WeaponsCapability, SymbolSetEnum.SEA_SURFACE),
-    LRST("21", "Ballistic Missile Defense, Long-Range Surveillance and Track (LRST)", ModifierCategory.MissionArea, SymbolSetEnum.SEA_SURFACE),
-    SEA_BASED_X("22", "Sea-Base X-Band", ModifierCategory.MissionArea, SymbolSetEnum.SEA_SURFACE);
+    OWN("01", "Own Ship", ModifierCategory.MissionArea),
+    AA("02", "Antiair Warfare", ModifierCategory.MissionArea),
+    MD("08", "Missile Defense", ModifierCategory.MissionArea),
+    RMV("11", "Remote Multi-Mission Vehicle (USV-only)", ModifierCategory.MissionArea),
+    TORPEDO("17", "Torpedo", ModifierCategory.WeaponsCapability),
+    LRST("21", "Ballistic Missile Defense, Long-Range Surveillance and Track (LRST)", ModifierCategory.MissionArea),
+    SEA_BASED_X("22", "Sea-Base X-Band", ModifierCategory.MissionArea);
 
     private final String id;
     private final String label;
     private final ModifierCategory category;
-    private final SymbolSet symbolSet;
 
-    SeaSurfaceSectorOneModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
+    SeaSurfaceSectorOneModifier(String id, String label, ModifierCategory category) {
         this.id = id;
         this.label = label;
         this.category = category;
-        this.symbolSet = symbolSet;
     }
 
     @Override
@@ -43,7 +41,7 @@ public enum SeaSurfaceSectorOneModifier implements SectorOneModifier {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return symbolSet;
+        return SymbolSetEnum.SEA_SURFACE;
     }
 
 }

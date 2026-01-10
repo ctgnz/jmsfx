@@ -6,22 +6,20 @@ import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum LandEquipmentSectorOneModifier implements SectorOneModifier {
-    EARLY_WARNING_RADAR("03", "Early Warning Radar", ModifierCategory.SensorType, SymbolSetEnum.LAND_EQUIPMENT),
-    INTRUSION("04", "Intrusion", ModifierCategory.SensorType, SymbolSetEnum.LAND_EQUIPMENT),
-    UPGRADED_EARLY_WARNING_RADAR("07", "Upgraded Early Warning Radar", ModifierCategory.SensorType, SymbolSetEnum.LAND_EQUIPMENT),
-    MULTI_PURPOSE_BLADE("12", "Multi Purpose Blade", ModifierCategory.EngineerEquipment, SymbolSetEnum.LAND_EQUIPMENT),
-    TANK_WIDTH_MINE_PLOW("13", "Tank Width Mine Plow", ModifierCategory.EngineerEquipment, SymbolSetEnum.LAND_EQUIPMENT);
+    EARLY_WARNING_RADAR("03", "Early Warning Radar", ModifierCategory.SensorType),
+    INTRUSION("04", "Intrusion", ModifierCategory.SensorType),
+    UPGRADED_EARLY_WARNING_RADAR("07", "Upgraded Early Warning Radar", ModifierCategory.SensorType),
+    MULTI_PURPOSE_BLADE("12", "Multi Purpose Blade", ModifierCategory.EngineerEquipment),
+    TANK_WIDTH_MINE_PLOW("13", "Tank Width Mine Plow", ModifierCategory.EngineerEquipment);
 
     private final String id;
     private final String label;
     private final ModifierCategory category;
-    private final SymbolSet symbolSet;
 
-    LandEquipmentSectorOneModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
+    LandEquipmentSectorOneModifier(String id, String label, ModifierCategory category) {
         this.id = id;
         this.label = label;
         this.category = category;
-        this.symbolSet = symbolSet;
     }
 
     @Override
@@ -41,7 +39,7 @@ public enum LandEquipmentSectorOneModifier implements SectorOneModifier {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return symbolSet;
+        return SymbolSetEnum.LAND_EQUIPMENT;
     }
 
 }

@@ -6,19 +6,17 @@ import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum CyberspaceDismountedIndividualSectorTwoModifier implements SectorTwoModifier {
-    SECURED("01", "Secured", ModifierCategory.None, SymbolSetEnum.CYBERSPACE_DISMOUNTED),
-    OPEN("02", "Open", ModifierCategory.None, SymbolSetEnum.CYBERSPACE_DISMOUNTED);
+    SECURED("01", "Secured", ModifierCategory.None),
+    OPEN("02", "Open", ModifierCategory.None);
 
     private final String id;
     private final String label;
     private final ModifierCategory category;
-    private final SymbolSet symbolSet;
 
-    CyberspaceDismountedIndividualSectorTwoModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
+    CyberspaceDismountedIndividualSectorTwoModifier(String id, String label, ModifierCategory category) {
         this.id = id;
         this.label = label;
         this.category = category;
-        this.symbolSet = symbolSet;
     }
 
     @Override
@@ -38,7 +36,7 @@ public enum CyberspaceDismountedIndividualSectorTwoModifier implements SectorTwo
 
     @Override
     public SymbolSet getSymbolSet() {
-        return symbolSet;
+        return SymbolSetEnum.CYBERSPACE_DISMOUNTED;
     }
 
     @Override

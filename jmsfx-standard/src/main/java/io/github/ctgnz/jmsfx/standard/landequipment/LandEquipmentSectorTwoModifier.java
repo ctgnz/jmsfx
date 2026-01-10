@@ -6,18 +6,16 @@ import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public enum LandEquipmentSectorTwoModifier implements SectorTwoModifier {
-    TRACTOR_TRAILER("06", "Tractor Trailer", ModifierCategory.Capability, SymbolSetEnum.LAND_EQUIPMENT);
+    TRACTOR_TRAILER("06", "Tractor Trailer", ModifierCategory.Capability);
 
     private final String id;
     private final String label;
     private final ModifierCategory category;
-    private final SymbolSet symbolSet;
 
-    LandEquipmentSectorTwoModifier(String id, String label, ModifierCategory category, SymbolSetEnum symbolSet) {
+    LandEquipmentSectorTwoModifier(String id, String label, ModifierCategory category) {
         this.id = id;
         this.label = label;
         this.category = category;
-        this.symbolSet = symbolSet;
     }
 
     @Override
@@ -37,7 +35,7 @@ public enum LandEquipmentSectorTwoModifier implements SectorTwoModifier {
 
     @Override
     public SymbolSet getSymbolSet() {
-        return symbolSet;
+        return SymbolSetEnum.LAND_EQUIPMENT;
     }
 
 }
