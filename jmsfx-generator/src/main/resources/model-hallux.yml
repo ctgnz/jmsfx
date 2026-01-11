@@ -136,17 +136,8 @@ amplifierGroups:
   - {code: "B", id: "CORPS_MEF", label: "Corps/MEF"}
   - {code: "C", id: "ARMY", label: "Army"}
   - {code: "D", id: "ARMY_GROUP_FRONT", label: "Army Group/Front"}
-  - {code: "E", id: "REGION_THEATRE", label: "Region/Theatre"}
+  - {code: "E", id: "REGION_THEATRE", label: "Theatre/Region"}
   - {code: "F", id: "COMMAND", label: "Command"}
-- details: {code: "2", id: SERVICE_TIER, label: "Service Tier"}
-  config: {typeName: ServiceTier, graphicLocation: "Amplifier", standard: true, frameAmplifier: true, enumId: SERVICE_TIER, enumDesc: "Service Tiers"}
-  values:
-  - {code: "1", id: "REGULARS", label: "Regulars", backgroundFill: '#80E0FF'}
-  - {code: "2", id: "CONSCRIPTS", label: "Conscripts", backgroundFill: '#FF8080'}
-  - {code: "3", id: "RESERVE_L1", label: "Reserve Level 1 (Regulars)", backgroundFill: '#AAFFAA'}
-  - {code: "4", id: "RESERVE_L2", label: "Reserve Level 2 (Volunteers)", backgroundFill: '#FFFF80'}
-  - {code: "5", id: "RESERVE_L3", label: "Reserve Level 3 (Militia)", backgroundFill: '#E68646'}
-  - {code: "6", id: "CONTRACTORS", label: "Civilian Contractors", backgroundFill: '#FFA1FF'}
 - details: {code: "3", id: EQUIP_MOBILITY, label: "Equipment mobility", amplifierId: R_MobilityIndicator}
   config: {typeName: EquipmentMobility, graphicLocation: "Amplifier", standard: true, enumId: EQUIPMENT_MOBILITY, enumDesc: "Equipment Mobility", symbolSets: [LAND_UNIT, LAND_EQUIPMENT, LAND_INSTALLATION]}
   values:
@@ -169,23 +160,27 @@ amplifierGroups:
 - details: {code: "7", id: LEADERSHIP_INDICATOR, label: "Role for dismounted individuals", amplifierId: AV_LeadershipIdentifier}
   config: {typeName: LeadershipRole, graphicLocation: "Amplifier", standard: true, enumId: LEADERSHIP_ROLE, enumDesc: "Leadership Role", symbolSets: [DISMOUNTED]}
   values:
-  - {code: "1", id: "LEADER_INDIVIDUAL", label: "Leader"}
-  - {code: "2", id: "DEPUTY_LEADER_INDIVIDUAL", label: "Deputy Leader"}
-  - {code: "3", id: "STAFF_INDIVIDUAL", label: "Staff"}
-  - {code: "4", id: "ACTING_LEADER_INDIVIDUAL", label: "Acting Leader"}
-  - {code: "5", id: "SENIOR_ENLISTED_ADVISOR", label: "Senior Enlisted Advisor"}
-- details: {code: "8", id: STAFF_ROLE, label: "NATO Staff Branch"}
-  config: {typeName: StaffRole, graphicLocation: "Amplifier", standard: true, enumId: STAFF_ROLE, enumDesc: "NATO Staff Role"}
+  - {code: "1", id: "LEADER", label: "Leader"}
+  - {code: "2", id: "DEPUTY_LEADER", label: "Deputy Leader"}
+  - {code: "3", id: "SENIOR_ENLISTED_ADVISOR", label: "Senior Enlisted Advisor"}
+  - {code: "4", id: "STAFF_J1", label: "J1 Personnel/Manpower"}
+  - {code: "5", id: "STAFF_J2", label: "J2 Intelligence/Security"}
+  - {code: "6", id: "STAFF_J3", label: "J3 Operations"}
+  - {code: "7", id: "STAFF_J4", label: "J4 Logistics"}
+  - {code: "8", id: "STAFF_J5", label: "J5 Plans"}
+  - {code: "9", id: "STAFF_J6", label: "J6 Signals/Communications"}
+  - {code: "A", id: "STAFF_J7", label: "J7 Training/Military Education"}
+  - {code: "B", id: "STAFF_J8", label: "J8 Finance/Contracts"}
+  - {code: "C", id: "STAFF_J9", label: "J9 Civil-Military Co-operation"}
+- details: {code: "8", id: SERVICE_TIER, label: "Service Tier"}
+  config: {typeName: ServiceTier, graphicLocation: "Amplifier", standard: true, frameAmplifier: true, enumId: SERVICE_TIER, enumDesc: "Service Tiers"}
   values:
-  - {code: "1", id: "STAFF_J1", label: "J1 Personnel/Manpower"}
-  - {code: "2", id: "STAFF_J2", label: "J2 Intelligence/Security"}
-  - {code: "3", id: "STAFF_J3", label: "J3 Operations"}
-  - {code: "4", id: "STAFF_J4", label: "J4 Logistics"}
-  - {code: "5", id: "STAFF_J5", label: "J5 Plans"}
-  - {code: "6", id: "STAFF_J6", label: "J6 Signals/Communications"}
-  - {code: "7", id: "STAFF_J7", label: "J7 Training/Military Education"}
-  - {code: "8", id: "STAFF_J8", label: "J8 Finance/Contracts"}
-  - {code: "9", id: "STAFF_J9", label: "J9 Civil-Military Co-operation"}
+  - {code: "1", id: "REGULARS", label: "Regulars", backgroundFill: '#80E0FF'}
+  - {code: "2", id: "CONSCRIPTS", label: "Conscripts", backgroundFill: '#FF8080'}
+  - {code: "3", id: "RESERVE_L1", label: "Reserve Level 1 (Regulars)", backgroundFill: '#AAFFAA'}
+  - {code: "4", id: "RESERVE_L2", label: "Reserve Level 2 (Volunteers)", backgroundFill: '#FFFF80'}
+  - {code: "5", id: "RESERVE_L3", label: "Reserve Level 3 (Militia)", backgroundFill: '#E68646'}
+  - {code: "6", id: "CONTRACTORS", label: "Civilian Contractors", backgroundFill: '#FFA1FF'}
 - details: {code: "9", id: NATO_RANK, label: "NATO Ranks"}
   config: {typeName: NatoRank, graphicLocation: "Amplifier", standard: true, enumId: NATO_RANK, enumDesc: "NATO Standard Ranks"}
   values:
@@ -2834,6 +2829,7 @@ symbolSets:
       - {code: "19", id: DEMOLITION, graphicType: MAIN, label: "Demolition"}
       - {code: "20", id: COMMANDER, graphicType: MAIN, label: "Commander"}
       - {code: "21", id: SECOND_IN_COMMAND, graphicType: MAIN, label: "Second in Command"}
+      - {code: "A0", id: STAFF, graphicType: MAIN, label: "Staff"}
       - {code: "A1", id: DRIVER, graphicType: MAIN, label: "Driver"}
       - {code: "A2", id: GUNNER, graphicType: MAIN, label: "Gunner"}
       - {code: "A3", id: LOADER, graphicType: MAIN, label: "Loader"}
@@ -2910,10 +2906,17 @@ symbolSets:
   - {code: "48", category: Echelon, id: SQUAD, label: "Squad"}
   - {code: "49", category: Echelon, id: SECTION, label: "Section"}
   - {code: "50", category: Echelon, id: PLATOON, label: "Platoon/Detachment"}
+  - {code: "A0", category: Echelon, id: STAFFEL, label: "Staffel"}
   - {code: "51", category: Echelon, id: COMPANY, label: "Company"}
   - {code: "52", category: Echelon, id: BATTALION, label: "Battalion"}
   - {code: "53", category: Echelon, id: REGIMENT, label: "Regiment/Group"}
-  - {code: "54", category: Echelon, id: STAFFEL, label: "Staffel"}
+  - {code: "A1", category: Echelon, id: BRIGADE, label: "Brigade"}
+  - {code: "A2", category: Echelon, id: DIVISION, label: "Division"}
+  - {code: "A3", category: Echelon, id: CORPS, label: "Corps/MEF"}
+  - {code: "A4", category: Echelon, id: ARMY, label: "Army"}
+  - {code: "A5", category: Echelon, id: ARMY_GROUP, label: "Army Group/Front"}
+  - {code: "A6", category: Echelon, id: THEATRE, label: "Theatre/Region"}
+  - {code: "A7", category: Echelon, id: COMMAND, label: "Command"}
   sectorTwoMods:
   - {code: "03", category: Task, id: VIDEO_IMAGERY, label: "Video Imagery (Combat Camera)"}
   - {code: "04", category: FunctionalStaffArea, id: J1, label: "J1"}
@@ -2950,6 +2953,9 @@ symbolSets:
   - {code: "36", category: Rank, id: WO3, label: "WO-3"}
   - {code: "37", category: Rank, id: WO4, label: "WO-4"}
   - {code: "38", category: Rank, id: WO5, label: "WO-5"}
+  - {code: "91", category: FunctionalStaffArea, id: CDR, label: "Commander"}
+  - {code: "92", category: FunctionalStaffArea, id: SIC, label: "Second-in-Command"}
+  - {code: "93", category: FunctionalStaffArea, id: SEA, label: "Senior Enlisted Advisor"}
   - {code: "A1", category: Crew, id: COMMAND_CONTROL_MOD2, label: "Command/Control"}
   - {code: "A2", category: Crew, id: DRIVER_MOD2, label: "Driver"}
   - {code: "A3", category: Crew, id: GUNNER_MOD2, label: "Gunner"}
