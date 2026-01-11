@@ -198,7 +198,7 @@ amplifierGroups:
   - {code: "23", id: "RANK_WO3", label: "WO-3"}
   - {code: "24", id: "RANK_WO4", label: "WO-4"}
   - {code: "25", id: "RANK_WO5", label: "WO-5"}
-  - {code: "2F", id: "RANK_OFD", label: "OF(D)"}
+  - {code: "2F", id: "RANK_OFD", label: "OF-D"}
   - {code: "30", id: "RANK_OF1A", label: "OF-1A"}
   - {code: "31", id: "RANK_OF1", label: "OF-1"}
   - {code: "32", id: "RANK_OF2", label: "OF-2"}
@@ -1056,7 +1056,7 @@ symbolSets:
   - {code: "11", category: Capability, id: REFUEL, label: "Refuel"}
   - {code: "12", category: Capability, id: TUG, label: "Tug"}
 - details: {code: "10", dimensionId: LAND_UNIT, id: LAND_UNIT, label: "Land Units"}
-  config: {useFrame: true, amplifierClass: UnitEchelon, amplifierTwoClass: EquipmentMobility}
+  config: {useFrame: true, amplifierClass: UnitEchelon, amplifierTwoClass: EquipmentMobility, frameAmplifierClass: ServiceTier}
   amplifierGuides:
   - {code: B, type: RECTANGLE, amplifier: B_Echelon, points: [205.0, 192.0, 200.0, 80.0]}
   - {code: C, type: RECTANGLE, amplifier: C_Quantity, points: [205.0, 192.0, 200.0, 80.0]}
@@ -2928,16 +2928,16 @@ symbolSets:
   - {code: "10", category: FunctionalStaffArea, id: J7, label: "J7"}
   - {code: "11", category: FunctionalStaffArea, id: J8, label: "J8"}
   - {code: "12", category: FunctionalStaffArea, id: J9, label: "J9"}
-  - {code: "14", category: Rank, id: OF01, label: "OF-1"}
-  - {code: "15", category: Rank, id: OF02, label: "OF-2"}
-  - {code: "16", category: Rank, id: OF03, label: "OF-3"}
-  - {code: "17", category: Rank, id: OF04, label: "OF-4"}
-  - {code: "18", category: Rank, id: OF05, label: "OF-5"}
-  - {code: "19", category: Rank, id: OF06, label: "OF-6"}
-  - {code: "20", category: Rank, id: OF07, label: "OF-7"}
-  - {code: "21", category: Rank, id: OF08, label: "OF-8"}
-  - {code: "22", category: Rank, id: OF09, label: "OF-9"}
-  - {code: "23", category: Rank, id: OF10, label: "OF-10"}
+  - {code: "14", category: Rank, id: OF1, label: "OF-1"}
+  - {code: "15", category: Rank, id: OF2, label: "OF-2"}
+  - {code: "16", category: Rank, id: OF3, label: "OF-3"}
+  - {code: "17", category: Rank, id: OF4, label: "OF-4"}
+  - {code: "18", category: Rank, id: OF5, label: "OF-5"}
+  - {code: "19", category: Rank, id: OF6, label: "OF-6"}
+  - {code: "20", category: Rank, id: OF7, label: "OF-7"}
+  - {code: "21", category: Rank, id: OF8, label: "OF-8"}
+  - {code: "22", category: Rank, id: OF9, label: "OF-9"}
+  - {code: "23", category: Rank, id: OFX, label: "OF-10"}
   - {code: "24", category: Rank, id: OFD, label: "OF-D"}
   - {code: "25", category: Rank, id: OR1, label: "OR-1"}
   - {code: "26", category: Rank, id: OR2, label: "OR-2"}
@@ -2953,23 +2953,25 @@ symbolSets:
   - {code: "36", category: Rank, id: WO3, label: "WO-3"}
   - {code: "37", category: Rank, id: WO4, label: "WO-4"}
   - {code: "38", category: Rank, id: WO5, label: "WO-5"}
-  - {code: "91", category: FunctionalStaffArea, id: CDR, label: "Commander"}
-  - {code: "92", category: FunctionalStaffArea, id: SIC, label: "Second-in-Command"}
-  - {code: "93", category: FunctionalStaffArea, id: SEA, label: "Senior Enlisted Advisor"}
-  - {code: "A1", category: Crew, id: COMMAND_CONTROL_MOD2, label: "Command/Control"}
-  - {code: "A2", category: Crew, id: DRIVER_MOD2, label: "Driver"}
-  - {code: "A3", category: Crew, id: GUNNER_MOD2, label: "Gunner"}
-  - {code: "A4", category: Crew, id: LOADER_MOD2, label: "Loader"}
-  - {code: "A5", category: Crew, id: PILOT_MOD2, label: "Pilot"}
-  - {code: "A6", category: Crew, id: NAVIGATOR_MOD2, label: "Navigator"}
-  - {code: "A7", category: Crew, id: FLIGHT_ENGINEER_MOD2, label: "Flight Engineer"}
-  - {code: "A8", category: Crew, id: OPERATOR_MOD2, label: "Operator"}
-  - {code: "A9", category: Crew, id: OBSERVER_MOD2, label: "Observer"}
-  - {code: "AA", category: Crew, id: SIGNAL_MOD2, label: "Signal"}
-  - {code: "AB", category: Crew, id: MEDICAL_MOD2, label: "Medical"}
-  - {code: "AC", category: Crew, id: LOGISTICS_MOD2, label: "Logistics"}
-  - {code: "AD", category: Crew, id: MAINTENANCE_MOD2, label: "Maintenance"}
-  - {code: "AE", category: Crew, id: FAO_MOD2, label: "FAO"}
+  - {code: "A1", category: Rank, id: OFA, label: "OF-1A"}
+  - {code: "A2", category: Rank, id: CIV, label: "Civilian"}
+  - {code: "A3", category: FunctionalStaffArea, id: CDR, label: "Commander"}
+  - {code: "A4", category: FunctionalStaffArea, id: SIC, label: "Second-in-Command"}
+  - {code: "A5", category: FunctionalStaffArea, id: SEA, label: "Senior Enlisted Advisor"}
+  - {code: "B1", category: Crew, id: COMMAND_CONTROL_MOD2, label: "Command/Control"}
+  - {code: "B2", category: Crew, id: DRIVER_MOD2, label: "Driver"}
+  - {code: "B3", category: Crew, id: GUNNER_MOD2, label: "Gunner"}
+  - {code: "B4", category: Crew, id: LOADER_MOD2, label: "Loader"}
+  - {code: "B5", category: Crew, id: PILOT_MOD2, label: "Pilot"}
+  - {code: "B6", category: Crew, id: NAVIGATOR_MOD2, label: "Navigator"}
+  - {code: "B7", category: Crew, id: FLIGHT_ENGINEER_MOD2, label: "Flight Engineer"}
+  - {code: "B8", category: Crew, id: OPERATOR_MOD2, label: "Operator"}
+  - {code: "B9", category: Crew, id: OBSERVER_MOD2, label: "Observer"}
+  - {code: "BA", category: Crew, id: SIGNAL_MOD2, label: "Signal"}
+  - {code: "BB", category: Crew, id: MEDICAL_MOD2, label: "Medical"}
+  - {code: "BC", category: Crew, id: LOGISTICS_MOD2, label: "Logistics"}
+  - {code: "BD", category: Crew, id: MAINTENANCE_MOD2, label: "Maintenance"}
+  - {code: "BE", category: Crew, id: FAO_MOD2, label: "FAO"}
 - details: {code: "30", dimensionId: SEA_SURFACE, id: SEA_SURFACE, label: "Sea Surface"}
   config: {useFrame: true, amplifierClass: TowedArrayType}
   amplifierGuides:
