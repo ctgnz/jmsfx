@@ -798,6 +798,7 @@ symbolSets:
   - {groupId: 2, code: "C2", category: Capability, id: NIGHT, label: "Night"}
   - {groupId: 2, code: "C3", category: Capability, id: ALL_WEATHER, label: "All Weather"}
   - {groupId: 2, code: "C4", category: Capability, id: DIVE, label: "Dive"}
+  - {groupId: 2, code: "D1", category: Mobility, id: PARACHUTE, label: "Parachute"}
 - details: {code: "01", dimensionId: AIR, id: AIR, label: "Air"}
   config: {useFrame: true}
   amplifierGuides:
