@@ -148,10 +148,13 @@ amplifierGroups:
   - {code: "5", id: "TOWED", label: "Towed"}
   - {code: "6", id: "RAIL", label: "Rail"}
   - {code: "7", id: "PACK_ANIMALS", label: "Pack animals"}
+  - {code: "8", id: "MOUNTED", label: "Mounted"}
+  - {code: "9", id: "ANIMAL_DRAWN", label: "Animal-drawn vehicle"}
   - {code: "A", id: "OVER_SNOW", label: "Over snow (prime mover)"}
   - {code: "B", id: "SLED", label: "Sled"}
   - {code: "D", id: "BARGE", label: "Barge"}
   - {code: "E", id: "AMPHIB", label: "Amphibious"}
+  - {code: "F", id: "CYCLE", label: "Bicycle/Motorcycle"}
 - details: {code: "6", id: TOWED_ARRAYS, label: "Naval towed array", amplifierId: AG_AuxiliaryEquipmentIndicator}
   config: {typeName: TowedArrayType, graphicLocation: "Amplifier", standard: true, enumId: TOWED_ARRAYS, enumDesc: "Naval Towed Array Types", symbolSets: [SEA_SURFACE]}
   values:
@@ -2744,7 +2747,7 @@ symbolSets:
   - {code: "04", category: Terrain, id: VEGETATION, label: "Vegetation"}
   - {code: "05", category: Terrain, id: OBSTACLES, label: "Obstacles"}
 - details: {code: "27", dimensionId: DISMOUNTED, id: DISMOUNTED, label: "Dismounted Individual"}
-  config: {useFrame: true, amplifierClass: LeadershipRole}
+  config: {useFrame: true, amplifierClass: LeadershipRole, amplifierTwoClass: EquipmentMobility}
   amplifierGuides:
   - {code: C, type: RECTANGLE, amplifier: C_Quantity, points: [205.0, 546.0, 200.0, 96.0]}
   - {code: G, type: RECTANGLE, amplifier: G_StaffComments, points: [478.0, 248.0, 134.0, 96.0]}
@@ -2754,6 +2757,7 @@ symbolSets:
   - {code: M, type: RECTANGLE, amplifier: M_HigherFormation, points: [478.0, 440.0, 134.0, 96.0]}
   - {code: P, type: RECTANGLE, amplifier: P_IffSifAis, points: [478.0, 536.0, 134.0, 96.0]}
   - {code: Q, type: POLYLINE, amplifier: Q_DirectionOfMovementIndicator, points: [304.754, 641.628, 304.754, 702.084, 380.942, 734.447]}
+  - {code: R, type: RECTANGLE, amplifier: R_MobilityIndicator, points: [185.0, 542.0, 240.0, 90.0]}
   - {code: S2, type: POLYLINE, amplifier: S2_OffsetLocationIndicator, points: [180.082, 470.0, 180.082, 693.086, 62.332, 757.333]}
   - {code: T, type: RECTANGLE, amplifier: T_UniqueDesignation, points: [0.0, 440.0, 134.0, 96.0]}
   - {code: V, type: RECTANGLE, amplifier: V_TypeOfEquipment, points: [0.0, 344.0, 134.0, 96.0]}
