@@ -15,7 +15,7 @@
         <dependency>
             <groupId>io.github.ctgnz</groupId>
             <artifactId>foxglove</artifactId>
-            <version>0.9.7-SNAPSHOT</version>
+            <version>0.9.9-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>io.github.ctgnz</groupId>
@@ -50,12 +50,12 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>21.0.4</version>
+            <version>25.0.3</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-swing</artifactId>
-            <version>21.0.4</version>
+            <version>25.0.3</version>
         </dependency>
         <dependency>
             <groupId>org.dom4j</groupId>
