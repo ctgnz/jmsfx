@@ -2860,6 +2860,9 @@ symbolSets:
       - {code: "B7", id: VETERINARY, graphicType: FULL_OCTAGON, label: "Veterinary"}
       - {code: "B8", id: DENTIST, graphicType: FULL_OCTAGON, label: "Dentist"}
       - {code: "B9", id: NURSE, graphicType: FULL_OCTAGON, label: "Nurse"}
+      - {code: "BA", id: SEAPORT_OPERATOR, graphicType: MAIN, label: "Sea Port Operator"}
+      - {code: "BB", id: AIRPORT_OPERATOR, graphicType: MAIN, label: "Airport Operator"}
+      - {code: "BC", id: RAILWAY_OPERATOR, graphicType: MAIN, label: "Railway Operator"}
     - details: {code: "03", id: LETHAL_WEAPONS, graphicType: NA, label: "Lethal Weapons"}
       entitySubTypes:
       - {code: "01", id: RIFLE, graphicType: MAIN, label: "Rifle"}
