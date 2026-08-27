@@ -7,7 +7,7 @@
     <parent>
         <groupId>io.github.ctgnz</groupId>
         <artifactId>jmsfx</artifactId>
-        <version>1.1.7-SNAPSHOT</version>
+        <version>1.1.8-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>        
     </parent>
 
@@ -15,12 +15,12 @@
         <dependency>
             <groupId>io.github.ctgnz</groupId>
             <artifactId>foxglove</artifactId>
-            <version>0.9.9-SNAPSHOT</version>
+            <version>0.9.9</version>
         </dependency>
         <dependency>
             <groupId>io.github.ctgnz</groupId>
             <artifactId>jmsfx-core</artifactId>
-            <version>1.1.7-SNAPSHOT</version>
+            <version>1.1.8-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.neovisionaries</groupId>
