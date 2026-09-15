@@ -6,7 +6,7 @@ import java.util.EnumSet;
 
 public enum StandardIdentityEnum implements StandardIdentity {
 <#list identities as ident>
-    ${ident.id}("${ident.code}", StandardIdentityGroupEnum.${ident.groupID}, "${ident.label}")<#sep>,
+        ${ident.id}("${ident.code}", StandardIdentityGroupEnum.${ident.groupID}, "${ident.label}")<#sep>,
 </#list>;
 
     private static final EnumSet<StandardIdentityEnum> KNOWN_IDENTITIES = EnumSet.of(<#list identities as ident><#if !ident.confirmed><#continue></#if>${ident.id}<#sep>, </#list>);

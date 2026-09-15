@@ -14,12 +14,12 @@ import ${iconPackage}.SymbolSetEnum;
 
 public enum ${symbolSet.baseTypeName}Entity implements Entity {
 <#list symbolSet.entities as ent>
-    ${ent.id}("${ent.code}", "${ent.label}", GraphicType.${ent.graphicType})<#if ent.baseSymbolSet??> {
-        @Override
-        public SymbolSet getBaseSymbolSet() {
-            return SymbolSetEnum.${ent.baseSymbolSet};
-        }
-    }</#if><#sep>,
+        ${ent.id}("${ent.code}", "${ent.label}", GraphicType.${ent.graphicType})<#if ent.baseSymbolSet??> {
+            @Override
+            public SymbolSet getBaseSymbolSet() {
+                return SymbolSetEnum.${ent.baseSymbolSet};
+            }
+        }</#if><#sep>,
 </#list>;
 
     private final String id;

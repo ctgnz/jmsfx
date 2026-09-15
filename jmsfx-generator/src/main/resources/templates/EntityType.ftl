@@ -13,12 +13,12 @@ import ${typePackage}.GraphicType;
 
 public enum ${symbolSet.baseTypeName}EntityType implements EntityType {
 <#list symbolSet.entityTypes as entType>
-    ${entType.id}("${entType.code}", "${entType.label}", ${symbolSet.baseTypeName}Entity.${entType.entityId}, GraphicType.${entType.graphicType})<#if entType.graphic??> {
-        @Override
-        public String getGraphicIdentifier() {
-            return "${entType.graphic}";
-        }
-    }</#if><#sep>,
+        ${entType.id}("${entType.code}", "${entType.label}", ${symbolSet.baseTypeName}Entity.${entType.entityId}, GraphicType.${entType.graphicType})<#if entType.graphic??> {
+            @Override
+            public String getGraphicIdentifier() {
+                return "${entType.graphic}";
+            }
+        }</#if><#sep>,
 </#list>;
 
     private final String id;

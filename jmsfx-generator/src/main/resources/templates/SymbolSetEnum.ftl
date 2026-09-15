@@ -17,7 +17,7 @@ import ${iconPackage}.${sym.packageName}.${sym.baseTypeName}SymbolSet;
 
 public enum SymbolSetEnum implements SymbolSet {
 <#list symbolSets as sym>
-    ${sym.id}("${sym.code}", "${sym.label}", DimensionEnum.${sym.dimensionId}, <#if sym.graphicLocation??>"${sym.graphicLocation}", </#if>${sym.baseTypeName}SymbolSet.INSTANCE)<#sep>,
+        ${sym.id}("${sym.code}", "${sym.label}", DimensionEnum.${sym.dimensionId}, <#if sym.graphicLocation??>"${sym.graphicLocation}", </#if>${sym.baseTypeName}SymbolSet.INSTANCE)<#sep>,
 </#list>;
 
     private final String id;

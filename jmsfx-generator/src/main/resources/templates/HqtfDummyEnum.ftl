@@ -7,7 +7,7 @@ import ${basePackage}.HqtfDummy;
 
 public enum HqtfDummyEnum implements HqtfDummy {
 <#list hqtfDummies as dummy>
-    ${dummy.id}("${dummy.code}", "${dummy.label}"<#list dummy.dimensions>, <#items as dim>"${dim}"<#sep>, </#items></#list>)<#sep>,
+        ${dummy.id}("${dummy.code}", "${dummy.label}"<#list dummy.dimensions>, <#items as dim>"${dim}"<#sep>, </#items></#list>)<#sep>,
 </#list>;
 
     private final String id;

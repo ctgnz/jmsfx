@@ -7,7 +7,7 @@ import ${basePackage}.Status;
 
 public enum StatusEnum implements Status {
 <#list statuses as status>
-    ${status.id}("${status.code}", "${status.label}", <#if status?index gt 1>true<#else>false</#if><#list status.dimensions>, <#items as dim>"${dim}"<#sep>, </#items></#list>)<#sep>,
+        ${status.id}("${status.code}", "${status.label}", <#if status?index gt 1>true<#else>false</#if><#list status.dimensions>, <#items as dim>"${dim}"<#sep>, </#items></#list>)<#sep>,
 </#list>;
 
     private final String id;

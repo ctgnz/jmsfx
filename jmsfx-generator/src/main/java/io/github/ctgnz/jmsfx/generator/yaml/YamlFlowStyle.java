@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
 @Target(TYPE)
 /**
  * Indicates that the annotated class should be output using YAML Flow style rather than Block
- * 
+ *
  * @author ctg
  */
 public @interface YamlFlowStyle {

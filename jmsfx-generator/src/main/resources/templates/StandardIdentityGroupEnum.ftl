@@ -8,7 +8,7 @@ import ${basePackage}.StandardIdentityGroup;
 
 public enum StandardIdentityGroupEnum implements StandardIdentityGroup {
 <#list identityGroups as ident>
-    ${ident.id}("${ident.code}", "${ident.label}", "${ident.graphicSuffix}")<#sep>,
+        ${ident.id}("${ident.code}", "${ident.label}", "${ident.graphicSuffix}")<#sep>,
 </#list>;
 
     private final String id;

@@ -9,7 +9,7 @@ import ${typePackage}.GeometryType;
 
 public enum DimensionEnum implements Dimension {
 <#list dimensions as dim>
-    ${dim.id}("${dim.code}", "${dim.label}", GeometryType.${dim.geometry}, "${dim.graphicLocation}")<#sep>,
+        ${dim.id}("${dim.code}", "${dim.label}", GeometryType.${dim.geometry}, "${dim.graphicLocation}")<#sep>,
 </#list>;
 
     private final String id;

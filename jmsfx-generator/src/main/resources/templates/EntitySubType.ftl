@@ -6,12 +6,12 @@ import ${typePackage}.GraphicType;
 
 public enum ${symbolSet.baseTypeName}EntitySubType implements EntitySubType {
 <#list symbolSet.entitySubTypes as subType>
-    ${subType.id}("${subType.code}", "${subType.label}", ${symbolSet.baseTypeName}EntityType.${subType.entityTypeId}, GraphicType.${subType.graphicType})<#if subType.graphic??> {
-        @Override
-        public String getGraphicIdentifier() {
-            return "${subType.graphic}";
-        }
-    }</#if><#sep>,
+        ${subType.id}("${subType.code}", "${subType.label}", ${symbolSet.baseTypeName}EntityType.${subType.entityTypeId}, GraphicType.${subType.graphicType})<#if subType.graphic??> {
+            @Override
+            public String getGraphicIdentifier() {
+                return "${subType.graphic}";
+            }
+        }</#if><#sep>,
 </#list>;
 
     private final String id;

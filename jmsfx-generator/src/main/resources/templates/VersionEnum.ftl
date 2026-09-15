@@ -4,7 +4,7 @@ import ${basePackage}.Version;
 
 public enum VersionEnum implements Version {
 <#list versions as version>
-    ${version.id}("${version.code}", "${version.label}")<#sep>,
+        ${version.id}("${version.code}", "${version.label}")<#sep>,
 </#list>;
 
     private final String id;

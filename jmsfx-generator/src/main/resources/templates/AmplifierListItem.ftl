@@ -11,7 +11,7 @@ import com.google.common.collect.Maps;</#if>
 
 public enum ${amplifier.typeName} implements <#if amplifier.standard>StandardAmplifierItem<#elseif amplifier.country>CountryCode<#else>AmplifierListItem</#if> {
 <#list amplifier.values as val>
-    <#if val.extension>@Extension </#if>${val.id}("${val.code}", "${val.label}"<#if val.remarks??>, "${val.remarks}"</#if><#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#sep>,
+        <#if val.extension>@Extension </#if>${val.id}("${val.code}", "${val.label}"<#if val.remarks??>, "${val.remarks}"</#if><#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#sep>,
 </#list>;<#if amplifier.coded>
 
     private static final Map<String, ${amplifier.typeName}> CODES = Maps.uniqueIndex(Arrays.asList(values()), ${amplifier.typeName}::getId);

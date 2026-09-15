@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 
 /**
  * Indicates a list of properties which should always be quoted in YAML output.
- * 
+ *
  * @author ctg
  */
 @Documented

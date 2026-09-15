@@ -7,7 +7,7 @@ import ${iconPackage}.SymbolSetEnum;
 
 public enum ${symbolSet.baseTypeName}SectorOneModifier implements SectorOneModifier {
 <#list symbolSet.sectorOneMods as mod>
-    ${mod.id}("${mod.code}", "${mod.label}", ModifierCategory.${mod.category})<#sep>,
+        ${mod.id}("${mod.code}", "${mod.label}", ModifierCategory.${mod.category})<#sep>,
 </#list>;
 
     private final String id;

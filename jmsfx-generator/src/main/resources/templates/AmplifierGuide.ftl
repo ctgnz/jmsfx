@@ -11,7 +11,7 @@ import javafx.scene.shape.Shape;
 
 public enum ${symbolSet.baseTypeName}AmplifierGuide implements AmplifierGuide {
 <#list symbolSet.amplifierGuides as guide>
-    <#if guide.graphical>${guide.code}(AmplifierEnum.${guide.amplifier}, GuideType.${guide.type}<#list guide.points as pt>, ${pt}</#list>)<#else>${guide.code}(AmplifierEnum.${guide.amplifier}, GuideType.${guide.type})</#if><#sep>,
+        <#if guide.graphical>${guide.code}(AmplifierEnum.${guide.amplifier}, GuideType.${guide.type}<#list guide.points as pt>, ${pt}</#list>)<#else>${guide.code}(AmplifierEnum.${guide.amplifier}, GuideType.${guide.type})</#if><#sep>,
 </#list>;
 
     private final AmplifierEnum amplifier;

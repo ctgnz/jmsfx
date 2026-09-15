@@ -9,7 +9,7 @@ import ${iconPackage}.SymbolSetEnum;
 
 public enum CommonSectorTwoModifier implements SectorTwoModifier {
 <#list symbolSet.sectorTwoMods as mod>
-    ${mod.id}("${mod.groupId}", "${mod.code}", "${mod.label}", ModifierCategory.${mod.category})<#sep>,
+        ${mod.id}("${mod.groupId}", "${mod.code}", "${mod.label}", ModifierCategory.${mod.category})<#sep>,
 </#list>;
 
     private final String groupId;

@@ -9,7 +9,7 @@ import ${iconPackage}.SymbolSetEnum;
 
 public enum CommonSectorOneModifier implements SectorOneModifier {
 <#list symbolSet.sectorOneMods as mod>
-    ${mod.id}("${mod.groupId}", "${mod.code}", "${mod.label}", ModifierCategory.${mod.category})<#sep>,
+        ${mod.id}("${mod.groupId}", "${mod.code}", "${mod.label}", ModifierCategory.${mod.category})<#sep>,
 </#list>;
 
     private final String groupId;

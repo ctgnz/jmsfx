@@ -6,9 +6,9 @@ import ${typePackage}.AmplifierType;
 public enum AmplifierEnum implements Amplifier {
 <#list amplifiers as val>
 <#if val.max gt 0>
-    <#if val.extension>@Extension </#if><#if val.deprecated>@Deprecated </#if>${val.constantName}("${val.id}", "${val.label}", AmplifierType.${val.type}, ${val.min}, ${val.max}, "${val.description}")<#if val?is_last>;<#else>,</#if>
+        <#if val.extension>@Extension </#if><#if val.deprecated>@Deprecated </#if>${val.constantName}("${val.id}", "${val.label}", AmplifierType.${val.type}, ${val.min}, ${val.max}, "${val.description}")<#if val?is_last>;<#else>,</#if>
 <#else>
-    <#if val.extension>@Extension </#if><#if val.deprecated>@Deprecated </#if>${val.constantName}("${val.id}", "${val.label}", AmplifierType.${val.type}, "${val.description}")<#if val?is_last>;<#else>,</#if>
+        <#if val.extension>@Extension </#if><#if val.deprecated>@Deprecated </#if>${val.constantName}("${val.id}", "${val.label}", AmplifierType.${val.type}, "${val.description}")<#if val?is_last>;<#else>,</#if>
 </#if>
 </#list>
 

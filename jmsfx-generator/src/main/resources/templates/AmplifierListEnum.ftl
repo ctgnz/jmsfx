@@ -13,7 +13,7 @@ import ${amplifierPackage}.*;
 
 public enum AmplifierListEnum implements AmplifierList {
 <#list amplifierGroups as grp>
-    ${grp.enumId}("${grp.code}", "${grp.enumDesc}", <#if grp.amplifierId??>AmplifierEnum.${grp.amplifierId}<#else>null</#if>, ${grp.typeName}.class<#list grp.symbolSets as sym>, SymbolSetEnum.${sym}</#list>)<#sep>,
+        ${grp.enumId}("${grp.code}", "${grp.enumDesc}", <#if grp.amplifierId??>AmplifierEnum.${grp.amplifierId}<#else>null</#if>, ${grp.typeName}.class<#list grp.symbolSets as sym>, SymbolSetEnum.${sym}</#list>)<#sep>,
 </#list>;
 
     @SuppressWarnings("unchecked")

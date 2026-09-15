@@ -4,7 +4,7 @@ import ${basePackage}.Context;
 
 public enum ContextEnum implements Context {
 <#list contexts as ctx>
-    ${ctx.id}("${ctx.code}", "${ctx.label}")<#sep>,
+        ${ctx.id}("${ctx.code}", "${ctx.label}")<#sep>,
 </#list>;
 
     private final String id;

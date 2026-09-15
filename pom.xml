@@ -158,6 +158,7 @@
                         <eclipse>
                             <file>${maven.multiModuleProjectDirectory}/config/eclipse-formatter.xml</file>
                         </eclipse>
+                        <trimTrailingWhitespace/>
                     </java>
                 </configuration>
                 <executions>
