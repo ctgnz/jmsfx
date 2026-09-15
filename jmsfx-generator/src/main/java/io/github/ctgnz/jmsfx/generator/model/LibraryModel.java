@@ -20,8 +20,11 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 })
 public class LibraryModel {
     @YamlFlowStyle
-    @YamlForceQuote(properties = { "graphicLocation", "baseSymbolSet" })
-    public record Config(String libraryPrefix, String countryCodeClass, String iconPackage, String amplifierPackage, String commonPackage) {}
+    @YamlForceQuote(properties = {
+        "graphicLocation", "baseSymbolSet"
+    })
+    public record Config(String libraryPrefix, String countryCodeClass, String iconPackage, String amplifierPackage, String commonPackage) {
+    }
 
     private final List<ContextModel> contexts = new ArrayList<>();
     private final List<HqtfDummyModel> hqtfDummies = new ArrayList<>();
@@ -56,7 +59,10 @@ public class LibraryModel {
     }
 
     public AmplifierListModel getAmplifierList(String enumType) {
-        return amplifierGroups.stream().filter(amp -> StringUtils.equals(amp.getTypeName(), enumType)).findFirst().orElseThrow();
+        return amplifierGroups.stream()
+            .filter(amp -> StringUtils.equals(amp.getTypeName(), enumType))
+            .findFirst()
+            .orElseThrow();
     }
 
     public String getAmplifierPackage() {
@@ -84,7 +90,10 @@ public class LibraryModel {
     }
 
     public DimensionModel getDimension(String key) {
-        return dimensions.stream().filter(dim -> StringUtils.equals(dim.getId(), key)).findFirst().orElseThrow();
+        return dimensions.stream()
+            .filter(dim -> StringUtils.equals(dim.getId(), key))
+            .findFirst()
+            .orElseThrow();
     }
 
     public Map<String, String> getDimensionGraphics() {

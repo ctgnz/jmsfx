@@ -15,7 +15,6 @@ import io.github.ctgnz.jmsfx.standard.landunits.LandUnitsSectorTwoModifier;
 @RequestMapping("/LandUnits")
 public class LandUnitsIconController extends IconRestController<LandUnitsEntity, LandUnitsEntityType, LandUnitsEntitySubType, LandUnitsSectorOneModifier, LandUnitsSectorTwoModifier, UnitEchelon> {
 
-
     public LandUnitsIconController() {
         super(SymbolSetEnum.LAND_UNIT);
     }

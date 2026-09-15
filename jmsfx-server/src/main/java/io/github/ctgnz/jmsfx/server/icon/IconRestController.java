@@ -90,18 +90,25 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
 
     private String createGraphic(E entity, T entityType, S entitySubType, M sectorOneMod, N sectorTwoMod, A amplifier) throws Exception {
         IdentificationSymbol symbol = new IdentificationSymbol(StandardIconLibrary.instance());
-        symbol.symbolSetProperty().set(symbolSet);
-        symbol.entityProperty().set(entity);
-        symbol.entityTypeProperty().set(entityType);
-        symbol.entitySubTypeProperty().set(entitySubType);
+        symbol.symbolSetProperty()
+            .set(symbolSet);
+        symbol.entityProperty()
+            .set(entity);
+        symbol.entityTypeProperty()
+            .set(entityType);
+        symbol.entitySubTypeProperty()
+            .set(entitySubType);
         if (sectorOneMod != null) {
-            symbol.sectorOneModifierProperty().set(sectorOneMod);
+            symbol.sectorOneModifierProperty()
+                .set(sectorOneMod);
         }
         if (sectorTwoMod != null) {
-            symbol.sectorTwoModifierProperty().set(sectorTwoMod);
+            symbol.sectorTwoModifierProperty()
+                .set(sectorTwoMod);
         }
         if (amplifier != null) {
-            symbol.amplifierProperty().set(amplifier);
+            symbol.amplifierProperty()
+                .set(amplifier);
         }
         return parser.write(symbol.getCombinedGraphic(), false);
     }

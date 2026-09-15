@@ -12,7 +12,9 @@ public interface HqtfDummy extends CodeElement {
     }
 
     default boolean isSupported(SymbolSet symbolSet) {
-        return getDimensionIds().isEmpty() || getDimensionIds().stream().anyMatch(dim -> Objects.equals(dim, symbolSet.getDimension().getName()));
+        return getDimensionIds().isEmpty() || getDimensionIds().stream()
+            .anyMatch(dim -> Objects.equals(dim, symbolSet.getDimension()
+                .getName()));
     }
 
 }

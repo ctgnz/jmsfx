@@ -12,22 +12,30 @@ import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 @Controller
 public class WebController {
 
-    @GetMapping({"/"})
+    @GetMapping({
+        "/"
+    })
     public String homePage() {
         return "index";
     }
 
-    @GetMapping({"/generate"})
+    @GetMapping({
+        "/generate"
+    })
     public String generateIcons() {
         return "generate";
     }
 
-    @GetMapping({"/browse"})
+    @GetMapping({
+        "/browse"
+    })
     public String browseSymbolSets() {
         return "entity-list";
     }
 
-    @GetMapping({"/browse/{symbolSet}"})
+    @GetMapping({
+        "/browse/{symbolSet}"
+    })
     public String browseSymbolSet(@PathVariable SymbolSet symbolSet, Model model) {
         model.addAttribute("symbolSet", new SymbolSetImpl((SymbolSetEnum) symbolSet));
         return "entity-list :: entities";

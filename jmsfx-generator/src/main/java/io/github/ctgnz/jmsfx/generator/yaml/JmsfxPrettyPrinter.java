@@ -12,8 +12,12 @@ import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 
 public class JmsfxPrettyPrinter extends DefaultPrettyPrinter {
 
-    private static final String[] MAP_FIELDS = { "namingAbbreviations", "idStrategies", "nameStrategies" };
-    private static final String[] NEWLINE_FIELDS = { "hqUnit", "trades", "branchRoles", "primaryDomain", "echelonIndex", "country", "inventory", "catalog", "orbat", "unitParagraph" };
+    private static final String[] MAP_FIELDS = {
+        "namingAbbreviations", "idStrategies", "nameStrategies"
+    };
+    private static final String[] NEWLINE_FIELDS = {
+        "hqUnit", "trades", "branchRoles", "primaryDomain", "echelonIndex", "country", "inventory", "catalog", "orbat", "unitParagraph"
+    };
     private static final long serialVersionUID = 1L;
     private boolean mapElement;
 
@@ -35,8 +39,6 @@ public class JmsfxPrettyPrinter extends DefaultPrettyPrinter {
     public void beforeObjectEntries(JsonGenerator g) throws IOException {
         super.beforeObjectEntries(g);
     }
-
-
 
     @Override
     public DefaultPrettyPrinter createInstance() {
@@ -66,7 +68,9 @@ public class JmsfxPrettyPrinter extends DefaultPrettyPrinter {
 
     @Override
     public void writeEndObject(JsonGenerator g, int nrOfEntries) throws IOException {
-        String fieldName = g.getOutputContext().getParent().getCurrentName();
+        String fieldName = g.getOutputContext()
+            .getParent()
+            .getCurrentName();
         if (isMapElement(fieldName)) {
             this.mapElement = false;
             --_nesting;
@@ -85,11 +89,12 @@ public class JmsfxPrettyPrinter extends DefaultPrettyPrinter {
 
     @Override
     public void writeObjectEntrySeparator(JsonGenerator g) throws IOException {
-        String fieldName = g.getOutputContext().getCurrentName();
-//        if (isMapElement(fieldName)) {
-//            this.mapElement = true;
-//            ++_nesting;
-//        }
+        String fieldName = g.getOutputContext()
+            .getCurrentName();
+        // if (isMapElement(fieldName)) {
+        // this.mapElement = true;
+        // ++_nesting;
+        // }
         if (isNewLineField(fieldName)) {
             g.writeRaw(_separators.getObjectEntrySeparator());
             ++_nesting;
@@ -105,8 +110,11 @@ public class JmsfxPrettyPrinter extends DefaultPrettyPrinter {
     @Override
     public void writeStartObject(JsonGenerator g) throws IOException {
         super.writeStartObject(g);
-        if (g.getOutputContext().getCurrentValue() instanceof Map<?, ?>) {
-            String fieldName = g.getOutputContext().getParent().getCurrentName();
+        if (g.getOutputContext()
+            .getCurrentValue() instanceof Map<?, ?>) {
+            String fieldName = g.getOutputContext()
+                .getParent()
+                .getCurrentName();
             if (isMapElement(fieldName)) {
                 this.mapElement = true;
                 ++_nesting;
@@ -116,11 +124,13 @@ public class JmsfxPrettyPrinter extends DefaultPrettyPrinter {
     }
 
     private boolean isMapElement(String fieldName) {
-        return Arrays.stream(MAP_FIELDS).anyMatch(name -> name.equals(fieldName));
+        return Arrays.stream(MAP_FIELDS)
+            .anyMatch(name -> name.equals(fieldName));
     }
 
     private boolean isNewLineField(String fieldName) {
-        return Arrays.stream(NEWLINE_FIELDS).anyMatch(name -> name.equals(fieldName));
+        return Arrays.stream(NEWLINE_FIELDS)
+            .anyMatch(name -> name.equals(fieldName));
     }
 
     private boolean isPrimitiveArrayType(JsonGenerator g) {

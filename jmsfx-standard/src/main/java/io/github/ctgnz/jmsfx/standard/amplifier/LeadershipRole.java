@@ -5,8 +5,8 @@ import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum LeadershipRole implements StandardAmplifierItem {
-    LEADER_INDIVIDUAL("1", "Leader"),
-    DEPUTY_LEADER_INDIVIDUAL("2", "Deputy Leader");
+        LEADER_INDIVIDUAL("1", "Leader"),
+        DEPUTY_LEADER_INDIVIDUAL("2", "Deputy Leader");
 
     private final String id;
     private final String label;

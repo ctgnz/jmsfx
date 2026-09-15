@@ -30,7 +30,8 @@ public interface Entity extends MainElement {
         }
         String graphicIdentifier = getGraphicIdentifier();
         if (isFullFrameIcon()) {
-            return String.format("/svg/Appendices/%s/%s%s.svg", graphicLocation, graphicIdentifier, identity.getGroup().getGraphicSuffix());
+            return String.format("/svg/Appendices/%s/%s%s.svg", graphicLocation, graphicIdentifier, identity.getGroup()
+                .getGraphicSuffix());
         } else {
             return String.format("/svg/Appendices/%s/%s.svg", graphicLocation, graphicIdentifier);
         }

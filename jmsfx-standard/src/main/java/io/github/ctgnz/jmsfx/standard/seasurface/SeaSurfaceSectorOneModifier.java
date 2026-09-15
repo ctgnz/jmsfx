@@ -2,17 +2,17 @@ package io.github.ctgnz.jmsfx.standard.seasurface;
 
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 
 public enum SeaSurfaceSectorOneModifier implements SectorOneModifier {
-    OWN("01", "Own Ship", ModifierCategory.MissionArea),
-    AA("02", "Antiair Warfare", ModifierCategory.MissionArea),
-    MD("08", "Missile Defense", ModifierCategory.MissionArea),
-    RMV("11", "Remote Multi-Mission Vehicle (USV-only)", ModifierCategory.MissionArea),
-    TORPEDO("17", "Torpedo", ModifierCategory.WeaponsCapability),
-    LRST("21", "Ballistic Missile Defense, Long-Range Surveillance and Track (LRST)", ModifierCategory.MissionArea),
-    SEA_BASED_X("22", "Sea-Base X-Band", ModifierCategory.MissionArea);
+        OWN("01", "Own Ship", ModifierCategory.MissionArea),
+        AA("02", "Antiair Warfare", ModifierCategory.MissionArea),
+        MD("08", "Missile Defense", ModifierCategory.MissionArea),
+        RMV("11", "Remote Multi-Mission Vehicle (USV-only)", ModifierCategory.MissionArea),
+        TORPEDO("17", "Torpedo", ModifierCategory.WeaponsCapability),
+        LRST("21", "Ballistic Missile Defense, Long-Range Surveillance and Track (LRST)", ModifierCategory.MissionArea),
+        SEA_BASED_X("22", "Sea-Base X-Band", ModifierCategory.MissionArea);
 
     private final String id;
     private final String label;

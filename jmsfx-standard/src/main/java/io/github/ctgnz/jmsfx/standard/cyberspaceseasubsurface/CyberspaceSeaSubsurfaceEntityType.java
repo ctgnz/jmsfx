@@ -5,19 +5,19 @@ import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum CyberspaceSeaSubsurfaceEntityType implements EntityType {
-    COMBAT_MISSION_TEAM("01", "Combat Mission Team", CyberspaceSeaSubsurfaceEntity.MISSION_FORCE, GraphicType.MAIN),
-    NATIONAL_MISSION_TEAM("02", "National Mission Team", CyberspaceSeaSubsurfaceEntity.MISSION_FORCE, GraphicType.MAIN),
-    CYBER_PROTECTION_TEAM("03", "Cyber Protection Team", CyberspaceSeaSubsurfaceEntity.MISSION_FORCE, GraphicType.MAIN),
-    DEFENSIVE_CYBERSPACE_OPERATION("01", "Defensive Cyberspace Operation", CyberspaceSeaSubsurfaceEntity.CYBERSPACE_UNIT, GraphicType.MAIN),
-    OFFENSIVE_CYBERSPACE_OPERATION("02", "Cyberspace Operation", CyberspaceSeaSubsurfaceEntity.CYBERSPACE_UNIT, GraphicType.MAIN),
-    INTERNET_SERVICE_PROVIDER("03", "Internet Service Provider", CyberspaceSeaSubsurfaceEntity.CYBERSPACE_UNIT, GraphicType.MAIN),
-    SECURITY_OPERATIONS_CENTRE("04", "Security Operations Centre", CyberspaceSeaSubsurfaceEntity.CYBERSPACE_UNIT, GraphicType.MAIN),
-    ACTIVE_CYBER_OPERATIONS("05", "Active Cyber Operations", CyberspaceSeaSubsurfaceEntity.CYBERSPACE_UNIT, GraphicType.MAIN),
-    ADVANCED_PERSISTANT_THREAT("06", "Advanced Persistant Threat", CyberspaceSeaSubsurfaceEntity.CYBERSPACE_UNIT, GraphicType.MAIN),
-    NATION_STATE("01", "Nation State", CyberspaceSeaSubsurfaceEntity.THREAT_ACTOR, GraphicType.MAIN),
-    NON_NATION_STATE("02", "Non Nation State", CyberspaceSeaSubsurfaceEntity.THREAT_ACTOR, GraphicType.MAIN),
-    CRIMINAL("03", "Unknown", CyberspaceSeaSubsurfaceEntity.THREAT_ACTOR, GraphicType.MAIN),
-    INSIDER("04", "Insider", CyberspaceSeaSubsurfaceEntity.THREAT_ACTOR, GraphicType.MAIN);
+        COMBAT_MISSION_TEAM("01", "Combat Mission Team", CyberspaceSeaSubsurfaceEntity.MISSION_FORCE, GraphicType.MAIN),
+        NATIONAL_MISSION_TEAM("02", "National Mission Team", CyberspaceSeaSubsurfaceEntity.MISSION_FORCE, GraphicType.MAIN),
+        CYBER_PROTECTION_TEAM("03", "Cyber Protection Team", CyberspaceSeaSubsurfaceEntity.MISSION_FORCE, GraphicType.MAIN),
+        DEFENSIVE_CYBERSPACE_OPERATION("01", "Defensive Cyberspace Operation", CyberspaceSeaSubsurfaceEntity.CYBERSPACE_UNIT, GraphicType.MAIN),
+        OFFENSIVE_CYBERSPACE_OPERATION("02", "Cyberspace Operation", CyberspaceSeaSubsurfaceEntity.CYBERSPACE_UNIT, GraphicType.MAIN),
+        INTERNET_SERVICE_PROVIDER("03", "Internet Service Provider", CyberspaceSeaSubsurfaceEntity.CYBERSPACE_UNIT, GraphicType.MAIN),
+        SECURITY_OPERATIONS_CENTRE("04", "Security Operations Centre", CyberspaceSeaSubsurfaceEntity.CYBERSPACE_UNIT, GraphicType.MAIN),
+        ACTIVE_CYBER_OPERATIONS("05", "Active Cyber Operations", CyberspaceSeaSubsurfaceEntity.CYBERSPACE_UNIT, GraphicType.MAIN),
+        ADVANCED_PERSISTANT_THREAT("06", "Advanced Persistant Threat", CyberspaceSeaSubsurfaceEntity.CYBERSPACE_UNIT, GraphicType.MAIN),
+        NATION_STATE("01", "Nation State", CyberspaceSeaSubsurfaceEntity.THREAT_ACTOR, GraphicType.MAIN),
+        NON_NATION_STATE("02", "Non Nation State", CyberspaceSeaSubsurfaceEntity.THREAT_ACTOR, GraphicType.MAIN),
+        CRIMINAL("03", "Unknown", CyberspaceSeaSubsurfaceEntity.THREAT_ACTOR, GraphicType.MAIN),
+        INSIDER("04", "Insider", CyberspaceSeaSubsurfaceEntity.THREAT_ACTOR, GraphicType.MAIN);
 
     private final String id;
     private final String label;

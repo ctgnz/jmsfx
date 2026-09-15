@@ -5,9 +5,9 @@ import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum SeaSubsurfaceEntitySubType implements EntitySubType {
-    SUBMARINE_SURFACED("01", "Submarine-Surfaced", SeaSubsurfaceEntityType.SUBMARINE, GraphicType.MAIN),
-    SUBMARINE_SNORKELING("02", "Submarine-Snorkeling", SeaSubsurfaceEntityType.SUBMARINE, GraphicType.MAIN),
-    SUBMARINE_BOTTOMED("03", "Submarine-Bottomed", SeaSubsurfaceEntityType.SUBMARINE, GraphicType.MAIN);
+        SUBMARINE_SURFACED("01", "Submarine-Surfaced", SeaSubsurfaceEntityType.SUBMARINE, GraphicType.MAIN),
+        SUBMARINE_SNORKELING("02", "Submarine-Snorkeling", SeaSubsurfaceEntityType.SUBMARINE, GraphicType.MAIN),
+        SUBMARINE_BOTTOMED("03", "Submarine-Bottomed", SeaSubsurfaceEntityType.SUBMARINE, GraphicType.MAIN);
 
     private final String id;
     private final String label;

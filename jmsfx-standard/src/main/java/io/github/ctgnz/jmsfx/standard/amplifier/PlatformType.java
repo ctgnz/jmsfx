@@ -5,8 +5,8 @@ import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum PlatformType implements AmplifierListItem {
-    ELNOT("ELNOT", "Electronic Intelligence Notation"),
-    CENOT("CENOT", "Communications Intelligence Notation");
+        ELNOT("ELNOT", "Electronic Intelligence Notation"),
+        CENOT("CENOT", "Communications Intelligence Notation");
 
     private final String id;
     private final String label;

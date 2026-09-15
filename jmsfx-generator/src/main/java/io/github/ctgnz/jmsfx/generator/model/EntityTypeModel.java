@@ -17,12 +17,19 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-@JsonIgnoreProperties({ "id", "label", "code", "extension", "deprecated", "remarks"})
-@JsonPropertyOrder({ "details", "entitySubTypes"})
+@JsonIgnoreProperties({
+    "id", "label", "code", "extension", "deprecated", "remarks"
+})
+@JsonPropertyOrder({
+    "details", "entitySubTypes"
+})
 public class EntityTypeModel extends AbstractModel {
     @YamlFlowStyle
-    @YamlForceQuote(properties = { "code", "label", "remarks" })
-    public record Details(String code, String id, GraphicType graphicType, String graphic, boolean extension, boolean deprecated, String label, String remarks) {}
+    @YamlForceQuote(properties = {
+        "code", "label", "remarks"
+    })
+    public record Details(String code, String id, GraphicType graphicType, String graphic, boolean extension, boolean deprecated, String label, String remarks) {
+    }
 
     private @JsonBackReference EntityModel entity;
     private final @JsonManagedReference List<EntitySubTypeModel> entitySubTypes = new ArrayList<>();

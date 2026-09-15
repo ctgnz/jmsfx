@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface EntityType extends MainElement {
 
-	@Override
+    @Override
     default String getGraphicIdentifier() {
         return String.format("%s%s%s00", getBaseSymbolSet().getId(), getEntity().getId(), getId());
     }

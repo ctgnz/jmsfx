@@ -5,24 +5,24 @@ import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum EngagementWeapon implements AmplifierListItem {
-    NA("", "Unspecified"),
-    M("-M", "Missile"),
-    BM("-BM", "Ballistic Missile"),
-    CM("-CM", "Cruise Missile"),
-    GN("-GN", "Gun"),
-    T("-T", "Torpedo"),
-    A("-A", "Attack Aircraft"),
-    C("-C", "Combat Air Patrol"),
-    D("-D", "Defensive Counter Air"),
-    UW("-UW", "Undersea Warfare (USW)/Antisubmarine Warfare (ASW)Engagement"),
-    MW("-MW", "Mine Warfare (MW) Engagement"),
-    SW("-SW", "Surface Warfare (SUW) Engagement"),
-    EA("-EA", "Electronic Attack"),
-    ED("-ED", "Electronic Defence"),
-    UV("-UV", "Unmanned Vehicle"),
-    CW("-CW", "Close in Weapon System"),
-    L3("-L3", "Lamps"),
-    VA("-VA", "Vertical Launch ASROC");
+        NA("", "Unspecified"),
+        M("-M", "Missile"),
+        BM("-BM", "Ballistic Missile"),
+        CM("-CM", "Cruise Missile"),
+        GN("-GN", "Gun"),
+        T("-T", "Torpedo"),
+        A("-A", "Attack Aircraft"),
+        C("-C", "Combat Air Patrol"),
+        D("-D", "Defensive Counter Air"),
+        UW("-UW", "Undersea Warfare (USW)/Antisubmarine Warfare (ASW)Engagement"),
+        MW("-MW", "Mine Warfare (MW) Engagement"),
+        SW("-SW", "Surface Warfare (SUW) Engagement"),
+        EA("-EA", "Electronic Attack"),
+        ED("-ED", "Electronic Defence"),
+        UV("-UV", "Unmanned Vehicle"),
+        CW("-CW", "Close in Weapon System"),
+        L3("-L3", "Lamps"),
+        VA("-VA", "Vertical Launch ASROC");
 
     private final String id;
     private final String label;

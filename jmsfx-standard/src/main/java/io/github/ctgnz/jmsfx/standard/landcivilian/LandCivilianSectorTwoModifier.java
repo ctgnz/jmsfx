@@ -2,11 +2,11 @@ package io.github.ctgnz.jmsfx.standard.landcivilian;
 
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 
 public enum LandCivilianSectorTwoModifier implements SectorTwoModifier {
-    LEADER("01", "Leader or Leadership", ModifierCategory.Organization);
+        LEADER("01", "Leader or Leadership", ModifierCategory.Organization);
 
     private final String id;
     private final String label;

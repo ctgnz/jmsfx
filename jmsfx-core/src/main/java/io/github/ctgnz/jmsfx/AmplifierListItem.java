@@ -20,7 +20,8 @@ public interface AmplifierListItem extends CodeElement {
 
     default boolean isDeprecated() {
         try {
-            return getClass().getField(getName()).getAnnotation(Deprecated.class) != null;
+            return getClass().getField(getName())
+                .getAnnotation(Deprecated.class) != null;
         } catch (NoSuchFieldException | SecurityException e) {
             return false;
         }
@@ -28,7 +29,8 @@ public interface AmplifierListItem extends CodeElement {
 
     default boolean isExtension() {
         try {
-            return getClass().getField(getName()).getAnnotation(Extension.class) != null;
+            return getClass().getField(getName())
+                .getAnnotation(Extension.class) != null;
         } catch (NoSuchFieldException | SecurityException e) {
             return false;
         }

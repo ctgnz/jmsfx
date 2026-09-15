@@ -5,17 +5,17 @@ import java.util.List;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum ActivityEntity implements Entity {
-    INCIDENT("11", "Incident", GraphicType.NA),
-    CIVIL_DISTURBANCE("12", "Civil Disturbance", GraphicType.FULL_OCTAGON),
-    OPERATION("13", "Operation", GraphicType.NA),
-    HAZARD_MATERIALS("15", "Hazard Materials", GraphicType.NA),
-    TRANSPORTATION_INCIDENT("16", "Transportation Incident", GraphicType.FULL_OCTAGON),
-    NATURAL_EVENT("17", "Natural Event", GraphicType.MAIN),
-    INDIVIDUAL("18", "Individual", GraphicType.NA);
+        INCIDENT("11", "Incident", GraphicType.NA),
+        CIVIL_DISTURBANCE("12", "Civil Disturbance", GraphicType.FULL_OCTAGON),
+        OPERATION("13", "Operation", GraphicType.NA),
+        HAZARD_MATERIALS("15", "Hazard Materials", GraphicType.NA),
+        TRANSPORTATION_INCIDENT("16", "Transportation Incident", GraphicType.FULL_OCTAGON),
+        NATURAL_EVENT("17", "Natural Event", GraphicType.MAIN),
+        INDIVIDUAL("18", "Individual", GraphicType.NA);
 
     private final String id;
     private final String label;

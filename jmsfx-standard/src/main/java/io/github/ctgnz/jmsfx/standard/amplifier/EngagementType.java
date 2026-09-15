@@ -5,9 +5,9 @@ import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum EngagementType implements AmplifierListItem {
-    L("", "Local"),
-    R("R:", "Remote"),
-    B("B:", "Both");
+        L("", "Local"),
+        R("R:", "Remote"),
+        B("B:", "Both");
 
     private final String id;
     private final String label;

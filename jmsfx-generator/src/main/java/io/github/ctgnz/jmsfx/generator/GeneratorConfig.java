@@ -76,7 +76,8 @@ public class GeneratorConfig {
     }
 
     public Path getModelFile() throws URISyntaxException {
-        return Paths.get(DomainModelGenerator.class.getResource(modelFilePath).toURI());
+        return Paths.get(DomainModelGenerator.class.getResource(modelFilePath)
+            .toURI());
     }
 
     public String getModelFilePath() {
@@ -93,7 +94,8 @@ public class GeneratorConfig {
 
     public Configuration getTemplateConfig() throws IOException, URISyntaxException {
         Configuration configuration = new Configuration(Configuration.VERSION_2_3_30);
-        configuration.setDirectoryForTemplateLoading(new File(GeneratorConfig.class.getResource("/templates").toURI()));
+        configuration.setDirectoryForTemplateLoading(new File(GeneratorConfig.class.getResource("/templates")
+            .toURI()));
         return configuration;
     }
 

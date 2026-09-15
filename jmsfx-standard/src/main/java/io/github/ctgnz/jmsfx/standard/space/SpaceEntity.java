@@ -5,13 +5,13 @@ import java.util.List;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum SpaceEntity implements Entity {
-    MILITARY("11", "Military", GraphicType.MAIN),
-    CIVILIAN("12", "Civilian", GraphicType.MAIN),
-    MANUAL_TRACK("13", "Manual Track", GraphicType.FULL_OCTAGON);
+        MILITARY("11", "Military", GraphicType.MAIN),
+        CIVILIAN("12", "Civilian", GraphicType.MAIN),
+        MANUAL_TRACK("13", "Manual Track", GraphicType.FULL_OCTAGON);
 
     private final String id;
     private final String label;

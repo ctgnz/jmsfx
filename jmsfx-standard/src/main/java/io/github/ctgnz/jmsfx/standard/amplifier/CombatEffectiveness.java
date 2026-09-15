@@ -5,11 +5,11 @@ import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum CombatEffectiveness implements AmplifierListItem {
-    FULLY_OPERATIONAL("FO", "Fully Operational"),
-    SUBSTANTIALLY_OPERATIONAL("SO", "Substantially Operational"),
-    MARGINALLY_OPERATIONAL("MO", "Marginally Operational"),
-    NOT_OPERATIONAL("NO", "Not Operational"),
-    UNKNOWN_EFFECTIVENESS("UNK", "Unknown");
+        FULLY_OPERATIONAL("FO", "Fully Operational"),
+        SUBSTANTIALLY_OPERATIONAL("SO", "Substantially Operational"),
+        MARGINALLY_OPERATIONAL("MO", "Marginally Operational"),
+        NOT_OPERATIONAL("NO", "Not Operational"),
+        UNKNOWN_EFFECTIVENESS("UNK", "Unknown");
 
     private final String id;
     private final String label;

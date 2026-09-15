@@ -1,8 +1,5 @@
 package io.github.ctgnz.jmsfx.types;
 
-import nz.co.ctg.foxglove.SvgGraphic;
-
-import io.github.ctgnz.jmsfx.AmplifierGuide;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
@@ -15,7 +12,11 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.transform.Transform;
 
-public class GraphicAmplifierValue {
+import nz.co.ctg.foxglove.SvgGraphic;
+
+import io.github.ctgnz.jmsfx.AmplifierGuide;
+
+public final class GraphicAmplifierValue {
     protected static final Font AMPLIFIER_FONT = Font.font("sans-serif", FontWeight.NORMAL, FontPosture.REGULAR, 60);
     private final AmplifierGuide guide;
     private final ObjectProperty<SvgGraphic> graphic;
@@ -77,17 +78,21 @@ public class GraphicAmplifierValue {
     }
 
     private Transform calculateTransform() {
-        Group group = graphic.get().createGroup();
+        Group group = graphic.get()
+            .createGroup();
         Bounds bounds = group.getLayoutBounds();
         double dx = guide.getWidth() / bounds.getWidth();
         double dy = guide.getHeight() / bounds.getHeight();
         switch (getScaleDirection()) {
             case Both:
-                return Transform.translate(guide.getX(), guide.getY()).createConcatenation(Transform.scale(dx, dy));
+                return Transform.translate(guide.getX(), guide.getY())
+                    .createConcatenation(Transform.scale(dx, dy));
             case Horizontal:
-                return Transform.translate(guide.getX(), guide.getY()).createConcatenation(Transform.scale(dx, dx));
+                return Transform.translate(guide.getX(), guide.getY())
+                    .createConcatenation(Transform.scale(dx, dx));
             case Vertical:
-                return Transform.translate(guide.getX(), guide.getY()).createConcatenation(Transform.scale(dy, dy));
+                return Transform.translate(guide.getX(), guide.getY())
+                    .createConcatenation(Transform.scale(dy, dy));
             default:
                 return Transform.translate(guide.getX(), guide.getY());
         }

@@ -5,13 +5,13 @@ import java.util.List;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum CyberspaceSeaSubsurfaceEntity implements Entity {
-    MISSION_FORCE("11", "Mission Force", GraphicType.NA),
-    CYBERSPACE_UNIT("12", "Cyberspace Unit", GraphicType.MAIN),
-    THREAT_ACTOR("13", "Threat Actor", GraphicType.MAIN);
+        MISSION_FORCE("11", "Mission Force", GraphicType.NA),
+        CYBERSPACE_UNIT("12", "Cyberspace Unit", GraphicType.MAIN),
+        THREAT_ACTOR("13", "Threat Actor", GraphicType.MAIN);
 
     private final String id;
     private final String label;

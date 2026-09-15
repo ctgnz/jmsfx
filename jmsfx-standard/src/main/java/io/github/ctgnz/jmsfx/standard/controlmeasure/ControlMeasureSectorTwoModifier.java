@@ -2,15 +2,15 @@ package io.github.ctgnz.jmsfx.standard.controlmeasure;
 
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 
 public enum ControlMeasureSectorTwoModifier implements SectorTwoModifier {
-    URBAN("01", "Urban", ModifierCategory.Terrain),
-    WATER("02", "Water", ModifierCategory.Terrain),
-    GROUND("03", "Ground", ModifierCategory.Terrain),
-    VEGETATION("04", "Vegetation", ModifierCategory.Terrain),
-    OBSTACLES("05", "Obstacles", ModifierCategory.Terrain);
+        URBAN("01", "Urban", ModifierCategory.Terrain),
+        WATER("02", "Water", ModifierCategory.Terrain),
+        GROUND("03", "Ground", ModifierCategory.Terrain),
+        VEGETATION("04", "Vegetation", ModifierCategory.Terrain),
+        OBSTACLES("05", "Obstacles", ModifierCategory.Terrain);
 
     private final String id;
     private final String label;

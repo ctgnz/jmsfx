@@ -1,7 +1,8 @@
 package io.github.ctgnz.jmsfx;
 
-import io.github.ctgnz.jmsfx.types.GuideType;
 import javafx.scene.shape.Shape;
+
+import io.github.ctgnz.jmsfx.types.GuideType;
 
 public interface AmplifierGuide {
 

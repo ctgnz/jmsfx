@@ -4,14 +4,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import io.github.ctgnz.jmsfx.AmplifierGuide;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
-import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.SymbolSetInfo;
-import io.github.ctgnz.jmsfx.AmplifierGuide;
 
 public class AirMissileSymbolSet implements SymbolSetInfo {
     public static final SymbolSetInfo INSTANCE = new AirMissileSymbolSet();

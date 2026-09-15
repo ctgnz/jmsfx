@@ -14,7 +14,8 @@ public interface AmplifierList extends CodeElement {
     <A extends AmplifierListItem> Class<A> getValueClass();
 
     default boolean isCompatibleWith(SymbolSet symbolSet) {
-        return getSymbolSets().isEmpty() || getSymbolSets().stream().anyMatch(sym -> Objects.equals(sym, symbolSet));
+        return getSymbolSets().isEmpty() || getSymbolSets().stream()
+            .anyMatch(sym -> Objects.equals(sym, symbolSet));
     }
 
     default boolean isStandardAmplifier() {

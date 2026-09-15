@@ -5,12 +5,12 @@ import java.util.List;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum CommonEntity implements Entity {
-    UNSPECIFIED("00", "Unspecified", GraphicType.NA),
-    INVALID("10", "Invalid Symbol", GraphicType.FULL_FRAME);
+        UNSPECIFIED("00", "Unspecified", GraphicType.NA),
+        INVALID("10", "Invalid Symbol", GraphicType.FULL_FRAME);
 
     private final String id;
     private final String label;

@@ -1,6 +1,8 @@
 package io.github.ctgnz.jmsfx.standard;
 
 import java.util.stream.Stream;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import org.apache.commons.lang3.ObjectUtils;
 
@@ -34,8 +36,6 @@ import io.github.ctgnz.jmsfx.standard.common.CommonEntitySubType;
 import io.github.ctgnz.jmsfx.standard.common.CommonEntityType;
 import io.github.ctgnz.jmsfx.standard.common.CommonSectorOneModifier;
 import io.github.ctgnz.jmsfx.standard.common.CommonSectorTwoModifier;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 public class StandardIconLibrary implements IconLibrary {
     private static final StandardIconLibrary INSTANCE = new StandardIconLibrary();
@@ -72,7 +72,8 @@ public class StandardIconLibrary implements IconLibrary {
 
     @Override
     public ObservableList<CountryCode> getCountryCodes() {
-        return FXCollections.observableArrayList(Stream.concat(Stream.of(CountryCode.UNDEFINED), Stream.of(NatoCountryCode.values())).toList());
+        return FXCollections.observableArrayList(Stream.concat(Stream.of(CountryCode.UNDEFINED), Stream.of(NatoCountryCode.values()))
+            .toList());
     }
 
     @Override

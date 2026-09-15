@@ -5,7 +5,7 @@ import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum UnknownAmplifier implements StandardAmplifierItem {
-    NA("0", "Unknown", "FFFF80");
+        NA("0", "Unknown", "FFFF80");
 
     private final String id;
     private final String label;

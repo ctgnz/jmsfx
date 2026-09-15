@@ -8,16 +8,16 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 
+import io.github.ctgnz.jmsfx.AmplifierGuide;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
-import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.SymbolSetInfo;
-import io.github.ctgnz.jmsfx.AmplifierGuide;
-import io.github.ctgnz.jmsfx.standard.amplifier.UnitEchelon;
 import io.github.ctgnz.jmsfx.standard.amplifier.EquipmentMobility;
+import io.github.ctgnz.jmsfx.standard.amplifier.UnitEchelon;
 
 public class LandUnitsSymbolSet implements SymbolSetInfo {
     public static final SymbolSetInfo INSTANCE = new LandUnitsSymbolSet();

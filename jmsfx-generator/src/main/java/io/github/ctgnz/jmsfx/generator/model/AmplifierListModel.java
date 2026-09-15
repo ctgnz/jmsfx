@@ -13,16 +13,27 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-@JsonIgnoreProperties({ "id", "label", "code", "extension", "deprecated", "remarks"})
-@JsonPropertyOrder({ "details", "config", "values" })
+@JsonIgnoreProperties({
+    "id", "label", "code", "extension", "deprecated", "remarks"
+})
+@JsonPropertyOrder({
+    "details", "config", "values"
+})
 public class AmplifierListModel extends AbstractModel {
     @YamlFlowStyle
-    @YamlForceQuote(properties = { "code", "label", "remarks" })
-    public record Details(String code, String id, boolean extension, boolean deprecated, String label, String amplifierId, String remarks) {}
+    @YamlForceQuote(properties = {
+        "code", "label", "remarks"
+    })
+    public record Details(String code, String id, boolean extension, boolean deprecated, String label, String amplifierId, String remarks) {
+    }
 
     @YamlFlowStyle
-    @YamlForceQuote(properties = { "graphicLocation", "baseSymbolSet", "enumDesc" })
-    public record Config(String typeName, String graphicLocation, boolean standard, boolean country, boolean coded, boolean frameAmplifier, boolean unknown, String enumId, String enumDesc, String[] symbolSets) {}
+    @YamlForceQuote(properties = {
+        "graphicLocation", "baseSymbolSet", "enumDesc"
+    })
+    public record Config(String typeName, String graphicLocation, boolean standard, boolean country, boolean coded, boolean frameAmplifier, boolean unknown, String enumId, String enumDesc,
+                         String[] symbolSets) {
+    }
 
     private final List<AmplifierListItemModel> values = new ArrayList<>();
     private @JsonIgnore String typeName;
@@ -79,11 +90,13 @@ public class AmplifierListModel extends AbstractModel {
     @Override
     @JsonIgnore
     public boolean isExtension() {
-        return values.stream().anyMatch(AmplifierListItemModel::isExtension);
+        return values.stream()
+            .anyMatch(AmplifierListItemModel::isExtension);
     }
 
     public boolean isFor(String symbolSetId) {
-        return symbolSets.stream().anyMatch(id -> id.equals(symbolSetId));
+        return symbolSets.stream()
+            .anyMatch(id -> id.equals(symbolSetId));
     }
 
     public boolean isFrameAmplifier() {
@@ -124,7 +137,8 @@ public class AmplifierListModel extends AbstractModel {
         this.enumId = config.enumId;
         this.enumDesc = config.enumDesc;
         if (config.symbolSets != null) {
-            Arrays.stream(config.symbolSets).forEach(symbolSets::add);
+            Arrays.stream(config.symbolSets)
+                .forEach(symbolSets::add);
         }
     }
 

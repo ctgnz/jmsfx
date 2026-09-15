@@ -5,14 +5,14 @@ import java.util.List;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum AirEntity implements Entity {
-    MILITARY("11", "Military", GraphicType.MAIN),
-    CIVILIAN("12", "Civilian", GraphicType.MAIN),
-    WEAPON("13", "Weapon", GraphicType.MAIN),
-    MANUAL_TRACK("14", "Manual Track", GraphicType.FULL_OCTAGON);
+        MILITARY("11", "Military", GraphicType.MAIN),
+        CIVILIAN("12", "Civilian", GraphicType.MAIN),
+        WEAPON("13", "Weapon", GraphicType.MAIN),
+        MANUAL_TRACK("14", "Manual Track", GraphicType.FULL_OCTAGON);
 
     private final String id;
     private final String label;

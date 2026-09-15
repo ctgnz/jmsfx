@@ -7,8 +7,12 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
 @YamlFlowStyle
-@YamlForceQuote(properties = { "code", "label", "remarks" })
-@JsonPropertyOrder({ "groupId", "code", "category", "id", "extension", "deprecated", "label", "remarks" })
+@YamlForceQuote(properties = {
+    "code", "label", "remarks"
+})
+@JsonPropertyOrder({
+    "groupId", "code", "category", "id", "extension", "deprecated", "label", "remarks"
+})
 public class SectorOneModifierModel extends AbstractModel {
 
     private @JsonBackReference SymbolSetModel symbolSet;

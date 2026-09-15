@@ -5,9 +5,9 @@ import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum ReinforcedReduced implements AmplifierListItem {
-    REINFORCED("+", "Reinforced"),
-    REDUCED("-", "Reduced"),
-    REINFORCED_REDUCED("±", "Reinforced and Reduced");
+        REINFORCED("+", "Reinforced"),
+        REDUCED("-", "Reduced"),
+        REINFORCED_REDUCED("Â±", "Reinforced and Reduced");
 
     private final String id;
     private final String label;

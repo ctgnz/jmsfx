@@ -2,14 +2,14 @@ package io.github.ctgnz.jmsfx.standard.air;
 
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 
 public enum AirSectorTwoModifier implements SectorTwoModifier {
-    BOOM("04", "Boom-Only", ModifierCategory.RefuelingCapability),
-    DROGUE("05", "Drogue-Only", ModifierCategory.RefuelingCapability),
-    BOOM_DROGUE("06", "Boom and Drogue", ModifierCategory.RefuelingCapability),
-    DOWNLINK("11", "Downlinked", ModifierCategory.TrackLinkAvailability);
+        BOOM("04", "Boom-Only", ModifierCategory.RefuelingCapability),
+        DROGUE("05", "Drogue-Only", ModifierCategory.RefuelingCapability),
+        BOOM_DROGUE("06", "Boom and Drogue", ModifierCategory.RefuelingCapability),
+        DOWNLINK("11", "Downlinked", ModifierCategory.TrackLinkAvailability);
 
     private final String id;
     private final String label;

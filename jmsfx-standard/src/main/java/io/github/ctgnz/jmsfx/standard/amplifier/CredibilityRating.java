@@ -5,12 +5,12 @@ import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum CredibilityRating implements AmplifierListItem {
-    CONFIRMED("1", "Confirmed by Other Sources"),
-    PROBABLY("2", "Probably True"),
-    POSSIBLY("3", "Possibly True"),
-    DOUBTFULLY("4", "Doubtfully True"),
-    IMPROBABLE("5", "Improbable"),
-    CRED_CANNOT_BE_JUDGED("6", "Truth Cannot Be Judged");
+        CONFIRMED("1", "Confirmed by Other Sources"),
+        PROBABLY("2", "Probably True"),
+        POSSIBLY("3", "Possibly True"),
+        DOUBTFULLY("4", "Doubtfully True"),
+        IMPROBABLE("5", "Improbable"),
+        CRED_CANNOT_BE_JUDGED("6", "Truth Cannot Be Judged");
 
     private final String id;
     private final String label;

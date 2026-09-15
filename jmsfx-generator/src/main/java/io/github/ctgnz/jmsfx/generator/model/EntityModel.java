@@ -17,12 +17,19 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-@JsonIgnoreProperties({ "id", "label", "code", "extension", "deprecated", "remarks"})
-@JsonPropertyOrder({ "details", "entityTypes"})
+@JsonIgnoreProperties({
+    "id", "label", "code", "extension", "deprecated", "remarks"
+})
+@JsonPropertyOrder({
+    "details", "entityTypes"
+})
 public class EntityModel extends AbstractModel {
     @YamlFlowStyle
-    @YamlForceQuote(properties = { "code", "label", "remarks" })
-    public record Details(String code, String id, GraphicType graphicType, String baseSymbolSet, boolean extension, boolean deprecated, String label, String remarks) {}
+    @YamlForceQuote(properties = {
+        "code", "label", "remarks"
+    })
+    public record Details(String code, String id, GraphicType graphicType, String baseSymbolSet, boolean extension, boolean deprecated, String label, String remarks) {
+    }
 
     private @JsonBackReference SymbolSetModel symbolSet;
     private final @JsonManagedReference List<EntityTypeModel> entityTypes = new ArrayList<>();
@@ -67,7 +74,8 @@ public class EntityModel extends AbstractModel {
     }
 
     protected Stream<EntitySubTypeModel> streamEntitySubTypes() {
-        return entityTypes.stream().flatMap(EntityTypeModel::streamEntitySubTypes);
+        return entityTypes.stream()
+            .flatMap(EntityTypeModel::streamEntitySubTypes);
     }
 
     protected Stream<EntityTypeModel> streamEntityTypes() {

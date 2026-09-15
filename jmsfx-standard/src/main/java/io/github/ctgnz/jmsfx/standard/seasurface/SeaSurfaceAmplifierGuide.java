@@ -1,31 +1,32 @@
 package io.github.ctgnz.jmsfx.standard.seasurface;
 
-import io.github.ctgnz.jmsfx.AmplifierGuide;
-import io.github.ctgnz.jmsfx.standard.AmplifierEnum;
-import io.github.ctgnz.jmsfx.types.GuideType;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Polyline;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
+import io.github.ctgnz.jmsfx.AmplifierGuide;
+import io.github.ctgnz.jmsfx.standard.AmplifierEnum;
+import io.github.ctgnz.jmsfx.types.GuideType;
+
 public enum SeaSurfaceAmplifierGuide implements AmplifierGuide {
-    G(AmplifierEnum.G_StaffComments, GuideType.RECTANGLE, 478, 440, 134, 96),
-    H(AmplifierEnum.H_AdditionalInformation, GuideType.RECTANGLE, 478, 440, 134, 96),
-    P(AmplifierEnum.P_IffSifAis, GuideType.RECTANGLE, 478, 344, 134, 96),
-    T(AmplifierEnum.T_UniqueDesignation, GuideType.RECTANGLE, 478, 152, 134, 96),
-    V(AmplifierEnum.V_TypeOfEquipment, GuideType.RECTANGLE, 478, 248, 134, 96),
-    Y(AmplifierEnum.Y_Location, GuideType.RECTANGLE, 478, 536, 134, 96),
-    Z(AmplifierEnum.Z_Speed, GuideType.RECTANGLE, 478, 536, 134, 96),
-    AH(AmplifierEnum.AH_AreaOfUncertaintyIndicator, GuideType.SYSTEM),
-    AH1(AmplifierEnum.AH1_AreaOfUncertaintyIndicatorLongitude, GuideType.SYSTEM),
-    AJ(AmplifierEnum.AJ_SpeedLeader, GuideType.LINE, 178.565, 467.976, 17.069, 557.214),
-    AL(AmplifierEnum.AL_OperationalCondition, GuideType.RECTANGLE, 142, 542, 328, 96),
-    AO(AmplifierEnum.AO_EngagementBar, GuideType.RECTANGLE, 134, 152, 344, 96),
-    AO1(AmplifierEnum.AO1_TargetDesignation, GuideType.SYSTEM),
-    AQ(AmplifierEnum.AQ_GuardedUnit, GuideType.RECTANGLE, 0, 152, 134, 96),
-    AR(AmplifierEnum.AR_SpecialDesignator, GuideType.RECTANGLE, 0, 152, 134, 96),
-    AS(AmplifierEnum.AS_Country, GuideType.RECTANGLE, 478, 152, 134, 96);
+        G(AmplifierEnum.G_StaffComments, GuideType.RECTANGLE, 478, 440, 134, 96),
+        H(AmplifierEnum.H_AdditionalInformation, GuideType.RECTANGLE, 478, 440, 134, 96),
+        P(AmplifierEnum.P_IffSifAis, GuideType.RECTANGLE, 478, 344, 134, 96),
+        T(AmplifierEnum.T_UniqueDesignation, GuideType.RECTANGLE, 478, 152, 134, 96),
+        V(AmplifierEnum.V_TypeOfEquipment, GuideType.RECTANGLE, 478, 248, 134, 96),
+        Y(AmplifierEnum.Y_Location, GuideType.RECTANGLE, 478, 536, 134, 96),
+        Z(AmplifierEnum.Z_Speed, GuideType.RECTANGLE, 478, 536, 134, 96),
+        AH(AmplifierEnum.AH_AreaOfUncertaintyIndicator, GuideType.SYSTEM),
+        AH1(AmplifierEnum.AH1_AreaOfUncertaintyIndicatorLongitude, GuideType.SYSTEM),
+        AJ(AmplifierEnum.AJ_SpeedLeader, GuideType.LINE, 178.565, 467.976, 17.069, 557.214),
+        AL(AmplifierEnum.AL_OperationalCondition, GuideType.RECTANGLE, 142, 542, 328, 96),
+        AO(AmplifierEnum.AO_EngagementBar, GuideType.RECTANGLE, 134, 152, 344, 96),
+        AO1(AmplifierEnum.AO1_TargetDesignation, GuideType.SYSTEM),
+        AQ(AmplifierEnum.AQ_GuardedUnit, GuideType.RECTANGLE, 0, 152, 134, 96),
+        AR(AmplifierEnum.AR_SpecialDesignator, GuideType.RECTANGLE, 0, 152, 134, 96),
+        AS(AmplifierEnum.AS_Country, GuideType.RECTANGLE, 478, 152, 134, 96);
 
     private final AmplifierEnum amplifier;
     private final GuideType type;
@@ -42,7 +43,7 @@ public enum SeaSurfaceAmplifierGuide implements AmplifierGuide {
     public AmplifierEnum getAmplifier() {
         return amplifier;
     }
-    
+
     @Override
     public String getCode() {
         return name();
@@ -50,7 +51,8 @@ public enum SeaSurfaceAmplifierGuide implements AmplifierGuide {
 
     @Override
     public double getHeight() {
-        return shape.getLayoutBounds().getHeight();
+        return shape.getLayoutBounds()
+            .getHeight();
     }
 
     public double[] getPoints() {
@@ -67,17 +69,20 @@ public enum SeaSurfaceAmplifierGuide implements AmplifierGuide {
 
     @Override
     public double getWidth() {
-        return shape.getLayoutBounds().getWidth();
+        return shape.getLayoutBounds()
+            .getWidth();
     }
 
     @Override
     public double getX() {
-        return shape.getLayoutBounds().getMinX();
+        return shape.getLayoutBounds()
+            .getMinX();
     }
 
     @Override
     public double getY() {
-        return shape.getLayoutBounds().getMinY();
+        return shape.getLayoutBounds()
+            .getMinY();
     }
 
     private Shape createShape() {

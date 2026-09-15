@@ -5,12 +5,12 @@ import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum ReliabilityRating implements AmplifierListItem {
-    COMPLETELY("A", "Completely Reliable"),
-    USUALLY("B", "Usually Reliable"),
-    FAIRLY("C", "Fairly Reliable"),
-    NOT_USUALLY("D", "Not Usually Reliable"),
-    UNRELIABLE("E", "Unreliable"),
-    REL_CANNOT_BE_JUDGED("F", "Reliability Cannot Be Judged");
+        COMPLETELY("A", "Completely Reliable"),
+        USUALLY("B", "Usually Reliable"),
+        FAIRLY("C", "Fairly Reliable"),
+        NOT_USUALLY("D", "Not Usually Reliable"),
+        UNRELIABLE("E", "Unreliable"),
+        REL_CANNOT_BE_JUDGED("F", "Reliability Cannot Be Judged");
 
     private final String id;
     private final String label;

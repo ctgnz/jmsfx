@@ -25,7 +25,8 @@ public interface Status extends CodeElement {
     }
 
     default boolean isSupported(SymbolSet symbolSet) {
-        return getDimensionIds().isEmpty() || getDimensionIds().contains(symbolSet.getDimension().getName());
+        return getDimensionIds().isEmpty() || getDimensionIds().contains(symbolSet.getDimension()
+            .getName());
     }
 
 }

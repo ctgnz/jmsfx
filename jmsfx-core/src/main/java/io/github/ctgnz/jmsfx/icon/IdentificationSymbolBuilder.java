@@ -147,7 +147,8 @@ public final class IdentificationSymbolBuilder {
         this.amplifier3 = library.getDefaultAmplifier();
         this.frameAmplifier = library.getDefaultAmplifier();
         this.countryCode = library.getExtensionCountryCode();
-        this.entity = symbolSet.getEntities().get(0);
+        this.entity = symbolSet.getEntities()
+            .get(0);
         this.sectorOneModifier = library.getDefaultSectorOneModifier();
         this.sectorTwoModifier = library.getDefaultSectorTwoModifier();
     }

@@ -5,17 +5,17 @@ import java.util.List;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum SeaSurfaceEntity implements Entity {
-    MILITARY("11", "Military", GraphicType.MAIN),
-    MILITARY_COMBAT("12", "Military Combatant", GraphicType.MAIN),
-    MILITARY_NON_COMBAT("13", "Military Noncombatant", GraphicType.MAIN),
-    CIVILIAN("14", "Civilian", GraphicType.MAIN),
-    OWN_SHIP("15", "Own Ship", GraphicType.FULL_OCTAGON),
-    FUSED_TRACK("16", "Fused Track", GraphicType.FULL_OCTAGON),
-    MANUAL_TRACK("17", "Manual Track", GraphicType.FULL_OCTAGON);
+        MILITARY("11", "Military", GraphicType.MAIN),
+        MILITARY_COMBAT("12", "Military Combatant", GraphicType.MAIN),
+        MILITARY_NON_COMBAT("13", "Military Noncombatant", GraphicType.MAIN),
+        CIVILIAN("14", "Civilian", GraphicType.MAIN),
+        OWN_SHIP("15", "Own Ship", GraphicType.FULL_OCTAGON),
+        FUSED_TRACK("16", "Fused Track", GraphicType.FULL_OCTAGON),
+        MANUAL_TRACK("17", "Manual Track", GraphicType.FULL_OCTAGON);
 
     private final String id;
     private final String label;

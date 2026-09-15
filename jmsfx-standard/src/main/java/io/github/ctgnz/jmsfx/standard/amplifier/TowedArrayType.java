@@ -5,8 +5,8 @@ import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum TowedArrayType implements StandardAmplifierItem {
-    SHORT_TOWED_ARRAY("1", "Short towed array"),
-    LONG_TOWED_ARRAY("2", "Long towed array");
+        SHORT_TOWED_ARRAY("1", "Short towed array"),
+        LONG_TOWED_ARRAY("2", "Long towed array");
 
     private final String id;
     private final String label;

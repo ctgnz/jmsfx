@@ -20,10 +20,10 @@ public class JmsfxYamlFactory extends YAMLFactory {
         int feats = _yamlGeneratorFeatures;
         if (_dumperOptions == null) {
             return new JmsfxYamlGenerator(ctxt, _generatorFeatures, feats,
-                    _quotingChecker, _objectCodec, out, _version);
+                                          _quotingChecker, _objectCodec, out, _version);
         } else {
             return new JmsfxYamlGenerator(ctxt, _generatorFeatures, feats,
-                    _quotingChecker, _objectCodec, out, _dumperOptions);
+                                          _quotingChecker, _objectCodec, out, _dumperOptions);
         }
     }
 }

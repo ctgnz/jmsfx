@@ -1,6 +1,5 @@
 package io.github.ctgnz.jmsfx.types;
 
-import io.github.ctgnz.jmsfx.AmplifierGuide;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
@@ -14,6 +13,8 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
+import io.github.ctgnz.jmsfx.AmplifierGuide;
+
 public class TextAmplifierValue {
     public static final Font AMPLIFIER_FONT = Font.font("sans-serif", FontWeight.NORMAL, FontPosture.REGULAR, 60);
     private final AmplifierGuide guide;
@@ -21,6 +22,7 @@ public class TextAmplifierValue {
     private final ObjectProperty<Point2D> location;
     private final StringProperty text;
 
+    @SuppressWarnings("this-escape")
     public TextAmplifierValue(AmplifierGuide guide, Pos initialAttachment, String initialText) {
         this.guide = guide;
         this.attachment = new SimpleObjectProperty<>(initialAttachment);
@@ -68,7 +70,8 @@ public class TextAmplifierValue {
     private Point2D calculateAttachment() {
         Text holder = new Text(getText());
         holder.setFont(AMPLIFIER_FONT);
-        double width = holder.getLayoutBounds().getWidth();
+        double width = holder.getLayoutBounds()
+            .getWidth();
         double height = holder.getBaselineOffset();
         switch (getAttachment()) {
             case TOP_LEFT:

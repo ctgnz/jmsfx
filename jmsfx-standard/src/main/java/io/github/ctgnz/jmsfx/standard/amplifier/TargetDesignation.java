@@ -5,9 +5,9 @@ import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum TargetDesignation implements AmplifierListItem {
-    TA("TA", "Hostile Target"),
-    NT("TA", "Hostile Non-Target"),
-    EX("EX", "Expired");
+        TA("TA", "Hostile Target"),
+        NT("TA", "Hostile Non-Target"),
+        EX("EX", "Expired");
 
     private final String id;
     private final String label;

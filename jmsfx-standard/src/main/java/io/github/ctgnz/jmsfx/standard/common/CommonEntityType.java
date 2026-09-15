@@ -8,7 +8,7 @@ import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum CommonEntityType implements EntityType {
-    UNSPECIFIED_TYPE("00", "Unspecified", CommonEntity.UNSPECIFIED, GraphicType.NA);
+        UNSPECIFIED_TYPE("00", "Unspecified", CommonEntity.UNSPECIFIED, GraphicType.NA);
 
     private final String id;
     private final String label;

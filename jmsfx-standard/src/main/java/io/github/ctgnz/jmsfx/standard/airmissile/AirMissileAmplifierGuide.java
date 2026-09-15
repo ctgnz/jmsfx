@@ -1,16 +1,17 @@
 package io.github.ctgnz.jmsfx.standard.airmissile;
 
-import io.github.ctgnz.jmsfx.AmplifierGuide;
-import io.github.ctgnz.jmsfx.standard.AmplifierEnum;
-import io.github.ctgnz.jmsfx.types.GuideType;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Polyline;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
+import io.github.ctgnz.jmsfx.AmplifierGuide;
+import io.github.ctgnz.jmsfx.standard.AmplifierEnum;
+import io.github.ctgnz.jmsfx.types.GuideType;
+
 public enum AirMissileAmplifierGuide implements AmplifierGuide {
-    AJ(AmplifierEnum.AJ_SpeedLeader, GuideType.LINE, 176.341, 469.248, 17.069, 557.214);
+        AJ(AmplifierEnum.AJ_SpeedLeader, GuideType.LINE, 176.341, 469.248, 17.069, 557.214);
 
     private final AmplifierEnum amplifier;
     private final GuideType type;
@@ -27,7 +28,7 @@ public enum AirMissileAmplifierGuide implements AmplifierGuide {
     public AmplifierEnum getAmplifier() {
         return amplifier;
     }
-    
+
     @Override
     public String getCode() {
         return name();
@@ -35,7 +36,8 @@ public enum AirMissileAmplifierGuide implements AmplifierGuide {
 
     @Override
     public double getHeight() {
-        return shape.getLayoutBounds().getHeight();
+        return shape.getLayoutBounds()
+            .getHeight();
     }
 
     public double[] getPoints() {
@@ -52,17 +54,20 @@ public enum AirMissileAmplifierGuide implements AmplifierGuide {
 
     @Override
     public double getWidth() {
-        return shape.getLayoutBounds().getWidth();
+        return shape.getLayoutBounds()
+            .getWidth();
     }
 
     @Override
     public double getX() {
-        return shape.getLayoutBounds().getMinX();
+        return shape.getLayoutBounds()
+            .getMinX();
     }
 
     @Override
     public double getY() {
-        return shape.getLayoutBounds().getMinY();
+        return shape.getLayoutBounds()
+            .getMinY();
     }
 
     private Shape createShape() {

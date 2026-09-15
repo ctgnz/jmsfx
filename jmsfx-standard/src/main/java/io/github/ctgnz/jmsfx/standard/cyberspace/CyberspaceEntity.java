@@ -5,19 +5,19 @@ import java.util.List;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum CyberspaceEntity implements Entity {
-    MISSION_FORCE("11", "Mission Force", GraphicType.NA),
-    CYBERSPACE_UNIT("12", "Cyberspace Unit", GraphicType.MAIN),
-    THREAT_ACTOR("13", "Threat Actor", GraphicType.MAIN),
-    AGENT("14", "Agent", GraphicType.NA),
-    APPLICATION("15", "Application", GraphicType.MAIN),
-    THREAT("16", "Threat", GraphicType.MAIN),
-    DATA("17", "Data", GraphicType.MAIN),
-    PATHS("20", "Paths", GraphicType.NA),
-    TERRAIN("21", "Terrain", GraphicType.NA);
+        MISSION_FORCE("11", "Mission Force", GraphicType.NA),
+        CYBERSPACE_UNIT("12", "Cyberspace Unit", GraphicType.MAIN),
+        THREAT_ACTOR("13", "Threat Actor", GraphicType.MAIN),
+        AGENT("14", "Agent", GraphicType.NA),
+        APPLICATION("15", "Application", GraphicType.MAIN),
+        THREAT("16", "Threat", GraphicType.MAIN),
+        DATA("17", "Data", GraphicType.MAIN),
+        PATHS("20", "Paths", GraphicType.NA),
+        TERRAIN("21", "Terrain", GraphicType.NA);
 
     private final String id;
     private final String label;

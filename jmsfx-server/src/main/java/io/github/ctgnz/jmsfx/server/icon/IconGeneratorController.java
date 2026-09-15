@@ -17,7 +17,9 @@ public class IconGeneratorController {
 
     @GetMapping("/symbols")
     public List<SymbolSetImpl> getSupportedSymbolSets() {
-        return Arrays.stream(SymbolSetEnum.values()).map(SymbolSetImpl::new).collect(Collectors.toList());
+        return Arrays.stream(SymbolSetEnum.values())
+            .map(SymbolSetImpl::new)
+            .collect(Collectors.toList());
     }
 
 }

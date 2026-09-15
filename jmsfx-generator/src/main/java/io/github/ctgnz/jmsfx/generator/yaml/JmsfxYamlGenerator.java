@@ -26,7 +26,8 @@ public class JmsfxYamlGenerator extends YAMLGenerator {
 
     @Override
     public void writeStartObject(Object forValue) throws IOException {
-        YamlFlowStyle annotation = forValue.getClass().getAnnotation(YamlFlowStyle.class);
+        YamlFlowStyle annotation = forValue.getClass()
+            .getAnnotation(YamlFlowStyle.class);
         _outputOptions.setDefaultFlowStyle(annotation != null ? FlowStyle.FLOW : FlowStyle.BLOCK);
         super.writeStartObject(forValue);
     }
@@ -40,7 +41,8 @@ public class JmsfxYamlGenerator extends YAMLGenerator {
     @Override
     public void writeString(String text) throws IOException, JsonGenerationException {
         Object currentValue = _writeContext.getCurrentValue();
-        YamlForceQuote annotation = currentValue.getClass().getAnnotation(YamlForceQuote.class);
+        YamlForceQuote annotation = currentValue.getClass()
+            .getAnnotation(YamlForceQuote.class);
         if (annotation != null && ArrayUtils.contains(annotation.properties(), _writeContext.getCurrentName())) {
             disable(Feature.MINIMIZE_QUOTES);
             super.writeString(text);

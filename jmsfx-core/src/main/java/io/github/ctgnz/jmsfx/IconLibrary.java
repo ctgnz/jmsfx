@@ -1,9 +1,10 @@
 package io.github.ctgnz.jmsfx;
 
+import javafx.collections.ObservableList;
+
 import nz.co.ctg.foxglove.SvgGraphic;
 
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbolBuilder;
-import javafx.collections.ObservableList;
 
 public interface IconLibrary {
 

@@ -29,15 +29,18 @@ public class SpringWebConfig implements ApplicationContextAware, WebMvcConfigure
 
     @Override
     public void setApplicationContext(final ApplicationContext applicationContext)
-            throws BeansException {
+                                                                                   throws BeansException {
         this.applicationContext = applicationContext;
     }
 
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/images/**").addResourceLocations("classpath:/images/");
-        registry.addResourceHandler("/css/**").addResourceLocations("classpath:/bootstrap/css/");
-        registry.addResourceHandler("/js/**").addResourceLocations("classpath:/bootstrap/js/");
+        registry.addResourceHandler("/images/**")
+            .addResourceLocations("classpath:/images/");
+        registry.addResourceHandler("/css/**")
+            .addResourceLocations("classpath:/bootstrap/css/");
+        registry.addResourceHandler("/js/**")
+            .addResourceLocations("classpath:/bootstrap/js/");
     }
 
     @Bean
@@ -57,15 +60,13 @@ public class SpringWebConfig implements ApplicationContextAware, WebMvcConfigure
         return new DateFormatter();
     }
 
-
-
     /* **************************************************************** */
-    /*  THYMELEAF-SPECIFIC ARTIFACTS                                    */
-    /*  TemplateResolver <- TemplateEngine <- ViewResolver              */
+    /* THYMELEAF-SPECIFIC ARTIFACTS */
+    /* TemplateResolver <- TemplateEngine <- ViewResolver */
     /* **************************************************************** */
 
     @Bean
-    public SpringResourceTemplateResolver templateResolver(){
+    public SpringResourceTemplateResolver templateResolver() {
         // SpringResourceTemplateResolver automatically integrates with Spring's own
         // resource resolution infrastructure, which is highly recommended.
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
@@ -81,7 +82,7 @@ public class SpringWebConfig implements ApplicationContextAware, WebMvcConfigure
     }
 
     @Bean
-    public SpringTemplateEngine templateEngine(){
+    public SpringTemplateEngine templateEngine() {
         // SpringTemplateEngine automatically applies SpringStandardDialect and
         // enables Spring's own MessageSource message resolution mechanisms.
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
@@ -96,7 +97,7 @@ public class SpringWebConfig implements ApplicationContextAware, WebMvcConfigure
     }
 
     @Bean
-    public ThymeleafViewResolver viewResolver(){
+    public ThymeleafViewResolver viewResolver() {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
         viewResolver.setTemplateEngine(templateEngine());
         return viewResolver;

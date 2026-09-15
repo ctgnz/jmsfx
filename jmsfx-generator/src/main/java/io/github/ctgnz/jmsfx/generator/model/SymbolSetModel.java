@@ -15,16 +15,26 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-@JsonIgnoreProperties({ "id", "label", "code", "extension", "deprecated", "remarks"})
-@JsonPropertyOrder({ "details", "config", "amplifierGuides", "entities", "sectorOneMods", "sectorTwoMods" })
+@JsonIgnoreProperties({
+    "id", "label", "code", "extension", "deprecated", "remarks"
+})
+@JsonPropertyOrder({
+    "details", "config", "amplifierGuides", "entities", "sectorOneMods", "sectorTwoMods"
+})
 public class SymbolSetModel extends AbstractModel {
     @YamlFlowStyle
-    @YamlForceQuote(properties = { "code", "label", "remarks" })
-    public record Details(String code, String dimensionId, String id, boolean extension, boolean deprecated, String label, String remarks) {}
+    @YamlForceQuote(properties = {
+        "code", "label", "remarks"
+    })
+    public record Details(String code, String dimensionId, String id, boolean extension, boolean deprecated, String label, String remarks) {
+    }
 
     @YamlFlowStyle
-    @YamlForceQuote(properties = { "graphicLocation", "baseSymbolSet" })
-    public record Config(String graphicLocation, String baseSymbolSet, boolean useFrame, String frameAmplifierClass, String amplifierClass, String amplifierTwoClass, String amplifierThreeClass) {}
+    @YamlForceQuote(properties = {
+        "graphicLocation", "baseSymbolSet"
+    })
+    public record Config(String graphicLocation, String baseSymbolSet, boolean useFrame, String frameAmplifierClass, String amplifierClass, String amplifierTwoClass, String amplifierThreeClass) {
+    }
 
     private @JsonIgnore String dimensionId;
     private @JsonIgnore String fileName;
@@ -93,12 +103,16 @@ public class SymbolSetModel extends AbstractModel {
 
     @JsonIgnore
     public List<EntitySubTypeModel> getEntitySubTypes() {
-        return entities.stream().flatMap(EntityModel::streamEntitySubTypes).toList();
+        return entities.stream()
+            .flatMap(EntityModel::streamEntitySubTypes)
+            .toList();
     }
 
     @JsonIgnore
     public List<EntityTypeModel> getEntityTypes() {
-        return entities.stream().flatMap(EntityModel::streamEntityTypes).toList();
+        return entities.stream()
+            .flatMap(EntityModel::streamEntityTypes)
+            .toList();
     }
 
     @JsonIgnore
@@ -116,7 +130,8 @@ public class SymbolSetModel extends AbstractModel {
 
     @JsonIgnore
     public String getPackageName() {
-        return StringUtils.remove(StringUtils.deleteWhitespace(label).toLowerCase(), '-');
+        return StringUtils.remove(StringUtils.deleteWhitespace(label)
+            .toLowerCase(), '-');
     }
 
     public List<SectorOneModifierModel> getSectorOneMods() {

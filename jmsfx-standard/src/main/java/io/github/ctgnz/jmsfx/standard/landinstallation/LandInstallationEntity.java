@@ -5,12 +5,12 @@ import java.util.List;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum LandInstallationEntity implements Entity {
-    INSTALLATION("11", "Installation", GraphicType.MAIN),
-    INFRASTRUCTURE("12", "Infrastructure", GraphicType.NA);
+        INSTALLATION("11", "Installation", GraphicType.MAIN),
+        INFRASTRUCTURE("12", "Infrastructure", GraphicType.NA);
 
     private final String id;
     private final String label;

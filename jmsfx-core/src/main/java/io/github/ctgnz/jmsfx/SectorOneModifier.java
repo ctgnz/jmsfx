@@ -4,7 +4,8 @@ import java.util.Comparator;
 
 public interface SectorOneModifier extends ModifierElement {
 
-    Comparator<SectorOneModifier> VIEW_ORDER = Comparator.comparing(SectorOneModifier::getCategory).thenComparing(SectorOneModifier::getLabel);
+    Comparator<SectorOneModifier> VIEW_ORDER = Comparator.comparing(SectorOneModifier::getCategory)
+        .thenComparing(SectorOneModifier::getLabel);
 
     default String getFullGraphicLocation() {
         return String.format("/svg/Appendices/%s/mod1/%s.svg", getGraphicLocation(), getGraphicIdentifier());

@@ -5,8 +5,8 @@ import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum SpecialDesignator implements AmplifierListItem {
-    NRT("NRT", "Non-Real Time"),
-    SIG("SIG", "Tactically Significant Tracks");
+        NRT("NRT", "Non-Real Time"),
+        SIG("SIG", "Tactically Significant Tracks");
 
     private final String id;
     private final String label;

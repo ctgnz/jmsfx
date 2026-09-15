@@ -2,11 +2,11 @@ package io.github.ctgnz.jmsfx.standard.airmissile;
 
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum AirMissileEntity implements Entity {
-    MISSILE("11", "Missile", GraphicType.MAIN);
+        MISSILE("11", "Missile", GraphicType.MAIN);
 
     private final String id;
     private final String label;

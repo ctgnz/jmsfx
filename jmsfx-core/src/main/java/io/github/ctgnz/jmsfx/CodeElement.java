@@ -9,5 +9,5 @@ public interface CodeElement {
     default boolean isUnknown() {
         return "00".equals(getId());
     }
-    
+
 }

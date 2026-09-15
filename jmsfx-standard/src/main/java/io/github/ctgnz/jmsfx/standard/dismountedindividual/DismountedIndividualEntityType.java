@@ -8,10 +8,10 @@ import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum DismountedIndividualEntityType implements EntityType {
-    TASK("02", "Activity/Task", DismountedIndividualEntity.MILITARY, GraphicType.NA),
-    LETHAL_WEAPONS("03", "Lethal Weapons", DismountedIndividualEntity.MILITARY, GraphicType.NA),
-    NON_LETHAL_WEAPONS("04", "Non-Lethal Weapons", DismountedIndividualEntity.MILITARY, GraphicType.NA),
-    TASK2("01", "Activity", DismountedIndividualEntity.CIVILIAN2, GraphicType.NA);
+        TASK("02", "Activity/Task", DismountedIndividualEntity.MILITARY, GraphicType.NA),
+        LETHAL_WEAPONS("03", "Lethal Weapons", DismountedIndividualEntity.MILITARY, GraphicType.NA),
+        NON_LETHAL_WEAPONS("04", "Non-Lethal Weapons", DismountedIndividualEntity.MILITARY, GraphicType.NA),
+        TASK2("01", "Activity", DismountedIndividualEntity.CIVILIAN2, GraphicType.NA);
 
     private final String id;
     private final String label;

@@ -5,12 +5,12 @@ import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum InstallationComposition implements AmplifierListItem {
-    DEVELOPMENT("DEVELOP", "Development"),
-    RESEARCH("RSRCH", "Research"),
-    PRODUCTION("PROD", "Production"),
-    SERVICE("SVC", "Service"),
-    STORAGE("STORE", "Storage"),
-    UTILITY("UTIL", "Utility");
+        DEVELOPMENT("DEVELOP", "Development"),
+        RESEARCH("RSRCH", "Research"),
+        PRODUCTION("PROD", "Production"),
+        SERVICE("SVC", "Service"),
+        STORAGE("STORE", "Storage"),
+        UTILITY("UTIL", "Utility");
 
     private final String id;
     private final String label;

@@ -1,10 +1,11 @@
 package io.github.ctgnz.jmsfx.types;
 
-import io.github.ctgnz.jmsfx.AmplifierGuide;
-import io.github.ctgnz.jmsfx.AmplifierListItem;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.geometry.Pos;
+
+import io.github.ctgnz.jmsfx.AmplifierGuide;
+import io.github.ctgnz.jmsfx.AmplifierListItem;
 
 public class ListAmplifierValue<A extends AmplifierListItem> extends TextAmplifierValue {
     private final ObjectProperty<A> value = new SimpleObjectProperty<>();

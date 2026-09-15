@@ -6,12 +6,15 @@ import java.util.List;
 import io.github.ctgnz.jmsfx.Status;
 
 public enum StatusEnum implements Status {
-    PRESENT("0", "Present", false),
-    PLANNED("1", "Planned/Anticipated/Suspect", false),
-    FULLY_CAPABLE("2", "Present/Fully Capable", true, "ACTIVITY", "AIR", "COMMON", "CYBERSPACE", "DISMOUNTED", "LAND_EQUIPMENT", "LAND_INSTALLATION", "LAND_UNIT", "SEA_SUBSURFACE", "SEA_SURFACE", "SPACE"),
-    DAMAGED("3", "Present/Damaged", true, "ACTIVITY", "AIR", "COMMON", "CYBERSPACE", "DISMOUNTED", "LAND_EQUIPMENT", "LAND_INSTALLATION", "LAND_UNIT", "SEA_SUBSURFACE", "SEA_SURFACE", "SPACE"),
-    DESTROYED("4", "Present/Destroyed", true, "ACTIVITY", "AIR", "COMMON", "CYBERSPACE", "DISMOUNTED", "LAND_EQUIPMENT", "LAND_INSTALLATION", "LAND_UNIT", "SEA_SUBSURFACE", "SEA_SURFACE", "SPACE"),
-    FULL("5", "Present/Full to Capacity", true, "ACTIVITY", "AIR", "COMMON", "CYBERSPACE", "DISMOUNTED", "LAND_EQUIPMENT", "LAND_INSTALLATION", "LAND_UNIT", "SEA_SUBSURFACE", "SEA_SURFACE", "SPACE");
+        PRESENT("0", "Present", false),
+        PLANNED("1", "Planned/Anticipated/Suspect", false),
+        FULLY_CAPABLE("2", "Present/Fully Capable", true, "ACTIVITY", "AIR", "COMMON", "CYBERSPACE", "DISMOUNTED", "LAND_EQUIPMENT", "LAND_INSTALLATION", "LAND_UNIT", "SEA_SUBSURFACE", "SEA_SURFACE",
+                      "SPACE"),
+        DAMAGED("3", "Present/Damaged", true, "ACTIVITY", "AIR", "COMMON", "CYBERSPACE", "DISMOUNTED", "LAND_EQUIPMENT", "LAND_INSTALLATION", "LAND_UNIT", "SEA_SUBSURFACE", "SEA_SURFACE", "SPACE"),
+        DESTROYED("4", "Present/Destroyed", true, "ACTIVITY", "AIR", "COMMON", "CYBERSPACE", "DISMOUNTED", "LAND_EQUIPMENT", "LAND_INSTALLATION", "LAND_UNIT", "SEA_SUBSURFACE", "SEA_SURFACE",
+                  "SPACE"),
+        FULL("5", "Present/Full to Capacity", true, "ACTIVITY", "AIR", "COMMON", "CYBERSPACE", "DISMOUNTED", "LAND_EQUIPMENT", "LAND_INSTALLATION", "LAND_UNIT", "SEA_SUBSURFACE", "SEA_SURFACE",
+             "SPACE");
 
     private final String id;
     private final String label;

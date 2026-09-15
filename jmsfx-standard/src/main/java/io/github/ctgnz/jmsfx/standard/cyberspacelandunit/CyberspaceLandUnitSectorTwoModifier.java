@@ -2,12 +2,12 @@ package io.github.ctgnz.jmsfx.standard.cyberspacelandunit;
 
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 
 public enum CyberspaceLandUnitSectorTwoModifier implements SectorTwoModifier {
-    SECURED("01", "Secured", ModifierCategory.None),
-    OPEN("02", "Open", ModifierCategory.None);
+        SECURED("01", "Secured", ModifierCategory.None),
+        OPEN("02", "Open", ModifierCategory.None);
 
     private final String id;
     private final String label;

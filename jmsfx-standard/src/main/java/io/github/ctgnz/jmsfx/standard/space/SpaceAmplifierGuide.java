@@ -1,28 +1,29 @@
 package io.github.ctgnz.jmsfx.standard.space;
 
-import io.github.ctgnz.jmsfx.AmplifierGuide;
-import io.github.ctgnz.jmsfx.standard.AmplifierEnum;
-import io.github.ctgnz.jmsfx.types.GuideType;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Polyline;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
+import io.github.ctgnz.jmsfx.AmplifierGuide;
+import io.github.ctgnz.jmsfx.standard.AmplifierEnum;
+import io.github.ctgnz.jmsfx.types.GuideType;
+
 public enum SpaceAmplifierGuide implements AmplifierGuide {
-    G(AmplifierEnum.G_StaffComments, GuideType.RECTANGLE, 478, 436, 134, 80),
-    H(AmplifierEnum.H_AdditionalInformation, GuideType.RECTANGLE, 478, 436, 134, 80),
-    T(AmplifierEnum.T_UniqueDesignation, GuideType.RECTANGLE, 478, 196, 134, 80),
-    V(AmplifierEnum.V_TypeOfEquipment, GuideType.RECTANGLE, 478, 276, 134, 80),
-    X(AmplifierEnum.X_AltitudeDepth, GuideType.RECTANGLE, 478, 356, 134, 80),
-    Z(AmplifierEnum.Z_Speed, GuideType.RECTANGLE, 478, 356, 134, 80),
-    AH(AmplifierEnum.AH_AreaOfUncertaintyIndicator, GuideType.SYSTEM),
-    AH1(AmplifierEnum.AH1_AreaOfUncertaintyIndicatorLongitude, GuideType.SYSTEM),
-    AJ(AmplifierEnum.AJ_SpeedLeader, GuideType.LINE, 176.341, 469.248, 17.069, 557.214),
-    AL(AmplifierEnum.AL_OperationalCondition, GuideType.RECTANGLE, 142, 518, 328, 80),
-    AO(AmplifierEnum.AO_EngagementBar, GuideType.RECTANGLE, 132, 116, 346, 80),
-    AO1(AmplifierEnum.AO1_TargetDesignation, GuideType.SYSTEM),
-    AS(AmplifierEnum.AS_Country, GuideType.RECTANGLE, 478, 196, 134, 80);
+        G(AmplifierEnum.G_StaffComments, GuideType.RECTANGLE, 478, 436, 134, 80),
+        H(AmplifierEnum.H_AdditionalInformation, GuideType.RECTANGLE, 478, 436, 134, 80),
+        T(AmplifierEnum.T_UniqueDesignation, GuideType.RECTANGLE, 478, 196, 134, 80),
+        V(AmplifierEnum.V_TypeOfEquipment, GuideType.RECTANGLE, 478, 276, 134, 80),
+        X(AmplifierEnum.X_AltitudeDepth, GuideType.RECTANGLE, 478, 356, 134, 80),
+        Z(AmplifierEnum.Z_Speed, GuideType.RECTANGLE, 478, 356, 134, 80),
+        AH(AmplifierEnum.AH_AreaOfUncertaintyIndicator, GuideType.SYSTEM),
+        AH1(AmplifierEnum.AH1_AreaOfUncertaintyIndicatorLongitude, GuideType.SYSTEM),
+        AJ(AmplifierEnum.AJ_SpeedLeader, GuideType.LINE, 176.341, 469.248, 17.069, 557.214),
+        AL(AmplifierEnum.AL_OperationalCondition, GuideType.RECTANGLE, 142, 518, 328, 80),
+        AO(AmplifierEnum.AO_EngagementBar, GuideType.RECTANGLE, 132, 116, 346, 80),
+        AO1(AmplifierEnum.AO1_TargetDesignation, GuideType.SYSTEM),
+        AS(AmplifierEnum.AS_Country, GuideType.RECTANGLE, 478, 196, 134, 80);
 
     private final AmplifierEnum amplifier;
     private final GuideType type;
@@ -39,7 +40,7 @@ public enum SpaceAmplifierGuide implements AmplifierGuide {
     public AmplifierEnum getAmplifier() {
         return amplifier;
     }
-    
+
     @Override
     public String getCode() {
         return name();
@@ -47,7 +48,8 @@ public enum SpaceAmplifierGuide implements AmplifierGuide {
 
     @Override
     public double getHeight() {
-        return shape.getLayoutBounds().getHeight();
+        return shape.getLayoutBounds()
+            .getHeight();
     }
 
     public double[] getPoints() {
@@ -64,17 +66,20 @@ public enum SpaceAmplifierGuide implements AmplifierGuide {
 
     @Override
     public double getWidth() {
-        return shape.getLayoutBounds().getWidth();
+        return shape.getLayoutBounds()
+            .getWidth();
     }
 
     @Override
     public double getX() {
-        return shape.getLayoutBounds().getMinX();
+        return shape.getLayoutBounds()
+            .getMinX();
     }
 
     @Override
     public double getY() {
-        return shape.getLayoutBounds().getMinY();
+        return shape.getLayoutBounds()
+            .getMinY();
     }
 
     private Shape createShape() {

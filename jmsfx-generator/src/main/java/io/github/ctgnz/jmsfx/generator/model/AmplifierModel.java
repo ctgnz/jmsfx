@@ -9,7 +9,9 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
 @YamlFlowStyle
-@YamlForceQuote(properties = { "id", "code", "label", "remarks" })
+@YamlForceQuote(properties = {
+    "id", "code", "label", "remarks"
+})
 @JsonPropertyOrder({
     "id", "type", "min", "max", "code", "extension", "deprecated", "label", "description", "remarks"
 })
@@ -25,13 +27,13 @@ public class AmplifierModel extends AbstractModel {
 
     @JsonCreator
     public AmplifierModel(@JsonProperty("id") String id,
-                         @JsonProperty("label") String label,
-                         @JsonProperty("code") String code,
-                         @JsonProperty("remarks") String remarks,
-                         @JsonProperty("type") AmplifierType type,
-                         @JsonProperty("description") String description,
-                         @JsonProperty("min") int min,
-                         @JsonProperty("max") int max) {
+                          @JsonProperty("label") String label,
+                          @JsonProperty("code") String code,
+                          @JsonProperty("remarks") String remarks,
+                          @JsonProperty("type") AmplifierType type,
+                          @JsonProperty("description") String description,
+                          @JsonProperty("min") int min,
+                          @JsonProperty("max") int max) {
         super(id, label, code, remarks);
         this.type = type;
         this.description = description;

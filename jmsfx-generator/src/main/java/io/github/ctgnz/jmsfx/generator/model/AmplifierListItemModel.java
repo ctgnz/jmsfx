@@ -6,7 +6,9 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
 @YamlFlowStyle
-@YamlForceQuote(properties = { "id", "code", "label", "remarks" })
+@YamlForceQuote(properties = {
+    "id", "code", "label", "remarks"
+})
 @JsonPropertyOrder({
     "code", "id", "extension", "deprecated", "label", "backgroundFill", "remarks"
 })

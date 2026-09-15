@@ -5,25 +5,25 @@ import java.util.List;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.GraphicType;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum CyberspaceLandEquipmentEntity implements Entity {
-    MISSION_FORCE("11", "Mission Force", GraphicType.NA),
-    CYBERSPACE_UNIT("12", "Cyberspace Unit", GraphicType.MAIN),
-    THREAT_ACTOR("13", "Threat Actor", GraphicType.MAIN),
-    END_POINT("18", "End Point", GraphicType.MAIN) {
-        @Override
-        public SymbolSet getBaseSymbolSet() {
-            return SymbolSetEnum.CYBERSPACE_LAND_EQUIPMENT;
-        }
-    },
-    WEARABLE("19", "Wearable", GraphicType.MAIN) {
-        @Override
-        public SymbolSet getBaseSymbolSet() {
-            return SymbolSetEnum.CYBERSPACE_LAND_EQUIPMENT;
-        }
-    };
+        MISSION_FORCE("11", "Mission Force", GraphicType.NA),
+        CYBERSPACE_UNIT("12", "Cyberspace Unit", GraphicType.MAIN),
+        THREAT_ACTOR("13", "Threat Actor", GraphicType.MAIN),
+        END_POINT("18", "End Point", GraphicType.MAIN) {
+            @Override
+            public SymbolSet getBaseSymbolSet() {
+                return SymbolSetEnum.CYBERSPACE_LAND_EQUIPMENT;
+            }
+        },
+        WEARABLE("19", "Wearable", GraphicType.MAIN) {
+            @Override
+            public SymbolSet getBaseSymbolSet() {
+                return SymbolSetEnum.CYBERSPACE_LAND_EQUIPMENT;
+            }
+        };
 
     private final String id;
     private final String label;

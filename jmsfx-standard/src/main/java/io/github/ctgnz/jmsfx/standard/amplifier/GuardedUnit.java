@@ -5,7 +5,7 @@ import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum GuardedUnit implements AmplifierListItem {
-    BG("BG", "Guarded Unit");
+        BG("BG", "Guarded Unit");
 
     private final String id;
     private final String label;

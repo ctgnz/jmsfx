@@ -7,10 +7,10 @@ import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.StandardIdentityGroup;
 
 public enum StandardIdentityGroupEnum implements StandardIdentityGroup {
-    SIG_UNKNOWN("1", "Unknown", "_0"),
-    SIG_FRIEND("3", "Friend", "_1"),
-    SIG_NEUTRAL("4", "Neutral", "_2"),
-    SIG_HOSTILE("6", "Hostile", "_3");
+        SIG_UNKNOWN("1", "Unknown", "_0"),
+        SIG_FRIEND("3", "Friend", "_1"),
+        SIG_NEUTRAL("4", "Neutral", "_2"),
+        SIG_HOSTILE("6", "Hostile", "_3");
 
     private final String id;
     private final String label;
@@ -34,7 +34,10 @@ public enum StandardIdentityGroupEnum implements StandardIdentityGroup {
 
     @Override
     public List<StandardIdentity> getIdentities() {
-        return Arrays.stream(StandardIdentityEnum.values()).filter(this::owns).map(StandardIdentity.class::cast).toList();
+        return Arrays.stream(StandardIdentityEnum.values())
+            .filter(this::owns)
+            .map(StandardIdentity.class::cast)
+            .toList();
     }
 
     @Override
