@@ -130,22 +130,19 @@ public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
         return String.format("/svg/Amplifier/%s.svg", getDimension().getName());
     }
 
-    @SuppressWarnings("unchecked")
     @Override
-    public <A extends StandardAmplifierItem> List<A> getAmplifierList() {
-        return (List<A>) amplifier1;
+    public List<StandardAmplifierItem> getAmplifierList() {
+        return amplifier1;
     }
 
-    @SuppressWarnings("unchecked")
     @Override
-    public <A extends StandardAmplifierItem> List<A> getAmplifierListThree() {
-        return (List<A>) amplifier3;
+    public List<StandardAmplifierItem> getAmplifierListThree() {
+        return amplifier3;
     }
 
-    @SuppressWarnings("unchecked")
     @Override
-    public <A extends StandardAmplifierItem> List<A> getAmplifierListTwo() {
-        return (List<A>) amplifier2;
+    public List<StandardAmplifierItem> getAmplifierListTwo() {
+        return amplifier2;
     }
 
     @Override
@@ -158,10 +155,9 @@ public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
         return entities;
     }
 
-    @SuppressWarnings("unchecked")
     @Override
-    public <A extends StandardAmplifierItem> ObservableList<A> getFrameAmplifierList() {
-        return (ObservableList<A>) frameAmplifiers;
+    public ObservableList<StandardAmplifierItem> getFrameAmplifierList() {
+        return frameAmplifiers;
     }
 
     public ObservableList<StandardAmplifierItem> getFrameAmplifiers() {

@@ -49,17 +49,17 @@ public enum SymbolSetEnum implements SymbolSet {
     }
 
     @Override
-    public <A extends StandardAmplifierItem> List<A> getAmplifierList() {
+    public List<StandardAmplifierItem> getAmplifierList() {
         return symbolSetInfo.getAmplifiers();
     }
 
     @Override
-    public <A extends StandardAmplifierItem> List<A> getAmplifierListTwo() {
+    public List<StandardAmplifierItem> getAmplifierListTwo() {
         return symbolSetInfo.getAmplifiersTwo();
     }
 
     @Override
-    public <A extends StandardAmplifierItem> List<A> getAmplifierListThree() {
+    public List<StandardAmplifierItem> getAmplifierListThree() {
         return symbolSetInfo.getAmplifiersThree();
     }
 
@@ -69,7 +69,7 @@ public enum SymbolSetEnum implements SymbolSet {
     }
 
     @Override
-    public <E extends Entity> List<E> getEntities() {
+    public List<Entity> getEntities() {
         return symbolSetInfo.getEntities();
     }
 
@@ -79,7 +79,7 @@ public enum SymbolSetEnum implements SymbolSet {
     }
 
     @Override
-    public <A extends StandardAmplifierItem> List<A> getFrameAmplifierList() {
+    public List<StandardAmplifierItem> getFrameAmplifierList() {
         return symbolSetInfo.getFrameAmplifiers();
     }
 
@@ -99,12 +99,12 @@ public enum SymbolSetEnum implements SymbolSet {
     }
 
     @Override
-    public <M extends SectorOneModifier> List<M> getSectorOneModifiers() {
+    public List<SectorOneModifier> getSectorOneModifiers() {
         return symbolSetInfo.getSectorOneModifiers();
     }
 
     @Override
-    public <M extends SectorTwoModifier> List<M> getSectorTwoModifiers() {
+    public List<SectorTwoModifier> getSectorTwoModifiers() {
         return symbolSetInfo.getSectorTwoModifiers();
     }
 

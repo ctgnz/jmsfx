@@ -4,25 +4,25 @@ import java.util.List;
 
 public interface SymbolSetInfo {
 
-    <G extends AmplifierGuide> List<G> getAmplifierGuides();
+    List<AmplifierGuide> getAmplifierGuides();
 
-    <A extends StandardAmplifierItem> List<A> getAmplifiers();
+    List<StandardAmplifierItem> getAmplifiers();
 
-    <A extends StandardAmplifierItem> List<A> getAmplifiersTwo();
+    List<StandardAmplifierItem> getAmplifiersTwo();
 
-    <A extends StandardAmplifierItem> List<A> getAmplifiersThree();
+    List<StandardAmplifierItem> getAmplifiersThree();
 
-    <A extends StandardAmplifierItem> List<A> getFrameAmplifiers();
+    List<StandardAmplifierItem> getFrameAmplifiers();
 
-    <E extends Entity> List<E> getEntities();
+    List<Entity> getEntities();
 
-    <E extends EntitySubType> List<E> getEntitySubTypes(EntityType entityType);
+    List<EntitySubType> getEntitySubTypes(EntityType entityType);
 
-    <E extends EntityType> List<E> getEntityTypes(Entity entity);
+    List<EntityType> getEntityTypes(Entity entity);
 
-    <M extends SectorOneModifier>List<M> getSectorOneModifiers();
+    List<SectorOneModifier> getSectorOneModifiers();
 
-    <M extends SectorTwoModifier>List<M> getSectorTwoModifiers();
+    List<SectorTwoModifier> getSectorTwoModifiers();
 
     boolean isAmplifierPresent();
 

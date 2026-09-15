@@ -10,11 +10,11 @@ public interface SymbolSet extends CodeElement {
 
     List<AmplifierGuide> getAmplifierGuides();
 
-    <A extends StandardAmplifierItem> List<A> getAmplifierList();
+    List<StandardAmplifierItem> getAmplifierList();
 
-    <A extends StandardAmplifierItem> List<A> getAmplifierListThree();
+    List<StandardAmplifierItem> getAmplifierListThree();
 
-    <A extends StandardAmplifierItem> List<A> getAmplifierListTwo();
+    List<StandardAmplifierItem> getAmplifierListTwo();
 
     Dimension getDimension();
 
@@ -22,9 +22,9 @@ public interface SymbolSet extends CodeElement {
         return getDimension().getId();
     }
 
-    <E extends Entity> List<E> getEntities();
+    List<Entity> getEntities();
 
-    <A extends StandardAmplifierItem> List<A> getFrameAmplifierList();
+    List<StandardAmplifierItem> getFrameAmplifierList();
 
     String getFrameId();
 
@@ -34,9 +34,9 @@ public interface SymbolSet extends CodeElement {
 
     String getGraphicLocation();
 
-    <M extends SectorOneModifier> List<M> getSectorOneModifiers();
+    List<SectorOneModifier> getSectorOneModifiers();
 
-    <M extends SectorTwoModifier> List<M> getSectorTwoModifiers();
+    List<SectorTwoModifier> getSectorTwoModifiers();
 
     SymbolSetInfo getSymbolSetInfo();
 
