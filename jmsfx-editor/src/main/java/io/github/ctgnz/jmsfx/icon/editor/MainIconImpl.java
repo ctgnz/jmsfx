@@ -1,11 +1,12 @@
 package io.github.ctgnz.jmsfx.icon.editor;
 
-import io.github.ctgnz.jmsfx.MainElement;
-import io.github.ctgnz.jmsfx.types.GraphicType;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
+
+import io.github.ctgnz.jmsfx.MainElement;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public class MainIconImpl extends CodeElementImpl {
     protected final ObjectProperty<GraphicType> graphicType = new SimpleObjectProperty<>();

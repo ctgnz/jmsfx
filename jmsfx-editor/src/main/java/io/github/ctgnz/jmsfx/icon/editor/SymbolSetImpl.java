@@ -2,6 +2,15 @@ package io.github.ctgnz.jmsfx.icon.editor;
 
 import java.util.List;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
@@ -14,14 +23,6 @@ import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.SymbolSetInfo;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
     private final ObservableList<Entity> entities = FXCollections.observableArrayList();
@@ -41,6 +42,7 @@ public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
     public SymbolSetImpl() {
     }
 
+    @SuppressWarnings("this-escape")
     public SymbolSetImpl(SymbolSet symbolSet) {
         super(symbolSet);
         this.dimension.set(symbolSet.getDimension());
@@ -49,14 +51,26 @@ public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
         SymbolSetInfo info = symbolSet.getSymbolSetInfo();
         this.symbolSetInfo.set(info);
         this.framedIcon.set(info.isFramedIcon());
-        info.getEntities().stream().map(EntityImpl::new).forEach(this::addEntity);
-        info.getSectorOneModifiers().stream().map(SectorOneModifierImpl::new).forEach(this::addSectorOneModifier);
-        info.getSectorTwoModifiers().stream().map(SectorTwoModifierImpl::new).forEach(this::addSectorTwoModifier);
+        info.getEntities()
+            .stream()
+            .map(EntityImpl::new)
+            .forEach(this::addEntity);
+        info.getSectorOneModifiers()
+            .stream()
+            .map(SectorOneModifierImpl::new)
+            .forEach(this::addSectorOneModifier);
+        info.getSectorTwoModifiers()
+            .stream()
+            .map(SectorTwoModifierImpl::new)
+            .forEach(this::addSectorTwoModifier);
         this.amplifier1.setAll(info.getAmplifiers());
         this.amplifier2.setAll(info.getAmplifiersTwo());
         this.amplifier3.setAll(info.getAmplifiersThree());
         this.frameAmplifiers.setAll(info.getFrameAmplifiers());
-        info.getAmplifierGuides().stream().map(AmplifierGuideImpl::new).forEach(this::addAmplifierGuide);
+        info.getAmplifierGuides()
+            .stream()
+            .map(AmplifierGuideImpl::new)
+            .forEach(this::addAmplifierGuide);
     }
 
     public void addAmplifierGuide(AmplifierGuideImpl adapter) {
@@ -118,7 +132,10 @@ public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
 
     @Override
     public AmplifierGuide getAmplifierGuide(Amplifier amplifier) {
-        return amplifierGuides.stream().filter(guide -> guide.getAmplifier() == amplifier).findFirst().orElse(null);
+        return amplifierGuides.stream()
+            .filter(guide -> guide.getAmplifier() == amplifier)
+            .findFirst()
+            .orElse(null);
     }
 
     @Override
@@ -175,7 +192,8 @@ public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
     }
 
     public String getPath() {
-        return getLabel().replaceAll("\\s", "").replaceAll("-", "");
+        return getLabel().replaceAll("\\s", "")
+            .replaceAll("-", "");
     }
 
     @Override
@@ -199,7 +217,8 @@ public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(9643, 3491).append(getId()).toHashCode();
+        return new HashCodeBuilder(9643, 3491).append(getId())
+            .toHashCode();
     }
 
     public boolean isAmplifierGuidesPresent() {

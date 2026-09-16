@@ -1,16 +1,17 @@
 package io.github.ctgnz.jmsfx.icon.editor;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-
-import io.github.ctgnz.jmsfx.Amplifier;
-import io.github.ctgnz.jmsfx.types.AmplifierType;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
+import io.github.ctgnz.jmsfx.Amplifier;
+import io.github.ctgnz.jmsfx.types.AmplifierType;
 
 public class AmplifierImpl extends CodeElementImpl implements Amplifier {
     private final StringProperty description = new SimpleStringProperty();
@@ -68,7 +69,8 @@ public class AmplifierImpl extends CodeElementImpl implements Amplifier {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(5261, 1627).append(getId()).toHashCode();
+        return new HashCodeBuilder(5261, 1627).append(getId())
+            .toHashCode();
     }
 
     public IntegerProperty maxProperty() {

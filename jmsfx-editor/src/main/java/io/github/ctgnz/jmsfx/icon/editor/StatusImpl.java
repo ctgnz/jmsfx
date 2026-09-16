@@ -2,14 +2,15 @@ package io.github.ctgnz.jmsfx.icon.editor;
 
 import java.util.List;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-
-import io.github.ctgnz.jmsfx.Status;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
+import io.github.ctgnz.jmsfx.Status;
 
 public class StatusImpl extends CodeElementImpl implements Status {
 
@@ -49,7 +50,8 @@ public class StatusImpl extends CodeElementImpl implements Status {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(3329, 9239).append(getId()).toHashCode();
+        return new HashCodeBuilder(3329, 9239).append(getId())
+            .toHashCode();
     }
 
     @Override

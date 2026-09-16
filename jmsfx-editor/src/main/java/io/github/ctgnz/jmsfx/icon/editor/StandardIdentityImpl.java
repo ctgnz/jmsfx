@@ -1,14 +1,15 @@
 package io.github.ctgnz.jmsfx.icon.editor;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleObjectProperty;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.StandardIdentityGroup;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleObjectProperty;
 
 public class StandardIdentityImpl extends CodeElementImpl implements StandardIdentity {
 
@@ -59,7 +60,8 @@ public class StandardIdentityImpl extends CodeElementImpl implements StandardIde
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(1447, 7451).append(getId()).toHashCode();
+        return new HashCodeBuilder(1447, 7451).append(getId())
+            .toHashCode();
     }
 
     public BooleanProperty hostileProperty() {

@@ -3,16 +3,17 @@ package io.github.ctgnz.jmsfx.icon.editor;
 import java.util.List;
 import java.util.stream.Stream;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.StandardIdentityGroup;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 public class StandardIdentityGroupImpl extends CodeElementImpl implements StandardIdentityGroup {
 
@@ -22,10 +23,14 @@ public class StandardIdentityGroupImpl extends CodeElementImpl implements Standa
     public StandardIdentityGroupImpl() {
     }
 
+    @SuppressWarnings("this-escape")
     public StandardIdentityGroupImpl(StandardIdentityGroup identityGroup) {
         super(identityGroup);
         this.graphicSuffix.set(identityGroup.getGraphicSuffix());
-        this.identities.setAll(identityGroup.getIdentities().stream().map(this::createIdentityAdapter).toList());
+        this.identities.setAll(identityGroup.getIdentities()
+            .stream()
+            .map(this::createIdentityAdapter)
+            .toList());
     }
 
     @Override
@@ -57,7 +62,8 @@ public class StandardIdentityGroupImpl extends CodeElementImpl implements Standa
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(3163, 3617).append(getId()).toHashCode();
+        return new HashCodeBuilder(3163, 3617).append(getId())
+            .toHashCode();
     }
 
     @Override

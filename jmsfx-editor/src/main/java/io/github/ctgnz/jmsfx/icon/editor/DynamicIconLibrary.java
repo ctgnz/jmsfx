@@ -2,6 +2,9 @@ package io.github.ctgnz.jmsfx.icon.editor;
 
 import java.util.Optional;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import org.apache.commons.lang3.StringUtils;
 
 import com.google.common.collect.Lists;
@@ -29,8 +32,6 @@ import io.github.ctgnz.jmsfx.StandardIdentityGroup;
 import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.Version;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 public class DynamicIconLibrary implements IconLibrary {
     private final ObservableList<Version> versions = FXCollections.observableArrayList();
@@ -50,6 +51,7 @@ public class DynamicIconLibrary implements IconLibrary {
     public DynamicIconLibrary() {
     }
 
+    @SuppressWarnings("this-escape")
     public DynamicIconLibrary(IconLibrary staticLibrary) {
         this.versions.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getVersions()), VersionImpl::new));
         this.contexts.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getContexts()), ContextImpl::new));
@@ -59,14 +61,20 @@ public class DynamicIconLibrary implements IconLibrary {
         this.hqtfDummys.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getHqtfDummys()), HqtfDummyImpl::new));
         this.amplifiers.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getAmplifiers()), AmplifierImpl::new));
         this.listAmplifiers.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getListAmplifiers()), AmplifierListImpl::new));
-        this.symbolSets.setAll(dimensions.stream().map(DimensionImpl.class::cast).flatMap(DimensionImpl::streamSymbolSets).toList());
+        this.symbolSets.setAll(dimensions.stream()
+            .map(DimensionImpl.class::cast)
+            .flatMap(DimensionImpl::streamSymbolSets)
+            .toList());
         SymbolSet symSet = getDefaultSymbolSet();
         this.commonSectorOneModifiers.setAll(symSet.getSectorOneModifiers());
         this.commonSectorTwoModifiers.setAll(symSet.getSectorTwoModifiers());
     }
 
     public Optional<Amplifier> getAmplifier(String amplifierId) {
-        return amplifiers.stream().filter(amp -> StringUtils.equals(amplifierId, amp.getId())).map(Amplifier.class::cast).findFirst();
+        return amplifiers.stream()
+            .filter(amp -> StringUtils.equals(amplifierId, amp.getId()))
+            .map(Amplifier.class::cast)
+            .findFirst();
     }
 
     @Override
@@ -106,17 +114,20 @@ public class DynamicIconLibrary implements IconLibrary {
 
     @Override
     public Entity getDefaultEntity() {
-        return getDefaultSymbolSet().getEntities().getFirst();
+        return getDefaultSymbolSet().getEntities()
+            .getFirst();
     }
 
     @Override
     public EntitySubType getDefaultEntitySubType() {
-        return getDefaultEntityType().getEntitySubTypes().getFirst();
+        return getDefaultEntityType().getEntitySubTypes()
+            .getFirst();
     }
 
     @Override
     public EntityType getDefaultEntityType() {
-        return getDefaultEntity().getEntityTypes().getFirst();
+        return getDefaultEntity().getEntityTypes()
+            .getFirst();
     }
 
     @Override
@@ -176,7 +187,10 @@ public class DynamicIconLibrary implements IconLibrary {
 
     @Override
     public ObservableList<StandardIdentity> getStandardIdentities() {
-        return FXCollections.observableArrayList(standardIdentityGroups.stream().map(StandardIdentityGroupImpl.class::cast).flatMap(StandardIdentityGroupImpl::streamIdentities).toList());
+        return FXCollections.observableArrayList(standardIdentityGroups.stream()
+            .map(StandardIdentityGroupImpl.class::cast)
+            .flatMap(StandardIdentityGroupImpl::streamIdentities)
+            .toList());
     }
 
     @Override
@@ -190,7 +204,10 @@ public class DynamicIconLibrary implements IconLibrary {
     }
 
     public Optional<SymbolSet> getSymbolSet(String symbolSetId) {
-        return symbolSets.stream().filter(sym -> StringUtils.equals(symbolSetId, sym.getId())).map(SymbolSet.class::cast).findFirst();
+        return symbolSets.stream()
+            .filter(sym -> StringUtils.equals(symbolSetId, sym.getId()))
+            .map(SymbolSet.class::cast)
+            .findFirst();
     }
 
     @Override

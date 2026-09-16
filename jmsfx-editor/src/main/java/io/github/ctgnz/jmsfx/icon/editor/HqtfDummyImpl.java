@@ -2,14 +2,15 @@ package io.github.ctgnz.jmsfx.icon.editor;
 
 import java.util.List;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-
-import io.github.ctgnz.jmsfx.HqtfDummy;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
+import io.github.ctgnz.jmsfx.HqtfDummy;
 
 public class HqtfDummyImpl extends CodeElementImpl implements HqtfDummy {
 
@@ -45,7 +46,8 @@ public class HqtfDummyImpl extends CodeElementImpl implements HqtfDummy {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(8951, 1601).append(getId()).toHashCode();
+        return new HashCodeBuilder(8951, 1601).append(getId())
+            .toHashCode();
     }
 
     @Override

@@ -5,6 +5,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
@@ -12,12 +19,6 @@ import io.github.ctgnz.jmsfx.Amplifier;
 import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 public class AmplifierListImpl<A extends AmplifierListItem> extends CodeElementImpl implements AmplifierList {
     private final ObjectProperty<Amplifier> amplifier = new SimpleObjectProperty<>();
@@ -29,6 +30,7 @@ public class AmplifierListImpl<A extends AmplifierListItem> extends CodeElementI
     public AmplifierListImpl() {
     }
 
+    @SuppressWarnings("this-escape")
     public AmplifierListImpl(AmplifierList amplifierList) {
         super(amplifierList);
         this.amplifier.set(amplifierList.getAmplifier());
@@ -62,8 +64,8 @@ public class AmplifierListImpl<A extends AmplifierListItem> extends CodeElementI
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<A> getItems() {
-        return (List<A>) values;
+    public <T extends AmplifierListItem> List<T> getItems() {
+        return (List<T>) (List<?>) values;
     }
 
     @Override
@@ -73,8 +75,8 @@ public class AmplifierListImpl<A extends AmplifierListItem> extends CodeElementI
 
     @SuppressWarnings("unchecked")
     @Override
-    public Class<A> getValueClass() {
-        return valueClass.get();
+    public <T extends AmplifierListItem> Class<T> getValueClass() {
+        return (Class<T>) valueClass.get();
     }
 
     public ObservableList<AmplifierListItemImpl<A>> getValues() {
@@ -83,7 +85,8 @@ public class AmplifierListImpl<A extends AmplifierListItem> extends CodeElementI
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(4877, 7789).append(getId()).toHashCode();
+        return new HashCodeBuilder(4877, 7789).append(getId())
+            .toHashCode();
     }
 
     @Override
@@ -104,8 +107,11 @@ public class AmplifierListImpl<A extends AmplifierListItem> extends CodeElementI
     protected List<AmplifierListItemImpl<A>> loadValues() {
         try {
             Class<A> amplifierClass = getValueClass();
-            A[] vals = (A[]) amplifierClass.getMethod("values").invoke(amplifierClass);
-            return Arrays.stream(vals).map(AmplifierListItemImpl::new).toList();
+            A[] vals = (A[]) amplifierClass.getMethod("values")
+                .invoke(amplifierClass);
+            return Arrays.stream(vals)
+                .map(AmplifierListItemImpl::new)
+                .toList();
         } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException | SecurityException e) {
             return Collections.emptyList();
         }

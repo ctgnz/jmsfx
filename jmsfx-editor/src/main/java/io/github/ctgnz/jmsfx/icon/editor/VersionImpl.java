@@ -29,7 +29,8 @@ public class VersionImpl extends CodeElementImpl implements Version {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(8353, 3539).append(getId()).toHashCode();
+        return new HashCodeBuilder(8353, 3539).append(getId())
+            .toHashCode();
     }
 
 }

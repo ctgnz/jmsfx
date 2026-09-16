@@ -2,16 +2,17 @@ package io.github.ctgnz.jmsfx.icon.editor;
 
 import java.util.List;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 public class EntityTypeImpl extends MainIconImpl implements EntityType {
     private final ObjectProperty<Entity> entity = new SimpleObjectProperty<>();
@@ -20,10 +21,14 @@ public class EntityTypeImpl extends MainIconImpl implements EntityType {
     public EntityTypeImpl() {
     }
 
+    @SuppressWarnings("this-escape")
     public EntityTypeImpl(EntityType entityType) {
         super(entityType);
         this.entity.set(entityType.getEntity());
-        this.entitySubTypes.addAll(entityType.getEntitySubTypes().stream().map(this::adaptSubType).toList());
+        this.entitySubTypes.addAll(entityType.getEntitySubTypes()
+            .stream()
+            .map(this::adaptSubType)
+            .toList());
     }
 
     public ObjectProperty<Entity> entityProperty() {
@@ -55,7 +60,8 @@ public class EntityTypeImpl extends MainIconImpl implements EntityType {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(9371, 1741).append(getId()).toHashCode();
+        return new HashCodeBuilder(9371, 1741).append(getId())
+            .toHashCode();
     }
 
     @Override

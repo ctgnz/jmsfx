@@ -1,17 +1,18 @@
 package io.github.ctgnz.jmsfx.icon.editor;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-
-import io.github.ctgnz.jmsfx.AmplifierList;
-import io.github.ctgnz.jmsfx.AmplifierListItem;
-import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
+import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierListItem;
+import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 
 public class StandardAmplifierItemImpl<A extends StandardAmplifierItem> extends CodeElementImpl implements AmplifierListItem {
     private final ObjectProperty<AmplifierList> amplifierList = new SimpleObjectProperty<>();
@@ -83,7 +84,8 @@ public class StandardAmplifierItemImpl<A extends StandardAmplifierItem> extends 
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(4271, 1733).append(getId()).toHashCode();
+        return new HashCodeBuilder(4271, 1733).append(getId())
+            .toHashCode();
     }
 
     @Override

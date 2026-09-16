@@ -1,13 +1,14 @@
 package io.github.ctgnz.jmsfx.icon.editor;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.StandardIdentity;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 
 public class EntitySubTypeImpl extends MainIconImpl implements EntitySubType {
     private final ObjectProperty<EntityType> entityType = new SimpleObjectProperty<>();
@@ -47,7 +48,8 @@ public class EntitySubTypeImpl extends MainIconImpl implements EntitySubType {
         String graphicLocation = getSymbolSet().getGraphicLocation();
         String graphicIdentifier = getGraphicIdentifier();
         if (isFullFrameIcon()) {
-            return String.format("/svg/Appendices/%s/%s%s.svg", graphicLocation, graphicIdentifier, identity.getGroup().getGraphicSuffix());
+            return String.format("/svg/Appendices/%s/%s%s.svg", graphicLocation, graphicIdentifier, identity.getGroup()
+                .getGraphicSuffix());
         } else {
             return String.format("/svg/Appendices/%s/%s.svg", graphicLocation, graphicIdentifier);
         }
@@ -55,7 +57,8 @@ public class EntitySubTypeImpl extends MainIconImpl implements EntitySubType {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(2377, 7741).append(getId()).toHashCode();
+        return new HashCodeBuilder(2377, 7741).append(getId())
+            .toHashCode();
     }
 
     @Override

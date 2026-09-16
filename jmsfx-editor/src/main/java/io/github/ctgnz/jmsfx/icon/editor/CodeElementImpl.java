@@ -1,8 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.editor;
 
-import io.github.ctgnz.jmsfx.CodeElement;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
+import io.github.ctgnz.jmsfx.CodeElement;
 
 public class CodeElementImpl {
 

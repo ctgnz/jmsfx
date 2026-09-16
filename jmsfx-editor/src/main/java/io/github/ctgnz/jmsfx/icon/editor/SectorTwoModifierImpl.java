@@ -1,17 +1,18 @@
 package io.github.ctgnz.jmsfx.icon.editor;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-
-import io.github.ctgnz.jmsfx.SectorTwoModifier;
-import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.ModifierCategory;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
+import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.types.ModifierCategory;
 
 public class SectorTwoModifierImpl extends CodeElementImpl implements SectorTwoModifier {
     private final ObjectProperty<SymbolSet> symbolSet = new SimpleObjectProperty<>();
@@ -68,7 +69,8 @@ public class SectorTwoModifierImpl extends CodeElementImpl implements SectorTwoM
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(7297, 7933).append(getId()).toHashCode();
+        return new HashCodeBuilder(7297, 7933).append(getId())
+            .toHashCode();
     }
 
     @Override

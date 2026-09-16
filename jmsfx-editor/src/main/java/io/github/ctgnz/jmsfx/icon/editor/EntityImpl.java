@@ -2,16 +2,17 @@ package io.github.ctgnz.jmsfx.icon.editor;
 
 import java.util.List;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 public class EntityImpl extends MainIconImpl implements Entity {
     private final ObjectProperty<SymbolSet> symbolSet = new SimpleObjectProperty<>();
@@ -21,13 +22,17 @@ public class EntityImpl extends MainIconImpl implements Entity {
     public EntityImpl() {
     }
 
+    @SuppressWarnings("this-escape")
     public EntityImpl(Entity entity) {
         super(entity);
         this.symbolSet.set(entity.getSymbolSet());
         this.baseSymbolSet.set(entity.getBaseSymbolSet());
         this.graphicType.set(entity.getGraphicType());
         this.unknown.set(entity.isUnknown());
-        this.entityTypes.addAll(entity.getEntityTypes().stream().map(this::adaptEntityType).toList());
+        this.entityTypes.addAll(entity.getEntityTypes()
+            .stream()
+            .map(this::adaptEntityType)
+            .toList());
     }
 
     @Override
@@ -65,7 +70,8 @@ public class EntityImpl extends MainIconImpl implements Entity {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(3217, 7127).append(getId()).toHashCode();
+        return new HashCodeBuilder(3217, 7127).append(getId())
+            .toHashCode();
     }
 
     public ObjectProperty<SymbolSet> symbolSetProperty() {

@@ -2,7 +2,7 @@
 
 JavaFX implementation of **NATO APP-6, Edition E (2023)** military symbology - not MIL-STD-2525D. They're related, converged NATO-vs-US standards but formally distinct; don't conflate them. The `edition-e` git branch name refers to APP-6 **Edition E**, not a generic feature branch. Now the **canonical fork** of the old Esri `joint-military-symbology-xml` (JMSML) project, which modelled MIL-STD-2525D specifically - that upstream repo is dead/abandoned; this one owns the schema/data lineage going forward, held in `jmsfx-standard`. Depends on `foxglove` (separate repo) for SVG-in-JavaFX rendering.
 
-Modules actually wired into the Maven reactor: `jmsfx-core`, `jmsfx-generator`, `jmsfx-standard`, `jmsfx-creator`, `jmsfx-server`. `jmsfx-editor` exists as a directory but is **not** in the root POM's `<modules>` - see Known issues.
+All modules are wired into the Maven reactor: `jmsfx-core`, `jmsfx-generator`, `jmsfx-standard`, `jmsfx-editor`, `jmsfx-creator`, `jmsfx-server`.
 
 ## Domain background
 
@@ -34,7 +34,9 @@ Enum constants are **not** named `UPPER_SNAKE_CASE` by convention here - the aut
 
 **When `jmsfx-core`'s public interfaces change, fix the relevant `.ftl` template and regenerate** - don't hand-patch the generated `.java` output, since a later regeneration would silently revert the hand-patch. To verify a template matches house style: regenerate with raw output (no Spotless), then run `spotless:apply` once and diff against the previously-committed source - zero diff means the template is correct.
 
-## Known issues
+## Method-level generics on interfaces like `AmplifierList`
 
-- `jmsfx-editor` is excluded from the reactor's `<modules>` because its model `Impl` classes (e.g. `StandardAmplifierImpl`, `AmplifierListImpl`) predate `jmsfx-core`'s generic-parameter cleanup (`f62ac24`, "Drop unused generic type parameters from SymbolSetInfo/SymbolSet") and no longer compile against it - e.g. `StandardAmplifierImpl.getItems()` casts an `ObservableList<StandardAmplifierItemImpl<A>>` to `List<A>`, which is now a hard compile error, not just an unchecked-cast warning, since `StandardAmplifierItemImpl` doesn't actually implement the bound `A` requires. Fixing this needs a real migration of `jmsfx-editor`'s generics to match the current core API, not a POM change.
-- Because of the above, `jmsfx-server` still doesn't build in the default reactor: it depends on `jmsfx-editor`, which the reactor can't produce. Build `jmsfx-core`, `jmsfx-generator`, `jmsfx-standard`, `jmsfx-creator` in isolation (`-pl jmsfx-core,jmsfx-generator,jmsfx-standard,jmsfx-creator`) until `jmsfx-editor` is migrated.
+`AmplifierList.getItems()`/`getValueClass()` are declared with their own method-level type parameter (`<A extends AmplifierListItem> List<A> getItems()`), not a class-level one - the same pattern `SymbolSetInfo`/`SymbolSet` used to have before `f62ac24` dropped it there as unused. Nothing calls these with an explicit type witness either, so the class-level-vs-method-level distinction only matters for how an implementer satisfies the signature:
+
+- The generated `AmplifierListEnum` (jmsfx-standard) implements it by redeclaring the same method-level `<A extends AmplifierListItem>` and casting from an untyped/`Object` source (`(Class<A>) valueClass`, `(A[]) ...invoke(...)`) - always a legal unchecked cast, never a hard error.
+- `jmsfx-editor`'s hand-written `Impl` classes (`StandardAmplifierImpl`, `AmplifierListImpl`) are themselves generic over a class-level type parameter and used to implement `getItems()` by returning that class-level type directly. That satisfies the override (erasure matches) but two things go wrong once warnings are errors: it's flagged as an unchecked-conversion override, and a direct cast from the field's concrete type (`ObservableList<StandardAmplifierItemImpl<A>>`) to the interface's `List<A>` is a **hard compile error**, not just a warning, because they're two differently-parameterized instances of the same generic type. Fixed by redeclaring the same method-level type parameter (matching `AmplifierListEnum`'s approach) and casting through `List<?>` (e.g. `(List<T>) (List<?>) values`). If you add another `Impl` class implementing `AmplifierList`, follow this same shape rather than binding to the class's own type parameter.

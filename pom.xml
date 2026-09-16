@@ -41,6 +41,7 @@
 		<module>jmsfx-core</module>
 		<module>jmsfx-generator</module>
 		<module>jmsfx-standard</module>
+		<module>jmsfx-editor</module>
 		<module>jmsfx-creator</module>
 		<module>jmsfx-server</module>
 	</modules>

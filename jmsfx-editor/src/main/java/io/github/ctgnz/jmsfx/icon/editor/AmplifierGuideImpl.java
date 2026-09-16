@@ -2,12 +2,6 @@ package io.github.ctgnz.jmsfx.icon.editor;
 
 import java.util.Arrays;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-
-import io.github.ctgnz.jmsfx.Amplifier;
-import io.github.ctgnz.jmsfx.AmplifierGuide;
-import io.github.ctgnz.jmsfx.types.GuideType;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -19,6 +13,13 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Polyline;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
+import io.github.ctgnz.jmsfx.Amplifier;
+import io.github.ctgnz.jmsfx.AmplifierGuide;
+import io.github.ctgnz.jmsfx.types.GuideType;
 
 public class AmplifierGuideImpl implements AmplifierGuide {
     private final ObjectProperty<SymbolSetImpl> symbolSet = new SimpleObjectProperty<>();
@@ -36,7 +37,8 @@ public class AmplifierGuideImpl implements AmplifierGuide {
         this.type.set(model.getType());
         this.code.set(model.getCode());
         this.shape.set(createShape(model.getPoints()));
-        Arrays.stream(model.getPoints()).forEach(points::add);
+        Arrays.stream(model.getPoints())
+            .forEach(points::add);
     }
 
     @Override
@@ -64,12 +66,15 @@ public class AmplifierGuideImpl implements AmplifierGuide {
 
     @Override
     public double getHeight() {
-        return getShape().getLayoutBounds().getHeight();
+        return getShape().getLayoutBounds()
+            .getHeight();
     }
 
     @Override
     public double[] getPoints() {
-        return points.stream().mapToDouble(Double::doubleValue).toArray();
+        return points.stream()
+            .mapToDouble(Double::doubleValue)
+            .toArray();
     }
 
     @Override
@@ -84,22 +89,26 @@ public class AmplifierGuideImpl implements AmplifierGuide {
 
     @Override
     public double getWidth() {
-        return getShape().getLayoutBounds().getWidth();
+        return getShape().getLayoutBounds()
+            .getWidth();
     }
 
     @Override
     public double getX() {
-        return getShape().getLayoutBounds().getMinX();
+        return getShape().getLayoutBounds()
+            .getMinX();
     }
 
     @Override
     public double getY() {
-        return getShape().getLayoutBounds().getMinY();
+        return getShape().getLayoutBounds()
+            .getMinY();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(6449, 9461).append(getCode()).toHashCode();
+        return new HashCodeBuilder(6449, 9461).append(getCode())
+            .toHashCode();
     }
 
     protected void setSymbolSet(SymbolSetImpl symbolSet) {

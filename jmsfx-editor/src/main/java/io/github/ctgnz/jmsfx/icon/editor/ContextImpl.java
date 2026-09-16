@@ -1,13 +1,14 @@
 package io.github.ctgnz.jmsfx.icon.editor;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-
-import io.github.ctgnz.jmsfx.Context;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
+import io.github.ctgnz.jmsfx.Context;
 
 public class ContextImpl extends CodeElementImpl implements Context {
 
@@ -43,7 +44,8 @@ public class ContextImpl extends CodeElementImpl implements Context {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(6619, 9173).append(getId()).toHashCode();
+        return new HashCodeBuilder(6619, 9173).append(getId())
+            .toHashCode();
     }
 
     @Override

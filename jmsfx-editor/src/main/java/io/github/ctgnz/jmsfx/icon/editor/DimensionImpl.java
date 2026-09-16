@@ -3,18 +3,19 @@ package io.github.ctgnz.jmsfx.icon.editor;
 import java.util.List;
 import java.util.stream.Stream;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-
-import io.github.ctgnz.jmsfx.Dimension;
-import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.types.GeometryType;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
+import io.github.ctgnz.jmsfx.Dimension;
+import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.types.GeometryType;
 
 public class DimensionImpl extends CodeElementImpl implements Dimension {
 
@@ -28,9 +29,13 @@ public class DimensionImpl extends CodeElementImpl implements Dimension {
     public DimensionImpl() {
     }
 
+    @SuppressWarnings("this-escape")
     public DimensionImpl(Dimension dimension) {
         super(dimension);
-        dimension.getSymbolSets().stream().map(SymbolSetImpl::new).forEach(this::addSymbolSet);
+        dimension.getSymbolSets()
+            .stream()
+            .map(SymbolSetImpl::new)
+            .forEach(this::addSymbolSet);
         this.defaultSymbolSet.set(symbolSets.getFirst());
         this.geometryType.set(dimension.getGeometryType());
         this.frameId.set(dimension.getFrameId());
@@ -99,7 +104,9 @@ public class DimensionImpl extends CodeElementImpl implements Dimension {
 
     @Override
     public List<SymbolSet> getSymbolSets() {
-        return symbolSets.stream().map(SymbolSet.class::cast).toList();
+        return symbolSets.stream()
+            .map(SymbolSet.class::cast)
+            .toList();
     }
 
     public StringProperty graphicLocationProperty() {
@@ -108,7 +115,8 @@ public class DimensionImpl extends CodeElementImpl implements Dimension {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(9883, 3907).append(getId()).toHashCode();
+        return new HashCodeBuilder(9883, 3907).append(getId())
+            .toHashCode();
     }
 
     public StringProperty nameProperty() {
