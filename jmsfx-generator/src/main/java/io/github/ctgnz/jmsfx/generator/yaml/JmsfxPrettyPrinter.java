@@ -134,7 +134,7 @@ public class JmsfxPrettyPrinter extends DefaultPrettyPrinter {
     }
 
     private boolean isPrimitiveArrayType(JsonGenerator g) {
-        Object currentValue = g.getCurrentValue();
+        Object currentValue = g.currentValue();
         if (currentValue instanceof List<?>) {
             List<?> list = (List<?>) currentValue;
             if (!list.isEmpty()) {
