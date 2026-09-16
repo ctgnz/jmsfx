@@ -1,12 +1,17 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+# Publishes a GitHub Release for a tagged jmsfx version.
+#
+# Tag a commit whose pom version has had -SNAPSHOT removed everywhere, and whose tag equals that version. Edit
+# each module's pom.xml by hand rather than mvn versions:set - this reactor has picked up drifted per-module
+# versions before when relying on the plugin - then:
+#
+#     git commit -am "Release 1.2.0"
+#     git tag 1.2.0 && git push origin master 1.2.0
+#
+# jmsfx isn't published to Maven Central yet (unlike foxglove) - this only builds jars and attaches them to a
+# GitHub Release. Once Central Portal publishing is set up here too, add a deploy step matching foxglove's
+# release.yml (central-publishing-maven-plugin, GPG signing, the release profile).
 
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-name: Create GitHub Package
+name: Release
 
 on:
   push:
@@ -17,20 +22,38 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
+    - uses: actions/checkout@v4
+    - name: Set up JDK 25
+      uses: actions/setup-java@v4
       with:
-        java-version: '17'
+        java-version: '25'
         distribution: 'temurin'
-        cache: maven
-        gpg-private-key: ${{secrets.OSSRH_GPG_SECRET_KEY}}
-        gpg-passphrase: MAVEN_GPG_PASSPHRASE
-    - name: Build with Maven
-      run: mvn -Prelease -B clean verify
+        cache: 'maven'
+
+    - name: Verify the tag names a release version
+      run: |
+        VERSION=$(mvn -q -B help:evaluate -Dexpression=project.version -DforceStdout 2>/dev/null | tail -n1)
+        echo "tag:         $GITHUB_REF_NAME"
+        echo "pom version: $VERSION"
+        case "$VERSION" in
+          *-SNAPSHOT)
+            echo "::error::pom version $VERSION is a snapshot - remove -SNAPSHOT before tagging a release"
+            exit 1
+            ;;
+        esac
+        if [ "$VERSION" != "$GITHUB_REF_NAME" ]; then
+          echo "::error::tag $GITHUB_REF_NAME does not match pom version $VERSION"
+          exit 1
+        fi
+
+    # Tests already ran via maven.yml's own push-to-master trigger, before this commit was ever tagged - no need
+    # to run them again here.
+    - name: Build
+      run: mvn -B --no-transfer-progress -DskipTests package
+
     - name: Create release
       uses: ncipollo/release-action@v1
       with:
         allowUpdates: true
-        artifacts: "${{ github.workspace }}/jmsfx-server/target/*.jar,${{ github.workspace }}/jmsfx-server/target/*.zip"
+        artifacts: "jmsfx-core/target/*.jar,jmsfx-standard/target/*.jar"
         token: ${{ secrets.GITHUB_TOKEN }}
