@@ -74,6 +74,13 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
             .toList();
     }
 
+    @GetMapping(value = "/symbol", produces = "image/svg+xml")
+    public String generateFrameOnlySymbol(@RequestParam(required = false) M sectorOneMod,
+                                          @RequestParam(required = false) N sectorTwoMod,
+                                          @RequestParam(required = false) A amplifier) throws Exception {
+        return createGraphic(null, null, null, sectorOneMod, sectorTwoMod, amplifier);
+    }
+
     @GetMapping(value = "/symbol/modifier/one/{sectorOneMod}", produces = "image/svg+xml")
     public String generateModifierOneSymbol(@PathVariable M sectorOneMod) throws Exception {
         return createGraphic(null, null, null, sectorOneMod, null, null);

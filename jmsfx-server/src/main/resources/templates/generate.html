@@ -31,6 +31,7 @@ $(document).ready(function () {
 		$.get(symbolSet + '/entity/list', function (data) {
     		var select = $("#entity");
     		select.empty();
+    		select.append('<option value="" selected>Unspecified</option>');
     		$.each(data, function(ix, entity) {
     			var opt = $('<option>', {
     				value: entity.name,
@@ -38,14 +39,13 @@ $(document).ready(function () {
     			})
     			select.append(opt);
     		});
-    		var first = $('#entity option:first');
-    		first.prop('selected', 'selected');
-    		entity = first.val(); 
+    		entity = '';
     		updatePreview();
 		});
 		$.get(symbolSet + '/modifier/one', function (data) {
     		var select = $("#modifier-one");
     		select.empty();
+    		select.append('<option value="" selected>Unspecified</option>');
     		if (data.length == 0) {
     			select.attr('disabled', 'disabled');
     		} else {
@@ -62,6 +62,7 @@ $(document).ready(function () {
 		$.get(symbolSet + '/modifier/two', function (data) {
     		var select = $("#modifier-two");
     		select.empty();
+    		select.append('<option value="" selected>Unspecified</option>');
     		if (data.length == 0) {
     			select.attr('disabled', 'disabled');
     		} else {
@@ -97,6 +98,14 @@ $(document).ready(function () {
 		var opt = $('#entity option:selected');
 		entity = opt.val();
 		entityType = entitySubType = ''
+		if (entity === '') {
+			$('#entity-type').empty()
+				.attr('disabled', 'disabled');
+			$('#entity-subtype').empty()
+				.attr('disabled', 'disabled');
+			updatePreview();
+			return;
+		}
 		$.get(symbolSet + '/entityType/' + entity + '/list', function (data) {
     		var select = $("#entity-type");
     		select.empty();
@@ -169,41 +178,39 @@ $(document).ready(function () {
 });
 
 function updatePreview() {
+	var symbolUrl = symbolSet + '/symbol';
 	if (entity) {
-    	var symbolUrl = symbolSet + '/symbol/'
     	if (entityType === "") {
-    		symbolUrl += 'entity/' + entity;
+    		symbolUrl += '/entity/' + entity;
     	} else {
-    		symbolUrl += entityType;
+    		symbolUrl += '/' + entityType;
     		if (entitySubType) {
-    			symbolUrl += '/' + entitySubType;	
+    			symbolUrl += '/' + entitySubType;
     		}
     	}
-    	var symbolData = {};
-    	if (modOne) {
-    		symbolData['sectorOneMod'] = modOne;
-    	}
-    	if (modTwo) {
-    		symbolData['sectorTwoMod'] = modTwo; 
-    	}
-    	if (amplifier) {
-    		symbolData['amplifier'] = amplifier; 
-    	}
-    	$.get({
-    		url: symbolUrl,
-    		data: symbolData,
-    		dataType: "html", 
-    		success: function (data) {
-    			$('#preview').html(data);
-				$('#preview').attr('src', this.url);
-                $('#preview-link').attr('href', this.url);
-                $title = $(data).find("svg\\:title");
-    			$('#preview-caption').html($title.text());
-    		}
-    	});
-	} else {
-		$('#preview').html('');
 	}
+	var symbolData = {};
+	if (modOne) {
+		symbolData['sectorOneMod'] = modOne;
+	}
+	if (modTwo) {
+		symbolData['sectorTwoMod'] = modTwo;
+	}
+	if (amplifier) {
+		symbolData['amplifier'] = amplifier;
+	}
+	$.get({
+		url: symbolUrl,
+		data: symbolData,
+		dataType: "html",
+		success: function (data) {
+			$('#preview').html(data);
+			$('#preview').attr('src', this.url);
+            $('#preview-link').attr('href', this.url);
+            $title = $(data).find("svg\\:title");
+			$('#preview-caption').html($title.text());
+		}
+	});
 }
 	</script>
 </head>
