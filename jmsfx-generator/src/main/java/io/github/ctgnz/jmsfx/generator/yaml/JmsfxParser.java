@@ -55,7 +55,7 @@ public class JmsfxParser {
             .loaderOptions(loaderOptions)
             .dumperOptions(options));
         ObjectMapper mapper = new ObjectMapper(factory);
-        mapper.setSerializationInclusion(Include.NON_DEFAULT);
+        mapper.setDefaultPropertyInclusion(Include.NON_DEFAULT);
         mapper.registerModule(new JavaTimeModule());
         SimpleModule module = new SimpleModule("basic");
         mapper.registerModule(module);
