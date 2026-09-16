@@ -11,7 +11,7 @@
     </parent>
 
     <properties>
-        <spring.boot.version>3.4.5</spring.boot.version>
+        <spring.boot.version>3.5.16</spring.boot.version>
     </properties>
 	
 	<dependencies>
@@ -78,7 +78,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
                 <configuration>
-                    <mainClass>nz.co.ctg.jmsfx.server.JmsfxServer</mainClass>
+                    <mainClass>io.github.ctgnz.jmsfx.server.JmsfxServer</mainClass>
                 </configuration>
                 <executions>
                     <execution>
