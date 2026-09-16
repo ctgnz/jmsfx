@@ -1,7 +1,5 @@
 package io.github.ctgnz.jmsfx.standard.common;
 
-import org.apache.commons.lang3.StringUtils;
-
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
@@ -112,7 +110,7 @@ public enum CommonSectorOneModifier implements SectorOneModifier {
 
     @Override
     public boolean isUnknown() {
-        return StringUtils.equals("0", groupId) && StringUtils.equals("00", id);
+        return "0".equals(groupId) && "00".equals(id);
     }
 
 }

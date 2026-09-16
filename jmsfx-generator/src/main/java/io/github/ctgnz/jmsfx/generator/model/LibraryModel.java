@@ -3,9 +3,8 @@ package io.github.ctgnz.jmsfx.generator.model;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
-
-import org.apache.commons.lang3.StringUtils;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -60,7 +59,7 @@ public class LibraryModel {
 
     public AmplifierListModel getAmplifierList(String enumType) {
         return amplifierGroups.stream()
-            .filter(amp -> StringUtils.equals(amp.getTypeName(), enumType))
+            .filter(amp -> Objects.equals(amp.getTypeName(), enumType))
             .findFirst()
             .orElseThrow();
     }
@@ -91,7 +90,7 @@ public class LibraryModel {
 
     public DimensionModel getDimension(String key) {
         return dimensions.stream()
-            .filter(dim -> StringUtils.equals(dim.getId(), key))
+            .filter(dim -> Objects.equals(dim.getId(), key))
             .findFirst()
             .orElseThrow();
     }

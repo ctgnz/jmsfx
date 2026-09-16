@@ -1,6 +1,7 @@
 package io.github.ctgnz.jmsfx.icon.editor;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 import javafx.beans.property.SimpleStringProperty;
@@ -8,7 +9,6 @@ import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
@@ -68,7 +68,7 @@ public class StandardIdentityGroupImpl extends CodeElementImpl implements Standa
 
     @Override
     public boolean owns(StandardIdentity id) {
-        return StringUtils.equals(id.getGroupId(), getId());
+        return Objects.equals(id.getGroupId(), getId());
     }
 
     protected StandardIdentityImpl createIdentityAdapter(StandardIdentity id) {
