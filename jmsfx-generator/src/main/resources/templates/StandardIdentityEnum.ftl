@@ -1,8 +1,9 @@
 package ${iconPackage};
 
+import java.util.EnumSet;
+
 import ${basePackage}.StandardIdentity;
 import ${basePackage}.StandardIdentityGroup;
-import java.util.EnumSet;
 
 public enum StandardIdentityEnum implements StandardIdentity {
 <#list identities as ident>

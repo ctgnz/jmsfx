@@ -1,13 +1,16 @@
 package ${iconPackage}.amplifier;
+<#if amplifier.coded>
+
+import java.util.Arrays;
+import java.util.Map;
+
+import com.google.common.collect.Maps;
+</#if>
 
 import ${basePackage}.AmplifierList;
 import ${basePackage}.<#if amplifier.standard>StandardAmplifierItem<#elseif amplifier.country>CountryCode<#else>AmplifierListItem</#if>;<#if amplifier.extension>
 import ${basePackage}.Extension;</#if>
-import ${iconPackage}.AmplifierListEnum;<#if amplifier.coded>
-
-import java.util.Arrays;
-import java.util.Map;
-import com.google.common.collect.Maps;</#if>
+import ${iconPackage}.AmplifierListEnum;
 
 public enum ${amplifier.typeName} implements <#if amplifier.standard>StandardAmplifierItem<#elseif amplifier.country>CountryCode<#else>AmplifierListItem</#if> {
 <#list amplifier.values as val>

@@ -2,6 +2,9 @@ package ${iconPackage};
 
 import java.util.stream.Stream;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import org.apache.commons.lang3.ObjectUtils;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
@@ -34,8 +37,6 @@ import ${commonPackage}.CommonEntitySubType;
 import ${commonPackage}.CommonEntityType;
 import ${commonPackage}.CommonSectorOneModifier;
 import ${commonPackage}.CommonSectorTwoModifier;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 public class ${libraryPrefix}IconLibrary implements IconLibrary {
     private static final ${libraryPrefix}IconLibrary INSTANCE = new ${libraryPrefix}IconLibrary();

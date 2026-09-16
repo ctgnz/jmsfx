@@ -1,13 +1,14 @@
 package ${iconPackage}.${symbolSet.packageName};
 
-import ${basePackage}.AmplifierGuide;
-import ${iconPackage}.AmplifierEnum;
-import ${typePackage}.GuideType;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Polyline;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
+
+import ${basePackage}.AmplifierGuide;
+import ${iconPackage}.AmplifierEnum;
+import ${typePackage}.GuideType;
 
 public enum ${symbolSet.baseTypeName}AmplifierGuide implements AmplifierGuide {
 <#list symbolSet.amplifierGuides as guide>
