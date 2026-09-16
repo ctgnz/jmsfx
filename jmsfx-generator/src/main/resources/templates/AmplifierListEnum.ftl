@@ -53,7 +53,8 @@ public enum AmplifierListEnum implements AmplifierList {
     public <A extends AmplifierListItem> List<A> getItems() {
         try {
             Class<A> amplifierClass = getValueClass();
-            A[] vals = (A[]) amplifierClass.getMethod("values").invoke(amplifierClass);
+            A[] vals = (A[]) amplifierClass.getMethod("values")
+                .invoke(amplifierClass);
             return Arrays.asList(vals);
         } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException | SecurityException e) {
             return Collections.emptyList();

@@ -11,7 +11,7 @@ import ${basePackage}.SectorTwoModifier;
 import ${basePackage}.StandardAmplifierItem;
 import ${basePackage}.SymbolSet;
 import ${basePackage}.SymbolSetInfo;
-<#list symbolSets as sym>
+<#list symbolSets?sort_by("packageName") as sym>
 import ${iconPackage}.${sym.packageName}.${sym.baseTypeName}SymbolSet;
 </#list>
 
@@ -29,7 +29,7 @@ public enum SymbolSetEnum implements SymbolSet {
     SymbolSetEnum(String id, String label, DimensionEnum dimension, SymbolSetInfo symbolSetInfo) {
         this(id, label, dimension, dimension.getGraphicLocation(), symbolSetInfo);
     }
-    
+
     SymbolSetEnum(String id, String label, DimensionEnum dimension, String graphicLocation, SymbolSetInfo symbolSetInfo) {
         this.id = id;
         this.label = label;
@@ -40,7 +40,10 @@ public enum SymbolSetEnum implements SymbolSet {
 
     @Override
     public AmplifierGuide getAmplifierGuide(Amplifier amplifier) {
-        return getAmplifierGuides().stream().filter(guide -> guide.getAmplifier() == amplifier).findFirst().orElse(null);
+        return getAmplifierGuides().stream()
+            .filter(guide -> guide.getAmplifier() == amplifier)
+            .findFirst()
+            .orElse(null);
     }
 
     @Override

@@ -4,14 +4,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import ${basePackage}.AmplifierGuide;
 import ${basePackage}.Entity;
 import ${basePackage}.EntitySubType;
 import ${basePackage}.EntityType;
-import ${basePackage}.StandardAmplifierItem;
 import ${basePackage}.SectorOneModifier;
 import ${basePackage}.SectorTwoModifier;
+import ${basePackage}.StandardAmplifierItem;
 import ${basePackage}.SymbolSetInfo;
-import ${basePackage}.AmplifierGuide;
 import ${iconPackage}.unknown.UnknownEntity;
 
 public class CommonSymbolSet implements SymbolSetInfo {

@@ -10,18 +10,22 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 </#if>
 
+import ${basePackage}.AmplifierGuide;
 import ${basePackage}.Entity;
 import ${basePackage}.EntitySubType;
 import ${basePackage}.EntityType;
-import ${basePackage}.StandardAmplifierItem;
 import ${basePackage}.SectorOneModifier;
 import ${basePackage}.SectorTwoModifier;
+import ${basePackage}.StandardAmplifierItem;
 import ${basePackage}.SymbolSetInfo;
-import ${basePackage}.AmplifierGuide;<#if symbolSet.amplifierPresent>
-import ${iconPackage}.amplifier.${symbolSet.amplifierClass};</#if><#if symbolSet.amplifierThreePresent>
-import ${iconPackage}.amplifier.${symbolSet.amplifierThreeClass};</#if><#if symbolSet.amplifierTwoPresent>
-import ${iconPackage}.amplifier.${symbolSet.amplifierTwoClass};</#if><#if symbolSet.frameAmplifierPresent>
-import ${iconPackage}.amplifier.${symbolSet.frameAmplifierClass};</#if>
+<#assign amplifierClasses = []>
+<#if symbolSet.amplifierPresent><#assign amplifierClasses = amplifierClasses + [symbolSet.amplifierClass]></#if>
+<#if symbolSet.amplifierTwoPresent><#assign amplifierClasses = amplifierClasses + [symbolSet.amplifierTwoClass]></#if>
+<#if symbolSet.amplifierThreePresent><#assign amplifierClasses = amplifierClasses + [symbolSet.amplifierThreeClass]></#if>
+<#if symbolSet.frameAmplifierPresent><#assign amplifierClasses = amplifierClasses + [symbolSet.frameAmplifierClass]></#if>
+<#list amplifierClasses?sort as amplifierClass>
+import ${iconPackage}.amplifier.${amplifierClass};
+</#list>
 
 public class ${symbolSet.baseTypeName}SymbolSet implements SymbolSetInfo {
     public static final SymbolSetInfo INSTANCE = new ${symbolSet.baseTypeName}SymbolSet();

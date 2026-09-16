@@ -30,7 +30,7 @@ public enum ${symbolSet.baseTypeName}AmplifierGuide implements AmplifierGuide {
     public AmplifierEnum getAmplifier() {
         return amplifier;
     }
-    
+
     @Override
     public String getCode() {
         return name();
@@ -38,7 +38,8 @@ public enum ${symbolSet.baseTypeName}AmplifierGuide implements AmplifierGuide {
 
     @Override
     public double getHeight() {
-        return shape.getLayoutBounds().getHeight();
+        return shape.getLayoutBounds()
+            .getHeight();
     }
 
     public double[] getPoints() {
@@ -55,17 +56,20 @@ public enum ${symbolSet.baseTypeName}AmplifierGuide implements AmplifierGuide {
 
     @Override
     public double getWidth() {
-        return shape.getLayoutBounds().getWidth();
+        return shape.getLayoutBounds()
+            .getWidth();
     }
 
     @Override
     public double getX() {
-        return shape.getLayoutBounds().getMinX();
+        return shape.getLayoutBounds()
+            .getMinX();
     }
 
     @Override
     public double getY() {
-        return shape.getLayoutBounds().getMinY();
+        return shape.getLayoutBounds()
+            .getMinY();
     }
 
     private Shape createShape() {

@@ -9,8 +9,8 @@ import ${basePackage}.Entity;
 import ${basePackage}.EntityType;
 </#if>
 import ${basePackage}.SymbolSet;
-import ${typePackage}.GraphicType;
 import ${iconPackage}.SymbolSetEnum;
+import ${typePackage}.GraphicType;
 
 public enum ${symbolSet.baseTypeName}Entity implements Entity {
 <#list symbolSet.entities as ent>

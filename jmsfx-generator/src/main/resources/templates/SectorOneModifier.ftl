@@ -2,8 +2,8 @@ package ${iconPackage}.${symbolSet.packageName};
 
 import ${basePackage}.SectorOneModifier;
 import ${basePackage}.SymbolSet;
-import ${typePackage}.ModifierCategory;
 import ${iconPackage}.SymbolSetEnum;
+import ${typePackage}.ModifierCategory;
 
 public enum ${symbolSet.baseTypeName}SectorOneModifier implements SectorOneModifier {
 <#list symbolSet.sectorOneMods as mod>

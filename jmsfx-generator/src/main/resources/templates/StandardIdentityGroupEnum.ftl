@@ -33,7 +33,10 @@ public enum StandardIdentityGroupEnum implements StandardIdentityGroup {
 
     @Override
     public List<StandardIdentity> getIdentities() {
-        return Arrays.stream(StandardIdentityEnum.values()).filter(this::owns).map(StandardIdentity.class::cast).toList();
+        return Arrays.stream(StandardIdentityEnum.values())
+            .filter(this::owns)
+            .map(StandardIdentity.class::cast)
+            .toList();
     }
 
     @Override

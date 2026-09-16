@@ -4,8 +4,8 @@ import org.apache.commons.lang3.StringUtils;
 
 import ${basePackage}.SectorOneModifier;
 import ${basePackage}.SymbolSet;
-import ${typePackage}.ModifierCategory;
 import ${iconPackage}.SymbolSetEnum;
+import ${typePackage}.ModifierCategory;
 
 public enum CommonSectorOneModifier implements SectorOneModifier {
 <#list symbolSet.sectorOneMods as mod>

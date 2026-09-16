@@ -4,8 +4,8 @@ import org.apache.commons.lang3.StringUtils;
 
 import ${basePackage}.SectorTwoModifier;
 import ${basePackage}.SymbolSet;
-import ${typePackage}.ModifierCategory;
 import ${iconPackage}.SymbolSetEnum;
+import ${typePackage}.ModifierCategory;
 
 public enum CommonSectorTwoModifier implements SectorTwoModifier {
 <#list symbolSet.sectorTwoMods as mod>

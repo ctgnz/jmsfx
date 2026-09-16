@@ -73,7 +73,8 @@ public class ${libraryPrefix}IconLibrary implements IconLibrary {
 
     @Override
     public ObservableList<CountryCode> getCountryCodes() {
-        return FXCollections.observableArrayList(Stream.concat(Stream.of(CountryCode.UNDEFINED), Stream.of(${countryCodeClass}.values())).toList());
+        return FXCollections.observableArrayList(Stream.concat(Stream.of(CountryCode.UNDEFINED), Stream.of(${countryCodeClass}.values()))
+            .toList());
     }
 
     @Override
