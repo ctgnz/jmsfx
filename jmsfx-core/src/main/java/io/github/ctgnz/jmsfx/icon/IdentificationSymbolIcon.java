@@ -30,6 +30,7 @@ public class IdentificationSymbolIcon extends Pane {
     protected IdentificationSymbolIcon(IdentificationSymbol symbol) {
         this.symbol = symbol;
         getChildren().add(container);
+        fillBackground.addListener((obs, oldValue, newValue) -> updateIcon());
         symbol.scaleProperty()
             .addListener((obs, oldValue, newValue) -> updateScale(newValue));
         symbol.codeProperty()

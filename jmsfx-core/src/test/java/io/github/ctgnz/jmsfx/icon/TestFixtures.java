@@ -5,6 +5,9 @@ import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.Group;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 import nz.co.ctg.foxglove.SvgGraphic;
@@ -91,6 +94,23 @@ final class TestFixtures {
 
     static FakeVersion version(String id, String label) {
         return new FakeVersion(id, label);
+    }
+
+    /**
+     * An {@link SvgGraphic} whose {@code createGroup()} is overridden to return a fixed {@link Group} containing a single filled {@link Rectangle} -
+     * {@code SvgGraphic.createGroup()} isn't final, so this sidesteps needing to build a real SVG element tree just to give {@code IdentificationSymbolIcon}'s fill-replacement
+     * logic a real {@link javafx.scene.shape.Shape} to act on.
+     */
+    static SvgGraphic svgGraphicWithFilledRectangle(Color initialFill) {
+        Rectangle rectangle = new Rectangle(10, 10);
+        rectangle.setFill(initialFill);
+        Group group = new Group(rectangle);
+        return new SvgGraphic() {
+            @Override
+            public Group createGroup() {
+                return group;
+            }
+        };
     }
 
     static class FakeAmplifier implements Amplifier {
@@ -432,13 +452,18 @@ final class TestFixtures {
         private EntitySubType defaultEntitySubType;
         private EntityType defaultEntityType;
         private HqtfDummy defaultHqtfDummy = unknownHqtfDummy();
-        private SectorOneModifier defaultSectorOneModifier;
-        private SectorTwoModifier defaultSectorTwoModifier;
+        // Real IconLibrary implementations never return null here - every isXxxUsed() predicate in
+        // IdentificationSymbol/IdentificationSymbolIcon relies on always getting a real (possibly "unknown")
+        // instance back, not null. The modifier's own symbolSet reference is never read by isUnknown(), so null is
+        // fine there.
+        private SectorOneModifier defaultSectorOneModifier = unknownSectorOneModifier(null);
+        private SectorTwoModifier defaultSectorTwoModifier = unknownSectorTwoModifier(null);
         private StandardIdentity defaultStandardIdentity = standardIdentity("1", "Friend", true);
         private Status defaultStatus = status("0", "Present", true, false);
         private SymbolSet defaultSymbolSet = symbolSet("10", "Land Unit", GeometryType.POINT_GEOMETRY);
         private Version defaultVersion = version("00", "Current");
         private CountryCode extensionCountryCode = CountryCode.UNDEFINED;
+        private SvgGraphic frameGraphic = new SvgGraphic();
 
         @Override
         public ObservableList<Amplifier> getAmplifiers() {
@@ -577,7 +602,7 @@ final class TestFixtures {
 
         @Override
         public SvgGraphic loadFrameGraphic(SymbolSet symbolSet, StandardIdentity identity, Status status, boolean civilianEntity) {
-            return new SvgGraphic();
+            return frameGraphic;
         }
 
         @Override
@@ -652,6 +677,11 @@ final class TestFixtures {
 
         FakeIconLibrary withDefaultSymbolSet(SymbolSet value) {
             this.defaultSymbolSet = value;
+            return this;
+        }
+
+        FakeIconLibrary withFrameGraphic(SvgGraphic value) {
+            this.frameGraphic = value;
             return this;
         }
     }
