@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.ctgnz</groupId>
 	<artifactId>jmsfx</artifactId>
-	<version>1.1.7-SNAPSHOT</version>
+	<version>1.2.0-SNAPSHOT</version>
 	<name>JMSFX - Joint Military Symbology on JavaFX</name>
 	<packaging>pom</packaging>
     <url>https://www.ctg.co.nz/jsmfx</url>
@@ -38,13 +38,16 @@
     </distributionManagement>
     
 	<modules>
+		<module>jmsfx-core</module>
 		<module>jmsfx-generator</module>
 		<module>jmsfx-standard</module>
+		<module>jmsfx-editor</module>
+		<module>jmsfx-creator</module>
 		<module>jmsfx-server</module>
 	</modules>
 	
 	<properties>
-        <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
     <profiles>
@@ -100,6 +103,33 @@
                     <artifactId>maven-source-plugin</artifactId>
                     <version>3.3.0</version>
                 </plugin>
+                <!-- Tells m2e to skip Spotless during its own incremental/full builds, rather than fail with
+                     "Plugin execution not covered by lifecycle configuration" - `mvn` from the command line still
+                     runs it normally, since pluginManagement doesn't affect that. -->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>com.diffplug.spotless</groupId>
+                                        <artifactId>spotless-maven-plugin</artifactId>
+                                        <versionRange>[2.44.5,)</versionRange>
+                                        <goals>
+                                            <goal>check</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore/>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -108,10 +138,39 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <source>21</source>
-                    <target>21</target>
-                    <encoding>ISO-8859-1</encoding>
+                    <source>25</source>
+                    <target>25</target>
+                    <encoding>UTF-8</encoding>
+                    <compilerArgs>
+                        <arg>-Xlint:all</arg>
+                        <arg>-Werror</arg>
+                    </compilerArgs>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>2.44.5</version>
+                <configuration>
+                    <java>
+                        <importOrder>
+                            <file>${maven.multiModuleProjectDirectory}/config/eclipse.importorder</file>
+                        </importOrder>
+                        <removeUnusedImports/>
+                        <eclipse>
+                            <file>${maven.multiModuleProjectDirectory}/config/eclipse-formatter.xml</file>
+                        </eclipse>
+                        <trimTrailingWhitespace/>
+                    </java>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
 	</build>

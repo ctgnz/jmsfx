@@ -1,25 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Version_1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
+
+<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve" sodipodi:docname="60130400.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs28" /><sodipodi:namedview id="namedview26" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="1.1123737" inkscape:cx="180.69467" inkscape:cy="396.44949" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="Version_1.0" />
 <g id="octagon" display="none">
 	
-		<line id="mod2_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="445.015" x2="406.199" y2="445.295"/>
+		<line id="mod2_1_" display="inline" fill="none" stroke="#0000ff" stroke-width="2" x1="203.966" y1="445.01501" x2="406.19901" y2="445.29501" />
 	
-		<line id="mod1_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="346.985" x2="406.199" y2="346.705"/>
+		<line id="mod1_1_" display="inline" fill="none" stroke="#0000ff" stroke-width="2" x1="203.966" y1="346.98499" x2="406.19901" y2="346.70499" />
 	<g id="outFrame" display="inline">
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="220" y1="309.5" x2="306" y2="273"/>
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="306" y1="273" x2="390.5" y2="309.5"/>
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" y1="309.5" x2="427" y2="396"/>
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="427" y1="396" x2="390.5" y2="482.5"/>
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" y1="482.5" x2="306" y2="516"/>
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="306" y1="516" x2="220" y2="482.5"/>
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="220" y1="482.5" x2="183" y2="396"/>
-		<line fill="none" stroke="#0000FF" stroke-width="2" x1="183" y1="396" x2="220" y2="309.5"/>
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="220" y1="309.5" x2="306" y2="273" id="line4" />
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="306" y1="273" x2="390.5" y2="309.5" id="line6" />
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="390.5" y1="309.5" x2="427" y2="396" id="line8" />
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="427" y1="396" x2="390.5" y2="482.5" id="line10" />
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="390.5" y1="482.5" x2="306" y2="516" id="line12" />
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="306" y1="516" x2="220" y2="482.5" id="line14" />
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="220" y1="482.5" x2="183" y2="396" id="line16" />
+		<line fill="none" stroke="#0000ff" stroke-width="2" x1="183" y1="396" x2="220" y2="309.5" id="line18" />
 	</g>
 </g>
-<g id="main" opacity="0.9">
-	<text transform="matrix(1 0 0 1 214 436.25)" font-family="sans-serif" font-size="110">IMP</text>
+<g id="main" opacity="0.9" transform="translate(-11.398945,-1.7565682)">
+	<text transform="translate(214,436.25)" font-family="sans-serif" font-size="110px" id="text22">INS</text>
 </g>
 </svg>

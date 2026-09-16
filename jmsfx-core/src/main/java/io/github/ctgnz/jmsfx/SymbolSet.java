@@ -1,0 +1,47 @@
+package io.github.ctgnz.jmsfx;
+
+import java.util.List;
+
+import io.github.ctgnz.jmsfx.types.GeometryType;
+
+public interface SymbolSet extends CodeElement {
+
+    AmplifierGuide getAmplifierGuide(Amplifier amplifier);
+
+    List<AmplifierGuide> getAmplifierGuides();
+
+    List<StandardAmplifierItem> getAmplifierList();
+
+    List<StandardAmplifierItem> getAmplifierListThree();
+
+    List<StandardAmplifierItem> getAmplifierListTwo();
+
+    Dimension getDimension();
+
+    default String getDimensionId() {
+        return getDimension().getId();
+    }
+
+    List<Entity> getEntities();
+
+    List<StandardAmplifierItem> getFrameAmplifierList();
+
+    String getFrameId();
+
+    default String getFrameLocation(StandardIdentity identity, Status status, boolean civilianEntity) {
+        return String.format("/svg/Frames/0_%s%s_%s%s.svg", identity.getId(), getFrameId(), status.getFrameId(identity), civilianEntity ? "c" : "");
+    }
+
+    String getGraphicLocation();
+
+    List<SectorOneModifier> getSectorOneModifiers();
+
+    List<SectorTwoModifier> getSectorTwoModifiers();
+
+    SymbolSetInfo getSymbolSetInfo();
+
+    default boolean isPointGeometry() {
+        return getDimension().getGeometryType() == GeometryType.POINT_GEOMETRY;
+    }
+
+}

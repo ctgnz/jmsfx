@@ -6,7 +6,7 @@
 	<parent>
         <groupId>io.github.ctgnz</groupId>
         <artifactId>jmsfx</artifactId>
-        <version>1.1.7-SNAPSHOT</version>
+        <version>1.2.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>        
     </parent>
 
@@ -28,12 +28,17 @@
 	    <dependency>
 	        <groupId>io.github.ctgnz</groupId>
 	        <artifactId>jmsfx-standard</artifactId>
-	        <version>1.1.7-SNAPSHOT</version>
+	        <version>1.2.0-SNAPSHOT</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>io.github.ctgnz</groupId>
+	        <artifactId>jmsfx-editor</artifactId>
+	        <version>1.2.0-SNAPSHOT</version>
 	    </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>21.0.4</version>
+            <version>25.0.3</version>
         </dependency>
         <dependency>
           <groupId>org.springframework.boot</groupId>
@@ -43,12 +48,12 @@
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>4.0.0</version>
+            <version>4.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
-            <version>4.0.0</version>
+            <version>4.0.3</version>
         </dependency>
 	</dependencies>
 	

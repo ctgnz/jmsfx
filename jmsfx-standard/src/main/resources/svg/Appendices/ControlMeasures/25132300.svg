@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00">
+   <svg:defs id="defs14520" font-style="normal"/>
+   <svg:g id="main" style="stroke:#800080;stroke-opacity:1" font-style="normal">
+      <svg:circle id="path14691" cx="306.55164" cy="213.05789" r="95.291718" style="fill:#ffffff;fill-rule:evenodd;stroke:#800080;stroke-width:12;stroke-dasharray:none;stroke-opacity:1" font-style="normal"/>
+      <svg:text id="text14498" x="272.94226" y="230.48367" dx="0.0" dy="0.0" style="fill:#800080;fill-opacity:1;stroke:#800080;stroke-opacity:1" font-family="sans-serif" font-size="48px" font-style="normal">VG</svg:text>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal">
+      <svg:g id="g14505" style="stroke:#800080;stroke-opacity:1" display="inline" font-style="normal" transform="translate(118.50967,101.93397)">
+         <svg:rect id="rect14501" rx="0.0" ry="0.0" x="277.47711" y="173.46121" width="59.327679" height="67.658455" style="stroke:#0000FF;stroke-opacity:1" fill="none" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="2.11156" font-style="normal"/>
+         <svg:text id="text14503" x="287.60287" y="226.19376" dx="0.0" dy="0.0" style="fill:#0000FF;fill-opacity:1;stroke:#0000FF;stroke-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="52px" font-style="normal">H</svg:text>
+      </svg:g>
+      <svg:g id="points" display="inline" font-style="normal">
+         <svg:text id="text14507" x="246.24588" y="82.75988" dx="0.0" dy="0.0" style="fill:#0000FF;fill-opacity:1;stroke:#0000FF;stroke-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="32.3352px" font-style="normal">POINT</svg:text>
+         <svg:text id="text14509" x="246.24588" y="44.20718" dx="0.0" dy="0.0" style="fill:#0000FF;fill-opacity:1;stroke:#0000FF;stroke-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="32.3352px" font-style="normal">CENTRE</svg:text>
+         <svg:g id="path15091" font-style="normal">
+            <svg:g id="g17660" font-style="normal" transform="matrix(1,0,0,-1,0,421.83984)">
+               <svg:g id="path17662" font-style="normal">
+                  <svg:path id="path17668" d="m 304.717,218.83984 v 116.42578 h -3.0002 V 218.83984 l -7.73438,0.0664 8.36914,-14.47461 0.86524,-1.49805 9.2322,15.97226" style="color:#0000FF;fill:#0000FF;fill-rule:evenodd;-inkscape-stroke:none" fill="#0000FF" font-style="normal"/>
+               </svg:g>
+            </svg:g>
+         </svg:g>
+      </svg:g>
+   </svg:g>
+   <svg:g id="example" display="none" font-style="normal">
+      <svg:text id="varTe" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="52" font-style="normal" transform="matrix(1 0 0 1 292.1245 226.1787)">9</svg:text>
+   </svg:g>
+</svg:svg>

@@ -7,7 +7,7 @@
     <parent>
         <groupId>io.github.ctgnz</groupId>
         <artifactId>jmsfx</artifactId>
-        <version>1.1.7-SNAPSHOT</version>
+        <version>1.2.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>        
     </parent>
 
@@ -15,7 +15,12 @@
         <dependency>
             <groupId>io.github.ctgnz</groupId>
             <artifactId>foxglove</artifactId>
-            <version>0.9.6-SNAPSHOT</version>
+            <version>0.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.ctgnz</groupId>
+            <artifactId>jmsfx-core</artifactId>
+            <version>1.2.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.neovisionaries</groupId>
@@ -45,12 +50,12 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>21.0.4</version>
+            <version>25.0.3</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-swing</artifactId>
-            <version>21.0.4</version>
+            <version>25.0.3</version>
         </dependency>
         <dependency>
             <groupId>org.dom4j</groupId>
@@ -61,27 +66,6 @@
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
             <version>4.0.3</version>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13</version>
-            <scope>test</scope>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest</artifactId>
-            <version>2.2</version>
-            <scope>test</scope>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
-            <version>2.0.2-beta</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -109,24 +93,6 @@
                     <subpackages>nz.co.ctg.jmsfx.icon</subpackages>
                 </configuration>
             </plugin>
-        	<plugin>
-	            <groupId>org.codehaus.mojo</groupId>
-	            <artifactId>build-helper-maven-plugin</artifactId>
-	            <version>3.2.0</version>
-	            <executions>
-	                <execution>
-	                    <phase>generate-sources</phase>
-	                    <goals>
-	                        <goal>add-source</goal>
-	                    </goals>
-	                    <configuration>
-	                        <sources>
-	                            <source>src/main/generated</source>
-	                        </sources>
-	                    </configuration>
-	                </execution>
-	            </executions>
-	        </plugin>
         </plugins>
     </build>
 

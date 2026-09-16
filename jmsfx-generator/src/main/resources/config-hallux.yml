@@ -1,0 +1,6 @@
+modelFilePath: "/model-hallux.yml"
+outputDir: "D:/git/hallux/jmsfx-hallux/src/main/java"
+iconPackage: "nz.co.ctg.hallux.jmsfx"
+commonPackage: "nz.co.ctg.hallux.jmsfx.common"
+amplifierPackage: "nz.co.ctg.hallux.jmsfx.amplifier"
+libraryPrefix: "Hallux"

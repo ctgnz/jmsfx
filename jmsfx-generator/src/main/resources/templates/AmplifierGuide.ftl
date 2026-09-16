@@ -1,44 +1,85 @@
-package ${basePackage};
+package ${iconPackage}.${symbolSet.packageName};
 
-public class AmplifierGuide {
-    private final String code;
-    private final Amplifier amplifier;
-    private final int x;
-    private final int y;
-    private final int width;
-    private final int height;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Polygon;
+import javafx.scene.shape.Polyline;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
 
-    public AmplifierGuide(String code, Amplifier amplifier, int x, int y, int width, int height) {
-        this.code = code;
+import ${basePackage}.AmplifierGuide;
+import ${iconPackage}.AmplifierEnum;
+import ${typePackage}.GuideType;
+
+public enum ${symbolSet.baseTypeName}AmplifierGuide implements AmplifierGuide {
+<#list symbolSet.amplifierGuides as guide>
+        <#if guide.graphical>${guide.code}(AmplifierEnum.${guide.amplifier}, GuideType.${guide.type}<#list guide.points as pt>, ${pt}</#list>)<#else>${guide.code}(AmplifierEnum.${guide.amplifier}, GuideType.${guide.type})</#if><#sep>,
+</#list>;
+
+    private final AmplifierEnum amplifier;
+    private final GuideType type;
+    private final double[] points;
+    private final Shape shape;
+
+    ${symbolSet.baseTypeName}AmplifierGuide(AmplifierEnum amplifier, GuideType type, double... points) {
         this.amplifier = amplifier;
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
+        this.type = type;
+        this.points = points;
+        this.shape = createShape();
     }
 
-    public Amplifier getAmplifier() {
+    public AmplifierEnum getAmplifier() {
         return amplifier;
     }
 
+    @Override
     public String getCode() {
-        return code;
+        return name();
     }
 
-    public int getHeight() {
-        return height;
+    @Override
+    public double getHeight() {
+        return shape.getLayoutBounds()
+            .getHeight();
     }
 
-    public int getWidth() {
-        return width;
+    public double[] getPoints() {
+        return points;
     }
 
-    public int getX() {
-        return x;
+    public Shape getShape() {
+        return shape;
     }
 
-    public int getY() {
-        return y;
+    public GuideType getType() {
+        return type;
+    }
+
+    @Override
+    public double getWidth() {
+        return shape.getLayoutBounds()
+            .getWidth();
+    }
+
+    @Override
+    public double getX() {
+        return shape.getLayoutBounds()
+            .getMinX();
+    }
+
+    @Override
+    public double getY() {
+        return shape.getLayoutBounds()
+            .getMinY();
+    }
+
+    private Shape createShape() {
+        return switch (type) {
+            case LINE -> new Line(points[0], points[1], points[2], points[3]);
+            case POLYLINE -> new Polyline(points);
+            case POLYGON -> new Polygon(points);
+            case RECTANGLE -> new Rectangle(points[0], points[1], points[2], points[3]);
+            default -> new Rectangle(0, 0, 0, 0);
+        };
     }
 
 }

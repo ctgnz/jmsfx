@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Version_1.0" x="0px" y="0px" width="612px" height="792px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve" sodipodi:docname="0_660_1.svg" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs1507" /><sodipodi:namedview id="namedview1505" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="1.1123737" inkscape:cx="183.3916" inkscape:cy="396.44949" inkscape:window-width="1920" inkscape:window-height="1009" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="Version_1.0" />
+<g id="frame">
+	<g id="g1501">
+		<polyline fill="#FF8080" points="306,568 479,395 306,222 133,395 306,568   " id="polyline1479" />
+		<g id="g1499">
+			<line fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" x1="306" y1="568" x2="314.839" y2="559.161" id="line1481" />
+			
+				<line fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" stroke-dasharray="25.5417,15.325" x1="325.675" y1="548.325" x2="464.743" y2="409.257" id="line1483" />
+			<polyline fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" points="470.161,403.839 479,395      470.161,386.161    " id="polyline1485" />
+			
+				<line fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" stroke-dasharray="25.5417,15.325" x1="459.325" y1="375.325" x2="320.257" y2="236.257" id="line1487" />
+			<polyline fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" points="314.839,230.839 306,222      297.161,230.839    " id="polyline1489" />
+			
+				<line fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" stroke-dasharray="25.5417,15.325" x1="286.325" y1="241.675" x2="147.257" y2="380.743" id="line1491" />
+			<polyline fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" points="141.839,386.161 133,395      141.839,403.839    " id="polyline1493" />
+			
+				<line fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" stroke-dasharray="25.5417,15.325" x1="152.675" y1="414.675" x2="291.743" y2="553.743" id="line1495" />
+			<line fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" x1="297.161" y1="559.161" x2="306" y2="568" id="line1497" />
+		</g>
+	</g><path id="polyline2741" d="M 425.2168 341.2168 L 425.2168 448.7832 L 479 395 L 425.2168 341.2168 z " />
+</g>
+</svg>

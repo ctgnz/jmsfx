@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00">
+   <svg:defs id="defs37" font-style="normal"/>
+   <svg:g id="main" font-style="normal">
+      <svg:g id="g12" font-style="normal">
+         <svg:line id="line2" x1="264.25" y1="288.973" x2="344.25" y2="288.973" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+         <svg:line id="line4" x1="304.25" y1="288.973" x2="304.25" y2="203.973" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+         <svg:line id="line6" x1="304.25" y1="203.973" x2="354.25" y2="153.973" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+         <svg:line id="line8" x1="304.25" y1="203.973" x2="254.25" y2="153.973" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
+         <svg:circle id="circle10" cx="304.25" cy="158.973" r="25.0" stroke="#000000" font-style="normal"/>
+      </svg:g>
+   </svg:g>
+   <svg:g id="template" display="inline" font-style="normal" transform="translate(4.4948922,-189.68445)">
+      <svg:g id="g25" display="inline" font-style="normal" transform="translate(140,140)">
+         <svg:text id="text21" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" transform="translate(244.25,208.9727)">ANCHOR</svg:text>
+         <svg:text id="text23" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" transform="translate(256.25,233.9727)">POINT</svg:text>
+      </svg:g>
+      <svg:g id="g31" display="inline" font-style="normal">
+         <svg:polyline id="polyline27" points="392.250000,362.473000 363.250000,397.473000 315.250000,397.473000" fill="none" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+         <svg:polygon id="polygon29" points="310.250000,397.473000 324.250000,389.473000 324.250000,405.473000" fill="#FFFFFF" stroke="#0000FF" stroke-width="3.0" font-style="normal"/>
+      </svg:g>
+      <svg:g id="g1045" font-style="normal" transform="translate(107.42792,132.59932)">
+         <svg:rect id="rect486" rx="0.0" ry="0.0" x="172.4198" y="132.86476" width="41.721127" height="43.519085" style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" font-style="normal"/>
+         <svg:text id="text374" xml:space="preserve" x="179.754" y="167.71121" dx="0.0" dy="0.0" style="font-style:normal;font-weight:normal;font-size:36px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" fill="#0000FF" font-style="normal">
+            <svg:tspan id="tspan372" x="179.754" y="167.71121" font-style="normal">H</svg:tspan>
+         </svg:text>
+      </svg:g>
+      <svg:g id="g1065" font-style="normal" transform="translate(38.206583,163.61408)">
+         <svg:rect id="rect1051" rx="0.0" ry="0.0" x="145.18501" y="170.35641" width="43.150967" height="37.307606" style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" font-style="normal"/>
+         <svg:text id="text428" xml:space="preserve" x="154.89526" y="197.73483" dx="0.0" dy="0.0" style="font-style:normal;font-weight:normal;font-size:24px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" fill="#0000FF" font-style="normal">
+            <svg:tspan id="tspan426" x="154.89526" y="197.73483" font-style="normal">W  -</svg:tspan>
+         </svg:text>
+      </svg:g>
+      <svg:g id="g1060" font-style="normal" transform="translate(35.060159,146.28605)">
+         <svg:rect id="rect1055" rx="0.0" ry="0.0" x="148.41229" y="227.07291" width="50.630569" height="37.145893" style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:2.16171;stroke-dasharray:none;stroke-opacity:1" font-style="normal"/>
+         <svg:text id="text432" xml:space="preserve" x="154.97171" y="254.39977" dx="0.0" dy="0.0" style="font-style:normal;font-weight:normal;font-size:24px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" fill="#0000FF" font-style="normal">
+            <svg:tspan id="tspan430" x="154.97171" y="254.39977" font-style="normal">W1</svg:tspan>
+         </svg:text>
+      </svg:g>
+   </svg:g>
+</svg:svg>
