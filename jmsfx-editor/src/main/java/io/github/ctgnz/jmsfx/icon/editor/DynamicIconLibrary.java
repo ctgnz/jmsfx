@@ -1,11 +1,10 @@
 package io.github.ctgnz.jmsfx.icon.editor;
 
+import java.util.Objects;
 import java.util.Optional;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-import org.apache.commons.lang3.StringUtils;
 
 import com.google.common.collect.Lists;
 
@@ -72,7 +71,7 @@ public class DynamicIconLibrary implements IconLibrary {
 
     public Optional<Amplifier> getAmplifier(String amplifierId) {
         return amplifiers.stream()
-            .filter(amp -> StringUtils.equals(amplifierId, amp.getId()))
+            .filter(amp -> Objects.equals(amplifierId, amp.getId()))
             .map(Amplifier.class::cast)
             .findFirst();
     }
@@ -205,7 +204,7 @@ public class DynamicIconLibrary implements IconLibrary {
 
     public Optional<SymbolSet> getSymbolSet(String symbolSetId) {
         return symbolSets.stream()
-            .filter(sym -> StringUtils.equals(symbolSetId, sym.getId()))
+            .filter(sym -> Objects.equals(symbolSetId, sym.getId()))
             .map(SymbolSet.class::cast)
             .findFirst();
     }

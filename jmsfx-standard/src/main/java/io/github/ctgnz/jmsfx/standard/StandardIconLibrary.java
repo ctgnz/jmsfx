@@ -1,11 +1,10 @@
 package io.github.ctgnz.jmsfx.standard;
 
+import java.util.Objects;
 import java.util.stream.Stream;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-import org.apache.commons.lang3.ObjectUtils;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
 import nz.co.ctg.foxglove.SvgGraphic;
@@ -258,7 +257,7 @@ public class StandardIconLibrary implements IconLibrary {
 
     @Override
     public void setExtensionCountryCode(CountryCode countryCode) {
-        this.extensionCountryCode = ObjectUtils.defaultIfNull(countryCode, CountryCode.UNDEFINED);
+        this.extensionCountryCode = Objects.requireNonNullElse(countryCode, CountryCode.UNDEFINED);
     }
 
 }

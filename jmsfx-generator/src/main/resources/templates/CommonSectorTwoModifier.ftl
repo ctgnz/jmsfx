@@ -1,7 +1,5 @@
 package ${commonPackage};
 
-import org.apache.commons.lang3.StringUtils;
-
 import ${basePackage}.SectorTwoModifier;
 import ${basePackage}.SymbolSet;
 import ${iconPackage}.SymbolSetEnum;
@@ -56,7 +54,7 @@ public enum CommonSectorTwoModifier implements SectorTwoModifier {
 
     @Override
     public boolean isUnknown() {
-        return StringUtils.equals("0", groupId) && StringUtils.equals("00", id);
+        return "0".equals(groupId) && "00".equals(id);
     }
 
 }

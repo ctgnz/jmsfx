@@ -38,7 +38,7 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>25.0.3</version>
+            <version>27</version>
         </dependency>
         <dependency>
           <groupId>org.springframework.boot</groupId>
@@ -48,12 +48,12 @@
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>4.0.2</version>
+            <version>4.0.5</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
-            <version>4.0.3</version>
+            <version>4.0.9</version>
         </dependency>
 	</dependencies>
 	
