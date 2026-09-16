@@ -141,6 +141,7 @@
                     <source>25</source>
                     <target>25</target>
                     <encoding>UTF-8</encoding>
+                    <parameters>true</parameters>
                     <compilerArgs>
                         <arg>-Xlint:all</arg>
                         <arg>-Werror</arg>

@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.ctgnz.jmsfx.icon.editor.SymbolSetImpl;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 @RestController
@@ -16,9 +15,9 @@ import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 public class IconGeneratorController {
 
     @GetMapping("/symbols")
-    public List<SymbolSetImpl> getSupportedSymbolSets() {
+    public List<SymbolSetSummary> getSupportedSymbolSets() {
         return Arrays.stream(SymbolSetEnum.values())
-            .map(SymbolSetImpl::new)
+            .map(SymbolSetSummary::of)
             .collect(Collectors.toList());
     }
 

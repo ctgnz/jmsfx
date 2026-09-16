@@ -1,12 +1,15 @@
 package io.github.ctgnz.jmsfx.server;
 
+import java.util.Arrays;
+
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.server.ResponseStatusException;
 
-import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.icon.editor.SymbolSetImpl;
+import io.github.ctgnz.jmsfx.server.icon.SymbolSetSummary;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 @Controller
@@ -34,10 +37,16 @@ public class WebController {
     }
 
     @GetMapping({
-        "/browse/{symbolSet}"
+        "/browse/{symbolSetId}"
     })
-    public String browseSymbolSet(@PathVariable SymbolSet symbolSet, Model model) {
-        model.addAttribute("symbolSet", new SymbolSetImpl((SymbolSetEnum) symbolSet));
+    public String browseSymbolSet(@PathVariable String symbolSetId, Model model) {
+        SymbolSetEnum symbolSet = Arrays.stream(SymbolSetEnum.values())
+            .filter(candidate -> candidate.getId()
+                .equals(symbolSetId))
+            .findFirst()
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Unknown symbol set: " + symbolSetId));
+        model.addAttribute("symbolSet", symbolSet);
+        model.addAttribute("symbolSetPath", SymbolSetSummary.pathFor(symbolSet));
         return "entity-list :: entities";
     }
 

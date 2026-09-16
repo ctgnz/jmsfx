@@ -17,28 +17,25 @@ import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
-import io.github.ctgnz.jmsfx.icon.editor.SymbolSetImpl;
 import io.github.ctgnz.jmsfx.standard.StandardIconLibrary;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public abstract class IconRestController<E extends Entity, T extends EntityType, S extends EntitySubType, M extends SectorOneModifier, N extends SectorTwoModifier, A extends AmplifierListItem> {
-    private SymbolSetEnum symbolSet;
-    private FoxgloveParser parser = new FoxgloveParser();
-    private SymbolSetImpl dto;
+    private final SymbolSetEnum symbolSet;
+    private final FoxgloveParser parser = new FoxgloveParser();
 
     public IconRestController(SymbolSetEnum symbolSet) {
         this.symbolSet = symbolSet;
-        this.dto = new SymbolSetImpl(symbolSet);
     }
 
     @GetMapping("/modifier/one")
     public List<SectorOneModifier> listSectorOneModifiers() {
-        return dto.getSectorOneModifiers();
+        return symbolSet.getSectorOneModifiers();
     }
 
     @GetMapping("/modifier/two")
     public List<SectorTwoModifier> listSectorTwoModifiers() {
-        return dto.getSectorTwoModifiers();
+        return symbolSet.getSectorTwoModifiers();
     }
 
     @GetMapping("/amplifier")
@@ -48,7 +45,7 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
 
     @GetMapping("/entity/list")
     public List<Entity> listEntities() {
-        return dto.getEntities();
+        return symbolSet.getEntities();
     }
 
     @GetMapping(value = "/symbol/modifier/one/{sectorOneMod}", produces = "image/svg+xml")
