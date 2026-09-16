@@ -19,10 +19,11 @@ import io.github.ctgnz.jmsfx.generator.model.SymbolSetModel;
 import io.github.ctgnz.jmsfx.generator.model.VersionModel;
 
 /**
- * Tests against the real {@code config.yml}/{@code model-standard.yml} (jmsfx-generator's own {@code src/main/resources}, on the test classpath) rather than a hand-built fixture -
- * several model classes map YAML through nested {@code @JsonGetter("details")}/{@code @JsonSetter("config")} records (e.g. {@link SymbolSetModel}) while others rely on plain bean
- * properties, and exercising the real, already-working configuration against real production data is a more reliable check of that mapping than guessing at a synthetic fixture's
- * shape.
+ * The {@link LibraryModel} tests read the real {@code model-standard.yml} (jmsfx-generator's own {@code src/main/resources}, on the test classpath) rather than a hand-built
+ * fixture - several model classes map YAML through nested {@code @JsonGetter("details")}/{@code @JsonSetter("config")} records (e.g. {@link SymbolSetModel}) while others rely on
+ * plain bean properties, and exercising the real, already-working configuration against real production data is a more reliable check of that mapping than guessing at a synthetic
+ * fixture's shape. The {@link GeneratorConfig} test uses its own small fixture instead, since the real {@code config.yml}'s {@code outputDir} is a hardcoded absolute Windows path
+ * - not portable to read on other platforms.
  */
 class JmsfxParserTest {
 
@@ -34,14 +35,23 @@ class JmsfxParserTest {
     }
 
     @Test
-    void testReadConfigParsesTheRealConfigFile() throws IOException {
-        GeneratorConfig config;
-        try (InputStream input = getClass().getResourceAsStream("/config.yml")) {
-            config = candidate.readConfig(input);
-        }
+    void testReadConfigParsesEachField() throws IOException {
+        // Not read from the real config.yml here: its outputDir is a hardcoded absolute Windows path, which
+        // isn't portable to parse into a Path on other platforms (including CI). A relative path exercises the
+        // same field mapping without that portability problem.
+        String yaml = """
+                        modelFilePath: "/model-standard.yml"
+                        outputDir: "build/generated-sources"
+                        iconPackage: "io.github.ctgnz.jmsfx.standard"
+                        commonPackage: "io.github.ctgnz.jmsfx.standard.common"
+                        amplifierPackage: "io.github.ctgnz.jmsfx.standard.amplifier"
+                        libraryPrefix: "Standard"
+                        """;
+
+        GeneratorConfig config = candidate.readConfig(new ByteArrayInputStream(yaml.getBytes(StandardCharsets.UTF_8)));
 
         assertThat(config.getModelFilePath(), is("/model-standard.yml"));
-        assertThat(config.getOutputDir(), is(Path.of("D:/git/jmsfx/jmsfx-standard/src/main/java")));
+        assertThat(config.getOutputDir(), is(Path.of("build/generated-sources")));
         assertThat(config.getIconPackage(), is("io.github.ctgnz.jmsfx.standard"));
         assertThat(config.getCommonPackage(), is("io.github.ctgnz.jmsfx.standard.common"));
         assertThat(config.getAmplifierPackage(), is("io.github.ctgnz.jmsfx.standard.amplifier"));
