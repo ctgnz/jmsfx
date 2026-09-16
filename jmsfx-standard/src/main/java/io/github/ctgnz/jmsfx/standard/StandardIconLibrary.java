@@ -1,6 +1,7 @@
 package io.github.ctgnz.jmsfx.standard;
 
 import java.util.stream.Stream;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

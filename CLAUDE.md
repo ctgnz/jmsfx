@@ -2,7 +2,7 @@
 
 JavaFX implementation of **NATO APP-6, Edition E (2023)** military symbology - not MIL-STD-2525D. They're related, converged NATO-vs-US standards but formally distinct; don't conflate them. The `edition-e` git branch name refers to APP-6 **Edition E**, not a generic feature branch. Now the **canonical fork** of the old Esri `joint-military-symbology-xml` (JMSML) project, which modelled MIL-STD-2525D specifically - that upstream repo is dead/abandoned; this one owns the schema/data lineage going forward, held in `jmsfx-standard`. Depends on `foxglove` (separate repo) for SVG-in-JavaFX rendering.
 
-Modules actually wired into the Maven reactor: `jmsfx-core`, `jmsfx-generator`, `jmsfx-standard`, `jmsfx-server`. `jmsfx-editor` and `jmsfx-creator` exist as directories but are **not** in the root POM's `<modules>` - see Known issues.
+Modules actually wired into the Maven reactor: `jmsfx-core`, `jmsfx-generator`, `jmsfx-standard`, `jmsfx-creator`, `jmsfx-server`. `jmsfx-editor` exists as a directory but is **not** in the root POM's `<modules>` - see Known issues.
 
 ## Domain background
 
@@ -36,4 +36,5 @@ Enum constants are **not** named `UPPER_SNAKE_CASE` by convention here - the aut
 
 ## Known issues
 
-- `jmsfx-server` doesn't build in the default reactor: it depends on `jmsfx-editor:1.1.8-SNAPSHOT`, but only `1.1.7-SNAPSHOT` is installed locally, and `jmsfx-editor`/`jmsfx-creator` aren't in the reactor's `<modules>` to produce a fresh one. Build `jmsfx-core`, `jmsfx-generator`, `jmsfx-standard` in isolation (`-pl jmsfx-core,jmsfx-generator,jmsfx-standard`) until this is sorted out.
+- `jmsfx-editor` is excluded from the reactor's `<modules>` because its model `Impl` classes (e.g. `StandardAmplifierImpl`, `AmplifierListImpl`) predate `jmsfx-core`'s generic-parameter cleanup (`f62ac24`, "Drop unused generic type parameters from SymbolSetInfo/SymbolSet") and no longer compile against it - e.g. `StandardAmplifierImpl.getItems()` casts an `ObservableList<StandardAmplifierItemImpl<A>>` to `List<A>`, which is now a hard compile error, not just an unchecked-cast warning, since `StandardAmplifierItemImpl` doesn't actually implement the bound `A` requires. Fixing this needs a real migration of `jmsfx-editor`'s generics to match the current core API, not a POM change.
+- Because of the above, `jmsfx-server` still doesn't build in the default reactor: it depends on `jmsfx-editor`, which the reactor can't produce. Build `jmsfx-core`, `jmsfx-generator`, `jmsfx-standard`, `jmsfx-creator` in isolation (`-pl jmsfx-core,jmsfx-generator,jmsfx-standard,jmsfx-creator`) until `jmsfx-editor` is migrated.

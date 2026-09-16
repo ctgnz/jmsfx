@@ -1,7 +1,8 @@
 package io.github.ctgnz.jmsfx.icon.creator;
 
-import io.github.ctgnz.jmsfx.CodeElement;
 import javafx.scene.control.ListCell;
+
+import io.github.ctgnz.jmsfx.CodeElement;
 
 public class CodeElementListCell<E extends CodeElement> extends ListCell<E> {
     @Override

@@ -6,6 +6,7 @@ import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
+
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
