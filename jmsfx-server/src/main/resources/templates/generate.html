@@ -33,7 +33,7 @@ $(document).ready(function () {
     		select.empty();
     		$.each(data, function(ix, entity) {
     			var opt = $('<option>', {
-    				value: entity.entity,
+    				value: entity.name,
     				text: entity.label
     			})
     			select.append(opt);
@@ -53,7 +53,7 @@ $(document).ready(function () {
     		}
     		$.each(data, function(ix, mod) {
     			var opt = $('<option>', {
-    				value: mod.modifier,
+    				value: mod.name,
     				text: mod.label
     			})
     			select.append(opt);
@@ -69,7 +69,7 @@ $(document).ready(function () {
     		}
     		$.each(data, function(ix, mod) {
     			var opt = $('<option>', {
-    				value: mod.modifier,
+    				value: mod.name,
     				text: mod.label
     			})
     			select.append(opt);
@@ -86,7 +86,7 @@ $(document).ready(function () {
     		}
     		$.each(data, function(ix, amp) {
     			var opt = $('<option>', {
-    				value: amp.amplifier,
+    				value: amp.name,
     				text: amp.label
     			})
     			select.append(opt);
@@ -109,7 +109,7 @@ $(document).ready(function () {
     		}
     		$.each(data, function(ix, entityType) {
     			var opt = $('<option>', {
-    				value: entityType.entityType,
+    				value: entityType.name,
     				text: entityType.label
     			})
     			select.append(opt);
@@ -137,7 +137,7 @@ $(document).ready(function () {
         		}
         		$.each(data, function(ix, entitySubType) {
         			var opt = $('<option>', {
-        				value: entitySubType.entitySubType,
+        				value: entitySubType.name,
         				text: entitySubType.label
         			})
         			select.append(opt);

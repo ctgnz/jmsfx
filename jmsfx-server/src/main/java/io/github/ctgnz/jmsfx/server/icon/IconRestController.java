@@ -1,6 +1,5 @@
 package io.github.ctgnz.jmsfx.server.icon;
 
-import java.util.Collections;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
 
-import io.github.ctgnz.jmsfx.AmplifierList;
 import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntitySubType;
@@ -29,23 +27,51 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
     }
 
     @GetMapping("/modifier/one")
-    public List<SectorOneModifier> listSectorOneModifiers() {
-        return symbolSet.getSectorOneModifiers();
+    public List<CodeElementSummary> listSectorOneModifiers() {
+        return symbolSet.getSectorOneModifiers()
+            .stream()
+            .map(CodeElementSummary::of)
+            .toList();
     }
 
     @GetMapping("/modifier/two")
-    public List<SectorTwoModifier> listSectorTwoModifiers() {
-        return symbolSet.getSectorTwoModifiers();
+    public List<CodeElementSummary> listSectorTwoModifiers() {
+        return symbolSet.getSectorTwoModifiers()
+            .stream()
+            .map(CodeElementSummary::of)
+            .toList();
     }
 
     @GetMapping("/amplifier")
-    public List<AmplifierList> listAmplifiers() {
-        return Collections.emptyList();
+    public List<CodeElementSummary> listAmplifiers() {
+        return symbolSet.getAmplifierList()
+            .stream()
+            .map(CodeElementSummary::of)
+            .toList();
     }
 
     @GetMapping("/entity/list")
-    public List<Entity> listEntities() {
-        return symbolSet.getEntities();
+    public List<CodeElementSummary> listEntities() {
+        return symbolSet.getEntities()
+            .stream()
+            .map(CodeElementSummary::of)
+            .toList();
+    }
+
+    @GetMapping("/entityType/{entity}/list")
+    public List<CodeElementSummary> listEntityTypes(@PathVariable E entity) {
+        return entity.getEntityTypes()
+            .stream()
+            .map(CodeElementSummary::of)
+            .toList();
+    }
+
+    @GetMapping("/entitySubType/{entityType}/list")
+    public List<CodeElementSummary> listEntitySubTypes(@PathVariable T entityType) {
+        return entityType.getEntitySubTypes()
+            .stream()
+            .map(CodeElementSummary::of)
+            .toList();
     }
 
     @GetMapping(value = "/symbol/modifier/one/{sectorOneMod}", produces = "image/svg+xml")
