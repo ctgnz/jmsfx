@@ -71,3 +71,50 @@ div.entity-subtype {
 	margin-top: 6px;
 	margin: 12 24 12 24px;
 }
+
+ul.tree-view,
+ul.tree-view ul {
+	list-style: none;
+	padding-left: 1.5rem;
+	margin-bottom: 0;
+}
+
+ul.tree-view {
+	padding-left: 0;
+}
+
+ul.tree-view summary {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+ul.tree-view summary::-webkit-details-marker {
+	display: none;
+}
+
+ul.tree-view summary::before {
+	content: "\25B8";
+	display: inline-block;
+	width: 1.5rem;
+	font-size: 1.75rem;
+	line-height: 1;
+	text-align: center;
+	transition: transform 0.15s ease-in-out;
+}
+
+ul.tree-view details[open] > summary::before {
+	transform: rotate(90deg);
+}
+
+ul.tree-view .tree-leaf {
+	display: flex;
+	align-items: center;
+}
+
+ul.tree-view .tree-leaf.has-spacer::before {
+	content: "";
+	display: inline-block;
+	width: 1.5rem;
+	flex-shrink: 0;
+}
