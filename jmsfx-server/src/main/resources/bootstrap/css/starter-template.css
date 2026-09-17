@@ -96,7 +96,9 @@ ul.tree-view summary::-webkit-details-marker {
 ul.tree-view summary::before {
 	content: "\25B8";
 	display: inline-block;
-	width: 1em;
+	width: 1.5rem;
+	font-size: 1.75rem;
+	line-height: 1;
 	text-align: center;
 	transition: transform 0.15s ease-in-out;
 }

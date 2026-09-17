@@ -62,61 +62,62 @@ $(document).ready(function() {
             </div>
             <div th:if="${symbolSet}" th:fragment="entities">
                 <h5 class="p-3" th:text="${symbolSet.label}">Symbol Set</h5>
-                <ul class="tree-view">
-                    <li th:each="entity : ${symbolSet.entities}">
-                        <details th:unless="${#lists.isEmpty(entity.entityTypes)}">
-                            <summary>
-                                <img class="jms-icon" th:attr="src='/' + ${symbolSetPath} + '/symbol/entity/'+${entity.name()},alt='Icon for entity ' + ${entity.label}" />
-                                <span class="entity" th:text="${entity.label}"></span>
-                            </summary>
-                            <ul>
-                                <li th:each="entityType : ${entity.entityTypes}">
-                                    <details th:unless="${#lists.isEmpty(entityType.entitySubTypes)}">
-                                        <summary>
-                                            <img class="jms-icon" th:attr="src='/' + ${symbolSetPath} + '/symbol/'+${entityType.name()},alt='Icon for entity type ' + ${entityType.label}" />
-                                            <span class="entity-type" th:text="${entityType.label}"></span>
-                                        </summary>
-                                        <ul>
-                                            <li th:each="entitySubType : ${entityType.entitySubTypes}" class="tree-leaf">
-                                                <img class="jms-icon" th:attr="src='/' + ${symbolSetPath} + '/symbol/'+${entityType.name()}+'/'+${entitySubType.name()},alt='Icon for ' + ${entitySubType.label}" />
-                                                <span th:text="${entitySubType.label}" class="entity-subtype">Entity Sub Type</span>
-                                            </li>
-                                        </ul>
-                                    </details>
-                                    <div th:if="${#lists.isEmpty(entityType.entitySubTypes)}" class="tree-leaf">
-                                        <img class="jms-icon" th:attr="src='/' + ${symbolSetPath} + '/symbol/'+${entityType.name()},alt='Icon for entity type ' + ${entityType.label}" />
-                                        <span class="entity-type" th:text="${entityType.label}"></span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </details>
-                        <div th:if="${#lists.isEmpty(entity.entityTypes)}" class="tree-leaf">
-                            <img class="jms-icon" th:attr="src='/' + ${symbolSetPath} + '/symbol/entity/'+${entity.name()},alt='Icon for entity ' + ${entity.label}" />
-                            <span class="entity" th:text="${entity.label}"></span>
-                        </div>
-                    </li>
-                </ul>
-
-	            <div class="row">
-		            <div th:unless="${#lists.isEmpty(symbolSet.sectorOneModifiers)}" th:fragment="entities" class="col-md-6 col-sm-12">
-		                <h5 class="p-3">Sector One Modifiers</h5>
-		                <ul class="list-group entity col-md-12">
-		                    <li class="list-group-item" th:each="sectorOneMod : ${symbolSet.sectorOneModifiers}">
-		                        <img class="jms-icon" alt="Icon for ${sectorOneMod.label}" th:attr="src='/' + ${symbolSetPath} + '/symbol/modifier/one/'+${sectorOneMod.name()}" />
-		                        <span th:text="${sectorOneMod.label}" class="entity">Sector One Modifier</span>
-		                    </li>
-		                </ul>
-			        </div>
-		            <div th:unless="${#lists.isEmpty(symbolSet.sectorTwoModifiers)}"  th:fragment="entities" class="col-md-5 col-sm-12">
-		                <h5 class="p-3">Sector Two Modifiers</h5>
-		                <ul class="list-group entity col-md-12">
-		                    <li class="list-group-item" th:each="sectorTwoMod : ${symbolSet.sectorTwoModifiers}">
-		                        <img class="jms-icon" alt="Icon for ${sectorTwoMod.label}" th:attr="src='/' + ${symbolSetPath} + '/symbol/modifier/two/'+${sectorTwoMod.name()}" />
-		                        <span th:text="${sectorTwoMod.label}" class="entity">Sector Two Modifier</span>
-		                    </li>
-		                </ul>
-			        </div>
-				</div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="tree-view">
+                            <li th:each="entity : ${symbolSet.entities}">
+                                <details th:unless="${#lists.isEmpty(entity.entityTypes)}">
+                                    <summary>
+                                        <img class="jms-icon" th:attr="src='/' + ${symbolSetPath} + '/symbol/entity/'+${entity.name()},alt='Icon for entity ' + ${entity.label}" />
+                                        <span class="entity" th:text="${entity.label}"></span>
+                                    </summary>
+                                    <ul>
+                                        <li th:each="entityType : ${entity.entityTypes}">
+                                            <details th:unless="${#lists.isEmpty(entityType.entitySubTypes)}">
+                                                <summary>
+                                                    <img class="jms-icon" th:attr="src='/' + ${symbolSetPath} + '/symbol/'+${entityType.name()},alt='Icon for entity type ' + ${entityType.label}" />
+                                                    <span class="entity-type" th:text="${entityType.label}"></span>
+                                                </summary>
+                                                <ul>
+                                                    <li th:each="entitySubType : ${entityType.entitySubTypes}" class="tree-leaf">
+                                                        <img class="jms-icon" th:attr="src='/' + ${symbolSetPath} + '/symbol/'+${entityType.name()}+'/'+${entitySubType.name()},alt='Icon for ' + ${entitySubType.label}" />
+                                                        <span th:text="${entitySubType.label}" class="entity-subtype">Entity Sub Type</span>
+                                                    </li>
+                                                </ul>
+                                            </details>
+                                            <div th:if="${#lists.isEmpty(entityType.entitySubTypes)}" class="tree-leaf">
+                                                <img class="jms-icon" th:attr="src='/' + ${symbolSetPath} + '/symbol/'+${entityType.name()},alt='Icon for entity type ' + ${entityType.label}" />
+                                                <span class="entity-type" th:text="${entityType.label}"></span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </details>
+                                <div th:if="${#lists.isEmpty(entity.entityTypes)}" class="tree-leaf">
+                                    <img class="jms-icon" th:attr="src='/' + ${symbolSetPath} + '/symbol/entity/'+${entity.name()},alt='Icon for entity ' + ${entity.label}" />
+                                    <span class="entity" th:text="${entity.label}"></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div th:unless="${#lists.isEmpty(symbolSet.sectorOneModifiers)}" class="col-md-3">
+                        <h5 class="p-3">Sector One Modifiers</h5>
+                        <ul class="tree-view">
+                            <li class="tree-leaf" th:each="sectorOneMod : ${symbolSet.sectorOneModifiers}">
+                                <img class="jms-icon" alt="Icon for ${sectorOneMod.label}" th:attr="src='/' + ${symbolSetPath} + '/symbol/modifier/one/'+${sectorOneMod.name()}" />
+                                <span th:text="${sectorOneMod.label}" class="entity">Sector One Modifier</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div th:unless="${#lists.isEmpty(symbolSet.sectorTwoModifiers)}" class="col-md-3">
+                        <h5 class="p-3">Sector Two Modifiers</h5>
+                        <ul class="tree-view">
+                            <li class="tree-leaf" th:each="sectorTwoMod : ${symbolSet.sectorTwoModifiers}">
+                                <img class="jms-icon" alt="Icon for ${sectorTwoMod.label}" th:attr="src='/' + ${symbolSetPath} + '/symbol/modifier/two/'+${sectorTwoMod.name()}" />
+                                <span th:text="${sectorTwoMod.label}" class="entity">Sector Two Modifier</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
         </div>
