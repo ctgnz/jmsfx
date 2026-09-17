@@ -53,6 +53,12 @@
             <resource>
                 <directory>src/main/resources</directory>
             </resource>
+            <!-- ctg-brand submodule, copied in alongside the vendored Bootstrap
+                 so it is served at /css/brand.css like any other stylesheet -->
+            <resource>
+                <directory>${project.basedir}/../brand/css</directory>
+                <targetPath>bootstrap/css</targetPath>
+            </resource>
         </resources>
         <plugins>
             <plugin>
