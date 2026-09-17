@@ -4,6 +4,7 @@
     <title>JMSFX | Generate Icons</title>
     <script type="text/javascript">
 var symbolSet, entity, entityType, entitySubType, modOne, modTwo, amplifier;
+var previewRequest, previewSpinnerTimeout;
 
 function showError(message) {
 	$('#page-alert').text(message)
@@ -233,8 +234,14 @@ function updatePreview() {
 	if (amplifier) {
 		symbolData['amplifier'] = amplifier;
 	}
-	$('#preview-spinner').removeClass('d-none');
-	$.get({
+	clearTimeout(previewSpinnerTimeout);
+	if (previewRequest) {
+		previewRequest.abort();
+	}
+	previewSpinnerTimeout = setTimeout(function () {
+		$('#preview-spinner').removeClass('d-none');
+	}, 300);
+	previewRequest = $.get({
 		url: symbolUrl,
 		data: symbolData,
 		dataType: "html",
@@ -245,10 +252,14 @@ function updatePreview() {
             $title = $(data).find("svg\\:title");
 			$('#preview-caption').html($title.text());
 		},
-		error: function () {
+		error: function (jqXHR, textStatus) {
+			if (textStatus === 'abort') {
+				return;
+			}
 			showError('Failed to generate the icon preview.');
 		},
 		complete: function () {
+			clearTimeout(previewSpinnerTimeout);
 			$('#preview-spinner').addClass('d-none');
 		}
 	});
