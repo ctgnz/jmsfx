@@ -111,3 +111,10 @@ ul.tree-view .tree-leaf {
 	display: flex;
 	align-items: center;
 }
+
+ul.tree-view .tree-leaf.has-spacer::before {
+	content: "";
+	display: inline-block;
+	width: 1.5rem;
+	flex-shrink: 0;
+}

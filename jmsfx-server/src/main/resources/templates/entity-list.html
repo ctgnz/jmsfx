@@ -64,6 +64,7 @@ $(document).ready(function() {
                 <h5 class="p-3" th:text="${symbolSet.label}">Symbol Set</h5>
                 <div class="row">
                     <div class="col-md-6">
+                        <h5 class="p-3">Main Sector Icons</h5>
                         <ul class="tree-view">
                             <li th:each="entity : ${symbolSet.entities}">
                                 <details th:unless="${#lists.isEmpty(entity.entityTypes)}">
@@ -79,20 +80,20 @@ $(document).ready(function() {
                                                     <span class="entity-type" th:text="${entityType.label}"></span>
                                                 </summary>
                                                 <ul>
-                                                    <li th:each="entitySubType : ${entityType.entitySubTypes}" class="tree-leaf">
+                                                    <li th:each="entitySubType : ${entityType.entitySubTypes}" class="tree-leaf has-spacer">
                                                         <img class="jms-icon" th:attr="src='/' + ${symbolSetPath} + '/symbol/'+${entityType.name()}+'/'+${entitySubType.name()},alt='Icon for ' + ${entitySubType.label}" />
                                                         <span th:text="${entitySubType.label}" class="entity-subtype">Entity Sub Type</span>
                                                     </li>
                                                 </ul>
                                             </details>
-                                            <div th:if="${#lists.isEmpty(entityType.entitySubTypes)}" class="tree-leaf">
+                                            <div th:if="${#lists.isEmpty(entityType.entitySubTypes)}" class="tree-leaf has-spacer">
                                                 <img class="jms-icon" th:attr="src='/' + ${symbolSetPath} + '/symbol/'+${entityType.name()},alt='Icon for entity type ' + ${entityType.label}" />
                                                 <span class="entity-type" th:text="${entityType.label}"></span>
                                             </div>
                                         </li>
                                     </ul>
                                 </details>
-                                <div th:if="${#lists.isEmpty(entity.entityTypes)}" class="tree-leaf">
+                                <div th:if="${#lists.isEmpty(entity.entityTypes)}" class="tree-leaf has-spacer">
                                     <img class="jms-icon" th:attr="src='/' + ${symbolSetPath} + '/symbol/entity/'+${entity.name()},alt='Icon for entity ' + ${entity.label}" />
                                     <span class="entity" th:text="${entity.label}"></span>
                                 </div>
