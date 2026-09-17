@@ -3,7 +3,17 @@
     <head>
         <title>JMSFX | Browse Symbol Sets</title>
         <script type="text/javascript">
+function showError(message) {
+	$('#page-alert').text(message)
+		.removeClass('d-none');
+}
+
+function hideError() {
+	$('#page-alert').addClass('d-none');
+}
+
 $(document).ready(function() {
+	hideError();
 	$.getJSON('/info/symbols', function(data) {
 		var select = $("#symbol-sets");
 		select.empty();
@@ -14,25 +24,37 @@ $(document).ready(function() {
 				text: symbol.label
 			}));
 		});
-		$('#symbol-sets').change(function () {
-			var opt = $('#symbol-sets option:selected');
-        	var url = '/browse/' + opt.val(); 
-            $.get(url, function(data) {
-                $('#entities').html(data);
-            });
-		});
-    });
+	}).fail(function () {
+		showError('Failed to load the list of symbol sets - check the server connection and reload the page.');
+	});
+	$('#symbol-sets').change(function () {
+		hideError();
+		var opt = $('#symbol-sets option:selected');
+    	var url = '/browse/' + opt.val();
+    	$('#browse-spinner').removeClass('d-none');
+        $.get(url, function(data) {
+            $('#entities').html(data);
+        }).fail(function () {
+        	showError('Failed to load the entities for ' + opt.text() + '.');
+        }).always(function () {
+        	$('#browse-spinner').addClass('d-none');
+        });
+	});
 });
         </script>
     </head>
     <body>
         <div id="content">
+            <div id="page-alert" class="alert alert-danger d-none" role="alert"></div>
             <form>
-                <div class="d-flex mb-2">
+                <div class="d-flex mb-2 align-items-center">
                     <label for="symbol-sets" class="col-sm-2 col-form-label">Symbol Set:</label>
                     <select id="symbol-sets" class="col-sm-4 col-form-select" aria-label="Symbol Set">
                         <option>Select symbol set</option>
                     </select>
+                    <div id="browse-spinner" class="spinner-border spinner-border-sm ms-3 d-none" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
                 </div>
             </form>
             <div id="entities">

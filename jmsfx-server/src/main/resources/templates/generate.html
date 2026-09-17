@@ -4,7 +4,24 @@
     <title>JMSFX | Generate Icons</title>
     <script type="text/javascript">
 var symbolSet, entity, entityType, entitySubType, modOne, modTwo, amplifier;
+
+function showError(message) {
+	$('#page-alert').text(message)
+		.removeClass('d-none');
+}
+
+function hideError() {
+	$('#page-alert').addClass('d-none');
+}
+
+function stripUnspecified(data) {
+	return $.grep(data, function (item) {
+		return item.id !== '00';
+	});
+}
+
 $(document).ready(function () {
+	hideError();
 	$.getJSON('/info/symbols', function (data) {
 		var select = $("#symbol-set");
 		select.empty();
@@ -16,9 +33,12 @@ $(document).ready(function () {
 			})
 			select.append(opt);
 		});
+    }).fail(function () {
+    	showError('Failed to load the list of symbol sets - check the server connection and reload the page.');
     });
 	$('#symbol-set').change(function () {
 		$('#preview').html('');
+		hideError();
 		var opt = $('#symbol-set option:selected');
 		symbolSet = opt.val();
 		entity = entityType = entitySubType = modOne = modTwo = amplifier = '';
@@ -32,7 +52,7 @@ $(document).ready(function () {
     		var select = $("#entity");
     		select.empty();
     		select.append('<option value="" selected>Unspecified</option>');
-    		$.each(data, function(ix, entity) {
+    		$.each(stripUnspecified(data), function(ix, entity) {
     			var opt = $('<option>', {
     				value: entity.name,
     				text: entity.label
@@ -41,6 +61,8 @@ $(document).ready(function () {
     		});
     		entity = '';
     		updatePreview();
+		}).fail(function () {
+			showError('Failed to load the entity list for ' + symbolSet + '.');
 		});
 		$.get(symbolSet + '/modifier/one', function (data) {
     		var select = $("#modifier-one");
@@ -51,13 +73,15 @@ $(document).ready(function () {
     		} else {
     			select.removeAttr('disabled');
     		}
-    		$.each(data, function(ix, mod) {
+    		$.each(stripUnspecified(data), function(ix, mod) {
     			var opt = $('<option>', {
     				value: mod.name,
     				text: mod.label
     			})
     			select.append(opt);
     		});
+		}).fail(function () {
+			showError('Failed to load Modifier One options for ' + symbolSet + '.');
 		});
 		$.get(symbolSet + '/modifier/two', function (data) {
     		var select = $("#modifier-two");
@@ -68,13 +92,15 @@ $(document).ready(function () {
     		} else {
     			select.removeAttr('disabled');
     		}
-    		$.each(data, function(ix, mod) {
+    		$.each(stripUnspecified(data), function(ix, mod) {
     			var opt = $('<option>', {
     				value: mod.name,
     				text: mod.label
     			})
     			select.append(opt);
     		});
+		}).fail(function () {
+			showError('Failed to load Modifier Two options for ' + symbolSet + '.');
 		});
 		$.get(symbolSet + '/amplifier', function (data) {
     		var select = $("#amplifier");
@@ -85,16 +111,19 @@ $(document).ready(function () {
     		} else {
     			select.removeAttr('disabled');
     		}
-    		$.each(data, function(ix, amp) {
+    		$.each(stripUnspecified(data), function(ix, amp) {
     			var opt = $('<option>', {
     				value: amp.name,
     				text: amp.label
     			})
     			select.append(opt);
     		});
+		}).fail(function () {
+			showError('Failed to load the amplifier list for ' + symbolSet + '.');
 		});
 	});
 	$('#entity').change(function () {
+		hideError();
 		var opt = $('#entity option:selected');
 		entity = opt.val();
 		entityType = entitySubType = ''
@@ -116,17 +145,20 @@ $(document).ready(function () {
     			select.append('<option value="" selected>Unspecified</option>');
     			select.removeAttr('disabled');
     		}
-    		$.each(data, function(ix, entityType) {
+    		$.each(stripUnspecified(data), function(ix, entityType) {
     			var opt = $('<option>', {
     				value: entityType.name,
     				text: entityType.label
     			})
     			select.append(opt);
     		});
+		}).fail(function () {
+			showError('Failed to load entity types for ' + entity + '.');
 		});
 		updatePreview();
 	});
 	$('#entity-type').change(function () {
+		hideError();
 		var opt = $('#entity-type option:selected');
 		entityType = opt.val();
 		entitySubType = ''
@@ -144,13 +176,15 @@ $(document).ready(function () {
         			select.append('<option value="" selected>Unspecified</option>');
         			select.removeAttr('disabled');
         		}
-        		$.each(data, function(ix, entitySubType) {
+        		$.each(stripUnspecified(data), function(ix, entitySubType) {
         			var opt = $('<option>', {
         				value: entitySubType.name,
         				text: entitySubType.label
         			})
         			select.append(opt);
         		});
+    		}).fail(function () {
+    			showError('Failed to load entity sub-types for ' + entityType + '.');
     		});
 		}
 		updatePreview();
@@ -199,6 +233,7 @@ function updatePreview() {
 	if (amplifier) {
 		symbolData['amplifier'] = amplifier;
 	}
+	$('#preview-spinner').removeClass('d-none');
 	$.get({
 		url: symbolUrl,
 		data: symbolData,
@@ -209,6 +244,12 @@ function updatePreview() {
             $('#preview-link').attr('href', this.url);
             $title = $(data).find("svg\\:title");
 			$('#preview-caption').html($title.text());
+		},
+		error: function () {
+			showError('Failed to generate the icon preview.');
+		},
+		complete: function () {
+			$('#preview-spinner').addClass('d-none');
 		}
 	});
 }
@@ -217,6 +258,7 @@ function updatePreview() {
 <body>
     <div id="content">
         <h5 class="py-3">JMSFX Icon Generator</h5>
+        <div id="page-alert" class="alert alert-danger d-none" role="alert"></div>
         <div class="row">
             <div id="controls" class="col-md-4">
                 <form>
@@ -267,6 +309,9 @@ function updatePreview() {
             <div class="col-md-6 ms-auto">
                 <figure>
                     <figcaption id="preview-caption"></figcaption>
+                    <div id="preview-spinner" class="spinner-border d-none" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
                     <a id="preview-link" target="_blank">
                         <img id="preview" />
                     </a>
