@@ -1,12 +1,30 @@
 package io.github.ctgnz.jmsfx.server.icon;
 
+import java.io.ByteArrayOutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
 
+import javax.imageio.ImageIO;
+
+import javafx.application.Platform;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.Group;
+import javafx.scene.SnapshotParameters;
+import javafx.scene.image.WritableImage;
+import javafx.scene.paint.Color;
+import javafx.scene.transform.Scale;
+
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
+import nz.co.ctg.foxglove.SvgGraphic;
 
 import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.Entity;
@@ -74,51 +92,55 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
             .toList();
     }
 
-    @GetMapping(value = "/symbol", produces = "image/svg+xml")
-    public String generateFrameOnlySymbol(@RequestParam(required = false) M sectorOneMod,
-                                          @RequestParam(required = false) N sectorTwoMod,
-                                          @RequestParam(required = false) A amplifier) throws Exception {
-        return createGraphic(null, null, null, sectorOneMod, sectorTwoMod, amplifier);
+    @GetMapping("/symbol")
+    public ResponseEntity<byte[]> generateFrameOnlySymbol(@RequestParam(required = false) M sectorOneMod,
+                                                          @RequestParam(required = false) N sectorTwoMod,
+                                                          @RequestParam(required = false) A amplifier,
+                                                          @RequestParam(required = false) Integer pngWidth) throws Exception {
+        return render(buildSymbol(null, null, null, sectorOneMod, sectorTwoMod, amplifier), pngWidth);
     }
 
-    @GetMapping(value = "/symbol/modifier/one/{sectorOneMod}", produces = "image/svg+xml")
-    public String generateModifierOneSymbol(@PathVariable M sectorOneMod) throws Exception {
-        return createGraphic(null, null, null, sectorOneMod, null, null);
+    @GetMapping("/symbol/modifier/one/{sectorOneMod}")
+    public ResponseEntity<byte[]> generateModifierOneSymbol(@PathVariable M sectorOneMod, @RequestParam(required = false) Integer pngWidth) throws Exception {
+        return render(buildSymbol(null, null, null, sectorOneMod, null, null), pngWidth);
     }
 
-    @GetMapping(value = "/symbol/modifier/two/{sectorTwoMod}", produces = "image/svg+xml")
-    public String generateModifierTwoSymbol(@PathVariable N sectorTwoMod) throws Exception {
-        return createGraphic(null, null, null, null, sectorTwoMod, null);
+    @GetMapping("/symbol/modifier/two/{sectorTwoMod}")
+    public ResponseEntity<byte[]> generateModifierTwoSymbol(@PathVariable N sectorTwoMod, @RequestParam(required = false) Integer pngWidth) throws Exception {
+        return render(buildSymbol(null, null, null, null, sectorTwoMod, null), pngWidth);
     }
 
-    @GetMapping(value = "/symbol/entity/{entity}", produces = "image/svg+xml")
-    public String generateEntitySymbol(@PathVariable E entity,
-                                       @RequestParam(required = false) M sectorOneMod,
-                                       @RequestParam(required = false) N sectorTwoMod,
-                                       @RequestParam(required = false) A amplifier) throws Exception {
-        return createGraphic(entity, null, null, sectorOneMod, sectorTwoMod, amplifier);
-    }
-
-    @SuppressWarnings("unchecked")
-    @GetMapping(value = "/symbol/{entityType}/{entitySubType}", produces = "image/svg+xml")
-    public String generateEntitySubTypeSymbol(@PathVariable T entityType,
-                                              @PathVariable S entitySubType,
-                                              @RequestParam(required = false) M sectorOneMod,
-                                              @RequestParam(required = false) N sectorTwoMod,
-                                              @RequestParam(required = false) A amplifier) throws Exception {
-        return createGraphic((E) entityType.getEntity(), entityType, entitySubType, sectorOneMod, sectorTwoMod, amplifier);
+    @GetMapping("/symbol/entity/{entity}")
+    public ResponseEntity<byte[]> generateEntitySymbol(@PathVariable E entity,
+                                                       @RequestParam(required = false) M sectorOneMod,
+                                                       @RequestParam(required = false) N sectorTwoMod,
+                                                       @RequestParam(required = false) A amplifier,
+                                                       @RequestParam(required = false) Integer pngWidth) throws Exception {
+        return render(buildSymbol(entity, null, null, sectorOneMod, sectorTwoMod, amplifier), pngWidth);
     }
 
     @SuppressWarnings("unchecked")
-    @GetMapping(value = "/symbol/{entityType}", produces = "image/svg+xml")
-    public String generateSymbol(@PathVariable T entityType,
-                                 @RequestParam(required = false) M sectorOneMod,
-                                 @RequestParam(required = false) N sectorTwoMod,
-                                 @RequestParam(required = false) A amplifier) throws Exception {
-        return createGraphic((E) entityType.getEntity(), entityType, null, sectorOneMod, sectorTwoMod, amplifier);
+    @GetMapping("/symbol/{entityType}/{entitySubType}")
+    public ResponseEntity<byte[]> generateEntitySubTypeSymbol(@PathVariable T entityType,
+                                                              @PathVariable S entitySubType,
+                                                              @RequestParam(required = false) M sectorOneMod,
+                                                              @RequestParam(required = false) N sectorTwoMod,
+                                                              @RequestParam(required = false) A amplifier,
+                                                              @RequestParam(required = false) Integer pngWidth) throws Exception {
+        return render(buildSymbol((E) entityType.getEntity(), entityType, entitySubType, sectorOneMod, sectorTwoMod, amplifier), pngWidth);
     }
 
-    private String createGraphic(E entity, T entityType, S entitySubType, M sectorOneMod, N sectorTwoMod, A amplifier) throws Exception {
+    @SuppressWarnings("unchecked")
+    @GetMapping("/symbol/{entityType}")
+    public ResponseEntity<byte[]> generateSymbol(@PathVariable T entityType,
+                                                 @RequestParam(required = false) M sectorOneMod,
+                                                 @RequestParam(required = false) N sectorTwoMod,
+                                                 @RequestParam(required = false) A amplifier,
+                                                 @RequestParam(required = false) Integer pngWidth) throws Exception {
+        return render(buildSymbol((E) entityType.getEntity(), entityType, null, sectorOneMod, sectorTwoMod, amplifier), pngWidth);
+    }
+
+    private IdentificationSymbol buildSymbol(E entity, T entityType, S entitySubType, M sectorOneMod, N sectorTwoMod, A amplifier) {
         IdentificationSymbol symbol = new IdentificationSymbol(StandardIconLibrary.instance());
         symbol.symbolSetProperty()
             .set(symbolSet);
@@ -140,7 +162,47 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
             symbol.amplifierProperty()
                 .set(amplifier);
         }
-        return parser.write(symbol.getCombinedGraphic(), false);
+        return symbol;
+    }
+
+    private ResponseEntity<byte[]> render(IdentificationSymbol symbol, Integer pngWidth) throws Exception {
+        if (pngWidth != null) {
+            return renderPng(symbol, pngWidth);
+        }
+        return renderSvg(symbol);
+    }
+
+    private ResponseEntity<byte[]> renderSvg(IdentificationSymbol symbol) throws Exception {
+        String svg = parser.write(symbol.getCombinedGraphic(), false);
+        return ResponseEntity.ok()
+            .contentType(MediaType.valueOf("image/svg+xml"))
+            .body(svg.getBytes(StandardCharsets.UTF_8));
+    }
+
+    private ResponseEntity<byte[]> renderPng(IdentificationSymbol symbol, int targetWidth) throws Exception {
+        SvgGraphic graphic = symbol.getCombinedGraphic();
+        double scale = targetWidth / graphic.getPixelsWidth();
+        SnapshotParameters params = new SnapshotParameters();
+        params.setTransform(new Scale(scale, scale));
+        params.setFill(Color.TRANSPARENT);
+
+        CompletableFuture<WritableImage> snapshot = new CompletableFuture<>();
+        Platform.runLater(() -> {
+            try {
+                Group group = graphic.createGroup();
+                snapshot.complete(group.snapshot(params, null));
+            } catch (Exception e) {
+                snapshot.completeExceptionally(e);
+            }
+        });
+        WritableImage image = snapshot.get(10, TimeUnit.SECONDS);
+
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", out);
+        return ResponseEntity.ok()
+            .contentType(MediaType.IMAGE_PNG)
+            .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"icon.png\"")
+            .body(out.toByteArray());
     }
 
 }
