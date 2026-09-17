@@ -1,0 +1,6 @@
+# These files are executed on the Linux server. A CRLF checkout on Windows
+# breaks the shebang ("$'\r': command not found") and systemd unit parsing,
+# and they get copied up straight from the working copy.
+*.sh        text eol=lf
+*.service   text eol=lf
+Caddyfile   text eol=lf

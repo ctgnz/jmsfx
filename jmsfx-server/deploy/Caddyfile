@@ -1,0 +1,7 @@
+# provision.sh substitutes __DOMAIN__ and writes this to /etc/caddy/Caddyfile.
+# Caddy obtains and renews the Let's Encrypt certificate on its own.
+
+__DOMAIN__ {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:8080
+}

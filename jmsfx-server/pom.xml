@@ -12,6 +12,8 @@
 
     <properties>
         <spring.boot.version>4.1.1</spring.boot.version>
+        <!-- Must track the JavaFX version foxglove pulls in transitively -->
+        <javafx.linux.version>27</javafx.linux.version>
     </properties>
 	
 	<dependencies>
@@ -30,6 +32,34 @@
 	        <artifactId>jmsfx-standard</artifactId>
 	        <version>1.3.0-SNAPSHOT</version>
 	    </dependency>
+        <!-- JavaFX resolves its native classifier from the build host, so a jar
+             built on Windows cannot render on the Linux server. Icon composition
+             goes through a JavaFX scene graph even for SVG output, so the Linux
+             natives have to travel with the artifact. -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>${javafx.linux.version}</version>
+            <classifier>linux</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>${javafx.linux.version}</version>
+            <classifier>linux</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.linux.version}</version>
+            <classifier>linux</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-swing</artifactId>
+            <version>${javafx.linux.version}</version>
+            <classifier>linux</classifier>
+        </dependency>
         <dependency>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-devtools</artifactId>
