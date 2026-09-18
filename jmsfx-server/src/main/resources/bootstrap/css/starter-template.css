@@ -1,20 +1,23 @@
-html {
-  position: relative;
-  min-height: 100%;
+/* Hold the footer at the bottom of the viewport on short pages. The column
+   grows to fill the screen and main takes up the slack, so nothing here needs
+   to know how tall the footer is - the previous approach pinned it absolutely
+   and repeated a 60px height in three places, which broke as soon as the
+   footer text wrapped. dvh keeps mobile browser chrome from causing overflow;
+   browsers without it fall back to the vh line above. */
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+main {
+  flex: 1 0 auto;
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+  flex-shrink: 0;
+  padding: 1rem 0;
 }
 
 
