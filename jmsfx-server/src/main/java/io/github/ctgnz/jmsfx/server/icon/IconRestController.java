@@ -1,22 +1,8 @@
 package io.github.ctgnz.jmsfx.server.icon;
 
-import java.io.ByteArrayOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.TimeUnit;
 
-import javax.imageio.ImageIO;
-
-import javafx.application.Platform;
-import javafx.embed.swing.SwingFXUtils;
-import javafx.scene.Group;
-import javafx.scene.SnapshotParameters;
-import javafx.scene.image.WritableImage;
-import javafx.scene.paint.Color;
-import javafx.scene.transform.Scale;
-
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
-import nz.co.ctg.foxglove.SvgGraphic;
 
 import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.Entity;
@@ -95,28 +80,26 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
     @GetMapping("/symbol")
     public ResponseEntity<byte[]> generateFrameOnlySymbol(@RequestParam(required = false) M sectorOneMod,
                                                           @RequestParam(required = false) N sectorTwoMod,
-                                                          @RequestParam(required = false) A amplifier,
-                                                          @RequestParam(required = false) Integer pngWidth) throws Exception {
-        return render(buildSymbol(null, null, null, sectorOneMod, sectorTwoMod, amplifier), pngWidth);
+                                                          @RequestParam(required = false) A amplifier) throws Exception {
+        return renderSvg(buildSymbol(null, null, null, sectorOneMod, sectorTwoMod, amplifier));
     }
 
     @GetMapping("/symbol/modifier/one/{sectorOneMod}")
-    public ResponseEntity<byte[]> generateModifierOneSymbol(@PathVariable M sectorOneMod, @RequestParam(required = false) Integer pngWidth) throws Exception {
-        return render(buildSymbol(null, null, null, sectorOneMod, null, null), pngWidth);
+    public ResponseEntity<byte[]> generateModifierOneSymbol(@PathVariable M sectorOneMod) throws Exception {
+        return renderSvg(buildSymbol(null, null, null, sectorOneMod, null, null));
     }
 
     @GetMapping("/symbol/modifier/two/{sectorTwoMod}")
-    public ResponseEntity<byte[]> generateModifierTwoSymbol(@PathVariable N sectorTwoMod, @RequestParam(required = false) Integer pngWidth) throws Exception {
-        return render(buildSymbol(null, null, null, null, sectorTwoMod, null), pngWidth);
+    public ResponseEntity<byte[]> generateModifierTwoSymbol(@PathVariable N sectorTwoMod) throws Exception {
+        return renderSvg(buildSymbol(null, null, null, null, sectorTwoMod, null));
     }
 
     @GetMapping("/symbol/entity/{entity}")
     public ResponseEntity<byte[]> generateEntitySymbol(@PathVariable E entity,
                                                        @RequestParam(required = false) M sectorOneMod,
                                                        @RequestParam(required = false) N sectorTwoMod,
-                                                       @RequestParam(required = false) A amplifier,
-                                                       @RequestParam(required = false) Integer pngWidth) throws Exception {
-        return render(buildSymbol(entity, null, null, sectorOneMod, sectorTwoMod, amplifier), pngWidth);
+                                                       @RequestParam(required = false) A amplifier) throws Exception {
+        return renderSvg(buildSymbol(entity, null, null, sectorOneMod, sectorTwoMod, amplifier));
     }
 
     @SuppressWarnings("unchecked")
@@ -125,9 +108,8 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
                                                               @PathVariable S entitySubType,
                                                               @RequestParam(required = false) M sectorOneMod,
                                                               @RequestParam(required = false) N sectorTwoMod,
-                                                              @RequestParam(required = false) A amplifier,
-                                                              @RequestParam(required = false) Integer pngWidth) throws Exception {
-        return render(buildSymbol((E) entityType.getEntity(), entityType, entitySubType, sectorOneMod, sectorTwoMod, amplifier), pngWidth);
+                                                              @RequestParam(required = false) A amplifier) throws Exception {
+        return renderSvg(buildSymbol((E) entityType.getEntity(), entityType, entitySubType, sectorOneMod, sectorTwoMod, amplifier));
     }
 
     @SuppressWarnings("unchecked")
@@ -135,9 +117,8 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
     public ResponseEntity<byte[]> generateSymbol(@PathVariable T entityType,
                                                  @RequestParam(required = false) M sectorOneMod,
                                                  @RequestParam(required = false) N sectorTwoMod,
-                                                 @RequestParam(required = false) A amplifier,
-                                                 @RequestParam(required = false) Integer pngWidth) throws Exception {
-        return render(buildSymbol((E) entityType.getEntity(), entityType, null, sectorOneMod, sectorTwoMod, amplifier), pngWidth);
+                                                 @RequestParam(required = false) A amplifier) throws Exception {
+        return renderSvg(buildSymbol((E) entityType.getEntity(), entityType, null, sectorOneMod, sectorTwoMod, amplifier));
     }
 
     private IdentificationSymbol buildSymbol(E entity, T entityType, S entitySubType, M sectorOneMod, N sectorTwoMod, A amplifier) {
@@ -165,49 +146,11 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
         return symbol;
     }
 
-    private ResponseEntity<byte[]> render(IdentificationSymbol symbol, Integer pngWidth) throws Exception {
-        if (pngWidth != null) {
-            return renderPng(symbol, pngWidth);
-        }
-        return renderSvg(symbol);
-    }
-
     private ResponseEntity<byte[]> renderSvg(IdentificationSymbol symbol) throws Exception {
         String svg = parser.write(symbol.getCombinedGraphic(), false);
         return ResponseEntity.ok()
             .contentType(MediaType.valueOf("image/svg+xml"))
             .body(svg.getBytes(StandardCharsets.UTF_8));
-    }
-
-    private ResponseEntity<byte[]> renderPng(IdentificationSymbol symbol, int targetWidth) throws Exception {
-        SvgGraphic graphic = symbol.getCombinedGraphic();
-
-        CompletableFuture<WritableImage> snapshot = new CompletableFuture<>();
-        Platform.runLater(() -> {
-            try {
-                Group group = graphic.createGroup();
-                // The composite carries the full APP-6E canvas, most of which is
-                // empty for any one symbol, so scale against what is actually
-                // drawn rather than the canvas - otherwise the export comes back
-                // narrower than the width that was asked for.
-                double scale = targetWidth / group.getBoundsInLocal()
-                    .getWidth();
-                SnapshotParameters params = new SnapshotParameters();
-                params.setTransform(new Scale(scale, scale));
-                params.setFill(Color.TRANSPARENT);
-                snapshot.complete(group.snapshot(params, null));
-            } catch (Exception e) {
-                snapshot.completeExceptionally(e);
-            }
-        });
-        WritableImage image = snapshot.get(10, TimeUnit.SECONDS);
-
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", out);
-        return ResponseEntity.ok()
-            .contentType(MediaType.IMAGE_PNG)
-            .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"icon.png\"")
-            .body(out.toByteArray());
     }
 
 }
