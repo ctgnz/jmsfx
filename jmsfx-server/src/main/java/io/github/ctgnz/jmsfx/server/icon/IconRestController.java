@@ -181,15 +181,20 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
 
     private ResponseEntity<byte[]> renderPng(IdentificationSymbol symbol, int targetWidth) throws Exception {
         SvgGraphic graphic = symbol.getCombinedGraphic();
-        double scale = targetWidth / graphic.getPixelsWidth();
-        SnapshotParameters params = new SnapshotParameters();
-        params.setTransform(new Scale(scale, scale));
-        params.setFill(Color.TRANSPARENT);
 
         CompletableFuture<WritableImage> snapshot = new CompletableFuture<>();
         Platform.runLater(() -> {
             try {
                 Group group = graphic.createGroup();
+                // The composite carries the full APP-6E canvas, most of which is
+                // empty for any one symbol, so scale against what is actually
+                // drawn rather than the canvas - otherwise the export comes back
+                // narrower than the width that was asked for.
+                double scale = targetWidth / group.getBoundsInLocal()
+                    .getWidth();
+                SnapshotParameters params = new SnapshotParameters();
+                params.setTransform(new Scale(scale, scale));
+                params.setFill(Color.TRANSPARENT);
                 snapshot.complete(group.snapshot(params, null));
             } catch (Exception e) {
                 snapshot.completeExceptionally(e);
