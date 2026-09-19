@@ -43,6 +43,38 @@
                     <subpackages>nz.co.ctg.jmsfx.icon</subpackages>
                 </configuration>
             </plugin>
+            <!-- jpackage takes a directory of jars rather than a classpath, so the
+                 runtime dependencies are gathered next to the application jar. The
+                 JavaFX artifacts resolve to the building platform's classifier,
+                 which is what we want: each platform builds its own bundle. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>collect-runtime-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                            <includeScope>runtime</includeScope>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>io.github.ctgnz.jmsfx.icon.creator.IconCreatorLauncher</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
