@@ -5,8 +5,75 @@
     </head>
     <body>
         <div id="content">
-            <h5 class="py-3">Welcome to the JMSFX Icon Generator</h5>
-            <p>JMSFX is a Java library for rendering the NATO APP-6 Joint Military Symbology icons.</p>
+            <h5 class="py-3">JMSFX Icon Generator</h5>
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <p>
+                        Build military symbols to <strong>NATO APP-6, Edition E</strong> - the symbols used to represent units, equipment,
+                        installations and activities on a military map - and export them as SVG.
+                    </p>
+                    <p class="text-body-secondary">
+                        APP-6E is related to, but formally distinct from, the US MIL-STD-2525D. This site follows the NATO standard.
+                    </p>
+
+                    <h6 class="mt-4">Browse</h6>
+                    <p>
+                        <a href="/browse">Browse</a> walks the symbol sets as a tree, from each set down through its entities, entity types and
+                        sub-types. Use it to find out what exists, and what a given symbol looks like, without composing anything.
+                    </p>
+
+                    <h6 class="mt-4">Generate</h6>
+                    <p>
+                        <a href="/generate">Generate</a> composes one symbol. Choose a symbol set, then narrow it by entity, entity type and
+                        sub-type, and add sector one and two modifiers and an amplifier. The preview updates as you go, and
+                        <em>Export SVG</em> saves what you see.
+                    </p>
+                    <p>
+                        Every icon is drawn on a standard 612 x 792 canvas, with each part occupying its own region of it - which is what lets the
+                        pieces line up. Exported files keep that canvas, so a symbol composed here sits correctly alongside any other.
+                    </p>
+
+                    <h6 class="mt-4">On the desktop</h6>
+                    <p>
+                        <a href="/download">Icon Creator</a> does the same job as a desktop application, with the full set of amplifier controls
+                        alongside the icon and no round trip to the server for each change. It is a free download for Windows, macOS and Linux.
+                    </p>
+
+                    <h6 class="mt-4">Straight from a URL</h6>
+                    <p>
+                        The pages above are a thin layer over a plain HTTP API, which is often the easier way to use this - a symbol can be
+                        referenced directly from a document, a wiki or a script. Every response is <code>image/svg+xml</code>.
+                    </p>
+
+                    <pre class="bg-body-tertiary border rounded p-3"><code>/Air/symbol                          the bare frame
+/Air/symbol/entity/MILITARY          narrowed to an entity
+/Air/symbol/FIXED_WING               to an entity type
+/Air/symbol/FIXED_WING/BOMBER        to a sub-type
+/Air/symbol?sectorOneMod=FIGHTER     with a modifier</code></pre>
+
+                    <p>
+                        The leading segment is the symbol set - <code>/Air</code>, <code>/LandUnits</code>, <code>/SeaSurface</code> and so on,
+                        24 in all. Note that the path takes an element's <em>name</em>, such as <code>FIXED_WING</code>, rather than its numeric
+                        identifier. Sector modifiers and amplifiers are query parameters: <code>sectorOneMod</code>, <code>sectorTwoMod</code>,
+                        <code>amplifier</code>.
+                    </p>
+                    <p>
+                        Companion paths list what a symbol set actually offers, which is how you find those names -
+                        <code>/Air/entity/list</code>, <code>/Air/entityType/MILITARY/list</code>,
+                        <code>/Air/entitySubType/FIXED_WING/list</code>, <code>/Air/modifier/one</code>, <code>/Air/amplifier</code>. They return
+                        JSON, and an empty list simply means that set has none of that kind - Air has no amplifiers, for instance. The
+                        <a href="/generate">Generate</a> page is built on exactly these calls, so its network traffic is a working example.
+                    </p>
+
+                    <h6 class="mt-4">The library</h6>
+                    <p>
+                        Underneath is a JavaFX implementation of APP-6E that renders symbols as ordinary scene graph nodes. It is open source,
+                        along with <a href="https://github.com/ctgnz/foxglove">foxglove</a>, the SVG rendering library it is built on -
+                        both at <a href="https://github.com/ctgnz">github.com/ctgnz</a>.
+                    </p>
+                </div>
+            </div>
         </div>
     </body>
 </html>
