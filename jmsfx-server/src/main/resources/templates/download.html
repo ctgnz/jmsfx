@@ -1,0 +1,91 @@
+<!doctype html>
+<html th:replace="~{layout :: layout(~{::title}, 'download', ~{::#content}, ~{})}">
+    <head>
+        <title>JMSFX | Download the Icon Creator</title>
+    </head>
+    <body>
+        <div id="content">
+            <h5 class="py-3">Icon Creator for the desktop</h5>
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <p>
+                        Icon Creator composes APP-6E symbols on your own machine and saves them as a single composite SVG. It covers the same
+                        symbology as the <a href="/generate">Generate</a> page here, with the full set of amplifier controls alongside the icon
+                        and without a round trip to the server for every change.
+                    </p>
+                    <p>
+                        Each download carries its own Java runtime, so there is nothing else to install - no JDK, and no JavaFX.
+                    </p>
+
+                    <div class="d-flex align-items-center flex-wrap gap-2 my-4">
+                        <a class="btn btn-primary" href="https://github.com/ctgnz/jmsfx/releases/latest">Downloads on GitHub</a>
+                        <a class="btn btn-outline-primary" href="https://github.com/ctgnz/jmsfx">Source code</a>
+                    </div>
+
+                    <table class="table align-middle">
+                        <caption>Pick the archive matching your system from the release page.</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">System</th>
+                                <th scope="col">File</th>
+                                <th scope="col">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Windows</th>
+                                <td><code>...-windows.zip</code></td>
+                                <td>64-bit. Unzip, then run <em>JMSFX Icon Creator.exe</em>.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">macOS</th>
+                                <td><code>...-macos.zip</code></td>
+                                <td><span class="badge text-bg-secondary">Apple Silicon only</span> <span class="badge bg-gold text-dark">Untested</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Linux</th>
+                                <td><code>...-linux.tar.gz</code></td>
+                                <td>64-bit. Extract, then run <em>bin/JMSFX Icon Creator</em>.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h6 class="mt-4">Your browser will probably warn you</h6>
+                    <p>
+                        These downloads are not code signed, so Windows and macOS both treat them as coming from an unknown publisher. The warnings
+                        are about the absence of a signature, not about anything detected in the files. Signing certificates cost several hundred
+                        dollars a year, which is difficult to justify for a free tool - so the warnings are described here instead.
+                    </p>
+
+                    <dl class="row">
+                        <dt class="col-sm-3">Windows</dt>
+                        <dd class="col-sm-9">
+                            Chrome blocks the download as dangerous; keep it from the downloads list. Windows then shows
+                            <em>Windows protected your PC</em> the first time you run it - choose <em>More info</em>, then <em>Run anyway</em>.
+                            Getting past the browser does not get you past this second prompt.
+                        </dd>
+                        <dt class="col-sm-3">macOS</dt>
+                        <dd class="col-sm-9">
+                            Gatekeeper refuses to open the application. Right-click it in Finder and choose <em>Open</em>, which offers the option
+                            to run it anyway.
+                        </dd>
+                        <dt class="col-sm-3">Linux</dt>
+                        <dd class="col-sm-9">No warnings.</dd>
+                    </dl>
+
+                    <h6 class="mt-4">About the macOS build</h6>
+                    <p>
+                        The macOS download is built for <strong>Apple Silicon</strong> and will not run on an Intel Mac. Because the Java runtime is
+                        bundled, there is no fallback.
+                    </p>
+                    <p>
+                        It is also <strong>untested</strong>. Nobody working on JMSFX has a Mac, so while the build is produced and checked
+                        automatically, no one has watched it run. If you try it, an
+                        <a href="https://github.com/ctgnz/jmsfx/issues">issue</a> saying whether it worked would be genuinely useful.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

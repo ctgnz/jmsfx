@@ -37,6 +37,13 @@ public class WebController {
     }
 
     @GetMapping({
+        "/download"
+    })
+    public String downloadCreator() {
+        return "download";
+    }
+
+    @GetMapping({
         "/browse/{symbolSetId}"
     })
     public String browseSymbolSet(@PathVariable String symbolSetId, Model model) {
