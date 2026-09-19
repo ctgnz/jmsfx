@@ -148,15 +148,19 @@ jobs:
       # A headless runner cannot confirm the application renders correctly. This only
       # establishes that jpackage produced a launcher and brought the jars along.
       # The layout differs per platform - Windows puts the launcher beside the app
-      # directory, Linux under bin/, and macOS inside a .app bundle - so this looks
-      # for an executable file by name rather than at a fixed path.
+      # directory, Linux under bin/, and macOS inside a .app bundle - so each path
+      # is named explicitly. Searching by name matched the bundled icon instead,
+      # and so reported success without a launcher being present at all.
       run: |
         cd jmsfx-creator/target/dist
         ls -la . | sed 's/^/  /'
         find . -name "*.jar" | wc -l | xargs echo "jars in image:"
-        LAUNCHER=$(find . -type f -name 'JMSFX Icon Creator*' ! -name '*.cfg' | head -1)
-        test -n "$LAUNCHER" \
-          || { echo "::error::no launcher found in the application image"; exit 1; }
+        case "${{ matrix.platform }}" in
+          windows) LAUNCHER="JMSFX Icon Creator/JMSFX Icon Creator.exe" ;;
+          linux)   LAUNCHER="JMSFX Icon Creator/bin/JMSFX Icon Creator" ;;
+          macos)   LAUNCHER="JMSFX Icon Creator.app/Contents/MacOS/JMSFX Icon Creator" ;;
+        esac
+        test -f "$LAUNCHER" || { echo "::error::no launcher at $LAUNCHER"; exit 1; }
         echo "launcher: $LAUNCHER"
 
     - name: Smoke test that it starts
