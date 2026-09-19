@@ -44,24 +44,37 @@
                         </dd>
                         <dt class="col-sm-3">Status</dt>
                         <dd class="col-sm-9">
-                            Whether the object is present or merely planned, and its condition - damaged, destroyed and so on.
+                            Whether the object is actually there, or only anticipated.
                         </dd>
                     </dl>
                     <p>
-                        The line itself carries a fourth signal: <strong>solid</strong> when the identity is certain, and
-                        <strong>dotted</strong> when it is not - which is why Pending, Assumed Friend and Suspect are drawn with a dotted border.
+                        The line style carries identity and status together, and there are three of them:
+                    </p>
+                    <ul>
+                        <li><strong>Solid</strong> - present or confirmed.</li>
+                        <li><strong>Dashed</strong> - anticipated, planned or suspected.</li>
+                        <li><strong>Dotted</strong> - the identity itself is uncertain, as with Pending, Assumed Friend and Suspect.</li>
+                    </ul>
+                    <p>
+                        The third overrides the others: when identity is uncertain the frame is dotted, and status is simply not shown.
                     </p>
 
-                    <h6 class="mt-4">Dimensions and symbol sets</h6>
+                    <h6 class="mt-4">Dimensions and symbol sets are not the same thing</h6>
                     <p>
-                        Dimension usually means the physical environment an object operates in - Land (split into Unit, Equipment and
-                        Installation), Sea Surface, Sea Subsurface, Air, Space. Some dimensions have no physical environment at all: Activity,
-                        Unknown, Dismounted Individual and Cyberspace are treated as dimensions regardless.
+                        A <strong>dimension</strong> is broadly the environment an object operates in - Air, Space, Land, Sea Surface, Sea
+                        Subsurface. Some have no physical environment at all: Activity, Unknown, Dismounted Individual and Cyberspace count as
+                        dimensions regardless.
                     </p>
                     <p>
-                        On this site the dimension is what you pick first on <a href="/generate">Generate</a>, and what the leading path segment
-                        names in the API - <code>/Air</code>, <code>/LandUnits</code>, <code>/SeaSurface</code>. Within one, symbols narrow by
-                        <strong>entity</strong>, then <strong>entity type</strong>, then <strong>entity sub-type</strong>.
+                        A <strong>symbol set</strong> is narrower. Each dimension is made up of <em>one or more</em> symbol sets - the Air
+                        dimension covers both Air and Air Missile, for instance, and Cyberspace covers a whole family of them. That is why this
+                        site offers 23 symbol sets where the standard illustrates far fewer dimensions, and why Land Equipment and Sea Surface
+                        share a frame shape despite being different symbol sets in different dimensions.
+                    </p>
+                    <p>
+                        It is the <strong>symbol set</strong> you pick first on <a href="/generate">Generate</a>, and the symbol set that the
+                        leading path segment names in the API - <code>/Air</code>, <code>/LandUnits</code>, <code>/SeaSurface</code>. Within one,
+                        symbols narrow by <strong>entity</strong>, then <strong>entity type</strong>, then <strong>entity sub-type</strong>.
                     </p>
 
                     <h6 class="mt-4">Modifiers and amplifiers are not the same thing</h6>
