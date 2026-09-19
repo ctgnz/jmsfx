@@ -1,6 +1,7 @@
 package io.github.ctgnz.jmsfx.icon.creator;
 
 import java.io.File;
+import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -23,6 +24,7 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToolBar;
 import javafx.scene.control.Tooltip;
@@ -507,6 +509,9 @@ public class IconCreator extends Application {
     }
 
     private Node createToolBar() {
+        Button saveSvg = new Button("Save SVG");
+        saveSvg.setOnAction(evt -> saveCompositeSvg());
+
         Button showAll = new Button("Show All");
         showAll.setOnAction(evt -> {
             Dialog<String> dialog = new Dialog<>();
@@ -527,7 +532,41 @@ public class IconCreator extends Application {
         Button clearCache = new Button("Clear Cache");
         clearCache.setOnAction(evt -> FoxgloveParser.clearCache());
 
-        return new ToolBar(showAll, clearCache);
+        return new ToolBar(saveSvg, new Separator(), showAll, clearCache);
+    }
+
+    private void saveCompositeSvg() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save Composite SVG");
+        fileChooser.getExtensionFilters()
+            .add(new ExtensionFilter("SVG Graphic Files", "*.svg"));
+        fileChooser.setInitialDirectory(lastDirectory);
+        fileChooser.setInitialFileName(defaultSvgFileName());
+        File selectedFile = fileChooser.showSaveDialog(mainStage);
+        if (selectedFile == null) {
+            return;
+        }
+        lastDirectory = selectedFile.getParentFile();
+        try {
+            // getCombinedGraphic already merges the fragments into one SVG
+            // document against the shared APP-6E canvas, so this is the same
+            // output the server serves - no scene graph involved.
+            Files.writeString(selectedFile.toPath(), svgParser.write(symbol.getCombinedGraphic(), true));
+        } catch (Exception e) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.initOwner(mainStage);
+            alert.setHeaderText("Could not save the icon");
+            alert.setContentText(selectedFile.getName() + " could not be written: " + e);
+            alert.showAndWait();
+        }
+    }
+
+    private String defaultSvgFileName() {
+        // getCode spaces the SIDC into three groups of ten for display; a file
+        // name wants the thirty digits on their own.
+        String code = symbol.getCode();
+        String digits = code == null ? "" : code.replaceAll("\\s", "");
+        return (digits.isBlank() ? "icon" : digits) + ".svg";
     }
 
     private Node createSymbol() {
