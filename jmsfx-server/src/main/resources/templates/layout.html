@@ -30,6 +30,10 @@
                         <a th:if="${activePage} == 'generate'" class="nav-link active" aria-current="page" href="/generate">Generate</a>
                         <a th:unless="${activePage} == 'generate'" class="nav-link" href="/generate">Generate</a>
                     </li>
+                    <li class="nav-item">
+                        <a th:if="${activePage} == 'download'" class="nav-link active" aria-current="page" href="/download">Download</a>
+                        <a th:unless="${activePage} == 'download'" class="nav-link" href="/download">Download</a>
+                    </li>
                 </ul>
             </nav>
         </header>
