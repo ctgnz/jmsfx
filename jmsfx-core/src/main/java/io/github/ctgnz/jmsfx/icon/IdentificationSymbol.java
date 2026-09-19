@@ -3,6 +3,7 @@ package io.github.ctgnz.jmsfx.icon;
 import static java.util.stream.Collectors.toList;
 import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
@@ -17,15 +18,12 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableMap;
-import javafx.geometry.Bounds;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.paint.Color;
 
 import nz.co.ctg.foxglove.ISvgContent;
 import nz.co.ctg.foxglove.ISvgStylable;
 import nz.co.ctg.foxglove.SvgGraphic;
-import nz.co.ctg.foxglove.type.ViewBox;
 
 import io.github.ctgnz.jmsfx.Amplifier;
 import io.github.ctgnz.jmsfx.AmplifierGuide;
@@ -221,55 +219,62 @@ public class IdentificationSymbol {
     public SvgGraphic getCombinedGraphic() {
         SvgGraphic container = new SvgGraphic();
         container.setTitle(getDescription());
+
+        List<SvgGraphic> parts = new ArrayList<>();
         if (isFrameUsed()) {
             SvgGraphic frame = getFrameGraphic();
             if (isFrameAmplifierUsed()) {
                 AmplifierListItem frameAmplifier = getFrameAmplifier();
                 replaceFill(frame, Color.web(frameAmplifier.getBackgroundFill()));
             }
-            container.getContent()
-                .addAll(frame.getVisibleContent());
+            parts.add(frame);
         }
         if (isStatusIconUsed()) {
-            container.getContent()
-                .addAll(getStatusGraphic().getVisibleContent());
+            parts.add(getStatusGraphic());
         }
         if (isHqtfDummyIconUsed()) {
-            container.getContent()
-                .addAll(getHqtfDummyGraphic().getVisibleContent());
+            parts.add(getHqtfDummyGraphic());
         }
         if (isMainIconUsed() && getMainIconGraphic() != null) {
-            container.getContent()
-                .addAll(getMainIconGraphic().getVisibleContent());
+            parts.add(getMainIconGraphic());
         }
         if (isAmplifierUsed()) {
-            container.getContent()
-                .addAll(getAmplifierGraphic().getVisibleContent());
+            parts.add(getAmplifierGraphic());
         }
         if (isAmplifierTwoUsed()) {
-            container.getContent()
-                .addAll(getAmplifierTwoGraphic().getVisibleContent());
+            parts.add(getAmplifierTwoGraphic());
         }
         if (isAmplifierThreeUsed()) {
-            container.getContent()
-                .addAll(getAmplifierThreeGraphic().getVisibleContent());
+            parts.add(getAmplifierThreeGraphic());
         }
         if (isSectorOneModifierUsed()) {
-            container.getContent()
-                .addAll(getSectorOneModifierGraphic().getVisibleContent());
+            parts.add(getSectorOneModifierGraphic());
         }
         if (isSectorTwoModifierUsed()) {
-            container.getContent()
-                .addAll(getSectorTwoModifierGraphic().getVisibleContent());
+            parts.add(getSectorTwoModifierGraphic());
         }
-        Group graphic = container.createGroup();
-        graphic.autosize();
-        Bounds bounds = graphic.getBoundsInLocal();
-        container.setPixelsX(bounds.getMinX());
-        container.setPixelsY(bounds.getMinY());
-        container.setPixelsWidth(bounds.getWidth());
-        container.setPixelsHeight(bounds.getHeight());
-        container.setViewBox(new ViewBox(bounds));
+        parts.forEach(part -> container.getContent()
+            .addAll(part.getVisibleContent()));
+
+        // APP-6E draws every fragment - frame, main icon, modifiers and amplifiers
+        // alike - against one shared canvas, each occupying its own subregion of it.
+        // The composite therefore inherits that canvas rather than being cropped to
+        // its ink: the coordinate space is what makes the fragments line up, and
+        // every part carries the same one, so any of them will do.
+        //
+        // This deliberately does not measure the rendered result. Doing so meant
+        // building a JavaFX scene graph purely to read a bounding box, which made
+        // SVG output need a display. Cropping to visible content only matters when
+        // rasterising, so that belongs to the PNG path - see #32.
+        parts.stream()
+            .findFirst()
+            .ifPresent(reference -> {
+                container.setViewBox(reference.getViewBox());
+                container.setPixelsX(reference.getPixelsX());
+                container.setPixelsY(reference.getPixelsY());
+                container.setPixelsWidth(reference.getPixelsWidth());
+                container.setPixelsHeight(reference.getPixelsHeight());
+            });
         return container;
     }
 
