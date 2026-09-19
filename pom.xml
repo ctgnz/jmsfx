@@ -48,6 +48,8 @@
 	
 	<properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Declared once here: jmsfx-core and jmsfx-standard both depend on foxglove and must agree. -->
+        <foxglove.version>0.11.0</foxglove.version>
     </properties>
     
     <profiles>
