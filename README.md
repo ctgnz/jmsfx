@@ -60,7 +60,7 @@ java -jar jmsfx-server/target/jmsfx-server-*.jar
 
 It serves on port 8080 by default.
 
-Note that composing icons currently requires a JavaFX toolkit even for SVG output, because the composition step builds a scene graph. On a headless host that means a virtual display - see [issue #32](https://github.com/ctgnz/jmsfx/issues/32), which tracks removing the requirement for the SVG path.
+The web application runs headless, with no display or JavaFX toolkit required - icons are composed and served as SVG. It deliberately does not rasterise: converting SVG to other formats is a job existing tools already do well.
 
 ## Licence
 

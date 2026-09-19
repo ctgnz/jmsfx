@@ -48,11 +48,6 @@ if ! swapon --show | grep -q /swapfile; then
     grep -q '^/swapfile' /etc/fstab || echo '/swapfile none swap sw 0 0' >> /etc/fstab
 fi
 
-echo "==> installing JavaFX runtime dependencies"
-# Icon composition builds a JavaFX scene graph even for SVG output, so the server
-# needs GTK and a virtual display. See https://github.com/ctgnz/jmsfx/issues/32
-apt-get install -y xvfb libgtk-3-0t64 libgl1 libxtst6
-
 echo "==> creating ${APP_USER} service account"
 id -u "${APP_USER}" >/dev/null 2>&1 || useradd --system --no-create-home --shell /usr/sbin/nologin "${APP_USER}"
 install -d -o "${APP_USER}" -g "${APP_USER}" -m 0755 "${APP_DIR}"

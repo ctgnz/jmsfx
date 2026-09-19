@@ -211,9 +211,6 @@ $(document).ready(function () {
 		amplifier = opt.val();
 		updatePreview();
 	});
-	$('#export-size').change(function () {
-		updateExportLinks();
-	});
 });
 
 function updateExportLinks() {
@@ -222,9 +219,6 @@ function updateExportLinks() {
 	}
 	var svgParams = $.param(lastSymbolData);
 	$('#export-svg').attr('href', lastSymbolUrl + (svgParams ? '?' + svgParams : ''))
-		.removeClass('disabled');
-	var pngParams = $.param($.extend({}, lastSymbolData, { pngWidth: $('#export-size').val() }));
-	$('#export-png').attr('href', lastSymbolUrl + '?' + pngParams)
 		.removeClass('disabled');
 }
 
@@ -337,17 +331,6 @@ function updatePreview() {
                 </form>
                 <div class="d-flex align-items-center flex-wrap gap-2 mt-3">
                     <a id="export-svg" class="btn btn-outline-primary btn-sm disabled" download="icon.svg">Export SVG</a>
-                    <a id="export-png" class="btn btn-outline-primary btn-sm disabled" download="icon.png">Export PNG</a>
-                    <label for="export-size" class="ms-2 mb-0">Size:</label>
-                    <select id="export-size" class="form-select form-select-sm w-auto">
-                        <option value="32">32px</option>
-                        <option value="64">64px</option>
-                        <option value="128">128px</option>
-                        <option value="256">256px</option>
-                        <option value="512" selected>512px</option>
-                        <option value="1024">1024px</option>
-                        <option value="2048">2048px</option>
-                    </select>
                 </div>
             </div>
             <div class="col-md-6 ms-auto">

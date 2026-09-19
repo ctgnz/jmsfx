@@ -9,14 +9,9 @@ User=jmsfx
 Group=jmsfx
 WorkingDirectory=/opt/jmsfx
 
-# xvfb-run supplies the virtual display JavaFX needs: icon composition builds a
-# scene graph even for SVG output, and PNG export rasterises through it.
-# See https://github.com/ctgnz/jmsfx/issues/32 - once SVG composition no longer
-# needs a toolkit, only PNG will require this.
-#
 # Bound to loopback on purpose: Caddy terminates TLS and proxies in, so the
 # JVM is never reachable from the internet directly.
-ExecStart=/usr/bin/xvfb-run -a /usr/bin/java -XX:MaxRAMPercentage=60 -jar /opt/jmsfx/jmsfx-server.jar --server.address=127.0.0.1 --server.port=8080
+ExecStart=/usr/bin/java -XX:MaxRAMPercentage=60 -jar /opt/jmsfx/jmsfx-server.jar --server.address=127.0.0.1 --server.port=8080
 
 # Spring Boot exits 143 on SIGTERM; without this systemd records a failure.
 SuccessExitStatus=143
