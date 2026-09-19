@@ -10,6 +10,22 @@ APP-6E is deliberately designed so the base symbology model can be extended (add
 
 Every icon fits within a standard SVG `viewBox="0 0 612 792"`. An icon is composed of several distinct, independently-selectable parts - the main icon, two modifiers (sector one/two - `SectorOneModifier`/`SectorTwoModifier`), and a variable number of amplifiers depending on the symbol set (see the `amplifier`/`amplifierTwo`/`amplifierThree`/`frameAmplifier` fields on `IdentificationSymbol`) - each with well-defined, fixed locations within that viewBox. Rendering an icon is just: pick the relevant SVG for each part and layer them in a defined z-order - no per-icon custom layout. This composes naturally with foxglove's SVG-in-JavaFX rendering. In jmsfx-core, **`IdentificationSymbol`** is the model of one icon (the selected main/modifiers/amplifiers and their state); **`IdentificationSymbolIcon`** is the JavaFX `Node` that renders it.
 
+**`IdentificationSymbol` is the decoded SIDC.** The APP-6E symbol identification code is a 30-position hexadecimal string - thirteen elements of information in three sets of ten - and its positions map one-to-one onto the class's identity-bearing properties, with nothing left over on either side:
+
+| SIDC positions | Property |
+| --- | --- |
+| 1-2, 3, 4, 5-6, 7, 8 | `version`, `context`, `standardIdentity`, `symbolSet`, `status`, `hqtfDummy` |
+| 9-10 | `amplifier` (as `getFullId()` - the amplifier list's id, then the item's) |
+| 11-12, 13-14, 15-16 | `entity`, `entityType`, `entitySubType` |
+| 17-18, 19-20 | `sectorOneModifier`, `sectorTwoModifier` |
+| 21, 22 | the same two modifiers again, via `getGroupId()` - zero means the symbol set's own modifier, non-zero means the common table, in which case the full common-modifier code is digit 21 then 17-18 (and 22 then 19-20) |
+| 23-24, 25-26, 27 | `amplifierTwo`, `amplifierThree`, `frameAmplifier` |
+| 28-30 | `countryCode` |
+
+`getFirstTenDigits()`/`getSecondTenDigits()`/`getThirdTenDigits()` do that encoding, and `toString()` joins them space-separated. Every other field on the class is derived (the `*Graphic` properties, resolved from the above), presentational (`scale`, `textAmplifiers`, `graphicAmplifiers`, `amplifierTemplateVisible`) or the cached encoding itself (`code`). So the SIDC is the class's complete state, which means a symbol round-trips through its code, and the code is a sound cache key for anything derived from a whole symbol.
+
+One caveat before treating a jmsfx SIDC as interchangeable with the standard's: **positions 9-10 currently diverge for echelons** - tracked as #48, so expect these codes to change. Two causes. `UnitEchelon` has `Staffel` at `5`, which is not an APP-6E echelon (it is an Annex B national designation) and shifts Company/Battery/Troop and above one place off Table A-8; and the list is flat `1`-`F` under a single `UNIT_ECHELON("1")`, whereas the standard splits echelon across two amplifier codes - `1` for brigade and below, `2` for division and above. Platoon and below happen to match; nothing above does. The `svg/Echelon/*.svg` assets are named `{identityGroupId}{fullId}` and follow jmsfx's numbering, so model and graphics agree with each other, and `model-hallux.yml` keeps its own ordering with its own asset copy.
+
 Three consumer modules build on this:
 - **`jmsfx-creator`** - desktop app for composing icons; can save the result as a composite SVG.
 - **`jmsfx-server`** - the same icon-composition capability, web-based (has `IconRestController`).
