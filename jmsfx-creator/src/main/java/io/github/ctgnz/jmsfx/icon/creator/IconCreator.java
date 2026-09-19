@@ -24,6 +24,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToolBar;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -106,6 +107,7 @@ public class IconCreator extends Application {
         root.setCenter(createSymbol());
         root.setLeft(createButtons());
         root.setRight(createAmplifierButtons());
+        root.setTop(createToolBar());
 
         Scene scene = new Scene(root);
         mainStage.setScene(scene);
@@ -491,6 +493,10 @@ public class IconCreator extends Application {
         gridPane.add(new Label("Sector 2 Mod:"), 0, row);
         gridPane.add(mod2, 1, row++);
 
+        return gridPane;
+    }
+
+    private Node createToolBar() {
         Button showAll = new Button("Show All");
         showAll.setOnAction(evt -> {
             Dialog<String> dialog = new Dialog<>();
@@ -507,13 +513,11 @@ public class IconCreator extends Application {
             });
             dialog.show();
         });
-        gridPane.add(showAll, 1, row++);
 
         Button clearCache = new Button("Clear Cache");
         clearCache.setOnAction(evt -> FoxgloveParser.clearCache());
-        gridPane.add(clearCache, 1, row++);
 
-        return gridPane;
+        return new ToolBar(showAll, clearCache);
     }
 
     private Node createSymbol() {
