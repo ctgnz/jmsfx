@@ -102,6 +102,51 @@
                         that only the minimum necessary should be shown, since they clutter quickly.
                     </p>
 
+                    <h6 class="mt-4">The SIDC</h6>
+                    <p>
+                        All of the above has a code. A <strong>symbol identification code</strong>, or SIDC, is a 30-position hexadecimal
+                        string - thirteen elements of information, written as three sets of ten. It is the entire symbol reduced to a key.
+                        Taking one apart:
+                    </p>
+                    <dl class="row">
+                        <dt class="col-sm-3"><code>1403100214</code></dt>
+                        <dd class="col-sm-9">
+                            Version, context, standard identity, symbol set, status, the headquarters / task force / dummy indicator, and an
+                            amplifier - here a present, real-world, friendly Land Unit headquarters at platoon echelon.
+                        </dd>
+                        <dt class="col-sm-3"><code>1204010006</code></dt>
+                        <dd class="col-sm-9">
+                            Entity, entity type, entity sub-type, then the sector one and sector two modifiers - movement and manoeuvre,
+                            narrowing to anti-armour, narrowing to armoured, with no sector one modifier.
+                        </dd>
+                        <dt class="col-sm-3"><code>0100000000</code></dt>
+                        <dd class="col-sm-9">
+                            For each sector, whether its modifier comes from the symbol set or from the common table; then further amplifiers
+                            and a country code.
+                        </dd>
+                    </dl>
+                    <p>
+                        Two details in there are worth drawing out, because both are consequences of how tight the code is.
+                    </p>
+                    <p>
+                        The first is how <strong>common modifiers</strong> fit. A symbol set's own modifier gets two digits, but a common
+                        modifier needs three - and there was no room to widen the code. So the third digit was borrowed from the last set of
+                        ten: read digit 22 first, then digits 19 and 20, and the example's <code>1</code> and <code>06</code> give
+                        <code>106</code>, high mobility / off-road. A zero in that leading position means the modifier is the symbol set's own
+                        after all.
+                    </p>
+                    <p>
+                        The second is that the seven standard identities collapse into four <strong>standard identity groups</strong> -
+                        Unknown covers Pending and Unknown, Friend covers Friend and Assumed Friend, Neutral stands alone, and Hostile covers
+                        Hostile and Suspect. Where a part of a symbol varies by frame shape, it is the <em>group</em> that selects which SVG to
+                        use, not the identity: four frame shapes, so four variants, not seven.
+                    </p>
+                    <p>
+                        Which is the point of the whole thing. Given a SIDC, every SVG that makes up the symbol is determined - the code is
+                        read, not interpreted. The desktop <a href="/download">Icon Creator</a> shows the code as you build a symbol, in the
+                        same three groups of ten.
+                    </p>
+
                     <h6 class="mt-4">How they are drawn here</h6>
                     <p>
                         Every part is drawn against the same 612 x 792 canvas, each occupying its own region of it. Nothing is positioned
