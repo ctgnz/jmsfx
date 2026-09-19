@@ -50,12 +50,12 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>27</version>
+            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-swing</artifactId>
-            <version>27</version>
+            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.dom4j</groupId>
