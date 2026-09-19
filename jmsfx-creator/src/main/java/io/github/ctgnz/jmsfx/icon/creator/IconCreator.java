@@ -562,11 +562,13 @@ public class IconCreator extends Application {
     }
 
     private String defaultSvgFileName() {
-        // getCode spaces the SIDC into three groups of ten for display; a file
-        // name wants the thirty digits on their own.
+        // getCode spaces the SIDC into three groups of ten for display. Dashes
+        // keep that grouping legible in a directory listing without putting
+        // spaces in a file name.
         String code = symbol.getCode();
-        String digits = code == null ? "" : code.replaceAll("\\s", "");
-        return (digits.isBlank() ? "icon" : digits) + ".svg";
+        String name = code == null ? "" : code.trim()
+            .replaceAll("\\s+", "-");
+        return (name.isEmpty() ? "icon" : name) + ".svg";
     }
 
     private Node createSymbol() {
