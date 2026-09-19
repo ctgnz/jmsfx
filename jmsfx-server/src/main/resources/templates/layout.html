@@ -34,6 +34,10 @@
                         <a th:if="${activePage} == 'download'" class="nav-link active" aria-current="page" href="/download">Download</a>
                         <a th:unless="${activePage} == 'download'" class="nav-link" href="/download">Download</a>
                     </li>
+                    <li class="nav-item">
+                        <a th:if="${activePage} == 'symbology'" class="nav-link active" aria-current="page" href="/symbology">Symbology</a>
+                        <a th:unless="${activePage} == 'symbology'" class="nav-link" href="/symbology">Symbology</a>
+                    </li>
                 </ul>
             </nav>
         </header>

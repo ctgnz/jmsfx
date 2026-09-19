@@ -44,6 +44,13 @@ public class WebController {
     }
 
     @GetMapping({
+        "/symbology"
+    })
+    public String symbologyPrimer() {
+        return "symbology";
+    }
+
+    @GetMapping({
         "/browse/{symbolSetId}"
     })
     public String browseSymbolSet(@PathVariable String symbolSetId, Model model) {

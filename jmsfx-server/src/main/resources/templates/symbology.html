@@ -1,0 +1,144 @@
+<!doctype html>
+<html th:replace="~{layout :: layout(~{::title}, 'symbology', ~{::#content}, ~{})}">
+    <head>
+        <title>JMSFX | How APP-6E symbols are built</title>
+    </head>
+    <body>
+        <div id="content">
+            <h5 class="py-3">How a symbol is built</h5>
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <p>
+                        A short primer on the parts of a military symbol and the words this site uses for them, enough to make the
+                        <a href="/generate">Generate</a> page make sense. It is an introduction, not a substitute for the standard itself.
+                    </p>
+                    <p class="text-body-secondary">
+                        This site follows <strong>NATO APP-6, Edition E (2023)</strong>. It is related to, and largely converged with, the US
+                        MIL-STD-2525D, but the two are separate documents and differ in detail.
+                    </p>
+
+                    <h6 class="mt-4">The parts</h6>
+                    <p>
+                        A symbol is a composition of a <strong>frame</strong>, a <strong>fill</strong>, an <strong>icon</strong>,
+                        <strong>modifiers</strong> and <strong>amplifiers</strong>, arranged within and around a bounding octagon. Between them
+                        they say what the object is, whose it is, and what state it is in.
+                    </p>
+
+                    <h6 class="mt-4">The frame</h6>
+                    <p>
+                        The frame is the border of the symbol, and the base that everything else is added to. Its shape carries three things at
+                        once:
+                    </p>
+                    <dl class="row">
+                        <dt class="col-sm-3">Standard identity</dt>
+                        <dd class="col-sm-9">
+                            Your relationship to the object: <em>Pending, Unknown, Friend, Neutral, Hostile, Assumed Friend</em> or
+                            <em>Suspect</em>. This is also what the frame's colour reflects.
+                        </dd>
+                        <dt class="col-sm-3">Dimension</dt>
+                        <dd class="col-sm-9">
+                            Broadly, where the object operates. A <strong>closed</strong> frame denotes Land and Sea Surface, a frame
+                            <strong>open at the bottom</strong> denotes Air and Space, and a frame <strong>open at the top</strong> denotes Sea
+                            Subsurface.
+                        </dd>
+                        <dt class="col-sm-3">Status</dt>
+                        <dd class="col-sm-9">
+                            Whether the object is present or merely planned, and its condition - damaged, destroyed and so on.
+                        </dd>
+                    </dl>
+                    <p>
+                        The line itself carries a fourth signal: <strong>solid</strong> when the identity is certain, and
+                        <strong>dotted</strong> when it is not - which is why Pending, Assumed Friend and Suspect are drawn with a dotted border.
+                    </p>
+
+                    <h6 class="mt-4">Dimensions and symbol sets</h6>
+                    <p>
+                        Dimension usually means the physical environment an object operates in - Land (split into Unit, Equipment and
+                        Installation), Sea Surface, Sea Subsurface, Air, Space. Some dimensions have no physical environment at all: Activity,
+                        Unknown, Dismounted Individual and Cyberspace are treated as dimensions regardless.
+                    </p>
+                    <p>
+                        On this site the dimension is what you pick first on <a href="/generate">Generate</a>, and what the leading path segment
+                        names in the API - <code>/Air</code>, <code>/LandUnits</code>, <code>/SeaSurface</code>. Within one, symbols narrow by
+                        <strong>entity</strong>, then <strong>entity type</strong>, then <strong>entity sub-type</strong>.
+                    </p>
+
+                    <h6 class="mt-4">Modifiers and amplifiers are not the same thing</h6>
+                    <p>
+                        The two are easy to confuse, and the distinction is simply <em>where they go</em>.
+                    </p>
+                    <p>
+                        A <strong>modifier</strong> qualifies the icon and sits with it, inside the bounding octagon - above, below or beside the
+                        main icon. There are two slots, <strong>sector one</strong> and <strong>sector two</strong>, and many modifiers are common
+                        across symbol sets rather than specific to one.
+                    </p>
+                    <p>
+                        An <strong>amplifier</strong> is optional extra information and is displayed <strong>outside the frame</strong> - echelon,
+                        a unit designation, a date-time, and so on. Not every amplifier applies to every dimension, and the standard is explicit
+                        that only the minimum necessary should be shown, since they clutter quickly.
+                    </p>
+
+                    <h6 class="mt-4">How they are drawn here</h6>
+                    <p>
+                        Every part is drawn against the same 612 x 792 canvas, each occupying its own region of it. Nothing is positioned
+                        relative to anything else - the shared coordinate space is what makes the pieces line up. Composing a symbol is therefore
+                        a matter of choosing the right SVG for each part and layering them in a fixed order:
+                    </p>
+                    <pre class="bg-body-tertiary border rounded p-3"><code>frame
+  status
+    headquarters / task force / dummy
+      main icon
+        amplifiers
+          sector one modifier
+            sector two modifier</code></pre>
+
+                    <h6 class="mt-4">Built up a piece at a time</h6>
+                    <p>
+                        The same Air symbol, narrowed one step at a time. Each is a live URL from this site.
+                    </p>
+                    <table class="table align-middle">
+                        <tbody>
+                            <tr>
+                                <td style="width: 140px"><img src="/Air/symbol" alt="Air frame with no icon" style="height: 90px" /></td>
+                                <td><code>/Air/symbol</code><br /><span class="text-body-secondary">The bare frame - an air object of unknown identity.</span></td>
+                            </tr>
+                            <tr>
+                                <td><img src="/Air/symbol/entity/MILITARY" alt="Military air entity" style="height: 90px" /></td>
+                                <td><code>/Air/symbol/entity/MILITARY</code><br /><span class="text-body-secondary">Narrowed to a military entity.</span></td>
+                            </tr>
+                            <tr>
+                                <td><img src="/Air/symbol/FIXED_WING" alt="Fixed-wing aircraft" style="height: 90px" /></td>
+                                <td><code>/Air/symbol/FIXED_WING</code><br /><span class="text-body-secondary">An entity type - fixed-wing.</span></td>
+                            </tr>
+                            <tr>
+                                <td><img src="/Air/symbol/FIXED_WING/BOMBER" alt="Bomber" style="height: 90px" /></td>
+                                <td><code>/Air/symbol/FIXED_WING/BOMBER</code><br /><span class="text-body-secondary">A sub-type - bomber.</span></td>
+                            </tr>
+                            <tr>
+                                <td><img src="/Air/symbol?sectorOneMod=FIGHTER" alt="Frame with a sector one modifier" style="height: 90px" /></td>
+                                <td><code>/Air/symbol?sectorOneMod=FIGHTER</code><br /><span class="text-body-secondary">A sector one modifier, on the bare frame.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="text-body-secondary">
+                        Use <a href="/browse">Browse</a> to see what a symbol set contains, and <a href="/generate">Generate</a> to build one.
+                    </p>
+
+                    <h6 class="mt-5">Source</h6>
+                    <p class="text-body-secondary small mb-0">
+                        NATO Standard <strong>APP-06, NATO Joint Military Symbology</strong>, Edition E, Version 1, October 2023. Allied
+                        Procedural Publication, published by the NATO Standardization Office; promulgated 11 October 2023, superseding Edition D,
+                        Version 1. The agreement of nations to use it is recorded in <strong>STANAG 2019</strong>.
+                    </p>
+                    <p class="text-body-secondary small">
+                        No stable public link is given here deliberately - NATO does not publish one that reliably survives, so the full title,
+                        edition and STANAG number are more use for tracking down the document than a URL that may already have moved. The
+                        descriptions above are written from it rather than reproduced from it.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
