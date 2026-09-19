@@ -13,6 +13,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
@@ -20,7 +22,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
@@ -79,7 +80,6 @@ public class IconCreator extends Application {
     }
 
     private IdentificationSymbol symbol;
-    private ProgressBar showAllProgress;
     private GridPane amplifierGuidePane;
     private Stage mainStage;
     private FoxgloveParser svgParser = new FoxgloveParser();
@@ -111,7 +111,7 @@ public class IconCreator extends Application {
         mainStage.setScene(scene);
         mainStage.setResizable(true);
         mainStage.setMaximized(true);
-        mainStage.setTitle("Icon Previewer");
+        mainStage.setTitle("Icon Creator");
         mainStage.show();
     }
 
@@ -136,8 +136,10 @@ public class IconCreator extends Application {
                 amplifierGuidePane.add(title, 0, 0);
                 amplifierGuidePane.add(showGuides, 0, 1);
                 AtomicInteger row = new AtomicInteger(2);
-                newValue.getAmplifierGuides()
-                    .forEach(guide -> createAmplifierGuide(row, guide));
+                if (newValue != null) {
+                    newValue.getAmplifierGuides()
+                        .forEach(guide -> createAmplifierGuide(row, guide));
+                }
             });
 
         ScrollPane sp = new ScrollPane(amplifierGuidePane);
@@ -153,11 +155,16 @@ public class IconCreator extends Application {
             .select(0);
         guideSelect.valueProperty()
             .addListener((obs, oldValue, newValue) -> {
+                // Each mode owns one kind of amplifier, so switching has to drop
+                // the other kind - otherwise the previous one stays attached to
+                // the symbol while the UI claims the new mode is in effect.
                 switch (newValue) {
                     case "Text":
+                        symbol.removeGraphicAmplifier(guide.getAmplifier());
                         symbol.addTextAmplifier(guide.getAmplifier(), Pos.TOP_LEFT, guide.getCode());
                         break;
                     case "Graphic":
+                        symbol.removeTextAmplifier(guide.getAmplifier());
                         break;
                     default:
                         symbol.removeTextAmplifier(guide.getAmplifier());
@@ -223,6 +230,18 @@ public class IconCreator extends Application {
             if (selectedFile != null) {
                 lastDirectory = selectedFile.getParentFile();
                 SvgGraphic graphic = svgParser.parseFile(selectedFile);
+                // parseFile returns an empty graphic rather than throwing, so an
+                // unreadable file would otherwise attach nothing and say nothing.
+                if (graphic.getContent()
+                    .isEmpty()) {
+                    Alert alert = new Alert(AlertType.ERROR);
+                    alert.initOwner(mainStage);
+                    alert.setHeaderText("Could not use that graphic");
+                    alert.setContentText(selectedFile.getName()
+                                         + " could not be read as SVG, or contains nothing to draw.");
+                    alert.showAndWait();
+                    return;
+                }
                 symbol.addGraphicAmplifier(guide.getAmplifier(), graphic, ScaleDirection.Original, Pos.TOP_LEFT);
             }
         });
@@ -397,21 +416,23 @@ public class IconCreator extends Application {
         symbolSet.valueProperty()
             .addListener((obs, oldValue, newValue) -> {
                 amplifiers.retainAll(library.getDefaultAmplifier());
-                amplifiers.addAll(newValue.getAmplifierList());
                 amplifiersTwo.retainAll(library.getDefaultAmplifier());
-                amplifiersTwo.addAll(newValue.getAmplifierListTwo());
                 amplifiersThree.retainAll(library.getDefaultAmplifier());
-                amplifiersThree.addAll(newValue.getAmplifierListThree());
                 frameAmplifiers.retainAll(library.getDefaultAmplifier());
-                frameAmplifiers.addAll(newValue.getFrameAmplifierList());
                 sectorOneModifiers.retainAll(library.getCommonSectorOneModifiers());
-                sectorOneModifiers.addAll(newValue.getSectorOneModifiers());
-                sectorOneModifiers.sort(SectorOneModifier.VIEW_ORDER);
                 sectorTwoModifiers.retainAll(library.getCommonSectorTwoModifiers());
-                sectorTwoModifiers.addAll(newValue.getSectorTwoModifiers());
-                sectorTwoModifiers.sort(SectorTwoModifier.VIEW_ORDER);
                 entities.retainAll(library.getDefaultEntity());
-                entities.addAll(newValue.getEntities());
+                if (newValue != null) {
+                    amplifiers.addAll(newValue.getAmplifierList());
+                    amplifiersTwo.addAll(newValue.getAmplifierListTwo());
+                    amplifiersThree.addAll(newValue.getAmplifierListThree());
+                    frameAmplifiers.addAll(newValue.getFrameAmplifierList());
+                    sectorOneModifiers.addAll(newValue.getSectorOneModifiers());
+                    sectorTwoModifiers.addAll(newValue.getSectorTwoModifiers());
+                    entities.addAll(newValue.getEntities());
+                }
+                sectorOneModifiers.sort(SectorOneModifier.VIEW_ORDER);
+                sectorTwoModifiers.sort(SectorTwoModifier.VIEW_ORDER);
             });
 
         GridPane gridPane = new GridPane();
@@ -487,10 +508,6 @@ public class IconCreator extends Application {
             dialog.show();
         });
         gridPane.add(showAll, 1, row++);
-
-        showAllProgress = new ProgressBar();
-        showAllProgress.setVisible(false);
-        gridPane.add(showAllProgress, 0, row++, 2, 1);
 
         Button clearCache = new Button("Clear Cache");
         clearCache.setOnAction(evt -> FoxgloveParser.clearCache());
