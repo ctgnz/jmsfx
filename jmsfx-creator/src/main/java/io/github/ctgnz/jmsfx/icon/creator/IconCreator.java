@@ -102,11 +102,21 @@ public class IconCreator extends Application {
     public void start(Stage stage) throws Exception {
         this.mainStage = stage;
         BorderPane root = new BorderPane();
-        root.setPadding(new Insets(12));
 
-        root.setCenter(createSymbol());
-        root.setLeft(createButtons());
-        root.setRight(createAmplifierButtons());
+        // Inset the three content regions individually rather than padding the
+        // root, so the toolbar spans the full width of the window instead of
+        // floating clear of its edges. Group is not a Region and has no padding
+        // of its own, so this has to be a margin rather than padding.
+        Node symbolView = createSymbol();
+        Node propertyPane = createButtons();
+        Node amplifierPane = createAmplifierButtons();
+        BorderPane.setMargin(symbolView, new Insets(12));
+        BorderPane.setMargin(propertyPane, new Insets(12));
+        BorderPane.setMargin(amplifierPane, new Insets(12));
+
+        root.setCenter(symbolView);
+        root.setLeft(propertyPane);
+        root.setRight(amplifierPane);
         root.setTop(createToolBar());
 
         Scene scene = new Scene(root);
