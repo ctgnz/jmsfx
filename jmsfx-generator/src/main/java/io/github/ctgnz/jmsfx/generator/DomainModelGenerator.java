@@ -17,7 +17,6 @@ import io.github.ctgnz.jmsfx.generator.model.AbstractModel;
 import io.github.ctgnz.jmsfx.generator.model.LibraryModel;
 import io.github.ctgnz.jmsfx.generator.model.SymbolSetModel;
 import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
-import jakarta.xml.bind.JAXBException;
 
 public class DomainModelGenerator {
 
@@ -54,7 +53,7 @@ public class DomainModelGenerator {
         generateLibrary(dataModel);
     }
 
-    public LibraryModel parse() throws JAXBException, IOException, Exception {
+    public LibraryModel parse() throws Exception {
         return parser.readLibraryModel(Files.newInputStream(config.getModelFile()));
     }
 
