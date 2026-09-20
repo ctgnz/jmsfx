@@ -49,6 +49,7 @@ public class DomainModelGenerator {
             .forEach(enumConfig -> generateStandardEnum(dataModel, enumConfig));
         generateAmplifierEnum(dataModel);
         generateListAmplifierEnums(dataModel);
+        generateModifierBounds(dataModel);
         generateSymbolSets(dataModel);
         generateLibrary(dataModel);
     }
@@ -113,6 +114,18 @@ public class DomainModelGenerator {
                     throw new IllegalArgumentException("Unable to create amplifier group enum", e);
                 }
             });
+    }
+
+    /** Only emitted when there is something to emit - a model whose modifiers all keep within the octagon needs no lookup. */
+    private void generateModifierBounds(LibraryModel dataModel) throws Exception {
+        if (dataModel.getModifierBounds() == null || dataModel.getModifierBounds()
+            .isEmpty()) {
+            return;
+        }
+        Template template = config.getTemplateConfig()
+            .getTemplate("ModifierBounds.ftl");
+        template.process(dataModel, newWriter(config.getIconPackageDir()
+            .resolve("ModifierBounds.java")));
     }
 
     private void generateStandardEnum(LibraryModel dataModel, String typeName) {

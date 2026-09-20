@@ -1,7 +1,10 @@
 package io.github.ctgnz.jmsfx.standard.cyberspacespace;
 
+import javafx.geometry.Rectangle2D;
+
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.standard.ModifierBounds;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.types.ModifierCategory;
 
@@ -44,4 +47,8 @@ public enum CyberspaceSpaceSectorTwoModifier implements SectorTwoModifier {
         return SymbolSetEnum.CYBERSPACE;
     }
 
+    @Override
+    public Rectangle2D getModifierBounds() {
+        return ModifierBounds.lookup(getGraphicIdentifier());
+    }
 }

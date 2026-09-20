@@ -15,9 +15,11 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
 @JsonPropertyOrder({
-    "config", "versions", "contexts", "identityGroups", "identities", "statuses", "hqtfDummies", "dimensions", "dimensionGraphics", "amplifiers", "amplifierGroups", "symbolSets"
+    "config", "versions", "contexts", "identityGroups", "identities", "statuses", "hqtfDummies", "dimensions", "dimensionGraphics", "amplifiers", "amplifierGroups", "modifierBounds", "symbolSets"
 })
 public class LibraryModel {
+    private Map<String, List<Double>> modifierBounds;
+
     @YamlFlowStyle
     @YamlForceQuote(properties = {
         "graphicLocation", "baseSymbolSet"
@@ -207,4 +209,18 @@ public class LibraryModel {
         this.commonPackage = config.commonPackage;
     }
 
+    /**
+     * Measured bounds for the few sector modifier fragments that draw outside the bounding octagon, keyed by graphic identifier - the file stem, which is what
+     * {@code ModifierElement.getGraphicIdentifier()} produces. Everything else takes the octagon by rule, so only the exceptions are carried.
+     * <p>
+     * Keyed by identifier rather than hung off the modifier models because the identifier is derived three different ways - symbol set modifiers, and common modifiers in each
+     * sector - and duplicating that derivation in {@code FragmentMeasurer} is what went wrong in jmsfx#52. The measurer scans the directories instead.
+     */
+    public Map<String, List<Double>> getModifierBounds() {
+        return modifierBounds;
+    }
+
+    public void setModifierBounds(Map<String, List<Double>> modifierBounds) {
+        this.modifierBounds = modifierBounds;
+    }
 }

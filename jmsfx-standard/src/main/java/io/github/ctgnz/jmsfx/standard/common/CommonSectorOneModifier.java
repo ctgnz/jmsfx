@@ -1,7 +1,10 @@
 package io.github.ctgnz.jmsfx.standard.common;
 
+import javafx.geometry.Rectangle2D;
+
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.standard.ModifierBounds;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.types.ModifierCategory;
 
@@ -113,4 +116,8 @@ public enum CommonSectorOneModifier implements SectorOneModifier {
         return "0".equals(groupId) && "00".equals(id);
     }
 
+    @Override
+    public Rectangle2D getModifierBounds() {
+        return ModifierBounds.lookup(getGraphicIdentifier());
+    }
 }

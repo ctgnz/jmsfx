@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.concurrent.CountDownLatch;
+import java.util.stream.Stream;
 
 import javafx.application.Platform;
 import javafx.geometry.Bounds;
@@ -44,6 +46,18 @@ public class FragmentMeasurer {
 
     /** Bounds are rounded to this many decimals - beyond it the numbers are float32 noise, not signal. */
     private static final int PRECISION = 2;
+
+    /** The bounding octagon from BoundingOctagon.svg - x 183.5 to 426.5, y 272.5 to 516.5. */
+    private static final double OCTAGON_MIN_X = 183.5;
+    private static final double OCTAGON_MIN_Y = 272.5;
+    private static final double OCTAGON_MAX_X = 426.5;
+    private static final double OCTAGON_MAX_Y = 516.5;
+
+    /** Matches the rounding applied to measurements, so a fragment is not called escaping by less than it is recorded to. */
+    private static final double TOLERANCE = 0.01;
+
+    /** The one symbol set excluded throughout - see jmsfx#52. */
+    private static final String CONTROL_MEASURES = "ControlMeasures";
 
     public static void main(String[] args) {
         String configFile = args.length > 0 ? args[0] : "/config.yml";
@@ -127,6 +141,7 @@ public class FragmentMeasurer {
         measureStatuses(model);
         measureHqtfDummies(model);
         measureFrames(model);
+        measureSectorModifiers(model);
 
         Path modelFile = config.getModelSourceFile();
         Files.writeString(modelFile, parser.writeLibraryModel(model), StandardCharsets.UTF_8);
@@ -226,6 +241,69 @@ public class FragmentMeasurer {
         }
         System.out.format("  %-24s %d of %d measured, %d absent%n", "frames (by dimension)", measured, model.getDimensions()
             .size(), absent);
+    }
+
+    /**
+     * Sector modifiers are drawn within the bounding octagon, so only the fragments that break that rule need recording - 46 of 449 at the time of writing, from the Land Units
+     * supply bar down to sub-pixel stroke overhangs.
+     * <p>
+     * This walks {@code Appendices/*}/mod1 and mod2 rather than deriving paths from the model. A modifier's identifier is built three different ways depending on whether it
+     * belongs to a symbol set or to one of the two common sets, and the file stem already is that identifier - so scanning avoids duplicating logic that has gone wrong before.
+     */
+    private void measureSectorModifiers(LibraryModel model) throws Exception {
+        Path appendices = config.getResourceDir()
+            .resolve("svg")
+            .resolve("Appendices");
+        if (!Files.isDirectory(appendices)) {
+            System.out.format("  %-24s no Appendices directory at %s%n", "sector modifiers", appendices);
+            return;
+        }
+        Map<String, List<Double>> escaping = new TreeMap<>();
+        int inspected = 0;
+        try (Stream<Path> tree = Files.walk(appendices)) {
+            List<Path> fragments = tree.filter(Files::isRegularFile)
+                .filter(path -> path.getFileName()
+                    .toString()
+                    .endsWith(".svg"))
+                .filter(FragmentMeasurer::isSectorModifier)
+                .sorted()
+                .toList();
+            for (Path fragment : fragments) {
+                inspected++;
+                Bounds bounds = boundsOf(fragment);
+                if (bounds == null || containedInOctagon(bounds)) {
+                    continue;
+                }
+                String fileName = fragment.getFileName()
+                    .toString();
+                escaping.put(fileName.substring(0, fileName.length() - ".svg".length()), rectangle(bounds));
+            }
+        }
+        model.setModifierBounds(escaping.isEmpty() ? null : escaping);
+        System.out.format("  %-24s %d inspected, %d escaping the octagon%n", "sector modifiers", inspected, escaping.size());
+    }
+
+    private static boolean isSectorModifier(Path fragment) {
+        Path parent = fragment.getParent();
+        if (parent == null || parent.getParent() == null) {
+            return false;
+        }
+        String directory = parent.getFileName()
+            .toString();
+        if (!"mod1".equals(directory) && !"mod2".equals(directory)) {
+            return false;
+        }
+        // Control Measures do not obey the icon composition rules - they are map graphics rather than
+        // symbols built within the octagon - so their fragments are excluded here as everywhere else.
+        return !CONTROL_MEASURES.equals(parent.getParent()
+            .getFileName()
+            .toString());
+    }
+
+    /** Within the octagon of {@code BoundingOctagon.svg}, allowing the same tolerance the measurements are rounded to. */
+    private static boolean containedInOctagon(Bounds bounds) {
+        return bounds.getMinX() >= OCTAGON_MIN_X - TOLERANCE && bounds.getMinY() >= OCTAGON_MIN_Y - TOLERANCE
+               && bounds.getMaxX() <= OCTAGON_MAX_X + TOLERANCE && bounds.getMaxY() <= OCTAGON_MAX_Y + TOLERANCE;
     }
 
     private Path svg(String directory, String fileName) {
