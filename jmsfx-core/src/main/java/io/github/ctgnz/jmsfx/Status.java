@@ -8,6 +8,10 @@ public interface Status extends CodeElement {
 
     List<String> getDimensionIds();
 
+    /**
+     * APP-6E offers two renderings of the operational condition codes, and the trailing {@code 2} selects the <em>alternate</em> one - the form in Table 1-7. That is the only
+     * variant implemented here, and the only one the shipped fragments cover: every file under {@code /svg/OCA} that this can name ends in {@code 2}.
+     */
     default String getGraphicLocation(StandardIdentity identity, SymbolSet symbolSet) {
         return String.format("/svg/OCA/0%s%s%s2.svg", identity.getGroupId(), symbolSet.getFrameId(), getId());
     }
