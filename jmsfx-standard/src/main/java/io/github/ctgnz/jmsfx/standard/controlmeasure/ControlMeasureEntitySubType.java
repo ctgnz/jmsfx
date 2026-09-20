@@ -88,12 +88,7 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
         RECTANGULAR_TARGET("02", "Rectangular Target", ControlMeasureEntityType.AREA_TARGETS, GraphicType.MAIN),
         CIRCULAR_TARGET("03", "Circular Target", ControlMeasureEntityType.AREA_TARGETS, GraphicType.MAIN),
         RECTANGULAR_TARGET_SINGLE_TARGET("04", "Rectangular Target - Single Target", ControlMeasureEntityType.AREA_TARGETS, GraphicType.MAIN),
-        SERIES_GROUP_TARGETS("05", "Series of Targets", ControlMeasureEntityType.AREA_TARGETS, GraphicType.MAIN) {
-            @Override
-            public String getGraphicIdentifier() {
-                return "25240805.a";
-            }
-        },
+        SERIES_GROUP_TARGETS("05", "Series of Targets", ControlMeasureEntityType.AREA_TARGETS, GraphicType.MAIN),
         SMOKE_TARGET("06", "Smoke Target", ControlMeasureEntityType.AREA_TARGETS, GraphicType.MAIN),
         BOMB_AREA("08", "Bomb Area", ControlMeasureEntityType.AREA_TARGETS, GraphicType.MAIN),
         FSA_IRREGULAR("01", "Irregular", ControlMeasureEntityType.FIRE_SUPPORT_AREA, GraphicType.MAIN),
@@ -208,24 +203,9 @@ public enum ControlMeasureEntitySubType implements EntitySubType {
         ASR_ALTERNATING_TRAFFIC("03", "Alternating Traffic", ControlMeasureEntityType.ALTERNATE_SUPPLY_ROUTE, GraphicType.MAIN),
         ROUTE_ONE_WAY_TRAFFIC("01", "One Way Traffic", ControlMeasureEntityType.ROUTE, GraphicType.MAIN),
         ROUTE_ALTERNATING_TRAFFIC("02", "Alternating Traffic", ControlMeasureEntityType.ROUTE, GraphicType.MAIN),
-        TMT_COVER("01", "Cover", ControlMeasureEntityType.SECURITY, GraphicType.MAIN) {
-            @Override
-            public String getGraphicIdentifier() {
-                return "25342201.b";
-            }
-        },
-        TMT_GUARD("02", "Guard", ControlMeasureEntityType.SECURITY, GraphicType.MAIN) {
-            @Override
-            public String getGraphicIdentifier() {
-                return "25342202.b";
-            }
-        },
-        TMT_SCREEN("03", "Screen", ControlMeasureEntityType.SECURITY, GraphicType.MAIN) {
-            @Override
-            public String getGraphicIdentifier() {
-                return "25342203.b";
-            }
-        },
+        TMT_COVER("01", "Cover", ControlMeasureEntityType.SECURITY, GraphicType.MAIN),
+        TMT_GUARD("02", "Guard", ControlMeasureEntityType.SECURITY, GraphicType.MAIN),
+        TMT_SCREEN("03", "Screen", ControlMeasureEntityType.SECURITY, GraphicType.MAIN),
         HMSD_SMALL("01", "Human Made Space Debris, Small", ControlMeasureEntityType.HUMAN_MADE_SPACE_DEBRIS, GraphicType.MAIN),
         HMSD_MEDIUM("02", "Human Made Space Debris, Medium", ControlMeasureEntityType.HUMAN_MADE_SPACE_DEBRIS, GraphicType.MAIN),
         HMSD_BIG("03", "Human Made Space Debris, Big", ControlMeasureEntityType.HUMAN_MADE_SPACE_DEBRIS, GraphicType.MAIN),
