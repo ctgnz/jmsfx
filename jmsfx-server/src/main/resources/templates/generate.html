@@ -211,13 +211,20 @@ $(document).ready(function () {
 		amplifier = opt.val();
 		updatePreview();
 	});
+	$('#export-trim').change(updateExportLinks);
 });
 
 function updateExportLinks() {
 	if (!lastSymbolUrl) {
 		return;
 	}
-	var svgParams = $.param(lastSymbolData);
+	// The preview keeps the whole canvas so it does not jump about as selections change;
+	// only the exported file is trimmed, and only when asked. See #45.
+	var exportData = $.extend({}, lastSymbolData);
+	if ($('#export-trim').is(':checked')) {
+		exportData.trim = 'true';
+	}
+	var svgParams = $.param(exportData);
 	$('#export-svg').attr('href', lastSymbolUrl + (svgParams ? '?' + svgParams : ''))
 		.removeClass('disabled');
 }
@@ -331,6 +338,13 @@ function updatePreview() {
                 </form>
                 <div class="d-flex align-items-center flex-wrap gap-2 mt-3">
                     <a id="export-svg" class="btn btn-outline-primary btn-sm disabled" download="icon.svg">Export SVG</a>
+                    <div class="form-check ms-2 mb-0">
+                        <input class="form-check-input" type="checkbox" id="export-trim" checked />
+                        <label class="form-check-label" for="export-trim">Trim to size</label>
+                    </div>
+                </div>
+                <div class="form-text">
+                    Trimmed files crop to the symbol. Untrimmed, they keep the full 612 x 792 canvas, so separate symbols line up with one another.
                 </div>
             </div>
             <div class="col-md-6 ms-auto">

@@ -80,26 +80,30 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
     @GetMapping("/symbol")
     public ResponseEntity<byte[]> generateFrameOnlySymbol(@RequestParam(required = false) M sectorOneMod,
                                                           @RequestParam(required = false) N sectorTwoMod,
-                                                          @RequestParam(required = false) A amplifier) throws Exception {
-        return renderSvg(buildSymbol(null, null, null, sectorOneMod, sectorTwoMod, amplifier));
+                                                          @RequestParam(required = false) A amplifier,
+                                                          @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+        return renderSvg(buildSymbol(null, null, null, sectorOneMod, sectorTwoMod, amplifier), trim);
     }
 
     @GetMapping("/symbol/modifier/one/{sectorOneMod}")
-    public ResponseEntity<byte[]> generateModifierOneSymbol(@PathVariable M sectorOneMod) throws Exception {
-        return renderSvg(buildSymbol(null, null, null, sectorOneMod, null, null));
+    public ResponseEntity<byte[]> generateModifierOneSymbol(@PathVariable M sectorOneMod,
+                                                            @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+        return renderSvg(buildSymbol(null, null, null, sectorOneMod, null, null), trim);
     }
 
     @GetMapping("/symbol/modifier/two/{sectorTwoMod}")
-    public ResponseEntity<byte[]> generateModifierTwoSymbol(@PathVariable N sectorTwoMod) throws Exception {
-        return renderSvg(buildSymbol(null, null, null, null, sectorTwoMod, null));
+    public ResponseEntity<byte[]> generateModifierTwoSymbol(@PathVariable N sectorTwoMod,
+                                                            @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+        return renderSvg(buildSymbol(null, null, null, null, sectorTwoMod, null), trim);
     }
 
     @GetMapping("/symbol/entity/{entity}")
     public ResponseEntity<byte[]> generateEntitySymbol(@PathVariable E entity,
                                                        @RequestParam(required = false) M sectorOneMod,
                                                        @RequestParam(required = false) N sectorTwoMod,
-                                                       @RequestParam(required = false) A amplifier) throws Exception {
-        return renderSvg(buildSymbol(entity, null, null, sectorOneMod, sectorTwoMod, amplifier));
+                                                       @RequestParam(required = false) A amplifier,
+                                                       @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+        return renderSvg(buildSymbol(entity, null, null, sectorOneMod, sectorTwoMod, amplifier), trim);
     }
 
     @SuppressWarnings("unchecked")
@@ -108,8 +112,9 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
                                                               @PathVariable S entitySubType,
                                                               @RequestParam(required = false) M sectorOneMod,
                                                               @RequestParam(required = false) N sectorTwoMod,
-                                                              @RequestParam(required = false) A amplifier) throws Exception {
-        return renderSvg(buildSymbol((E) entityType.getEntity(), entityType, entitySubType, sectorOneMod, sectorTwoMod, amplifier));
+                                                              @RequestParam(required = false) A amplifier,
+                                                              @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+        return renderSvg(buildSymbol((E) entityType.getEntity(), entityType, entitySubType, sectorOneMod, sectorTwoMod, amplifier), trim);
     }
 
     @SuppressWarnings("unchecked")
@@ -117,8 +122,9 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
     public ResponseEntity<byte[]> generateSymbol(@PathVariable T entityType,
                                                  @RequestParam(required = false) M sectorOneMod,
                                                  @RequestParam(required = false) N sectorTwoMod,
-                                                 @RequestParam(required = false) A amplifier) throws Exception {
-        return renderSvg(buildSymbol((E) entityType.getEntity(), entityType, null, sectorOneMod, sectorTwoMod, amplifier));
+                                                 @RequestParam(required = false) A amplifier,
+                                                 @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+        return renderSvg(buildSymbol((E) entityType.getEntity(), entityType, null, sectorOneMod, sectorTwoMod, amplifier), trim);
     }
 
     private IdentificationSymbol buildSymbol(E entity, T entityType, S entitySubType, M sectorOneMod, N sectorTwoMod, A amplifier) {
@@ -146,8 +152,12 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
         return symbol;
     }
 
-    private ResponseEntity<byte[]> renderSvg(IdentificationSymbol symbol) throws Exception {
-        String svg = parser.write(symbol.getCombinedGraphic(), false);
+    /**
+     * {@code trim} crops the viewBox to what the symbol draws, plus a little padding. Off by default, so an existing caller keeps the shared 612 x 792 canvas and two symbols still
+     * line up with each other; on, the symbol fills the space it is given, which is what a thumbnail or a standalone file wants. See jmsfx#45.
+     */
+    private ResponseEntity<byte[]> renderSvg(IdentificationSymbol symbol, boolean trim) throws Exception {
+        String svg = parser.write(symbol.getCombinedGraphic(trim), false);
         return ResponseEntity.ok()
             .contentType(MediaType.valueOf("image/svg+xml"))
             .body(svg.getBytes(StandardCharsets.UTF_8));

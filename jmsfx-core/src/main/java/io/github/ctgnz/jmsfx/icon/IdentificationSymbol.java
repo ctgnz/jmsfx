@@ -18,6 +18,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableMap;
+import javafx.geometry.BoundingBox;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.paint.Color;
@@ -25,6 +26,7 @@ import javafx.scene.paint.Color;
 import nz.co.ctg.foxglove.ISvgContent;
 import nz.co.ctg.foxglove.ISvgStylable;
 import nz.co.ctg.foxglove.SvgGraphic;
+import nz.co.ctg.foxglove.type.ViewBox;
 
 import io.github.ctgnz.jmsfx.Amplifier;
 import io.github.ctgnz.jmsfx.AmplifierGuide;
@@ -219,6 +221,19 @@ public class IdentificationSymbol {
     }
 
     public SvgGraphic getCombinedGraphic() {
+        return getCombinedGraphic(false);
+    }
+
+    /**
+     * The composed symbol, optionally cropped to what it actually draws.
+     * <p>
+     * Untrimmed - the default - the result keeps the shared 612 x 792 canvas, which is what lets two exported symbols sit correctly alongside one another. Trimmed, the viewBox
+     * becomes {@link #getVisibleBounds()} plus {@link IconGeometry#TRIM_PADDING}, which is what a symbol wants when it is displayed small: the canvas is mostly empty, so scaling
+     * it into a thumbnail leaves the symbol itself at around half the size it could be.
+     * <p>
+     * Only the viewBox differs. The content is identical either way, still in canvas coordinates, so trimming changes how a renderer frames the symbol rather than what is drawn.
+     */
+    public SvgGraphic getCombinedGraphic(boolean trimToVisibleBounds) {
         SvgGraphic container = new SvgGraphic();
         container.setTitle(getDescription());
 
@@ -264,19 +279,24 @@ public class IdentificationSymbol {
         // its ink: the coordinate space is what makes the fragments line up, and
         // every part carries the same one, so any of them will do.
         //
-        // This deliberately does not measure the rendered result. Doing so meant
-        // building a JavaFX scene graph purely to read a bounding box, which made
-        // SVG output need a display. Cropping to visible content only matters when
-        // rasterising, so that belongs to the PNG path - see #32.
-        parts.stream()
-            .findFirst()
-            .ifPresent(reference -> {
-                container.setViewBox(reference.getViewBox());
-                container.setPixelsX(reference.getPixelsX());
-                container.setPixelsY(reference.getPixelsY());
-                container.setPixelsWidth(reference.getPixelsWidth());
-                container.setPixelsHeight(reference.getPixelsHeight());
-            });
+        // Neither branch measures the rendered result. Doing so meant building a
+        // JavaFX scene graph purely to read a bounding box, which made SVG output
+        // need a display - see #32. The trimmed viewBox comes from bounds measured
+        // once at generation time and unioned arithmetically, so it costs no toolkit.
+        Rectangle2D trimmed = trimToVisibleBounds ? IconGeometry.padded(getVisibleBounds()) : Rectangle2D.EMPTY;
+        if (!Rectangle2D.EMPTY.equals(trimmed)) {
+            applyViewBox(container, trimmed);
+        } else {
+            parts.stream()
+                .findFirst()
+                .ifPresent(reference -> {
+                    container.setViewBox(reference.getViewBox());
+                    container.setPixelsX(reference.getPixelsX());
+                    container.setPixelsY(reference.getPixelsY());
+                    container.setPixelsWidth(reference.getPixelsWidth());
+                    container.setPixelsHeight(reference.getPixelsHeight());
+                });
+        }
         return container;
     }
 
@@ -764,6 +784,15 @@ public class IdentificationSymbol {
         sectorTwoModifierGraphic.bind(Bindings.createObjectBinding(this::loadSectorTwoModifierGraphic, code, sectorTwoModifier));
         statusGraphic.bind(Bindings.createObjectBinding(this::loadStatusGraphic, code, status));
         hqtfDummyGraphic.bind(Bindings.createObjectBinding(this::loadHqtfDummyGraphic, code, hqtfDummy));
+    }
+
+    /** The symbol's intrinsic size follows its viewBox, so a trimmed symbol reports the size of its ink rather than of the canvas. */
+    private static void applyViewBox(SvgGraphic container, Rectangle2D bounds) {
+        container.setViewBox(new ViewBox(new BoundingBox(bounds.getMinX(), bounds.getMinY(), bounds.getWidth(), bounds.getHeight())));
+        container.setPixelsX(bounds.getMinX());
+        container.setPixelsY(bounds.getMinY());
+        container.setPixelsWidth(bounds.getWidth());
+        container.setPixelsHeight(bounds.getHeight());
     }
 
     /** Only standard amplifiers carry measured bounds; a text or country amplifier draws no graphic of its own. */
