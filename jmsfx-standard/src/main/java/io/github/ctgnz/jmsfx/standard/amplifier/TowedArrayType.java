@@ -8,7 +8,7 @@ import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum TowedArrayType implements StandardAmplifierItem {
-        SHORT_TOWED_ARRAY("1", "Short towed array") {
+        SHORT_TOWED_ARRAY("61", "Short towed array") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -20,7 +20,7 @@ public enum TowedArrayType implements StandardAmplifierItem {
                 };
             }
         },
-        LONG_TOWED_ARRAY("2", "Long towed array") {
+        LONG_TOWED_ARRAY("62", "Long towed array") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {

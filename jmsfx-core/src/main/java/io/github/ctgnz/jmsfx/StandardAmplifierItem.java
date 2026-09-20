@@ -2,6 +2,13 @@ package io.github.ctgnz.jmsfx;
 
 import javafx.geometry.Rectangle2D;
 
+/**
+ * An amplifier that can be named in a SIDC, at positions 9 and 10 - echelon, equipment mobility, naval towed array and leadership role.
+ * <p>
+ * Their ids are the complete two-digit code from APP-6E Table A-8, so {@code getFullId()} is inherited unchanged from {@link AmplifierListItem}. It used to prefix the amplifier
+ * list's own id, which made the first digit a property of the group rather than of the value - a carry-over from the Esri model that could not express echelon spanning two code
+ * groups, or equipment mobility spanning three.
+ */
 public interface StandardAmplifierItem extends AmplifierListItem {
 
     /**
@@ -15,11 +22,6 @@ public interface StandardAmplifierItem extends AmplifierListItem {
      */
     default Rectangle2D getAmplifierBounds(StandardIdentity identity) {
         return Rectangle2D.EMPTY;
-    }
-
-    @Override
-    default String getFullId() {
-        return String.format("%s%s", getAmplifierList().getId(), getId());
     }
 
 }

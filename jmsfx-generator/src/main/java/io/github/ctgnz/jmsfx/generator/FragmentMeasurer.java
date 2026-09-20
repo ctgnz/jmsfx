@@ -326,9 +326,14 @@ public class FragmentMeasurer {
         return bounds;
     }
 
-    /** {@code /svg/{location}/{identityGroup}{listCode}{itemCode}.svg}, the same path the library loads at runtime. */
+    /**
+     * {@code /svg/{location}/{identityGroup}{itemCode}.svg}, the same path the library loads at runtime.
+     * <p>
+     * A standard amplifier's own code is the complete two-digit value from Table A-8, so the list's code is not part of the name. It used to be, which is why echelon could not
+     * express division and above - those codes begin with a 2, and every item was prefixed with the list's 1.
+     */
     private Path fragmentFor(AmplifierListModel list, AmplifierListItemModel item, StandardIdentityGroupModel group) {
-        String name = group.getCode() + list.getCode() + item.getCode() + ".svg";
+        String name = group.getCode() + item.getCode() + ".svg";
         return config.getResourceDir()
             .resolve("svg")
             .resolve(list.getGraphicLocation())

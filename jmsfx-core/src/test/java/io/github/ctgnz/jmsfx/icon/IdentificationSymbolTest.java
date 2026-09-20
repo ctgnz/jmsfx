@@ -244,34 +244,46 @@ class IdentificationSymbolTest {
     }
 
     /**
-     * APP-6E puts the amplifier at SIDC positions 9 and 10. An amplifier's own id is only the second of those digits - the first identifies its group - so the amplifier has to
-     * contribute {@code getFullId()} rather than {@code getId()}, or the first set of ten comes out one short.
-     * <p>
-     * The group code here is deliberately not "0": with a zero group the defect hides, because the digit before the amplifier is itself a zero and the shortened code still happens
-     * to end with the right two characters.
+     * APP-6E puts the amplifier at SIDC positions 9 and 10, and a standard amplifier's id is the complete two-digit code from Table A-8 - so the amplifier contributes
+     * {@code getFullId()}. Using {@code getId()} would be the same thing today, but the two differ for amplifiers that are not SIDC values, and the first set of ten used to come
+     * out one character short because of it.
      */
     @Test
-    void testFirstTenDigitsEndWithTheAmplifiersGroupAndCode() {
-        var group = new TestFixtures.FakeAmplifierList("2");
-        var amplifier = new TestFixtures.FakeAmplifierListItem("4", "Platoon/Detachment", true, group);
-        candidate.setAmplifier(amplifier);
+    void testFirstTenDigitsEndWithTheAmplifiersCode() {
+        candidate.setAmplifier(new TestFixtures.FakeAmplifierListItem("24", "Army Group/Front", true));
 
-        assertThat(amplifier.getFullId(), is("24"));
         assertThat(candidate.getFirstTenDigits(), endsWith("24"));
     }
 
-    /** The amplifier occupies two positions, so swapping it for another of the same group must not change the length. */
+    /** The amplifier occupies two positions, so swapping it for another must not change the length. */
     @Test
-    void testTheAmplifierOccupiesTwoPositions() {
-        var group = new TestFixtures.FakeAmplifierList("2");
-        candidate.setAmplifier(new TestFixtures.FakeAmplifierListItem("4", "Platoon/Detachment", true, group));
-        int withAmplifier = candidate.getFirstTenDigits()
+    void testTheAmplifierAlwaysOccupiesTwoPositions() {
+        candidate.setAmplifier(new TestFixtures.FakeAmplifierListItem("24", "Army Group/Front", true));
+        int withOne = candidate.getFirstTenDigits()
             .length();
 
-        candidate.setAmplifier(new TestFixtures.FakeAmplifierListItem("1", "Team/Crew", true, group));
+        candidate.setAmplifier(new TestFixtures.FakeAmplifierListItem("11", "Team/Crew", true));
 
         assertThat(candidate.getFirstTenDigits()
-            .length(), is(withAmplifier));
-        assertThat(candidate.getFirstTenDigits(), endsWith("21"));
+            .length(), is(withOne));
+        assertThat(candidate.getFirstTenDigits(), endsWith("11"));
+    }
+
+    /**
+     * An unspecified amplifier fills both of its positions rather than echoing its placeholder id, which is a single digit because that same value doubles as the frame amplifier
+     * at position 27 - a one-digit position. Reporting the id directly left the set a character short.
+     */
+    @Test
+    void testAnUnspecifiedAmplifierFillsBothOfItsPositions() {
+        candidate.setAmplifier(new TestFixtures.FakeAmplifierListItem("0", "Unspecified", false, true));
+        int unspecified = candidate.getFirstTenDigits()
+            .length();
+
+        candidate.setAmplifier(new TestFixtures.FakeAmplifierListItem("24", "Army Group/Front", true));
+
+        assertThat(candidate.getFirstTenDigits()
+            .length(), is(unspecified));
+        assertThat(unspecified, is(candidate.getFirstTenDigits()
+            .length()));
     }
 }

@@ -8,7 +8,7 @@ import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum LeadershipRole implements StandardAmplifierItem {
-        LEADER_INDIVIDUAL("1", "Leader") {
+        LEADER_INDIVIDUAL("71", "Leader") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -20,7 +20,7 @@ public enum LeadershipRole implements StandardAmplifierItem {
                 };
             }
         },
-        DEPUTY_LEADER_INDIVIDUAL("2", "Deputy Leader") {
+        DEPUTY_LEADER_INDIVIDUAL("72", "Deputy Leader") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {

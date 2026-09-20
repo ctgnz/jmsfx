@@ -154,16 +154,6 @@ final class TestFixtures {
     }
 
     static class FakeAmplifierList implements AmplifierList {
-        private final String id;
-
-        FakeAmplifierList() {
-            this("0");
-        }
-
-        FakeAmplifierList(String id) {
-            this.id = id;
-        }
-
         @Override
         public Amplifier getAmplifier() {
             return null;
@@ -171,7 +161,7 @@ final class TestFixtures {
 
         @Override
         public String getId() {
-            return id;
+            return "0";
         }
 
         @Override
@@ -200,17 +190,19 @@ final class TestFixtures {
         private final String id;
         private final String label;
         private final boolean graphicalIcon;
-        private final AmplifierList amplifierList;
+        private final boolean unknown;
+        private final AmplifierList amplifierList = new FakeAmplifierList();
 
         FakeAmplifierListItem(String id, String label, boolean graphicalIcon) {
-            this(id, label, graphicalIcon, new FakeAmplifierList());
+            this(id, label, graphicalIcon, false);
         }
 
-        FakeAmplifierListItem(String id, String label, boolean graphicalIcon, AmplifierList amplifierList) {
+        /** {@code unknown} mirrors the generated placeholder amplifier, which reports itself unknown despite its id not being "00" - it is a single digit. */
+        FakeAmplifierListItem(String id, String label, boolean graphicalIcon, boolean unknown) {
             this.id = id;
             this.label = label;
             this.graphicalIcon = graphicalIcon;
-            this.amplifierList = amplifierList;
+            this.unknown = unknown;
         }
 
         @Override
@@ -241,6 +233,11 @@ final class TestFixtures {
         @Override
         public boolean isGraphicalIcon() {
             return graphicalIcon;
+        }
+
+        @Override
+        public boolean isUnknown() {
+            return unknown || StandardAmplifierItem.super.isUnknown();
         }
     }
 
