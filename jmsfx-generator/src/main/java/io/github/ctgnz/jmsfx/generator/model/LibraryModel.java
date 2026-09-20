@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.TreeMap;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -15,10 +14,9 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
 @JsonPropertyOrder({
-    "config", "versions", "contexts", "identityGroups", "identities", "statuses", "hqtfDummies", "dimensions", "dimensionGraphics", "amplifiers", "amplifierGroups", "modifierBounds", "symbolSets"
+    "config", "versions", "contexts", "identityGroups", "identities", "statuses", "hqtfDummies", "dimensions", "amplifiers", "amplifierGroups", "modifierBounds", "symbolSets"
 })
 public class LibraryModel {
-    private Map<String, List<Double>> modifierBounds;
 
     @YamlFlowStyle
     @YamlForceQuote(properties = {
@@ -34,10 +32,10 @@ public class LibraryModel {
     private final List<StatusModel> statuses = new ArrayList<>();
     private final List<VersionModel> versions = new ArrayList<>();
     private final List<DimensionModel> dimensions = new ArrayList<>();
-    private @JsonIgnore final Map<String, String> dimensionGraphics = new TreeMap<>();
     private final List<AmplifierModel> amplifiers = new ArrayList<>();
     private final List<AmplifierListModel> amplifierGroups = new ArrayList<>();
     private final List<SymbolSetModel> symbolSets = new ArrayList<>();
+    private Map<String, BoundsModel> modifierBounds;
     private @JsonIgnore String basePackage = "io.github.ctgnz.jmsfx";
     private @JsonIgnore String typePackage = "io.github.ctgnz.jmsfx.types";
     private @JsonIgnore String iconPackage;
@@ -97,10 +95,6 @@ public class LibraryModel {
             .orElseThrow();
     }
 
-    public Map<String, String> getDimensionGraphics() {
-        return dimensionGraphics;
-    }
-
     public List<DimensionModel> getDimensions() {
         return dimensions;
     }
@@ -123,6 +117,17 @@ public class LibraryModel {
 
     public String getLibraryPrefix() {
         return libraryPrefix;
+    }
+
+    /**
+     * Measured bounds for the few sector modifier fragments that draw outside the bounding octagon, keyed by graphic identifier - the file stem, which is what
+     * {@code ModifierElement.getGraphicIdentifier()} produces. Everything else takes the octagon by rule, so only the exceptions are carried.
+     * <p>
+     * Keyed by identifier rather than hung off the modifier models because the identifier is derived three different ways - symbol set modifiers, and common modifiers in each
+     * sector - and duplicating that derivation in {@code FragmentMeasurer} is what went wrong in jmsfx#52. The measurer scans the directories instead.
+     */
+    public Map<String, BoundsModel> getModifierBounds() {
+        return modifierBounds;
     }
 
     @SuppressWarnings("unchecked")
@@ -187,6 +192,10 @@ public class LibraryModel {
         this.libraryPrefix = libraryPrefix;
     }
 
+    public void setModifierBounds(Map<String, BoundsModel> modifierBounds) {
+        this.modifierBounds = modifierBounds;
+    }
+
     public void setSymbolSet(SymbolSetModel symbolSet) {
         this.symbolSet = symbolSet;
     }
@@ -207,20 +216,5 @@ public class LibraryModel {
         this.iconPackage = config.iconPackage;
         this.amplifierPackage = config.amplifierPackage;
         this.commonPackage = config.commonPackage;
-    }
-
-    /**
-     * Measured bounds for the few sector modifier fragments that draw outside the bounding octagon, keyed by graphic identifier - the file stem, which is what
-     * {@code ModifierElement.getGraphicIdentifier()} produces. Everything else takes the octagon by rule, so only the exceptions are carried.
-     * <p>
-     * Keyed by identifier rather than hung off the modifier models because the identifier is derived three different ways - symbol set modifiers, and common modifiers in each
-     * sector - and duplicating that derivation in {@code FragmentMeasurer} is what went wrong in jmsfx#52. The measurer scans the directories instead.
-     */
-    public Map<String, List<Double>> getModifierBounds() {
-        return modifierBounds;
-    }
-
-    public void setModifierBounds(Map<String, List<Double>> modifierBounds) {
-        this.modifierBounds = modifierBounds;
     }
 }

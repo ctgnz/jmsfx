@@ -18,7 +18,7 @@ public final class ModifierBounds {
 
     private static final Map<String, Rectangle2D> BOUNDS = Map.ofEntries(
 <#list modifierBounds as identifier, rect>
-        Map.entry("${identifier}", new Rectangle2D(${rect[0]?c}, ${rect[1]?c}, ${rect[2]?c}, ${rect[3]?c}))<#sep>,
+        Map.entry("${identifier}", new Rectangle2D(${rect.minX?c}, ${rect.minY?c}, ${rect.width?c}, ${rect.height?c}))<#sep>,
 </#list>);
 
     /**

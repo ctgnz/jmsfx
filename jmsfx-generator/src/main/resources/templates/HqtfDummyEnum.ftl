@@ -18,7 +18,7 @@ public enum HqtfDummyEnum implements HqtfDummy {
             public Rectangle2D getHqtfDummyBounds(StandardIdentity identity, SymbolSet symbolSet) {
                 return switch (identity.getGroupId() + symbolSet.getDimensionId()) {
 <#list dummy.bounds as key, rect>
-                    case "${key}" -> new Rectangle2D(${rect[0]?c}, ${rect[1]?c}, ${rect[2]?c}, ${rect[3]?c});
+                    case "${key}" -> new Rectangle2D(${rect.minX?c}, ${rect.minY?c}, ${rect.width?c}, ${rect.height?c});
 </#list>
                     default -> Rectangle2D.EMPTY;
                 };

@@ -25,7 +25,7 @@ public enum ${amplifier.typeName} implements <#if amplifier.standard>StandardAmp
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
 <#list val.bounds as groupCode, rect>
-                    case "${groupCode}" -> new Rectangle2D(${rect[0]?c}, ${rect[1]?c}, ${rect[2]?c}, ${rect[3]?c});
+                    case "${groupCode}" -> new Rectangle2D(${rect.minX?c}, ${rect.minY?c}, ${rect.width?c}, ${rect.height?c});
 </#list>
                     default -> Rectangle2D.EMPTY;
                 };

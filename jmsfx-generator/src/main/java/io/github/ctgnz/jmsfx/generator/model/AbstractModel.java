@@ -1,7 +1,6 @@
 package io.github.ctgnz.jmsfx.generator.model;
 
 import java.util.Comparator;
-import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.RegExUtils;
@@ -15,13 +14,13 @@ public abstract class AbstractModel {
         return Comparator.comparing(AbstractModel::getCode);
     }
 
-    protected Map<String, List<Double>> bounds;
     protected String id;
     protected String label;
     protected String code;
     protected String remarks;
     protected boolean extension;
     protected boolean deprecated;
+    protected Map<String, BoundsModel> bounds;
 
     public AbstractModel() {
     }
@@ -34,16 +33,11 @@ public abstract class AbstractModel {
     }
 
     /**
-     * Measured bounds for this element's graphic, as <code>[x, y, width, height]</code> keyed by whatever discriminates the fragment - the standard identity group for an
-     * amplifier, group plus frame id for a status, and so on. Written by {@link io.github.ctgnz.jmsfx.generator.FragmentMeasurer} rather than maintained by hand, and absent for
-     * elements with no graphic of their own.
+     * Measured bounds for this element's graphic, keyed by whatever discriminates the fragment - the standard identity group for an amplifier, group plus frame id for a status,
+     * and so on. Written by {@link io.github.ctgnz.jmsfx.generator.FragmentMeasurer} rather than maintained by hand, and absent for elements with no graphic of their own.
      */
-    public Map<String, List<Double>> getBounds() {
+    public Map<String, BoundsModel> getBounds() {
         return bounds;
-    }
-
-    public void setBounds(Map<String, List<Double>> bounds) {
-        this.bounds = bounds;
     }
 
     /**
@@ -74,6 +68,10 @@ public abstract class AbstractModel {
 
     public boolean isExtension() {
         return extension;
+    }
+
+    public void setBounds(Map<String, BoundsModel> bounds) {
+        this.bounds = bounds;
     }
 
     public void setDeprecated(boolean deprecated) {

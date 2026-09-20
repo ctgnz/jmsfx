@@ -21,6 +21,7 @@ import nz.co.ctg.foxglove.SvgGraphic;
 
 import io.github.ctgnz.jmsfx.generator.model.AmplifierListItemModel;
 import io.github.ctgnz.jmsfx.generator.model.AmplifierListModel;
+import io.github.ctgnz.jmsfx.generator.model.BoundsModel;
 import io.github.ctgnz.jmsfx.generator.model.DimensionModel;
 import io.github.ctgnz.jmsfx.generator.model.HqtfDummyModel;
 import io.github.ctgnz.jmsfx.generator.model.LibraryModel;
@@ -114,7 +115,7 @@ public class FragmentMeasurer {
             }
             int perList = 0;
             for (AmplifierListItemModel item : list.getValues()) {
-                Map<String, List<Double>> byGroup = new LinkedHashMap<>();
+                Map<String, BoundsModel> byGroup = new LinkedHashMap<>();
                 for (StandardIdentityGroupModel group : groups) {
                     Path file = fragmentFor(list, item, group);
                     if (!Files.exists(file)) {
@@ -156,7 +157,7 @@ public class FragmentMeasurer {
         int measured = 0;
         int absent = 0;
         for (StatusModel status : model.getStatuses()) {
-            Map<String, List<Double>> byKey = new LinkedHashMap<>();
+            Map<String, BoundsModel> byKey = new LinkedHashMap<>();
             for (StandardIdentityGroupModel group : model.getIdentityGroups()) {
                 for (DimensionModel dimension : model.getDimensions()) {
                     String key = group.getCode() + dimension.getCode();
@@ -183,7 +184,7 @@ public class FragmentMeasurer {
         int measured = 0;
         int absent = 0;
         for (HqtfDummyModel hqtfDummy : model.getHqtfDummies()) {
-            Map<String, List<Double>> byKey = new LinkedHashMap<>();
+            Map<String, BoundsModel> byKey = new LinkedHashMap<>();
             for (StandardIdentityGroupModel group : model.getIdentityGroups()) {
                 for (DimensionModel dimension : model.getDimensions()) {
                     String key = group.getCode() + dimension.getCode();
@@ -213,7 +214,7 @@ public class FragmentMeasurer {
         int measured = 0;
         int absent = 0;
         for (DimensionModel dimension : model.getDimensions()) {
-            Map<String, List<Double>> byKey = new LinkedHashMap<>();
+            Map<String, BoundsModel> byKey = new LinkedHashMap<>();
             for (StandardIdentityModel identity : model.getIdentities()) {
                 for (StatusModel status : model.getStatuses()) {
                     String statusFrameId = identity.isConfirmed() ? status.getCode() : "0";
@@ -258,7 +259,7 @@ public class FragmentMeasurer {
             System.out.format("  %-24s no Appendices directory at %s%n", "sector modifiers", appendices);
             return;
         }
-        Map<String, List<Double>> escaping = new TreeMap<>();
+        Map<String, BoundsModel> escaping = new TreeMap<>();
         int inspected = 0;
         try (Stream<Path> tree = Files.walk(appendices)) {
             List<Path> fragments = tree.filter(Files::isRegularFile)
@@ -352,13 +353,8 @@ public class FragmentMeasurer {
         return group.getBoundsInLocal();
     }
 
-    private List<Double> rectangle(Bounds bounds) {
-        List<Double> values = new ArrayList<>(4);
-        values.add(round(bounds.getMinX()));
-        values.add(round(bounds.getMinY()));
-        values.add(round(bounds.getWidth()));
-        values.add(round(bounds.getHeight()));
-        return values;
+    private BoundsModel rectangle(Bounds bounds) {
+        return new BoundsModel(round(bounds.getMinX()), round(bounds.getMinY()), round(bounds.getWidth()), round(bounds.getHeight()));
     }
 
     private double round(double value) {
