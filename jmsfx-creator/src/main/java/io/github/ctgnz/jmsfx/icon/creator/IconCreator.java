@@ -89,6 +89,7 @@ public class IconCreator extends Application {
     private File lastDirectory;
     private IdentificationSymbolIcon icon;
     private IconLibrary library = StandardIconLibrary.instance();
+    private final CheckBox trimOnSave = new CheckBox("Trim to size");
     private final ObservableList<AmplifierListItem> amplifiers = FXCollections.observableArrayList(Arrays.asList(library.getDefaultAmplifier()));
     private final ObservableList<AmplifierListItem> amplifiersTwo = FXCollections.observableArrayList(Arrays.asList(library.getDefaultAmplifier()));
     private final ObservableList<AmplifierListItem> amplifiersThree = FXCollections.observableArrayList(Arrays.asList(library.getDefaultAmplifier()));
@@ -511,6 +512,8 @@ public class IconCreator extends Application {
     private Node createToolBar() {
         Button saveSvg = new Button("Save SVG");
         saveSvg.setOnAction(evt -> saveCompositeSvg());
+        trimOnSave.setSelected(true);
+        trimOnSave.setTooltip(new Tooltip("Crop the saved file to the symbol. Unchecked, it keeps the full 612 x 792 canvas, so separate symbols line up with one another."));
 
         Button showAll = new Button("Show All");
         showAll.setOnAction(evt -> {
@@ -532,7 +535,7 @@ public class IconCreator extends Application {
         Button clearCache = new Button("Clear Cache");
         clearCache.setOnAction(evt -> FoxgloveParser.clearCache());
 
-        return new ToolBar(saveSvg, new Separator(), showAll, clearCache);
+        return new ToolBar(saveSvg, trimOnSave, new Separator(), showAll, clearCache);
     }
 
     private void saveCompositeSvg() {
@@ -550,8 +553,9 @@ public class IconCreator extends Application {
         try {
             // getCombinedGraphic already merges the fragments into one SVG
             // document against the shared APP-6E canvas, so this is the same
-            // output the server serves - no scene graph involved.
-            Files.writeString(selectedFile.toPath(), svgParser.write(symbol.getCombinedGraphic(), true));
+            // output the server serves - no scene graph involved. Trimming only
+            // narrows the viewBox; the content is identical either way.
+            Files.writeString(selectedFile.toPath(), svgParser.write(symbol.getCombinedGraphic(trimOnSave.isSelected()), true));
         } catch (Exception e) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.initOwner(mainStage);
