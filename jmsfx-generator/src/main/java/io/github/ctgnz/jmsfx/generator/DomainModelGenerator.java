@@ -17,7 +17,6 @@ import io.github.ctgnz.jmsfx.generator.model.AbstractModel;
 import io.github.ctgnz.jmsfx.generator.model.LibraryModel;
 import io.github.ctgnz.jmsfx.generator.model.SymbolSetModel;
 import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
-import jakarta.xml.bind.JAXBException;
 
 public class DomainModelGenerator {
 
@@ -50,11 +49,12 @@ public class DomainModelGenerator {
             .forEach(enumConfig -> generateStandardEnum(dataModel, enumConfig));
         generateAmplifierEnum(dataModel);
         generateListAmplifierEnums(dataModel);
+        generateModifierBounds(dataModel);
         generateSymbolSets(dataModel);
         generateLibrary(dataModel);
     }
 
-    public LibraryModel parse() throws JAXBException, IOException, Exception {
+    public LibraryModel parse() throws Exception {
         return parser.readLibraryModel(Files.newInputStream(config.getModelFile()));
     }
 
@@ -114,6 +114,18 @@ public class DomainModelGenerator {
                     throw new IllegalArgumentException("Unable to create amplifier group enum", e);
                 }
             });
+    }
+
+    /** Only emitted when there is something to emit - a model whose modifiers all keep within the octagon needs no lookup. */
+    private void generateModifierBounds(LibraryModel dataModel) throws Exception {
+        if (dataModel.getModifierBounds() == null || dataModel.getModifierBounds()
+            .isEmpty()) {
+            return;
+        }
+        Template template = config.getTemplateConfig()
+            .getTemplate("ModifierBounds.ftl");
+        template.process(dataModel, newWriter(config.getIconPackageDir()
+            .resolve("ModifierBounds.java")));
     }
 
     private void generateStandardEnum(LibraryModel dataModel, String typeName) {

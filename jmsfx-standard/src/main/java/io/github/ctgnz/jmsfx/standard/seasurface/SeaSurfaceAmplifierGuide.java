@@ -18,6 +18,7 @@ public enum SeaSurfaceAmplifierGuide implements AmplifierGuide {
         V(AmplifierEnum.V_TypeOfEquipment, GuideType.RECTANGLE, 478, 248, 134, 96),
         Y(AmplifierEnum.Y_Location, GuideType.RECTANGLE, 478, 536, 134, 96),
         Z(AmplifierEnum.Z_Speed, GuideType.RECTANGLE, 478, 536, 134, 96),
+        AG(AmplifierEnum.AG_AuxiliaryEquipmentIndicator, GuideType.RECTANGLE, 142, 542, 328, 96),
         AH(AmplifierEnum.AH_AreaOfUncertaintyIndicator, GuideType.SYSTEM),
         AH1(AmplifierEnum.AH1_AreaOfUncertaintyIndicatorLongitude, GuideType.SYSTEM),
         AJ(AmplifierEnum.AJ_SpeedLeader, GuideType.LINE, 178.565, 467.976, 17.069, 557.214),

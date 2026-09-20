@@ -1,13 +1,29 @@
 package ${iconPackage};
+<#assign hasBounds = hqtfDummies?filter(v -> v.bounds??)?size gt 0>
 
-import java.util.Arrays;
+<#if hasBounds>import javafx.geometry.Rectangle2D;
+
+</#if>import java.util.Arrays;
 import java.util.List;
 
 import ${basePackage}.HqtfDummy;
+<#if hasBounds>import ${basePackage}.StandardIdentity;
+</#if><#if hasBounds>import ${basePackage}.SymbolSet;
+</#if>
 
 public enum HqtfDummyEnum implements HqtfDummy {
 <#list hqtfDummies as dummy>
-        ${dummy.id}("${dummy.code}", "${dummy.label}"<#list dummy.dimensions>, <#items as dim>"${dim}"<#sep>, </#items></#list>)<#sep>,
+        ${dummy.id}("${dummy.code}", "${dummy.label}"<#list dummy.dimensions>, <#items as dim>"${dim}"<#sep>, </#items></#list>) <#if dummy.bounds??>{
+            @Override
+            public Rectangle2D getHqtfDummyBounds(StandardIdentity identity, SymbolSet symbolSet) {
+                return switch (identity.getGroupId() + symbolSet.getDimensionId()) {
+<#list dummy.bounds as key, rect>
+                    case "${key}" -> new Rectangle2D(${rect.minX?c}, ${rect.minY?c}, ${rect.width?c}, ${rect.height?c});
+</#list>
+                    default -> Rectangle2D.EMPTY;
+                };
+            }
+        }</#if><#sep>,
 </#list>;
 
     private final String id;

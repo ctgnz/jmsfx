@@ -1,7 +1,10 @@
 package io.github.ctgnz.jmsfx.standard.controlmeasure;
 
+import javafx.geometry.Rectangle2D;
+
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.standard.ModifierBounds;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.types.ModifierCategory;
 
@@ -88,4 +91,8 @@ public enum ControlMeasureSectorOneModifier implements SectorOneModifier {
         return SymbolSetEnum.CONTROL_MEASURE;
     }
 
+    @Override
+    public Rectangle2D getModifierBounds() {
+        return ModifierBounds.lookup(getGraphicIdentifier());
+    }
 }

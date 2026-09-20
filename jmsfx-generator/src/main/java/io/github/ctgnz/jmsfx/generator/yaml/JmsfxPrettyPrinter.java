@@ -10,7 +10,7 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 
-public class JmsfxPrettyPrinter extends DefaultPrettyPrinter {
+public final class JmsfxPrettyPrinter extends DefaultPrettyPrinter {
 
     private static final String[] MAP_FIELDS = {
         "namingAbbreviations", "idStrategies", "nameStrategies"

@@ -13,6 +13,8 @@ import freemarker.template.Configuration;
 
 public class GeneratorConfig {
     private Path outputDir;
+    private Path resourceDir;
+    private Path modelSourceFile;
     private String basePackage = "io.github.ctgnz.jmsfx";
     private String typePackage = "io.github.ctgnz.jmsfx.types";
     private String iconPackage;
@@ -86,6 +88,27 @@ public class GeneratorConfig {
 
     public Path getOutputDir() {
         return outputDir;
+    }
+
+    /**
+     * The model file <em>in the source tree</em>, which is where {@link FragmentMeasurer} writes measured bounds back to. {@link #getModelFile()} resolves the same file from the
+     * classpath, so it points into {@code target/classes} at runtime - fine for reading, but a write there would be discarded by the next clean.
+     */
+    public Path getModelSourceFile() {
+        return modelSourceFile;
+    }
+
+    /** Where the SVG fragments live, for {@link FragmentMeasurer}. Generation itself does not read them. */
+    public Path getResourceDir() {
+        return resourceDir;
+    }
+
+    public void setModelSourceFile(Path modelSourceFile) {
+        this.modelSourceFile = modelSourceFile;
+    }
+
+    public void setResourceDir(Path resourceDir) {
+        this.resourceDir = resourceDir;
     }
 
     public List<String> getStandardEnums() {

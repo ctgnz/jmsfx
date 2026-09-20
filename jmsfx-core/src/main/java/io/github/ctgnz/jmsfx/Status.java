@@ -2,10 +2,16 @@ package io.github.ctgnz.jmsfx;
 
 import java.util.List;
 
+import javafx.geometry.Rectangle2D;
+
 public interface Status extends CodeElement {
 
     List<String> getDimensionIds();
 
+    /**
+     * APP-6E offers two renderings of the operational condition codes, and the trailing {@code 2} selects the <em>alternate</em> one - the form in Table 1-7. That is the only
+     * variant implemented here, and the only one the shipped fragments cover: every file under {@code /svg/OCA} that this can name ends in {@code 2}.
+     */
     default String getGraphicLocation(StandardIdentity identity, SymbolSet symbolSet) {
         return String.format("/svg/OCA/0%s%s%s2.svg", identity.getGroupId(), symbolSet.getFrameId(), getId());
     }
@@ -29,4 +35,12 @@ public interface Status extends CodeElement {
             .getName());
     }
 
+    /**
+     * Where this status's operational-condition graphic draws, or {@link Rectangle2D#EMPTY} when it has none - {@code Present} and {@code Planned} are frame statuses and draw no
+     * bar of their own. Keyed by the same things that pick the fragment in {@link #getGraphicLocation(StandardIdentity, SymbolSet)}: the identity's group and the symbol set's
+     * frame id. Generated from measurements rather than computed, so no JavaFX toolkit is needed.
+     */
+    default Rectangle2D getStatusBounds(StandardIdentity identity, SymbolSet symbolSet) {
+        return Rectangle2D.EMPTY;
+    }
 }

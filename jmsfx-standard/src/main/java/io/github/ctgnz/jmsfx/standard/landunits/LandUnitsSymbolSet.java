@@ -16,7 +16,6 @@ import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.SymbolSetInfo;
-import io.github.ctgnz.jmsfx.standard.amplifier.EquipmentMobility;
 import io.github.ctgnz.jmsfx.standard.amplifier.UnitEchelon;
 
 public class LandUnitsSymbolSet implements SymbolSetInfo {
@@ -40,7 +39,7 @@ public class LandUnitsSymbolSet implements SymbolSetInfo {
 
     @Override
     public List<StandardAmplifierItem> getAmplifiersTwo() {
-        return Arrays.asList(EquipmentMobility.values());
+        return Collections.emptyList();
     }
 
     @Override
@@ -85,7 +84,7 @@ public class LandUnitsSymbolSet implements SymbolSetInfo {
 
     @Override
     public boolean isAmplifierTwoPresent() {
-        return true;
+        return false;
     }
 
     @Override

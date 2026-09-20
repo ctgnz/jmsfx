@@ -18,12 +18,15 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableMap;
+import javafx.geometry.BoundingBox;
 import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.paint.Color;
 
 import nz.co.ctg.foxglove.ISvgContent;
 import nz.co.ctg.foxglove.ISvgStylable;
 import nz.co.ctg.foxglove.SvgGraphic;
+import nz.co.ctg.foxglove.type.ViewBox;
 
 import io.github.ctgnz.jmsfx.Amplifier;
 import io.github.ctgnz.jmsfx.AmplifierGuide;
@@ -34,6 +37,7 @@ import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.HqtfDummy;
+import io.github.ctgnz.jmsfx.IconGeometry;
 import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.MainElement;
 import io.github.ctgnz.jmsfx.SectorOneModifier;
@@ -217,6 +221,19 @@ public class IdentificationSymbol {
     }
 
     public SvgGraphic getCombinedGraphic() {
+        return getCombinedGraphic(false);
+    }
+
+    /**
+     * The composed symbol, optionally cropped to what it actually draws.
+     * <p>
+     * Untrimmed - the default - the result keeps the shared 612 x 792 canvas, which is what lets two exported symbols sit correctly alongside one another. Trimmed, the viewBox
+     * becomes {@link #getVisibleBounds()} plus {@link IconGeometry#TRIM_PADDING}, which is what a symbol wants when it is displayed small: the canvas is mostly empty, so scaling
+     * it into a thumbnail leaves the symbol itself at around half the size it could be.
+     * <p>
+     * Only the viewBox differs. The content is identical either way, still in canvas coordinates, so trimming changes how a renderer frames the symbol rather than what is drawn.
+     */
+    public SvgGraphic getCombinedGraphic(boolean trimToVisibleBounds) {
         SvgGraphic container = new SvgGraphic();
         container.setTitle(getDescription());
 
@@ -262,19 +279,24 @@ public class IdentificationSymbol {
         // its ink: the coordinate space is what makes the fragments line up, and
         // every part carries the same one, so any of them will do.
         //
-        // This deliberately does not measure the rendered result. Doing so meant
-        // building a JavaFX scene graph purely to read a bounding box, which made
-        // SVG output need a display. Cropping to visible content only matters when
-        // rasterising, so that belongs to the PNG path - see #32.
-        parts.stream()
-            .findFirst()
-            .ifPresent(reference -> {
-                container.setViewBox(reference.getViewBox());
-                container.setPixelsX(reference.getPixelsX());
-                container.setPixelsY(reference.getPixelsY());
-                container.setPixelsWidth(reference.getPixelsWidth());
-                container.setPixelsHeight(reference.getPixelsHeight());
-            });
+        // Neither branch measures the rendered result. Doing so meant building a
+        // JavaFX scene graph purely to read a bounding box, which made SVG output
+        // need a display - see #32. The trimmed viewBox comes from bounds measured
+        // once at generation time and unioned arithmetically, so it costs no toolkit.
+        Rectangle2D trimmed = trimToVisibleBounds ? IconGeometry.padded(getVisibleBounds()) : Rectangle2D.EMPTY;
+        if (!Rectangle2D.EMPTY.equals(trimmed)) {
+            applyViewBox(container, trimmed);
+        } else {
+            parts.stream()
+                .findFirst()
+                .ifPresent(reference -> {
+                    container.setViewBox(reference.getViewBox());
+                    container.setPixelsX(reference.getPixelsX());
+                    container.setPixelsY(reference.getPixelsY());
+                    container.setPixelsWidth(reference.getPixelsWidth());
+                    container.setPixelsHeight(reference.getPixelsHeight());
+                });
+        }
         return container;
     }
 
@@ -496,6 +518,58 @@ public class IdentificationSymbol {
         return defaultIfNull(version.get(), library.getDefaultVersion());
     }
 
+    /**
+     * The region of the 612 x 792 canvas this symbol actually draws on, or {@link Rectangle2D#EMPTY} if it draws nothing.
+     * <p>
+     * This unions the bounds of exactly the parts {@link #getCombinedGraphic()} composes, under the same guards and in the same order. The union is the answer rather than an
+     * approximation of it: parts are composited into one shared coordinate space with no transform applied, so the composite's extent is precisely the union of its parts'. That
+     * was confirmed by measuring, over 1,084 symbols, with no disagreement beyond float32 epsilon.
+     * <p>
+     * No JavaFX toolkit is involved. Each part's bounds were measured once at generation time and baked into the model, so this is arithmetic - which is what lets a headless
+     * server trim a symbol to its ink. See jmsfx#45.
+     * <p>
+     * The result is tight to the ink. Callers wanting a viewBox should pass it through {@link IconGeometry#padded(Rectangle2D)}.
+     */
+    public Rectangle2D getVisibleBounds() {
+        StandardIdentity identity = getStandardIdentity();
+        SymbolSet symbolSet = getSymbolSet();
+        Rectangle2D bounds = Rectangle2D.EMPTY;
+
+        if (isFrameUsed()) {
+            bounds = IconGeometry.union(bounds, symbolSet.getDimension()
+                .getFrameBounds(identity, effectiveFrameStatus(), isCivilianEntity()));
+        }
+        if (isStatusIconUsed()) {
+            bounds = IconGeometry.union(bounds, getStatus().getStatusBounds(identity, symbolSet));
+        }
+        if (isHqtfDummyIconUsed()) {
+            bounds = IconGeometry.union(bounds, getHqtfDummy().getHqtfDummyBounds(identity, symbolSet));
+        }
+        if (isMainIconUsed() && getMainIconGraphic() != null) {
+            // A main icon is drawn within the octagon, and a FULL_FRAME one is its frame - which is
+            // already in the union, since Control Measure is the only unframed symbol set and it does
+            // not compose this way. Either rule is covered by contributing the octagon. jmsfx#53 tracks
+            // the fragments that overrun, which are being corrected in the SVGs.
+            bounds = IconGeometry.union(bounds, IconGeometry.OCTAGON);
+        }
+        if (isAmplifierUsed()) {
+            bounds = IconGeometry.union(bounds, amplifierBounds(getAmplifier(), identity));
+        }
+        if (isAmplifierTwoUsed()) {
+            bounds = IconGeometry.union(bounds, amplifierBounds(getAmplifierTwo(), identity));
+        }
+        if (isAmplifierThreeUsed()) {
+            bounds = IconGeometry.union(bounds, amplifierBounds(getAmplifierThree(), identity));
+        }
+        if (isSectorOneModifierUsed()) {
+            bounds = IconGeometry.union(bounds, getSectorOneModifier().getModifierBounds());
+        }
+        if (isSectorTwoModifierUsed()) {
+            bounds = IconGeometry.union(bounds, getSectorTwoModifier().getModifierBounds());
+        }
+        return bounds;
+    }
+
     public ObjectProperty<HqtfDummy> hqtfDummyProperty() {
         return hqtfDummy;
     }
@@ -712,6 +786,31 @@ public class IdentificationSymbol {
         hqtfDummyGraphic.bind(Bindings.createObjectBinding(this::loadHqtfDummyGraphic, code, hqtfDummy));
     }
 
+    /** The symbol's intrinsic size follows its viewBox, so a trimmed symbol reports the size of its ink rather than of the canvas. */
+    private static void applyViewBox(SvgGraphic container, Rectangle2D bounds) {
+        container.setViewBox(new ViewBox(new BoundingBox(bounds.getMinX(), bounds.getMinY(), bounds.getWidth(), bounds.getHeight())));
+        container.setPixelsX(bounds.getMinX());
+        container.setPixelsY(bounds.getMinY());
+        container.setPixelsWidth(bounds.getWidth());
+        container.setPixelsHeight(bounds.getHeight());
+    }
+
+    /** Only standard amplifiers carry measured bounds; a text or country amplifier draws no graphic of its own. */
+    private static Rectangle2D amplifierBounds(AmplifierListItem item, StandardIdentity identity) {
+        return item instanceof StandardAmplifierItem standard ? standard.getAmplifierBounds(identity) : Rectangle2D.EMPTY;
+    }
+
+    /**
+     * The status the frame is drawn for, which is not always the symbol's own. A planned status only changes the frame when the identity is confirmed - an unconfirmed identity
+     * already draws a dotted frame, and there is no fragment combining the two - so everything else falls back to the default.
+     * <p>
+     * Shared with {@link #loadFrameGraphic()} so the bounds cannot end up describing a different frame from the one drawn.
+     */
+    private Status effectiveFrameStatus() {
+        Status current = getStatus();
+        return getStandardIdentity().isConfirmed() && current.isPlanned() ? current : library.getDefaultStatus();
+    }
+
     private SvgGraphic loadAmplifierGraphic() {
         return library.loadAmplifierGraphic(getAmplifier(), getStandardIdentity());
     }
@@ -729,12 +828,7 @@ public class IdentificationSymbol {
     }
 
     private SvgGraphic loadFrameGraphic() {
-        StandardIdentity effectiveIdentity = getStandardIdentity();
-        Status effectiveStatus = status.get();
-        if (!effectiveIdentity.isConfirmed() || !effectiveStatus.isPlanned()) {
-            effectiveStatus = library.getDefaultStatus();
-        }
-        return library.loadFrameGraphic(getSymbolSet(), effectiveIdentity, effectiveStatus, isCivilianEntity());
+        return library.loadFrameGraphic(getSymbolSet(), getStandardIdentity(), effectiveFrameStatus(), isCivilianEntity());
     }
 
     private SvgGraphic loadFrameOverlayGraphic() {

@@ -1,8 +1,12 @@
-package ${commonPackage};
+<#assign hasModBounds = (modifierBounds??) && (modifierBounds?size gt 0)>package ${commonPackage};
 
-import ${basePackage}.SectorOneModifier;
+<#if hasModBounds>import javafx.geometry.Rectangle2D;
+
+</#if>import ${basePackage}.SectorOneModifier;
 import ${basePackage}.SymbolSet;
 import ${iconPackage}.SymbolSetEnum;
+<#if hasModBounds>import ${iconPackage}.ModifierBounds;
+</#if>
 import ${typePackage}.ModifierCategory;
 
 public enum CommonSectorOneModifier implements SectorOneModifier {
@@ -57,4 +61,9 @@ public enum CommonSectorOneModifier implements SectorOneModifier {
         return "0".equals(groupId) && "00".equals(id);
     }
 
-}
+<#if hasModBounds>
+    @Override
+    public Rectangle2D getModifierBounds() {
+        return ModifierBounds.lookup(getGraphicIdentifier());
+    }
+</#if>}

@@ -10,7 +10,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
     "id", "code", "label", "remarks"
 })
 @JsonPropertyOrder({
-    "code", "id", "extension", "deprecated", "label", "backgroundFill", "remarks"
+    "code", "id", "extension", "deprecated", "label", "backgroundFill", "bounds", "remarks"
 })
 public class AmplifierListItemModel extends AbstractModel {
     private String backgroundFill;
