@@ -1869,7 +1869,7 @@ symbolSets:
   entities:
   - details: {code: "11", id: COMMAND_CONTROL_LINES, graphicType: NA, label: "Command and Control Lines"}
     entityTypes:
-    - details: {code: "01", id: BOUNDARY, graphicType: MAIN, graphic: 25110100.a, label: "Boundary"}
+    - details: {code: "01", id: BOUNDARY, graphicType: MAIN, label: "Boundary"}
     - details: {code: "02", id: LIGHT_LINE, graphicType: MAIN, label: "Light Line"}
     - details: {code: "03", id: ENGINEER_WORK_LINE, graphicType: MAIN, label: "Engineer Work Line"}
     - details: {code: "04", id: GENERIC_LINE, graphicType: MAIN, label: "Line, Generic"}
@@ -2238,7 +2238,7 @@ symbolSets:
       - {code: "02", id: RECTANGULAR_TARGET, graphicType: MAIN, label: "Rectangular Target"}
       - {code: "03", id: CIRCULAR_TARGET, graphicType: MAIN, label: "Circular Target"}
       - {code: "04", id: RECTANGULAR_TARGET_SINGLE_TARGET, graphicType: MAIN, label: "Rectangular Target - Single Target"}
-      - {code: "05", id: SERIES_GROUP_TARGETS, graphicType: MAIN, graphic: 25240805.a, label: "Series of Targets"}
+      - {code: "05", id: SERIES_GROUP_TARGETS, graphicType: MAIN, label: "Series of Targets"}
       - {code: "06", id: SMOKE_TARGET, graphicType: MAIN, label: "Smoke Target"}
       - {code: "08", id: BOMB_AREA, graphicType: MAIN, label: "Bomb Area"}
     - details: {code: "09", id: FIRE_SUPPORT_STATION, graphicType: MAIN, label: "Fire Support Station"}
@@ -2541,10 +2541,10 @@ symbolSets:
     - details: {code: "21", id: TMT_SECURE, graphicType: MAIN, label: "Secure"}
     - details: {code: "22", id: SECURITY, graphicType: NA, label: "Security"}
       entitySubTypes:
-      - {code: "01", id: TMT_COVER, graphicType: MAIN, graphic: 25342201.b, label: "Cover"}
-      - {code: "02", id: TMT_GUARD, graphicType: MAIN, graphic: 25342202.b, label: "Guard"}
-      - {code: "03", id: TMT_SCREEN, graphicType: MAIN, graphic: 25342203.b, label: "Screen"}
-    - details: {code: "23", id: TMT_SEIZE, graphicType: MAIN, graphic: 25342300.b, label: "Seize"}
+      - {code: "01", id: TMT_COVER, graphicType: MAIN, label: "Cover"}
+      - {code: "02", id: TMT_GUARD, graphicType: MAIN, label: "Guard"}
+      - {code: "03", id: TMT_SCREEN, graphicType: MAIN, label: "Screen"}
+    - details: {code: "23", id: TMT_SEIZE, graphicType: MAIN, label: "Seize"}
     - details: {code: "24", id: TMT_WITHDRAW, graphicType: MAIN, label: "Withdraw"}
     - details: {code: "25", id: TMT_WITHDRAW_UNDER_PRESSURE, graphicType: MAIN, label: "Withdraw Under Pressure"}
     - details: {code: "26", id: CORDON_AND_KNOCK, graphicType: MAIN, label: "Cordon and Knock"}

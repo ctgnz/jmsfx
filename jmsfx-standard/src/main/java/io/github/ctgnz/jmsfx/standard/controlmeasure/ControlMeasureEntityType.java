@@ -8,12 +8,7 @@ import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum ControlMeasureEntityType implements EntityType {
-        BOUNDARY("01", "Boundary", ControlMeasureEntity.COMMAND_CONTROL_LINES, GraphicType.MAIN) {
-            @Override
-            public String getGraphicIdentifier() {
-                return "25110100.a";
-            }
-        },
+        BOUNDARY("01", "Boundary", ControlMeasureEntity.COMMAND_CONTROL_LINES, GraphicType.MAIN),
         LIGHT_LINE("02", "Light Line", ControlMeasureEntity.COMMAND_CONTROL_LINES, GraphicType.MAIN),
         ENGINEER_WORK_LINE("03", "Engineer Work Line", ControlMeasureEntity.COMMAND_CONTROL_LINES, GraphicType.MAIN),
         GENERIC_LINE("04", "Line, Generic", ControlMeasureEntity.COMMAND_CONTROL_LINES, GraphicType.MAIN),
@@ -391,12 +386,7 @@ public enum ControlMeasureEntityType implements EntityType {
         TMT_RETIRE_RETIREMENT("20", "Retire/Retirement", ControlMeasureEntity.MISSION_TASKS, GraphicType.MAIN),
         TMT_SECURE("21", "Secure", ControlMeasureEntity.MISSION_TASKS, GraphicType.MAIN),
         SECURITY("22", "Security", ControlMeasureEntity.MISSION_TASKS, GraphicType.NA),
-        TMT_SEIZE("23", "Seize", ControlMeasureEntity.MISSION_TASKS, GraphicType.MAIN) {
-            @Override
-            public String getGraphicIdentifier() {
-                return "25342300.b";
-            }
-        },
+        TMT_SEIZE("23", "Seize", ControlMeasureEntity.MISSION_TASKS, GraphicType.MAIN),
         TMT_WITHDRAW("24", "Withdraw", ControlMeasureEntity.MISSION_TASKS, GraphicType.MAIN),
         TMT_WITHDRAW_UNDER_PRESSURE("25", "Withdraw Under Pressure", ControlMeasureEntity.MISSION_TASKS, GraphicType.MAIN),
         CORDON_AND_KNOCK("26", "Cordon and Knock", ControlMeasureEntity.MISSION_TASKS, GraphicType.MAIN),
