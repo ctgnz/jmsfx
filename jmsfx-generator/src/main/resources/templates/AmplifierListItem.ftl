@@ -1,20 +1,36 @@
 package ${iconPackage}.amplifier;
+<#assign hasBounds = amplifier.values?filter(v -> v.bounds??)?size gt 0>
 <#if amplifier.coded>
 
 import java.util.Arrays;
 import java.util.Map;
+</#if><#if hasBounds>
+
+import javafx.geometry.Rectangle2D;
+</#if><#if amplifier.coded>
 
 import com.google.common.collect.Maps;
 </#if>
 
 import ${basePackage}.AmplifierList;
 import ${basePackage}.<#if amplifier.standard>StandardAmplifierItem<#elseif amplifier.country>CountryCode<#else>AmplifierListItem</#if>;<#if amplifier.extension>
-import ${basePackage}.Extension;</#if>
+import ${basePackage}.Extension;</#if><#if hasBounds>
+import ${basePackage}.StandardIdentity;</#if>
 import ${iconPackage}.AmplifierListEnum;
 
 public enum ${amplifier.typeName} implements <#if amplifier.standard>StandardAmplifierItem<#elseif amplifier.country>CountryCode<#else>AmplifierListItem</#if> {
 <#list amplifier.values as val>
-        <#if val.extension>@Extension </#if>${val.id}("${val.code}", "${val.label}"<#if val.remarks??>, "${val.remarks}"</#if><#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#sep>,
+        <#if val.extension>@Extension </#if>${val.id}("${val.code}", "${val.label}"<#if val.remarks??>, "${val.remarks}"</#if><#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#if val.bounds??> {
+            @Override
+            public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+<#list val.bounds as groupCode, rect>
+                    case "${groupCode}" -> new Rectangle2D(${rect[0]?c}, ${rect[1]?c}, ${rect[2]?c}, ${rect[3]?c});
+</#list>
+                    default -> Rectangle2D.EMPTY;
+                };
+            }
+        }</#if><#sep>,
 </#list>;<#if amplifier.coded>
 
     private static final Map<String, ${amplifier.typeName}> CODES = Maps.uniqueIndex(Arrays.asList(values()), ${amplifier.typeName}::getId);
