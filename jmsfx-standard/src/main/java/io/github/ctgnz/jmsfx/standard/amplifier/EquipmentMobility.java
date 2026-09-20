@@ -8,7 +8,7 @@ import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum EquipmentMobility implements StandardAmplifierItem {
-        WHEEL_LIMIT_COUNTRY("1", "Wheeled limited cross country") {
+        WHEEL_LIMIT_COUNTRY("31", "Wheeled limited cross country") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -20,7 +20,7 @@ public enum EquipmentMobility implements StandardAmplifierItem {
                 };
             }
         },
-        WHEEL_COUNTRY("2", "Wheeled cross country") {
+        WHEEL_COUNTRY("32", "Wheeled cross country") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -32,7 +32,7 @@ public enum EquipmentMobility implements StandardAmplifierItem {
                 };
             }
         },
-        TRACKED("3", "Tracked") {
+        TRACKED("33", "Tracked") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -44,7 +44,7 @@ public enum EquipmentMobility implements StandardAmplifierItem {
                 };
             }
         },
-        WHEEL_TRACK("4", "Wheeled and tracked combination") {
+        WHEEL_TRACK("34", "Wheeled and tracked combination") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -56,7 +56,7 @@ public enum EquipmentMobility implements StandardAmplifierItem {
                 };
             }
         },
-        TOWED("5", "Towed") {
+        TOWED("35", "Towed") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -68,7 +68,7 @@ public enum EquipmentMobility implements StandardAmplifierItem {
                 };
             }
         },
-        RAIL("6", "Rail") {
+        RAIL("36", "Rail") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -80,7 +80,7 @@ public enum EquipmentMobility implements StandardAmplifierItem {
                 };
             }
         },
-        PACK_ANIMALS("7", "Pack animals") {
+        PACK_ANIMALS("37", "Pack animals") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -92,7 +92,7 @@ public enum EquipmentMobility implements StandardAmplifierItem {
                 };
             }
         },
-        OVER_SNOW("A", "Over snow (prime mover)") {
+        OVER_SNOW("41", "Over snow (prime mover)") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -104,7 +104,7 @@ public enum EquipmentMobility implements StandardAmplifierItem {
                 };
             }
         },
-        SLED("B", "Sled") {
+        SLED("42", "Sled") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -116,7 +116,7 @@ public enum EquipmentMobility implements StandardAmplifierItem {
                 };
             }
         },
-        BARGE("D", "Barge") {
+        BARGE("51", "Barge") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -128,7 +128,7 @@ public enum EquipmentMobility implements StandardAmplifierItem {
                 };
             }
         },
-        AMPHIB("E", "Amphibious") {
+        AMPHIB("52", "Amphibious") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {

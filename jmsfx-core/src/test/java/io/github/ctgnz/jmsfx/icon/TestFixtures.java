@@ -190,12 +190,19 @@ final class TestFixtures {
         private final String id;
         private final String label;
         private final boolean graphicalIcon;
+        private final boolean unknown;
         private final AmplifierList amplifierList = new FakeAmplifierList();
 
         FakeAmplifierListItem(String id, String label, boolean graphicalIcon) {
+            this(id, label, graphicalIcon, false);
+        }
+
+        /** {@code unknown} mirrors the generated placeholder amplifier, which reports itself unknown despite its id not being "00" - it is a single digit. */
+        FakeAmplifierListItem(String id, String label, boolean graphicalIcon, boolean unknown) {
             this.id = id;
             this.label = label;
             this.graphicalIcon = graphicalIcon;
+            this.unknown = unknown;
         }
 
         @Override
@@ -226,6 +233,11 @@ final class TestFixtures {
         @Override
         public boolean isGraphicalIcon() {
             return graphicalIcon;
+        }
+
+        @Override
+        public boolean isUnknown() {
+            return unknown || StandardAmplifierItem.super.isUnknown();
         }
     }
 

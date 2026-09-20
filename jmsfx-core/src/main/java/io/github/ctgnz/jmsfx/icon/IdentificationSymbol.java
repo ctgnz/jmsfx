@@ -380,8 +380,8 @@ public class IdentificationSymbol {
                 .getId(),
             hqtfDummy.get()
                 .getId(),
-            amplifier.get() != null ? amplifier.get()
-                .getId() : "00");
+            // Positions 9 and 10.
+            amplifierCode(amplifier.get()));
     }
 
     public AmplifierListItem getFrameAmplifier() {
@@ -505,10 +505,8 @@ public class IdentificationSymbol {
         return String.format("%s%s%s%s%s%s",
             getSectorOneModifier() != null ? getSectorOneModifier().getGroupId() : "0",
             getSectorTwoModifier() != null ? getSectorTwoModifier().getGroupId() : "0",
-            amplifierTwo.get() != null ? amplifierTwo.get()
-                .getFullId() : "00",
-            amplifierThree.get() != null ? amplifierThree.get()
-                .getFullId() : "00",
+            amplifierCode(amplifierTwo.get()),
+            amplifierCode(amplifierThree.get()),
             frameAmplifier.get() != null ? frameAmplifier.get()
                 .getId() : "0",
             getCountryCode().getCode());
@@ -798,6 +796,16 @@ public class IdentificationSymbol {
     /** Only standard amplifiers carry measured bounds; a text or country amplifier draws no graphic of its own. */
     private static Rectangle2D amplifierBounds(AmplifierListItem item, StandardIdentity identity) {
         return item instanceof StandardAmplifierItem standard ? standard.getAmplifierBounds(identity) : Rectangle2D.EMPTY;
+    }
+
+    /**
+     * An amplifier as it appears in the two SIDC positions it occupies - 9 and 10 for the amplifier proper, 23 to 26 for the second and third.
+     * <p>
+     * A standard amplifier's own id is already the complete two-digit code from Table A-8. An unspecified one fills both positions with zeros rather than reporting its placeholder
+     * id, which is a single digit because that same value doubles as the frame amplifier at position 27.
+     */
+    private static String amplifierCode(AmplifierListItem item) {
+        return item == null || item.isUnknown() ? "00" : item.getFullId();
     }
 
     /**

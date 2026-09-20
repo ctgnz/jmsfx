@@ -8,7 +8,7 @@ import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.standard.AmplifierListEnum;
 
 public enum UnitEchelon implements StandardAmplifierItem {
-        TEAM_CREW("1", "Team/Crew") {
+        TEAM_CREW("11", "Team/Crew") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -20,7 +20,7 @@ public enum UnitEchelon implements StandardAmplifierItem {
                 };
             }
         },
-        SQUAD("2", "Squad") {
+        SQUAD("12", "Squad") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -32,7 +32,7 @@ public enum UnitEchelon implements StandardAmplifierItem {
                 };
             }
         },
-        SEC("3", "Section") {
+        SEC("13", "Section") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -44,7 +44,7 @@ public enum UnitEchelon implements StandardAmplifierItem {
                 };
             }
         },
-        PLT_DETACHMENT("4", "Platoon/Detachment") {
+        PLT_DETACHMENT("14", "Platoon/Detachment") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -56,7 +56,7 @@ public enum UnitEchelon implements StandardAmplifierItem {
                 };
             }
         },
-        STAFFEL("5", "Staffel") {
+        STAFFEL("1A", "Staffel") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -68,7 +68,7 @@ public enum UnitEchelon implements StandardAmplifierItem {
                 };
             }
         },
-        CPY_BTY_TRP("6", "Company/Battery/Troop") {
+        CPY_BTY_TRP("15", "Company/Battery/Troop") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -80,7 +80,7 @@ public enum UnitEchelon implements StandardAmplifierItem {
                 };
             }
         },
-        BN_SQUADRON("7", "Battalion/Squadron") {
+        BN_SQUADRON("16", "Battalion/Squadron") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -92,7 +92,7 @@ public enum UnitEchelon implements StandardAmplifierItem {
                 };
             }
         },
-        REGT_GRP("8", "Regiment/Group") {
+        REGT_GRP("17", "Regiment/Group") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -104,7 +104,7 @@ public enum UnitEchelon implements StandardAmplifierItem {
                 };
             }
         },
-        BDE("9", "Brigade") {
+        BDE("18", "Brigade") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -116,7 +116,7 @@ public enum UnitEchelon implements StandardAmplifierItem {
                 };
             }
         },
-        DIV("A", "Division") {
+        DIV("21", "Division") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -128,7 +128,7 @@ public enum UnitEchelon implements StandardAmplifierItem {
                 };
             }
         },
-        CORPS_MEF("B", "Corps/MEF") {
+        CORPS_MEF("22", "Corps/MEF") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -140,7 +140,7 @@ public enum UnitEchelon implements StandardAmplifierItem {
                 };
             }
         },
-        ARMY("C", "Army") {
+        ARMY("23", "Army") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -152,7 +152,7 @@ public enum UnitEchelon implements StandardAmplifierItem {
                 };
             }
         },
-        ARMY_GROUP_FRONT("D", "Army Group/Front") {
+        ARMY_GROUP_FRONT("24", "Army Group/Front") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -164,7 +164,7 @@ public enum UnitEchelon implements StandardAmplifierItem {
                 };
             }
         },
-        REGION_THEATRE("E", "Region/Theatre") {
+        REGION_THEATRE("25", "Region/Theatre") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -176,7 +176,7 @@ public enum UnitEchelon implements StandardAmplifierItem {
                 };
             }
         },
-        COMMAND("F", "Command") {
+        COMMAND("26", "Command") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
