@@ -82,7 +82,7 @@ public abstract class AbstractModel {
         this.extension = extension;
     }
 
-    protected String sanitiseId(String id) {
+    private static String sanitiseId(String id) {
         String result = RegExUtils.removeAll(id, "[-\\(\\)]");
         result = RegExUtils.replaceAll(result, "(\\s+)", " ");
         result = RegExUtils.replaceAll(result, " ", "_");
