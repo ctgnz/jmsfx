@@ -12,6 +12,7 @@ import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.CoreMatchers.sameInstance;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.empty;
+import static org.hamcrest.Matchers.endsWith;
 
 import javafx.geometry.Pos;
 
@@ -240,5 +241,37 @@ class IdentificationSymbolTest {
     void testToStringConcatenatesTheThreeDigitGroups() {
         assertThat(candidate.toString(),
             is(candidate.getFirstTenDigits() + " " + candidate.getSecondTenDigits() + " " + candidate.getThirdTenDigits()));
+    }
+
+    /**
+     * APP-6E puts the amplifier at SIDC positions 9 and 10. An amplifier's own id is only the second of those digits - the first identifies its group - so the amplifier has to
+     * contribute {@code getFullId()} rather than {@code getId()}, or the first set of ten comes out one short.
+     * <p>
+     * The group code here is deliberately not "0": with a zero group the defect hides, because the digit before the amplifier is itself a zero and the shortened code still happens
+     * to end with the right two characters.
+     */
+    @Test
+    void testFirstTenDigitsEndWithTheAmplifiersGroupAndCode() {
+        var group = new TestFixtures.FakeAmplifierList("2");
+        var amplifier = new TestFixtures.FakeAmplifierListItem("4", "Platoon/Detachment", true, group);
+        candidate.setAmplifier(amplifier);
+
+        assertThat(amplifier.getFullId(), is("24"));
+        assertThat(candidate.getFirstTenDigits(), endsWith("24"));
+    }
+
+    /** The amplifier occupies two positions, so swapping it for another of the same group must not change the length. */
+    @Test
+    void testTheAmplifierOccupiesTwoPositions() {
+        var group = new TestFixtures.FakeAmplifierList("2");
+        candidate.setAmplifier(new TestFixtures.FakeAmplifierListItem("4", "Platoon/Detachment", true, group));
+        int withAmplifier = candidate.getFirstTenDigits()
+            .length();
+
+        candidate.setAmplifier(new TestFixtures.FakeAmplifierListItem("1", "Team/Crew", true, group));
+
+        assertThat(candidate.getFirstTenDigits()
+            .length(), is(withAmplifier));
+        assertThat(candidate.getFirstTenDigits(), endsWith("21"));
     }
 }

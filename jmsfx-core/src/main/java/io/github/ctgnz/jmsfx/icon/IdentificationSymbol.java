@@ -380,8 +380,10 @@ public class IdentificationSymbol {
                 .getId(),
             hqtfDummy.get()
                 .getId(),
+            // Positions 9 and 10, so the amplifier contributes its group code and its own -
+            // getId() alone is a single digit and leaves the first set of ten one short.
             amplifier.get() != null ? amplifier.get()
-                .getId() : "00");
+                .getFullId() : "00");
     }
 
     public AmplifierListItem getFrameAmplifier() {

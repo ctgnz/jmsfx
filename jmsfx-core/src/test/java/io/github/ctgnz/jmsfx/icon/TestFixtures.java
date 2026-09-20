@@ -154,6 +154,16 @@ final class TestFixtures {
     }
 
     static class FakeAmplifierList implements AmplifierList {
+        private final String id;
+
+        FakeAmplifierList() {
+            this("0");
+        }
+
+        FakeAmplifierList(String id) {
+            this.id = id;
+        }
+
         @Override
         public Amplifier getAmplifier() {
             return null;
@@ -161,7 +171,7 @@ final class TestFixtures {
 
         @Override
         public String getId() {
-            return "0";
+            return id;
         }
 
         @Override
@@ -190,12 +200,17 @@ final class TestFixtures {
         private final String id;
         private final String label;
         private final boolean graphicalIcon;
-        private final AmplifierList amplifierList = new FakeAmplifierList();
+        private final AmplifierList amplifierList;
 
         FakeAmplifierListItem(String id, String label, boolean graphicalIcon) {
+            this(id, label, graphicalIcon, new FakeAmplifierList());
+        }
+
+        FakeAmplifierListItem(String id, String label, boolean graphicalIcon, AmplifierList amplifierList) {
             this.id = id;
             this.label = label;
             this.graphicalIcon = graphicalIcon;
+            this.amplifierList = amplifierList;
         }
 
         @Override
