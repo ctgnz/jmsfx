@@ -15,7 +15,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
     "code", "label", "remarks"
 })
 @JsonPropertyOrder({
-    "code", "id", "extension", "deprecated", "label", "remarks", "dimensions"
+    "code", "id", "extension", "deprecated", "label", "bounds", "remarks", "dimensions"
 })
 public class StatusModel extends AbstractModel {
 

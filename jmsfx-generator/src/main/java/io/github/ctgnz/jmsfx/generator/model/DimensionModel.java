@@ -10,7 +10,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
     "code", "label", "remarks", "graphicLocation"
 })
 @JsonPropertyOrder({
-    "code", "id", "geometry", "graphicLocation", "extension", "deprecated", "label", "remarks"
+    "code", "id", "geometry", "graphicLocation", "extension", "deprecated", "label", "bounds", "remarks"
 })
 public class DimensionModel extends AbstractModel {
 

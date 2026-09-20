@@ -1,6 +1,8 @@
 package io.github.ctgnz.jmsfx.generator.model;
 
 import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.RegExUtils;
 
@@ -13,6 +15,7 @@ public abstract class AbstractModel {
         return Comparator.comparing(AbstractModel::getCode);
     }
 
+    protected Map<String, List<Double>> bounds;
     protected String id;
     protected String label;
     protected String code;
@@ -28,6 +31,19 @@ public abstract class AbstractModel {
         this.label = label;
         this.code = code;
         this.remarks = remarks;
+    }
+
+    /**
+     * Measured bounds for this element's graphic, as <code>[x, y, width, height]</code> keyed by whatever discriminates the fragment - the standard identity group for an
+     * amplifier, group plus frame id for a status, and so on. Written by {@link io.github.ctgnz.jmsfx.generator.FragmentMeasurer} rather than maintained by hand, and absent for
+     * elements with no graphic of their own.
+     */
+    public Map<String, List<Double>> getBounds() {
+        return bounds;
+    }
+
+    public void setBounds(Map<String, List<Double>> bounds) {
+        this.bounds = bounds;
     }
 
     /**

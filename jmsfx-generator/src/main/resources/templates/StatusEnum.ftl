@@ -1,13 +1,29 @@
 package ${iconPackage};
+<#assign hasBounds = statuses?filter(v -> v.bounds??)?size gt 0>
 
-import java.util.Arrays;
+<#if hasBounds>import javafx.geometry.Rectangle2D;
+
+</#if>import java.util.Arrays;
 import java.util.List;
 
 import ${basePackage}.Status;
+<#if hasBounds>import ${basePackage}.StandardIdentity;
+</#if><#if hasBounds>import ${basePackage}.SymbolSet;
+</#if>
 
 public enum StatusEnum implements Status {
 <#list statuses as status>
-        ${status.id}("${status.code}", "${status.label}", <#if status?index gt 1>true<#else>false</#if><#list status.dimensions>, <#items as dim>"${dim}"<#sep>, </#items></#list>)<#sep>,
+        ${status.id}("${status.code}", "${status.label}", <#if status?index gt 1>true<#else>false</#if><#list status.dimensions>, <#items as dim>"${dim}"<#sep>, </#items></#list>) <#if status.bounds??>{
+            @Override
+            public Rectangle2D getStatusBounds(StandardIdentity identity, SymbolSet symbolSet) {
+                return switch (identity.getGroupId() + symbolSet.getFrameId()) {
+<#list status.bounds as key, rect>
+                    case "${key}" -> new Rectangle2D(${rect[0]?c}, ${rect[1]?c}, ${rect[2]?c}, ${rect[3]?c});
+</#list>
+                    default -> Rectangle2D.EMPTY;
+                };
+            }
+        }</#if><#sep>,
 </#list>;
 
     private final String id;

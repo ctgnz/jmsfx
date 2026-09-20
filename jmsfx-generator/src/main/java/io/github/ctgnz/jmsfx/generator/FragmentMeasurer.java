@@ -19,8 +19,12 @@ import nz.co.ctg.foxglove.SvgGraphic;
 
 import io.github.ctgnz.jmsfx.generator.model.AmplifierListItemModel;
 import io.github.ctgnz.jmsfx.generator.model.AmplifierListModel;
+import io.github.ctgnz.jmsfx.generator.model.DimensionModel;
+import io.github.ctgnz.jmsfx.generator.model.HqtfDummyModel;
 import io.github.ctgnz.jmsfx.generator.model.LibraryModel;
 import io.github.ctgnz.jmsfx.generator.model.StandardIdentityGroupModel;
+import io.github.ctgnz.jmsfx.generator.model.StandardIdentityModel;
+import io.github.ctgnz.jmsfx.generator.model.StatusModel;
 import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
 
 /**
@@ -118,9 +122,129 @@ public class FragmentMeasurer {
                 .size());
         }
 
+        System.out.format("  %-24s %d items, %d fragments absent%n", "(amplifiers total)", measured, missing);
+
+        measureStatuses(model);
+        measureHqtfDummies(model);
+        measureFrames(model);
+
         Path modelFile = config.getModelSourceFile();
         Files.writeString(modelFile, parser.writeLibraryModel(model), StandardCharsets.UTF_8);
-        System.out.format("%nMeasured %d amplifier items (%d fragments absent). Wrote %s%n", measured, missing, modelFile);
+        System.out.format("%nWrote %s%n", modelFile);
+    }
+
+    /**
+     * Status graphics live at {@code /svg/OCA/0{identityGroup}{frameId}{status}2.svg}, so the bounds are keyed by identity group and frame id - the two things that vary the
+     * fragment. {@code frameId} is the dimension's code.
+     */
+    private void measureStatuses(LibraryModel model) throws InterruptedException {
+        int measured = 0;
+        int absent = 0;
+        for (StatusModel status : model.getStatuses()) {
+            Map<String, List<Double>> byKey = new LinkedHashMap<>();
+            for (StandardIdentityGroupModel group : model.getIdentityGroups()) {
+                for (DimensionModel dimension : model.getDimensions()) {
+                    String key = group.getCode() + dimension.getCode();
+                    Path file = svg("OCA", "0" + key + status.getCode() + "2.svg");
+                    Bounds bounds = boundsOf(file);
+                    if (bounds == null) {
+                        absent++;
+                        continue;
+                    }
+                    byKey.put(key, rectangle(bounds));
+                }
+            }
+            if (!byKey.isEmpty()) {
+                status.setBounds(byKey);
+                measured++;
+            }
+        }
+        System.out.format("  %-24s %d of %d measured, %d absent%n", "statuses", measured, model.getStatuses()
+            .size(), absent);
+    }
+
+    /** HQ/task force/dummy graphics live at {@code /svg/HQTFFD/{identityGroup}{dimension}{hqtfDummy}.svg}. */
+    private void measureHqtfDummies(LibraryModel model) throws InterruptedException {
+        int measured = 0;
+        int absent = 0;
+        for (HqtfDummyModel hqtfDummy : model.getHqtfDummies()) {
+            Map<String, List<Double>> byKey = new LinkedHashMap<>();
+            for (StandardIdentityGroupModel group : model.getIdentityGroups()) {
+                for (DimensionModel dimension : model.getDimensions()) {
+                    String key = group.getCode() + dimension.getCode();
+                    Path file = svg("HQTFFD", key + hqtfDummy.getCode() + ".svg");
+                    Bounds bounds = boundsOf(file);
+                    if (bounds == null) {
+                        absent++;
+                        continue;
+                    }
+                    byKey.put(key, rectangle(bounds));
+                }
+            }
+            if (!byKey.isEmpty()) {
+                hqtfDummy.setBounds(byKey);
+                measured++;
+            }
+        }
+        System.out.format("  %-24s %d of %d measured, %d absent%n", "hqtf/dummy", measured, model.getHqtfDummies()
+            .size(), absent);
+    }
+
+    /**
+     * Frames live at {@code /svg/Frames/0_{identity}{frameId}_{statusFrameId}{c}.svg}, and hang off the dimension because {@code frameId} is the dimension's code. The status
+     * contributes its own code only for a confirmed identity; otherwise the frame is the "0" variant, which is what {@code Status.getFrameId(identity)} encodes.
+     */
+    private void measureFrames(LibraryModel model) throws InterruptedException {
+        int measured = 0;
+        int absent = 0;
+        for (DimensionModel dimension : model.getDimensions()) {
+            Map<String, List<Double>> byKey = new LinkedHashMap<>();
+            for (StandardIdentityModel identity : model.getIdentities()) {
+                for (StatusModel status : model.getStatuses()) {
+                    String statusFrameId = identity.isConfirmed() ? status.getCode() : "0";
+                    for (boolean civilian : new boolean[] {
+                        false, true
+                    }) {
+                        String key = identity.getCode() + statusFrameId + (civilian ? "c" : "");
+                        if (byKey.containsKey(key)) {
+                            continue;
+                        }
+                        Path file = svg("Frames", "0_" + identity.getCode() + dimension.getCode() + "_" + statusFrameId + (civilian ? "c" : "") + ".svg");
+                        Bounds bounds = boundsOf(file);
+                        if (bounds == null) {
+                            absent++;
+                            continue;
+                        }
+                        byKey.put(key, rectangle(bounds));
+                    }
+                }
+            }
+            if (!byKey.isEmpty()) {
+                dimension.setBounds(byKey);
+                measured++;
+            }
+        }
+        System.out.format("  %-24s %d of %d measured, %d absent%n", "frames (by dimension)", measured, model.getDimensions()
+            .size(), absent);
+    }
+
+    private Path svg(String directory, String fileName) {
+        return config.getResourceDir()
+            .resolve("svg")
+            .resolve(directory)
+            .resolve(fileName);
+    }
+
+    /** Measured bounds for a fragment, or null when the file is absent or draws nothing. */
+    private Bounds boundsOf(Path file) throws InterruptedException {
+        if (!Files.exists(file)) {
+            return null;
+        }
+        Bounds bounds = onFxThread(() -> measureFile(file));
+        if (bounds == null || bounds.isEmpty() || bounds.getWidth() <= 0 || bounds.getHeight() <= 0) {
+            return null;
+        }
+        return bounds;
     }
 
     /** {@code /svg/{location}/{identityGroup}{listCode}{itemCode}.svg}, the same path the library loads at runtime. */
