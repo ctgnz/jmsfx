@@ -887,7 +887,7 @@ symbolSets:
   - {code: "11", category: Capability, id: REFUEL, label: "Refuel"}
   - {code: "12", category: Capability, id: TUG, label: "Tug"}
 - details: {code: "10", dimensionId: LAND_UNIT, id: LAND_UNIT, label: "Land Units"}
-  config: {useFrame: true, amplifierClass: UnitEchelon, amplifierTwoClass: EquipmentMobility}
+  config: {useFrame: true, amplifierClass: UnitEchelon}
   amplifierGuides:
   - {code: B, type: RECTANGLE, amplifier: B_Echelon, points: [205.0, 192.0, 200.0, 80.0]}
   - {code: C, type: RECTANGLE, amplifier: C_Quantity, points: [205.0, 192.0, 200.0, 80.0]}
@@ -2675,6 +2675,7 @@ symbolSets:
   - {code: V, type: RECTANGLE, amplifier: V_TypeOfEquipment, points: [478.0, 248.0, 134.0, 96.0]}
   - {code: "Y", type: RECTANGLE, amplifier: Y_Location, points: [478.0, 536.0, 134.0, 96.0]}
   - {code: Z, type: RECTANGLE, amplifier: Z_Speed, points: [478.0, 536.0, 134.0, 96.0]}
+  - {code: AG, type: RECTANGLE, amplifier: AG_AuxiliaryEquipmentIndicator, points: [142.0, 542.0, 328.0, 96.0]}
   - {code: AH, type: SYSTEM, amplifier: AH_AreaOfUncertaintyIndicator}
   - {code: AH1, type: SYSTEM, amplifier: AH1_AreaOfUncertaintyIndicatorLongitude}
   - {code: AJ, type: LINE, amplifier: AJ_SpeedLeader, points: [178.565, 467.976, 17.069, 557.214]}

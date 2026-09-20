@@ -2990,6 +2990,7 @@ symbolSets:
   - {code: V, type: RECTANGLE, amplifier: V_TypeOfEquipment, points: [478.0, 248.0, 134.0, 96.0]}
   - {code: "Y", type: RECTANGLE, amplifier: Y_Location, points: [478.0, 536.0, 134.0, 96.0]}
   - {code: Z, type: RECTANGLE, amplifier: Z_Speed, points: [478.0, 536.0, 134.0, 96.0]}
+  - {code: AG, type: RECTANGLE, amplifier: AG_AuxiliaryEquipmentIndicator, points: [142.0, 542.0, 328.0, 96.0]}
   - {code: AH, type: SYSTEM, amplifier: AH_AreaOfUncertaintyIndicator}
   - {code: AH1, type: SYSTEM, amplifier: AH1_AreaOfUncertaintyIndicatorLongitude}
   - {code: AJ, type: LINE, amplifier: AJ_SpeedLeader, points: [178.565, 467.976, 17.069, 557.214]}
