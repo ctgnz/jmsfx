@@ -32,6 +32,15 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- Used only by FragmentMeasurer, which measures the SVG fragments and writes their bounds
+             into the model file. Code generation itself never touches it, so generating stays
+             headless - only re-measuring needs a JavaFX toolkit, and that runs on a dev machine
+             or CI when the fragments change. -->
+        <dependency>
+            <groupId>io.github.ctgnz</groupId>
+            <artifactId>foxglove</artifactId>
+            <version>${foxglove.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -59,7 +68,6 @@
             <artifactId>jaxb-core</artifactId>
             <version>${jaxb.api.version}</version>
         </dependency>
- 
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>

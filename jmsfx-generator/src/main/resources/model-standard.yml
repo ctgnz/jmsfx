@@ -121,45 +121,45 @@ amplifierGroups:
 - details: {code: "1", id: ECHELON, label: "Echelon", amplifierId: B_Echelon}
   config: {typeName: UnitEchelon, graphicLocation: "Echelon", standard: true, enumId: UNIT_ECHELON, enumDesc: "Unit Echelon", symbolSets: [LAND_UNIT, CONTROL_MEASURE, CYBERSPACE]}
   values:
-  - {code: "1", id: "TEAM_CREW", label: "Team/Crew"}
-  - {code: "2", id: "SQUAD", label: "Squad"}
-  - {code: "3", id: "SEC", label: "Section"}
-  - {code: "4", id: "PLT_DETACHMENT", label: "Platoon/Detachment"}
-  - {code: "5", id: "STAFFEL", label: "Staffel"}
-  - {code: "6", id: "CPY_BTY_TRP", label: "Company/Battery/Troop"}
-  - {code: "7", id: "BN_SQUADRON", label: "Battalion/Squadron"}
-  - {code: "8", id: "REGT_GRP", label: "Regiment/Group"}
-  - {code: "9", id: "BDE", label: "Brigade"}
-  - {code: "A", id: "DIV", label: "Division"}
-  - {code: "B", id: "CORPS_MEF", label: "Corps/MEF"}
-  - {code: "C", id: "ARMY", label: "Army"}
-  - {code: "D", id: "ARMY_GROUP_FRONT", label: "Army Group/Front"}
-  - {code: "E", id: "REGION_THEATRE", label: "Region/Theatre"}
-  - {code: "F", id: "COMMAND", label: "Command"}
+  - {code: "1", id: "TEAM_CREW", label: "Team/Crew", bounds: {"1": [287.08, 157.81, 34.66, 53.16], "3": [286.41, 205.5, 37.2, 40.58], "4": [287.08, 194.81, 34.66, 53.16], "6": [287.08, 157.81, 34.66, 53.16]}}
+  - {code: "2", id: "SQUAD", label: "Squad", bounds: {"1": [287.08, 170.0, 36.0, 36.0], "3": [287.08, 213.0, 36.0, 36.0], "4": [287.08, 207.0, 36.0, 36.0], "6": [287.08, 170.0, 36.0, 36.0]}}
+  - {code: "3", id: "SEC", label: "Section", bounds: {"1": [265.03, 170.0, 80.11, 36.0], "3": [265.03, 213.0, 80.11, 36.0], "4": [265.03, 207.0, 80.11, 36.0], "6": [265.03, 170.0, 80.11, 36.0]}}
+  - {code: "4", id: "PLT_DETACHMENT", label: "Platoon/Detachment", bounds: {"1": [245.0, 170.0, 123.11, 36.0], "3": [245.0, 213.0, 123.11, 36.0], "4": [245.0, 207.0, 123.11, 36.0], "6": [245.0, 170.0, 123.11, 36.0]}}
+  - {code: "5", id: "STAFFEL", label: "Staffel", bounds: {"1": [222.95, 170.0, 166.11, 36.0], "3": [222.95, 213.73, 166.11, 36.0], "4": [222.03, 207.0, 166.11, 36.0], "6": [222.03, 170.0, 166.11, 36.0]}}
+  - {code: "6", id: "CPY_BTY_TRP", label: "Company/Battery/Troop", bounds: {"1": [301.03, 163.5, 10.0, 49.0], "3": [301.03, 201.5, 10.0, 49.0], "4": [301.03, 200.5, 10.0, 49.0], "6": [301.03, 163.5, 10.0, 49.0]}}
+  - {code: "7", id: "BN_SQUADRON", label: "Battalion/Squadron", bounds: {"1": [278.03, 163.5, 54.11, 49.0], "3": [278.03, 201.5, 54.11, 49.0], "4": [278.03, 200.5, 54.11, 49.0], "6": [278.03, 163.5, 54.11, 49.0]}}
+  - {code: "8", id: "REGT_GRP", label: "Regiment/Group", bounds: {"1": [278.03, 163.5, 54.11, 49.0], "3": [278.03, 201.5, 54.11, 49.0], "4": [278.03, 200.5, 54.11, 49.0], "6": [278.03, 163.5, 54.11, 49.0]}}
+  - {code: "9", id: "BDE", label: "Brigade", bounds: {"1": [289.17, 157.81, 34.66, 53.16], "3": [287.17, 195.47, 39.0, 59.8], "4": [289.17, 194.81, 34.66, 53.16], "6": [289.17, 157.81, 34.66, 53.16]}}
+  - {code: "A", id: "DIV", label: "Division", bounds: {"1": [267.76, 157.81, 81.33, 53.16], "3": [260.76, 195.47, 91.49, 59.8], "4": [267.76, 194.81, 81.33, 53.16], "6": [267.76, 157.81, 81.33, 53.16]}}
+  - {code: "B", id: "CORPS_MEF", label: "Corps/MEF", bounds: {"1": [246.34, 157.81, 127.99, 53.16], "3": [234.34, 195.47, 143.99, 59.8], "4": [246.34, 194.81, 127.99, 53.16], "6": [246.34, 157.81, 127.99, 53.16]}}
+  - {code: "C", id: "ARMY", label: "Army", bounds: {"1": [230.69, 157.81, 174.66, 53.16], "3": [208.69, 195.47, 196.49, 59.8], "4": [230.69, 194.81, 174.66, 53.16], "6": [230.69, 157.81, 174.66, 53.16]}}
+  - {code: "D", id: "ARMY_GROUP_FRONT", label: "Army Group/Front", bounds: {"1": [218.88, 157.81, 221.32, 53.16], "3": [181.88, 195.47, 248.99, 59.8], "4": [212.88, 194.81, 221.32, 53.16], "6": [218.88, 157.81, 221.32, 53.16]}}
+  - {code: "E", id: "REGION_THEATRE", label: "Region/Theatre", bounds: {"1": [206.11, 157.81, 267.98, 53.16], "3": [186.11, 195.47, 233.98, 59.8], "4": [208.11, 194.81, 267.98, 53.16], "6": [206.11, 157.81, 267.98, 53.16]}}
+  - {code: "F", id: "COMMAND", label: "Command", bounds: {"1": [265.03, 170.0, 80.11, 36.0], "3": [265.95, 218.0, 80.11, 36.0], "4": [270.18, 203.69, 80.11, 36.0], "6": [264.94, 170.0, 80.11, 36.0]}}
 - details: {code: "3", id: EQUIP_MOBILITY, label: "Equipment mobility", amplifierId: R_MobilityIndicator}
   config: {typeName: EquipmentMobility, graphicLocation: "Amplifier", standard: true, enumId: EQUIPMENT_MOBILITY, enumDesc: "Equipment Mobility", symbolSets: [LAND_UNIT, LAND_EQUIPMENT, LAND_INSTALLATION]}
   values:
-  - {code: "1", id: "WHEEL_LIMIT_COUNTRY", label: "Wheeled limited cross country"}
-  - {code: "2", id: "WHEEL_COUNTRY", label: "Wheeled cross country"}
-  - {code: "3", id: "TRACKED", label: "Tracked"}
-  - {code: "4", id: "WHEEL_TRACK", label: "Wheeled and tracked combination"}
-  - {code: "5", id: "TOWED", label: "Towed"}
-  - {code: "6", id: "RAIL", label: "Rail"}
-  - {code: "7", id: "PACK_ANIMALS", label: "Pack animals"}
-  - {code: "A", id: "OVER_SNOW", label: "Over snow (prime mover)"}
-  - {code: "B", id: "SLED", label: "Sled"}
-  - {code: "D", id: "BARGE", label: "Barge"}
-  - {code: "E", id: "AMPHIB", label: "Amphibious"}
+  - {code: "1", id: "WHEEL_LIMIT_COUNTRY", label: "Wheeled limited cross country", bounds: {"1": [113.89, 563.75, 382.22, 55.07], "3": [156.89, 540.75, 296.22, 55.07], "4": [168.89, 525.5, 271.22, 55.07], "6": [130.5, 569.75, 351.0, 55.07]}}
+  - {code: "2", id: "WHEEL_COUNTRY", label: "Wheeled cross country", bounds: {"1": [113.89, 563.75, 382.22, 55.07], "3": [157.89, 539.75, 296.22, 55.07], "4": [169.89, 528.75, 271.22, 55.07], "6": [130.5, 570.75, 351.0, 55.07]}}
+  - {code: "3", id: "TRACKED", label: "Tracked", bounds: {"1": [114.39, 564.25, 383.21, 56.07], "3": [158.0, 540.25, 294.26, 56.07], "4": [170.0, 530.25, 270.0, 56.07], "6": [130.0, 570.25, 352.0, 56.07]}}
+  - {code: "4", id: "WHEEL_TRACK", label: "Wheeled and tracked combination", bounds: {"1": [114.89, 564.16, 382.71, 56.07], "3": [140.89, 541.16, 311.11, 56.07], "4": [104.89, 531.16, 335.2, 56.07], "6": [130.5, 570.16, 351.5, 56.07]}}
+  - {code: "5", id: "TOWED", label: "Towed", bounds: {"1": [114.89, 538.71, 382.22, 55.07], "3": [133.46, 516.5, 343.07, 55.07], "4": [168.46, 534.5, 274.07, 55.07], "6": [130.5, 544.46, 351.0, 55.07]}}
+  - {code: "6", id: "RAIL", label: "Rail", bounds: {"1": [114.89, 563.75, 382.22, 55.07], "3": [158.5, 538.71, 293.0, 55.07], "4": [170.5, 525.71, 269.0, 55.07], "6": [129.5, 569.5, 351.0, 55.07]}}
+  - {code: "7", id: "PACK_ANIMALS", label: "Pack animals", bounds: {"1": [252.93, 563.25, 106.15, 56.07], "3": [252.93, 538.25, 106.15, 56.07], "4": [252.93, 532.25, 106.15, 56.07], "6": [252.93, 554.25, 106.15, 56.07]}}
+  - {code: "A", id: "OVER_SNOW", label: "Over snow (prime mover)", bounds: {"1": [113.84, 513.18, 384.33, 56.07], "3": [159.34, 488.14, 293.33, 56.07], "4": [170.34, 534.14, 268.83, 56.07], "6": [130.0, 523.18, 350.83, 56.07]}}
+  - {code: "B", id: "SLED", label: "Sled", bounds: {"1": [109.39, 517.43, 383.22, 56.07], "3": [158.0, 494.43, 294.0, 56.07], "4": [158.0, 535.43, 294.0, 56.07], "6": [130.0, 522.43, 352.0, 56.07]}}
+  - {code: "D", id: "BARGE", label: "Barge", bounds: {"1": [114.95, 563.25, 383.21, 56.27], "3": [158.45, 540.25, 292.21, 41.25], "4": [170.95, 535.25, 268.21, 41.25], "6": [133.45, 569.25, 349.21, 43.25]}}
+  - {code: "E", id: "AMPHIB", label: "Amphibious", bounds: {"1": [108.83, 559.0, 395.45, 61.64], "3": [163.0, 537.0, 284.18, 61.63], "4": [163.0, 533.0, 284.18, 61.63], "6": [130.0, 536.0, 352.0, 61.63]}}
 - details: {code: "6", id: TOWED_ARRAYS, label: "Naval towed array", amplifierId: AG_AuxiliaryEquipmentIndicator}
   config: {typeName: TowedArrayType, graphicLocation: "Amplifier", standard: true, enumId: TOWED_ARRAYS, enumDesc: "Naval towed array", symbolSets: [SEA_SURFACE]}
   values:
-  - {code: "1", id: "SHORT_TOWED_ARRAY", label: "Short towed array"}
-  - {code: "2", id: "LONG_TOWED_ARRAY", label: "Long towed array"}
+  - {code: "1", id: "SHORT_TOWED_ARRAY", label: "Short towed array", bounds: {"1": [119.77, 586.13, 372.46, 40.0], "3": [120.72, 588.66, 372.46, 40.0], "4": [119.77, 545.5, 372.46, 40.0], "6": [118.77, 585.0, 372.46, 40.0]}}
+  - {code: "2", id: "LONG_TOWED_ARRAY", label: "Long towed array", bounds: {"1": [119.77, 586.63, 372.46, 41.0], "3": [120.72, 588.66, 372.46, 41.0], "4": [119.77, 545.0, 372.46, 41.0], "6": [118.77, 585.0, 372.46, 41.0]}}
 - details: {code: "7", id: LEADERSHIP_INDICATOR, label: "Role for dismounted individuals", amplifierId: AV_LeadershipIdentifier}
   config: {typeName: LeadershipRole, graphicLocation: "Amplifier", standard: true, enumId: LEADERSHIP_ROLE, enumDesc: "Leadership role", symbolSets: [DISMOUNTED]}
   values:
-  - {code: "1", id: "LEADER_INDIVIDUAL", label: "Leader"}
-  - {code: "2", id: "DEPUTY_LEADER_INDIVIDUAL", label: "Deputy Leader"}
+  - {code: "1", id: "LEADER_INDIVIDUAL", label: "Leader", bounds: {"1": [132.28, 183.0, 345.45, 127.26], "3": [170.79, 225.5, 268.41, 82.0], "4": [167.5, 193.63, 274.0, 60.0], "6": [113.98, 179.87, 382.04, 195.25]}}
+  - {code: "2", id: "DEPUTY_LEADER_INDIVIDUAL", label: "Deputy Leader", bounds: {"1": [132.28, 183.0, 345.45, 127.26], "3": [170.79, 225.5, 268.41, 82.0], "4": [167.5, 193.63, 274.0, 60.0], "6": [113.98, 179.87, 382.04, 195.25]}}
 - details: {code: "A1", id: REINFORCED, label: "Reinforced or Reduced Values", amplifierId: F_ReinforcedOrReduced}
   config: {typeName: ReinforcedReduced, graphicLocation: "NA", enumId: REINFORCED, enumDesc: "Reinforced or Reduced"}
   values:

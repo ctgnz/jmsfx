@@ -4,6 +4,9 @@ import java.util.Comparator;
 
 import org.apache.commons.lang3.RegExUtils;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 public abstract class AbstractModel {
 
     public static <E extends AbstractModel> Comparator<E> getStandardOrder() {
@@ -27,6 +30,12 @@ public abstract class AbstractModel {
         this.remarks = remarks;
     }
 
+    /**
+     * An empty code is meaningful - "Local" engagement type and "Unspecified" engagement stage both carry one - so it has to survive a write/read round trip. The mapper's blanket
+     * {@code NON_DEFAULT} inclusion would otherwise drop it, and the templates emit <code>"${val.code}"</code> straight into a string literal, so the code coming back as null
+     * breaks generation rather than merely changing the file.
+     */
+    @JsonInclude(Include.NON_NULL)
     public String getCode() {
         return code;
     }
