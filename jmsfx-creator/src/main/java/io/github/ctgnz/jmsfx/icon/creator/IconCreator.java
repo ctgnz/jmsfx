@@ -2,7 +2,9 @@ package io.github.ctgnz.jmsfx.icon.creator;
 
 import java.io.File;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javafx.application.Application;
@@ -377,10 +379,7 @@ public class IconCreator extends Application {
             .bindBidirectional(symbol.entityProperty());
         entity.valueProperty()
             .addListener((obs, oldValue, newValue) -> {
-                entityTypes.retainAll(library.getDefaultEntityType());
-                if (newValue != null) {
-                    entityTypes.addAll(newValue.getEntityTypes());
-                }
+                reset(entityTypes, library.getDefaultEntityType(), newValue == null ? null : newValue.getEntityTypes());
             });
 
         ComboBox<EntityType> entityType = new ComboBox<>(entityTypes);
@@ -394,10 +393,7 @@ public class IconCreator extends Application {
             .bindBidirectional(symbol.entityTypeProperty());
         entityType.valueProperty()
             .addListener((obs, oldValue, newValue) -> {
-                entitySubTypes.retainAll(library.getDefaultEntitySubType());
-                if (newValue != null) {
-                    entitySubTypes.addAll(newValue.getEntitySubTypes());
-                }
+                reset(entitySubTypes, library.getDefaultEntitySubType(), newValue == null ? null : newValue.getEntitySubTypes());
             });
 
         ComboBox<EntitySubType> entitySubType = new ComboBox<>(entitySubTypes);
@@ -430,22 +426,13 @@ public class IconCreator extends Application {
 
         symbolSet.valueProperty()
             .addListener((obs, oldValue, newValue) -> {
-                amplifiers.retainAll(library.getDefaultAmplifier());
-                amplifiersTwo.retainAll(library.getDefaultAmplifier());
-                amplifiersThree.retainAll(library.getDefaultAmplifier());
-                frameAmplifiers.retainAll(library.getDefaultAmplifier());
-                sectorOneModifiers.retainAll(library.getCommonSectorOneModifiers());
-                sectorTwoModifiers.retainAll(library.getCommonSectorTwoModifiers());
-                entities.retainAll(library.getDefaultEntity());
-                if (newValue != null) {
-                    amplifiers.addAll(newValue.getAmplifierList());
-                    amplifiersTwo.addAll(newValue.getAmplifierListTwo());
-                    amplifiersThree.addAll(newValue.getAmplifierListThree());
-                    frameAmplifiers.addAll(newValue.getFrameAmplifierList());
-                    sectorOneModifiers.addAll(newValue.getSectorOneModifiers());
-                    sectorTwoModifiers.addAll(newValue.getSectorTwoModifiers());
-                    entities.addAll(newValue.getEntities());
-                }
+                reset(amplifiers, library.getDefaultAmplifier(), newValue == null ? null : newValue.getAmplifierList());
+                reset(amplifiersTwo, library.getDefaultAmplifier(), newValue == null ? null : newValue.getAmplifierListTwo());
+                reset(amplifiersThree, library.getDefaultAmplifier(), newValue == null ? null : newValue.getAmplifierListThree());
+                reset(frameAmplifiers, library.getDefaultAmplifier(), newValue == null ? null : newValue.getFrameAmplifierList());
+                reset(sectorOneModifiers, library.getCommonSectorOneModifiers(), newValue == null ? null : newValue.getSectorOneModifiers());
+                reset(sectorTwoModifiers, library.getCommonSectorTwoModifiers(), newValue == null ? null : newValue.getSectorTwoModifiers());
+                reset(entities, library.getDefaultEntity(), newValue == null ? null : newValue.getEntities());
                 sectorOneModifiers.sort(SectorOneModifier.VIEW_ORDER);
                 sectorTwoModifiers.sort(SectorTwoModifier.VIEW_ORDER);
             });
@@ -589,6 +576,29 @@ public class IconCreator extends Application {
         Group stack = new Group(icon);
         BorderPane.setAlignment(stack, Pos.TOP_CENTER);
         return stack;
+    }
+
+    /**
+     * Refills a combo box's list with the default entries followed by the ones this symbol set, entity or entity type offers, skipping any the defaults already provide.
+     * <p>
+     * The list is replaced in one go rather than trimmed and appended to. {@code retainAll} keeps <i>every</i> element equal to the default, so where the added items included that
+     * default as well - which the Common entity types and subtypes always do, and every symbol set's sector modifiers do - a further copy of it survived each pass, and the combo
+     * boxes grew an Unspecified entry every time the symbol set changed.
+     * <p>
+     * Replacing the contents does not disturb the selection: the defaults come first and the symbol resets its own value to one of them whenever the symbol set changes.
+     */
+    private static <E> void reset(ObservableList<E> list, E fallback, List<? extends E> items) {
+        reset(list, List.of(fallback), items);
+    }
+
+    private static <E> void reset(ObservableList<E> list, List<? extends E> defaults, List<? extends E> items) {
+        List<E> rebuilt = new ArrayList<>(defaults);
+        if (items != null) {
+            items.stream()
+                .filter(item -> !rebuilt.contains(item))
+                .forEach(rebuilt::add);
+        }
+        list.setAll(rebuilt);
     }
 
 }
