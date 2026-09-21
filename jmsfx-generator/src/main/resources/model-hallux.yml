@@ -1373,11 +1373,12 @@ symbolSets:
 - details: {code: "00", dimensionId: COMMON, id: COMMON, label: "Common"}
   config: {useFrame: true}
   entities:
-  - details: {code: "00", id: UNSPECIFIED, graphicType: MAIN, label: "Unspecified"}
+  - details: {code: "00", id: UNSPECIFIED, graphicType: NA, label: "Unspecified"}
     entityTypes:
     - details: {code: "00", id: UNSPECIFIED_TYPE, graphicType: NA, label: "Unspecified"}
       entitySubTypes:
       - {code: "00", id: UNSPECIFIED_SUB_TYPE, graphicType: NA, label: "Unspecified"}
+  - details: {code: "01", id: UNKNOWN, graphicType: MAIN, label: "Unknown Symbol"}
   - details: {code: "10", id: INVALID, graphicType: MAIN, label: "Invalid Symbol"}
   sectorOneMods:
   - {groupId: 0, code: "00", category: None, id: UNSPECIFIED, label: "Unspecified"}

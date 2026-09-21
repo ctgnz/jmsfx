@@ -72,7 +72,7 @@ class JmsfxParserTest {
         assertThat(common.getDimensionId(), is("COMMON"));
         assertThat(common.getLabel(), is("Common"));
         assertThat(common.isUseFrame(), is(true));
-        assertThat(common.getEntities(), hasSize(2));
+        assertThat(common.getEntities(), hasSize(3));
 
         var unspecified = common.getEntities()
             .stream()
@@ -118,7 +118,7 @@ class JmsfxParserTest {
             .findFirst()
             .orElseThrow();
         assertThat(roundTrippedCommon.getLabel(), is("Common"));
-        assertThat(roundTrippedCommon.getEntities(), hasSize(2));
+        assertThat(roundTrippedCommon.getEntities(), hasSize(3));
     }
 
     private LibraryModel readRealLibraryModel() throws IOException {
