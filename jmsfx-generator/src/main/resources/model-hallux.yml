@@ -712,6 +712,584 @@ amplifierGroups:
   - {code: "SVC", id: "SERVICE", label: "Service"}
   - {code: "STORE", id: "STORAGE", label: "Storage"}
   - {code: "UTIL", id: "UTILITY", label: "Utility"}
+iconBounds:
+  "25110100": {minX: 8.61, minY: 110.72, width: 383.39, height: 179.02}
+  "25110200": {minX: 113.23, minY: 321.27, width: 375.68, height: 145.81}
+  "25110300": {minX: 67.38, minY: 315.19, width: 472.95, height: 151.0}
+  "25110400": {minX: 49.4, minY: 309.54, width: 501.54, height: 158.44}
+  "25110500": {minX: 7.66, minY: 272.21, width: 589.7, height: 194.88}
+  "25120100": {minX: 19.17, minY: 97.1, width: 373.75, height: 195.95}
+  "25120200": {minX: 10.5, minY: 53.99, width: 379.73, height: 281.13}
+  "25120300": {minX: 9.5, minY: 54.99, width: 379.73, height: 281.13}
+  "25120400": {minX: 54.42, minY: 136.65, width: 317.77, height: 131.64}
+  "25120500": {minX: 9.5, minY: 54.99, width: 379.73, height: 281.13}
+  "25120600": {minX: 9.5, minY: 54.99, width: 379.73, height: 281.13}
+  "25120700": {minX: 4.45, minY: 54.99, width: 384.78, height: 281.13}
+  "25120800": {minX: 9.5, minY: 54.99, width: 379.73, height: 281.13}
+  "25130100": {minX: 188.28, minY: 82.5, width: 290.17, height: 342.63}
+  "25130200": {minX: 189.18, minY: 80.76, width: 290.17, height: 342.63}
+  "25130300": {minX: 188.08, minY: 81.5, width: 290.17, height: 342.63}
+  "25130400": {minX: 124.5, minY: 265.5, width: 362.0, height: 257.38}
+  "25130500": {minX: 201.0, minY: 290.5, width: 330.67, height: 210.0}
+  "25130600": {minX: 153.0, minY: 175.07, width: 305.0, height: 373.93}
+  "25130700": {minX: 141.06, minY: 237.97, width: 317.11, height: 316.3}
+  "25130800": {minX: 189.64, minY: 82.55, width: 290.17, height: 342.63}
+  "25130900": {minX: 188.08, minY: 81.5, width: 290.17, height: 342.63}
+  "25131001": {minX: 188.02, minY: 81.5, width: 290.17, height: 342.63}
+  "25131002": {minX: 188.02, minY: 81.5, width: 290.17, height: 342.63}
+  "25131003": {minX: 188.26, minY: 81.5, width: 290.17, height: 342.63}
+  "25131100": {minX: 188.13, minY: 83.01, width: 290.17, height: 342.63}
+  "25131200": {minX: 188.45, minY: 82.25, width: 290.17, height: 342.63}
+  "25131300": {minX: 208.41, minY: 119.04, width: 329.89, height: 316.38}
+  "25131301": {minX: 208.41, minY: 119.04, width: 329.89, height: 316.38}
+  "25131400": {minX: 189.08, minY: 81.5, width: 290.17, height: 342.63}
+  "25131500": {minX: 188.01, minY: 82.13, width: 290.17, height: 342.63}
+  "25131600": {minX: 188.57, minY: 82.13, width: 290.17, height: 342.63}
+  "25131700": {minX: 193.78, minY: 152.5, width: 223.92, height: 354.96}
+  "25131800": {minX: 192.47, minY: 155.03, width: 254.22, height: 354.96}
+  "25131900": {minX: 167.75, minY: 215.88, width: 346.26, height: 263.12}
+  "25132000": {minX: 104.22, minY: 32.97, width: 426.9, height: 402.58}
+  "25132100": {minX: 205.26, minY: 14.93, width: 202.58, height: 299.41}
+  "25132200": {minX: 188.57, minY: 82.13, width: 290.17, height: 342.63}
+  "25132300": {minX: 205.26, minY: 14.93, width: 251.11, height: 329.17}
+  "25140100": {minX: 93.33, minY: 32.74, width: 182.31, height: 317.33}
+  "25140300": {minX: 19.44, minY: 167.57, width: 356.7, height: 138.42}
+  "25140400": {minX: 26.6, minY: 114.72, width: 344.07, height: 132.56}
+  "25140500": {minX: 30.35, minY: 120.31, width: 331.08, height: 179.57}
+  "25140601": {minX: 12.11, minY: 146.55, width: 381.07, height: 147.16}
+  "25140602": {minX: 12.11, minY: 146.55, width: 381.07, height: 147.16}
+  "25140603": {minX: 12.11, minY: 146.55, width: 381.07, height: 147.16}
+  "25140605": {minX: 4.11, minY: 136.92, width: 395.07, height: 161.02}
+  "25140700": {minX: 66.5, minY: 149.56, width: 271.24, height: 132.3}
+  "25140800": {minX: 23.5, minY: 43.76, width: 361.68, height: 249.95}
+  "25140900": {minX: 66.5, minY: 149.56, width: 271.24, height: 132.3}
+  "25141000": {minX: 66.5, minY: 149.56, width: 271.24, height: 132.3}
+  "25141100": {minX: 66.5, minY: 149.56, width: 271.24, height: 132.3}
+  "25141200": {minX: 66.5, minY: 149.56, width: 269.24, height: 132.3}
+  "25141300": {minX: 35.67, minY: 23.33, width: 340.64, height: 328.96}
+  "25141400": {minX: 57.75, minY: 26.75, width: 249.97, height: 350.35}
+  "25141500": {minX: 14.08, minY: 154.77, width: 379.67, height: 128.81}
+  "25141600": {minX: 14.08, minY: 154.77, width: 375.68, height: 128.81}
+  "25141700": {minX: 22.69, minY: 38.54, width: 351.68, height: 341.37}
+  "25141800": {minX: 14.08, minY: 154.77, width: 375.68, height: 128.81}
+  "25141900": {minX: 14.08, minY: 154.77, width: 375.68, height: 128.81}
+  "25142000": {minX: 14.08, minY: 155.19, width: 384.47, height: 128.4}
+  "25142100": {minX: 27.23, minY: 126.13, width: 344.16, height: 155.52}
+  "25150100": {minX: 39.64, minY: 108.29, width: 327.16, height: 179.8}
+  "25150200": {minX: 38.64, minY: 107.29, width: 329.16, height: 181.8}
+  "25150501": {minX: 23.17, minY: 107.29, width: 356.12, height: 181.8}
+  "25150502": {minX: 23.17, minY: 107.29, width: 356.12, height: 181.8}
+  "25150503": {minX: 23.17, minY: 107.29, width: 356.12, height: 181.8}
+  "25150600": {minX: 39.64, minY: 108.29, width: 327.16, height: 179.8}
+  "25150700": {minX: 39.64, minY: 108.29, width: 327.16, height: 179.8}
+  "25150800": {minX: 39.64, minY: 108.29, width: 327.16, height: 179.8}
+  "25150900": {minX: 39.64, minY: 108.29, width: 327.16, height: 179.8}
+  "25151000": {minX: 20.03, minY: 87.62, width: 363.91, height: 207.75}
+  "25151100": {minX: 51.5, minY: 19.42, width: 289.08, height: 355.66}
+  "25151200": {minX: 35.42, minY: 130.44, width: 329.16, height: 200.08}
+  "25151202": {minX: 35.64, minY: 131.29, width: 329.16, height: 199.24}
+  "25151203": {minX: 41.06, minY: 120.7, width: 331.14, height: 198.67}
+  "25151204": {minX: 3.5, minY: 101.79, width: 391.62, height: 208.75}
+  "25151205": {minX: 92.25, minY: 250.46, width: 362.25, height: 286.78}
+  "25151300": {minX: 39.64, minY: 108.29, width: 327.16, height: 179.8}
+  "25151401": {minX: 23.35, minY: 54.68, width: 342.48, height: 293.88}
+  "25151402": {minX: 23.35, minY: 54.68, width: 342.48, height: 293.88}
+  "25151403": {minX: 36.68, minY: 46.5, width: 326.99, height: 293.24}
+  "25151404": {minX: 36.68, minY: 46.5, width: 326.99, height: 293.24}
+  "25151406": {minX: 36.68, minY: 46.5, width: 336.82, height: 293.24}
+  "25151500": {minX: 39.64, minY: 108.29, width: 327.16, height: 179.8}
+  "25151600": {minX: 39.64, minY: 108.29, width: 327.16, height: 179.8}
+  "25151700": {minX: 39.64, minY: 108.29, width: 327.16, height: 179.8}
+  "25151800": {minX: 48.89, minY: 88.85, width: 288.92, height: 208.29}
+  "25151900": {minX: 40.07, minY: 48.69, width: 330.86, height: 313.01}
+  "25152000": {minX: 60.48, minY: 44.55, width: 297.5, height: 290.09}
+  "25152100": {minX: 60.48, minY: 47.73, width: 297.5, height: 286.91}
+  "25152200": {minX: 9.11, minY: 81.24, width: 373.84, height: 237.01}
+  "25152300": {minX: 36.68, minY: 46.5, width: 326.99, height: 293.24}
+  "25152400": {minX: 9.5, minY: 54.99, width: 379.73, height: 281.13}
+  "25152500": {minX: 9.5, minY: 54.99, width: 379.73, height: 281.13}
+  "25160100": {minX: 160.61, minY: 243.87, width: 372.5, height: 251.0}
+  "25160200": {minX: 162.92, minY: 230.53, width: 374.6, height: 251.0}
+  "25160201": {minX: 161.92, minY: 230.54, width: 374.6, height: 251.0}
+  "25160202": {minX: 161.61, minY: 230.29, width: 372.6, height: 251.0}
+  "25160203": {minX: 158.61, minY: 230.7, width: 374.6, height: 251.0}
+  "25160204": {minX: 160.91, minY: 230.04, width: 374.6, height: 251.0}
+  "25160205": {minX: 148.73, minY: 247.05, width: 389.11, height: 288.0}
+  "25160300": {minX: 130.0, minY: 221.0, width: 350.0, height: 350.0}
+  "25160400": {minX: 236.77, minY: 135.63, width: 241.74, height: 288.79}
+  "25170100": {minX: 5.0, minY: 37.5, width: 393.41, height: 286.0}
+  "25170200": {minX: 5.0, minY: 37.5, width: 393.41, height: 286.0}
+  "25170300": {minX: 5.0, minY: 37.5, width: 393.41, height: 286.0}
+  "25170400": {minX: 5.0, minY: 37.5, width: 393.41, height: 286.0}
+  "25170500": {minX: 5.0, minY: 37.5, width: 393.41, height: 286.0}
+  "25170600": {minX: 5.0, minY: 37.5, width: 393.41, height: 286.0}
+  "25170700": {minX: 5.0, minY: 37.5, width: 393.41, height: 286.0}
+  "25170800": {minX: 168.82, minY: 259.2, width: 274.18, height: 274.18}
+  "25170900": {minX: 38.95, minY: 32.94, width: 349.34, height: 321.69}
+  "25171000": {minX: 38.95, minY: 32.94, width: 349.34, height: 321.69}
+  "25171100": {minX: 38.95, minY: 32.94, width: 349.34, height: 321.69}
+  "25171200": {minX: 38.95, minY: 32.94, width: 349.34, height: 321.69}
+  "25171300": {minX: 38.95, minY: 32.94, width: 349.34, height: 321.69}
+  "25171400": {minX: 38.95, minY: 32.94, width: 349.34, height: 321.69}
+  "25171500": {minX: 38.95, minY: 32.94, width: 349.34, height: 321.69}
+  "25171600": {minX: 38.95, minY: 32.94, width: 349.34, height: 321.69}
+  "25171700": {minX: 38.95, minY: 32.94, width: 349.34, height: 321.69}
+  "25171800": {minX: 38.95, minY: 32.94, width: 349.34, height: 321.69}
+  "25171900": {minX: 38.95, minY: 32.94, width: 349.34, height: 321.69}
+  "25172000": {minX: 19.21, minY: 72.89, width: 358.21, height: 254.85}
+  "25180000": {minX: 200.5, minY: 221.0, width: 210.0, height: 350.0}
+  "25180100": {minX: 183.5, minY: 268.67, width: 313.47, height: 283.11}
+  "25180200": {minX: 183.82, minY: 270.43, width: 313.47, height: 283.11}
+  "25180300": {minX: 233.24, minY: 119.47, width: 255.01, height: 289.08}
+  "25180400": {minX: 171.0, minY: 268.1, width: 384.61, height: 320.59}
+  "25180500": {minX: 200.81, minY: 221.0, width: 210.0, height: 350.0}
+  "25180600": {minX: 176.81, minY: 221.0, width: 294.22, height: 350.0}
+  "25180700": {minX: 200.81, minY: 221.0, width: 210.0, height: 350.0}
+  "25180800": {minX: 196.81, minY: 221.0, width: 210.0, height: 350.0}
+  "25180900": {minX: 196.81, minY: 211.07, width: 210.0, height: 368.93}
+  "25181000": {minX: 200.81, minY: 221.0, width: 210.0, height: 350.0}
+  "25181100": {minX: 200.81, minY: 221.0, width: 210.0, height: 350.0}
+  "25181200": {minX: 200.5, minY: 221.0, width: 210.0, height: 350.0}
+  "25181300": {minX: 200.5, minY: 207.27, width: 210.0, height: 377.73}
+  "25181400": {minX: 200.04, minY: 204.42, width: 210.0, height: 382.58}
+  "25181500": {minX: 200.5, minY: 207.27, width: 210.0, height: 373.73}
+  "25181600": {minX: 200.04, minY: 188.42, width: 210.0, height: 382.58}
+  "25181700": {minX: 200.5, minY: 199.27, width: 210.0, height: 377.73}
+  "25181800": {minX: 191.5, minY: 221.0, width: 210.0, height: 350.0}
+  "25181900": {minX: 188.5, minY: 221.0, width: 210.0, height: 350.0}
+  "25182000": {minX: 200.5, minY: 221.0, width: 210.0, height: 350.0}
+  "25182100": {minX: 200.5, minY: 221.0, width: 210.0, height: 350.0}
+  "25182200": {minX: 200.5, minY: 221.0, width: 210.0, height: 350.0}
+  "25182300": {minX: 200.5, minY: 221.0, width: 210.0, height: 350.0}
+  "25182400": {minX: 199.5, minY: 221.0, width: 210.0, height: 350.0}
+  "25182500": {minX: 195.5, minY: 221.0, width: 210.0, height: 350.0}
+  "25182600": {minX: 186.89, minY: 74.78, width: 305.86, height: 216.69}
+  "25190100": {minX: 20.5, minY: 135.08, width: 370.68, height: 158.64}
+  "25190200": {minX: 20.5, minY: 135.08, width: 370.68, height: 158.64}
+  "25200101": {minX: 36.79, minY: 105.51, width: 326.42, height: 170.0}
+  "25200201": {minX: 36.79, minY: 105.51, width: 326.42, height: 170.0}
+  "25200202": {minX: 32.48, minY: 116.56, width: 341.59, height: 157.58}
+  "25200300": {minX: 67.93, minY: 61.88, width: 265.63, height: 309.51}
+  "25200400": {minX: 254.94, minY: 320.94, width: 108.12, height: 162.65}
+  "25200401": {minX: 36.79, minY: 105.51, width: 326.42, height: 217.64}
+  "25200402": {minX: 28.0, minY: 105.51, width: 341.0, height: 217.64}
+  "25200500": {minX: 67.93, minY: 61.88, width: 288.24, height: 308.51}
+  "25200600": {minX: 163.5, minY: 247.04, width: 293.74, height: 297.11}
+  "25200700": {minX: 163.89, minY: 294.2, width: 278.37, height: 202.26}
+  "25210100": {minX: 170.31, minY: 270.76, width: 379.05, height: 250.49}
+  "25210200": {minX: 171.93, minY: 271.02, width: 379.05, height: 250.49}
+  "25210300": {minX: 154.65, minY: 248.15, width: 252.02, height: 239.35}
+  "25210400": {minX: 159.26, minY: 205.24, width: 291.57, height: 360.81}
+  "25210500": {minX: 115.5, minY: 161.0, width: 380.0, height: 303.09}
+  "25210600": {minX: 140.76, minY: 275.62, width: 282.56, height: 214.69}
+  "25210700": {minX: 152.5, minY: 113.24, width: 325.1, height: 368.27}
+  "25210800": {minX: 19.66, minY: 23.99, width: 353.08, height: 352.01}
+  "25210900": {minX: 19.66, minY: 23.99, width: 356.58, height: 352.01}
+  "25211000": {minX: 180.05, minY: 273.33, width: 279.0, height: 286.33}
+  "25211100": {minX: 112.95, minY: 178.09, width: 374.1, height: 297.81}
+  "25211200": {minX: 174.65, minY: 166.24, width: 300.35, height: 322.48}
+  "25211300": {minX: 174.5, minY: 289.45, width: 263.0, height: 343.84}
+  "25211400": {minX: 137.5, minY: 233.26, width: 361.0, height: 321.36}
+  "25211500": {minX: 175.67, minY: 265.04, width: 328.5, height: 264.0}
+  "25211600": {minX: 212.69, minY: 242.44, width: 297.67, height: 326.89}
+  "25211700": {minX: 169.88, minY: 219.02, width: 278.0, height: 292.78}
+  "25211800": {minX: 142.95, minY: 222.07, width: 332.09, height: 302.56}
+  "25211900": {minX: 284.37, minY: 290.96, width: 225.06, height: 210.07}
+  "25212000": {minX: 147.25, minY: 128.76, width: 351.5, height: 366.36}
+  "25212100": {minX: 156.31, minY: 78.46, width: 357.75, height: 342.12}
+  "25212200": {minX: 146.25, minY: 128.76, width: 351.5, height: 363.36}
+  "25212300": {minX: 164.43, minY: 238.21, width: 226.72, height: 254.57}
+  "25212400": {minX: 165.75, minY: 238.21, width: 238.5, height: 254.57}
+  "25212500": {minX: 166.77, minY: 237.37, width: 238.5, height: 349.36}
+  "25212600": {minX: 165.2, minY: 238.14, width: 245.93, height: 254.57}
+  "25212700": {minX: 167.11, minY: 239.21, width: 244.08, height: 253.57}
+  "25212800": {minX: 197.94, minY: 313.13, width: 222.21, height: 228.2}
+  "25212901": {minX: 197.94, minY: 310.13, width: 222.21, height: 228.2}
+  "25212902": {minX: 197.94, minY: 310.13, width: 222.21, height: 228.2}
+  "25212903": {minX: 197.94, minY: 310.13, width: 222.21, height: 228.2}
+  "25212904": {minX: 197.94, minY: 310.13, width: 222.21, height: 228.2}
+  "25213000": {minX: 203.5, minY: 302.77, width: 327.77, height: 186.77}
+  "25213100": {minX: 209.46, minY: 302.77, width: 322.71, height: 186.77}
+  "25213200": {minX: 204.29, minY: 302.77, width: 327.77, height: 186.77}
+  "25213300": {minX: 198.96, minY: 287.88, width: 308.27, height: 216.23}
+  "25213400": {minX: 201.77, minY: 307.7, width: 317.0, height: 176.61}
+  "25213500": {minX: 161.25, minY: 144.1, width: 246.45, height: 339.75}
+  "25213501": {minX: 163.25, minY: 145.1, width: 246.45, height: 339.75}
+  "25213502": {minX: 161.5, minY: 143.1, width: 246.45, height: 339.75}
+  "25213503": {minX: 161.5, minY: 142.5, width: 246.45, height: 339.75}
+  "25213504": {minX: 160.62, minY: 141.6, width: 246.45, height: 339.75}
+  "25213505": {minX: 161.25, minY: 144.46, width: 246.45, height: 339.75}
+  "25213506": {minX: 160.75, minY: 142.1, width: 246.45, height: 339.75}
+  "25213507": {minX: 161.25, minY: 144.1, width: 246.45, height: 339.75}
+  "25213508": {minX: 160.25, minY: 144.1, width: 246.45, height: 339.75}
+  "25213509": {minX: 161.62, minY: 144.1, width: 246.45, height: 339.75}
+  "25213510": {minX: 162.5, minY: 144.1, width: 239.91, height: 339.75}
+  "25213511": {minX: 163.25, minY: 144.1, width: 246.45, height: 339.75}
+  "25213512": {minX: 161.25, minY: 143.1, width: 246.45, height: 339.75}
+  "25213513": {minX: 163.25, minY: 146.1, width: 246.45, height: 339.75}
+  "25213514": {minX: 161.25, minY: 144.1, width: 246.45, height: 339.75}
+  "25213515": {minX: 161.25, minY: 144.1, width: 246.45, height: 339.75}
+  "25213600": {minX: 179.17, minY: 278.37, width: 372.93, height: 234.26}
+  "25213700": {minX: 176.85, minY: 277.93, width: 373.35, height: 235.09}
+  "25213800": {minX: 177.35, minY: 277.91, width: 373.35, height: 235.09}
+  "25213900": {minX: 176.35, minY: 277.91, width: 373.35, height: 235.09}
+  "25214100": {minX: 159.0, minY: 275.37, width: 287.0, height: 240.63}
+  "25214200": {minX: 175.88, minY: 276.0, width: 375.7, height: 234.26}
+  "25214300": {minX: 175.88, minY: 276.0, width: 375.7, height: 234.26}
+  "25214400": {minX: 175.88, minY: 276.35, width: 375.7, height: 234.26}
+  "25214500": {minX: 175.88, minY: 278.35, width: 375.7, height: 234.26}
+  "25214600": {minX: 175.88, minY: 276.0, width: 375.7, height: 234.26}
+  "25214700": {minX: 164.56, minY: 252.5, width: 392.09, height: 287.0}
+  "25214800": {minX: 158.64, minY: 276.0, width: 375.7, height: 234.26}
+  "25214900": {minX: 171.0, minY: 249.0, width: 384.36, height: 290.39}
+  "25215000": {minX: 111.0, minY: 251.5, width: 390.0, height: 284.89}
+  "25215100": {minX: 111.0, minY: 253.0, width: 390.0, height: 282.39}
+  "25215200": {minX: 111.0, minY: 253.0, width: 390.0, height: 282.39}
+  "25215300": {minX: 111.0, minY: 241.0, width: 390.0, height: 306.39}
+  "25215400": {minX: 111.0, minY: 241.0, width: 390.0, height: 306.39}
+  "25215500": {minX: 111.0, minY: 241.0, width: 390.0, height: 306.39}
+  "25215600": {minX: 173.96, minY: 290.5, width: 384.36, height: 290.39}
+  "25215700": {minX: 111.0, minY: 277.0, width: 390.0, height: 234.39}
+  "25215800": {minX: 111.0, minY: 277.0, width: 390.0, height: 234.39}
+  "25215900": {minX: 111.0, minY: 277.0, width: 390.0, height: 234.39}
+  "25216000": {minX: 111.0, minY: 307.0, width: 390.0, height: 234.39}
+  "25216100": {minX: 111.0, minY: 277.0, width: 390.0, height: 234.39}
+  "25216200": {minX: 111.0, minY: 277.0, width: 390.0, height: 234.39}
+  "25216300": {minX: 111.0, minY: 277.0, width: 390.0, height: 234.39}
+  "25216400": {minX: 111.0, minY: 277.0, width: 390.0, height: 234.39}
+  "25216500": {minX: 111.0, minY: 253.0, width: 390.0, height: 282.39}
+  "25216600": {minX: 111.0, minY: 241.0, width: 390.0, height: 306.39}
+  "25216700": {minX: 111.0, minY: 241.0, width: 390.0, height: 306.39}
+  "25216800": {minX: 111.0, minY: 241.0, width: 390.0, height: 306.39}
+  "25216900": {minX: 111.0, minY: 241.0, width: 390.0, height: 306.39}
+  "25217000": {minX: 117.36, minY: 277.96, width: 296.17, height: 312.31}
+  "25217100": {minX: 124.55, minY: 273.22, width: 361.95, height: 242.11}
+  "25217200": {minX: 124.55, minY: 238.71, width: 361.95, height: 305.05}
+  "25217300": {minX: 124.55, minY: 238.71, width: 361.95, height: 305.05}
+  "25217400": {minX: 124.55, minY: 234.71, width: 361.95, height: 312.05}
+  "25217500": {minX: 124.55, minY: 234.71, width: 361.95, height: 312.05}
+  "25217600": {minX: 124.55, minY: 234.71, width: 361.95, height: 312.05}
+  "25217700": {minX: 124.55, minY: 234.71, width: 361.95, height: 312.05}
+  "25217800": {minX: 91.06, minY: 288.41, width: 318.8, height: 213.18}
+  "25217900": {minX: 92.06, minY: 288.91, width: 318.8, height: 213.18}
+  "25218000": {minX: 119.91, minY: 242.27, width: 370.24, height: 303.4}
+  "25218100": {minX: 119.91, minY: 230.84, width: 370.24, height: 325.83}
+  "25218200": {minX: 119.91, minY: 254.5, width: 370.24, height: 278.17}
+  "25218300": {minX: 119.96, minY: 268.75, width: 372.09, height: 292.77}
+  "25218400": {minX: 131.22, minY: 276.48, width: 346.78, height: 162.0}
+  "25218500": {minX: 124.0, minY: 282.76, width: 363.29, height: 279.96}
+  "25218600": {minX: 170.0, minY: 252.5, width: 269.0, height: 348.22}
+  "25218700": {minX: 123.14, minY: 236.98, width: 375.87, height: 273.66}
+  "25218800": {minX: 119.06, minY: 229.56, width: 385.71, height: 280.29}
+  "25218900": {minX: 229.76, minY: 312.5, width: 382.23, height: 221.46}
+  "25219000": {minX: 153.25, minY: 237.37, width: 303.5, height: 216.07}
+  "25219100": {minX: 135.5, minY: 293.5, width: 328.91, height: 202.27}
+  "25219200": {minX: 141.0, minY: 294.0, width: 317.41, height: 200.77}
+  "25220100": {minX: 50.76, minY: 31.49, width: 306.72, height: 342.89}
+  "25220101": {minX: 50.76, minY: 31.49, width: 306.72, height: 342.89}
+  "25220102": {minX: 50.76, minY: 31.49, width: 306.72, height: 342.89}
+  "25220103": {minX: 50.76, minY: 31.49, width: 306.72, height: 342.89}
+  "25220104": {minX: 50.76, minY: 31.49, width: 306.72, height: 342.89}
+  "25220105": {minX: 50.76, minY: 31.49, width: 306.72, height: 342.89}
+  "25220106": {minX: 50.76, minY: 31.49, width: 306.72, height: 342.89}
+  "25220107": {minX: 50.76, minY: 31.49, width: 306.72, height: 342.89}
+  "25220108": {minX: 50.76, minY: 31.49, width: 306.72, height: 342.89}
+  "25230100": {minX: 118.0, minY: 268.24, width: 366.68, height: 228.76}
+  "25230200": {minX: 118.0, minY: 246.24, width: 366.68, height: 216.88}
+  "25240101": {minX: 59.42, minY: 15.82, width: 253.37, height: 373.92}
+  "25240102": {minX: 17.19, minY: 83.76, width: 371.72, height: 241.97}
+  "25240103": {minX: 23.96, minY: 43.85, width: 348.82, height: 308.6}
+  "25240201": {minX: 59.11, minY: 59.03, width: 252.45, height: 274.97}
+  "25240202": {minX: 17.19, minY: 83.76, width: 371.72, height: 241.97}
+  "25240203": {minX: 23.96, minY: 43.85, width: 348.82, height: 308.6}
+  "25240301": {minX: 59.11, minY: 59.03, width: 252.45, height: 274.96}
+  "25240302": {minX: 17.19, minY: 83.76, width: 371.72, height: 241.97}
+  "25240303": {minX: 23.96, minY: 43.85, width: 348.82, height: 308.6}
+  "25240401": {minX: 59.11, minY: 59.03, width: 252.45, height: 274.96}
+  "25240402": {minX: 17.19, minY: 83.76, width: 371.72, height: 241.97}
+  "25240403": {minX: 23.96, minY: 43.85, width: 348.82, height: 308.6}
+  "25240501": {minX: 15.86, minY: 78.22, width: 379.04, height: 253.94}
+  "25240502": {minX: 24.31, minY: 31.19, width: 364.48, height: 332.19}
+  "25240503": {minX: 24.31, minY: 31.19, width: 364.48, height: 332.19}
+  "25240601": {minX: 191.28, minY: 295.93, width: 213.06, height: 199.5}
+  "25240602": {minX: 159.83, minY: 289.21, width: 262.03, height: 214.46}
+  "25240603": {minX: 134.25, minY: 260.5, width: 342.0, height: 267.65}
+  "25240701": {minX: 15.24, minY: 91.55, width: 369.26, height: 211.29}
+  "25240702": {minX: 15.24, minY: 91.55, width: 369.26, height: 211.29}
+  "25240703": {minX: 15.24, minY: 96.87, width: 369.26, height: 219.27}
+  "25240801": {minX: 22.41, minY: 107.43, width: 346.65, height: 180.91}
+  "25240802": {minX: 20.75, minY: 114.04, width: 337.41, height: 240.38}
+  "25240803": {minX: 45.96, minY: 43.85, width: 348.82, height: 308.6}
+  "25240804": {minX: 24.02, minY: 25.1, width: 348.19, height: 349.06}
+  "25240805": {minX: 52.55, minY: 96.75, width: 299.75, height: 224.84}
+  "25240806": {minX: 30.05, minY: 112.11, width: 344.15, height: 167.74}
+  "25240808": {minX: 30.05, minY: 112.11, width: 344.15, height: 167.74}
+  "25240900": {minX: 215.68, minY: 316.84, width: 288.86, height: 266.39}
+  "25241001": {minX: 30.05, minY: 112.11, width: 344.15, height: 167.74}
+  "25241002": {minX: 3.91, minY: 88.62, width: 390.0, height: 230.75}
+  "25241003": {minX: 6.23, minY: 43.85, width: 388.56, height: 308.6}
+  "25241101": {minX: 33.19, minY: 112.34, width: 351.13, height: 131.13}
+  "25241102": {minX: 3.91, minY: 88.62, width: 390.0, height: 230.75}
+  "25241103": {minX: 6.23, minY: 43.85, width: 388.56, height: 308.6}
+  "25241201": {minX: 33.19, minY: 112.34, width: 351.13, height: 131.13}
+  "25241202": {minX: 3.91, minY: 88.62, width: 390.0, height: 230.75}
+  "25241203": {minX: 6.23, minY: 43.85, width: 388.56, height: 308.6}
+  "25241301": {minX: 33.19, minY: 112.34, width: 351.13, height: 131.13}
+  "25241302": {minX: 3.91, minY: 88.62, width: 390.0, height: 230.75}
+  "25241303": {minX: 6.23, minY: 43.85, width: 388.56, height: 308.6}
+  "25241401": {minX: 33.19, minY: 112.34, width: 351.13, height: 131.13}
+  "25241402": {minX: 3.91, minY: 88.62, width: 390.0, height: 230.75}
+  "25241403": {minX: 6.23, minY: 43.85, width: 388.56, height: 308.6}
+  "25241501": {minX: 33.19, minY: 112.34, width: 351.13, height: 131.13}
+  "25241502": {minX: 3.91, minY: 88.62, width: 390.0, height: 230.75}
+  "25241503": {minX: 6.23, minY: 43.85, width: 388.56, height: 308.6}
+  "25241701": {minX: 33.19, minY: 112.34, width: 351.13, height: 131.13}
+  "25241702": {minX: 3.91, minY: 88.62, width: 390.0, height: 230.75}
+  "25241703": {minX: 6.23, minY: 43.85, width: 388.56, height: 308.6}
+  "25241801": {minX: 33.19, minY: 112.34, width: 351.13, height: 131.13}
+  "25241802": {minX: 3.91, minY: 88.62, width: 390.0, height: 230.75}
+  "25241803": {minX: 6.23, minY: 43.85, width: 388.56, height: 308.6}
+  "25241901": {minX: 33.19, minY: 112.34, width: 351.13, height: 131.13}
+  "25241902": {minX: 3.91, minY: 88.62, width: 390.0, height: 230.75}
+  "25241903": {minX: 6.23, minY: 43.85, width: 388.56, height: 308.6}
+  "25242000": {minX: 94.22, minY: 112.34, width: 246.1, height: 131.13}
+  "25242100": {minX: 39.56, minY: 50.85, width: 313.68, height: 315.17}
+  "25242200": {minX: 22.23, minY: 36.44, width: 338.26, height: 323.84}
+  "25242301": {minX: 33.19, minY: 112.34, width: 351.13, height: 131.13}
+  "25242302": {minX: 3.91, minY: 88.62, width: 390.0, height: 230.75}
+  "25242303": {minX: 6.23, minY: 43.85, width: 388.56, height: 308.6}
+  "25242304": {minX: 33.19, minY: 112.34, width: 351.13, height: 131.13}
+  "25242305": {minX: 3.91, minY: 88.62, width: 390.0, height: 230.75}
+  "25242306": {minX: 6.23, minY: 43.85, width: 388.56, height: 308.6}
+  "25242400": {minX: 24.31, minY: 31.19, width: 364.48, height: 332.19}
+  "25242500": {minX: 24.31, minY: 31.19, width: 364.48, height: 332.19}
+  "25250100": {minX: 189.57, minY: 81.5, width: 290.17, height: 342.63}
+  "25250200": {minX: 189.57, minY: 81.5, width: 290.17, height: 342.63}
+  "25250300": {minX: 189.57, minY: 81.5, width: 290.17, height: 342.63}
+  "25250400": {minX: 190.57, minY: 81.5, width: 290.17, height: 342.63}
+  "25250500": {minX: 189.57, minY: 82.13, width: 290.17, height: 342.63}
+  "25250600": {minX: 191.28, minY: 293.76, width: 280.42, height: 201.68}
+  "25260100": {minX: 35.28, minY: 122.44, width: 337.48, height: 148.08}
+  "25260200": {minX: 26.28, minY: 125.44, width: 337.48, height: 145.08}
+  "25260300": {minX: 26.28, minY: 125.44, width: 337.48, height: 145.08}
+  "25260400": {minX: 26.28, minY: 125.44, width: 337.48, height: 145.08}
+  "25260500": {minX: 26.28, minY: 125.44, width: 337.48, height: 145.08}
+  "25260600": {minX: 26.28, minY: 157.02, width: 337.49, height: 113.5}
+  "25270100": {minX: 3.26, minY: 68.17, width: 390.15, height: 261.2}
+  "25270200": {minX: 13.47, minY: 44.69, width: 376.58, height: 279.74}
+  "25270300": {minX: 47.0, minY: 25.68, width: 322.85, height: 333.82}
+  "25270400": {minX: 47.0, minY: 25.68, width: 322.85, height: 333.82}
+  "25270501": {minX: 11.67, minY: 84.67, width: 328.33, height: 244.65}
+  "25270502": {minX: 29.13, minY: 131.16, width: 336.69, height: 130.47}
+  "25270503": {minX: 89.67, minY: 129.47, width: 236.65, height: 154.26}
+  "25270504": {minX: 74.34, minY: 65.93, width: 309.71, height: 307.65}
+  "25270601": {minX: 17.5, minY: 60.21, width: 367.72, height: 278.58}
+  "25270602": {minX: 9.41, minY: 61.21, width: 375.81, height: 278.58}
+  "25270603": {minX: 8.0, minY: 60.21, width: 384.22, height: 278.58}
+  "25270701": {minX: 53.72, minY: 51.21, width: 294.52, height: 271.59}
+  "25270707": {minX: 46.38, minY: 106.14, width: 316.0, height: 189.71}
+  "25270800": {minX: 57.03, minY: 26.42, width: 282.74, height: 327.62}
+  "25270801": {minX: 57.03, minY: 82.07, width: 282.74, height: 203.97}
+  "25271000": {minX: 37.03, minY: 109.05, width: 324.58, height: 161.4}
+  "25271100": {minX: 30.5, minY: 30.73, width: 307.01, height: 338.67}
+  "25271201": {minX: 73.62, minY: 76.43, width: 256.66, height: 242.13}
+  "25271202": {minX: 73.62, minY: 76.43, width: 256.66, height: 242.13}
+  "25271203": {minX: 73.62, minY: 76.43, width: 256.66, height: 242.13}
+  "25271204": {minX: 49.62, minY: 76.43, width: 273.66, height: 243.13}
+  "25271300": {minX: 32.5, minY: 28.73, width: 343.01, height: 338.67}
+  "25271500": {minX: 17.28, minY: 64.27, width: 363.43, height: 271.81}
+  "25271600": {minX: 17.28, minY: 64.27, width: 363.43, height: 271.81}
+  "25271700": {minX: 40.4, minY: 83.91, width: 333.95, height: 214.81}
+  "25271701": {minX: 40.4, minY: 83.91, width: 333.95, height: 214.81}
+  "25271800": {minX: 40.4, minY: 83.91, width: 333.95, height: 214.81}
+  "25271801": {minX: 40.4, minY: 83.91, width: 333.95, height: 214.81}
+  "25271900": {minX: 40.4, minY: 83.91, width: 333.95, height: 214.81}
+  "25272000": {minX: 40.4, minY: 83.91, width: 333.95, height: 214.81}
+  "25272001": {minX: 40.4, minY: 83.91, width: 333.95, height: 214.81}
+  "25272100": {minX: 73.41, minY: 59.67, width: 265.08, height: 299.66}
+  "25272101": {minX: 41.09, minY: 84.61, width: 339.21, height: 213.42}
+  "25272200": {minX: 15.23, minY: 80.1, width: 369.55, height: 252.36}
+  "25280100": {minX: 16.5, minY: 98.14, width: 347.01, height: 146.18}
+  "25280200": {minX: 64.0, minY: 262.69, width: 344.0, height: 236.31}
+  "25280201": {minX: 98.88, minY: 266.35, width: 343.94, height: 216.03}
+  "25280300": {minX: 102.17, minY: 328.15, width: 273.33, height: 154.53}
+  "25280400": {minX: 102.17, minY: 325.31, width: 273.33, height: 238.31}
+  "25280500": {minX: 82.28, minY: 321.55, width: 332.06, height: 197.28}
+  "25280600": {minX: 82.95, minY: 321.61, width: 294.33, height: 146.0}
+  "25280700": {minX: 63.1, minY: 230.27, width: 325.84, height: 221.85}
+  "25280800": {minX: 190.13, minY: 82.23, width: 289.5, height: 341.93}
+  "25280900": {minX: 243.03, minY: 332.03, width: 292.78, height: 127.93}
+  "25281000": {minX: 220.7, minY: 331.03, width: 315.61, height: 130.43}
+  "25281100": {minX: 217.7, minY: 329.5, width: 318.61, height: 130.5}
+  "25281200": {minX: 209.49, minY: 299.69, width: 329.65, height: 198.18}
+  "25281300": {minX: 128.33, minY: 217.65, width: 308.03, height: 333.26}
+  "25281301": {minX: 127.33, minY: 217.65, width: 308.03, height: 333.26}
+  "25281400": {minX: 127.53, minY: 217.65, width: 308.03, height: 333.26}
+  "25281401": {minX: 127.53, minY: 217.65, width: 308.03, height: 333.26}
+  "25281500": {minX: 127.04, minY: 218.65, width: 308.03, height: 333.26}
+  "25281600": {minX: 127.73, minY: 218.65, width: 308.03, height: 333.26}
+  "25281700": {minX: 127.73, minY: 218.65, width: 308.03, height: 333.26}
+  "25281701": {minX: 127.73, minY: 218.65, width: 308.03, height: 333.26}
+  "25281800": {minX: 189.13, minY: 82.23, width: 289.5, height: 341.93}
+  "25281801": {minX: 189.61, minY: 82.23, width: 289.5, height: 341.93}
+  "25281802": {minX: 189.13, minY: 82.23, width: 289.5, height: 341.93}
+  "25281803": {minX: 189.13, minY: 83.23, width: 289.5, height: 341.93}
+  "25281804": {minX: 189.33, minY: 82.98, width: 289.5, height: 341.93}
+  "25281805": {minX: 189.13, minY: 83.23, width: 289.5, height: 341.93}
+  "25281806": {minX: 190.13, minY: 82.23, width: 289.5, height: 341.93}
+  "25281807": {minX: 189.13, minY: 82.23, width: 289.5, height: 341.93}
+  "25281808": {minX: 189.13, minY: 83.23, width: 289.5, height: 341.93}
+  "25281809": {minX: 189.13, minY: 82.23, width: 289.5, height: 341.93}
+  "25281901": {minX: 205.57, minY: 245.6, width: 202.87, height: 256.06}
+  "25281902": {minX: 230.5, minY: 234.82, width: 152.5, height: 328.53}
+  "25281903": {minX: 211.65, minY: 213.79, width: 186.71, height: 361.84}
+  "25282001": {minX: 168.47, minY: 247.0, width: 236.18, height: 297.11}
+  "25282002": {minX: 179.13, minY: 231.61, width: 234.51, height: 291.32}
+  "25282003": {minX: 114.95, minY: 284.23, width: 381.91, height: 228.91}
+  "25290100": {minX: 7.5, minY: 117.23, width: 389.01, height: 128.09}
+  "25290101": {minX: 1.23, minY: 144.34, width: 396.83, height: 122.97}
+  "25290201": {minX: 10.9, minY: 57.56, width: 251.09, height: 294.22}
+  "25290202": {minX: 10.9, minY: 57.56, width: 251.09, height: 294.22}
+  "25290203": {minX: 10.01, minY: 161.34, width: 379.99, height: 75.32}
+  "25290204": {minX: 10.41, minY: 84.28, width: 359.3, height: 151.91}
+  "25290301": {minX: 14.45, minY: 102.18, width: 372.61, height: 133.63}
+  "25290302": {minX: 20.66, minY: 89.18, width: 352.68, height: 140.67}
+  "25290303": {minX: 21.08, minY: 96.05, width: 351.84, height: 133.81}
+  "25290304": {minX: 4.19, minY: 115.21, width: 395.88, height: 98.97}
+  "25290305": {minX: 4.19, minY: 99.21, width: 395.88, height: 114.97}
+  "25290306": {minX: 4.19, minY: 99.21, width: 395.88, height: 114.97}
+  "25290307": {minX: 4.19, minY: 99.21, width: 395.88, height: 114.97}
+  "25290308": {minX: 4.19, minY: 99.21, width: 395.88, height: 114.97}
+  "25290309": {minX: 4.19, minY: 99.21, width: 395.88, height: 114.97}
+  "25290400": {minX: 39.71, minY: 60.19, width: 328.0, height: 252.67}
+  "25290500": {minX: 24.0, minY: 35.61, width: 322.42, height: 344.98}
+  "25290600": {minX: 97.45, minY: 20.52, width: 206.18, height: 347.35}
+  "25290700": {minX: 33.38, minY: 150.0, width: 331.24, height: 95.32}
+  "25290800": {minX: 97.45, minY: 42.52, width: 187.79, height: 296.48}
+  "25290900": {minX: 28.68, minY: 157.21, width: 330.89, height: 98.4}
+  "25291000": {minX: 51.05, minY: 108.34, width: 275.99, height: 142.85}
+  "25300100": {minX: 26.28, minY: 125.44, width: 337.48, height: 145.08}
+  "25310100": {minX: 33.64, minY: 105.29, width: 329.16, height: 181.8}
+  "25310200": {minX: 33.64, minY: 105.29, width: 329.16, height: 181.8}
+  "25310300": {minX: 33.64, minY: 105.29, width: 329.16, height: 181.8}
+  "25310400": {minX: 33.64, minY: 105.29, width: 329.16, height: 181.8}
+  "25310500": {minX: 33.64, minY: 105.29, width: 329.16, height: 181.8}
+  "25310600": {minX: 33.64, minY: 105.29, width: 329.16, height: 181.8}
+  "25310700": {minX: 33.64, minY: 105.29, width: 329.16, height: 181.8}
+  "25310800": {minX: 22.87, minY: 105.29, width: 354.2, height: 181.8}
+  "25320101": {minX: 189.61, minY: 83.23, width: 289.5, height: 341.93}
+  "25320102": {minX: 189.61, minY: 83.23, width: 289.5, height: 341.93}
+  "25320103": {minX: 189.61, minY: 83.23, width: 289.5, height: 341.93}
+  "25320104": {minX: 189.61, minY: 83.23, width: 289.5, height: 341.93}
+  "25320200": {minX: 189.13, minY: 83.23, width: 289.5, height: 341.93}
+  "25320300": {minX: 189.61, minY: 81.23, width: 289.5, height: 341.93}
+  "25320400": {minX: 190.13, minY: 82.23, width: 289.5, height: 341.93}
+  "25320500": {minX: 189.13, minY: 82.23, width: 289.5, height: 341.93}
+  "25320600": {minX: 190.13, minY: 82.23, width: 289.5, height: 341.93}
+  "25320700": {minX: 189.13, minY: 82.23, width: 289.5, height: 341.93}
+  "25320800": {minX: 189.13, minY: 83.23, width: 289.5, height: 341.93}
+  "25320900": {minX: 189.13, minY: 83.23, width: 289.5, height: 341.93}
+  "25321000": {minX: 189.81, minY: 83.23, width: 289.5, height: 341.93}
+  "25321100": {minX: 189.13, minY: 82.23, width: 289.5, height: 341.93}
+  "25321200": {minX: 189.81, minY: 81.23, width: 289.5, height: 341.93}
+  "25321300": {minX: 189.69, minY: 82.46, width: 289.5, height: 341.93}
+  "25321400": {minX: 189.39, minY: 83.23, width: 289.5, height: 341.93}
+  "25321500": {minX: 189.13, minY: 81.23, width: 289.5, height: 341.93}
+  "25321600": {minX: 189.13, minY: 83.23, width: 289.5, height: 341.93}
+  "25321700": {minX: 188.33, minY: 82.83, width: 290.32, height: 342.32}
+  "25321701": {minX: 187.33, minY: 83.83, width: 290.32, height: 342.32}
+  "25321702": {minX: 187.33, minY: 82.83, width: 290.32, height: 342.32}
+  "25321703": {minX: 187.33, minY: 82.83, width: 290.32, height: 342.32}
+  "25321704": {minX: 188.33, minY: 82.83, width: 290.32, height: 342.32}
+  "25321705": {minX: 188.33, minY: 82.83, width: 290.32, height: 342.32}
+  "25321706": {minX: 187.33, minY: 82.83, width: 290.32, height: 342.32}
+  "25321707": {minX: 187.33, minY: 82.83, width: 290.32, height: 342.32}
+  "25321708": {minX: 187.33, minY: 82.83, width: 290.32, height: 342.32}
+  "25321709": {minX: 188.33, minY: 82.83, width: 290.32, height: 342.32}
+  "25321710": {minX: 188.33, minY: 82.83, width: 290.32, height: 342.32}
+  "25321711": {minX: 188.33, minY: 81.83, width: 290.32, height: 342.32}
+  "25321712": {minX: 188.33, minY: 82.83, width: 290.32, height: 342.32}
+  "25321713": {minX: 188.33, minY: 82.83, width: 290.32, height: 342.32}
+  "25321714": {minX: 187.33, minY: 82.83, width: 290.32, height: 342.32}
+  "25321715": {minX: 187.33, minY: 83.83, width: 290.32, height: 342.32}
+  "25321716": {minX: 188.33, minY: 82.83, width: 290.32, height: 342.32}
+  "25321800": {minX: 189.13, minY: 82.23, width: 289.5, height: 341.93}
+  "25321900": {minX: 189.13, minY: 82.23, width: 289.5, height: 341.93}
+  "25330100": {minX: 14.5, minY: 106.57, width: 376.92, height: 168.03}
+  "25330200": {minX: 14.5, minY: 91.27, width: 379.0, height: 183.32}
+  "25330300": {minX: 15.97, minY: 118.59, width: 372.06, height: 169.22}
+  "25330301": {minX: 15.97, minY: 92.59, width: 372.06, height: 195.22}
+  "25330302": {minX: 15.97, minY: 88.1, width: 372.06, height: 199.72}
+  "25330303": {minX: 15.97, minY: 88.1, width: 372.06, height: 199.72}
+  "25330400": {minX: 15.97, minY: 118.59, width: 372.06, height: 169.22}
+  "25330401": {minX: 15.97, minY: 92.58, width: 372.06, height: 195.24}
+  "25330402": {minX: 15.97, minY: 88.1, width: 372.06, height: 199.72}
+  "25330403": {minX: 15.97, minY: 88.1, width: 372.06, height: 199.72}
+  "25330500": {minX: 15.97, minY: 117.79, width: 372.06, height: 170.02}
+  "25330501": {minX: 15.97, minY: 103.79, width: 372.06, height: 184.02}
+  "25330502": {minX: 15.97, minY: 91.79, width: 372.06, height: 196.02}
+  "25340100": {minX: 22.17, minY: 87.93, width: 265.83, height: 224.57}
+  "25340200": {minX: 13.55, minY: 85.75, width: 362.63, height: 239.0}
+  "25340300": {minX: 40.5, minY: 96.05, width: 312.09, height: 206.0}
+  "25340400": {minX: 21.5, minY: 98.74, width: 350.34, height: 200.76}
+  "25340500": {minX: 28.41, minY: 15.67, width: 341.28, height: 364.26}
+  "25340600": {minX: 46.5, minY: 64.55, width: 308.81, height: 266.04}
+  "25340700": {minX: 15.5, minY: 64.55, width: 379.74, height: 266.04}
+  "25340800": {minX: 24.25, minY: 77.42, width: 339.31, height: 240.51}
+  "25340900": {minX: 11.0, minY: 68.0, width: 377.0, height: 258.45}
+  "25341000": {minX: 36.0, minY: 83.14, width: 329.18, height: 231.41}
+  "25341100": {minX: 15.57, minY: 114.51, width: 372.76, height: 158.94}
+  "25341200": {minX: 32.35, minY: 114.89, width: 333.79, height: 166.04}
+  "25341300": {minX: 29.29, minY: 146.18, width: 340.69, height: 103.37}
+  "25341400": {minX: 10.75, minY: 56.5, width: 378.74, height: 280.7}
+  "25341500": {minX: 10.75, minY: 29.74, width: 387.75, height: 308.82}
+  "25341600": {minX: 13.5, minY: 59.5, width: 371.0, height: 274.2}
+  "25341700": {minX: 14.5, minY: 26.74, width: 376.37, height: 346.69}
+  "25341800": {minX: 69.99, minY: 27.2, width: 258.51, height: 341.11}
+  "25341900": {minX: 58.05, minY: 59.17, width: 285.76, height: 276.76}
+  "25342000": {minX: 31.25, minY: 77.42, width: 339.31, height: 240.51}
+  "25342100": {minX: 5.0, minY: 27.99, width: 390.67, height: 330.95}
+  "25342201": {minX: 3.83, minY: 133.28, width: 391.34, height: 133.7}
+  "25342202": {minX: 3.83, minY: 133.28, width: 391.34, height: 133.7}
+  "25342203": {minX: 3.83, minY: 133.28, width: 391.34, height: 133.7}
+  "25342300": {minX: 15.25, minY: 84.38, width: 370.45, height: 232.73}
+  "25342400": {minX: 33.56, minY: 78.67, width: 338.01, height: 238.01}
+  "25342500": {minX: 31.11, minY: 82.17, width: 337.95, height: 231.76}
+  "25342600": {minX: 10.75, minY: 29.74, width: 387.75, height: 308.82}
+  "25342700": {minX: 10.75, minY: 29.74, width: 387.75, height: 308.82}
+  "25342800": {minX: 11.0, minY: 68.0, width: 377.0, height: 258.45}
+  "25342900": {minX: 68.25, minY: 26.86, width: 328.36, height: 341.41}
+  "25343000": {minX: 37.5, minY: 36.92, width: 311.5, height: 170.4}
+  "25343100": {minX: 46.33, minY: 129.36, width: 337.66, height: 143.15}
+  "25343200": {minX: 15.03, minY: 45.96, width: 236.61, height: 186.16}
+  "25343300": {minX: 57.98, minY: 59.17, width: 285.83, height: 278.11}
+  "25343400": {minX: 3.69, minY: 28.95, width: 361.0, height: 317.45}
+  "25343500": {minX: 7.45, minY: 115.95, width: 342.24, height: 169.94}
+  "25343600": {minX: 41.15, minY: 93.21, width: 308.33, height: 133.74}
+  "25343700": {minX: 87.1, minY: 130.09, width: 261.85, height: 121.55}
+  "25343800": {minX: 85.73, minY: 127.36, width: 265.02, height: 122.68}
+  "25343900": {minX: 14.5, minY: 26.74, width: 366.13, height: 333.07}
+  "25344000": {minX: 60.71, minY: 115.1, width: 287.14, height: 193.82}
+  "25344100": {minX: 67.79, minY: 140.13, width: 290.26, height: 215.76}
+  "25344200": {minX: 59.34, minY: 141.04, width: 290.56, height: 214.86}
+  "25344300": {minX: 73.5, minY: 73.5, width: 245.49, height: 262.8}
+  "25344400": {minX: 59.34, minY: 141.04, width: 291.31, height: 214.86}
+  "25344500": {minX: 37.5, minY: 6.5, width: 311.5, height: 200.82}
+  "25344600": {minX: 37.5, minY: 9.68, width: 311.5, height: 197.64}
+  "25344700": {minX: 109.97, minY: 59.17, width: 239.03, height: 148.15}
+  "25350101": {minX: 125.06, minY: 102.36, width: 199.96, height: 199.96}
+  "25350102": {minX: 125.06, minY: 102.36, width: 199.96, height: 199.96}
+  "25350103": {minX: 125.06, minY: 102.36, width: 199.96, height: 199.96}
+  "25350201": {minX: 125.06, minY: 102.36, width: 199.96, height: 199.96}
+  "25350202": {minX: 125.06, minY: 102.36, width: 199.96, height: 199.96}
+  "25350203": {minX: 125.06, minY: 102.36, width: 199.96, height: 199.96}
+  "25360100": {minX: 240.07, minY: 136.37, width: 239.74, height: 288.81}
+  "25360200": {minX: 227.28, minY: 185.97, width: 252.53, height: 239.21}
+  "25360300": {minX: 223.19, minY: 129.96, width: 250.27, height: 313.02}
+  "25370100": {minX: 9.5, minY: 54.99, width: 379.73, height: 281.13}
+  "60200100": {minX: 114.28, minY: 133.42, width: 371.45, height: 133.17}
+  "60200200": {minX: 88.87, minY: 90.96, width: 410.98, height: 174.21}
+  "60210100": {minX: 88.61, minY: 90.65, width: 373.87, height: 229.45}
 modifierBounds:
   "01021": {minX: 275.0, minY: 267.61, width: 56.69, height: 94.96}
   "01041": {minX: 279.0, minY: 267.61, width: 51.92, height: 94.96}
@@ -2122,726 +2700,726 @@ symbolSets:
   entities:
   - details: {code: "11", id: COMMAND_CONTROL_LINES, graphicType: NA, label: "Command and Control Lines"}
     entityTypes:
-    - details: {code: "01", id: BOUNDARY, graphicType: MAIN, label: "Boundary"}
-    - details: {code: "02", id: LIGHT_LINE, graphicType: MAIN, label: "Light Line"}
-    - details: {code: "03", id: ENGINEER_WORK_LINE, graphicType: MAIN, label: "Engineer Work Line"}
-    - details: {code: "04", id: GENERIC_LINE, graphicType: MAIN, label: "Line, Generic"}
-    - details: {code: "05", id: DECISION_LINE, graphicType: MAIN, label: "Decision Line"}
+    - details: {code: "01", id: BOUNDARY, graphicType: FREE_CANVAS, label: "Boundary"}
+    - details: {code: "02", id: LIGHT_LINE, graphicType: FREE_CANVAS, label: "Light Line"}
+    - details: {code: "03", id: ENGINEER_WORK_LINE, graphicType: FREE_CANVAS, label: "Engineer Work Line"}
+    - details: {code: "04", id: GENERIC_LINE, graphicType: FREE_CANVAS, label: "Line, Generic"}
+    - details: {code: "05", id: DECISION_LINE, graphicType: FREE_CANVAS, label: "Decision Line"}
   - details: {code: "12", id: COMMAND_CONTROL_AREAS, graphicType: NA, label: "Command and Control Areas"}
     entityTypes:
-    - details: {code: "01", id: AREA_OPERATIONS, graphicType: MAIN, label: "Area of Operations"}
-    - details: {code: "02", id: NAMED_AREA_INTEREST, graphicType: MAIN, label: "Named Area of Interest"}
-    - details: {code: "03", id: TARGETED_AREA_INTEREST, graphicType: MAIN, label: "Targeted Area of Interest"}
-    - details: {code: "04", id: AIRFIELD_ZONE, graphicType: MAIN, label: "Airfield Zone"}
-    - details: {code: "05", id: BASE_CAMP, graphicType: MAIN, label: "Base Camp"}
-    - details: {code: "06", id: GUERILLA_BASE, graphicType: MAIN, label: "Guerilla Base"}
-    - details: {code: "07", id: GENERIC_AREA, graphicType: MAIN, label: "Area, Generic"}
-    - details: {code: "08", id: BRIDGEHEAD, graphicType: MAIN, label: "Bridgehead"}
+    - details: {code: "01", id: AREA_OPERATIONS, graphicType: FREE_CANVAS, label: "Area of Operations"}
+    - details: {code: "02", id: NAMED_AREA_INTEREST, graphicType: FREE_CANVAS, label: "Named Area of Interest"}
+    - details: {code: "03", id: TARGETED_AREA_INTEREST, graphicType: FREE_CANVAS, label: "Targeted Area of Interest"}
+    - details: {code: "04", id: AIRFIELD_ZONE, graphicType: FREE_CANVAS, label: "Airfield Zone"}
+    - details: {code: "05", id: BASE_CAMP, graphicType: FREE_CANVAS, label: "Base Camp"}
+    - details: {code: "06", id: GUERILLA_BASE, graphicType: FREE_CANVAS, label: "Guerilla Base"}
+    - details: {code: "07", id: GENERIC_AREA, graphicType: FREE_CANVAS, label: "Area, Generic"}
+    - details: {code: "08", id: BRIDGEHEAD, graphicType: FREE_CANVAS, label: "Bridgehead"}
   - details: {code: "13", id: COMMAND_CONTROL_POINTS, graphicType: NA, label: "Command and Control Points"}
     entityTypes:
-    - details: {code: "01", id: ACTION_POINT, graphicType: MAIN, label: "Action Point (General)"}
-    - details: {code: "02", id: AMNESTY_POINT, graphicType: MAIN, label: "Amnesty Point"}
-    - details: {code: "03", id: CHECKPOINT, graphicType: MAIN, label: "Checkpoint"}
-    - details: {code: "04", id: CENTER_MAIN_EFFORT, graphicType: MAIN, label: "Center of Main Effort"}
-    - details: {code: "05", id: CONTACT_POINT, graphicType: MAIN, label: "Contact Point"}
-    - details: {code: "06", id: COORDINATING_POINT, graphicType: MAIN, label: "Coordinating Point"}
-    - details: {code: "07", id: DECISION_POINT, graphicType: MAIN, label: "Decision Point"}
-    - details: {code: "08", id: DISTRESS_CALL, graphicType: MAIN, label: "Distress Call"}
-    - details: {code: "09", id: ENTRY_CONTROL_POINT, graphicType: MAIN, label: "Entry Control Point"}
+    - details: {code: "01", id: ACTION_POINT, graphicType: FREE_CANVAS, label: "Action Point (General)"}
+    - details: {code: "02", id: AMNESTY_POINT, graphicType: FREE_CANVAS, label: "Amnesty Point"}
+    - details: {code: "03", id: CHECKPOINT, graphicType: FREE_CANVAS, label: "Checkpoint"}
+    - details: {code: "04", id: CENTER_MAIN_EFFORT, graphicType: FREE_CANVAS, label: "Center of Main Effort"}
+    - details: {code: "05", id: CONTACT_POINT, graphicType: FREE_CANVAS, label: "Contact Point"}
+    - details: {code: "06", id: COORDINATING_POINT, graphicType: FREE_CANVAS, label: "Coordinating Point"}
+    - details: {code: "07", id: DECISION_POINT, graphicType: FREE_CANVAS, label: "Decision Point"}
+    - details: {code: "08", id: DISTRESS_CALL, graphicType: FREE_CANVAS, label: "Distress Call"}
+    - details: {code: "09", id: ENTRY_CONTROL_POINT, graphicType: FREE_CANVAS, label: "Entry Control Point"}
     - details: {code: "10", id: FLY_TO_POINT, graphicType: NA, label: "Fly-To-Point"}
       entitySubTypes:
-      - {code: "01", id: FLY_TO_POINT_SONOBUOY, graphicType: MAIN, label: "Fly-To-Point (Sonobuoy)"}
-      - {code: "02", id: FLY_TO_POINT_WEAPON, graphicType: MAIN, label: "Fly-To-Point (Weapon)"}
-      - {code: "03", id: FLY_TO_POINT_NORMAL, graphicType: MAIN, label: "Fly-To-Point (Normal)"}
-    - details: {code: "11", id: LINKUP_POINT, graphicType: MAIN, label: "Linkup Point"}
-    - details: {code: "12", id: PASSAGE_POINT, graphicType: MAIN, label: "Passage Point"}
-    - details: {code: "13", id: POINT_OF_INTEREST, graphicType: MAIN, label: "Point of Interest"}
+      - {code: "01", id: FLY_TO_POINT_SONOBUOY, graphicType: FREE_CANVAS, label: "Fly-To-Point (Sonobuoy)"}
+      - {code: "02", id: FLY_TO_POINT_WEAPON, graphicType: FREE_CANVAS, label: "Fly-To-Point (Weapon)"}
+      - {code: "03", id: FLY_TO_POINT_NORMAL, graphicType: FREE_CANVAS, label: "Fly-To-Point (Normal)"}
+    - details: {code: "11", id: LINKUP_POINT, graphicType: FREE_CANVAS, label: "Linkup Point"}
+    - details: {code: "12", id: PASSAGE_POINT, graphicType: FREE_CANVAS, label: "Passage Point"}
+    - details: {code: "13", id: POINT_OF_INTEREST, graphicType: FREE_CANVAS, label: "Point of Interest"}
       entitySubTypes:
-      - {code: "01", id: POI_LAUNCH_EVENT, graphicType: MAIN, label: "Launch Event (Point of Interest)"}
-    - details: {code: "14", id: RALLY_POINT, graphicType: MAIN, label: "Rally Point"}
-    - details: {code: "15", id: RELEASE_POINT, graphicType: MAIN, label: "Release Point"}
-    - details: {code: "16", id: START_POINT, graphicType: MAIN, label: "Start Point"}
-    - details: {code: "17", id: CC_SPECIAL_POINT, graphicType: MAIN, label: "Special Point"}
-    - details: {code: "18", id: CC_WAYPOINT, graphicType: MAIN, label: "Waypoint"}
-    - details: {code: "19", id: AIRFIELD, graphicType: MAIN, label: "Airfield"}
-    - details: {code: "20", id: TARGET_HANDOVER, graphicType: MAIN, label: "Target Handover"}
-    - details: {code: "21", id: KEY_TERRAIN, graphicType: MAIN, label: "Key Terrain"}
-    - details: {code: "22", id: CONTROL_POINT, graphicType: MAIN, label: "Control Point"}
-    - details: {code: "23", id: VITAL_GROUND, graphicType: MAIN, label: "Vital Ground"}
+      - {code: "01", id: POI_LAUNCH_EVENT, graphicType: FREE_CANVAS, label: "Launch Event (Point of Interest)"}
+    - details: {code: "14", id: RALLY_POINT, graphicType: FREE_CANVAS, label: "Rally Point"}
+    - details: {code: "15", id: RELEASE_POINT, graphicType: FREE_CANVAS, label: "Release Point"}
+    - details: {code: "16", id: START_POINT, graphicType: FREE_CANVAS, label: "Start Point"}
+    - details: {code: "17", id: CC_SPECIAL_POINT, graphicType: FREE_CANVAS, label: "Special Point"}
+    - details: {code: "18", id: CC_WAYPOINT, graphicType: FREE_CANVAS, label: "Waypoint"}
+    - details: {code: "19", id: AIRFIELD, graphicType: FREE_CANVAS, label: "Airfield"}
+    - details: {code: "20", id: TARGET_HANDOVER, graphicType: FREE_CANVAS, label: "Target Handover"}
+    - details: {code: "21", id: KEY_TERRAIN, graphicType: FREE_CANVAS, label: "Key Terrain"}
+    - details: {code: "22", id: CONTROL_POINT, graphicType: FREE_CANVAS, label: "Control Point"}
+    - details: {code: "23", id: VITAL_GROUND, graphicType: FREE_CANVAS, label: "Vital Ground"}
   - details: {code: "14", id: MANEUVER_LINES, graphicType: NA, label: "Maneuver Lines"}
     entityTypes:
-    - details: {code: "01", id: FORWARD_LINE_OF_TROOPS, graphicType: MAIN, label: "Forward Line of Troops"}
-    - details: {code: "03", id: PHASE_LINE, graphicType: MAIN, label: "Phase Line"}
-    - details: {code: "04", id: FORWARD_EDGE_BATTLE_AREA, graphicType: MAIN, label: "Forward Edge of the Battle Area"}
-    - details: {code: "05", id: PRINCIPAL_DIRECTION_OF_FIRE, graphicType: MAIN, label: "Principal Direction of Fire"}
+    - details: {code: "01", id: FORWARD_LINE_OF_TROOPS, graphicType: FREE_CANVAS, label: "Forward Line of Troops"}
+    - details: {code: "03", id: PHASE_LINE, graphicType: FREE_CANVAS, label: "Phase Line"}
+    - details: {code: "04", id: FORWARD_EDGE_BATTLE_AREA, graphicType: FREE_CANVAS, label: "Forward Edge of the Battle Area"}
+    - details: {code: "05", id: PRINCIPAL_DIRECTION_OF_FIRE, graphicType: FREE_CANVAS, label: "Principal Direction of Fire"}
     - details: {code: "06", id: DIRECTION_OF_ATTACK, graphicType: NA, label: "Direction of Attack"}
       entitySubTypes:
-      - {code: "01", id: FRIENDLY_AVIATION, graphicType: MAIN, label: "Friendly Aviation"}
-      - {code: "02", id: FRIENDLY_MAIN_ATTACK_DECISIVE, graphicType: MAIN, label: "Friendly Direction of Main Attack"}
-      - {code: "03", id: FRIENDLY_SUPPORTING_ATTACK, graphicType: MAIN, label: "Friendly Direction of Supporting Attack"}
-      - {code: "05", id: FEINT, graphicType: MAIN, label: "Feint"}
-    - details: {code: "07", id: FINAL_COORDINATION_LINE, graphicType: MAIN, label: "Final Coordination Line"}
-    - details: {code: "08", id: INFILTRATION_LANE, graphicType: MAIN, label: "Infiltration Lane"}
-    - details: {code: "09", id: LIMIT_OF_ADVANCE, graphicType: MAIN, label: "Limit of Advance"}
-    - details: {code: "10", id: LINE_OF_DEPARTURE, graphicType: MAIN, label: "Line of Departure"}
-    - details: {code: "11", id: LINE_OF_DEPARTURE_LINE_OF_CONTACT, graphicType: MAIN, label: "Line of Departure/Line of Contact"}
-    - details: {code: "12", id: PROBABLE_LINE_OF_DEPLOYMENT, graphicType: MAIN, label: "Probable Line of Deployment"}
-    - details: {code: "13", id: AIRHEAD_LINE, graphicType: MAIN, label: "Airhead Line"}
-    - details: {code: "14", id: BRIDGEHEAD_LINE, graphicType: MAIN, label: "Bridgehead Line"}
-    - details: {code: "15", id: HOLDING_LINE, graphicType: MAIN, label: "Holding Line"}
-    - details: {code: "16", id: RELEASE_LINE, graphicType: MAIN, label: "Release Line"}
-    - details: {code: "17", id: AMBUSH, graphicType: MAIN, label: "Ambush"}
-    - details: {code: "18", id: HANDOVER_LINE, graphicType: MAIN, label: "Handover Line"}
-    - details: {code: "19", id: BATTLE_HANDOVER_LINE, graphicType: MAIN, label: "Battle Handover Line"}
-    - details: {code: "20", id: NAMED_AREA_OF_INTEREST_LINE, graphicType: MAIN, label: "Named Area of Interest (NAI) Line"}
-    - details: {code: "21", id: MOBILITY_CORRIDOR, graphicType: MAIN, label: "Mobility Corridor"}
+      - {code: "01", id: FRIENDLY_AVIATION, graphicType: FREE_CANVAS, label: "Friendly Aviation"}
+      - {code: "02", id: FRIENDLY_MAIN_ATTACK_DECISIVE, graphicType: FREE_CANVAS, label: "Friendly Direction of Main Attack"}
+      - {code: "03", id: FRIENDLY_SUPPORTING_ATTACK, graphicType: FREE_CANVAS, label: "Friendly Direction of Supporting Attack"}
+      - {code: "05", id: FEINT, graphicType: FREE_CANVAS, label: "Feint"}
+    - details: {code: "07", id: FINAL_COORDINATION_LINE, graphicType: FREE_CANVAS, label: "Final Coordination Line"}
+    - details: {code: "08", id: INFILTRATION_LANE, graphicType: FREE_CANVAS, label: "Infiltration Lane"}
+    - details: {code: "09", id: LIMIT_OF_ADVANCE, graphicType: FREE_CANVAS, label: "Limit of Advance"}
+    - details: {code: "10", id: LINE_OF_DEPARTURE, graphicType: FREE_CANVAS, label: "Line of Departure"}
+    - details: {code: "11", id: LINE_OF_DEPARTURE_LINE_OF_CONTACT, graphicType: FREE_CANVAS, label: "Line of Departure/Line of Contact"}
+    - details: {code: "12", id: PROBABLE_LINE_OF_DEPLOYMENT, graphicType: FREE_CANVAS, label: "Probable Line of Deployment"}
+    - details: {code: "13", id: AIRHEAD_LINE, graphicType: FREE_CANVAS, label: "Airhead Line"}
+    - details: {code: "14", id: BRIDGEHEAD_LINE, graphicType: FREE_CANVAS, label: "Bridgehead Line"}
+    - details: {code: "15", id: HOLDING_LINE, graphicType: FREE_CANVAS, label: "Holding Line"}
+    - details: {code: "16", id: RELEASE_LINE, graphicType: FREE_CANVAS, label: "Release Line"}
+    - details: {code: "17", id: AMBUSH, graphicType: FREE_CANVAS, label: "Ambush"}
+    - details: {code: "18", id: HANDOVER_LINE, graphicType: FREE_CANVAS, label: "Handover Line"}
+    - details: {code: "19", id: BATTLE_HANDOVER_LINE, graphicType: FREE_CANVAS, label: "Battle Handover Line"}
+    - details: {code: "20", id: NAMED_AREA_OF_INTEREST_LINE, graphicType: FREE_CANVAS, label: "Named Area of Interest (NAI) Line"}
+    - details: {code: "21", id: MOBILITY_CORRIDOR, graphicType: FREE_CANVAS, label: "Mobility Corridor"}
   - details: {code: "15", id: MANEUVER_AREAS, graphicType: NA, label: "Maneuver Areas"}
     entityTypes:
-    - details: {code: "01", id: AREA, graphicType: MAIN, label: "Area"}
-    - details: {code: "02", id: ASSEMBLY_AREA, graphicType: MAIN, label: "Assembly Area"}
+    - details: {code: "01", id: AREA, graphicType: FREE_CANVAS, label: "Area"}
+    - details: {code: "02", id: ASSEMBLY_AREA, graphicType: FREE_CANVAS, label: "Assembly Area"}
     - details: {code: "05", id: ACTION_AREA, graphicType: NA, label: "Action Area"}
       entitySubTypes:
-      - {code: "01", id: JTAA, graphicType: MAIN, label: "Joint Tactical Action Area (JTAA)"}
-      - {code: "02", id: SAA, graphicType: MAIN, label: "Submarine Action Area (SAA)"}
-      - {code: "03", id: SGAA, graphicType: MAIN, label: "Submarine-Generated Action Area (SGAA)"}
-    - details: {code: "06", id: DROP_ZONE, graphicType: MAIN, label: "Drop Zone"}
-    - details: {code: "07", id: EXTRACTION_ZONE, graphicType: MAIN, label: "Extraction Zone"}
-    - details: {code: "08", id: LANDING_ZONE, graphicType: MAIN, label: "Landing Zone"}
-    - details: {code: "09", id: PICK_UP_ZONE, graphicType: MAIN, label: "Pick-Up Zone"}
-    - details: {code: "10", id: FORTIFIED_AREA, graphicType: MAIN, label: "Fortified Area"}
-    - details: {code: "11", id: LIMITED_ACCESS_AREA, graphicType: MAIN, label: "Limited Access Area"}
-    - details: {code: "12", id: BATTLE_POSITION, graphicType: MAIN, label: "Battle Position"}
+      - {code: "01", id: JTAA, graphicType: FREE_CANVAS, label: "Joint Tactical Action Area (JTAA)"}
+      - {code: "02", id: SAA, graphicType: FREE_CANVAS, label: "Submarine Action Area (SAA)"}
+      - {code: "03", id: SGAA, graphicType: FREE_CANVAS, label: "Submarine-Generated Action Area (SGAA)"}
+    - details: {code: "06", id: DROP_ZONE, graphicType: FREE_CANVAS, label: "Drop Zone"}
+    - details: {code: "07", id: EXTRACTION_ZONE, graphicType: FREE_CANVAS, label: "Extraction Zone"}
+    - details: {code: "08", id: LANDING_ZONE, graphicType: FREE_CANVAS, label: "Landing Zone"}
+    - details: {code: "09", id: PICK_UP_ZONE, graphicType: FREE_CANVAS, label: "Pick-Up Zone"}
+    - details: {code: "10", id: FORTIFIED_AREA, graphicType: FREE_CANVAS, label: "Fortified Area"}
+    - details: {code: "11", id: LIMITED_ACCESS_AREA, graphicType: FREE_CANVAS, label: "Limited Access Area"}
+    - details: {code: "12", id: BATTLE_POSITION, graphicType: FREE_CANVAS, label: "Battle Position"}
       entitySubTypes:
-      - {code: "02", id: PREPARED_BUT_NOT_OCCUPIED, graphicType: MAIN, label: "Battle Position - Prepared (P) but not Occupied"}
-      - {code: "03", id: STRONG_POINT, graphicType: MAIN, label: "Strong Point"}
-      - {code: "04", id: CONTAIN, graphicType: MAIN, label: "Contain"}
-      - {code: "05", id: RETAIN, graphicType: MAIN, label: "Retain"}
-    - details: {code: "13", id: ENGAGEMENT_AREA_EA, graphicType: MAIN, label: "Engagement Area (EA)"}
+      - {code: "02", id: PREPARED_BUT_NOT_OCCUPIED, graphicType: FREE_CANVAS, label: "Battle Position - Prepared (P) but not Occupied"}
+      - {code: "03", id: STRONG_POINT, graphicType: FREE_CANVAS, label: "Strong Point"}
+      - {code: "04", id: CONTAIN, graphicType: FREE_CANVAS, label: "Contain"}
+      - {code: "05", id: RETAIN, graphicType: FREE_CANVAS, label: "Retain"}
+    - details: {code: "13", id: ENGAGEMENT_AREA_EA, graphicType: FREE_CANVAS, label: "Engagement Area (EA)"}
     - details: {code: "14", id: AXIS_ADVANCE, graphicType: NA, label: "Axis of Advance"}
       entitySubTypes:
-      - {code: "01", id: AXIS_ADVANCE_FRIENDLY_AIRBORNE_AVIATION, graphicType: MAIN, label: "Friendly Airborne/Aviation"}
-      - {code: "02", id: AXIS_ADVANCE_ATTACK_HELICOPTER, graphicType: MAIN, label: "Attack Helicopter"}
-      - {code: "03", id: AXIS_ADVANCE_MAIN_ATTACK, graphicType: MAIN, label: "Main Attack"}
-      - {code: "04", id: AXIS_ADVANCE_SUPPORTING_ATTACK, graphicType: MAIN, label: "Supporting Attack"}
-      - {code: "06", id: AXIS_ADVANCE_FEINT, graphicType: MAIN, label: "Feint"}
-    - details: {code: "15", id: ASSAULT_POSITION, graphicType: MAIN, label: "Assault Position"}
-    - details: {code: "16", id: ATTACK_POSITION, graphicType: MAIN, label: "Attack Position"}
-    - details: {code: "17", id: OBJECTIVE, graphicType: MAIN, label: "Objective"}
-    - details: {code: "18", id: ENCIRCLEMENT, graphicType: MAIN, label: "Encirclement"}
-    - details: {code: "19", id: PENETRATION_BOX, graphicType: MAIN, label: "Penetration Box"}
-    - details: {code: "20", id: ATTACK_BY_FIRE_POSITION, graphicType: MAIN, label: "Attack by Fire Position"}
-    - details: {code: "21", id: SUPPORT_BY_FIRE, graphicType: MAIN, label: "Support by Fire"}
-    - details: {code: "22", id: SEARCH_AREA_RECONNAISSANCE_AREA, graphicType: MAIN, label: "Search Area/Reconnaissance Area"}
-    - details: {code: "23", id: AVENUE_OF_APPROACH, graphicType: MAIN, label: "Avenue of Approach"}
-    - details: {code: "24", id: RESTRICTED_TERRAIN, graphicType: MAIN, label: "Restricted Terrain"}
-    - details: {code: "25", id: SEVERELY_RESTRICTED_TERRAIN, graphicType: MAIN, label: "Severely Restricted Terrain"}
+      - {code: "01", id: AXIS_ADVANCE_FRIENDLY_AIRBORNE_AVIATION, graphicType: FREE_CANVAS, label: "Friendly Airborne/Aviation"}
+      - {code: "02", id: AXIS_ADVANCE_ATTACK_HELICOPTER, graphicType: FREE_CANVAS, label: "Attack Helicopter"}
+      - {code: "03", id: AXIS_ADVANCE_MAIN_ATTACK, graphicType: FREE_CANVAS, label: "Main Attack"}
+      - {code: "04", id: AXIS_ADVANCE_SUPPORTING_ATTACK, graphicType: FREE_CANVAS, label: "Supporting Attack"}
+      - {code: "06", id: AXIS_ADVANCE_FEINT, graphicType: FREE_CANVAS, label: "Feint"}
+    - details: {code: "15", id: ASSAULT_POSITION, graphicType: FREE_CANVAS, label: "Assault Position"}
+    - details: {code: "16", id: ATTACK_POSITION, graphicType: FREE_CANVAS, label: "Attack Position"}
+    - details: {code: "17", id: OBJECTIVE, graphicType: FREE_CANVAS, label: "Objective"}
+    - details: {code: "18", id: ENCIRCLEMENT, graphicType: FREE_CANVAS, label: "Encirclement"}
+    - details: {code: "19", id: PENETRATION_BOX, graphicType: FREE_CANVAS, label: "Penetration Box"}
+    - details: {code: "20", id: ATTACK_BY_FIRE_POSITION, graphicType: FREE_CANVAS, label: "Attack by Fire Position"}
+    - details: {code: "21", id: SUPPORT_BY_FIRE, graphicType: FREE_CANVAS, label: "Support by Fire"}
+    - details: {code: "22", id: SEARCH_AREA_RECONNAISSANCE_AREA, graphicType: FREE_CANVAS, label: "Search Area/Reconnaissance Area"}
+    - details: {code: "23", id: AVENUE_OF_APPROACH, graphicType: FREE_CANVAS, label: "Avenue of Approach"}
+    - details: {code: "24", id: RESTRICTED_TERRAIN, graphicType: FREE_CANVAS, label: "Restricted Terrain"}
+    - details: {code: "25", id: SEVERELY_RESTRICTED_TERRAIN, graphicType: FREE_CANVAS, label: "Severely Restricted Terrain"}
   - details: {code: "16", id: MANEUVER_POINTS, graphicType: NA, label: "Maneuver Points"}
     entityTypes:
-    - details: {code: "01", id: OBSERVATION_POST_OUTPOST_UNSPECIFIED, graphicType: MAIN, label: "Observation Post/Outpost (Unspecified)"}
-    - details: {code: "02", id: OBSERVATION_POST_OUTPOST_SPECIFIED, graphicType: MAIN, label: "Observation Post/Outpost (Specified)"}
+    - details: {code: "01", id: OBSERVATION_POST_OUTPOST_UNSPECIFIED, graphicType: FREE_CANVAS, label: "Observation Post/Outpost (Unspecified)"}
+    - details: {code: "02", id: OBSERVATION_POST_OUTPOST_SPECIFIED, graphicType: FREE_CANVAS, label: "Observation Post/Outpost (Specified)"}
       entitySubTypes:
-      - {code: "01", id: RECONNAISSANCE_OUTPOST, graphicType: MAIN, label: "Reconnaissance Outpost"}
-      - {code: "02", id: FORWARD_OBSERVER_OUTPOST, graphicType: MAIN, label: "Forward Observer Outpost"}
-      - {code: "03", id: CBRN_OBSERVATION_OUTPOST, graphicType: MAIN, label: "CBRN Observation Outpost"}
-      - {code: "04", id: SENSOR_OUTPOST_LISTENING_POST, graphicType: MAIN, label: "Sensor Outpost/Listening Post"}
-      - {code: "05", id: COMBAT_OUTPOST, graphicType: MAIN, label: "Combat Outpost"}
-    - details: {code: "03", id: TARGET_REFERENCE_POINT, graphicType: MAIN, label: "Target Reference Point"}
-    - details: {code: "04", id: POINT_OF_DEPARTURE, graphicType: MAIN, label: "Point of Departure"}
+      - {code: "01", id: RECONNAISSANCE_OUTPOST, graphicType: FREE_CANVAS, label: "Reconnaissance Outpost"}
+      - {code: "02", id: FORWARD_OBSERVER_OUTPOST, graphicType: FREE_CANVAS, label: "Forward Observer Outpost"}
+      - {code: "03", id: CBRN_OBSERVATION_OUTPOST, graphicType: FREE_CANVAS, label: "CBRN Observation Outpost"}
+      - {code: "04", id: SENSOR_OUTPOST_LISTENING_POST, graphicType: FREE_CANVAS, label: "Sensor Outpost/Listening Post"}
+      - {code: "05", id: COMBAT_OUTPOST, graphicType: FREE_CANVAS, label: "Combat Outpost"}
+    - details: {code: "03", id: TARGET_REFERENCE_POINT, graphicType: FREE_CANVAS, label: "Target Reference Point"}
+    - details: {code: "04", id: POINT_OF_DEPARTURE, graphicType: FREE_CANVAS, label: "Point of Departure"}
   - details: {code: "17", id: AIRSPACE_CONTROL_CORRIDORS_AREAS, graphicType: NA, label: "Airspace Control (Corridors) Areas"}
     entityTypes:
-    - details: {code: "01", id: AIR_CORRIDOR, graphicType: MAIN, label: "Air Corridor"}
-    - details: {code: "02", id: LOW_LEVEL_TRANSIT_ROUTE, graphicType: MAIN, label: "Low Level Transit Route"}
-    - details: {code: "03", id: MINIMUM_RISK_ROUTE, graphicType: MAIN, label: "Minimum-Risk Route"}
-    - details: {code: "04", id: SAFE_LANE, graphicType: MAIN, label: "Safe Lane"}
-    - details: {code: "05", id: STANDARD_USE_ARMY_AIRCRAFT_FLIGHT_ROUTE, graphicType: MAIN, label: "Standard Use Army Aircraft Flight Route"}
-    - details: {code: "06", id: TRANSIT_CORRIDOR, graphicType: MAIN, label: "Transit Corridor"}
-    - details: {code: "07", id: UA_ROUTE, graphicType: MAIN, label: "Unmanned Aircraft (UA) Route"}
-    - details: {code: "08", id: BASE_DEFENSE_ZONE, graphicType: MAIN, label: "Base Defense Zone"}
-    - details: {code: "09", id: HIGH_DENSITY_AIRSPACE_CONTROL_ZONE, graphicType: MAIN, label: "High-Density Airspace Control Zone"}
-    - details: {code: "10", id: RESTRICTED_OPERATIONS_ZONE, graphicType: MAIN, label: "Restricted Operations Zone"}
-    - details: {code: "11", id: AIR_TO_AIR_RESTRICTED_OPERATING_ZONE, graphicType: MAIN, label: "Air-to-Air Restricted Operating Zone"}
-    - details: {code: "12", id: UNMANNED_AIRCRAFT_RESTRICTED_OPERATING_ZONE, graphicType: MAIN, label: "Unmanned Aircraft Restricted Operating Zone"}
-    - details: {code: "13", id: WEAPON_ENGAGEMENT_ZONE, graphicType: MAIN, label: "Weapon Engagement Zone"}
-    - details: {code: "14", id: FIGHTER_ENGAGEMENT_ZONE, graphicType: MAIN, label: "Fighter Engagement Zone"}
-    - details: {code: "15", id: JOINT_ENGAGEMENT_ZONE, graphicType: MAIN, label: "Joint Engagement Zone"}
-    - details: {code: "16", id: MISSILE_ENGAGEMENT_ZONE, graphicType: MAIN, label: "Missile Engagement Zone"}
-    - details: {code: "17", id: LOW_ALTITUDE_MISSILE_ENGAGEMENT_ZONE, graphicType: MAIN, label: "Low Altitude Missile Engagement Zone"}
-    - details: {code: "18", id: HIGH_ALTITUDE_MISSILE_ENGAGEMENT_ZONE, graphicType: MAIN, label: "High Altitude Missile Engagement Zone"}
-    - details: {code: "19", id: SHORT_RANGE_AIR_DEFENSE_ENGAGEMENT_ZONE, graphicType: MAIN, label: "Short Range Air Defense Engagement Zone"}
-    - details: {code: "20", id: WEAPONS_FREE_ZONE, graphicType: MAIN, label: "Weapons Free Zone"}
-  - details: {code: "18", id: AIRSPACE_CONTROL_POINTS, graphicType: MAIN, label: "Airspace Control Points"}
+    - details: {code: "01", id: AIR_CORRIDOR, graphicType: FREE_CANVAS, label: "Air Corridor"}
+    - details: {code: "02", id: LOW_LEVEL_TRANSIT_ROUTE, graphicType: FREE_CANVAS, label: "Low Level Transit Route"}
+    - details: {code: "03", id: MINIMUM_RISK_ROUTE, graphicType: FREE_CANVAS, label: "Minimum-Risk Route"}
+    - details: {code: "04", id: SAFE_LANE, graphicType: FREE_CANVAS, label: "Safe Lane"}
+    - details: {code: "05", id: STANDARD_USE_ARMY_AIRCRAFT_FLIGHT_ROUTE, graphicType: FREE_CANVAS, label: "Standard Use Army Aircraft Flight Route"}
+    - details: {code: "06", id: TRANSIT_CORRIDOR, graphicType: FREE_CANVAS, label: "Transit Corridor"}
+    - details: {code: "07", id: UA_ROUTE, graphicType: FREE_CANVAS, label: "Unmanned Aircraft (UA) Route"}
+    - details: {code: "08", id: BASE_DEFENSE_ZONE, graphicType: FREE_CANVAS, label: "Base Defense Zone"}
+    - details: {code: "09", id: HIGH_DENSITY_AIRSPACE_CONTROL_ZONE, graphicType: FREE_CANVAS, label: "High-Density Airspace Control Zone"}
+    - details: {code: "10", id: RESTRICTED_OPERATIONS_ZONE, graphicType: FREE_CANVAS, label: "Restricted Operations Zone"}
+    - details: {code: "11", id: AIR_TO_AIR_RESTRICTED_OPERATING_ZONE, graphicType: FREE_CANVAS, label: "Air-to-Air Restricted Operating Zone"}
+    - details: {code: "12", id: UNMANNED_AIRCRAFT_RESTRICTED_OPERATING_ZONE, graphicType: FREE_CANVAS, label: "Unmanned Aircraft Restricted Operating Zone"}
+    - details: {code: "13", id: WEAPON_ENGAGEMENT_ZONE, graphicType: FREE_CANVAS, label: "Weapon Engagement Zone"}
+    - details: {code: "14", id: FIGHTER_ENGAGEMENT_ZONE, graphicType: FREE_CANVAS, label: "Fighter Engagement Zone"}
+    - details: {code: "15", id: JOINT_ENGAGEMENT_ZONE, graphicType: FREE_CANVAS, label: "Joint Engagement Zone"}
+    - details: {code: "16", id: MISSILE_ENGAGEMENT_ZONE, graphicType: FREE_CANVAS, label: "Missile Engagement Zone"}
+    - details: {code: "17", id: LOW_ALTITUDE_MISSILE_ENGAGEMENT_ZONE, graphicType: FREE_CANVAS, label: "Low Altitude Missile Engagement Zone"}
+    - details: {code: "18", id: HIGH_ALTITUDE_MISSILE_ENGAGEMENT_ZONE, graphicType: FREE_CANVAS, label: "High Altitude Missile Engagement Zone"}
+    - details: {code: "19", id: SHORT_RANGE_AIR_DEFENSE_ENGAGEMENT_ZONE, graphicType: FREE_CANVAS, label: "Short Range Air Defense Engagement Zone"}
+    - details: {code: "20", id: WEAPONS_FREE_ZONE, graphicType: FREE_CANVAS, label: "Weapons Free Zone"}
+  - details: {code: "18", id: AIRSPACE_CONTROL_POINTS, graphicType: FREE_CANVAS, label: "Airspace Control Points"}
     entityTypes:
-    - details: {code: "01", id: AIR_CONTROL_POINT, graphicType: MAIN, label: "Air Control Point"}
-    - details: {code: "02", id: COMMUNICATIONS_CHECKPOINT, graphicType: MAIN, label: "Communications Checkpoint"}
-    - details: {code: "03", id: DOWNED_AIRCREW_PICK_UP_POINT, graphicType: MAIN, label: "Downed Aircrew Pick-Up Point"}
-    - details: {code: "04", id: POP_UP_POINT, graphicType: MAIN, label: "Pop-up Point"}
-    - details: {code: "05", id: AIR_CONTROL_RENDEZVOUS, graphicType: MAIN, label: "Air Control Rendezvous"}
-    - details: {code: "06", id: TACAN, graphicType: MAIN, label: "TACAN"}
-    - details: {code: "07", id: CAP_STATION, graphicType: MAIN, label: "CAP Station"}
-    - details: {code: "08", id: AEW_STATION, graphicType: MAIN, label: "AEW Station"}
-    - details: {code: "09", id: ASW_HELO_FW_STATION, graphicType: MAIN, label: "ASW (Helo and F/W) Station"}
-    - details: {code: "10", id: STRIKE_INITIAL_POINT, graphicType: MAIN, label: "Strike Initial Point"}
-    - details: {code: "11", id: REPLENISHMENT_STATION, graphicType: MAIN, label: "Replenishment Station"}
-    - details: {code: "12", id: TANKING, graphicType: MAIN, label: "Tanking"}
-    - details: {code: "13", id: ANTISUBMARINE_WARFARE_ROTARY_WING, graphicType: MAIN, label: "Antisubmarine Warfare, Rotary Wing"}
-    - details: {code: "14", id: SUCAP_FIXED_WING, graphicType: MAIN, label: "SUCAP - Fixed Wing"}
-    - details: {code: "15", id: SUCAP_ROTARY_WING, graphicType: MAIN, label: "SUCAP - Rotary Wing"}
-    - details: {code: "16", id: MIW_FIXED_WING, graphicType: MAIN, label: "MIW - Fixed Wing"}
-    - details: {code: "17", id: MIW_ROTARY_WING, graphicType: MAIN, label: "MIW - Rotary Wing"}
-    - details: {code: "18", id: TOMCAT, graphicType: MAIN, label: "Tomcat"}
-    - details: {code: "19", id: RESCUE, graphicType: MAIN, label: "Rescue"}
-    - details: {code: "20", id: UAS_UA, graphicType: MAIN, label: "Unmanned Aerial System (UAS/UA)"}
-    - details: {code: "21", id: VTUA, graphicType: MAIN, label: "VTUA"}
-    - details: {code: "22", id: ORBIT, graphicType: MAIN, label: "Orbit"}
-    - details: {code: "23", id: ORBIT_FIGURE_EIGHT, graphicType: MAIN, label: "Orbit - Figure Eight"}
-    - details: {code: "24", id: ORBIT_RACE_TRACK, graphicType: MAIN, label: "Orbit - Race Track"}
-    - details: {code: "25", id: ORBIT_RANDOM_CLOSED, graphicType: MAIN, label: "Orbit - Random Closed"}
-    - details: {code: "26", id: ISOLATED_PERSONNEL, graphicType: MAIN, label: "Isolated Personnel"}
+    - details: {code: "01", id: AIR_CONTROL_POINT, graphicType: FREE_CANVAS, label: "Air Control Point"}
+    - details: {code: "02", id: COMMUNICATIONS_CHECKPOINT, graphicType: FREE_CANVAS, label: "Communications Checkpoint"}
+    - details: {code: "03", id: DOWNED_AIRCREW_PICK_UP_POINT, graphicType: FREE_CANVAS, label: "Downed Aircrew Pick-Up Point"}
+    - details: {code: "04", id: POP_UP_POINT, graphicType: FREE_CANVAS, label: "Pop-up Point"}
+    - details: {code: "05", id: AIR_CONTROL_RENDEZVOUS, graphicType: FREE_CANVAS, label: "Air Control Rendezvous"}
+    - details: {code: "06", id: TACAN, graphicType: FREE_CANVAS, label: "TACAN"}
+    - details: {code: "07", id: CAP_STATION, graphicType: FREE_CANVAS, label: "CAP Station"}
+    - details: {code: "08", id: AEW_STATION, graphicType: FREE_CANVAS, label: "AEW Station"}
+    - details: {code: "09", id: ASW_HELO_FW_STATION, graphicType: FREE_CANVAS, label: "ASW (Helo and F/W) Station"}
+    - details: {code: "10", id: STRIKE_INITIAL_POINT, graphicType: FREE_CANVAS, label: "Strike Initial Point"}
+    - details: {code: "11", id: REPLENISHMENT_STATION, graphicType: FREE_CANVAS, label: "Replenishment Station"}
+    - details: {code: "12", id: TANKING, graphicType: FREE_CANVAS, label: "Tanking"}
+    - details: {code: "13", id: ANTISUBMARINE_WARFARE_ROTARY_WING, graphicType: FREE_CANVAS, label: "Antisubmarine Warfare, Rotary Wing"}
+    - details: {code: "14", id: SUCAP_FIXED_WING, graphicType: FREE_CANVAS, label: "SUCAP - Fixed Wing"}
+    - details: {code: "15", id: SUCAP_ROTARY_WING, graphicType: FREE_CANVAS, label: "SUCAP - Rotary Wing"}
+    - details: {code: "16", id: MIW_FIXED_WING, graphicType: FREE_CANVAS, label: "MIW - Fixed Wing"}
+    - details: {code: "17", id: MIW_ROTARY_WING, graphicType: FREE_CANVAS, label: "MIW - Rotary Wing"}
+    - details: {code: "18", id: TOMCAT, graphicType: FREE_CANVAS, label: "Tomcat"}
+    - details: {code: "19", id: RESCUE, graphicType: FREE_CANVAS, label: "Rescue"}
+    - details: {code: "20", id: UAS_UA, graphicType: FREE_CANVAS, label: "Unmanned Aerial System (UAS/UA)"}
+    - details: {code: "21", id: VTUA, graphicType: FREE_CANVAS, label: "VTUA"}
+    - details: {code: "22", id: ORBIT, graphicType: FREE_CANVAS, label: "Orbit"}
+    - details: {code: "23", id: ORBIT_FIGURE_EIGHT, graphicType: FREE_CANVAS, label: "Orbit - Figure Eight"}
+    - details: {code: "24", id: ORBIT_RACE_TRACK, graphicType: FREE_CANVAS, label: "Orbit - Race Track"}
+    - details: {code: "25", id: ORBIT_RANDOM_CLOSED, graphicType: FREE_CANVAS, label: "Orbit - Random Closed"}
+    - details: {code: "26", id: ISOLATED_PERSONNEL, graphicType: FREE_CANVAS, label: "Isolated Personnel"}
   - details: {code: "19", id: AIRSPACE_CONTROL_LINES, graphicType: NA, label: "Airspace Control Lines"}
     entityTypes:
-    - details: {code: "01", id: IFF_OFF_LINE, graphicType: MAIN, label: "Identification Friend or Foe Off Line"}
-    - details: {code: "02", id: IFF_ON_LINE, graphicType: MAIN, label: "Identification Friend or Foe On Line"}
+    - details: {code: "01", id: IFF_OFF_LINE, graphicType: FREE_CANVAS, label: "Identification Friend or Foe Off Line"}
+    - details: {code: "02", id: IFF_ON_LINE, graphicType: FREE_CANVAS, label: "Identification Friend or Foe On Line"}
   - details: {code: "20", id: MARITIME_CONTROL_AREAS, graphicType: NA, label: "Maritime Control Areas"}
     entityTypes:
     - details: {code: "01", id: LAUNCH_AREA, graphicType: NA, label: "Launch Area"}
       entitySubTypes:
-      - {code: "01", id: LAUNCH_ELLIPSE_CIRCLE, graphicType: MAIN, label: "Ellipse/Circle"}
+      - {code: "01", id: LAUNCH_ELLIPSE_CIRCLE, graphicType: FREE_CANVAS, label: "Ellipse/Circle"}
     - details: {code: "02", id: DEFENDED_AREA, graphicType: NA, label: "Defended Area"}
       entitySubTypes:
-      - {code: "01", id: DEFEND_ELLIPSE_CIRCLE, graphicType: MAIN, label: "Ellipse/Circle"}
-      - {code: "02", id: DEFEND_RECTANGLE, graphicType: MAIN, label: "Rectangle"}
-    - details: {code: "03", id: NOTACK_ZONE, graphicType: MAIN, label: "No Attack (NOTACK) Zone"}
-    - details: {code: "04", id: SHIP_AREA_OF_INTEREST, graphicType: MAIN, label: "Ship Area of Interest"}
+      - {code: "01", id: DEFEND_ELLIPSE_CIRCLE, graphicType: FREE_CANVAS, label: "Ellipse/Circle"}
+      - {code: "02", id: DEFEND_RECTANGLE, graphicType: FREE_CANVAS, label: "Rectangle"}
+    - details: {code: "03", id: NOTACK_ZONE, graphicType: FREE_CANVAS, label: "No Attack (NOTACK) Zone"}
+    - details: {code: "04", id: SHIP_AREA_OF_INTEREST, graphicType: FREE_CANVAS, label: "Ship Area of Interest"}
       entitySubTypes:
-      - {code: "01", id: SHIP_AOI_ELLIPSE_CIRCLE, graphicType: MAIN, label: "Ellipse/Circle"}
-      - {code: "02", id: SHIP_AOI_RECTANGLE, graphicType: MAIN, label: "Rectangle"}
-    - details: {code: "05", id: ACTIVE_MANEUVER_AREA, graphicType: MAIN, label: "Active Maneuver Area"}
-    - details: {code: "06", id: CUED_ACQUISITION_DOCTRINE, graphicType: MAIN, label: "Cued Acquisition Doctrine"}
-    - details: {code: "07", id: RADAR_SEARCH_DOCTRINE, graphicType: MAIN, label: "Radar Search Doctrine"}
+      - {code: "01", id: SHIP_AOI_ELLIPSE_CIRCLE, graphicType: FREE_CANVAS, label: "Ellipse/Circle"}
+      - {code: "02", id: SHIP_AOI_RECTANGLE, graphicType: FREE_CANVAS, label: "Rectangle"}
+    - details: {code: "05", id: ACTIVE_MANEUVER_AREA, graphicType: FREE_CANVAS, label: "Active Maneuver Area"}
+    - details: {code: "06", id: CUED_ACQUISITION_DOCTRINE, graphicType: FREE_CANVAS, label: "Cued Acquisition Doctrine"}
+    - details: {code: "07", id: RADAR_SEARCH_DOCTRINE, graphicType: FREE_CANVAS, label: "Radar Search Doctrine"}
   - details: {code: "21", id: MARITIME_CONTROL_POINTS, graphicType: NA, label: "Maritime Control Points"}
     entityTypes:
-    - details: {code: "01", id: PLAN_SHIP, graphicType: MAIN, label: "Plan Ship"}
-    - details: {code: "02", id: AIM_POINT, graphicType: MAIN, label: "Aim Point"}
-    - details: {code: "03", id: DEFENDED_ASSET, graphicType: MAIN, label: "Defended Asset"}
-    - details: {code: "04", id: DROP_POINT, graphicType: MAIN, label: "Drop Point"}
-    - details: {code: "05", id: ENTRY_POINT, graphicType: MAIN, label: "Entry Point"}
-    - details: {code: "06", id: AIR_DETONATION, graphicType: MAIN, label: "Air Detonation"}
-    - details: {code: "07", id: GROUND_ZERO, graphicType: MAIN, label: "Ground Zero"}
-    - details: {code: "08", id: IMPACT_POINT, graphicType: MAIN, label: "Impact Point"}
-    - details: {code: "09", id: PREDICTED_IMPACT_POINT, graphicType: MAIN, label: "Predicted Impact Point"}
-    - details: {code: "10", id: LAUNCHED_TORPEDO, graphicType: MAIN, label: "Launched Torpedo"}
-    - details: {code: "11", id: MISSILE_DETECTION_POINT, graphicType: MAIN, label: "Missile Detection Point"}
-    - details: {code: "12", id: ACOUSTIC_COUNTERMEASURE_DECOY, graphicType: MAIN, label: "Acoustic Countermeasure (Decoy)"}
-    - details: {code: "13", id: ECM_DECOY, graphicType: MAIN, label: "Electronic Countermeasures (ECM) Decoy"}
-    - details: {code: "14", id: BRIEF_CONTACT, graphicType: MAIN, label: "Brief Contact"}
-    - details: {code: "15", id: DATUM_LOST_CONTACT, graphicType: MAIN, label: "Datum Lost Contact"}
-    - details: {code: "16", id: BT_BUOY_DROP, graphicType: MAIN, label: "BT Buoy Drop"}
-    - details: {code: "17", id: REPORTED_BOTTOM_SUB, graphicType: MAIN, label: "Reported Bottom Sub"}
-    - details: {code: "18", id: MOVING_HAVEN, graphicType: MAIN, label: "Moving Haven"}
-    - details: {code: "19", id: SCREEN_CENTER, graphicType: MAIN, label: "Screen Center"}
-    - details: {code: "20", id: LOST_CONTACT, graphicType: MAIN, label: "Lost Contact"}
-    - details: {code: "21", id: SINKER, graphicType: MAIN, label: "Sinker"}
-    - details: {code: "22", id: TRIAL_TRACK, graphicType: MAIN, label: "Trial Track"}
-    - details: {code: "23", id: ACOUSTIC_FIX, graphicType: MAIN, label: "Acoustic Fix"}
-    - details: {code: "24", id: ELECTROMAGNETIC_FIX, graphicType: MAIN, label: "Electromagnetic Fix"}
-    - details: {code: "25", id: ELECTROMAGNETIC_MAD, graphicType: MAIN, label: "Electromagnetic - Magnetic Anomaly Detection (MAD)"}
-    - details: {code: "26", id: OPTICAL_FIX, graphicType: MAIN, label: "Optical Fix"}
-    - details: {code: "27", id: FORMATION, graphicType: MAIN, label: "Formation"}
-    - details: {code: "28", id: HARBOR, graphicType: MAIN, label: "Harbor"}
+    - details: {code: "01", id: PLAN_SHIP, graphicType: FREE_CANVAS, label: "Plan Ship"}
+    - details: {code: "02", id: AIM_POINT, graphicType: FREE_CANVAS, label: "Aim Point"}
+    - details: {code: "03", id: DEFENDED_ASSET, graphicType: FREE_CANVAS, label: "Defended Asset"}
+    - details: {code: "04", id: DROP_POINT, graphicType: FREE_CANVAS, label: "Drop Point"}
+    - details: {code: "05", id: ENTRY_POINT, graphicType: FREE_CANVAS, label: "Entry Point"}
+    - details: {code: "06", id: AIR_DETONATION, graphicType: FREE_CANVAS, label: "Air Detonation"}
+    - details: {code: "07", id: GROUND_ZERO, graphicType: FREE_CANVAS, label: "Ground Zero"}
+    - details: {code: "08", id: IMPACT_POINT, graphicType: FREE_CANVAS, label: "Impact Point"}
+    - details: {code: "09", id: PREDICTED_IMPACT_POINT, graphicType: FREE_CANVAS, label: "Predicted Impact Point"}
+    - details: {code: "10", id: LAUNCHED_TORPEDO, graphicType: FREE_CANVAS, label: "Launched Torpedo"}
+    - details: {code: "11", id: MISSILE_DETECTION_POINT, graphicType: FREE_CANVAS, label: "Missile Detection Point"}
+    - details: {code: "12", id: ACOUSTIC_COUNTERMEASURE_DECOY, graphicType: FREE_CANVAS, label: "Acoustic Countermeasure (Decoy)"}
+    - details: {code: "13", id: ECM_DECOY, graphicType: FREE_CANVAS, label: "Electronic Countermeasures (ECM) Decoy"}
+    - details: {code: "14", id: BRIEF_CONTACT, graphicType: FREE_CANVAS, label: "Brief Contact"}
+    - details: {code: "15", id: DATUM_LOST_CONTACT, graphicType: FREE_CANVAS, label: "Datum Lost Contact"}
+    - details: {code: "16", id: BT_BUOY_DROP, graphicType: FREE_CANVAS, label: "BT Buoy Drop"}
+    - details: {code: "17", id: REPORTED_BOTTOM_SUB, graphicType: FREE_CANVAS, label: "Reported Bottom Sub"}
+    - details: {code: "18", id: MOVING_HAVEN, graphicType: FREE_CANVAS, label: "Moving Haven"}
+    - details: {code: "19", id: SCREEN_CENTER, graphicType: FREE_CANVAS, label: "Screen Center"}
+    - details: {code: "20", id: LOST_CONTACT, graphicType: FREE_CANVAS, label: "Lost Contact"}
+    - details: {code: "21", id: SINKER, graphicType: FREE_CANVAS, label: "Sinker"}
+    - details: {code: "22", id: TRIAL_TRACK, graphicType: FREE_CANVAS, label: "Trial Track"}
+    - details: {code: "23", id: ACOUSTIC_FIX, graphicType: FREE_CANVAS, label: "Acoustic Fix"}
+    - details: {code: "24", id: ELECTROMAGNETIC_FIX, graphicType: FREE_CANVAS, label: "Electromagnetic Fix"}
+    - details: {code: "25", id: ELECTROMAGNETIC_MAD, graphicType: FREE_CANVAS, label: "Electromagnetic - Magnetic Anomaly Detection (MAD)"}
+    - details: {code: "26", id: OPTICAL_FIX, graphicType: FREE_CANVAS, label: "Optical Fix"}
+    - details: {code: "27", id: FORMATION, graphicType: FREE_CANVAS, label: "Formation"}
+    - details: {code: "28", id: HARBOR, graphicType: FREE_CANVAS, label: "Harbor"}
     - details: {code: "29", id: HARBOR_ENTRANCE_POINT, graphicType: NA, label: "Harbor Entrance Point"}
       entitySubTypes:
-      - {code: "01", id: A, graphicType: MAIN, label: "A"}
-      - {code: "02", id: Q, graphicType: MAIN, label: "Q"}
-      - {code: "03", id: X, graphicType: MAIN, label: "X"}
-      - {code: "04", id: "Y", graphicType: MAIN, label: "Y"}
-    - details: {code: "30", id: DIP_POSITION, graphicType: MAIN, label: "Dip Position"}
-    - details: {code: "31", id: SEARCH, graphicType: MAIN, label: "Search"}
-    - details: {code: "32", id: SEARCH_AREA, graphicType: MAIN, label: "Search Area"}
-    - details: {code: "33", id: SEARCH_CENTER, graphicType: MAIN, label: "Search Center"}
-    - details: {code: "34", id: SEARCH_NAVIGATIONAL_REFERENCE_POINT, graphicType: MAIN, label: "Navigational Reference Point"}
-    - details: {code: "35", id: SONOBUOY, graphicType: MAIN, label: "Sonobuoy"}
+      - {code: "01", id: A, graphicType: FREE_CANVAS, label: "A"}
+      - {code: "02", id: Q, graphicType: FREE_CANVAS, label: "Q"}
+      - {code: "03", id: X, graphicType: FREE_CANVAS, label: "X"}
+      - {code: "04", id: "Y", graphicType: FREE_CANVAS, label: "Y"}
+    - details: {code: "30", id: DIP_POSITION, graphicType: FREE_CANVAS, label: "Dip Position"}
+    - details: {code: "31", id: SEARCH, graphicType: FREE_CANVAS, label: "Search"}
+    - details: {code: "32", id: SEARCH_AREA, graphicType: FREE_CANVAS, label: "Search Area"}
+    - details: {code: "33", id: SEARCH_CENTER, graphicType: FREE_CANVAS, label: "Search Center"}
+    - details: {code: "34", id: SEARCH_NAVIGATIONAL_REFERENCE_POINT, graphicType: FREE_CANVAS, label: "Navigational Reference Point"}
+    - details: {code: "35", id: SONOBUOY, graphicType: FREE_CANVAS, label: "Sonobuoy"}
       entitySubTypes:
-      - {code: "01", id: AMBIENT_NOISE, graphicType: MAIN, label: "Ambient Noise"}
-      - {code: "02", id: AIR_TRANSPORTABLE_COMMUNICATION, graphicType: MAIN, label: "Air Transportable Communication"}
-      - {code: "03", id: BARRA, graphicType: MAIN, label: "Barra"}
-      - {code: "04", id: BATHYTHERMOGRAPH_TRANSMITTING, graphicType: MAIN, label: "Bathythermograph Transmitting"}
-      - {code: "05", id: CAMBS, graphicType: MAIN, label: "Command Active Multi-Beam (CAMBS)"}
-      - {code: "06", id: CASS, graphicType: MAIN, label: "Command Active Sonobuoy Directional Command Active Sonobuoy System (CASS)"}
-      - {code: "07", id: DIFAR, graphicType: MAIN, label: "Digital Frequency Analysis and Recording (DIFAR)"}
-      - {code: "08", id: DICASS, graphicType: MAIN, label: "Directional Command Active Sonobuoy System (DICASS)"}
-      - {code: "09", id: ERAPS, graphicType: MAIN, label: "Expendable Reliable Acoustic Path Sonobuoy (ERAPS)"}
-      - {code: "10", id: EXPIRED, graphicType: MAIN, label: "Expired"}
-      - {code: "11", id: KINGPIN, graphicType: MAIN, label: "Kingpin"}
-      - {code: "12", id: LOFAR, graphicType: MAIN, label: "Low Frequency Analysis and Recording (LOFAR)"}
-      - {code: "13", id: PATTERN_CENTER, graphicType: MAIN, label: "Pattern Center"}
-      - {code: "14", id: RANGE_ONLY, graphicType: MAIN, label: "Range Only"}
-      - {code: "15", id: VERTICAL_LINE_ARRAY_DIRECTIONAL_FREQUENCY_ANALYSIS_RECORDING_DIFAR, graphicType: MAIN, label: "Vertical Line Array Directional Frequency Analysis and Recording (DIFAR)"}
-    - details: {code: "36", id: REFERENCE_POINT, graphicType: MAIN, label: "Reference Point"}
-    - details: {code: "37", id: MARITIME_SPECIAL_POINT, graphicType: MAIN, label: "Special Point"}
-    - details: {code: "38", id: NAVIGATIONAL_REFERENCE_POINT, graphicType: MAIN, label: "Navigational Reference Point"}
-    - details: {code: "39", id: DATA_LINK_REFERENCE_POINT, graphicType: MAIN, label: "Data Link Reference Point"}
-    - details: {code: "41", id: VITAL_AREA_CENTER, graphicType: MAIN, label: "Vital Area Center"}
-    - details: {code: "42", id: CORRIDOR_TAB_POINT, graphicType: MAIN, label: "Corridor Tab Point"}
-    - details: {code: "43", id: ENEMY_POINT, graphicType: MAIN, label: "Enemy Point"}
-    - details: {code: "44", id: MARSHALL_POINT, graphicType: MAIN, label: "Marshall Point"}
-    - details: {code: "45", id: POSITION_INTENDED_MOVEMENT_PIM, graphicType: MAIN, label: "Position and Intended Movement (PIM)"}
-    - details: {code: "46", id: PRE_LANDFALL_WAYPOINT, graphicType: MAIN, label: "Pre-Landfall Waypoint"}
-    - details: {code: "47", id: ESTIMATED_POSITION_EP, graphicType: MAIN, label: "Estimated Position (EP)"}
-    - details: {code: "48", id: MARITIME_WAYPOINT, graphicType: MAIN, label: "Waypoint"}
-    - details: {code: "49", id: GENERAL_SUBSURFACE_STATION, graphicType: MAIN, label: "General Subsurface Station"}
-    - details: {code: "50", id: SUBMARINE_SUBSURFACE_STATION, graphicType: MAIN, label: "Submarine Subsurface Station"}
-    - details: {code: "51", id: SUBMARINE_ANTISUBMARINE_WARFARE_SUBSURFACE_STATION, graphicType: MAIN, label: "Submarine Antisubmarine Warfare Subsurface Station"}
-    - details: {code: "52", id: UNMANNED_UNDERWATER_VEHICLE_SUBSURFACE_STATION, graphicType: MAIN, label: "Unmanned Underwater Vehicle Subsurface Station"}
-    - details: {code: "53", id: ASW_UNMANNED_UNDERWATER_VEHICLE_SUBSURFACE_STATION, graphicType: MAIN, label: "Antisubmarine Warfare (ASW) Unmanned Underwater Vehicle Subsurface Station"}
-    - details: {code: "54", id: MINE_WARFARE_UNMANNED_UNDERWATER_VEHICLE_SUBSURFACE_STATION, graphicType: MAIN, label: "Mine Warfare Unmanned Underwater Vehicle Subsurface Station"}
-    - details: {code: "55", id: SURFACE_WARFARE_UNMANNED_UNDERWATER_VEHICLE_SUBSURFACE_STATION, graphicType: MAIN, label: "Surface Warfare Unmanned Underwater Vehicle Subsurface Station"}
-    - details: {code: "56", id: GENERAL_SURFACE_STATION, graphicType: MAIN, label: "General Surface Station"}
-    - details: {code: "57", id: ASW_SURFACE_STATION, graphicType: MAIN, label: "Antisubmarine Warfare (ASW) Surface Station"}
-    - details: {code: "58", id: MINE_WARFARE_SURFACE_STATION, graphicType: MAIN, label: "Mine Warfare Surface Station"}
-    - details: {code: "59", id: NON_COMBATANT_SURFACE_STATION, graphicType: MAIN, label: "Non-Combatant Surface Station"}
-    - details: {code: "60", id: PICKET_SURFACE_STATION, graphicType: MAIN, label: "Picket Surface Station"}
-    - details: {code: "61", id: RENDEZVOUS_SURFACE_STATION, graphicType: MAIN, label: "Rendezvous Surface Station"}
-    - details: {code: "62", id: REPLENISHMENT_SEA_SURFACE_STATION, graphicType: MAIN, label: "Replenishment at Sea Surface Station"}
-    - details: {code: "63", id: RESCUE_SURFACE_STATION, graphicType: MAIN, label: "Rescue Surface Station"}
-    - details: {code: "64", id: SURFACE_WARFARE_SURFACE_STATION, graphicType: MAIN, label: "Surface Warfare Surface Station"}
-    - details: {code: "65", id: UNMANNED_UNDERWATER_VEHICLE_SURFACE_STATION, graphicType: MAIN, label: "Unmanned Underwater Vehicle Surface Station"}
-    - details: {code: "66", id: ASW_UNMANNED_UNDERWATER_VEHICLE_SURFACE_STATION, graphicType: MAIN, label: "Antisubmarine Warfare (ASW) Unmanned Underwater Vehicle Surface Station"}
-    - details: {code: "67", id: MINE_WARFARE_UNMANNED_UNDERWATER_VEHICLE_SURFACE_STATION, graphicType: MAIN, label: "Mine Warfare Unmanned Underwater Vehicle Surface Station"}
-    - details: {code: "68", id: REMOTE_MULTI_MISSION_VEHICLE_MINE_WARFARE_UNMANNED_UNDERWATER, graphicType: MAIN, label: "Remote Multi-Mission Vehicle Mine Warfare Unmanned Underwater"}
-    - details: {code: "69", id: SURFACE_WARFARE_MINE_WARFARE_UNMANNED_UNDERWATER_VEHICLE, graphicType: MAIN, label: "Surface Warfare Mine Warfare Unmanned Underwater Vehicle"}
-    - details: {code: "70", id: SHORE_CONTROL_STATION, graphicType: MAIN, label: "Shore Control Station"}
-    - details: {code: "71", id: GENERAL_ROUTE, graphicType: MAIN, label: "General Route"}
-    - details: {code: "72", id: DIVERSION_ROUTE, graphicType: MAIN, label: "Diversion Route"}
-    - details: {code: "73", id: PIM_ROUTE, graphicType: MAIN, label: "Position and Intended Movement (PIM) Route"}
-    - details: {code: "74", id: PICKET_ROUTE, graphicType: MAIN, label: "Picket Route"}
-    - details: {code: "75", id: POINT_R_ROUTE, graphicType: MAIN, label: "Point R Route"}
-    - details: {code: "76", id: RENDEZVOUS_ROUTE, graphicType: MAIN, label: "Rendezvous Route"}
-    - details: {code: "77", id: WAYPOINT_ROUTE, graphicType: MAIN, label: "Waypoint Route"}
-    - details: {code: "78", id: CLUTTER_STATIONARY_CEASE_REPORTING, graphicType: MAIN, label: "Clutter-Stationary or Cease Reporting"}
-    - details: {code: "79", id: TENTATIVE_PROVISIONAL_TRACK, graphicType: MAIN, label: "Tentative or Provisional Track"}
-    - details: {code: "80", id: DISTRESSED_VESSEL, graphicType: MAIN, label: "Distressed Vessel"}
-    - details: {code: "81", id: DITCHED_AIRCRAFT_DOWNED_AIRCRAFT, graphicType: MAIN, label: "Ditched Aircraft/Downed Aircraft"}
-    - details: {code: "82", id: PERSON_IN_WATER_BAILOUT, graphicType: MAIN, label: "Person in Water/Bailout"}
-    - details: {code: "83", id: ICEBERG, graphicType: MAIN, label: "Iceberg"}
-    - details: {code: "84", id: NAVIGATIONAL, graphicType: MAIN, label: "Navigational"}
-    - details: {code: "85", id: OIL_RIG, graphicType: MAIN, label: "Oil Rig"}
-    - details: {code: "86", id: SEA_MINE_LIKE, graphicType: MAIN, label: "Sea Mine-Like"}
-    - details: {code: "87", id: BOTTOM_RETURN_NOMBO, graphicType: MAIN, label: "Bottom Return/Non-Mine Like Bottom Object (NOMBO)"}
-    - details: {code: "88", id: BOTTOM_RETURN_NOMBO_INSTALLATION_MANMADE, graphicType: MAIN, label: "Bottom Return/Non-Mine Like Bottom Object (NOMBO)/Installation Manmade"}
-    - details: {code: "89", id: MARINE_LIFE, graphicType: MAIN, label: "Marine Life"}
-    - details: {code: "90", id: SEA_ANOMALY_WAKE_CURRENT_KNUCKLE, graphicType: MAIN, label: "Sea Anomaly (Wake-Current-Knuckle)"}
-    - details: {code: "91", id: BOTTOM_RETURN_NON_MILCO_WRECK_DANGEROUS, graphicType: MAIN, label: "Bottom Return/Non-MILCO-Wreck-Dangerous"}
-    - details: {code: "92", id: BOTTOM_RETURN_NON_MILCO_WRECK_NON_DANGEROUS, graphicType: MAIN, label: "Bottom Return/Non-MILCO-Wreck-Non Dangerous"}
+      - {code: "01", id: AMBIENT_NOISE, graphicType: FREE_CANVAS, label: "Ambient Noise"}
+      - {code: "02", id: AIR_TRANSPORTABLE_COMMUNICATION, graphicType: FREE_CANVAS, label: "Air Transportable Communication"}
+      - {code: "03", id: BARRA, graphicType: FREE_CANVAS, label: "Barra"}
+      - {code: "04", id: BATHYTHERMOGRAPH_TRANSMITTING, graphicType: FREE_CANVAS, label: "Bathythermograph Transmitting"}
+      - {code: "05", id: CAMBS, graphicType: FREE_CANVAS, label: "Command Active Multi-Beam (CAMBS)"}
+      - {code: "06", id: CASS, graphicType: FREE_CANVAS, label: "Command Active Sonobuoy Directional Command Active Sonobuoy System (CASS)"}
+      - {code: "07", id: DIFAR, graphicType: FREE_CANVAS, label: "Digital Frequency Analysis and Recording (DIFAR)"}
+      - {code: "08", id: DICASS, graphicType: FREE_CANVAS, label: "Directional Command Active Sonobuoy System (DICASS)"}
+      - {code: "09", id: ERAPS, graphicType: FREE_CANVAS, label: "Expendable Reliable Acoustic Path Sonobuoy (ERAPS)"}
+      - {code: "10", id: EXPIRED, graphicType: FREE_CANVAS, label: "Expired"}
+      - {code: "11", id: KINGPIN, graphicType: FREE_CANVAS, label: "Kingpin"}
+      - {code: "12", id: LOFAR, graphicType: FREE_CANVAS, label: "Low Frequency Analysis and Recording (LOFAR)"}
+      - {code: "13", id: PATTERN_CENTER, graphicType: FREE_CANVAS, label: "Pattern Center"}
+      - {code: "14", id: RANGE_ONLY, graphicType: FREE_CANVAS, label: "Range Only"}
+      - {code: "15", id: VERTICAL_LINE_ARRAY_DIRECTIONAL_FREQUENCY_ANALYSIS_RECORDING_DIFAR, graphicType: FREE_CANVAS, label: "Vertical Line Array Directional Frequency Analysis and Recording (DIFAR)"}
+    - details: {code: "36", id: REFERENCE_POINT, graphicType: FREE_CANVAS, label: "Reference Point"}
+    - details: {code: "37", id: MARITIME_SPECIAL_POINT, graphicType: FREE_CANVAS, label: "Special Point"}
+    - details: {code: "38", id: NAVIGATIONAL_REFERENCE_POINT, graphicType: FREE_CANVAS, label: "Navigational Reference Point"}
+    - details: {code: "39", id: DATA_LINK_REFERENCE_POINT, graphicType: FREE_CANVAS, label: "Data Link Reference Point"}
+    - details: {code: "41", id: VITAL_AREA_CENTER, graphicType: FREE_CANVAS, label: "Vital Area Center"}
+    - details: {code: "42", id: CORRIDOR_TAB_POINT, graphicType: FREE_CANVAS, label: "Corridor Tab Point"}
+    - details: {code: "43", id: ENEMY_POINT, graphicType: FREE_CANVAS, label: "Enemy Point"}
+    - details: {code: "44", id: MARSHALL_POINT, graphicType: FREE_CANVAS, label: "Marshall Point"}
+    - details: {code: "45", id: POSITION_INTENDED_MOVEMENT_PIM, graphicType: FREE_CANVAS, label: "Position and Intended Movement (PIM)"}
+    - details: {code: "46", id: PRE_LANDFALL_WAYPOINT, graphicType: FREE_CANVAS, label: "Pre-Landfall Waypoint"}
+    - details: {code: "47", id: ESTIMATED_POSITION_EP, graphicType: FREE_CANVAS, label: "Estimated Position (EP)"}
+    - details: {code: "48", id: MARITIME_WAYPOINT, graphicType: FREE_CANVAS, label: "Waypoint"}
+    - details: {code: "49", id: GENERAL_SUBSURFACE_STATION, graphicType: FREE_CANVAS, label: "General Subsurface Station"}
+    - details: {code: "50", id: SUBMARINE_SUBSURFACE_STATION, graphicType: FREE_CANVAS, label: "Submarine Subsurface Station"}
+    - details: {code: "51", id: SUBMARINE_ANTISUBMARINE_WARFARE_SUBSURFACE_STATION, graphicType: FREE_CANVAS, label: "Submarine Antisubmarine Warfare Subsurface Station"}
+    - details: {code: "52", id: UNMANNED_UNDERWATER_VEHICLE_SUBSURFACE_STATION, graphicType: FREE_CANVAS, label: "Unmanned Underwater Vehicle Subsurface Station"}
+    - details: {code: "53", id: ASW_UNMANNED_UNDERWATER_VEHICLE_SUBSURFACE_STATION, graphicType: FREE_CANVAS, label: "Antisubmarine Warfare (ASW) Unmanned Underwater Vehicle Subsurface Station"}
+    - details: {code: "54", id: MINE_WARFARE_UNMANNED_UNDERWATER_VEHICLE_SUBSURFACE_STATION, graphicType: FREE_CANVAS, label: "Mine Warfare Unmanned Underwater Vehicle Subsurface Station"}
+    - details: {code: "55", id: SURFACE_WARFARE_UNMANNED_UNDERWATER_VEHICLE_SUBSURFACE_STATION, graphicType: FREE_CANVAS, label: "Surface Warfare Unmanned Underwater Vehicle Subsurface Station"}
+    - details: {code: "56", id: GENERAL_SURFACE_STATION, graphicType: FREE_CANVAS, label: "General Surface Station"}
+    - details: {code: "57", id: ASW_SURFACE_STATION, graphicType: FREE_CANVAS, label: "Antisubmarine Warfare (ASW) Surface Station"}
+    - details: {code: "58", id: MINE_WARFARE_SURFACE_STATION, graphicType: FREE_CANVAS, label: "Mine Warfare Surface Station"}
+    - details: {code: "59", id: NON_COMBATANT_SURFACE_STATION, graphicType: FREE_CANVAS, label: "Non-Combatant Surface Station"}
+    - details: {code: "60", id: PICKET_SURFACE_STATION, graphicType: FREE_CANVAS, label: "Picket Surface Station"}
+    - details: {code: "61", id: RENDEZVOUS_SURFACE_STATION, graphicType: FREE_CANVAS, label: "Rendezvous Surface Station"}
+    - details: {code: "62", id: REPLENISHMENT_SEA_SURFACE_STATION, graphicType: FREE_CANVAS, label: "Replenishment at Sea Surface Station"}
+    - details: {code: "63", id: RESCUE_SURFACE_STATION, graphicType: FREE_CANVAS, label: "Rescue Surface Station"}
+    - details: {code: "64", id: SURFACE_WARFARE_SURFACE_STATION, graphicType: FREE_CANVAS, label: "Surface Warfare Surface Station"}
+    - details: {code: "65", id: UNMANNED_UNDERWATER_VEHICLE_SURFACE_STATION, graphicType: FREE_CANVAS, label: "Unmanned Underwater Vehicle Surface Station"}
+    - details: {code: "66", id: ASW_UNMANNED_UNDERWATER_VEHICLE_SURFACE_STATION, graphicType: FREE_CANVAS, label: "Antisubmarine Warfare (ASW) Unmanned Underwater Vehicle Surface Station"}
+    - details: {code: "67", id: MINE_WARFARE_UNMANNED_UNDERWATER_VEHICLE_SURFACE_STATION, graphicType: FREE_CANVAS, label: "Mine Warfare Unmanned Underwater Vehicle Surface Station"}
+    - details: {code: "68", id: REMOTE_MULTI_MISSION_VEHICLE_MINE_WARFARE_UNMANNED_UNDERWATER, graphicType: FREE_CANVAS, label: "Remote Multi-Mission Vehicle Mine Warfare Unmanned Underwater"}
+    - details: {code: "69", id: SURFACE_WARFARE_MINE_WARFARE_UNMANNED_UNDERWATER_VEHICLE, graphicType: FREE_CANVAS, label: "Surface Warfare Mine Warfare Unmanned Underwater Vehicle"}
+    - details: {code: "70", id: SHORE_CONTROL_STATION, graphicType: FREE_CANVAS, label: "Shore Control Station"}
+    - details: {code: "71", id: GENERAL_ROUTE, graphicType: FREE_CANVAS, label: "General Route"}
+    - details: {code: "72", id: DIVERSION_ROUTE, graphicType: FREE_CANVAS, label: "Diversion Route"}
+    - details: {code: "73", id: PIM_ROUTE, graphicType: FREE_CANVAS, label: "Position and Intended Movement (PIM) Route"}
+    - details: {code: "74", id: PICKET_ROUTE, graphicType: FREE_CANVAS, label: "Picket Route"}
+    - details: {code: "75", id: POINT_R_ROUTE, graphicType: FREE_CANVAS, label: "Point R Route"}
+    - details: {code: "76", id: RENDEZVOUS_ROUTE, graphicType: FREE_CANVAS, label: "Rendezvous Route"}
+    - details: {code: "77", id: WAYPOINT_ROUTE, graphicType: FREE_CANVAS, label: "Waypoint Route"}
+    - details: {code: "78", id: CLUTTER_STATIONARY_CEASE_REPORTING, graphicType: FREE_CANVAS, label: "Clutter-Stationary or Cease Reporting"}
+    - details: {code: "79", id: TENTATIVE_PROVISIONAL_TRACK, graphicType: FREE_CANVAS, label: "Tentative or Provisional Track"}
+    - details: {code: "80", id: DISTRESSED_VESSEL, graphicType: FREE_CANVAS, label: "Distressed Vessel"}
+    - details: {code: "81", id: DITCHED_AIRCRAFT_DOWNED_AIRCRAFT, graphicType: FREE_CANVAS, label: "Ditched Aircraft/Downed Aircraft"}
+    - details: {code: "82", id: PERSON_IN_WATER_BAILOUT, graphicType: FREE_CANVAS, label: "Person in Water/Bailout"}
+    - details: {code: "83", id: ICEBERG, graphicType: FREE_CANVAS, label: "Iceberg"}
+    - details: {code: "84", id: NAVIGATIONAL, graphicType: FREE_CANVAS, label: "Navigational"}
+    - details: {code: "85", id: OIL_RIG, graphicType: FREE_CANVAS, label: "Oil Rig"}
+    - details: {code: "86", id: SEA_MINE_LIKE, graphicType: FREE_CANVAS, label: "Sea Mine-Like"}
+    - details: {code: "87", id: BOTTOM_RETURN_NOMBO, graphicType: FREE_CANVAS, label: "Bottom Return/Non-Mine Like Bottom Object (NOMBO)"}
+    - details: {code: "88", id: BOTTOM_RETURN_NOMBO_INSTALLATION_MANMADE, graphicType: FREE_CANVAS, label: "Bottom Return/Non-Mine Like Bottom Object (NOMBO)/Installation Manmade"}
+    - details: {code: "89", id: MARINE_LIFE, graphicType: FREE_CANVAS, label: "Marine Life"}
+    - details: {code: "90", id: SEA_ANOMALY_WAKE_CURRENT_KNUCKLE, graphicType: FREE_CANVAS, label: "Sea Anomaly (Wake-Current-Knuckle)"}
+    - details: {code: "91", id: BOTTOM_RETURN_NON_MILCO_WRECK_DANGEROUS, graphicType: FREE_CANVAS, label: "Bottom Return/Non-MILCO-Wreck-Dangerous"}
+    - details: {code: "92", id: BOTTOM_RETURN_NON_MILCO_WRECK_NON_DANGEROUS, graphicType: FREE_CANVAS, label: "Bottom Return/Non-MILCO-Wreck-Non Dangerous"}
   - details: {code: "22", id: MARITIME_CONTROL_LINES, graphicType: NA, label: "Maritime Control Lines"}
     entityTypes:
-    - details: {code: "01", id: BEARING_LINE, graphicType: MAIN, label: "Bearing Line"}
+    - details: {code: "01", id: BEARING_LINE, graphicType: FREE_CANVAS, label: "Bearing Line"}
       entitySubTypes:
-      - {code: "01", id: ELECTRONIC, graphicType: MAIN, label: "Electronic"}
-      - {code: "02", id: ELECTRONIC_WARFARE_EW, graphicType: MAIN, label: "Electronic Warfare (EW)"}
-      - {code: "03", id: ACOUSTIC, graphicType: MAIN, label: "Acoustic"}
-      - {code: "04", id: ACOUSTIC_AMBIGUOUS, graphicType: MAIN, label: "Acoustic (Ambiguous)"}
-      - {code: "05", id: TORPEDO, graphicType: MAIN, label: "Torpedo"}
-      - {code: "06", id: ELECTRO_OPTICAL_INTERCEPT, graphicType: MAIN, label: "Electro-Optical Intercept"}
-      - {code: "07", id: JAMMER, graphicType: MAIN, label: "Jammer"}
-      - {code: "08", id: RADIO_DIRECTION_FINDER_RDF, graphicType: MAIN, label: "Radio Direction Finder (RDF)"}
+      - {code: "01", id: ELECTRONIC, graphicType: FREE_CANVAS, label: "Electronic"}
+      - {code: "02", id: ELECTRONIC_WARFARE_EW, graphicType: FREE_CANVAS, label: "Electronic Warfare (EW)"}
+      - {code: "03", id: ACOUSTIC, graphicType: FREE_CANVAS, label: "Acoustic"}
+      - {code: "04", id: ACOUSTIC_AMBIGUOUS, graphicType: FREE_CANVAS, label: "Acoustic (Ambiguous)"}
+      - {code: "05", id: TORPEDO, graphicType: FREE_CANVAS, label: "Torpedo"}
+      - {code: "06", id: ELECTRO_OPTICAL_INTERCEPT, graphicType: FREE_CANVAS, label: "Electro-Optical Intercept"}
+      - {code: "07", id: JAMMER, graphicType: FREE_CANVAS, label: "Jammer"}
+      - {code: "08", id: RADIO_DIRECTION_FINDER_RDF, graphicType: FREE_CANVAS, label: "Radio Direction Finder (RDF)"}
   - details: {code: "23", id: DECEPTION, graphicType: NA, label: "Deception"}
     entityTypes:
-    - details: {code: "01", id: DECOY_DUMMY, graphicType: MAIN, label: "Decoy/Dummy"}
-    - details: {code: "02", id: DECOY_DUMMY_FEINT, graphicType: MAIN, label: "Decoy/Dummy/Feint"}
+    - details: {code: "01", id: DECOY_DUMMY, graphicType: FREE_CANVAS, label: "Decoy/Dummy"}
+    - details: {code: "02", id: DECOY_DUMMY_FEINT, graphicType: FREE_CANVAS, label: "Decoy/Dummy/Feint"}
   - details: {code: "24", id: FIRES_AREAS, graphicType: NA, label: "Fires Areas"}
     entityTypes:
     - details: {code: "01", id: AIRSPACE_COORDINATION_AREA, graphicType: NA, label: "Airspace Coordination Area"}
       entitySubTypes:
-      - {code: "01", id: ACA_IRREGULAR, graphicType: MAIN, label: "Irregular"}
-      - {code: "02", id: ACA_RECTANGULAR, graphicType: MAIN, label: "Rectangular"}
-      - {code: "03", id: ACA_CIRCULAR, graphicType: MAIN, label: "Circular"}
+      - {code: "01", id: ACA_IRREGULAR, graphicType: FREE_CANVAS, label: "Irregular"}
+      - {code: "02", id: ACA_RECTANGULAR, graphicType: FREE_CANVAS, label: "Rectangular"}
+      - {code: "03", id: ACA_CIRCULAR, graphicType: FREE_CANVAS, label: "Circular"}
     - details: {code: "02", id: FREE_FIRE_AREA, graphicType: NA, label: "Free Fire Area"}
       entitySubTypes:
-      - {code: "01", id: FFA_IRREGULAR, graphicType: MAIN, label: "Irregular"}
-      - {code: "02", id: FFA_RECTANGULAR, graphicType: MAIN, label: "Rectangular"}
-      - {code: "03", id: FFA_CIRCULAR, graphicType: MAIN, label: "Circular"}
+      - {code: "01", id: FFA_IRREGULAR, graphicType: FREE_CANVAS, label: "Irregular"}
+      - {code: "02", id: FFA_RECTANGULAR, graphicType: FREE_CANVAS, label: "Rectangular"}
+      - {code: "03", id: FFA_CIRCULAR, graphicType: FREE_CANVAS, label: "Circular"}
     - details: {code: "03", id: NO_FIRE_AREA, graphicType: NA, label: "No Fire Area"}
       entitySubTypes:
-      - {code: "01", id: NFA_IRREGULAR, graphicType: MAIN, label: "Irregular"}
-      - {code: "02", id: NFA_RECTANGULAR, graphicType: MAIN, label: "Rectangular"}
-      - {code: "03", id: NFA_CIRCULAR, graphicType: MAIN, label: "Circular"}
+      - {code: "01", id: NFA_IRREGULAR, graphicType: FREE_CANVAS, label: "Irregular"}
+      - {code: "02", id: NFA_RECTANGULAR, graphicType: FREE_CANVAS, label: "Rectangular"}
+      - {code: "03", id: NFA_CIRCULAR, graphicType: FREE_CANVAS, label: "Circular"}
     - details: {code: "04", id: RESTRICTED_FIRE_AREA, graphicType: NA, label: "Restricted Fire Area"}
       entitySubTypes:
-      - {code: "01", id: RFA_IRREGULAR, graphicType: MAIN, label: "Irregular"}
-      - {code: "02", id: RFA_RECTANGULAR, graphicType: MAIN, label: "Rectangular"}
-      - {code: "03", id: RFA_CIRCULAR, graphicType: MAIN, label: "Circular"}
+      - {code: "01", id: RFA_IRREGULAR, graphicType: FREE_CANVAS, label: "Irregular"}
+      - {code: "02", id: RFA_RECTANGULAR, graphicType: FREE_CANVAS, label: "Rectangular"}
+      - {code: "03", id: RFA_CIRCULAR, graphicType: FREE_CANVAS, label: "Circular"}
     - details: {code: "05", id: POSITION_AREA_FOR_ARTILLERY_PAA, graphicType: NA, label: "Position Area For Artillery (PAA)"}
       entitySubTypes:
-      - {code: "01", id: PAA_RECTANGULAR, graphicType: MAIN, label: "Rectangular"}
-      - {code: "02", id: PAA_CIRCULAR, graphicType: MAIN, label: "Circular"}
-      - {code: "03", id: PAA_IRREGULAR, graphicType: MAIN, label: "Irregular"}
+      - {code: "01", id: PAA_RECTANGULAR, graphicType: FREE_CANVAS, label: "Rectangular"}
+      - {code: "02", id: PAA_CIRCULAR, graphicType: FREE_CANVAS, label: "Circular"}
+      - {code: "03", id: PAA_IRREGULAR, graphicType: FREE_CANVAS, label: "Irregular"}
     - details: {code: "06", id: POINT_TARGETS, graphicType: NA, label: "Point Targets"}
       entitySubTypes:
-      - {code: "01", id: POINT_SINGLE_TARGET, graphicType: MAIN, label: "Point or Single Target"}
-      - {code: "02", id: NUCLEAR_TARGET, graphicType: MAIN, label: "Nuclear Target"}
-      - {code: "03", id: TARGET_RECORDED, graphicType: MAIN, label: "Target-Recorded"}
+      - {code: "01", id: POINT_SINGLE_TARGET, graphicType: FREE_CANVAS, label: "Point or Single Target"}
+      - {code: "02", id: NUCLEAR_TARGET, graphicType: FREE_CANVAS, label: "Nuclear Target"}
+      - {code: "03", id: TARGET_RECORDED, graphicType: FREE_CANVAS, label: "Target-Recorded"}
     - details: {code: "07", id: LINEAR_TARGETS, graphicType: NA, label: "Linear Targets"}
       entitySubTypes:
-      - {code: "01", id: LINEAR_TARGET, graphicType: MAIN, label: "Linear Target"}
-      - {code: "02", id: LINEAR_SMOKE_TARGET, graphicType: MAIN, label: "Linear Smoke Target"}
-      - {code: "03", id: FINAL_PROTECTIVE_FIRE_FPF, graphicType: MAIN, label: "Final Protective Fire (FPF)"}
+      - {code: "01", id: LINEAR_TARGET, graphicType: FREE_CANVAS, label: "Linear Target"}
+      - {code: "02", id: LINEAR_SMOKE_TARGET, graphicType: FREE_CANVAS, label: "Linear Smoke Target"}
+      - {code: "03", id: FINAL_PROTECTIVE_FIRE_FPF, graphicType: FREE_CANVAS, label: "Final Protective Fire (FPF)"}
     - details: {code: "08", id: AREA_TARGETS, graphicType: NA, label: "Area Targets"}
       entitySubTypes:
-      - {code: "01", id: AREA_TARGET, graphicType: MAIN, label: "Area Target"}
-      - {code: "02", id: RECTANGULAR_TARGET, graphicType: MAIN, label: "Rectangular Target"}
-      - {code: "03", id: CIRCULAR_TARGET, graphicType: MAIN, label: "Circular Target"}
-      - {code: "04", id: RECTANGULAR_TARGET_SINGLE_TARGET, graphicType: MAIN, label: "Rectangular Target - Single Target"}
-      - {code: "05", id: SERIES_GROUP_TARGETS, graphicType: MAIN, label: "Series of Targets"}
-      - {code: "06", id: SMOKE_TARGET, graphicType: MAIN, label: "Smoke Target"}
-      - {code: "08", id: BOMB_AREA, graphicType: MAIN, label: "Bomb Area"}
-    - details: {code: "09", id: FIRE_SUPPORT_STATION, graphicType: MAIN, label: "Fire Support Station"}
+      - {code: "01", id: AREA_TARGET, graphicType: FREE_CANVAS, label: "Area Target"}
+      - {code: "02", id: RECTANGULAR_TARGET, graphicType: FREE_CANVAS, label: "Rectangular Target"}
+      - {code: "03", id: CIRCULAR_TARGET, graphicType: FREE_CANVAS, label: "Circular Target"}
+      - {code: "04", id: RECTANGULAR_TARGET_SINGLE_TARGET, graphicType: FREE_CANVAS, label: "Rectangular Target - Single Target"}
+      - {code: "05", id: SERIES_GROUP_TARGETS, graphicType: FREE_CANVAS, label: "Series of Targets"}
+      - {code: "06", id: SMOKE_TARGET, graphicType: FREE_CANVAS, label: "Smoke Target"}
+      - {code: "08", id: BOMB_AREA, graphicType: FREE_CANVAS, label: "Bomb Area"}
+    - details: {code: "09", id: FIRE_SUPPORT_STATION, graphicType: FREE_CANVAS, label: "Fire Support Station"}
     - details: {code: "10", id: FIRE_SUPPORT_AREA, graphicType: NA, label: "Fire Support Area"}
       entitySubTypes:
-      - {code: "01", id: FSA_IRREGULAR, graphicType: MAIN, label: "Irregular"}
-      - {code: "02", id: FSA_RECTANGULAR, graphicType: MAIN, label: "Rectangular"}
-      - {code: "03", id: FSA_CIRCULAR, graphicType: MAIN, label: "Circular"}
+      - {code: "01", id: FSA_IRREGULAR, graphicType: FREE_CANVAS, label: "Irregular"}
+      - {code: "02", id: FSA_RECTANGULAR, graphicType: FREE_CANVAS, label: "Rectangular"}
+      - {code: "03", id: FSA_CIRCULAR, graphicType: FREE_CANVAS, label: "Circular"}
     - details: {code: "11", id: ARTILLERY_TARGET_INTELLIGENCE_ZONE, graphicType: NA, label: "Artillery Target Intelligence Zone"}
       entitySubTypes:
-      - {code: "01", id: ATI_IRREGULAR, graphicType: MAIN, label: "Irregular"}
-      - {code: "02", id: ATI_RECTANGULAR, graphicType: MAIN, label: "Rectangular"}
-      - {code: "03", id: ATI_CIRCULAR, graphicType: MAIN, label: "Circular"}
+      - {code: "01", id: ATI_IRREGULAR, graphicType: FREE_CANVAS, label: "Irregular"}
+      - {code: "02", id: ATI_RECTANGULAR, graphicType: FREE_CANVAS, label: "Rectangular"}
+      - {code: "03", id: ATI_CIRCULAR, graphicType: FREE_CANVAS, label: "Circular"}
     - details: {code: "12", id: CALL_FOR_FIRE_AREA, graphicType: NA, label: "Call for Fire Zone (CFFZ)"}
       entitySubTypes:
-      - {code: "01", id: CFFZ_IRREGULAR, graphicType: MAIN, label: "Irregular"}
-      - {code: "02", id: CFFZ_RECTANGULAR, graphicType: MAIN, label: "Rectangular"}
-      - {code: "03", id: CFFZ_CIRCULAR, graphicType: MAIN, label: "Circular"}
+      - {code: "01", id: CFFZ_IRREGULAR, graphicType: FREE_CANVAS, label: "Irregular"}
+      - {code: "02", id: CFFZ_RECTANGULAR, graphicType: FREE_CANVAS, label: "Rectangular"}
+      - {code: "03", id: CFFZ_CIRCULAR, graphicType: FREE_CANVAS, label: "Circular"}
     - details: {code: "13", id: CENSOR_ZONE, graphicType: NA, label: "Censor Zone"}
       entitySubTypes:
-      - {code: "01", id: CENSOR_IRREGULAR, graphicType: MAIN, label: "Irregular"}
-      - {code: "02", id: CENSOR_RECTANGULAR, graphicType: MAIN, label: "Rectangular"}
-      - {code: "03", id: CENSOR_CIRCULAR, graphicType: MAIN, label: "Circular"}
+      - {code: "01", id: CENSOR_IRREGULAR, graphicType: FREE_CANVAS, label: "Irregular"}
+      - {code: "02", id: CENSOR_RECTANGULAR, graphicType: FREE_CANVAS, label: "Rectangular"}
+      - {code: "03", id: CENSOR_CIRCULAR, graphicType: FREE_CANVAS, label: "Circular"}
     - details: {code: "14", id: CRITICAL_FRIENDLY_ZONE, graphicType: NA, label: "Critical Friendly Zone"}
       entitySubTypes:
-      - {code: "01", id: CFZ_IRREGULAR, graphicType: MAIN, label: "Irregular"}
-      - {code: "02", id: CFZ_RECTANGULAR, graphicType: MAIN, label: "Rectangular"}
-      - {code: "03", id: CFZ_CIRCULAR, graphicType: MAIN, label: "Circular"}
+      - {code: "01", id: CFZ_IRREGULAR, graphicType: FREE_CANVAS, label: "Irregular"}
+      - {code: "02", id: CFZ_RECTANGULAR, graphicType: FREE_CANVAS, label: "Rectangular"}
+      - {code: "03", id: CFZ_CIRCULAR, graphicType: FREE_CANVAS, label: "Circular"}
     - details: {code: "15", id: DEAD_SPACE_AREA, graphicType: NA, label: "Dead Space Area"}
       entitySubTypes:
-      - {code: "01", id: DA_IRREGULAR, graphicType: MAIN, label: "Irregular"}
-      - {code: "02", id: DA_RECTANGULAR, graphicType: MAIN, label: "Rectangular"}
-      - {code: "03", id: DA_CIRCULAR, graphicType: MAIN, label: "Circular"}
+      - {code: "01", id: DA_IRREGULAR, graphicType: FREE_CANVAS, label: "Irregular"}
+      - {code: "02", id: DA_RECTANGULAR, graphicType: FREE_CANVAS, label: "Rectangular"}
+      - {code: "03", id: DA_CIRCULAR, graphicType: FREE_CANVAS, label: "Circular"}
     - details: {code: "17", id: TARGET_BUILD_UP_AREA, graphicType: NA, label: "Target Build-up Area"}
       entitySubTypes:
-      - {code: "01", id: TBA_IRREGULAR, graphicType: MAIN, label: "Irregular"}
-      - {code: "02", id: TBA_RECTANGULAR, graphicType: MAIN, label: "Rectangular"}
-      - {code: "03", id: TBA_CIRCULAR, graphicType: MAIN, label: "Circular"}
+      - {code: "01", id: TBA_IRREGULAR, graphicType: FREE_CANVAS, label: "Irregular"}
+      - {code: "02", id: TBA_RECTANGULAR, graphicType: FREE_CANVAS, label: "Rectangular"}
+      - {code: "03", id: TBA_CIRCULAR, graphicType: FREE_CANVAS, label: "Circular"}
     - details: {code: "18", id: TARGET_VALUE_AREA, graphicType: NA, label: "Target Value Area"}
       entitySubTypes:
-      - {code: "01", id: TVAR_IRREGULAR, graphicType: MAIN, label: "Irregular"}
-      - {code: "02", id: TVAR_RECTANGULAR, graphicType: MAIN, label: "Rectangular"}
-      - {code: "03", id: TVAR_CIRCULAR, graphicType: MAIN, label: "Circular"}
+      - {code: "01", id: TVAR_IRREGULAR, graphicType: FREE_CANVAS, label: "Irregular"}
+      - {code: "02", id: TVAR_RECTANGULAR, graphicType: FREE_CANVAS, label: "Rectangular"}
+      - {code: "03", id: TVAR_CIRCULAR, graphicType: FREE_CANVAS, label: "Circular"}
     - details: {code: "19", id: ZONE_OF_RESPONSIBILITY, graphicType: NA, label: "Zone of Responsibility"}
       entitySubTypes:
-      - {code: "01", id: ZOR_IRREGULAR, graphicType: MAIN, label: "Irregular"}
-      - {code: "02", id: ZOR_RECTANGULAR, graphicType: MAIN, label: "Rectangular"}
-      - {code: "03", id: ZOR_CIRCULAR, graphicType: MAIN, label: "Circular"}
-    - details: {code: "20", id: TERMINALLY_GUIDED_MUNITION_FOOTPRINT_TGMF, graphicType: MAIN, label: "Terminally Guided Munition Footprint (TGMF)"}
-    - details: {code: "21", id: WEAPON_SENSOR_RANGE_FAN_CIRCULAR, graphicType: MAIN, label: "Weapon/Sensor Range fan-Circular"}
-    - details: {code: "22", id: WEAPON_SENSOR_RANGE_FAN_SECTOR, graphicType: MAIN, label: "Weapon/Sensor Range fan-Sector"}
+      - {code: "01", id: ZOR_IRREGULAR, graphicType: FREE_CANVAS, label: "Irregular"}
+      - {code: "02", id: ZOR_RECTANGULAR, graphicType: FREE_CANVAS, label: "Rectangular"}
+      - {code: "03", id: ZOR_CIRCULAR, graphicType: FREE_CANVAS, label: "Circular"}
+    - details: {code: "20", id: TERMINALLY_GUIDED_MUNITION_FOOTPRINT_TGMF, graphicType: FREE_CANVAS, label: "Terminally Guided Munition Footprint (TGMF)"}
+    - details: {code: "21", id: WEAPON_SENSOR_RANGE_FAN_CIRCULAR, graphicType: FREE_CANVAS, label: "Weapon/Sensor Range fan-Circular"}
+    - details: {code: "22", id: WEAPON_SENSOR_RANGE_FAN_SECTOR, graphicType: FREE_CANVAS, label: "Weapon/Sensor Range fan-Sector"}
     - details: {code: "23", id: KILL_BOX, graphicType: NA, label: "Kill Box"}
       entitySubTypes:
-      - {code: "01", id: BKB_IRREGULAR_BLUE, graphicType: MAIN, label: "Irregular-Blue"}
-      - {code: "02", id: BKB_RECTANGULAR_BLUE, graphicType: MAIN, label: "Rectangular-Blue"}
-      - {code: "03", id: BKB_CIRCULAR_BLUE, graphicType: MAIN, label: "Circular-Blue"}
-      - {code: "04", id: PKB_IRREGULAR_PURPLE, graphicType: MAIN, label: "Irregular-Purple"}
-      - {code: "05", id: PKB_RECTANGULAR_PURPLE, graphicType: MAIN, label: "Rectangular-Purple"}
-      - {code: "06", id: PKB_CIRCULAR_PURPLE, graphicType: MAIN, label: "Circular-Purple"}
-    - details: {code: "24", id: ARTILLERY_MANOEUVRE_AREA, graphicType: MAIN, label: "Artillery Manoeuvre Area"}
-    - details: {code: "25", id: ARTILLERY_RESERVED_AREA, graphicType: MAIN, label: "Artillery Reserved Area"}
+      - {code: "01", id: BKB_IRREGULAR_BLUE, graphicType: FREE_CANVAS, label: "Irregular-Blue"}
+      - {code: "02", id: BKB_RECTANGULAR_BLUE, graphicType: FREE_CANVAS, label: "Rectangular-Blue"}
+      - {code: "03", id: BKB_CIRCULAR_BLUE, graphicType: FREE_CANVAS, label: "Circular-Blue"}
+      - {code: "04", id: PKB_IRREGULAR_PURPLE, graphicType: FREE_CANVAS, label: "Irregular-Purple"}
+      - {code: "05", id: PKB_RECTANGULAR_PURPLE, graphicType: FREE_CANVAS, label: "Rectangular-Purple"}
+      - {code: "06", id: PKB_CIRCULAR_PURPLE, graphicType: FREE_CANVAS, label: "Circular-Purple"}
+    - details: {code: "24", id: ARTILLERY_MANOEUVRE_AREA, graphicType: FREE_CANVAS, label: "Artillery Manoeuvre Area"}
+    - details: {code: "25", id: ARTILLERY_RESERVED_AREA, graphicType: FREE_CANVAS, label: "Artillery Reserved Area"}
   - details: {code: "25", id: FIRES_POINTS, graphicType: NA, label: "Fires Points"}
     entityTypes:
-    - details: {code: "01", id: FIRING_POINT, graphicType: MAIN, label: "Firing Point"}
-    - details: {code: "02", id: HIDE_POINT, graphicType: MAIN, label: "Hide Point"}
-    - details: {code: "03", id: LAUNCH_POINT, graphicType: MAIN, label: "Launch Point"}
-    - details: {code: "04", id: RELOAD_POINT, graphicType: MAIN, label: "Reload Point"}
-    - details: {code: "05", id: SURVEY_CONTROL_POINT, graphicType: MAIN, label: "Survey Control Point"}
-    - details: {code: "06", id: KNOWN_POINT, graphicType: MAIN, label: "Known Point"}
+    - details: {code: "01", id: FIRING_POINT, graphicType: FREE_CANVAS, label: "Firing Point"}
+    - details: {code: "02", id: HIDE_POINT, graphicType: FREE_CANVAS, label: "Hide Point"}
+    - details: {code: "03", id: LAUNCH_POINT, graphicType: FREE_CANVAS, label: "Launch Point"}
+    - details: {code: "04", id: RELOAD_POINT, graphicType: FREE_CANVAS, label: "Reload Point"}
+    - details: {code: "05", id: SURVEY_CONTROL_POINT, graphicType: FREE_CANVAS, label: "Survey Control Point"}
+    - details: {code: "06", id: KNOWN_POINT, graphicType: FREE_CANVAS, label: "Known Point"}
   - details: {code: "26", id: FIRE_LINES, graphicType: NA, label: "Fire Lines"}
     entityTypes:
-    - details: {code: "01", id: FIRE_SUPPORT_COORDINATION_LINE_FSCL, graphicType: MAIN, label: "Fire Support Coordination Line (FSCL)"}
-    - details: {code: "02", id: COORDINATED_FIRE_LINE_CFL, graphicType: MAIN, label: "Coordinated Fire Line (CFL)"}
-    - details: {code: "03", id: NO_FIRE_LINE, graphicType: MAIN, label: "No Fire Line"}
-    - details: {code: "04", id: BATTLEFIELD_COORDINATION_LINE, graphicType: MAIN, label: "Battlefield Coordination Line"}
-    - details: {code: "05", id: RESTRICTIVE_FIRE_LINE, graphicType: MAIN, label: "Restrictive Fire Line"}
-    - details: {code: "06", id: MUNITION_FLIGHT_PATH, graphicType: MAIN, label: "Munition Flight Path"}
+    - details: {code: "01", id: FIRE_SUPPORT_COORDINATION_LINE_FSCL, graphicType: FREE_CANVAS, label: "Fire Support Coordination Line (FSCL)"}
+    - details: {code: "02", id: COORDINATED_FIRE_LINE_CFL, graphicType: FREE_CANVAS, label: "Coordinated Fire Line (CFL)"}
+    - details: {code: "03", id: NO_FIRE_LINE, graphicType: FREE_CANVAS, label: "No Fire Line"}
+    - details: {code: "04", id: BATTLEFIELD_COORDINATION_LINE, graphicType: FREE_CANVAS, label: "Battlefield Coordination Line"}
+    - details: {code: "05", id: RESTRICTIVE_FIRE_LINE, graphicType: FREE_CANVAS, label: "Restrictive Fire Line"}
+    - details: {code: "06", id: MUNITION_FLIGHT_PATH, graphicType: FREE_CANVAS, label: "Munition Flight Path"}
   - details: {code: "27", id: PROTECTION_AREAS, graphicType: NA, label: "Protection Areas"}
     entityTypes:
-    - details: {code: "01", id: OBSTACLE_BELT, graphicType: MAIN, label: "Obstacle Belt"}
-    - details: {code: "02", id: OBSTACLE_ZONE, graphicType: MAIN, label: "Obstacle Zone"}
-    - details: {code: "03", id: OBSTACLE_FREE_ZONE, graphicType: MAIN, label: "Obstacle Free Zone"}
-    - details: {code: "04", id: OBSTACLE_RESTRICTED_ZONE, graphicType: MAIN, label: "Obstacle Restricted Zone"}
+    - details: {code: "01", id: OBSTACLE_BELT, graphicType: FREE_CANVAS, label: "Obstacle Belt"}
+    - details: {code: "02", id: OBSTACLE_ZONE, graphicType: FREE_CANVAS, label: "Obstacle Zone"}
+    - details: {code: "03", id: OBSTACLE_FREE_ZONE, graphicType: FREE_CANVAS, label: "Obstacle Free Zone"}
+    - details: {code: "04", id: OBSTACLE_RESTRICTED_ZONE, graphicType: FREE_CANVAS, label: "Obstacle Restricted Zone"}
     - details: {code: "05", id: OBSTACLE_EFFECTS, graphicType: NA, label: "Obstacle Effects"}
       entitySubTypes:
-      - {code: "01", id: BLOCK, graphicType: MAIN, label: "Block"}
-      - {code: "02", id: DISRUPT, graphicType: MAIN, label: "Disrupt"}
-      - {code: "03", id: FIX, graphicType: MAIN, label: "Fix"}
-      - {code: "04", id: TURN, graphicType: MAIN, label: "Turn"}
+      - {code: "01", id: BLOCK, graphicType: FREE_CANVAS, label: "Block"}
+      - {code: "02", id: DISRUPT, graphicType: FREE_CANVAS, label: "Disrupt"}
+      - {code: "03", id: FIX, graphicType: FREE_CANVAS, label: "Fix"}
+      - {code: "04", id: TURN, graphicType: FREE_CANVAS, label: "Turn"}
     - details: {code: "06", id: OBSTACLE_BYPASS, graphicType: NA, label: "Obstacle Bypass"}
       entitySubTypes:
-      - {code: "01", id: OBSTACLE_BYPASS_EASY, graphicType: MAIN, label: "Easy"}
-      - {code: "02", id: OBSTACLE_BYPASS_DIFFICULT, graphicType: MAIN, label: "Difficult"}
-      - {code: "03", id: OBSTACLE_BYPASS_IMPOSSIBLE, graphicType: MAIN, label: "Impossible"}
+      - {code: "01", id: OBSTACLE_BYPASS_EASY, graphicType: FREE_CANVAS, label: "Easy"}
+      - {code: "02", id: OBSTACLE_BYPASS_DIFFICULT, graphicType: FREE_CANVAS, label: "Difficult"}
+      - {code: "03", id: OBSTACLE_BYPASS_IMPOSSIBLE, graphicType: FREE_CANVAS, label: "Impossible"}
     - details: {code: "07", id: MINEFIELD, graphicType: NA, label: "Minefield"}
       entitySubTypes:
-      - {code: "01", id: MINEFIELD_COMPLETED, graphicType: MAIN, label: "Completed"}
-      - {code: "07", id: MINEFIELD_DYNAMIC_DEPICTION, graphicType: MAIN, label: "Dynamic Depiction"}
-    - details: {code: "08", id: MINED_AREA, graphicType: MAIN, label: "Mined Area"}
+      - {code: "01", id: MINEFIELD_COMPLETED, graphicType: FREE_CANVAS, label: "Completed"}
+      - {code: "07", id: MINEFIELD_DYNAMIC_DEPICTION, graphicType: FREE_CANVAS, label: "Dynamic Depiction"}
+    - details: {code: "08", id: MINED_AREA, graphicType: FREE_CANVAS, label: "Mined Area"}
       entitySubTypes:
-      - {code: "01", id: MINED_AREA_FENCED, graphicType: MAIN, label: "Mined Area, Fenced"}
-    - details: {code: "10", id: UXO_AREA, graphicType: MAIN, label: "Unexploded Explosive Ordnance (UXO) Area"}
-    - details: {code: "11", id: BRIDGE_OR_GAP, graphicType: MAIN, label: "Bridge or Gap"}
+      - {code: "01", id: MINED_AREA_FENCED, graphicType: FREE_CANVAS, label: "Mined Area, Fenced"}
+    - details: {code: "10", id: UXO_AREA, graphicType: FREE_CANVAS, label: "Unexploded Explosive Ordnance (UXO) Area"}
+    - details: {code: "11", id: BRIDGE_OR_GAP, graphicType: FREE_CANVAS, label: "Bridge or Gap"}
     - details: {code: "12", id: ROADBLOCKS_CRATERS_BLOWN_BRIDGES, graphicType: NA, label: "Roadblocks, Craters and Blown Bridges"}
       entitySubTypes:
-      - {code: "01", id: PLANNED, graphicType: MAIN, label: "Planned"}
-      - {code: "02", id: EXPLOSIVES_STATE_OF_READINESS_1, graphicType: MAIN, label: "Explosives-State of Readiness 1 (Safe)"}
-      - {code: "03", id: EXPLOSIVES_STATE_OF_READINESS_2, graphicType: MAIN, label: "Explosives-State of Readiness 2 (armed but passable)"}
-      - {code: "04", id: ROADBLOCK_COMPLETE_EXECUTED, graphicType: MAIN, label: "Roadblock Complete (Executed)"}
-    - details: {code: "13", id: ASSAULT_CROSSING, graphicType: MAIN, label: "Assault Crossing"}
-    - details: {code: "15", id: FORD_EASY, graphicType: MAIN, label: "Ford Easy"}
-    - details: {code: "16", id: FORD_DIFFICULT, graphicType: MAIN, label: "Ford Difficult"}
-    - details: {code: "17", id: BIOLOGICAL_CONTAMINATED_AREA, graphicType: MAIN, label: "Biological Contaminated Area"}
+      - {code: "01", id: PLANNED, graphicType: FREE_CANVAS, label: "Planned"}
+      - {code: "02", id: EXPLOSIVES_STATE_OF_READINESS_1, graphicType: FREE_CANVAS, label: "Explosives-State of Readiness 1 (Safe)"}
+      - {code: "03", id: EXPLOSIVES_STATE_OF_READINESS_2, graphicType: FREE_CANVAS, label: "Explosives-State of Readiness 2 (armed but passable)"}
+      - {code: "04", id: ROADBLOCK_COMPLETE_EXECUTED, graphicType: FREE_CANVAS, label: "Roadblock Complete (Executed)"}
+    - details: {code: "13", id: ASSAULT_CROSSING, graphicType: FREE_CANVAS, label: "Assault Crossing"}
+    - details: {code: "15", id: FORD_EASY, graphicType: FREE_CANVAS, label: "Ford Easy"}
+    - details: {code: "16", id: FORD_DIFFICULT, graphicType: FREE_CANVAS, label: "Ford Difficult"}
+    - details: {code: "17", id: BIOLOGICAL_CONTAMINATED_AREA, graphicType: FREE_CANVAS, label: "Biological Contaminated Area"}
       entitySubTypes:
-      - {code: "01", id: BIO_TOXIC_INDUSTRIAL_MATERIAL, graphicType: MAIN, label: "Toxic Industrial Material"}
-    - details: {code: "18", id: CHEMICAL_CONTAMINATED_AREA, graphicType: MAIN, label: "Chemical Contaminated Area"}
+      - {code: "01", id: BIO_TOXIC_INDUSTRIAL_MATERIAL, graphicType: FREE_CANVAS, label: "Toxic Industrial Material"}
+    - details: {code: "18", id: CHEMICAL_CONTAMINATED_AREA, graphicType: FREE_CANVAS, label: "Chemical Contaminated Area"}
       entitySubTypes:
-      - {code: "01", id: CHEM_TOXIC_INDUSTRIAL_MATERIAL, graphicType: MAIN, label: "Toxic Industrial Material"}
-    - details: {code: "19", id: NUCLEAR_CONTAMINATED_AREA, graphicType: MAIN, label: "Nuclear Contaminated Area"}
-    - details: {code: "20", id: RADIOLOGICAL_CONTAMINATED_AREA, graphicType: MAIN, label: "Radiological Contaminated Area"}
+      - {code: "01", id: CHEM_TOXIC_INDUSTRIAL_MATERIAL, graphicType: FREE_CANVAS, label: "Toxic Industrial Material"}
+    - details: {code: "19", id: NUCLEAR_CONTAMINATED_AREA, graphicType: FREE_CANVAS, label: "Nuclear Contaminated Area"}
+    - details: {code: "20", id: RADIOLOGICAL_CONTAMINATED_AREA, graphicType: FREE_CANVAS, label: "Radiological Contaminated Area"}
       entitySubTypes:
-      - {code: "01", id: RAD_TOXIC_INDUSTRIAL_MATERIAL, graphicType: MAIN, label: "Toxic Industrial Material"}
-    - details: {code: "21", id: MINIMUM_SAFE_DISTANCE_ZONE, graphicType: MAIN, label: "Minimum Safe Distance Zone"}
+      - {code: "01", id: RAD_TOXIC_INDUSTRIAL_MATERIAL, graphicType: FREE_CANVAS, label: "Toxic Industrial Material"}
+    - details: {code: "21", id: MINIMUM_SAFE_DISTANCE_ZONE, graphicType: FREE_CANVAS, label: "Minimum Safe Distance Zone"}
       entitySubTypes:
-      - {code: "01", id: MULTIPLE_STRIKE, graphicType: MAIN, label: "Multiple Strike"}
-    - details: {code: "22", id: RADIATION_DOSE_RATE_CONTOUR_LINES, graphicType: MAIN, label: "Radiation Dose Rate Contour Lines"}
+      - {code: "01", id: MULTIPLE_STRIKE, graphicType: FREE_CANVAS, label: "Multiple Strike"}
+    - details: {code: "22", id: RADIATION_DOSE_RATE_CONTOUR_LINES, graphicType: FREE_CANVAS, label: "Radiation Dose Rate Contour Lines"}
   - details: {code: "28", id: PROTECTION_POINTS, graphicType: NA, label: "Protection Points"}
     entityTypes:
-    - details: {code: "01", id: ABATIS, graphicType: MAIN, label: "Abatis"}
-    - details: {code: "02", id: ANTIPERSONNEL_MINE, graphicType: MAIN, label: "Antipersonnel Mine"}
+    - details: {code: "01", id: ABATIS, graphicType: FREE_CANVAS, label: "Abatis"}
+    - details: {code: "02", id: ANTIPERSONNEL_MINE, graphicType: FREE_CANVAS, label: "Antipersonnel Mine"}
       entitySubTypes:
-      - {code: "01", id: ANTIPERSONNEL_MINE_WITH_DIRECTIONAL_EFFECTS, graphicType: MAIN, label: "Antipersonnel Mine with Directional Effects"}
-    - details: {code: "03", id: ANTITANK_MINE, graphicType: MAIN, label: "Antitank Mine"}
-    - details: {code: "04", id: ANTITANK_MINE_ANTIHANDLING, graphicType: MAIN, label: "Antitank Mine with Anti-handling Device"}
-    - details: {code: "05", id: WIDE_AREA_ANTITANK_MINE, graphicType: MAIN, label: "Wide Area Antitank Mine"}
-    - details: {code: "06", id: UNSPECIFIED_MINE, graphicType: MAIN, label: "Unspecified Mine"}
-    - details: {code: "07", id: BOOBY_TRAP, graphicType: MAIN, label: "Booby Trap"}
-    - details: {code: "08", id: ENGINEER_REGULATING_POINT, graphicType: MAIN, label: "Engineer Regulating Point"}
-    - details: {code: "09", id: SHELTER, graphicType: MAIN, label: "Shelter"}
-    - details: {code: "10", id: SHELTER_ABOVE_GROUND, graphicType: MAIN, label: "Shelter Above Ground"}
-    - details: {code: "11", id: BELOW_GROUND_SHELTER, graphicType: MAIN, label: "Below Ground Shelter"}
-    - details: {code: "12", id: FORT, graphicType: MAIN, label: "Fort"}
-    - details: {code: "13", id: CHEMICAL_EVENT, graphicType: MAIN, label: "Chemical Event"}
+      - {code: "01", id: ANTIPERSONNEL_MINE_WITH_DIRECTIONAL_EFFECTS, graphicType: FREE_CANVAS, label: "Antipersonnel Mine with Directional Effects"}
+    - details: {code: "03", id: ANTITANK_MINE, graphicType: FREE_CANVAS, label: "Antitank Mine"}
+    - details: {code: "04", id: ANTITANK_MINE_ANTIHANDLING, graphicType: FREE_CANVAS, label: "Antitank Mine with Anti-handling Device"}
+    - details: {code: "05", id: WIDE_AREA_ANTITANK_MINE, graphicType: FREE_CANVAS, label: "Wide Area Antitank Mine"}
+    - details: {code: "06", id: UNSPECIFIED_MINE, graphicType: FREE_CANVAS, label: "Unspecified Mine"}
+    - details: {code: "07", id: BOOBY_TRAP, graphicType: FREE_CANVAS, label: "Booby Trap"}
+    - details: {code: "08", id: ENGINEER_REGULATING_POINT, graphicType: FREE_CANVAS, label: "Engineer Regulating Point"}
+    - details: {code: "09", id: SHELTER, graphicType: FREE_CANVAS, label: "Shelter"}
+    - details: {code: "10", id: SHELTER_ABOVE_GROUND, graphicType: FREE_CANVAS, label: "Shelter Above Ground"}
+    - details: {code: "11", id: BELOW_GROUND_SHELTER, graphicType: FREE_CANVAS, label: "Below Ground Shelter"}
+    - details: {code: "12", id: FORT, graphicType: FREE_CANVAS, label: "Fort"}
+    - details: {code: "13", id: CHEMICAL_EVENT, graphicType: FREE_CANVAS, label: "Chemical Event"}
       entitySubTypes:
-      - {code: "01", id: CHEM_TOXIC_INDUSTRIAL_MATERIAL_POINT, graphicType: MAIN, label: "Toxic Industrial Material"}
-    - details: {code: "14", id: BIOLOGICAL_EVENT, graphicType: MAIN, label: "Biological Event"}
+      - {code: "01", id: CHEM_TOXIC_INDUSTRIAL_MATERIAL_POINT, graphicType: FREE_CANVAS, label: "Toxic Industrial Material"}
+    - details: {code: "14", id: BIOLOGICAL_EVENT, graphicType: FREE_CANVAS, label: "Biological Event"}
       entitySubTypes:
-      - {code: "01", id: BIO_TOXIC_INDUSTRIAL_MATERIAL_POINT, graphicType: MAIN, label: "Toxic Industrial Material"}
-    - details: {code: "15", id: NUCLEAR_EVENT, graphicType: MAIN, label: "Nuclear Event"}
-    - details: {code: "16", id: NUCLEAR_FALLOUT_PRODUCING_EVENT, graphicType: MAIN, label: "Nuclear Fallout Producing Event"}
-    - details: {code: "17", id: RADIOLOGICAL, graphicType: MAIN, label: "Radiological"}
+      - {code: "01", id: BIO_TOXIC_INDUSTRIAL_MATERIAL_POINT, graphicType: FREE_CANVAS, label: "Toxic Industrial Material"}
+    - details: {code: "15", id: NUCLEAR_EVENT, graphicType: FREE_CANVAS, label: "Nuclear Event"}
+    - details: {code: "16", id: NUCLEAR_FALLOUT_PRODUCING_EVENT, graphicType: FREE_CANVAS, label: "Nuclear Fallout Producing Event"}
+    - details: {code: "17", id: RADIOLOGICAL, graphicType: FREE_CANVAS, label: "Radiological"}
       entitySubTypes:
-      - {code: "01", id: RAD_TOXIC_INDUSTRIAL_MATERIAL_POINT, graphicType: MAIN, label: "Toxic Industrial Material"}
-    - details: {code: "18", id: GENERAL_DECONTAMINATION_POINT_SITE, graphicType: MAIN, label: "General Decontamination Point/Site"}
+      - {code: "01", id: RAD_TOXIC_INDUSTRIAL_MATERIAL_POINT, graphicType: FREE_CANVAS, label: "Toxic Industrial Material"}
+    - details: {code: "18", id: GENERAL_DECONTAMINATION_POINT_SITE, graphicType: FREE_CANVAS, label: "General Decontamination Point/Site"}
       entitySubTypes:
-      - {code: "01", id: DECON_ALTERNATE, graphicType: MAIN, label: "Alternate"}
-      - {code: "02", id: DECON_EQUIPMENT, graphicType: MAIN, label: "Equipment"}
-      - {code: "03", id: DECON_TROOP, graphicType: MAIN, label: "Troop"}
-      - {code: "04", id: DECON_EQUIPMENT_TROOP, graphicType: MAIN, label: "Equipment/Troop"}
-      - {code: "05", id: DECON_OPERATIONAL, graphicType: MAIN, label: "Operational"}
-      - {code: "06", id: DECON_THOROUGH, graphicType: MAIN, label: "Thorough"}
-      - {code: "07", id: DECON_MAIN_EQUIPMENT, graphicType: MAIN, label: "Main Equipment"}
-      - {code: "08", id: DECON_FORWARD_TROOP, graphicType: MAIN, label: "Forward Troop"}
-      - {code: "09", id: DECON_WOUNDED_PERSONNEL, graphicType: MAIN, label: "Wounded Personnel"}
+      - {code: "01", id: DECON_ALTERNATE, graphicType: FREE_CANVAS, label: "Alternate"}
+      - {code: "02", id: DECON_EQUIPMENT, graphicType: FREE_CANVAS, label: "Equipment"}
+      - {code: "03", id: DECON_TROOP, graphicType: FREE_CANVAS, label: "Troop"}
+      - {code: "04", id: DECON_EQUIPMENT_TROOP, graphicType: FREE_CANVAS, label: "Equipment/Troop"}
+      - {code: "05", id: DECON_OPERATIONAL, graphicType: FREE_CANVAS, label: "Operational"}
+      - {code: "06", id: DECON_THOROUGH, graphicType: FREE_CANVAS, label: "Thorough"}
+      - {code: "07", id: DECON_MAIN_EQUIPMENT, graphicType: FREE_CANVAS, label: "Main Equipment"}
+      - {code: "08", id: DECON_FORWARD_TROOP, graphicType: FREE_CANVAS, label: "Forward Troop"}
+      - {code: "09", id: DECON_WOUNDED_PERSONNEL, graphicType: FREE_CANVAS, label: "Wounded Personnel"}
     - details: {code: "19", id: OTHER_SIMILAR_OBSTACLES, graphicType: NA, label: "Tetrahedrons, Dragons Teeth, and Other Similar Obstacles"}
       entitySubTypes:
-      - {code: "01", id: FIXED_PREFABRICATED, graphicType: MAIN, label: "Fixed and Prefabricated"}
-      - {code: "02", id: MOVABLE, graphicType: MAIN, label: "Movable"}
-      - {code: "03", id: MOVABLE_PREFABRICATED, graphicType: MAIN, label: "Movable and Prefabricated"}
+      - {code: "01", id: FIXED_PREFABRICATED, graphicType: FREE_CANVAS, label: "Fixed and Prefabricated"}
+      - {code: "02", id: MOVABLE, graphicType: FREE_CANVAS, label: "Movable"}
+      - {code: "03", id: MOVABLE_PREFABRICATED, graphicType: FREE_CANVAS, label: "Movable and Prefabricated"}
     - details: {code: "20", id: VERTICAL_OBSTRUCTIONS, graphicType: NA, label: "Vertical Obstructions"}
       entitySubTypes:
-      - {code: "01", id: TOWER_LOW, graphicType: MAIN, label: "Tower-Low"}
-      - {code: "02", id: TOWER_HIGH, graphicType: MAIN, label: "Tower-High"}
-      - {code: "03", id: OVERHEAD_WIRE, graphicType: MAIN, label: "Overhead Wire"}
+      - {code: "01", id: TOWER_LOW, graphicType: FREE_CANVAS, label: "Tower-Low"}
+      - {code: "02", id: TOWER_HIGH, graphicType: FREE_CANVAS, label: "Tower-High"}
+      - {code: "03", id: OVERHEAD_WIRE, graphicType: FREE_CANVAS, label: "Overhead Wire"}
   - details: {code: "29", id: PROTECTION_LINES, graphicType: NA, label: "Protection Lines"}
     entityTypes:
-    - details: {code: "01", id: OBSTACLE_LINE, graphicType: MAIN, label: "Obstacle Line"}
+    - details: {code: "01", id: OBSTACLE_LINE, graphicType: FREE_CANVAS, label: "Obstacle Line"}
       entitySubTypes:
-      - {code: "01", id: MINE_LINE, graphicType: MAIN, label: "Mineline"}
+      - {code: "01", id: MINE_LINE, graphicType: FREE_CANVAS, label: "Mineline"}
     - details: {code: "02", id: ANTITANK_OBSTACLES, graphicType: NA, label: "Antitank Obstacles"}
       entitySubTypes:
-      - {code: "01", id: AT_UNDER_CONSTRUCTION, graphicType: MAIN, label: "Under Construction"}
-      - {code: "02", id: AT_COMPLETED, graphicType: MAIN, label: "Completed"}
-      - {code: "03", id: AT_REINFORCED_WITH_MINES, graphicType: MAIN, label: "Reinforced-with Antitank Mines"}
-      - {code: "04", id: AT_ANTITANK_WALL, graphicType: MAIN, label: "Antitank Wall"}
+      - {code: "01", id: AT_UNDER_CONSTRUCTION, graphicType: FREE_CANVAS, label: "Under Construction"}
+      - {code: "02", id: AT_COMPLETED, graphicType: FREE_CANVAS, label: "Completed"}
+      - {code: "03", id: AT_REINFORCED_WITH_MINES, graphicType: FREE_CANVAS, label: "Reinforced-with Antitank Mines"}
+      - {code: "04", id: AT_ANTITANK_WALL, graphicType: FREE_CANVAS, label: "Antitank Wall"}
     - details: {code: "03", id: WIRE_OBSTACLES, graphicType: NA, label: "Wire Obstacles"}
       entitySubTypes:
-      - {code: "01", id: UNSPECIFIED_WIRE, graphicType: MAIN, label: "Unspecified Wire"}
-      - {code: "02", id: SINGLE_FENCE_WIRE, graphicType: MAIN, label: "Single Fence Wire"}
-      - {code: "03", id: DOUBLE_FENCE_WIRE, graphicType: MAIN, label: "Double Fence Wire"}
-      - {code: "04", id: DOUBLE_APRON_FENCE, graphicType: MAIN, label: "Double Apron Fence"}
-      - {code: "05", id: LOW_WIRE_FENCE, graphicType: MAIN, label: "Low Wire Fence"}
-      - {code: "06", id: HIGH_WIRE_FENCE, graphicType: MAIN, label: "High Wire Fence"}
-      - {code: "07", id: SINGLE_CONCERTINA, graphicType: MAIN, label: "Single Concertina"}
-      - {code: "08", id: DOUBLE_STRAND_CONCERTINA, graphicType: MAIN, label: "Double Strand Concertina"}
-      - {code: "09", id: TRIPLE_STRAND_CONCERTINA, graphicType: MAIN, label: "Triple Strand Concertina"}
-    - details: {code: "04", id: MINE_CLUSTER, graphicType: MAIN, label: "Mine Cluster"}
-    - details: {code: "05", id: TRIP_WIRE, graphicType: MAIN, label: "Trip Wire"}
-    - details: {code: "06", id: LANE, graphicType: MAIN, label: "Lane"}
-    - details: {code: "07", id: FERRY, graphicType: MAIN, label: "Ferry"}
-    - details: {code: "08", id: RAFT_SITE, graphicType: MAIN, label: "Raft Site"}
-    - details: {code: "09", id: FORTIFIED_LINE, graphicType: MAIN, label: "Fortified Line"}
-    - details: {code: "10", id: FORTIFIED_POSITION, graphicType: MAIN, label: "Fortified Position"}
+      - {code: "01", id: UNSPECIFIED_WIRE, graphicType: FREE_CANVAS, label: "Unspecified Wire"}
+      - {code: "02", id: SINGLE_FENCE_WIRE, graphicType: FREE_CANVAS, label: "Single Fence Wire"}
+      - {code: "03", id: DOUBLE_FENCE_WIRE, graphicType: FREE_CANVAS, label: "Double Fence Wire"}
+      - {code: "04", id: DOUBLE_APRON_FENCE, graphicType: FREE_CANVAS, label: "Double Apron Fence"}
+      - {code: "05", id: LOW_WIRE_FENCE, graphicType: FREE_CANVAS, label: "Low Wire Fence"}
+      - {code: "06", id: HIGH_WIRE_FENCE, graphicType: FREE_CANVAS, label: "High Wire Fence"}
+      - {code: "07", id: SINGLE_CONCERTINA, graphicType: FREE_CANVAS, label: "Single Concertina"}
+      - {code: "08", id: DOUBLE_STRAND_CONCERTINA, graphicType: FREE_CANVAS, label: "Double Strand Concertina"}
+      - {code: "09", id: TRIPLE_STRAND_CONCERTINA, graphicType: FREE_CANVAS, label: "Triple Strand Concertina"}
+    - details: {code: "04", id: MINE_CLUSTER, graphicType: FREE_CANVAS, label: "Mine Cluster"}
+    - details: {code: "05", id: TRIP_WIRE, graphicType: FREE_CANVAS, label: "Trip Wire"}
+    - details: {code: "06", id: LANE, graphicType: FREE_CANVAS, label: "Lane"}
+    - details: {code: "07", id: FERRY, graphicType: FREE_CANVAS, label: "Ferry"}
+    - details: {code: "08", id: RAFT_SITE, graphicType: FREE_CANVAS, label: "Raft Site"}
+    - details: {code: "09", id: FORTIFIED_LINE, graphicType: FREE_CANVAS, label: "Fortified Line"}
+    - details: {code: "10", id: FORTIFIED_POSITION, graphicType: FREE_CANVAS, label: "Fortified Position"}
   - details: {code: "30", id: INTELLIGENCE_LINES, graphicType: NA, label: "Intelligence Lines"}
     entityTypes:
-    - details: {code: "01", id: INTELLIGENCE_COORDINATION_LINE, graphicType: MAIN, label: "Intelligence Coordination Line"}
+    - details: {code: "01", id: INTELLIGENCE_COORDINATION_LINE, graphicType: FREE_CANVAS, label: "Intelligence Coordination Line"}
   - details: {code: "31", id: SUSTAINMENT_AREAS, graphicType: NA, label: "Sustainment Areas"}
     entityTypes:
-    - details: {code: "01", id: DETAINEE_HOLDING_AREA, graphicType: MAIN, label: "Detainee Holding Area"}
-    - details: {code: "02", id: EPW_HOLDING_AREA, graphicType: MAIN, label: "Enemy Prisoner of War Holding Area"}
-    - details: {code: "03", id: FARP, graphicType: MAIN, label: "Forward Arming and Refueling Point"}
-    - details: {code: "04", id: REFUGEE_HOLDING_AREA, graphicType: MAIN, label: "Refugee Holding Area"}
-    - details: {code: "05", id: REGIMENTAL_SUPPORT_AREA, graphicType: MAIN, label: "Regimental Support Area"}
-    - details: {code: "06", id: BRIGADE_SUPPORT_AREA, graphicType: MAIN, label: "Brigade Support Area"}
-    - details: {code: "07", id: DIVISION_SUPPORT_AREA, graphicType: MAIN, label: "Division Support Area"}
-    - details: {code: "08", id: CORPS_SUPPORT_AREA, graphicType: MAIN, label: "Corps Support Area"}
+    - details: {code: "01", id: DETAINEE_HOLDING_AREA, graphicType: FREE_CANVAS, label: "Detainee Holding Area"}
+    - details: {code: "02", id: EPW_HOLDING_AREA, graphicType: FREE_CANVAS, label: "Enemy Prisoner of War Holding Area"}
+    - details: {code: "03", id: FARP, graphicType: FREE_CANVAS, label: "Forward Arming and Refueling Point"}
+    - details: {code: "04", id: REFUGEE_HOLDING_AREA, graphicType: FREE_CANVAS, label: "Refugee Holding Area"}
+    - details: {code: "05", id: REGIMENTAL_SUPPORT_AREA, graphicType: FREE_CANVAS, label: "Regimental Support Area"}
+    - details: {code: "06", id: BRIGADE_SUPPORT_AREA, graphicType: FREE_CANVAS, label: "Brigade Support Area"}
+    - details: {code: "07", id: DIVISION_SUPPORT_AREA, graphicType: FREE_CANVAS, label: "Division Support Area"}
+    - details: {code: "08", id: CORPS_SUPPORT_AREA, graphicType: FREE_CANVAS, label: "Corps Support Area"}
   - details: {code: "32", id: SUSTAINMENT_POINTS, graphicType: NA, label: "Sustainment Points"}
     entityTypes:
     - details: {code: "01", id: AMBULANCE_POINTS, graphicType: NA, label: "Ambulance Point"}
       entitySubTypes:
-      - {code: "01", id: AMBULANCE_EXCHANGE_POINT, graphicType: MAIN, label: "Ambulance Exchange Point"}
-      - {code: "02", id: AMBULANCE_CONTROL_POINT, graphicType: MAIN, label: "Ambulance Control Point"}
-      - {code: "03", id: AMBULANCE_LOAD_POINT, graphicType: MAIN, label: "Ambulance Load Point"}
-      - {code: "04", id: AMBULANCE_RELAY_POINT, graphicType: MAIN, label: "Ambulance Relay Point"}
-    - details: {code: "02", id: AMMUNITION_SUPPLY_POINT, graphicType: MAIN, label: "Ammunition Supply Point"}
-    - details: {code: "03", id: AMMUNITION_TRANSFER_POINT, graphicType: MAIN, label: "Ammunition Transfer Point"}
-    - details: {code: "04", id: CANNIBALIZATION_POINT, graphicType: MAIN, label: "Cannibalization Point"}
-    - details: {code: "05", id: CASUALTY_COLLECTION_POINT, graphicType: MAIN, label: "Casualty Collection Point"}
-    - details: {code: "06", id: CIVILIAN_COLLECTION_POINT, graphicType: MAIN, label: "Civilian Collection Point"}
-    - details: {code: "07", id: DETAINEE_COLLECTION_POINT, graphicType: MAIN, label: "Detainee Collection Point"}
-    - details: {code: "08", id: EPW_COLLECTION_POINT, graphicType: MAIN, label: "Enemy Prisoner of War Collection Point"}
-    - details: {code: "09", id: LOGISTICS_RELEASE_POINT, graphicType: MAIN, label: "Logistics Release Point"}
-    - details: {code: "10", id: MAINTENANCE_COLLECTION_POINT_MCP, graphicType: MAIN, label: "Maintenance Collection Point (MCP)"}
-    - details: {code: "11", id: MEDEVAC_PICKUP_POINT, graphicType: MAIN, label: "Medical Evacuation (MEDEVAC) Pick-up Point"}
-    - details: {code: "12", id: REARM_REFUEL_RESUPPLY_POINT_R3P, graphicType: MAIN, label: "Rearm-Refuel and Resupply Point (R3P)"}
-    - details: {code: "13", id: REFUEL_ON_THE_MOVE_ROM_POINT, graphicType: MAIN, label: "Refuel on the Move (ROM) Point"}
-    - details: {code: "14", id: TRAFFIC_CONTROL_POST_TCP, graphicType: MAIN, label: "Traffic Control Post (TCP)"}
-    - details: {code: "15", id: TRAILER_TRANSFER_POINT_TTP, graphicType: MAIN, label: "Trailer Transfer Point (TTP)"}
-    - details: {code: "16", id: UNIT_MAINTENANCE_COLLECTION_POINT_UMCP, graphicType: MAIN, label: "Unit Maintenance Collection Point (UMCP)"}
-    - details: {code: "17", id: GENERAL_SUPPLY_POINT, graphicType: MAIN, label: "General Supply Point"}
+      - {code: "01", id: AMBULANCE_EXCHANGE_POINT, graphicType: FREE_CANVAS, label: "Ambulance Exchange Point"}
+      - {code: "02", id: AMBULANCE_CONTROL_POINT, graphicType: FREE_CANVAS, label: "Ambulance Control Point"}
+      - {code: "03", id: AMBULANCE_LOAD_POINT, graphicType: FREE_CANVAS, label: "Ambulance Load Point"}
+      - {code: "04", id: AMBULANCE_RELAY_POINT, graphicType: FREE_CANVAS, label: "Ambulance Relay Point"}
+    - details: {code: "02", id: AMMUNITION_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "Ammunition Supply Point"}
+    - details: {code: "03", id: AMMUNITION_TRANSFER_POINT, graphicType: FREE_CANVAS, label: "Ammunition Transfer Point"}
+    - details: {code: "04", id: CANNIBALIZATION_POINT, graphicType: FREE_CANVAS, label: "Cannibalization Point"}
+    - details: {code: "05", id: CASUALTY_COLLECTION_POINT, graphicType: FREE_CANVAS, label: "Casualty Collection Point"}
+    - details: {code: "06", id: CIVILIAN_COLLECTION_POINT, graphicType: FREE_CANVAS, label: "Civilian Collection Point"}
+    - details: {code: "07", id: DETAINEE_COLLECTION_POINT, graphicType: FREE_CANVAS, label: "Detainee Collection Point"}
+    - details: {code: "08", id: EPW_COLLECTION_POINT, graphicType: FREE_CANVAS, label: "Enemy Prisoner of War Collection Point"}
+    - details: {code: "09", id: LOGISTICS_RELEASE_POINT, graphicType: FREE_CANVAS, label: "Logistics Release Point"}
+    - details: {code: "10", id: MAINTENANCE_COLLECTION_POINT_MCP, graphicType: FREE_CANVAS, label: "Maintenance Collection Point (MCP)"}
+    - details: {code: "11", id: MEDEVAC_PICKUP_POINT, graphicType: FREE_CANVAS, label: "Medical Evacuation (MEDEVAC) Pick-up Point"}
+    - details: {code: "12", id: REARM_REFUEL_RESUPPLY_POINT_R3P, graphicType: FREE_CANVAS, label: "Rearm-Refuel and Resupply Point (R3P)"}
+    - details: {code: "13", id: REFUEL_ON_THE_MOVE_ROM_POINT, graphicType: FREE_CANVAS, label: "Refuel on the Move (ROM) Point"}
+    - details: {code: "14", id: TRAFFIC_CONTROL_POST_TCP, graphicType: FREE_CANVAS, label: "Traffic Control Post (TCP)"}
+    - details: {code: "15", id: TRAILER_TRANSFER_POINT_TTP, graphicType: FREE_CANVAS, label: "Trailer Transfer Point (TTP)"}
+    - details: {code: "16", id: UNIT_MAINTENANCE_COLLECTION_POINT_UMCP, graphicType: FREE_CANVAS, label: "Unit Maintenance Collection Point (UMCP)"}
+    - details: {code: "17", id: GENERAL_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "General Supply Point"}
       entitySubTypes:
-      - {code: "01", id: NATO_CLASS_1_SUPPLY_POINT, graphicType: MAIN, label: "NATO Class I Supply Point"}
-      - {code: "02", id: NATO_CLASS_2_SUPPLY_POINT, graphicType: MAIN, label: "NATO Class II Supply Point"}
-      - {code: "03", id: NATO_CLASS_3_SUPPLY_POINT, graphicType: MAIN, label: "NATO Class III Supply Point"}
-      - {code: "04", id: NATO_CLASS_4_SUPPLY_POINT, graphicType: MAIN, label: "NATO Class IV Supply Point"}
-      - {code: "05", id: NATO_CLASS_5_SUPPLY_POINT, graphicType: MAIN, label: "NATO Class V Supply Point"}
-      - {code: "06", id: NATO_MULTIPLE_CLASS_SUPPLY_POINT, graphicType: MAIN, label: "NATO Multiple Class Supply Point"}
-      - {code: "07", id: US_CLASS_01_SUPPLY_POINT, graphicType: MAIN, label: "US Class I Supply Point"}
-      - {code: "08", id: US_CLASS_02_SUPPLY_POINT, graphicType: MAIN, label: "US Class II Supply Point"}
-      - {code: "09", id: US_CLASS_03_SUPPLY_POINT, graphicType: MAIN, label: "US Class III Supply Point"}
-      - {code: "10", id: US_CLASS_04_SUPPLY_POINT, graphicType: MAIN, label: "US Class IV Supply Point"}
-      - {code: "11", id: US_CLASS_05_SUPPLY_POINT, graphicType: MAIN, label: "US Class V Supply Point"}
-      - {code: "12", id: US_CLASS_06_SUPPLY_POINT, graphicType: MAIN, label: "US Class VI Supply Point"}
-      - {code: "13", id: US_CLASS_07_SUPPLY_POINT, graphicType: MAIN, label: "US Class VII Supply Point"}
-      - {code: "14", id: US_CLASS_08_SUPPLY_POINT, graphicType: MAIN, label: "US Class VIII Supply Point"}
-      - {code: "15", id: US_CLASS_09_SUPPLY_POINT, graphicType: MAIN, label: "US Class IX Supply Point"}
-      - {code: "16", id: US_CLASS_10_SUPPLY_POINT, graphicType: MAIN, label: "US Class X Supply Point"}
-    - details: {code: "18", id: MEDICAL_SUPPLY_POINT, graphicType: MAIN, label: "Medical Supply Point"}
-    - details: {code: "19", id: MORTUARY_COLLECTION_POINT, graphicType: MAIN, label: "Mortuary Collection Point"}
+      - {code: "01", id: NATO_CLASS_1_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "NATO Class I Supply Point"}
+      - {code: "02", id: NATO_CLASS_2_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "NATO Class II Supply Point"}
+      - {code: "03", id: NATO_CLASS_3_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "NATO Class III Supply Point"}
+      - {code: "04", id: NATO_CLASS_4_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "NATO Class IV Supply Point"}
+      - {code: "05", id: NATO_CLASS_5_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "NATO Class V Supply Point"}
+      - {code: "06", id: NATO_MULTIPLE_CLASS_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "NATO Multiple Class Supply Point"}
+      - {code: "07", id: US_CLASS_01_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "US Class I Supply Point"}
+      - {code: "08", id: US_CLASS_02_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "US Class II Supply Point"}
+      - {code: "09", id: US_CLASS_03_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "US Class III Supply Point"}
+      - {code: "10", id: US_CLASS_04_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "US Class IV Supply Point"}
+      - {code: "11", id: US_CLASS_05_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "US Class V Supply Point"}
+      - {code: "12", id: US_CLASS_06_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "US Class VI Supply Point"}
+      - {code: "13", id: US_CLASS_07_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "US Class VII Supply Point"}
+      - {code: "14", id: US_CLASS_08_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "US Class VIII Supply Point"}
+      - {code: "15", id: US_CLASS_09_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "US Class IX Supply Point"}
+      - {code: "16", id: US_CLASS_10_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "US Class X Supply Point"}
+    - details: {code: "18", id: MEDICAL_SUPPLY_POINT, graphicType: FREE_CANVAS, label: "Medical Supply Point"}
+    - details: {code: "19", id: MORTUARY_COLLECTION_POINT, graphicType: FREE_CANVAS, label: "Mortuary Collection Point"}
   - details: {code: "33", id: SUSTAINMENT_LINES, graphicType: NA, label: "Sustainment Lines"}
     entityTypes:
-    - details: {code: "01", id: MOVING_CONVOY, graphicType: MAIN, label: "Moving Convoy"}
-    - details: {code: "02", id: HALTED_CONVOY, graphicType: MAIN, label: "Halted Convoy"}
-    - details: {code: "03", id: MAIN_SUPPLY_ROUTE, graphicType: MAIN, label: "Main Supply Route"}
+    - details: {code: "01", id: MOVING_CONVOY, graphicType: FREE_CANVAS, label: "Moving Convoy"}
+    - details: {code: "02", id: HALTED_CONVOY, graphicType: FREE_CANVAS, label: "Halted Convoy"}
+    - details: {code: "03", id: MAIN_SUPPLY_ROUTE, graphicType: FREE_CANVAS, label: "Main Supply Route"}
       entitySubTypes:
-      - {code: "01", id: MSR_ONE_WAY_TRAFFIC, graphicType: MAIN, label: "One Way Traffic"}
-      - {code: "02", id: MSR_TWO_WAY_TRAFFIC, graphicType: MAIN, label: "Two Way Traffic"}
-      - {code: "03", id: MSR_ALTERNATING_TRAFFIC, graphicType: MAIN, label: "Alternating Traffic"}
-    - details: {code: "04", id: ALTERNATE_SUPPLY_ROUTE, graphicType: MAIN, label: "Alternate Supply Route"}
+      - {code: "01", id: MSR_ONE_WAY_TRAFFIC, graphicType: FREE_CANVAS, label: "One Way Traffic"}
+      - {code: "02", id: MSR_TWO_WAY_TRAFFIC, graphicType: FREE_CANVAS, label: "Two Way Traffic"}
+      - {code: "03", id: MSR_ALTERNATING_TRAFFIC, graphicType: FREE_CANVAS, label: "Alternating Traffic"}
+    - details: {code: "04", id: ALTERNATE_SUPPLY_ROUTE, graphicType: FREE_CANVAS, label: "Alternate Supply Route"}
       entitySubTypes:
-      - {code: "01", id: ASR_ONE_WAY_TRAFFIC, graphicType: MAIN, label: "One Way Traffic"}
-      - {code: "02", id: ASR_TWO_WAY_TRAFFIC, graphicType: MAIN, label: "Two Way Traffic"}
-      - {code: "03", id: ASR_ALTERNATING_TRAFFIC, graphicType: MAIN, label: "Alternating Traffic"}
-    - details: {code: "05", id: ROUTE, graphicType: MAIN, label: "Route, Generic"}
+      - {code: "01", id: ASR_ONE_WAY_TRAFFIC, graphicType: FREE_CANVAS, label: "One Way Traffic"}
+      - {code: "02", id: ASR_TWO_WAY_TRAFFIC, graphicType: FREE_CANVAS, label: "Two Way Traffic"}
+      - {code: "03", id: ASR_ALTERNATING_TRAFFIC, graphicType: FREE_CANVAS, label: "Alternating Traffic"}
+    - details: {code: "05", id: ROUTE, graphicType: FREE_CANVAS, label: "Route, Generic"}
       entitySubTypes:
-      - {code: "01", id: ROUTE_ONE_WAY_TRAFFIC, graphicType: MAIN, label: "One Way Traffic"}
-      - {code: "02", id: ROUTE_ALTERNATING_TRAFFIC, graphicType: MAIN, label: "Alternating Traffic"}
+      - {code: "01", id: ROUTE_ONE_WAY_TRAFFIC, graphicType: FREE_CANVAS, label: "One Way Traffic"}
+      - {code: "02", id: ROUTE_ALTERNATING_TRAFFIC, graphicType: FREE_CANVAS, label: "Alternating Traffic"}
   - details: {code: "34", id: MISSION_TASKS, graphicType: NA, label: "Mission Tasks"}
     entityTypes:
-    - details: {code: "01", id: TMT_BLOCK, graphicType: MAIN, label: "Block"}
-    - details: {code: "02", id: TMT_BREACH, graphicType: MAIN, label: "Breach"}
-    - details: {code: "03", id: TMT_BYPASS, graphicType: MAIN, label: "Bypass"}
-    - details: {code: "04", id: TMT_CANALIZE, graphicType: MAIN, label: "Canalize"}
-    - details: {code: "05", id: TMT_CLEAR, graphicType: MAIN, label: "Clear"}
-    - details: {code: "06", id: TMT_COUNTERATTACK, graphicType: MAIN, label: "Counterattack"}
-    - details: {code: "07", id: TMT_COUNTERATTACK_BY_FIRE, graphicType: MAIN, label: "Counterattack by Fire"}
-    - details: {code: "08", id: TMT_DELAY, graphicType: MAIN, label: "Delay"}
-    - details: {code: "09", id: TMT_DESTROY, graphicType: MAIN, label: "Destroy"}
-    - details: {code: "10", id: TMT_DISTRUPT, graphicType: MAIN, label: "Disrupt"}
-    - details: {code: "11", id: TMT_FIX, graphicType: MAIN, label: "Fix"}
-    - details: {code: "12", id: TMT_FOLLOW_AND_ASSUME, graphicType: MAIN, label: "Follow and Assume"}
-    - details: {code: "13", id: TMT_FOLLOW_AND_SUPPORT, graphicType: MAIN, label: "Follow and Support"}
-    - details: {code: "14", id: TMT_INTERDICT, graphicType: MAIN, label: "Interdict"}
-    - details: {code: "15", id: TMT_ISOLATE, graphicType: MAIN, label: "Isolate"}
-    - details: {code: "16", id: TMT_NEUTRALIZE, graphicType: MAIN, label: "Neutralize"}
-    - details: {code: "17", id: TMT_OCCUPY, graphicType: MAIN, label: "Occupy"}
-    - details: {code: "18", id: TMT_PENETRATE, graphicType: MAIN, label: "Penetrate"}
-    - details: {code: "19", id: TMT_RELIEF_IN_PLACE_RIP, graphicType: MAIN, label: "Relief in Place (RIP)"}
-    - details: {code: "20", id: TMT_RETIRE_RETIREMENT, graphicType: MAIN, label: "Retire/Retirement"}
-    - details: {code: "21", id: TMT_SECURE, graphicType: MAIN, label: "Secure"}
+    - details: {code: "01", id: TMT_BLOCK, graphicType: FREE_CANVAS, label: "Block"}
+    - details: {code: "02", id: TMT_BREACH, graphicType: FREE_CANVAS, label: "Breach"}
+    - details: {code: "03", id: TMT_BYPASS, graphicType: FREE_CANVAS, label: "Bypass"}
+    - details: {code: "04", id: TMT_CANALIZE, graphicType: FREE_CANVAS, label: "Canalize"}
+    - details: {code: "05", id: TMT_CLEAR, graphicType: FREE_CANVAS, label: "Clear"}
+    - details: {code: "06", id: TMT_COUNTERATTACK, graphicType: FREE_CANVAS, label: "Counterattack"}
+    - details: {code: "07", id: TMT_COUNTERATTACK_BY_FIRE, graphicType: FREE_CANVAS, label: "Counterattack by Fire"}
+    - details: {code: "08", id: TMT_DELAY, graphicType: FREE_CANVAS, label: "Delay"}
+    - details: {code: "09", id: TMT_DESTROY, graphicType: FREE_CANVAS, label: "Destroy"}
+    - details: {code: "10", id: TMT_DISTRUPT, graphicType: FREE_CANVAS, label: "Disrupt"}
+    - details: {code: "11", id: TMT_FIX, graphicType: FREE_CANVAS, label: "Fix"}
+    - details: {code: "12", id: TMT_FOLLOW_AND_ASSUME, graphicType: FREE_CANVAS, label: "Follow and Assume"}
+    - details: {code: "13", id: TMT_FOLLOW_AND_SUPPORT, graphicType: FREE_CANVAS, label: "Follow and Support"}
+    - details: {code: "14", id: TMT_INTERDICT, graphicType: FREE_CANVAS, label: "Interdict"}
+    - details: {code: "15", id: TMT_ISOLATE, graphicType: FREE_CANVAS, label: "Isolate"}
+    - details: {code: "16", id: TMT_NEUTRALIZE, graphicType: FREE_CANVAS, label: "Neutralize"}
+    - details: {code: "17", id: TMT_OCCUPY, graphicType: FREE_CANVAS, label: "Occupy"}
+    - details: {code: "18", id: TMT_PENETRATE, graphicType: FREE_CANVAS, label: "Penetrate"}
+    - details: {code: "19", id: TMT_RELIEF_IN_PLACE_RIP, graphicType: FREE_CANVAS, label: "Relief in Place (RIP)"}
+    - details: {code: "20", id: TMT_RETIRE_RETIREMENT, graphicType: FREE_CANVAS, label: "Retire/Retirement"}
+    - details: {code: "21", id: TMT_SECURE, graphicType: FREE_CANVAS, label: "Secure"}
     - details: {code: "22", id: SECURITY, graphicType: NA, label: "Security"}
       entitySubTypes:
-      - {code: "01", id: TMT_COVER, graphicType: MAIN, label: "Cover"}
-      - {code: "02", id: TMT_GUARD, graphicType: MAIN, label: "Guard"}
-      - {code: "03", id: TMT_SCREEN, graphicType: MAIN, label: "Screen"}
-    - details: {code: "23", id: TMT_SEIZE, graphicType: MAIN, label: "Seize"}
-    - details: {code: "24", id: TMT_WITHDRAW, graphicType: MAIN, label: "Withdraw"}
-    - details: {code: "25", id: TMT_WITHDRAW_UNDER_PRESSURE, graphicType: MAIN, label: "Withdraw Under Pressure"}
-    - details: {code: "26", id: CORDON_AND_KNOCK, graphicType: MAIN, label: "Cordon and Knock"}
-    - details: {code: "27", id: CORDON_AND_SEARCH, graphicType: MAIN, label: "Cordon and Search"}
-    - details: {code: "28", id: SUPPRESS, graphicType: MAIN, label: "Suppress"}
-    - details: {code: "29", id: ADVANCE_TO_CONTACT, graphicType: MAIN, label: "Advance to Contact"}
-    - details: {code: "30", id: CAPTURE, graphicType: MAIN, label: "Capture"}
-    - details: {code: "31", id: EXPLOIT, graphicType: MAIN, label: "Exploit"}
-    - details: {code: "32", id: CONTROL, graphicType: MAIN, label: "Control"}
-    - details: {code: "33", id: DEMONSTRATION, graphicType: MAIN, label: "Demonstration"}
-    - details: {code: "34", id: DENY, graphicType: MAIN, label: "Deny"}
-    - details: {code: "35", id: ENVELOP, graphicType: MAIN, label: "Envelop"}
-    - details: {code: "36", id: ESCORT, graphicType: MAIN, label: "Escort"}
-    - details: {code: "37", id: EXFILTRATION, graphicType: MAIN, label: "Exfiltration"}
-    - details: {code: "38", id: INFILTRATION, graphicType: MAIN, label: "Infiltration"}
-    - details: {code: "39", id: LOCATE, graphicType: MAIN, label: "Locate"}
-    - details: {code: "40", id: PURSUE, graphicType: MAIN, label: "Pursue"}
-    - details: {code: "41", id: FORWARD_PASSAGE_OF_LINES, graphicType: MAIN, label: "Forward Passage of Lines"}
-    - details: {code: "42", id: REARWARD_PASSAGE_OF_LINES, graphicType: MAIN, label: "Rearward Passage of Lines"}
-    - details: {code: "43", id: DEFEAT, graphicType: MAIN, label: "Defeat"}
-    - details: {code: "44", id: DISENGAGE, graphicType: MAIN, label: "Disengage"}
-    - details: {code: "45", id: EVACUATE, graphicType: MAIN, label: "Evacuate"}
-    - details: {code: "46", id: RECOVER, graphicType: MAIN, label: "Recover"}
-    - details: {code: "47", id: TURN, graphicType: MAIN, label: "Turn"}
+      - {code: "01", id: TMT_COVER, graphicType: FREE_CANVAS, label: "Cover"}
+      - {code: "02", id: TMT_GUARD, graphicType: FREE_CANVAS, label: "Guard"}
+      - {code: "03", id: TMT_SCREEN, graphicType: FREE_CANVAS, label: "Screen"}
+    - details: {code: "23", id: TMT_SEIZE, graphicType: FREE_CANVAS, label: "Seize"}
+    - details: {code: "24", id: TMT_WITHDRAW, graphicType: FREE_CANVAS, label: "Withdraw"}
+    - details: {code: "25", id: TMT_WITHDRAW_UNDER_PRESSURE, graphicType: FREE_CANVAS, label: "Withdraw Under Pressure"}
+    - details: {code: "26", id: CORDON_AND_KNOCK, graphicType: FREE_CANVAS, label: "Cordon and Knock"}
+    - details: {code: "27", id: CORDON_AND_SEARCH, graphicType: FREE_CANVAS, label: "Cordon and Search"}
+    - details: {code: "28", id: SUPPRESS, graphicType: FREE_CANVAS, label: "Suppress"}
+    - details: {code: "29", id: ADVANCE_TO_CONTACT, graphicType: FREE_CANVAS, label: "Advance to Contact"}
+    - details: {code: "30", id: CAPTURE, graphicType: FREE_CANVAS, label: "Capture"}
+    - details: {code: "31", id: EXPLOIT, graphicType: FREE_CANVAS, label: "Exploit"}
+    - details: {code: "32", id: CONTROL, graphicType: FREE_CANVAS, label: "Control"}
+    - details: {code: "33", id: DEMONSTRATION, graphicType: FREE_CANVAS, label: "Demonstration"}
+    - details: {code: "34", id: DENY, graphicType: FREE_CANVAS, label: "Deny"}
+    - details: {code: "35", id: ENVELOP, graphicType: FREE_CANVAS, label: "Envelop"}
+    - details: {code: "36", id: ESCORT, graphicType: FREE_CANVAS, label: "Escort"}
+    - details: {code: "37", id: EXFILTRATION, graphicType: FREE_CANVAS, label: "Exfiltration"}
+    - details: {code: "38", id: INFILTRATION, graphicType: FREE_CANVAS, label: "Infiltration"}
+    - details: {code: "39", id: LOCATE, graphicType: FREE_CANVAS, label: "Locate"}
+    - details: {code: "40", id: PURSUE, graphicType: FREE_CANVAS, label: "Pursue"}
+    - details: {code: "41", id: FORWARD_PASSAGE_OF_LINES, graphicType: FREE_CANVAS, label: "Forward Passage of Lines"}
+    - details: {code: "42", id: REARWARD_PASSAGE_OF_LINES, graphicType: FREE_CANVAS, label: "Rearward Passage of Lines"}
+    - details: {code: "43", id: DEFEAT, graphicType: FREE_CANVAS, label: "Defeat"}
+    - details: {code: "44", id: DISENGAGE, graphicType: FREE_CANVAS, label: "Disengage"}
+    - details: {code: "45", id: EVACUATE, graphicType: FREE_CANVAS, label: "Evacuate"}
+    - details: {code: "46", id: RECOVER, graphicType: FREE_CANVAS, label: "Recover"}
+    - details: {code: "47", id: TURN, graphicType: FREE_CANVAS, label: "Turn"}
   - details: {code: "35", id: SPACE_DEBRIS, graphicType: NA, label: "Space Debris"}
     entityTypes:
     - details: {code: "01", id: HUMAN_MADE_SPACE_DEBRIS, graphicType: NA, label: "Human Made Space Debris"}
       entitySubTypes:
-      - {code: "01", id: HMSD_SMALL, graphicType: MAIN, label: "Human Made Space Debris, Small"}
-      - {code: "02", id: HMSD_MEDIUM, graphicType: MAIN, label: "Human Made Space Debris, Medium"}
-      - {code: "03", id: HMSD_BIG, graphicType: MAIN, label: "Human Made Space Debris, Big"}
+      - {code: "01", id: HMSD_SMALL, graphicType: FREE_CANVAS, label: "Human Made Space Debris, Small"}
+      - {code: "02", id: HMSD_MEDIUM, graphicType: FREE_CANVAS, label: "Human Made Space Debris, Medium"}
+      - {code: "03", id: HMSD_BIG, graphicType: FREE_CANVAS, label: "Human Made Space Debris, Big"}
     - details: {code: "02", id: NATURAL_SPACE_DEBRIS, graphicType: NA, label: "Natural Space Debris"}
       entitySubTypes:
-      - {code: "01", id: NSD_SMALL, graphicType: MAIN, label: "Natural Space Debris, Small"}
-      - {code: "02", id: NSD_MEDIUM, graphicType: MAIN, label: "Natural Space Debris, Medium"}
-      - {code: "03", id: NSD_BIG, graphicType: MAIN, label: "Natural Space Debris, Big"}
+      - {code: "01", id: NSD_SMALL, graphicType: FREE_CANVAS, label: "Natural Space Debris, Small"}
+      - {code: "02", id: NSD_MEDIUM, graphicType: FREE_CANVAS, label: "Natural Space Debris, Medium"}
+      - {code: "03", id: NSD_BIG, graphicType: FREE_CANVAS, label: "Natural Space Debris, Big"}
   - details: {code: "36", id: PROTECTION_OF_CULTURAL_PROPERTY, graphicType: NA, label: "Protection Of Cultural Property"}
     entityTypes:
-    - details: {code: "01", id: PCP_GENERAL, graphicType: MAIN, label: "Protection Of Cultural Property, General"}
-    - details: {code: "02", id: PCP_SPECIAL, graphicType: MAIN, label: "Protection Of Cultural Property, Special"}
-    - details: {code: "03", id: PCP_ENHANCED, graphicType: MAIN, label: "Protection Of Cultural Property, Enhanced"}
+    - details: {code: "01", id: PCP_GENERAL, graphicType: FREE_CANVAS, label: "Protection Of Cultural Property, General"}
+    - details: {code: "02", id: PCP_SPECIAL, graphicType: FREE_CANVAS, label: "Protection Of Cultural Property, Special"}
+    - details: {code: "03", id: PCP_ENHANCED, graphicType: FREE_CANVAS, label: "Protection Of Cultural Property, Enhanced"}
   - details: {code: "37", id: INTELLIGENCE_AREAS, graphicType: NA, label: "Intelligence Areas"}
     entityTypes:
-    - details: {code: "01", id: HUMAN_TERRAIN, graphicType: MAIN, label: "Human Terrain"}
+    - details: {code: "01", id: HUMAN_TERRAIN, graphicType: FREE_CANVAS, label: "Human Terrain"}
   sectorOneMods:
   - {code: "01", category: Mobility, id: STANDARD_ON_ROAD_MOBILITY, label: "Standard Mobility/On-Road Mobility"}
   - {code: "02", category: Mobility, id: HIGH_OFF_ROAD_MOBILITY, label: "High Mobility/Off-Road Mobility"}
@@ -3650,11 +4228,11 @@ symbolSets:
     - details: {code: "02", id: PERSONA, graphicType: MAIN, label: "Persona"}
   - details: {code: "20", id: PATHS, graphicType: NA, label: "Paths"}
     entityTypes:
-    - details: {code: "01", id: DATA_PATH_SEGMENT, graphicType: MAIN, label: "Data Path Segment"}
-    - details: {code: "02", id: DATA_TUNNEL, graphicType: MAIN, label: "Data Tunnel"}
+    - details: {code: "01", id: DATA_PATH_SEGMENT, graphicType: FREE_CANVAS, label: "Data Path Segment"}
+    - details: {code: "02", id: DATA_TUNNEL, graphicType: FREE_CANVAS, label: "Data Tunnel"}
   - details: {code: "21", id: TERRAIN, graphicType: NA, label: "Terrain"}
     entityTypes:
-    - details: {code: "01", id: NETWORK, graphicType: MAIN, label: "Network"}
+    - details: {code: "01", id: NETWORK, graphicType: FREE_CANVAS, label: "Network"}
   sectorOneMods:
   - {code: "01", category: None, id: DEFENSIVE_CYBERSPACE, label: "Defensive Cyberspace"}
   - {code: "02", category: None, id: OFFENSIVE_CYBERSPACE, label: "Offensive Cyberspace"}

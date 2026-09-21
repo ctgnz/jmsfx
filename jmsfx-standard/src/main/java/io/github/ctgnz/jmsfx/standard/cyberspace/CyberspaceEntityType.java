@@ -1,7 +1,10 @@
 package io.github.ctgnz.jmsfx.standard.cyberspace;
 
+import javafx.geometry.Rectangle2D;
+
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.standard.IconBounds;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum CyberspaceEntityType implements EntityType {
@@ -30,9 +33,9 @@ public enum CyberspaceEntityType implements EntityType {
         SPEARPHISHING("03", "Spearphishing", CyberspaceEntity.THREAT, GraphicType.MAIN),
         DIGITAL_CURRENCY("01", "Digital Currency", CyberspaceEntity.DATA, GraphicType.MAIN),
         PERSONA("02", "Persona", CyberspaceEntity.DATA, GraphicType.MAIN),
-        DATA_PATH_SEGMENT("01", "Data Path Segment", CyberspaceEntity.PATHS, GraphicType.MAIN),
-        DATA_TUNNEL("02", "Data Tunnel", CyberspaceEntity.PATHS, GraphicType.MAIN),
-        NETWORK("01", "Network", CyberspaceEntity.TERRAIN, GraphicType.MAIN);
+        DATA_PATH_SEGMENT("01", "Data Path Segment", CyberspaceEntity.PATHS, GraphicType.FREE_CANVAS),
+        DATA_TUNNEL("02", "Data Tunnel", CyberspaceEntity.PATHS, GraphicType.FREE_CANVAS),
+        NETWORK("01", "Network", CyberspaceEntity.TERRAIN, GraphicType.FREE_CANVAS);
 
     private final String id;
     private final String label;
@@ -49,6 +52,11 @@ public enum CyberspaceEntityType implements EntityType {
     @Override
     public GraphicType getGraphicType() {
         return graphicType;
+    }
+
+    @Override
+    public Rectangle2D getIconBounds() {
+        return IconBounds.lookup(getGraphicIdentifier(), getGraphicType());
     }
 
     @Override

@@ -6,5 +6,6 @@ public enum GraphicType {
         MAIN_1,
         MAIN_2,
         FULL_OCTAGON,
-        FULL_FRAME;
+        FULL_FRAME,
+        FREE_CANVAS;
 }

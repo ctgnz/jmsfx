@@ -8,6 +8,7 @@ public enum GraphicType {
         MAIN_2,
         FULL_OCTAGON,
         FULL_FRAME,
+        FREE_CANVAS,
         SPECIAL;
 
     public static GraphicType fromValue(String v) {

@@ -2,9 +2,12 @@ package io.github.ctgnz.jmsfx.standard.controlmeasure;
 
 import java.util.List;
 
+import javafx.geometry.Rectangle2D;
+
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.standard.IconBounds;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
@@ -16,7 +19,7 @@ public enum ControlMeasureEntity implements Entity {
         MANEUVER_AREAS("15", "Maneuver Areas", GraphicType.NA),
         MANEUVER_POINTS("16", "Maneuver Points", GraphicType.NA),
         AIRSPACE_CONTROL_CORRIDORS_AREAS("17", "Airspace Control (Corridors) Areas", GraphicType.NA),
-        AIRSPACE_CONTROL_POINTS("18", "Airspace Control Points", GraphicType.MAIN),
+        AIRSPACE_CONTROL_POINTS("18", "Airspace Control Points", GraphicType.FREE_CANVAS),
         AIRSPACE_CONTROL_LINES("19", "Airspace Control Lines", GraphicType.NA),
         MARITIME_CONTROL_AREAS("20", "Maritime Control Areas", GraphicType.NA),
         MARITIME_CONTROL_POINTS("21", "Maritime Control Points", GraphicType.NA),
@@ -50,6 +53,11 @@ public enum ControlMeasureEntity implements Entity {
     @Override
     public GraphicType getGraphicType() {
         return graphicType;
+    }
+
+    @Override
+    public Rectangle2D getIconBounds() {
+        return IconBounds.lookup(getGraphicIdentifier(), getGraphicType());
     }
 
     @Override

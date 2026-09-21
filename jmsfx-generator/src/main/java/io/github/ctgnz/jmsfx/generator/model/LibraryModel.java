@@ -14,7 +14,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
 @JsonPropertyOrder({
-    "config", "versions", "contexts", "identityGroups", "identities", "statuses", "hqtfDummies", "dimensions", "amplifiers", "amplifierGroups", "modifierBounds", "symbolSets"
+    "config", "versions", "contexts", "identityGroups", "identities", "statuses", "hqtfDummies", "dimensions", "amplifiers", "amplifierGroups", "iconBounds", "modifierBounds", "symbolSets"
 })
 public class LibraryModel {
 
@@ -35,6 +35,7 @@ public class LibraryModel {
     private final List<AmplifierModel> amplifiers = new ArrayList<>();
     private final List<AmplifierListModel> amplifierGroups = new ArrayList<>();
     private final List<SymbolSetModel> symbolSets = new ArrayList<>();
+    private Map<String, BoundsModel> iconBounds;
     private Map<String, BoundsModel> modifierBounds;
     private @JsonIgnore String basePackage = "io.github.ctgnz.jmsfx";
     private @JsonIgnore String typePackage = "io.github.ctgnz.jmsfx.types";
@@ -101,6 +102,17 @@ public class LibraryModel {
 
     public List<HqtfDummyModel> getHqtfDummies() {
         return hqtfDummies;
+    }
+
+    /**
+     * Measured bounds for the main icon fragments that carry {@code FREE_CANVAS}, keyed by graphic identifier.
+     * <p>
+     * Every other main icon is built within the octagon, or is {@code FULL_FRAME} and takes its frame's bounds, so its extent follows from its graphic type and needs no data at
+     * all. APP-6E 8.1.3 exempts Control Measures from those composition rules, and a few Cyberspace path and terrain graphics are the same kind of thing, so for those the only way
+     * to know the extent is to measure the fragment.
+     */
+    public Map<String, BoundsModel> getIconBounds() {
+        return iconBounds;
     }
 
     public String getIconPackage() {
@@ -182,6 +194,10 @@ public class LibraryModel {
 
     public void setCountryCodeClass(String countryCodeClass) {
         this.countryCodeClass = countryCodeClass;
+    }
+
+    public void setIconBounds(Map<String, BoundsModel> iconBounds) {
+        this.iconBounds = iconBounds;
     }
 
     public void setIconPackage(String iconPackage) {
