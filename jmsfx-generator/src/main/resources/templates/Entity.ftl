@@ -1,15 +1,17 @@
-package ${iconPackage}.${symbolSet.packageName};
+<#assign hasIconBounds = (iconBounds??) && (iconBounds?size gt 0)>package ${iconPackage}.${symbolSet.packageName};
 
 <#if symbolSet.entityTypePresent>
 import java.util.List;
 
-</#if>
-import ${basePackage}.Entity;
+</#if><#if hasIconBounds>import javafx.geometry.Rectangle2D;
+
+</#if>import ${basePackage}.Entity;
 <#if symbolSet.entityTypePresent>
 import ${basePackage}.EntityType;
 </#if>
 import ${basePackage}.SymbolSet;
-import ${iconPackage}.SymbolSetEnum;
+<#if hasIconBounds>import ${iconPackage}.IconBounds;
+</#if>import ${iconPackage}.SymbolSetEnum;
 import ${typePackage}.GraphicType;
 
 public enum ${symbolSet.baseTypeName}Entity implements Entity {
@@ -37,6 +39,13 @@ public enum ${symbolSet.baseTypeName}Entity implements Entity {
         return graphicType;
     }
 
+<#if hasIconBounds>
+    @Override
+    public Rectangle2D getIconBounds() {
+        return IconBounds.lookup(getGraphicIdentifier(), getGraphicType());
+    }
+
+</#if>
     @Override
     public String getId() {
         return id;

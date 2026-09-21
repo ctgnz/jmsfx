@@ -544,11 +544,11 @@ public class IdentificationSymbol {
             bounds = IconGeometry.union(bounds, getHqtfDummy().getHqtfDummyBounds(identity, symbolSet));
         }
         if (isMainIconUsed() && getMainIconGraphic() != null) {
-            // A main icon is drawn within the octagon, and a FULL_FRAME one is its frame - which is
-            // already in the union, since Control Measure is the only unframed symbol set and it does
-            // not compose this way. Either rule is covered by contributing the octagon. jmsfx#53 tracks
-            // the fragments that overrun, which are being corrected in the SVGs.
-            bounds = IconGeometry.union(bounds, IconGeometry.OCTAGON);
+            // A main icon is drawn within the octagon, and a FULL_FRAME one is its frame, which is
+            // already in the union - so the octagon covers either rule. A FREE_CANVAS element obeys
+            // neither and carries its measured extent instead. jmsfx#53 tracks the fragments that
+            // overrun the octagon, which are being corrected in the SVGs.
+            bounds = IconGeometry.union(bounds, getMainIconElement().getIconBounds());
         }
         if (isAmplifierUsed()) {
             bounds = IconGeometry.union(bounds, amplifierBounds(getAmplifier(), identity));

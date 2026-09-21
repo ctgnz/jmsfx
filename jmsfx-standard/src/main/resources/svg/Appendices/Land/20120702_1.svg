@@ -19,7 +19,7 @@
 		<line id="mod1_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="346.985" x2="406.199" y2="346.705"/>
 </g>
 <g id="main">
-	<line fill="none" stroke="#000000" stroke-width="5" x1="306" y1="273.6" x2="306" y2="518.4"/>
+	<line fill="none" stroke="#000000" stroke-width="5" x1="306" y1="273.6" x2="306" y2="517.5"/>
 	<line fill="none" stroke="#000000" stroke-width="5" x1="131.5" y1="396" x2="479.5" y2="396"/>
 	<line fill="none" stroke="#000000" stroke-width="5" x1="231.5" y1="364.5" x2="231.5" y2="424.5"/>
 	<line fill="none" stroke="#000000" stroke-width="5" x1="385.5" y1="364.5" x2="385.5" y2="424.5"/>

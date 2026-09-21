@@ -1,7 +1,10 @@
 package io.github.ctgnz.jmsfx.standard.airmissile;
 
+import javafx.geometry.Rectangle2D;
+
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.SymbolSet;
+import io.github.ctgnz.jmsfx.standard.IconBounds;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
@@ -21,6 +24,11 @@ public enum AirMissileEntity implements Entity {
     @Override
     public GraphicType getGraphicType() {
         return graphicType;
+    }
+
+    @Override
+    public Rectangle2D getIconBounds() {
+        return IconBounds.lookup(getGraphicIdentifier(), getGraphicType());
     }
 
     @Override

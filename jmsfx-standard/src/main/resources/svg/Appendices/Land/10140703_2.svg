@@ -19,8 +19,8 @@
 		<line id="mod1_1_" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="346.985" x2="406.199" y2="346.705"/>
 </g>
 <g id="main">
-	<line fill="none" stroke="#000000" stroke-width="5" x1="438" y1="264" x2="174" y2="528"/>
-	<line fill="none" stroke="#000000" stroke-width="5" x1="306.25" y1="352.985" x2="306.25" y2="443.5"/>
-	<polyline fill="none" stroke="#000000" stroke-width="5" points="231.171,442 231.171,352.985 381.328,352.985 381.328,442 	"/>
+	<line fill="none" stroke="#000000" stroke-width="5" x1="438" y1="263" x2="174" y2="527"/>
+	<line fill="none" stroke="#000000" stroke-width="5" x1="306.25" y1="351.985" x2="306.25" y2="442.5"/>
+	<polyline fill="none" stroke="#000000" stroke-width="5" points="231.171,441 231.171,351.985 381.328,351.985 381.328,441"/>
 </g>
 </svg>
