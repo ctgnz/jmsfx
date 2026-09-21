@@ -49,7 +49,7 @@
 	<properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Declared once here: jmsfx-core and jmsfx-standard both depend on foxglove and must agree. -->
-        <foxglove.version>0.11.0</foxglove.version>
+        <foxglove.version>0.12.0</foxglove.version>
         <!-- Likewise for JavaFX, which jmsfx-standard declares directly and jmsfx-server pins again for
              its linux natives. These have to match each other and what foxglove pulls transitively, or
              the classpath ends up carrying two JavaFX versions at once. Stay on an LTS line (11, 17,
