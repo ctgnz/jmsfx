@@ -99,8 +99,8 @@ hqtfDummies:
       width: 352.02, height: 649.78}, "620": {minX: 129.49, minY: 113.38, width: 352.02, height: 649.78}, "630": {minX: 129.49, minY: 113.38, width: 352.02, height: 649.78}, "635": {minX: 170.26, minY: 122.25, width: 270.99, height: 671.25}, "660": {minX: 129.49, minY: 113.38, width: 352.02, height: 649.78}}, dimensions: [AIR, CYBERSPACE, LAND_EQUIPMENT, LAND_INSTALLATION, LAND_UNIT, SEA_SUBSURFACE, SEA_SURFACE, SPACE]}
 dimensions:
 - {code: "00", id: COMMON, geometry: POINT_GEOMETRY, graphicLocation: "Common", label: "Common", bounds: {"00": {minX: 132.22, minY: 220.92, width: 348.01, height: 348.01}, "00c": {minX: 132.22, minY: 220.92, width: 348.01, height: 348.01}, "10": {minX: 131.75, minY: 220.75, width: 348.5, height: 348.5}, "10c": {minX: 131.75, minY: 220.75, width: 348.5, height: 348.5}, "11": {minX: 131.75, minY: 220.75, width: 348.5, height: 348.5}, "11c": {minX: 131.75, minY: 220.75, width: 348.5,
-      height: 348.5}, "20": {minX: 159.5, minY: 241.6, width: 293.0, height: 321.75}, "20c": {minX: 159.5, minY: 241.6, width: 293.0, height: 321.75}, "30": {minX: 159.5, minY: 240.78, width: 293.0, height: 321.75}, "30c": {minX: 159.5, minY: 240.78, width: 293.0, height: 321.75}, "31": {minX: 159.5, minY: 240.78, width: 293.0, height: 321.75}, "31c": {minX: 159.5, minY: 240.78, width: 293.0, height: 321.75}, "40": {minX: 171.5, minY: 237.78, width: 269.0, height: 321.75}, "40c": {
-      minX: 171.5, minY: 237.78, width: 269.0, height: 321.75}, "41": {minX: 171.0, minY: 237.78, width: 270.0, height: 321.75}, "41c": {minX: 171.0, minY: 237.78, width: 270.0, height: 321.75}, "50": {minX: 128.96, minY: 217.96, width: 354.07, height: 352.3}, "60": {minX: 128.96, minY: 217.96, width: 354.07, height: 354.07}, "61": {minX: 128.96, minY: 217.96, width: 354.07, height: 352.54}}}
+      height: 348.5}, "20": {minX: 159.5, minY: 249.53, width: 293.0, height: 293.0}, "20c": {minX: 159.5, minY: 249.53, width: 293.0, height: 293.0}, "30": {minX: 159.5, minY: 249.5, width: 293.0, height: 293.0}, "30c": {minX: 159.5, minY: 249.5, width: 293.0, height: 293.0}, "31": {minX: 159.5, minY: 249.5, width: 293.0, height: 293.0}, "31c": {minX: 159.5, minY: 249.5, width: 293.0, height: 293.0}, "40": {minX: 171.5, minY: 260.5, width: 269.0, height: 269.0}, "40c": {minX: 171.5,
+      minY: 260.5, width: 269.0, height: 269.0}, "41": {minX: 171.0, minY: 260.0, width: 270.0, height: 270.0}, "41c": {minX: 171.0, minY: 260.0, width: 270.0, height: 270.0}, "50": {minX: 128.96, minY: 217.96, width: 354.07, height: 352.3}, "60": {minX: 128.96, minY: 217.96, width: 354.07, height: 354.07}, "61": {minX: 128.96, minY: 217.96, width: 354.07, height: 352.54}}}
 - {code: "01", id: AIR, geometry: POINT_GEOMETRY, graphicLocation: "Air", label: "Air", bounds: {"00": {minX: 124.25, minY: 202.38, width: 363.5, height: 315.25}, "00c": {minX: 124.25, minY: 202.38, width: 363.5, height: 315.25}, "10": {minX: 124.25, minY: 201.38, width: 363.5, height: 315.25}, "10c": {minX: 124.25, minY: 201.38, width: 363.5, height: 315.25}, "11": {minX: 124.25, minY: 201.38, width: 363.5, height: 315.25}, "11c": {minX: 124.25, minY: 201.38, width: 363.5, height: 315.25},
     "20": {minX: 172.56, minY: 197.82, width: 266.78, height: 319.34}, "20c": {minX: 172.56, minY: 197.82, width: 266.78, height: 319.34}, "30": {minX: 172.56, minY: 197.82, width: 266.78, height: 319.34}, "30c": {minX: 172.56, minY: 197.82, width: 266.78, height: 319.34}, "31": {minX: 172.56, minY: 197.82, width: 266.79, height: 319.34}, "31c": {minX: 172.56, minY: 197.82, width: 266.79, height: 319.34}, "40": {minX: 171.0, minY: 249.0, width: 270.0, height: 291.5}, "40c": {minX: 171.0,
       minY: 249.0, width: 270.0, height: 291.5}, "41": {minX: 171.0, minY: 249.0, width: 270.0, height: 291.0}, "41c": {minX: 171.0, minY: 249.0, width: 270.0, height: 291.0}, "50": {minX: 171.0, minY: 201.1, width: 270.0, height: 316.4}, "60": {minX: 170.25, minY: 201.1, width: 270.0, height: 316.4}, "61": {minX: 170.25, minY: 201.1, width: 270.0, height: 315.9}}}
@@ -795,12 +795,12 @@ symbolSets:
 - details: {code: "00", dimensionId: COMMON, id: COMMON, label: "Common"}
   config: {useFrame: true}
   entities:
-  - details: {code: "00", id: UNSPECIFIED, graphicType: NA, label: "Unspecified"}
+  - details: {code: "00", id: UNSPECIFIED, graphicType: MAIN, label: "Unspecified"}
     entityTypes:
     - details: {code: "00", id: UNSPECIFIED_TYPE, graphicType: NA, label: "Unspecified"}
       entitySubTypes:
       - {code: "00", id: UNSPECIFIED_SUB_TYPE, graphicType: NA, label: "Unspecified"}
-  - details: {code: "10", id: INVALID, graphicType: FULL_FRAME, label: "Invalid Symbol"}
+  - details: {code: "10", id: INVALID, graphicType: MAIN, label: "Invalid Symbol"}
   sectorOneMods:
   - {groupId: 0, code: "00", category: None, id: UNSPECIFIED, label: "Unspecified"}
   - {groupId: 1, code: "00", category: Mobility, id: UAV_DRONE, label: "UAV/Drone Equipped/Drone"}

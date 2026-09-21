@@ -9,8 +9,8 @@ import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum CommonEntity implements Entity {
-        UNSPECIFIED("00", "Unspecified", GraphicType.NA),
-        INVALID("10", "Invalid Symbol", GraphicType.FULL_FRAME);
+        UNSPECIFIED("00", "Unspecified", GraphicType.MAIN),
+        INVALID("10", "Invalid Symbol", GraphicType.MAIN);
 
     private final String id;
     private final String label;
