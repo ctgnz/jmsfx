@@ -21,9 +21,8 @@
 <g id="main">
 	<g>
 		<g>
-			<line fill="none" stroke="#000000" stroke-width="10" x1="306" y1="276.5" x2="306" y2="473.5"/>
-			<polygon fill="none" stroke="#000000" stroke-width="10" points="370.546,469.998 306.181,510.652 241.815,469.998 
-				241.815,469.578 370.546,469.578 			"/>
+			<line fill="none" stroke="#000000" stroke-width="5" x1="306" y1="280.5" x2="306" y2="472.417"/>
+			<polygon fill="none" stroke="#000000" stroke-width="5" points="306.515,507.834 249.334,469.667 362.668,469.667 "/>
 		</g>
 	</g>
 	<text transform="matrix(1 0 0 1 220 427.6719)" font-family="sans-serif" font-size="96">E</text>
