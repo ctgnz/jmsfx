@@ -19,7 +19,7 @@
 		<line id="top" display="inline" fill="none" stroke="#0000FF" stroke-width="2" x1="203.966" y1="346.985" x2="406.199" y2="346.705"/>
 </g>
 <g id="main">
-	<line fill="none" stroke="#000000" stroke-width="10" x1="183" y1="396" x2="427" y2="396"/>
+	<line fill="none" stroke="#000000" stroke-width="10" x1="183.5" y1="396" x2="426.5" y2="396"/>
 	<polygon fill="#00FF00" stroke="#000000" stroke-width="10" points="282.227,338.015 282.227,297.5 328.529,297.5 328.529,338.015 
 			"/>
 	<polygon fill="#00FF00" stroke="#000000" stroke-width="10" points="239.128,375.181 210.489,346.523 243.242,313.793 
