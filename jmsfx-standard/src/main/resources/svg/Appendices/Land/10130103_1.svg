@@ -18,8 +18,8 @@
 	
 		<line id="mod1_1_" display="inline" fill="none" stroke="#0000ff" stroke-width="2" x1="203.966" y1="346.98499" x2="406.19901" y2="346.70499" />
 </g>
-<g id="main" transform="translate(-0.49909266)">
-	<path id="_x3C_path_x3E_" fill="none" stroke="#000000" stroke-width="5" d="m 129.5,517.7 c 7.874,-9.448 17.078,-17.917 27.337,-25.408 78.512,-57.322 218.814,-57.323 297.326,0 10.26,7.491 19.464,15.96 27.337,25.408" /><text font-family="sans-serif" font-size="110px" id="text22" x="214.12206" y="434.49344" transform="translate(0.49909266)">MD</text>
+<g id="main">
+	<path id="_x3C_path_x3E_" fill="none" stroke="#000000" stroke-width="5" d="M126.082,516c8.053,-9.448,17.466,-17.917,27.958,-25.408c80.296,-57.322,223.787,-57.323,304.084,0c10.493,7.491,19.906,15.96,27.958,25.408" /><text font-family="sans-serif" font-size="110px" id="text22" x="214.12206" y="434.49344">MD</text>
 </g>
 
 </svg>
