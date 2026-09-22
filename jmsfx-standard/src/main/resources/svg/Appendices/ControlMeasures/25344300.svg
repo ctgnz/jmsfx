@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00">
-   <svg:defs id="defs26" font-style="normal"/>
-   <svg:g id="main" font-style="normal">
-      <svg:g id="g10" font-style="normal" transform="translate(0 1) translate(0 1) translate(0 1) translate(-1 0) translate(-1 0) translate(0 1) translate(0 1) translate(-1 0)">
-         <svg:rect id="rect6" rx="0.0" ry="0.0" x="181.5" y="173.5" width="35.0" height="35.0" fill="#FFFFFF" stroke="#FFFFFF" font-style="normal"/>
-         <svg:text id="text8" x="184.83252" y="203.72339" dx="0.0" dy="0.0" font-family="sans-serif" font-size="35px" font-style="normal">D</svg:text>
-      </svg:g>
-      <svg:g id="g1029" font-style="normal" transform="rotate(45,191.66066,189.03862)">
-         <svg:path id="path318" d="M 200,357.77526 V 223.83655" style="fill:none;stroke:#000000;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1" font-style="normal"/>
-         <svg:path id="path321" d="m 180,236 20,-20 20,20 z" style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" font-style="normal"/>
-      </svg:g>
-      <svg:g id="g1035" font-style="normal" transform="matrix(-0.70710678,0.70710678,0.70710678,0.70710678,202.68629,-80.15642)">
-         <svg:path id="path1031" d="M 200,357.77526 V 223.83655" style="fill:none;stroke:#000000;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1" font-style="normal"/>
-         <svg:path id="path1033" d="m 180,236 20,-20 20,20 z" style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" font-style="normal"/>
-      </svg:g>
-      <svg:g id="g1041" font-style="normal" transform="rotate(-135,199.23202,194.34695)">
-         <svg:path id="path1037" d="M 200,357.77526 V 223.83655" style="fill:none;stroke:#000000;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1" font-style="normal"/>
-         <svg:path id="path1039" d="m 180,236 20,-20 20,20 z" style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" font-style="normal"/>
-      </svg:g>
-      <svg:g id="g1047" font-style="normal" transform="matrix(0.70710678,-0.70710678,-0.70710678,-0.70710678,189.8066,472.64931)">
-         <svg:path id="path1043" d="M 200,357.77526 V 223.83655" style="fill:none;stroke:#000000;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1" font-style="normal"/>
-         <svg:path id="path1045" d="m 180,236 20,-20 20,20 z" style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" font-style="normal"/>
-      </svg:g>
-   </svg:g>
-   <svg:g id="template" display="inline" font-style="normal" transform="matrix(1.75,0,0,1.75,-244.99097,-176.51601)">
-      <svg:g id="g1051" font-style="normal" transform="translate(-1.6863953,-3.7619588)">
-         <svg:line id="line13" x1="253.714" y1="233.571" x2="253.714" y2="271.28528" fill="none" stroke="#0000FF" stroke-width="2.17124" display="inline" font-style="normal"/>
-         <svg:path id="path1053" d="m 262.05529,234.94142 -8.57143,-8.57143 -8.57143,8.57143 z" style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.428572px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" fill="#0000FF" font-style="normal"/>
-      </svg:g>
-      <svg:g id="CENTER_x25_20POINT" display="inline" font-style="normal" transform="translate(31.712826,-78.075563)">
-         <svg:text id="text17" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9978px" font-style="normal" transform="matrix(0.5714,0,0,0.5714,195.7137,356.5714)">CENTER</svg:text>
-         <svg:text id="text19" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9978px" font-style="normal" transform="matrix(0.5714,0,0,0.5714,201.7137,368.5714)">POINT</svg:text>
-      </svg:g>
-   </svg:g>
+<svg:svg enable-background="new 0 0 400 400" font-style="normal" height="400.0" id="Version_1.0" version="1.1" viewBox=" 0.00  0.00 400.00 400.00" width="400.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0">
+  <svg:g font-style="normal" id="main">
+    <svg:g font-style="normal" transform="translate(0 1) translate(0 1) translate(0 1) translate(-1 0) translate(-1 0) translate(0 1) translate(0 1) translate(-1 0)">
+      <svg:rect fill="#FFFFFF" font-style="normal" height="35.0" rx="0.0" ry="0.0" stroke="#FFFFFF" width="35.0" x="181.5" y="173.5"/>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="35px" font-style="normal" x="184.83252" y="203.72339">D</svg:text>
+    </svg:g>
+    <svg:g font-style="normal" transform="rotate(45,191.66066,189.03862)">
+      <svg:path d="M 200,357.77526 V 223.83655" font-style="normal" style="fill:none;stroke:#000000;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+      <svg:path d="m 180,236 20,-20 20,20 z" font-style="normal" style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    </svg:g>
+    <svg:g font-style="normal" transform="matrix(-0.70710678,0.70710678,0.70710678,0.70710678,202.68629,-80.15642)">
+      <svg:path d="M 200,357.77526 V 223.83655" font-style="normal" style="fill:none;stroke:#000000;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+      <svg:path d="m 180,236 20,-20 20,20 z" font-style="normal" style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    </svg:g>
+    <svg:g font-style="normal" transform="rotate(-135,199.23202,194.34695)">
+      <svg:path d="M 200,357.77526 V 223.83655" font-style="normal" style="fill:none;stroke:#000000;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+      <svg:path d="m 180,236 20,-20 20,20 z" font-style="normal" style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    </svg:g>
+    <svg:g font-style="normal" transform="matrix(0.70710678,-0.70710678,-0.70710678,-0.70710678,189.8066,472.64931)">
+      <svg:path d="M 200,357.77526 V 223.83655" font-style="normal" style="fill:none;stroke:#000000;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+      <svg:path d="m 180,236 20,-20 20,20 z" font-style="normal" style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    </svg:g>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template" transform="matrix(1.75,0,0,1.75,-244.99097,-176.51601)">
+    <svg:g font-style="normal" transform="translate(-1.6863953,-3.7619588)">
+      <svg:line display="inline" fill="none" font-style="normal" stroke="#0000FF" stroke-width="2.17124" x1="253.714" x2="253.714" y1="233.571" y2="271.28528"/>
+      <svg:path d="m 262.05529,234.94142 -8.57143,-8.57143 -8.57143,8.57143 z" fill="#0000FF" font-style="normal" style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.428572px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="CENTER_x25_20POINT" transform="translate(31.712826,-78.075563)">
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9978px" font-style="normal" transform="matrix(0.5714,0,0,0.5714,195.7137,356.5714)" x="0.0" y="0.0">CENTER</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9978px" font-style="normal" transform="matrix(0.5714,0,0,0.5714,201.7137,368.5714)" x="0.0" y="0.0">POINT</svg:text>
+    </svg:g>
+  </svg:g>
 </svg:svg>

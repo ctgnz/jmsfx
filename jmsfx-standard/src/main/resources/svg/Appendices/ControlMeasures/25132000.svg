@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00">
-   <svg:defs id="defs3645" font-style="normal">
-      <svg:marker id="TriangleStart" refX="0" refY="0" markerWidth="5.3244081" markerHeight="6.155385" orient="auto-start-reverse" style="overflow:visible" font-style="normal" viewBox=" 0.00  0.00  5.32  6.16" preserveAspectRatio="xMidYMid">
-         <svg:path id="path135" d="M 5.77,0 -2.88,5 V -5 Z" style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt" font-style="normal" transform="scale(0.5)"/>
-      </svg:marker>
-   </svg:defs>
-   <svg:g id="main" font-style="normal" transform="translate(0,32)">
-      <svg:path id="path3764" d="M 305.5055,397.296 368.955,265.71163 500.539,202.262 368.955,138.813 305.5055,7.229 242.056,138.813 l -131.584,63.449 131.584,63.45 z" style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:20, 20;stroke-dashoffset:0;stroke-opacity:1" font-style="normal"/>
-      <svg:text id="text14389" x="275.36295" y="221.70874" dx="0.0" dy="0.0" font-family="sans-serif" font-size="52px" font-style="normal">TH</svg:text>
-   </svg:g>
-   <svg:g id="template" display="inline" font-style="normal">
-      <svg:g id="g3630" display="inline" font-style="normal" transform="translate(110.12486,-88.998865)">
-         <svg:rect id="rect3626" rx="0.0" ry="0.0" x="268.64899" y="168.229" width="73.388" height="72.728996" fill="none" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="2.4349" font-style="normal"/>
-         <svg:text id="text3628" x="0.0" y="0.0" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="52px" font-style="normal" transform="translate(290.5845,226.1787)">T</svg:text>
-      </svg:g>
-      <svg:g id="points" display="inline" font-style="normal">
-         <svg:text id="text3632" x="0.0" y="0.0" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="32.3352px" font-style="normal" transform="translate(398.1719,428.5664)">POINT</svg:text>
-         <svg:text id="text3634" x="0.0" y="0.0" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="32.3352px" font-style="normal" transform="translate(398.1719,390.0137)">CENTER</svg:text>
-         <svg:path id="path14392" d="M 392.9913,397.39626 313.50721,243.86647" style="fill:#0000ff;stroke:#0000FF;stroke-width:2.79208;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart);fill-opacity:1" fill="#0000FF" font-style="normal"/>
-      </svg:g>
-   </svg:g>
-   <svg:g id="example" display="none" font-style="normal">
-      <svg:text id="varTe" x="399.21783" y="134.51065" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="52px" font-style="normal">9</svg:text>
-   </svg:g>
+<svg:svg enable-background="new 0 0 612 792" font-style="normal" height="792.0" id="Version_1.0" version="1.1" viewBox=" 0.00  0.00 612.00 792.00" width="612.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0">
+  <svg:defs font-style="normal">
+    <svg:marker font-style="normal" id="TriangleStart" markerHeight="6.155385" markerWidth="5.3244081" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" refX="0" refY="0" style="overflow:visible" viewBox=" 0.00  0.00  5.32  6.16">
+      <svg:path d="M 5.77,0 -2.88,5 V -5 Z" font-style="normal" style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt" transform="scale(0.5)"/>
+    </svg:marker>
+  </svg:defs>
+  <svg:g font-style="normal" id="main" transform="translate(0,32)">
+    <svg:path d="M 305.5055,397.296 368.955,265.71163 500.539,202.262 368.955,138.813 305.5055,7.229 242.056,138.813 l -131.584,63.449 131.584,63.45 z" font-style="normal" style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:20, 20;stroke-dashoffset:0;stroke-opacity:1"/>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="52px" font-style="normal" x="275.36295" y="221.70874">TH</svg:text>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:g display="inline" font-style="normal" transform="translate(110.12486,-88.998865)">
+      <svg:rect fill="none" font-style="normal" height="72.728996" rx="0.0" ry="0.0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="2.4349" width="73.388" x="268.64899" y="168.229"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="52px" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="translate(290.5845,226.1787)" x="0.0" y="0.0">T</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="points">
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="32.3352px" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="translate(398.1719,428.5664)" x="0.0" y="0.0">POINT</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="32.3352px" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="translate(398.1719,390.0137)" x="0.0" y="0.0">CENTER</svg:text>
+      <svg:path d="M 392.9913,397.39626 313.50721,243.86647" fill="#0000FF" font-style="normal" style="fill:#0000ff;stroke:#0000FF;stroke-width:2.79208;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart);fill-opacity:1"/>
+    </svg:g>
+  </svg:g>
+  <svg:g display="none" font-style="normal" id="example">
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="52px" font-style="normal" id="varTe" x="399.21783" y="134.51065">9</svg:text>
+  </svg:g>
 </svg:svg>

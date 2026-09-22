@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00" preserveAspectRatio="xMidYMid meet">
-   <svg:g id="main" font-style="normal">
-      <svg:path d="M467.75,325.324l-162.331,71.252L146.25,325.324H467.75z M198.345,134.949v-6.186h210.034v6.186H198.345z M302.535,325.923   V128.764h7.441v197.159H302.535z" font-style="normal"/>
-      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" font-family="sans-serif" font-size="120" font-style="normal" transform="matrix(1 0 0 1 325.25 263.001)">T</svg:text>
-      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" font-family="sans-serif" font-size="120" font-style="normal" transform="matrix(1 0 0 1 213.2505 263.001)">T</svg:text>
-   </svg:g>
-   <svg:g id="template" display="inline" font-style="normal" transform="translate(-360 -290) scale(2.5 2.5)">
-      <svg:line x1="266.1" y1="284.305" x2="266.1" y2="302.305" fill="none" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
-      <svg:line x1="265.15" y1="302.305" x2="291.1" y2="302.305" fill="none" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
-      <svg:polygon points="266.100000,277.305000 274.100000,290.305000 258.100000,290.305000" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
-      <svg:g id="ANCHOR_x25_20POINT" display="inline" font-style="normal" transform="matrix(1 0 0 1 77 -110)">
-         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="30" font-style="normal" transform="matrix(0.4 0 0 0.4 214.1 408.3051)">ANCHOR</svg:text>
-         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="30" font-style="normal" transform="matrix(0.4 0 0 0.4 220.1 420.3051)">POINT</svg:text>
-      </svg:g>
-   </svg:g>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792.0" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0.00  0.00 612.00 792.00" width="612.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:path d="M467.75,325.324l-162.331,71.252L146.25,325.324H467.75z M198.345,134.949v-6.186h210.034v6.186H198.345z M302.535,325.923   V128.764h7.441v197.159H302.535z" font-style="normal"/>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="120" font-style="normal" transform="matrix(1 0 0 1 325.25 263.001)" x="0.0" y="0.0">T</svg:text>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="120" font-style="normal" transform="matrix(1 0 0 1 213.2505 263.001)" x="0.0" y="0.0">T</svg:text>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template" transform="translate(-360 -290) scale(2.5 2.5)">
+    <svg:line display="inline" fill="none" font-style="normal" stroke="#0000FF" stroke-width="2.0" x1="266.1" x2="266.1" y1="284.305" y2="302.305"/>
+    <svg:line display="inline" fill="none" font-style="normal" stroke="#0000FF" stroke-width="2.0" x1="265.15" x2="291.1" y1="302.305" y2="302.305"/>
+    <svg:polygon display="inline" fill="#FFFFFF" font-style="normal" points="266.100000,277.305000 274.100000,290.305000 258.100000,290.305000" stroke="#0000FF" stroke-width="2.0"/>
+    <svg:g display="inline" font-style="normal" id="ANCHOR_x25_20POINT" transform="matrix(1 0 0 1 77 -110)">
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="30" font-style="normal" transform="matrix(0.4 0 0 0.4 214.1 408.3051)" x="0.0" y="0.0">ANCHOR</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="30" font-style="normal" transform="matrix(0.4 0 0 0.4 220.1 420.3051)" x="0.0" y="0.0">POINT</svg:text>
+    </svg:g>
+  </svg:g>
 </svg:svg>

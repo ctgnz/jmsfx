@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00" preserveAspectRatio="xMidYMid meet">
-   <svg:g id="main" font-style="normal">
-      <svg:path d="   M153.747,138.651c-42.024,4.464-96.079,2.243-108.09,26.702c-12.01,24.46-9.997,97.839,36.03,120.08   c46.028,22.236,194.149,31.146,240.176,13.353s40.035-93.396,36.031-120.099c-4.004-26.681-26.033-33.347-60.051-40.032   C263.826,131.986,195.772,134.207,153.747,138.651" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="7.0" font-style="normal"/>
-   </svg:g>
-   <svg:g id="template" display="inline" font-style="normal">
-      <svg:g id="varT" display="inline" font-style="normal">
-         <svg:rect rx="0.0" ry="0.0" x="181.048" y="182.386" width="65.005" height="54.273" fill="#FFFFFF" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="1.7378" font-style="normal"/>
-         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="36" font-style="normal" transform="matrix(1 0 0 1 202.4883 223.8535)">T</svg:text>
-      </svg:g>
-      <svg:g id="varB" display="inline" font-style="normal">
-         <svg:rect rx="0.0" ry="0.0" x="182.121" y="275.386" width="65.006" height="54.273" fill="#FFFFFF" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="1.7378" font-style="normal"/>
-         <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="36" font-style="normal" transform="matrix(1 0 0 1 202.5508 316.8535)">B</svg:text>
-      </svg:g>
-   </svg:g>
-   <svg:g id="example" display="none" font-style="normal">
-      <svg:polygon points="202.869000,32.910000 155.617000,72.507000 202.869000,112.104000 250.123000,72.507000 202.869000,32.910000" clip-rule="evenodd" fill="#FF8080" fill-rule="evenodd" stroke="#808080" stroke-miterlimit="10.0" stroke-width="3.0" display="inline" font-style="normal"/>
-      <svg:rect rx="0.0" ry="0.0" x="189.5" y="279.5" width="49.0" height="44.0" fill="#FFFFFF" display="inline" font-style="normal"/>
-      <svg:text id="varBe" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="36" font-style="normal" transform="matrix(1 0 0 1 204.5547 316.8535)">II</svg:text>
-      <svg:text id="varTe" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="36" font-style="normal" transform="matrix(1 0 0 1 164.4673 223.8535)">XRAY</svg:text>
-   </svg:g>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 400 400" font-style="normal" height="400.0" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0.00  0.00 400.00 400.00" width="400.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:path d="   M153.747,138.651c-42.024,4.464-96.079,2.243-108.09,26.702c-12.01,24.46-9.997,97.839,36.03,120.08   c46.028,22.236,194.149,31.146,240.176,13.353s40.035-93.396,36.031-120.099c-4.004-26.681-26.033-33.347-60.051-40.032   C263.826,131.986,195.772,134.207,153.747,138.651" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="7.0"/>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:g display="inline" font-style="normal" id="varT">
+      <svg:rect fill="#FFFFFF" font-style="normal" height="54.273" rx="0.0" ry="0.0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="1.7378" width="65.005" x="181.048" y="182.386"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="36" font-style="normal" transform="matrix(1 0 0 1 202.4883 223.8535)" x="0.0" y="0.0">T</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="varB">
+      <svg:rect fill="#FFFFFF" font-style="normal" height="54.273" rx="0.0" ry="0.0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="1.7378" width="65.006" x="182.121" y="275.386"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="36" font-style="normal" transform="matrix(1 0 0 1 202.5508 316.8535)" x="0.0" y="0.0">B</svg:text>
+    </svg:g>
+  </svg:g>
+  <svg:g display="none" font-style="normal" id="example">
+    <svg:polygon clip-rule="evenodd" display="inline" fill="#FF8080" fill-rule="evenodd" font-style="normal" points="202.869000,32.910000 155.617000,72.507000 202.869000,112.104000 250.123000,72.507000 202.869000,32.910000" stroke="#808080" stroke-miterlimit="10.0" stroke-width="3.0"/>
+    <svg:rect display="inline" fill="#FFFFFF" font-style="normal" height="44.0" rx="0.0" ry="0.0" width="49.0" x="189.5" y="279.5"/>
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="36" font-style="normal" id="varBe" transform="matrix(1 0 0 1 204.5547 316.8535)" x="0.0" y="0.0">II</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="36" font-style="normal" id="varTe" transform="matrix(1 0 0 1 164.4673 223.8535)" x="0.0" y="0.0">XRAY</svg:text>
+  </svg:g>
 </svg:svg>
