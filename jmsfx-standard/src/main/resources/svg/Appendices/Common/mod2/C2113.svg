@@ -12,10 +12,10 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="220" x2="183" y1="482.5" y2="396"/>
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
-    <line display="inline" fill="none" id="bottom" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="445.01501" y2="445.29501"/>
-    <line display="inline" fill="none" id="top" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="346.98499" y2="346.70499"/>
+    <line display="inline" fill="none" id="bottom" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
+    <line display="inline" fill="none" id="top" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
   </g>
-  <g transform="translate(-9.5112177)">
+  <g transform="translate(-9.51122)">
     <g id="mod2" transform="matrix(0.9,0,0,0.9,30.6,47.47395)">
       <polyline points="306,445.015 335.725,504.464 276.275,504.464"/>
     </g>

@@ -2,8 +2,8 @@
 <!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
 <svg enable-background="new 0 0 612 792" height="792px" id="Version_1.0" version="1.1" viewBox="0 0 612 792" width="612px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" y="0px">
   <g display="none" id="octagon">
-    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="445.01501" y2="445.29501"/>
-    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="346.98499" y2="346.70499"/>
+    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
+    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
     <g display="inline" id="outFrame">
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="220" x2="306" y1="309.5" y2="273"/>
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="306" x2="390.5" y1="273" y2="309.5"/>
@@ -15,23 +15,23 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
   </g>
-  <g id="main" transform="matrix(0.78,0,0,0.78,67.041157,93.500405)">
-    <circle cx="304.75369" cy="386.11124" r="24" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:11.5385;stroke-dasharray:none;stroke-opacity:1"/>
-    <g style="stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0,0.38134865,-0.71756815,0,560.33225,290.50518)">
+  <g id="main" transform="matrix(0.78,0,0,0.78,67.04116,93.5004)">
+    <circle cx="304.7537" cy="386.11124" r="24" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:11.5385;stroke-dasharray:none;stroke-opacity:1"/>
+    <g style="stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0,0.38135,-0.71757,0,560.33225,290.50518)">
       <path d="m 249.91602,315.93555 v 10 h 109.98546 v -10 z" style="color:#000000;fill:#000000;stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1"/>
       <path d="m 342.39027,298.40584 v 45.05942 l 35.93945,-22.5297 c -0.01,-0.006 -35.93945,-22.52972 -35.93945,-22.52972 z" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1"/>
     </g>
-    <g style="stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0,-0.38134865,-0.71756815,0,509.68971,481.28919)">
+    <g style="stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0,-0.38135,-0.71757,0,509.6897,481.2892)">
       <path d="m 249.91602,315.93555 v 10 h 109.98546 v -10 z" style="color:#000000;fill:#000000;stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1"/>
       <path d="m 342.39027,298.40584 v 45.05942 l 35.93945,-22.5297 z" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1"/>
     </g>
-    <g style="stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.38134865,0,0,-0.71756815,210.24359,591.0785)">
+    <g style="stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0.38135,0,0,-0.71757,210.2436,591.0785)">
       <path d="m 249.91602,315.93555 v 10 h 109.98546 v -10 z" style="color:#000000;fill:#000000;stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1"/>
       <path d="m 342.39027,298.40584 v 45.05942 l 35.93945,-22.5297 c -0.22434,-0.41463 -35.93945,-22.52972 -35.93945,-22.52972 z" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1"/>
     </g>
-    <g style="stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1" transform="matrix(-0.38134865,0,0,-0.71756815,400.1698,641.73619)">
+    <g style="stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1" transform="matrix(-0.38135,0,0,-0.71757,400.1698,641.73619)">
       <path d="m 249.91602,315.93555 v 10 h 109.98546 v -10 z" style="color:#000000;fill:#000000;stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1"/>
-      <path d="m 342.39027,298.40584 v 45.05942 l 35.93945,-22.5297 c -11.97819,-7.51297 -35.29286,-22.24806 -35.93945,-22.52972 z" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1"/>
+      <path d="m 342.39027,298.40584 v 45.05942 l 35.93945,-22.5297 c -11.9782,-7.51297 -35.29286,-22.24806 -35.93945,-22.52972 z" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1"/>
     </g>
   </g>
 </svg>

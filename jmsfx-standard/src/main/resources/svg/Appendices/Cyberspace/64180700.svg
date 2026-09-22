@@ -2,8 +2,8 @@
 <!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
 <svg enable-background="new 0 0 612 792" height="792px" id="Version_1.0" version="1.1" viewBox="0 0 612 792" width="612px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" y="0px">
   <g display="none" id="octagon">
-    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="445.01501" y2="445.29501"/>
-    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="346.98499" y2="346.70499"/>
+    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
+    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
     <g display="inline" id="outFrame">
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="220" x2="306" y1="309.5" y2="273"/>
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="306" x2="390.5" y1="273" y2="309.5"/>
@@ -16,11 +16,11 @@
     </g>
   </g>
   <g id="main" opacity="0.93">
-    <rect height="41.802498" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-dasharray:none" width="114.61975" x="251.71396" y="388.46991"/>
-    <rect height="31.014755" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-dasharray:none" width="75.514191" x="271.26672" y="410.58569"/>
-    <rect height="38.310764" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3.52629;stroke-dasharray:none" width="94.471992" x="261.78784" y="349.4382"/>
+    <rect height="41.8025" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-dasharray:none" width="114.61975" x="251.71396" y="388.46991"/>
+    <rect height="31.01476" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-dasharray:none" width="75.5142" x="271.26672" y="410.5857"/>
+    <rect height="38.31076" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3.52629;stroke-dasharray:none" width="94.472" x="261.78784" y="349.4382"/>
     <path d="m 338.17843,396.34258 19.38805,0" style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"/>
-    <path d="m 278.82933,421.54467 h 60.38901" style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
-    <path d="m 278.82933,431.54467 h 60.38901" style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+    <path d="m 278.82933,421.54467 h 60.389" style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+    <path d="m 278.82933,431.54467 h 60.389" style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
   </g>
 </svg>

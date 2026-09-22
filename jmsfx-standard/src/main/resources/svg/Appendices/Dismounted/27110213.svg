@@ -7,6 +7,6 @@
     <line fill="none" stroke="#0000ff" stroke-width="2" x1="202.5" x2="407.5" y1="443.29999" y2="443.29999"/>
   </g>
   <g id="main">
-    <polyline fill="none" points="214.5,303.5 302.016,417.173 309.483,374.826 397,488.5" stroke="#000000" stroke-width="5" style="stroke-width:6.62642532;stroke-dasharray:none" transform="matrix(1.102865,0,0,0.51624878,-32.205824,191.07032)"/>
+    <polyline fill="none" points="214.5,303.5 302.016,417.173 309.483,374.826 397,488.5" stroke="#000000" stroke-width="5" style="stroke-width:6.62643;stroke-dasharray:none" transform="matrix(1.10287,0,0,0.51625,-32.20582,191.07032)"/>
   </g>
 </svg>

@@ -4,8 +4,8 @@
   <g id="mod1" transform="translate(0,-170.25)">
     <g>
       <path d="M 167.465,566.287 H 444.534 Z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
-      <circle cx="142.429" cy="566.25" fill="none" r="25.037001" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
-      <circle cx="469.57101" cy="566.25" fill="none" r="25.037001" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+      <circle cx="142.429" cy="566.25" fill="none" r="25.037" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+      <circle cx="469.571" cy="566.25" fill="none" r="25.037" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
     </g>
   </g>
 </svg>

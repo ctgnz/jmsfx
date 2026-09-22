@@ -16,7 +16,7 @@
     <line display="inline" fill="none" id="mod1_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="346.985" y2="346.705"/>
   </g>
   <g id="main">
-    <g transform="translate(10.572816,24.029126)">
+    <g transform="translate(10.57282,24.02913)">
       <path d="m 240,385.35 v 16.05 h 13.35 V 372 c -1.8,1.2 -13.35,11.7 -13.35,13.35 z" fill="#ffffff" id="_65846384"/>
       <polygon fill="#ffffff" id="_65247944" points="285.6,401.4 285.45,340.35 269.85,355.65 269.4,401.4"/>
       <path d="m 304.35,401.4 h 16.05 v -44.85 c 0,-1.65 -14.1,-14.7 -16.05,-16.05 z" fill="#ffffff" id="_64268320"/>

@@ -2,16 +2,16 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg enable-background="new 0 0 612 792" height="792px" id="Version_1.0" version="1.1" viewBox="0 0 612 792" width="612px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" y="0px">
   <g id="mod1">
-    <g transform="translate(-26.159165,99.667484)">
+    <g transform="translate(-26.15917,99.66748)">
       <g>
-        <circle cx="166.74713" cy="310.7973" r="58.883091" style="fill:#00ff00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:8;stroke-dasharray:none;stroke-opacity:1"/>
-        <path d="m 99.747131,226.724 66.999999,84.0733 67,-84.0733" style="fill:none;stroke:#00ff00;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+        <circle cx="166.74713" cy="310.7973" r="58.8831" style="fill:#00ff00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:8;stroke-dasharray:none;stroke-opacity:1"/>
+        <path d="m 99.74713,226.724 67,84.0733 67,-84.0733" style="fill:none;stroke:#00ff00;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
       </g>
       <g>
-        <circle cx="497.5712" cy="310.7973" r="58.883091" style="fill:#00ff00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:8;stroke-dasharray:none;stroke-opacity:1"/>
+        <circle cx="497.5712" cy="310.7973" r="58.8831" style="fill:#00ff00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:8;stroke-dasharray:none;stroke-opacity:1"/>
         <path d="m 430.5712,226.724 67,84.0733 67,-84.0733" style="fill:none;stroke:#00ff00;stroke-width:12;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
       </g>
-      <path d="m 332.15916,259.11494 a 70.659709,70.659709 0 0 0 -70.65938,70.65937 70.659709,70.659709 0 0 0 0.26953,3.77579 H 402.549 a 70.659709,70.659709 0 0 0 0.26954,-3.77579 70.659709,70.659709 0 0 0 -70.65938,-70.65937 z" style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#00ff00;stroke-width:8;stroke-dasharray:16, 16;stroke-dashoffset:0;stroke-opacity:1"/>
+      <path d="m 332.15916,259.11494 a 70.6597,70.6597 0 0 0 -70.65938,70.65937 70.6597,70.6597 0 0 0 0.26953,3.7758 H 402.549 a 70.6597,70.6597 0 0 0 0.26954,-3.7758 70.6597,70.6597 0 0 0 -70.65938,-70.65937 z" style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#00ff00;stroke-width:8;stroke-dasharray:16, 16;stroke-dashoffset:0;stroke-opacity:1"/>
     </g>
   </g>
 </svg>

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg enable-background="new 0 0 612 792" font-style="normal" height="792.0" id="Version_1.0" version="1.1" viewBox=" 0.00  0.00 612.00 792.00" width="612.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0">
+<svg:svg enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
   <svg:g font-style="normal" id="main">
     <svg:path d="m 242.575,140.0537 h 128.229 l -5e-4,170.97765 -64.1155,85.48965 -64.113,-85.48965 z" font-style="normal" style="fill:none;stroke:#002776;stroke-width:4;stroke-linecap:round;stroke-miterlimit:8" transform="translate(0,-1.1827)"/>
     <svg:path d="m 370.803,311.037 -64.115,85.484 -64.113,-85.484 z" font-style="normal" style="fill:#002776;stroke-width:4;stroke-linecap:round;stroke-miterlimit:8" transform="translate(0,-172.166)"/>
     <svg:path d="m 306.688,394.07989 -64.113,-85.72489 64.113,-84 64.115,84 z" font-style="normal" style="fill:#002776;stroke-width:4;stroke-linecap:round;stroke-miterlimit:8"/>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template">
-    <svg:g display="inline" font-style="normal" id="H" transform="translate(115.05695,89.629998)">
-      <svg:rect fill="none" font-style="normal" height="53.196999" rx="0.0" ry="0.0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="4.0" width="56.633999" x="278.69901" y="84.545998"/>
+    <svg:g display="inline" font-style="normal" id="H" transform="translate(115.05695,89.63)">
+      <svg:rect fill="none" font-style="normal" height="53.197" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="4" width="56.634" x="278.699" y="84.546"/>
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="36px" font-style="normal" id="varH" x="293.48962" y="124.23141">H</svg:text>
     </svg:g>
     <svg:g display="inline" font-style="normal" id="points">
-      <svg:path d="m 370.803,397.467 h -35.62 c -0.658,0 -1.191,-0.518 -1.191,-1.176 0,-0.658 0.533,-1.193 1.191,-1.193 h 35.62 c 0.66,0 1.192,0.535 1.192,1.193 0,0.658 -0.532,1.176 -1.192,1.176 z m -33.249,5.947 -23.741,-7.123 23.741,-7.125 z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="4.0"/>
+      <svg:path d="m 370.803,397.467 h -35.62 c -0.658,0 -1.191,-0.518 -1.191,-1.176 0,-0.658 0.533,-1.193 1.191,-1.193 h 35.62 c 0.66,0 1.192,0.535 1.192,1.193 0,0.658 -0.532,1.176 -1.192,1.176 z m -33.249,5.947 -23.741,-7.123 23.741,-7.125 z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10" stroke-width="4"/>
       <svg:g font-style="normal">
-        <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="23.6512px" font-style="normal" transform="translate(377.3232,420.1641)" x="0.0" y="0.0">POINT</svg:text>
-        <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="23.6512px" font-style="normal" transform="translate(377.3232,392.522)" x="0.0" y="0.0">ANCHOR</svg:text>
+        <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="23.6512px" font-style="normal" transform="translate(377.3232,420.1641)" x="0" y="0">POINT</svg:text>
+        <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="23.6512px" font-style="normal" transform="translate(377.3232,392.522)" x="0" y="0">ANCHOR</svg:text>
       </svg:g>
     </svg:g>
   </svg:g>

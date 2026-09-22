@@ -4,10 +4,10 @@
   <g id="mod1" transform="translate(0,-195.28699)">
     <g>
       <line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5" x1="117.393" x2="494.60699" y1="566.25" y2="566.25"/>
-      <circle cx="142.429" cy="591.28699" fill="none" r="25.037001" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
-      <circle cx="194.72701" cy="591.28699" fill="none" r="25.037001" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
-      <circle cx="417.272" cy="591.28699" fill="none" r="25.037001" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
-      <circle cx="469.57101" cy="591.28699" fill="none" r="25.037001" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+      <circle cx="142.429" cy="591.28699" fill="none" r="25.037" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+      <circle cx="194.72701" cy="591.28699" fill="none" r="25.037" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+      <circle cx="417.272" cy="591.28699" fill="none" r="25.037" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+      <circle cx="469.571" cy="591.28699" fill="none" r="25.037" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
     </g>
   </g>
 </svg>

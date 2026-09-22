@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792.0" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0.00  0.00 612.00 792.00" width="612.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0" zoomAndPan="magnify">
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
   <svg:g font-style="normal" id="main">
     <svg:g font-style="normal">
-      <svg:polygon fill="none" font-style="normal" points="166.747000,478.537000 306.747000,236.037000 446.746000,478.537000" stroke="#000000" stroke-width="5.0"/>
+      <svg:polygon fill="none" font-style="normal" points="166.747,478.537 306.747,236.037 446.746,478.537" stroke="#000000" stroke-width="5"/>
     </svg:g>
     <svg:g font-style="normal">
-      <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="377.076" x2="168.076" y1="355.13" y2="478.13"/>
+      <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="377.076" x2="168.076" y1="355.13" y2="478.13"/>
     </svg:g>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template" transform="translate(-135 -150)">
-    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 572.8438 516.5283)" x="0.0" y="0.0">CENTER</svg:text>
-    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 583.8438 541.5283)" x="0.0" y="0.0">POINT</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 572.8438 516.5283)" x="0" y="0">CENTER</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 583.8438 541.5283)" x="0" y="0">POINT</svg:text>
     <svg:g display="inline" font-style="normal">
-      <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="3.0" x1="455.747" x2="614.213" y1="546.52" y2="546.52"/>
+      <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="3" x1="455.747" x2="614.213" y1="546.52" y2="546.52"/>
       <svg:path d="M450.434,548.825c3.721,1.124,6.137,2.159,9.121,3.356v-11.354c-1.068,0.508-5.4,2.23-9.121,3.354 c-3.98,1.201-7.592,2.024-9.934,2.318C442.842,546.801,446.452,547.623,450.434,548.825z" fill="#0000FF" font-style="normal"/>
     </svg:g>
   </svg:g>

@@ -2,8 +2,8 @@
 <!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
 <svg enable-background="new 0 0 612 792" height="792px" id="Version_1.0" version="1.1" viewBox="0 0 612 792" width="612px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" y="0px">
   <g display="none" id="octagon">
-    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="445.01501" y2="445.29501"/>
-    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="346.98499" y2="346.70499"/>
+    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
+    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
     <g display="inline" id="outFrame">
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="220" x2="306" y1="309.5" y2="273"/>
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="306" x2="390.5" y1="273" y2="309.5"/>
@@ -16,7 +16,7 @@
     </g>
   </g>
   <g id="main" opacity="0.93"/>
-  <path d="m 394.063,368.00822 v 31.17176 l 21.9976,-15.58587 c -7.33143,-5.19742 -14.66502,-10.39093 -21.9976,-15.58589 z" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.677628;-inkscape-stroke:none"/>
-  <path d="m 216.26,368.00822 v 31.17176 l -21.997,-15.58587 c 7.33143,-5.19742 14.66442,-10.39093 21.997,-15.58589 z" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.677628;-inkscape-stroke:none"/>
+  <path d="m 394.063,368.00822 v 31.17176 l 21.9976,-15.58587 c -7.33143,-5.19742 -14.66502,-10.39093 -21.9976,-15.58589 z" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.67763;-inkscape-stroke:none"/>
+  <path d="m 216.26,368.00822 v 31.17176 l -21.997,-15.58587 c 7.33143,-5.19742 14.66442,-10.39093 21.997,-15.58589 z" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.67763;-inkscape-stroke:none"/>
   <path d="m 216.16,383.494 h 24.90644 L 216.26,436.679 H 394.063 L 370.13427,383.494 H 394.163" style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
 </svg>

@@ -6,7 +6,7 @@
     <line fill="none" stroke="#0000ff" stroke-width="2" x1="202.5" x2="407.5" y1="345.70001" y2="345.70001"/>
     <line fill="none" stroke="#0000ff" stroke-width="2" x1="202.5" x2="407.5" y1="443.29999" y2="443.29999"/>
   </g>
-  <g id="mod1" transform="translate(16.361356,-4)">
+  <g id="mod1" transform="translate(16.36136,-4)">
     <text font-family="sans-serif" font-size="59.1785px" transform="matrix(1.0139,0,0,1,238.335,344.2832)">JFS</text>
   </g>
 </svg>

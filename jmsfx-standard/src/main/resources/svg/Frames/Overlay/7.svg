@@ -12,14 +12,14 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="220" x2="183" y1="482.5" y2="396"/>
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
-    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="445.01501" y2="445.29501"/>
-    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="346.98499" y2="346.70499"/>
+    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
+    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
   </g>
   <g id="frame_overlay">
     <path d="M 483.974,318.612 H 371.204 L 427.589,217.62612 Z" fill="#faf183" stroke="#000000" stroke-dasharray="5,5" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="5" style="stroke-dasharray:none;fill:#ffff00;fill-opacity:1"/>
-    <g transform="translate(-1.589175,3.1179907)">
+    <g transform="translate(-1.58918,3.118)">
       <path d="m 436.01736,239.90652 -1.58767,50.57813 c -2.04943,4.0454 -7.59954,4.15778 -10.3809,0 l -1.7098,-50.57813 c 3.65969,-4.94438 10.31145,-4.94438 13.67837,0 z" style="font-size:96px;stroke-width:1.14136"/>
-      <ellipse cx="429.17816" cy="302.48773" rx="6.0945215" ry="6.0944004" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.6;stroke-dasharray:none"/>
+      <ellipse cx="429.17816" cy="302.48773" rx="6.09452" ry="6.0944" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.6;stroke-dasharray:none"/>
     </g>
     <g id="frame_overlay-0" transform="translate(2,-6)">
       <text font-family="sans-serif" font-size="72px" transform="translate(452.082,269.8145)">S</text>

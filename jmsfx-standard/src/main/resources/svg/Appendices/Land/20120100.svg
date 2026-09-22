@@ -15,7 +15,7 @@
     <line display="inline" fill="none" id="mod2_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="445.015" y2="445.295"/>
     <line display="inline" fill="none" id="mod1_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="346.985" y2="346.705"/>
   </g>
-  <g id="main" transform="translate(77.123596,57.348315)">
+  <g id="main" transform="translate(77.1236,57.34832)">
     <g>
       <path d="m 237,272.2 v 1.6 h 23.8 c 0,0 11.4,-10.2 11.9,-10.8 -3.1,-4.6 -8.9,-9.2 -16.8,-9.2 h -1.6 c -7.7,0 -17.3,11.4 -17.3,18.4 z" fill="#ffffff" id="_96021888"/>
       <path d="m 237,290.6 c 2.7,0.6 9.1,4.3 12.1,5.8 5.6,2.7 4.3,7.4 7.9,9.8 0,-4.9 0,-9.7 0,-14.6 0,-6.2 1.8,-8.4 2.2,-12.4 H 237 Z" fill="#ffffff" id="_63611392"/>

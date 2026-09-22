@@ -15,7 +15,7 @@
     <line display="inline" fill="none" id="mod2_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="445.015" y2="445.295"/>
     <line display="inline" fill="none" id="mod1_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="346.985" y2="346.705"/>
   </g>
-  <g id="mod1" transform="translate(2.4106136)">
+  <g id="mod1" transform="translate(2.41061)">
     <text font-family="sans-serif" font-size="72px" id="V" transform="translate(279.0005,344.5557)">L</text>
   </g>
 </svg>

@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792.0" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0.00  0.00 612.00 792.00" width="612.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0" zoomAndPan="magnify">
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
   <svg:g font-style="normal" id="main">
     <svg:g font-style="normal">
-      <svg:polygon fill="none" font-style="normal" points="166.006000,495.049000 306.006000,252.548000 446.006000,495.049000" stroke="#000000" stroke-width="5.0"/>
+      <svg:polygon fill="none" font-style="normal" points="166.006,495.049 306.006,252.548 446.006,495.049" stroke="#000000" stroke-width="5"/>
     </svg:g>
     <svg:g font-style="normal">
       <svg:g font-style="normal">
         <svg:g font-style="normal" id="lines">
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="207.677" x2="207.677" y1="495.049" y2="535.049"/>
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="247.677" x2="247.677" y1="495.049" y2="535.049"/>
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="287.677" x2="287.677" y1="495.049" y2="535.049"/>
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="327.677" x2="327.677" y1="495.049" y2="535.049"/>
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="367.678" x2="367.678" y1="495.049" y2="535.049"/>
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="407.678" x2="407.678" y1="495.049" y2="535.049"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="207.677" x2="207.677" y1="495.049" y2="535.049"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="247.677" x2="247.677" y1="495.049" y2="535.049"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="287.677" x2="287.677" y1="495.049" y2="535.049"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="327.677" x2="327.677" y1="495.049" y2="535.049"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="367.678" x2="367.678" y1="495.049" y2="535.049"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="407.678" x2="407.678" y1="495.049" y2="535.049"/>
         </svg:g>
       </svg:g>
       <svg:g font-style="normal" transform="rotate(60 200 300) translate(-70 -160.5)">
         <svg:g font-style="normal" id="lines_1_">
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="300.432" x2="265.792" y1="379.777" y2="399.779"/>
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="320.432" x2="285.791" y1="414.417" y2="434.418"/>
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="340.431" x2="305.791" y1="449.06" y2="469.06"/>
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="360.431" x2="325.791" y1="483.701" y2="503.702"/>
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="380.432" x2="345.792" y1="518.343" y2="538.342"/>
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="400.431" x2="365.792" y1="552.982" y2="572.982"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="300.432" x2="265.792" y1="379.777" y2="399.779"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="320.432" x2="285.791" y1="414.417" y2="434.418"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="340.431" x2="305.791" y1="449.06" y2="469.06"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="360.431" x2="325.791" y1="483.701" y2="503.702"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="380.432" x2="345.792" y1="518.343" y2="538.342"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="400.431" x2="365.792" y1="552.982" y2="572.982"/>
         </svg:g>
       </svg:g>
       <svg:g font-style="normal" transform="rotate(-60 200 300) translate(70 -160.5)">
         <svg:g font-style="normal" id="lines_2_">
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="107.732" x2="142.375" y1="729.689" y2="749.688"/>
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="127.732" x2="162.375" y1="695.048" y2="715.048"/>
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="147.732" x2="182.375" y1="660.407" y2="680.407"/>
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="167.732" x2="202.375" y1="625.766" y2="645.766"/>
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="187.733" x2="222.375" y1="591.124" y2="611.123"/>
-          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="207.733" x2="242.375" y1="556.483" y2="576.484"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="107.732" x2="142.375" y1="729.689" y2="749.688"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="127.732" x2="162.375" y1="695.048" y2="715.048"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="147.732" x2="182.375" y1="660.407" y2="680.407"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="167.732" x2="202.375" y1="625.766" y2="645.766"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="187.733" x2="222.375" y1="591.124" y2="611.123"/>
+          <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="207.733" x2="242.375" y1="556.483" y2="576.484"/>
         </svg:g>
       </svg:g>
     </svg:g>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template" transform="translate(-135 -150)">
-    <svg:line display="inline" fill="none" font-style="normal" stroke="#0000FF" stroke-width="3.0" x1="450.535" x2="615.812" y1="546.221" y2="548.565"/>
-    <svg:polygon display="inline" fill="#FFFFFF" font-style="normal" points="443.013000,546.262000 452.783000,549.645000 452.939000,542.798000" stroke="#0000FF" stroke-width="3.0"/>
-    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 574.1737 517.9976)" x="0.0" y="0.0">CENTER</svg:text>
-    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 585.1737 542.9976)" x="0.0" y="0.0">POINT</svg:text>
+    <svg:line display="inline" fill="none" font-style="normal" stroke="#0000FF" stroke-width="3" x1="450.535" x2="615.812" y1="546.221" y2="548.565"/>
+    <svg:polygon display="inline" fill="#FFFFFF" font-style="normal" points="443.013,546.262 452.783,549.645 452.939,542.798" stroke="#0000FF" stroke-width="3"/>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 574.1737 517.9976)" x="0" y="0">CENTER</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 585.1737 542.9976)" x="0" y="0">POINT</svg:text>
   </svg:g>
 </svg:svg>

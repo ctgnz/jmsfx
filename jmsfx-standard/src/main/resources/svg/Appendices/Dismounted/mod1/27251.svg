@@ -6,7 +6,7 @@
     <line fill="none" stroke="#0000ff" stroke-width="2" x1="202.5" x2="407.5" y1="345.70001" y2="345.70001"/>
     <line fill="none" stroke="#0000ff" stroke-width="2" x1="202.5" x2="407.5" y1="443.29999" y2="443.29999"/>
   </g>
-  <g id="mod1" transform="translate(-2.0331663,-4)">
+  <g id="mod1" transform="translate(-2.03317,-4)">
     <text font-family="sans-serif" font-size="60px" transform="translate(239.665,343.5029)">DEM</text>
   </g>
 </svg>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg enable-background="new 0 0 612 792" font-style="normal" height="792.0" id="Version_1.0" version="1.1" viewBox=" 0.00  0.00 612.00 792.00" width="612.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0">
+<svg:svg enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
   <svg:defs font-style="normal">
-    <svg:marker font-style="normal" id="TriangleStart" markerHeight="6.155385" markerWidth="5.3244081" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" refX="0" refY="0" style="overflow:visible" viewBox=" 0.00  0.00  5.32  6.16">
+    <svg:marker font-style="normal" id="TriangleStart" markerHeight="6.155385" markerWidth="5.3244081" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" refX="0" refY="0" style="overflow:visible" viewBox=" 0  0  5.32  6.16">
       <svg:path d="M 5.77,0 -2.88,5 V -5 Z" font-style="normal" style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt" transform="scale(0.5)"/>
     </svg:marker>
   </svg:defs>
@@ -10,14 +10,14 @@
     <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="52px" font-style="normal" x="275.36295" y="221.70874">TH</svg:text>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template">
-    <svg:g display="inline" font-style="normal" transform="translate(110.12486,-88.998865)">
-      <svg:rect fill="none" font-style="normal" height="72.728996" rx="0.0" ry="0.0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="2.4349" width="73.388" x="268.64899" y="168.229"/>
-      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="52px" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="translate(290.5845,226.1787)" x="0.0" y="0.0">T</svg:text>
+    <svg:g display="inline" font-style="normal" transform="translate(110.12486,-88.99887)">
+      <svg:rect fill="none" font-style="normal" height="72.729" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="2.4349" width="73.388" x="268.649" y="168.229"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="52px" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="translate(290.5845,226.1787)" x="0" y="0">T</svg:text>
     </svg:g>
     <svg:g display="inline" font-style="normal" id="points">
-      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="32.3352px" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="translate(398.1719,428.5664)" x="0.0" y="0.0">POINT</svg:text>
-      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="32.3352px" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="translate(398.1719,390.0137)" x="0.0" y="0.0">CENTER</svg:text>
-      <svg:path d="M 392.9913,397.39626 313.50721,243.86647" fill="#0000FF" font-style="normal" style="fill:#0000ff;stroke:#0000FF;stroke-width:2.79208;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart);fill-opacity:1"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="32.3352px" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="translate(398.1719,428.5664)" x="0" y="0">POINT</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="32.3352px" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="translate(398.1719,390.0137)" x="0" y="0">CENTER</svg:text>
+      <svg:path d="M 392.9913,397.39626 313.5072,243.86647" fill="#0000FF" font-style="normal" style="fill:#0000ff;stroke:#0000FF;stroke-width:2.79208;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart);fill-opacity:1"/>
     </svg:g>
   </svg:g>
   <svg:g display="none" font-style="normal" id="example">

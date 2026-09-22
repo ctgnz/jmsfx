@@ -15,13 +15,13 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="393" x2="306.5" y1="479.5" y2="516.5"/>
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="306.5" x2="220" y1="516.5" y2="479.5"/>
     </g>
-    <line fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="445.01501" y2="445.29501"/>
-    <line fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="346.98499" y2="346.70499"/>
+    <line fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
+    <line fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
   </g>
   <g id="AQ/AR">
     <rect height="96" id="rectAQAR" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2.04612;stroke-dasharray:none;stroke-opacity:1" width="134" x="0" y="152"/>
-    <text id="textAQAR" style="font-style:normal;font-weight:normal;font-size:36px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="7.234375" xml:space="preserve" y="210.22168">
-      <tspan x="7.234375" y="210.22168">AQ/AR</tspan>
+    <text id="textAQAR" style="font-style:normal;font-weight:normal;font-size:36px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="7.23438" xml:space="preserve" y="210.22168">
+      <tspan x="7.23438" y="210.22168">AQ/AR</tspan>
     </text>
   </g>
   <g id="T-AS">
@@ -67,9 +67,9 @@
     </text>
   </g>
   <g id="AJ">
-    <path d="M 178.56538,467.97636 17.068735,557.21353" id="lineAJ" style="fill:none;stroke:#0000ff;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
-    <text id="textAJ" style="font-style:normal;font-weight:normal;font-size:32px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="23.075066" xml:space="preserve" y="527.69196">
-      <tspan x="23.075066" y="527.69196">AJ</tspan>
+    <path d="M 178.56538,467.97636 17.06874,557.21353" id="lineAJ" style="fill:none;stroke:#0000ff;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+    <text id="textAJ" style="font-style:normal;font-weight:normal;font-size:32px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="23.07507" xml:space="preserve" y="527.69196">
+      <tspan x="23.07507" y="527.69196">AJ</tspan>
     </text>
   </g>
 </svg>

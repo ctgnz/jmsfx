@@ -28,11 +28,11 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="393" x2="306.5" y1="479.5" y2="516.5"/>
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="306.5" x2="220" y1="516.5" y2="479.5"/>
     </g>
-    <line fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="445.01501" y2="445.29501"/>
-    <line fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="346.98499" y2="346.70499"/>
+    <line fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
+    <line fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
   </g>
   <g id="Q" transform="translate(0,-38)">
-    <path d="m 386.42773,759.19727 -11.16601,26.21484 28.25976,-3.44727 z" style="color:#000000;fill:#0000ff;fill-rule:evenodd;stroke:#0000ff;stroke-opacity:1;-inkscape-stroke:none"/>
+    <path d="m 386.42773,759.19727 -11.166,26.21484 28.25976,-3.44727 z" style="color:#000000;fill:#0000ff;fill-rule:evenodd;stroke:#0000ff;stroke-opacity:1;-inkscape-stroke:none"/>
     <path d="m 304.754,679.628 v 60.456 l 76.188,32.363" style="fill:none;stroke:#0000fe;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
     <text style="font-style:normal;font-weight:normal;font-size:32px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="393.61179" xml:space="preserve" y="769.65723">
       <tspan x="393.61179" y="769.65723">Q</tspan>
@@ -40,8 +40,8 @@
   </g>
   <g id="S2" transform="translate(54,-46)">
     <path d="M 126.082,516 V 739.086 L 8.332,803.333" id="pathS" style="fill:none;stroke:#0000ff;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
-    <text style="font-style:normal;font-weight:normal;font-size:32px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="5.2417717" xml:space="preserve" y="778.06128">
-      <tspan x="5.2417717" y="778.06128">S2</tspan>
+    <text style="font-style:normal;font-weight:normal;font-size:32px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="5.24177" xml:space="preserve" y="778.06128">
+      <tspan x="5.24177" y="778.06128">S2</tspan>
     </text>
   </g>
   <g id="AS">
@@ -76,32 +76,32 @@
   </g>
   <g id="W">
     <rect height="96" id="rectW" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" width="134" x="0" y="152"/>
-    <text style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="47.224609" xml:space="preserve" y="214.54102">
-      <tspan x="47.224609" y="214.54102">W</tspan>
+    <text style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="47.2246" xml:space="preserve" y="214.54102">
+      <tspan x="47.2246" y="214.54102">W</tspan>
     </text>
   </g>
   <g id="X-Y">
     <rect height="96" id="rectXY" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" width="134" x="0" y="248"/>
-    <text style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="31.306641" xml:space="preserve" y="308.22656">
-      <tspan x="31.306641" y="308.22656">X/Y</tspan>
+    <text style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="31.30664" xml:space="preserve" y="308.22656">
+      <tspan x="31.30664" y="308.22656">X/Y</tspan>
     </text>
   </g>
   <g id="V-AF">
     <rect height="96" id="rectVAF" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" width="134" x="0" y="344"/>
-    <text style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="19.080078" xml:space="preserve" y="404.22656">
-      <tspan x="19.080078" y="404.22656">V/AF</tspan>
+    <text style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="19.08008" xml:space="preserve" y="404.22656">
+      <tspan x="19.08008" y="404.22656">V/AF</tspan>
     </text>
   </g>
   <g id="T">
     <rect height="96" id="rectT" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" width="134" x="0" y="440"/>
-    <text style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="54.675781" xml:space="preserve" y="502.54102">
-      <tspan x="54.675781" y="502.54102">T</tspan>
+    <text style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="54.67578" xml:space="preserve" y="502.54102">
+      <tspan x="54.67578" y="502.54102">T</tspan>
     </text>
   </g>
   <g id="Z">
     <rect height="96" id="rectZ" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" width="134" x="0" y="536"/>
-    <text style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="53.191406" xml:space="preserve" y="598.54102">
-      <tspan x="53.191406" y="598.54102">Z</tspan>
+    <text style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="53.1914" xml:space="preserve" y="598.54102">
+      <tspan x="53.1914" y="598.54102">Z</tspan>
     </text>
   </g>
   <g id="C">

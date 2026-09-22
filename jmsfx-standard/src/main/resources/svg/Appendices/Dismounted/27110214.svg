@@ -6,7 +6,7 @@
     <line fill="none" stroke="#0000ff" stroke-width="2" x1="202.5" x2="407.5" y1="345.70001" y2="345.70001"/>
     <line fill="none" stroke="#0000ff" stroke-width="2" x1="202.5" x2="407.5" y1="443.29999" y2="443.29999"/>
   </g>
-  <g id="main" transform="matrix(1.1004191,0,0,0.52504503,-31.064828,186.38736)">
-    <line fill="none" stroke="#000000" stroke-width="5" style="stroke-width:6.57798181;stroke-dasharray:none" x1="396.75" x2="213.75" y1="303.25" y2="489"/>
+  <g id="main" transform="matrix(1.10042,0,0,0.52505,-31.06483,186.38736)">
+    <line fill="none" stroke="#000000" stroke-width="5" style="stroke-width:6.57798;stroke-dasharray:none" x1="396.75" x2="213.75" y1="303.25" y2="489"/>
   </g>
 </svg>

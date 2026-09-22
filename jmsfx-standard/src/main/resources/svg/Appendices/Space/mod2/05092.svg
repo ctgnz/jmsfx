@@ -12,13 +12,13 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="220" x2="183" y1="482.5" y2="396"/>
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
-    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="445.01501" y2="445.29501"/>
-    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="346.98499" y2="346.70499"/>
+    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
+    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
   </g>
   <g id="mod2" transform="matrix(0.6,0,0,0.6,120.91857,242.23221)">
-    <ellipse cx="306.80399" cy="396.29099" rx="34.667" ry="23.457001"/>
-    <line fill="none" stroke="#020001" stroke-width="5" x1="332.09601" x2="281.32599" y1="354.16699" y2="438"/>
-    <line fill="none" stroke="#020001" stroke-width="5" x1="283.04501" x2="330.754" y1="352.86301" y2="438.47501"/>
-    <line fill="none" stroke="#020001" stroke-width="5" x1="306.89899" x2="306.89899" y1="441.16599" y2="350.83301"/>
+    <ellipse cx="306.804" cy="396.291" rx="34.667" ry="23.457"/>
+    <line fill="none" stroke="#020001" stroke-width="5" x1="332.096" x2="281.32599" y1="354.167" y2="438"/>
+    <line fill="none" stroke="#020001" stroke-width="5" x1="283.045" x2="330.754" y1="352.863" y2="438.475"/>
+    <line fill="none" stroke="#020001" stroke-width="5" x1="306.899" x2="306.899" y1="441.166" y2="350.833"/>
   </g>
 </svg>

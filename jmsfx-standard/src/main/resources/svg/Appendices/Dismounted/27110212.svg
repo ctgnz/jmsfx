@@ -7,7 +7,7 @@
     <line fill="none" stroke="#0000ff" stroke-width="2" x1="202.5" x2="407.5" y1="443.29999" y2="443.29999"/>
   </g>
   <g id="main" style="stroke-width:5;stroke-dasharray:none">
-    <line fill="none" stroke="#000000" stroke-width="2.87239" style="stroke-width:5;stroke-dasharray:none" x1="305.36301" x2="305.36301" y1="346.70001" y2="442.15997"/>
-    <line fill="none" stroke="#000000" stroke-width="4.8854" style="stroke-width:5;stroke-dasharray:none" x1="184.35101" x2="425.64899" y1="394.42999" y2="394.42999"/>
+    <line fill="none" stroke="#000000" stroke-width="2.8724" style="stroke-width:5;stroke-dasharray:none" x1="305.363" x2="305.363" y1="346.70001" y2="442.15997"/>
+    <line fill="none" stroke="#000000" stroke-width="4.8854" style="stroke-width:5;stroke-dasharray:none" x1="184.35101" x2="425.649" y1="394.42999" y2="394.42999"/>
   </g>
 </svg>

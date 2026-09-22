@@ -2,8 +2,8 @@
 <!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
 <svg enable-background="new 0 0 612 792" height="792px" id="Version_1.0" version="1.1" viewBox="0 0 612 792" width="612px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" y="0px">
   <g display="none" id="octagon">
-    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="445.01501" y2="445.29501"/>
-    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="346.98499" y2="346.70499"/>
+    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
+    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
     <g display="inline" id="outFrame">
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="220" x2="306" y1="309.5" y2="273"/>
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="306" x2="390.5" y1="273" y2="309.5"/>
@@ -15,10 +15,10 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
   </g>
-  <g style="stroke-width:6;stroke-dasharray:none" transform="translate(-3.5769064,-0.00121233)">
+  <g style="stroke-width:6;stroke-dasharray:none" transform="translate(-3.5769,-0.00121)">
     <path d="m 293.47825,354.29062 c -4.29947,4.10712 -6.74028,9.78849 -6.75976,15.73437 -3.6e-4,12.07275 9.78662,21.85974 21.85937,21.85938 12.07275,3.6e-4 21.85974,-9.78663 21.85938,-21.85938 -0.0198,-5.9304 -2.44836,-11.59822 -6.72852,-15.70312" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:6;stroke-dasharray:none"/>
-    <path d="m 278.09757,433.14411 c 5.70661,1.66989 11.84722,0.94301 17.00624,-2.01306 10.45549,-6.03606 14.03778,-19.40533 8.0011,-29.86046 -6.03607,-10.45548 -19.40534,-14.03777 -29.86047,-8.00109 -5.12598,2.98235 -8.82017,7.91946 -10.23504,13.67863" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:6;stroke-dasharray:none"/>
-    <path d="m 354.14514,406.99114 c -1.40714,-5.77701 -5.10695,-10.73149 -10.24649,-13.72131 -10.45513,-6.03668 -23.8244,-2.4544 -29.86046,8.00108 -6.03669,10.45513 -2.4544,23.82441 8.00109,29.86047 5.14577,2.94806 11.26853,3.67877 16.96356,2.02449" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:6;stroke-dasharray:none"/>
-    <circle cx="308.57785" cy="397.10648" r="14.538462" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:6;stroke-dasharray:none"/>
+    <path d="m 278.09757,433.14411 c 5.70661,1.6699 11.84722,0.94301 17.00624,-2.01306 10.45549,-6.03606 14.03778,-19.40533 8.0011,-29.86046 -6.03607,-10.45548 -19.40534,-14.03777 -29.86047,-8.0011 -5.12598,2.98235 -8.82017,7.91946 -10.23504,13.67863" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:6;stroke-dasharray:none"/>
+    <path d="m 354.14514,406.99114 c -1.40714,-5.777 -5.10695,-10.7315 -10.2465,-13.72131 -10.45513,-6.03668 -23.8244,-2.4544 -29.86046,8.00108 -6.0367,10.45513 -2.4544,23.8244 8.0011,29.86047 5.14577,2.94806 11.26853,3.67877 16.96356,2.02449" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:6;stroke-dasharray:none"/>
+    <circle cx="308.57785" cy="397.10648" r="14.53846" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:6;stroke-dasharray:none"/>
   </g>
 </svg>

@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792.0" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0.00  0.00 612.00 792.00" width="612.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0" zoomAndPan="magnify">
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
   <svg:g font-style="normal" id="main">
-    <svg:circle cx="310.291" cy="391.197" fill="none" font-style="normal" r="48.793" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
+    <svg:circle cx="310.291" cy="391.197" fill="none" font-style="normal" r="48.793" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
   </svg:g>
   <svg:g display="none" font-style="normal" id="example">
-    <svg:rect display="inline" fill="#474747" font-style="normal" height="329.5" rx="0.0" ry="0.0" width="329.5" x="140.5" y="231.382"/>
+    <svg:rect display="inline" fill="#474747" font-style="normal" height="329.5" rx="0" ry="0" width="329.5" x="140.5" y="231.382"/>
     <svg:g display="inline" font-style="normal">
-      <svg:circle cx="276.5" cy="340.316" fill="#008600" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="276.5" cy="365.066" fill="#008600" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="276.5" cy="389.816" fill="#00FF00" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="276.5" cy="414.566" fill="#00FF00" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="276.5" cy="439.316" fill="#00FF00" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="298.5" cy="340.316" fill="#E9FF07" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="298.5" cy="365.066" fill="#E9FF07" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="298.5" cy="389.816" fill="#E9FF07" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="298.5" cy="414.566" fill="#E1A900" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="298.5" cy="439.316" fill="#E1A900" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="321.5" cy="340.316" fill="#839500" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="321.5" cy="365.066" fill="#E1BA00" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="321.5" cy="389.816" fill="#E1BA00" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="321.5" cy="414.566" fill="#8B7900" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="321.5" cy="439.316" fill="#FF9500" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="343.5" cy="340.316" fill="#839500" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="343.5" cy="365.066" fill="#839500" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="343.5" cy="389.816" fill="#839500" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="343.5" cy="414.566" fill="#004700" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="343.5" cy="439.316" fill="#004700" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
+      <svg:circle cx="276.5" cy="340.316" fill="#008600" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="276.5" cy="365.066" fill="#008600" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="276.5" cy="389.816" fill="#00FF00" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="276.5" cy="414.566" fill="#00FF00" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="276.5" cy="439.316" fill="#00FF00" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="298.5" cy="340.316" fill="#E9FF07" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="298.5" cy="365.066" fill="#E9FF07" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="298.5" cy="389.816" fill="#E9FF07" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="298.5" cy="414.566" fill="#E1A900" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="298.5" cy="439.316" fill="#E1A900" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="321.5" cy="340.316" fill="#839500" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="321.5" cy="365.066" fill="#E1BA00" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="321.5" cy="389.816" fill="#E1BA00" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="321.5" cy="414.566" fill="#8B7900" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="321.5" cy="439.316" fill="#FF9500" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="343.5" cy="340.316" fill="#839500" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="343.5" cy="365.066" fill="#839500" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="343.5" cy="389.816" fill="#839500" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="343.5" cy="414.566" fill="#004700" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="343.5" cy="439.316" fill="#004700" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
     </svg:g>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template">
     <svg:g display="inline" font-style="normal">
-      <svg:circle cx="276.5" cy="340.316" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="276.5" cy="365.066" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="276.5" cy="389.816" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="276.5" cy="414.566" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="276.5" cy="439.316" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="298.5" cy="340.316" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="298.5" cy="365.066" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="298.5" cy="389.816" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="298.5" cy="414.566" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="298.5" cy="439.316" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="321.5" cy="340.316" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="321.5" cy="365.066" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="321.5" cy="389.816" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="321.5" cy="414.566" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="321.5" cy="439.316" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="343.5" cy="340.316" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="343.5" cy="365.066" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="343.5" cy="389.816" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="343.5" cy="414.566" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
-      <svg:circle cx="343.5" cy="439.316" fill="none" font-style="normal" r="10.0" stroke="#000000" stroke-miterlimit="8.0" stroke-width="5.0"/>
+      <svg:circle cx="276.5" cy="340.316" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="276.5" cy="365.066" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="276.5" cy="389.816" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="276.5" cy="414.566" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="276.5" cy="439.316" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="298.5" cy="340.316" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="298.5" cy="365.066" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="298.5" cy="389.816" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="298.5" cy="414.566" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="298.5" cy="439.316" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="321.5" cy="340.316" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="321.5" cy="365.066" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="321.5" cy="389.816" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="321.5" cy="414.566" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="321.5" cy="439.316" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="343.5" cy="340.316" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="343.5" cy="365.066" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="343.5" cy="389.816" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="343.5" cy="414.566" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
+      <svg:circle cx="343.5" cy="439.316" fill="none" font-style="normal" r="10" stroke="#000000" stroke-miterlimit="8" stroke-width="5"/>
     </svg:g>
-    <svg:rect display="inline" fill="none" font-style="normal" height="133.0" rx="0.0" ry="0.0" stroke="#0000FF" stroke-miterlimit="8.0" stroke-width="5.1216" width="103.0" x="257.5" y="323.5"/>
-    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 291.5 478.5)" x="0.0" y="0.0">AOI</svg:text>
+    <svg:rect display="inline" fill="none" font-style="normal" height="133" rx="0" ry="0" stroke="#0000FF" stroke-miterlimit="8" stroke-width="5.1216" width="103" x="257.5" y="323.5"/>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 291.5 478.5)" x="0" y="0">AOI</svg:text>
   </svg:g>
 </svg:svg>

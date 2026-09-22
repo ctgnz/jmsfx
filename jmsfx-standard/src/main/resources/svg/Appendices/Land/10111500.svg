@@ -9,10 +9,10 @@
       <path d="M 0,0 5,-5 -12.5,0 5,5 Z" style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt" transform="matrix(0.2,0,0,0.2,1.2,0)"/>
     </marker>
     <marker id="Arrow2Mstart" orient="auto" refX="0.0" refY="0.0" style="overflow:visible">
-      <path d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z" style="fill-rule:evenodd;fill:context-stroke;stroke-width:0.62500000;stroke-linejoin:round" transform="scale(0.6) translate(0,0)"/>
+      <path d="M 8.7185878,4.03374 L -2.20729,0.016013256 L 8.7185884,-4.0017 C 6.9731,-1.62965 6.98315,1.61574 8.7185878,4.03374 z" style="fill-rule:evenodd;fill:context-stroke;stroke-width:0.625;stroke-linejoin:round" transform="scale(0.6) translate(0,0)"/>
     </marker>
     <marker id="Arrow2Lstart" orient="auto" refX="0.0" refY="0.0" style="overflow:visible">
-      <path d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z" style="fill-rule:evenodd;fill:context-stroke;stroke-width:0.62500000;stroke-linejoin:round" transform="scale(1.1) translate(1,0)"/>
+      <path d="M 8.7185878,4.03374 L -2.20729,0.016013256 L 8.7185884,-4.0017 C 6.9731,-1.62965 6.98315,1.61574 8.7185878,4.03374 z" style="fill-rule:evenodd;fill:context-stroke;stroke-width:0.625;stroke-linejoin:round" transform="scale(1.1) translate(1,0)"/>
     </marker>
   </defs>
   <g display="none" id="octagon">
@@ -26,16 +26,16 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="220" x2="183" y1="482.5" y2="396"/>
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
-    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="445.01501" y2="445.29501"/>
-    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="346.98499" y2="346.70499"/>
+    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
+    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
   </g>
-  <g id="main" transform="translate(0.13012733,3.2621339)">
+  <g id="main" transform="translate(0.13013,3.26213)">
     <g>
-      <path d="m 304.86985,345.40913 -9.18359,15.89063 h 5.68359 v 70 h 7 v -70 h 5.68555 z" style="color:#000000;fill:#000000;-inkscape-stroke:none"/>
-      <path d="m 390.76146,427.89233 -15.89063,-9.18359 v 5.68359 h -70 v 7 h 70 v 5.68555 z" style="color:#000000;fill:#000000;-inkscape-stroke:none"/>
-      <path d="m 218.9802,427.89233 15.89063,-9.18359 v 5.68359 h 70 v 7 h -70 v 5.68555 z" style="color:#000000;fill:#000000;-inkscape-stroke:none"/>
-      <path d="m 364.68893,367.70321 -17.73015,4.74259 4.0189,4.01891 -49.49747,49.49747 4.94975,4.94975 49.49747,-49.49748 4.02029,4.0203 z" style="color:#000000;fill:#000000;-inkscape-stroke:none"/>
-      <path d="m 245.03794,367.70321 17.73015,4.74259 -4.0189,4.01891 49.49747,49.49747 -4.94975,4.94975 -49.49747,-49.49748 -4.02029,4.0203 z" style="color:#000000;fill:#000000;-inkscape-stroke:none"/>
+      <path d="m 304.86985,345.40913 -9.1836,15.89063 h 5.68359 v 70 h 7 v -70 h 5.68555 z" style="color:#000000;fill:#000000;-inkscape-stroke:none"/>
+      <path d="m 390.76146,427.89233 -15.89063,-9.1836 v 5.68359 h -70 v 7 h 70 v 5.68555 z" style="color:#000000;fill:#000000;-inkscape-stroke:none"/>
+      <path d="m 218.9802,427.89233 15.89063,-9.1836 v 5.68359 h 70 v 7 h -70 v 5.68555 z" style="color:#000000;fill:#000000;-inkscape-stroke:none"/>
+      <path d="m 364.68893,367.70321 -17.73015,4.74259 4.0189,4.0189 -49.49747,49.49747 4.94975,4.94975 49.49747,-49.49748 4.0203,4.0203 z" style="color:#000000;fill:#000000;-inkscape-stroke:none"/>
+      <path d="m 245.03794,367.70321 17.73015,4.74259 -4.0189,4.0189 49.49747,49.49747 -4.94975,4.94975 -49.49747,-49.49748 -4.0203,4.0203 z" style="color:#000000;fill:#000000;-inkscape-stroke:none"/>
     </g>
   </g>
 </svg>

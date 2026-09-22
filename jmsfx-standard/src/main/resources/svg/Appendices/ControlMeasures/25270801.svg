@@ -1,186 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg enable-background="new 0 0 400 400" font-style="normal" height="400.0" id="Version_1.0" version="1.1" viewBox=" 0.00  0.00 400.00 400.00" width="400.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0">
+<svg:svg enable-background="new 0 0 400 400" font-style="normal" height="400" id="Version_1.0" version="1.1" viewBox=" 0  0 400 400" width="400" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
   <svg:g display="inline" font-style="normal" id="main">
-    <svg:path d="m 195.951,118.865 c 34.328,-1.161 89.678,-17.114 108.297,5.248 18.617,22.344 39.128,107.79 3.438,128.829 -35.691,21.041 -182.692,17.744 -217.569,-2.604 -34.897,-20.328 -9.421,-97.45 8.222,-119.366 17.64,-21.916 63.305,-10.968 97.612,-12.107" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.4331"/>
-    <svg:g font-style="normal" transform="rotate(2.8049206,708.7742,37.888192)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:path d="m 195.951,118.865 c 34.328,-1.161 89.678,-17.114 108.297,5.248 18.617,22.344 39.128,107.79 3.438,128.829 -35.691,21.041 -182.692,17.744 -217.569,-2.604 -34.897,-20.328 -9.421,-97.45 8.222,-119.366 17.64,-21.916 63.305,-10.968 97.612,-12.107" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5.4331"/>
+    <svg:g font-style="normal" transform="rotate(2.80492,708.7742,37.8882)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(-7.9051763,-19.301793,-514.82575)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(-7.90518,-19.3018,-514.82575)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(65.555377,237.62109,264.89419)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(65.55538,237.62109,264.89419)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(85.899061,213.11516,262.25451)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(85.89906,213.11516,262.2545)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(-34.034955,406.96418,-55.174025)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(-34.03496,406.96418,-55.17403)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(-3.3743645,2264.4531,-1297.8036)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(-3.37436,2264.4531,-1297.8036)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(4.4492473,-1408.0071,444.90095)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(4.44925,-1408.0071,444.90095)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(17.394278,-236.15829,41.514586)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(17.39428,-236.15829,41.51459)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(-83.144092,148.26738,221.07956)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(-83.1441,148.26738,221.07956)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(-61.424342,118.98342,193.46509)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(-61.42434,118.98342,193.46509)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
     <svg:g font-style="normal">
-      <svg:polygon fill="#FFFFFF" font-style="normal" points="183.762000,249.361000 183.762000,281.920000 216.320000,281.920000 216.320000,249.361000"/>
-      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(188.6768,279.1348)" x="0.0" y="0.0">M</svg:text>
+      <svg:polygon fill="#FFFFFF" font-style="normal" points="183.762,249.361 183.762,281.92 216.32,281.92 216.32,249.361"/>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(188.6768,279.1348)" x="0" y="0">M</svg:text>
     </svg:g>
     <svg:g font-style="normal">
-      <svg:polygon fill="#FFFFFF" font-style="normal" points="183.762000,102.849000 183.762000,135.407000 216.320000,135.407000 216.320000,102.849000"/>
-      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(188.6768,132.623)" x="0.0" y="0.0">M</svg:text>
+      <svg:polygon fill="#FFFFFF" font-style="normal" points="183.762,102.849 183.762,135.407 216.32,135.407 216.32,102.849"/>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(188.6768,132.623)" x="0" y="0">M</svg:text>
     </svg:g>
     <svg:g font-style="normal">
-      <svg:polygon fill="#FFFFFF" font-style="normal" points="307.218000,159.825000 307.218000,192.385000 339.775000,192.385000 339.775000,159.825000"/>
-      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(312.0625,189.6211)" x="0.0" y="0.0">M</svg:text>
+      <svg:polygon fill="#FFFFFF" font-style="normal" points="307.218,159.825 307.218,192.385 339.775,192.385 339.775,159.825"/>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(312.0625,189.6211)" x="0" y="0">M</svg:text>
     </svg:g>
     <svg:g font-style="normal">
-      <svg:polygon fill="#FFFFFF" font-style="normal" points="57.032000,176.105000 57.032000,208.664000 89.590000,208.664000 89.590000,176.105000"/>
-      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(61.8779,205.8789)" x="0.0" y="0.0">M</svg:text>
+      <svg:polygon fill="#FFFFFF" font-style="normal" points="57.032,176.105 57.032,208.664 89.59,208.664 89.59,176.105"/>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(61.8779,205.8789)" x="0" y="0">M</svg:text>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(2.8049206,708.7742,37.888192)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(2.80492,708.7742,37.8882)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(-7.9051763,-19.301793,-514.82575)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(-7.90518,-19.3018,-514.82575)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(65.555377,237.62109,264.89419)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(65.55538,237.62109,264.89419)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(85.899061,213.11516,262.25451)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(85.89906,213.11516,262.2545)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(-34.034955,406.96418,-55.174025)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(-34.03496,406.96418,-55.17403)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(-3.3743645,2264.4531,-1297.8036)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(-3.37436,2264.4531,-1297.8036)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(4.4492473,-1408.0071,444.90095)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(4.44925,-1408.0071,444.90095)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(17.394278,-236.15829,41.514586)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(17.39428,-236.15829,41.51459)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(-83.144092,148.26738,221.07956)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(-83.1441,148.26738,221.07956)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
-    <svg:g font-style="normal" transform="rotate(-61.424342,118.98342,193.46509)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g font-style="normal" transform="rotate(-61.42434,118.98342,193.46509)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px"/>
     </svg:g>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template">
-    <svg:g display="inline" font-style="normal" id="mod1" transform="translate(-37.241492,-153.46063)">
-      <svg:rect fill="none" font-style="normal" height="44.842934" rx="0.0" ry="0.0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="2.10264" style="stroke-width:3;stroke-dasharray:none" width="104.215" x="180.89217" y="314.56415"/>
-      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18px" font-style="normal" transform="translate(186.0908,334.1406)" x="0.0" y="0.0">SECTOR 1</svg:text>
+    <svg:g display="inline" font-style="normal" id="mod1" transform="translate(-37.2415,-153.46063)">
+      <svg:rect fill="none" font-style="normal" height="44.84293" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="2.10264" style="stroke-width:3;stroke-dasharray:none" width="104.215" x="180.89217" y="314.56415"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18px" font-style="normal" transform="translate(186.0908,334.1406)" x="0" y="0">SECTOR 1</svg:text>
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18px" font-style="normal" x="185.51073" y="352.76135">MODIFIER</svg:text>
     </svg:g>
     <svg:g display="inline" font-style="normal" id="varN1" transform="translate(-94.38792,52.00967)">
-      <svg:rect fill="none" font-style="normal" height="41.602272" rx="0.0" ry="0.0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="1.28869" style="fill:#ffffff;fill-opacity:1;stroke-width:3;stroke-dasharray:none" width="37.987137" x="182.86397" y="37.33741"/>
-      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="32.5581px" font-style="normal" x="189.64825" y="69.974243">N</svg:text>
+      <svg:rect fill="none" font-style="normal" height="41.60227" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="1.28869" style="fill:#ffffff;fill-opacity:1;stroke-width:3;stroke-dasharray:none" width="37.98714" x="182.86397" y="37.3374"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="32.5581px" font-style="normal" x="189.64825" y="69.97424">N</svg:text>
     </svg:g>
-    <svg:g display="inline" font-style="normal" transform="translate(84.114405,46.230818)">
-      <svg:rect fill="none" font-style="normal" height="41.602272" rx="0.0" ry="0.0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="1.28869" style="fill:#ffffff;fill-opacity:1;stroke-width:3;stroke-dasharray:none" width="37.987137" x="182.86397" y="37.33741"/>
-      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="32.5581px" font-style="normal" x="189.64825" y="69.974243">N</svg:text>
+    <svg:g display="inline" font-style="normal" transform="translate(84.1144,46.23082)">
+      <svg:rect fill="none" font-style="normal" height="41.60227" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="1.28869" style="fill:#ffffff;fill-opacity:1;stroke-width:3;stroke-dasharray:none" width="37.98714" x="182.86397" y="37.3374"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="32.5581px" font-style="normal" x="189.64825" y="69.97424">N</svg:text>
     </svg:g>
   </svg:g>
   <svg:g display="none" font-style="normal" id="example">
     <svg:g display="inline" font-style="normal" id="varAe">
-      <svg:path d="m 127.809,172.672 c -13.144,0 -23.799,9.708 -23.799,21.681 0,11.976 10.655,21.68 23.799,21.68 13.145,0 23.798,-9.704 23.798,-21.68 0,-11.974 -10.653,-21.681 -23.798,-21.681 z" fill="none" font-style="normal" stroke="#00FF00" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
+      <svg:path d="m 127.809,172.672 c -13.144,0 -23.799,9.708 -23.799,21.681 0,11.976 10.655,21.68 23.799,21.68 13.145,0 23.798,-9.704 23.798,-21.68 0,-11.974 -10.653,-21.681 -23.798,-21.681 z" fill="none" font-style="normal" stroke="#00FF00" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="5"/>
       <svg:path clip-rule="evenodd" d="m 200.39,170.513 c -13.799,0 -24.984,10.191 -24.984,22.76 0,12.572 11.186,22.759 24.984,22.759 13.798,0 24.983,-10.188 24.983,-22.759 0,-12.569 -11.185,-22.76 -24.983,-22.76 z" fill="#00FF00" fill-rule="evenodd" font-style="normal"/>
       <svg:path clip-rule="evenodd" d="m 273.464,170.046 c -12.936,0 -23.423,10.294 -23.423,22.992 0,12.7 10.487,22.994 23.423,22.994 12.936,0 23.422,-10.294 23.422,-22.994 0,-12.698 -10.487,-22.992 -23.422,-22.992 z" fill="#00FF00" fill-rule="evenodd" font-style="normal"/>
-      <svg:line fill="none" font-style="normal" stroke="#00FF00" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0" x1="286.96201" x2="300.35001" y1="177.127" y2="162.575"/>
-      <svg:line fill="none" font-style="normal" stroke="#00FF00" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0" x1="260.18799" x2="246.802" y1="177.127" y2="162.575"/>
+      <svg:line fill="none" font-style="normal" stroke="#00FF00" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="5" x1="286.96201" x2="300.35" y1="177.127" y2="162.575"/>
+      <svg:line fill="none" font-style="normal" stroke="#00FF00" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="5" x1="260.188" x2="246.802" y1="177.127" y2="162.575"/>
     </svg:g>
-    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="32.5581px" font-style="normal" id="varWe" transform="translate(186.0908,334.1406)" x="0.0" y="0.0"/>
-    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="32.5581px" font-style="normal" id="varHe" transform="translate(189.6523,69.1396)" x="0.0" y="0.0"/>
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="32.5581px" font-style="normal" id="varWe" transform="translate(186.0908,334.1406)" x="0" y="0"/>
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="32.5581px" font-style="normal" id="varHe" transform="translate(189.6523,69.1396)" x="0" y="0"/>
     <svg:g display="inline" font-style="normal">
-      <svg:path d="m 195.951,118.865 c 34.328,-1.161 89.678,-17.114 108.297,5.248 18.617,22.344 39.128,107.79 3.438,128.829 -35.691,21.041 -182.692,17.744 -217.569,-2.604 -34.897,-20.328 -9.421,-97.45 8.222,-119.366 17.64,-21.916 63.305,-10.968 97.612,-12.107" fill="none" font-style="normal" stroke="#00FF00" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.4331"/>
+      <svg:path d="m 195.951,118.865 c 34.328,-1.161 89.678,-17.114 108.297,5.248 18.617,22.344 39.128,107.79 3.438,128.829 -35.691,21.041 -182.692,17.744 -217.569,-2.604 -34.897,-20.328 -9.421,-97.45 8.222,-119.366 17.64,-21.916 63.305,-10.968 97.612,-12.107" fill="none" font-style="normal" stroke="#00FF00" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5.4331"/>
       <svg:g font-style="normal">
-        <svg:polygon fill="#FFFFFF" font-style="normal" points="183.762000,249.361000 183.762000,281.920000 216.320000,281.920000 216.320000,249.361000"/>
-        <svg:text dx="0.0" dy="0.0" fill="#00FF00" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(188.6768,279.1348)" x="0.0" y="0.0">M</svg:text>
+        <svg:polygon fill="#FFFFFF" font-style="normal" points="183.762,249.361 183.762,281.92 216.32,281.92 216.32,249.361"/>
+        <svg:text dx="0.0" dy="0.0" fill="#00FF00" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(188.6768,279.1348)" x="0" y="0">M</svg:text>
       </svg:g>
       <svg:g font-style="normal">
-        <svg:polygon fill="#FFFFFF" font-style="normal" points="183.762000,102.849000 183.762000,135.407000 216.320000,135.407000 216.320000,102.849000"/>
-        <svg:text dx="0.0" dy="0.0" fill="#00FF00" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(188.6768,132.623)" x="0.0" y="0.0">M</svg:text>
+        <svg:polygon fill="#FFFFFF" font-style="normal" points="183.762,102.849 183.762,135.407 216.32,135.407 216.32,102.849"/>
+        <svg:text dx="0.0" dy="0.0" fill="#00FF00" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(188.6768,132.623)" x="0" y="0">M</svg:text>
       </svg:g>
       <svg:g font-style="normal">
-        <svg:polygon fill="#FFFFFF" font-style="normal" points="307.218000,159.825000 307.218000,192.385000 339.775000,192.385000 339.775000,159.825000"/>
-        <svg:text dx="0.0" dy="0.0" fill="#00FF00" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(312.0625,189.6211)" x="0.0" y="0.0">M</svg:text>
+        <svg:polygon fill="#FFFFFF" font-style="normal" points="307.218,159.825 307.218,192.385 339.775,192.385 339.775,159.825"/>
+        <svg:text dx="0.0" dy="0.0" fill="#00FF00" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(312.0625,189.6211)" x="0" y="0">M</svg:text>
       </svg:g>
       <svg:g font-style="normal">
-        <svg:polygon fill="#FFFFFF" font-style="normal" points="57.032000,176.105000 57.032000,208.664000 89.590000,208.664000 89.590000,176.105000"/>
-        <svg:text dx="0.0" dy="0.0" fill="#00FF00" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(61.8779,205.8789)" x="0.0" y="0.0">M</svg:text>
+        <svg:polygon fill="#FFFFFF" font-style="normal" points="57.032,176.105 57.032,208.664 89.59,208.664 89.59,176.105"/>
+        <svg:text dx="0.0" dy="0.0" fill="#00FF00" font-family="sans-serif" font-size="32.5581px" font-style="normal" transform="translate(61.8779,205.8789)" x="0" y="0">M</svg:text>
       </svg:g>
     </svg:g>
-    <svg:g display="inline" font-style="normal" transform="rotate(2.8049206,708.7742,37.888192)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g display="inline" font-style="normal" transform="rotate(2.80492,708.7742,37.8882)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px;fill:#00ff00;fill-opacity:1"/>
     </svg:g>
-    <svg:g display="inline" font-style="normal" transform="rotate(-7.9051763,-19.301793,-514.82575)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g display="inline" font-style="normal" transform="rotate(-7.90518,-19.3018,-514.82575)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px;fill:#00ff00;fill-opacity:1"/>
     </svg:g>
-    <svg:g display="inline" font-style="normal" transform="rotate(65.555377,237.62109,264.89419)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g display="inline" font-style="normal" transform="rotate(65.55538,237.62109,264.89419)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px;fill:#00ff00;fill-opacity:1"/>
     </svg:g>
-    <svg:g display="inline" font-style="normal" transform="rotate(85.899061,213.11516,262.25451)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g display="inline" font-style="normal" transform="rotate(85.89906,213.11516,262.2545)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px;fill:#00ff00;fill-opacity:1"/>
     </svg:g>
-    <svg:g display="inline" font-style="normal" transform="rotate(-34.034955,406.96418,-55.174025)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g display="inline" font-style="normal" transform="rotate(-34.03496,406.96418,-55.17403)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px;fill:#00ff00;fill-opacity:1"/>
     </svg:g>
-    <svg:g display="inline" font-style="normal" transform="rotate(-3.3743645,2264.4531,-1297.8036)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g display="inline" font-style="normal" transform="rotate(-3.37436,2264.4531,-1297.8036)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px;fill:#00ff00;fill-opacity:1"/>
     </svg:g>
-    <svg:g display="inline" font-style="normal" transform="rotate(4.4492473,-1408.0071,444.90095)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g display="inline" font-style="normal" transform="rotate(4.44925,-1408.0071,444.90095)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px;fill:#00ff00;fill-opacity:1"/>
     </svg:g>
-    <svg:g display="inline" font-style="normal" transform="rotate(17.394278,-236.15829,41.514586)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g display="inline" font-style="normal" transform="rotate(17.39428,-236.15829,41.51459)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px;fill:#00ff00;fill-opacity:1"/>
     </svg:g>
-    <svg:g display="inline" font-style="normal" transform="rotate(-83.144092,148.26738,221.07956)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g display="inline" font-style="normal" transform="rotate(-83.1441,148.26738,221.07956)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px;fill:#00ff00;fill-opacity:1"/>
     </svg:g>
-    <svg:g display="inline" font-style="normal" transform="rotate(-61.424342,118.98342,193.46509)">
-      <svg:rect font-style="normal" height="17.642616" rx="0.0" ry="0.0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.840542" x="147.2708" y="135.41331"/>
+    <svg:g display="inline" font-style="normal" transform="rotate(-61.42434,118.98342,193.46509)">
+      <svg:rect font-style="normal" height="17.64262" rx="0" ry="0" style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.214" width="14.84054" x="147.2708" y="135.41331"/>
       <svg:path d="m 162.12076,135.51001 -6.02344,8.625 6.01172,8.82422 h -2.68359 l -4.75782,-7.1836 -4.875,7.1836 h -2.53125 l 6.08203,-8.71875 -5.9414,-8.73047 h 2.67187 l 4.69922,7.08984 4.80469,-7.08984 z" font-style="normal" style="font-size:24px;fill:#00ff00;fill-opacity:1"/>
     </svg:g>
   </svg:g>

@@ -15,7 +15,7 @@
     <line display="inline" fill="none" id="mod2_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="445.015" y2="445.295"/>
     <line display="inline" fill="none" id="mod1_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="346.985" y2="346.705"/>
   </g>
-  <g id="mod1" transform="translate(1.526348)">
+  <g id="mod1" transform="translate(1.52635)">
     <text font-family="sans-serif" font-size="60px" transform="translate(244.5,340.5)">ATD</text>
   </g>
 </svg>

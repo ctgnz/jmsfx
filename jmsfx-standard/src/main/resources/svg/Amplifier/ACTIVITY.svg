@@ -21,8 +21,8 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="393" x2="306.5" y1="479.5" y2="516.5"/>
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="306.5" x2="220" y1="516.5" y2="479.5"/>
     </g>
-    <line fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="445.01501" y2="445.29501"/>
-    <line fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.19901" y1="346.98499" y2="346.70499"/>
+    <line fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
+    <line fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
   </g>
   <g id="AS">
     <rect height="80" id="rectAS" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" width="126" x="486" y="196"/>
@@ -50,8 +50,8 @@
   </g>
   <g id="W">
     <rect height="80" id="rectARW" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" width="126" x="0" y="196"/>
-    <text id="textW" style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="43.224609" xml:space="preserve" y="250.54102">
-      <tspan x="43.224609" y="250.54102">W</tspan>
+    <text id="textW" style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="43.2246" xml:space="preserve" y="250.54102">
+      <tspan x="43.2246" y="250.54102">W</tspan>
     </text>
   </g>
   <g id="Y">
@@ -62,12 +62,12 @@
   </g>
   <g id="T">
     <rect height="80" id="rectT" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" width="126" x="0" y="356"/>
-    <text id="textT" style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="50.675781" xml:space="preserve" y="410.54102">
-      <tspan x="50.675781" y="410.54102">T</tspan>
+    <text id="textT" style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="50.67578" xml:space="preserve" y="410.54102">
+      <tspan x="50.67578" y="410.54102">T</tspan>
     </text>
   </g>
   <g id="Q" transform="translate(0,-162.0968)">
-    <g id="pathQ" transform="matrix(-1,0,0,1,611.35529,0.67423383)">
+    <g id="pathQ" transform="matrix(-1,0,0,1,611.35529,0.67423)">
       <path d="m 407.90154,786.36724 -12.78562,25.4642 28.42017,-1.67093 z" style="color:#000000;fill:#0000ff;fill-rule:evenodd;stroke:#0000ff;stroke-opacity:1;-inkscape-stroke:none"/>
       <path d="m 304.75329,679.62757 4e-4,60.456 96.5296,59.062" style="fill:none;stroke:#0000fe;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
     </g>
@@ -76,10 +76,10 @@
     </text>
   </g>
   <g id="S"/>
-  <g id="S2" transform="translate(-16.181612,-52.869464)">
+  <g id="S2" transform="translate(-16.181612,-52.86946)">
     <path d="m 126.082,676.8468 v 245.046 L 0,954.0968" id="S-8" style="fill:none;stroke:#0000ff;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" transform="translate(16.181612,-109.22734)"/>
-    <text id="textS2" style="font-style:normal;font-weight:normal;font-size:32px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="67.241776" xml:space="preserve" y="814.06128">
-      <tspan x="67.241776" y="814.06128">S2</tspan>
+    <text id="textS2" style="font-style:normal;font-weight:normal;font-size:32px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="67.24178" xml:space="preserve" y="814.06128">
+      <tspan x="67.24178" y="814.06128">S2</tspan>
     </text>
   </g>
 </svg>
