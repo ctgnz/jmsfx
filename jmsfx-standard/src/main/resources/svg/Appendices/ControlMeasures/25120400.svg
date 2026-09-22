@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00">
-   <svg:defs id="defs556" font-style="normal"/>
-   <svg:g id="main" font-style="normal">
-      <svg:path id="path539" d="   M173.997,143.575c32.958-0.323,85.872-12.428,104.147,6.204c18.293,18.649,39.504,89.043,5.578,105.659   c-33.941,16.631-175.242,11.326-209.127-5.951c-33.875-17.271-10.749-80.041,5.815-97.707   C96.974,134.13,141.038,143.914,173.997,143.575" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="4.5267" font-style="normal"/>
-      <svg:line id="line541" x1="107.994" y1="200.472" x2="258.326" y2="200.472" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="4.5267" font-style="normal"/>
-      <svg:line id="line543" x1="118.048" y1="238.109" x2="248.256" y2="162.833" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="4.5267" font-style="normal"/>
-   </svg:g>
-   <svg:g id="example" display="none" font-style="normal">
-      <svg:text id="varH" x="0.0" y="0.0" dx="0.0" dy="0.0" display="inline" font-family="sans-serif" font-size="22.515" font-style="normal" transform="matrix(1 0 0 1 317.2949 202.5371)">570M</svg:text>
-   </svg:g>
-   <svg:g id="template" display="inline" font-style="normal">
-      <svg:rect id="rect548" rx="0.0" ry="0.0" x="321.496" y="172.549" width="49.847" height="46.794" fill="none" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="1.6954" display="inline" font-style="normal"/>
-      <svg:text id="text550" x="0.0" y="0.0" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" display="inline" font-family="sans-serif" font-size="22.515" font-style="normal" transform="matrix(1 0 0 1 337.4551 202.5371)">H</svg:text>
-   </svg:g>
+<svg:svg enable-background="new 0 0 400 400" font-style="normal" height="400" id="Version_1.0" version="1.1" viewBox=" 0  0 400 400" width="400" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+  <svg:g font-style="normal" id="main">
+    <svg:path d="M173.997,143.575c32.958-0.323,85.872-12.428,104.147,6.204c18.293,18.649,39.504,89.043,5.578,105.659 c-33.941,16.631-175.242,11.326-209.127-5.951c-33.875-17.271-10.749-80.041,5.815-97.707 C96.974,134.13,141.038,143.914,173.997,143.575" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="4.5267"/>
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="4.5267" x1="107.994" x2="258.326" y1="200.472" y2="200.472"/>
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="4.5267" x1="118.048" x2="248.256" y1="238.109" y2="162.833"/>
+  </svg:g>
+  <svg:g display="none" font-style="normal" id="example">
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="22.515" font-style="normal" id="varH" transform="matrix(1 0 0 1 317.2949 202.5371)" x="0" y="0">570M</svg:text>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:rect display="inline" fill="none" font-style="normal" height="46.794" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="1.6954" width="49.847" x="321.496" y="172.549"/>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="22.515" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="matrix(1 0 0 1 337.4551 202.5371)" x="0" y="0">H</svg:text>
+  </svg:g>
 </svg:svg>

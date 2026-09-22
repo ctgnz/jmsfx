@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00">
-   <svg:defs id="defs4277" font-style="normal"/>
-   <svg:g id="main" font-style="normal">
-      <svg:line id="line4256" x1="196.81" y1="286.567" x2="414.672" y2="504.428" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="6.0593" font-style="normal"/>
-      <svg:line id="line4258" x1="196.81" y1="504.428" x2="414.672" y2="286.567" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="6.0593" font-style="normal"/>
-      <svg:path id="path4260" d="M305.741,359.188c-20.039,0-36.31,16.248-36.31,36.312   s16.271,36.313,36.31,36.313c20.062,0,36.312-16.249,36.312-36.313S325.803,359.188,305.741,359.188" stroke="#000000" stroke-miterlimit="10.0" stroke-width="3.0" font-style="normal"/>
-   </svg:g>
-   <svg:g id="template" display="inline" font-style="normal">
-      <svg:g id="g4267" display="inline" font-style="normal">
-         <svg:text id="text4263" x="0.0" y="0.0" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="30.1374" font-style="normal" transform="matrix(1 0 0 1 260.2891 214.6533)">POINT</svg:text>
-         <svg:text id="text4265" x="0.0" y="0.0" dx="0.0" dy="0.0" style="fill:#0000ff;fill-opacity:1" fill="#0000FF" font-family="sans-serif" font-size="30.1374" font-style="normal" transform="matrix(1 0 0 1 244.6641 179.7832)">CENTER</svg:text>
-      </svg:g>
-      <svg:line id="line4269" x1="305.512" y1="357.397" x2="305.512" y2="226.0" fill="none" stroke="#0000FF" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="7.0" display="inline" font-style="normal"/>
-      <svg:path id="path4271" d="   M308.529,357.397v20.051h-6.058v-20.051H308.529L308.529,357.397z M314.589,375.211l-9.077,22.289l-9.078-22.289H314.589   L314.589,375.211z" fill="#0000FF" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3116" display="inline" font-style="normal"/>
-   </svg:g>
+<svg:svg enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+  <svg:g font-style="normal" id="main">
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="6.0593" x1="196.81" x2="414.672" y1="286.567" y2="504.428"/>
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="6.0593" x1="196.81" x2="414.672" y1="504.428" y2="286.567"/>
+    <svg:path d="M305.741,359.188c-20.039,0-36.31,16.248-36.31,36.312 s16.271,36.313,36.31,36.313c20.062,0,36.312-16.249,36.312-36.313S325.803,359.188,305.741,359.188" font-style="normal" stroke="#000000" stroke-miterlimit="10" stroke-width="3"/>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:g display="inline" font-style="normal">
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="30.1374" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="matrix(1 0 0 1 260.2891 214.6533)" x="0" y="0">POINT</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="30.1374" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="matrix(1 0 0 1 244.6641 179.7832)" x="0" y="0">CENTER</svg:text>
+    </svg:g>
+    <svg:line display="inline" fill="none" font-style="normal" stroke="#0000FF" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="7" x1="305.512" x2="305.512" y1="357.397" y2="226"/>
+    <svg:path d="M308.529,357.397v20.051h-6.058v-20.051H308.529L308.529,357.397z M314.589,375.211l-9.077,22.289l-9.078-22.289H314.589 L314.589,375.211z" display="inline" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10" stroke-width="0.3116"/>
+  </svg:g>
 </svg:svg>

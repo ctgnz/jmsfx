@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" version="1.1" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00">
-   <svg:defs id="defs251" font-style="normal"/>
-   <svg:g id="main" font-style="normal" transform="translate(-27.241771,0.90805902)">
-      <svg:path id="polyline205" d="m 132.49964,264.15357 -1.4096,-28.5064 23.5928,4.464 z" style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.6" font-style="normal"/>
-      <svg:path id="path189" d="m 118.77004,179.64717 c 18.444,-146.213598 227.6392,-120.645598 221.2,14.5592 -4.824,101.2936 -153.4064,139.508 -208.88,41.4408" style="stroke-width:2;stroke-dasharray:none" fill="none" stroke="#000000" stroke-width="1.6" font-style="normal"/>
-      <svg:g id="g211" font-style="normal" transform="translate(120.27318,69.549164)">
-         <svg:rect id="rect207" rx="0.0" ry="0.0" x="190.01328" y="160.55356" width="24.249269" height="25.622709" style="stroke-width:0.842668" fill="#FFFFFF" stroke="#FFFFFF" font-style="normal"/>
-         <svg:text id="text209" x="192.42307" y="182.08952" dx="0.0" dy="0.0" font-family="sans-serif" font-size="24px" font-style="normal">D</svg:text>
+<svg:svg enable-background="new 0 0 400 400" font-style="normal" height="400" id="Version_1.0" version="1.1" viewBox=" 0  0 400 400" width="400" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+  <svg:g font-style="normal" id="main" transform="translate(-27.24177,0.90806)">
+    <svg:path d="m 132.49964,264.15357 -1.4096,-28.5064 23.5928,4.464 z" font-style="normal" style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.6"/>
+    <svg:path d="m 118.77004,179.64717 c 18.444,-146.2136 227.6392,-120.6456 221.2,14.5592 -4.824,101.2936 -153.4064,139.508 -208.88,41.4408" fill="none" font-style="normal" stroke="#000000" stroke-width="1.6" style="stroke-width:2;stroke-dasharray:none"/>
+    <svg:g font-style="normal" transform="translate(120.27318,69.54916)">
+      <svg:rect fill="#FFFFFF" font-style="normal" height="25.6227" rx="0" ry="0" stroke="#FFFFFF" style="stroke-width:0.84267" width="24.24927" x="190.01328" y="160.55356"/>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="24px" font-style="normal" x="192.42307" y="182.08952">D</svg:text>
+    </svg:g>
+    <svg:path d="m 196.09736,85.0648 34.14303,-54.48354 27.24177,54.12032" font-style="normal" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"/>
+    <svg:path d="m 144.8957,117.67944 0.38865,-64.2966 51.63162,31.70645" font-style="normal" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"/>
+    <svg:path d="M 120.11628,171.3602 84.69838,117.69667 145.2428,115.35231" font-style="normal" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+    <svg:path d="m 255.52554,84.59205 55.35518,-32.71094 -0.66335,60.58615" font-style="normal" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"/>
+    <svg:path d="m 310.13482,112.62773 64.04438,5.70259 -35.8662,48.83377" font-style="normal" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"/>
+    <svg:path d="m 338.731,166.56957 50.67822,39.57172 -56.63773,21.52418" font-style="normal" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"/>
+    <svg:path d="m 312.60868,257.4012 -2.5013,64.24909 -50.5618,-33.38599" font-style="normal" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"/>
+    <svg:path d="m 259.9638,288.4297 -34.07307,54.52734 -27.31122,-54.08533" font-style="normal" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+    <svg:path d="m 199.43689,289.36296 -57.72183,28.32653 5.3526,-60.35291" font-style="normal" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:g display="inline" font-style="normal" transform="translate(-46.23082,-16.69446)">
+      <svg:ellipse cx="248.43567" cy="204.3309" font-style="normal" rx="2.985" ry="2.934" stroke="#000000"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="21px" font-style="normal" x="261.02036" y="212.09506">PT. 1</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="16px" font-style="normal" x="187.87825" y="229.1004">(CENTER POINT)</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal">
+      <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="2" x1="39.40533" x2="31.14975" y1="159.86044" y2="116.29208"/>
+      <svg:g font-style="normal" transform="rotate(-22.73098,60.47587,187.75043)">
+        <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="2" x1="82.5" x2="51" y1="185.25" y2="153.75"/>
+        <svg:polygon fill="#FFFFFF" font-style="normal" points="82.688,174.354 88.269,191.485 70.775,187.174" stroke="#0000FF" stroke-width="2"/>
       </svg:g>
-      <svg:path id="path1039" d="m 196.09736,85.064809 34.14303,-54.483541 27.24177,54.120321" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none" font-style="normal"/>
-      <svg:path id="path1041" d="m 144.8957,117.67944 0.38865,-64.296597 51.63162,31.706446" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none" font-style="normal"/>
-      <svg:path id="path1043" d="M 120.11628,171.3602 84.698383,117.69667 145.2428,115.35231" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1" font-style="normal"/>
-      <svg:path id="path1045" d="m 255.52554,84.592049 55.35518,-32.710942 -0.66335,60.586153" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none" font-style="normal"/>
-      <svg:path id="path1047" d="m 310.13482,112.62773 64.04438,5.70259 -35.8662,48.83377" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none" font-style="normal"/>
-      <svg:path id="path1049" d="m 338.731,166.56957 50.67822,39.57172 -56.63773,21.52418" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none" font-style="normal"/>
-      <svg:path id="path1051" d="m 312.60868,257.40121 -2.5013,64.24909 -50.5618,-33.38599" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none" font-style="normal"/>
-      <svg:path id="path1053" d="m 259.9638,288.42971 -34.07307,54.52734 -27.31122,-54.08533" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1" font-style="normal"/>
-      <svg:path id="path1055" d="m 199.43689,289.36296 -57.72183,28.32653 5.3526,-60.35291" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1" font-style="normal"/>
-   </svg:g>
-   <svg:g id="template" display="inline" font-style="normal">
-      <svg:g id="g220" display="inline" font-style="normal" transform="translate(-46.230818,-16.694462)">
-         <svg:ellipse id="ellipse214" cx="248.43567" cy="204.3309" rx="2.9849999" ry="2.934" stroke="#000000" font-style="normal"/>
-         <svg:text id="text216" x="261.02036" y="212.09506" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="21px" font-style="normal">PT. 1</svg:text>
-         <svg:text id="text218" x="187.87825" y="229.1004" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="16px" font-style="normal">(CENTER POINT)</svg:text>
+      <svg:g font-style="normal" transform="matrix(1.75,0,0,1.75,-105.38676,-18.51067)">
+        <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="11.9981px" font-style="normal" style="stroke-width:0.5714" x="66.29125" y="50.1758">PT. 2</svg:text>
+        <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="9.1424px" font-style="normal" style="stroke-width:0.5714" x="62.32727" y="60.34125">(START</svg:text>
+        <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="16px" font-style="normal" transform="matrix(0.5714,0,0,0.5714,64.428,70.5714)" x="0" y="0">POINT)</svg:text>
       </svg:g>
-      <svg:g id="g235" display="inline" font-style="normal">
-         <svg:line id="line224" x1="39.405327" y1="159.86044" x2="31.149748" y2="116.29208" fill="none" stroke="#0000FF" stroke-width="2.0" font-style="normal"/>
-         <svg:g id="g1199" font-style="normal" transform="rotate(-22.730981,60.475868,187.75043)">
-            <svg:line id="line222" x1="82.5" y1="185.25" x2="51.0" y2="153.75" fill="none" stroke="#0000FF" stroke-width="2.0" font-style="normal"/>
-            <svg:polygon id="polygon226" points="82.688000,174.354000 88.269000,191.485000 70.775000,187.174000" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.0" font-style="normal"/>
-         </svg:g>
-         <svg:g id="_x3C_group_x3E_" font-style="normal" transform="matrix(1.75,0,0,1.75,-105.38676,-18.510674)">
-            <svg:text id="text228" x="66.291245" y="50.175804" dx="0.0" dy="0.0" style="stroke-width:0.5714" fill="#0000FF" font-family="sans-serif" font-size="11.9981px" font-style="normal">PT. 2</svg:text>
-            <svg:text id="text230" x="62.327267" y="60.341248" dx="0.0" dy="0.0" style="stroke-width:0.5714" fill="#0000FF" font-family="sans-serif" font-size="9.1424px" font-style="normal">(START</svg:text>
-            <svg:text id="text232" x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="16px" font-style="normal" transform="matrix(0.5714,0,0,0.5714,64.428,70.5714)">POINT)</svg:text>
-         </svg:g>
-      </svg:g>
-   </svg:g>
+    </svg:g>
+  </svg:g>
 </svg:svg>

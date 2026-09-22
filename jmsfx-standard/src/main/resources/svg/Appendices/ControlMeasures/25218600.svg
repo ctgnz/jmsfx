@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00" preserveAspectRatio="xMidYMid meet">
-   <svg:g id="main" font-style="normal">
-      <svg:polygon points="401.500000,363.500000 401.500000,428.500000 353.500000,477.500000 261.500000,477.500000 212.624000,430.449000 214.500000,361.500000 261.521000,314.485000 353.500000,312.500000" stroke="#000000" font-style="normal"/>
-      <svg:line x1="234.501" y1="341.501" x2="172.5" y2="293.5" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
-      <svg:line x1="306.91" y1="312.5" x2="306.91" y2="252.5" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
-      <svg:line x1="380.796" y1="341.501" x2="436.5" y2="293.5" fill="none" stroke="#000000" stroke-width="5.0" font-style="normal"/>
-   </svg:g>
-   <svg:g id="template" display="inline" font-style="normal">
-      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="28.2962" font-style="normal" transform="matrix(1 0 0 1 246.1152 560.7666)">C</svg:text>
-      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="28.2962" font-style="normal" transform="matrix(1 0 0 1 266.5503 560.7666)">E</svg:text>
-      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="28.2962" font-style="normal" transform="matrix(1 0 0 1 285.3101 560.7666)">N</svg:text>
-      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="28.2962" font-style="normal" transform="matrix(1 0 0 1 305.7451 560.7666)">T</svg:text>
-      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="28.2962" font-style="normal" transform="matrix(1 0 0 1 323.4531 560.7666)">E</svg:text>
-      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="28.2962" font-style="normal" transform="matrix(1 0 0 1 342.2148 560.7666)">R</svg:text>
-      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="28.2962" font-style="normal" transform="matrix(1 0 0 1 246.1152 594.7217)">POINT </svg:text>
-      <svg:line x1="306.91" y1="477.5" x2="306.91" y2="533.5" fill="none" stroke="#0000FF" stroke-width="5.0" display="inline" font-style="normal"/>
-      <svg:g display="inline" font-style="normal">
-         <svg:g font-style="normal">
-            <svg:line x1="307.063" y1="477.5" x2="307.063" y2="411.0" fill="none" stroke="#0000FF" stroke-width="5.0" font-style="normal"/>
-            <svg:polygon points="319.566000,414.646000 307.102000,393.058000 294.637000,414.646000" fill="#0000FF" font-style="normal"/>
-         </svg:g>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:polygon font-style="normal" points="401.5,363.5 401.5,428.5 353.5,477.5 261.5,477.5 212.624,430.449 214.5,361.5 261.521,314.485 353.5,312.5" stroke="#000000"/>
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="234.501" x2="172.5" y1="341.501" y2="293.5"/>
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="306.91" x2="306.91" y1="312.5" y2="252.5"/>
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="380.796" x2="436.5" y1="341.501" y2="293.5"/>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="28.2962" font-style="normal" transform="matrix(1 0 0 1 246.1152 560.7666)" x="0" y="0">C</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="28.2962" font-style="normal" transform="matrix(1 0 0 1 266.5503 560.7666)" x="0" y="0">E</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="28.2962" font-style="normal" transform="matrix(1 0 0 1 285.3101 560.7666)" x="0" y="0">N</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="28.2962" font-style="normal" transform="matrix(1 0 0 1 305.7451 560.7666)" x="0" y="0">T</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="28.2962" font-style="normal" transform="matrix(1 0 0 1 323.4531 560.7666)" x="0" y="0">E</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="28.2962" font-style="normal" transform="matrix(1 0 0 1 342.2148 560.7666)" x="0" y="0">R</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="28.2962" font-style="normal" transform="matrix(1 0 0 1 246.1152 594.7217)" x="0" y="0">POINT </svg:text>
+    <svg:line display="inline" fill="none" font-style="normal" stroke="#0000FF" stroke-width="5" x1="306.91" x2="306.91" y1="477.5" y2="533.5"/>
+    <svg:g display="inline" font-style="normal">
+      <svg:g font-style="normal">
+        <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="5" x1="307.063" x2="307.063" y1="477.5" y2="411"/>
+        <svg:polygon fill="#0000FF" font-style="normal" points="319.566,414.646 307.102,393.058 294.637,414.646"/>
       </svg:g>
-   </svg:g>
+    </svg:g>
+  </svg:g>
 </svg:svg>

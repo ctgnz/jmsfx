@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="400.0" height="400.0" enable-background="new 0 0 400 400" font-style="normal" viewBox=" 0.00  0.00 400.00 400.00" preserveAspectRatio="xMidYMid meet">
-   <svg:g id="main" font-style="normal">
-      <svg:path d="M200.755,64.883   c-71.694,0-129.822,54.722-129.822,122.253c0,67.511,58.127,122.232,129.822,122.232c71.692,0,129.803-54.724,129.803-122.232   C330.558,119.604,272.447,64.883,200.755,64.883" fill="none" stroke="#FFCC00" stroke-miterlimit="10.0" stroke-width="5.0" font-style="normal"/>
-   </svg:g>
-   <svg:g id="template" display="inline" font-style="normal">
-      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="26.4544" font-style="normal" transform="matrix(1 0 0 1 159.2207 364.7891)">CENTER POINT</svg:text>
-      <svg:g display="inline" font-style="normal">
-         <svg:g font-style="normal">
-            <svg:line x1="280.5" y1="337.5" x2="210.817" y2="206.532" fill="none" stroke="#0000FF" stroke-linejoin="bevel" stroke-width="5.0" font-style="normal"/>
-            <svg:g font-style="normal">
-               <svg:polygon points="223.536000,203.896000 202.391000,190.694000 201.525000,215.607000" fill="#0000FF" font-style="normal"/>
-            </svg:g>
-         </svg:g>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 400 400" font-style="normal" height="400" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 400 400" width="400" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:path d="M200.755,64.883 c-71.694,0-129.822,54.722-129.822,122.253c0,67.511,58.127,122.232,129.822,122.232c71.692,0,129.803-54.724,129.803-122.232 C330.558,119.604,272.447,64.883,200.755,64.883" fill="none" font-style="normal" stroke="#FFCC00" stroke-miterlimit="10" stroke-width="5"/>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="26.4544" font-style="normal" transform="matrix(1 0 0 1 159.2207 364.7891)" x="0" y="0">CENTER POINT</svg:text>
+    <svg:g display="inline" font-style="normal">
+      <svg:g font-style="normal">
+        <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-width="5" x1="280.5" x2="210.817" y1="337.5" y2="206.532"/>
+        <svg:g font-style="normal">
+          <svg:polygon fill="#0000FF" font-style="normal" points="223.536,203.896 202.391,190.694 201.525,215.607"/>
+        </svg:g>
       </svg:g>
-   </svg:g>
-   <svg:g id="example" display="none" font-style="normal">
-      <svg:circle cx="200.938" cy="189.07" r="98.063" fill="none" stroke="#80E0FF" stroke-width="10.0" display="inline" font-style="normal"/>
-      <svg:line x1="200.938" y1="287.133" x2="200.938" y2="91.007" fill="none" stroke="#80E0FF" stroke-width="10.0" display="inline" font-style="normal"/>
-      <svg:line x1="102.875" y1="189.07" x2="299.0" y2="189.07" fill="none" stroke="#80E0FF" stroke-width="10.0" display="inline" font-style="normal"/>
-   </svg:g>
+    </svg:g>
+  </svg:g>
+  <svg:g display="none" font-style="normal" id="example">
+    <svg:circle cx="200.938" cy="189.07" display="inline" fill="none" font-style="normal" r="98.063" stroke="#80E0FF" stroke-width="10"/>
+    <svg:line display="inline" fill="none" font-style="normal" stroke="#80E0FF" stroke-width="10" x1="200.938" x2="200.938" y1="287.133" y2="91.007"/>
+    <svg:line display="inline" fill="none" font-style="normal" stroke="#80E0FF" stroke-width="10" x1="102.875" x2="299" y1="189.07" y2="189.07"/>
+  </svg:g>
 </svg:svg>

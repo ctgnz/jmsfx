@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Version_1.0" xml:space="preserve" zoomAndPan="magnify" version="1.1" contentScriptType="application/ecmascript" contentStyleType="text/css" x="0.0" y="0.0" width="612.0" height="792.0" enable-background="new 0 0 612 792" font-style="normal" viewBox=" 0.00  0.00 612.00 792.00" preserveAspectRatio="xMidYMid meet">
-   <svg:g id="main" font-style="normal" transform="translate(-530 -560) scale(3 3)">
-      <svg:polygon points="278.334000,260.666000 307.334000,318.667000 249.334000,318.667000" fill="#FFFFFF" stroke="#000000" stroke-width="2.0" font-style="normal"/>
-   </svg:g>
-   <svg:g id="template" display="inline" font-style="normal" transform="translate(105 -79)">
-      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="35.9964" font-style="normal" transform="matrix(1 0 0 1 112.999 614.0001)">ANCHOR</svg:text>
-      <svg:text x="0.0" y="0.0" dx="0.0" dy="0.0" fill="#0000FF" display="inline" font-family="sans-serif" font-size="35.9964" font-style="normal" transform="matrix(1 0 0 1 130.999 647.0001)">POINT</svg:text>
-      <svg:line x1="200.001" y1="497.001" x2="200.001" y2="575.001" fill="none" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
-      <svg:polygon points="200.000000,475.151000 217.695000,508.151000 182.306000,508.151000" fill="#FFFFFF" stroke="#0000FF" stroke-width="2.0" display="inline" font-style="normal"/>
-   </svg:g>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main" transform="translate(-530 -560) scale(3 3)">
+    <svg:polygon fill="#FFFFFF" font-style="normal" points="278.334,260.666 307.334,318.667 249.334,318.667" stroke="#000000" stroke-width="2"/>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template" transform="translate(105 -79)">
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="35.9964" font-style="normal" transform="matrix(1 0 0 1 112.999 614.0001)" x="0" y="0">ANCHOR</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="35.9964" font-style="normal" transform="matrix(1 0 0 1 130.999 647.0001)" x="0" y="0">POINT</svg:text>
+    <svg:line display="inline" fill="none" font-style="normal" stroke="#0000FF" stroke-width="2" x1="200.001" x2="200.001" y1="497.001" y2="575.001"/>
+    <svg:polygon display="inline" fill="#FFFFFF" font-style="normal" points="200,475.151 217.695,508.151 182.306,508.151" stroke="#0000FF" stroke-width="2"/>
+  </svg:g>
 </svg:svg>
