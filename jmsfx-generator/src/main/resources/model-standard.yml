@@ -226,12 +226,12 @@ amplifierGroups:
   - {code: "51", id: "BARGE", label: "Barge", bounds: {"1": {minX: 114.95, minY: 563.25, width: 383.21, height: 56.27}, "3": {minX: 158.45, minY: 540.25, width: 292.21, height: 41.25}, "4": {minX: 170.95, minY: 535.25, width: 268.21, height: 41.25}, "6": {minX: 133.45, minY: 569.25, width: 349.21, height: 43.25}}}
   - {code: "52", id: "AMPHIB", label: "Amphibious", bounds: {"1": {minX: 108.83, minY: 559.0, width: 395.45, height: 61.64}, "3": {minX: 163.0, minY: 537.0, width: 284.18, height: 61.63}, "4": {minX: 163.0, minY: 533.0, width: 284.18, height: 61.63}, "6": {minX: 130.0, minY: 536.0, width: 352.0, height: 61.63}}}
 - details: {code: "6", id: TOWED_ARRAYS, label: "Naval towed array", amplifierId: AG_AuxiliaryEquipmentIndicator}
-  config: {typeName: TowedArrayType, graphicLocation: "Amplifier", standard: true, enumId: TOWED_ARRAYS, enumDesc: "Naval towed array", symbolSets: [SEA_SURFACE]}
+  config: {typeName: TowedArrayType, graphicLocation: "Amplifier", standard: true, enumId: TOWED_ARRAYS, enumDesc: "Naval Towed Array Types", symbolSets: [SEA_SURFACE]}
   values:
   - {code: "61", id: "SHORT_TOWED_ARRAY", label: "Short towed array", bounds: {"1": {minX: 119.77, minY: 586.13, width: 372.46, height: 40.0}, "3": {minX: 120.72, minY: 588.66, width: 372.46, height: 40.0}, "4": {minX: 119.77, minY: 545.5, width: 372.46, height: 40.0}, "6": {minX: 118.77, minY: 585.0, width: 372.46, height: 40.0}}}
   - {code: "62", id: "LONG_TOWED_ARRAY", label: "Long towed array", bounds: {"1": {minX: 119.77, minY: 586.63, width: 372.46, height: 41.0}, "3": {minX: 120.72, minY: 588.66, width: 372.46, height: 41.0}, "4": {minX: 119.77, minY: 545.0, width: 372.46, height: 41.0}, "6": {minX: 118.77, minY: 585.0, width: 372.46, height: 41.0}}}
 - details: {code: "7", id: LEADERSHIP_INDICATOR, label: "Role for dismounted individuals", amplifierId: AV_LeadershipIdentifier}
-  config: {typeName: LeadershipRole, graphicLocation: "Amplifier", standard: true, enumId: LEADERSHIP_ROLE, enumDesc: "Leadership role", symbolSets: [DISMOUNTED]}
+  config: {typeName: LeadershipRole, graphicLocation: "Amplifier", standard: true, enumId: LEADERSHIP_ROLE, enumDesc: "Leadership Role", symbolSets: [DISMOUNTED]}
   values:
   - {code: "71", id: "LEADER_INDIVIDUAL", label: "Leader", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
   - {code: "72", id: "DEPUTY_LEADER_INDIVIDUAL", label: "Deputy Leader", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
@@ -3223,10 +3223,10 @@ symbolSets:
       - {code: "09", id: SNIPER, graphicType: MAIN, label: "Sniper"}
       - {code: "10", id: SOF, graphicType: MAIN, label: "Special Operations Forces (SOF)"}
       - {code: "11", id: DESIGNATED_MARKSMAN, graphicType: MAIN, label: "Designated Marksman (DM)"}
-      - {code: "12", id: MEDICAL, graphicType: MAIN, label: "Medical"}
-      - {code: "13", id: SIGNAL, graphicType: MAIN, label: "Signal"}
-      - {code: "14", id: RECONNAISSANCE, graphicType: MAIN, label: "Reconnaissance"}
-      - {code: "15", id: INFANTRY, graphicType: MAIN, label: "Infantry"}
+      - {code: "12", id: MEDIC, graphicType: MAIN, label: "Medic"}
+      - {code: "13", id: SIGNALLER, graphicType: MAIN, label: "Signaller"}
+      - {code: "14", id: SCOUT, graphicType: MAIN, label: "Reconnaissance Scout"}
+      - {code: "15", id: INFANTEER, graphicType: MAIN, label: "Infanteer"}
       - {code: "16", id: CLOSE_PROTECTION, graphicType: MAIN, label: "Close Protection (CLP)"}
       - {code: "17", id: CROWD_RIOT_CONTROL, graphicType: MAIN, label: "Infantry"}
       - {code: "18", id: SWAT, graphicType: MAIN, label: "Special Weapons and Tactics (SWAT)"}
