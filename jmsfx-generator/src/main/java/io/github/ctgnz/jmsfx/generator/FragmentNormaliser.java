@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
@@ -38,11 +39,9 @@ import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
  * java io.github.ctgnz.jmsfx.generator.FragmentNormaliser [--apply] [--show &lt;path&gt;] [/config.yml] [/config-hallux.yml]
  * </pre>
  *
- * Every rewrite is checked against {@link SvgFingerprint}: a file whose fingerprint would change is reported and left alone, never written. That makes "this reformat did not
- * change what anything draws" a property the run verifies rather than one the author asserts.
- * <p>
- * Numeric precision is deliberately <em>not</em> normalised here - {@code 303.51999} is left as it is rather than restored to {@code 303.52}. That is the one step that rewrites
- * content rather than layout, so it is kept separate to stay independently reviewable and revertible.
+ * Every rewrite is checked against {@link SvgFingerprint}: a file that would come back describing a different drawing is reported and left alone, never written. That makes "this
+ * reformat did not change what anything draws" a property the run verifies rather than one the author asserts. Structure, attributes and text have to match exactly; numbers are
+ * compared numerically, within {@link #VERIFY_TOLERANCE}, since the one step here that touches them deliberately moves a few by a fraction of a thousandth of a unit.
  */
 public class FragmentNormaliser {
 
@@ -76,9 +75,47 @@ public class FragmentNormaliser {
      * the same shape can differ purely in where that wrapping fell, which is exactly what makes duplicates hard to spot.
      * <p>
      * Runs collapse to one space and the ends are trimmed. Nothing else: a single space between two numbers is a separator and removing it would silently join them into one
-     * coordinate. {@link SvgFingerprint} would catch that, since it rounds each number it finds and two numbers do not round to the same string as their concatenation.
+     * coordinate. {@link SvgFingerprint#equivalent} would catch that, since the two sides stop lining up number for number as soon as one of them is lost.
      */
     private static final Set<String> COORDINATE_ATTRIBUTES = Set.of("d", "points");
+
+    /** Attributes whose values are numbers, and so are worth writing at their shortest faithful length. */
+    private static final Set<String> NUMERIC_ATTRIBUTES = Set.of("d", "points", "x", "y", "x1", "y1", "x2", "y2", "cx", "cy", "r", "rx", "ry", "width", "height", "viewBox",
+        "transform", "stroke-width", "stroke-dasharray", "stroke-dashoffset", "stroke-miterlimit", "font-size", "offset", "opacity", "fill-opacity", "stroke-opacity", "style");
+
+    /**
+     * Only a number carrying a decimal point is a candidate, which is what keeps this away from everything else a value can hold.
+     * <p>
+     * A hex colour has no point, so {@code #0000ff} is never seen as a number - a trap worth naming, because {@link SvgFingerprint}'s own rounding does fall into it and reduces
+     * that colour to {@code #0.000ff} internally. Harmless there, since it does the same to both sides of a comparison, but it must not reach a file.
+     */
+    private static final Pattern DECIMAL = Pattern.compile("\\d+\\.\\d+");
+
+    /**
+     * How far a number may be moved to write it more briefly, in user units on a 612x792 canvas.
+     * <p>
+     * Inkscape round-trips coordinates through 32-bit floats, which holds about seven significant decimal digits, so a value near 300 comes back perturbed in the fifth decimal:
+     * {@code 303.52} returns as {@code 303.51999} and {@code 4.25} as {@code 4.24999996}. At 1e-5 the shortest faithful form recovers those, while a genuinely precise
+     * {@code 24.0012} is left alone because writing it as {@code 24.001} would move it by 2e-4.
+     * <p>
+     * The bound is absolute rather than relative on purpose: what matters is where a point lands on a fixed canvas, not its magnitude. A relative bound let the largest coordinate
+     * in the set, {@code 74808.3359}, move by 0.036 units, which is the wrong trade entirely.
+     * <p>
+     * 1e-5 of a 612-unit canvas is one part in 61 million - below a thousandth of a pixel at any size these are rendered at.
+     */
+    private static final double TOLERANCE = 1e-5;
+
+    /**
+     * The bound the rewrite is checked against afterwards, deliberately looser than the one it was made under.
+     * <p>
+     * The two are computed differently - {@link #shorten} compares a value against its own candidate string, while verification re-parses both documents and compares what it finds
+     * - so a change made at exactly {@link #TOLERANCE} can measure a fraction above it on the way back: {@code 303.52 - 303.51999} is not 1e-5 in binary floating point but a few
+     * ulps over. Verifying at the same number makes the check fail on arithmetic rather than on anything real.
+     * <p>
+     * Twice the rewrite bound leaves no room for that while giving nothing away: 2e-5 is still a fifty-thousandth of a user unit, and every mistake worth catching - a coordinate
+     * genuinely moved, a separator lost, an element or a glyph gone - is orders of magnitude larger.
+     */
+    private static final double VERIFY_TOLERANCE = 2 * TOLERANCE;
 
     public static void main(String[] args) {
         List<String> rest = new ArrayList<>(Arrays.asList(args));
@@ -128,7 +165,7 @@ public class FragmentNormaliser {
                 continue;
             }
 
-            String before = SvgFingerprint.of(document);
+            String before = SvgFingerprint.exact(document);
             Tally tally = new Tally();
             strip(document, tally);
             String rendered = serialise(document);
@@ -138,16 +175,17 @@ public class FragmentNormaliser {
             // something the in-memory tree still holds correctly.
             String after;
             try (InputStream in = new ByteArrayInputStream(rendered.getBytes(StandardCharsets.UTF_8))) {
-                after = SvgFingerprint.of(SvgFingerprint.parse(in));
+                after = SvgFingerprint.exact(SvgFingerprint.parse(in));
             }
+            boolean equivalent = SvgFingerprint.equivalent(before, after, VERIFY_TOLERANCE);
             if (name.equals(show)) {
                 System.out.format("%n--- %s (normalised) ---%n%s%n", name, rendered);
-                if (!before.equals(after)) {
+                if (!equivalent) {
                     System.out.format("fingerprint before: %s%nfingerprint after : %s%n", before, after);
                 }
             }
 
-            if (!before.equals(after)) {
+            if (!equivalent) {
                 refused.add(name);
                 continue;
             }
@@ -205,14 +243,8 @@ public class FragmentNormaliser {
                            .matches()) {
                 doomed.add(attribute);
                 tally.count("generated ids");
-            } else if (COORDINATE_ATTRIBUTES.contains(attribute.getLocalName())) {
-                String tidied = attribute.getValue()
-                    .trim()
-                    .replaceAll("\\s+", " ");
-                if (!tidied.equals(attribute.getValue())) {
-                    attribute.setValue(tidied);
-                    tally.count("coordinate whitespace");
-                }
+            } else {
+                tidy(attribute, tally);
             }
         }
         doomed.forEach(attribute -> element.removeAttributeNode(attribute));
@@ -236,6 +268,65 @@ public class FragmentNormaliser {
             }
         }
         remove.forEach(element::removeChild);
+    }
+
+    /** Collapses a coordinate list's layout whitespace, then writes each of its numbers at its shortest faithful length. */
+    private void tidy(Attr attribute, Tally tally) {
+        String name = attribute.getLocalName();
+        String original = attribute.getValue();
+        String value = original;
+
+        if (COORDINATE_ATTRIBUTES.contains(name)) {
+            value = value.trim()
+                .replaceAll("\\s+", " ");
+            if (!value.equals(original)) {
+                tally.count("coordinate whitespace");
+            }
+        }
+        if (NUMERIC_ATTRIBUTES.contains(name)) {
+            String spaced = value;
+            value = DECIMAL.matcher(value)
+                .replaceAll(match -> Matcher.quoteReplacement(shorten(match.group())));
+            if (!value.equals(spaced)) {
+                tally.count("number precision");
+            }
+        }
+        if (!value.equals(original)) {
+            attribute.setValue(value);
+        }
+    }
+
+    /**
+     * The briefest way of writing a number that still lands within {@link #TOLERANCE} of it, and that cannot then be shortened again.
+     * <p>
+     * Most of what this does costs nothing at all: {@code 326.523000} is written {@code 326.523} and the value is untouched. Only where the editor perturbed a coordinate does it
+     * actually move one, and never further than the tolerance allows.
+     * <p>
+     * That second condition is what makes running this twice a no-op, and it is not free. Each step measures against the value it was given, so a shortened value can be a step
+     * away from being shortened once more, and the moves add up: {@code 50.695312} is within tolerance of {@code 50.69531}, which is in turn within tolerance of {@code 50.6953},
+     * but the two together move it 1.2e-5 - past the bound this is supposed to hold. A first run wrote the middle form and a second run took the third, so the tree never settled.
+     * Taking a shortening only when it is stable means such a value keeps the length it came with, which is the right trade: the point is a predictable tree, and a tree that
+     * changes every time it is normalised is the opposite of one.
+     */
+    private String shorten(String token) {
+        String candidate = step(token);
+        if (candidate.equals(token)) {
+            return token;
+        }
+        return step(candidate).equals(candidate) ? candidate : token;
+    }
+
+    /** The shortest representation within {@link #TOLERANCE} of {@code token}, or {@code token} if there is no shorter one. */
+    private String step(String token) {
+        double value = Double.parseDouble(token);
+        for (int places = 0; places <= 9; places++) {
+            String candidate = String.format(Locale.ROOT, "%." + places + "f", value);
+            if (Math.abs(Double.parseDouble(candidate) - value) <= TOLERANCE) {
+                return candidate.contains(".") ? candidate.replaceAll("0+$", "")
+                    .replaceAll("\\.$", "") : candidate;
+            }
+        }
+        return token;
     }
 
     /** Every id pointed at from within the same document, so those ids survive while the editor's generated ones do not. */

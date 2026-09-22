@@ -69,8 +69,76 @@ public final class SvgFingerprint {
 
     public static String of(Document document) {
         StringBuilder out = new StringBuilder();
-        append(document.getDocumentElement(), out);
+        append(document.getDocumentElement(), out, true);
         return out.toString();
+    }
+
+    /**
+     * As {@link #of(Document)}, but with every number left exactly as written.
+     * <p>
+     * Rounding to {@link #PRECISION} is the right way to compare two independently-edited trees, where the question is only whether they agree. It is the wrong way to check a
+     * rewrite that deliberately adjusts numbers, because a value sitting on a rounding boundary flips sides for a change far smaller than the rounding itself: {@code 43.86149}
+     * written as {@code 43.8615} has moved by 1e-5, but rounds to {@code 43.861} before and {@code 43.862} after. Twenty-six fragments were refused for exactly that, none of them
+     * for a real difference.
+     * <p>
+     * Pair this with {@link #equivalent(String, String, double)}, which compares the numbers numerically against a stated tolerance and everything else literally - a stronger
+     * check than the rounded string, since it bounds how far any single value may have moved instead of quantising them all first.
+     */
+    public static String exact(Document document) {
+        StringBuilder out = new StringBuilder();
+        append(document.getDocumentElement(), out, false);
+        return out.toString();
+    }
+
+    /**
+     * Whether two exact fingerprints describe the same drawing, allowing each number to differ by at most {@code tolerance}.
+     * <p>
+     * Everything that is not a number has to match character for character, so an element, an attribute or a piece of text that appeared, vanished or changed is still caught - as
+     * is a coordinate separator lost, since that turns two numbers into one and the two sides stop lining up.
+     */
+    public static boolean equivalent(String left, String right, double tolerance) {
+        int i = 0;
+        int j = 0;
+        while (i < left.length() && j < right.length()) {
+            int leftEnd = numberEnd(left, i);
+            int rightEnd = numberEnd(right, j);
+            if (leftEnd > i && rightEnd > j) {
+                double a = Double.parseDouble(left.substring(i, leftEnd));
+                double b = Double.parseDouble(right.substring(j, rightEnd));
+                if (Math.abs(a - b) > tolerance) {
+                    return false;
+                }
+                i = leftEnd;
+                j = rightEnd;
+            } else if (left.charAt(i) == right.charAt(j)) {
+                i++;
+                j++;
+            } else {
+                return false;
+            }
+        }
+        return i == left.length() && j == right.length();
+    }
+
+    /** The end of the number starting at {@code from}, or {@code from} itself if there is not one there. */
+    private static int numberEnd(String value, int from) {
+        int i = from;
+        if (i < value.length() && value.charAt(i) == '-') {
+            i++;
+        }
+        int digits = i;
+        while (i < value.length() && (Character.isDigit(value.charAt(i)) || value.charAt(i) == '.')) {
+            i++;
+        }
+        if (i == digits) {
+            return from;
+        }
+        try {
+            Double.parseDouble(value.substring(from, i));
+            return i;
+        } catch (NumberFormatException e) {
+            return from;
+        }
     }
 
     /** Whether a node is the editor's own, rather than part of the drawing. */
@@ -115,7 +183,7 @@ public final class SvgFingerprint {
         return true;
     }
 
-    private static void append(Node node, StringBuilder out) {
+    private static void append(Node node, StringBuilder out, boolean round) {
         if (node.getNodeType() == Node.TEXT_NODE || node.getNodeType() == Node.CDATA_SECTION_NODE) {
             String text = node.getNodeValue()
                 .trim()
@@ -145,7 +213,7 @@ public final class SvgFingerprint {
             if (isEditorMetadata(attribute) || ID_ATTRIBUTE.equals(attribute.getLocalName())) {
                 continue;
             }
-            sorted.put(attribute.getLocalName(), normalise(attribute.getValue()));
+            sorted.put(attribute.getLocalName(), normalise(attribute.getValue(), round));
         }
         sorted.forEach((name, value) -> out.append(' ')
             .append(name)
@@ -154,12 +222,12 @@ public final class SvgFingerprint {
         out.append('>');
         NodeList children = element.getChildNodes();
         for (int i = 0; i < children.getLength(); i++) {
-            append(children.item(i), out);
+            append(children.item(i), out, round);
         }
     }
 
-    /** Collapses whitespace and rounds every number, so re-serialisation drift and reformatted lists compare equal. */
-    private static String normalise(String value) {
+    /** Collapses whitespace and, when {@code round} is set, rounds every number, so re-serialisation drift and reformatted lists compare equal. */
+    private static String normalise(String value, boolean round) {
         String collapsed = value.trim()
             .replaceAll("\\s+", " ");
         StringBuilder out = new StringBuilder(collapsed.length());
@@ -173,7 +241,7 @@ public final class SvgFingerprint {
             if (i > start) {
                 String token = collapsed.substring(start, i);
                 try {
-                    out.append(String.format(Locale.ROOT, "%." + PRECISION + "f", Double.parseDouble(token)));
+                    out.append(round ? String.format(Locale.ROOT, "%." + PRECISION + "f", Double.parseDouble(token)) : token);
                 } catch (NumberFormatException e) {
                     out.append(token);
                 }
