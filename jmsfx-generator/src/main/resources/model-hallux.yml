@@ -211,7 +211,7 @@ amplifierGroups:
   - {code: "22", id: "CORPS_MEF", label: "Corps/MEF", bounds: {"1": {minX: 246.7, minY: 168.8, width: 127.08, height: 31.78}, "3": {minX: 234.74, minY: 207.83, width: 142.96, height: 35.75}, "4": {minX: 246.7, minY: 205.8, width: 127.08, height: 31.78}, "6": {minX: 246.7, minY: 168.8, width: 127.08, height: 31.78}}}
   - {code: "23", id: "ARMY", label: "Army", bounds: {"1": {minX: 231.04, minY: 168.8, width: 173.74, height: 31.78}, "3": {minX: 209.09, minY: 207.83, width: 195.46, height: 35.75}, "4": {minX: 231.04, minY: 205.8, width: 173.74, height: 31.78}, "6": {minX: 231.04, minY: 168.8, width: 173.74, height: 31.78}}}
   - {code: "24", id: "ARMY_GROUP_FRONT", label: "Army Group/Front", bounds: {"1": {minX: 219.23, minY: 168.8, width: 220.41, height: 31.78}, "3": {minX: 182.28, minY: 207.83, width: 247.96, height: 35.75}, "4": {minX: 213.23, minY: 205.8, width: 220.41, height: 31.78}, "6": {minX: 219.23, minY: 168.8, width: 220.41, height: 31.78}}}
-  - {code: "25", id: "REGION_THEATRE", label: "Theatre/Region", bounds: {"1": {minX: 206.46, minY: 168.8, width: 267.07, height: 31.78}, "3": {minX: 186.5, minY: 207.83, width: 232.95, height: 35.75}, "4": {minX: 208.46, minY: 205.8, width: 267.07, height: 31.78}, "6": {minX: 206.46, minY: 168.8, width: 267.07, height: 31.78}}}
+  - {code: "25", id: "REGION_THEATRE", label: "Region/Theatre", bounds: {"1": {minX: 206.46, minY: 168.8, width: 267.07, height: 31.78}, "3": {minX: 186.5, minY: 207.83, width: 232.95, height: 35.75}, "4": {minX: 208.46, minY: 205.8, width: 267.07, height: 31.78}, "6": {minX: 206.46, minY: 168.8, width: 267.07, height: 31.78}}}
   - {code: "26", id: "COMMAND", label: "Command", bounds: {"1": {minX: 265.03, minY: 170.0, width: 80.11, height: 36.0}, "3": {minX: 265.95, minY: 218.0, width: 80.11, height: 36.0}, "4": {minX: 270.18, minY: 203.69, width: 80.11, height: 36.0}, "6": {minX: 264.94, minY: 170.0, width: 80.11, height: 36.0}}}
 - details: {code: "3", id: EQUIP_MOBILITY, label: "Equipment mobility", amplifierId: R_MobilityIndicator}
   config: {typeName: EquipmentMobility, graphicLocation: "Amplifier", standard: true, enumId: EQUIPMENT_MOBILITY, enumDesc: "Equipment Mobility", symbolSets: [LAND_UNIT, LAND_EQUIPMENT, LAND_INSTALLATION]}
@@ -225,11 +225,11 @@ amplifierGroups:
   - {code: "37", id: "PACK_ANIMALS", label: "Pack animals", bounds: {"1": {minX: 252.93, minY: 563.25, width: 106.15, height: 56.07}, "3": {minX: 252.93, minY: 538.25, width: 106.15, height: 56.07}, "4": {minX: 252.93, minY: 532.25, width: 106.15, height: 56.07}, "6": {minX: 252.93, minY: 554.25, width: 106.15, height: 56.07}}}
   - {code: "38", id: "MOUNTED", label: "Mounted", bounds: {"1": {minX: 252.93, minY: 563.25, width: 106.15, height: 56.07}, "3": {minX: 252.93, minY: 538.25, width: 106.15, height: 56.07}, "4": {minX: 252.93, minY: 532.25, width: 106.15, height: 56.07}, "6": {minX: 252.93, minY: 554.25, width: 106.15, height: 56.07}}}
   - {code: "39", id: "ANIMAL_DRAWN", label: "Animal-drawn vehicle", bounds: {"1": {minX: 252.93, minY: 563.25, width: 106.15, height: 56.07}, "3": {minX: 252.93, minY: 538.25, width: 106.15, height: 56.07}, "4": {minX: 252.93, minY: 532.25, width: 106.15, height: 56.07}, "6": {minX: 252.93, minY: 554.25, width: 106.15, height: 56.07}}}
+  - {code: "3A", id: "CYCLE", label: "Bicycle/Motorcycle", bounds: {"1": {minX: 238.89, minY: 563.75, width: 134.22, height: 55.07}, "3": {minX: 228.89, minY: 540.75, width: 152.22, height: 55.07}, "4": {minX: 229.39, minY: 525.5, width: 151.22, height: 55.07}, "6": {minX: 240.5, minY: 569.75, width: 131.0, height: 55.07}}}
   - {code: "41", id: "OVER_SNOW", label: "Over snow (prime mover)", bounds: {"1": {minX: 113.84, minY: 513.18, width: 384.33, height: 56.07}, "3": {minX: 159.34, minY: 488.14, width: 293.33, height: 56.07}, "4": {minX: 170.34, minY: 534.14, width: 268.83, height: 56.07}, "6": {minX: 130.0, minY: 523.18, width: 350.83, height: 56.07}}}
   - {code: "42", id: "SLED", label: "Sled", bounds: {"1": {minX: 109.39, minY: 517.43, width: 383.22, height: 56.07}, "3": {minX: 158.0, minY: 494.43, width: 294.0, height: 56.07}, "4": {minX: 158.0, minY: 535.43, width: 294.0, height: 56.07}, "6": {minX: 130.0, minY: 522.43, width: 352.0, height: 56.07}}}
   - {code: "51", id: "BARGE", label: "Barge", bounds: {"1": {minX: 114.95, minY: 563.25, width: 383.21, height: 56.27}, "3": {minX: 158.45, minY: 540.25, width: 292.21, height: 41.25}, "4": {minX: 170.95, minY: 535.25, width: 268.21, height: 41.25}, "6": {minX: 133.45, minY: 569.25, width: 349.21, height: 43.25}}}
   - {code: "52", id: "AMPHIB", label: "Amphibious", bounds: {"1": {minX: 108.83, minY: 559.0, width: 395.45, height: 61.64}, "3": {minX: 163.0, minY: 537.0, width: 284.18, height: 61.63}, "4": {minX: 163.0, minY: 533.0, width: 284.18, height: 61.63}, "6": {minX: 130.0, minY: 536.0, width: 352.0, height: 61.63}}}
-  - {code: "3F", id: "CYCLE", label: "Bicycle/Motorcycle", bounds: {"1": {minX: 238.89, minY: 563.75, width: 134.22, height: 55.07}, "3": {minX: 228.89, minY: 540.75, width: 152.22, height: 55.07}, "4": {minX: 229.39, minY: 525.5, width: 151.22, height: 55.07}, "6": {minX: 240.5, minY: 569.75, width: 131.0, height: 55.07}}}
 - details: {code: "6", id: TOWED_ARRAYS, label: "Naval towed array", amplifierId: AG_AuxiliaryEquipmentIndicator}
   config: {typeName: TowedArrayType, graphicLocation: "Amplifier", standard: true, enumId: TOWED_ARRAYS, enumDesc: "Naval Towed Array Types", symbolSets: [SEA_SURFACE]}
   values:
@@ -238,8 +238,8 @@ amplifierGroups:
 - details: {code: "7", id: LEADERSHIP_INDICATOR, label: "Role for dismounted individuals", amplifierId: AV_LeadershipIdentifier}
   config: {typeName: LeadershipRole, graphicLocation: "Amplifier", standard: true, enumId: LEADERSHIP_ROLE, enumDesc: "Leadership Role", symbolSets: [DISMOUNTED]}
   values:
-  - {code: "71", id: "LEADER", label: "Leader", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
-  - {code: "72", id: "DEPUTY_LEADER", label: "Deputy Leader", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
+  - {code: "71", id: "LEADER_INDIVIDUAL", label: "Leader", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
+  - {code: "72", id: "DEPUTY_LEADER_INDIVIDUAL", label: "Deputy Leader", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
   - {code: "73", id: "SENIOR_ENLISTED_ADVISOR", label: "Senior Enlisted Advisor", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
   - {code: "74", id: "STAFF_J1", label: "J1 Personnel/Manpower", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
   - {code: "75", id: "STAFF_J2", label: "J2 Intelligence/Security", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
@@ -467,7 +467,7 @@ amplifierGroups:
   - {code: "SGS", id: "GS", label: "South Georgia and the South Sandwich Islands", remarks: "239"}
   - {code: "FJI", id: "FJ", label: "Fiji", remarks: "242"}
   - {code: "FIN", id: "FI", label: "Finland", remarks: "246"}
-  - {code: "SUO", id: "SF", label: "Finland", remarks: "246"}
+  - {code: "SUO", id: "SF", label: "Suomi (Finland)", remarks: "246"}
   - {code: "ALA", id: "AX", label: "Åland Islands", remarks: "248"}
   - {code: "FXX", id: "FX", label: "France, Metropolitan", remarks: "249"}
   - {code: "FRA", id: "FR", label: "France", remarks: "250"}
@@ -2026,6 +2026,7 @@ symbolSets:
   - {code: "50", category: Capability, id: RADAR, label: "Radar"}
   - {code: "51", category: Capability, id: RFID_INTERROGATOR_SENSOR, label: "Radio Frequency Identification (RFID) Interrogator / Sensor"}
   - {code: "55", category: Capability, id: SENSOR, label: "Sensor"}
+  - {code: "56", category: Capability, id: WEAPON, label: "Weapon/Weapons"}
   - {code: "57", category: Capability, id: SIGNALS_INTELLIGENCE, label: "Signals Intelligence"}
   - {code: "59", category: Capability, id: SINGLE_ROCKET_LAUNCHER, label: "Single Rocket Launcher"}
   - {code: "60", category: Capability, id: SMOKE, label: "Smoke"}
@@ -2383,18 +2384,13 @@ symbolSets:
     - details: {code: "08", id: UNITED_STATES_SECRET_SERVICE_USSS, graphicType: MAIN, label: "United States Secret Service (USSS)"}
     - details: {code: "09", id: TRANSPORTATION_SECURITY_ADMINISTRATION_TSA, graphicType: MAIN, label: "Transportation Security Administration (TSA)"}
     - details: {code: "10", id: COAST_GUARD, graphicType: FULL_OCTAGON, label: "Coast Guard"}
-  - details: {code: "18", id: WORKING_ANIMALS, graphicType: FULL_OCTAGON, label: "Working Animals"}
+  - details: {code: "18", id: PACK_ANIMALS, graphicType: FULL_OCTAGON, label: "Pack Animals"}
     entityTypes:
-    - details: {code: "01", id: PACK_ANIMALS, graphicType: FULL_OCTAGON, label: "Pack Animals"}
-      entitySubTypes:
-      - {code: "01", id: HORSE, graphicType: FULL_OCTAGON, label: "Horse"}
-      - {code: "02", id: MULE, graphicType: FULL_OCTAGON, label: "Mule"}
-      - {code: "03", id: CAMEL, graphicType: FULL_OCTAGON, label: "Camel"}
-      - {code: "04", id: OXEN, graphicType: FULL_OCTAGON, label: "Oxen"}
-      - {code: "05", id: ELEPHANT, graphicType: FULL_OCTAGON, label: "Elephant"}
-    - details: {code: "02", id: TRAINED_ANIMALS, graphicType: FULL_OCTAGON, label: "Trained Animals"}
-      entitySubTypes:
-      - {code: "01", id: DOG, graphicType: FULL_OCTAGON, label: "Dog"}
+    - details: {code: "01", id: HORSE, graphicType: FULL_OCTAGON, label: "Horse"}
+    - details: {code: "02", id: MULE, graphicType: FULL_OCTAGON, label: "Mule"}
+    - details: {code: "03", id: CAMEL, graphicType: FULL_OCTAGON, label: "Camel"}
+    - details: {code: "04", id: OXEN, graphicType: FULL_OCTAGON, label: "Oxen"}
+    - details: {code: "05", id: ELEPHANT, graphicType: FULL_OCTAGON, label: "Elephant"}
   - details: {code: "19", id: MISSILE_SUPPORT, graphicType: FULL_OCTAGON, label: "Missile Support"}
     entityTypes:
     - details: {code: "01", id: MISSILE_TRANSLOADER, graphicType: FULL_OCTAGON, label: "Transloader"}
@@ -2402,6 +2398,10 @@ symbolSets:
     - details: {code: "03", id: MISSILE_CRANE_LOADING_DEVICE, graphicType: FULL_OCTAGON, label: "Crane/Loading Device"}
     - details: {code: "04", id: MISSILE_PROPELLANT_TRANSPORTER, graphicType: FULL_OCTAGON, label: "Propellant Transporter"}
     - details: {code: "05", id: MISSILE_WARHEAD_TRANSPORTER, graphicType: FULL_OCTAGON, label: "Warhead Transporter"}
+  - details: {code: "1A", id: WORKING_ANIMALS, graphicType: FULL_OCTAGON, label: "Working Animals"}
+    entityTypes:
+    - details: {code: "01", id: DOG, graphicType: FULL_OCTAGON, label: "Dog"}
+    - details: {code: "02", id: PIGEON, graphicType: FULL_OCTAGON, label: "Pigeon"}
   - details: {code: "20", id: OTHER_EQUIPMENT, graphicType: NA, label: "Other Equipment"}
     entityTypes:
     - details: {code: "01", id: ANTENNAE, graphicType: FULL_OCTAGON, label: "Antennae"}
@@ -3486,6 +3486,10 @@ symbolSets:
       - {code: "09", id: SNIPER, graphicType: MAIN, label: "Sniper"}
       - {code: "10", id: SOF, graphicType: MAIN, label: "Special Operations Forces (SOF)"}
       - {code: "11", id: DESIGNATED_MARKSMAN, graphicType: MAIN, label: "Designated Marksman (DM)"}
+      - {code: "12", id: MEDIC, graphicType: MAIN, label: "Medic"}
+      - {code: "13", id: SIGNALLER, graphicType: MAIN, label: "Signaller"}
+      - {code: "14", id: SCOUT, graphicType: MAIN, label: "Reconnaissance Scout"}
+      - {code: "15", id: INFANTEER, graphicType: MAIN, label: "Infanteer"}
       - {code: "16", id: CLOSE_PROTECTION, graphicType: MAIN, label: "Close Protection (CLP)"}
       - {code: "17", id: CROWD_RIOT_CONTROL, graphicType: MAIN, label: "Infantry"}
       - {code: "18", id: SWAT, graphicType: MAIN, label: "Special Weapons and Tactics (SWAT)"}
@@ -3594,16 +3598,16 @@ symbolSets:
   - {code: "10", category: FunctionalStaffArea, id: J7, label: "J7"}
   - {code: "11", category: FunctionalStaffArea, id: J8, label: "J8"}
   - {code: "12", category: FunctionalStaffArea, id: J9, label: "J9"}
-  - {code: "14", category: Rank, id: OF1, label: "OF-1"}
-  - {code: "15", category: Rank, id: OF2, label: "OF-2"}
-  - {code: "16", category: Rank, id: OF3, label: "OF-3"}
-  - {code: "17", category: Rank, id: OF4, label: "OF-4"}
-  - {code: "18", category: Rank, id: OF5, label: "OF-5"}
-  - {code: "19", category: Rank, id: OF6, label: "OF-6"}
-  - {code: "20", category: Rank, id: OF7, label: "OF-7"}
-  - {code: "21", category: Rank, id: OF8, label: "OF-8"}
-  - {code: "22", category: Rank, id: OF9, label: "OF-9"}
-  - {code: "23", category: Rank, id: OFX, label: "OF-10"}
+  - {code: "14", category: Rank, id: OF01, label: "OF-1"}
+  - {code: "15", category: Rank, id: OF02, label: "OF-2"}
+  - {code: "16", category: Rank, id: OF03, label: "OF-3"}
+  - {code: "17", category: Rank, id: OF04, label: "OF-4"}
+  - {code: "18", category: Rank, id: OF05, label: "OF-5"}
+  - {code: "19", category: Rank, id: OF06, label: "OF-6"}
+  - {code: "20", category: Rank, id: OF07, label: "OF-7"}
+  - {code: "21", category: Rank, id: OF08, label: "OF-8"}
+  - {code: "22", category: Rank, id: OF09, label: "OF-9"}
+  - {code: "23", category: Rank, id: OF10, label: "OF-10"}
   - {code: "24", category: Rank, id: OFD, label: "OF-D"}
   - {code: "25", category: Rank, id: OR1, label: "OR-1"}
   - {code: "26", category: Rank, id: OR2, label: "OR-2"}
