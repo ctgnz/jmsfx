@@ -21,7 +21,7 @@
       <path d="M 295.676,346.34543 V 374.155 h -28.14692" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:4"/>
     </g>
     <g transform="translate(0.12169367,-0.28208751)">
-      <path d="M 316.70508 399.74414 A 14 14 0 0 1 307.34766 403.37695 A 14 14 0 0 1 298.0625 399.81445 C 294.01962 403.94385 285 415.24347 285 434 L 330 434 C 330 416.13632 320.62272 404.02846 316.70508 399.74414 z " style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+      <path d="M 316.70508 399.74414 A 14 14 0 0 1 307.34766 403.37695 A 14 14 0 0 1 298.0625 399.81445 C 294.01962 403.94385 285 415.24347 285 434 L 330 434 C 330 416.13632 320.62272 404.02846 316.70508 399.74414 z" style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
       <circle cx="307.34827" cy="389.3772" r="14" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-dasharray:none"/>
     </g>
   </g>

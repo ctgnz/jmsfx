@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg:svg enable-background="new 0 0 400 400" font-style="normal" height="400.0" id="Version_1.0" version="1.1" viewBox=" 0.00  0.00 400.00 400.00" width="400.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0">
   <svg:g font-style="normal" id="main">
-    <svg:path d="M389.916,290.055H22.169   V100.101l334.411,0.997c2.16,2.081,2.99,3.528,5.534,5.267c3.254,2.444,9.073,2.444,10.144,6.284   c1.455,5.211-3.617,10.444-3.617,16.021c0,3.493,2.547,6.624,3.617,9.757c14.143,9.052,12.407,9.96,15.658,26.325L389.916,290.055z   " fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0"/>
+    <svg:path d="M389.916,290.055H22.169 V100.101l334.411,0.997c2.16,2.081,2.99,3.528,5.534,5.267c3.254,2.444,9.073,2.444,10.144,6.284 c1.455,5.211-3.617,10.444-3.617,16.021c0,3.493,2.547,6.624,3.617,9.757c14.143,9.052,12.407,9.96,15.658,26.325L389.916,290.055z" fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0"/>
     <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="48" font-style="normal" id="static" transform="matrix(1 0 0 1 131.3706 208)" x="0.0" y="0.0">AO</svg:text>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template" transform="translate(150 118)">

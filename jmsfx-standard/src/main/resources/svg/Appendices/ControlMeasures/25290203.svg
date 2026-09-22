@@ -36,8 +36,8 @@
   <svg:g display="none" font-style="normal" id="example">
     <svg:polyline display="inline" fill="#FF8080" font-style="normal" points="196.370000,366.405000 247.370000,315.405000 196.370000,264.405000 145.370000,315.405000 196.370000,366.405000" stroke="#808080" stroke-linecap="square" stroke-width="5.0"/>
     <svg:g display="inline" font-style="normal" id="symbol">
-      <svg:path d="M180.024,328.966c-6.75,0-12.222-5.89-12.222-13.155    s5.472-13.155,12.222-13.155" fill="none" font-style="normal" stroke="#808080" stroke-width="5.0"/>
-      <svg:path d="M212.716,302.655c6.75,0,12.222,5.89,12.222,13.155    c0,7.265-5.472,13.155-12.222,13.155" fill="none" font-style="normal" stroke="#808080" stroke-width="5.0"/>
+      <svg:path d="M180.024,328.966c-6.75,0-12.222-5.89-12.222-13.155 s5.472-13.155,12.222-13.155" fill="none" font-style="normal" stroke="#808080" stroke-width="5.0"/>
+      <svg:path d="M212.716,302.655c6.75,0,12.222,5.89,12.222,13.155 c0,7.265-5.472,13.155-12.222,13.155" fill="none" font-style="normal" stroke="#808080" stroke-width="5.0"/>
       <svg:line fill="none" font-style="normal" stroke="#808080" stroke-width="5.0" x1="180.024" x2="212.716" y1="302.655" y2="302.655"/>
       <svg:line fill="none" font-style="normal" stroke="#808080" stroke-width="5.0" x1="180.024" x2="212.716" y1="328.966" y2="328.966"/>
     </svg:g>

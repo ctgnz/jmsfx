@@ -23,6 +23,6 @@
     <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24.5599" font-style="normal" transform="matrix(1 0 0 1 497.9375 391.8442)" x="0.0" y="0.0">E</svg:text>
     <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24.5599" font-style="normal" transform="matrix(1 0 0 1 514.3184 391.8442)" x="0.0" y="0.0">R</svg:text>
     <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24.5599" font-style="normal" transform="matrix(1 0 0 1 532.0059 391.8442)" x="0.0" y="0.0"/>
-    <svg:path d="   M431.021,397.371l-111.871,0.123l-0.02-2.743l111.891-0.125V397.371L431.021,397.371z M321.874,404.309l-16.374-8.167l16.352-8.207   L321.874,404.309L321.874,404.309z" display="inline" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3275"/>
+    <svg:path d="M431.021,397.371l-111.871,0.123l-0.02-2.743l111.891-0.125V397.371L431.021,397.371z M321.874,404.309l-16.374-8.167l16.352-8.207 L321.874,404.309L321.874,404.309z" display="inline" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3275"/>
   </svg:g>
 </svg:svg>

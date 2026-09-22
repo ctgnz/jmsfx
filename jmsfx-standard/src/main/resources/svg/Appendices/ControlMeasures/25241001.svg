@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 400 400" font-style="normal" height="400.0" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0.00  0.00 400.00 400.00" width="400.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0" zoomAndPan="magnify">
   <svg:g font-style="normal" id="main">
-    <svg:path d="   M182.289,130.731c45.249-5.17,115.95-27.164,144.236-7.769c28.281,19.397,69.298,99.572,25.451,124.138   c-43.846,24.566-238.984,38.793-288.493,23.28c-49.481-15.513-28.285-93.094-8.468-116.374   C74.809,130.731,137.02,135.9,182.289,130.731" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0"/>
+    <svg:path d="M182.289,130.731c45.249-5.17,115.95-27.164,144.236-7.769c28.281,19.397,69.298,99.572,25.451,124.138 c-43.846,24.566-238.984,38.793-288.493,23.28c-49.481-15.513-28.285-93.094-8.468-116.374 C74.809,130.731,137.02,135.9,182.289,130.731" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0"/>
     <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="32" font-style="normal" transform="matrix(1 0 0 1 136.4883 178.3994)" x="0.0" y="0.0">FSA</svg:text>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template">

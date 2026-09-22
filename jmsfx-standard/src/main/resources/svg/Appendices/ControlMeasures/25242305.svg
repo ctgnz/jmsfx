@@ -25,20 +25,20 @@
     </svg:g>
     <svg:g display="inline" font-style="normal" id="points">
       <svg:g font-style="normal">
-        <svg:path d="M74.256,201.854l-12.149-9.063     c-0.563-0.427-0.68-1.243-0.252-1.825c0.427-0.563,1.242-0.68,1.806-0.252l12.149,9.063c0.583,0.427,0.699,1.243,0.271,1.825     C75.654,202.163,74.838,202.28,74.256,201.854L74.256,201.854z M60.322,199.505l-7.803-15.507l17.08,3.086L60.322,199.505z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3105"/>
+        <svg:path d="M74.256,201.854l-12.149-9.063 c-0.563-0.427-0.68-1.243-0.252-1.825c0.427-0.563,1.242-0.68,1.806-0.252l12.149,9.063c0.583,0.427,0.699,1.243,0.271,1.825 C75.654,202.163,74.838,202.28,74.256,201.854L74.256,201.854z M60.322,199.505l-7.803-15.507l17.08,3.086L60.322,199.505z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3105"/>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="13.0426" font-style="normal" transform="matrix(1 0 0 1 62.3281 216.0029)" x="0.0" y="0.0">P</svg:text>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="13.0426" font-style="normal" transform="matrix(1 0 0 1 70.7138 216.0029)" x="0.0" y="0.0">T</svg:text>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="13.0426" font-style="normal" transform="matrix(1 0 0 1 79.0991 216.0029)" x="0.0" y="0.0"/>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="13.0426" font-style="normal" transform="matrix(1 0 0 1 82.813 216.0029)" x="0.0" y="0.0">1</svg:text>
       </svg:g>
       <svg:g font-style="normal">
-        <svg:path d="M325.059,210.9l13.121-4.483     c0.68-0.231,1.414,0.116,1.646,0.796c0.232,0.682-0.134,1.418-0.813,1.65l-13.12,4.479c-0.656,0.232-1.396-0.137-1.63-0.813     C324.029,211.87,324.378,211.133,325.059,210.9L325.059,210.9z M333.638,201.119l17.194,2.328l-12.168,12.363L333.638,201.119z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3105"/>
+        <svg:path d="M325.059,210.9l13.121-4.483 c0.68-0.231,1.414,0.116,1.646,0.796c0.232,0.682-0.134,1.418-0.813,1.65l-13.12,4.479c-0.656,0.232-1.396-0.137-1.63-0.813 C324.029,211.87,324.378,211.133,325.059,210.9L325.059,210.9z M333.638,201.119l17.194,2.328l-12.168,12.363L333.638,201.119z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3105"/>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="13.0426" font-style="normal" transform="matrix(1 0 0 1 298.4326 224.3936)" x="0.0" y="0.0">P</svg:text>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="13.0426" font-style="normal" transform="matrix(1 0 0 1 306.8193 224.3936)" x="0.0" y="0.0">T</svg:text>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="13.0426" font-style="normal" transform="matrix(1 0 0 1 315.2031 224.3936)" x="0.0" y="0.0"> 2 </svg:text>
       </svg:g>
       <svg:g font-style="normal">
-        <svg:path d="M364.691,102.135v202.491     c0,0.718-0.584,1.299-1.305,1.299c-0.719,0-1.302-0.581-1.302-1.299V102.135c0-0.719,0.583-1.301,1.302-1.301     C364.107,100.834,364.691,101.416,364.691,102.135L364.691,102.135z M355.627,104.716l7.764-15.527l7.768,15.527H355.627z      M371.154,302.042l-7.768,15.526l-7.764-15.526H371.154z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3105"/>
+        <svg:path d="M364.691,102.135v202.491 c0,0.718-0.584,1.299-1.305,1.299c-0.719,0-1.302-0.581-1.302-1.299V102.135c0-0.719,0.583-1.301,1.302-1.301 C364.107,100.834,364.691,101.416,364.691,102.135L364.691,102.135z M355.627,104.716l7.764-15.527l7.768,15.527H355.627z M371.154,302.042l-7.768,15.526l-7.764-15.526H371.154z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3105"/>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18" font-style="normal" transform="matrix(6.123234e-017 1 -1 6.123234e-017 373.8379 180.1611)" x="0.0" y="0.0">WIDTH (m)</svg:text>
       </svg:g>
     </svg:g>

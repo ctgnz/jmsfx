@@ -21,7 +21,7 @@
       <line fill="none" stroke="#000000" stroke-width="5" x1="251.816" x2="359.816" y1="399" y2="399"/>
       <line fill="none" stroke="#000000" stroke-width="5" x1="251.816" x2="359.816" y1="374.422" y2="374.422"/>
       <line fill="none" stroke="#000000" stroke-width="5" x1="305.816" x2="305.816" y1="283.5" y2="508.5"/>
-      <polyline fill="none" points="252.625,316.563 305.816,280.875 359.82,316.563   " stroke="#000000" stroke-width="5"/>
+      <polyline fill="none" points="252.625,316.563 305.816,280.875 359.82,316.563" stroke="#000000" stroke-width="5"/>
     </g>
   </g>
 </svg>

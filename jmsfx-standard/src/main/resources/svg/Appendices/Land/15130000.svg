@@ -20,6 +20,6 @@
     <ellipse cx="226" cy="437" fill="none" rx="13" ry="13" stroke="#000000" stroke-width="5"/>
     <ellipse cx="386" cy="437" fill="none" rx="13" ry="13" stroke="#000000" stroke-width="5"/>
     <line fill="none" stroke="#000000" stroke-width="5" x1="208" x2="404" y1="420" y2="420"/>
-    <polyline fill="none" points="246.325,406.25 246.325,344.25 305.175,344.25 305.176,406.25    305.175,344.25 364.024,344.25 364.024,406.25  " stroke="#000000" stroke-width="5"/>
+    <polyline fill="none" points="246.325,406.25 246.325,344.25 305.175,344.25 305.176,406.25 305.175,344.25 364.024,344.25 364.024,406.25" stroke="#000000" stroke-width="5"/>
   </g>
 </svg>

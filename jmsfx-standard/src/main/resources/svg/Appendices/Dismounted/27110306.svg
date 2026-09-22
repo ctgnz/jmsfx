@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 12.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
 <svg enable-background="new 0 0 612 792" height="792" id="Version_1.0" overflow="visible" version="1.1" viewBox="0 0 612 792" width="612" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <g display="none" id="octagon">
-    <polygon fill="none" points="305,516.5 218.733,480.768 183,394.5 218.733,308.233 305,272.5    391.268,308.233 427,394.5 391.268,480.768  " stroke="#0000FF" stroke-width="2"/>
+    <polygon fill="none" points="305,516.5 218.733,480.768 183,394.5 218.733,308.233 305,272.5 391.268,308.233 427,394.5 391.268,480.768" stroke="#0000FF" stroke-width="2"/>
     <line fill="none" stroke="#0000FF" stroke-width="2" x1="202.5" x2="407.5" y1="345.7" y2="345.7"/>
     <line fill="none" stroke="#0000FF" stroke-width="2" x1="202.5" x2="407.5" y1="443.3" y2="443.3"/>
   </g>
@@ -11,7 +11,7 @@
       <line fill="none" stroke="#000000" stroke-width="5" x1="278.5" x2="331.498" y1="441.17" y2="441.17"/>
       <line fill="none" stroke="#000000" stroke-width="5" x1="278.5" x2="331.498" y1="401.646" y2="401.646"/>
       <line fill="none" stroke="#000000" stroke-width="5" x1="304.999" x2="304.999" y1="352.291" y2="441.17"/>
-      <polyline fill="none" points="278.897,366.419 304.999,351.17 331.5,366.419   " stroke="#000000" stroke-width="5"/>
+      <polyline fill="none" points="278.897,366.419 304.999,351.17 331.5,366.419" stroke="#000000" stroke-width="5"/>
     </g>
   </g>
 </svg>

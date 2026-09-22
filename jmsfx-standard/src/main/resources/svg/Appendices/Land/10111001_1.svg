@@ -18,8 +18,8 @@
   <g id="main">
     <line fill="none" stroke="#000000" stroke-width="5" x1="305" x2="305" y1="353.75" y2="409.525"/>
     <circle cx="305" cy="426.109" fill="none" r="15.584" stroke="#000000" stroke-width="5"/>
-    <polyline fill="none" points="272.537,366.091 281.325,353.573 292.318,367.927 304.23,353.573    317.059,367.927 328.969,353.573 339.463,367.827  " stroke="#000000" stroke-width="5"/>
-    <polyline fill="none" points="127.984,280.068 305.083,423.5    305.943,372.5 485.5,512  " stroke="#000000" stroke-miterlimit="1" stroke-width="5"/>
+    <polyline fill="none" points="272.537,366.091 281.325,353.573 292.318,367.927 304.23,353.573 317.059,367.927 328.969,353.573 339.463,367.827" stroke="#000000" stroke-width="5"/>
+    <polyline fill="none" points="127.984,280.068 305.083,423.5 305.943,372.5 485.5,512" stroke="#000000" stroke-miterlimit="1" stroke-width="5"/>
   </g>
   <rect display="none" fill="none" height="240" id="greyBox" stroke="#C8C8C8" stroke-width="10" width="359" x="126.5" y="276"/>
 </svg>

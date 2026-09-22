@@ -20,6 +20,6 @@
     <circle cx="306.083" cy="304.755" fill="none" r="23.352" stroke="#000000" stroke-width="5"/>
     <rect fill="none" height="16.601" stroke="#000000" stroke-width="5" width="10.736" x="271.799" y="296.455"/>
     <rect fill="none" height="16.601" stroke="#000000" stroke-width="5" width="10.736" x="329.435" y="296.03"/>
-    <polygon fill="none" points="332.818,342.833 320.516,328.791 292.25,328.791 278.125,342.833     " stroke="#000000" stroke-width="5"/>
+    <polygon fill="none" points="332.818,342.833 320.516,328.791 292.25,328.791 278.125,342.833" stroke="#000000" stroke-width="5"/>
   </g>
 </svg>

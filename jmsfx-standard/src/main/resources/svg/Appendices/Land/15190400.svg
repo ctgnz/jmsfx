@@ -22,7 +22,7 @@
     <line fill="none" stroke="#000000" stroke-width="5" x1="208" x2="404" y1="427" y2="427"/>
     <g>
       <text font-family="sans-serif" font-size="50" transform="matrix(1 0 0 1 228.229 399)">MSL</text>
-      <polygon fill="none" points="336,359 376,359 356,384   " stroke="#000000" stroke-width="5"/>
+      <polygon fill="none" points="336,359 376,359 356,384" stroke="#000000" stroke-width="5"/>
       <line fill="none" stroke="#000000" stroke-width="5" x1="356" x2="356" y1="384" y2="404"/>
     </g>
   </g>

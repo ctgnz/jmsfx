@@ -32,7 +32,7 @@
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" id="varN" style="fill:#0000ff;fill-opacity:1" transform="matrix(1 0 0 1 387.9453 288.2988)" x="0.0" y="0.0">N</svg:text>
     </svg:g>
     <svg:g display="inline" font-style="normal" id="points">
-      <svg:path d="M369.605,397.167h-35.62    c-0.658,0-1.191-0.517-1.191-1.176c0-0.658,0.533-1.192,1.191-1.192h35.62c0.66,0,1.192,0.534,1.192,1.192    C370.798,396.65,370.266,397.167,369.605,397.167L369.605,397.167z M336.356,403.115l-23.741-7.124l23.741-7.124V403.115z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="4.0" style="fill:#0000ff;fill-opacity:1"/>
+      <svg:path d="M369.605,397.167h-35.62 c-0.658,0-1.191-0.517-1.191-1.176c0-0.658,0.533-1.192,1.191-1.192h35.62c0.66,0,1.192,0.534,1.192,1.192 C370.798,396.65,370.266,397.167,369.605,397.167L369.605,397.167z M336.356,403.115l-23.741-7.124l23.741-7.124V403.115z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="4.0" style="fill:#0000ff;fill-opacity:1"/>
       <svg:g font-style="normal">
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="23.6512" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="matrix(1 0 0 1 376.126 419.8643)" x="0.0" y="0.0">POINT</svg:text>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="23.6512" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="matrix(1 0 0 1 376.126 392.2227)" x="0.0" y="0.0">ANCHOR</svg:text>

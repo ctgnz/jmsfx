@@ -27,8 +27,8 @@
   </svg:g>
   <svg:g display="none" font-style="normal" id="example">
     <svg:polyline display="inline" fill="#FF8080" font-style="normal" points="354.154000,238.297000 392.451000,200.000000 354.154000,161.703000 315.856000,200.000000 354.154000,238.297000" stroke="#000000" stroke-linecap="square" stroke-width="3.0"/>
-    <svg:path d="M341.879,210.184c-5.068,0-9.177-4.424-9.177-9.879   c0-5.456,4.108-9.879,9.177-9.879" display="inline" fill="none" font-style="normal" stroke="#000000" stroke-width="3.0"/>
-    <svg:path d="M366.429,190.425c5.068,0,9.177,4.423,9.177,9.879   c0,5.456-4.108,9.879-9.177,9.879" display="inline" fill="none" font-style="normal" stroke="#000000" stroke-width="3.0"/>
+    <svg:path d="M341.879,210.184c-5.068,0-9.177-4.424-9.177-9.879 c0-5.456,4.108-9.879,9.177-9.879" display="inline" fill="none" font-style="normal" stroke="#000000" stroke-width="3.0"/>
+    <svg:path d="M366.429,190.425c5.068,0,9.177,4.423,9.177,9.879 c0,5.456-4.108,9.879-9.177,9.879" display="inline" fill="none" font-style="normal" stroke="#000000" stroke-width="3.0"/>
     <svg:line display="inline" fill="none" font-style="normal" stroke="#000000" stroke-width="3.0" x1="341.879" x2="366.429" y1="190.425" y2="190.425"/>
     <svg:line display="inline" fill="none" font-style="normal" stroke="#000000" stroke-width="3.0" x1="341.879" x2="366.429" y1="210.184" y2="210.184"/>
     <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="24.5" font-style="normal" transform="matrix(1 0 0 1 347.6934 153.25)" x="0.0" y="0.0">II</svg:text>

@@ -3,7 +3,7 @@
   <svg:g font-style="normal" id="main">
     <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="25.157" font-style="normal" transform="matrix(1 0 0 1 153.1631 135.2705)" x="0.0" y="0.0">FFA</svg:text>
     <svg:g font-style="normal">
-      <svg:path d="    M138.047,62.514c-38.923,6.124-60.916,93.731-71.078,122.264c-10.162,28.514-3.393,28.514,10.162,48.894    c13.537,20.381,38.904,59.094,71.059,73.352c32.155,14.261,96.464,38.713,121.852,12.229    c25.385-26.483,52.458-128.368,30.448-171.158C278.496,105.303,176.97,56.409,138.047,62.514" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="4.9263"/>
+      <svg:path d="M138.047,62.514c-38.923,6.124-60.916,93.731-71.078,122.264c-10.162,28.514-3.393,28.514,10.162,48.894 c13.537,20.381,38.904,59.094,71.059,73.352c32.155,14.261,96.464,38.713,121.852,12.229 c25.385-26.483,52.458-128.368,30.448-171.158C278.496,105.303,176.97,56.409,138.047,62.514" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="4.9263"/>
     </svg:g>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template">

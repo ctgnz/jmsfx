@@ -16,8 +16,8 @@
     <line display="inline" fill="none" id="top" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="346.985" y2="346.705"/>
   </g>
   <g id="main">
-    <polyline points="258.333,445.015 258.333,389.975 306,347.886 353.666,389.975    353.666,445.015  " stroke="#000000" stroke-width="0.6891"/>
-    <polyline fill="none" points="247.333,445.015 247.333,386.737 292.066,347.886  " stroke="#000000" stroke-width="3.4455"/>
-    <polyline fill="none" points="364.666,445.015 364.666,386.737 319.933,347.886  " stroke="#000000" stroke-width="3.4455"/>
+    <polyline points="258.333,445.015 258.333,389.975 306,347.886 353.666,389.975 353.666,445.015" stroke="#000000" stroke-width="0.6891"/>
+    <polyline fill="none" points="247.333,445.015 247.333,386.737 292.066,347.886" stroke="#000000" stroke-width="3.4455"/>
+    <polyline fill="none" points="364.666,445.015 364.666,386.737 319.933,347.886" stroke="#000000" stroke-width="3.4455"/>
   </g>
 </svg>

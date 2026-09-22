@@ -20,7 +20,7 @@
       <line fill="none" stroke="#000000" stroke-width="5" x1="251.816" x2="359.816" y1="396" y2="396"/>
       <line fill="none" stroke="#000000" stroke-width="5" x1="305.816" x2="305.816" y1="280.5" y2="505.5"/>
       <circle cx="306" cy="338.561" fill="none" r="24.848" stroke="#000000" stroke-width="5"/>
-      <polyline fill="none" points="252.625,313.563 305.816,277.875 359.82,313.563   " stroke="#000000" stroke-width="5"/>
+      <polyline fill="none" points="252.625,313.563 305.816,277.875 359.82,313.563" stroke="#000000" stroke-width="5"/>
     </g>
   </g>
 </svg>

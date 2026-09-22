@@ -18,7 +18,7 @@
   <g id="main">
     <g>
       <ellipse cx="306" cy="396" rx="80" ry="80" stroke="#000000"/>
-      <polygon fill="#FFFFFF" points="306,316 375,436 237,436   " stroke="#000000" stroke-linejoin="bevel"/>
+      <polygon fill="#FFFFFF" points="306,316 375,436 237,436" stroke="#000000" stroke-linejoin="bevel"/>
     </g>
   </g>
 </svg>

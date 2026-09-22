@@ -16,7 +16,7 @@
     </g>
   </g>
   <g id="mod1">
-    <polyline fill="none" points="246.208,301.708 257.875,311.292 354.541,311.292    365.791,301.708  " stroke="#000000" stroke-width="5"/>
-    <polyline fill="none" points="365.791,337.75 354.124,328.167 257.458,328.167 246.208,337.75     " stroke="#000000" stroke-width="5"/>
+    <polyline fill="none" points="246.208,301.708 257.875,311.292 354.541,311.292 365.791,301.708" stroke="#000000" stroke-width="5"/>
+    <polyline fill="none" points="365.791,337.75 354.124,328.167 257.458,328.167 246.208,337.75" stroke="#000000" stroke-width="5"/>
   </g>
 </svg>

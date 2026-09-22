@@ -16,7 +16,7 @@
     </g>
   </g>
   <g id="mod1" transform="translate(0,150)">
-    <polygon points="310.171,320.755 357.787,298.805 357.787,342.705 " stroke="#000000" stroke-width="5"/>
-    <polygon points="302.736,320.755 255.12,342.705 255.12,298.805 " stroke="#000000" stroke-width="5"/>
+    <polygon points="310.171,320.755 357.787,298.805 357.787,342.705" stroke="#000000" stroke-width="5"/>
+    <polygon points="302.736,320.755 255.12,342.705 255.12,298.805" stroke="#000000" stroke-width="5"/>
   </g>
 </svg>

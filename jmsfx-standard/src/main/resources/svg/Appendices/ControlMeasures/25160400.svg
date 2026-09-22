@@ -11,7 +11,7 @@
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" id="varT" transform="matrix(1 0 0 1 387.8418 169.7363)" x="0.0" y="0.0">T</svg:text>
     </svg:g>
     <svg:g display="inline" font-style="normal" id="points">
-      <svg:path d="M369.502,396.707h-35.619    c-0.658,0-1.19-0.517-1.19-1.176c0-0.658,0.532-1.192,1.19-1.192h35.619c0.66,0,1.193,0.534,1.193,1.192    C370.695,396.19,370.162,396.707,369.502,396.707L369.502,396.707z M336.254,402.655l-23.742-7.124l23.742-7.124V402.655z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="4.0"/>
+      <svg:path d="M369.502,396.707h-35.619 c-0.658,0-1.19-0.517-1.19-1.176c0-0.658,0.532-1.192,1.19-1.192h35.619c0.66,0,1.193,0.534,1.193,1.192 C370.695,396.19,370.162,396.707,369.502,396.707L369.502,396.707z M336.254,402.655l-23.742-7.124l23.742-7.124V402.655z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="4.0"/>
       <svg:g font-style="normal">
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="23.6512" font-style="normal" transform="matrix(1 0 0 1 376.0234 419.4043)" x="0.0" y="0.0">POINT</svg:text>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="23.6512" font-style="normal" transform="matrix(1 0 0 1 376.0234 391.7627)" x="0.0" y="0.0">ANCHOR</svg:text>
@@ -34,7 +34,7 @@
       <svg:text dx="0.0" dy="0.0" fill="#7F7F7F" font-family="sans-serif" font-size="14" font-style="normal" transform="matrix(0.8689 0 0 1 447.0293 457.9209)" x="0.0" y="0.0">PL WOOL</svg:text>
     </svg:g>
     <svg:g display="inline" font-style="normal">
-      <svg:path d="M282.818,452.88    c17.143,4.237,47.352,1.322,55.748-1.838c10.461,0.432,19.241-0.861,28.67,2.586c6.715-0.287,30.871,1.91,37.563,1.371    c21.377-1.726,40.394-2.119,37.81-2.119" fill="none" font-style="normal" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
+      <svg:path d="M282.818,452.88 c17.143,4.237,47.352,1.322,55.748-1.838c10.461,0.432,19.241-0.861,28.67,2.586c6.715-0.287,30.871,1.91,37.563,1.371 c21.377-1.726,40.394-2.119,37.81-2.119" fill="none" font-style="normal" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
       <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="14" font-style="normal" transform="matrix(1 0 0 1 288.0688 441.8369)" x="0.0" y="0.0">LD</svg:text>
       <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="14" font-style="normal" transform="matrix(1 0 0 1 419.2715 441.8369)" x="0.0" y="0.0">LD</svg:text>
     </svg:g>

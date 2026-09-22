@@ -17,7 +17,7 @@
   </g>
   <g id="main">
     <g id="Bio">
-      <polyline fill="#FFFFFF" points="292.408,351.9 339.218,378.27 333.451,388.29     304.388,371.917   " stroke="#000000" stroke-width="5"/>
+      <polyline fill="#FFFFFF" points="292.408,351.9 339.218,378.27 333.451,388.29 304.388,371.917" stroke="#000000" stroke-width="5"/>
       <ellipse cx="285.735" cy="369.327" fill="#FFFFFF" rx="18.901" ry="18.701" stroke="#000000" stroke-width="5"/>
     </g>
     <g id="Satellite">

@@ -54,8 +54,8 @@
     </svg:g>
   </svg:g>
   <svg:g display="none" font-style="normal" id="example">
-    <svg:path d="M169.5,17.5   c0,53.813,9.791,110.229,2.777,164.003c-2.307,17.689-6.955,33.105-7.829,50.949c-1.021,20.841,2.293,40.733,3.052,61.048   c0.839,22.467,2.031,31.949,2.031,55" display="inline" fill="none" font-style="normal" stroke="#808080" stroke-miterlimit="10.0" stroke-width="5.0"/>
-    <svg:path d="M230.5,18.5   c8.965,47.307,2.073,100.545-0.223,148.005c-1.264,26.121,2.945,50.297,6.223,75.919c2.747,21.475,3.121,42.96,6.246,64.075   c1.941,13.119,1.856,28.772,1.754,42" display="inline" fill="none" font-style="normal" stroke="#808080" stroke-miterlimit="10.0" stroke-width="5.0"/>
+    <svg:path d="M169.5,17.5 c0,53.813,9.791,110.229,2.777,164.003c-2.307,17.689-6.955,33.105-7.829,50.949c-1.021,20.841,2.293,40.733,3.052,61.048 c0.839,22.467,2.031,31.949,2.031,55" display="inline" fill="none" font-style="normal" stroke="#808080" stroke-miterlimit="10.0" stroke-width="5.0"/>
+    <svg:path d="M230.5,18.5 c8.965,47.307,2.073,100.545-0.223,148.005c-1.264,26.121,2.945,50.297,6.223,75.919c2.747,21.475,3.121,42.96,6.246,64.075 c1.941,13.119,1.856,28.772,1.754,42" display="inline" fill="none" font-style="normal" stroke="#808080" stroke-miterlimit="10.0" stroke-width="5.0"/>
     <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="25.157" font-style="normal" id="varWeW1e" transform="matrix(1 0 0 1 197.6421 352.2988)" x="0.0" y="0.0"/>
   </svg:g>
 </svg:svg>

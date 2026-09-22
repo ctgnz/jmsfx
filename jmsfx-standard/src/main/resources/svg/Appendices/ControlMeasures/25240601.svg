@@ -18,7 +18,7 @@
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="36" font-style="normal" transform="matrix(1 0 0 1 353.7598 453.8398)" x="0.0" y="0.0">H</svg:text>
     </svg:g>
     <svg:g display="inline" font-style="normal" id="points">
-      <svg:path d="M235.52,339.6l38.323,28.915    c0.796,0.581,0.955,1.699,0.345,2.47c-0.585,0.796-1.701,0.956-2.471,0.346l-38.322-28.914c-0.771-0.588-0.931-1.703-0.346-2.471    C233.636,339.146,234.751,338.987,235.52,339.6L235.52,339.6z M276.368,359.316l21.871,29.818l-34.681-12.862L276.368,359.316z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.4252"/>
+      <svg:path d="M235.52,339.6l38.323,28.915 c0.796,0.581,0.955,1.699,0.345,2.47c-0.585,0.796-1.701,0.956-2.471,0.346l-38.322-28.914c-0.771-0.588-0.931-1.703-0.346-2.471 C233.636,339.146,234.751,338.987,235.52,339.6L235.52,339.6z M276.368,359.316l21.871,29.818l-34.681-12.862L276.368,359.316z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.4252"/>
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="26.7877" font-style="normal" transform="matrix(1 0 0 1 191.2778 333.7969)" x="0.0" y="0.0">P</svg:text>
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="26.7877" font-style="normal" transform="matrix(1 0 0 1 209.145 333.7969)" x="0.0" y="0.0">T</svg:text>
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="26.7877" font-style="normal" transform="matrix(1 0 0 1 225.3198 333.7969)" x="0.0" y="0.0"/>

@@ -28,7 +28,7 @@
     </svg:g>
   </svg:g>
   <svg:g display="none" font-style="normal" id="example">
-    <svg:path d="   M94.995,335.704c-10.564-52.085-11.186-85.626-6.836-142.62c32.316-40.358,27.965-81.263,27.965-124.076" display="inline" fill="none" font-style="normal" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
-    <svg:path d="   M294.039,335.704c-10.566-52.085-11.188-85.626-6.839-142.62c32.315-40.358,27.967-81.263,27.967-124.076" display="inline" fill="none" font-style="normal" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
+    <svg:path d="M94.995,335.704c-10.564-52.085-11.186-85.626-6.836-142.62c32.316-40.358,27.965-81.263,27.965-124.076" display="inline" fill="none" font-style="normal" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
+    <svg:path d="M294.039,335.704c-10.566-52.085-11.188-85.626-6.839-142.62c32.315-40.358,27.967-81.263,27.967-124.076" display="inline" fill="none" font-style="normal" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
   </svg:g>
 </svg:svg>

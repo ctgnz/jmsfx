@@ -76,7 +76,7 @@
     <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="20" font-style="normal" id="varTe_1_" transform="matrix(1 0 0 1 220.4258 57.5)" x="0.0" y="0.0">DRAGON</svg:text>
     <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="30" font-style="normal" id="varTe" transform="matrix(1 0 0 1 111.4917 282)" x="0.0" y="0.0">UA DRAGON</svg:text>
     <svg:g display="inline" font-style="normal">
-      <svg:path d="    M349.972,227.568c-25.216,0-45.653,20.404-45.653,45.578s20.438,45.575,45.653,45.575c25.215,0,45.654-20.401,45.654-45.575    S375.186,227.568,349.972,227.568L349.972,227.568z" fill="none" font-style="normal" stroke="#7F7F7F" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
+      <svg:path d="M349.972,227.568c-25.216,0-45.653,20.404-45.653,45.578s20.438,45.575,45.653,45.575c25.215,0,45.654-20.401,45.654-45.575 S375.186,227.568,349.972,227.568L349.972,227.568z" fill="none" font-style="normal" stroke="#7F7F7F" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
       <svg:text dx="0.0" dy="0.0" fill="#808080" font-family="sans-serif" font-size="25.2981" font-style="normal" transform="matrix(1.0017 0 0 1 340.8418 299.9033)" x="0.0" y="0.0">2</svg:text>
       <svg:text dx="0.0" dy="0.0" font-style="normal" transform="matrix(1.0017 0 0 1 320.5732 265.4824)" x="0.0" y="0.0">
         <svg:tspan fill="#808080" font-family="sans-serif" font-size="25.2981" font-style="normal" x="0" y="0">AC</svg:tspan>
@@ -84,7 +84,7 @@
       </svg:text>
     </svg:g>
     <svg:g display="inline" font-style="normal">
-      <svg:path d="    M52.794,227.423c-25.216,0-45.653,20.404-45.653,45.578s20.438,45.575,45.653,45.575c25.215,0,45.654-20.401,45.654-45.575    S78.009,227.423,52.794,227.423L52.794,227.423z" fill="none" font-style="normal" stroke="#7F7F7F" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
+      <svg:path d="M52.794,227.423c-25.216,0-45.653,20.404-45.653,45.578s20.438,45.575,45.653,45.575c25.215,0,45.654-20.401,45.654-45.575 S78.009,227.423,52.794,227.423L52.794,227.423z" fill="none" font-style="normal" stroke="#7F7F7F" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
       <svg:text dx="0.0" dy="0.0" fill="#808080" font-family="sans-serif" font-size="25.2981" font-style="normal" transform="matrix(1.0017 0 0 1 43.664 299.7578)" x="0.0" y="0.0">1</svg:text>
       <svg:text dx="0.0" dy="0.0" font-style="normal" transform="matrix(1.0017 0 0 1 23.3955 265.3369)" x="0.0" y="0.0">
         <svg:tspan fill="#808080" font-family="sans-serif" font-size="25.2981" font-style="normal" x="0" y="0">AC</svg:tspan>

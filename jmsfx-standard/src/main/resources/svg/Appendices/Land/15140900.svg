@@ -20,6 +20,6 @@
     <line fill="none" stroke="#000000" stroke-width="5" x1="393.75" x2="393.75" y1="374.375" y2="542.406"/>
     <line fill="none" stroke="#000000" stroke-width="5" x1="216" x2="393.75" y1="540.155" y2="540.155"/>
     <path d="M216,376.676c77.765,31.206,99.985,31.206,177.75,0" fill="none" stroke="#000000" stroke-width="5"/>
-    <polyline fill="none" points="309.956,478.488 349.914,416.052 269.998,416.052    309.956,478.488 309.956,525.313  " stroke="#000000" stroke-width="5"/>
+    <polyline fill="none" points="309.956,478.488 349.914,416.052 269.998,416.052 309.956,478.488 309.956,525.313" stroke="#000000" stroke-width="5"/>
   </g>
 </svg>

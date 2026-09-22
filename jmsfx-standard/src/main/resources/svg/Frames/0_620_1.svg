@@ -4,15 +4,15 @@
   <g id="frame">
     <rect height="26" stroke="#000000" stroke-width="2" width="57.68" x="277.16" y="215.5"/>
     <g>
-      <polyline fill="#FF8080" points="306,568 479,395 306,222 133,395 306,568   "/>
+      <polyline fill="#FF8080" points="306,568 479,395 306,222 133,395 306,568"/>
       <g>
         <line fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="5" x1="306" x2="314.839" y1="568" y2="559.161"/>
         <line fill="none" stroke="#000000" stroke-dasharray="25.5417,15.325" stroke-miterlimit="10" stroke-width="5" x1="325.675" x2="464.743" y1="548.325" y2="409.257"/>
-        <polyline fill="none" points="470.161,403.839 479,395      470.161,386.161    " stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
+        <polyline fill="none" points="470.161,403.839 479,395 470.161,386.161" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="25.5417,15.325" stroke-miterlimit="10" stroke-width="5" x1="459.325" x2="320.257" y1="375.325" y2="236.257"/>
-        <polyline fill="none" points="314.839,230.839 306,222      297.161,230.839    " stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
+        <polyline fill="none" points="314.839,230.839 306,222 297.161,230.839" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="25.5417,15.325" stroke-miterlimit="10" stroke-width="5" x1="286.325" x2="147.257" y1="241.675" y2="380.743"/>
-        <polyline fill="none" points="141.839,386.161 133,395      141.839,403.839    " stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
+        <polyline fill="none" points="141.839,386.161 133,395 141.839,403.839" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="25.5417,15.325" stroke-miterlimit="10" stroke-width="5" x1="152.675" x2="291.743" y1="414.675" y2="553.743"/>
         <line fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="5" x1="297.161" x2="306" y1="559.161" y2="568"/>
       </g>

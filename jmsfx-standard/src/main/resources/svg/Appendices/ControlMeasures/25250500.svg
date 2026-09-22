@@ -24,7 +24,7 @@
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" id="varW1" transform="matrix(1 0 0 1 198.1714 210.6738)" x="0.0" y="0.0">W1</svg:text>
     </svg:g>
     <svg:g display="inline" font-style="normal" id="points">
-      <svg:path d="M370.73,397.051h-35.62    c-0.658,0-1.191-0.517-1.191-1.176c0-0.658,0.533-1.192,1.191-1.192h35.62c0.66,0,1.192,0.534,1.192,1.192    C371.923,396.534,371.391,397.051,370.73,397.051L370.73,397.051z M337.481,402.999l-23.741-7.124l23.741-7.124V402.999z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="2.0"/>
+      <svg:path d="M370.73,397.051h-35.62 c-0.658,0-1.191-0.517-1.191-1.176c0-0.658,0.533-1.192,1.191-1.192h35.62c0.66,0,1.192,0.534,1.192,1.192 C371.923,396.534,371.391,397.051,370.73,397.051L370.73,397.051z M337.481,402.999l-23.741-7.124l23.741-7.124V402.999z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="2.0"/>
       <svg:g font-style="normal">
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="23.6512" font-style="normal" transform="matrix(1 0 0 1 377.251 419.748)" x="0.0" y="0.0">POINT</svg:text>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="23.6512" font-style="normal" transform="matrix(1 0 0 1 377.251 392.1064)" x="0.0" y="0.0">ANCHOR</svg:text>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 400 400" font-style="normal" height="400.0" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0.00  0.00 400.00 400.00" width="400.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0" zoomAndPan="magnify">
   <svg:g font-style="normal" id="main">
-    <svg:path d="M292.006,111.958   c-36.895,12.43-73.788,24.86-102.974,53.253c-29.168,28.393-60.055,97.628-72.069,117.145" fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0439"/>
-    <svg:path d="M291,154.375   c-47.171-28.413-95.621-56.641-135.085-42.436c-39.444,14.205-85.783,106.545-102.936,127.855" fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0439"/>
+    <svg:path d="M292.006,111.958 c-36.895,12.43-73.788,24.86-102.974,53.253c-29.168,28.393-60.055,97.628-72.069,117.145" fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0439"/>
+    <svg:path d="M291,154.375 c-47.171-28.413-95.621-56.641-135.085-42.436c-39.444,14.205-85.783,106.545-102.936,127.855" fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0439"/>
     <svg:polyline fill="none" font-style="normal" points="290.250000,114.375000 289.980000,91.555000 350.833000,138.750000 289.738000,174.761000 289.738000,152.500000" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0439"/>
     <svg:g font-style="normal">
-      <svg:path d="M245.116,148.016l0.102-37.841    l4.548,0.015l-0.086,37.842L245.116,148.016L245.116,148.016z M240.65,112.447l6.854-13.661l6.824,13.697L240.65,112.447    L240.65,112.447z" font-style="normal" stroke="#000000" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="2.0"/>
+      <svg:path d="M245.116,148.016l0.102-37.841 l4.548,0.015l-0.086,37.842L245.116,148.016L245.116,148.016z M240.65,112.447l6.854-13.661l6.824,13.697L240.65,112.447 L240.65,112.447z" font-style="normal" stroke="#000000" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="2.0"/>
       <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="3.0" x1="234.854" x2="259.479" y1="148.717" y2="148.819"/>
     </svg:g>
     <svg:line fill="none" font-style="normal" stroke="#000000" stroke-miterlimit="10.0" stroke-width="5.0" x1="217.009" x2="217.009" y1="115.849" y2="144.048"/>

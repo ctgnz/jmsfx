@@ -3,19 +3,19 @@
 <svg enable-background="new 0 0 612 792" height="792px" id="Version_1.0" version="1.1" viewBox="0 0 612 792" width="612px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
   <g id="frame">
     <g>
-      <polyline fill="#FF8080" points="174.25,516 174.25,326 306.25,204 438.25,326 438.25,516   "/>
+      <polyline fill="#FF8080" points="174.25,516 174.25,326 306.25,204 438.25,326 438.25,516"/>
       <g>
         <line fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="5" x1="174.25" x2="174.25" y1="516" y2="503.5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="23.5714,14.1429" stroke-miterlimit="10" stroke-width="5" x1="174.25" x2="174.25" y1="489.357" y2="345.571"/>
-        <polyline fill="none" points="174.25,338.5 174.25,326      183.43,317.516    " stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
+        <polyline fill="none" points="174.25,338.5 174.25,326 183.43,317.516" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="22.1063,13.2638" stroke-miterlimit="10" stroke-width="5" x1="193.17" x2="292.2" y1="308.513" y2="216.985"/>
-        <polyline fill="none" points="297.07,212.484 306.25,204      315.43,212.484    " stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
+        <polyline fill="none" points="297.07,212.484 306.25,204 315.43,212.484" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="22.1063,13.2638" stroke-miterlimit="10" stroke-width="5" x1="325.17" x2="424.2" y1="221.487" y2="313.014"/>
-        <polyline fill="none" points="429.07,317.516 438.25,326      438.25,338.5    " stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
+        <polyline fill="none" points="429.07,317.516 438.25,326 438.25,338.5" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="23.5714,14.1429" stroke-miterlimit="10" stroke-width="5" x1="438.25" x2="438.25" y1="352.643" y2="496.429"/>
         <line fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="5" x1="438.25" x2="438.25" y1="503.5" y2="516"/>
       </g>
     </g>
-    <polygon points="229.25,276 306.25,206 383.25,276  " stroke="#000000"/>
+    <polygon points="229.25,276 306.25,206 383.25,276" stroke="#000000"/>
   </g>
 </svg>

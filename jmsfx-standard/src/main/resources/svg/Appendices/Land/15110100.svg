@@ -18,7 +18,7 @@
   <g id="main">
     <g id="Arrow">
       <line fill="none" stroke="#000000" stroke-width="5" x1="305.816" x2="305.816" y1="282.5" y2="504.5"/>
-      <polyline fill="none" points="252.625,315.563 305.816,279.875 359.82,315.563   " stroke="#000000" stroke-width="5"/>
+      <polyline fill="none" points="252.625,315.563 305.816,279.875 359.82,315.563" stroke="#000000" stroke-width="5"/>
     </g>
   </g>
 </svg>

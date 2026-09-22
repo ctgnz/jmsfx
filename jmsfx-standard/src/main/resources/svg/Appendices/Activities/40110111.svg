@@ -18,7 +18,7 @@
   <g id="main">
     <g>
       <ellipse cx="305" cy="447" fill="none" rx="90" ry="45" stroke="#000000" stroke-width="10"/>
-      <polyline fill="none" points="215,442 305,302 395,442   " stroke="#000000" stroke-width="9"/>
+      <polyline fill="none" points="215,442 305,302 395,442" stroke="#000000" stroke-width="9"/>
     </g>
   </g>
 </svg>

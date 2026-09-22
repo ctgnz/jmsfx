@@ -16,7 +16,7 @@
     <line display="inline" fill="none" id="top" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="346.985" y2="346.705"/>
   </g>
   <g id="main">
-    <polyline fill="none" points="276.106,313.874 306.865,283.114 337.625,313.874  " stroke="#000000" stroke-width="5"/>
+    <polyline fill="none" points="276.106,313.874 306.865,283.114 337.625,313.874" stroke="#000000" stroke-width="5"/>
     <circle cx="306" cy="479.5" fill="none" r="27.332" stroke="#000000" stroke-width="5"/>
     <line fill="none" stroke="#000000" stroke-width="5" x1="306.865" x2="306.865" y1="283.114" y2="452.168"/>
   </g>

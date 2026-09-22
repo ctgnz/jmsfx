@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 400 400" font-style="normal" height="400.0" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0.00  0.00 400.00 400.00" width="400.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0" zoomAndPan="magnify">
   <svg:g font-style="normal" id="main">
-    <svg:path d="   M199.234,128.013c39.609-2.048,103.727-23.454,124.826,4.961c21.12,28.415,43.372,137.924,1.856,165.54   C284.4,326.15,114.888,324.316,74.973,298.75c-39.915-25.545-9.243-125.132,11.454-153.568   C107.126,116.721,159.625,130.035,199.234,128.013" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0"/>
+    <svg:path d="M199.234,128.013c39.609-2.048,103.727-23.454,124.826,4.961c21.12,28.415,43.372,137.924,1.856,165.54 C284.4,326.15,114.888,324.316,74.973,298.75c-39.915-25.545-9.243-125.132,11.454-153.568 C107.126,116.721,159.625,130.035,199.234,128.013" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0"/>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template">
     <svg:g display="inline" font-style="normal" id="varT">
@@ -45,7 +45,7 @@
       <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="7.3454" font-style="normal" transform="matrix(1 0 0 1 152.9063 263.3438)" x="0.0" y="0.0">KL0003 </svg:text>
       <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="7.3454" font-style="normal" transform="matrix(1 0 0 1 143.2266 228.8506)" x="0.0" y="0.0">KL0002</svg:text>
       <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="7.3454" font-style="normal" transform="matrix(1 0 0 1 95.6719 265.9453)" x="0.0" y="0.0">KL0001</svg:text>
-      <svg:path d="    M131.898,205.6c18.184-0.938,47.62-10.768,57.306,2.277c9.696,13.045,19.912,63.318,0.851,75.997    c-19.058,12.688-96.88,11.847-115.204,0.108c-18.324-11.729-4.243-57.447,5.259-70.502    C89.613,200.416,113.714,206.527,131.898,205.6" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="2.2954"/>
+      <svg:path d="M131.898,205.6c18.184-0.938,47.62-10.768,57.306,2.277c9.696,13.045,19.912,63.318,0.851,75.997 c-19.058,12.688-96.88,11.847-115.204,0.108c-18.324-11.729-4.243-57.447,5.259-70.502 C89.613,200.416,113.714,206.527,131.898,205.6" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="2.2954"/>
       <svg:rect fill="#FFFFFF" font-style="normal" height="25.625" rx="0.0" ry="0.0" width="31.369" x="110.858" y="191.787"/>
       <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="13.6488" font-style="normal" id="varTe" transform="matrix(1 0 0 1 114.4941 209.251)" x="0.0" y="0.0">C4F</svg:text>
       <svg:g font-style="normal">

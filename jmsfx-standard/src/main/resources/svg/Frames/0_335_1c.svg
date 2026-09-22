@@ -5,9 +5,9 @@
     <g>
       <path d="M437.342,274.815c0,174.435-58.379,315.841-130.394,315.841c-72.011,0-130.391-141.406-130.391-315.841" fill="#FFA1FF"/>
       <g>
-        <path d="M437.342,274.815c0,4.186-0.033,8.353-0.101,12.5     " fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
-        <path d="     M436.646,307.64c-6.779,159.01-62.26,283.016-129.698,283.016c-68.865,0-125.264-129.321-130.061-293.178" fill="none" stroke="#000000" stroke-dasharray="25.4169,20.3335" stroke-miterlimit="10" stroke-width="5"/>
-        <path d="M176.657,287.314     c-0.066-4.146-0.1-8.313-0.1-12.5" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
+        <path d="M437.342,274.815c0,4.186-0.033,8.353-0.101,12.5" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
+        <path d="M436.646,307.64c-6.779,159.01-62.26,283.016-129.698,283.016c-68.865,0-125.264-129.321-130.061-293.178" fill="none" stroke="#000000" stroke-dasharray="25.4169,20.3335" stroke-miterlimit="10" stroke-width="5"/>
+        <path d="M176.657,287.314 c-0.066-4.146-0.1-8.313-0.1-12.5" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
       </g>
     </g>
   </g>

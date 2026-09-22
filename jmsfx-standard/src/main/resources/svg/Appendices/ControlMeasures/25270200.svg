@@ -11,7 +11,7 @@
     <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="35.078" font-style="normal" id="varTe" transform="matrix(1 0 0 1 134.4971 251.5869)" x="0.0" y="0.0">5-7 RAR</svg:text>
     <svg:g display="inline" font-style="normal">
       <svg:g font-style="normal">
-        <svg:path d="M96.979,147.194     c19.572,0,37.308,4.795,50.222,12.565" fill="none" font-style="normal" stroke="#808080" stroke-linejoin="round" stroke-width="5.0"/>
+        <svg:path d="M96.979,147.194 c19.572,0,37.308,4.795,50.222,12.565" fill="none" font-style="normal" stroke="#808080" stroke-linejoin="round" stroke-width="5.0"/>
         <svg:g font-style="normal">
           <svg:polygon fill="#808080" font-style="normal" points="135.834000,163.149000 144.555000,158.136000 147.000000,148.379000 158.923000,168.999000"/>
         </svg:g>

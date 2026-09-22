@@ -6,13 +6,13 @@
     <g>
       <rect fill="#80E0FF" height="240" width="360" x="126.082" y="275"/>
       <g>
-        <polyline fill="none" points="126.082,287.5 126.082,275 138.582,275    " stroke="#000000" stroke-width="5"/>
+        <polyline fill="none" points="126.082,287.5 126.082,275 138.582,275" stroke="#000000" stroke-width="5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="25,15" stroke-width="5" x1="153.582" x2="466.082" y1="275" y2="275"/>
-        <polyline fill="none" points="473.582,275 486.082,275 486.082,287.5    " stroke="#000000" stroke-width="5"/>
+        <polyline fill="none" points="473.582,275 486.082,275 486.082,287.5" stroke="#000000" stroke-width="5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="25,15" stroke-width="5" x1="486.082" x2="486.082" y1="302.5" y2="495"/>
-        <polyline fill="none" points="486.082,502.5 486.082,515 473.582,515    " stroke="#000000" stroke-width="5"/>
+        <polyline fill="none" points="486.082,502.5 486.082,515 473.582,515" stroke="#000000" stroke-width="5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="25,15" stroke-width="5" x1="458.582" x2="146.082" y1="515" y2="515"/>
-        <polyline fill="none" points="138.582,515 126.082,515 126.082,502.5    " stroke="#000000" stroke-width="5"/>
+        <polyline fill="none" points="138.582,515 126.082,515 126.082,502.5" stroke="#000000" stroke-width="5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="25,15" stroke-width="5" x1="126.082" x2="126.082" y1="487.5" y2="295"/>
       </g>
     </g>

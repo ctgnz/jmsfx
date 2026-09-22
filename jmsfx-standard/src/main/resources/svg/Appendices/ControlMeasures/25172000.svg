@@ -19,7 +19,7 @@
   </svg:pattern>
   <svg:pattern font-style="normal" id="slash2" patternTransform="matrix(-0.766 0.6428 -0.6428 -0.766 -74808.3359 -37820.3828)" preserveAspectRatio="xMidYMid meet"/>
   <svg:g font-style="normal" id="main">
-    <svg:path d="M110.779,75.89   L23.237,324.745h262.609l87.54-248.855H110.779z" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
+    <svg:path d="M110.779,75.89 L23.237,324.745h262.609l87.54-248.855H110.779z" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
     <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="21.1506" font-style="normal" transform="matrix(1 0 0 1 74.0078 247.0869)" x="0.0" y="0.0">TIME TO:</svg:text>
     <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="21.1506" font-style="normal" transform="matrix(1 0 0 1 83.7808 211.7363)" x="0.0" y="0.0">TIME FROM:</svg:text>
     <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="26.2015" font-style="normal" transform="matrix(1 0 0 1 118.5483 136.6182)" x="0.0" y="0.0">WFZ</svg:text>

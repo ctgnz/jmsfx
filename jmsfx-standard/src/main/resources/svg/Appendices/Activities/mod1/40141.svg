@@ -16,8 +16,8 @@
     <line display="inline" fill="none" id="mod1_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="346.985" y2="346.705"/>
   </g>
   <g id="mod1">
-    <polygon points="319.801,316.914 343.236,294 343.236,339.829  " stroke="#000000" stroke-width="5.4619"/>
-    <polygon points="284.652,316.914 308.085,294 308.085,339.829  " stroke="#000000" stroke-width="5.4619"/>
-    <polygon points="249.5,316.914 272.934,294 272.934,339.829  " stroke="#000000" stroke-width="5.4619"/>
+    <polygon points="319.801,316.914 343.236,294 343.236,339.829" stroke="#000000" stroke-width="5.4619"/>
+    <polygon points="284.652,316.914 308.085,294 308.085,339.829" stroke="#000000" stroke-width="5.4619"/>
+    <polygon points="249.5,316.914 272.934,294 272.934,339.829" stroke="#000000" stroke-width="5.4619"/>
   </g>
 </svg>

@@ -26,7 +26,7 @@
     <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="6.5785" x1="46.648" x2="66.013" y1="230.588" y2="230.588"/>
     <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="6.5785" x1="60.446" x2="79.811" y1="260.795" y2="260.795"/>
     <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="6.5785" x1="329.744" x2="344.848" y1="283.266" y2="295.682"/>
-    <svg:path d="   M165.208,146.053c-37.574,3.965-85.914,1.996-96.658,23.9c-10.741,21.876-8.944,87.589,32.229,107.496   c41.17,19.908,173.628,27.865,214.798,11.949c41.17-15.94,35.825-83.625,32.226-107.523c-3.568-23.873-23.259-29.859-53.686-35.822   C263.663,140.065,202.805,142.061,165.208,146.053" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="6.5785"/>
+    <svg:path d="M165.208,146.053c-37.574,3.965-85.914,1.996-96.658,23.9c-10.741,21.876-8.944,87.589,32.229,107.496 c41.17,19.908,173.628,27.865,214.798,11.949c41.17-15.94,35.825-83.625,32.226-107.523c-3.568-23.873-23.259-29.859-53.686-35.822 C263.663,140.065,202.805,142.061,165.208,146.053" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="6.5785"/>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template">
     <svg:g display="inline" font-style="normal" id="varT">

@@ -3,10 +3,10 @@
   <svg:g font-style="normal" id="main">
     <svg:polygon fill="none" font-style="normal" points="305.701000,395.762000 379.287000,278.062000 232.117000,278.062000" stroke="#000000" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
     <svg:g font-style="normal">
-      <svg:path d="M284.943,307.355c-3.894,0-7.046,4.143-7.046,9.229    c0,5.11,3.152,9.229,7.046,9.229c3.895,0,7.045-4.119,7.045-9.229C291.988,311.499,288.838,307.355,284.943,307.355" font-style="normal" stroke="#000000" stroke-width="1.1654"/>
-      <svg:path d="M285.943,309.351    c16.783,0,30.381,17.71,30.381,39.537" fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.1568"/>
-      <svg:path d="M328.433,309.351    c-16.784,0-30.38,17.71-30.38,39.537" fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.1568"/>
-      <svg:path d="M329.207,307.103c-3.77,0-6.819,4.059-6.819,9.043    c0,5.007,3.052,9.043,6.819,9.043c3.771,0,6.82-4.037,6.82-9.043C336.027,311.162,332.978,307.103,329.207,307.103" font-style="normal" stroke="#000000" stroke-width="1.135"/>
+      <svg:path d="M284.943,307.355c-3.894,0-7.046,4.143-7.046,9.229 c0,5.11,3.152,9.229,7.046,9.229c3.895,0,7.045-4.119,7.045-9.229C291.988,311.499,288.838,307.355,284.943,307.355" font-style="normal" stroke="#000000" stroke-width="1.1654"/>
+      <svg:path d="M285.943,309.351 c16.783,0,30.381,17.71,30.381,39.537" fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.1568"/>
+      <svg:path d="M328.433,309.351 c-16.784,0-30.38,17.71-30.38,39.537" fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.1568"/>
+      <svg:path d="M329.207,307.103c-3.77,0-6.819,4.059-6.819,9.043 c0,5.007,3.052,9.043,6.819,9.043c3.771,0,6.82-4.037,6.82-9.043C336.027,311.162,332.978,307.103,329.207,307.103" font-style="normal" stroke="#000000" stroke-width="1.135"/>
     </svg:g>
     <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="28" font-style="normal" transform="matrix(1 0 0 1 298.7988 305.5615)" x="0.0" y="0.0">R</svg:text>
   </svg:g>
@@ -38,7 +38,7 @@
     <svg:g display="inline" font-style="normal">
       <svg:g font-style="normal" id="varQ">
         <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="3.0" x1="302.688" x2="302.805" y1="488.196" y2="537.642"/>
-        <svg:path d="M302.688,536.366l63.351,0.098     c0.719,0,1.297,0.578,1.273,1.275c0,0.715-0.559,1.293-1.273,1.293l-63.351-0.095c-0.715,0-1.295-0.582-1.295-1.296     C301.394,536.946,301.974,536.366,302.688,536.366L302.688,536.366z M363.47,530.014l25.745,7.764l-25.766,7.688L363.47,530.014z     " fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.309"/>
+        <svg:path d="M302.688,536.366l63.351,0.098 c0.719,0,1.297,0.578,1.273,1.275c0,0.715-0.559,1.293-1.273,1.293l-63.351-0.095c-0.715,0-1.295-0.582-1.295-1.296 C301.394,536.946,301.974,536.366,302.688,536.366L302.688,536.366z M363.47,530.014l25.745,7.764l-25.766,7.688L363.47,530.014z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.309"/>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="28" font-style="normal" id="Q" transform="matrix(1 0 0 1 394.3008 545.9814)" x="0.0" y="0.0">Q</svg:text>
       </svg:g>
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="23.1768" font-style="normal" transform="matrix(1 0 0 1 127.7656 491.833)" x="0.0" y="0.0">POINT</svg:text>
@@ -56,7 +56,7 @@
   <svg:g display="none" font-style="normal" id="example">
     <svg:g display="inline" font-style="normal" id="varQ_1_">
       <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="3.0" x1="305.688" x2="305.805" y1="441.196" y2="490.642"/>
-      <svg:path d="M305.688,489.366l63.351,0.098    c0.719,0,1.297,0.578,1.273,1.275c0,0.715-0.559,1.293-1.273,1.293l-63.351-0.095c-0.715,0-1.295-0.582-1.295-1.296    C304.394,489.946,304.974,489.366,305.688,489.366L305.688,489.366z M366.47,483.014l25.745,7.764l-25.766,7.688L366.47,483.014z" font-style="normal" stroke="#000000" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.309"/>
+      <svg:path d="M305.688,489.366l63.351,0.098 c0.719,0,1.297,0.578,1.273,1.275c0,0.715-0.559,1.293-1.273,1.293l-63.351-0.095c-0.715,0-1.295-0.582-1.295-1.296 C304.394,489.946,304.974,489.366,305.688,489.366L305.688,489.366z M366.47,483.014l25.745,7.764l-25.766,7.688L366.47,483.014z" font-style="normal" stroke="#000000" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.309"/>
     </svg:g>
     <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="28" font-style="normal" id="varYe" transform="matrix(1 0 0 1 222.2109 438.8994)" x="0.0" y="0.0">ME11201970</svg:text>
     <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="28" font-style="normal" id="varCe" transform="matrix(1 0 0 1 295.8594 251.5039)" x="0.0" y="0.0">1</svg:text>

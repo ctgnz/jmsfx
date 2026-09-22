@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792.0" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0.00  0.00 612.00 792.00" width="612.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0" zoomAndPan="magnify">
   <svg:g font-style="normal" id="main">
-    <svg:path d="M230.5,395.238c0,0-65.308,2.843-50-14c15.308-16.842,100-19,100-19l25-142l25,142   c0,0,84.857,2.74,100,19c15.143,16.261-50,14-50,14H230.5z" font-style="normal" stroke="#000000" stroke-width="5.0"/>
-    <svg:path d="M305.5,116.239c82.842,0,150,62.579,150,104c0,29.938-43.902,61.631-80,63   c-35.15,1.333-34.055-62.18-70-62.5c-35.945-0.32-33.143,63.331-69,62.5c-36.692-0.85-81-32.242-81-63   C155.5,178.818,222.658,116.239,305.5,116.239z" font-style="normal" stroke="#000000" stroke-width="5.0"/>
+    <svg:path d="M230.5,395.238c0,0-65.308,2.843-50-14c15.308-16.842,100-19,100-19l25-142l25,142 c0,0,84.857,2.74,100,19c15.143,16.261-50,14-50,14H230.5z" font-style="normal" stroke="#000000" stroke-width="5.0"/>
+    <svg:path d="M305.5,116.239c82.842,0,150,62.579,150,104c0,29.938-43.902,61.631-80,63 c-35.15,1.333-34.055-62.18-70-62.5c-35.945-0.32-33.143,63.331-69,62.5c-36.692-0.85-81-32.242-81-63 C155.5,178.818,222.658,116.239,305.5,116.239z" font-style="normal" stroke="#000000" stroke-width="5.0"/>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template">
     <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 385.5977 476.4199)" x="0.0" y="0.0">POINT</svg:text>

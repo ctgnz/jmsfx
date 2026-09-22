@@ -15,6 +15,6 @@
     <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 505.8027 388.5366)" x="0.0" y="0.0">E</svg:text>
     <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 521.8105 388.5366)" x="0.0" y="0.0">R</svg:text>
     <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 440.5186 417.3359)" x="0.0" y="0.0">POINT </svg:text>
-    <svg:path d="   M448.557,398.171H328.045v-5.342h120.512V398.171L448.557,398.171z M330.738,403.533l-26.795-8.033l26.795-8.034V403.533   L330.738,403.533z" display="inline" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3214"/>
+    <svg:path d="M448.557,398.171H328.045v-5.342h120.512V398.171L448.557,398.171z M330.738,403.533l-26.795-8.033l26.795-8.034V403.533 L330.738,403.533z" display="inline" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3214"/>
   </svg:g>
 </svg:svg>

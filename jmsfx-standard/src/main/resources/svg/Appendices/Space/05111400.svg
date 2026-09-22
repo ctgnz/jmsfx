@@ -24,9 +24,9 @@
     </g>
     <g id="Nav">
       <g id="Mini">
-        <polyline fill="#FFFFFF" points="281.167,397 306.005,353.187 330.42,397    " stroke="#000000" stroke-width="5"/>
+        <polyline fill="#FFFFFF" points="281.167,397 306.005,353.187 330.42,397" stroke="#000000" stroke-width="5"/>
       </g>
-      <path d="M281.322,351.75c0,10.136,10.985,18.353,24.536,18.353    c13.55,0,24.537-8.217,24.537-18.353" fill="none" stroke="#000000" stroke-width="5"/>
+      <path d="M281.322,351.75c0,10.136,10.985,18.353,24.536,18.353 c13.55,0,24.537-8.217,24.537-18.353" fill="none" stroke="#000000" stroke-width="5"/>
     </g>
   </g>
 </svg>

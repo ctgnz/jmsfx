@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 400 400" font-style="normal" height="400.0" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0.00  0.00 400.00 400.00" width="400.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0" zoomAndPan="magnify">
   <svg:g font-style="normal" id="main">
-    <svg:path d="M107.583,135.927   c7.796-4.249-0.77,0,17.926,0c13.233,0,26.467-0.606,39.701-1.214c11.295-3.035,22.195-7.888,33.492-12.16   c19.067,1.821,32.325,8.521,50.623,9.732c10.106,0.606,30.364,1.214,30.364,1.214" fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="6.2317"/>
+    <svg:path d="M107.583,135.927 c7.796-4.249-0.77,0,17.926,0c13.233,0,26.467-0.606,39.701-1.214c11.295-3.035,22.195-7.888,33.492-12.16 c19.067,1.821,32.325,8.521,50.623,9.732c10.106,0.606,30.364,1.214,30.364,1.214" fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="6.2317"/>
     <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="21" font-style="normal" transform="matrix(1 0 0 1 315.7891 135.5996)" x="0.0" y="0.0">FEBA</svg:text>
     <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="21" font-style="normal" transform="matrix(1 0 0 1 26.5957 133.7344)" x="0.0" y="0.0">FEBA</svg:text>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template">
     <svg:g display="inline" font-style="normal">
       <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="4.0" x1="278.5" x2="278.5" y1="193.639" y2="156.5"/>
-      <svg:path d="M275.425,149.415c-1.498,4.96-2.878,8.184-4.475,12.163h15.133c-0.677-1.424-2.978-7.203-4.476-12.163    c-1.604-5.309-2.701-10.122-3.092-13.244C278.125,139.292,277.027,144.106,275.425,149.415z" fill="#0000FF" font-style="normal"/>
+      <svg:path d="M275.425,149.415c-1.498,4.96-2.878,8.184-4.475,12.163h15.133c-0.677-1.424-2.978-7.203-4.476-12.163 c-1.604-5.309-2.701-10.122-3.092-13.244C278.125,139.292,277.027,144.106,275.425,149.415z" fill="#0000FF" font-style="normal"/>
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="30.9949" font-style="normal" transform="matrix(1 0 0 1 247.3662 221.2295)" x="0.0" y="0.0">PT 3</svg:text>
     </svg:g>
     <svg:g display="inline" font-style="normal">
       <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="4.0" x1="200.5" x2="200.5" y1="211.902" y2="147.634"/>
-      <svg:path d="M197.425,140.549c-1.499,4.96-2.878,8.184-4.475,12.163h15.133c-0.677-1.424-2.978-7.203-4.476-12.163    c-1.604-5.309-2.7-10.122-3.092-13.244C200.125,130.427,199.028,135.24,197.425,140.549z" fill="#0000FF" font-style="normal"/>
+      <svg:path d="M197.425,140.549c-1.499,4.96-2.878,8.184-4.475,12.163h15.133c-0.677-1.424-2.978-7.203-4.476-12.163 c-1.604-5.309-2.7-10.122-3.092-13.244C200.125,130.427,199.028,135.24,197.425,140.549z" fill="#0000FF" font-style="normal"/>
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="30.9949" font-style="normal" transform="matrix(1 0 0 1 163.1074 240.7109)" x="0.0" y="0.0">PT 2</svg:text>
     </svg:g>
     <svg:g display="inline" font-style="normal">
       <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="4.0" x1="110.21" x2="110.21" y1="201.639" y2="158.5"/>
-      <svg:path d="M107.135,151.415c-1.499,4.96-2.878,8.184-4.475,12.163h15.133c-0.677-1.424-2.978-7.203-4.475-12.163    c-1.604-5.309-2.701-10.122-3.092-13.244C109.835,141.292,108.738,146.106,107.135,151.415z" fill="#0000FF" font-style="normal"/>
+      <svg:path d="M107.135,151.415c-1.499,4.96-2.878,8.184-4.475,12.163h15.133c-0.677-1.424-2.978-7.203-4.475-12.163 c-1.604-5.309-2.701-10.122-3.092-13.244C109.835,141.292,108.738,146.106,107.135,151.415z" fill="#0000FF" font-style="normal"/>
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="30.9949" font-style="normal" transform="matrix(1 0 0 1 70.7158 226.2295)" x="0.0" y="0.0">PT 1</svg:text>
     </svg:g>
   </svg:g>

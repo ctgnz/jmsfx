@@ -6,11 +6,11 @@
       <g>
         <line fill="none" stroke="#000000" stroke-width="5" x1="131.992" x2="145.849" y1="298.382" y2="283.959"/>
         <line fill="none" stroke="#000000" stroke-dasharray="36.9893,24.9678" stroke-width="5" x1="163.147" x2="283.274" y1="265.955" y2="140.924"/>
-        <polyline fill="none" points="291.923,131.922 305.779,117.5 319.554,132    " stroke="#000000" stroke-width="5"/>
+        <polyline fill="none" points="291.923,131.922 305.779,117.5 319.554,132" stroke="#000000" stroke-width="5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="37.1082,25.0481" stroke-width="5" x1="336.806" x2="456.607" y1="150.16" y2="276.272"/>
         <line fill="none" stroke="#000000" stroke-width="5" x1="465.233" x2="479.008" y1="285.353" y2="299.853"/>
       </g>
     </g>
-    <polyline fill="none" points="   249.5,277.958 249.5,196.5 362.5,196.5 362.5,277.958  " stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+    <polyline fill="none" points="249.5,277.958 249.5,196.5 362.5,196.5 362.5,277.958" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
   </g>
 </svg>

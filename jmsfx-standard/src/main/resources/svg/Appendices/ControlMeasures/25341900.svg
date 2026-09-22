@@ -44,7 +44,7 @@
       <svg:g font-style="normal" id="main_1_">
         <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="2.0" x1="348.987" x2="390.133" y1="183.928" y2="211.435"/>
         <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="2.0" x1="348.987" x2="390.133" y1="211.435" y2="183.928"/>
-        <svg:path d="M362.684,192.38c-6.876,0-6.876,10.607,0,10.607h13.754     c6.877,0,6.877-10.607,0-10.607H362.684z" fill="none" font-style="normal" stroke="#000000" stroke-width="2.0"/>
+        <svg:path d="M362.684,192.38c-6.876,0-6.876,10.607,0,10.607h13.754 c6.877,0,6.877-10.607,0-10.607H362.684z" fill="none" font-style="normal" stroke="#000000" stroke-width="2.0"/>
       </svg:g>
       <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="12" font-style="normal" transform="matrix(1 0 0 1 365.5 179.5)" x="0.0" y="0.0">X</svg:text>
     </svg:g>
@@ -55,7 +55,7 @@
       <svg:g font-style="normal" id="main_2_">
         <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="2.0" x1="20.037" x2="61.183" y1="253.118" y2="280.625"/>
         <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="2.0" x1="20.037" x2="61.183" y1="280.625" y2="253.118"/>
-        <svg:path d="M33.733,261.571c-6.876,0-6.876,10.606,0,10.606h13.754     c6.877,0,6.877-10.606,0-10.606H33.733z" fill="none" font-style="normal" stroke="#000000" stroke-width="2.0"/>
+        <svg:path d="M33.733,261.571c-6.876,0-6.876,10.606,0,10.606h13.754 c6.877,0,6.877-10.606,0-10.606H33.733z" fill="none" font-style="normal" stroke="#000000" stroke-width="2.0"/>
       </svg:g>
       <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="12" font-style="normal" transform="matrix(1 0 0 1 36.5498 248.6904)" x="0.0" y="0.0">X</svg:text>
     </svg:g>

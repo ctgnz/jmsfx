@@ -25,7 +25,7 @@
   </svg:pattern>
   <svg:g font-style="normal" id="main">
     <svg:pattern font-style="normal" id="SVGID_1_" patternTransform="matrix(0.7071 -0.7071 0.7071 0.7071 -784.9438 4529.0039)" preserveAspectRatio="xMidYMid meet"/>
-    <svg:path d="   M138.047,62.514c-38.923,6.124-60.916,93.731-71.078,122.264c-10.162,28.514-3.393,28.514,10.162,48.894   c13.537,20.381,38.904,59.094,71.059,73.352c32.155,14.26,96.464,38.713,121.852,12.229   c25.385-26.483,52.458-128.368,30.448-171.158C278.496,105.303,176.97,56.409,138.047,62.514" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="4.9263"/>
+    <svg:path d="M138.047,62.514c-38.923,6.124-60.916,93.731-71.078,122.264c-10.162,28.514-3.393,28.514,10.162,48.894 c13.537,20.381,38.904,59.094,71.059,73.352c32.155,14.26,96.464,38.713,121.852,12.229 c25.385-26.483,52.458-128.368,30.448-171.158C278.496,105.303,176.97,56.409,138.047,62.514" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="4.9263"/>
     <svg:rect fill="#FFFFFF" font-style="normal" height="37.241" rx="0.0" ry="0.0" width="58.761" x="155.408" y="107.5"/>
     <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="25.157" font-style="normal" transform="matrix(1 0 0 1 161.1631 135.2705)" x="0.0" y="0.0">NFA</svg:text>
   </svg:g>

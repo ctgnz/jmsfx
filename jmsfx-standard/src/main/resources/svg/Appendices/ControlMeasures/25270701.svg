@@ -19,13 +19,13 @@
   </svg:g>
   <svg:g display="none" font-style="normal" id="example">
     <svg:g display="inline" font-style="normal" id="varAe">
-      <svg:path clip-rule="evenodd" d="M292.135,172.932c-14.801,0-26.799,10.968-26.799,24.5    c0,13.531,11.998,24.499,26.799,24.499c14.804,0,26.802-10.968,26.802-24.499C318.937,183.9,306.938,172.932,292.135,172.932    L292.135,172.932z" fill-rule="evenodd" font-style="normal"/>
+      <svg:path clip-rule="evenodd" d="M292.135,172.932c-14.801,0-26.799,10.968-26.799,24.5 c0,13.531,11.998,24.499,26.799,24.499c14.804,0,26.802-10.968,26.802-24.499C318.937,183.9,306.938,172.932,292.135,172.932 L292.135,172.932z" fill-rule="evenodd" font-style="normal"/>
       <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0" x1="251.936" x2="292.135" y1="152.863" y2="192.999"/>
       <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0" x1="332.337" x2="292.135" y1="152.863" y2="192.999"/>
-      <svg:path clip-rule="evenodd" d="M111.231,172.932c-14.803,0-26.8,10.968-26.8,24.5    c0,13.531,11.998,24.499,26.8,24.499s26.802-10.968,26.802-24.499C138.033,183.9,126.034,172.932,111.231,172.932L111.231,172.932    z" fill-rule="evenodd" font-style="normal"/>
+      <svg:path clip-rule="evenodd" d="M111.231,172.932c-14.803,0-26.8,10.968-26.8,24.5 c0,13.531,11.998,24.499,26.8,24.499s26.802-10.968,26.802-24.499C138.033,183.9,126.034,172.932,111.231,172.932L111.231,172.932 z" fill-rule="evenodd" font-style="normal"/>
       <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0" x1="71.03" x2="111.231" y1="152.863" y2="192.999"/>
       <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0" x1="151.432" x2="111.231" y1="152.863" y2="192.999"/>
-      <svg:path clip-rule="evenodd" d="M201.685,172.932c-14.805,0-26.802,10.968-26.802,24.5    c0,13.531,11.998,24.499,26.802,24.499c14.801,0,26.799-10.968,26.799-24.499C228.483,183.9,216.485,172.932,201.685,172.932    L201.685,172.932z" fill-rule="evenodd" font-style="normal"/>
+      <svg:path clip-rule="evenodd" d="M201.685,172.932c-14.805,0-26.802,10.968-26.802,24.5 c0,13.531,11.998,24.499,26.802,24.499c14.801,0,26.799-10.968,26.799-24.499C228.483,183.9,216.485,172.932,201.685,172.932 L201.685,172.932z" fill-rule="evenodd" font-style="normal"/>
       <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0" x1="161.481" x2="201.685" y1="152.863" y2="192.999"/>
       <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0" x1="241.884" x2="201.685" y1="152.863" y2="192.999"/>
     </svg:g>

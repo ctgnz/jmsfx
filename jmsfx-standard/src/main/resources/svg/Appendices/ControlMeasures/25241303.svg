@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 400 400" font-style="normal" height="400.0" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0.00  0.00 400.00 400.00" width="400.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0" zoomAndPan="magnify">
   <svg:g font-style="normal" id="main">
-    <svg:path d="   M205.543,46.847c-86.479,0-156.582,67.732-156.582,151.288c0,83.576,70.103,151.309,156.582,151.309   c86.48,0,156.581-67.731,156.581-151.309C362.124,114.579,292.023,46.847,205.543,46.847" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0"/>
+    <svg:path d="M205.543,46.847c-86.479,0-156.582,67.732-156.582,151.288c0,83.576,70.103,151.309,156.582,151.309 c86.48,0,156.581-67.731,156.581-151.309C362.124,114.579,292.023,46.847,205.543,46.847" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0"/>
     <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 121.9204 140.0313)" x="0.0" y="0.0">CENSOR ZONE</svg:text>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template">
@@ -23,9 +23,9 @@
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="19.2665" font-style="normal" transform="matrix(0.7612 0.6486 -0.6486 0.7612 258.9395 238.2725)" x="0.0" y="0.0">AM</svg:text>
     </svg:g>
     <svg:g display="inline" font-style="normal" id="points">
-      <svg:path d="M204.339,210.367l103.031,87.436    c0.536,0.459,0.611,1.26,0.151,1.797c-0.46,0.535-1.263,0.592-1.797,0.151l-103.05-87.455c-0.536-0.458-0.594-1.262-0.135-1.797    C202.98,209.964,203.805,209.906,204.339,210.367L204.339,210.367z M309.547,291.303l6.71,15.711l-16.588-4.052L309.547,291.303z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3058"/>
+      <svg:path d="M204.339,210.367l103.031,87.436 c0.536,0.459,0.611,1.26,0.151,1.797c-0.46,0.535-1.263,0.592-1.797,0.151l-103.05-87.455c-0.536-0.458-0.594-1.262-0.135-1.797 C202.98,209.964,203.805,209.906,204.339,210.367L204.339,210.367z M309.547,291.303l6.71,15.711l-16.588-4.052L309.547,291.303z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3058"/>
       <svg:g font-style="normal">
-        <svg:path d="M384.543,210.311     l-168.299-1.074c-0.706,0-1.279-0.57-1.279-1.276c0.02-0.706,0.592-1.262,1.299-1.262l168.297,1.069     c0.706,0,1.28,0.574,1.264,1.28C385.822,209.755,385.249,210.311,384.543,210.311L384.543,210.311z M218.748,215.641l-15.25-7.76     l15.346-7.53L218.748,215.641z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3058"/>
+        <svg:path d="M384.543,210.311 l-168.299-1.074c-0.706,0-1.279-0.57-1.279-1.276c0.02-0.706,0.592-1.262,1.299-1.262l168.297,1.069 c0.706,0,1.28,0.574,1.264,1.28C385.822,209.755,385.249,210.311,384.543,210.311L384.543,210.311z M218.748,215.641l-15.25-7.76 l15.346-7.53L218.748,215.641z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3058"/>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="12.843" font-style="normal" transform="matrix(1 0 0 1 367.4688 202.9717)" x="0.0" y="0.0">P</svg:text>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="12.843" font-style="normal" transform="matrix(1 0 0 1 375.7266 202.9717)" x="0.0" y="0.0">T</svg:text>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="12.843" font-style="normal" transform="matrix(1 0 0 1 383.9824 202.9717)" x="0.0" y="0.0"/>
@@ -45,7 +45,7 @@
     <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="19.2665" font-style="normal" id="varAMe" transform="matrix(0.7612 0.6486 -0.6486 0.7612 291.8145 238.2725)" x="0.0" y="0.0"/>
     <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="24" font-style="normal" id="varTe" transform="matrix(1 0 0 1 194.6899 217.1328)" x="0.0" y="0.0">SCHOOL</svg:text>
     <svg:g display="inline" font-style="normal">
-      <svg:path d="    M250.698,70.577c-79.697,0-144.303,62.42-144.303,139.424c0,77.021,64.605,139.442,144.303,139.442    c79.699,0,144.302-62.42,144.302-139.442C395,132.998,330.397,70.577,250.698,70.577" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0"/>
+      <svg:path d="M250.698,70.577c-79.697,0-144.303,62.42-144.303,139.424c0,77.021,64.605,139.442,144.303,139.442 c79.699,0,144.302-62.42,144.302-139.442C395,132.998,330.397,70.577,250.698,70.577" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0"/>
       <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 157.9507 185.4692)" x="0.0" y="0.0">CENSOR ZONE</svg:text>
     </svg:g>
   </svg:g>

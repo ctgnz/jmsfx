@@ -16,7 +16,7 @@
     <line display="inline" fill="none" id="top" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="346.985" y2="346.705"/>
   </g>
   <g id="main">
-    <polygon fill="#FFFFFF" points="237.851,477.014 195.912,393.136 248.334,393.136    248.334,324.986 363.666,324.986 363.666,393.136 416.088,393.136 374.15,477.014  " stroke="#000000" stroke-width="5"/>
+    <polygon fill="#FFFFFF" points="237.851,477.014 195.912,393.136 248.334,393.136 248.334,324.986 363.666,324.986 363.666,393.136 416.088,393.136 374.15,477.014" stroke="#000000" stroke-width="5"/>
     <text font-family="sans-serif" font-size="140" transform="matrix(1 0 0 1 251.5 453.5)">O</text>
   </g>
 </svg>

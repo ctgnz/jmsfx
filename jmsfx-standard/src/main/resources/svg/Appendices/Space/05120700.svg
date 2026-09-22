@@ -25,7 +25,7 @@
     </g>
     <g id="EarthObs">
       <line fill="none" stroke="#000000" stroke-width="5" x1="305.616" x2="305.616" y1="398.661" y2="403.626"/>
-      <polyline fill="none" points="285.533,416.735 292.93,404.622 316.86,404.622 324.801,416.735       " stroke="#000000" stroke-width="5"/>
+      <polyline fill="none" points="285.533,416.735 292.93,404.622 316.86,404.622 324.801,416.735" stroke="#000000" stroke-width="5"/>
       <circle cx="305.087" cy="427.184" fill="#FFFFFF" r="14.043" stroke="#000000" stroke-width="5"/>
     </g>
   </g>

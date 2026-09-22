@@ -3,15 +3,15 @@
 <svg enable-background="new 0 0 612 792" height="792px" id="Version_1.0" version="1.1" viewBox="0 0 612 792" width="612px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
   <g id="frame">
     <g>
-      <polyline fill="#FF8080" points="173.25,517 173.25,327 305.25,205 437.25,327 437.25,517   "/>
+      <polyline fill="#FF8080" points="173.25,517 173.25,327 305.25,205 437.25,327 437.25,517"/>
       <g>
         <line fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="5" x1="173.25" x2="173.25" y1="517" y2="504.5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="23.5714,14.1429" stroke-miterlimit="10" stroke-width="5" x1="173.25" x2="173.25" y1="490.357" y2="346.571"/>
-        <polyline fill="none" points="173.25,339.5 173.25,327      182.43,318.516    " stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
+        <polyline fill="none" points="173.25,339.5 173.25,327 182.43,318.516" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="22.1063,13.2638" stroke-miterlimit="10" stroke-width="5" x1="192.17" x2="291.2" y1="309.513" y2="217.985"/>
-        <polyline fill="none" points="296.07,213.484 305.25,205      314.43,213.484    " stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
+        <polyline fill="none" points="296.07,213.484 305.25,205 314.43,213.484" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="22.1063,13.2638" stroke-miterlimit="10" stroke-width="5" x1="324.17" x2="423.2" y1="222.487" y2="314.014"/>
-        <polyline fill="none" points="428.07,318.516 437.25,327      437.25,339.5    " stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
+        <polyline fill="none" points="428.07,318.516 437.25,327 437.25,339.5" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
         <line fill="none" stroke="#000000" stroke-dasharray="23.5714,14.1429" stroke-miterlimit="10" stroke-width="5" x1="437.25" x2="437.25" y1="353.643" y2="497.429"/>
         <line fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="5" x1="437.25" x2="437.25" y1="504.5" y2="517"/>
       </g>

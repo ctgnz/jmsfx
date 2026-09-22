@@ -27,13 +27,13 @@
       <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="3.3174" x1="122.969" x2="200.265" y1="268.201" y2="119.666"/>
       <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="3.3174" x1="118.832" x2="187.169" y1="252.986" y2="118.929"/>
     </svg:g>
-    <svg:path d="   M185.582,119.42c-34.695,5.743-54.304,88.204-63.351,115.049c-9.066,26.848-3.028,26.848,9.047,46.014   c12.057,19.187,34.695,55.615,63.351,69.037c28.657,13.426,85.988,36.434,108.605,11.504   c22.64-24.926,46.771-120.812,27.164-161.081C310.789,159.691,220.275,113.658,185.582,119.42" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="4.93"/>
+    <svg:path d="M185.582,119.42c-34.695,5.743-54.304,88.204-63.351,115.049c-9.066,26.848-3.028,26.848,9.047,46.014 c12.057,19.187,34.695,55.615,63.351,69.037c28.657,13.426,85.988,36.434,108.605,11.504 c22.64-24.926,46.771-120.812,27.164-161.081C310.789,159.691,220.275,113.658,185.582,119.42" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="4.93"/>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template">
     <svg:rect display="inline" fill="none" font-style="normal" height="44.185" rx="0.0" ry="0.0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="1.8464" width="47.139" x="71.693" y="43.699"/>
     <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 87.104 74.4551)" x="0.0" y="0.0">A</svg:text>
   </svg:g>
   <svg:g display="none" font-style="normal" id="example">
-    <svg:path d="   M95.151,50.916c-12.4,0-22.45,6.697-22.45,14.959c0,8.261,10.05,14.959,22.45,14.959c12.398,0,22.449-6.698,22.449-14.959   C117.6,57.612,107.549,50.916,95.151,50.916L95.151,50.916z" display="inline" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
+    <svg:path d="M95.151,50.916c-12.4,0-22.45,6.697-22.45,14.959c0,8.261,10.05,14.959,22.45,14.959c12.398,0,22.449-6.698,22.449-14.959 C117.6,57.612,107.549,50.916,95.151,50.916L95.151,50.916z" display="inline" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
   </svg:g>
 </svg:svg>

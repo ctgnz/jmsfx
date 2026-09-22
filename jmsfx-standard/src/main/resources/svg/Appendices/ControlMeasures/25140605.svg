@@ -2,7 +2,7 @@
 <svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 400 400" font-style="normal" height="400.0" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0.00  0.00 400.00 400.00" width="400.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0" zoomAndPan="magnify">
   <svg:g font-style="normal" id="main">
     <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5.0" x1="108.5" x2="355.488" y1="183.445" y2="183.445"/>
-    <svg:path d="M321.316,207.443c-0.742-1.162-0.397-2.709,0.768-3.451l32.263-20.547l-32.263-20.547c-1.165-0.742-1.51-2.29-0.768-3.452   c0.74-1.162,2.298-1.499,3.451-0.767l35.573,22.656c0.722,0.459,1.157,1.255,1.157,2.109s-0.438,1.65-1.157,2.109l-35.573,22.657   c-0.415,0.265-0.882,0.392-1.341,0.392C322.604,208.602,321.795,208.191,321.316,207.443z" font-style="normal"/>
+    <svg:path d="M321.316,207.443c-0.742-1.162-0.397-2.709,0.768-3.451l32.263-20.547l-32.263-20.547c-1.165-0.742-1.51-2.29-0.768-3.452 c0.74-1.162,2.298-1.499,3.451-0.767l35.573,22.656c0.722,0.459,1.157,1.255,1.157,2.109s-0.438,1.65-1.157,2.109l-35.573,22.657 c-0.415,0.265-0.882,0.392-1.341,0.392C322.604,208.602,321.795,208.191,321.316,207.443z" font-style="normal"/>
     <svg:g font-style="normal">
       <svg:line fill="none" font-style="normal" stroke="#000000" stroke-dasharray="12.0,6.0" stroke-width="5.0" x1="374.519" x2="325.5" y1="183.565" y2="139.421"/>
       <svg:line fill="none" font-style="normal" stroke="#000000" stroke-dasharray="12.0,6.0" stroke-width="5.0" x1="374.333" x2="325.5" y1="183.722" y2="226.5"/>
@@ -33,7 +33,7 @@
         <svg:g font-style="normal">
           <svg:g font-style="normal">
             <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="5.0" x1="107.5" x2="107.5" y1="210.945" y2="268.5"/>
-            <svg:path d="M103.657,202.09c-1.874,6.2-3.598,10.229-5.594,15.202h18.917c-0.846-1.78-3.723-9.002-5.594-15.202       c-2.005-6.635-3.376-12.652-3.865-16.556C107.031,189.437,105.66,195.455,103.657,202.09z" fill="#0000FF" font-style="normal"/>
+            <svg:path d="M103.657,202.09c-1.874,6.2-3.598,10.229-5.594,15.202h18.917c-0.846-1.78-3.723-9.002-5.594-15.202 c-2.005-6.635-3.376-12.652-3.865-16.556C107.031,189.437,105.66,195.455,103.657,202.09z" fill="#0000FF" font-style="normal"/>
           </svg:g>
         </svg:g>
       </svg:g>
@@ -42,7 +42,7 @@
         <svg:g font-style="normal">
           <svg:g font-style="normal">
             <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="5.0" x1="375.5" x2="375.5" y1="213.945" y2="271.5"/>
-            <svg:path d="M371.656,205.09c-1.873,6.2-3.602,10.229-5.594,15.202h18.916c-0.85-1.78-3.726-9.002-5.598-15.202       c-2.004-6.635-3.376-12.652-3.865-16.556C375.031,192.437,373.66,198.455,371.656,205.09z" fill="#0000FF" font-style="normal"/>
+            <svg:path d="M371.656,205.09c-1.873,6.2-3.602,10.229-5.594,15.202h18.916c-0.85-1.78-3.726-9.002-5.598-15.202 c-2.004-6.635-3.376-12.652-3.865-16.556C375.031,192.437,373.66,198.455,371.656,205.09z" fill="#0000FF" font-style="normal"/>
           </svg:g>
         </svg:g>
       </svg:g>

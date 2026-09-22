@@ -2,14 +2,14 @@
 <svg:svg enable-background="new 0 0 612 792" font-style="normal" height="792.0" id="Version_1.0" version="1.1" viewBox=" 0.00  0.00 612.00 792.00" width="612.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0">
   <svg:g font-style="normal" id="main">
     <svg:polygon font-style="normal" points="305.513000,395.500000 242.457000,266.657000 368.379000,267.013000" stroke="#000000"/>
-    <svg:path d="   M305.513,122.793c-51.546,0-93.353,36.622-93.353,81.813c0,45.19,41.807,81.812,93.353,81.812s93.327-36.621,93.327-81.812   S357.059,122.793,305.513,122.793" fill="#FFFFFF" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="6.5011"/>
+    <svg:path d="M305.513,122.793c-51.546,0-93.353,36.622-93.353,81.813c0,45.19,41.807,81.812,93.353,81.812s93.327-36.621,93.327-81.812 S357.059,122.793,305.513,122.793" fill="#FFFFFF" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="6.5011"/>
     <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="52" font-style="normal" transform="matrix(1 0 0 1 299.3608 226.1787)" x="0.0" y="0.0"/>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template">
     <svg:g display="inline" font-style="normal" id="points">
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="32.3352" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="matrix(1 0 0 1 398.1719 428.5664)" x="0.0" y="0.0">POINT</svg:text>
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="32.3352" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="matrix(1 0 0 1 398.1719 390.0137)" x="0.0" y="0.0">ANCHOR</svg:text>
-      <svg:path d="M386.471,398.465h-48.697    c-0.877,0-1.606-0.707-1.606-1.607s0.729-1.632,1.606-1.632h48.697c0.9,0,1.631,0.731,1.631,1.632    S387.373,398.465,386.471,398.465L386.471,398.465z M341.037,406.598l-32.48-9.74l32.48-9.738V406.598z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3896" style="fill:#0000ff;fill-opacity:1"/>
+      <svg:path d="M386.471,398.465h-48.697 c-0.877,0-1.606-0.707-1.606-1.607s0.729-1.632,1.606-1.632h48.697c0.9,0,1.631,0.731,1.631,1.632 S387.373,398.465,386.471,398.465L386.471,398.465z M341.037,406.598l-32.48-9.74l32.48-9.738V406.598z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3896" style="fill:#0000ff;fill-opacity:1"/>
     </svg:g>
     <svg:g display="inline" font-style="normal">
       <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="52" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="matrix(1 0 0 1 274.7827 226.1787)" x="0.0" y="0.0">LE</svg:text>

@@ -6,8 +6,8 @@
       <path d="M175.557,516.657c0-174.435,58.379-315.841,130.394-315.841c72.011,0,130.391,141.406,130.391,315.841" fill="#FFA1FF"/>
       <g>
         <path d="M175.557,516.657c0-4.187,0.034-8.354,0.1-12.5" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
-        <path d="     M176.053,488.912c5.801-161.441,61.743-288.096,129.898-288.096c69.221,0,125.846,130.66,130.13,295.719" fill="none" stroke="#000000" stroke-dasharray="25.4169,15.2501" stroke-miterlimit="10" stroke-width="5"/>
-        <path d="M436.241,504.157     c0.067,4.146,0.101,8.313,0.101,12.5" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
+        <path d="M176.053,488.912c5.801-161.441,61.743-288.096,129.898-288.096c69.221,0,125.846,130.66,130.13,295.719" fill="none" stroke="#000000" stroke-dasharray="25.4169,15.2501" stroke-miterlimit="10" stroke-width="5"/>
+        <path d="M436.241,504.157 c0.067,4.146,0.101,8.313,0.101,12.5" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="5"/>
       </g>
     </g>
   </g>

@@ -36,7 +36,7 @@
         <svg:g font-style="normal">
           <svg:g font-style="normal">
             <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="5.0" x1="125.5" x2="125.5" y1="210.945" y2="268.5"/>
-            <svg:path d="M121.657,202.09c-1.874,6.2-3.598,10.229-5.594,15.202h18.917c-0.846-1.78-3.723-9.002-5.594-15.202       c-2.005-6.635-3.376-12.652-3.865-16.556C125.031,189.437,123.66,195.455,121.657,202.09z" fill="#0000FF" font-style="normal"/>
+            <svg:path d="M121.657,202.09c-1.874,6.2-3.598,10.229-5.594,15.202h18.917c-0.846-1.78-3.723-9.002-5.594-15.202 c-2.005-6.635-3.376-12.652-3.865-16.556C125.031,189.437,123.66,195.455,121.657,202.09z" fill="#0000FF" font-style="normal"/>
           </svg:g>
         </svg:g>
       </svg:g>
@@ -45,7 +45,7 @@
         <svg:g font-style="normal">
           <svg:g font-style="normal">
             <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="5.0" x1="369.5" x2="369.5" y1="205.945" y2="263.5"/>
-            <svg:path d="M365.656,197.09c-1.873,6.2-3.6,10.229-5.594,15.202h18.916c-0.848-1.78-3.724-9.002-5.596-15.202       c-2.004-6.635-3.376-12.652-3.865-16.556C369.031,184.437,367.66,190.455,365.656,197.09z" fill="#0000FF" font-style="normal"/>
+            <svg:path d="M365.656,197.09c-1.873,6.2-3.6,10.229-5.594,15.202h18.916c-0.848-1.78-3.724-9.002-5.596-15.202 c-2.004-6.635-3.376-12.652-3.865-16.556C369.031,184.437,367.66,190.455,365.656,197.09z" fill="#0000FF" font-style="normal"/>
           </svg:g>
         </svg:g>
       </svg:g>
@@ -56,7 +56,7 @@
       <svg:polygon fill="none" font-style="normal" points="27.164000,156.999000 27.164000,215.074000 111.307000,215.074000 111.307000,156.999000 27.164000,156.999000" stroke="#000000" stroke-linecap="round" stroke-miterlimit="8.0" stroke-width="5.0"/>
       <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="3.0" x1="53.441" x2="81.199" y1="194.443" y2="175.706"/>
       <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="3.0" x1="53.441" x2="81.199" y1="175.706" y2="194.443"/>
-      <svg:path d="    M67.252,171.094c-10.951,0-19.828,6.259-19.828,13.981c0,7.722,8.876,13.982,19.828,13.982c10.951,0,19.826-6.261,19.826-13.982    C87.078,177.353,78.203,171.094,67.252,171.094L67.252,171.094z" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="3.0"/>
+      <svg:path d="M67.252,171.094c-10.951,0-19.828,6.259-19.828,13.981c0,7.722,8.876,13.982,19.828,13.982c10.951,0,19.826-6.261,19.826-13.982 C87.078,177.353,78.203,171.094,67.252,171.094L67.252,171.094z" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8.0" stroke-width="3.0"/>
     </svg:g>
     <svg:g display="inline" font-style="normal">
       <svg:rect fill="#FFFFFF" font-style="normal" height="43.0" rx="0.0" ry="0.0" width="82.0" x="232.5" y="161.945"/>

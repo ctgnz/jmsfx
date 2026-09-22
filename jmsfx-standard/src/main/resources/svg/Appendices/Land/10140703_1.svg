@@ -18,7 +18,7 @@
   <g id="main">
     <line fill="none" stroke="#000000" stroke-miterlimit="1" stroke-width="5" x1="126.5" x2="485.5" y1="516" y2="276"/>
     <line fill="none" stroke="#000000" stroke-width="5" x1="306.25" x2="306" y1="352.985" y2="443.5"/>
-    <polyline fill="none" points="231.171,443.5 231.171,352.985 381.328,352.985 381.328,443.5     " stroke="#000000" stroke-width="5"/>
+    <polyline fill="none" points="231.171,443.5 231.171,352.985 381.328,352.985 381.328,443.5" stroke="#000000" stroke-width="5"/>
   </g>
   <rect display="none" fill="none" height="240" id="greyBox" stroke="#C8C8C8" stroke-width="10" width="359" x="126.5" y="276"/>
 </svg>

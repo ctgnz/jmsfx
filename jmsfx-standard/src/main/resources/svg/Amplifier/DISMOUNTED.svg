@@ -14,8 +14,8 @@
     </text>
   </g>
   <g id="frame">
-    <polygon fill="#80e0ff" points="432.44,323.5 432.44,469.5 306,542.5 179.56,469.5 179.56,323.5 306,250.5 "/>
-    <polygon fill="none" points="432.44,323.5 432.44,469.5 306,542.5 179.56,469.5 179.56,323.5 306,250.5 " stroke="#000000" stroke-width="5"/>
+    <polygon fill="#80e0ff" points="432.44,323.5 432.44,469.5 306,542.5 179.56,469.5 179.56,323.5 306,250.5"/>
+    <polygon fill="none" points="432.44,323.5 432.44,469.5 306,542.5 179.56,469.5 179.56,323.5 306,250.5" stroke="#000000" stroke-width="5"/>
   </g>
   <g id="octagon" style="display:inline">
     <g id="outFrame">

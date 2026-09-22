@@ -18,7 +18,7 @@
       <svg:g font-style="normal">
         <svg:g font-style="normal">
           <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="5.0" x1="305.52" x2="305.52" y1="369.78" y2="283.531"/>
-          <svg:path d="M309.363,378.637c1.873-6.199,3.598-10.229,5.594-15.203H296.04c0.846,1.781,3.723,9.004,5.594,15.203      c2.005,6.637,3.376,12.653,3.866,16.555C305.989,391.29,307.361,385.273,309.363,378.637z" fill="#0000FF" font-style="normal" style="fill:#0000ff;fill-opacity:1"/>
+          <svg:path d="M309.363,378.637c1.873-6.199,3.598-10.229,5.594-15.203H296.04c0.846,1.781,3.723,9.004,5.594,15.203 c2.005,6.637,3.376,12.653,3.866,16.555C305.989,391.29,307.361,385.273,309.363,378.637z" fill="#0000FF" font-style="normal" style="fill:#0000ff;fill-opacity:1"/>
         </svg:g>
       </svg:g>
     </svg:g>

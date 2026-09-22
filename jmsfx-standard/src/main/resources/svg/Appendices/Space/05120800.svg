@@ -24,10 +24,10 @@
       <line fill="none" stroke="#000000" stroke-width="5" x1="283.213" x2="291.402" y1="396" y2="396"/>
     </g>
     <g id="Mini">
-      <polyline fill="none" points="283.728,441.999 305.005,420.731 326.273,442.008   " stroke="#000000" stroke-width="5"/>
-      <polyline fill="none" points="325.192,349.759 303.915,371.026 282.646,349.75   " stroke="#000000" stroke-width="5"/>
-      <polyline fill="none" points="194.55,374.727 215.818,396.004 194.542,417.273   " stroke="#000000" stroke-width="5"/>
-      <polyline fill="none" points="414.296,417.273 393.027,395.996 414.305,374.727   " stroke="#000000" stroke-width="5"/>
+      <polyline fill="none" points="283.728,441.999 305.005,420.731 326.273,442.008" stroke="#000000" stroke-width="5"/>
+      <polyline fill="none" points="325.192,349.759 303.915,371.026 282.646,349.75" stroke="#000000" stroke-width="5"/>
+      <polyline fill="none" points="194.55,374.727 215.818,396.004 194.542,417.273" stroke="#000000" stroke-width="5"/>
+      <polyline fill="none" points="414.296,417.273 393.027,395.996 414.305,374.727" stroke="#000000" stroke-width="5"/>
     </g>
   </g>
 </svg>

@@ -14,7 +14,7 @@
     <svg:g display="inline" font-style="normal" id="points">
       <svg:g font-style="normal">
         <svg:g font-style="normal">
-          <svg:path d="M59.579,193.244l-9.955-8.014      c-0.714-0.563-0.812-1.597-0.247-2.31c0.565-0.686,1.598-0.81,2.31-0.244l9.955,8.014c0.713,0.563,0.812,1.594,0.245,2.307      C61.323,193.686,60.291,193.807,59.579,193.244L59.579,193.244z M47.043,193.659L27.65,165.471l31.706,12.878L47.043,193.659z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3933"/>
+          <svg:path d="M59.579,193.244l-9.955-8.014 c-0.714-0.563-0.812-1.597-0.247-2.31c0.565-0.686,1.598-0.81,2.31-0.244l9.955,8.014c0.713,0.563,0.812,1.594,0.245,2.307 C61.323,193.686,60.291,193.807,59.579,193.244L59.579,193.244z M47.043,193.659L27.65,165.471l31.706,12.878L47.043,193.659z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3933"/>
           <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="2.4579" x1="60.364" x2="60.364" y1="252.945" y2="189.532"/>
         </svg:g>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="31.0676" font-style="normal" transform="matrix(1 0 0 1 37.3398 296.2529)" x="0.0" y="0.0">P</svg:text>
@@ -23,7 +23,7 @@
       </svg:g>
       <svg:g font-style="normal">
         <svg:g font-style="normal">
-          <svg:path d="M338.128,190.69l9.956-8.014      c0.712-0.566,1.746-0.442,2.313,0.244c0.563,0.713,0.465,1.747-0.246,2.31l-9.979,8.014c-0.688,0.563-1.721,0.442-2.287-0.247      C337.319,192.284,337.418,191.253,338.128,190.69L338.128,190.69z M340.413,178.349l31.71-12.878l-19.396,28.188      L340.413,178.349z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3933"/>
+          <svg:path d="M338.128,190.69l9.956-8.014 c0.712-0.566,1.746-0.442,2.313,0.244c0.563,0.713,0.465,1.747-0.246,2.31l-9.979,8.014c-0.688,0.563-1.721,0.442-2.287-0.247 C337.319,192.284,337.418,191.253,338.128,190.69L338.128,190.69z M340.413,178.349l31.71-12.878l-19.396,28.188 L340.413,178.349z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10.0" stroke-width="0.3933"/>
           <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10.0" stroke-width="2.4579" x1="339.578" x2="339.578" y1="252.945" y2="189.532"/>
         </svg:g>
         <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="31.0676" font-style="normal" transform="matrix(1 0 0 1 306.3242 296.2529)" x="0.0" y="0.0">P</svg:text>

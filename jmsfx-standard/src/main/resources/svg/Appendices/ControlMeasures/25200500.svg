@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 400 400" font-style="normal" height="400.0" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0.00  0.00 400.00 400.00" width="400.0" x="0.0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0.0" zoomAndPan="magnify">
   <svg:g font-style="normal" id="main">
-    <svg:path d="M200.755,64.883   c-71.694,0-129.822,54.722-129.822,122.253c0,67.511,58.127,122.232,129.822,122.232c71.692,0,129.803-54.724,129.803-122.232   C330.558,119.604,272.447,64.883,200.755,64.883" fill="none" font-style="normal" stroke="#FFCC00" stroke-miterlimit="10.0" stroke-width="5.0"/>
+    <svg:path d="M200.755,64.883 c-71.694,0-129.822,54.722-129.822,122.253c0,67.511,58.127,122.232,129.822,122.232c71.692,0,129.803-54.724,129.803-122.232 C330.558,119.604,272.447,64.883,200.755,64.883" fill="none" font-style="normal" stroke="#FFCC00" stroke-miterlimit="10.0" stroke-width="5.0"/>
   </svg:g>
   <svg:g display="inline" font-style="normal" id="template">
     <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="26.4544" font-style="normal" transform="matrix(1 0 0 1 159.2207 364.7891)" x="0.0" y="0.0">CENTER POINT</svg:text>

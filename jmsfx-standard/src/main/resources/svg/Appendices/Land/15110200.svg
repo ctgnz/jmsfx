@@ -19,7 +19,7 @@
     <g id="Arrow">
       <line fill="none" stroke="#000000" stroke-width="5" x1="251.816" x2="359.816" y1="488.5" y2="488.5"/>
       <line fill="none" stroke="#000000" stroke-width="5" x1="305.816" x2="305.816" y1="280.5" y2="488.5"/>
-      <polyline fill="none" points="252.625,313.563 305.816,277.875 359.82,313.563   " stroke="#000000" stroke-width="5"/>
+      <polyline fill="none" points="252.625,313.563 305.816,277.875 359.82,313.563" stroke="#000000" stroke-width="5"/>
     </g>
   </g>
 </svg>
