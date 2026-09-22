@@ -68,6 +68,18 @@ public class FragmentNormaliser {
 
     private static final String ID_ATTRIBUTE = "id";
 
+    /**
+     * Attributes whose value is a coordinate list, and whose internal whitespace is therefore layout rather than content.
+     * <p>
+     * Illustrator wraps its output at a fixed width and leaves the continuation's indentation inside the attribute, so a {@code d} arrives as
+     * {@code "   M469.55,617.323c0.007,0,0.015,0,0.021,0...H142.429h0.02   -0.007,0,..."} - leading spaces, trailing spaces, and runs of three or four mid-value. Two files drawing
+     * the same shape can differ purely in where that wrapping fell, which is exactly what makes duplicates hard to spot.
+     * <p>
+     * Runs collapse to one space and the ends are trimmed. Nothing else: a single space between two numbers is a separator and removing it would silently join them into one
+     * coordinate. {@link SvgFingerprint} would catch that, since it rounds each number it finds and two numbers do not round to the same string as their concatenation.
+     */
+    private static final Set<String> COORDINATE_ATTRIBUTES = Set.of("d", "points");
+
     public static void main(String[] args) {
         List<String> rest = new ArrayList<>(Arrays.asList(args));
         boolean apply = rest.remove("--apply");
@@ -193,6 +205,14 @@ public class FragmentNormaliser {
                            .matches()) {
                 doomed.add(attribute);
                 tally.count("generated ids");
+            } else if (COORDINATE_ATTRIBUTES.contains(attribute.getLocalName())) {
+                String tidied = attribute.getValue()
+                    .trim()
+                    .replaceAll("\\s+", " ");
+                if (!tidied.equals(attribute.getValue())) {
+                    attribute.setValue(tidied);
+                    tally.count("coordinate whitespace");
+                }
             }
         }
         doomed.forEach(attribute -> element.removeAttributeNode(attribute));
