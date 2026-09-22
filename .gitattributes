@@ -1,0 +1,6 @@
+# The SVG fragments are rewritten by FragmentNormaliser (jmsfx#71), which always writes LF.
+# Without this, core.autocrlf=true hands the working tree CRLF on checkout, the normaliser
+# rewrites every fragment back to LF, and its check mode reports the whole tree as dirty on
+# Windows after a fresh clone. Pinning the working tree to LF keeps normalisation idempotent
+# wherever it runs, and keeps the fragments byte-comparable against hallux's copies.
+*.svg text eol=lf
