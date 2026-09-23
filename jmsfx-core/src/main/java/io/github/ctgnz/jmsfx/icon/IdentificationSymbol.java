@@ -297,6 +297,14 @@ public class IdentificationSymbol {
                     container.setPixelsHeight(reference.getPixelsHeight());
                 });
         }
+        // Nothing was drawn and nothing sized the result: no frame to inherit a canvas from, and no ink
+        // to trim to. That is Control Measure, which draws no frame, for an element with no graphic of
+        // its own. Leaving it unsized is the harmful part rather than leaving it blank - an SVG with no
+        // viewBox has no intrinsic size, so an <img> showing it stretches to fill whatever its styling
+        // allows, which on the Browse tree meant an empty icon expanding to half the column width.
+        if (container.getViewBox() == null) {
+            applyViewBox(container, IconGeometry.BLANK);
+        }
         return container;
     }
 

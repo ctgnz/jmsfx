@@ -8,11 +8,13 @@ import static io.github.ctgnz.jmsfx.icon.TestFixtures.symbolSet;
 import static io.github.ctgnz.jmsfx.icon.TestFixtures.unknownAmplifier;
 import static io.github.ctgnz.jmsfx.icon.TestFixtures.unknownSectorOneModifier;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.CoreMatchers.sameInstance;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.endsWith;
+import static org.hamcrest.Matchers.hasSize;
 
 import javafx.geometry.Pos;
 
@@ -22,6 +24,7 @@ import org.junit.jupiter.api.Test;
 import nz.co.ctg.foxglove.SvgGraphic;
 
 import io.github.ctgnz.jmsfx.Amplifier;
+import io.github.ctgnz.jmsfx.IconGeometry;
 import io.github.ctgnz.jmsfx.MainElement;
 import io.github.ctgnz.jmsfx.StandardAmplifierItem;
 import io.github.ctgnz.jmsfx.types.GeometryType;
@@ -185,6 +188,36 @@ class IdentificationSymbolTest {
         candidate.setSymbolSet(symbolSet("30", "Control Measure", GeometryType.LINE_GEOMETRY));
 
         assertThat(candidate.isFrameUsed(), is(false));
+    }
+
+    @Test
+    void testASymbolThatDrawsNothingStillHasASize() {
+        // Control Measure draws no frame, so an element with no graphic of its own composes to an empty
+        // document. Without a viewBox that has no intrinsic size, and an <img> showing it stretches to
+        // fill whatever its styling allows - on the Browse tree, half the column.
+        candidate.setSymbolSet(symbolSet("25", "Control Measure", GeometryType.LINE_GEOMETRY));
+        candidate.setEntity(entity("11", "Command and Control Lines").withGraphicType(GraphicType.NA)
+            .withSymbolSet(candidate.getSymbolSet()));
+
+        SvgGraphic combined = candidate.getCombinedGraphic();
+
+        assertThat(combined.getViewBox(), is(notNullValue()));
+        assertThat(combined.getPixelsWidth(), is(IconGeometry.BLANK.getWidth()));
+        assertThat(combined.getPixelsHeight(), is(IconGeometry.BLANK.getHeight()));
+        // Blank, but sized: the only content is the title, so the fallback gives it a size without
+        // inventing anything to draw.
+        assertThat(combined.getContent(), hasSize(1));
+    }
+
+    @Test
+    void testASymbolThatDrawsNothingIsSizedWhenTrimmedToo() {
+        // The trimmed path measures ink, and there is none, so it falls through the same gap.
+        candidate.setSymbolSet(symbolSet("25", "Control Measure", GeometryType.LINE_GEOMETRY));
+        candidate.setEntity(entity("11", "Command and Control Lines").withGraphicType(GraphicType.NA)
+            .withSymbolSet(candidate.getSymbolSet()));
+
+        assertThat(candidate.getCombinedGraphic(true)
+            .getViewBox(), is(notNullValue()));
     }
 
     @Test
