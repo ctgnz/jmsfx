@@ -38,16 +38,34 @@ import ${commonPackage}.CommonSectorOneModifier;
 import ${commonPackage}.CommonSectorTwoModifier;
 
 public class ${libraryPrefix}IconLibrary implements IconLibrary {
-    private static final ${libraryPrefix}IconLibrary INSTANCE = new ${libraryPrefix}IconLibrary();
 
+    /**
+     * The one instance, which {@link java.util.ServiceLoader} built.
+     * <p>
+     * Prefer {@link IconLibrary#discover()} over naming this class. An application depends on
+     * exactly one symbology library and there is no choice to make at this point, so compiling in
+     * which one it is only prevents the same application running against another.
+     * <p>
+     * This deliberately does not hold a singleton of its own. The library carries mutable state -
+     * the extension country code - so a second instance beside the discovered one would be a
+     * library that silently disagreed with itself about its own configuration.
+     */
     public static ${libraryPrefix}IconLibrary instance() {
-        return INSTANCE;
+        return (${libraryPrefix}IconLibrary) IconLibrary.discover();
     }
 
     private final FoxgloveParser parser = new FoxgloveParser();
     private CountryCode extensionCountryCode = CountryCode.UNDEFINED;
 
-    private ${libraryPrefix}IconLibrary() {
+    /**
+     * For {@link java.util.ServiceLoader}, which requires a public no-arg constructor of a provider
+     * declared in {@code META-INF/services} - its static {@code provider()} convention applies only
+     * to providers in named modules, and these libraries are used on the classpath.
+     * <p>
+     * Not for calling. Use {@link IconLibrary#discover()}, or {@link #instance()}, both of which
+     * return the single instance the service loader created.
+     */
+    public ${libraryPrefix}IconLibrary() {
     }
 
     @Override

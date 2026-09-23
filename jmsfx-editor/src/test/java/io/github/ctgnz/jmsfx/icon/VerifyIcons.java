@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.icon.editor.DynamicIconLibrary;
 import io.github.ctgnz.jmsfx.icon.editor.EntitySubTypeImpl;
 import io.github.ctgnz.jmsfx.icon.editor.SymbolSetImpl;
-import io.github.ctgnz.jmsfx.standard.StandardIconLibrary;
 
 public class VerifyIcons {
 
@@ -29,7 +29,7 @@ public class VerifyIcons {
 
     public void verify() throws Exception {
         this.usedPaths = new ArrayList<>();
-        DynamicIconLibrary library = new DynamicIconLibrary(StandardIconLibrary.instance());
+        DynamicIconLibrary library = new DynamicIconLibrary(IconLibrary.discover());
         System.out.println("Version");
         library.getVersions()
             .forEach(version -> {

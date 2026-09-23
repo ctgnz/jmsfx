@@ -12,10 +12,28 @@
     </parent>
 
     <dependencies>
+        <!--
+            Compiled against the interfaces only. The creator works through IconLibrary and names no
+            concrete library, so the same build runs against any of them - jmsfx-standard here, or a
+            library generated from an extended model elsewhere. See #76.
+        -->
+        <dependency>
+            <groupId>io.github.ctgnz</groupId>
+            <artifactId>jmsfx-core</artifactId>
+            <version>1.5.0-SNAPSHOT</version>
+        </dependency>
+
+        <!--
+            A library has to be present to run, and this is the one the packaged desktop bundle ships.
+            Runtime scope rather than compile, so nothing here can quietly bind to it again: the build
+            fails on a standard-only type rather than shipping an application that only works against
+            one library.
+        -->
         <dependency>
             <groupId>io.github.ctgnz</groupId>
             <artifactId>jmsfx-standard</artifactId>
             <version>1.5.0-SNAPSHOT</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 

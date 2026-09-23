@@ -1,14 +1,12 @@
 package io.github.ctgnz.jmsfx.icon.creator;
 
-import java.util.Arrays;
-
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.stage.Stage;
 
 import io.github.ctgnz.jmsfx.IconLibrary;
-import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.SymbolSet;
 
 public class IconGallery extends TabPane {
 
@@ -20,7 +18,7 @@ public class IconGallery extends TabPane {
         this.library = library;
         this.mainStage = mainStage;
         setMaxWidth(mainStage.getWidth());
-        Arrays.stream(SymbolSetEnum.values())
+        library.getSymbolSets()
             .forEach(sym -> {
                 Tab tab = new Tab(sym.getLabel());
                 tab.setUserData(sym);
@@ -40,7 +38,7 @@ public class IconGallery extends TabPane {
         if (tab == null || tab.getContent() != null) {
             return;
         }
-        SymbolSetGallery gallery = new SymbolSetGallery(library, (SymbolSetEnum) tab.getUserData());
+        SymbolSetGallery gallery = new SymbolSetGallery(library, (SymbolSet) tab.getUserData());
         gallery.setMinWidth(mainStage.getWidth());
         tab.setContent(new ScrollPane(gallery));
     }

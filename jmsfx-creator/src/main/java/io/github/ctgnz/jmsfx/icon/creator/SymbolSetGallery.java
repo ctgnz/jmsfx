@@ -1,7 +1,5 @@
 package io.github.ctgnz.jmsfx.icon.creator;
 
-import java.util.Arrays;
-
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.ContentDisplay;
@@ -16,19 +14,16 @@ import org.apache.commons.lang3.StringUtils;
 
 import io.github.ctgnz.jmsfx.CodeElement;
 import io.github.ctgnz.jmsfx.IconLibrary;
+import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
-import io.github.ctgnz.jmsfx.standard.HqtfDummyEnum;
-import io.github.ctgnz.jmsfx.standard.StandardIdentityEnum;
-import io.github.ctgnz.jmsfx.standard.StatusEnum;
-import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.types.IconScale;
 
 public class SymbolSetGallery extends BorderPane {
-    private SymbolSetEnum symbolSet;
+    private SymbolSet symbolSet;
     private IconLibrary library;
 
     @SuppressWarnings("this-escape")
-    public SymbolSetGallery(IconLibrary library, SymbolSetEnum symbolSet) {
+    public SymbolSetGallery(IconLibrary library, SymbolSet symbolSet) {
         this.library = library;
         this.symbolSet = symbolSet;
         setCenter(new VBox(createFrames(), createStatus(), createHqtfDummy(), createSector1(), createSector2()));
@@ -37,7 +32,8 @@ public class SymbolSetGallery extends BorderPane {
 
     private Node createFrames() {
         TilePane flowPane = new TilePane();
-        Arrays.stream(StandardIdentityEnum.values())
+        library.getStandardIdentities()
+            .stream()
             .forEach(stdId -> {
                 IdentificationSymbol symbol = createDefaultSymbol(flowPane, stdId);
                 symbol.setStandardIdentity(stdId);
@@ -49,7 +45,8 @@ public class SymbolSetGallery extends BorderPane {
 
     private Node createHqtfDummy() {
         TilePane flowPane = new TilePane();
-        Arrays.stream(HqtfDummyEnum.values())
+        library.getHqtfDummys()
+            .stream()
             .filter(status -> status.isSupported(symbolSet))
             .forEach(hqtfDummy -> {
                 IdentificationSymbol symbol = createDefaultSymbol(flowPane, hqtfDummy);
@@ -110,7 +107,8 @@ public class SymbolSetGallery extends BorderPane {
 
     private Node createStatus() {
         TilePane flowPane = new TilePane();
-        Arrays.stream(StatusEnum.values())
+        library.getStatuses()
+            .stream()
             .filter(status -> status.isSupported(symbolSet))
             .forEach(status -> {
                 IdentificationSymbol symbol = createDefaultSymbol(flowPane, status);

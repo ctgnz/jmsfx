@@ -15,10 +15,10 @@ import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
-import io.github.ctgnz.jmsfx.standard.StandardIconLibrary;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
 public abstract class IconRestController<E extends Entity, T extends EntityType, S extends EntitySubType, M extends SectorOneModifier, N extends SectorTwoModifier, A extends AmplifierListItem> {
@@ -128,7 +128,7 @@ public abstract class IconRestController<E extends Entity, T extends EntityType,
     }
 
     private IdentificationSymbol buildSymbol(E entity, T entityType, S entitySubType, M sectorOneMod, N sectorTwoMod, A amplifier) {
-        IdentificationSymbol symbol = new IdentificationSymbol(StandardIconLibrary.instance());
+        IdentificationSymbol symbol = new IdentificationSymbol(IconLibrary.discover());
         symbol.symbolSetProperty()
             .set(symbolSet);
         symbol.entityProperty()
