@@ -25,6 +25,15 @@ public final class IconGeometry {
     public static final Rectangle2D OCTAGON = new Rectangle2D(183.5, 272.5, 243.0, 244.0);
 
     /**
+     * The canvas a symbol gets when it draws nothing at all.
+     * <p>
+     * Most symbol sets draw a frame, so a symbol with no icon of its own still has something to show and something to size it by. Control Measure draws no frame, so an element
+     * with no graphic composes to an empty document - and an SVG with no {@code viewBox} has no intrinsic size, which leaves an {@code <img>} showing it free to stretch to
+     * whatever its styling permits. Small and square is what an absent icon should occupy; the value matters only in that it is finite.
+     */
+    public static final Rectangle2D BLANK = new Rectangle2D(0, 0, 16, 16);
+
+    /**
      * Breathing room added on every side when a symbol is trimmed to its ink.
      * <p>
      * Stroke extents are already included in a measured bound, so this is not there to stop strokes clipping - it absorbs rounding at the edges, and the couple of pixels by which
