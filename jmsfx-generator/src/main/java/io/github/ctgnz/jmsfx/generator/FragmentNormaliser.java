@@ -117,31 +117,65 @@ public class FragmentNormaliser {
      */
     private static final double VERIFY_TOLERANCE = 2 * TOLERANCE;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         List<String> rest = new ArrayList<>(Arrays.asList(args));
         boolean apply = rest.remove("--apply");
-        String show = null;
-        int showAt = rest.indexOf("--show");
-        if (showAt >= 0) {
-            rest.remove(showAt);
-            show = showAt < rest.size() ? rest.remove(showAt) : null;
+        boolean check = rest.remove("--check");
+        String show = take(rest, "--show");
+        List<Path> directories = new ArrayList<>();
+        for (String dir = take(rest, "--dir"); dir != null; dir = take(rest, "--dir")) {
+            directories.add(Path.of(dir));
         }
-        String left = !rest.isEmpty() ? rest.remove(0) : "/config.yml";
-        String right = !rest.isEmpty() ? rest.remove(0) : "/config-hallux.yml";
-        try {
-            FragmentNormaliser normaliser = new FragmentNormaliser();
-            normaliser.run(left, apply, show);
-            normaliser.run(right, apply, show);
-        } catch (Exception e) {
-            e.printStackTrace();
+
+        FragmentNormaliser normaliser = new FragmentNormaliser();
+        List<String> dirty = new ArrayList<>();
+        if (directories.isEmpty()) {
+            String left = !rest.isEmpty() ? rest.remove(0) : "/config.yml";
+            String right = !rest.isEmpty() ? rest.remove(0) : "/config-hallux.yml";
+            for (String config : List.of(left, right)) {
+                dirty.addAll(normaliser.run(normaliser.svgRoot(config), config, apply, show));
+            }
+        } else {
+            for (Path directory : directories) {
+                // A directory that is not there is not a failure. The build passes this in from the
+                // module layout, and a check bound to it has to survive someone building a subset of
+                // the reactor, or a checkout where a sibling repository simply is not present.
+                if (!Files.isDirectory(directory)) {
+                    System.out.format("%nno such directory, skipping: %s%n", directory);
+                    continue;
+                }
+                dirty.addAll(normaliser.run(directory, directory.toString(), apply, show));
+            }
         }
+
+        if (check && !dirty.isEmpty()) {
+            // Thrown rather than exited, because this runs in Maven's own JVM under exec:java -
+            // System.exit would take the build down without a message worth reading.
+            throw new IllegalStateException(String.format(
+                "%d SVG fragment%s %s not normalised: %s%s%nRun the normaliser with --apply to bring %s into line:"
+                                                          + "%n    mvn -q -pl jmsfx-generator exec:java -Dexec.mainClass=%s -Dexec.args=--apply%n",
+                dirty.size(), dirty.size() == 1 ? "" : "s", dirty.size() == 1 ? "is" : "are",
+                String.join(", ", dirty.subList(0, Math.min(5, dirty.size()))),
+                dirty.size() > 5 ? String.format(" (and %d more)", dirty.size() - 5) : "",
+                dirty.size() == 1 ? "it" : "them", FragmentNormaliser.class.getName()));
+        }
+    }
+
+    /** Removes {@code flag} and the value after it from {@code args}, or returns null if the flag is not there. */
+    private static String take(List<String> args, String flag) {
+        int at = args.indexOf(flag);
+        if (at < 0) {
+            return null;
+        }
+        args.remove(at);
+        return at < args.size() ? args.remove(at) : null;
     }
 
     private final JmsfxParser parser = new JmsfxParser();
 
-    public void run(String configFile, boolean apply, String show) throws Exception {
-        Path root = svgRoot(configFile);
-        System.out.format("%n%s%n%s%n", configFile, root);
+    /** Normalises one tree, returning the fragments that changed - or that would have, when only reporting. */
+    public List<String> run(Path root, String label, boolean apply, String show) throws Exception {
+        System.out.format("%n%s%n%s%n", label, root);
 
         List<String> changed = new ArrayList<>();
         List<String> unreadable = new ArrayList<>();
@@ -209,6 +243,13 @@ public class FragmentNormaliser {
         reasons.forEach((reason, count) -> System.out.format("     %-28s %d%n", reason, count));
         report("Could not be parsed", unreadable);
         report("REFUSED - normalising would have changed what these draw", refused);
+
+        // A refusal is a failure too, and a louder one: the file is not normalised and cannot be
+        // normalised without changing what it draws, so it needs a person rather than --apply.
+        List<String> outstanding = new ArrayList<>(changed);
+        outstanding.addAll(refused);
+        outstanding.addAll(unreadable);
+        return outstanding;
     }
 
     /** Removes everything the editor added and nothing else. */
@@ -539,7 +580,7 @@ public class FragmentNormaliser {
         names.forEach(name -> System.out.format("   %s%n", name));
     }
 
-    private Path svgRoot(String configFile) throws Exception {
+    Path svgRoot(String configFile) throws Exception {
         try (InputStream in = FragmentNormaliser.class.getResourceAsStream(configFile)) {
             if (in == null) {
                 throw new IllegalArgumentException("no such config on the classpath: " + configFile);

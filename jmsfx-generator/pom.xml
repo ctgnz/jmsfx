@@ -114,6 +114,45 @@
                     <skip>true</skip>
                 </configuration>
             </plugin>
+            <!--
+                Checks that the SVG fragments are still normalised, and fails naming the files if not,
+                the way Spotless does for Java. It reports only and never writes; the normaliser's apply
+                mode is the fix, and the failure message spells out the command.
+
+                Bound to verify rather than written as a test, so skipping tests cannot skip it, and at
+                verify for the same reason Spotless is there: late enough not to slow the inner loop,
+                early enough that nothing is published without it.
+
+                The directory is passed from the module layout rather than read from config.yml, whose
+                resourceDir is an absolute Windows path and so resolves nowhere on a CI runner. A
+                directory that is not present is skipped rather than failing, which keeps partial
+                reactor builds and partial checkouts working.
+
+                hallux's fragments are not covered: the tool lives here and that repo has no dependency
+                on it. See jmsfx#73 and jmsfx#81, the same coupling question the model split must answer.
+            -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.6.4</version>
+                <executions>
+                    <execution>
+                        <id>check-fragments-normalised</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>io.github.ctgnz.jmsfx.generator.FragmentNormaliser</mainClass>
+                            <arguments>
+                                <argument>--check</argument>
+                                <argument>--dir</argument>
+                                <argument>${project.basedir}/../jmsfx-standard/src/main/resources/svg</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>

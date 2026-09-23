@@ -146,6 +146,22 @@
                                         <ignore/>
                                     </action>
                                 </pluginExecution>
+                                <!-- The fragment check (jmsfx-generator, #73) walks ~3,000 files, which is
+                                     not something to do on every incremental build in the IDE. `mvn verify`
+                                     still runs it. -->
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.codehaus.mojo</groupId>
+                                        <artifactId>exec-maven-plugin</artifactId>
+                                        <versionRange>[3.6.4,)</versionRange>
+                                        <goals>
+                                            <goal>java</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore/>
+                                    </action>
+                                </pluginExecution>
                             </pluginExecutions>
                         </lifecycleMappingMetadata>
                     </configuration>
