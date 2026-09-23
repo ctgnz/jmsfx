@@ -58,7 +58,6 @@ import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbolIcon;
-import io.github.ctgnz.jmsfx.standard.StandardIconLibrary;
 import io.github.ctgnz.jmsfx.types.IconScale;
 import io.github.ctgnz.jmsfx.types.ScaleDirection;
 
@@ -90,7 +89,7 @@ public class IconCreator extends Application {
     private FoxgloveParser svgParser = new FoxgloveParser();
     private File lastDirectory;
     private IdentificationSymbolIcon icon;
-    private IconLibrary library = StandardIconLibrary.instance();
+    private IconLibrary library = IconLibrary.discover();
     private final CheckBox trimOnSave = new CheckBox("Trim to size");
     private final ObservableList<AmplifierListItem> amplifiers = FXCollections.observableArrayList(Arrays.asList(library.getDefaultAmplifier()));
     private final ObservableList<AmplifierListItem> amplifiersTwo = FXCollections.observableArrayList(Arrays.asList(library.getDefaultAmplifier()));

@@ -12,10 +12,40 @@
     </parent>
 
     <dependencies>
+        <!--
+            Compiled against the interfaces only. The creator works through IconLibrary and names no
+            concrete library, so the same build runs against any of them - jmsfx-standard here, or a
+            library generated from an extended model elsewhere. See #76.
+        -->
+        <dependency>
+            <groupId>io.github.ctgnz</groupId>
+            <artifactId>jmsfx-core</artifactId>
+            <version>1.5.0-SNAPSHOT</version>
+        </dependency>
+
+        <!--
+            A library has to be present to run, and this is the one the packaged desktop bundle ships.
+
+            Runtime scope rather than compile, so nothing here can quietly bind to it again: the build
+            fails on a standard-only type rather than shipping an application that only works against
+            one library.
+
+            Optional because runtime scope is transitive, and this must not be. Anything depending on
+            jmsfx-creator to run the application against *its* library would otherwise inherit this one
+            too, put two IconLibrary implementations on the classpath, and be refused by discovery - which
+            is exactly what hallux hit. Optional stops it propagating while leaving it on this module's
+            own runtime classpath, so copy-dependencies still gathers it into the bundle below and the
+            application runs standalone.
+
+            A consumer that supplies no library gets discovery's "none on the classpath" error, which says
+            what to add.
+        -->
         <dependency>
             <groupId>io.github.ctgnz</groupId>
             <artifactId>jmsfx-standard</artifactId>
             <version>1.5.0-SNAPSHOT</version>
+            <scope>runtime</scope>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
