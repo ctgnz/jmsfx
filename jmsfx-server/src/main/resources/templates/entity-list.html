@@ -27,6 +27,11 @@ $(document).ready(function() {
 	}).fail(function () {
 		showError('Failed to load the list of symbol sets - check the server connection and reload the page.');
 	});
+	// Delegated, because the tree is replaced wholesale every time a symbol set is chosen -
+	// a handler bound to the buttons themselves would be thrown away with the old content.
+	$('#entities').on('click', '.tree-toggle', function () {
+		$('#entities .col-md-6 details').prop('open', $(this).data('open'));
+	});
 	$('#symbol-sets').change(function () {
 		hideError();
 		var opt = $('#symbol-sets option:selected');
@@ -34,6 +39,12 @@ $(document).ready(function() {
     	$('#browse-spinner').removeClass('d-none');
         $.get(url, function(data) {
             $('#entities').html(data);
+            // Tooltips attach per element, so they have to be created again each time the
+            // tree is replaced. Without this the buttons still show the browser's own title
+            // tooltip, so the label is never lost - it just looks less like the rest of the UI.
+            $('#entities [data-bs-toggle="tooltip"]').each(function () {
+                new bootstrap.Tooltip(this);
+            });
         }).fail(function () {
         	showError('Failed to load the entities for ' + opt.text() + '.');
         }).always(function () {
@@ -64,7 +75,31 @@ $(document).ready(function() {
                 <h5 class="p-3" th:text="${symbolSet.label}">Symbol Set</h5>
                 <div class="row">
                     <div class="col-md-6">
-                        <h5 class="p-3">Main Sector Icons</h5>
+                        <div class="tree-header">
+                            <h5 class="mb-0">Main Sector Icons</h5>
+                            <div class="btn-group btn-group-sm" role="group" aria-label="Expand or collapse the whole tree">
+                                <!-- Icon only, with the name as a tooltip. The glyphs are the familiar
+                                     box-and-plus / box-and-minus of a tree control, drawn inline so they
+                                     take their colour from the button and stay crisp at any display scale -
+                                     the same approach the tree's own chevron already uses. -->
+                                <button type="button" class="btn btn-outline-secondary tree-toggle" data-open="true"
+                                        title="Expand all" aria-label="Expand all" data-bs-toggle="tooltip">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                         fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                                        <rect x="2.75" y="2.75" width="10.5" height="10.5" rx="1.5"/>
+                                        <path d="M8 5.25v5.5M5.25 8h5.5"/>
+                                    </svg>
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary tree-toggle" data-open="false"
+                                        title="Collapse all" aria-label="Collapse all" data-bs-toggle="tooltip">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                         fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+                                        <rect x="2.75" y="2.75" width="10.5" height="10.5" rx="1.5"/>
+                                        <path d="M5.25 8h5.5"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
                         <ul class="tree-view">
                             <li th:each="entity : ${symbolSet.entities}">
                                 <details th:unless="${#lists.isEmpty(entity.entityTypes)}">
@@ -101,7 +136,9 @@ $(document).ready(function() {
                         </ul>
                     </div>
                     <div th:unless="${#lists.isEmpty(symbolSet.sectorOneModifiers)}" class="col-md-3">
-                        <h5 class="p-3">Sector One Modifiers</h5>
+                        <div class="tree-header">
+                            <h5 class="mb-0">Sector One Modifiers</h5>
+                        </div>
                         <ul class="tree-view">
                             <li class="tree-leaf" th:each="sectorOneMod : ${symbolSet.sectorOneModifiers}">
                                 <img class="jms-icon" alt="Icon for ${sectorOneMod.label}" th:attr="src='/' + ${symbolSetPath} + '/symbol/modifier/one/'+${sectorOneMod.name()}+'?trim=true'" />
@@ -110,7 +147,9 @@ $(document).ready(function() {
                         </ul>
                     </div>
                     <div th:unless="${#lists.isEmpty(symbolSet.sectorTwoModifiers)}" class="col-md-3">
-                        <h5 class="p-3">Sector Two Modifiers</h5>
+                        <div class="tree-header">
+                            <h5 class="mb-0">Sector Two Modifiers</h5>
+                        </div>
                         <ul class="tree-view">
                             <li class="tree-leaf" th:each="sectorTwoMod : ${symbolSet.sectorTwoModifiers}">
                                 <img class="jms-icon" alt="Icon for ${sectorTwoMod.label}" th:attr="src='/' + ${symbolSetPath} + '/symbol/modifier/two/'+${sectorTwoMod.name()}+'?trim=true'" />

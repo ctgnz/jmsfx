@@ -41,6 +41,7 @@ img.jms-icon {
 	max-width: 50%;
 }
 
+
 span.entity {
 	padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
 	position: relative;
@@ -73,6 +74,19 @@ div.entity-subtype {
 	padding: 6px;
 	margin-top: 6px;
 	margin: 12 24 12 24px;
+}
+
+/* Every column's heading sits in one of these, whether or not it carries controls, so the
+   three trees start on the same line. A fixed height rather than one the content decides:
+   the expand/collapse buttons are taller than the heading alone, and without this the main
+   icon tree would begin lower than the modifier lists beside it. */
+.tree-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+	min-height: 3.5rem;
+	padding: 0 1rem;
 }
 
 ul.tree-view,
