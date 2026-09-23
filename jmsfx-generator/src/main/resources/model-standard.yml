@@ -1581,7 +1581,7 @@ symbolSets:
   - {code: AS, type: RECTANGLE, amplifier: AS_Country, points: [486.0, 196.0, 126.0, 80.0]}
   - {code: AW, type: RECTANGLE, amplifier: AW_HeadquartersElement, points: [185.0, 520.0, 240.0, 80.0]}
   entities:
-  - details: {code: "11", id: COMMAND_AND_CONTROL, graphicType: MAIN, label: "Command and Control"}
+  - details: {code: "11", id: COMMAND_AND_CONTROL, graphicType: NA, label: "Command and Control"}
     entityTypes:
     - details: {code: "01", id: BROADCAST_TRANSMITTER_ANTENNAE, graphicType: FULL_OCTAGON, label: "Broadcast Transmitter Antennae"}
     - details: {code: "02", id: CIVIL_AFFAIRS, graphicType: MAIN, label: "Civil Affairs"}

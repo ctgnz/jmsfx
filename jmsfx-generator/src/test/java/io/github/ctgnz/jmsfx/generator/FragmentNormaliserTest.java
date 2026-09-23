@@ -42,8 +42,8 @@ class FragmentNormaliserTest {
 
     @Test
     void anUnnormalisedFragmentIsReported(@TempDir Path dir) throws Exception {
-        write(dir, "Appendices/Land/10110000.svg", INKSCAPE);
-        assertThat(run(dir, false), contains("Appendices/Land/10110000.svg"));
+        write(dir, "Appendices/Land/10120100.svg", INKSCAPE);
+        assertThat(run(dir, false), contains("Appendices/Land/10120100.svg"));
     }
 
     @Test
