@@ -17,10 +17,8 @@
   </g>
   <g id="main">
     <g>
-      <g>
-        <line fill="none" stroke="#000000" stroke-width="5" x1="306" x2="306" y1="280.5" y2="472.417"/>
-        <polygon fill="none" points="306.515,507.834 249.334,469.667 362.668,469.667" stroke="#000000" stroke-width="5"/>
-      </g>
+      <line fill="none" stroke="#000000" stroke-width="5" x1="306" x2="306" y1="280.5" y2="472.417"/>
+      <polygon fill="none" points="306.515,507.834 249.334,469.667 362.668,469.667" stroke="#000000" stroke-width="5"/>
     </g>
     <text font-family="sans-serif" font-size="96" transform="matrix(1 0 0 1 220 427.6719)">E</text>
     <text font-family="sans-serif" font-size="96" transform="matrix(1 0 0 1 319.166 428.584)">W</text>

@@ -4,13 +4,11 @@
   <g id="hqtffd">
     <polyline fill="none" points="237.5,257.163 237.5,181.5 375.5,181.5 375.5,257.163" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
     <g>
-      <g>
-        <line fill="none" stroke="#000000" stroke-width="5" x1="135.25" x2="150.112" y1="232.163" y2="220.326"/>
-        <line fill="none" stroke="#000000" stroke-dasharray="36.7065,36.7065" stroke-width="5" x1="178.824" x2="279.315" y1="197.457" y2="117.415"/>
-        <polyline fill="none" points="293.671,105.98 308.533,94.143 323.239,106.173" stroke="#000000" stroke-width="5"/>
-        <line fill="none" stroke="#000000" stroke-dasharray="35.9959,35.9959" stroke-width="5" x1="351.101" x2="448.613" y1="128.965" y2="208.737"/>
-        <line fill="none" stroke="#000000" stroke-width="5" x1="462.544" x2="477.25" y1="220.133" y2="232.163"/>
-      </g>
+      <line fill="none" stroke="#000000" stroke-width="5" x1="135.25" x2="150.112" y1="232.163" y2="220.326"/>
+      <line fill="none" stroke="#000000" stroke-dasharray="36.7065,36.7065" stroke-width="5" x1="178.824" x2="279.315" y1="197.457" y2="117.415"/>
+      <polyline fill="none" points="293.671,105.98 308.533,94.143 323.239,106.173" stroke="#000000" stroke-width="5"/>
+      <line fill="none" stroke="#000000" stroke-dasharray="35.9959,35.9959" stroke-width="5" x1="351.101" x2="448.613" y1="128.965" y2="208.737"/>
+      <line fill="none" stroke="#000000" stroke-width="5" x1="462.544" x2="477.25" y1="220.133" y2="232.163"/>
     </g>
   </g>
 </svg>

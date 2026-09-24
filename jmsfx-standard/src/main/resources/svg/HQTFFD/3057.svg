@@ -4,13 +4,11 @@
   <g id="hqtffd">
     <polyline fill="none" points="242.5,239.277 242.5,175.041 367.5,175.041 367.5,239.277" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
     <g>
-      <g>
-        <line fill="none" stroke="#000000" stroke-width="5" x1="175.557" x2="190.33" y1="195.5" y2="182.018"/>
-        <line fill="none" stroke="#000000" stroke-dasharray="33.9207,22.8965" stroke-width="5" x1="207.242" x2="282.72" y1="166.583" y2="97.699"/>
-        <polyline fill="none" points="291.176,89.982 305.949,76.5 320.722,89.982" stroke="#000000" stroke-width="5"/>
-        <line fill="none" stroke="#000000" stroke-dasharray="33.9208,22.8965" stroke-width="5" x1="337.634" x2="413.113" y1="105.417" y2="174.301"/>
-        <line fill="none" stroke="#000000" stroke-width="5" x1="421.569" x2="436.342" y1="182.018" y2="195.5"/>
-      </g>
+      <line fill="none" stroke="#000000" stroke-width="5" x1="175.557" x2="190.33" y1="195.5" y2="182.018"/>
+      <line fill="none" stroke="#000000" stroke-dasharray="33.9207,22.8965" stroke-width="5" x1="207.242" x2="282.72" y1="166.583" y2="97.699"/>
+      <polyline fill="none" points="291.176,89.982 305.949,76.5 320.722,89.982" stroke="#000000" stroke-width="5"/>
+      <line fill="none" stroke="#000000" stroke-dasharray="33.9208,22.8965" stroke-width="5" x1="337.634" x2="413.113" y1="105.417" y2="174.301"/>
+      <line fill="none" stroke="#000000" stroke-width="5" x1="421.569" x2="436.342" y1="182.018" y2="195.5"/>
     </g>
     <line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5" x1="175.557" x2="175.557" y1="483.736" y2="759.658"/>
   </g>
