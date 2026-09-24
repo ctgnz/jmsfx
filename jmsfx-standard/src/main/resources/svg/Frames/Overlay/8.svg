@@ -18,8 +18,8 @@
   <g id="frame_overlay">
     <circle cx="428.81268" cy="273.2894" r="50.89394" style="fill:#ffff00;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:8;stroke-dasharray:none;stroke-opacity:1"/>
     <path d="m 393.21495,237.69166 71.19546,71.19547" style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
-  </g>
-  <g id="frame_overlay-5" transform="translate(22,-20)">
-    <text font-family="sans-serif" font-size="72px" transform="translate(452.082,269.8145)">S</text>
+    <g id="frame_overlay-5" transform="translate(22,-20)">
+      <text font-family="sans-serif" font-size="72px" transform="translate(452.082,269.8145)">S</text>
+    </g>
   </g>
 </svg>
