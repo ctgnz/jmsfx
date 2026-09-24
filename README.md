@@ -24,6 +24,12 @@ Every icon is drawn inside a standard `viewBox="0 0 612 792"`, and is composed o
 
 Rendering is therefore a matter of choosing the SVG for each part and layering them in a defined order - there is no per-icon layout. `IdentificationSymbol` models the chosen parts and their state; `IdentificationSymbolIcon` is the JavaFX `Node` that draws it.
 
+They line up because that one coordinate space is shared: a main icon and its sector modifiers are built within the **bounding octagon**, x 183.5 to 426.5 and y 272.5 to 516.5. That is a rule rather than a measurement, which is what lets a symbol's extent be worked out without starting a JavaFX toolkit.
+
+The exception is the Control Measures, and a few Cyberspace path and terrain graphics. APP-6E 8.1.3 exempts them from the composition rules: they are map graphics rather than icons assembled within the octagon, they may use any part of the canvas, and their extent has to be measured. They are marked `FREE_CANVAS` in the model, and are the only main icons that carry measured bounds.
+
+Each part is one SVG fragment, and what those files have to look like - content roots, the free canvas shape, normalisation, and the two checks bound to the build - is [the fragment contract](docs/fragments.md).
+
 ## The model is generated, not hand-written
 
 APP-6E is deliberately designed so that a consumer can extend the base symbology - adding or removing elements for its own domain. Hand-maintaining the resulting combinations is impractical, so the domain model is generated instead: `jmsfx-generator` reads a YAML model and emits the Java for `jmsfx-standard`. Revisions to the standard, and per-consumer extensions, are absorbed by regenerating rather than by editing thousands of classes.
