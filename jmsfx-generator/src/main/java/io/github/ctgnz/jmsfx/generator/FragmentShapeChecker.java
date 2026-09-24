@@ -30,7 +30,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
  * </ul>
  * Nothing else at the root: no bare drawing elements, and no groups under any other name. The template is optional rather than required because two kinds of fragment have nothing
  * to construct - an area measure is defined by at least three control points the user places, so there is no fixed geometry a template could draw, and the Space Debris fragments
- * are whole symbols in the way an ordinary icon is. See jmsfx#78 and {@code svg/README.md}.
+ * are whole symbols in the way an ordinary icon is. See jmsfx#78 and {@code docs/fragments.md}.
  * <p>
  * <strong>Bound to {@code verify}</strong>, because injecting fragments into the generated classes needs a rule for "which element is the content" and this is that rule. A
  * fragment that drifts off the shape - an editor leaving a group anonymous, a new icon arriving with its content loose at the root - fails the build where it is cheap to fix,
@@ -97,7 +97,7 @@ public class FragmentShapeChecker {
         if (!wrong.isEmpty()) {
             // Thrown rather than exited, because this runs in Maven's own JVM under exec:java -
             // System.exit would take the build down without a message worth reading.
-            throw new IllegalStateException(String.format("%d of %d free canvas fragment%s off the expected shape:%n    %s%n%nSee svg/README.md for the shape they should hold.%n",
+            throw new IllegalStateException(String.format("%d of %d free canvas fragment%s off the expected shape:%n    %s%n%nSee docs/fragments.md for the shape they should hold.%n",
                 wrong.size(), checked, wrong.size() == 1 ? " is" : "s are", String.join(System.lineSeparator() + "    ", wrong)));
         }
     }

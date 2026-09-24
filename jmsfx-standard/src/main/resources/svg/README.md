@@ -1,18 +1,21 @@
-# joint-military-symbology-xml #
+# The SVG fragments
 
-## SVG Files
+Every part of a symbol - frame, main icon, sector modifiers, amplifiers - is one file in here, and
+rendering a symbol means picking the right files and layering them.
 
-This folder contains a zip file with all of the SVG files supplied by DISA, for use in implementing MIL-STD-2525.
+These originate with DISA, by way of Esri's `joint-military-symbology-xml` project, which modelled
+MIL-STD-2525D. That project is no longer maintained and jmsfx is now the canonical fork, so the files
+have moved on: they are APP-6E rather than 2525D, they have been normalised, and they hold to a
+structure the build enforces.
 
-When unzipping these files for use with the included image conversion utility, please refer to its instructions [here](../source/utilities/image-conversion-utilities/README.md).
+**[The fragment contract](https://github.com/ctgnz/jmsfx/blob/master/docs/fragments.md)** is what a
+fragment has to look like - content roots, the free canvas shape, what the normaliser strips, and the
+two checks bound to `verify`. Read that before editing anything in here.
 
-Known issues are documented and tracked [here](KNOWN_ISSUES.md).
+Known drawing issues, inherited along with the files, are tracked in [KNOWN_ISSUES.md](KNOWN_ISSUES.md).
 
-## Sections
-
-* [Naming Conventions](#naming)
-* [File Details](#details)
-* [Licensing](#licensing)
+This file covers only how the fragments are **named**, which is unchanged from the original and is the
+mapping from a SIDC to a filename.
 
 ## Naming
 
@@ -44,39 +47,6 @@ For symbol assembly purposes, the following SIDC positions are used to determine
 * Status/Operational Condition Amplifier (OCA) (Folder: `OCA` - Characters: 1 or 6, depending on style): The standard allows for two styles of these.  File names vary based on which style is considered.
 	- The default version (overlaid / or X) this uses SIDC position 7.
 	- The optional version (colored bars) this Uses SIDC positions 3-7 along with an additional value of 2 at the end.
-
-## Details
-
-This section describes the details of the internal composition of the SVG files, for those developers who
-wish to make their own changes.
-
-### Free canvas icons
-
-The Control Measure fragments, and three of the Cyberspace ones, are `FREE_CANVAS`: GIS construction samples
-showing how a measure is drawn on a map, rather than icons composed into a symbol. APP-6E 8.1.3 exempts them
-from the composition rules. They carry illustrative material alongside the drawn content, so each one holds:
-
-| element | how many | what it is |
-| --- | --- | --- |
-| `<g id="main">` | exactly one | the content - what a consumer renders |
-| `<g id="template">` | zero or one | the construction guide: anchor point labels (`T`, `AS`) and the `PT 1`/`PT 2` arrows that place them |
-| `<g id="example">` | zero or more | a worked sample, normally `display="none"`. Where there is more than one they are numbered `example1`, `example2` and so on |
-| `<defs>` | as needed | anything `main` references. Patterns and markers belong here, never loose in the document or inside `main` |
-
-The template is optional because two kinds of fragment have nothing to construct:
-
-* An **area** is defined by at least three control points the user places, so there is no fixed geometry a
-  template could draw. That covers every area measure without one, including Airhead Line, which is an area
-  despite the name.
-* The **Space Debris** fragments are whole symbols in the way an ordinary icon is, so `main` holds all of it.
-
-Nothing outside that list appears at the root of a free canvas fragment: no bare drawing elements, and no
-groups under any other name.
-
-### Everything else
-
-Every other fragment holds a single content group, named for what it is - `frame`, `main`, `echelon`, `mod1`,
-`mod2`. Those names are not yet consistent across the tree; making them so is tracked separately.
 
 ## Licensing
 
