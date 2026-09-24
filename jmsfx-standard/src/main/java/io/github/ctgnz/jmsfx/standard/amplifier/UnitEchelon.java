@@ -12,10 +12,10 @@ public enum UnitEchelon implements StandardAmplifierItem {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
-                    case "1" -> new Rectangle2D(288.79, 167.77, 31.13, 33.91);
+                    case "1" -> new Rectangle2D(288.38, 166.57, 33.4, 36.4);
                     case "3" -> new Rectangle2D(286.41, 205.5, 37.2, 40.58);
-                    case "4" -> new Rectangle2D(288.79, 204.77, 31.13, 33.91);
-                    case "6" -> new Rectangle2D(288.79, 167.77, 31.13, 33.91);
+                    case "4" -> new Rectangle2D(288.38, 203.57, 33.4, 36.4);
+                    case "6" -> new Rectangle2D(288.38, 166.57, 33.4, 36.4);
                     default -> Rectangle2D.EMPTY;
                 };
             }
@@ -108,10 +108,10 @@ public enum UnitEchelon implements StandardAmplifierItem {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
-                    case "1" -> new Rectangle2D(289.52, 168.8, 33.75, 31.78);
-                    case "3" -> new Rectangle2D(287.56, 207.83, 37.97, 35.75);
-                    case "4" -> new Rectangle2D(289.52, 205.8, 33.75, 31.78);
-                    case "6" -> new Rectangle2D(289.52, 168.8, 33.75, 31.78);
+                    case "1" -> new Rectangle2D(283.53, 163.5, 43.1, 49);
+                    case "3" -> new Rectangle2D(283.53, 201.5, 43.1, 49);
+                    case "4" -> new Rectangle2D(283.53, 200.5, 43.1, 49);
+                    case "6" -> new Rectangle2D(283.53, 163.5, 43.1, 49);
                     default -> Rectangle2D.EMPTY;
                 };
             }
@@ -120,10 +120,10 @@ public enum UnitEchelon implements StandardAmplifierItem {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
-                    case "1" -> new Rectangle2D(268.11, 168.8, 80.41, 31.78);
-                    case "3" -> new Rectangle2D(261.15, 207.83, 90.47, 35.75);
-                    case "4" -> new Rectangle2D(268.11, 205.8, 80.41, 31.78);
-                    case "6" -> new Rectangle2D(268.11, 168.8, 80.41, 31.78);
+                    case "1" -> new Rectangle2D(259.69, 163.5, 90.79, 49);
+                    case "3" -> new Rectangle2D(259.69, 201.5, 90.79, 49);
+                    case "4" -> new Rectangle2D(259.69, 200.5, 90.79, 49);
+                    case "6" -> new Rectangle2D(259.69, 163.5, 90.79, 49);
                     default -> Rectangle2D.EMPTY;
                 };
             }
@@ -132,10 +132,10 @@ public enum UnitEchelon implements StandardAmplifierItem {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
-                    case "1" -> new Rectangle2D(246.7, 168.8, 127.08, 31.78);
-                    case "3" -> new Rectangle2D(234.74, 207.83, 142.96, 35.75);
-                    case "4" -> new Rectangle2D(246.7, 205.8, 127.08, 31.78);
-                    case "6" -> new Rectangle2D(246.7, 168.8, 127.08, 31.78);
+                    case "1" -> new Rectangle2D(235.84, 163.5, 138.48, 49);
+                    case "3" -> new Rectangle2D(235.84, 201.5, 138.48, 49);
+                    case "4" -> new Rectangle2D(235.84, 200.5, 138.48, 49);
+                    case "6" -> new Rectangle2D(235.84, 163.5, 138.48, 49);
                     default -> Rectangle2D.EMPTY;
                 };
             }
@@ -144,10 +144,10 @@ public enum UnitEchelon implements StandardAmplifierItem {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
-                    case "1" -> new Rectangle2D(231.04, 168.8, 173.74, 31.78);
-                    case "3" -> new Rectangle2D(209.09, 207.83, 195.46, 35.75);
-                    case "4" -> new Rectangle2D(231.04, 205.8, 173.74, 31.78);
-                    case "6" -> new Rectangle2D(231.04, 168.8, 173.74, 31.78);
+                    case "1" -> new Rectangle2D(212, 163.5, 186.17, 49);
+                    case "3" -> new Rectangle2D(212, 201.5, 186.17, 49);
+                    case "4" -> new Rectangle2D(212, 200.5, 186.17, 49);
+                    case "6" -> new Rectangle2D(212, 163.5, 186.17, 49);
                     default -> Rectangle2D.EMPTY;
                 };
             }
@@ -156,10 +156,10 @@ public enum UnitEchelon implements StandardAmplifierItem {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
-                    case "1" -> new Rectangle2D(219.23, 168.8, 220.41, 31.78);
-                    case "3" -> new Rectangle2D(182.28, 207.83, 247.96, 35.75);
-                    case "4" -> new Rectangle2D(213.23, 205.8, 220.41, 31.78);
-                    case "6" -> new Rectangle2D(219.23, 168.8, 220.41, 31.78);
+                    case "1" -> new Rectangle2D(188.16, 163.5, 233.86, 49);
+                    case "3" -> new Rectangle2D(188.16, 201.5, 233.86, 49);
+                    case "4" -> new Rectangle2D(188.16, 200.5, 233.86, 49);
+                    case "6" -> new Rectangle2D(188.16, 163.5, 233.86, 49);
                     default -> Rectangle2D.EMPTY;
                 };
             }
@@ -168,10 +168,10 @@ public enum UnitEchelon implements StandardAmplifierItem {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
-                    case "1" -> new Rectangle2D(206.46, 168.8, 267.07, 31.78);
-                    case "3" -> new Rectangle2D(186.5, 207.83, 232.95, 35.75);
-                    case "4" -> new Rectangle2D(208.46, 205.8, 267.07, 31.78);
-                    case "6" -> new Rectangle2D(206.46, 168.8, 267.07, 31.78);
+                    case "1" -> new Rectangle2D(164.31, 163.5, 281.55, 49);
+                    case "3" -> new Rectangle2D(164.31, 201.5, 281.55, 49);
+                    case "4" -> new Rectangle2D(164.31, 200.5, 281.55, 49);
+                    case "6" -> new Rectangle2D(164.31, 163.5, 281.55, 49);
                     default -> Rectangle2D.EMPTY;
                 };
             }
@@ -180,10 +180,10 @@ public enum UnitEchelon implements StandardAmplifierItem {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
-                    case "1" -> new Rectangle2D(265.03, 170, 80.11, 36);
-                    case "3" -> new Rectangle2D(265.95, 218, 80.11, 36);
-                    case "4" -> new Rectangle2D(270.18, 203.69, 80.11, 36);
-                    case "6" -> new Rectangle2D(264.94, 170, 80.11, 36);
+                    case "1" -> new Rectangle2D(250.56, 163.5, 109.04, 49);
+                    case "3" -> new Rectangle2D(250.56, 201.5, 109.04, 49);
+                    case "4" -> new Rectangle2D(250.56, 200.5, 109.04, 49);
+                    case "6" -> new Rectangle2D(250.56, 163.5, 109.04, 49);
                     default -> Rectangle2D.EMPTY;
                 };
             }
