@@ -23,16 +23,11 @@ import io.github.ctgnz.jmsfx.generator.model.AmplifierListItemModel;
 import io.github.ctgnz.jmsfx.generator.model.AmplifierListModel;
 import io.github.ctgnz.jmsfx.generator.model.BoundsModel;
 import io.github.ctgnz.jmsfx.generator.model.DimensionModel;
-import io.github.ctgnz.jmsfx.generator.model.EntityModel;
-import io.github.ctgnz.jmsfx.generator.model.EntitySubTypeModel;
-import io.github.ctgnz.jmsfx.generator.model.EntityTypeModel;
-import io.github.ctgnz.jmsfx.generator.model.GraphicType;
 import io.github.ctgnz.jmsfx.generator.model.HqtfDummyModel;
 import io.github.ctgnz.jmsfx.generator.model.LibraryModel;
 import io.github.ctgnz.jmsfx.generator.model.StandardIdentityGroupModel;
 import io.github.ctgnz.jmsfx.generator.model.StandardIdentityModel;
 import io.github.ctgnz.jmsfx.generator.model.StatusModel;
-import io.github.ctgnz.jmsfx.generator.model.SymbolSetModel;
 import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
 
 /**
@@ -251,55 +246,27 @@ public class FragmentMeasurer {
     }
 
     /**
-     * Main icons that carry {@code FREE_CANVAS}, at {@code /svg/Appendices/{graphicLocation}/{graphicIdentifier}.svg}.
+     * The extent of every {@code FREE_CANVAS} main icon, which is the only kind that has to be measured.
      * <p>
-     * Every other main icon's extent follows from its graphic type - the octagon, or the frame for a {@code FULL_FRAME} one - so only these need measuring. APP-6E 8.1.3 exempts
-     * Control Measures from the composition rules, and a few Cyberspace path and terrain graphics are the same kind of thing.
-     * <p>
-     * The identifier is derived the same three ways {@code MainElement.getGraphicIdentifier()} derives it. jmsfx#52 is a caution against duplicating that kind of derivation, so
-     * every derived path is checked against the disk and anything missing is reported rather than quietly skipped.
+     * Every other main icon's extent follows from its graphic type - the octagon, or the frame for a {@code FULL_FRAME} one - so only these need a number recorded. Which icons
+     * those are, and which fragment each draws, is {@link FreeCanvasIcons}. A fragment that resolves nowhere is reported rather than quietly skipped, because the identifier is
+     * derived rather than read, so a path going nowhere means either the derivation or the model is wrong. See jmsfx#52.
      */
     private void measureIcons(LibraryModel model) throws Exception {
         Map<String, BoundsModel> measured = new TreeMap<>();
         List<String> missing = new ArrayList<>();
-        int free = 0;
-        for (SymbolSetModel symbolSet : model.getSymbolSets()) {
-            Map<String, String> identifiers = new LinkedHashMap<>();
-            for (EntityModel entity : symbolSet.getEntities()) {
-                if (entity.getGraphicType() == GraphicType.FREE_CANVAS) {
-                    identifiers.put(baseCode(model, symbolSet, entity) + entity.getCode() + "0000", entity.getLabel());
-                }
+        List<FreeCanvasIcons.Icon> icons = FreeCanvasIcons.collect(model, config.getResourceDir()
+            .resolve("svg"));
+        for (FreeCanvasIcons.Icon icon : icons) {
+            Bounds bounds = boundsOf(icon.fragment());
+            if (bounds == null) {
+                missing.add(String.format("%s / %s (%s)", icon.symbolSet(), icon.label(), icon.identifier()));
+                continue;
             }
-            for (EntityTypeModel entityType : symbolSet.getEntityTypes()) {
-                if (entityType.getGraphicType() == GraphicType.FREE_CANVAS) {
-                    EntityModel entity = entityType.getEntity();
-                    String identifier = entityType.getGraphic() != null ? entityType.getGraphic()
-                        : baseCode(model, symbolSet, entity) + entity.getCode() + entityType.getCode() + "00";
-                    identifiers.put(identifier, entityType.getLabel());
-                }
-            }
-            for (EntitySubTypeModel subType : symbolSet.getEntitySubTypes()) {
-                if (subType.getGraphicType() == GraphicType.FREE_CANVAS) {
-                    EntityTypeModel entityType = subType.getEntityType();
-                    EntityModel entity = entityType.getEntity();
-                    String identifier = subType.getGraphic() != null ? subType.getGraphic()
-                        : baseCode(model, symbolSet, entity) + entity.getCode() + entityType.getCode() + subType.getCode();
-                    identifiers.put(identifier, subType.getLabel());
-                }
-            }
-            for (Map.Entry<String, String> entry : identifiers.entrySet()) {
-                free++;
-                Path file = svg("Appendices", graphicLocation(model, symbolSet) + "/" + entry.getKey() + ".svg");
-                Bounds bounds = boundsOf(file);
-                if (bounds == null) {
-                    missing.add(String.format("%s / %s (%s)", symbolSet.getLabel(), entry.getValue(), entry.getKey()));
-                    continue;
-                }
-                measured.put(entry.getKey(), rectangle(bounds));
-            }
+            measured.put(icon.identifier(), rectangle(bounds));
         }
         model.setIconBounds(measured.isEmpty() ? null : measured);
-        System.out.format("  %-24s %d free-canvas icons, %d measured, %d unreadable or absent%n", "main icons", free, measured.size(), missing.size());
+        System.out.format("  %-24s %d free-canvas icons, %d measured, %d unreadable or absent%n", "main icons", icons.size(), measured.size(), missing.size());
         missing.forEach(name -> System.out.format("      no fragment for %s%n", name));
     }
 
@@ -373,20 +340,6 @@ public class FragmentMeasurer {
             .resolve(fileName);
     }
 
-    /** The symbol set an element's fragment is filed under, which is its own unless the entity borrows another set's numbering. */
-    private String baseCode(LibraryModel model, SymbolSetModel symbolSet, EntityModel entity) {
-        if (entity.getBaseSymbolSet() == null) {
-            return symbolSet.getCode();
-        }
-        return model.getSymbolSets()
-            .stream()
-            .filter(candidate -> entity.getBaseSymbolSet()
-                .equals(candidate.getId()))
-            .findFirst()
-            .map(SymbolSetModel::getCode)
-            .orElse(symbolSet.getCode());
-    }
-
     /** Measured bounds for a fragment, or null when the file is absent or draws nothing. */
     private Bounds boundsOf(Path file) throws InterruptedException {
         if (!Files.exists(file)) {
@@ -411,15 +364,6 @@ public class FragmentMeasurer {
             .resolve("svg")
             .resolve(list.getGraphicLocation())
             .resolve(name);
-    }
-
-    /** Where a symbol set's fragments live, which falls back to the dimension's directory when the set does not name its own - as {@code SymbolSetEnum} does. */
-    private String graphicLocation(LibraryModel model, SymbolSetModel symbolSet) {
-        if (symbolSet.getGraphicLocation() != null) {
-            return symbolSet.getGraphicLocation();
-        }
-        DimensionModel dimension = model.getDimension(symbolSet.getDimensionId());
-        return dimension == null ? null : dimension.getGraphicLocation();
     }
 
     private Bounds measureFile(Path file) {

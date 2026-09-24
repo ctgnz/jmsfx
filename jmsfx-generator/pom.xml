@@ -115,9 +115,19 @@
                 </configuration>
             </plugin>
             <!--
-                Checks that the SVG fragments are still normalised, and fails naming the files if not,
-                the way Spotless does for Java. It reports only and never writes; the normaliser's apply
-                mode is the fix, and the failure message spells out the command.
+                Two checks over the SVG fragments, both of which report only and never write, and both
+                of which fail naming the files, the way Spotless does for Java.
+
+                The first checks they are still normalised. The normaliser's apply mode is the fix, and
+                the failure message spells out the command.
+
+                The second checks the free canvas fragments still hold the shape described in
+                svg/README.md - one main group, an optional template, any number of examples - because
+                injecting fragments into the generated classes needs a rule for "which element is the
+                content" and that is the rule. A fragment drifts off it easily: an editor leaves a group
+                anonymous, or a new icon arrives with its content loose at the root. Catching that here
+                costs nothing; catching it during injection means finding construction scaffolding
+                rendered as though it were the drawing.
 
                 Bound to verify rather than written as a test, so skipping tests cannot skip it, and at
                 verify for the same reason Spotless is there: late enough not to slow the inner loop,
@@ -148,6 +158,22 @@
                                 <argument>--check</argument>
                                 <argument>--dir</argument>
                                 <argument>${project.basedir}/../jmsfx-standard/src/main/resources/svg</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>check-fragment-shape</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>io.github.ctgnz.jmsfx.generator.FragmentShapeChecker</mainClass>
+                            <arguments>
+                                <argument>--dir</argument>
+                                <argument>${project.basedir}/../jmsfx-standard/src/main/resources/svg</argument>
+                                <argument>--model</argument>
+                                <argument>/model-standard.yml</argument>
                             </arguments>
                         </configuration>
                     </execution>
