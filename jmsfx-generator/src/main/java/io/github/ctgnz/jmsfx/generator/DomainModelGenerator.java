@@ -209,18 +209,17 @@ public class DomainModelGenerator {
                     .getTemplate("CommonSectorTwoModifier.ftl");
                 s2ModTemplate.process(dataModel, newWriter(packagePath.resolve("CommonSectorTwoModifier.java")));
             } else {
-                if (!symSetDetails.getSectorOneMods()
-                    .isEmpty()) {
-                    Template s1ModTemplate = config.getTemplateConfig()
-                        .getTemplate("SectorOneModifier.ftl");
-                    s1ModTemplate.process(dataModel, newWriter(packagePath.resolve(symSetDetails.getBaseTypeName() + "SectorOneModifier.java")));
-                }
-                if (!symSetDetails.getSectorTwoMods()
-                    .isEmpty()) {
-                    Template s2ModTemplate = config.getTemplateConfig()
-                        .getTemplate("SectorTwoModifier.ftl");
-                    s2ModTemplate.process(dataModel, newWriter(packagePath.resolve(symSetDetails.getBaseTypeName() + "SectorTwoModifier.java")));
-                }
+                // Emitted for every symbol set, including the two whose lists are empty. An enum with no
+                // constants is valid Java, and having one means a consumer always has a concrete type to
+                // name: jmsfx-server's controllers are generic over the modifier types, and where no enum
+                // existed they fell back to the interface, which Spring cannot convert a path variable to -
+                // so the request failed as a server error rather than a bad one. See #90.
+                Template s1ModTemplate = config.getTemplateConfig()
+                    .getTemplate("SectorOneModifier.ftl");
+                s1ModTemplate.process(dataModel, newWriter(packagePath.resolve(symSetDetails.getBaseTypeName() + "SectorOneModifier.java")));
+                Template s2ModTemplate = config.getTemplateConfig()
+                    .getTemplate("SectorTwoModifier.ftl");
+                s2ModTemplate.process(dataModel, newWriter(packagePath.resolve(symSetDetails.getBaseTypeName() + "SectorTwoModifier.java")));
             }
             if (symSetDetails.isAmplifierGuidesPresent()) {
                 Template template = config.getTemplateConfig()

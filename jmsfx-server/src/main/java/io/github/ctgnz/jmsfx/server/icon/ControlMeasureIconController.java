@@ -3,8 +3,8 @@ package io.github.ctgnz.jmsfx.server.icon;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
+import io.github.ctgnz.jmsfx.standard.amplifier.UnitEchelon;
 import io.github.ctgnz.jmsfx.standard.controlmeasure.ControlMeasureEntity;
 import io.github.ctgnz.jmsfx.standard.controlmeasure.ControlMeasureEntitySubType;
 import io.github.ctgnz.jmsfx.standard.controlmeasure.ControlMeasureEntityType;
@@ -13,7 +13,7 @@ import io.github.ctgnz.jmsfx.standard.controlmeasure.ControlMeasureSectorTwoModi
 
 @RestController
 @RequestMapping("/ControlMeasure")
-public class ControlMeasureIconController extends IconRestController<ControlMeasureEntity, ControlMeasureEntityType, ControlMeasureEntitySubType, ControlMeasureSectorOneModifier, ControlMeasureSectorTwoModifier, AmplifierListItem> {
+public class ControlMeasureIconController extends IconRestController<ControlMeasureEntity, ControlMeasureEntityType, ControlMeasureEntitySubType, ControlMeasureSectorOneModifier, ControlMeasureSectorTwoModifier, UnitEchelon> {
 
     public ControlMeasureIconController() {
         super(SymbolSetEnum.CONTROL_MEASURE);
