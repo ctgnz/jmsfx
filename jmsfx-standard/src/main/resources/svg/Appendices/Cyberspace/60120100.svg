@@ -15,8 +15,7 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
   </g>
-  <g id="main" opacity="0.93"/>
-  <g transform="matrix(1.4,0,0,1.4,-137.54103,-56.6236)">
+  <g id="main" transform="matrix(1.4,0,0,1.4,-137.54103,-56.6236)">
     <path d="M 240,345 265.84615,300 290,345 Z" style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
     <path d="m 291.11538,345 25.84616,-45 24.15384,45 z" style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
     <path d="m 342.23077,345 25.84615,-45 24.15385,45 z" style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>

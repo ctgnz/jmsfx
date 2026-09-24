@@ -6,5 +6,7 @@
     <line fill="none" stroke="#0000FF" stroke-width="2" x1="202.5" x2="407.5" y1="345.7" y2="345.7"/>
     <line fill="none" stroke="#0000FF" stroke-width="2" x1="202.5" x2="407.5" y1="443.3" y2="443.3"/>
   </g>
-  <line fill="none" id="mod1" stroke="#000000" stroke-width="8" x1="305" x2="305" y1="294.5" y2="344.5"/>
+  <g id="mod1">
+    <line fill="none" stroke="#000000" stroke-width="8" x1="305" x2="305" y1="294.5" y2="344.5"/>
+  </g>
 </svg>

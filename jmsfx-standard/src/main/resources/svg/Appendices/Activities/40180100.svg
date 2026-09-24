@@ -15,7 +15,7 @@
     <line display="inline" fill="none" id="mod2_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="445.015" y2="445.295"/>
     <line display="inline" fill="none" id="mod1_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="346.985" y2="346.705"/>
   </g>
-  <g id="Main">
+  <g id="main">
     <text font-family="sans-serif" font-size="55" transform="matrix(1 0 0 1 254.9004 492.5)">REL</text>
     <line fill="none" stroke="#000000" stroke-width="5" x1="308.402" x2="308.402" y1="377.951" y2="444.105"/>
     <line fill="none" stroke="#000000" stroke-width="5" x1="290.361" x2="326.445" y1="395.992" y2="395.992"/>

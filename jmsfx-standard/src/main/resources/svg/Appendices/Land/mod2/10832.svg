@@ -4,7 +4,7 @@
   <defs>
     <pattern height="6" id="EMFhbasepattern" patternUnits="userSpaceOnUse" width="6" x="0" y="0"/>
   </defs>
-  <g display="none" id="Octagon">
+  <g display="none" id="octagon">
     <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
     <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
     <g display="inline" id="outFrame">

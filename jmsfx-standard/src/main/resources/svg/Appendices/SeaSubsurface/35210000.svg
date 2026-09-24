@@ -15,5 +15,7 @@
     <line display="inline" fill="none" id="bottom" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
     <line display="inline" fill="none" id="top" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
   </g>
-  <path d="m 256.9669,347.9773 v 96.0681 h 96.0681 v -32.0227 h -32.0227 V 380 h -32.0227 v -32.0227 z" style="fill-rule:evenodd;stroke-width:5;stroke-linecap:round;stroke:#000000;stroke-opacity:1;stroke-dasharray:none;fill:none"/>
+  <g id="main">
+    <path d="m 256.9669,347.9773 v 96.0681 h 96.0681 v -32.0227 h -32.0227 V 380 h -32.0227 v -32.0227 z" style="fill-rule:evenodd;stroke-width:5;stroke-linecap:round;stroke:#000000;stroke-opacity:1;stroke-dasharray:none;fill:none"/>
+  </g>
 </svg>

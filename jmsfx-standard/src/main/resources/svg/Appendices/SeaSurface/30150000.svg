@@ -15,7 +15,7 @@
       <line fill="none" stroke="#0000FF" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
   </g>
-  <g id="Main">
+  <g id="main">
     <circle cx="306" cy="395" fill="none" r="105" stroke="#80E0FF" stroke-width="10"/>
     <line fill="none" stroke="#80E0FF" stroke-width="10" x1="306" x2="306" y1="500" y2="290"/>
     <line fill="none" stroke="#80E0FF" stroke-width="10" x1="201" x2="411" y1="395" y2="395"/>

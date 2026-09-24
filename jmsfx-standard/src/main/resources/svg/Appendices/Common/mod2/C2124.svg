@@ -15,7 +15,7 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
   </g>
-  <g transform="matrix(0.95,0,0,0.95,14.06054,35.59854)">
+  <g id="mod2" transform="matrix(0.95,0,0,0.95,14.06054,35.59854)">
     <path d="m 320.2225,433.7571 v 39.10556" style="fill:none;stroke:#000000;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
     <path d="m 320.80366,456.52213 h 57.53462" style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
     <path d="m 378.17936,445.44382 v 25.1714" style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>

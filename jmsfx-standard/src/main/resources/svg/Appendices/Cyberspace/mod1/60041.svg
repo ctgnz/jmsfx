@@ -15,7 +15,9 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
   </g>
-  <text style="font-style:normal;font-weight:normal;font-size:56px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" x="242.12401" xml:space="preserve" y="343.74347">
-    <tspan x="242.12401" y="343.74347">EDM</tspan>
-  </text>
+  <g id="mod1">
+    <text style="font-style:normal;font-weight:normal;font-size:56px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" x="242.12401" xml:space="preserve" y="343.74347">
+      <tspan x="242.12401" y="343.74347">EDM</tspan>
+    </text>
+  </g>
 </svg>

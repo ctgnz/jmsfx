@@ -15,7 +15,7 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
   </g>
-  <g transform="matrix(1.0201,0,0,1.15299,-15.70958,-54.2774)">
+  <g id="mod1" transform="matrix(1.0201,0,0,1.15299,-15.70958,-54.2774)">
     <g>
       <path d="m 249.91602,315.93555 v 10 h 102.48437 v -10 z" style="color:#000000;fill:#000000;-inkscape-stroke:none"/>
       <path d="m 342.39027,298.40584 v 45.05942 l 35.93945,-22.5297 c -11.9782,-7.51297 -23.95937,-15.02029 -35.93945,-22.52972 z" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:1.04137;-inkscape-stroke:none"/>

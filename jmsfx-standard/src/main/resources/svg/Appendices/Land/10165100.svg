@@ -15,7 +15,7 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
   </g>
-  <g style="stroke-width:5;stroke-dasharray:none" transform="translate(-3.26823,1.73809)">
+  <g id="main" style="stroke-width:5;stroke-dasharray:none" transform="translate(-3.26823,1.73809)">
     <path d="m 217.60436,374.76755 h 50 v -25 l 40,45 -40,45 v -25 h -50 z" style="fill:#fffffc;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"/>
     <path d="m 398.934,374.76755 h -50 v -25 l -40,45 40,45 v -25 h 50 z" style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"/>
   </g>

@@ -15,5 +15,7 @@
     <line display="inline" fill="none" id="bottom" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="442.015" y2="442.295"/>
     <line display="inline" fill="none" id="top" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="343.985" y2="343.705"/>
   </g>
-  <text font-family="sans-serif" font-size="86" id="main" transform="matrix(1 0 0 1 187.5 422.5)">SAFE</text>
+  <g id="main">
+    <text font-family="sans-serif" font-size="86" transform="matrix(1 0 0 1 187.5 422.5)">SAFE</text>
+  </g>
 </svg>

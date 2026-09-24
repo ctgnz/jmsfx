@@ -15,5 +15,7 @@
     <line display="inline" fill="none" id="bottom" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="445.015" y2="445.295"/>
     <line display="inline" fill="none" id="top" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="346.985" y2="346.705"/>
   </g>
-  <path d="M376.334,448.724c0,28.099-31.488,50.875-70.334,50.875 c-38.844,0-70.333-22.776-70.333-50.875" fill="none" id="mod2" stroke="#000000" stroke-width="5"/>
+  <g id="mod2">
+    <path d="M376.334,448.724c0,28.099-31.488,50.875-70.334,50.875 c-38.844,0-70.333-22.776-70.333-50.875" fill="none" stroke="#000000" stroke-width="5"/>
+  </g>
 </svg>

@@ -15,7 +15,9 @@
     <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
     <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
   </g>
-  <text style="font-style:normal;font-weight:normal;font-size:110px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" x="195.9409" xml:space="preserve" y="434.49344">
-    <tspan x="195.9409" y="434.49344">REL</tspan>
-  </text>
+  <g id="main">
+    <text style="font-style:normal;font-weight:normal;font-size:110px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none" x="195.9409" xml:space="preserve" y="434.49344">
+      <tspan x="195.9409" y="434.49344">REL</tspan>
+    </text>
+  </g>
 </svg>

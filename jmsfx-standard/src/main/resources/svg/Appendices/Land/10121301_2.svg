@@ -15,7 +15,7 @@
     <line display="inline" fill="none" id="mod2_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="445.015" y2="445.295"/>
     <line display="inline" fill="none" id="mod1_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="346.985" y2="346.705"/>
   </g>
-  <g id="main_1_">
+  <g id="main">
     <polygon id="main" points="245.685,440.015 305.082,352.75 364.479,440.015" stroke="#000000" stroke-width="5"/>
     <g id="symbol">
       <line fill="none" stroke="#000000" stroke-width="5" x1="174" x2="438" y1="527" y2="263"/>
