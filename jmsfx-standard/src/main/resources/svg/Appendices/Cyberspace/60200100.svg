@@ -2,13 +2,14 @@
 <!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
 <svg enable-background="new 0 0 600 400" height="400px" id="Version_1.0" version="1.1" viewBox="0 0 600 400" width="600px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" y="0px">
   <g id="main" transform="translate(97.85574,28.0985)">
-    <path d="m 122.68503,150.65468 64.20305,-25.42695 50.8539,8.89943 42.59014,29.241" style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+    <path d="m 122.68503,150.65468 64.20305,-25.42695 c 0,0 93.44404,38.14043 93.44404,38.14043" style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+  </g>
+  <g id="example" style="display:none" transform="translate(97.85574,28.0985)">
     <g aria-label="C2" style="font-weight:bold;font-size:20px;line-height:1.25" transform="translate(-3.17837,12.0778)">
-      <path d="m 197.22284,108.34774 q -1.62109,0 -2.99805,-0.47852 -1.36719,-0.47851 -2.35351,-1.42578 -0.98633,-0.94726 -1.53321,-2.36328 -0.5371,-1.41601 -0.5371,-3.27148 0,-1.72852 0.51758,-3.13477 0.51758,-1.40625 1.50391,-2.4121 0.94726,-0.9668 2.34375,-1.49414 1.40625,-0.52734 3.0664,-0.52734 0.91797,0 1.6504,0.10742 0.74218,0.09766 1.36718,0.26367 0.6543,0.18555 1.18164,0.41992 0.5371,0.2246 0.9375,0.41992 v 3.52539 h -0.42968 q -0.27344,-0.23438 -0.69336,-0.55664 -0.41016,-0.32227 -0.9375,-0.63477 -0.5371,-0.3125 -1.16211,-0.52734 -0.625,-0.21484 -1.33789,-0.21484 -0.79102,0 -1.50391,0.2539 -0.7129,0.24414 -1.31836,0.820312 -0.57617,0.55664 -0.9375,1.47461 -0.35156,0.91797 -0.35156,2.22656 0,1.36719 0.38086,2.28516 0.39062,0.91797 0.97656,1.44531 0.5957,0.5371 1.32813,0.7715 0.73242,0.22461 1.44531,0.22461 0.6836,0 1.34765,-0.20508 0.67383,-0.20508 1.24024,-0.55664 0.47851,-0.28321 0.88867,-0.60547 0.41016,-0.32227 0.67383,-0.55664 h 0.39062 v 3.47656 q -0.54687,0.24414 -1.04492,0.45898 -0.49805,0.21485 -1.04492,0.3711 -0.7129,0.20508 -1.33789,0.3125 -0.625,0.10742 -1.71875,0.10742 z"/>
-      <path d="M 216.49042,108.06454 H 205.0744 v -2.40235 q 1.3086,-0.94726 2.61719,-2.01172 1.31836,-1.06445 2.10937,-1.83593 1.18164,-1.14258 1.67969,-1.99219 0.49805,-0.8496 0.49805,-1.67969 0,-0.9961 -0.64453,-1.5332 -0.63477,-0.54688 -1.83594,-0.54688 -0.89844,0 -1.89453,0.3711 -0.98633,0.3711 -1.83594,0.94727 h -0.3125 v -3.23242 q 0.69336,-0.30273 2.04102,-0.60547 1.35742,-0.30274 2.71484,-0.30274 2.73438,0 4.16992,1.15234 1.43555,1.14258 1.43555,3.24219 0,1.37695 -0.69336,2.61719 -0.6836,1.24023 -2.09961,2.55859 -0.88867,0.8203 -1.78711,1.51367 -0.89844,0.6836 -1.2793,0.95703 h 6.53321 z"/>
+      <text dx="0" dy="0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1" x="175.41798" y="103.20982">C2</text>
     </g>
     <g>
-      <circle cx="73.42032" cy="178.30649" r="55" style="fill:#80e0ff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:round"/>
+      <circle cx="73.42032" cy="178.30649" r="55" style="fill:#80e0ff;fill-opacity:1;fill-rule:evenodd;stroke:#bababa;stroke-width:4;stroke-linecap:round;stroke-opacity:1"/>
       <g id="main-2" transform="matrix(0.5,0,0,0.5,-83.33564,-19.69944)">
         <rect height="74.80269" rx="5.99013" ry="6.41166" style="fill:#e1e1e1;fill-opacity:1;fill-rule:evenodd;stroke:#bababa;stroke-width:6.1973;stroke-opacity:1" width="119.80269" x="253.61058" y="351.59924"/>
         <path d="m 240.51192,431.52313 h 146 c 0,0 0.0119,9.13947 -9.99997,12 h -126 c -9.85294,-3.17837 -10.00003,-12 -10.00003,-12 z" style="fill:#bababa;fill-opacity:1;fill-rule:evenodd;stroke-width:0.5"/>
@@ -17,7 +18,7 @@
       </g>
     </g>
     <g>
-      <circle cx="330.8682" cy="181.48486" r="55" style="fill:#80e0ff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:round"/>
+      <circle cx="330.8682" cy="181.48486" r="55" style="fill:#80e0ff;fill-opacity:1;fill-rule:evenodd;stroke:#bababa;stroke-width:4;stroke-linecap:round;stroke-opacity:1"/>
       <g id="main-6" transform="matrix(0.39,0,0,0.39,211.8883,30.98225)">
         <circle cx="304.7537" cy="386.11124" r="24" style="fill:none;fill-rule:evenodd;stroke:#bababa;stroke-width:11.5385;stroke-dasharray:none;stroke-opacity:1"/>
         <g style="stroke:#bababa;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1" transform="matrix(0,0.38135,-0.71757,0,560.33225,290.50518)">
@@ -37,6 +38,24 @@
           <path d="m 342.39027,298.40584 v 45.05942 l 35.93945,-22.5297 c -11.9782,-7.51297 -35.29286,-22.24806 -35.93945,-22.52972 z" style="color:#000000;fill:#bababa;fill-opacity:1;fill-rule:evenodd;stroke:#bababa;stroke-width:2.45083;stroke-dasharray:none;stroke-opacity:1"/>
         </g>
       </g>
+    </g>
+  </g>
+  <g display="inline" font-style="normal" id="template" transform="translate(-86.72435,-134.18963)">
+    <g display="inline" font-style="normal" id="varT" transform="translate(-16.122385,10.30876)">
+      <text dx="0" dy="0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" style="fill:#0000ff;fill-opacity:1" x="383.53568" y="261.52139">T</text>
+      <rect font-style="normal" height="34.8595" rx="0" ry="0" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:1.86791;stroke-dasharray:none" width="36.3596" x="372.7504" y="235.36702"/>
+    </g>
+    <g id="pt2" transform="translate(-55.376888,-49.7691)">
+      <text display="inline" dx="0" dy="0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" style="fill:#0000ff;fill-opacity:1" x="489.64783" y="461.101">PT 2</text>
+      <path d="m 517.77832,435.80202 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.998,-0.001 -1.785,-0.816 -1.785,-1.82 z m -8.966,-17.741 10.938,-36.087 10.732,36.166 z" display="inline" fill="#0000FF" font-style="normal" stroke="#0000ff" stroke-linejoin="bevel" stroke-miterlimit="10" stroke-width="0.4335" style="fill:#0000ff;fill-opacity:1"/>
+    </g>
+    <g id="pt1" transform="translate(213.79685,-61.68565)">
+      <text display="inline" dx="0" dy="0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" style="fill:#0000ff;fill-opacity:1" x="67.3806" y="461.10104">PT 1</text>
+      <path d="m 92.5111,435.80203 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.998,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.966,-17.741 10.94,-36.087 10.732,36.166 z" display="inline" fill="#0000FF" font-style="normal" stroke="#0000ff" stroke-linejoin="bevel" stroke-miterlimit="10" stroke-width="0.4335" style="fill:#0000ff;fill-opacity:1"/>
+    </g>
+    <g id="pt3" transform="translate(-147.20439,-87.62166)">
+      <text display="inline" dx="0" dy="0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" style="fill:#0000ff;fill-opacity:1" x="489.64783" y="461.101">PT 3</text>
+      <path d="m 517.77832,435.80202 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.998,-0.001 -1.785,-0.816 -1.785,-1.82 z m -8.966,-17.741 10.938,-36.087 10.732,36.166 z" display="inline" fill="#0000FF" font-style="normal" stroke="#0000ff" stroke-linejoin="bevel" stroke-miterlimit="10" stroke-width="0.4335" style="fill:#0000ff;fill-opacity:1"/>
     </g>
   </g>
 </svg>

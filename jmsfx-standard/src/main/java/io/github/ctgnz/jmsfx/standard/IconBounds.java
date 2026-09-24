@@ -594,8 +594,8 @@ public final class IconBounds {
         Map.entry("25360200", new Rectangle2D(227.28, 185.97, 252.23, 234.48)),
         Map.entry("25360300", new Rectangle2D(223.19, 129.96, 249.97, 308.29)),
         Map.entry("25370100", new Rectangle2D(9.5, 54.99, 379.73, 281.13)),
-        Map.entry("60200100", new Rectangle2D(114.28, 133.42, 371.45, 133.17)),
-        Map.entry("60200200", new Rectangle2D(88.87, 92.18, 410.98, 172.99)),
+        Map.entry("60200100", new Rectangle2D(114.28, 110.55, 371.45, 166.59)),
+        Map.entry("60200200", new Rectangle2D(88.87, 70.67, 410.98, 215.52)),
         Map.entry("60210100", new Rectangle2D(88.61, 90.65, 373.87, 229.45)));
 
     /**

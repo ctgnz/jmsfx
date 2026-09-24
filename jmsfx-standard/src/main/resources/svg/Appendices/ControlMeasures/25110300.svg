@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg:svg enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
-  <svg:g font-style="normal" id="main" style="display:inline">
-    <svg:line fill="none" font-style="normal" stroke="#010101" stroke-width="10.9096" x1="94.28008" x2="520.36975" y1="375" y2="375"/>
-    <svg:text dx="0.0" dy="0.0" fill="#010101" font-family="sans-serif" font-size="36px" font-style="normal" x="91.93633" y="353">EWL</svg:text>
-    <svg:text dx="0.0" dy="0.0" fill="#010101" font-family="sans-serif" font-size="36px" font-style="normal" x="441.93616" y="353">EWL</svg:text>
-  </svg:g>
-  <svg:g display="none" font-style="normal" id="example" transform="translate(-66.72595)">
-    <svg:text display="inline" dx="0.0" dy="0.0" fill="#8C8C8C" font-family="sans-serif" font-size="24px" font-style="normal" x="265.25574" y="408.59613">326 EN BN (USA)</svg:text>
-    <svg:text display="inline" dx="0.0" dy="0.0" fill="#8C8C8C" font-family="sans-serif" font-size="24px" font-style="normal" x="264.60535" y="360.95029">127 EN BN (USA)</svg:text>
-  </svg:g>
-  <svg:g display="inline" font-style="normal" id="template">
-    <svg:g font-style="normal" transform="translate(0,-2)">
-      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" style="fill:#0000ff;fill-opacity:1" x="264.60254" y="418.51422">T1/AS1</svg:text>
-      <svg:rect font-style="normal" height="46.7103" rx="0" ry="0" style="fill:none;fill-rule:evenodd;stroke:#0000FF;stroke-width:4.03658;stroke-dasharray:none" width="126.7194" x="244.4147" y="387.82312"/>
-    </svg:g>
-    <svg:g display="inline" font-style="normal" transform="translate(0,4)">
-      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" style="fill:#0000ff;fill-opacity:1" x="278.37543" y="343.89902">T/AS</svg:text>
-      <svg:rect font-style="normal" height="46.7103" rx="0" ry="0" style="fill:none;fill-rule:evenodd;stroke:#0000FF;stroke-width:4.03658;stroke-dasharray:none" width="126.7194" x="243.51573" y="313.20792"/>
-    </svg:g>
-    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" style="fill:#0000ff;fill-opacity:1" x="489.64783" y="461.101">PT 2</svg:text>
-    <svg:path d="m 517.77832,435.80202 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.998,-0.001 -1.785,-0.816 -1.785,-1.82 z m -8.966,-17.741 10.938,-36.087 10.732,36.166 z" display="inline" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10" stroke-width="0.4335" style="fill:#0000ff;fill-opacity:1"/>
-    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" style="fill:#0000ff;fill-opacity:1" x="67.3806" y="461.10104">PT 1</svg:text>
-    <svg:path d="m 92.5111,435.80203 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.998,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.966,-17.741 10.94,-36.087 10.732,36.166 z" display="inline" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10" stroke-width="0.4335" style="fill:#0000ff;fill-opacity:1"/>
-  </svg:g>
-</svg:svg>
+<svg enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" y="0">
+  <g font-style="normal" id="main" style="display:inline">
+    <line fill="none" font-style="normal" stroke="#010101" stroke-width="10.9096" x1="94.28008" x2="520.36975" y1="375" y2="375"/>
+    <text dx="0.0" dy="0.0" fill="#010101" font-family="sans-serif" font-size="36px" font-style="normal" x="91.93633" y="353">EWL</text>
+    <text dx="0.0" dy="0.0" fill="#010101" font-family="sans-serif" font-size="36px" font-style="normal" x="441.93616" y="353">EWL</text>
+  </g>
+  <g display="none" font-style="normal" id="example" transform="translate(-66.72595)">
+    <text display="inline" dx="0" dy="0" fill="#8c8c8c" font-family="sans-serif" font-size="24px" font-style="normal" x="265.25574" y="408.59613">326 EN BN (USA)</text>
+    <text display="inline" dx="0" dy="0" fill="#8c8c8c" font-family="sans-serif" font-size="24px" font-style="normal" x="264.60535" y="360.95029">127 EN BN (USA)</text>
+  </g>
+  <g display="inline" font-style="normal" id="template">
+    <g font-style="normal" id="varT1_AS1" transform="translate(0,-2)">
+      <text dx="0" dy="0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" style="fill:#0000ff;fill-opacity:1" x="264.60254" y="418.51422">T1/AS1</text>
+      <rect font-style="normal" height="46.7103" rx="0" ry="0" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:4.03658;stroke-dasharray:none" width="126.7194" x="244.4147" y="387.82312"/>
+    </g>
+    <g display="inline" font-style="normal" id="varT_AS" transform="translate(0,4)">
+      <text dx="0" dy="0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" style="fill:#0000ff;fill-opacity:1" x="278.37543" y="343.89902">T/AS</text>
+      <rect font-style="normal" height="46.7103" rx="0" ry="0" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:4.03658;stroke-dasharray:none" width="126.7194" x="243.51573" y="313.20792"/>
+    </g>
+    <g id="pt2">
+      <text display="inline" dx="0" dy="0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" style="fill:#0000ff;fill-opacity:1" x="489.64783" y="461.101">PT 2</text>
+      <path d="m 517.77832,435.80202 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.998,-0.001 -1.785,-0.816 -1.785,-1.82 z m -8.966,-17.741 10.938,-36.087 10.732,36.166 z" display="inline" fill="#0000FF" font-style="normal" stroke="#0000ff" stroke-linejoin="bevel" stroke-miterlimit="10" stroke-width="0.4335" style="fill:#0000ff;fill-opacity:1"/>
+    </g>
+    <g id="pt1">
+      <text display="inline" dx="0" dy="0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" style="fill:#0000ff;fill-opacity:1" x="67.3806" y="461.10104">PT 1</text>
+      <path d="m 92.5111,435.80203 0.052,-21.317 c 0.029,-1.003 0.839,-1.79 1.817,-1.79 1.001,0 1.813,0.813 1.813,1.82 l -0.084,21.291 c 0,1 -0.809,1.816 -1.813,1.816 -0.998,-10e-4 -1.785,-0.816 -1.785,-1.82 z m -8.966,-17.741 10.94,-36.087 10.732,36.166 z" display="inline" fill="#0000FF" font-style="normal" stroke="#0000ff" stroke-linejoin="bevel" stroke-miterlimit="10" stroke-width="0.4335" style="fill:#0000ff;fill-opacity:1"/>
+    </g>
+  </g>
+</svg>
