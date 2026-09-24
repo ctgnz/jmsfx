@@ -47,7 +47,36 @@ For symbol assembly purposes, the following SIDC positions are used to determine
 
 ## Details
 
-This section describes the details of the internal composition of the SVG files, for those developers who wish to make their own changes (TBD).
+This section describes the details of the internal composition of the SVG files, for those developers who
+wish to make their own changes.
+
+### Free canvas icons
+
+The Control Measure fragments, and three of the Cyberspace ones, are `FREE_CANVAS`: GIS construction samples
+showing how a measure is drawn on a map, rather than icons composed into a symbol. APP-6E 8.1.3 exempts them
+from the composition rules. They carry illustrative material alongside the drawn content, so each one holds:
+
+| element | how many | what it is |
+| --- | --- | --- |
+| `<g id="main">` | exactly one | the content - what a consumer renders |
+| `<g id="template">` | zero or one | the construction guide: anchor point labels (`T`, `AS`) and the `PT 1`/`PT 2` arrows that place them |
+| `<g id="example">` | zero or more | a worked sample, normally `display="none"`. Where there is more than one they are numbered `example1`, `example2` and so on |
+| `<defs>` | as needed | anything `main` references. Patterns and markers belong here, never loose in the document or inside `main` |
+
+The template is optional because two kinds of fragment have nothing to construct:
+
+* An **area** is defined by at least three control points the user places, so there is no fixed geometry a
+  template could draw. That covers every area measure without one, including Airhead Line, which is an area
+  despite the name.
+* The **Space Debris** fragments are whole symbols in the way an ordinary icon is, so `main` holds all of it.
+
+Nothing outside that list appears at the root of a free canvas fragment: no bare drawing elements, and no
+groups under any other name.
+
+### Everything else
+
+Every other fragment holds a single content group, named for what it is - `frame`, `main`, `echelon`, `mod1`,
+`mod2`. Those names are not yet consistent across the tree; making them so is tracked separately.
 
 ## Licensing
 

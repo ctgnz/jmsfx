@@ -1225,8 +1225,8 @@ iconBounds:
   "25360200": {minX: 227.28, minY: 185.97, width: 252.23, height: 234.48}
   "25360300": {minX: 223.19, minY: 129.96, width: 249.97, height: 308.29}
   "25370100": {minX: 9.5, minY: 54.99, width: 379.73, height: 281.13}
-  "60200100": {minX: 114.28, minY: 133.42, width: 371.45, height: 133.17}
-  "60200200": {minX: 88.87, minY: 92.18, width: 410.98, height: 172.99}
+  "60200100": {minX: 114.28, minY: 110.55, width: 371.45, height: 166.59}
+  "60200200": {minX: 88.87, minY: 70.67, width: 410.98, height: 215.52}
   "60210100": {minX: 88.61, minY: 90.65, width: 373.87, height: 229.45}
 modifierBounds:
   "10622": {minX: 121.0, minY: 442.52, width: 370.0, height: 5.28}

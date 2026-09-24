@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
-  <svg:rect display="none" fill="#474747" font-style="normal" height="329.5" id="template2" rx="0" ry="0" width="329.5" x="140.5" y="231.382"/>
+  <svg:g id="example">
+    <svg:rect display="none" fill="#474747" font-style="normal" height="329.5" rx="0" ry="0" width="329.5" x="140.5" y="231.382"/>
+  </svg:g>
   <svg:g font-style="normal" id="main">
     <svg:rect fill="#557788" fill-opacity="0.25" font-style="normal" height="242.474" rx="0" ry="0" stroke="#FFFFFF" stroke-miterlimit="8" stroke-width="5" transform="matrix(0.729 0.6845 -0.6845 0.729 348.5139 -121.4117)" width="118.325" x="268.433" y="258.218"/>
   </svg:g>
