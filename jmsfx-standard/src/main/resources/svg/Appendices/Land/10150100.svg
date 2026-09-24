@@ -16,13 +16,7 @@
     </g>
   </g>
   <g id="main">
-    <g>
-      <g>
-        <g>
-          <line fill="none" stroke="#000000" stroke-width="5" x1="306" x2="306" y1="280.5" y2="472.417"/>
-          <polygon fill="none" points="306.515,507.834 249.334,469.667 362.668,469.667" stroke="#020001" stroke-width="5"/>
-        </g>
-      </g>
-    </g>
+    <line fill="none" stroke="#000000" stroke-width="5" x1="306" x2="306" y1="280.5" y2="472.417"/>
+    <polygon fill="none" points="306.515,507.834 249.334,469.667 362.668,469.667" stroke="#020001" stroke-width="5"/>
   </g>
 </svg>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg enable-background="new 0 0 612 792" height="792px" id="Version_1.0" version="1.1" viewBox="0 0 612 792" width="612px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" y="0px">
-  <g display="none" id="Octagon">
+  <g display="none" id="octagon">
     <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
     <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
     <g display="inline" id="outFrame">
@@ -15,7 +15,7 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
   </g>
-  <g>
+  <g id="mod2">
     <circle cx="348.82599" cy="469.12723" r="10" style="fill:#000000;fill-rule:evenodd;stroke-width:5;stroke-linecap:round"/>
     <path d="m 313.705,468.17371 c 2.22486,-1.43027 16.52334,-17.87827 35.59773,-18.1167 19.0744,-0.23843 33.37288,17.48103 35.91557,18.75238 -2.22485,1.27135 -15.87662,20.6589 -35.2799,21.29507 -19.40327,0.63617 -33.84963,-20.34157 -36.2334,-21.93075 z" style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"/>
   </g>

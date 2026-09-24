@@ -15,7 +15,7 @@
     <line display="inline" fill="none" id="mod2_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="445.015" y2="445.295"/>
     <line display="inline" fill="none" id="mod1_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="346.985" y2="346.705"/>
   </g>
-  <g id="Main">
+  <g id="main">
     <ellipse cx="306.947" cy="391.346" fill="none" rx="12.028" ry="12.028" stroke="#000000" stroke-width="5"/>
     <line fill="none" stroke="#000000" stroke-width="5" x1="306.947" x2="306.947" y1="403.374" y2="469.528"/>
     <line fill="none" stroke="#000000" stroke-width="5" x1="288.906" x2="324.99" y1="421.415" y2="421.415"/>

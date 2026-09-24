@@ -15,8 +15,9 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
   </g>
-  <g id="main" opacity="0.93"/>
-  <path d="m 394.063,368.00822 v 31.17176 l 21.9976,-15.58587 c -7.33143,-5.19742 -14.66502,-10.39093 -21.9976,-15.58589 z" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.67763;-inkscape-stroke:none"/>
-  <path d="m 216.26,368.00822 v 31.17176 l -21.997,-15.58587 c 7.33143,-5.19742 14.66442,-10.39093 21.997,-15.58589 z" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.67763;-inkscape-stroke:none"/>
-  <path d="m 216.16,383.494 h 24.90644 L 216.26,436.679 H 394.063 L 370.13427,383.494 H 394.163" style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+  <g id="main">
+    <path d="m 394.063,368.00822 v 31.17176 l 21.9976,-15.58587 c -7.33143,-5.19742 -14.66502,-10.39093 -21.9976,-15.58589 z" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.67763;-inkscape-stroke:none"/>
+    <path d="m 216.26,368.00822 v 31.17176 l -21.997,-15.58587 c 7.33143,-5.19742 14.66442,-10.39093 21.997,-15.58589 z" style="color:#000000;fill:#000000;fill-rule:evenodd;stroke-width:0.67763;-inkscape-stroke:none"/>
+    <path d="m 216.16,383.494 h 24.90644 L 216.26,436.679 H 394.063 L 370.13427,383.494 H 394.163" style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+  </g>
 </svg>

@@ -15,7 +15,7 @@
     <line display="inline" fill="none" id="mod2_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="445.015" y2="445.295"/>
     <line display="inline" fill="none" id="mod1_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="346.985" y2="346.705"/>
   </g>
-  <g id="Main">
+  <g id="main">
     <path d="M262.333,356.305c0,39.509,1.315,80.195,80.333,80.195" fill="none" stroke="#000000" stroke-width="5"/>
     <polygon points="279.401,419.52 279.401,443.225 291.255,443.225 291.255,427.422"/>
     <line fill="none" stroke="#000000" stroke-width="5" x1="261.228" x2="328.393" y1="380.011" y2="354.725"/>

@@ -15,12 +15,13 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
   </g>
-  <g id="main" opacity="0.93"/>
-  <g transform="matrix(0.64,0,0,0.64,106.60096,159.70564)">
-    <path d="m 302.34381,355 h 67.65571 l 9.6e-4,80 H 250 v -80 h 38.5938" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:7.42225"/>
-    <path d="M 250,355 310,400.0454 370,355" style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
-    <path d="M 298.10742,391.11719 253.5,435 h 113 L 321.89258,391.11719 310,400.04492 Z" style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+  <g id="main">
+    <g transform="matrix(0.64,0,0,0.64,106.60096,159.70564)">
+      <path d="m 302.34381,355 h 67.65571 l 9.6e-4,80 H 250 v -80 h 38.5938" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:7.42225"/>
+      <path d="M 250,355 310,400.0454 370,355" style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+      <path d="M 298.10742,391.11719 253.5,435 h 113 L 321.89258,391.11719 310,400.04492 Z" style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+    </g>
+    <path d="m 315.96297,390.43083 c 0.0386,2.64049 -4.17398,5.23234 -8.8531,5.1966 -7.14467,-0.0546 -12.4751,-8.97888 -12.4751,-8.97888 0,0 -0.7946,-8.42268 -2.54269,-11.2832 3.65512,2.06594 4.76755,2.22485 6.8335,4.76755 -3.17837,-0.7946 -4.76755,2.5427 -4.76755,2.5427" style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+    <path d="m 305,352.095 v 11.431 c -0.15892,7.787 11.08844,13.34632 11.2477,19.78527" style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
   </g>
-  <path d="m 315.96297,390.43083 c 0.0386,2.64049 -4.17398,5.23234 -8.8531,5.1966 -7.14467,-0.0546 -12.4751,-8.97888 -12.4751,-8.97888 0,0 -0.7946,-8.42268 -2.54269,-11.2832 3.65512,2.06594 4.76755,2.22485 6.8335,4.76755 -3.17837,-0.7946 -4.76755,2.5427 -4.76755,2.5427" style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
-  <path d="m 305,352.095 v 11.431 c -0.15892,7.787 11.08844,13.34632 11.2477,19.78527" style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
 </svg>

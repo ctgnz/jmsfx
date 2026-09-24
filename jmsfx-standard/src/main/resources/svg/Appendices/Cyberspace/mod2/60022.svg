@@ -15,7 +15,7 @@
     <line display="inline" fill="none" id="bottom" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
     <line display="inline" fill="none" id="top" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
   </g>
-  <g>
+  <g id="mod2">
     <rect height="29.53846" rx="6" ry="6" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:3.25846" width="49.84615" x="280.07788" y="474.61539"/>
     <path d="m 344.61879,475.42311 c 0.11538,-4.38462 1.18595,-22.0093 -13.21746,-22.0291 -14.4034,-0.0198 -13.21746,16.95217 -13.21746,22.0291" style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
     <rect height="2.69694" style="fill:#000000;fill-rule:evenodd;stroke-width:6.99393" width="7.9873886" x="287.8003" y="473.0874"/>

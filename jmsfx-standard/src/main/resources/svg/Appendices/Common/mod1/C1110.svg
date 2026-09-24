@@ -15,5 +15,7 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
   </g>
-  <path d="m 305.00096,298.44883 v 43.8615 m -40.0836,-44.67616 h 80.1672 v 44.53733 h -80.1672 z" style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+  <g id="mod1">
+    <path d="m 305.00096,298.44883 v 43.8615 m -40.0836,-44.67616 h 80.1672 v 44.53733 h -80.1672 z" style="fill:none;stroke:#000000;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+  </g>
 </svg>

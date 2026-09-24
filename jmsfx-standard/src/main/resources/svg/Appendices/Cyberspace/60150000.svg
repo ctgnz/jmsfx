@@ -15,8 +15,7 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
   </g>
-  <g id="main" opacity="0.93"/>
-  <g transform="translate(1.12847e-5)">
+  <g id="main" transform="translate(1.12847e-5)">
     <rect height="90" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1" width="90" x="260.00095" y="351.106"/>
     <rect height="30" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1" width="90" x="260.00095" y="381.106"/>
     <rect height="30" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-dasharray:none;stroke-opacity:1" transform="rotate(90)" width="90" x="351.106" y="-320.00095"/>

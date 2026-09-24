@@ -15,13 +15,12 @@
       <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
     </g>
   </g>
-  <g id="main" opacity="0.93"/>
-  <g>
+  <g id="main">
     <path d="m 250,355 h 119.99952 l 9.6e-4,80 H 250 Z" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:7.42225"/>
     <path d="M 250,355 310,400.0454 370,355" style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"/>
     <path d="M 298.10742,391.11719 253.5,435 h 113 L 321.89258,391.11719 310,400.04492 Z" style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+    <path d="m 283.08963,371.86914 101.67537,-1.4e-4 -9e-5,6.039 -94.07491,4e-5 z" style="fill-rule:evenodd;stroke-width:0.96293"/>
+    <rect height="6.0389" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.64488;stroke-dasharray:none;stroke-opacity:1" width="45.6015" x="199.28372" y="371.86914"/>
+    <path d="m 384.765,371.869 c 0,0 2.80415,-6.37256 11.38575,-6.84932 7.787,0.31784 11.05515,7.54766 16.1462,10.02783 -4.48264,3.06366 -6.27962,7.82225 -15.65581,7.98117 -6.4362,0.0795 -11.87614,-5.12068 -11.87614,-5.12068 z" style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
   </g>
-  <path d="m 283.08963,371.86914 101.67537,-1.4e-4 -9e-5,6.039 -94.07491,4e-5 z" style="fill-rule:evenodd;stroke-width:0.96293"/>
-  <rect height="6.0389" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.64488;stroke-dasharray:none;stroke-opacity:1" width="45.6015" x="199.28372" y="371.86914"/>
-  <path d="m 384.765,371.869 c 0,0 2.80415,-6.37256 11.38575,-6.84932 7.787,0.31784 11.05515,7.54766 16.1462,10.02783 -4.48264,3.06366 -6.27962,7.82225 -15.65581,7.98117 -6.4362,0.0795 -11.87614,-5.12068 -11.87614,-5.12068 z" style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
 </svg>
