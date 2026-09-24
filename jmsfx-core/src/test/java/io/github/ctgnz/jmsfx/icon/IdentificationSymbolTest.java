@@ -191,6 +191,39 @@ class IdentificationSymbolTest {
     }
 
     @Test
+    void testAFreeCanvasElementIsNotFramed() {
+        // APP-6E 8.1.3 exempts these from the icon building rules - they are map graphics rather than
+        // icons assembled in the octagon, and a map graphic inside a symbol frame is a contradiction.
+        // Cyberspace is point geometry, so before this the exemption depended on which symbol set the
+        // element happened to sit in.
+        assertThat(candidate.isFrameUsed(), is(true));
+
+        candidate.setEntity(entity("11", "Data Path Segment").withGraphicType(GraphicType.FREE_CANVAS)
+            .withSymbolSet(candidate.getSymbolSet()));
+
+        assertThat(candidate.isFrameUsed(), is(false));
+    }
+
+    @Test
+    void testAFreeCanvasElementDropsTheStatusIconWithTheFrame() {
+        // Not a separate rule: the status ring is drawn around a frame, and isStatusIconUsed already
+        // requires one. Pinned because it is the layer most likely to be reinstated by accident.
+        candidate.setEntity(entity("11", "Data Path Segment").withGraphicType(GraphicType.FREE_CANVAS)
+            .withSymbolSet(candidate.getSymbolSet()));
+
+        assertThat(candidate.isStatusIconUsed(), is(false));
+    }
+
+    @Test
+    void testANormalElementIsStillFramed() {
+        // The exemption must be the exception - every other icon in a point-geometry set keeps its frame.
+        candidate.setEntity(entity("11", "Infantry").withGraphicType(GraphicType.MAIN)
+            .withSymbolSet(candidate.getSymbolSet()));
+
+        assertThat(candidate.isFrameUsed(), is(true));
+    }
+
+    @Test
     void testASymbolThatDrawsNothingStillHasASize() {
         // Control Measure draws no frame, so an element with no graphic of its own composes to an empty
         // document. Without a viewBox that has no intrinsic size, and an <img> showing it stretches to
