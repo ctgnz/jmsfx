@@ -51,8 +51,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
-                    <excludePackageNames>nz.co.ctg.jmsfx.model</excludePackageNames>
-                    <subpackages>nz.co.ctg.jmsfx.icon</subpackages>
+                    <subpackages>io.github.ctgnz.jmsfx.icon.editor</subpackages>
                 </configuration>
             </plugin>
         </plugins>

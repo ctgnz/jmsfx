@@ -4,6 +4,7 @@
 	<artifactId>jmsfx</artifactId>
 	<version>2.0.0-SNAPSHOT</version>
 	<name>JMSFX - Joint Military Symbology on JavaFX</name>
+	<description>A JavaFX implementation of NATO APP-6E military symbology: a generated domain model of the standard, and the SVG composition that draws a symbol from it.</description>
 	<packaging>pom</packaging>
     <url>https://www.ctg.co.nz/jmsfx</url>
 
@@ -29,14 +30,6 @@
         <url>http://github.com/ctgnz/jmsfx/tree/master</url>
     </scm>
 
-    <distributionManagement>
-        <repository>
-            <id>ossrh</id>
-            <name>Central Repository OSSRH</name>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-    
 	<modules>
 		<module>jmsfx-core</module>
 		<module>jmsfx-generator</module>
@@ -65,6 +58,15 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
+                        <configuration>
+                            <!--
+                                Keep doclint checking syntax, html and references - it is what caught a {@link} to a
+                                type the file never imported, the release profile having never been run before - but
+                                drop "missing", which reports every undocumented getter and buried that one error
+                                under a hundred warnings.
+                            -->
+                            <doclint>all,-missing</doclint>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>attach-javadoc</id>
@@ -85,6 +87,62 @@
                                 </goals>
                             </execution>
                         </executions>
+                    </plugin>
+                    <plugin>
+                        <!--
+                            Central requires signed artifacts. Signing at verify rather than at deploy so the
+                            signatures exist by the time the publishing plugin builds its bundle, and
+                            loopback pinentry so CI can sign unattended with the passphrase in the environment.
+                        -->
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <!--
+                            Publishes to the Central Portal, which replaced OSSRH - hence no distributionManagement
+                            above, since the plugin uploads directly rather than deploying to a staging repository.
+                            
+                            autoPublish is false, matching foxglove: a tag stages a validated deployment on the
+                            Portal and publishing stays a deliberate step, so a bad staging can be dropped rather
+                            than having to be superseded.
+                            
+                            Only the parent, jmsfx-core and jmsfx-standard belong on Central: the API a consumer
+                            compiles against and the generated library it renders with. The parent is easy to
+                            overlook and resolution breaks for everyone without it. The rest are excluded -
+                            creator, editor and server are applications, delivered as bundles and a deployment,
+                            and the generator only becomes a published artifact once jmsfx#102 gives the library
+                            repositories something to depend on when they generate themselves.
+                        -->
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.11.0</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                            <autoPublish>false</autoPublish>
+                            <excludeArtifacts>
+                                <excludeArtifact>jmsfx-generator</excludeArtifact>
+                                <excludeArtifact>jmsfx-creator</excludeArtifact>
+                                <excludeArtifact>jmsfx-editor</excludeArtifact>
+                                <excludeArtifact>jmsfx-server</excludeArtifact>
+                            </excludeArtifacts>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>

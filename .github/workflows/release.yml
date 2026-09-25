@@ -45,6 +45,15 @@ jobs:
         java-version: '25'
         distribution: 'temurin'
         cache: 'maven'
+        # Writes a settings.xml carrying a 'central' server whose credentials come from the
+        # environment, and imports the signing key. The publishing plugin resolves that server
+        # before it does anything else, so without it the build fails on a null server rather
+        # than on a rejected upload.
+        server-id: central
+        server-username: MAVEN_USERNAME
+        server-password: MAVEN_PASSWORD
+        gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+        gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
     - name: Verify the tag names a release version
       if: github.ref_type == 'tag'
@@ -68,6 +77,20 @@ jobs:
     - name: Build
       run: mvn -B --no-transfer-progress -DskipTests package
 
+    # Tag only: a manual run carries a snapshot version, which the Portal will not take, and
+    # publishing is not what a rehearsal is for. autoPublish is false in the pom, so this stages
+    # a validated deployment and publishing to Central stays a deliberate click - a bad staging
+    # can be dropped rather than having to be superseded.
+    - name: Publish to the Maven Central Portal
+      if: github.ref_type == 'tag'
+      run: mvn -B --no-transfer-progress -DskipTests -Prelease deploy
+      env:
+        MAVEN_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
+        MAVEN_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
+        MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+    # After the publish, so a failed deploy cannot leave a release announcing a version that
+    # never reached Central - which is how foxglove's 0.9.5 went wrong.
     - name: Create release
       if: github.ref_type == 'tag'
       uses: ncipollo/release-action@v1
