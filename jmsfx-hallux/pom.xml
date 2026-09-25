@@ -14,13 +14,6 @@
             <artifactId>jmsfx-core</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>io.github.ctgnz</groupId>
-            <artifactId>jmsfx-creator</artifactId>
-            <version>${project.version}</version>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
     </dependencies>
 
     <build>
