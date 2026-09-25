@@ -5,7 +5,7 @@
 	<version>2.0.0-SNAPSHOT</version>
 	<name>JMSFX - Joint Military Symbology on JavaFX</name>
 	<packaging>pom</packaging>
-    <url>https://www.ctg.co.nz/jsmfx</url>
+    <url>https://www.ctg.co.nz/jmsfx</url>
 
     <licenses>
         <license>
