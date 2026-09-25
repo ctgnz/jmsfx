@@ -36,7 +36,7 @@ jobs:
     # Submodules matter even here: jmsfx-server takes its stylesheet from the brand
     # submodule, and Maven skips a missing resource directory with only a warning -
     # so without this the reactor builds green and silently ships without it.
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
       with:
         submodules: recursive
     - name: Set up JDK 25
@@ -103,7 +103,7 @@ jobs:
     # The brand submodule feeds jmsfx-server's stylesheet. Maven skips a missing
     # resource directory with only a warning, so without this the reactor builds
     # green and silently ships without it.
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
       with:
         submodules: recursive
 
@@ -208,7 +208,7 @@ jobs:
 
     - name: Keep the bundles when run manually
       if: github.ref_type != 'tag'
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: jmsfx-creator-${{ matrix.platform }}
         path: |
