@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:circle cx="298.5" cy="395.599" fill="none" font-style="normal" r="125" stroke="#000000" stroke-width="5"/>
+    <svg:polygon fill="none" font-style="normal" points="234.24,430.6 234.24,360.599 374.24,430.6 374.24,360.599" stroke="#000000" stroke-width="5"/>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="60" font-style="normal" transform="matrix(1 0 0 1 432.2402 417.5996)" x="0" y="0">PUP</svg:text>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:g display="inline" font-style="normal" transform="translate(80 130)">
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 298.5 428.5986)" x="0" y="0">CENTER</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 309.5 453.5986)" x="0" y="0">POINT</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal">
+      <svg:g font-style="normal">
+        <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="3" x1="418.586" x2="315.414" y1="534.393" y2="411.328"/>
+        <svg:path d="M310.232,408.738c1.529,3.572,2.289,6.09,3.289,9.146l8.697-7.292c-1.074-0.492-5.182-2.703-8.432-4.833 c-3.479-2.278-6.43-4.517-8.159-6.123C306.908,401.62,308.598,404.916,310.232,408.738z" fill="#0000FF" font-style="normal"/>
+      </svg:g>
+    </svg:g>
+  </svg:g>
+</svg:svg>

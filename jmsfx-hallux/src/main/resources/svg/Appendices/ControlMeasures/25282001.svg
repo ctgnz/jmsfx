@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:path d="M178.259,539.896l100-250l100,250" fill="none" font-style="normal" stroke="#000000" stroke-width="20"/>
+    <svg:ellipse cx="278.259" cy="514.896" font-style="normal" rx="25" ry="25" stroke="#000000"/>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template" transform="translate(75 -102.5) translate(175 175) scale(1.56 1.56) translate(-175 -175) translate(0.64103 0) translate(0.64103 0) translate(7.37179 -6.41026)">
+    <svg:rect display="inline" fill="none" font-style="normal" height="50" rx="0" ry="0" stroke="#0000FF" stroke-width="5" width="50" x="212.986" y="295.767"/>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="56.1531" font-style="normal" transform="matrix(0.641 0 0 0.641 225.9803 333.7666)" x="0" y="0">X</svg:text>
+  </svg:g>
+  <svg:g display="none" font-style="normal" id="example" transform="translate(75 -102.5) translate(175 175) scale(1.56 1.56) translate(-175 -175) translate(0.64103 0) translate(0.64103 0) translate(7.37179 -6.41026)">
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="56.1531" font-style="normal" id="varXe" transform="matrix(0.641 0 0 0.641 214.4419 333.7666)" x="0" y="0">629</svg:text>
+  </svg:g>
+</svg:svg>

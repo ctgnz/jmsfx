@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg enable-background="new 0 0 400 400" font-style="normal" height="400" id="Version_1.0" version="1.1" viewBox=" 0  0 400 400" width="400" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+  <svg:g font-style="normal" id="main">
+    <svg:g font-style="normal" id="boundaries">
+      <svg:path d="M53.716,113.142 c33.878,2.469,71.33-0.56,104.105-0.823c61.963,0.543,123.943,2.469,185.905,2.469" fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.1894"/>
+      <svg:path d="M52.844,283.758 c36.085,0.264,72.169,0.264,108.254,0.823c24.886,0.278,24.846,0.28,74.375,1.68c15.146,1.679,26.981,2.238,42.967,1.679 c7.983-2.799,16.527-4.461,24.793-5.858c13.776,1.12,27.542,2.503,41.317,2.503" fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.1894"/>
+      <svg:path d="M136.297,195.55 c37.87,3.359,76.605,3.351,114.906,3.351" fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.1977"/>
+    </svg:g>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:path d="m 343.711,112.319 c -1.663,43.147 -3.886,86.59 1.662,129.474 -0.563,15.111 -0.839,28.857 -0.839,43.706" display="inline" fill="none" font-style="normal" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.1894"/>
+    <svg:path d="m 52.086,112.311 c 1.959,5.777 0.28,11.556 -0.839,17.326 0.28,8.808 -2.799,37.139 2.519,52.819 -0.56,15.951 -1.679,31.903 -2.519,47.862 1.12,38.506 0.839,20.354 0.839,54.457" display="inline" fill="none" font-style="normal" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.1977"/>
+    <svg:path d="m 136.446,112.311 c 1.934,5.777 0.272,11.556 -0.831,17.326 0.271,8.808 -2.774,37.139 2.494,52.819 -0.56,15.951 -1.663,31.903 -2.494,47.862 1.103,38.506 0.831,20.354 0.831,54.457" display="inline" fill="none" font-style="normal" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.1977"/>
+    <svg:g display="inline" font-style="normal">
+      <svg:polygon fill="#FFFFFF" font-style="normal" points="86.733,255.473 176.737,255.473 176.737,235.669 86.733,235.669"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="10.9308px" font-style="normal" transform="translate(92.9639,249.3564)" x="0" y="0">MND(S)  X  6IN</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal">
+      <svg:polygon fill="#FFFFFF" font-style="normal" points="281.325,199.698 392,199.698 392,179.894 281.325,179.894"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="10.9308px" font-style="normal" transform="translate(287.5557,193.5811)" x="0" y="0">MND(S) X X  ARRC</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal">
+      <svg:polygon fill="#FFFFFF" font-style="normal" points="79.282,156.7 183.321,156.7 183.321,136.839 79.282,136.839"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="10.9308px" font-style="normal" transform="translate(88.7334,150.9531)" x="0" y="0">MND(S)  X  5MB</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal">
+      <svg:polygon fill="#FFFFFF" font-style="normal" points="8.61,209.6 115.646,209.6 115.646,189.796 8.61,189.796"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="10.9308px" font-style="normal" transform="translate(11.8408,203.4834)" x="0" y="0">ARRC  X X  MND(S)</svg:text>
+    </svg:g>
+  </svg:g>
+  <svg:g display="none" font-style="normal" id="example">
+    <svg:g display="none" font-style="normal">
+      <svg:polygon fill="#FFFFFF" font-style="normal" points="203.734,262.387 203.734,307.163 262.34,307.163 262.34,262.387"/>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="10.9308" font-style="normal" transform="matrix(1 0 0 1 213.0039 275.4297)" x="0" y="0">MND(N) </svg:text>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="10.9308" font-style="normal" transform="matrix(1 0 0 1 224.2285 288.5469)" x="0" y="0">X X </svg:text>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="10.9308" font-style="normal" transform="matrix(1 0 0 1 205.4063 301.6641)" x="0" y="0">1AD (DEU)</svg:text>
+    </svg:g>
+    <svg:g display="none" font-style="normal">
+      <svg:polygon fill="#FFFFFF" font-style="normal" points="157.115,176.896 157.115,222.5 221.9,222.5 221.9,176.896"/>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="10.9308" font-style="normal" transform="matrix(1 0 0 1 162.4243 188.1318)" x="0" y="0">5MB (CAN) </svg:text>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="10.9308" font-style="normal" transform="matrix(1 0 0 1 187.3174 201.249)" x="0" y="0">X </svg:text>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="10.9308" font-style="normal" transform="matrix(1 0 0 1 166.0674 214.3662)" x="0" y="0">6IN (NLD)</svg:text>
+    </svg:g>
+    <svg:g display="none" font-style="normal">
+      <svg:polygon fill="#FFFFFF" font-style="normal" points="221.9,92.4 221.9,137.176 280.506,137.176 280.506,92.4"/>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="10.9308" font-style="normal" transform="matrix(1 0 0 1 231.1699 105.4424)" x="0" y="0">MND(N) </svg:text>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="10.9308" font-style="normal" transform="matrix(1 0 0 1 242.3945 118.5596)" x="0" y="0">X X </svg:text>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="10.9308" font-style="normal" transform="matrix(1 0 0 1 231.4707 131.6768)" x="0" y="0">MND(S)</svg:text>
+    </svg:g>
+  </svg:g>
+  <svg:g display="none" id="example3">
+    <svg:g display="inline">
+      <svg:polygon fill="#FFFFFF" points="203.734,262.387 203.734,307.163 262.34,307.163 262.34,262.387"/>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 213.0039 275.4297)">MND(N) </svg:text>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 224.2285 288.5469)">X X </svg:text>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 205.4063 301.6641)">1AD (DEU)</svg:text>
+    </svg:g>
+    <svg:g display="inline">
+      <svg:polygon fill="#FFFFFF" points="86.733,235.669 86.733,255.473 176.737,255.473 176.737,235.669"/>
+      <svg:text font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 92.9639 249.3564)">MND(S)  X  6IN</svg:text>
+    </svg:g>
+    <svg:g display="inline">
+      <svg:polygon fill="#FFFFFF" points="281.325,179.894 281.325,199.698 392,199.698 392,179.894"/>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 287.5557 193.5811)">MND(S) X X  ARRC</svg:text>
+    </svg:g>
+    <svg:g display="inline">
+      <svg:polygon fill="#FFFFFF" points="157.115,176.896 157.115,222.5 221.9,222.5 221.9,176.896"/>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 162.4243 188.1318)">5MB (CAN) </svg:text>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 187.3174 201.249)">X </svg:text>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 166.0674 214.3662)">6IN (NLD)</svg:text>
+    </svg:g>
+    <svg:g display="inline">
+      <svg:polygon fill="#FFFFFF" points="79.282,136.839 79.282,156.7 183.321,156.7 183.321,136.839"/>
+      <svg:text font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 88.7334 150.9531)">MND(S)  X  5MB</svg:text>
+    </svg:g>
+    <svg:g display="inline">
+      <svg:polygon fill="#FFFFFF" points="221.9,92.4 221.9,137.176 280.506,137.176 280.506,92.4"/>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 231.1699 105.4424)">MND(N) </svg:text>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 242.3945 118.5596)">X X </svg:text>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 231.4707 131.6768)">MND(S)</svg:text>
+    </svg:g>
+    <svg:g display="inline">
+      <svg:polygon fill="#FFFFFF" points="8.61,189.796 8.61,209.6 115.646,209.6 115.646,189.796"/>
+      <svg:text font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 11.8408 203.4834)">ARRC  X X  MND(S)</svg:text>
+    </svg:g>
+  </svg:g>
+  <svg:g display="none" id="example2">
+    <svg:g display="inline">
+      <svg:polygon fill="#FFFFFF" points="203.734,262.387 203.734,307.163 262.34,307.163 262.34,262.387"/>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 213.0039 275.4297)">MND(N) </svg:text>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 224.2285 288.5469)">X X </svg:text>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 205.4063 301.6641)">1AD (DEU)</svg:text>
+    </svg:g>
+    <svg:g display="inline">
+      <svg:polygon fill="#FFFFFF" points="86.733,235.669 86.733,255.473 176.737,255.473 176.737,235.669"/>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 92.9639 249.3564)">MND(S)  X  6IN</svg:text>
+    </svg:g>
+    <svg:g display="inline">
+      <svg:polygon fill="#FFFFFF" points="281.325,179.894 281.325,199.698 392,199.698 392,179.894"/>
+      <svg:text font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 287.5557 193.5811)">MND(S) X X  ARRC</svg:text>
+    </svg:g>
+    <svg:g display="inline">
+      <svg:polygon fill="#FFFFFF" points="157.115,176.896 157.115,222.5 221.9,222.5 221.9,176.896"/>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 162.4243 188.1318)">5MB (CAN) </svg:text>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 187.3174 201.249)">X </svg:text>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 166.0674 214.3662)">6IN (NLD)</svg:text>
+    </svg:g>
+    <svg:g display="inline">
+      <svg:polygon fill="#FFFFFF" points="79.282,136.839 79.282,156.7 183.321,156.7 183.321,136.839"/>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 88.7334 150.9531)">MND(S)  X  5MB</svg:text>
+    </svg:g>
+    <svg:g display="inline">
+      <svg:polygon fill="#FFFFFF" points="221.9,92.4 221.9,137.176 280.506,137.176 280.506,92.4"/>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 231.1699 105.4424)">MND(N) </svg:text>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 242.3945 118.5596)">X X </svg:text>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 231.4707 131.6768)">MND(S)</svg:text>
+    </svg:g>
+    <svg:g display="inline">
+      <svg:polygon fill="#FFFFFF" points="8.61,189.796 8.61,209.6 115.646,209.6 115.646,189.796"/>
+      <svg:text fill="#808080" font-family="sans-serif" font-size="10.9308" transform="matrix(1 0 0 1 11.8408 203.4834)">ARRC  X X  MND(S)</svg:text>
+    </svg:g>
+  </svg:g>
+</svg:svg>

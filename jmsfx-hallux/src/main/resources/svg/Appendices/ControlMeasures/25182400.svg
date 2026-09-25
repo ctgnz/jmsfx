@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="10" x1="204.5" x2="204.5" y1="221" y2="571"/>
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="10" x1="404.5" x2="404.5" y1="221" y2="571"/>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="100" font-style="normal" transform="matrix(1 0 0 1 240.6504 531)" x="0" y="0">RT</svg:text>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="120" font-style="normal" transform="matrix(1 0 0 1 256 449)" x="0" y="0">O</svg:text>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template" transform="translate(0 -140)">
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 256 391)" x="0" y="0">CENTER</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 267 416)" x="0" y="0">POINT</svg:text>
+    <svg:g display="inline" font-style="normal">
+      <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="3" x1="302" x2="302" y1="429" y2="484"/>
+      <svg:polygon fill="#FFFFFF" font-style="normal" points="302,487 295,472 309,472" stroke="#0000FF"/>
+    </svg:g>
+  </svg:g>
+</svg:svg>

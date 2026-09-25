@@ -1,4 +1,4 @@
-config: {libraryPrefix: Hallux, countryCodeClass: NatoCountryCode, iconPackage: nz.co.ctg.hallux.jmsfx, amplifierPackage: nz.co.ctg.hallux.jmsfx.amplifier, commonPackage: nz.co.ctg.hallux.jmsfx.common}
+config: {libraryPrefix: Hallux, countryCodeClass: NatoCountryCode, iconPackage: io.github.ctgnz.jmsfx.hallux, amplifierPackage: io.github.ctgnz.jmsfx.hallux.amplifier, commonPackage: io.github.ctgnz.jmsfx.hallux.common}
 versions:
 - {code: "10", id: ORIGINAL, label: "APP-6(D)/MIL-STD-2525D October 2017"}
 - {code: "11", id: MS2525D1, label: "MIL-STD-2525D Chg 1 August 2018"}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: Adobe Illustrator 12.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
+<svg enable-background="new 0 0 612 792" height="792" id="Version_1.0" overflow="visible" version="1.1" viewBox="0 0 612 792" width="612" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <g display="none" id="octagon">
+    <polygon fill="none" points="305,516.5 218.733,480.768 183,394.5 218.733,308.233 305,272.5 391.268,308.233 427,394.5 391.268,480.768" stroke="#0000FF" stroke-width="2"/>
+    <line fill="none" stroke="#0000FF" stroke-width="2" x1="202.5" x2="407.5" y1="345.7" y2="345.7"/>
+    <line fill="none" stroke="#0000FF" stroke-width="2" x1="202.5" x2="407.5" y1="443.3" y2="443.3"/>
+  </g>
+  <g id="mod1" transform="translate(-19)">
+    <path d="M 295.96484,295.85 H 289.035 l 1.6e-4,3.99961 L 300.38086,319.5 289.035,339.1504 V 343.15 h 6.92984 L 305,327.50195 l 9.03516,15.64844 6.92984,-3.9e-4 v -3.99961 L 309.61914,319.5 320.96484,299.8496 320.965,295.85 h -6.92984 L 305,311.49805 Z" style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1"/>
+    <g transform="translate(38)">
+      <path d="M 295.96484,295.85 H 289.035 l 1.6e-4,3.99961 L 300.38086,319.5 289.035,339.1504 V 343.15 h 6.92984 L 305,327.50195 l 9.03516,15.64844 6.92984,-3.9e-4 v -3.99961 L 309.61914,319.5 320.96484,299.8496 320.965,295.85 h -6.92984 L 305,311.49805 Z" style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1"/>
+    </g>
+  </g>
+</svg>

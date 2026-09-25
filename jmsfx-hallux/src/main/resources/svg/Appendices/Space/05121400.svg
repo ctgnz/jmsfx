@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg enable-background="new 0 0 612 792" height="792px" id="Version_1.0" version="1.1" viewBox="0 0 612 792" width="612px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" y="0px">
+  <g display="none" id="octagon">
+    <line display="inline" fill="none" id="mod2_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="445.015" y2="445.295"/>
+    <line display="inline" fill="none" id="mod1_1_" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="346.985" y2="346.705"/>
+    <g display="inline" id="outFrame">
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="220" x2="306" y1="309.5" y2="273"/>
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="306" x2="390.5" y1="273" y2="309.5"/>
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" x2="427" y1="309.5" y2="396"/>
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="427" x2="390.5" y1="396" y2="482.5"/>
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" x2="306" y1="482.5" y2="516"/>
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="306" x2="220" y1="516" y2="482.5"/>
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="220" x2="183" y1="482.5" y2="396"/>
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
+    </g>
+  </g>
+  <g id="main">
+    <g aria-label="SV" style="font-size:130px" transform="matrix(1 0 0 1 222.9995 443.25)">
+      <path d="m 81.37695,-26.97754 q 0,5.52246 -2.60254,10.91797 -2.53906,5.3955 -7.17285,9.14062 -5.07813,4.0625 -11.87012,6.34766 -6.72852,2.28516 -16.25,2.28516 -10.21973,0 -18.4082,-1.9043 -8.125,-1.9043 -16.56738,-5.64941401 V -21.58203 h 0.88867 q 7.17285,5.9668 16.56738,9.2041 9.39453,3.2373 17.64648,3.2373 11.679688,0 18.1543,-4.37988 6.538086,-4.37988 6.538086,-11.679687 0,-6.28418 -3.11035,-9.26758 -3.04688,-2.9834 -9.33106,-4.633789 -4.76074,-1.26953 -10.34668,-2.09473 -5.52246,-0.8252 -11.74316,-2.09473 -12.56836,-2.66602 -18.6621,-9.07715 -6.03027,-6.4746 -6.03027,-16.821289 0,-11.87012 10.0293,-19.42383 10.0293,-7.61719 25.4541,-7.61719 9.96582,0 18.28125,1.9043 8.31543,1.9043 14.72656,4.69727 v 14.85352 h -0.88867 q -5.3955,-4.57031 -14.21875,-7.553711 -8.75977,-3.04688 -17.96387,-3.04688 -10.09277,0 -16.25,4.18945 -6.09375,4.18945 -6.09375,10.79102 0,5.90332 3.04688,9.26758 3.04688,3.36426 10.72754,5.1416 4.0625,0.88867 11.55274,2.1582 7.49023,1.26953 12.695312,2.60254 10.5371,2.79297 15.86914,8.44238 5.33203,5.649414 5.33203,15.80566 z" style="stroke:#000000;stroke-opacity:1;fill:#ffffff;stroke-width:5;stroke-dasharray:none;fill-opacity:1"/>
+      <path d="M 176.08398,-94.5166 141.67969,0 H 124.92188 L 90.51758,-94.5166 h 13.45703 l 29.64355,83.1543 29.64356,-83.1543 z" style="stroke:#000000;stroke-opacity:1;fill:#ffffff;stroke-width:5;stroke-dasharray:none;fill-opacity:1"/>
+    </g>
+  </g>
+</svg>

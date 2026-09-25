@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg enable-background="new 0 0 612 792" height="792px" id="Version_1.0" version="1.1" viewBox="0 0 612 792" width="612px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" y="0px">
+  <g display="none" id="octagon">
+    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
+    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
+    <g display="inline" id="outFrame">
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="220" x2="306" y1="309.5" y2="273"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="306" x2="390.5" y1="273" y2="309.5"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="390.5" x2="427" y1="309.5" y2="396"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="427" x2="390.5" y1="396" y2="482.5"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="390.5" x2="306" y1="482.5" y2="516"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="306" x2="220" y1="516" y2="482.5"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="220" x2="183" y1="482.5" y2="396"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
+    </g>
+  </g>
+  <g id="main" transform="translate(-6.0613,-0.10614)">
+    <rect height="74.80269" rx="5.99013" ry="6.41166" style="fill:#fffffe;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:6.1973" width="119.80269" x="253.61058" y="351.59924"/>
+    <path d="m 240.51192,431.52313 h 146 c 0,0 0.0119,9.13947 -9.99997,12 h -126 c -9.85294,-3.17837 -10.00003,-12 -10.00003,-12 z" style="fill-rule:evenodd;stroke-width:0.5"/>
+    <rect height="4" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.52946;stroke-dasharray:none;stroke-opacity:1" width="20" x="303.51193" y="435.52313"/>
+  </g>
+</svg>

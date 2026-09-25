@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg enable-background="new 0 0 400 400" font-style="normal" height="400" id="Version_1.0" version="1.1" viewBox=" 0  0 400 400" width="400" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+  <svg:g font-style="normal" id="main">
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="4" style="stroke-dasharray:32,32;stroke-dashoffset:0" x1="13" x2="385" y1="70" y2="303"/>
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="4" style="stroke-dasharray:32,32;stroke-dashoffset:0" x1="386" x2="15" y1="70" y2="304"/>
+    <svg:g font-style="normal" transform="translate(0 1) translate(0 1) translate(0 1) translate(-1 0) translate(-1 0) translate(0 1) translate(0 1) translate(-1 0)">
+      <svg:rect fill="#FFFFFF" font-style="normal" height="35" rx="0" ry="0" stroke="#FFFFFF" width="35" x="185" y="164"/>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="35" font-style="normal" transform="matrix(1 0 0 1 190.3623 194)" x="0" y="0">S</svg:text>
+    </svg:g>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template" transform="matrix(1.75,0,0,1.75,-250,-190)">
+    <svg:line display="inline" fill="none" font-style="normal" stroke="#0000FF" stroke-width="2" x1="253.714" x2="243.714" y1="233.571" y2="265.571"/>
+    <svg:polygon display="inline" fill="#FFFFFF" font-style="normal" points="246.7,236.607 255.989,228.199 258.029,240.561" stroke="#0000FF" stroke-width="2"/>
+    <svg:g display="inline" font-style="normal" id="CENTER_x25_20POINT" transform="translate(19,-76)">
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9978px" font-style="normal" transform="matrix(0.5714,0,0,0.5714,195.7137,356.5714)" x="0" y="0">CENTER</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9978px" font-style="normal" transform="matrix(0.5714,0,0,0.5714,201.7137,368.5714)" x="0" y="0">POINT</svg:text>
+    </svg:g>
+  </svg:g>
+</svg:svg>

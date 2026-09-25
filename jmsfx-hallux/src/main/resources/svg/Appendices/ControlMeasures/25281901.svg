@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g id="main">
+    <svg:polygon font-style="normal" points="307,247 207,397 407,397" stroke="#000000"/>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:line display="inline" fill="none" font-style="normal" stroke="#0000FF" stroke-width="3" x1="307" x2="307" y1="412" y2="459"/>
+    <svg:polygon display="inline" fill="#FFFFFF" font-style="normal" points="307,399 297,413 317,413" stroke="#0000FF"/>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="22" font-style="normal" transform="matrix(1 0 0 1 258.7871 477)" x="0" y="0">ANCHOR</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="22" font-style="normal" transform="matrix(1 0 0 1 272.812 497)" x="0" y="0">POINT</svg:text>
+  </svg:g>
+</svg:svg>
