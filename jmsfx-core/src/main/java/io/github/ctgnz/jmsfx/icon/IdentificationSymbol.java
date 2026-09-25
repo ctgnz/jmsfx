@@ -611,9 +611,10 @@ public class IdentificationSymbol {
     /**
      * Whether this symbol is drawn inside a frame.
      * <p>
-     * Point geometry is the usual answer: a symbol set drawn at a point gets a frame, one drawn as a line or an area does not. A {@link GraphicType#FREE_CANVAS} main element is
-     * the exception in the other direction. APP-6E 8.1.3 exempts those from the icon building rules - they are map graphics rather than icons assembled within the octagon - and a
-     * map graphic inside a symbol frame is a contradiction, so the exemption belongs to the element rather than to whichever symbol set it happens to sit in.
+     * Point geometry is the usual answer: a symbol set drawn at a point gets a frame, one drawn as a line or an area does not. A
+     * {@link io.github.ctgnz.jmsfx.types.GraphicType#FREE_CANVAS} main element is the exception in the other direction. APP-6E 8.1.3 exempts those from the icon building rules -
+     * they are map graphics rather than icons assembled within the octagon - and a map graphic inside a symbol frame is a contradiction, so the exemption belongs to the element
+     * rather than to whichever symbol set it happens to sit in.
      * <p>
      * Control Measure hid this for a long time. Its dimension is mixed geometry, so it never had a frame anyway, and the two rules agreed by accident. Cyberspace is point
      * geometry, and its three FREE_CANVAS elements were drawn framed until this was made explicit. See jmsfx#91.
