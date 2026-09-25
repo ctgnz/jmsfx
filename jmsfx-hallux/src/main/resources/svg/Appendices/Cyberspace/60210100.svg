@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg enable-background="new 0 0 600 400" height="400px" id="Version_1.0" version="1.1" viewBox="0 0 600 400" width="600px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" y="0px">
+  <g id="main">
+    <rect height="215.40518" rx="18" ry="18" style="fill:none;fill-rule:evenodd;stroke:#000001;stroke-width:8;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1" width="365.8737" x="92.61177" y="100.68933"/>
+    <rect height="18.4852" rx="5" ry="5" style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000001;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1" transform="translate(-146.084,2.24745)" width="67.16994" x="266.41504" y="89.29805"/>
+    <rect height="18.4852" rx="7.36592" ry="5" style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.21375;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1" transform="translate(-34)" width="98.95363" x="320.80322" y="90.64652"/>
+  </g>
+  <g id="example" style="display:none">
+    <text style="font-style:normal;font-weight:normal;font-size:14px;line-height:1.25;font-family:sans-serif;fill:#787878;fill-opacity:1;stroke:#787878;stroke-opacity:1" x="122.4536" xml:space="preserve" y="105.87745">
+      <tspan style="fill:#787878;fill-opacity:1;stroke:#787878;stroke-opacity:1" x="122.4536" y="105.87745">MODNET</tspan>
+    </text>
+    <text style="font-style:normal;font-weight:normal;font-size:14px;line-height:1.25;font-family:sans-serif;display:inline;fill:#787878;fill-opacity:1;stroke:#787878;stroke-opacity:1" transform="translate(-34)" x="322.92578" xml:space="preserve" y="104.97846">
+      <tspan style="fill:#787878;fill-opacity:1;stroke:#787878;stroke-opacity:1" x="322.92578" y="104.97846">192.168.25.0</tspan>
+    </text>
+  </g>
+  <g display="inline" font-style="normal" id="template" transform="translate(-53.57225,-227.81012)">
+    <g id="pt2">
+      <text display="inline" dx="0" dy="0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" style="fill:#0000ff;fill-opacity:1" x="403.5321" y="503.63568">PT 2</text>
+      <path d="m 462.95287,501.25474 16.6707,13.28552 c 0.76789,0.6459 0.88127,1.76957 0.27362,2.53588 -0.62195,0.78434 -1.76349,0.91545 -2.55253,0.28977 l -16.63045,-13.29443 c -0.78355,-0.62133 -0.92028,-1.76222 -0.29647,-2.5489 0.62087,-0.78137 1.74845,-0.89164 2.53513,-0.26783 z m 19.47182,3.99758 21.48004,30.99224 -35.00604,-14.06173 z" display="inline" fill="#0000FF" font-style="normal" stroke="#0000ff" stroke-linejoin="bevel" stroke-miterlimit="10" stroke-width="0.4335" style="fill:#0000ff;fill-opacity:1"/>
+    </g>
+    <g id="pt1">
+      <text display="inline" dx="0" dy="0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" style="fill:#0000ff;fill-opacity:1" x="196.49986" y="392.60721">PT 1</text>
+      <path d="m 192.51104,374.4029 -15.47753,-14.6582 c -0.71004,-0.70902 -0.72722,-1.83825 -0.0565,-2.54998 0.68654,-0.72847 1.83511,-0.76179 2.56794,-0.0711 l 15.43667,14.66366 c 0.72774,0.68585 0.76672,1.83425 0.0781,2.5649 -0.6852,0.7256 -1.81809,0.73936 -2.54874,0.0508 z m -19.06018,-5.64285 -18.75865,-32.71189 33.67999,16.99453 z" display="inline" fill="#0000FF" font-style="normal" stroke="#0000ff" stroke-linejoin="bevel" stroke-miterlimit="10" stroke-width="0.4335" style="fill:#0000ff;fill-opacity:1"/>
+    </g>
+    <g id="varAY" transform="translate(19.88728,228.94802)">
+      <rect height="15.16186" style="display:inline;fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-dasharray:none;stroke-opacity:1" width="79.38846" x="330.58582" y="92.3082"/>
+      <text style="font-style:normal;font-weight:normal;font-size:14px;line-height:1.25;font-family:sans-serif;fill-opacity:1;stroke:#0000ff;stroke-opacity:1" x="362.07886" xml:space="preserve" y="104.97846">
+        <tspan style="fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-opacity:1" x="362.07886" y="104.97846">AY</tspan>
+      </text>
+    </g>
+    <g id="varT" style="display:inline" transform="translate(-92.51175,230.05757)">
+      <rect height="18.4852" rx="5" ry="5" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1" width="67.16994" x="266.41504" y="89.29805"/>
+      <text style="font-style:normal;font-weight:normal;font-size:14px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:#0000ff;stroke-opacity:1" x="295.23438" xml:space="preserve" y="103.63">
+        <tspan style="stroke:#0000ff;stroke-opacity:1" x="295.23438" y="103.63">T</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

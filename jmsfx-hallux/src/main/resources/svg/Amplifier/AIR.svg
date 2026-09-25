@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg enable-background="new 0 0 612 792" height="792px" id="Version_1.0" version="1.1" viewBox="0 0 612 792" width="612px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" y="0px">
+  <g id="frame">
+    <path d="m 175.557,516.657 c 0,-174.435 58.379,-315.841 130.394,-315.841 72.011,0 130.391,141.406 130.391,315.841" fill="#80e0ff" stroke="#000000" stroke-width="5"/>
+  </g>
+  <g id="octagon" style="display:inline">
+    <g id="outFrame">
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="220" x2="183.5" y1="479.5" y2="393.5"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="183.5" x2="220" y1="393.5" y2="309"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="220" x2="306.5" y1="309" y2="272.5"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="306.5" x2="393" y1="272.5" y2="309"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="393" x2="426.5" y1="309" y2="393.5"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="426.5" x2="393" y1="393.5" y2="479.5"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="393" x2="306.5" y1="479.5" y2="516.5"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="306.5" x2="220" y1="516.5" y2="479.5"/>
+    </g>
+    <line fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
+    <line fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
+  </g>
+  <g id="T-AS">
+    <rect height="80" id="rectT" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2.04612;stroke-dasharray:none;stroke-opacity:1" width="134" x="478" y="156"/>
+    <text id="textT" style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="497.5" xml:space="preserve" y="208.22656">
+      <tspan x="497.5" y="208.22656">T/AS</tspan>
+    </text>
+  </g>
+  <g id="P">
+    <rect height="80" id="rectP" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2.04612;stroke-dasharray:none;stroke-opacity:1" width="134" x="478" y="236"/>
+    <text id="textP" style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="531.58203" xml:space="preserve" y="290.54102">
+      <tspan style="fill:#0000ff" x="531.58203" y="290.54102">P</tspan>
+    </text>
+  </g>
+  <g id="V">
+    <rect height="80" id="rectV" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2.04612;stroke-dasharray:none;stroke-opacity:1" width="134" x="478" y="316"/>
+    <text id="textV" style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="531.32812" xml:space="preserve" y="370.54102">
+      <tspan x="531.32812" y="370.54102">V</tspan>
+    </text>
+  </g>
+  <g id="Z-X">
+    <rect height="80" id="rectZX" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2.04612;stroke-dasharray:none;stroke-opacity:1" width="134" x="478" y="396"/>
+    <text id="textZX" style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="507.93945" xml:space="preserve" y="448.22656">
+      <tspan x="507.93945" y="448.22656">Z/X</tspan>
+    </text>
+  </g>
+  <g id="G-H">
+    <rect height="80" id="rectGH" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2.04612;stroke-dasharray:none;stroke-opacity:1" width="134" x="478" y="476"/>
+    <text id="textGH" style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="506.21094" xml:space="preserve" y="528.22656">
+      <tspan x="506.21094" y="528.22656">G/H</tspan>
+    </text>
+  </g>
+  <g id="AL">
+    <rect height="80" id="rectAL" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" width="328" x="142" y="518"/>
+    <text id="textAL" style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="280.92188" xml:space="preserve" y="572.54102">
+      <tspan x="280.92188" y="572.54102">AL</tspan>
+    </text>
+  </g>
+  <g id="AO">
+    <rect height="80" id="rectAO" style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-dasharray:none;stroke-opacity:1" width="346" x="132" y="118"/>
+    <text id="textAO" style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="276.44531" xml:space="preserve" y="172.54102">
+      <tspan x="276.44531" y="172.54102">AO</tspan>
+    </text>
+  </g>
+  <g id="AJ">
+    <path d="M 176.341,469.248 17.069,557.214" id="lineAJ" style="fill:none;stroke:#0000ff;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+    <text id="textAJ" style="font-style:normal;font-weight:normal;font-size:32px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none" x="23.07507" xml:space="preserve" y="527.69196">
+      <tspan x="23.07507" y="527.69196">AJ</tspan>
+    </text>
+  </g>
+</svg>

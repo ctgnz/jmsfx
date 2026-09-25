@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg enable-background="new 0 0 400 400" font-style="normal" height="400" id="Version_1.0" version="1.1" viewBox=" 0  0 400 400" width="400" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+  <svg:g font-style="normal" id="main" transform="matrix(1.75,0,0,1.75,-247.24177,-173.62089)">
+    <svg:path d="m 181.336,222.638 c 13.174,-104.438 162.599,-86.176 158,10.4 -3.446,72.352 -109.576,99.648 -149.2,29.6" fill="none" font-style="normal" stroke="#000000" stroke-width="2"/>
+    <svg:path d="m 198.83765,211.26027 -17.24187,10.83494 -17.51492,-12.77329" font-style="normal" style="fill:none;stroke:#000000;stroke-width:2"/>
+    <svg:path d="m 180.06153,278.59473 10.41414,-16.15893 23.064,3.58021" font-style="normal" style="fill:none;stroke:#000000;stroke-width:2"/>
+    <svg:g font-style="normal" transform="translate(173,50)">
+      <svg:rect fill="#FFFFFF" font-style="normal" height="20" rx="0" ry="0" stroke="#FFFFFF" width="20" x="155.571" y="167.714"/>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="19.998px" font-style="normal" style="stroke-width:0.5714" x="144.66492" y="184.8571">LOC</svg:text>
+    </svg:g>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:ellipse cx="208.44382" cy="224.84563" display="inline" font-style="normal" rx="2.984" ry="2.934" stroke="#000000"/>
+    <svg:g font-style="normal" transform="translate(-20.54703,-26.32588)">
+      <svg:line display="inline" fill="none" font-style="normal" stroke="#0000FF" stroke-width="2" x1="81" x2="56.19" y1="220.74899" y2="181.40601"/>
+      <svg:line display="inline" fill="none" font-style="normal" stroke="#0000FF" stroke-width="1.84689" x1="56.5" x2="56.5" y1="182.24899" y2="125.54095"/>
+      <svg:polygon display="inline" fill="#FFFFFF" font-style="normal" points="87.669,224.311 69.553,216.924 82.71,205.385" stroke="#0000FF" stroke-width="2"/>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" transform="translate(56,40)">
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989px" font-style="normal" transform="translate(-27.5005,5.75)" x="0" y="0">PT. 2</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989px" font-style="normal" transform="translate(-41.5005,30.25)" x="0" y="0">(START</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989px" font-style="normal" transform="translate(-39.7505,56.5)" x="0" y="0">POINT)</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" transform="translate(-29.3996,157.30554)">
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989px" font-style="normal" transform="translate(213.749,90.5)" x="0" y="0">PT. 1</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989px" font-style="normal" transform="translate(148.9995,109.75)" x="0" y="0">(CENTER POINT)</svg:text>
+    </svg:g>
+  </svg:g>
+</svg:svg>

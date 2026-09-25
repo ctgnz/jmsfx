@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg enable-background="new 0 0 400 400" font-style="normal" height="400" id="Version_1.0" version="1.1" viewBox=" 0  0 400 400" width="400" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+  <svg:g font-style="normal" id="main">
+    <svg:path d="m 46.31101,196.14075 c 0.90806,-51.30533 57.20772,-126.2202 66.2883,-136.20885 20.88536,-36.32236 63.1101,-18.16118 103.0647,-15.89103 35.4143,0.90806 98.07037,39.50057 110.32917,55.3916 38.5925,29.057887 44.94892,72.19069 34.96027,94.89217 -14.98297,27.24177 3.63224,54.02951 -27.6958,89.44382 -34.96027,58.5698 -76.731,70.8286 -128.94438,68.10442 -43.1328,-1.81612 -74.91487,0.90806 -123.49603,-59.9319 C 43.58683,249.26221 46.31101,196.14075 46.31101,196.14075 Z" font-style="normal" style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none"/>
+    <svg:g font-style="normal">
+      <svg:rect fill="#FFFFFF" font-style="normal" height="29.188" rx="0" ry="0" width="49.307" x="182.408" y="334.189"/>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="20.8061" font-style="normal" transform="matrix(1 0 0 1 186.417 355.668)" x="0" y="0">PAA</svg:text>
+    </svg:g>
+    <svg:g font-style="normal">
+      <svg:rect fill="#FFFFFF" font-style="normal" height="29.188" rx="0" ry="0" width="49.307" x="182.571" y="31.189"/>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="20.8061" font-style="normal" transform="matrix(1 0 0 1 186.5801 52.668)" x="0" y="0">PAA</svg:text>
+    </svg:g>
+    <svg:g font-style="normal">
+      <svg:rect fill="#FFFFFF" font-style="normal" height="29.188" rx="0" ry="0" width="49.307" x="24.307" y="183.551"/>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="20.8061" font-style="normal" transform="matrix(1 0 0 1 28.3164 205.0293)" x="0" y="0">PAA</svg:text>
+    </svg:g>
+    <svg:g font-style="normal">
+      <svg:rect fill="#FFFFFF" font-style="normal" height="29.188" rx="0" ry="0" width="49.309" x="339.473" y="180.869"/>
+      <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="20.8061" font-style="normal" transform="matrix(1 0 0 1 343.4814 202.3467)" x="0" y="0">PAA</svg:text>
+    </svg:g>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:g display="inline" font-style="normal" id="varT" transform="translate(-75.3689,-73.09875)">
+      <svg:rect fill="none" font-style="normal" height="40.12848" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="3.8922" width="39.22043" x="258.0751" y="208.60841"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="36px" font-style="normal" x="266.5935" y="241.75957">T</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="varW" transform="translate(-98.02174,-30.41998)">
+      <svg:rect fill="none" font-style="normal" height="30.578" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="3" width="30.578" x="257.629" y="218.605"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="19.2665px" font-style="normal" x="263.39294" y="240.89786">W  -</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="varW1" transform="translate(-44.8513,-30.41998)">
+      <svg:rect fill="none" font-style="normal" height="30.578" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="3" width="47.972" x="257.629" y="218.605"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="19.2665px" font-style="normal" x="266.55835" y="240.92137">W1</svg:text>
+    </svg:g>
+  </svg:g>
+</svg:svg>

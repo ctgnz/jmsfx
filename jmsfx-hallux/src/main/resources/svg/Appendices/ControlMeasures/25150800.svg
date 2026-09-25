@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 400 400" font-style="normal" height="400" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 400 400" width="400" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:path d="M156.972,115.492c-42.024,4.464-96.079,2.243-108.09,26.702c-12.01,24.46-9.997,97.839,36.03,120.08 c46.028,22.236,194.148,31.146,240.177,13.354c46.027-17.794,40.034-93.396,36.03-120.099 c-4.003-26.681-26.032-33.347-60.051-40.032C267.052,108.827,198.997,111.048,156.972,115.492" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="40" font-style="normal" id="static" transform="matrix(1 0 0 1 134.0757 206.5234)" x="0" y="0">LZ </svg:text>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template" transform="translate(150 118)">
+    <svg:rect display="inline" fill="none" font-style="normal" height="43.748" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="2.6622" width="44.223" x="63.277" y="51.752"/>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="40" font-style="normal" transform="matrix(1 0 0 1 73.5918 88.5234)" x="0" y="0">T</svg:text>
+  </svg:g>
+  <svg:g display="none" font-style="normal" id="example">
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="40" font-style="normal" id="varTe" transform="matrix(1 0 0 1 134.0757 206.5234)" x="0" y="0">LZ SILVER</svg:text>
+  </svg:g>
+</svg:svg>

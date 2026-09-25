@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="72" font-style="normal" transform="matrix(1 0 0 1 234.6133 383.5508)" x="0" y="0">CCP</svg:text>
+    <svg:circle cx="311.318" cy="397.93" fill="none" font-style="normal" r="125" stroke="#000000" stroke-width="5"/>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:g display="inline" font-style="normal" id="varT" transform="translate(0 50)">
+      <svg:rect fill="#FFFFFF" font-style="normal" height="62.57" rx="0" ry="0" stroke="#0000FF" stroke-width="5" width="64.535" x="277.283" y="364.203"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="72" font-style="normal" transform="matrix(1 0 0 1 286.293 422.2031)" x="0" y="0">T</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="points">
+      <svg:g font-style="normal" transform="translate(140 120)">
+        <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 258.6133 403.4551)" x="0" y="0">CENTER</svg:text>
+        <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 269.6133 428.4551)" x="0" y="0">POINT</svg:text>
+      </svg:g>
+      <svg:g font-style="normal">
+        <svg:g font-style="normal">
+          <svg:g font-style="normal">
+            <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="5" x1="459.683" x2="326.682" y1="501.203" y2="411.203"/>
+            <svg:path d="M317.193,409.422c4.085,5.023,6.456,8.713,9.457,13.151l10.602-15.667c-1.949-0.297-9.543-1.963-15.727-3.888 c-6.619-2.062-12.372-4.294-15.877-6.077C308.606,399.537,312.82,404.045,317.193,409.422z" fill="#0000FF" font-style="normal"/>
+          </svg:g>
+        </svg:g>
+      </svg:g>
+    </svg:g>
+  </svg:g>
+  <svg:g display="none" font-style="normal" id="example" transform="translate(0 50)">
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="72" font-style="normal" id="varTe" transform="matrix(1 0 0 1 289.2617 421.2031)" x="0" y="0">1</svg:text>
+  </svg:g>
+</svg:svg>

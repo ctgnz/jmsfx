@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 400 400" font-style="normal" height="400" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 400 400" width="400" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:path d="M183.543,46.847c-86.479,0-156.582,67.732-156.582,151.288c0,83.576,70.103,151.309,156.582,151.309 c86.48,0,156.581-67.731,156.581-151.309C340.124,114.579,270.023,46.847,183.543,46.847" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="19.2645" font-style="normal" transform="matrix(1 0 0 1 83.1226 248.2432)" x="0" y="0">Grids</svg:text>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="19.2645" font-style="normal" transform="matrix(1 0 0 1 83.1226 275.1777)" x="0" y="0">EFF:</svg:text>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="19.2645" font-style="normal" transform="matrix(1 0 0 1 83.1226 193.8125)" x="0" y="0">MAX ALT:</svg:text>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="19.2645" font-style="normal" transform="matrix(1 0 0 1 83.1226 168.1328)" x="0" y="0">MIN ALT:</svg:text>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="19.2645" font-style="normal" transform="matrix(1 0 0 1 83.1519 101.7793)" x="0" y="0">ACA</svg:text>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:g display="inline" font-style="normal" id="varAM">
+      <svg:rect fill="none" font-style="normal" height="47.975" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="3" transform="matrix(0.6486 -0.7611 0.7611 0.6486 -96.492 276.2242)" width="30.581" x="235.603" y="218.621"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="19.2665" font-style="normal" transform="matrix(0.7612 0.6486 -0.6486 0.7612 236.9395 238.2734)" x="0" y="0">AM</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="varX1">
+      <svg:rect fill="none" font-style="normal" height="25.477" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="2.5418" width="45.867" x="179.09" y="175.907"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18" font-style="normal" transform="matrix(1 0 0 1 190.4463 195.9639)" x="0" y="0">X1</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="varX">
+      <svg:rect fill="none" font-style="normal" height="30.579" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="2.5418" width="33.254" x="176.528" y="138.832"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18" font-style="normal" transform="matrix(1 0 0 1 187.0811 159.8711)" x="0" y="0">X</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="varH">
+      <svg:rect fill="none" font-style="normal" height="24.846" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="1.9924" width="28.181" x="138.305" y="230.186"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18" font-style="normal" transform="matrix(1 0 0 1 143.6636 250.3926)" x="0" y="0">H</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="varW1">
+      <svg:rect fill="none" font-style="normal" height="34.515" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="2.5418" width="44.205" x="123.15" y="292.241"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18" font-style="normal" transform="matrix(1 0 0 1 130.2056 317.3428)" x="0" y="0">W</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18" font-style="normal" transform="matrix(1 0 0 1 147.3936 317.3428)" x="0" y="0">1</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18" font-style="normal" transform="matrix(1 0 0 1 157.0796 317.3428)" x="0" y="0"/>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="varW">
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="serif" font-size="21.7108" font-style="normal" transform="matrix(1 0 0 1 169.6426 282.4648)" x="0" y="0">-</svg:text>
+      <svg:rect fill="none" font-style="normal" height="34.534" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="2.5418" width="34.152" x="132.706" y="257.571"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18" font-style="normal" transform="matrix(1 0 0 1 139.6812 282.8037)" x="0" y="0">W</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="varT">
+      <svg:rect fill="none" font-style="normal" height="35.682" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="2.5418" width="33.254" x="89.762" y="106.973"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18" font-style="normal" transform="matrix(1 0 0 1 100.8608 131.4414)" x="0" y="0">T</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="points">
+      <svg:path d="M182.339,210.367l103.031,87.436 c0.536,0.459,0.61,1.26,0.151,1.797c-0.459,0.535-1.263,0.592-1.797,0.151l-103.05-87.455c-0.537-0.458-0.594-1.262-0.135-1.797 C180.981,209.964,181.804,209.906,182.339,210.367L182.339,210.367z M287.547,291.303l6.71,15.711l-16.588-4.052L287.547,291.303z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10" stroke-width="0.3058"/>
+      <svg:g font-style="normal">
+        <svg:path d="M362.543,210.311 l-168.298-1.074c-0.707,0-1.28-0.57-1.28-1.276c0.019-0.706,0.593-1.262,1.299-1.262l168.295,1.069 c0.706,0,1.28,0.574,1.264,1.28C363.822,209.755,363.249,210.311,362.543,210.311L362.543,210.311z M196.748,215.641l-15.25-7.76 l15.346-7.53L196.748,215.641z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10" stroke-width="0.3058"/>
+        <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="12.843" font-style="normal" transform="matrix(1 0 0 1 345.4688 202.9717)" x="0" y="0">P</svg:text>
+        <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="12.843" font-style="normal" transform="matrix(1 0 0 1 353.7266 202.9717)" x="0" y="0">T</svg:text>
+        <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="12.843" font-style="normal" transform="matrix(1 0 0 1 361.9824 202.9717)" x="0" y="0"/>
+        <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="12.843" font-style="normal" transform="matrix(1 0 0 1 365.6406 202.9717)" x="0" y="0">1</svg:text>
+      </svg:g>
+      <svg:g font-style="normal">
+        <svg:rect fill="none" font-style="normal" height="92.814" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="2.2146" transform="matrix(0.65 -0.76 0.76 0.65 -127.2576 260.1669)" width="28.008" x="204.791" y="221.821"/>
+        <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="14.0014" font-style="normal" transform="matrix(0.76 0.65 -0.65 0.76 188.6509 248.3184)" x="0" y="0">RADIUS (M)</svg:text>
+      </svg:g>
+    </svg:g>
+  </svg:g>
+  <svg:g display="none" font-style="normal" id="example">
+    <svg:text display="inline" dx="0.0" dy="0.0" enable-background="new    " font-style="normal" id="varWeW1e" transform="matrix(1 0 0 1 129.4214 276.4668)" x="0" y="0">
+      <svg:tspan font-family="sans-serif" font-size="21" font-style="normal" x="0" y="0">281400ZAPR08 -</svg:tspan>
+      <svg:tspan font-family="sans-serif" font-size="21" font-style="normal" x="0" y="25.2">281530ZAPR08</svg:tspan>
+    </svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="21" font-style="normal" id="VarYeYne" transform="matrix(1 0 0 1 136.4209 249.377)" x="0" y="0">NK2312 to NK3013</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="21" font-style="normal" id="varX1e" transform="matrix(1 0 0 1 170.4253 193.9639)" x="0" y="0">3000 FT AGL</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="21" font-style="normal" id="varXe" transform="matrix(1 0 0 1 169.6426 169.1328)" x="0" y="0">500 FT AGL</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="21" font-style="normal" id="varTe" transform="matrix(1 0 0 1 82.4497 131.4414)" x="0" y="0">53ID(M)</svg:text>
+  </svg:g>
+</svg:svg>

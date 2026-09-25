@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="10" x1="205.5" x2="205.5" y1="231" y2="581"/>
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="10" x1="405.5" x2="405.5" y1="231" y2="581"/>
+    <svg:g font-style="normal">
+      <svg:polyline font-style="normal" points="305.5,410.5 224.5,365.5 224.5,455.5 305.5,410.5 386.5,365.5 386.5,455.5 305.5,410.5"/>
+    </svg:g>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="60" font-style="normal" transform="matrix(1 0 0 1 235.0098 355)" x="0" y="0">SUW</svg:text>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template" transform="translate(0 -140) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1)">
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 253 401)" x="0" y="0">CENTER</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 264 426)" x="0" y="0">POINT</svg:text>
+    <svg:g display="inline" font-style="normal" transform="translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(200 85) scale(1 0.75862) translate(-200 -85)">
+      <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="3" x1="298.5" x2="298.5" y1="593.817" y2="648.819"/>
+      <svg:polygon fill="#FFFFFF" font-style="normal" points="298.5,651.817 291.5,636.818 305.5,636.818" stroke="#0000FF"/>
+    </svg:g>
+  </svg:g>
+</svg:svg>

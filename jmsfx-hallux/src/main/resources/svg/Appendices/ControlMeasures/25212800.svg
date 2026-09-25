@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main" transform="translate(-250 -150) scale(1.75 1.75)">
+    <svg:path d="M255.967,264.643l126.98,0.134l-3.402,2.812H259.508L255.967,264.643z M255.967,264.643l3.509,3.02l35.039,95.971 l-3.026,0.01L255.967,264.643z M382.947,264.643l-3.402,2.974l-34.975,96.026h2.994L382.947,264.643z" font-style="normal"/>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:g display="inline" font-style="normal" id="varH">
+      <svg:rect fill="#FFFFFF" font-style="normal" height="50.799" rx="0" ry="0" stroke="#0000FF" stroke-width="2.1866" width="58.683" x="277.817" y="372.5"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="43.2269" font-style="normal" transform="matrix(1.1335 0 0 1 288.0264 412.7051)" x="0" y="0">H</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="points" transform="matrix(1 0 0 1 56 -61)">
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989" font-style="normal" transform="matrix(1 0 0 1 209.5669 576.8751)" x="0" y="0">CENTER</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.9989" font-style="normal" transform="matrix(1 0 0 1 221.8169 597.8751)" x="0" y="0">POINT</svg:text>
+      <svg:g font-style="normal" transform="matrix(0.89767 -0.44066 0.44066 0.89767 133.455 170.916)">
+        <svg:g font-style="normal">
+          <svg:g font-style="normal">
+            <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="5" x1="-65.201" x2="-33.728" y1="396.661" y2="332.549"/>
+            <svg:path d="M-33.275,322.904c-4.414,4.739-7.736,7.597-11.721,11.182l16.983,8.336c0.025-1.972,0.626-9.724,1.678-16.113 c1.126-6.841,2.546-12.847,3.824-16.564C-24.671,313.033-28.551,317.832-33.275,322.904z" fill="#0000FF" font-style="normal"/>
+          </svg:g>
+        </svg:g>
+      </svg:g>
+    </svg:g>
+  </svg:g>
+</svg:svg>

@@ -138,8 +138,9 @@
                 directory that is not present is skipped rather than failing, which keeps partial
                 reactor builds and partial checkouts working.
 
-                hallux's fragments are not covered: the tool lives here and that repo has no dependency
-                on it. See jmsfx#73 and jmsfx#81, the same coupling question the model split must answer.
+                Both fragment trees are covered now that jmsfx-hallux is a module here (jmsfx#106).
+                It used to be only jmsfx-standard's, because the other tree sat in a repository that had
+                no dependency on this tooling.
             -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -158,6 +159,8 @@
                                 <argument>--check</argument>
                                 <argument>--dir</argument>
                                 <argument>${project.basedir}/../jmsfx-standard/src/main/resources/svg</argument>
+                                <argument>--dir</argument>
+                                <argument>${project.basedir}/../jmsfx-hallux/src/main/resources/svg</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -172,6 +175,8 @@
                             <arguments>
                                 <argument>--dir</argument>
                                 <argument>${project.basedir}/../jmsfx-standard/src/main/resources/svg</argument>
+                                <argument>--dir</argument>
+                                <argument>${project.basedir}/../jmsfx-hallux/src/main/resources/svg</argument>
                                 <argument>--model</argument>
                                 <argument>/model-standard.yml</argument>
                             </arguments>
