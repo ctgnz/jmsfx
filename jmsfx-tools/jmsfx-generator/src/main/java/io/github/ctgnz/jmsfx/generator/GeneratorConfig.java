@@ -108,12 +108,22 @@ public class GeneratorConfig {
         return resourceDir;
     }
 
-    public void setModelSourceFile(Path modelSourceFile) {
-        this.modelSourceFile = modelSourceFile;
+    /**
+     * Takes a String, not a Path, and so does every path setter here.
+     * <p>
+     * Jackson's {@code Path} deserialiser treats {@code D:/git/jmsfx/...} as a URI and refuses it with "scheme 'D' not allowed" on any platform where that is not a drive letter -
+     * so reading one of these configs failed outright on a Linux runner. Nothing noticed until {@link ModelComparator} became the first check that reads a config during the build;
+     * the fragment checks are passed their directories by the build and never parse one.
+     * <p>
+     * {@code Path.of} is happy to hold a value it cannot resolve, which is what is wanted: these paths only mean anything on the machine that wrote them, and the tools that use
+     * them run there. jmsfx#116 removes them from the configs altogether.
+     */
+    public void setModelSourceFile(String modelSourceFile) {
+        this.modelSourceFile = Path.of(modelSourceFile);
     }
 
-    public void setResourceDir(Path resourceDir) {
-        this.resourceDir = resourceDir;
+    public void setResourceDir(String resourceDir) {
+        this.resourceDir = Path.of(resourceDir);
     }
 
     public List<String> getStandardEnums() {
@@ -167,8 +177,8 @@ public class GeneratorConfig {
         this.modelFilePath = modelFilePath;
     }
 
-    public void setOutputDir(Path outputDir) {
-        this.outputDir = outputDir;
+    public void setOutputDir(String outputDir) {
+        this.outputDir = Path.of(outputDir);
     }
 
     public void setTypePackage(String typePackage) {
