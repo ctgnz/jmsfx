@@ -22,6 +22,7 @@ public class GeneratorConfig {
     private String amplifierPackage;
     private String modelFilePath;
     private String libraryPrefix;
+    private String countryCodeClass;
     private String libraryFile = "Base.xml";
     private String extensionCountryCode = "000";
 
@@ -51,6 +52,10 @@ public class GeneratorConfig {
             Files.createDirectories(packageDir);
         }
         return packageDir;
+    }
+
+    public String getCountryCodeClass() {
+        return countryCodeClass;
     }
 
     public String getExtensionCountryCode() {
@@ -140,6 +145,10 @@ public class GeneratorConfig {
 
     public void setExtensionCountryCode(String extensionCountryCode) {
         this.extensionCountryCode = extensionCountryCode;
+    }
+
+    public void setCountryCodeClass(String countryCodeClass) {
+        this.countryCodeClass = countryCodeClass;
     }
 
     public void setIconPackage(String iconPackage) {

@@ -55,8 +55,21 @@ public class DomainModelGenerator {
         generateLibrary(dataModel);
     }
 
+    /**
+     * Reads the model, then stamps this generator's naming onto it.
+     * <p>
+     * The model file describes symbology; what a library is called and which packages it lands in are properties of generating one, not of the standard it implements. So they live
+     * in config-*.yml alone, and are applied here rather than being declared a second time at the head of every model file - which is what jmsfx#108 was about. An overlay model
+     * (jmsfx#81) carries no packages at all, which is the same point from the other direction.
+     */
     public LibraryModel parse() throws Exception {
-        return parser.readLibraryModel(Files.newInputStream(config.getModelFile()));
+        LibraryModel dataModel = parser.readLibraryModel(Files.newInputStream(config.getModelFile()));
+        dataModel.setLibraryPrefix(config.getLibraryPrefix());
+        dataModel.setCountryCodeClass(config.getCountryCodeClass());
+        dataModel.setIconPackage(config.getIconPackage());
+        dataModel.setAmplifierPackage(config.getAmplifierPackage());
+        dataModel.setCommonPackage(config.getCommonPackage());
+        return dataModel;
     }
 
     /** Generated sources always come out UTF-8, regardless of the JVM's platform-default encoding. */

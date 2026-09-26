@@ -3,6 +3,7 @@ package io.github.ctgnz.jmsfx.generator.yaml;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.nullValue;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -83,13 +84,24 @@ class JmsfxParserTest {
         assertThat(common.getEntitySubTypes(), hasSize(1));
     }
 
+    /**
+     * The naming a library is generated under is no longer in the model file, so the parser does not supply it - {@code DomainModelGenerator.parse} stamps it on from
+     * {@code config-*.yml} afterwards. See jmsfx#108. Asserted as absent here rather than dropped silently, because a model file growing a {@code config:} block again is exactly
+     * the regression this is guarding.
+     */
     @Test
-    void testReadLibraryModelParsesTopLevelConfigAndVersions() throws IOException {
+    void testReadLibraryModelLeavesGenerationNamingToTheConfig() throws IOException {
         LibraryModel library = readRealLibraryModel();
 
-        assertThat(library.getLibraryPrefix(), is("Standard"));
-        assertThat(library.getCountryCodeClass(), is("NatoCountryCode"));
-        assertThat(library.getIconPackage(), is("io.github.ctgnz.jmsfx.standard"));
+        assertThat(library.getLibraryPrefix(), is(nullValue()));
+        assertThat(library.getCountryCodeClass(), is(nullValue()));
+        assertThat(library.getIconPackage(), is(nullValue()));
+    }
+
+    @Test
+    void testReadLibraryModelParsesVersions() throws IOException {
+        LibraryModel library = readRealLibraryModel();
+
         assertThat(library.getVersions(), hasSize(4));
 
         VersionModel original = library.getVersions()

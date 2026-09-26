@@ -1,4 +1,3 @@
-config: {libraryPrefix: Standard, countryCodeClass: NatoCountryCode, iconPackage: io.github.ctgnz.jmsfx.standard, amplifierPackage: io.github.ctgnz.jmsfx.standard.amplifier, commonPackage: io.github.ctgnz.jmsfx.standard.common}
 versions:
 - {code: "10", id: ORIGINAL, label: "APP-6(D)/MIL-STD-2525D October 2017"}
 - {code: "11", id: MS2525D1, label: "MIL-STD-2525D Chg 1 August 2018"}
