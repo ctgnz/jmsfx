@@ -50,6 +50,7 @@ Grouped by deliverable, so that things which share a release sit together:
 | `library/` | The generated libraries. A plain directory, not a module: each library tracks its own domain, so these are the lifecycles that should *not* move together. |
 | &nbsp;&nbsp;`jmsfx-standard` | The generated APP-6E domain model. Not hand-written; see above. |
 | &nbsp;&nbsp;`jmsfx-hallux` | An extension library - icons APP-6E dropped, an enlarged Dismounted Individual set, extra amplifiers. |
+| &nbsp;&nbsp;`jmsfx-battleorder` | An extension colouring a unit's frame by branch of service. Documentation only for now - it needs [#81](https://github.com/ctgnz/jmsfx/issues/81) to be generated, so it is not yet in the reactor. |
 
 The editor sits with the generator rather than with the applications because it edits the model file, which is the generator's input. Nothing in either pom says so - the coupling runs through the YAML.
 

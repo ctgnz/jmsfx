@@ -1,8 +1,8 @@
 # JMSFX Extension for Battle Order
 
-An extension to the [JMSFX](https://github.com/ctgnz/jmsfx) APP-6E symbology model that colours a
-unit's frame by its branch of service, following the convention used by
-[Battle Order](https://www.battleorder.org/icons)'s icon library.
+An extension to the JMSFX APP-6E symbology model that colours a unit's frame by its branch of
+service, following the convention used by [Battle Order](https://www.battleorder.org/icons)'s icon
+library.
 
 It is a small extension by design. The icons, modifiers and echelons are the standard APP-6E ones;
 the only addition is a single frame amplifier, scoped to the Land Units symbol set.
@@ -35,15 +35,27 @@ treatment, which is a change to how a symbol is composed rather than an entry in
 
 ## Status
 
-`model-battleorder.yml` is the extension overlay, and at the moment that is all this repository holds.
+**Not built yet, and not in the reactor.** This directory holds the extension's documentation; its
+model overlay and generator config live with the other models, in
+`jmsfx-tools/jmsfx-generator/src/main/resources/`:
 
-Generating a library from a base model plus an overlay is [jmsfx#81](https://github.com/ctgnz/jmsfx/issues/81),
-and is part of the 2.0.0 release. Until it lands there is no build here: the existing generator reads one
-whole model file rather than composing one, which is exactly what #81 exists to change. This extension is
-the first thing it will be tried on, being small enough that the overlay is seven lines rather than a
-copy of the base.
+| File | What it is |
+| --- | --- |
+| `model-battleorder.yml` | The overlay - one frame amplifier group, seven values. |
+| `config-battleorder.yml` | Where the generated library goes, and under what package. |
+
+The overlay is an overlay, not a whole model, and the generator reads one complete model file rather
+than composing one. Composing a library from a base model plus an overlay is
+[jmsfx#81](https://github.com/ctgnz/jmsfx/issues/81); this extension is the first thing it will be
+tried on, being small enough that the overlay is a dozen lines rather than a copy of the base. Once
+#81 lands, this becomes a generated library beside `jmsfx-standard` and `jmsfx-hallux`, and joins the
+root pom's `<modules>`.
+
+It came in from its own repository as part of [jmsfx#102](https://github.com/ctgnz/jmsfx/issues/102),
+which settled on a monorepo: every change here so far has been cross-cutting, and an extension that
+needs a generator change to exist at all is the clearest case of that.
 
 ## Licence
 
-Apache 2.0, the same as JMSFX. The Battle Order colours are reproduced from their published icon library;
-the symbology itself is NATO APP-6E.
+Apache 2.0, the same as the rest of JMSFX - see `LICENSE.md` at the repository root. The Battle Order
+colours are reproduced from their published icon library; the symbology itself is NATO APP-6E.
