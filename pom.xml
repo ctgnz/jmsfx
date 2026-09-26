@@ -7,22 +7,17 @@
 	<name>JMSFX - Joint Military Symbology on JavaFX</name>
 	<description>A JavaFX implementation of NATO APP-6E military symbology: a generated domain model of the standard, and the SVG composition that draws a symbol from it.</description>
 
-	<parent>
-		<groupId>io.github.ctgnz</groupId>
-		<artifactId>jmsfx-parent</artifactId>
-		<version>2.0.0-SNAPSHOT</version>
-		<relativePath>jmsfx-parent/pom.xml</relativePath>
-	</parent>
-
 	<!--
 		An aggregator, and deliberately nothing else. Everything that configures a build moved to
 		jmsfx-parent, which carries no modules - so the shared configuration can be versioned and
 		released on its own, and bumping it is one edit rather than one per module. This file only
 		answers "what is in this repository". See jmsfx#102.
 
-		It is a module of itself, which looks odd and is the normal way to do this: jmsfx-parent is
-		built by this reactor, so it has to be listed, and it is found by relativePath rather than
-		needing to be installed first.
+		It inherits nothing, deliberately. An aggregator has no sources, so there is nothing for
+		inherited configuration to act on - and a <parent> here would be a second place
+		jmsfx-parent's version is written down, which is half of what the split was meant to stop.
+		jmsfx-parent is listed below as a module because this reactor builds it, which is a
+		different relationship entirely.
 	-->
 	<!--
 		Grouped by deliverable, not flat. jmsfx-tools and jmsfx-viewer are real poms because their
