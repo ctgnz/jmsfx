@@ -27,7 +27,13 @@
 	    </dependency>
 	    <dependency>
 	        <groupId>io.github.ctgnz</groupId>
+	        <artifactId>jmsfx-core</artifactId>
+	        <version>${project.version}</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>io.github.ctgnz</groupId>
 	        <artifactId>jmsfx-standard</artifactId>
+	        <scope>runtime</scope>
 	        <version>2.0.0-SNAPSHOT</version>
 	    </dependency>
         <!-- JavaFX resolves its native classifier from the build host, so a jar
