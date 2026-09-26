@@ -27,6 +27,19 @@ public interface IconLibrary {
         return IconLibraries.discover();
     }
 
+    /**
+     * Which library this is - {@code Standard}, {@code Hallux}, {@code BattleOrder}.
+     * <p>
+     * An application built against jmsfx-core names no library and discovers whichever one is on its classpath, so without this it cannot report what it is running, and a
+     * deployment cannot be checked from outside beyond inferring it from which symbol sets appear. That is answerable while there is one library and awkward once there are three,
+     * each deployed to its own subdomain. See jmsfx#111.
+     * <p>
+     * Deliberately not {@code getVersion()}: {@link #getVersions()} already means something else here - an APP-6 edition, SIDC positions 1-2 - and two methods a character apart
+     * meaning different things is a trap. The library's own artifact version is a separate question, and one the generated source cannot answer, since it has no idea what version
+     * it will be published as.
+     */
+    String getName();
+
     ObservableList<Amplifier> getAmplifiers();
 
     ObservableList<SectorOneModifier> getCommonSectorOneModifiers();

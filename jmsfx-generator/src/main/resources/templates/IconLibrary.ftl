@@ -68,6 +68,12 @@ public class ${libraryPrefix}IconLibrary implements IconLibrary {
     public ${libraryPrefix}IconLibrary() {
     }
 
+    /** The library prefix this was generated with, which is what names the class too. */
+    @Override
+    public String getName() {
+        return "${libraryPrefix}";
+    }
+
     @Override
     public ObservableList<Amplifier> getAmplifiers() {
         return FXCollections.observableArrayList(AmplifierEnum.values());

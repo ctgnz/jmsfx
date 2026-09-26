@@ -50,6 +50,15 @@ public class DynamicIconLibrary implements IconLibrary {
     public DynamicIconLibrary() {
     }
 
+    /**
+     * Not a generated library, so it has no prefix of its own. It is whatever model the editor currently holds, which is the honest answer and stops it being mistaken for one of
+     * the published libraries if it ever reaches something that reports a name.
+     */
+    @Override
+    public String getName() {
+        return "Dynamic";
+    }
+
     @SuppressWarnings("this-escape")
     public DynamicIconLibrary(IconLibrary staticLibrary) {
         this.versions.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getVersions()), VersionImpl::new));
