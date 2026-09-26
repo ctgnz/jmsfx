@@ -21,6 +21,11 @@ amplifierGroups:
            frameAmplifier: true, symbolSets: [LAND_UNIT],
            enumId: SERVICE_BRANCH, enumDesc: "Branch of Service"}
   values:
+  # First, so it is the default: a symbol set that has a frame amplifier defaults to its first
+  # value, and defaulting to Infantry would quietly assert a branch nobody chose. FFFF80 is
+  # APP-6E's unknown yellow, which Battle Order's palette does not use - so an uncoloured unit
+  # reads as "pick a branch" rather than as a branch.
+  - {code: "0", id: UNKNOWN, label: "Unknown", backgroundFill: FFFF80}
   - {code: "1", id: INFANTRY, label: "Infantry", backgroundFill: 5BAA5B}
   - {code: "2", id: ARMOR_RECON, label: "Armor/Recon", backgroundFill: FFD00B}
   - {code: "3", id: ARTILLERY_AIR_DEFENSE, label: "Artillery/Air Defense", backgroundFill: FF3333}

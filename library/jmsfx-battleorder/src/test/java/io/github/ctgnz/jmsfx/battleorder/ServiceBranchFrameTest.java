@@ -31,9 +31,10 @@ import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
  */
 class ServiceBranchFrameTest {
 
-    /** Two of Battle Order's published branch colours. */
+    /** Two of Battle Order's published branch colours, and APP-6E's unknown yellow, which their palette does not use. */
     private static final String INFANTRY_GREEN = "5BAA5B";
     private static final String MARITIME_BLUE = "67C6EF";
+    private static final String UNKNOWN_YELLOW = "FFFF80";
 
     private final FoxgloveParser parser = new FoxgloveParser();
 
@@ -45,18 +46,11 @@ class ServiceBranchFrameTest {
     }
 
     @Test
-    void landUnitsOffersTheSevenBranches() {
+    void landUnitsOffersTheSevenBranchesAndUnknown() {
         assertThat(landUnits().getFrameAmplifierList()
-            .size(), is(7));
+            .size(), is(8));
     }
 
-    /**
-     * Two branches, not one branch and none.
-     * <p>
-     * Selecting no frame amplifier does not give an uncoloured frame: a symbol set that has one defaults to its first value, so Land Units in this library is always coloured by
-     * branch and Infantry green appears whether or not anything asked for it. That is consistent with what the extension is for - branch colour instead of affiliation colour - but
-     * it does mean the absence of a colour proves nothing, and an assertion written that way passes for the wrong reason.
-     */
     @Test
     void theFrameTakesTheBranchColour() throws Exception {
         String infantry = render(ServiceBranch.INFANTRY);
@@ -67,6 +61,27 @@ class ServiceBranchFrameTest {
         assertThat(maritime, containsString(MARITIME_BLUE));
         assertThat(maritime, not(containsString(INFANTRY_GREEN)));
     }
+
+    /**
+     * Code 0 is the prompt: APP-6E's unknown yellow, which Battle Order's palette does not use, so a unit whose branch nobody has chosen does not read as a branch.
+     * <p>
+     * It exists as a <em>value</em> rather than as the absence of one. SIDC position 27 carries the frame amplifier, and 0 means unspecified - which this library previously had no
+     * value for at all, so a code with 27=0 could not be decoded. Selecting no frame amplifier is a different thing again, and leaves the frame its own fill.
+     */
+    @Test
+    void unknownIsTheYellowPrompt() throws Exception {
+        String unknown = render(ServiceBranch.UNKNOWN);
+
+        assertThat(unknown, containsString(UNKNOWN_YELLOW));
+        assertThat(unknown, not(containsString(INFANTRY_GREEN)));
+    }
+
+    /*
+     * Deliberately not tested: what a symbol renders when no frame amplifier is selected at all. It should be the frame's own fill, and in isolation it is - but
+     * IdentificationSymbol applies a frame amplifier by mutating the graphic returned by FoxgloveParser, which caches parsed files in a static map and hands back the same object.
+     * So one symbol's branch colour persists on the shared frame, and the next symbol with no frame amplifier inherits it. Asserting the correct value here would pass or fail on
+     * test order rather than on behaviour. See jmsfx#121.
+     */
 
     private String render(AmplifierListItem frameAmplifier) throws Exception {
         SymbolSet landUnits = landUnits();
