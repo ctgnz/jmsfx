@@ -1,5 +1,7 @@
 package io.github.ctgnz.jmsfx.server;
 
+import java.util.List;
+
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -9,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.format.datetime.DateFormatter;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -16,6 +19,8 @@ import org.thymeleaf.spring6.SpringTemplateEngine;
 import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
+
+import io.github.ctgnz.jmsfx.server.icon.SymbologyArgumentResolver;
 
 @Configuration
 @EnableWebMvc
@@ -48,6 +53,20 @@ public class SpringWebConfig implements ApplicationContextAware, WebMvcConfigure
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasename("Messages");
         return messageSource;
+    }
+
+    /**
+     * Lets a handler take jmsfx-core's interfaces - a {@code SymbolSet}, an {@code Entity} - and have them resolved against the library on the classpath, rather than converted to
+     * a generated enum. See {@link SymbologyArgumentResolver} for why a converter cannot do it.
+     */
+    @Override
+    public void addArgumentResolvers(final List<HandlerMethodArgumentResolver> resolvers) {
+        resolvers.add(symbologyArgumentResolver());
+    }
+
+    @Bean
+    public SymbologyArgumentResolver symbologyArgumentResolver() {
+        return new SymbologyArgumentResolver();
     }
 
     @Override

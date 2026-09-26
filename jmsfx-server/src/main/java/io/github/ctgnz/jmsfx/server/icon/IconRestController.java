@@ -6,8 +6,9 @@ import java.util.List;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
 
@@ -18,116 +19,103 @@ import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
+import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
-import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 
-public abstract class IconRestController<E extends Entity, T extends EntityType, S extends EntitySubType, M extends SectorOneModifier, N extends SectorTwoModifier, A extends AmplifierListItem> {
-    private final SymbolSetEnum symbolSet;
+/**
+ * The icon API, for whichever symbology library is on the classpath.
+ * <p>
+ * This used to be an abstract class with six type parameters and twenty-three subclasses, one per symbol set, each binding those parameters to one set's generated enums and fixing
+ * its own URL prefix. That shape existed for a single reason: Spring converts a {@code @PathVariable} of an enum type through {@code Enum.valueOf}, so a handler had to name a
+ * concrete enum to accept one. The symbol set moves into the path and {@link SymbologyArgumentResolver} does the resolving, so the handlers can take jmsfx-core's interfaces and no
+ * generated type is named anywhere in this module.
+ * <p>
+ * The URLs are unchanged. The prefix each subclass declared was {@link SymbolSetSummary#pathFor} applied to its set, which is now simply matched rather than hard-coded, and path
+ * segments are still the Java enum constant names {@link CodeElementSummary} publishes.
+ * <p>
+ * See jmsfx#93, and jmsfx#76 for the same move made in jmsfx-creator.
+ */
+@RestController
+@RequestMapping("/{" + SymbologyArgumentResolver.SYMBOL_SET + "}")
+public class IconRestController {
+
     private final FoxgloveParser parser = new FoxgloveParser();
 
-    public IconRestController(SymbolSetEnum symbolSet) {
-        this.symbolSet = symbolSet;
-    }
-
     @GetMapping("/modifier/one")
-    public List<CodeElementSummary> listSectorOneModifiers() {
-        return symbolSet.getSectorOneModifiers()
-            .stream()
-            .map(CodeElementSummary::of)
-            .toList();
+    public List<CodeElementSummary> listSectorOneModifiers(SymbolSet symbolSet) {
+        return summarise(symbolSet.getSectorOneModifiers());
     }
 
     @GetMapping("/modifier/two")
-    public List<CodeElementSummary> listSectorTwoModifiers() {
-        return symbolSet.getSectorTwoModifiers()
-            .stream()
-            .map(CodeElementSummary::of)
-            .toList();
+    public List<CodeElementSummary> listSectorTwoModifiers(SymbolSet symbolSet) {
+        return summarise(symbolSet.getSectorTwoModifiers());
     }
 
     @GetMapping("/amplifier")
-    public List<CodeElementSummary> listAmplifiers() {
-        return symbolSet.getAmplifierList()
-            .stream()
-            .map(CodeElementSummary::of)
-            .toList();
+    public List<CodeElementSummary> listAmplifiers(SymbolSet symbolSet) {
+        return summarise(symbolSet.getAmplifierList());
     }
 
     @GetMapping("/entity/list")
-    public List<CodeElementSummary> listEntities() {
-        return symbolSet.getEntities()
-            .stream()
-            .map(CodeElementSummary::of)
-            .toList();
+    public List<CodeElementSummary> listEntities(SymbolSet symbolSet) {
+        return summarise(symbolSet.getEntities());
     }
 
     @GetMapping("/entityType/{entity}/list")
-    public List<CodeElementSummary> listEntityTypes(@PathVariable E entity) {
-        return entity.getEntityTypes()
-            .stream()
-            .map(CodeElementSummary::of)
-            .toList();
+    public List<CodeElementSummary> listEntityTypes(Entity entity) {
+        return summarise(entity.getEntityTypes());
     }
 
     @GetMapping("/entitySubType/{entityType}/list")
-    public List<CodeElementSummary> listEntitySubTypes(@PathVariable T entityType) {
-        return entityType.getEntitySubTypes()
-            .stream()
+    public List<CodeElementSummary> listEntitySubTypes(EntityType entityType) {
+        return summarise(entityType.getEntitySubTypes());
+    }
+
+    @GetMapping("/symbol")
+    public ResponseEntity<byte[]> generateFrameOnlySymbol(SymbolSet symbolSet, SectorOneModifier sectorOneMod, SectorTwoModifier sectorTwoMod, AmplifierListItem amplifier,
+                                                          @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+        return renderSvg(buildSymbol(symbolSet, null, null, null, sectorOneMod, sectorTwoMod, amplifier), trim);
+    }
+
+    @GetMapping("/symbol/modifier/one/{sectorOneMod}")
+    public ResponseEntity<byte[]> generateModifierOneSymbol(SymbolSet symbolSet, SectorOneModifier sectorOneMod,
+                                                            @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+        return renderSvg(buildSymbol(symbolSet, null, null, null, sectorOneMod, null, null), trim);
+    }
+
+    @GetMapping("/symbol/modifier/two/{sectorTwoMod}")
+    public ResponseEntity<byte[]> generateModifierTwoSymbol(SymbolSet symbolSet, SectorTwoModifier sectorTwoMod,
+                                                            @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+        return renderSvg(buildSymbol(symbolSet, null, null, null, null, sectorTwoMod, null), trim);
+    }
+
+    @GetMapping("/symbol/entity/{entity}")
+    public ResponseEntity<byte[]> generateEntitySymbol(SymbolSet symbolSet, Entity entity, SectorOneModifier sectorOneMod, SectorTwoModifier sectorTwoMod,
+                                                       AmplifierListItem amplifier, @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+        return renderSvg(buildSymbol(symbolSet, entity, null, null, sectorOneMod, sectorTwoMod, amplifier), trim);
+    }
+
+    @GetMapping("/symbol/{entityType}/{entitySubType}")
+    public ResponseEntity<byte[]> generateEntitySubTypeSymbol(SymbolSet symbolSet, EntityType entityType, EntitySubType entitySubType, SectorOneModifier sectorOneMod,
+                                                              SectorTwoModifier sectorTwoMod, AmplifierListItem amplifier,
+                                                              @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+        return renderSvg(buildSymbol(symbolSet, entityType.getEntity(), entityType, entitySubType, sectorOneMod, sectorTwoMod, amplifier), trim);
+    }
+
+    @GetMapping("/symbol/{entityType}")
+    public ResponseEntity<byte[]> generateSymbol(SymbolSet symbolSet, EntityType entityType, SectorOneModifier sectorOneMod, SectorTwoModifier sectorTwoMod,
+                                                 AmplifierListItem amplifier, @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+        return renderSvg(buildSymbol(symbolSet, entityType.getEntity(), entityType, null, sectorOneMod, sectorTwoMod, amplifier), trim);
+    }
+
+    private static List<CodeElementSummary> summarise(List<? extends io.github.ctgnz.jmsfx.CodeElement> elements) {
+        return elements.stream()
             .map(CodeElementSummary::of)
             .toList();
     }
 
-    @GetMapping("/symbol")
-    public ResponseEntity<byte[]> generateFrameOnlySymbol(@RequestParam(required = false) M sectorOneMod,
-                                                          @RequestParam(required = false) N sectorTwoMod,
-                                                          @RequestParam(required = false) A amplifier,
-                                                          @RequestParam(defaultValue = "false") boolean trim) throws Exception {
-        return renderSvg(buildSymbol(null, null, null, sectorOneMod, sectorTwoMod, amplifier), trim);
-    }
-
-    @GetMapping("/symbol/modifier/one/{sectorOneMod}")
-    public ResponseEntity<byte[]> generateModifierOneSymbol(@PathVariable M sectorOneMod,
-                                                            @RequestParam(defaultValue = "false") boolean trim) throws Exception {
-        return renderSvg(buildSymbol(null, null, null, sectorOneMod, null, null), trim);
-    }
-
-    @GetMapping("/symbol/modifier/two/{sectorTwoMod}")
-    public ResponseEntity<byte[]> generateModifierTwoSymbol(@PathVariable N sectorTwoMod,
-                                                            @RequestParam(defaultValue = "false") boolean trim) throws Exception {
-        return renderSvg(buildSymbol(null, null, null, null, sectorTwoMod, null), trim);
-    }
-
-    @GetMapping("/symbol/entity/{entity}")
-    public ResponseEntity<byte[]> generateEntitySymbol(@PathVariable E entity,
-                                                       @RequestParam(required = false) M sectorOneMod,
-                                                       @RequestParam(required = false) N sectorTwoMod,
-                                                       @RequestParam(required = false) A amplifier,
-                                                       @RequestParam(defaultValue = "false") boolean trim) throws Exception {
-        return renderSvg(buildSymbol(entity, null, null, sectorOneMod, sectorTwoMod, amplifier), trim);
-    }
-
-    @SuppressWarnings("unchecked")
-    @GetMapping("/symbol/{entityType}/{entitySubType}")
-    public ResponseEntity<byte[]> generateEntitySubTypeSymbol(@PathVariable T entityType,
-                                                              @PathVariable S entitySubType,
-                                                              @RequestParam(required = false) M sectorOneMod,
-                                                              @RequestParam(required = false) N sectorTwoMod,
-                                                              @RequestParam(required = false) A amplifier,
-                                                              @RequestParam(defaultValue = "false") boolean trim) throws Exception {
-        return renderSvg(buildSymbol((E) entityType.getEntity(), entityType, entitySubType, sectorOneMod, sectorTwoMod, amplifier), trim);
-    }
-
-    @SuppressWarnings("unchecked")
-    @GetMapping("/symbol/{entityType}")
-    public ResponseEntity<byte[]> generateSymbol(@PathVariable T entityType,
-                                                 @RequestParam(required = false) M sectorOneMod,
-                                                 @RequestParam(required = false) N sectorTwoMod,
-                                                 @RequestParam(required = false) A amplifier,
-                                                 @RequestParam(defaultValue = "false") boolean trim) throws Exception {
-        return renderSvg(buildSymbol((E) entityType.getEntity(), entityType, null, sectorOneMod, sectorTwoMod, amplifier), trim);
-    }
-
-    private IdentificationSymbol buildSymbol(E entity, T entityType, S entitySubType, M sectorOneMod, N sectorTwoMod, A amplifier) {
+    private IdentificationSymbol buildSymbol(SymbolSet symbolSet, Entity entity, EntityType entityType, EntitySubType entitySubType, SectorOneModifier sectorOneMod,
+                                             SectorTwoModifier sectorTwoMod, AmplifierListItem amplifier) {
         IdentificationSymbol symbol = new IdentificationSymbol(IconLibrary.discover());
         symbol.symbolSetProperty()
             .set(symbolSet);
