@@ -1,7 +1,7 @@
 package io.github.ctgnz.jmsfx.generator;
 
-import java.io.InputStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -53,9 +53,11 @@ public class ModelComparator {
     private static final Set<String> CHILD_FIELDS = Set.of("entities", "entityTypes", "entitySubTypes", "values", "sectorOneMods", "sectorTwoMods", "amplifierGuides");
 
     public static void main(String[] args) throws Exception {
-        String base = args.length > 0 ? args[0] : "/config.yml";
-        String overlay = args.length > 1 ? args[1] : "/config-historical.yml";
-        new ModelComparator().check(base, overlay);
+        if (args.length < 2) {
+            System.err.println("usage: ModelComparator <base>/config.yml <overlay>/config.yml");
+            return;
+        }
+        new ModelComparator().check(Path.of(args[0]), Path.of(args[1]));
     }
 
     /**
@@ -65,7 +67,7 @@ public class ModelComparator {
      * silently after whichever module was current and still reports success. Four of eleven modules built that way before it was noticed. {@link FragmentShapeChecker} carries the
      * same warning, and it is worth heeding.
      */
-    public void check(String baseConfig, String overlayConfig) throws Exception {
+    public void check(Path baseConfig, Path overlayConfig) throws Exception {
         if (!compare(baseConfig, overlayConfig)) {
             throw new IllegalStateException("The extension model is not a true superset of the base - see the removed and altered elements listed above, and jmsfx#81.");
         }
@@ -75,7 +77,7 @@ public class ModelComparator {
     private final ObjectMapper mapper = new ObjectMapper();
 
     /** @return true when the overlay model is a true superset of the base. */
-    public boolean compare(String baseConfig, String overlayConfig) throws Exception {
+    public boolean compare(Path baseConfig, Path overlayConfig) throws Exception {
         return compare(read(baseConfig), read(overlayConfig));
     }
 
@@ -281,11 +283,9 @@ public class ModelComparator {
         return groupId == null || groupId.isNull() ? code : String.format("%s-%s", groupId.asText(), code);
     }
 
-    private LibraryModel read(String configFile) throws Exception {
-        try (InputStream stream = ModelComparator.class.getResourceAsStream(configFile)) {
-            GeneratorConfig config = parser.readConfig(stream);
-            return parser.readLibraryModel(Files.newInputStream(config.getModelFile()));
-        }
+    private LibraryModel read(Path configFile) throws Exception {
+        GeneratorConfig config = GeneratorConfig.load(configFile);
+        return parser.readLibraryModel(Files.newInputStream(config.getModelFile()));
     }
 
 }

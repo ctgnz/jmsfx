@@ -82,7 +82,34 @@
         </dependencies>
     </dependencyManagement>
 
+    <!--
+        Which library is being worked on, named explicitly: -Pstandard, -Phistorical. Maven activates a
+        profile in every project that defines it, so these sit here - where every module can see them -
+        while jmsfx-viewer defines the same ids again to add the runtime dependency its applications
+        ship with. That dependency cannot live here, or jmsfx-core would inherit a library too.
+
+        jmsfx.library.dir is what jmsfx#116 needs: since each library's config.yml and model.yml moved
+        into the library module, the generator and the editor have to be told which module to read, and
+        this is that answer in one place instead of a config file per library named by suffix.
+
+        Deliberately no activeByDefault - see the comment in jmsfx-viewer, which is where naming none
+        is turned into an explanatory failure.
+    -->
     <profiles>
+        <profile>
+            <id>standard</id>
+            <properties>
+                <jmsfx.library>standard</jmsfx.library>
+                <jmsfx.library.dir>${maven.multiModuleProjectDirectory}/library/jmsfx-standard/src/main/resources</jmsfx.library.dir>
+            </properties>
+        </profile>
+        <profile>
+            <id>historical</id>
+            <properties>
+                <jmsfx.library>historical</jmsfx.library>
+                <jmsfx.library.dir>${maven.multiModuleProjectDirectory}/library/jmsfx-historical/src/main/resources</jmsfx.library.dir>
+            </properties>
+        </profile>
         <profile>
             <id>release</id>
             <build>

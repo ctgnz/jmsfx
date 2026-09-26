@@ -1,6 +1,5 @@
 package io.github.ctgnz.jmsfx.generator;
 
-import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -61,7 +60,11 @@ public class FragmentMeasurer {
     private static final String CONTROL_MEASURES = "ControlMeasures";
 
     public static void main(String[] args) {
-        String configFile = args.length > 0 ? args[0] : "/config.yml";
+        if (args.length < 1) {
+            System.err.println("usage: FragmentMeasurer <library>/src/main/resources/config.yml");
+            return;
+        }
+        Path configFile = Path.of(args[0]);
         try {
             startToolkit();
             FragmentMeasurer measurer = new FragmentMeasurer(configFile);
@@ -86,17 +89,12 @@ public class FragmentMeasurer {
     private final JmsfxParser parser;
     private final FoxgloveParser svgParser = new FoxgloveParser();
 
-    public FragmentMeasurer(String configFile) throws Exception {
+    public FragmentMeasurer(Path configFile) throws Exception {
         this.parser = new JmsfxParser();
-        try (InputStream inputStream = FragmentMeasurer.class.getResourceAsStream(configFile)) {
-            this.config = parser.readConfig(inputStream);
-        }
-        if (config.getResourceDir() == null) {
-            throw new IllegalStateException(configFile + " has no resourceDir, so the SVG fragments cannot be found");
-        }
-        if (config.getModelSourceFile() == null) {
-            throw new IllegalStateException(configFile + " has no modelSourceFile, so there is nowhere to write the bounds back to");
-        }
+        this.config = GeneratorConfig.load(configFile);
+        // The two null checks that used to be here are gone with the paths they guarded: the
+        // fragments are the config's own directory and the model is the file beside it, so neither
+        // can be unset. Whether they exist is a different question, and reported where they are read.
     }
 
     public void measure() throws Exception {
@@ -145,7 +143,7 @@ public class FragmentMeasurer {
         measureIcons(model);
         measureSectorModifiers(model);
 
-        Path modelFile = config.getModelSourceFile();
+        Path modelFile = config.getModelFile();
         Files.writeString(modelFile, parser.writeLibraryModel(model), StandardCharsets.UTF_8);
         System.out.format("%nWrote %s%n", modelFile);
     }

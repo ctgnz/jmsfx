@@ -2,7 +2,6 @@ package io.github.ctgnz.jmsfx.generator;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
@@ -21,8 +20,12 @@ import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
 public class DomainModelGenerator {
 
     public static void main(String[] args) {
+        if (args.length < 1) {
+            System.err.println("usage: DomainModelGenerator <library>/src/main/resources/config.yml");
+            return;
+        }
         try {
-            DomainModelGenerator generator = new DomainModelGenerator(args.length > 0 ? args[0] : "/config.yml");
+            DomainModelGenerator generator = new DomainModelGenerator(Path.of(args[0]));
             LibraryModel dataModel = generator.parse();
             generator.generate(dataModel);
         } catch (Exception e) {
@@ -33,14 +36,10 @@ public class DomainModelGenerator {
     private GeneratorConfig config;
     private JmsfxParser parser;
 
-    public DomainModelGenerator(String configFile) {
+    public DomainModelGenerator(Path configFile) throws IOException {
         this.parser = new JmsfxParser();
-        try (InputStream inputStream = DomainModelGenerator.class.getResourceAsStream(configFile)) {
-            config = parser.readConfig(inputStream);
-            System.out.format("Writing to %s%n", config.getOutputDir());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        this.config = GeneratorConfig.load(configFile);
+        System.out.format("Writing to %s%n", config.getOutputDir());
     }
 
     public void generate(LibraryModel dataModel) throws Exception {

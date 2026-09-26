@@ -130,10 +130,12 @@ public class FragmentNormaliser {
         FragmentNormaliser normaliser = new FragmentNormaliser();
         List<String> dirty = new ArrayList<>();
         if (directories.isEmpty()) {
-            String left = !rest.isEmpty() ? rest.remove(0) : "/config.yml";
-            String right = !rest.isEmpty() ? rest.remove(0) : "/config-historical.yml";
-            for (String config : List.of(left, right)) {
-                dirty.addAll(normaliser.run(normaliser.svgRoot(config), config, apply, show));
+            if (rest.isEmpty()) {
+                throw new IllegalArgumentException("name the config files to work from, or pass --dir: see docs/fragments.md");
+            }
+            for (String config : rest) {
+                Path configFile = Path.of(config);
+                dirty.addAll(normaliser.run(normaliser.svgRoot(configFile), config, apply, show));
             }
         } else {
             for (Path directory : directories) {
@@ -580,12 +582,9 @@ public class FragmentNormaliser {
         names.forEach(name -> System.out.format("   %s%n", name));
     }
 
-    Path svgRoot(String configFile) throws Exception {
-        try (InputStream in = FragmentNormaliser.class.getResourceAsStream(configFile)) {
-            if (in == null) {
-                throw new IllegalArgumentException("no such config on the classpath: " + configFile);
-            }
-            GeneratorConfig config = parser.readConfig(in);
+    Path svgRoot(Path configFile) throws Exception {
+        {
+            GeneratorConfig config = GeneratorConfig.load(configFile);
             if (config.getResourceDir() == null) {
                 throw new IllegalStateException(configFile + " has no resourceDir, so its fragments cannot be found");
             }

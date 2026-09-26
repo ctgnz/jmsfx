@@ -103,8 +103,12 @@ ends up dominated by changes that have nothing to do with the drawing.
 
 ```
 mvn -q -Pstandard -pl :jmsfx-generator exec:java \
-  -Dexec.mainClass=io.github.ctgnz.jmsfx.generator.FragmentNormaliser -Dexec.args=--apply
+  -Dexec.mainClass=io.github.ctgnz.jmsfx.generator.FragmentNormaliser   -Dexec.arguments=--apply,--dir,../../library/jmsfx-standard/src/main/resources/svg,--dir,../../library/jmsfx-historical/src/main/resources/svg
 ```
+
+Either name the directories, as above, or name the libraries' `config.yml` files and let it find the
+`svg` tree beside each. There is no default: since #116 a config lives in the library module it
+describes, so there is no single one to fall back on.
 
 It strips editor attributes, elements and namespace declarations, empty `<defs>` and generated ids,
 shortens numbers that carry more precision than they mean, and tidies the whitespace inside coordinate

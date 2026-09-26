@@ -1,6 +1,5 @@
 package io.github.ctgnz.jmsfx.generator;
 
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -32,10 +31,12 @@ import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
 public class FragmentComparator {
 
     public static void main(String[] args) {
-        String left = args.length > 0 ? args[0] : "/config.yml";
-        String right = args.length > 1 ? args[1] : "/config-historical.yml";
+        if (args.length < 2) {
+            System.err.println("usage: FragmentComparator <base>/config.yml <overlay>/config.yml");
+            return;
+        }
         try {
-            new FragmentComparator().compare(left, right);
+            new FragmentComparator().compare(Path.of(args[0]), Path.of(args[1]));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -43,7 +44,7 @@ public class FragmentComparator {
 
     private final JmsfxParser parser = new JmsfxParser();
 
-    public void compare(String leftConfig, String rightConfig) throws Exception {
+    public void compare(Path leftConfig, Path rightConfig) throws Exception {
         Path left = svgRoot(leftConfig);
         Path right = svgRoot(rightConfig);
         System.out.format("left  %s%n", left);
@@ -116,12 +117,9 @@ public class FragmentComparator {
         return files;
     }
 
-    private Path svgRoot(String configFile) throws Exception {
-        try (InputStream in = FragmentComparator.class.getResourceAsStream(configFile)) {
-            if (in == null) {
-                throw new IllegalArgumentException("no such config on the classpath: " + configFile);
-            }
-            GeneratorConfig config = parser.readConfig(in);
+    private Path svgRoot(Path configFile) throws Exception {
+        {
+            GeneratorConfig config = GeneratorConfig.load(configFile);
             if (config.getResourceDir() == null) {
                 throw new IllegalStateException(configFile + " has no resourceDir, so its fragments cannot be found");
             }
