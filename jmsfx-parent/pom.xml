@@ -56,7 +56,7 @@
         -->
         <jmsfx.core.version>${project.version}</jmsfx.core.version>
         <jmsfx.standard.version>${project.version}</jmsfx.standard.version>
-        <jmsfx.hallux.version>${project.version}</jmsfx.hallux.version>
+        <jmsfx.historical.version>${project.version}</jmsfx.historical.version>
     </properties>
 
     <!--
@@ -165,7 +165,7 @@
                             generator in the same tree and never resolves it as a dependency. If a library ever
                             does live elsewhere, jmsfx-generator and jmsfx-tools come off this list together.
 
-                            jmsfx-hallux publishes too, which was an open question until it was settled
+                            jmsfx-historical publishes too, which was an open question until it was settled
                             deliberately rather than by default: jmsfx#106 brought it into this reactor after
                             1.5.0 shipped, so the release profile had never run with it present, and it was
                             held out until someone decided. An extension library is a library - a consumer

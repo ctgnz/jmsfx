@@ -9,8 +9,8 @@ import io.github.ctgnz.jmsfx.IconLibrary;
  * The Icon Creator bundles this server instance should offer: the three platforms, for the one library it is running.
  * <p>
  * The download page used to be the same page everywhere - a link to the releases page and a table saying which filename to look for. With an instance per library, each on its own
- * subdomain, that asks the visitor to know something they came here to be told: someone on a hallux subdomain wants the hallux creator, and should not have to recognise that from
- * a list of nine files.
+ * subdomain, that asks the visitor to know something they came here to be told: someone on a historical subdomain wants the historical creator, and should not have to recognise
+ * that from a list of nine files.
  * <p>
  * Naming a bundle needs two facts about this instance, and neither is a build-time constant any more. The library comes from {@link IconLibrary#getName()} (jmsfx#111, which exists
  * for exactly this), and the version from Spring's {@code BuildProperties} - so a 2.0.0 server offers the 2.0.0 creator rather than whatever happens to be newest.

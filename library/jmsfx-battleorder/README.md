@@ -48,7 +48,7 @@ The overlay is an overlay, not a whole model, and the generator reads one comple
 than composing one. Composing a library from a base model plus an overlay is
 [jmsfx#81](https://github.com/ctgnz/jmsfx/issues/81); this extension is the first thing it will be
 tried on, being small enough that the overlay is a dozen lines rather than a copy of the base. Once
-#81 lands, this becomes a generated library beside `jmsfx-standard` and `jmsfx-hallux`, and joins the
+#81 lands, this becomes a generated library beside `jmsfx-standard` and `jmsfx-historical`, and joins the
 root pom's `<modules>`.
 
 It came in from its own repository as part of [jmsfx#102](https://github.com/ctgnz/jmsfx/issues/102),

@@ -25,7 +25,7 @@
 
         <!--
             No library is declared here. Which one this ships with is chosen by a profile in
-            jmsfx-viewer - -Pstandard, -Phallux - so one source tree produces one bundle per library
+            jmsfx-viewer - -Pstandard, -Phistorical - so one source tree produces one bundle per library
             rather than a build that hard-codes its answer. See jmsfx#112.
 
             It stays out of compile scope there too, deliberately: nothing here may quietly bind to a

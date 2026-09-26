@@ -28,7 +28,7 @@
     </modules>
 
     <!--
-        One profile per library, and the library is always named explicitly: -Pstandard, -Phallux.
+        One profile per library, and the library is always named explicitly: -Pstandard, -Phistorical.
         Both applications inherit whichever is active, because a dependency declared in a profile
         here reaches every child - which is the point of putting them at this level rather than
         repeating them in two poms.
@@ -48,7 +48,7 @@
         it in one and not the other was a trap.
 
         jmsfx-battleorder has no profile yet: its model is an overlay and there is no generated
-        library to depend on until jmsfx#81 can compose one. Adding it is then a copy of the hallux
+        library to depend on until jmsfx#81 can compose one. Adding it is then a copy of the historical
         profile plus a jmsfx.battleorder.version property.
     -->
     <profiles>
@@ -67,15 +67,15 @@
             </dependencies>
         </profile>
         <profile>
-            <id>hallux</id>
+            <id>historical</id>
             <properties>
-                <jmsfx.library>hallux</jmsfx.library>
+                <jmsfx.library>historical</jmsfx.library>
             </properties>
             <dependencies>
                 <dependency>
                     <groupId>io.github.ctgnz</groupId>
-                    <artifactId>jmsfx-hallux</artifactId>
-                    <version>${jmsfx.hallux.version}</version>
+                    <artifactId>jmsfx-historical</artifactId>
+                    <version>${jmsfx.historical.version}</version>
                     <scope>runtime</scope>
                 </dependency>
             </dependencies>
@@ -112,7 +112,7 @@
 Name one on the command line:
 
     mvn -Pstandard verify        the APP-6E library
-    mvn -Phallux   verify        the hallux extension
+    mvn -Phistorical verify      the historical extension
 
 There is deliberately no default - see the comment above this rule, and jmsfx#112.</message>
                                 </requireProperty>

@@ -30,7 +30,7 @@
 	        <artifactId>jmsfx-core</artifactId>
 	        <version>${jmsfx.core.version}</version>
 	    </dependency>
-	    <!-- The library comes from the active profile in jmsfx-viewer: -Pstandard, -Phallux.
+	    <!-- The library comes from the active profile in jmsfx-viewer: -Pstandard, -Phistorical.
 	         runtime, and never optional - spring-boot:repackage drops optional dependencies from
 	         BOOT-INF/lib, so an optional library never reaches this jar. See jmsfx#93, jmsfx#112. -->
         <!-- JavaFX resolves its native classifier from the build host, so a jar
@@ -119,7 +119,7 @@
                     <mainClass>io.github.ctgnz.jmsfx.server.JmsfxServer</mainClass>
                     <!--
                         One build product per library, identifiable from its filename:
-                        jmsfx-server-2.0.0-standard.jar, -hallux. That matters once three of these
+                        jmsfx-server-2.0.0-standard.jar, -historical. That matters once three of these
                         are being shipped to three boxes, where "which library is in this jar" must
                         not depend on remembering how it was built. jmsfx#112.
 

@@ -26,10 +26,10 @@ class CreatorDownloadsTest {
 
     @Test
     void linksToTheReleaseTheVersionNames() {
-        assertThat(CreatorDownloads.of("Hallux", "2.1.0")
+        assertThat(CreatorDownloads.of("Historical", "2.1.0")
             .bundles()
             .getFirst()
-            .url(), is("https://github.com/ctgnz/jmsfx/releases/download/2.1.0/jmsfx-creator-2.1.0-hallux-windows.zip"));
+            .url(), is("https://github.com/ctgnz/jmsfx/releases/download/2.1.0/jmsfx-creator-2.1.0-historical-windows.zip"));
     }
 
     /** The library name is capitalised on IconLibrary and lowercase in a filename, which is also how the Maven profile and the jar classifier spell it. */

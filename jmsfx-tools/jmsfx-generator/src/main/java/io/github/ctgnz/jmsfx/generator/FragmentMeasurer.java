@@ -35,7 +35,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
  * <p>
  * This is deliberately separate from {@link DomainModelGenerator}. Measuring needs a JavaFX toolkit, because reading a bounding box means instantiating a {@code Node}; code
  * generation does not, and keeping the two apart is what lets generation run headless. The fragments are static - they change on an edition revision, or when a new variant like
- * hallux is created - so this runs occasionally and by hand rather than on every build.
+ * the historical extension is created - so this runs occasionally and by hand rather than on every build.
  * <p>
  * Run it with the same config file as the generator:
  *

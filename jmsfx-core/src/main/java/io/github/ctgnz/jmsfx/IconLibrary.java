@@ -28,7 +28,7 @@ public interface IconLibrary {
     }
 
     /**
-     * Which library this is - {@code Standard}, {@code Hallux}, {@code BattleOrder}.
+     * Which library this is - {@code Standard}, {@code Historical}, {@code BattleOrder}.
      * <p>
      * An application built against jmsfx-core names no library and discovers whichever one is on its classpath, so without this it cannot report what it is running, and a
      * deployment cannot be checked from outside beyond inferring it from which symbol sets appear. That is answerable while there is one library and awkward once there are three,

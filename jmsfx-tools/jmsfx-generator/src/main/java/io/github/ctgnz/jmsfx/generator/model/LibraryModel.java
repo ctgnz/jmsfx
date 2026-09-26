@@ -5,25 +5,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.annotation.JsonSetter;
-
-import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
-import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
 @JsonPropertyOrder({
-    "config", "versions", "contexts", "identityGroups", "identities", "statuses", "hqtfDummies", "dimensions", "amplifiers", "amplifierGroups", "iconBounds", "modifierBounds", "symbolSets"
+    "versions", "contexts", "identityGroups", "identities", "statuses", "hqtfDummies", "dimensions", "amplifiers", "amplifierGroups", "iconBounds", "modifierBounds", "symbolSets"
 })
 public class LibraryModel {
-
-    @YamlFlowStyle
-    @YamlForceQuote(properties = {
-        "graphicLocation", "baseSymbolSet"
-    })
-    public record Config(String libraryPrefix, String countryCodeClass, String iconPackage, String amplifierPackage, String commonPackage) {
-    }
 
     private final List<ContextModel> contexts = new ArrayList<>();
     private final List<HqtfDummyModel> hqtfDummies = new ArrayList<>();
@@ -220,17 +208,10 @@ public class LibraryModel {
         this.typePackage = typePackage;
     }
 
-    @JsonGetter("config")
-    private Config getConfig() {
-        return new Config(libraryPrefix, countryCodeClass, iconPackage, amplifierPackage, commonPackage);
-    }
-
-    @JsonSetter("config")
-    private void setConfig(Config config) {
-        this.libraryPrefix = config.libraryPrefix;
-        this.countryCodeClass = config.countryCodeClass;
-        this.iconPackage = config.iconPackage;
-        this.amplifierPackage = config.amplifierPackage;
-        this.commonPackage = config.commonPackage;
-    }
+    /*
+     * No config block. The generated package names and the library prefix used to be declared here as well as in config-*.yml, and the two were read for different things - this
+     * copy is what the templates interpolate into a package statement, while GeneratorConfig decides which directory the file is written to. Disagree and the generator writes a
+     * file to one package that declares another, which fails to compile somewhere unrelated rather than reporting a configuration error. See jmsfx#108. GeneratorConfig now owns
+     * them and applies them onto this model after parsing, so there is one place to edit. The fields below stay, because the templates read them from here.
+     */
 }
