@@ -42,6 +42,7 @@
 		<module>jmsfx-viewer</module>
 		<module>library/jmsfx-standard</module>
 		<module>library/jmsfx-historical</module>
+		<module>library/jmsfx-battleorder</module>
 	</modules>
 
 </project>

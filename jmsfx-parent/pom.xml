@@ -57,6 +57,7 @@
         <jmsfx.core.version>${project.version}</jmsfx.core.version>
         <jmsfx.standard.version>${project.version}</jmsfx.standard.version>
         <jmsfx.historical.version>${project.version}</jmsfx.historical.version>
+        <jmsfx.battleorder.version>${project.version}</jmsfx.battleorder.version>
     </properties>
 
     <!--
@@ -227,6 +228,16 @@
                                 <excludeArtifact>jmsfx-viewer</excludeArtifact>
                                 <excludeArtifact>jmsfx-creator</excludeArtifact>
                                 <excludeArtifact>jmsfx-server</excludeArtifact>
+                                <!--
+                                    jmsfx-battleorder is excluded until it can draw. It is the first
+                                    library composed from a base plus an overlay (jmsfx#81) and carries no
+                                    SVG fragments of its own, so it compiles and registers itself as an
+                                    IconLibrary but renders nothing. Publishing that would be publishing a
+                                    library that fails the moment anyone uses it, and a Central release
+                                    cannot be withdrawn. Comes off this list once jmsfx#82 or the fragment
+                                    packaging question settles how a library gets its fragments.
+                                -->
+                                <excludeArtifact>jmsfx-battleorder</excludeArtifact>
                             </excludeArtifacts>
                         </configuration>
                     </plugin>

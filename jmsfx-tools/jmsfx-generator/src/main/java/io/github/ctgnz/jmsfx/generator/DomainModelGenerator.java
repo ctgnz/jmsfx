@@ -55,14 +55,21 @@ public class DomainModelGenerator {
     }
 
     /**
-     * Reads the model, then stamps this generator's naming onto it.
+     * Reads the model, composing it onto a base first when the config names one, then stamps this generator's naming onto the result.
      * <p>
      * The model file describes symbology; what a library is called and which packages it lands in are properties of generating one, not of the standard it implements. So they live
-     * in config-*.yml alone, and are applied here rather than being declared a second time at the head of every model file - which is what jmsfx#108 was about. An overlay model
-     * (jmsfx#81) carries no packages at all, which is the same point from the other direction.
+     * in the config alone, and are applied here rather than being declared a second time at the head of every model file - which is what jmsfx#108 was about.
+     * <p>
+     * A config naming {@code baseLibrary} has an <em>overlay</em> rather than a whole model: only what the extension adds, composed onto the base by {@link ModelComposer}. See
+     * jmsfx#81.
      */
     public LibraryModel parse() throws Exception {
         LibraryModel dataModel = parser.readLibraryModel(Files.newInputStream(config.getModelFile()));
+        Path baseModelFile = config.getBaseModelFile();
+        if (baseModelFile != null) {
+            System.out.format("Composing onto %s%n", baseModelFile);
+            dataModel = new ModelComposer().compose(parser.readLibraryModel(Files.newInputStream(baseModelFile)), dataModel);
+        }
         dataModel.setLibraryPrefix(config.getLibraryPrefix());
         dataModel.setCountryCodeClass(config.getCountryCodeClass());
         dataModel.setIconPackage(config.getIconPackage());
@@ -78,6 +85,12 @@ public class DomainModelGenerator {
 
     private void deleteOldSourceFiles() throws IOException {
         Path outputDir = config.getOutputDir();
+        if (Files.notExists(outputDir)) {
+            // A library being generated for the first time has no sources to clear, which is not a
+            // problem worth an exception - jmsfx-battleorder hit this as the first library composed
+            // from an overlay rather than checked in whole.
+            return;
+        }
         Files.list(outputDir)
             .findFirst()
             .ifPresent(packageRoot -> {
