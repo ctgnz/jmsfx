@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 400 400" font-style="normal" height="400" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 400 400" width="400" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:polyline fill="none" font-style="normal" points="165.9,249.667 255.9,294.667 165.9,339.667 165.9,69.667 255.9,114.667 165.9,159.667" stroke="#000000" stroke-width="5"/>
+    <svg:polyline fill="none" font-style="normal" points="165.9,159.667 255.9,204.667 165.9,249.667" stroke="#000000" stroke-width="5"/>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:g display="inline" font-style="normal">
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 10.9004 346.667)" x="0" y="0">PT 2</svg:text>
+      <svg:polygon display="none" fill="#FFFFFF" font-style="normal" points="130.9,381.667 141.9,383.667 134.9,374.667" stroke="#0000FF" stroke-width="3"/>
+      <svg:g font-style="normal">
+        <svg:g font-style="normal">
+          <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="3" x1="64.9" x2="134.591" y1="340.667" y2="340.667"/>
+          <svg:g font-style="normal">
+            <svg:polygon fill="#0000FF" font-style="normal" points="126.165,351.776 130.885,340.667 126.165,329.558 152.5,340.667"/>
+          </svg:g>
+        </svg:g>
+      </svg:g>
+    </svg:g>
+    <svg:g display="inline" font-style="normal">
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 10.9004 79.667)" x="0" y="0">PT 1</svg:text>
+      <svg:g font-style="normal">
+        <svg:g font-style="normal">
+          <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="3" x1="64.9" x2="134.591" y1="68.667" y2="68.667"/>
+          <svg:g font-style="normal">
+            <svg:polygon fill="#0000FF" font-style="normal" points="126.165,79.776 130.885,68.667 126.165,57.558 152.5,68.667"/>
+          </svg:g>
+        </svg:g>
+      </svg:g>
+      <svg:polygon display="none" fill="#FFFFFF" font-style="normal" points="130.9,27.667 141.9,25.667 134.9,34.667" stroke="#0000FF" stroke-width="3"/>
+    </svg:g>
+  </svg:g>
+  <svg:g display="none" font-style="normal" id="example">
+    <svg:polygon clip-rule="evenodd" display="inline" fill="#FF8080" fill-rule="evenodd" font-style="normal" points="339.269,159.983 282.88,204.933 339.269,249.881 395.657,204.933 339.269,159.983" stroke="#808080" stroke-width="3"/>
+    <svg:path d="M339.269,190.066c-13.236,0-23.965,6.656-23.965,14.866s10.729,14.865,23.965,14.865c13.235,0,23.964-6.655,23.964-14.865 S352.504,190.066,339.269,190.066L339.269,190.066z" display="inline" fill="none" font-style="normal" stroke="#808080" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="3"/>
+    <svg:line display="inline" fill="none" font-style="normal" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="8" stroke-width="3" x1="339.269" x2="339.269" y1="140.104" y2="159.983"/>
+    <svg:g display="inline" font-style="normal">
+      <svg:polyline fill="none" font-style="normal" points="165.9,249.667 255.9,294.667 165.9,339.667 165.9,69.667 255.9,114.667 165.9,159.667" stroke="#00FF00" stroke-width="5"/>
+      <svg:polyline fill="none" font-style="normal" points="165.9,159.667 255.9,204.667 165.9,249.667" stroke="#00FF00" stroke-width="5"/>
+    </svg:g>
+  </svg:g>
+</svg:svg>

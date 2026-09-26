@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg enable-background="new 0 0 400 400" font-style="normal" height="400" id="Version_1.0" version="1.1" viewBox=" 0  0 400 400" width="400" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+  <svg:g font-style="normal" id="main">
+    <svg:polygon fill="none" font-style="normal" points="385.596,195.508 267.814,332.918 32.254,293.658 12.624,151.501 91.144,58.098 307.074,77.728" stroke="#000000" stroke-width="5"/>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="48" font-style="normal" transform="matrix(1 0 0 1 207.5918 204)" x="0" y="0"/>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="48" font-style="normal" id="static" transform="matrix(1 0 0 1 111.3691 200)" x="0" y="0">GB</svg:text>
+  </svg:g>
+  <svg:g display="none" font-style="normal" id="example" transform="translate(-24.97162,43.1328)">
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="48px" font-style="normal" id="varT" transform="translate(58.0234,200)" x="0" y="0">BOOGEYMEN</svg:text>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template" transform="translate(150,118)">
+    <svg:rect display="inline" fill="#FFFFFF" font-style="normal" height="52" rx="0" ry="0" stroke="#0000FF" stroke-width="2.4328" width="58.908" x="42.592" y="40.5"/>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="48px" font-style="normal" style="fill:#0000ff;fill-opacity:1" transform="translate(57.5918,84)" x="0" y="0">T</svg:text>
+  </svg:g>
+</svg:svg>

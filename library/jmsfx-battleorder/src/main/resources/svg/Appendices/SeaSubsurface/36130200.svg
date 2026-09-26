@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg enable-background="new 0 0 612 792" height="792px" id="Version_1.0" version="1.1" viewBox="0 0 612 792" width="612px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+  <g display="none" id="octagon">
+    <g display="inline" id="outFrame">
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="220" x2="306" y1="309.5" y2="273"/>
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="306" x2="390.5" y1="273" y2="309.5"/>
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" x2="427" y1="309.5" y2="396"/>
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="427" x2="390.5" y1="396" y2="482.5"/>
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="390.5" x2="306" y1="482.5" y2="516"/>
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="306" x2="220" y1="516" y2="482.5"/>
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="220" x2="183" y1="482.5" y2="396"/>
+      <line fill="none" stroke="#0000FF" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
+    </g>
+    <line fill="none" id="bottom" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="445.015" y2="445.295"/>
+    <line fill="none" id="top" stroke="#0000FF" stroke-width="2" x1="203.966" x2="406.199" y1="346.985" y2="346.705"/>
+  </g>
+  <g id="main">
+    <line fill="none" stroke="#000000" stroke-width="10" x1="306" x2="306" y1="386" y2="486"/>
+    <line fill="none" stroke="#000000" stroke-width="10" x1="251" x2="361" y1="489" y2="489"/>
+    <polygon fill="#008000" points="286,326 286,291 326,291 326,326" stroke="#000000" stroke-width="10"/>
+    <polygon fill="#008000" points="248.769,358.107 224.028,333.35 252.322,305.075 277.063,329.833" stroke="#000000" stroke-width="10"/>
+    <polygon fill="#008000" points="334.28,329.788 358.977,304.987 387.32,333.212 362.623,358.013" stroke="#000000" stroke-width="10"/>
+    <path d="M236,386c0-40,30-70,70-70s70,30,70,70H236z" fill="#008000" stroke="#000000" stroke-width="10"/>
+    <polygon fill="#008000" points="376,456 341,431 376,406" stroke="#000000" stroke-width="10"/>
+    <polygon fill="#008000" points="326,456 291,431 326,406" stroke="#000000" stroke-width="10"/>
+    <polygon fill="#008000" points="276,456 241,431 276,406" stroke="#000000" stroke-width="10"/>
+  </g>
+</svg>

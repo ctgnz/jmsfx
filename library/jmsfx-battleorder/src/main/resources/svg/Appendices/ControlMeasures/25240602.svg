@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5" x1="305.49" x2="305.49" y1="289.209" y2="503.669"/>
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5" x1="412.541" x2="198.247" y1="396.426" y2="396.426"/>
+    <svg:g font-style="normal">
+      <svg:polygon fill="#FFFFFF" font-style="normal" points="283.916,373.44 283.916,419.439 326.848,419.439 326.848,373.44"/>
+      <svg:path d="M305.382,387.729c-4.729,0-8.587,3.914-8.587,8.696c0,4.808,3.858,8.692,8.587,8.692c4.755,0,8.612-3.885,8.612-8.692 C313.995,391.643,310.137,387.729,305.382,387.729" font-style="normal"/>
+      <svg:path d="M305.382,387.729c-4.729,0-8.587,3.914-8.587,8.696c0,4.808,3.858,8.692,8.587,8.692c4.755,0,8.612-3.885,8.612-8.692 C313.995,391.643,310.137,387.729,305.382,387.729" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.7171"/>
+    </svg:g>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:g display="inline" font-style="normal" id="varAP">
+      <svg:rect fill="none" font-style="normal" height="56.517" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="2.7171" width="75.941" x="344.559" y="316.923"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="36.0826" font-style="normal" transform="matrix(1 0 0 1 358.2344 359.127)" x="0" y="0">AP</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="points">
+      <svg:path d="M227.035,338.278l38.498,29.047 c0.736,0.542,0.886,1.574,0.318,2.289c-0.542,0.74-1.575,0.887-2.289,0.342l-38.522-29.07c-0.714-0.538-0.861-1.573-0.319-2.289 C225.262,337.862,226.296,337.713,227.035,338.278L227.035,338.278z M267.87,358.81l20.258,27.614l-32.123-11.909L267.87,358.81z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10" stroke-width="0.3938"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="29.1269" font-style="normal" transform="matrix(1 0 0 1 159.8281 338.3936)" x="0" y="0">P</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="29.1269" font-style="normal" transform="matrix(1 0 0 1 179.3721 338.3936)" x="0" y="0">T</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="29.1269" font-style="normal" transform="matrix(1 0 0 1 196.7852 338.3936)" x="0" y="0"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="29.1269" font-style="normal" transform="matrix(1 0 0 1 205.0229 338.3936)" x="0" y="0">1</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="29.1269" font-style="normal" transform="matrix(1 0 0 1 221.1353 338.3936)" x="0" y="0"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="29.1269" font-style="normal" transform="matrix(1 0 0 1 229.373 338.3936)" x="0" y="0"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="29.1269" font-style="normal" transform="matrix(1 0 0 1 237.2031 338.3936)" x="0" y="0"/>
+    </svg:g>
+  </svg:g>
+  <svg:g display="none" font-style="normal" id="example">
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="36.0826" font-style="normal" id="varAPe" transform="matrix(1 0 0 1 344.2344 360.127)" x="0" y="0">AA0777</svg:text>
+  </svg:g>
+</svg:svg>

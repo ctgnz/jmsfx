@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:g font-style="normal">
+      <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="10" x1="205.812" x2="205.812" y1="221" y2="571"/>
+      <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="10" x1="405.813" x2="405.813" y1="221" y2="571"/>
+    </svg:g>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="120" font-style="normal" transform="matrix(1 0 0 1 266.1611 446.7861)" x="0" y="0">C</svg:text>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:g display="inline" font-style="normal" transform="translate(0 -140)">
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 266.3115 392.793)" x="0" y="0">CENTER</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 277.3115 417.793)" x="0" y="0">POINT</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal">
+      <svg:g font-style="normal">
+        <svg:g font-style="normal">
+          <svg:line fill="none" font-style="normal" stroke="#0000FF" stroke-width="4" x1="312.646" x2="312.646" y1="285.892" y2="340.892"/>
+          <svg:path d="M315.723,347.977c1.498-4.96,2.879-8.184,4.476-12.163h-15.134c0.677,1.424,2.979,7.203,4.476,12.163 c1.604,5.309,2.701,10.122,3.092,13.244C313.021,358.099,314.119,353.286,315.723,347.977z" fill="#0000FF" font-style="normal"/>
+        </svg:g>
+      </svg:g>
+    </svg:g>
+  </svg:g>
+</svg:svg>

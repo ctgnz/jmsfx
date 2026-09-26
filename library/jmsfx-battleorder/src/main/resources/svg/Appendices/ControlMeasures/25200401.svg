@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg enable-background="new 0 0 400 400" height="400px" id="Version_1.0" version="1.1" viewBox="0 0 400 400" width="400px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+  <g id="main">
+    <ellipse cx="200" cy="190.508" fill="#FFFFFF" rx="160.712" ry="82.5" stroke="#000000" stroke-width="5"/>
+    <text font-family="sans-serif" font-size="39.2364" transform="matrix(1 0 0 1 163.0757 314.834)">AOI </text>
+  </g>
+  <g display="none" id="example2">
+    <rect display="inline" height="237" width="351" x="24.5" y="89.5"/>
+    <text display="inline" font-family="sans-serif" font-size="12" transform="matrix(1 0 0 1 138.5 82.5)">White-Colored Option</text>
+    <ellipse cx="200" cy="190.508" display="inline" fill="none" rx="160.712" ry="82.5" stroke="#FFFFFF" stroke-width="5"/>
+    <text display="inline" fill="#FFFFFF" font-family="sans-serif" font-size="39.2364" transform="matrix(1 0 0 1 163.0757 314.834)">AOI </text>
+  </g>
+</svg>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg enable-background="new 0 0 400 400" font-style="normal" height="400" id="Version_1.0" version="1.1" viewBox=" 0  0 400 400" width="400" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+  <svg:g font-style="normal" id="main">
+    <svg:path d="M151.972,113.492c-42.024,4.464-96.079,2.243-108.09,26.702c-12.01,24.46-9.997,97.839,36.03,120.08 c46.028,22.236,194.148,31.146,240.177,13.354c46.027-17.794,40.034-93.396,36.03-120.099 c-4.003-26.681-26.032-33.347-60.051-40.032C262.052,106.827,193.997,109.048,151.972,113.492" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="7"/>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="36px" font-style="normal" x="108.07386" y="167.19041">CSA</svg:text>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template" transform="translate(22.70148,-79.00114)">
+    <svg:g font-style="normal">
+      <svg:rect display="inline" fill="none" font-style="normal" height="43.33603" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="1.32402" style="stroke-width:3;stroke-dasharray:none" width="47.25859" x="181.78377" y="209.83057"/>
+      <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="36px" font-style="normal" transform="translate(192.4424,244.6943)" x="0" y="0">T</svg:text>
+    </svg:g>
+    <svg:g font-style="normal" transform="translate(135.3008,37.23042)">
+      <svg:rect display="inline" fill="none" font-style="normal" height="34.90234" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="1.32402" style="fill:#ffffff;fill-opacity:1;stroke-width:3;stroke-dasharray:none" width="36.100712" x="181.46033" y="218.58772"/>
+      <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" x="190.51068" y="244.7635">N</svg:text>
+    </svg:g>
+    <svg:g font-style="normal" transform="translate(-179.79569,37.68445)">
+      <svg:rect display="inline" fill="none" font-style="normal" height="34.90234" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="1.32402" style="fill:#ffffff;fill-opacity:1;stroke-width:3;stroke-dasharray:none" width="36.100712" x="181.46033" y="218.58772"/>
+      <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24px" font-style="normal" x="190.51068" y="244.7635">N</svg:text>
+    </svg:g>
+    <svg:g font-style="normal" transform="translate(-68.10443,41.316686)">
+      <svg:rect display="inline" fill="none" font-style="normal" height="34.90234" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="1.32402" style="fill:#ffffff;fill-opacity:1;stroke-width:3;stroke-dasharray:none" width="36.100712" x="181.46033" y="218.58772"/>
+      <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18px" font-style="normal" x="190.61176" y="242.58235">W  -</svg:text>
+    </svg:g>
+    <svg:g font-style="normal" transform="translate(-68.37349,79.45517)">
+      <svg:rect display="inline" fill="none" font-style="normal" height="34.36422" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="1.32402" style="fill:#ffffff;fill-opacity:1;stroke-width:3;stroke-dasharray:none" width="50.9996" x="181.72939" y="218.85678"/>
+      <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="18px" font-style="normal" x="193.1623" y="242.60432">W1</svg:text>
+    </svg:g>
+  </svg:g>
+  <svg:g display="none" font-style="normal" id="example" transform="translate(16)">
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="36px" font-style="normal" id="varTe" x="177.43069" y="166.91795">BLUE</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="18px" font-style="normal" x="98.8836" y="198.24599">240800ZMAY2025 - </svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="18px" font-style="normal" x="98.8836" y="215.04507">251700ZMAY2025</svg:text>
+  </svg:g>
+</svg:svg>

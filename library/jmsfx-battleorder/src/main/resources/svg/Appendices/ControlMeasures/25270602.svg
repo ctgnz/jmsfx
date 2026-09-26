@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 400 400" font-style="normal" height="400" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 400 400" width="400" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:polyline fill="none" font-style="normal" points="335.5,320.5 15.5,320.5 55.5,300.5 15.5,280.5 55.5,260.5 15.5,240.5 55.5,220.5 15.5,200.5 55.5,180.5 15.5,160.5 55.5,140.5 15.5,120.5 55.5,100.5 15.5,80.5 335.5,80.5" stroke="#000000" stroke-width="5"/>
+    <svg:polygon font-style="normal" points="335.5,95.5 335.5,65.5 370.5,80.5" stroke="#000000" stroke-width="5"/>
+    <svg:polygon font-style="normal" points="335.5,335.5 335.5,305.5 370.5,320.5" stroke="#000000" stroke-width="5"/>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:polyline display="inline" fill="none" font-style="normal" points="378.5,90.5 378.5,120.5 358.5,140.5" stroke="#0000FF" stroke-width="3"/>
+    <svg:polyline display="inline" fill="none" font-style="normal" points="378.5,310.5 378.5,280.5 358.5,260.5" stroke="#0000FF" stroke-width="3"/>
+    <svg:polygon display="inline" fill="#FFFFFF" font-style="normal" points="374.5,95.5 378.5,85.5 382.5,95.5" stroke="#0000FF" stroke-width="3"/>
+    <svg:polygon display="inline" fill="#FFFFFF" font-style="normal" points="374.5,305.5 378.5,315.5 382.5,305.5" stroke="#0000FF" stroke-width="3"/>
+    <svg:line display="inline" fill="none" font-style="normal" stroke="#0000FF" stroke-width="3" x1="33.5" x2="68.5" y1="200.5" y2="200.5"/>
+    <svg:polygon display="inline" fill="#FFFFFF" font-style="normal" points="36.5,204.5 26.5,200.5 36.5,196.5" stroke="#0000FF" stroke-width="3"/>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 78.5 209.5)" x="0" y="0">PT.3</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 303.5 159.5)" x="0" y="0">PT.1</svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24" font-style="normal" transform="matrix(1 0 0 1 303.5 259.5)" x="0" y="0">PT.2</svg:text>
+  </svg:g>
+</svg:svg>

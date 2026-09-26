@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import freemarker.template.Configuration;
+import freemarker.template.TemplateExceptionHandler;
 import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
 
 /**
@@ -40,8 +41,23 @@ public class GeneratorConfig {
         try (InputStream stream = Files.newInputStream(absolute)) {
             GeneratorConfig config = new JmsfxParser().readConfig(stream);
             config.location = absolute.getParent();
+            config.inheritFromBase();
             return config;
         }
+    }
+
+    /**
+     * Takes from the base library's config what an overlay has no business restating.
+     * <p>
+     * Only {@code countryCodeClass}, and only when unset. The packages and the library prefix are what make this library distinct, so inheriting them would be wrong; the country
+     * code class names a type generated from the base's own country codes, so an overlay that does not change them has nothing to say about it. Naming it anyway in every overlay
+     * would be the duplication jmsfx#108 removed, one level up.
+     */
+    private void inheritFromBase() throws IOException {
+        if (baseLibrary == null || countryCodeClass != null) {
+            return;
+        }
+        countryCodeClass = load(getBaseModelFile().resolveSibling("config.yml")).getCountryCodeClass();
     }
 
     /** The directory the config was loaded from, which every path below is derived from. */
@@ -53,6 +69,7 @@ public class GeneratorConfig {
     private String amplifierPackage;
     private String libraryPrefix;
     private String countryCodeClass;
+    private String baseLibrary;
     private String libraryFile = "Base.xml";
     private String extensionCountryCode = "000";
 
@@ -62,6 +79,27 @@ public class GeneratorConfig {
 
     public Path getAmplifierPackageDir() throws IOException {
         return packageDir(amplifierPackage);
+    }
+
+    /**
+     * The library this one extends, named by its module directory - {@code jmsfx-standard}. Absent for a whole model, which is every library until jmsfx#81.
+     * <p>
+     * A module name rather than a path to the model, because the layout is already a convention jmsfx#116 relies on everywhere else here: a library's model is
+     * {@code <module>/src/main/resources/model.yml}, and its modules are siblings under {@code library}. Spelling out
+     * {@code ../../../../jmsfx-standard/src/main/resources/model.yml} would say the same thing less clearly and break if the tree moved.
+     */
+    public String getBaseLibrary() {
+        return baseLibrary;
+    }
+
+    /** The model this one composes onto, or null when it is a whole model in its own right. */
+    public Path getBaseModelFile() {
+        return baseLibrary == null ? null
+            : location.getParent()
+                .getParent()
+                .getParent()
+                .resolveSibling(baseLibrary)
+                .resolve("src/main/resources/model.yml");
     }
 
     public String getBasePackage() {
@@ -128,6 +166,11 @@ public class GeneratorConfig {
         Configuration configuration = new Configuration(Configuration.VERSION_2_3_30);
         configuration.setDirectoryForTemplateLoading(new File(GeneratorConfig.class.getResource("/templates")
             .toURI()));
+        // FreeMarker's default handler writes the error into the output and carries on, which for a code
+        // generator means a .java file containing a stack trace where an import should be. That is how a
+        // config missing countryCodeClass produced 179 files of which one was garbage, caught by javac
+        // rather than by generation. A template that cannot resolve something should stop.
+        configuration.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
         return configuration;
     }
 
@@ -137,6 +180,10 @@ public class GeneratorConfig {
 
     public void setAmplifierPackage(String amplifierPackage) {
         this.amplifierPackage = amplifierPackage;
+    }
+
+    public void setBaseLibrary(String baseLibrary) {
+        this.baseLibrary = baseLibrary;
     }
 
     public void setBasePackage(String basePackage) {

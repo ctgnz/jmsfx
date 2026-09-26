@@ -149,6 +149,8 @@
                                 <argument>${project.basedir}/../../library/jmsfx-standard/src/main/resources/svg</argument>
                                 <argument>--dir</argument>
                                 <argument>${project.basedir}/../../library/jmsfx-historical/src/main/resources/svg</argument>
+                                <argument>--dir</argument>
+                                <argument>${project.basedir}/../../library/jmsfx-battleorder/src/main/resources/svg</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -165,6 +167,8 @@
                                 <argument>${project.basedir}/../../library/jmsfx-standard/src/main/resources/svg</argument>
                                 <argument>--dir</argument>
                                 <argument>${project.basedir}/../../library/jmsfx-historical/src/main/resources/svg</argument>
+                                <argument>--dir</argument>
+                                <argument>${project.basedir}/../../library/jmsfx-battleorder/src/main/resources/svg</argument>
                                 <argument>--model</argument>
                                 <argument>${project.basedir}/../../library/jmsfx-standard/src/main/resources/model.yml</argument>
                             </arguments>

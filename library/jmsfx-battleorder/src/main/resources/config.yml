@@ -1,15 +1,8 @@
-# Not usable yet, and deliberately committed anyway.
-#
-# model.yml here is an *overlay* - one frame amplifier - not a whole model, and the generator
-# reads one complete model file rather than composing one. Composing a library from a base model
-# plus an overlay is jmsfx#81, and this extension is the first thing it will be tried on, being
-# small enough that the overlay is a dozen lines rather than a copy of the base.
-#
-# Everything below is already determined, so it sits here rather than being invented later: only
-# the base-model reference #81 introduces is missing. Until then, generating from this config
-# produces a library with a frame amplifier and no icons.
+# model.yml here is an *overlay*, not a whole model: one frame amplifier, and nothing else. The
+# generator composes it onto baseLibrary's model - see jmsfx#81 and ModelComposer.
 #
 # Paths are not configured - see jmsfx#116 and the sibling libraries' configs.
+baseLibrary: "jmsfx-standard"
 iconPackage: "io.github.ctgnz.jmsfx.battleorder"
 commonPackage: "io.github.ctgnz.jmsfx.battleorder.common"
 amplifierPackage: "io.github.ctgnz.jmsfx.battleorder.amplifier"

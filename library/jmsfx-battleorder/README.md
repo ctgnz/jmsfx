@@ -11,6 +11,7 @@ the only addition is a single frame amplifier, scoped to the Land Units symbol s
 
 | SIDC 27 | Branch | Fill |
 | :---: | --- | --- |
+| `0` | Unknown | `#FFFF80` |
 | `1` | Infantry | `#5BAA5B` |
 | `2` | Armor/Recon | `#FFD00B` |
 | `3` | Artillery/Air Defense | `#FF3333` |
@@ -19,7 +20,9 @@ the only addition is a single frame amplifier, scoped to the Land Units symbol s
 | `6` | Aviation | `#A2E3E8` |
 | `7` | Maritime | `#67C6EF` |
 
-`0` is left as APP-6E's unspecified frame amplifier, which carries the standard unknown yellow.
+`0` is APP-6E's unspecified frame amplifier, carrying the standard unknown yellow. It is first in the
+list deliberately, and the colour is chosen for what it is *not*: Battle Order's palette has no yellow,
+so a unit whose branch nobody has chosen reads as a prompt rather than as a branch.
 
 ## What this does to the frame
 
