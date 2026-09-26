@@ -5,7 +5,7 @@
 	
 	<parent>
         <groupId>io.github.ctgnz</groupId>
-        <artifactId>jmsfx</artifactId>
+        <artifactId>jmsfx-viewer</artifactId>
         <version>2.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>        
     </parent>
@@ -28,13 +28,13 @@
 	    <dependency>
 	        <groupId>io.github.ctgnz</groupId>
 	        <artifactId>jmsfx-core</artifactId>
-	        <version>${project.version}</version>
+	        <version>${jmsfx.core.version}</version>
 	    </dependency>
 	    <dependency>
 	        <groupId>io.github.ctgnz</groupId>
 	        <artifactId>jmsfx-standard</artifactId>
 	        <scope>runtime</scope>
-	        <version>2.0.0-SNAPSHOT</version>
+	        <version>${jmsfx.standard.version}</version>
 	    </dependency>
         <!-- JavaFX resolves its native classifier from the build host, so a jar
              built on Windows cannot render on the Linux server. Icon composition
@@ -90,7 +90,7 @@
             <!-- ctg-brand submodule, copied in alongside the vendored Bootstrap
                  so it is served at /css/brand.css like any other stylesheet -->
             <resource>
-                <directory>${project.basedir}/../brand/css</directory>
+                <directory>${project.basedir}/../../brand/css</directory>
                 <targetPath>bootstrap/css</targetPath>
             </resource>
         </resources>

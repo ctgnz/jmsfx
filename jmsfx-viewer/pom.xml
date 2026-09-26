@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>jmsfx-viewer</artifactId>
+    <packaging>pom</packaging>
+    <name>JMSFX Viewer Applications</name>
+    <description>The applications that compose and display symbols - a desktop icon creator and a web server - each consuming a generated icon library like any other consumer.</description>
+
+    <parent>
+        <groupId>io.github.ctgnz</groupId>
+        <artifactId>jmsfx-parent</artifactId>
+        <version>2.0.0-SNAPSHOT</version>
+        <relativePath>../jmsfx-parent/pom.xml</relativePath>
+    </parent>
+
+    <!--
+        These two are the same capability with two front ends, so they share a release: whatever the
+        creator can compose, the site should be able to compose too, and a version that means one but
+        not the other would be misleading. Grouping them keeps ${project.version} doing that work.
+
+        This is also the level at which a deliverable gets built, so it is where jmsfx#112 puts the
+        per-library profiles: neither application compiles against a library any more (jmsfx#76,
+        jmsfx#93), so which one it ships with is a packaging decision made here rather than a
+        compile-time dependency inherited by each child.
+    -->
+    <modules>
+        <module>jmsfx-creator</module>
+        <module>jmsfx-server</module>
+    </modules>
+
+</project>

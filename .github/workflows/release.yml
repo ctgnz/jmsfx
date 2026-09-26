@@ -96,7 +96,7 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         allowUpdates: true
-        artifacts: "jmsfx-core/target/*.jar,jmsfx-standard/target/*.jar"
+        artifacts: "jmsfx-core/target/*.jar,library/jmsfx-standard/target/*.jar"
         token: ${{ secrets.GITHUB_TOKEN }}
 
   # jpackage bundles a Java runtime with the application, and can only produce a
@@ -152,13 +152,13 @@ jobs:
 
     - name: Build jmsfx-creator and collect its dependencies
       shell: bash
-      run: mvn -B --no-transfer-progress -DskipTests -pl jmsfx-creator -am package
+      run: mvn -B --no-transfer-progress -DskipTests -pl :jmsfx-creator -am package
 
     - name: Stage the application jar alongside its dependencies
       shell: bash
       # jpackage reads one input directory and resolves --main-jar inside it, so the
       # application's own jar has to sit with the dependencies rather than above them.
-      run: cp jmsfx-creator/target/jmsfx-creator-*.jar jmsfx-creator/target/lib/
+      run: cp jmsfx-viewer/jmsfx-creator/target/jmsfx-creator-*.jar jmsfx-viewer/jmsfx-creator/target/lib/
 
     - name: Build the application image
       shell: bash
@@ -168,10 +168,10 @@ jobs:
           --name "JMSFX Icon Creator" \
           --app-version "${VERSION%-SNAPSHOT}" \
           --vendor "CTG Games Limited" \
-          --input jmsfx-creator/target/lib \
+          --input jmsfx-viewer/jmsfx-creator/target/lib \
           --main-jar "jmsfx-creator-${VERSION}.jar" \
           --main-class io.github.ctgnz.jmsfx.icon.creator.IconCreatorLauncher \
-          --dest jmsfx-creator/target/dist \
+          --dest jmsfx-viewer/jmsfx-creator/target/dist \
           --java-options "--enable-native-access=ALL-UNNAMED"
 
     - name: Check the image looks complete
@@ -183,7 +183,7 @@ jobs:
       # is named explicitly. Searching by name matched the bundled icon instead,
       # and so reported success without a launcher being present at all.
       run: |
-        cd jmsfx-creator/target/dist
+        cd jmsfx-viewer/jmsfx-creator/target/dist
         ls -la . | sed 's/^/  /'
         find . -name "*.jar" | wc -l | xargs echo "jars in image:"
         case "${{ matrix.platform }}" in
@@ -201,7 +201,7 @@ jobs:
       if: matrix.platform == 'linux'
       run: |
         sudo apt-get update && sudo apt-get install -y xvfb
-        cd "jmsfx-creator/target/dist/JMSFX Icon Creator/bin"
+        cd "jmsfx-viewer/jmsfx-creator/target/dist/JMSFX Icon Creator/bin"
         xvfb-run -a timeout 30 ./"JMSFX Icon Creator" > launch.log 2>&1 || true
         cat launch.log
         if grep -qE "Exception|Error:" launch.log; then
@@ -212,7 +212,7 @@ jobs:
     - name: Archive the image
       shell: bash
       run: |
-        cd jmsfx-creator/target/dist
+        cd jmsfx-viewer/jmsfx-creator/target/dist
         ARCHIVE="jmsfx-creator-${VERSION}-${{ matrix.platform }}"
         case "${{ matrix.platform }}" in
           linux)
@@ -235,8 +235,8 @@ jobs:
       with:
         name: jmsfx-creator-${{ matrix.platform }}
         path: |
-          jmsfx-creator/target/jmsfx-creator-*.zip
-          jmsfx-creator/target/jmsfx-creator-*.tar.gz
+          jmsfx-viewer/jmsfx-creator/target/jmsfx-creator-*.zip
+          jmsfx-viewer/jmsfx-creator/target/jmsfx-creator-*.tar.gz
 
     - name: Attach to the release
       if: github.ref_type == 'tag'
@@ -245,5 +245,5 @@ jobs:
         allowUpdates: true
         omitBodyDuringUpdate: true
         omitNameDuringUpdate: true
-        artifacts: "jmsfx-creator/target/jmsfx-creator-*.zip,jmsfx-creator/target/jmsfx-creator-*.tar.gz"
+        artifacts: "jmsfx-viewer/jmsfx-creator/target/jmsfx-creator-*.zip,jmsfx-viewer/jmsfx-creator/target/jmsfx-creator-*.tar.gz"
         token: ${{ secrets.GITHUB_TOKEN }}

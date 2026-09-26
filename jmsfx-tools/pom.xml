@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>jmsfx-tools</artifactId>
+    <packaging>pom</packaging>
+    <name>JMSFX Build-Time Tooling</name>
+    <description>The tooling that produces an icon library and maintains the model it comes from: the generator, and the editor for the model file that feeds it.</description>
+
+    <parent>
+        <groupId>io.github.ctgnz</groupId>
+        <artifactId>jmsfx-parent</artifactId>
+        <version>2.0.0-SNAPSHOT</version>
+        <relativePath>../jmsfx-parent/pom.xml</relativePath>
+    </parent>
+
+    <!--
+        Both of these are build-time tools, and they are coupled through the model file rather than
+        through the dependency graph: the editor edits model-standard.yml, which is the generator's
+        input. Nothing in either pom says so, which is why they are grouped - within this module
+        ${project.version} still applies, so a change to the model's shape moves the generator and
+        the editor together as one thing rather than as two releases to coordinate.
+
+        See jmsfx#102 for the grouping, and jmsfx#7 for making that YAML coupling explicit.
+    -->
+    <modules>
+        <module>jmsfx-generator</module>
+        <module>jmsfx-editor</module>
+    </modules>
+
+</project>

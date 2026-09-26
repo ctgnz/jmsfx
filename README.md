@@ -36,14 +36,24 @@ APP-6E is deliberately designed so that a consumer can extend the base symbology
 
 ## Modules
 
+Grouped by deliverable, so that things which share a release sit together:
+
 | Module | What it is |
 |---|---|
-| `jmsfx-core` | The symbology API - symbol sets, entities, modifiers, amplifiers, and the rendering model. |
-| `jmsfx-standard` | The generated APP-6E domain model. Not hand-written; see above. |
-| `jmsfx-generator` | Generates `jmsfx-standard` from a YAML model, via FreeMarker templates. |
-| `jmsfx-creator` | Desktop application for composing icons and saving them as composite SVG. |
-| `jmsfx-editor` | Desktop application for editing the YAML model itself, rather than composing icons. |
-| `jmsfx-server` | Spring Boot web application exposing the same capability over HTTP - this is what runs the site above. |
+| `jmsfx-parent` | Shared build configuration - Java level, encoding, formatter, release profile. Carries no modules, so it can be versioned on its own; the root `pom.xml` is only an aggregator. |
+| `jmsfx-core` | The symbology API - symbol sets, entities, modifiers, amplifiers, and the rendering model. Everything else pins it, so it moves slowly. |
+| `jmsfx-tools` | Build-time tooling, released as one thing. |
+| &nbsp;&nbsp;`jmsfx-generator` | Generates a library from a YAML model, via FreeMarker templates. |
+| &nbsp;&nbsp;`jmsfx-editor` | Desktop application for editing the YAML model itself, rather than composing icons. |
+| `jmsfx-viewer` | The applications, released as one thing. Neither compiles against a library; which one they ship with is a packaging choice. |
+| &nbsp;&nbsp;`jmsfx-creator` | Desktop application for composing icons and saving them as composite SVG. |
+| &nbsp;&nbsp;`jmsfx-server` | Spring Boot web application exposing the same capability over HTTP - this is what runs the site above. |
+| `library/` | The generated libraries. A plain directory, not a module: each library tracks its own domain, so these are the lifecycles that should *not* move together. |
+| &nbsp;&nbsp;`jmsfx-standard` | The generated APP-6E domain model. Not hand-written; see above. |
+| &nbsp;&nbsp;`jmsfx-hallux` | An extension library - icons APP-6E dropped, an enlarged Dismounted Individual set, extra amplifiers. |
+| &nbsp;&nbsp;`jmsfx-battleorder` | An extension colouring a unit's frame by branch of service. Documentation only for now - it needs [#81](https://github.com/ctgnz/jmsfx/issues/81) to be generated, so it is not yet in the reactor. |
+
+The editor sits with the generator rather than with the applications because it edits the model file, which is the generator's input. Nothing in either pom says so - the coupling runs through the YAML.
 
 ## Building
 
@@ -60,8 +70,8 @@ The `--recurse-submodules` matters: `jmsfx-server` takes its branding stylesheet
 To run the web application locally:
 
 ```sh
-mvn -pl jmsfx-server -am verify
-java -jar jmsfx-server/target/jmsfx-server-*.jar
+mvn -pl :jmsfx-server -am verify
+java -jar jmsfx-viewer/jmsfx-server/target/jmsfx-server-*.jar
 ```
 
 It serves on port 8080 by default.

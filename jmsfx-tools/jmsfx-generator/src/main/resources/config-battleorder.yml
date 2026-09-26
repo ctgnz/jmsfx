@@ -1,0 +1,20 @@
+# Not usable yet, and deliberately committed anyway.
+#
+# model-battleorder.yml is an *overlay* - one frame amplifier - not a whole model, and
+# the generator reads one complete model file rather than composing one. Composing a
+# library from a base model plus an overlay is jmsfx#81, and this extension is the first
+# thing it will be tried on, being small enough that the overlay is a dozen lines rather
+# than a copy of the base.
+#
+# Everything below is already determined, so it sits here rather than being invented
+# later: only the base-model reference #81 introduces is missing. Until then, running the
+# generator against this config produces a library with a frame amplifier and no icons.
+
+modelFilePath: "/model-battleorder.yml"
+modelSourceFile: "D:/git/jmsfx/jmsfx-tools/jmsfx-generator/src/main/resources/model-battleorder.yml"
+outputDir: "D:/git/jmsfx/library/jmsfx-battleorder/src/main/java"
+resourceDir: "D:/git/jmsfx/library/jmsfx-battleorder/src/main/resources"
+iconPackage: "io.github.ctgnz.jmsfx.battleorder"
+commonPackage: "io.github.ctgnz.jmsfx.battleorder.common"
+amplifierPackage: "io.github.ctgnz.jmsfx.battleorder.amplifier"
+libraryPrefix: "BattleOrder"

@@ -1,0 +1,30 @@
+# The Battle Order extension to the APP-6E symbology model.
+#
+# One frame amplifier, scoped to Land Units, colouring the frame by the branch of
+# service the unit belongs to. Nothing else: the icons, modifiers and echelons are
+# the standard ones, so this is an overlay on model-standard.yml rather than a model
+# in its own right.
+#
+# The colours are read from Battle Order's own icon library
+# (https://www.battleorder.org/icons, "New Unit Symbols", Headquarters row).
+#
+# Note what this does to the frame. In APP-6E the frame fill *is* the standard
+# identity - blue friend, red hostile, yellow unknown, green neutral - and a frame
+# amplifier replaces that fill. Battle Order charts draw every unit as Friend
+# whichever side they describe, so the fill is free to carry something else. A
+# consumer of this library gets branch colour instead of affiliation colour, not as
+# well as it.
+
+amplifierGroups:
+- details: {code: "8", id: SERVICE_BRANCH, label: "Service Branch"}
+  config: {typeName: ServiceBranch, graphicLocation: "Amplifier", standard: true,
+           frameAmplifier: true, symbolSets: [LAND_UNIT],
+           enumId: SERVICE_BRANCH, enumDesc: "Branch of Service"}
+  values:
+  - {code: "1", id: INFANTRY, label: "Infantry", backgroundFill: 5BAA5B}
+  - {code: "2", id: ARMOR_RECON, label: "Armor/Recon", backgroundFill: FFD00B}
+  - {code: "3", id: ARTILLERY_AIR_DEFENSE, label: "Artillery/Air Defense", backgroundFill: FF3333}
+  - {code: "4", id: COMBAT_SUPPORT_MEDICAL, label: "Combat Support, Medical", backgroundFill: F7F7F7}
+  - {code: "5", id: LOGISTICS_SERVICES, label: "Logistics, Services", backgroundFill: D87600}
+  - {code: "6", id: AVIATION, label: "Aviation", backgroundFill: A2E3E8}
+  - {code: "7", id: MARITIME, label: "Maritime", backgroundFill: 67C6EF}

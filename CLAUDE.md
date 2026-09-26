@@ -2,7 +2,15 @@
 
 JavaFX implementation of **NATO APP-6, Edition E (2023)** military symbology - not MIL-STD-2525D. They're related, converged NATO-vs-US standards but formally distinct; don't conflate them. The `edition-e` git branch name refers to APP-6 **Edition E**, not a generic feature branch. Now the **canonical fork** of the old Esri `joint-military-symbology-xml` (JMSML) project, which modelled MIL-STD-2525D specifically - that upstream repo is dead/abandoned; this one owns the schema/data lineage going forward, held in `jmsfx-standard`. Depends on `foxglove` (separate repo) for SVG-in-JavaFX rendering.
 
-All modules are wired into the Maven reactor: `jmsfx-core`, `jmsfx-generator`, `jmsfx-standard`, `jmsfx-editor`, `jmsfx-creator`, `jmsfx-server`.
+Modules are grouped by deliverable rather than flat (#102), which is also how the directories are laid out:
+
+- `jmsfx-parent` - the shared build configuration, and nothing else. It carries no modules so it can be versioned on its own; the root `pom.xml` is now *only* an aggregator.
+- `jmsfx-core` - the API. Everything pins it.
+- `jmsfx-tools/` - `jmsfx-generator`, `jmsfx-editor`. A real parent pom: these share a release, being coupled through the model file rather than the dependency graph.
+- `jmsfx-viewer/` - `jmsfx-creator`, `jmsfx-server`. A real parent pom: one capability, two front ends.
+- `library/` - `jmsfx-standard`, `jmsfx-hallux`, `jmsfx-battleorder`. A **plain directory, not a module** - these are exactly the lifecycles that should not move together. `jmsfx-battleorder` is documentation only until #81 can generate it, so it is not in `<modules>` yet.
+
+A dependency that crosses a group boundary resolves through `${jmsfx.core.version}` or `${jmsfx.standard.version}`, declared in `jmsfx-parent`; both default to `${project.version}`, so pinning one to a released version is what splits that lifecycle off. In-group dependencies still use `${project.version}` directly. Prefer `-pl :jmsfx-server` over `-pl jmsfx-viewer/jmsfx-server` - selecting by artifactId survives a directory move.
 
 ## Domain background
 
@@ -33,7 +41,7 @@ Three consumer modules build on this:
 
 ## Code style
 
-Eclipse formatter/import-order profile enforced via Spotless (`config/eclipse-formatter.xml`, `config/eclipse.importorder`), bound to the `verify` phase - `mvn verify` runs `spotless:check` and will fail on drift. `-Xlint:all -Werror` is on for the compiler. `pom.xml` also has an `org.eclipse.m2e:lifecycle-mapping` entry telling m2e to skip Spotless's `check` goal during its own builds (otherwise Eclipse errors with "Plugin execution not covered by lifecycle configuration").
+Eclipse formatter/import-order profile enforced via Spotless (`config/eclipse-formatter.xml`, `config/eclipse.importorder`), bound to the `verify` phase - `mvn verify` runs `spotless:check` and will fail on drift. `-Xlint:all -Werror` is on for the compiler. `jmsfx-parent/pom.xml` also has an `org.eclipse.m2e:lifecycle-mapping` entry telling m2e to skip Spotless's `check` goal during its own builds (otherwise Eclipse errors with "Plugin execution not covered by lifecycle configuration").
 
 Source encoding is `UTF-8` throughout (property, compiler plugin, and Spotless all agree) - it used to be `ISO-8859-1`, which only "worked" because it was close enough to whatever the JVM's platform-default encoding happened to be when files were generated.
 
@@ -41,10 +49,10 @@ Enum constants are **not** named `UPPER_SNAKE_CASE` by convention here - the aut
 
 ## Code generation
 
-`jmsfx-standard`'s Java sources (and a separate copy in `hallux`'s `jmsfx-hallux` module) are **generated**, not hand-written, by `jmsfx-generator`:
+The Java sources of every library under `library/` are **generated**, not hand-written, by `jmsfx-generator`:
 
-- `DomainModelGenerator` (`jmsfx-generator/src/main/java/.../DomainModelGenerator.java`) drives generation from FreeMarker templates in `jmsfx-generator/src/main/resources/templates/*.ftl`.
-- `config.yml`/`model-standard.yml` target `jmsfx-standard` (the base APP-6E model); `config-hallux.yml`/`model-hallux.yml` target hallux's `jmsfx-hallux` (hardcoded output path into the sibling `hallux` repo on this machine). `model-hallux.yml` is mostly a superset of `model-standard.yml`, with two deliberate deviations: it keeps a few icons from the older APP-6D edition that APP-6E removed, and its Dismounted Individual symbol set is extended far beyond APP-6E's original intent for that domain - expect that domain to look unusually large/elaborate. The user describes hallux's extensions as "a bit liberal" relative to the base standard.
+- `DomainModelGenerator` (`jmsfx-tools/jmsfx-generator/src/main/java/.../DomainModelGenerator.java`) drives generation from FreeMarker templates in `jmsfx-tools/jmsfx-generator/src/main/resources/templates/*.ftl`.
+- Each library has a config/model pair in `jmsfx-tools/jmsfx-generator/src/main/resources/`: `config.yml`/`model-standard.yml` target `library/jmsfx-standard` (the base APP-6E model), and `config-hallux.yml`/`model-hallux.yml` target `library/jmsfx-hallux`. Both configs carry **absolute** output paths, so they are machine-specific and have to be corrected if the checkout moves. `config-battleorder.yml` exists but cannot run yet - its model is an overlay, and composing one is #81. `model-hallux.yml` is mostly a superset of `model-standard.yml`, with two deliberate deviations: it keeps a few icons from the older APP-6D edition that APP-6E removed, and its Dismounted Individual symbol set is extended far beyond APP-6E's original intent for that domain - expect that domain to look unusually large/elaborate. The user describes hallux's extensions as "a bit liberal" relative to the base standard.
 - Always writes UTF-8 explicitly (`newWriter(Path)` helper) regardless of platform default.
 - Enum-emitting templates indent constant declarations at 8 spaces (one level deeper than the rest of the enum body) to match this project's real Eclipse formatter setting - confirmed by regenerating a module and diffing against Spotless's output until it converged to zero.
 
