@@ -458,6 +458,12 @@ final class TestFixtures {
      * {@code IconLibrary} implementations' documented behaviour of never returning null.
      */
     static class FakeIconLibrary implements IconLibrary {
+
+        @Override
+        public String getName() {
+            return "Fake";
+        }
+
         private StandardAmplifierItem defaultAmplifier = unknownAmplifier();
         private Context defaultContext = realityContext();
         private Entity defaultEntity = entity("00", "Unspecified");

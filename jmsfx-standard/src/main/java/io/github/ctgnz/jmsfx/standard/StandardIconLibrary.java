@@ -64,6 +64,12 @@ public class StandardIconLibrary implements IconLibrary {
     public StandardIconLibrary() {
     }
 
+    /** The library prefix this was generated with, which is what names the class too. */
+    @Override
+    public String getName() {
+        return "Standard";
+    }
+
     @Override
     public ObservableList<Amplifier> getAmplifiers() {
         return FXCollections.observableArrayList(AmplifierEnum.values());
