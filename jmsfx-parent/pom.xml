@@ -1,0 +1,314 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.github.ctgnz</groupId>
+	<artifactId>jmsfx-parent</artifactId>
+	<version>2.0.0-SNAPSHOT</version>
+	<name>JMSFX Parent</name>
+	<description>Shared build configuration for every JMSFX module: the Java level, the encoding, the formatter and import order, and the release profile. Carries no modules, so it can be versioned independently of the tree it configures.</description>
+	<packaging>pom</packaging>
+    <url>https://www.ctg.co.nz/jmsfx</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Colin Sharples</name>
+            <email>ctg@ctg.co.nz</email>
+            <organization>CTG Games Ltd</organization>
+            <organizationUrl>http://www.ctg.co.nz</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/ctgnz/jmsfx.git</connection>
+        <developerConnection>scm:git:ssh://github.com:ctgnz/jmsfx.git</developerConnection>
+        <url>http://github.com/ctgnz/jmsfx/tree/master</url>
+    </scm>
+
+
+	<properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Declared once here: jmsfx-core and jmsfx-standard both depend on foxglove and must agree. -->
+        <foxglove.version>0.12.0</foxglove.version>
+        <!-- Likewise for JavaFX, which jmsfx-standard declares directly and jmsfx-server pins again for
+             its linux natives. These have to match each other and what foxglove pulls transitively, or
+             the classpath ends up carrying two JavaFX versions at once. Stay on an LTS line (11, 17,
+             21, 25) to match the JDK the server runs on. -->
+        <javafx.version>25.0.3</javafx.version>
+        <!--
+            The seams. A dependency that crosses a group boundary resolves through one of these
+            rather than naming a version, so splitting a lifecycle is a one-line change here instead
+            of an edit in every dependent - which is the whole point of jmsfx#102.
+
+            Both default to ${project.version}, so today they resolve to the reactor's own version
+            and the build behaves exactly as it did when every pom said ${project.version} or, in
+            five places, repeated the literal. Pinning one to a released version is what actually
+            splits that module off; from then on a change to it is no longer tested against its
+            dependents until this line is deliberately bumped. See the cost section of jmsfx#102.
+
+            jmsfx-core is the one to split first, being the API everything else pins. It cannot be
+            done until 2.0.0 is released, because there is no released 2.x core to point at yet.
+        -->
+        <jmsfx.core.version>${project.version}</jmsfx.core.version>
+        <jmsfx.standard.version>${project.version}</jmsfx.standard.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <configuration>
+                            <!--
+                                Keep doclint checking syntax, html and references - it is what caught a {@link} to a
+                                type the file never imported, the release profile having never been run before - but
+                                drop "missing", which reports every undocumented getter and buried that one error
+                                under a hundred warnings.
+                            -->
+                            <doclint>all,-missing</doclint>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>attach-javadoc</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <!--
+                            Central requires signed artifacts. Signing at verify rather than at deploy so the
+                            signatures exist by the time the publishing plugin builds its bundle, and
+                            loopback pinentry so CI can sign unattended with the passphrase in the environment.
+                        -->
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <!--
+                            Publishes to the Central Portal, which replaced OSSRH - hence no distributionManagement
+                            above, since the plugin uploads directly rather than deploying to a staging repository.
+
+                            autoPublish is false, matching foxglove: a tag stages a validated deployment on the
+                            Portal and publishing stays a deliberate step, so a bad staging can be dropped rather
+                            than having to be superseded.
+
+                            Only the parent, jmsfx-core and jmsfx-standard belong on Central: the API a consumer
+                            compiles against and the generated library it renders with. The parent is easy to
+                            overlook and resolution breaks for everyone without it. The rest are excluded -
+                            creator, editor and server are applications, delivered as bundles and a deployment.
+
+                            The generator stays unpublished: jmsfx#102 settled on a monorepo rather than split
+                            library repositories, so every library that generates itself does so from the
+                            generator in the same tree and never resolves it as a dependency. If a library ever
+                            does live elsewhere, jmsfx-generator and jmsfx-tools come off this list together.
+
+                            jmsfx-hallux is excluded deliberately, and the exclusion is load-bearing rather
+                            than tidy-up. jmsfx#106 brought it into this reactor after 1.5.0 shipped, so the
+                            release profile has never run with it present; without an exclusion the next
+                            -Prelease deploy would publish it to Central, and a publication to Central cannot
+                            be withdrawn. Whether an extension library belongs there is a decision that has
+                            not been taken. Until it is, it stays off.
+                        -->
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.11.0</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                            <autoPublish>false</autoPublish>
+                            <excludeArtifacts>
+                                <!--
+                                    The aggregator stops being published at 2.0.0. It was the parent
+                                    until jmsfx#102 split that role out, and a consumer resolving
+                                    jmsfx-core now reads jmsfx-parent instead - so nothing needs the
+                                    aggregator, whose only content is a module list. jmsfx:1.5.0 and
+                                    earlier stay on Central as the parents they were.
+                                -->
+                                <excludeArtifact>jmsfx</excludeArtifact>
+                                <!--
+                                    The two group poms go out only if something under them does, for the
+                                    same reason the root parent has to be published: a consumer resolving
+                                    jmsfx-generator would need jmsfx-tools to read its parent. Nothing
+                                    under either publishes today, so both are excluded with their children.
+                                -->
+                                <excludeArtifact>jmsfx-tools</excludeArtifact>
+                                <excludeArtifact>jmsfx-generator</excludeArtifact>
+                                <excludeArtifact>jmsfx-editor</excludeArtifact>
+                                <excludeArtifact>jmsfx-viewer</excludeArtifact>
+                                <excludeArtifact>jmsfx-creator</excludeArtifact>
+                                <excludeArtifact>jmsfx-server</excludeArtifact>
+                                <excludeArtifact>jmsfx-hallux</excludeArtifact>
+                            </excludeArtifacts>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+	<build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.5.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.3.0</version>
+                </plugin>
+                <!-- Tells m2e to skip Spotless during its own incremental/full builds, rather than fail with
+                     "Plugin execution not covered by lifecycle configuration" - `mvn` from the command line still
+                     runs it normally, since pluginManagement doesn't affect that. -->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>com.diffplug.spotless</groupId>
+                                        <artifactId>spotless-maven-plugin</artifactId>
+                                        <versionRange>[2.44.5,)</versionRange>
+                                        <goals>
+                                            <goal>check</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore/>
+                                    </action>
+                                </pluginExecution>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-dependency-plugin</artifactId>
+                                        <versionRange>[3.7.0,)</versionRange>
+                                        <goals>
+                                            <goal>copy-dependencies</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore/>
+                                    </action>
+                                </pluginExecution>
+                                <!-- The fragment check (jmsfx-generator, #73) walks ~3,000 files, which is
+                                     not something to do on every incremental build in the IDE. `mvn verify`
+                                     still runs it. -->
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.codehaus.mojo</groupId>
+                                        <artifactId>exec-maven-plugin</artifactId>
+                                        <versionRange>[3.6.4,)</versionRange>
+                                        <goals>
+                                            <goal>java</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore/>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>25</source>
+                    <target>25</target>
+                    <encoding>UTF-8</encoding>
+                    <parameters>true</parameters>
+                    <compilerArgs>
+                        <arg>-Xlint:all</arg>
+                        <arg>-Werror</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <!-- The previous default predates the JUnit Platform entirely and cannot discover Jupiter tests. -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.6.0</version>
+            </plugin>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>2.44.5</version>
+                <configuration>
+                    <java>
+                        <importOrder>
+                            <file>${maven.multiModuleProjectDirectory}/config/eclipse.importorder</file>
+                        </importOrder>
+                        <removeUnusedImports/>
+                        <eclipse>
+                            <file>${maven.multiModuleProjectDirectory}/config/eclipse-formatter.xml</file>
+                        </eclipse>
+                        <trimTrailingWhitespace/>
+                    </java>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+	</build>
+
+</project>

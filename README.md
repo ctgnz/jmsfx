@@ -40,6 +40,7 @@ Grouped by deliverable, so that things which share a release sit together:
 
 | Module | What it is |
 |---|---|
+| `jmsfx-parent` | Shared build configuration - Java level, encoding, formatter, release profile. Carries no modules, so it can be versioned on its own; the root `pom.xml` is only an aggregator. |
 | `jmsfx-core` | The symbology API - symbol sets, entities, modifiers, amplifiers, and the rendering model. Everything else pins it, so it moves slowly. |
 | `jmsfx-tools` | Build-time tooling, released as one thing. |
 | &nbsp;&nbsp;`jmsfx-generator` | Generates a library from a YAML model, via FreeMarker templates. |
