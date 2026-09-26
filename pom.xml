@@ -14,7 +14,7 @@
             <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
-    
+
     <developers>
         <developer>
             <name>Colin Sharples</name>
@@ -23,23 +23,27 @@
             <organizationUrl>http://www.ctg.co.nz</organizationUrl>
         </developer>
     </developers>
-    
+
     <scm>
         <connection>scm:git:git://github.com/ctgnz/jmsfx.git</connection>
         <developerConnection>scm:git:ssh://github.com:ctgnz/jmsfx.git</developerConnection>
         <url>http://github.com/ctgnz/jmsfx/tree/master</url>
     </scm>
 
+	<!--
+		Grouped by deliverable, not flat. jmsfx-tools and jmsfx-viewer are real poms because their
+		children share a release; the libraries sit in a plain library/ directory because theirs is
+		exactly the lifecycle that should not be shared - standard tracks the APP-6E standard, and
+		each extension tracks its own domain. See jmsfx#102.
+	-->
 	<modules>
 		<module>jmsfx-core</module>
-		<module>jmsfx-generator</module>
-		<module>jmsfx-standard</module>
-		<module>jmsfx-hallux</module>
-		<module>jmsfx-editor</module>
-		<module>jmsfx-creator</module>
-		<module>jmsfx-server</module>
+		<module>jmsfx-tools</module>
+		<module>jmsfx-viewer</module>
+		<module>library/jmsfx-standard</module>
+		<module>library/jmsfx-hallux</module>
 	</modules>
-	
+
 	<properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Declared once here: jmsfx-core and jmsfx-standard both depend on foxglove and must agree. -->
@@ -50,7 +54,7 @@
              21, 25) to match the JDK the server runs on. -->
         <javafx.version>25.0.3</javafx.version>
     </properties>
-    
+
     <profiles>
         <profile>
             <id>release</id>
@@ -118,17 +122,27 @@
                         <!--
                             Publishes to the Central Portal, which replaced OSSRH - hence no distributionManagement
                             above, since the plugin uploads directly rather than deploying to a staging repository.
-                            
+
                             autoPublish is false, matching foxglove: a tag stages a validated deployment on the
                             Portal and publishing stays a deliberate step, so a bad staging can be dropped rather
                             than having to be superseded.
-                            
+
                             Only the parent, jmsfx-core and jmsfx-standard belong on Central: the API a consumer
                             compiles against and the generated library it renders with. The parent is easy to
                             overlook and resolution breaks for everyone without it. The rest are excluded -
-                            creator, editor and server are applications, delivered as bundles and a deployment,
-                            and the generator only becomes a published artifact once jmsfx#102 gives the library
-                            repositories something to depend on when they generate themselves.
+                            creator, editor and server are applications, delivered as bundles and a deployment.
+
+                            The generator stays unpublished: jmsfx#102 settled on a monorepo rather than split
+                            library repositories, so every library that generates itself does so from the
+                            generator in the same tree and never resolves it as a dependency. If a library ever
+                            does live elsewhere, jmsfx-generator and jmsfx-tools come off this list together.
+
+                            jmsfx-hallux is excluded deliberately, and the exclusion is load-bearing rather
+                            than tidy-up. jmsfx#106 brought it into this reactor after 1.5.0 shipped, so the
+                            release profile has never run with it present; without an exclusion the next
+                            -Prelease deploy would publish it to Central, and a publication to Central cannot
+                            be withdrawn. Whether an extension library belongs there is a decision that has
+                            not been taken. Until it is, it stays off.
                         -->
                         <groupId>org.sonatype.central</groupId>
                         <artifactId>central-publishing-maven-plugin</artifactId>
@@ -138,10 +152,19 @@
                             <publishingServerId>central</publishingServerId>
                             <autoPublish>false</autoPublish>
                             <excludeArtifacts>
+                                <!--
+                                    The two group poms go out only if something under them does, for the
+                                    same reason the root parent has to be published: a consumer resolving
+                                    jmsfx-generator would need jmsfx-tools to read its parent. Nothing
+                                    under either publishes today, so both are excluded with their children.
+                                -->
+                                <excludeArtifact>jmsfx-tools</excludeArtifact>
                                 <excludeArtifact>jmsfx-generator</excludeArtifact>
-                                <excludeArtifact>jmsfx-creator</excludeArtifact>
                                 <excludeArtifact>jmsfx-editor</excludeArtifact>
+                                <excludeArtifact>jmsfx-viewer</excludeArtifact>
+                                <excludeArtifact>jmsfx-creator</excludeArtifact>
                                 <excludeArtifact>jmsfx-server</excludeArtifact>
+                                <excludeArtifact>jmsfx-hallux</excludeArtifact>
                             </excludeArtifacts>
                         </configuration>
                     </plugin>

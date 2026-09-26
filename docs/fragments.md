@@ -102,7 +102,7 @@ ends up dominated by changes that have nothing to do with the drawing.
 `FragmentNormaliser` puts it back:
 
 ```
-mvn -q -pl jmsfx-generator exec:java \
+mvn -q -pl :jmsfx-generator exec:java \
   -Dexec.mainClass=io.github.ctgnz.jmsfx.generator.FragmentNormaliser -Dexec.args=--apply
 ```
 

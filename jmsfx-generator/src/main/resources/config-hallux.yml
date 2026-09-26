@@ -1,8 +1,0 @@
-modelFilePath: "/model-hallux.yml"
-modelSourceFile: "D:/git/jmsfx/jmsfx-generator/src/main/resources/model-hallux.yml"
-outputDir: "D:/git/jmsfx/jmsfx-hallux/src/main/java"
-resourceDir: "D:/git/jmsfx/jmsfx-hallux/src/main/resources"
-iconPackage: "io.github.ctgnz.jmsfx.hallux"
-commonPackage: "io.github.ctgnz.jmsfx.hallux.common"
-amplifierPackage: "io.github.ctgnz.jmsfx.hallux.amplifier"
-libraryPrefix: "Hallux"

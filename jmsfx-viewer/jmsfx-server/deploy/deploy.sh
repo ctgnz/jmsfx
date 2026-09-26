@@ -18,7 +18,7 @@ if [[ -n "${JMSFX_SSH_KEY:-}" ]]; then
     SSH_OPTS=(-i "${JMSFX_SSH_KEY}")
 fi
 
-REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+REPO_ROOT="$(cd "$(dirname "$0")/../../.." && pwd)"
 JAR_NAME=jmsfx-server.jar
 
 # Maven skips a missing <resource> directory with only a warning, so a clone
@@ -32,9 +32,9 @@ echo "==> building"
 cd "${REPO_ROOT}"
 # verify, not package: spring-boot:repackage is bound to post-integration-test,
 # so package alone leaves a thin jar that will not run.
-mvn -B -pl jmsfx-server -am verify
+mvn -B -pl :jmsfx-server -am verify
 
-JAR=$(ls -t "${REPO_ROOT}"/jmsfx-server/target/jmsfx-server-*.jar | grep -v '\.original$' | head -1)
+JAR=$(ls -t "${REPO_ROOT}"/jmsfx-viewer/jmsfx-server/target/jmsfx-server-*.jar | grep -v '\.original$' | head -1)
 echo "==> shipping $(basename "${JAR}") ($(du -h "${JAR}" | cut -f1))"
 
 # Upload beside the live jar, then swap and restart, so a failed transfer
