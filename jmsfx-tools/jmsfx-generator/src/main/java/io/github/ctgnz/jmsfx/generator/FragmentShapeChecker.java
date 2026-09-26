@@ -54,8 +54,8 @@ public class FragmentShapeChecker {
     private static final String GROUP_ELEMENT = "g";
     private static final String DEFS_ELEMENT = "defs";
 
-    /** What the build passes when it overrides the directory, since a config file's {@code resourceDir} is an absolute path that resolves nowhere on a runner. */
-    private static final String DEFAULT_MODEL = "/model-standard.yml";
+    /** Which model the shape rules are read from when the build passes directories rather than configs. A filesystem path since jmsfx#116. */
+    private static final String DEFAULT_MODEL = "library/jmsfx-standard/src/main/resources/model.yml";
 
     private final JmsfxParser parser = new JmsfxParser();
 
@@ -71,15 +71,17 @@ public class FragmentShapeChecker {
         List<String> wrong = new ArrayList<>();
         int checked = 0;
         if (directories.isEmpty()) {
-            String left = !rest.isEmpty() ? rest.remove(0) : "/config.yml";
-            String right = !rest.isEmpty() ? rest.remove(0) : "/config-historical.yml";
-            for (String config : List.of(left, right)) {
-                Result result = checker.run(checker.svgRoot(config), checker.model(checker.modelPath(config)), config);
+            if (rest.isEmpty()) {
+                throw new IllegalArgumentException("name the config files to check, or pass --dir: see docs/fragments.md");
+            }
+            for (String config : rest) {
+                Path configFile = Path.of(config);
+                Result result = checker.run(checker.svgRoot(configFile), checker.model(checker.modelPath(configFile)), config);
                 checked += result.checked();
                 wrong.addAll(result.wrong());
             }
         } else {
-            LibraryModel library = checker.model(model != null ? model : DEFAULT_MODEL);
+            LibraryModel library = checker.model(Path.of(model != null ? model : DEFAULT_MODEL));
             for (Path directory : directories) {
                 // A directory that is not there is not a failure, for the same reason it is not one in
                 // FragmentNormaliser: the build passes this in from the module layout, and a check bound
@@ -185,37 +187,22 @@ public class FragmentShapeChecker {
         return roots;
     }
 
-    /** The model a config file names, which is a classpath path and so resolves the same wherever the build runs. */
-    private String modelPath(String configFile) throws Exception {
-        try (InputStream in = resource(configFile)) {
-            return parser.readConfig(in)
-                .getModelFilePath();
-        }
+    /** The model a config file sits beside. */
+    private Path modelPath(Path configFile) throws Exception {
+        return GeneratorConfig.load(configFile)
+            .getModelFile();
     }
 
-    private LibraryModel model(String modelFile) throws Exception {
-        try (InputStream in = resource(modelFile)) {
+    private LibraryModel model(Path modelFile) throws Exception {
+        try (InputStream in = Files.newInputStream(modelFile)) {
             return parser.readLibraryModel(in);
         }
     }
 
-    private Path svgRoot(String configFile) throws Exception {
-        try (InputStream in = resource(configFile)) {
-            GeneratorConfig config = parser.readConfig(in);
-            if (config.getResourceDir() == null) {
-                throw new IllegalStateException(configFile + " has no resourceDir, so its fragments cannot be found");
-            }
-            return config.getResourceDir()
-                .resolve("svg");
-        }
-    }
-
-    private InputStream resource(String path) {
-        InputStream in = FragmentShapeChecker.class.getResourceAsStream(path);
-        if (in == null) {
-            throw new IllegalArgumentException("not on the classpath: " + path);
-        }
-        return in;
+    private Path svgRoot(Path configFile) throws Exception {
+        return GeneratorConfig.load(configFile)
+            .getResourceDir()
+            .resolve("svg");
     }
 
     /** The value following a flag, removing both from the list - so what is left is the positional arguments. */

@@ -33,6 +33,12 @@
         here reaches every child - which is the point of putting them at this level rather than
         repeating them in two poms.
 
+        The same ids are defined in jmsfx-parent, which is not duplication: there they carry
+        ${jmsfx.library} and the library's source directory, which every module may need, and here
+        they carry the runtime dependency, which only these two may have. Maven activates a profile
+        in every project that defines it, so -Pstandard lights up both halves. Putting the dependency
+        in the parent would give jmsfx-core a library it has no business with.
+
         Deliberately no activeByDefault. A default-activated profile switches off the moment any
         other profile is named, and jmsfx#103 put `mvn -Prelease deploy` in the release workflow, so
         a defaulted `standard` would silently deactivate during a release and publish an application
@@ -54,9 +60,6 @@
     <profiles>
         <profile>
             <id>standard</id>
-            <properties>
-                <jmsfx.library>standard</jmsfx.library>
-            </properties>
             <dependencies>
                 <dependency>
                     <groupId>io.github.ctgnz</groupId>
@@ -68,9 +71,6 @@
         </profile>
         <profile>
             <id>historical</id>
-            <properties>
-                <jmsfx.library>historical</jmsfx.library>
-            </properties>
             <dependencies>
                 <dependency>
                     <groupId>io.github.ctgnz</groupId>

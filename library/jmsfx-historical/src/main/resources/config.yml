@@ -1,0 +1,7 @@
+# How this library is generated. Paths are not configured: the model is model.yml beside this
+# file, the resources are this directory, and the generated sources go in ../java. See jmsfx#116.
+iconPackage: "io.github.ctgnz.jmsfx.historical"
+commonPackage: "io.github.ctgnz.jmsfx.historical.common"
+amplifierPackage: "io.github.ctgnz.jmsfx.historical.amplifier"
+countryCodeClass: "NatoCountryCode"
+libraryPrefix: "Historical"

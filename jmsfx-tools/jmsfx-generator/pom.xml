@@ -166,7 +166,7 @@
                                 <argument>--dir</argument>
                                 <argument>${project.basedir}/../../library/jmsfx-historical/src/main/resources/svg</argument>
                                 <argument>--model</argument>
-                                <argument>/model-standard.yml</argument>
+                                <argument>${project.basedir}/../../library/jmsfx-standard/src/main/resources/model.yml</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -178,9 +178,9 @@
                             an overlay that quietly changed a shared element would produce a library whose
                             codes no longer mean what the standard says - with nothing downstream noticing.
 
-                            Unlike the fragment checks above, this needs no absolute path: both models are
-                            read as classpath resources through their config files, so it runs on a CI runner
-                            as readily as here. Takes well under a second.
+                            Both models are reached through their library's config, which since jmsfx#116
+                            lives beside the model it describes - so these are the only two paths needed, and
+                            they are relative to this module. Takes well under a second.
                         -->
                         <id>check-model-superset</id>
                         <phase>verify</phase>
@@ -190,8 +190,8 @@
                         <configuration>
                             <mainClass>io.github.ctgnz.jmsfx.generator.ModelComparator</mainClass>
                             <arguments>
-                                <argument>/config.yml</argument>
-                                <argument>/config-historical.yml</argument>
+                                <argument>${project.basedir}/../../library/jmsfx-standard/src/main/resources/config.yml</argument>
+                                <argument>${project.basedir}/../../library/jmsfx-historical/src/main/resources/config.yml</argument>
                             </arguments>
                         </configuration>
                     </execution>

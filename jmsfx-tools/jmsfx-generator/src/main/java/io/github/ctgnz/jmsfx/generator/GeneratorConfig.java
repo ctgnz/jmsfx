@@ -2,25 +2,55 @@ package io.github.ctgnz.jmsfx.generator;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
 import freemarker.template.Configuration;
+import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
 
+/**
+ * Where a library is generated, and under what names.
+ * <p>
+ * Since jmsfx#116 this file lives in the library module it describes, beside the model it generates from and the SVG fragments that model carries bounds for - so it no longer has
+ * to say where any of them are. The model is {@code model.yml} next to it, the resources it writes are the directory holding it, and the generated sources go in that directory's
+ * sibling {@code java}.
+ * <p>
+ * Those used to be three configured paths, and absolute ones: machine-specific enough that {@code GeneratorConfigTest} could not assert against the real file and CLAUDE.md had to
+ * warn about them. They are now derived from wherever the config was loaded from, and the file carries nothing but naming - which also means the same file works on a CI runner and
+ * on anyone's clone.
+ */
 public class GeneratorConfig {
-    private Path outputDir;
-    private Path resourceDir;
-    private Path modelSourceFile;
+
+    /**
+     * Reads a config from the filesystem, remembering where it came from.
+     * <p>
+     * Deliberately not a classpath resource. A config that lives in the library module it describes can never be on the generator's own classpath - the dependency runs the other
+     * way, and making it circular is not an option - so loading by path is precisely what lets the file sit with the model and the fragments it belongs to.
+     */
+    public static GeneratorConfig load(Path configFile) throws IOException {
+        Path absolute = configFile.toAbsolutePath()
+            .normalize();
+        if (Files.notExists(absolute)) {
+            throw new IllegalArgumentException("no generator config at " + absolute);
+        }
+        try (InputStream stream = Files.newInputStream(absolute)) {
+            GeneratorConfig config = new JmsfxParser().readConfig(stream);
+            config.location = absolute.getParent();
+            return config;
+        }
+    }
+
+    /** The directory the config was loaded from, which every path below is derived from. */
+    private Path location;
     private String basePackage = "io.github.ctgnz.jmsfx";
     private String typePackage = "io.github.ctgnz.jmsfx.types";
     private String iconPackage;
     private String commonPackage;
     private String amplifierPackage;
-    private String modelFilePath;
     private String libraryPrefix;
     private String countryCodeClass;
     private String libraryFile = "Base.xml";
@@ -31,11 +61,7 @@ public class GeneratorConfig {
     }
 
     public Path getAmplifierPackageDir() throws IOException {
-        Path packageDir = outputDir.resolve(amplifierPackage.replaceAll("\\.", "/"));
-        if (Files.notExists(packageDir)) {
-            Files.createDirectories(packageDir);
-        }
-        return packageDir;
+        return packageDir(amplifierPackage);
     }
 
     public String getBasePackage() {
@@ -47,11 +73,7 @@ public class GeneratorConfig {
     }
 
     public Path getCommonPackageDir() throws IOException {
-        Path packageDir = outputDir.resolve(commonPackage.replaceAll("\\.", "/"));
-        if (Files.notExists(packageDir)) {
-            Files.createDirectories(packageDir);
-        }
-        return packageDir;
+        return packageDir(commonPackage);
     }
 
     public String getCountryCodeClass() {
@@ -67,11 +89,7 @@ public class GeneratorConfig {
     }
 
     public Path getIconPackageDir() throws IOException {
-        Path packageDir = outputDir.resolve(iconPackage.replaceAll("\\.", "/"));
-        if (Files.notExists(packageDir)) {
-            Files.createDirectories(packageDir);
-        }
-        return packageDir;
+        return packageDir(iconPackage);
     }
 
     public String getLibraryFile() {
@@ -82,48 +100,24 @@ public class GeneratorConfig {
         return libraryPrefix;
     }
 
-    public Path getModelFile() throws URISyntaxException {
-        return Paths.get(DomainModelGenerator.class.getResource(modelFilePath)
-            .toURI());
+    /**
+     * The model this library generates from: {@code model.yml} beside the config.
+     * <p>
+     * One path where there used to be two. {@code modelFilePath} resolved the model from the classpath for reading and {@code modelSourceFile} named it on disk for
+     * {@link FragmentMeasurer} to write measured bounds back to - the same file by two mechanisms, with nothing checking they agreed. Reading from the source tree serves both.
+     */
+    public Path getModelFile() {
+        return location.resolve("model.yml");
     }
 
-    public String getModelFilePath() {
-        return modelFilePath;
-    }
-
+    /** Generated sources, in the module's {@code src/main/java} - the sibling of the resources directory this config sits in. */
     public Path getOutputDir() {
-        return outputDir;
+        return location.resolveSibling("java");
     }
 
-    /**
-     * The model file <em>in the source tree</em>, which is where {@link FragmentMeasurer} writes measured bounds back to. {@link #getModelFile()} resolves the same file from the
-     * classpath, so it points into {@code target/classes} at runtime - fine for reading, but a write there would be discarded by the next clean.
-     */
-    public Path getModelSourceFile() {
-        return modelSourceFile;
-    }
-
-    /** Where the SVG fragments live, for {@link FragmentMeasurer}. Generation itself does not read them. */
+    /** The resources this library owns: the {@code svg} tree, and the service file naming its generated {@code IconLibrary}. The config sits in it. */
     public Path getResourceDir() {
-        return resourceDir;
-    }
-
-    /**
-     * Takes a String, not a Path, and so does every path setter here.
-     * <p>
-     * Jackson's {@code Path} deserialiser treats {@code D:/git/jmsfx/...} as a URI and refuses it with "scheme 'D' not allowed" on any platform where that is not a drive letter -
-     * so reading one of these configs failed outright on a Linux runner. Nothing noticed until {@link ModelComparator} became the first check that reads a config during the build;
-     * the fragment checks are passed their directories by the build and never parse one.
-     * <p>
-     * {@code Path.of} is happy to hold a value it cannot resolve, which is what is wanted: these paths only mean anything on the machine that wrote them, and the tools that use
-     * them run there. jmsfx#116 removes them from the configs altogether.
-     */
-    public void setModelSourceFile(String modelSourceFile) {
-        this.modelSourceFile = Path.of(modelSourceFile);
-    }
-
-    public void setResourceDir(String resourceDir) {
-        this.resourceDir = Path.of(resourceDir);
+        return location;
     }
 
     public List<String> getStandardEnums() {
@@ -153,12 +147,12 @@ public class GeneratorConfig {
         this.commonPackage = commonPackage;
     }
 
-    public void setExtensionCountryCode(String extensionCountryCode) {
-        this.extensionCountryCode = extensionCountryCode;
-    }
-
     public void setCountryCodeClass(String countryCodeClass) {
         this.countryCodeClass = countryCodeClass;
+    }
+
+    public void setExtensionCountryCode(String extensionCountryCode) {
+        this.extensionCountryCode = extensionCountryCode;
     }
 
     public void setIconPackage(String iconPackage) {
@@ -173,15 +167,22 @@ public class GeneratorConfig {
         this.libraryPrefix = libraryPrefix;
     }
 
-    public void setModelFilePath(String modelFilePath) {
-        this.modelFilePath = modelFilePath;
-    }
-
-    public void setOutputDir(String outputDir) {
-        this.outputDir = Path.of(outputDir);
-    }
-
     public void setTypePackage(String typePackage) {
         this.typePackage = typePackage;
     }
+
+    /** Created on demand, because the generator writes into it straight after asking. */
+    private Path packageDir(String packageName) throws IOException {
+        Path packageDir = getOutputDir().resolve(packageName.replace('.', '/'));
+        if (Files.notExists(packageDir)) {
+            Files.createDirectories(packageDir);
+        }
+        return packageDir;
+    }
+
+    /** Only for a config assembled in a test, which has no file to have been loaded from. */
+    void setLocation(Path location) {
+        this.location = location;
+    }
+
 }

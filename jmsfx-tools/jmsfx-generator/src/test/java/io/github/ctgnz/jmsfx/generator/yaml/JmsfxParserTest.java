@@ -4,11 +4,13 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.nullValue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -20,13 +22,16 @@ import io.github.ctgnz.jmsfx.generator.model.SymbolSetModel;
 import io.github.ctgnz.jmsfx.generator.model.VersionModel;
 
 /**
- * The {@link LibraryModel} tests read the real {@code model-standard.yml} (jmsfx-generator's own {@code src/main/resources}, on the test classpath) rather than a hand-built
- * fixture - several model classes map YAML through nested {@code @JsonGetter("details")}/{@code @JsonSetter("config")} records (e.g. {@link SymbolSetModel}) while others rely on
- * plain bean properties, and exercising the real, already-working configuration against real production data is a more reliable check of that mapping than guessing at a synthetic
- * fixture's shape. The {@link GeneratorConfig} test uses its own small fixture instead, since the real {@code config.yml}'s {@code outputDir} is a hardcoded absolute Windows path
- * - not portable to read on other platforms.
+ * These tests read the real files rather than hand-built fixtures - several model classes map YAML through nested {@code @JsonGetter("details")}/{@code @JsonSetter("config")}
+ * records (e.g. {@link SymbolSetModel}) while others rely on plain bean properties, and exercising the real, already-working configuration against real production data is a more
+ * reliable check of that mapping than guessing at a synthetic fixture's shape.
+ * <p>
+ * The config test used a synthetic fixture until jmsfx#116, because the real {@code config.yml} carried absolute Windows paths that would not parse anywhere else. It now carries
+ * no paths at all, so the real one can be read - which is worth more, since a config that cannot be asserted against is a config whose format nothing checks.
  */
 class JmsfxParserTest {
+
+    private static final Path STANDARD_CONFIG = Path.of("../../library/jmsfx-standard/src/main/resources/config.yml");
 
     private JmsfxParser candidate;
 
@@ -35,47 +40,33 @@ class JmsfxParserTest {
         candidate = new JmsfxParser();
     }
 
-    /**
-     * A Windows absolute path has to survive being read on a platform where it means nothing. Jackson's {@code Path} deserialiser rejected it as a URI with "scheme 'D' not
-     * allowed", which broke the build on a Linux runner as soon as a check started reading a config - see {@link GeneratorConfig#setModelSourceFile}. Asserting no exception rather
-     * than a resolved value, because what the value resolves to on this platform is not the point.
-     */
-    @Test
-    void testReadConfigAcceptsAPathFromAnotherPlatform() throws IOException {
-        String yaml = """
-                        modelSourceFile: "D:/git/jmsfx/jmsfx-tools/jmsfx-generator/src/main/resources/model-standard.yml"
-                        outputDir: "D:/git/jmsfx/library/jmsfx-standard/src/main/java"
-                        resourceDir: "D:/git/jmsfx/library/jmsfx-standard/src/main/resources"
-                        libraryPrefix: "Standard"
-                        """;
-
-        GeneratorConfig config = candidate.readConfig(new ByteArrayInputStream(yaml.getBytes(StandardCharsets.UTF_8)));
-
-        assertThat(config.getLibraryPrefix(), is("Standard"));
-    }
-
     @Test
     void testReadConfigParsesEachField() throws IOException {
-        // Not read from the real config.yml here: its outputDir is a hardcoded absolute Windows path, which
-        // isn't portable to parse into a Path on other platforms (including CI). A relative path exercises the
-        // same field mapping without that portability problem.
-        String yaml = """
-                        modelFilePath: "/model-standard.yml"
-                        outputDir: "build/generated-sources"
-                        iconPackage: "io.github.ctgnz.jmsfx.standard"
-                        commonPackage: "io.github.ctgnz.jmsfx.standard.common"
-                        amplifierPackage: "io.github.ctgnz.jmsfx.standard.amplifier"
-                        libraryPrefix: "Standard"
-                        """;
+        GeneratorConfig config = GeneratorConfig.load(STANDARD_CONFIG);
 
-        GeneratorConfig config = candidate.readConfig(new ByteArrayInputStream(yaml.getBytes(StandardCharsets.UTF_8)));
-
-        assertThat(config.getModelFilePath(), is("/model-standard.yml"));
-        assertThat(config.getOutputDir(), is(Path.of("build/generated-sources")));
         assertThat(config.getIconPackage(), is("io.github.ctgnz.jmsfx.standard"));
         assertThat(config.getCommonPackage(), is("io.github.ctgnz.jmsfx.standard.common"));
         assertThat(config.getAmplifierPackage(), is("io.github.ctgnz.jmsfx.standard.amplifier"));
+        assertThat(config.getCountryCodeClass(), is("NatoCountryCode"));
         assertThat(config.getLibraryPrefix(), is("Standard"));
+    }
+
+    /** The paths the config no longer carries, derived from where it was loaded from. This is what jmsfx#116 replaced three absolute paths with. */
+    @Test
+    void testDerivesEveryPathFromTheConfigsOwnLocation() throws IOException {
+        GeneratorConfig config = GeneratorConfig.load(STANDARD_CONFIG);
+        Path library = STANDARD_CONFIG.getParent()
+            .toAbsolutePath()
+            .normalize();
+
+        assertThat(config.getResourceDir(), is(library));
+        assertThat(config.getModelFile(), is(library.resolve("model.yml")));
+        assertThat(config.getOutputDir(), is(library.resolveSibling("java")));
+    }
+
+    @Test
+    void testRefusesAConfigThatIsNotThere() {
+        assertThrows(IllegalArgumentException.class, () -> GeneratorConfig.load(Path.of("no/such/config.yml")));
     }
 
     @Test
@@ -152,8 +143,12 @@ class JmsfxParserTest {
         assertThat(roundTrippedCommon.getEntities(), hasSize(3));
     }
 
+    /**
+     * Read from the library module rather than the classpath: since jmsfx#116 the model lives with the library it describes, which is not on this module's classpath and cannot be.
+     * Relative to this module, which is where surefire runs.
+     */
     private LibraryModel readRealLibraryModel() throws IOException {
-        try (InputStream input = getClass().getResourceAsStream("/model-standard.yml")) {
+        try (InputStream input = Files.newInputStream(STANDARD_CONFIG.resolveSibling("model.yml"))) {
             return candidate.readLibraryModel(input);
         }
     }
