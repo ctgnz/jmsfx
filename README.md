@@ -62,16 +62,20 @@ Requires **JDK 25** and Maven. JMSFX is not yet published to Maven Central, so b
 ```sh
 git clone --recurse-submodules https://github.com/ctgnz/jmsfx.git
 cd jmsfx
-mvn install
+mvn -Pstandard install
 ```
+
+`-Pstandard` names the symbology library the two applications ship with. There is deliberately no
+default - a build that names none is refused rather than producing an application with nothing to
+render with - so every `mvn` invocation here carries `-Pstandard` or `-Phallux`.
 
 The `--recurse-submodules` matters: `jmsfx-server` takes its branding stylesheet from the [ctg-brand](https://github.com/ctgnz/ctg-brand) submodule, and Maven will quietly skip the missing directory rather than fail if it is absent.
 
 To run the web application locally:
 
 ```sh
-mvn -pl :jmsfx-server -am verify
-java -jar jmsfx-viewer/jmsfx-server/target/jmsfx-server-*.jar
+mvn -Pstandard -pl :jmsfx-server -am verify
+java -jar jmsfx-viewer/jmsfx-server/target/jmsfx-server-*-standard.jar
 ```
 
 It serves on port 8080 by default.

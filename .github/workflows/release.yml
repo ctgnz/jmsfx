@@ -1,11 +1,17 @@
 # Publishes a GitHub Release for a tagged jmsfx version.
 #
-# Tag a commit whose pom version has had -SNAPSHOT removed everywhere, and whose tag equals that version. Edit
-# each module's pom.xml by hand rather than mvn versions:set - this reactor has picked up drifted per-module
-# versions before when relying on the plugin - then:
+# Tag a commit whose pom version has had -SNAPSHOT removed everywhere, and whose tag equals that version:
 #
+#     mvn versions:set -DnewVersion=1.2.0 -DprocessAllModules=true
 #     git commit -am "Release 1.2.0"
 #     git tag 1.2.0 && git push origin master 1.2.0
+#
+# processAllModules is not optional, and its absence is what made versions:set look unreliable here. Since
+# jmsfx#102 split the parent from the aggregator, no module declares the aggregator as its parent - so the
+# default behaviour, which walks the parent chain, changes the aggregator's own version and nothing else, and
+# leaves a tree where one pom says 1.2.0 and nine say 1.1.0-SNAPSHOT. Verify before tagging:
+#
+#     grep -rn "<version>" --include=pom.xml . | grep -v target | grep SNAPSHOT
 #
 # jmsfx isn't published to Maven Central yet (unlike foxglove) - this only builds jars and attaches them to a
 # GitHub Release. Once Central Portal publishing is set up here too, add a deploy step matching foxglove's
@@ -74,8 +80,12 @@ jobs:
 
     # Tests already ran via maven.yml's own push-to-master trigger, before this commit was ever tagged - no need
     # to run them again here.
+    # -Pstandard because jmsfx#112 gives the applications one build product per library and no
+    # default - a build naming none is refused by an enforcer rule rather than quietly producing an
+    # application with no library in it. The library named here is the one whose artifacts go to
+    # Central, which is the standard APP-6E one.
     - name: Build
-      run: mvn -B --no-transfer-progress -DskipTests package
+      run: mvn -B --no-transfer-progress -DskipTests -Pstandard package
 
     # Tag only: a manual run carries a snapshot version, which the Portal will not take, and
     # publishing is not what a rehearsal is for. autoPublish is false in the pom, so this stages
@@ -83,7 +93,11 @@ jobs:
     # can be dropped rather than having to be superseded.
     - name: Publish to the Maven Central Portal
       if: github.ref_type == 'tag'
-      run: mvn -B --no-transfer-progress -DskipTests -Prelease deploy
+      # Both profiles: -Prelease alone now fails the enforcer rule, which is the point of it. That
+      # is exactly the trap jmsfx#112 describes - naming a profile deactivates an activeByDefault
+      # one, so a defaulted library would have silently dropped out here and published an
+      # application that starts and then answers 500 to everything.
+      run: mvn -B --no-transfer-progress -DskipTests -Pstandard,release deploy
       env:
         MAVEN_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
@@ -104,13 +118,19 @@ jobs:
   # cross-compiling. Maven resolving JavaFX's native classifier from the build host
   # works in our favour here: each runner picks up its own platform's natives.
   package:
-    name: Package (${{ matrix.os }})
+    name: Package (${{ matrix.library }}, ${{ matrix.target.platform }})
     needs: build
     strategy:
-      # One platform failing should not deny the others their artifacts.
+      # One combination failing should not deny the others their artifacts.
       fail-fast: false
+      # A genuine cross product: every library on every platform, which is what jmsfx#112 means by
+      # one build product per library. Two libraries by three platforms is six jobs today, and
+      # jmsfx-battleorder makes it nine once jmsfx#81 can generate it - one word on the line below.
       matrix:
-        include:
+        library:
+          - standard
+          - hallux
+        target:
           - os: windows-latest
             platform: windows
           - os: macos-latest
@@ -121,7 +141,7 @@ jobs:
           # decision about who can run the download, not a housekeeping detail.
           - os: ubuntu-24.04
             platform: linux
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.target.os }}
     steps:
     # The brand submodule feeds jmsfx-server's stylesheet. Maven skips a missing
     # resource directory with only a warning, so without this the reactor builds
@@ -152,7 +172,7 @@ jobs:
 
     - name: Build jmsfx-creator and collect its dependencies
       shell: bash
-      run: mvn -B --no-transfer-progress -DskipTests -pl :jmsfx-creator -am package
+      run: mvn -B --no-transfer-progress -DskipTests -P${{ matrix.library }} -pl :jmsfx-creator -am package
 
     - name: Stage the application jar alongside its dependencies
       shell: bash
@@ -186,7 +206,7 @@ jobs:
         cd jmsfx-viewer/jmsfx-creator/target/dist
         ls -la . | sed 's/^/  /'
         find . -name "*.jar" | wc -l | xargs echo "jars in image:"
-        case "${{ matrix.platform }}" in
+        case "${{ matrix.target.platform }}" in
           windows) LAUNCHER="JMSFX Icon Creator/JMSFX Icon Creator.exe" ;;
           linux)   LAUNCHER="JMSFX Icon Creator/bin/JMSFX Icon Creator" ;;
           macos)   LAUNCHER="JMSFX Icon Creator.app/Contents/MacOS/JMSFX Icon Creator" ;;
@@ -198,7 +218,7 @@ jobs:
       # Only Linux can do this: a virtual display is available there, where the Windows
       # and macOS runners cannot be relied on to have an interactive session. So macOS
       # in particular ships without ever having been seen to run - see issue #41.
-      if: matrix.platform == 'linux'
+      if: matrix.target.platform == 'linux'
       run: |
         sudo apt-get update && sudo apt-get install -y xvfb
         cd "jmsfx-viewer/jmsfx-creator/target/dist/JMSFX Icon Creator/bin"
@@ -213,8 +233,11 @@ jobs:
       shell: bash
       run: |
         cd jmsfx-viewer/jmsfx-creator/target/dist
-        ARCHIVE="jmsfx-creator-${VERSION}-${{ matrix.platform }}"
-        case "${{ matrix.platform }}" in
+        # library then platform, matching CreatorDownloads in jmsfx-server - the download page
+        # builds these names to link to, and nothing checks that the two agree, so
+        # CreatorDownloadsTest spells them out in full.
+        ARCHIVE="jmsfx-creator-${VERSION}-${{ matrix.library }}-${{ matrix.target.platform }}"
+        case "${{ matrix.target.platform }}" in
           linux)
             tar czf "../${ARCHIVE}.tar.gz" "JMSFX Icon Creator"
             ;;
@@ -233,7 +256,7 @@ jobs:
       if: github.ref_type != 'tag'
       uses: actions/upload-artifact@v7
       with:
-        name: jmsfx-creator-${{ matrix.platform }}
+        name: jmsfx-creator-${{ matrix.library }}-${{ matrix.target.platform }}
         path: |
           jmsfx-viewer/jmsfx-creator/target/jmsfx-creator-*.zip
           jmsfx-viewer/jmsfx-creator/target/jmsfx-creator-*.tar.gz

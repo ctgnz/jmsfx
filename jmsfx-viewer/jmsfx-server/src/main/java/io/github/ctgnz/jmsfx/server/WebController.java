@@ -1,5 +1,7 @@
 package io.github.ctgnz.jmsfx.server;
 
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.boot.info.BuildProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,16 @@ import io.github.ctgnz.jmsfx.server.icon.SymbolSetSummary;
 
 @Controller
 public class WebController {
+
+    /**
+     * Absent when nothing put build-info on the classpath. ObjectProvider rather than a required bean so that stays a page that offers the releases page instead of an application
+     * that will not start.
+     */
+    private final ObjectProvider<BuildProperties> buildProperties;
+
+    WebController(ObjectProvider<BuildProperties> buildProperties) {
+        this.buildProperties = buildProperties;
+    }
 
     @GetMapping({
         "/"
@@ -35,10 +47,19 @@ public class WebController {
         return "entity-list";
     }
 
+    /**
+     * The bundles offered here are the ones for the library this instance is running, so a visitor to a hallux subdomain gets the hallux creator without having to know that is
+     * what they want. See jmsfx#112.
+     */
     @GetMapping({
         "/download"
     })
-    public String downloadCreator() {
+    public String downloadCreator(Model model) {
+        String version = buildProperties.getIfAvailable() == null ? null
+            : buildProperties.getObject()
+                .getVersion();
+        model.addAttribute("downloads", CreatorDownloads.of(IconLibrary.discover()
+            .getName(), version));
         return "download";
     }
 

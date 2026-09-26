@@ -1,15 +1,24 @@
 #!/usr/bin/env bash
 #
 # Build and ship jmsfx-server to the Lightsail instance.
-# Run from your workstation:  ./deploy.sh [user@host]
+# Run from your workstation:  ./deploy.sh <library> [user@host]
+#
+# The library is named, never guessed: there is one instance per library, each on its own
+# subdomain, and deploying the wrong one is silent. See jmsfx#112.
 #
 set -euo pipefail
 
-TARGET="${1:-${JMSFX_HOST:-}}"
-if [[ -z "${TARGET}" ]]; then
-    echo "usage: ./deploy.sh user@host   (or set JMSFX_HOST)" >&2
+LIBRARY="${1:-${JMSFX_LIBRARY:-}}"
+TARGET="${2:-${JMSFX_HOST:-}}"
+if [[ -z "${LIBRARY}" || -z "${TARGET}" ]]; then
+    echo "usage: ./deploy.sh <library> user@host   (or set JMSFX_LIBRARY and JMSFX_HOST)" >&2
+    echo "       library is one of: standard, hallux" >&2
     exit 1
 fi
+case "${LIBRARY}" in
+    standard|hallux) ;;
+    *) echo "unknown library '${LIBRARY}' - expected standard or hallux" >&2; exit 1 ;;
+esac
 
 # Lightsail hands out its own key pair, so allow pointing at one rather than
 # requiring an ~/.ssh/config entry.
@@ -28,13 +37,21 @@ if [[ ! -f "${REPO_ROOT}/brand/css/brand.css" ]]; then
     exit 1
 fi
 
-echo "==> building"
+echo "==> building ${LIBRARY}"
 cd "${REPO_ROOT}"
+VERSION=$(mvn -q -B help:evaluate -Dexpression=project.version -DforceStdout -pl :jmsfx-server 2>/dev/null | tail -n1)
 # verify, not package: spring-boot:repackage is bound to post-integration-test,
 # so package alone leaves a thin jar that will not run.
-mvn -B -pl :jmsfx-server -am verify
+mvn -B -P"${LIBRARY}" -pl :jmsfx-server -am verify
 
-JAR=$(ls -t "${REPO_ROOT}"/jmsfx-viewer/jmsfx-server/target/jmsfx-server-*.jar | grep -v '\.original$' | head -1)
+# The fat jar is the one carrying the library classifier; the unclassified jar beside it is the
+# thin one Spring Boot repackaged from, and it will not run. Naming the classifier exactly also
+# means a stale jar from another library cannot be picked up by accident.
+JAR="${REPO_ROOT}/jmsfx-viewer/jmsfx-server/target/jmsfx-server-${VERSION}-${LIBRARY}.jar"
+if [[ ! -f "${JAR}" ]]; then
+    echo "no ${LIBRARY} jar at ${JAR}" >&2
+    exit 1
+fi
 echo "==> shipping $(basename "${JAR}") ($(du -h "${JAR}" | cut -f1))"
 
 # Upload beside the live jar, then swap and restart, so a failed transfer

@@ -56,7 +56,31 @@
         -->
         <jmsfx.core.version>${project.version}</jmsfx.core.version>
         <jmsfx.standard.version>${project.version}</jmsfx.standard.version>
+        <jmsfx.hallux.version>${project.version}</jmsfx.hallux.version>
     </properties>
+
+    <!--
+        The test stack, declared once. The junit BOM and hamcrest's version were repeated verbatim in
+        three module poms, which is three places to forget when either moves. Modules now name the
+        artefacts and inherit the versions.
+    -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>6.1.3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest</artifactId>
+                <version>3.0</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <profiles>
         <profile>
@@ -130,22 +154,23 @@
                             Portal and publishing stays a deliberate step, so a bad staging can be dropped rather
                             than having to be superseded.
 
-                            Only the parent, jmsfx-core and jmsfx-standard belong on Central: the API a consumer
-                            compiles against and the generated library it renders with. The parent is easy to
-                            overlook and resolution breaks for everyone without it. The rest are excluded -
-                            creator, editor and server are applications, delivered as bundles and a deployment.
+                            What goes to Central is jmsfx-parent, jmsfx-core and the libraries: the API a
+                            consumer compiles against, and the generated libraries they render with. The parent
+                            is easy to overlook and resolution breaks for everyone without it. The rest are
+                            excluded - creator, editor and server are applications, delivered as bundles and a
+                            deployment, not things anyone resolves as a dependency.
 
                             The generator stays unpublished: jmsfx#102 settled on a monorepo rather than split
                             library repositories, so every library that generates itself does so from the
                             generator in the same tree and never resolves it as a dependency. If a library ever
                             does live elsewhere, jmsfx-generator and jmsfx-tools come off this list together.
 
-                            jmsfx-hallux is excluded deliberately, and the exclusion is load-bearing rather
-                            than tidy-up. jmsfx#106 brought it into this reactor after 1.5.0 shipped, so the
-                            release profile has never run with it present; without an exclusion the next
-                            -Prelease deploy would publish it to Central, and a publication to Central cannot
-                            be withdrawn. Whether an extension library belongs there is a decision that has
-                            not been taken. Until it is, it stays off.
+                            jmsfx-hallux publishes too, which was an open question until it was settled
+                            deliberately rather than by default: jmsfx#106 brought it into this reactor after
+                            1.5.0 shipped, so the release profile had never run with it present, and it was
+                            held out until someone decided. An extension library is a library - a consumer
+                            renders with it exactly as they would with jmsfx-standard - so Central is where
+                            it belongs.
                         -->
                         <groupId>org.sonatype.central</groupId>
                         <artifactId>central-publishing-maven-plugin</artifactId>
@@ -175,7 +200,6 @@
                                 <excludeArtifact>jmsfx-viewer</excludeArtifact>
                                 <excludeArtifact>jmsfx-creator</excludeArtifact>
                                 <excludeArtifact>jmsfx-server</excludeArtifact>
-                                <excludeArtifact>jmsfx-hallux</excludeArtifact>
                             </excludeArtifacts>
                         </configuration>
                     </plugin>
@@ -202,6 +226,12 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
                     <version>3.3.0</version>
+                </plugin>
+                <plugin>
+                    <!-- Bound in jmsfx-viewer, to refuse a build that names no library. See jmsfx#112. -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>3.5.0</version>
                 </plugin>
                 <!-- Tells m2e to skip Spotless during its own incremental/full builds, rather than fail with
                      "Plugin execution not covered by lifecycle configuration" - `mvn` from the command line still

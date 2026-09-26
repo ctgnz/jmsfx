@@ -18,13 +18,28 @@
                         Each download carries its own Java runtime, so there is nothing else to install - no JDK, and no JavaFX.
                     </p>
 
-                    <div class="d-flex align-items-center flex-wrap gap-2 my-4">
-                        <a class="btn btn-primary" href="https://github.com/ctgnz/jmsfx/releases/latest">Downloads on GitHub</a>
+                    <!-- One button per platform, all three for the library this instance runs. -->
+                    <div class="d-flex align-items-center flex-wrap gap-2 my-4" th:if="${downloads.versioned()}">
+                        <a class="btn btn-primary" th:each="bundle : ${downloads.bundles()}" th:href="${bundle.url()}"
+                           th:title="${bundle.filename()}" th:text="${bundle.system()}">Windows</a>
+                        <a class="btn btn-outline-primary" href="https://github.com/ctgnz/jmsfx">Source code</a>
+                    </div>
+                    <!-- No manifest to read a version from, which means running from exploded classes rather
+                         than a jar - so there is no bundle to name and the releases page is the honest answer. -->
+                    <div class="d-flex align-items-center flex-wrap gap-2 my-4" th:unless="${downloads.versioned()}">
+                        <a class="btn btn-primary" th:href="${downloads.releasesUrl()} + '/latest'">Downloads on GitHub</a>
                         <a class="btn btn-outline-primary" href="https://github.com/ctgnz/jmsfx">Source code</a>
                     </div>
 
+                    <p class="text-body-secondary small" th:if="${downloads.versioned()}">
+                        These are the <span th:text="${downloads.library()}">standard</span> builds, version
+                        <span th:text="${downloads.version()}">2.0.0</span> - matching this site, so the icons you compose
+                        on the desktop are the ones you see here.
+                    </p>
+
                     <table class="table align-middle">
-                        <caption>Pick the archive matching your system from the release page.</caption>
+                        <caption th:if="${downloads.versioned()}">What each button gives you.</caption>
+                        <caption th:unless="${downloads.versioned()}">Pick the archive matching your system from the release page.</caption>
                         <thead>
                             <tr>
                                 <th scope="col">System</th>
@@ -35,17 +50,17 @@
                         <tbody>
                             <tr>
                                 <th scope="row">Windows</th>
-                                <td><code>...-windows.zip</code></td>
+                                <td><code th:text="${downloads.bundles()[0].filename()} ?: '...-windows.zip'">...-windows.zip</code></td>
                                 <td>64-bit. Unzip, then run <em>JMSFX Icon Creator.exe</em>.</td>
                             </tr>
                             <tr>
                                 <th scope="row">macOS</th>
-                                <td><code>...-macos.zip</code></td>
+                                <td><code th:text="${downloads.bundles()[1].filename()} ?: '...-macos.zip'">...-macos.zip</code></td>
                                 <td><span class="badge text-bg-secondary">Apple Silicon only</span> <span class="badge bg-gold text-dark">Untested</span></td>
                             </tr>
                             <tr>
                                 <th scope="row">Linux</th>
-                                <td><code>...-linux.tar.gz</code></td>
+                                <td><code th:text="${downloads.bundles()[2].filename()} ?: '...-linux.tar.gz'">...-linux.tar.gz</code></td>
                                 <td>64-bit. Extract, then run <em>bin/JMSFX Icon Creator</em>.</td>
                             </tr>
                         </tbody>
