@@ -35,6 +35,25 @@ class JmsfxParserTest {
         candidate = new JmsfxParser();
     }
 
+    /**
+     * A Windows absolute path has to survive being read on a platform where it means nothing. Jackson's {@code Path} deserialiser rejected it as a URI with "scheme 'D' not
+     * allowed", which broke the build on a Linux runner as soon as a check started reading a config - see {@link GeneratorConfig#setModelSourceFile}. Asserting no exception rather
+     * than a resolved value, because what the value resolves to on this platform is not the point.
+     */
+    @Test
+    void testReadConfigAcceptsAPathFromAnotherPlatform() throws IOException {
+        String yaml = """
+                        modelSourceFile: "D:/git/jmsfx/jmsfx-tools/jmsfx-generator/src/main/resources/model-standard.yml"
+                        outputDir: "D:/git/jmsfx/library/jmsfx-standard/src/main/java"
+                        resourceDir: "D:/git/jmsfx/library/jmsfx-standard/src/main/resources"
+                        libraryPrefix: "Standard"
+                        """;
+
+        GeneratorConfig config = candidate.readConfig(new ByteArrayInputStream(yaml.getBytes(StandardCharsets.UTF_8)));
+
+        assertThat(config.getLibraryPrefix(), is("Standard"));
+    }
+
     @Test
     void testReadConfigParsesEachField() throws IOException {
         // Not read from the real config.yml here: its outputDir is a hardcoded absolute Windows path, which
