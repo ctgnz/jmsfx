@@ -57,8 +57,8 @@ deployed.
 From your workstation:
 
 ```sh
-./deploy.sh ubuntu@<static-ip>
-# or: JMSFX_HOST=ubuntu@<static-ip> ./deploy.sh
+./deploy.sh standard ubuntu@<static-ip>
+# or: JMSFX_LIBRARY=standard JMSFX_HOST=ubuntu@<static-ip> ./deploy.sh
 ```
 
 It builds with `-am` so the `brand` submodule and upstream modules are
@@ -78,3 +78,26 @@ The JVM is capped at 60% of instance RAM (`-XX:MaxRAMPercentage=60`). If it
 gets OOM-killed under load — visible as an abrupt restart in the journal with
 no stack trace — move up a plan rather than raising the percentage, since
 Caddy and the OS need the remainder.
+
+## One instance per library
+
+The library is the first argument and is never inferred, because there is one instance per library -
+each on its own `*.ctg.co.nz` subdomain - and deploying the wrong one is completely silent: the site
+comes up, serves icons, and is simply the wrong symbology. See jmsfx#112.
+
+`deploy.sh` builds with that library's profile and ships the jar carrying its classifier
+(`jmsfx-server-<version>-<library>.jar`). The unclassified jar beside it in `target/` is the thin one
+Spring Boot repackaged from and will not run, which is why the script names the classifier exactly
+rather than picking the newest jar.
+
+Each host holds one instance, so the paths on the box do not change per library - `/opt/jmsfx/` and
+the `jmsfx-server` unit are the same everywhere. What distinguishes them is which host you deploy to.
+
+To confirm you got the one you meant, ask the running instance:
+
+```sh
+curl https://<subdomain>.ctg.co.nz/info/library
+# {"name":"Hallux","symbolSets":23}
+```
+
+That endpoint exists for exactly this - see jmsfx#111.

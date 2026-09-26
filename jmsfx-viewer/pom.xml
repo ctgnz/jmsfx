@@ -27,4 +27,101 @@
         <module>jmsfx-server</module>
     </modules>
 
+    <!--
+        One profile per library, and the library is always named explicitly: -Pstandard, -Phallux.
+        Both applications inherit whichever is active, because a dependency declared in a profile
+        here reaches every child - which is the point of putting them at this level rather than
+        repeating them in two poms.
+
+        Deliberately no activeByDefault. A default-activated profile switches off the moment any
+        other profile is named, and jmsfx#103 put `mvn -Prelease deploy` in the release workflow, so
+        a defaulted `standard` would silently deactivate during a release and publish an application
+        with no library in it. That failure is quiet and late: the jar starts, then answers 500 to
+        every request with "No IconLibrary on the classpath". The enforcer rule below is what turns
+        naming none into an immediate, explanatory failure instead.
+
+        runtime scope, and *not* optional. spring-boot:repackage leaves optional dependencies out of
+        BOOT-INF/lib, so an optional library never reaches the server's fat jar (jmsfx#93). The
+        creator got away with optional because dependency:copy-dependencies does include optional
+        dependencies - but optional only stops a dependency reaching consumers, and since jmsfx#109
+        nothing consumes either application as a library. So it earns nothing in either, and having
+        it in one and not the other was a trap.
+
+        jmsfx-battleorder has no profile yet: its model is an overlay and there is no generated
+        library to depend on until jmsfx#81 can compose one. Adding it is then a copy of the hallux
+        profile plus a jmsfx.battleorder.version property.
+    -->
+    <profiles>
+        <profile>
+            <id>standard</id>
+            <properties>
+                <jmsfx.library>standard</jmsfx.library>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>io.github.ctgnz</groupId>
+                    <artifactId>jmsfx-standard</artifactId>
+                    <version>${jmsfx.standard.version}</version>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>hallux</id>
+            <properties>
+                <jmsfx.library>hallux</jmsfx.library>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>io.github.ctgnz</groupId>
+                    <artifactId>jmsfx-hallux</artifactId>
+                    <version>${jmsfx.hallux.version}</version>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <!--
+                    Naming no library has to fail, rather than produce an application that builds
+                    green and then cannot serve a single request. Every profile above sets
+                    jmsfx.library, so its absence means none of them is active.
+
+                    This does mean `mvn verify` at the repository root now needs -Pstandard. That is
+                    the cost of having no silent default, and it is deliberate: the alternative is a
+                    build that guesses, and the wrong guess is only discovered in production.
+                -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>require-a-library</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireProperty>
+                                    <property>jmsfx.library</property>
+                                    <message>No symbology library was named, so this build has nothing to render with.
+
+Name one on the command line:
+
+    mvn -Pstandard verify        the APP-6E library
+    mvn -Phallux   verify        the hallux extension
+
+There is deliberately no default - see the comment above this rule, and jmsfx#112.</message>
+                                </requireProperty>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

@@ -102,7 +102,7 @@ ends up dominated by changes that have nothing to do with the drawing.
 `FragmentNormaliser` puts it back:
 
 ```
-mvn -q -pl :jmsfx-generator exec:java \
+mvn -q -Pstandard -pl :jmsfx-generator exec:java \
   -Dexec.mainClass=io.github.ctgnz.jmsfx.generator.FragmentNormaliser -Dexec.args=--apply
 ```
 
@@ -150,7 +150,7 @@ something that is not about its shape would only be noise.
    with its ancestors' attributes folded in, and re-run `FragmentMeasurer` to confirm no bounds moved.
 4. Mirror it into the other tree. The shared fragments are byte-identical between `jmsfx-standard` and
    `hallux`, and are meant to stay that way.
-5. `mvn verify`.
+5. `mvn -Pstandard verify`.
 
 ## Related
 

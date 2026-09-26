@@ -10,6 +10,10 @@ Modules are grouped by deliverable rather than flat (#102), which is also how th
 - `jmsfx-viewer/` - `jmsfx-creator`, `jmsfx-server`. A real parent pom: one capability, two front ends.
 - `library/` - `jmsfx-standard`, `jmsfx-hallux`, `jmsfx-battleorder`. A **plain directory, not a module** - these are exactly the lifecycles that should not move together. `jmsfx-battleorder` is documentation only until #81 can generate it, so it is not in `<modules>` yet.
 
+**Every build must name a library**: `mvn -Pstandard verify` or `-Phallux` (#112). The profiles live in `jmsfx-viewer` and supply the runtime library both applications ship with; there is no `activeByDefault`, because naming any other profile would deactivate it silently, and an enforcer rule refuses a build that names none. `jmsfx-server`'s fat jar carries the library as a **classifier** - `jmsfx-server-2.0.0-standard.jar` - so the thin unclassified jar beside it is not the one to run.
+
+**`mvn versions:set` needs `-DprocessAllModules=true`.** Since #102 no module declares the root aggregator as its parent, so the default parent-chain walk bumps the aggregator alone and leaves every other pom behind. This is what made the plugin look unreliable here.
+
 A dependency that crosses a group boundary resolves through `${jmsfx.core.version}` or `${jmsfx.standard.version}`, declared in `jmsfx-parent`; both default to `${project.version}`, so pinning one to a released version is what splits that lifecycle off. In-group dependencies still use `${project.version}` directly. Prefer `-pl :jmsfx-server` over `-pl jmsfx-viewer/jmsfx-server` - selecting by artifactId survives a directory move.
 
 ## Domain background

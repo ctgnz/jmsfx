@@ -30,12 +30,9 @@
 	        <artifactId>jmsfx-core</artifactId>
 	        <version>${jmsfx.core.version}</version>
 	    </dependency>
-	    <dependency>
-	        <groupId>io.github.ctgnz</groupId>
-	        <artifactId>jmsfx-standard</artifactId>
-	        <scope>runtime</scope>
-	        <version>${jmsfx.standard.version}</version>
-	    </dependency>
+	    <!-- The library comes from the active profile in jmsfx-viewer: -Pstandard, -Phallux.
+	         runtime, and never optional - spring-boot:repackage drops optional dependencies from
+	         BOOT-INF/lib, so an optional library never reaches this jar. See jmsfx#93, jmsfx#112. -->
         <!-- JavaFX resolves its native classifier from the build host, so a jar
              built on Windows cannot render on the Linux server. Icon composition
              goes through a JavaFX scene graph even for SVG output, so the Linux
@@ -79,6 +76,17 @@
             <artifactId>jaxb-runtime</artifactId>
             <version>4.0.9</version>
         </dependency>
+
+	    <dependency>
+	        <groupId>org.junit.jupiter</groupId>
+	        <artifactId>junit-jupiter</artifactId>
+	        <scope>test</scope>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.hamcrest</groupId>
+	        <artifactId>hamcrest</artifactId>
+	        <scope>test</scope>
+	    </dependency>
 	</dependencies>
 	
 	<build>
@@ -109,6 +117,17 @@
                 <version>${spring.boot.version}</version>
                 <configuration>
                     <mainClass>io.github.ctgnz.jmsfx.server.JmsfxServer</mainClass>
+                    <!--
+                        One build product per library, identifiable from its filename:
+                        jmsfx-server-2.0.0-standard.jar, -hallux. That matters once three of these
+                        are being shipped to three boxes, where "which library is in this jar" must
+                        not depend on remembering how it was built. jmsfx#112.
+
+                        A classifier here also leaves the thin jar as the main artifact rather than
+                        replacing it, so there is no .original beside it any more - the fat jar is
+                        the classified one. deploy.sh selects on that.
+                    -->
+                    <classifier>${jmsfx.library}</classifier>
                 </configuration>
                 <executions>
                     <execution>
