@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg enable-background="new 0 0 612 792" height="792px" id="Version_1.0" version="1.1" viewBox="0 0 612 792" width="612px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" y="0px">
+  <g id="frame_overlay">
+    <path d="M 483.974,318.612 H 371.204 L 427.589,217.62612 Z" fill="#faf183" stroke="#000000" stroke-dasharray="5,5" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="5" style="stroke-dasharray:none;fill:#ffff00;fill-opacity:1"/>
+    <g transform="translate(-1.58918,3.118)">
+      <path d="m 436.01736,239.90652 -1.58767,50.57813 c -2.04943,4.0454 -7.59954,4.15778 -10.3809,0 l -1.7098,-50.57813 c 3.65969,-4.94438 10.31145,-4.94438 13.67837,0 z" style="font-size:96px;stroke-width:1.14136"/>
+      <ellipse cx="429.17816" cy="302.48773" rx="6.09452" ry="6.0944" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.6;stroke-dasharray:none"/>
+    </g>
+    <g id="frame_overlay-7" transform="translate(8)">
+      <text font-family="sans-serif" font-size="72px" transform="translate(452.082,269.8145)">X</text>
+    </g>
+  </g>
+</svg>

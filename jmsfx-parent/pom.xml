@@ -112,6 +112,13 @@
             </properties>
         </profile>
         <profile>
+            <id>battleorder</id>
+            <properties>
+                <jmsfx.library>battleorder</jmsfx.library>
+                <jmsfx.library.dir>${maven.multiModuleProjectDirectory}/library/jmsfx-battleorder/src/main/resources</jmsfx.library.dir>
+            </properties>
+        </profile>
+        <profile>
             <id>release</id>
             <build>
                 <plugins>

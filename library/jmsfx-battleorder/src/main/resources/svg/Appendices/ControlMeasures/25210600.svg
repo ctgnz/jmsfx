@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 612 792" font-style="normal" height="792" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 612 792" width="612" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:polygon fill="none" font-style="normal" points="359.726,377.468 381.393,398.468 359.726,418.468 363.393,438.802 342.06,429.802 338.393,456.468 321.06,426.802 306.994,468.135 292.06,436.468 280.726,453.135 269.06,421.468 246.393,431.135 254.727,415.135 231.393,394.135 256.393,375.135 253.06,343.837 272.726,357.801 278.393,333.135 296.06,362.135 303.727,323.943 316.393,354.135 335.06,331.801 339.06,360.25 359.726,344.521" stroke="#000000" stroke-width="5"/>
+    <svg:line fill="none" font-style="normal" stroke="#000000" stroke-width="5" x1="231.393" x2="381.393" y1="487.802" y2="487.802"/>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:g display="inline" font-style="normal" id="varX">
+      <svg:rect fill="none" font-style="normal" height="54.166" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="2.1727" width="49.975" x="372.262" y="296.86"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="28.8541" font-style="normal" transform="matrix(1 0 0 1 386.2734 333.6582)" x="0" y="0">X</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="points">
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="serif" font-size="28.8541" font-style="normal" transform="matrix(1 0 0 1 140.7632 301.3281)" x="0" y="0">CENTER</svg:text>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="serif" font-size="28.8541" font-style="normal" transform="matrix(1 0 0 1 140.7632 334.7109)" x="0" y="0">POINT</svg:text>
+      <svg:path d="M223.931,339.901l71.157,46.282 l-3.171,4.866l-71.137-46.281L223.931,339.901L223.931,339.901z M295.807,379.749l9.842,16.751l-19.316-2.173L295.807,379.749 L295.807,379.749z" fill="#0000FF" font-style="normal" stroke="#0000FF" stroke-linejoin="bevel" stroke-miterlimit="10" stroke-width="0.3476"/>
+    </svg:g>
+  </svg:g>
+  <svg:g display="none" font-style="normal" id="example">
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="28.8541" font-style="normal" transform="matrix(1 0 0 1 370.2734 333.6582)" x="0" y="0">965FT AGL</svg:text>
+  </svg:g>
+</svg:svg>

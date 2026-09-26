@@ -80,6 +80,17 @@
                 </dependency>
             </dependencies>
         </profile>
+        <profile>
+            <id>battleorder</id>
+            <dependencies>
+                <dependency>
+                    <groupId>io.github.ctgnz</groupId>
+                    <artifactId>jmsfx-battleorder</artifactId>
+                    <version>${jmsfx.battleorder.version}</version>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
     </profiles>
 
     <build>
@@ -113,6 +124,7 @@ Name one on the command line:
 
     mvn -Pstandard verify        the APP-6E library
     mvn -Phistorical verify      the historical extension
+    mvn -Pbattleorder verify     the Battle Order extension
 
 There is deliberately no default - see the comment above this rule, and jmsfx#112.</message>
                                 </requireProperty>

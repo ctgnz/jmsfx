@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg enable-background="new 0 0 612 792" height="792px" id="Version_1.0" version="1.1" viewBox="0 0 612 792" width="612px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" y="0px">
+  <g display="none" id="octagon">
+    <line display="inline" fill="none" id="mod2_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="445.01501" y2="445.295"/>
+    <line display="inline" fill="none" id="mod1_1_" stroke="#0000ff" stroke-width="2" x1="203.966" x2="406.199" y1="346.98499" y2="346.705"/>
+    <g display="inline" id="outFrame">
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="220" x2="306" y1="309.5" y2="273"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="306" x2="390.5" y1="273" y2="309.5"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="390.5" x2="427" y1="309.5" y2="396"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="427" x2="390.5" y1="396" y2="482.5"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="390.5" x2="306" y1="482.5" y2="516"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="306" x2="220" y1="516" y2="482.5"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="220" x2="183" y1="482.5" y2="396"/>
+      <line fill="none" stroke="#0000ff" stroke-width="2" x1="183" x2="220" y1="396" y2="309.5"/>
+    </g>
+  </g>
+  <g id="main" transform="matrix(0.78,0,0,0.78,-74.01618,205.0188)">
+    <path d="m 451.737,306.102 v -80.9079 l -17.481,16.9299 -23.348,-22.998 34.687,-34.386 h 21.8738 c 2.47219,19.55278 33.48694,18.42906 36.85811,0 H 526.5 l 34.462,34.386 -22.824,22.998 -17.679,-18.27837 V 306.102 Z" style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+    <circle cx="466.8502" cy="288.40292" r="5" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:6.36364;stroke-dasharray:none;stroke-opacity:1"/>
+    <path d="m 464.547,274.18842 c 14.38365,0.44949 17.0807,9.21454 17.5302,17.97958" style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+    <path d="m 464.547,262.0522 c 21.57548,0.89898 28.54268,13.93418 28.76742,30.1158" style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+    <path d="m 464.547,250.59024 c 27.387,0.10868 41.14843,17.9227 40.528,41.57776" style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"/>
+  </g>
+</svg>

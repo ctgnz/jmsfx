@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg:svg contentScriptType="application/ecmascript" contentStyleType="text/css" enable-background="new 0 0 400 400" font-style="normal" height="400" id="Version_1.0" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox=" 0  0 400 400" width="400" x="0" xml:space="preserve" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0" zoomAndPan="magnify">
+  <svg:g font-style="normal" id="main">
+    <svg:path d="M228.359,117.468c-36.691,0.892-60.847-10.18-78.3,10.881c-14.547,34.28-8.052,14.643-2.241,88.196 c0.228,3.932,3.59,7.329,4.482,11.07c0.664,3.039-0.456,6.971,2.241,9.117c3.342,2.678,13.863,3.74,13.863,3.74 c59.063-0.531,118.125,0,177.169-1.785c7.611-0.17,20.813-7.502,20.813-7.502c17.893-21.594,23.492-66.242-4.688-80.692 c-1.575-1.785-2.241-4.102-4.481-5.545c-1.784-1.235-4.688-0.893-6.933-1.786c-17.909-7.14,3.569-1.063-13.883-5.527 c-10.274-5.526-20.566-6.969-32.209-9.287C278.914,123.184,254.529,117.468,228.359,117.468" fill="none" font-style="normal" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="5"/>
+    <svg:text dx="0.0" dy="0.0" font-family="sans-serif" font-size="24.0048" font-style="normal" transform="matrix(1 0 0 1 221.8008 170.2539)" x="0" y="0">TVAR</svg:text>
+  </svg:g>
+  <svg:g display="inline" font-style="normal" id="template">
+    <svg:g display="inline" font-style="normal" id="varW1">
+      <svg:rect fill="none" font-style="normal" height="34.298" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="1.8991" width="43.926" x="79.585" y="127.42"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.3585" font-style="normal" transform="matrix(1 0 0 1 86.0708 152.2988)" x="0" y="0">W1</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="varW">
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="serif" font-size="21.5739" font-style="normal" transform="matrix(1 0 0 1 70.562 152.2588)" x="0" y="0">-</svg:text>
+      <svg:rect fill="none" font-style="normal" height="34.317" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="1.8991" width="33.918" x="34.139" y="127.666"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="20.3585" font-style="normal" transform="matrix(1 0 0 1 40.7886 152.6152)" x="0" y="0">W</svg:text>
+    </svg:g>
+    <svg:g display="inline" font-style="normal" id="varT">
+      <svg:rect fill="none" font-style="normal" height="39.973" rx="0" ry="0" stroke="#0000FF" stroke-linecap="round" stroke-miterlimit="8" stroke-width="1.8991" width="40.428" x="233.5" y="179.372"/>
+      <svg:text dx="0.0" dy="0.0" fill="#0000FF" font-family="sans-serif" font-size="24.0048" font-style="normal" transform="matrix(1 0 0 1 247.0469 208.9424)" x="0" y="0">T</svg:text>
+    </svg:g>
+  </svg:g>
+  <svg:g display="none" font-style="normal" id="example">
+    <svg:text display="inline" dx="0.0" dy="0.0" enable-background="new    " font-style="normal" id="varWeW1e_1_" transform="matrix(1 0 0 1 4 138.6152)" x="0" y="0">
+      <svg:tspan font-family="sans-serif" font-size="18" font-style="normal" x="0" y="0">020300ZDEC08 -</svg:tspan>
+      <svg:tspan font-family="sans-serif" font-size="18" font-style="normal" x="0" y="21.6">090500ZDEC08   </svg:tspan>
+    </svg:text>
+    <svg:text display="inline" dx="0.0" dy="0.0" font-family="sans-serif" font-size="24.0048" font-style="normal" id="varTe" transform="matrix(1 0 0 1 218.0635 201.9707)" x="0" y="0">SCUD</svg:text>
+  </svg:g>
+</svg:svg>
