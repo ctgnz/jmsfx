@@ -13,10 +13,10 @@ import java.util.stream.Stream;
 import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
 
 /**
- * Compares the SVG fragments of two models - jmsfx-standard and hallux's jmsfx-hallux - and reports how they differ.
+ * Compares the SVG fragments of two models - jmsfx-standard and jmsfx-historical - and reports how they differ.
  * <p>
- * The two trees are meant to relate by whole files being added or removed: hallux extends the base set, and renames a few where its own numbering differs. Anything present in both
- * should draw the same thing. This exists so that holds after a round of fragment edits, since those have to be carried across by hand.
+ * The two trees are meant to relate by whole files being added or removed: the historical extension extends the base set, and renames a few where its own numbering differs.
+ * Anything present in both should draw the same thing. This exists so that holds after a round of fragment edits, since those have to be carried across by hand.
  * <p>
  * Editor noise is deliberately ignored - {@link SvgFingerprint} carries the detail of what counts as noise. Comparing bytes reports dozens of differences that draw identically;
  * this compares the drawable content instead.
@@ -24,7 +24,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
  * Reports only - nothing is copied or written. Run it with the two config files:
  *
  * <pre>
- * java io.github.ctgnz.jmsfx.generator.FragmentComparator [/config.yml] [/config-hallux.yml]
+ * java io.github.ctgnz.jmsfx.generator.FragmentComparator [/config.yml] [/config-historical.yml]
  * </pre>
  *
  * {@link FragmentNormaliser} addresses the same noise from the other end, by taking it out of the files.
@@ -33,7 +33,7 @@ public class FragmentComparator {
 
     public static void main(String[] args) {
         String left = args.length > 0 ? args[0] : "/config.yml";
-        String right = args.length > 1 ? args[1] : "/config-hallux.yml";
+        String right = args.length > 1 ? args[1] : "/config-historical.yml";
         try {
             new FragmentComparator().compare(left, right);
         } catch (Exception e) {

@@ -50,7 +50,7 @@ Grouped by deliverable, so that things which share a release sit together:
 | &nbsp;&nbsp;`jmsfx-server` | Spring Boot web application exposing the same capability over HTTP - this is what runs the site above. |
 | `library/` | The generated libraries. A plain directory, not a module: each library tracks its own domain, so these are the lifecycles that should *not* move together. |
 | &nbsp;&nbsp;`jmsfx-standard` | The generated APP-6E domain model. Not hand-written; see above. |
-| &nbsp;&nbsp;`jmsfx-hallux` | An extension library - icons APP-6E dropped, an enlarged Dismounted Individual set, extra amplifiers. |
+| &nbsp;&nbsp;`jmsfx-historical` | An extension library - icons APP-6E dropped, an enlarged Dismounted Individual set, extra amplifiers. |
 | &nbsp;&nbsp;`jmsfx-battleorder` | An extension colouring a unit's frame by branch of service. Documentation only for now - it needs [#81](https://github.com/ctgnz/jmsfx/issues/81) to be generated, so it is not yet in the reactor. |
 
 The editor sits with the generator rather than with the applications because it edits the model file, which is the generator's input. Nothing in either pom says so - the coupling runs through the YAML.
@@ -67,7 +67,7 @@ mvn -Pstandard install
 
 `-Pstandard` names the symbology library the two applications ship with. There is deliberately no
 default - a build that names none is refused rather than producing an application with nothing to
-render with - so every `mvn` invocation here carries `-Pstandard` or `-Phallux`.
+render with - so every `mvn` invocation here carries `-Pstandard` or `-Phistorical`.
 
 The `--recurse-submodules` matters: `jmsfx-server` takes its branding stylesheet from the [ctg-brand](https://github.com/ctgnz/ctg-brand) submodule, and Maven will quietly skip the missing directory rather than fail if it is absent.
 

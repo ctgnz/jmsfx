@@ -129,7 +129,7 @@ jobs:
       matrix:
         library:
           - standard
-          - hallux
+          - historical
         target:
           - os: windows-latest
             platform: windows

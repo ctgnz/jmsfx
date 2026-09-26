@@ -41,7 +41,7 @@
 		<module>jmsfx-tools</module>
 		<module>jmsfx-viewer</module>
 		<module>library/jmsfx-standard</module>
-		<module>library/jmsfx-hallux</module>
+		<module>library/jmsfx-historical</module>
 	</modules>
 
 </project>

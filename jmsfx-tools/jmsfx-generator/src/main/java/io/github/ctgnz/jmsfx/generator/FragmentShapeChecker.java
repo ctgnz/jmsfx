@@ -37,7 +37,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
  * rather than surfacing much later as an injection that picks up construction scaffolding along with the drawing.
  *
  * <pre>
- * java io.github.ctgnz.jmsfx.generator.FragmentShapeChecker [--dir &lt;svg root&gt; [--model /model-standard.yml]] [/config.yml] [/config-hallux.yml]
+ * java io.github.ctgnz.jmsfx.generator.FragmentShapeChecker [--dir &lt;svg root&gt; [--model /model-standard.yml]] [/config.yml] [/config-historical.yml]
  * </pre>
  *
  * Only free canvas fragments are covered. Every other fragment holds a single content group, but the names it goes by are not yet consistent - {@code echelon}, {@code echelon_1_}
@@ -72,7 +72,7 @@ public class FragmentShapeChecker {
         int checked = 0;
         if (directories.isEmpty()) {
             String left = !rest.isEmpty() ? rest.remove(0) : "/config.yml";
-            String right = !rest.isEmpty() ? rest.remove(0) : "/config-hallux.yml";
+            String right = !rest.isEmpty() ? rest.remove(0) : "/config-historical.yml";
             for (String config : List.of(left, right)) {
                 Result result = checker.run(checker.svgRoot(config), checker.model(checker.modelPath(config)), config);
                 checked += result.checked();

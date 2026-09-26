@@ -12,12 +12,12 @@ LIBRARY="${1:-${JMSFX_LIBRARY:-}}"
 TARGET="${2:-${JMSFX_HOST:-}}"
 if [[ -z "${LIBRARY}" || -z "${TARGET}" ]]; then
     echo "usage: ./deploy.sh <library> user@host   (or set JMSFX_LIBRARY and JMSFX_HOST)" >&2
-    echo "       library is one of: standard, hallux" >&2
+    echo "       library is one of: standard, historical" >&2
     exit 1
 fi
 case "${LIBRARY}" in
-    standard|hallux) ;;
-    *) echo "unknown library '${LIBRARY}' - expected standard or hallux" >&2; exit 1 ;;
+    standard|historical) ;;
+    *) echo "unknown library '${LIBRARY}' - expected standard or historical" >&2; exit 1 ;;
 esac
 
 # Lightsail hands out its own key pair, so allow pointing at one rather than

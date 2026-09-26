@@ -48,8 +48,8 @@ public class WebController {
     }
 
     /**
-     * The bundles offered here are the ones for the library this instance is running, so a visitor to a hallux subdomain gets the hallux creator without having to know that is
-     * what they want. See jmsfx#112.
+     * The bundles offered here are the ones for the library this instance is running, so a visitor to a historical subdomain gets the historical creator without having to know
+     * that is what they want. See jmsfx#112.
      */
     @GetMapping({
         "/download"

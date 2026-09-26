@@ -36,7 +36,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
  * <strong>Reports by default and writes nothing.</strong> Pass {@code --apply} to rewrite the files in place.
  *
  * <pre>
- * java io.github.ctgnz.jmsfx.generator.FragmentNormaliser [--apply] [--show &lt;path&gt;] [/config.yml] [/config-hallux.yml]
+ * java io.github.ctgnz.jmsfx.generator.FragmentNormaliser [--apply] [--show &lt;path&gt;] [/config.yml] [/config-historical.yml]
  * </pre>
  *
  * Every rewrite is checked against {@link SvgFingerprint}: a file that would come back describing a different drawing is reported and left alone, never written. That makes "this
@@ -131,7 +131,7 @@ public class FragmentNormaliser {
         List<String> dirty = new ArrayList<>();
         if (directories.isEmpty()) {
             String left = !rest.isEmpty() ? rest.remove(0) : "/config.yml";
-            String right = !rest.isEmpty() ? rest.remove(0) : "/config-hallux.yml";
+            String right = !rest.isEmpty() ? rest.remove(0) : "/config-historical.yml";
             for (String config : List.of(left, right)) {
                 dirty.addAll(normaliser.run(normaliser.svgRoot(config), config, apply, show));
             }

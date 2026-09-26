@@ -97,7 +97,7 @@ To confirm you got the one you meant, ask the running instance:
 
 ```sh
 curl https://<subdomain>.ctg.co.nz/info/library
-# {"name":"Hallux","symbolSets":23}
+# {"name":"Historical","symbolSets":23}
 ```
 
 That endpoint exists for exactly this - see jmsfx#111.

@@ -2,7 +2,7 @@
 
 Every part of a symbol - the frame, the main icon, each modifier and each amplifier - is one SVG file,
 and rendering a symbol means picking the right files and layering them. This describes what those files
-have to look like. It applies to every icon library, `jmsfx-standard` and `hallux` alike.
+have to look like. It applies to every icon library, `jmsfx-standard` and `jmsfx-historical` alike.
 
 Two of these rules are checked at `verify` and will fail the build. Both report by name, so a failure
 tells you which file and what is wrong with it.
@@ -149,7 +149,7 @@ something that is not about its shape would only be noise.
    new group or a moved element changes it by design. Verify another way - compare each drawing element
    with its ancestors' attributes folded in, and re-run `FragmentMeasurer` to confirm no bounds moved.
 4. Mirror it into the other tree. The shared fragments are byte-identical between `jmsfx-standard` and
-   `hallux`, and are meant to stay that way.
+   `jmsfx-historical`, and are meant to stay that way.
 5. `mvn -Pstandard verify`.
 
 ## Related
