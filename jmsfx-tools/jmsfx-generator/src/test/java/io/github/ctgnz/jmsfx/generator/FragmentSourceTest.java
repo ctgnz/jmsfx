@@ -104,6 +104,17 @@ class FragmentSourceTest {
         assertThat(FragmentSource.contentRoot("<svg><g id=\"main\"><path/></g></svg>", "mod1"), is(nullValue()));
     }
 
+    /**
+     * An empty content root is legitimate and has to survive extraction.
+     * <p>
+     * "General" in the Dismounted set is effectively a synonym for Unknown and draws an empty frame, so its fragment is {@code <g id="main"/>}. Treating a self-closing tag as
+     * something to skip left the depth count open and reported the fragment as having no content.
+     */
+    @Test
+    void takesAnEmptySelfClosingGroup() {
+        assertThat(FragmentSource.contentRoot("<svg><g id=\"octagon\"/><g id=\"main\"/></svg>", "main"), is("<g id=\"main\"/>"));
+    }
+
     /** Depth counting, not a lazy match on the first closing tag - these groups nest. */
     @Test
     void takesTheWholeGroupWhenItNests() {

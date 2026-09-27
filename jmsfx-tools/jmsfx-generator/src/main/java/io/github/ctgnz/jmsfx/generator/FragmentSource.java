@@ -188,6 +188,14 @@ public final class FragmentSource {
         while (tags.find()) {
             if (!tags.group(3)
                 .isEmpty()) {
+                // A self-closing group closes itself. When it is the one being extracted that is the
+                // whole answer: an empty content root is legitimate - "General" in the Dismounted set is
+                // a synonym for Unknown and draws an empty frame, so its fragment is <g id="main"/>.
+                // Skipping it unconditionally left the depth count open and reported the fragment as
+                // having no content at all.
+                if (tags.start() == start) {
+                    return svg.substring(start, tags.end());
+                }
                 continue;
             }
             depth += tags.group(1)
