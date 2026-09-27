@@ -102,15 +102,22 @@ public final class FreeCanvasIcons {
         return identifiers;
     }
 
-    /** The symbol set an element's fragment is filed under, which is its own unless the entity borrows another set's numbering. */
-    private static String baseCode(LibraryModel model, SymbolSetModel symbolSet, EntityModel entity) {
-        if (entity.getBaseSymbolSet() == null) {
+    /**
+     * The symbol set an element's fragment is filed under, which is its own unless something borrows another set's numbering.
+     * <p>
+     * Declared in two places, and both have to be honoured. An entity may name a base symbol set of its own, and a whole symbol set may name one in its config - which is what the
+     * nine Cyberspace variants do, all filing their fragments under Cyberspace's numbering. The generated classes reflect that by overriding {@code getBaseSymbolSet} per constant
+     * in the first case and per class in the second, so both end up at the same identifier; reading only the entity's left every variant set resolving to fragments that do not
+     * exist.
+     */
+    static String baseCode(LibraryModel model, SymbolSetModel symbolSet, EntityModel entity) {
+        String baseId = entity != null && entity.getBaseSymbolSet() != null ? entity.getBaseSymbolSet() : symbolSet.getBaseSymbolSet();
+        if (baseId == null) {
             return symbolSet.getCode();
         }
         return model.getSymbolSets()
             .stream()
-            .filter(candidate -> entity.getBaseSymbolSet()
-                .equals(candidate.getId()))
+            .filter(candidate -> baseId.equals(candidate.getId()))
             .findFirst()
             .map(SymbolSetModel::getCode)
             .orElse(symbolSet.getCode());
