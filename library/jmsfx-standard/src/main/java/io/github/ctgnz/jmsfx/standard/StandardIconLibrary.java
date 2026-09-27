@@ -1,5 +1,7 @@
 package io.github.ctgnz.jmsfx.standard;
 
+import java.io.ByteArrayInputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 import java.util.stream.Stream;
 
@@ -18,6 +20,7 @@ import io.github.ctgnz.jmsfx.Dimension;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.FragmentMarkup;
 import io.github.ctgnz.jmsfx.HqtfDummy;
 import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.MainElement;
@@ -52,6 +55,7 @@ public class StandardIconLibrary implements IconLibrary {
         return (StandardIconLibrary) IconLibrary.discover();
     }
 
+    private int fellBackToClasspath;
     private final FoxgloveParser parser = new FoxgloveParser();
     private CountryCode extensionCountryCode = CountryCode.UNDEFINED;
 
@@ -238,32 +242,60 @@ public class StandardIconLibrary implements IconLibrary {
         }
     }
 
-    @Override
-    public SvgGraphic loadMainIconGraphic(MainElement mainIconElement, StandardIdentity identity) {
-        if (mainIconElement.isGraphicalIcon()) {
-            String filePath = mainIconElement.getGraphicLocation(identity);
-            return parser.parseFile(filePath);
-        } else {
+    /**
+     * The element's own markup as a graphic, or null when it carries none and the fragment has to be read from the classpath instead.
+     * <p>
+     * Parsed fresh each time rather than cached. {@code FoxgloveParser} caches by path and hands the same object back, which is what lets one symbol's recolouring leak onto the
+     * next (jmsfx#121); injected markup has no path to key on and no reason to be shared. Whether the parse cost matters is a question for measurement, not assumption.
+     */
+    private SvgGraphic parseInjected(String markup) {
+        String document = FragmentMarkup.document(markup);
+        if (document == null) {
+            fellBackToClasspath++;
             return null;
         }
+        try {
+            return parser.parse(new ByteArrayInputStream(document.getBytes(StandardCharsets.UTF_8)));
+        } catch (Exception e) {
+            throw new IllegalStateException("injected markup would not parse: " + markup, e);
+        }
+    }
+
+    /**
+     * How many times a caller asked for something this library was supposed to carry and did not.
+     * <p>
+     * Not a statistic for its own sake. The markup is generated from the model, so a mismatch between what is injected and what is asked for would otherwise be invisible:
+     * rendering would fall back to the file and look perfectly correct, while injection quietly did nothing.
+     */
+    public int getClasspathFallbacks() {
+        return fellBackToClasspath;
+    }
+
+    @Override
+    public SvgGraphic loadMainIconGraphic(MainElement mainIconElement, StandardIdentity identity) {
+        if (!mainIconElement.isGraphicalIcon()) {
+            return null;
+        }
+        SvgGraphic injected = parseInjected(mainIconElement.getGraphicMarkup(identity));
+        return injected != null ? injected : parser.parseFile(mainIconElement.getGraphicLocation(identity));
     }
 
     @Override
     public SvgGraphic loadSectorOneModifierGraphic(SectorOneModifier sectorOneModifier) {
-        if (!sectorOneModifier.isUnknown()) {
-            return parser.parseFile(sectorOneModifier.getFullGraphicLocation());
-        } else {
+        if (sectorOneModifier.isUnknown()) {
             return null;
         }
+        SvgGraphic injected = parseInjected(sectorOneModifier.getGraphicMarkup());
+        return injected != null ? injected : parser.parseFile(sectorOneModifier.getFullGraphicLocation());
     }
 
     @Override
     public SvgGraphic loadSectorTwoModifierGraphic(SectorTwoModifier sectorTwoModifier) {
-        if (!sectorTwoModifier.isUnknown()) {
-            return parser.parseFile(sectorTwoModifier.getFullGraphicLocation());
-        } else {
+        if (sectorTwoModifier.isUnknown()) {
             return null;
         }
+        SvgGraphic injected = parseInjected(sectorTwoModifier.getGraphicMarkup());
+        return injected != null ? injected : parser.parseFile(sectorTwoModifier.getFullGraphicLocation());
     }
 
     @Override

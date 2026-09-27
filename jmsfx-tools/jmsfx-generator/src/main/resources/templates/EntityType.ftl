@@ -1,4 +1,4 @@
-<#assign hasIconBounds = (iconBounds??) && (iconBounds?size gt 0)>package ${iconPackage}.${symbolSet.packageName};
+<#import "fragment-markup.ftl" as frag><#assign hasIconBounds = (iconBounds??) && (iconBounds?size gt 0)>package ${iconPackage}.${symbolSet.packageName};
 
 <#if symbolSet.entitySubTypePresent>
 import java.util.List;
@@ -11,17 +11,18 @@ import java.util.List;
 import ${basePackage}.EntitySubType;
 </#if>
 import ${basePackage}.EntityType;
+import ${basePackage}.StandardIdentity;
 <#if hasIconBounds>import ${iconPackage}.IconBounds;
 </#if>import ${typePackage}.GraphicType;
 
 public enum ${symbolSet.baseTypeName}EntityType implements EntityType {
 <#list symbolSet.entityTypes as entType>
-        ${entType.id}("${entType.code}", "${entType.label}", ${symbolSet.baseTypeName}Entity.${entType.entityId}, GraphicType.${entType.graphicType})<#if entType.graphic??> {
+        ${entType.id}("${entType.code}", "${entType.label}", ${symbolSet.baseTypeName}Entity.${entType.entityId}, GraphicType.${entType.graphicType})<#if entType.graphic?? || entType.graphicMarkup?? || entType.graphicMarkupByGroup??> {<#if entType.graphic??>
             @Override
             public String getGraphicIdentifier() {
                 return "${entType.graphic}";
             }
-        }</#if><#sep>,
+</#if><@frag.main entType/>        }</#if><#sep>,
 </#list>;
 
     private final String id;

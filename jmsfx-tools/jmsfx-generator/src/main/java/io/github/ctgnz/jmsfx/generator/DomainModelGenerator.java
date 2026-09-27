@@ -81,6 +81,24 @@ public class DomainModelGenerator {
         }
     }
 
+    /**
+     * Reads every fragment the model names and hangs it on the element that draws it, so the generated constant carries its own drawing - jmsfx#122.
+     * <p>
+     * After composition, deliberately: an overlay has no symbol sets of its own, so run against one alone this would find nothing.
+     */
+    private void injectFragments(LibraryModel dataModel) throws Exception {
+        FragmentSource.Result result = FragmentSource.inject(dataModel, config.getResourceDir()
+            .resolve("svg"));
+        System.out.format("Injected %d fragments%n", result.injected());
+        if (!result.missing()
+            .isEmpty()) {
+            // Reported rather than fatal: these elements now draw the Invalid Symbol, which is visible,
+            // where before they drew nothing at all and nobody noticed.
+            System.out.format("  %d named by the model but not found, and will draw the Invalid Symbol: %s%n", result.missing()
+                .size(), String.join(", ", result.missing()));
+        }
+    }
+
     public void generate(LibraryModel dataModel) throws Exception {
         deleteOldSourceFiles();
         config.getStandardEnums()
@@ -113,6 +131,7 @@ public class DomainModelGenerator {
         dataModel.setIconPackage(config.getIconPackage());
         dataModel.setAmplifierPackage(config.getAmplifierPackage());
         dataModel.setCommonPackage(config.getCommonPackage());
+        injectFragments(dataModel);
         return dataModel;
     }
 
