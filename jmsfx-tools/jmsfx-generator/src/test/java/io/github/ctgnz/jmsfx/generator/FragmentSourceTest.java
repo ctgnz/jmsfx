@@ -1,9 +1,9 @@
 package io.github.ctgnz.jmsfx.generator;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.everyItem;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.Matchers.hasKey;
+import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.nullValue;
@@ -13,28 +13,32 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-import java.util.Map;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import io.github.ctgnz.jmsfx.generator.model.AbstractModel;
+import io.github.ctgnz.jmsfx.generator.model.GraphicType;
 import io.github.ctgnz.jmsfx.generator.model.LibraryModel;
+import io.github.ctgnz.jmsfx.generator.model.SymbolSetModel;
 import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
 
 /**
- * Against the real library, because what needs checking is that the identifiers this derives are the ones the fragments are actually filed under - and a fixture would only prove
- * it agrees with itself. Every fragment the model names has to be found; {@link FragmentSource#collect} refuses the collection outright if one is missing, so a passing test here
- * is the assertion that all of them resolve.
+ * Against the real library, because what needs checking is that the elements this finds are the ones the fragments are actually filed under - and a fixture would only prove it
+ * agrees with itself.
+ * <p>
+ * The model is re-read for each test rather than shared, because injection mutates it: markup is hung on the elements, so a test that ran earlier would otherwise be visible in a
+ * later one.
  */
 class FragmentSourceTest {
 
     private static final Path CONFIG = Path.of("../../library/jmsfx-standard/src/main/resources/config.yml");
 
-    private static LibraryModel model;
-    private static Path svgRoot;
+    private LibraryModel model;
+    private Path svgRoot;
 
-    @BeforeAll
-    static void readTheStandardLibrary() throws IOException {
+    @BeforeEach
+    void readTheStandardLibrary() throws IOException {
         GeneratorConfig config = GeneratorConfig.load(CONFIG);
         svgRoot = config.getResourceDir()
             .resolve("svg");
@@ -45,58 +49,63 @@ class FragmentSourceTest {
 
     @Test
     void findsEveryFragmentTheStandardModelNames() throws IOException {
-        FragmentSource.Fragments fragments = FragmentSource.collect(model, svgRoot);
+        FragmentSource.Result result = FragmentSource.inject(model, svgRoot);
 
-        assertThat(fragments.missing(), is(List.of()));
-        assertThat(fragments.markup()
-            .size(), is(greaterThan(1500)));
-        assertThat(fragments.markup()
-            .values(), everyItem(not(nullValue())));
+        assertThat(result.missing(), is(List.of()));
+        assertThat(result.injected(), is(greaterThan(1500)));
     }
 
-    /** Each category keyed the way the generated classes ask for it: a main icon, a symbol set's own modifier, and the common table's. */
+    /** The markup ends up on the element that draws it, which is the whole point - no table, and nothing keyed on a filename. */
     @Test
-    void keysEachCategoryTheWayTheLibraryAsks() throws IOException {
-        Map<String, String> fragments = FragmentSource.collect(model, svgRoot)
-            .markup();
+    void hangsTheMarkupOnTheElement() throws IOException {
+        FragmentSource.inject(model, svgRoot);
 
-        assertThat(fragments, hasKey("10110100"));
-        assertThat(fragments, hasKey("10011"));
-        assertThat(fragments, hasKey("C1100"));
+        String markup = anEntityOf("Land Units").getGraphicMarkup();
+
+        assertThat(markup, not(nullValue()));
+        assertThat(markup, startsWith("<g"));
     }
 
-    /** A FULL_FRAME element is four fragments, one per identity group, and all four have to be there. */
-    @Test
-    void expandsAFullFrameElementPerIdentityGroup() throws IOException {
-        Map<String, String> fragments = FragmentSource.collect(model, svgRoot)
-            .markup();
-        List<String> suffixed = fragments.keySet()
-            .stream()
-            .filter(key -> key.contains("_"))
-            .toList();
-
-        assertThat(suffixed.size(), is(greaterThan(0)));
-        assertThat(suffixed.size() % 4, is(0));
-    }
-
+    /** The content root only: no envelope, and none of the scaffolding that is three quarters of the file. */
     @Test
     void injectsTheContentRootRatherThanTheFile() throws IOException {
-        Map<String, String> fragments = FragmentSource.collect(model, svgRoot)
-            .markup();
+        FragmentSource.inject(model, svgRoot);
 
-        // No envelope, no scaffolding - the group itself, which is what makes the payload a quarter of
-        // the file bytes. The envelope is added back at load time.
-        assertThat(fragments.get("10110100"), startsWith("<g"));
-        assertThat(fragments.get("10110100"), not(org.hamcrest.Matchers.containsString("id=\"octagon\"")));
-        assertThat(fragments.get("10110100"), not(org.hamcrest.Matchers.containsString("<svg")));
+        String markup = anEntityOf("Land Units").getGraphicMarkup();
+
+        assertThat(markup, not(containsString("id=\"octagon\"")));
+        assertThat(markup, not(containsString("<svg")));
+    }
+
+    /** A FULL_FRAME element is four drawings, one per identity group, because the icon is the frame. */
+    @Test
+    void givesAFullFrameElementOnePerIdentityGroup() throws IOException {
+        FragmentSource.inject(model, svgRoot);
+
+        AbstractModel fullFrame = model.getSymbolSets()
+            .stream()
+            .flatMap(set -> set.getEntityTypes()
+                .stream())
+            .filter(type -> type.getGraphicType() == GraphicType.FULL_FRAME)
+            .findFirst()
+            .orElseThrow();
+
+        assertThat(fullFrame.getGraphicMarkupByGroup()
+            .keySet(), hasSize(4));
+        assertThat(fullFrame.getGraphicMarkup(), is(nullValue()));
     }
 
     @Test
-    void leavesControlMeasuresOut() throws IOException {
-        Map<String, String> fragments = FragmentSource.collect(model, svgRoot)
-            .markup();
+    void givesAModifierItsOwnMarkup() throws IOException {
+        FragmentSource.inject(model, svgRoot);
 
-        assertThat(fragments, not(hasKey("25110100")));
+        AbstractModel modifier = symbolSet("Land Units").getSectorOneMods()
+            .stream()
+            .filter(mod -> mod.getGraphicMarkup() != null)
+            .findFirst()
+            .orElseThrow();
+
+        assertThat(modifier.getGraphicMarkup(), startsWith("<g"));
     }
 
     @Test
@@ -121,6 +130,22 @@ class FragmentSourceTest {
         String svg = "<svg><g id=\"main\"><g id=\"inner\"><path/></g><line/></g></svg>";
 
         assertThat(FragmentSource.contentRoot(svg, "main"), is("<g id=\"main\"><g id=\"inner\"><path/></g><line/></g>"));
+    }
+
+    private AbstractModel anEntityOf(String label) {
+        return symbolSet(label).getEntities()
+            .stream()
+            .filter(entity -> entity.getGraphicMarkup() != null)
+            .findFirst()
+            .orElseThrow();
+    }
+
+    private SymbolSetModel symbolSet(String label) {
+        return model.getSymbolSets()
+            .stream()
+            .filter(set -> label.equals(set.getLabel()))
+            .findFirst()
+            .orElseThrow();
     }
 
 }

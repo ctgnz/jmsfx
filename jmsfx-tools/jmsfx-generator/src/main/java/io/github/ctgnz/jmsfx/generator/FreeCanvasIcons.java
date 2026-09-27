@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 
+import io.github.ctgnz.jmsfx.generator.model.AbstractModel;
 import io.github.ctgnz.jmsfx.generator.model.DimensionModel;
 import io.github.ctgnz.jmsfx.generator.model.EntityModel;
 import io.github.ctgnz.jmsfx.generator.model.EntitySubTypeModel;
@@ -28,12 +29,12 @@ import io.github.ctgnz.jmsfx.generator.model.SymbolSetModel;
  */
 public final class FreeCanvasIcons {
 
-    /** One main icon: the graphic identifier that names it, enough label to report it by, its graphic type, and the fragment it draws. */
-    public record Icon(String identifier, String label, String symbolSet, GraphicType graphicType, Path fragment) {
+    /** One main icon: the graphic identifier that names it, enough label to report it by, its graphic type, the model element it belongs to, and the fragment it draws. */
+    public record Icon(String identifier, String label, String symbolSet, GraphicType graphicType, AbstractModel element, Path fragment) {
     }
 
     /** What an identifier maps to while collecting: enough to build an {@link Icon} once the symbol set's location is known. */
-    private record Entry(String label, GraphicType graphicType) {
+    private record Entry(String label, GraphicType graphicType, AbstractModel element) {
     }
 
     private FreeCanvasIcons() {
@@ -63,9 +64,10 @@ public final class FreeCanvasIcons {
             if (location == null) {
                 throw new IllegalStateException(String.format("symbol set %s has free canvas icons but no graphic location", symbolSet.getLabel()));
             }
-            identifiers.forEach((identifier, entry) -> icons.add(new Icon(identifier, entry.label(), symbolSet.getLabel(), entry.graphicType(), svgRoot.resolve("Appendices")
-                .resolve(location)
-                .resolve(identifier + ".svg"))));
+            identifiers.forEach((identifier, entry) -> icons.add(new Icon(identifier, entry.label(), symbolSet.getLabel(), entry.graphicType(), entry.element(),
+                                                                          svgRoot.resolve("Appendices")
+                                                                              .resolve(location)
+                                                                              .resolve(identifier + ".svg"))));
         }
         return icons;
     }
@@ -79,7 +81,7 @@ public final class FreeCanvasIcons {
         Map<String, Entry> identifiers = new LinkedHashMap<>();
         for (EntityModel entity : symbolSet.getEntities()) {
             if (wanted.test(entity.getGraphicType())) {
-                identifiers.put(baseCode(model, symbolSet, entity) + entity.getCode() + "0000", new Entry(entity.getLabel(), entity.getGraphicType()));
+                identifiers.put(baseCode(model, symbolSet, entity) + entity.getCode() + "0000", new Entry(entity.getLabel(), entity.getGraphicType(), entity));
             }
         }
         for (EntityTypeModel entityType : symbolSet.getEntityTypes()) {
@@ -87,7 +89,7 @@ public final class FreeCanvasIcons {
                 EntityModel entity = entityType.getEntity();
                 String identifier = entityType.getGraphic() != null ? entityType.getGraphic()
                     : baseCode(model, symbolSet, entity) + entity.getCode() + entityType.getCode() + "00";
-                identifiers.put(identifier, new Entry(entityType.getLabel(), entityType.getGraphicType()));
+                identifiers.put(identifier, new Entry(entityType.getLabel(), entityType.getGraphicType(), entityType));
             }
         }
         for (EntitySubTypeModel subType : symbolSet.getEntitySubTypes()) {
@@ -96,7 +98,7 @@ public final class FreeCanvasIcons {
                 EntityModel entity = entityType.getEntity();
                 String identifier = subType.getGraphic() != null ? subType.getGraphic()
                     : baseCode(model, symbolSet, entity) + entity.getCode() + entityType.getCode() + subType.getCode();
-                identifiers.put(identifier, new Entry(subType.getLabel(), subType.getGraphicType()));
+                identifiers.put(identifier, new Entry(subType.getLabel(), subType.getGraphicType(), subType));
             }
         }
         return identifiers;

@@ -5,12 +5,13 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import io.github.ctgnz.jmsfx.generator.model.AbstractModel;
 import io.github.ctgnz.jmsfx.generator.model.GraphicType;
 import io.github.ctgnz.jmsfx.generator.model.LibraryModel;
 import io.github.ctgnz.jmsfx.generator.model.SectorOneModifierModel;
@@ -35,41 +36,78 @@ import io.github.ctgnz.jmsfx.generator.model.SymbolSetModel;
  */
 public final class FragmentSource {
 
-    /** One fragment: the identifier a renderer asks for, the file it came from, and the markup of its content root - null when the file is not there. */
-    public record Fragment(String identifier, Path file, String markup) {
+    /**
+     * One fragment: the element that draws it, the identity group it belongs to for a {@code FULL_FRAME} element and null otherwise, the file it came from, and the markup of its
+     * content root - null when the file holds none. The identifier is kept only to report by; nothing is keyed on it.
+     */
+    public record Fragment(String identifier, AbstractModel element, String groupId, Path file, String markup) {
     }
 
     private static final String CONTROL_MEASURES = "ControlMeasures";
     /** The code {@link io.github.ctgnz.jmsfx.CodeElement#isUnknown()} treats as "nothing to draw". */
     private static final String UNSPECIFIED = "00";
+    /** The Common entity APP-6E provides for a symbol that cannot be resolved. */
+    private static final String INVALID = "INVALID";
     private static final Pattern GROUP_TAG = Pattern.compile("<(/?)(?:svg:)?g\\b([^>]*?)(/?)>");
 
     private FragmentSource() {
     }
 
-    /** What a collection found: the markup to inject, and the identifiers the model named but the tree could not supply. */
-    public record Fragments(Map<String, String> markup, List<String> missing) {
+    /** What an injection did: how many elements were given markup, and what the model named that the tree could not supply. */
+    public record Result(int injected, List<String> missing) {
     }
 
     /**
-     * Every injectable fragment in the model, resolved against the {@code svg} directory of a resource tree.
+     * Reads every fragment the model names and hangs its markup on the element that draws it.
      * <p>
-     * A fragment the model names but the tree does not hold is reported rather than thrown on, because it is not a new problem and injection must not invent one: today
-     * {@code FoxgloveParser.parseFile} catches the failure and hands back an empty graphic, so such an element already draws nothing and has done so unnoticed. Four of them exist
-     * in jmsfx-historical. Refusing to generate would turn a silent gap into a blocked build; reporting it and letting the runtime fall back to the file keeps behaviour identical
-     * while making the gap visible.
+     * On the element rather than in a table keyed by the fragment's filename, which would make the current layout permanent - jmsfx#124 exists to change it, and a generated lookup
+     * keyed on {@code 10110100} would have to be rewritten with it. The generated constant carries its own drawing instead.
+     * <p>
+     * A fragment the model names but the tree cannot supply gets the Invalid Symbol's markup, so the element renders as the standard "this is wrong" marker. Reading nothing would
+     * be quieter and worse: {@code FoxgloveParser} already swallows a missing file and returns an empty graphic, which is how three fragments in jmsfx-historical came to draw
+     * nothing unnoticed. A generation failure should be visible at runtime.
      */
-    public static Fragments collect(LibraryModel model, Path svgRoot) throws IOException {
-        Map<String, String> fragments = new TreeMap<>();
+    public static Result inject(LibraryModel model, Path svgRoot) throws IOException {
+        List<Fragment> fragments = locate(model, svgRoot);
+        String invalidSymbol = invalidSymbolMarkup(fragments);
         List<String> missing = new ArrayList<>();
-        for (Fragment fragment : locate(model, svgRoot)) {
-            if (fragment.markup() == null) {
+        Map<AbstractModel, Map<String, String>> byGroup = new LinkedHashMap<>();
+        int injected = 0;
+        for (Fragment fragment : fragments) {
+            String markup = fragment.markup();
+            if (markup == null) {
                 missing.add(fragment.identifier());
-            } else {
-                fragments.put(fragment.identifier(), fragment.markup());
+                markup = invalidSymbol;
+                if (markup == null) {
+                    continue;
+                }
             }
+            if (fragment.groupId() == null) {
+                fragment.element()
+                    .setGraphicMarkup(markup);
+            } else {
+                byGroup.computeIfAbsent(fragment.element(), element -> new LinkedHashMap<>())
+                    .put(fragment.groupId(), markup);
+            }
+            injected++;
         }
-        return new Fragments(fragments, missing);
+        byGroup.forEach((element, markupByGroup) -> element.setGraphicMarkupByGroup(markupByGroup));
+        return new Result(injected, missing);
+    }
+
+    /**
+     * The Invalid Symbol's markup, which is what an element with no fragment falls back to.
+     * <p>
+     * Found through the model rather than by naming a file, so it survives jmsfx#124: it is the Common symbol set's {@code INVALID} entity, which APP-6E provides for exactly this
+     * purpose. Null if that entity has no fragment either, in which case there is nothing sensible to substitute and the element is left without markup.
+     */
+    private static String invalidSymbolMarkup(List<Fragment> fragments) {
+        return fragments.stream()
+            .filter(fragment -> INVALID.equals(fragment.element()
+                .getId()) && fragment.markup() != null)
+            .map(Fragment::markup)
+            .findFirst()
+            .orElse(null);
     }
 
     /** Every fragment the model names, with its content root read where the file holds one and null where it does not. */
@@ -85,12 +123,12 @@ public final class FragmentSource {
                 for (StandardIdentityGroupModel group : model.getIdentityGroups()) {
                     if (group.getGraphicSuffix() != null) {
                         String identifier = icon.identifier() + group.getGraphicSuffix();
-                        add(fragments, identifier, icon.fragment()
+                        add(fragments, identifier, icon.element(), group.getCode(), icon.fragment()
                             .resolveSibling(identifier + ".svg"), "main");
                     }
                 }
             } else {
-                add(fragments, icon.identifier(), icon.fragment(), "main");
+                add(fragments, icon.identifier(), icon.element(), null, icon.fragment(), "main");
             }
         }
         for (SymbolSetModel symbolSet : model.getSymbolSets()) {
@@ -107,7 +145,7 @@ public final class FragmentSource {
                     continue;
                 }
                 String identifier = modifierIdentifier(baseCode, modifier.getGroupId(), modifier.getCode(), "1");
-                add(fragments, identifier, location.resolve("mod1")
+                add(fragments, identifier, modifier, null, location.resolve("mod1")
                     .resolve(identifier + ".svg"), "mod1");
             }
             for (SectorTwoModifierModel modifier : symbolSet.getSectorTwoMods()) {
@@ -115,7 +153,7 @@ public final class FragmentSource {
                     continue;
                 }
                 String identifier = modifierIdentifier(baseCode, modifier.getGroupId(), modifier.getCode(), "2");
-                add(fragments, identifier, location.resolve("mod2")
+                add(fragments, identifier, modifier, null, location.resolve("mod2")
                     .resolve(identifier + ".svg"), "mod2");
             }
         }
@@ -157,9 +195,9 @@ public final class FragmentSource {
                 .resolve(location);
     }
 
-    private static void add(List<Fragment> fragments, String identifier, Path file, String contentRoot) throws IOException {
+    private static void add(List<Fragment> fragments, String identifier, AbstractModel element, String groupId, Path file, String contentRoot) throws IOException {
         String markup = Files.exists(file) ? contentRoot(Files.readString(file, StandardCharsets.UTF_8), contentRoot) : null;
-        fragments.add(new Fragment(identifier, file, markup));
+        fragments.add(new Fragment(identifier, element, groupId, file, markup));
     }
 
     private static String directoryOf(Path fragment) {
