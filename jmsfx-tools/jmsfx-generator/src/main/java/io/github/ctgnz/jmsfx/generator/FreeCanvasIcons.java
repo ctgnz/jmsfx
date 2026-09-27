@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 
 import io.github.ctgnz.jmsfx.generator.model.DimensionModel;
 import io.github.ctgnz.jmsfx.generator.model.EntityModel;
@@ -27,8 +28,12 @@ import io.github.ctgnz.jmsfx.generator.model.SymbolSetModel;
  */
 public final class FreeCanvasIcons {
 
-    /** One free canvas icon: the graphic identifier that names it, enough label to report it by, and the fragment it draws. */
-    public record Icon(String identifier, String label, String symbolSet, Path fragment) {
+    /** One main icon: the graphic identifier that names it, enough label to report it by, its graphic type, and the fragment it draws. */
+    public record Icon(String identifier, String label, String symbolSet, GraphicType graphicType, Path fragment) {
+    }
+
+    /** What an identifier maps to while collecting: enough to build an {@link Icon} once the symbol set's location is known. */
+    private record Entry(String label, GraphicType graphicType) {
     }
 
     private FreeCanvasIcons() {
@@ -36,9 +41,19 @@ public final class FreeCanvasIcons {
 
     /** Every free canvas icon in the model, in symbol set order, resolved against the {@code svg} directory of a resource tree. */
     public static List<Icon> collect(LibraryModel model, Path svgRoot) {
+        return collect(model, svgRoot, type -> type == GraphicType.FREE_CANVAS);
+    }
+
+    /**
+     * Every main icon whose graphic type the predicate accepts.
+     * <p>
+     * Opened up for {@link FragmentSource}, which needs all of them rather than the free canvas ones. The identifier derivation stays here and has one copy, which is the whole
+     * reason this class exists - see the note about jmsfx#52 above.
+     */
+    public static List<Icon> collect(LibraryModel model, Path svgRoot, Predicate<GraphicType> wanted) {
         List<Icon> icons = new ArrayList<>();
         for (SymbolSetModel symbolSet : model.getSymbolSets()) {
-            Map<String, String> identifiers = identifiers(model, symbolSet);
+            Map<String, Entry> identifiers = identifiers(model, symbolSet, wanted);
             if (identifiers.isEmpty()) {
                 continue;
             }
@@ -48,7 +63,7 @@ public final class FreeCanvasIcons {
             if (location == null) {
                 throw new IllegalStateException(String.format("symbol set %s has free canvas icons but no graphic location", symbolSet.getLabel()));
             }
-            identifiers.forEach((identifier, label) -> icons.add(new Icon(identifier, label, symbolSet.getLabel(), svgRoot.resolve("Appendices")
+            identifiers.forEach((identifier, entry) -> icons.add(new Icon(identifier, entry.label(), symbolSet.getLabel(), entry.graphicType(), svgRoot.resolve("Appendices")
                 .resolve(location)
                 .resolve(identifier + ".svg"))));
         }
@@ -60,28 +75,28 @@ public final class FreeCanvasIcons {
      * <p>
      * A {@link LinkedHashMap} rather than a list of pairs because an entity type and its sub-type can name the same graphic, and the set should hold it once.
      */
-    private static Map<String, String> identifiers(LibraryModel model, SymbolSetModel symbolSet) {
-        Map<String, String> identifiers = new LinkedHashMap<>();
+    private static Map<String, Entry> identifiers(LibraryModel model, SymbolSetModel symbolSet, Predicate<GraphicType> wanted) {
+        Map<String, Entry> identifiers = new LinkedHashMap<>();
         for (EntityModel entity : symbolSet.getEntities()) {
-            if (entity.getGraphicType() == GraphicType.FREE_CANVAS) {
-                identifiers.put(baseCode(model, symbolSet, entity) + entity.getCode() + "0000", entity.getLabel());
+            if (wanted.test(entity.getGraphicType())) {
+                identifiers.put(baseCode(model, symbolSet, entity) + entity.getCode() + "0000", new Entry(entity.getLabel(), entity.getGraphicType()));
             }
         }
         for (EntityTypeModel entityType : symbolSet.getEntityTypes()) {
-            if (entityType.getGraphicType() == GraphicType.FREE_CANVAS) {
+            if (wanted.test(entityType.getGraphicType())) {
                 EntityModel entity = entityType.getEntity();
                 String identifier = entityType.getGraphic() != null ? entityType.getGraphic()
                     : baseCode(model, symbolSet, entity) + entity.getCode() + entityType.getCode() + "00";
-                identifiers.put(identifier, entityType.getLabel());
+                identifiers.put(identifier, new Entry(entityType.getLabel(), entityType.getGraphicType()));
             }
         }
         for (EntitySubTypeModel subType : symbolSet.getEntitySubTypes()) {
-            if (subType.getGraphicType() == GraphicType.FREE_CANVAS) {
+            if (wanted.test(subType.getGraphicType())) {
                 EntityTypeModel entityType = subType.getEntityType();
                 EntityModel entity = entityType.getEntity();
                 String identifier = subType.getGraphic() != null ? subType.getGraphic()
                     : baseCode(model, symbolSet, entity) + entity.getCode() + entityType.getCode() + subType.getCode();
-                identifiers.put(identifier, subType.getLabel());
+                identifiers.put(identifier, new Entry(subType.getLabel(), subType.getGraphicType()));
             }
         }
         return identifiers;
