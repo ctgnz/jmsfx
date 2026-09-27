@@ -21,11 +21,12 @@ public class DomainModelGenerator {
 
     public static void main(String[] args) {
         if (args.length < 1) {
-            System.err.println("usage: DomainModelGenerator <library>/src/main/resources/config.yml");
+            System.err.println("usage: DomainModelGenerator <library>/config.yml [<base-library>/config.yml]");
+            System.err.println("       the second argument is required only for an overlay, and is the config of the library it composes onto");
             return;
         }
         try {
-            DomainModelGenerator generator = new DomainModelGenerator(Path.of(args[0]));
+            DomainModelGenerator generator = new DomainModelGenerator(Path.of(args[0]), args.length > 1 ? Path.of(args[1]) : null);
             LibraryModel dataModel = generator.parse();
             generator.generate(dataModel);
         } catch (Exception e) {
@@ -34,12 +35,50 @@ public class DomainModelGenerator {
     }
 
     private GeneratorConfig config;
+    private GeneratorConfig baseConfig;
     private JmsfxParser parser;
 
     public DomainModelGenerator(Path configFile) throws IOException {
+        this(configFile, null);
+    }
+
+    /**
+     * @param configFile
+     *            the library to generate
+     * @param baseConfigFile
+     *            the config of the library it composes onto, for an overlay; null for a model complete in itself
+     */
+    public DomainModelGenerator(Path configFile, Path baseConfigFile) throws IOException {
         this.parser = new JmsfxParser();
         this.config = GeneratorConfig.load(configFile);
+        this.baseConfig = baseConfigFile == null ? null : GeneratorConfig.load(baseConfigFile);
+        checkBaseMatchesDeclaration();
+        if (baseConfig != null) {
+            config.inheritFrom(baseConfig);
+        }
         System.out.format("Writing to %s%n", config.getOutputDir());
+    }
+
+    /**
+     * That the base handed in is the one the config asked for.
+     * <p>
+     * The config declares what it extends by library prefix and the caller supplies where that library is, so the two can disagree - and composing an extension onto the wrong base
+     * produces a library that generates, compiles and renders while meaning something different. Cheaper to refuse than to notice later.
+     */
+    private void checkBaseMatchesDeclaration() {
+        if (config.isOverlay() && baseConfig == null) {
+            throw new IllegalArgumentException(String.format("%s is an overlay on %s, so the base library's config must be given as the second argument", config.getLibraryPrefix(),
+                config.getBaseLibrary()));
+        }
+        if (!config.isOverlay() && baseConfig != null) {
+            throw new IllegalArgumentException(String.format("%s is a complete model, so it takes no base - remove the second argument, or give it a baseLibrary",
+                config.getLibraryPrefix()));
+        }
+        if (baseConfig != null && !config.getBaseLibrary()
+            .equals(baseConfig.getLibraryPrefix())) {
+            throw new IllegalArgumentException(String.format("%s composes onto %s, but the config given as its base is %s", config.getLibraryPrefix(), config.getBaseLibrary(),
+                baseConfig.getLibraryPrefix()));
+        }
     }
 
     public void generate(LibraryModel dataModel) throws Exception {
@@ -60,15 +99,14 @@ public class DomainModelGenerator {
      * The model file describes symbology; what a library is called and which packages it lands in are properties of generating one, not of the standard it implements. So they live
      * in the config alone, and are applied here rather than being declared a second time at the head of every model file - which is what jmsfx#108 was about.
      * <p>
-     * A config naming {@code baseLibrary} has an <em>overlay</em> rather than a whole model: only what the extension adds, composed onto the base by {@link ModelComposer}. See
-     * jmsfx#81.
+     * A config naming {@code baseLibrary} has an <em>overlay</em> rather than a whole model: only what the extension adds, composed onto the base by {@link ModelComposer}. Where
+     * that base lives is the generator's second argument rather than something derived from this one's location - see {@link GeneratorConfig#getBaseLibrary()}. jmsfx#81.
      */
     public LibraryModel parse() throws Exception {
         LibraryModel dataModel = parser.readLibraryModel(Files.newInputStream(config.getModelFile()));
-        Path baseModelFile = config.getBaseModelFile();
-        if (baseModelFile != null) {
-            System.out.format("Composing onto %s%n", baseModelFile);
-            dataModel = new ModelComposer().compose(parser.readLibraryModel(Files.newInputStream(baseModelFile)), dataModel);
+        if (baseConfig != null) {
+            System.out.format("Composing onto %s%n", baseConfig.getModelFile());
+            dataModel = new ModelComposer().compose(parser.readLibraryModel(Files.newInputStream(baseConfig.getModelFile())), dataModel);
         }
         dataModel.setLibraryPrefix(config.getLibraryPrefix());
         dataModel.setCountryCodeClass(config.getCountryCodeClass());

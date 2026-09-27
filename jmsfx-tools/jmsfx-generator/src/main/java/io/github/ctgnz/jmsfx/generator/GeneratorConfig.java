@@ -41,23 +41,8 @@ public class GeneratorConfig {
         try (InputStream stream = Files.newInputStream(absolute)) {
             GeneratorConfig config = new JmsfxParser().readConfig(stream);
             config.location = absolute.getParent();
-            config.inheritFromBase();
             return config;
         }
-    }
-
-    /**
-     * Takes from the base library's config what an overlay has no business restating.
-     * <p>
-     * Only {@code countryCodeClass}, and only when unset. The packages and the library prefix are what make this library distinct, so inheriting them would be wrong; the country
-     * code class names a type generated from the base's own country codes, so an overlay that does not change them has nothing to say about it. Naming it anyway in every overlay
-     * would be the duplication jmsfx#108 removed, one level up.
-     */
-    private void inheritFromBase() throws IOException {
-        if (baseLibrary == null || countryCodeClass != null) {
-            return;
-        }
-        countryCodeClass = load(getBaseModelFile().resolveSibling("config.yml")).getCountryCodeClass();
     }
 
     /** The directory the config was loaded from, which every path below is derived from. */
@@ -82,24 +67,33 @@ public class GeneratorConfig {
     }
 
     /**
-     * The library this one extends, named by its module directory - {@code jmsfx-standard}. Absent for a whole model, which is every library until jmsfx#81.
+     * The library this one extends, named by its {@code libraryPrefix} - {@code Standard}. Absent for a whole model, which is every library but jmsfx-battleorder.
      * <p>
-     * A module name rather than a path to the model, because the layout is already a convention jmsfx#116 relies on everywhere else here: a library's model is
-     * {@code <module>/src/main/resources/model.yml}, and its modules are siblings under {@code library}. Spelling out
-     * {@code ../../../../jmsfx-standard/src/main/resources/model.yml} would say the same thing less clearly and break if the tree moved.
+     * A declaration, not a location. Where the base actually is comes from the second argument to {@link DomainModelGenerator}, and this is what that argument is checked against:
+     * a positional path is easy to get wrong, and composing one extension onto another would otherwise be completely silent.
+     * <p>
+     * It used to name the base's module directory and resolve the model by walking up three levels and sideways, with {@code src/main/resources/model.yml} spelled out at the end.
+     * That encoded the whole repository layout in one expression and would have broken the moment jmsfx#124 moved the model.
      */
     public String getBaseLibrary() {
         return baseLibrary;
     }
 
-    /** The model this one composes onto, or null when it is a whole model in its own right. */
-    public Path getBaseModelFile() {
-        return baseLibrary == null ? null
-            : location.getParent()
-                .getParent()
-                .getParent()
-                .resolveSibling(baseLibrary)
-                .resolve("src/main/resources/model.yml");
+    /** Whether this config describes an overlay to compose onto another library, rather than a model complete in itself. */
+    public boolean isOverlay() {
+        return baseLibrary != null;
+    }
+
+    /**
+     * Takes from the base what an overlay has no business restating.
+     * <p>
+     * Only {@code countryCodeClass}, and only when unset. The packages and the library prefix are what make this library distinct, so inheriting them would be wrong; the country
+     * code class names a type generated from the base's own country codes, so an overlay that does not change them has nothing to say about it.
+     */
+    void inheritFrom(GeneratorConfig base) {
+        if (countryCodeClass == null) {
+            countryCodeClass = base.getCountryCodeClass();
+        }
     }
 
     public String getBasePackage() {
