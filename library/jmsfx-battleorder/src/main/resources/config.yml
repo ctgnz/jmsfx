@@ -1,8 +1,9 @@
 # model.yml here is an *overlay*, not a whole model: one frame amplifier, and nothing else. The
-# generator composes it onto baseLibrary's model - see jmsfx#81 and ModelComposer.
+# generator composes it onto the library named by baseLibrary, whose config is passed to the
+# generator as its second argument - see jmsfx#81, ModelComposer and GeneratorConfig.
 #
 # Paths are not configured - see jmsfx#116 and the sibling libraries' configs.
-baseLibrary: "jmsfx-standard"
+baseLibrary: "Standard"
 iconPackage: "io.github.ctgnz.jmsfx.battleorder"
 commonPackage: "io.github.ctgnz.jmsfx.battleorder.common"
 amplifierPackage: "io.github.ctgnz.jmsfx.battleorder.amplifier"
