@@ -6,16 +6,37 @@ import javafx.geometry.Rectangle2D;
 
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.battleorder.IconBounds;
 import io.github.ctgnz.jmsfx.battleorder.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum AirEntity implements Entity {
-        MILITARY("11", "Military", GraphicType.MAIN),
-        CIVILIAN("12", "Civilian", GraphicType.MAIN),
-        WEAPON("13", "Weapon", GraphicType.MAIN),
-        MANUAL_TRACK("14", "Manual Track", GraphicType.FULL_OCTAGON);
+        MILITARY("11", "Military", GraphicType.MAIN) {
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"115\" transform=\"matrix(1 0 0 1 208.5005 436.3975)\">MIL</text>\n  </g>";
+            }
+        },
+        CIVILIAN("12", "Civilian", GraphicType.MAIN) {
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return "<g id=\"main\">\n    <text fill=\"#FFFFFF\" font-family=\"sans-serif\" font-size=\"116.5535\" stroke=\"#000000\" stroke-width=\"5\" transform=\"matrix(1 0 0 1 208.0005 439.25)\">CIV</text>\n  </g>";
+            }
+        },
+        WEAPON("13", "Weapon", GraphicType.MAIN) {
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"92\" transform=\"matrix(1 0 0 1 198 432.25)\">WPN</text>\n  </g>";
+            }
+        },
+        MANUAL_TRACK("14", "Manual Track", GraphicType.FULL_OCTAGON) {
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"100\" transform=\"matrix(1 0 0 1 192 433.25)\">MAN</text>\n  </g>";
+            }
+        };
 
     private final String id;
     private final String label;

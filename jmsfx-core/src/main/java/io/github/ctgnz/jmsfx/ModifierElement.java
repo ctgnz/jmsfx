@@ -12,6 +12,16 @@ public interface ModifierElement extends CodeElement {
 
     ModifierCategory getCategory();
 
+    /**
+     * The markup this modifier draws, ready to parse, or null when it carries none.
+     * <p>
+     * Overridden per modifier by a generated library, so the drawing sits on the modifier rather than in a table keyed by a filename - see {@link MainElement#getGraphicMarkup}. A
+     * modifier that draws nothing has no markup and none is expected: an "unspecified" modifier is the absence of one.
+     */
+    default String getGraphicMarkup() {
+        return null;
+    }
+
     String getGraphicIdentifier();
 
     default String getGroupId() {

@@ -1,20 +1,21 @@
-<#assign hasIconBounds = (iconBounds??) && (iconBounds?size gt 0)>package ${iconPackage}.${symbolSet.packageName};
+<#import "fragment-markup.ftl" as frag><#assign hasIconBounds = (iconBounds??) && (iconBounds?size gt 0)>package ${iconPackage}.${symbolSet.packageName};
 
 <#if hasIconBounds>import javafx.geometry.Rectangle2D;
 
 </#if>import ${basePackage}.EntitySubType;
 import ${basePackage}.EntityType;
+import ${basePackage}.StandardIdentity;
 <#if hasIconBounds>import ${iconPackage}.IconBounds;
 </#if>import ${typePackage}.GraphicType;
 
 public enum ${symbolSet.baseTypeName}EntitySubType implements EntitySubType {
 <#list symbolSet.entitySubTypes as subType>
-        ${subType.id}("${subType.code}", "${subType.label}", ${symbolSet.baseTypeName}EntityType.${subType.entityTypeId}, GraphicType.${subType.graphicType})<#if subType.graphic??> {
+        ${subType.id}("${subType.code}", "${subType.label}", ${symbolSet.baseTypeName}EntityType.${subType.entityTypeId}, GraphicType.${subType.graphicType})<#if subType.graphic?? || subType.graphicMarkup?? || subType.graphicMarkupByGroup??> {<#if subType.graphic??>
             @Override
             public String getGraphicIdentifier() {
                 return "${subType.graphic}";
             }
-        }</#if><#sep>,
+</#if><@frag.main subType/>        }</#if><#sep>,
 </#list>;
 
     private final String id;

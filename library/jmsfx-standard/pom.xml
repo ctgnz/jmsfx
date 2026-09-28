@@ -37,6 +37,14 @@
             <artifactId>jmsfx-core</artifactId>
             <version>${jmsfx.core.version}</version>
         </dependency>
+        <!-- The injected-markup contract, which this library's own test subclasses. See jmsfx#122. -->
+        <dependency>
+            <groupId>io.github.ctgnz</groupId>
+            <artifactId>jmsfx-core</artifactId>
+            <version>${jmsfx.core.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>com.neovisionaries</groupId>
             <artifactId>nv-i18n</artifactId>

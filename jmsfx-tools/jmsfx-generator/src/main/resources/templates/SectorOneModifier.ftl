@@ -1,4 +1,4 @@
-<#assign hasModBounds = (modifierBounds??) && (modifierBounds?size gt 0)>package ${iconPackage}.${symbolSet.packageName};
+<#import "fragment-markup.ftl" as frag><#assign hasModBounds = (modifierBounds??) && (modifierBounds?size gt 0)>package ${iconPackage}.${symbolSet.packageName};
 
 <#if hasModBounds>import javafx.geometry.Rectangle2D;
 
@@ -11,7 +11,7 @@ import ${typePackage}.ModifierCategory;
 
 public enum ${symbolSet.baseTypeName}SectorOneModifier implements SectorOneModifier {
 <#list symbolSet.sectorOneMods as mod>
-        ${mod.id}("${mod.code}", "${mod.label}", ModifierCategory.${mod.category})<#sep>,
+        ${mod.id}("${mod.code}", "${mod.label}", ModifierCategory.${mod.category})<#if mod.graphicMarkup??> {<@frag.modifier mod/>        }</#if><#sep>,
 </#list>;
 
     private final String id;

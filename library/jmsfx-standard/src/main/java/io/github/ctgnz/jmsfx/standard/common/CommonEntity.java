@@ -6,6 +6,7 @@ import javafx.geometry.Rectangle2D;
 
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.standard.IconBounds;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
@@ -13,8 +14,18 @@ import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum CommonEntity implements Entity {
         UNSPECIFIED("00", "Unspecified", GraphicType.NA),
-        UNKNOWN("01", "Unknown Symbol", GraphicType.MAIN),
-        INVALID("10", "Invalid Symbol", GraphicType.MAIN);
+        UNKNOWN("01", "Unknown Symbol", GraphicType.MAIN) {
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"140px\" x=\"265.0975\" y=\"446.4246\">?</text>\n  </g>";
+            }
+        },
+        INVALID("10", "Invalid Symbol", GraphicType.MAIN) {
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"140px\" transform=\"scale(1,-1)\" x=\"265.0975\" y=\"-342.5867\">?</text>\n  </g>";
+            }
+        };
 
     private final String id;
     private final String label;

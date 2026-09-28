@@ -6,13 +6,19 @@ import javafx.geometry.Rectangle2D;
 
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.historical.IconBounds;
 import io.github.ctgnz.jmsfx.historical.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum LandInstallationEntity implements Entity {
-        INSTALLATION("11", "Installation", GraphicType.MAIN),
+        INSTALLATION("11", "Installation", GraphicType.MAIN) {
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"110\" transform=\"matrix(1 0 0 1 211 435.6719)\">MIL</text>\n  </g>";
+            }
+        },
         INFRASTRUCTURE("12", "Infrastructure", GraphicType.NA);
 
     private final String id;

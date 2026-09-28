@@ -9,7 +9,12 @@ import io.github.ctgnz.jmsfx.battleorder.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.types.ModifierCategory;
 
 public enum LandCivilianSectorTwoModifier implements SectorTwoModifier {
-        LEADER("01", "Leader or Leadership", ModifierCategory.Organization);
+        LEADER("01", "Leader or Leadership", ModifierCategory.Organization) {
+            @Override
+            public String getGraphicMarkup() {
+                return "<g id=\"mod2\">\n    <text font-family=\"sans-serif\" font-size=\"60\" id=\"LDR\" transform=\"matrix(1 0 0 1 245 490.5146)\">LDR</text>\n  </g>";
+            }
+        };
 
     private final String id;
     private final String label;

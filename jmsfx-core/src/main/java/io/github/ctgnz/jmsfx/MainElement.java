@@ -6,6 +6,20 @@ import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public interface MainElement extends CodeElement {
 
+    /**
+     * The markup this element draws, ready to parse, or null when it carries none.
+     * <p>
+     * A generated library overrides this per element so the drawing lives on the thing that draws it, rather than in a table keyed by a filename - which would make the fragment
+     * layout permanent, and jmsfx#124 exists to change it. Null means the caller should fall back to reading {@link #getGraphicLocation(StandardIdentity)} from the classpath,
+     * which is what every library did before jmsfx#122 and what the categories jmsfx#123 covers still do.
+     * <p>
+     * Takes the identity because a {@code FULL_FRAME} element is four drawings, one per identity group: the icon <em>is</em> the frame, so each identity draws a different one.
+     * Everything else ignores the argument.
+     */
+    default String getGraphicMarkup(StandardIdentity identity) {
+        return null;
+    }
+
     String getGraphicIdentifier();
 
     GraphicType getGraphicType();

@@ -273,6 +273,12 @@
                     <version>3.3.0</version>
                 </plugin>
                 <plugin>
+                    <!-- Bound in jmsfx-core, for the test jar the libraries share their verification through. See jmsfx#122. -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.4.2</version>
+                </plugin>
+                <plugin>
                     <!-- Bound in jmsfx-viewer, to refuse a build that names no library. See jmsfx#112. -->
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.commons.lang3.RegExUtils;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -21,6 +22,8 @@ public abstract class AbstractModel {
     protected boolean extension;
     protected boolean deprecated;
     protected Map<String, BoundsModel> bounds;
+    protected String graphicMarkup;
+    protected Map<String, String> graphicMarkupByGroup;
 
     public AbstractModel() {
     }
@@ -30,6 +33,32 @@ public abstract class AbstractModel {
         this.label = label;
         this.code = code;
         this.remarks = remarks;
+    }
+
+    /**
+     * The markup this element draws, or null when it has none.
+     * <p>
+     * Read from the fragment by {@link io.github.ctgnz.jmsfx.generator.FragmentSource} and emitted onto the generated constant, so the drawing lives on the element rather than in
+     * a table keyed by a filename. {@code @JsonIgnore} is load-bearing: this is 0.6 MB across a library, and writing it into {@code model.yml} would bury the symbology it
+     * describes.
+     */
+    @JsonIgnore
+    public String getGraphicMarkup() {
+        return graphicMarkup;
+    }
+
+    /** The markup a {@code FULL_FRAME} element draws, by identity group id - the icon is the frame, so each identity draws a different one. Null for everything else. */
+    @JsonIgnore
+    public Map<String, String> getGraphicMarkupByGroup() {
+        return graphicMarkupByGroup;
+    }
+
+    public void setGraphicMarkup(String graphicMarkup) {
+        this.graphicMarkup = graphicMarkup;
+    }
+
+    public void setGraphicMarkupByGroup(Map<String, String> graphicMarkupByGroup) {
+        this.graphicMarkupByGroup = graphicMarkupByGroup;
     }
 
     /**

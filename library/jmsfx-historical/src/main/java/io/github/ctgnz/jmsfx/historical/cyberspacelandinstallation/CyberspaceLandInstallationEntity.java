@@ -6,6 +6,7 @@ import javafx.geometry.Rectangle2D;
 
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.historical.IconBounds;
 import io.github.ctgnz.jmsfx.historical.SymbolSetEnum;
@@ -13,8 +14,18 @@ import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum CyberspaceLandInstallationEntity implements Entity {
         MISSION_FORCE("11", "Mission Force", GraphicType.NA),
-        CYBERSPACE_UNIT("12", "Cyberspace Unit", GraphicType.MAIN),
-        THREAT_ACTOR("13", "Threat Actor", GraphicType.MAIN);
+        CYBERSPACE_UNIT("12", "Cyberspace Unit", GraphicType.MAIN) {
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return "<g id=\"main\" transform=\"translate(0.2539,0.60818)\">\n    <text font-family=\"sans-serif\" font-size=\"100px\" transform=\"translate(203.9658,430.25)\">CYB</text>\n  </g>";
+            }
+        },
+        THREAT_ACTOR("13", "Threat Actor", GraphicType.MAIN) {
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return "<g id=\"main\" opacity=\"0.87\" transform=\"translate(15.29002,-2.1213143)\">\n    <text font-family=\"sans-serif\" font-size=\"120px\" transform=\"translate(216,440.25)\">TA</text>\n  </g>";
+            }
+        };
 
     private final String id;
     private final String label;

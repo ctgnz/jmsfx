@@ -6,6 +6,9 @@ import java.util.stream.Stream;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.io.ByteArrayInputStream;
+import java.nio.charset.StandardCharsets;
+
 import nz.co.ctg.foxglove.FoxgloveParser;
 import nz.co.ctg.foxglove.SvgGraphic;
 
@@ -20,6 +23,7 @@ import ${basePackage}.EntitySubType;
 import ${basePackage}.EntityType;
 import ${basePackage}.HqtfDummy;
 import ${basePackage}.IconLibrary;
+import ${basePackage}.FragmentMarkup;
 import ${basePackage}.MainElement;
 import ${basePackage}.SectorOneModifier;
 import ${basePackage}.SectorTwoModifier;
@@ -54,6 +58,7 @@ public class ${libraryPrefix}IconLibrary implements IconLibrary {
         return (${libraryPrefix}IconLibrary) IconLibrary.discover();
     }
 
+    private int fellBackToClasspath;
     private final FoxgloveParser parser = new FoxgloveParser();
     private CountryCode extensionCountryCode = CountryCode.UNDEFINED;
 
@@ -242,32 +247,63 @@ public class ${libraryPrefix}IconLibrary implements IconLibrary {
         }
     }
 
-    @Override
-    public SvgGraphic loadMainIconGraphic(MainElement mainIconElement, StandardIdentity identity) {
-        if (mainIconElement.isGraphicalIcon()) {
-            String filePath = mainIconElement.getGraphicLocation(identity);
-            return parser.parseFile(filePath);
-        } else {
+    /**
+     * The element's own markup as a graphic, or null when it carries none and the fragment has to be read from the classpath instead.
+     * <p>
+     * Cached by the graphic location, which is a sound key for it: the location is unique to one element, and unique per identity group for a {@code FULL_FRAME} element, because the
+     * group suffix is part of it. Reorganising the fragment tree (jmsfx#124) keeps that property - every fragment stays identifiable to one element - so the key survives the move,
+     * and {@code getGraphicLocation} may well be renamed {@code getGraphicKey} then to say what it now is.
+     * <p>
+     * Sharing a parsed graphic is safe for these categories and not in general. Nothing mutates a main icon or a modifier; the frame is mutated, by {@code replaceFill} when a frame
+     * amplifier recolours it, and that is precisely how one symbol's colour leaks onto the next (jmsfx#121). The frame is not injected here - jmsfx#123 is where it is dealt with.
+     */
+    private SvgGraphic parseInjected(String graphicLocation, String markup) {
+        String document = FragmentMarkup.document(markup);
+        if (document == null) {
+            fellBackToClasspath++;
             return null;
         }
+        return parser.parseResource(graphicLocation, new ByteArrayInputStream(document.getBytes(StandardCharsets.UTF_8)));
+    }
+
+    /**
+     * How many times a caller asked for something this library was supposed to carry and did not.
+     * <p>
+     * Not a statistic for its own sake. The markup is generated from the model, so a mismatch between what is injected and what is asked for would otherwise be invisible: rendering
+     * would fall back to the file and look perfectly correct, while injection quietly did nothing.
+     */
+    public int getClasspathFallbacks() {
+        return fellBackToClasspath;
+    }
+
+    @Override
+    public SvgGraphic loadMainIconGraphic(MainElement mainIconElement, StandardIdentity identity) {
+        if (!mainIconElement.isGraphicalIcon()) {
+            return null;
+        }
+        String location = mainIconElement.getGraphicLocation(identity);
+        SvgGraphic injected = parseInjected(location, mainIconElement.getGraphicMarkup(identity));
+        return injected != null ? injected : parser.parseFile(location);
     }
 
     @Override
     public SvgGraphic loadSectorOneModifierGraphic(SectorOneModifier sectorOneModifier) {
-        if (!sectorOneModifier.isUnknown()) {
-            return parser.parseFile(sectorOneModifier.getFullGraphicLocation());
-        } else {
+        if (sectorOneModifier.isUnknown()) {
             return null;
         }
+        String location = sectorOneModifier.getFullGraphicLocation();
+        SvgGraphic injected = parseInjected(location, sectorOneModifier.getGraphicMarkup());
+        return injected != null ? injected : parser.parseFile(location);
     }
 
     @Override
     public SvgGraphic loadSectorTwoModifierGraphic(SectorTwoModifier sectorTwoModifier) {
-        if (!sectorTwoModifier.isUnknown()) {
-            return parser.parseFile(sectorTwoModifier.getFullGraphicLocation());
-        } else {
+        if (sectorTwoModifier.isUnknown()) {
             return null;
         }
+        String location = sectorTwoModifier.getFullGraphicLocation();
+        SvgGraphic injected = parseInjected(location, sectorTwoModifier.getGraphicMarkup());
+        return injected != null ? injected : parser.parseFile(location);
     }
 
     @Override
