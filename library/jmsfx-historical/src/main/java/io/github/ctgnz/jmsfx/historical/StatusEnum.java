@@ -64,6 +64,57 @@ public enum StatusEnum implements Status {
                     default -> Rectangle2D.EMPTY;
                 };
             }
+
+            @Override
+            public String getStatusMarkup(StandardIdentity identity, SymbolSet symbolSet) {
+                return switch (identity.getGroupId() + symbolSet.getFrameId()) {
+                    case "100" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "101" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"524.5\"/>\n  </g>";
+                    case "105" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"524.5\"/>\n  </g>";
+                    case "110" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "115" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "120" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "127" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "130" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "135" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"598.5\"/>\n  </g>";
+                    case "140" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "160" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "300" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "301" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"260.785\" x=\"176.557\" y=\"527.5\"/>\n  </g>";
+                    case "305" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"260.785\" x=\"176.557\" y=\"527.5\"/>\n  </g>";
+                    case "310" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "315" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "320" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "327" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "330" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "335" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"260.785\" x=\"176.557\" y=\"602.5\"/>\n  </g>";
+                    case "340" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "360" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "400" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "401" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"552.5\"/>\n  </g>";
+                    case "405" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"523.5\"/>\n  </g>";
+                    case "410" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "415" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "420" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "427" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "430" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "435" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"552.5\"/>\n  </g>";
+                    case "440" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "460" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "600" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"343.778\" x=\"135.222\" y=\"582.5\"/>\n  </g>";
+                    case "601" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"173.25\" y=\"525.5\"/>\n  </g>";
+                    case "605" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174.25\" y=\"525.5\"/>\n  </g>";
+                    case "610" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"582.5\"/>\n  </g>";
+                    case "615" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"583.5\"/>\n  </g>";
+                    case "620" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"579.5\"/>\n  </g>";
+                    case "627" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"583.5\"/>\n  </g>";
+                    case "630" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"582.5\"/>\n  </g>";
+                    case "635" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"173.75\" y=\"598.5\"/>\n  </g>";
+                    case "640" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"582.5\"/>\n  </g>";
+                    case "660" -> "<g id=\"oca\">\n    <rect fill=\"#00FF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"582.5\"/>\n  </g>";
+                    default -> null;
+                };
+            }
         },
         DAMAGED("3", "Present/Damaged", true, "ACTIVITY", "AIR", "COMMON", "CYBERSPACE", "DISMOUNTED", "LAND_EQUIPMENT", "LAND_INSTALLATION", "LAND_UNIT", "SEA_SUBSURFACE", "SEA_SURFACE", "SPACE") {
             @Override
@@ -114,6 +165,57 @@ public enum StatusEnum implements Status {
                     case "640" -> new Rectangle2D(132.72, 580, 347.01, 58);
                     case "660" -> new Rectangle2D(130.5, 580, 351, 58);
                     default -> Rectangle2D.EMPTY;
+                };
+            }
+
+            @Override
+            public String getStatusMarkup(StandardIdentity identity, SymbolSet symbolSet) {
+                return switch (identity.getGroupId() + symbolSet.getFrameId()) {
+                    case "100" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "101" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"524.5\"/>\n  </g>";
+                    case "105" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"524.5\"/>\n  </g>";
+                    case "110" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "115" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "120" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "127" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "130" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "135" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"598.5\"/>\n  </g>";
+                    case "140" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "160" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "300" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "301" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"260.785\" x=\"176.557\" y=\"527.5\"/>\n  </g>";
+                    case "305" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"260.785\" x=\"176.557\" y=\"527.5\"/>\n  </g>";
+                    case "310" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "315" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "320" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "327" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "330" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "335" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"260.785\" x=\"176.557\" y=\"602.5\"/>\n  </g>";
+                    case "340" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "360" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "400" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "401" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"552.5\"/>\n  </g>";
+                    case "405" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"523.5\"/>\n  </g>";
+                    case "410" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "415" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "420" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "427" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "430" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "435" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"552.5\"/>\n  </g>";
+                    case "440" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "460" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "600" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"343.778\" x=\"135.222\" y=\"582.5\"/>\n  </g>";
+                    case "601" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"173.25\" y=\"525.5\"/>\n  </g>";
+                    case "605" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174.25\" y=\"525.5\"/>\n  </g>";
+                    case "610" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"582.5\"/>\n  </g>";
+                    case "615" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"583.5\"/>\n  </g>";
+                    case "620" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"579.5\"/>\n  </g>";
+                    case "627" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"583.5\"/>\n  </g>";
+                    case "630" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"582.5\"/>\n  </g>";
+                    case "635" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"173.75\" y=\"598.5\"/>\n  </g>";
+                    case "640" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"582.5\"/>\n  </g>";
+                    case "660" -> "<g id=\"oca\">\n    <rect fill=\"#FFFF00\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"582.5\"/>\n  </g>";
+                    default -> null;
                 };
             }
         },
@@ -169,6 +271,57 @@ public enum StatusEnum implements Status {
                     default -> Rectangle2D.EMPTY;
                 };
             }
+
+            @Override
+            public String getStatusMarkup(StandardIdentity identity, SymbolSet symbolSet) {
+                return switch (identity.getGroupId() + symbolSet.getFrameId()) {
+                    case "100" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "101" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"524.5\"/>\n  </g>";
+                    case "105" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"524.5\"/>\n  </g>";
+                    case "110" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "115" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "120" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "127" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "130" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "135" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"598.5\"/>\n  </g>";
+                    case "140" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "160" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "300" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "301" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"260.785\" x=\"176.557\" y=\"527.5\"/>\n  </g>";
+                    case "305" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"260.785\" x=\"176.557\" y=\"527.5\"/>\n  </g>";
+                    case "310" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "315" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "320" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "327" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "330" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "335" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"260.785\" x=\"176.557\" y=\"602.5\"/>\n  </g>";
+                    case "340" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "360" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "400" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "401" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"552.5\"/>\n  </g>";
+                    case "405" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"523.5\"/>\n  </g>";
+                    case "410" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "415" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "420" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "427" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "430" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "435" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"552.5\"/>\n  </g>";
+                    case "440" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "460" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "600" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"343.778\" x=\"135.222\" y=\"582.5\"/>\n  </g>";
+                    case "601" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"173.25\" y=\"525.5\"/>\n  </g>";
+                    case "605" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174.25\" y=\"525.5\"/>\n  </g>";
+                    case "610" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"582.5\"/>\n  </g>";
+                    case "615" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"583.5\"/>\n  </g>";
+                    case "620" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"579.5\"/>\n  </g>";
+                    case "627" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"583.5\"/>\n  </g>";
+                    case "630" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"582.5\"/>\n  </g>";
+                    case "635" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"173.75\" y=\"598.5\"/>\n  </g>";
+                    case "640" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"582.5\"/>\n  </g>";
+                    case "660" -> "<g id=\"oca\">\n    <rect fill=\"#FF0000\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"582.5\"/>\n  </g>";
+                    default -> null;
+                };
+            }
         },
         FULL("5", "Present/Full to Capacity", true, "ACTIVITY", "AIR", "COMMON", "CYBERSPACE", "DISMOUNTED", "LAND_EQUIPMENT", "LAND_INSTALLATION", "LAND_UNIT", "SEA_SUBSURFACE", "SEA_SURFACE",
              "SPACE") {
@@ -220,6 +373,57 @@ public enum StatusEnum implements Status {
                     case "640" -> new Rectangle2D(132.72, 580, 347.01, 58);
                     case "660" -> new Rectangle2D(130.5, 580, 351, 58);
                     default -> Rectangle2D.EMPTY;
+                };
+            }
+
+            @Override
+            public String getStatusMarkup(StandardIdentity identity, SymbolSet symbolSet) {
+                return switch (identity.getGroupId() + symbolSet.getFrameId()) {
+                    case "100" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "101" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"524.5\"/>\n  </g>";
+                    case "105" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"524.5\"/>\n  </g>";
+                    case "110" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "115" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "120" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "127" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "130" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "135" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"598.5\"/>\n  </g>";
+                    case "140" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "160" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"576.5\"/>\n  </g>";
+                    case "300" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "301" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"260.785\" x=\"176.557\" y=\"527.5\"/>\n  </g>";
+                    case "305" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"260.785\" x=\"176.557\" y=\"527.5\"/>\n  </g>";
+                    case "310" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "315" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "320" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "327" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "330" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"288\" x=\"162\" y=\"553.5\"/>\n  </g>";
+                    case "335" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"260.785\" x=\"176.557\" y=\"602.5\"/>\n  </g>";
+                    case "340" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "360" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"360\" x=\"126.082\" y=\"526.5\"/>\n  </g>";
+                    case "400" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "401" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"552.5\"/>\n  </g>";
+                    case "405" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"523.5\"/>\n  </g>";
+                    case "410" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "415" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "420" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "427" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "430" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "435" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"552.5\"/>\n  </g>";
+                    case "440" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "460" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174\" y=\"542.5\"/>\n  </g>";
+                    case "600" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"343.778\" x=\"135.222\" y=\"582.5\"/>\n  </g>";
+                    case "601" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"173.25\" y=\"525.5\"/>\n  </g>";
+                    case "605" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"174.25\" y=\"525.5\"/>\n  </g>";
+                    case "610" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"582.5\"/>\n  </g>";
+                    case "615" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"583.5\"/>\n  </g>";
+                    case "620" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"579.5\"/>\n  </g>";
+                    case "627" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"583.5\"/>\n  </g>";
+                    case "630" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"582.5\"/>\n  </g>";
+                    case "635" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"264\" x=\"173.75\" y=\"598.5\"/>\n  </g>";
+                    case "640" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"342.01\" x=\"135.222\" y=\"582.5\"/>\n  </g>";
+                    case "660" -> "<g id=\"oca\">\n    <rect fill=\"#0000FF\" height=\"53\" stroke=\"#000000\" stroke-miterlimit=\"10\" stroke-width=\"5\" width=\"346\" x=\"133\" y=\"582.5\"/>\n  </g>";
+                    default -> null;
                 };
             }
         },

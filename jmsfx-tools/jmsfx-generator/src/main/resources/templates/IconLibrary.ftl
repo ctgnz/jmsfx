@@ -268,11 +268,10 @@ public class ${libraryPrefix}IconLibrary implements IconLibrary {
 
     @Override
     public SvgGraphic loadHqtfDummyGraphic(HqtfDummy hqtfDummy, StandardIdentity identity, SymbolSet symbolSet) {
-        if (!hqtfDummy.isUnknown()) {
-            return parser.parseFile(hqtfDummy.getGraphicLocation(identity, symbolSet));
-        } else {
+        if (hqtfDummy.isUnknown()) {
             return null;
         }
+        return injected(hqtfDummy.getGraphicLocation(identity, symbolSet), hqtfDummy.getHqtfDummyMarkup(identity, symbolSet));
     }
 
     /**
@@ -284,6 +283,17 @@ public class ${libraryPrefix}IconLibrary implements IconLibrary {
     private boolean isAmplified(AmplifierListItem frameAmplifier) {
         return frameAmplifier != null && !frameAmplifier.isUnknown() && !frameAmplifier.getBackgroundFill()
             .isBlank();
+    }
+
+    /**
+     * The element's markup as a graphic, falling back to reading the fragment from the classpath when it carries none.
+     * <p>
+     * The status bars and the HQ/task force/dummy indicators go through here rather than calling {@code parseInjected} directly, because unlike a main icon they have a file to
+     * fall back to under the same location - so a combination the generator did not inject still renders.
+     */
+    private SvgGraphic injected(String location, String markup) {
+        SvgGraphic graphic = parseInjected(location, markup);
+        return graphic == null ? parser.parseFile(location) : graphic;
     }
 
     /**
@@ -347,11 +357,10 @@ public class ${libraryPrefix}IconLibrary implements IconLibrary {
 
     @Override
     public SvgGraphic loadStatusGraphic(Status status, boolean isStatusIconUsed, StandardIdentity identity, SymbolSet symbolSet) {
-        if (isStatusIconUsed) {
-            return parser.parseFile(status.getGraphicLocation(identity, symbolSet));
-        } else {
+        if (!isStatusIconUsed) {
             return null;
         }
+        return injected(status.getGraphicLocation(identity, symbolSet), status.getStatusMarkup(identity, symbolSet));
     }
 
     @Override

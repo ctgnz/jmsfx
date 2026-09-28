@@ -133,6 +133,57 @@ public abstract class InjectedMarkupContract {
     }
 
     /**
+     * That every operational-condition bar a status carries is the one its own location names.
+     * <p>
+     * Keyed by identity group and frame id, the third of the three key shapes in this library. As with the frames, the markup came from the generator working out which fragment
+     * belonged to which status, and {@code getGraphicLocation} is jmsfx-core's unrelated derivation of the same thing.
+     */
+    @Test
+    public void everyInjectedStatusMatchesItsFragment() throws IOException {
+        List<String> wrong = new ArrayList<>();
+        int checked = 0;
+        for (SymbolSet symbolSet : IconLibrary.discover()
+            .getSymbolSets()) {
+            for (Status status : IconLibrary.discover()
+                .getStatuses()) {
+                for (StandardIdentity identity : IDENTITIES) {
+                    String markup = status.getStatusMarkup(identity, symbolSet);
+                    if (markup == null) {
+                        continue;
+                    }
+                    checked++;
+                    compare(status.getGraphicLocation(identity, symbolSet), "oca", markup, wrong);
+                }
+            }
+        }
+        assertThat(checked, is(greaterThan(100)));
+        assertThat(wrong, is(List.of()));
+    }
+
+    /** The same, for the headquarters, task force and dummy indicators - keyed by identity group and dimension. */
+    @Test
+    public void everyInjectedHqtfDummyMatchesItsFragment() throws IOException {
+        List<String> wrong = new ArrayList<>();
+        int checked = 0;
+        for (SymbolSet symbolSet : IconLibrary.discover()
+            .getSymbolSets()) {
+            for (HqtfDummy hqtfDummy : IconLibrary.discover()
+                .getHqtfDummys()) {
+                for (StandardIdentity identity : IDENTITIES) {
+                    String markup = hqtfDummy.getHqtfDummyMarkup(identity, symbolSet);
+                    if (markup == null) {
+                        continue;
+                    }
+                    checked++;
+                    compare(hqtfDummy.getGraphicLocation(identity, symbolSet), "hqtffd", markup, wrong);
+                }
+            }
+        }
+        assertThat(checked, is(greaterThan(100)));
+        assertThat(wrong, is(List.of()));
+    }
+
+    /**
      * That a civilian frame is its military counterpart and a different fill, and nothing else.
      * <p>
      * This is what removing the 90 {@code c} files rests on (jmsfx#123). Strip the fills from both and they must be the same drawing - the shape, the dashes and the stroke all
@@ -251,6 +302,16 @@ public abstract class InjectedMarkupContract {
                 .forEach(modifier -> add(modifier.getGraphicMarkup(), markup));
             symbolSet.getSectorTwoModifiers()
                 .forEach(modifier -> add(modifier.getGraphicMarkup(), markup));
+            for (StandardIdentity identity : IDENTITIES) {
+                FRAME_STATUSES.forEach(status -> add(symbolSet.getDimension()
+                    .getFrameMarkup(identity, status), markup));
+                IconLibrary.discover()
+                    .getStatuses()
+                    .forEach(status -> add(status.getStatusMarkup(identity, symbolSet), markup));
+                IconLibrary.discover()
+                    .getHqtfDummys()
+                    .forEach(hqtfDummy -> add(hqtfDummy.getHqtfDummyMarkup(identity, symbolSet), markup));
+            }
         }
         return markup;
     }

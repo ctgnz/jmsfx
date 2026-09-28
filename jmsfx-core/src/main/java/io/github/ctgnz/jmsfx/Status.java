@@ -43,4 +43,14 @@ public interface Status extends CodeElement {
     default Rectangle2D getStatusBounds(StandardIdentity identity, SymbolSet symbolSet) {
         return Rectangle2D.EMPTY;
     }
+
+    /**
+     * The markup this status's operational-condition bar draws, or null when it has none - a frame status draws no bar, and so carries no drawing either.
+     * <p>
+     * Keyed the same way as {@link #getStatusBounds(StandardIdentity, SymbolSet)} and {@link #getGraphicLocation(StandardIdentity, SymbolSet)}: identity group by frame id. See
+     * jmsfx#123.
+     */
+    default String getStatusMarkup(StandardIdentity identity, SymbolSet symbolSet) {
+        return null;
+    }
 }

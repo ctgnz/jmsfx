@@ -165,7 +165,41 @@ public final class FragmentSource {
             }
         }
         addFrames(fragments, model, svgRoot);
+        addFrameFurniture(fragments, model, svgRoot, "OCA", "oca", model.getStatuses(), (key, code) -> "0" + key + code + "2");
+        addFrameFurniture(fragments, model, svgRoot, "HQTFFD", "hqtffd", model.getHqtfDummies(), (key, code) -> key + code);
         return fragments;
+    }
+
+    /** How a category of frame furniture names the file for one element under one key. */
+    private interface Naming {
+        String identifier(String key, String code);
+    }
+
+    /**
+     * The status bars and the headquarters/task force/dummy indicators, hung on the element that draws them.
+     * <p>
+     * These two are the same shape of problem and so share an implementation: both are keyed by identity group and dimension, both file one fragment per combination, and both have
+     * exactly one content root in every file they ship. Only the directory, that root's id and the filename differ - a status adds the trailing {@code 2} that selects APP-6E's
+     * alternate rendering of the operational condition codes, which is the only form the shipped fragments cover.
+     * <p>
+     * Keyed exactly as {@link FragmentMeasurer} keys the matching bounds, so a drawing and its measurements cannot disagree about which fragment they describe. As with frames, a
+     * combination the tree does not hold is skipped rather than reported missing: not every identity group draws in every dimension, and absence is how the tree says so.
+     */
+    private static void addFrameFurniture(List<Fragment> fragments, LibraryModel model, Path svgRoot, String directory, String contentRoot,
+                                          List<? extends AbstractModel> elements, Naming naming) throws IOException {
+        Path root = svgRoot.resolve(directory);
+        for (AbstractModel element : elements) {
+            for (StandardIdentityGroupModel group : model.getIdentityGroups()) {
+                for (DimensionModel dimension : model.getDimensions()) {
+                    String key = group.getCode() + dimension.getCode();
+                    String identifier = naming.identifier(key, element.getCode());
+                    Path file = root.resolve(identifier + ".svg");
+                    if (Files.exists(file)) {
+                        add(fragments, identifier, element, key, file, contentRoot);
+                    }
+                }
+            }
+        }
     }
 
     /**

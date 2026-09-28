@@ -26,4 +26,14 @@ public interface HqtfDummy extends CodeElement {
     default Rectangle2D getHqtfDummyBounds(StandardIdentity identity, SymbolSet symbolSet) {
         return Rectangle2D.EMPTY;
     }
+
+    /**
+     * The markup this headquarters/task force/dummy indicator draws, or null when it has none - {@code Not Applicable} draws nothing.
+     * <p>
+     * Keyed the same way as {@link #getHqtfDummyBounds(StandardIdentity, SymbolSet)} and {@link #getGraphicLocation(StandardIdentity, SymbolSet)}: identity group by dimension. See
+     * jmsfx#123.
+     */
+    default String getHqtfDummyMarkup(StandardIdentity identity, SymbolSet symbolSet) {
+        return null;
+    }
 }

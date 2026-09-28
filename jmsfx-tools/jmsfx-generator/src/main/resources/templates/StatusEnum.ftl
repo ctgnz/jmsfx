@@ -1,5 +1,7 @@
 package ${iconPackage};
 <#assign hasBounds = statuses?filter(v -> v.bounds??)?size gt 0>
+<#assign hasMarkup = statuses?filter(v -> v.graphicMarkupByKey??)?size gt 0>
+<#assign hasGraphic = hasBounds || hasMarkup>
 
 <#if hasBounds>import javafx.geometry.Rectangle2D;
 
@@ -7,13 +9,14 @@ package ${iconPackage};
 import java.util.List;
 
 import ${basePackage}.Status;
-<#if hasBounds>import ${basePackage}.StandardIdentity;
-</#if><#if hasBounds>import ${basePackage}.SymbolSet;
+<#if hasGraphic>import ${basePackage}.StandardIdentity;
+import ${basePackage}.SymbolSet;
 </#if>
 
 public enum StatusEnum implements Status {
 <#list statuses as status>
-        ${status.id}("${status.code}", "${status.label}", <#if status?index gt 1>true<#else>false</#if><#list status.dimensions>, <#items as dim>"${dim}"<#sep>, </#items></#list>) <#if status.bounds??>{
+        ${status.id}("${status.code}", "${status.label}", <#if status?index gt 1>true<#else>false</#if><#list status.dimensions>, <#items as dim>"${dim}"<#sep>, </#items></#list>) <#if status.bounds?? || status.graphicMarkupByKey??>{
+<#if status.bounds??>
             @Override
             public Rectangle2D getStatusBounds(StandardIdentity identity, SymbolSet symbolSet) {
                 return switch (identity.getGroupId() + symbolSet.getFrameId()) {
@@ -23,6 +26,19 @@ public enum StatusEnum implements Status {
                     default -> Rectangle2D.EMPTY;
                 };
             }
+</#if>
+<#if status.graphicMarkupByKey??>
+
+            @Override
+            public String getStatusMarkup(StandardIdentity identity, SymbolSet symbolSet) {
+                return switch (identity.getGroupId() + symbolSet.getFrameId()) {
+<#list status.graphicMarkupByKey as key, markup>
+                    case "${key}" -> "${markup?j_string}";
+</#list>
+                    default -> null;
+                };
+            }
+</#if>
         }</#if><#sep>,
 </#list>;
 
