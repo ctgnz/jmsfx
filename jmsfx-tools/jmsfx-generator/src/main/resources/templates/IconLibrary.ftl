@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 import javafx.collections.FXCollections;
+import javafx.scene.paint.Color;
 import javafx.collections.ObservableList;
 
 import java.io.ByteArrayInputStream;
@@ -33,6 +34,7 @@ import ${basePackage}.StandardIdentityGroup;
 import ${basePackage}.Status;
 import ${basePackage}.SymbolSet;
 import ${basePackage}.Version;
+import ${basePackage}.icon.IdentificationSymbol;
 import ${amplifierPackage}.${countryCodeClass};
 import ${amplifierPackage}.UnknownAmplifier;
 import ${commonPackage}.CommonEntity;
@@ -219,14 +221,40 @@ public class ${libraryPrefix}IconLibrary implements IconLibrary {
         }
     }
 
+    /**
+     * The frame for this symbol set, identity and status, in the colour this symbol draws it.
+     * <p>
+     * Three fills are possible and they are alternatives, not layers. A civilian entity's frame is {@link IdentificationSymbol#CIVILIAN_PURPLE} whatever else is set; failing that
+     * a frame amplifier replaces the identity fill with the one it carries - Battle Order colours a frame by branch of service that way; failing both, the frame keeps the
+     * identity colour it was drawn with.
+     * <p>
+     * The colour goes into the markup before it is parsed, and the frame amplifier's id goes into the cache key, so each colour is a separate entry that nothing has to mutate.
+     * Recolouring the parsed graphic instead is what jmsfx#121 was: {@code FoxgloveParser} caches by location, so one symbol's branch colour stayed on the shared frame and the
+     * next symbol inherited it.
+     * <p>
+     * Hostile and suspect are never civilian. Anything held to be hostile is by definition not a civilian entity, which is why no {@code c} frame was ever drawn for those two
+     * identities; the guard is here rather than on {@link IdentificationSymbol#isCivilianEntity()} because it is a fact about the frame, not about the entity.
+     */
     @Override
-    public SvgGraphic loadFrameGraphic(SymbolSet symbolSet, StandardIdentity identity, Status status, boolean civilianEntity) {
-        if (symbolSet != null && symbolSet.isPointGeometry()) {
-            String filePath = symbolSet.getFrameLocation(identity, status, civilianEntity);
-            return parser.parseFile(filePath);
-        } else {
+    public SvgGraphic loadFrameGraphic(SymbolSet symbolSet, StandardIdentity identity, Status status, boolean civilianEntity, AmplifierListItem frameAmplifier) {
+        if (symbolSet == null || !symbolSet.isPointGeometry()) {
             return null;
         }
+        boolean civilian = civilianEntity && !identity.isHostile();
+        String location = symbolSet.getFrameLocation(identity, status, civilian);
+        String markup = symbolSet.getDimension()
+            .getFrameMarkup(identity, status);
+        if (markup == null) {
+            fellBackToClasspath++;
+            return parser.parseFile(location);
+        }
+        if (civilian) {
+            return parseInjected(location, FragmentMarkup.replaceFill(markup, IdentificationSymbol.CIVILIAN_PURPLE));
+        }
+        if (isAmplified(frameAmplifier)) {
+            return parseInjected(location + frameAmplifier.getFullId(), FragmentMarkup.replaceFill(markup, Color.web(frameAmplifier.getBackgroundFill())));
+        }
+        return parseInjected(location, markup);
     }
 
     @Override
@@ -240,11 +268,32 @@ public class ${libraryPrefix}IconLibrary implements IconLibrary {
 
     @Override
     public SvgGraphic loadHqtfDummyGraphic(HqtfDummy hqtfDummy, StandardIdentity identity, SymbolSet symbolSet) {
-        if (!hqtfDummy.isUnknown()) {
-            return parser.parseFile(hqtfDummy.getGraphicLocation(identity, symbolSet));
-        } else {
+        if (hqtfDummy.isUnknown()) {
             return null;
         }
+        return injected(hqtfDummy.getGraphicLocation(identity, symbolSet), hqtfDummy.getHqtfDummyMarkup(identity, symbolSet));
+    }
+
+    /**
+     * Whether this frame amplifier has a fill for the frame to take.
+     * <p>
+     * Being set and not unknown is not quite enough. {@code getFrameAmplifier} falls back to the library's default amplifier, and {@code getBackgroundFill} is blank for any
+     * amplifier that is not a frame amplifier - which {@code Color.web} would throw on rather than ignore.
+     */
+    private boolean isAmplified(AmplifierListItem frameAmplifier) {
+        return frameAmplifier != null && !frameAmplifier.isUnknown() && !frameAmplifier.getBackgroundFill()
+            .isBlank();
+    }
+
+    /**
+     * The element's markup as a graphic, falling back to reading the fragment from the classpath when it carries none.
+     * <p>
+     * The status bars and the HQ/task force/dummy indicators go through here rather than calling {@code parseInjected} directly, because unlike a main icon they have a file to
+     * fall back to under the same location - so a combination the generator did not inject still renders.
+     */
+    private SvgGraphic injected(String location, String markup) {
+        SvgGraphic graphic = parseInjected(location, markup);
+        return graphic == null ? parser.parseFile(location) : graphic;
     }
 
     /**
@@ -308,11 +357,10 @@ public class ${libraryPrefix}IconLibrary implements IconLibrary {
 
     @Override
     public SvgGraphic loadStatusGraphic(Status status, boolean isStatusIconUsed, StandardIdentity identity, SymbolSet symbolSet) {
-        if (isStatusIconUsed) {
-            return parser.parseFile(status.getGraphicLocation(identity, symbolSet));
-        } else {
+        if (!isStatusIconUsed) {
             return null;
         }
+        return injected(status.getGraphicLocation(identity, symbolSet), status.getStatusMarkup(identity, symbolSet));
     }
 
     @Override

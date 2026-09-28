@@ -6,17 +6,14 @@ import javafx.collections.MapChangeListener;
 import javafx.geometry.Bounds;
 import javafx.geometry.Point2D;
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 import javafx.scene.text.Text;
 import javafx.scene.transform.Transform;
 
 import io.github.ctgnz.jmsfx.Amplifier;
-import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.types.GraphicAmplifierValue;
 import io.github.ctgnz.jmsfx.types.IconScale;
 import io.github.ctgnz.jmsfx.types.TextAmplifierValue;
@@ -86,19 +83,15 @@ public class IdentificationSymbolIcon extends Pane {
                 .add(bg);
         }
         if (symbol.isFrameUsed()) {
-            Group frame = symbol.getFrameGraphic()
-                .createGroup();
+            // The frame arrives in the colour it draws in - civilian or frame amplifier applied to
+            // the markup before parsing - so there is nothing left to recolour. See jmsfx#121.
             container.getChildren()
-                .add(frame);
+                .add(symbol.getFrameGraphic()
+                    .createGroup());
             if (symbol.isFrameOverlayUsed()) {
-                Group overlay = symbol.getFrameOverlayGraphic()
-                    .createGroup();
                 container.getChildren()
-                    .add(overlay);
-            }
-            if (symbol.isFrameAmplifierUsed()) {
-                AmplifierListItem frameAmplifier = symbol.getFrameAmplifier();
-                replaceFill(frame, Color.web(frameAmplifier.getBackgroundFill()));
+                    .add(symbol.getFrameOverlayGraphic()
+                        .createGroup());
             }
         }
         if (symbol.isStatusIconUsed()) {
@@ -192,19 +185,6 @@ public class IdentificationSymbolIcon extends Pane {
         container.getTransforms()
             .add(Transform.scale(scaleFactor.getFactor(), scaleFactor.getFactor(), 0, 0));
         updateIcon();
-    }
-
-    private void replaceFill(Node node, Paint fill) {
-        if (node instanceof Group) {
-            ((Group) node).getChildren()
-                .forEach(child -> replaceFill(child, fill));
-        } else if (node instanceof Shape) {
-            Shape shape = (Shape) node;
-            if (shape.getFill() != null) {
-                shape.setFill(fill);
-
-            }
-        }
     }
 
 }

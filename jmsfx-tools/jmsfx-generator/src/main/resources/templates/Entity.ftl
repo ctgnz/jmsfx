@@ -17,7 +17,7 @@ import ${typePackage}.GraphicType;
 
 public enum ${symbolSet.baseTypeName}Entity implements Entity {
 <#list symbolSet.entities as ent>
-        ${ent.id}("${ent.code}", "${ent.label}", GraphicType.${ent.graphicType})<#if ent.baseSymbolSet?? || ent.graphicMarkup?? || ent.graphicMarkupByGroup??> {<#if ent.baseSymbolSet??>
+        ${ent.id}("${ent.code}", "${ent.label}", GraphicType.${ent.graphicType})<#if ent.baseSymbolSet?? || ent.graphicMarkup?? || ent.graphicMarkupByKey??> {<#if ent.baseSymbolSet??>
             @Override
             public SymbolSet getBaseSymbolSet() {
                 return SymbolSetEnum.${ent.baseSymbolSet};

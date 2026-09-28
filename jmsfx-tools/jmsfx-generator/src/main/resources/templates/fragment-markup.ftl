@@ -12,13 +12,13 @@
     for frame bounds. Everything else ignores the identity.
 -->
 <#macro main el>
-    <#if el.graphicMarkupByGroup??>
+    <#if el.graphicMarkupByKey??>
 
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return switch (identity.getGroup()
                     .getId()) {
-        <#list el.graphicMarkupByGroup as group, markup>
+        <#list el.graphicMarkupByKey as group, markup>
                     case "${group}" -> "${markup?j_string}";
         </#list>
                     default -> null;

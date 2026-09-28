@@ -76,12 +76,35 @@ class ServiceBranchFrameTest {
         assertThat(unknown, not(containsString(INFANTRY_GREEN)));
     }
 
-    /*
-     * Deliberately not tested: what a symbol renders when no frame amplifier is selected at all. It should be the frame's own fill, and in isolation it is - but
-     * IdentificationSymbol applies a frame amplifier by mutating the graphic returned by FoxgloveParser, which caches parsed files in a static map and hands back the same object.
-     * So one symbol's branch colour persists on the shared frame, and the next symbol with no frame amplifier inherits it. Asserting the correct value here would pass or fail on
-     * test order rather than on behaviour. See jmsfx#121.
+    /**
+     * That a branch colour does not outlive the symbol it belonged to.
+     * <p>
+     * This could not be asserted before jmsfx#121. A frame amplifier used to be applied by mutating the graphic {@code FoxgloveParser} returned, and the parser caches by location
+     * and hands back the same object - so one symbol's branch colour stayed on the shared frame and the next symbol inherited it. The colour now goes into the markup before it is
+     * parsed, under a cache key carrying the amplifier, so a symbol with no frame amplifier gets the frame as drawn however many branch-coloured symbols preceded it.
+     * <p>
+     * Rendering the amplified symbol first is the whole point: reverse the two lines and the old behaviour passes.
      */
+    @Test
+    void aBranchColourDoesNotOutliveItsSymbol() throws Exception {
+        render(ServiceBranch.INFANTRY);
+
+        String unamplified = render(null);
+
+        assertThat(unamplified, not(containsString(INFANTRY_GREEN)));
+        assertThat(unamplified, not(containsString(MARITIME_BLUE)));
+    }
+
+    /** The other half of the same leak: an amplified symbol must not pick up the colour of the one before it either. */
+    @Test
+    void eachBranchGetsItsOwnFrameWhicheverOrderTheyAreDrawnIn() throws Exception {
+        render(ServiceBranch.MARITIME);
+
+        String infantry = render(ServiceBranch.INFANTRY);
+
+        assertThat(infantry, containsString(INFANTRY_GREEN));
+        assertThat(infantry, not(containsString(MARITIME_BLUE)));
+    }
 
     private String render(AmplifierListItem frameAmplifier) throws Exception {
         SymbolSet landUnits = landUnits();

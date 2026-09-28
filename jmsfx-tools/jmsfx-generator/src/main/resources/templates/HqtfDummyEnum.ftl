@@ -1,5 +1,7 @@
 package ${iconPackage};
 <#assign hasBounds = hqtfDummies?filter(v -> v.bounds??)?size gt 0>
+<#assign hasMarkup = hqtfDummies?filter(v -> v.graphicMarkupByKey??)?size gt 0>
+<#assign hasGraphic = hasBounds || hasMarkup>
 
 <#if hasBounds>import javafx.geometry.Rectangle2D;
 
@@ -7,13 +9,14 @@ package ${iconPackage};
 import java.util.List;
 
 import ${basePackage}.HqtfDummy;
-<#if hasBounds>import ${basePackage}.StandardIdentity;
-</#if><#if hasBounds>import ${basePackage}.SymbolSet;
+<#if hasGraphic>import ${basePackage}.StandardIdentity;
+import ${basePackage}.SymbolSet;
 </#if>
 
 public enum HqtfDummyEnum implements HqtfDummy {
 <#list hqtfDummies as dummy>
-        ${dummy.id}("${dummy.code}", "${dummy.label}"<#list dummy.dimensions>, <#items as dim>"${dim}"<#sep>, </#items></#list>) <#if dummy.bounds??>{
+        ${dummy.id}("${dummy.code}", "${dummy.label}"<#list dummy.dimensions>, <#items as dim>"${dim}"<#sep>, </#items></#list>) <#if dummy.bounds?? || dummy.graphicMarkupByKey??>{
+<#if dummy.bounds??>
             @Override
             public Rectangle2D getHqtfDummyBounds(StandardIdentity identity, SymbolSet symbolSet) {
                 return switch (identity.getGroupId() + symbolSet.getDimensionId()) {
@@ -23,6 +26,19 @@ public enum HqtfDummyEnum implements HqtfDummy {
                     default -> Rectangle2D.EMPTY;
                 };
             }
+</#if>
+<#if dummy.graphicMarkupByKey??>
+
+            @Override
+            public String getHqtfDummyMarkup(StandardIdentity identity, SymbolSet symbolSet) {
+                return switch (identity.getGroupId() + symbolSet.getDimensionId()) {
+<#list dummy.graphicMarkupByKey as key, markup>
+                    case "${key}" -> "${markup?j_string}";
+</#list>
+                    default -> null;
+                };
+            }
+</#if>
         }</#if><#sep>,
 </#list>;
 

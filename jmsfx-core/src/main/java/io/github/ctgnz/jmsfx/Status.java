@@ -11,6 +11,10 @@ public interface Status extends CodeElement {
     /**
      * APP-6E offers two renderings of the operational condition codes, and the trailing {@code 2} selects the <em>alternate</em> one - the form in Table 1-7. That is the only
      * variant implemented here, and the only one the shipped fragments cover: every file under {@code /svg/OCA} that this can name ends in {@code 2}.
+     * <p>
+     * Implementing only the alternate form is a deliberate choice rather than an omission, and it is what leaves room for a library to define further status values. The digit is a
+     * literal here, so the status id beside it is free; were both renderings implemented, that position would have to carry which one was meant. jmsfx-historical uses the room: it
+     * adds {@code 6}, Present/Extinct, beyond the six APP-6E defines.
      */
     default String getGraphicLocation(StandardIdentity identity, SymbolSet symbolSet) {
         return String.format("/svg/OCA/0%s%s%s2.svg", identity.getGroupId(), symbolSet.getFrameId(), getId());
@@ -42,5 +46,15 @@ public interface Status extends CodeElement {
      */
     default Rectangle2D getStatusBounds(StandardIdentity identity, SymbolSet symbolSet) {
         return Rectangle2D.EMPTY;
+    }
+
+    /**
+     * The markup this status's operational-condition bar draws, or null when it has none - a frame status draws no bar, and so carries no drawing either.
+     * <p>
+     * Keyed the same way as {@link #getStatusBounds(StandardIdentity, SymbolSet)} and {@link #getGraphicLocation(StandardIdentity, SymbolSet)}: identity group by frame id. See
+     * jmsfx#123.
+     */
+    default String getStatusMarkup(StandardIdentity identity, SymbolSet symbolSet) {
+        return null;
     }
 }
