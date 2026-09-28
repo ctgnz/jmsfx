@@ -18,6 +18,16 @@ public interface AmplifierListItem extends CodeElement {
         return String.format("/svg/%s/%s%s.svg", getGraphicLocation(), identity.getGroupId(), getFullId());
     }
 
+    /**
+     * The markup this amplifier draws for an identity, or null when it has none.
+     * <p>
+     * Keyed by the identity group alone, which is the only thing that varies the fragment - the same key {@link StandardAmplifierItem#getAmplifierBounds(StandardIdentity)} uses,
+     * and the same one {@link #getGraphicLocation(StandardIdentity)} puts in the path. See jmsfx#130.
+     */
+    default String getGraphicMarkup(StandardIdentity identity) {
+        return null;
+    }
+
     default boolean isDeprecated() {
         try {
             return getClass().getField(getName())

@@ -19,6 +19,17 @@ public enum LeadershipRole implements StandardAmplifierItem {
                     default -> Rectangle2D.EMPTY;
                 };
             }
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+                    case "1" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"306.775\" x2=\"134.776\" y1=\"185.764\" y2=\"307.764\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"303.224\" x2=\"475.224\" y1=\"185.5\" y2=\"307.5\"/>\n  </g>";
+                    case "3" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"306.433\" x2=\"173.294\" y1=\"228.333\" y2=\"305\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"304.433\" x2=\"436.706\" y1=\"228\" y2=\"305\"/>\n  </g>";
+                    case "4" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"305.903\" x2=\"170\" y1=\"196.25\" y2=\"251.132\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"303.097\" x2=\"439\" y1=\"196.132\" y2=\"251.013\"/>\n  </g>";
+                    case "6" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"306.48\" x2=\"116.48\" y1=\"182.374\" y2=\"372.374\"/>\n    <g>\n      <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"303.52\" x2=\"493.52\" y1=\"182.626\" y2=\"372.626\"/>\n    </g>\n  </g>";
+                    default -> null;
+                };
+            }
         },
         DEPUTY_LEADER_INDIVIDUAL("72", "Deputy Leader") {
             @Override
@@ -29,6 +40,17 @@ public enum LeadershipRole implements StandardAmplifierItem {
                     case "4" -> new Rectangle2D(167.5, 193.63, 274, 60);
                     case "6" -> new Rectangle2D(113.98, 179.87, 382.04, 195.25);
                     default -> Rectangle2D.EMPTY;
+                };
+            }
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+                    case "1" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:40,20;stroke-dashoffset:0\" x1=\"306.775\" x2=\"134.776\" y1=\"185.764\" y2=\"307.764\"/>\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:40,20;stroke-dashoffset:0\" x1=\"303.224\" x2=\"475.224\" y1=\"185.5\" y2=\"307.5\"/>\n  </g>";
+                    case "3" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:40,20;stroke-dashoffset:0\" x1=\"306.433\" x2=\"173.294\" y1=\"228.333\" y2=\"305\"/>\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:40,20;stroke-dashoffset:0\" x1=\"304.433\" x2=\"436.706\" y1=\"228\" y2=\"305\"/>\n  </g>";
+                    case "4" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:40,20;stroke-dashoffset:0\" x1=\"305.903\" x2=\"170\" y1=\"196.25\" y2=\"251.132\"/>\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:40,20;stroke-dashoffset:0\" x1=\"303.097\" x2=\"439\" y1=\"196.132\" y2=\"251.013\"/>\n  </g>";
+                    case "6" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:40,20;stroke-dashoffset:0\" x1=\"306.48\" x2=\"116.48\" y1=\"182.374\" y2=\"372.374\"/>\n    <g>\n      <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:40,20;stroke-dashoffset:0\" x1=\"303.52\" x2=\"493.52\" y1=\"182.626\" y2=\"372.626\"/>\n    </g>\n  </g>";
+                    default -> null;
                 };
             }
         },
@@ -43,6 +65,17 @@ public enum LeadershipRole implements StandardAmplifierItem {
                     default -> Rectangle2D.EMPTY;
                 };
             }
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+                    case "1" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:40,20,10,20;stroke-dashoffset:0\" x1=\"306.775\" x2=\"134.776\" y1=\"185.764\" y2=\"307.764\"/>\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:40,20,10,20;stroke-dashoffset:0\" x1=\"303.224\" x2=\"475.224\" y1=\"185.5\" y2=\"307.5\"/>\n  </g>";
+                    case "3" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"40,20,10,20\" stroke-width=\"5\" x1=\"306.433\" x2=\"173.294\" y1=\"228.333\" y2=\"305\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"40,20,10,20\" stroke-width=\"5\" x1=\"304.433\" x2=\"436.706\" y1=\"228\" y2=\"305\"/>\n  </g>";
+                    case "4" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"40,20,10,20\" stroke-width=\"5\" x1=\"305.903\" x2=\"170\" y1=\"196.25\" y2=\"251.132\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"40,20,10,20\" stroke-width=\"5\" x1=\"303.097\" x2=\"439\" y1=\"196.132\" y2=\"251.013\"/>\n  </g>";
+                    case "6" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"40,20,10,20\" stroke-width=\"5\" x1=\"306.48\" x2=\"116.48\" y1=\"182.374\" y2=\"372.374\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"40, 20, 10, 20\" stroke-width=\"5\" x1=\"303.52\" x2=\"493.52\" y1=\"182.62601\" y2=\"372.62601\"/>\n  </g>";
+                    default -> null;
+                };
+            }
         },
         STAFF_J1("74", "J1 Personnel/Manpower") {
             @Override
@@ -53,6 +86,17 @@ public enum LeadershipRole implements StandardAmplifierItem {
                     case "4" -> new Rectangle2D(167.5, 193.63, 274, 60);
                     case "6" -> new Rectangle2D(113.98, 179.87, 382.04, 195.25);
                     default -> Rectangle2D.EMPTY;
+                };
+            }
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+                    case "1" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"306.775\" x2=\"134.776\" y1=\"185.764\" y2=\"307.764\"/>\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"303.224\" x2=\"475.224\" y1=\"185.5\" y2=\"307.5\"/>\n  </g>";
+                    case "3" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.433\" x2=\"173.294\" y1=\"228.333\" y2=\"305\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"304.433\" x2=\"436.706\" y1=\"228\" y2=\"305\"/>\n  </g>";
+                    case "4" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"305.903\" x2=\"170\" y1=\"196.25\" y2=\"251.132\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"303.097\" x2=\"439\" y1=\"196.132\" y2=\"251.013\"/>\n  </g>";
+                    case "6" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.48\" x2=\"116.48\" y1=\"182.374\" y2=\"372.374\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5, 15\" stroke-width=\"5\" x1=\"303.52\" x2=\"493.52\" y1=\"182.62601\" y2=\"372.62601\"/>\n  </g>";
+                    default -> null;
                 };
             }
         },
@@ -67,6 +111,17 @@ public enum LeadershipRole implements StandardAmplifierItem {
                     default -> Rectangle2D.EMPTY;
                 };
             }
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+                    case "1" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"306.775\" x2=\"134.776\" y1=\"185.764\" y2=\"307.764\"/>\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"303.224\" x2=\"475.224\" y1=\"185.5\" y2=\"307.5\"/>\n  </g>";
+                    case "3" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.433\" x2=\"173.294\" y1=\"228.333\" y2=\"305\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"304.433\" x2=\"436.706\" y1=\"228\" y2=\"305\"/>\n  </g>";
+                    case "4" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"305.903\" x2=\"170\" y1=\"196.25\" y2=\"251.132\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"303.097\" x2=\"439\" y1=\"196.132\" y2=\"251.013\"/>\n  </g>";
+                    case "6" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.48\" x2=\"116.48\" y1=\"182.374\" y2=\"372.374\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5, 15\" stroke-width=\"5\" x1=\"303.52\" x2=\"493.52\" y1=\"182.62601\" y2=\"372.62601\"/>\n  </g>";
+                    default -> null;
+                };
+            }
         },
         STAFF_J3("76", "J3 Operations") {
             @Override
@@ -77,6 +132,17 @@ public enum LeadershipRole implements StandardAmplifierItem {
                     case "4" -> new Rectangle2D(167.5, 193.63, 274, 60);
                     case "6" -> new Rectangle2D(113.98, 179.87, 382.04, 195.25);
                     default -> Rectangle2D.EMPTY;
+                };
+            }
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+                    case "1" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"306.775\" x2=\"134.776\" y1=\"185.764\" y2=\"307.764\"/>\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"303.224\" x2=\"475.224\" y1=\"185.5\" y2=\"307.5\"/>\n  </g>";
+                    case "3" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.433\" x2=\"173.294\" y1=\"228.333\" y2=\"305\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"304.433\" x2=\"436.706\" y1=\"228\" y2=\"305\"/>\n  </g>";
+                    case "4" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"305.903\" x2=\"170\" y1=\"196.25\" y2=\"251.132\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"303.097\" x2=\"439\" y1=\"196.132\" y2=\"251.013\"/>\n  </g>";
+                    case "6" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.48\" x2=\"116.48\" y1=\"182.374\" y2=\"372.374\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5, 15\" stroke-width=\"5\" x1=\"303.52\" x2=\"493.52\" y1=\"182.62601\" y2=\"372.62601\"/>\n  </g>";
+                    default -> null;
                 };
             }
         },
@@ -91,6 +157,17 @@ public enum LeadershipRole implements StandardAmplifierItem {
                     default -> Rectangle2D.EMPTY;
                 };
             }
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+                    case "1" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"306.775\" x2=\"134.776\" y1=\"185.764\" y2=\"307.764\"/>\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"303.224\" x2=\"475.224\" y1=\"185.5\" y2=\"307.5\"/>\n  </g>";
+                    case "3" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.433\" x2=\"173.294\" y1=\"228.333\" y2=\"305\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"304.433\" x2=\"436.706\" y1=\"228\" y2=\"305\"/>\n  </g>";
+                    case "4" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"305.903\" x2=\"170\" y1=\"196.25\" y2=\"251.132\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"303.097\" x2=\"439\" y1=\"196.132\" y2=\"251.013\"/>\n  </g>";
+                    case "6" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.48\" x2=\"116.48\" y1=\"182.374\" y2=\"372.374\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5, 15\" stroke-width=\"5\" x1=\"303.52\" x2=\"493.52\" y1=\"182.62601\" y2=\"372.62601\"/>\n  </g>";
+                    default -> null;
+                };
+            }
         },
         STAFF_J5("78", "J5 Plans") {
             @Override
@@ -101,6 +178,17 @@ public enum LeadershipRole implements StandardAmplifierItem {
                     case "4" -> new Rectangle2D(167.5, 193.63, 274, 60);
                     case "6" -> new Rectangle2D(113.98, 179.87, 382.04, 195.25);
                     default -> Rectangle2D.EMPTY;
+                };
+            }
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+                    case "1" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"306.775\" x2=\"134.776\" y1=\"185.764\" y2=\"307.764\"/>\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"303.224\" x2=\"475.224\" y1=\"185.5\" y2=\"307.5\"/>\n  </g>";
+                    case "3" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.433\" x2=\"173.294\" y1=\"228.333\" y2=\"305\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"304.433\" x2=\"436.706\" y1=\"228\" y2=\"305\"/>\n  </g>";
+                    case "4" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"305.903\" x2=\"170\" y1=\"196.25\" y2=\"251.132\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"303.097\" x2=\"439\" y1=\"196.132\" y2=\"251.013\"/>\n  </g>";
+                    case "6" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.48\" x2=\"116.48\" y1=\"182.374\" y2=\"372.374\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5, 15\" stroke-width=\"5\" x1=\"303.52\" x2=\"493.52\" y1=\"182.62601\" y2=\"372.62601\"/>\n  </g>";
+                    default -> null;
                 };
             }
         },
@@ -115,6 +203,17 @@ public enum LeadershipRole implements StandardAmplifierItem {
                     default -> Rectangle2D.EMPTY;
                 };
             }
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+                    case "1" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"306.775\" x2=\"134.776\" y1=\"185.764\" y2=\"307.764\"/>\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"303.224\" x2=\"475.224\" y1=\"185.5\" y2=\"307.5\"/>\n  </g>";
+                    case "3" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.433\" x2=\"173.294\" y1=\"228.333\" y2=\"305\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"304.433\" x2=\"436.706\" y1=\"228\" y2=\"305\"/>\n  </g>";
+                    case "4" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"305.903\" x2=\"170\" y1=\"196.25\" y2=\"251.132\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"303.097\" x2=\"439\" y1=\"196.132\" y2=\"251.013\"/>\n  </g>";
+                    case "6" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.48\" x2=\"116.48\" y1=\"182.374\" y2=\"372.374\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5, 15\" stroke-width=\"5\" x1=\"303.52\" x2=\"493.52\" y1=\"182.62601\" y2=\"372.62601\"/>\n  </g>";
+                    default -> null;
+                };
+            }
         },
         STAFF_J7("7A", "J7 Training/Military Education") {
             @Override
@@ -125,6 +224,17 @@ public enum LeadershipRole implements StandardAmplifierItem {
                     case "4" -> new Rectangle2D(167.5, 193.63, 274, 60);
                     case "6" -> new Rectangle2D(113.98, 179.87, 382.04, 195.25);
                     default -> Rectangle2D.EMPTY;
+                };
+            }
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+                    case "1" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"306.775\" x2=\"134.776\" y1=\"185.764\" y2=\"307.764\"/>\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"303.224\" x2=\"475.224\" y1=\"185.5\" y2=\"307.5\"/>\n  </g>";
+                    case "3" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.433\" x2=\"173.294\" y1=\"228.333\" y2=\"305\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"304.433\" x2=\"436.706\" y1=\"228\" y2=\"305\"/>\n  </g>";
+                    case "4" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"305.903\" x2=\"170\" y1=\"196.25\" y2=\"251.132\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"303.097\" x2=\"439\" y1=\"196.132\" y2=\"251.013\"/>\n  </g>";
+                    case "6" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.48\" x2=\"116.48\" y1=\"182.374\" y2=\"372.374\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5, 15\" stroke-width=\"5\" x1=\"303.52\" x2=\"493.52\" y1=\"182.62601\" y2=\"372.62601\"/>\n  </g>";
+                    default -> null;
                 };
             }
         },
@@ -139,6 +249,17 @@ public enum LeadershipRole implements StandardAmplifierItem {
                     default -> Rectangle2D.EMPTY;
                 };
             }
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+                    case "1" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"306.775\" x2=\"134.776\" y1=\"185.764\" y2=\"307.764\"/>\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"303.224\" x2=\"475.224\" y1=\"185.5\" y2=\"307.5\"/>\n  </g>";
+                    case "3" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.433\" x2=\"173.294\" y1=\"228.333\" y2=\"305\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"304.433\" x2=\"436.706\" y1=\"228\" y2=\"305\"/>\n  </g>";
+                    case "4" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"305.903\" x2=\"170\" y1=\"196.25\" y2=\"251.132\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"303.097\" x2=\"439\" y1=\"196.132\" y2=\"251.013\"/>\n  </g>";
+                    case "6" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.48\" x2=\"116.48\" y1=\"182.374\" y2=\"372.374\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5, 15\" stroke-width=\"5\" x1=\"303.52\" x2=\"493.52\" y1=\"182.62601\" y2=\"372.62601\"/>\n  </g>";
+                    default -> null;
+                };
+            }
         },
         STAFF_J9("7C", "J9 Civil-Military Co-operation") {
             @Override
@@ -149,6 +270,17 @@ public enum LeadershipRole implements StandardAmplifierItem {
                     case "4" -> new Rectangle2D(167.5, 193.63, 274, 60);
                     case "6" -> new Rectangle2D(113.98, 179.87, 382.04, 195.25);
                     default -> Rectangle2D.EMPTY;
+                };
+            }
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+                    case "1" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"306.775\" x2=\"134.776\" y1=\"185.764\" y2=\"307.764\"/>\n    <line fill=\"none\" stroke=\"#000000\" style=\"stroke-width:5;stroke-miterlimit:4;stroke-dasharray:5,15;stroke-dashoffset:0\" x1=\"303.224\" x2=\"475.224\" y1=\"185.5\" y2=\"307.5\"/>\n  </g>";
+                    case "3" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.433\" x2=\"173.294\" y1=\"228.333\" y2=\"305\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"304.433\" x2=\"436.706\" y1=\"228\" y2=\"305\"/>\n  </g>";
+                    case "4" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"305.903\" x2=\"170\" y1=\"196.25\" y2=\"251.132\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"303.097\" x2=\"439\" y1=\"196.132\" y2=\"251.013\"/>\n  </g>";
+                    case "6" -> "<g id=\"amplifier\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5,15\" stroke-width=\"5\" x1=\"306.48\" x2=\"116.48\" y1=\"182.374\" y2=\"372.374\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-dasharray=\"5, 15\" stroke-width=\"5\" x1=\"303.52\" x2=\"493.52\" y1=\"182.62601\" y2=\"372.62601\"/>\n  </g>";
+                    default -> null;
                 };
             }
         };
@@ -186,6 +318,7 @@ public enum LeadershipRole implements StandardAmplifierItem {
         return name();
     }
 
+    /** A frame amplifier recolours the frame rather than drawing, and a list with no graphic location has no drawings to reach. */
     @Override
     public boolean isGraphicalIcon() {
         return true;

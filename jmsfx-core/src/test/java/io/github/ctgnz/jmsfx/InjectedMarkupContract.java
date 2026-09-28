@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -184,6 +185,73 @@ public abstract class InjectedMarkupContract {
     }
 
     /**
+     * That every amplifier drawing is the one its own location names.
+     * <p>
+     * Keyed by identity group alone - the simplest of the key shapes here. The content root's id is derived independently of the generator, from the directory the list files its
+     * drawings in, which is the point: two derivations agreeing is the evidence.
+     */
+    @Test
+    public void everyInjectedAmplifierMatchesItsFragment() throws IOException {
+        List<String> wrong = new ArrayList<>();
+        int checked = 0;
+        for (AmplifierList list : IconLibrary.discover()
+            .getListAmplifiers()) {
+            for (AmplifierListItem item : list.<AmplifierListItem> getItems()) {
+                for (StandardIdentity identity : IDENTITIES) {
+                    String markup = item.getGraphicMarkup(identity);
+                    if (markup == null) {
+                        continue;
+                    }
+                    checked++;
+                    compare(item.getGraphicLocation(identity), item.getGraphicLocation()
+                        .toLowerCase(Locale.ROOT), markup, wrong);
+                }
+            }
+        }
+        assertThat(checked, is(greaterThan(50)));
+        assertThat(wrong, is(List.of()));
+    }
+
+    /** The same for the context indicators, which are the one category with no key - one drawing per context, whatever the symbol beneath it. */
+    @Test
+    public void everyInjectedFrameOverlayMatchesItsFragment() throws IOException {
+        List<String> wrong = new ArrayList<>();
+        int checked = 0;
+        for (Context context : IconLibrary.discover()
+            .getContexts()) {
+            String markup = context.getOverlayGraphicMarkup();
+            if (markup == null) {
+                continue;
+            }
+            checked++;
+            compare(context.getOverlayGraphicLocation(), "frame_overlay", markup, wrong);
+        }
+        assertThat(checked, is(greaterThan(1)));
+        assertThat(wrong, is(List.of()));
+    }
+
+    /**
+     * That a text amplifier does not claim to draw.
+     * <p>
+     * {@code isGraphicalIcon()} used to be true for every list that was not a frame amplifier, including the ones whose graphic location is {@code NA} - Reliability Rating,
+     * Country Codes and the rest. Those derive paths like {@code /svg/NA/1+.svg}, 1,476 of them across the identities, none of which has ever existed. The parser swallows the miss
+     * and caches an empty graphic, so nothing ever said so (jmsfx#130).
+     */
+    @Test
+    public void noTextAmplifierClaimsToDraw() {
+        List<String> claiming = new ArrayList<>();
+        for (AmplifierList list : IconLibrary.discover()
+            .getListAmplifiers()) {
+            for (AmplifierListItem item : list.<AmplifierListItem> getItems()) {
+                if (item.isGraphicalIcon() && "NA".equals(item.getGraphicLocation())) {
+                    claiming.add(list.getLabel() + "/" + item.getId());
+                }
+            }
+        }
+        assertThat(claiming, is(List.of()));
+    }
+
+    /**
      * That a civilian frame is its military counterpart and a different fill, and nothing else.
      * <p>
      * This is what removing the 90 {@code c} files rests on (jmsfx#123). Strip the fills from both and they must be the same drawing - the shape, the dashes and the stroke all
@@ -303,6 +371,10 @@ public abstract class InjectedMarkupContract {
             symbolSet.getSectorTwoModifiers()
                 .forEach(modifier -> add(modifier.getGraphicMarkup(), markup));
             for (StandardIdentity identity : IDENTITIES) {
+                IconLibrary.discover()
+                    .getListAmplifiers()
+                    .forEach(list -> list.<AmplifierListItem> getItems()
+                        .forEach(item -> add(item.getGraphicMarkup(identity), markup)));
                 FRAME_STATUSES.forEach(status -> add(symbolSet.getDimension()
                     .getFrameMarkup(identity, status), markup));
                 IconLibrary.discover()
@@ -313,6 +385,9 @@ public abstract class InjectedMarkupContract {
                     .forEach(hqtfDummy -> add(hqtfDummy.getHqtfDummyMarkup(identity, symbolSet), markup));
             }
         }
+        IconLibrary.discover()
+            .getContexts()
+            .forEach(context -> add(context.getOverlayGraphicMarkup(), markup));
         return markup;
     }
 

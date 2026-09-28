@@ -14,6 +14,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import io.github.ctgnz.jmsfx.generator.model.AbstractModel;
+import io.github.ctgnz.jmsfx.generator.model.AmplifierListItemModel;
+import io.github.ctgnz.jmsfx.generator.model.AmplifierListModel;
+import io.github.ctgnz.jmsfx.generator.model.ContextModel;
 import io.github.ctgnz.jmsfx.generator.model.DimensionModel;
 import io.github.ctgnz.jmsfx.generator.model.GraphicType;
 import io.github.ctgnz.jmsfx.generator.model.LibraryModel;
@@ -51,6 +54,10 @@ public final class FragmentSource {
     }
 
     private static final String CONTROL_MEASURES = "ControlMeasures";
+    /** The graphic location a text amplifier list carries: it draws nothing, so there is no directory behind it. */
+    private static final String NO_GRAPHIC = "NA";
+    /** The content root each amplifier directory files its drawing under. */
+    private static final Map<String, String> CONTENT_ROOTS = Map.of("Amplifier", "amplifier", "Echelon", "echelon");
     /** The code {@link io.github.ctgnz.jmsfx.CodeElement#isUnknown()} treats as "nothing to draw". */
     private static final String UNSPECIFIED = "00";
     /** The Common entity APP-6E provides for a symbol that cannot be resolved. */
@@ -167,7 +174,55 @@ public final class FragmentSource {
         addFrames(fragments, model, svgRoot);
         addFrameFurniture(fragments, model, svgRoot, "OCA", "oca", model.getStatuses(), (key, code) -> "0" + key + code + "2");
         addFrameFurniture(fragments, model, svgRoot, "HQTFFD", "hqtffd", model.getHqtfDummies(), (key, code) -> key + code);
+        addAmplifiers(fragments, model, svgRoot);
+        addOverlays(fragments, model, svgRoot);
         return fragments;
+    }
+
+    /**
+     * Every amplifier drawing, hung on the item that draws it and keyed by identity group.
+     * <p>
+     * One key rather than the two the frame furniture needs: an amplifier's fragment is {@code /svg/{list}/{identityGroup}{itemId}.svg}, so the group is the only thing that varies
+     * it. Keyed as {@link FragmentMeasurer} keys the matching bounds.
+     * <p>
+     * Only the standard lists are walked, matching the measurer. A list whose {@code graphicLocation} is {@code NA} carries no drawings at all - it is a text amplifier, and the
+     * paths it can derive name a directory that does not exist.
+     */
+    private static void addAmplifiers(List<Fragment> fragments, LibraryModel model, Path svgRoot) throws IOException {
+        for (AmplifierListModel list : model.getAmplifierGroups()) {
+            if (!list.isStandard() || list.isUnknown() || NO_GRAPHIC.equals(list.getGraphicLocation())) {
+                continue;
+            }
+            Path root = svgRoot.resolve(list.getGraphicLocation());
+            for (AmplifierListItemModel item : list.getValues()) {
+                for (StandardIdentityGroupModel group : model.getIdentityGroups()) {
+                    String identifier = group.getCode() + item.getCode();
+                    Path file = root.resolve(identifier + ".svg");
+                    if (Files.exists(file)) {
+                        add(fragments, identifier, item, group.getCode(), file, CONTENT_ROOTS.get(list.getGraphicLocation()));
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * The frame overlays - the context indicators - hung on the context that draws them.
+     * <p>
+     * The only category with no key at all: a context indicator is one drawing, the same whatever the symbol underneath it. Reality has no file and draws nothing, which is the
+     * same reason it has no location worth reading.
+     */
+    private static void addOverlays(List<Fragment> fragments, LibraryModel model, Path svgRoot) throws IOException {
+        Path root = svgRoot.resolve("Frames")
+            .resolve("Overlay");
+        for (ContextModel context : model.getContexts()) {
+            // The model's code, not its id: ContextEnum passes the code as the field its
+            // getOverlayGraphicLocation formats, so the file is 2.svg and not EXERCISE.svg.
+            Path file = root.resolve(context.getCode() + ".svg");
+            if (Files.exists(file)) {
+                add(fragments, context.getCode(), context, null, file, "frame_overlay");
+            }
+        }
     }
 
     /** How a category of frame furniture names the file for one element under one key. */
