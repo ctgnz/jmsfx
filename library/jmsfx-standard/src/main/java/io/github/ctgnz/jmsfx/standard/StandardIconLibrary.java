@@ -245,20 +245,21 @@ public class StandardIconLibrary implements IconLibrary {
     /**
      * The element's own markup as a graphic, or null when it carries none and the fragment has to be read from the classpath instead.
      * <p>
-     * Parsed fresh each time rather than cached. {@code FoxgloveParser} caches by path and hands the same object back, which is what lets one symbol's recolouring leak onto the
-     * next (jmsfx#121); injected markup has no path to key on and no reason to be shared. Whether the parse cost matters is a question for measurement, not assumption.
+     * Cached by the graphic location, which is a sound key for it: the location is unique to one element, and unique per identity group for a {@code FULL_FRAME} element, because
+     * the group suffix is part of it. Reorganising the fragment tree (jmsfx#124) keeps that property - every fragment stays identifiable to one element - so the key survives the
+     * move, and {@code getGraphicLocation} may well be renamed {@code getGraphicKey} then to say what it now is.
+     * <p>
+     * Sharing a parsed graphic is safe for these categories and not in general. Nothing mutates a main icon or a modifier; the frame is mutated, by {@code replaceFill} when a
+     * frame amplifier recolours it, and that is precisely how one symbol's colour leaks onto the next (jmsfx#121). The frame is not injected here - jmsfx#123 is where it is dealt
+     * with.
      */
-    private SvgGraphic parseInjected(String markup) {
+    private SvgGraphic parseInjected(String graphicLocation, String markup) {
         String document = FragmentMarkup.document(markup);
         if (document == null) {
             fellBackToClasspath++;
             return null;
         }
-        try {
-            return parser.parse(new ByteArrayInputStream(document.getBytes(StandardCharsets.UTF_8)));
-        } catch (Exception e) {
-            throw new IllegalStateException("injected markup would not parse: " + markup, e);
-        }
+        return parser.parseResource(graphicLocation, new ByteArrayInputStream(document.getBytes(StandardCharsets.UTF_8)));
     }
 
     /**
@@ -276,8 +277,9 @@ public class StandardIconLibrary implements IconLibrary {
         if (!mainIconElement.isGraphicalIcon()) {
             return null;
         }
-        SvgGraphic injected = parseInjected(mainIconElement.getGraphicMarkup(identity));
-        return injected != null ? injected : parser.parseFile(mainIconElement.getGraphicLocation(identity));
+        String location = mainIconElement.getGraphicLocation(identity);
+        SvgGraphic injected = parseInjected(location, mainIconElement.getGraphicMarkup(identity));
+        return injected != null ? injected : parser.parseFile(location);
     }
 
     @Override
@@ -285,8 +287,9 @@ public class StandardIconLibrary implements IconLibrary {
         if (sectorOneModifier.isUnknown()) {
             return null;
         }
-        SvgGraphic injected = parseInjected(sectorOneModifier.getGraphicMarkup());
-        return injected != null ? injected : parser.parseFile(sectorOneModifier.getFullGraphicLocation());
+        String location = sectorOneModifier.getFullGraphicLocation();
+        SvgGraphic injected = parseInjected(location, sectorOneModifier.getGraphicMarkup());
+        return injected != null ? injected : parser.parseFile(location);
     }
 
     @Override
@@ -294,8 +297,9 @@ public class StandardIconLibrary implements IconLibrary {
         if (sectorTwoModifier.isUnknown()) {
             return null;
         }
-        SvgGraphic injected = parseInjected(sectorTwoModifier.getGraphicMarkup());
-        return injected != null ? injected : parser.parseFile(sectorTwoModifier.getFullGraphicLocation());
+        String location = sectorTwoModifier.getFullGraphicLocation();
+        SvgGraphic injected = parseInjected(location, sectorTwoModifier.getGraphicMarkup());
+        return injected != null ? injected : parser.parseFile(location);
     }
 
     @Override

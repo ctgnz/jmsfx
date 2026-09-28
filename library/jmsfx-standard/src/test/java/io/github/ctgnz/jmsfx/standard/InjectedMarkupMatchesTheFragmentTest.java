@@ -3,7 +3,9 @@ package io.github.ctgnz.jmsfx.standard;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -14,9 +16,12 @@ import java.util.regex.Pattern;
 
 import org.junit.jupiter.api.Test;
 
+import nz.co.ctg.foxglove.FoxgloveParser;
+
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.FragmentMarkup;
 import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.MainElement;
 import io.github.ctgnz.jmsfx.SectorOneModifier;
@@ -85,6 +90,74 @@ class InjectedMarkupMatchesTheFragmentTest {
         }
         assertThat(checked, is(greaterThan(400)));
         assertThat(wrong, is(List.of()));
+    }
+
+    /**
+     * That every injected drawing is well-formed enough to parse.
+     * <p>
+     * Here rather than at generation time for two reasons. The generator cannot see {@code FragmentMarkup}, having no dependency on jmsfx-core, and giving it one to reach a single
+     * constant would be a worse trade than testing the output. And generation is a manual step while this runs on every build, so a template change that produces markup nothing
+     * can parse fails here rather than whenever someone next regenerates.
+     * <p>
+     * It matters because the runtime cannot report this. {@code parseResource} catches a parse failure and hands back an empty graphic, so malformed markup would draw nothing at
+     * all and look like a missing icon rather than a broken one - the same silent failure the Invalid Symbol fallback exists to prevent one level up.
+     */
+    @Test
+    void everyInjectedDocumentParses() {
+        FoxgloveParser parser = new FoxgloveParser();
+        List<String> unparseable = new ArrayList<>();
+        int parsed = 0;
+        for (String markup : everyInjectedMarkup()) {
+            try {
+                parser.parse(new ByteArrayInputStream(FragmentMarkup.document(markup)
+                    .getBytes(StandardCharsets.UTF_8)));
+                parsed++;
+            } catch (Exception e) {
+                unparseable.add(markup.substring(0, Math.min(90, markup.length())) + " -> " + e.getMessage());
+            }
+        }
+        assertThat(parsed, is(greaterThan(1000)));
+        assertThat(unparseable, is(List.of()));
+    }
+
+    /** That the check above would notice. A parse that cannot fail is not a check, and this one is only meaningful if malformed markup throws rather than coming back empty. */
+    @Test
+    void theParseCheckWouldNoticeMalformedMarkup() {
+        FoxgloveParser parser = new FoxgloveParser();
+
+        assertThrows(Exception.class, () -> parser.parse(new ByteArrayInputStream(FragmentMarkup.document("<g id=\"main\"><path")
+            .getBytes(StandardCharsets.UTF_8))));
+    }
+
+    /** Every drawing this library carries, however it is reached. */
+    private List<String> everyInjectedMarkup() {
+        List<String> markup = new ArrayList<>();
+        for (SymbolSet symbolSet : IconLibrary.discover()
+            .getSymbolSets()) {
+            for (Entity entity : symbolSet.getEntities()) {
+                collect(entity, markup);
+                for (EntityType entityType : entity.getEntityTypes()) {
+                    collect(entityType, markup);
+                    entityType.getEntitySubTypes()
+                        .forEach(subType -> collect(subType, markup));
+                }
+            }
+            symbolSet.getSectorOneModifiers()
+                .forEach(modifier -> add(modifier.getGraphicMarkup(), markup));
+            symbolSet.getSectorTwoModifiers()
+                .forEach(modifier -> add(modifier.getGraphicMarkup(), markup));
+        }
+        return markup;
+    }
+
+    private void collect(MainElement element, List<String> markup) {
+        IDENTITIES.forEach(identity -> add(element.getGraphicMarkup(identity), markup));
+    }
+
+    private static void add(String value, List<String> markup) {
+        if (value != null) {
+            markup.add(value);
+        }
     }
 
     /** @return how many drawings this element contributed - four for a FULL_FRAME element, one for anything else that has markup. */
