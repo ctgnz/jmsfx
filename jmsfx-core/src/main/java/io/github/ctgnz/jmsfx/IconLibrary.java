@@ -94,7 +94,16 @@ public interface IconLibrary {
 
     SvgGraphic loadAmplifierGraphic(AmplifierListItem amplifierItem, StandardIdentity identity);
 
-    SvgGraphic loadFrameGraphic(SymbolSet symbolSet, StandardIdentity identity, Status status, boolean civilianEntity);
+    /**
+     * The frame this symbol draws, already in the colour it draws it in.
+     * <p>
+     * The recolouring belongs here rather than at the call site because a parsed graphic is shared. {@code FoxgloveParser} caches by location and hands the same object to every
+     * caller, so a symbol that recoloured the frame it was given recoloured every other symbol's frame too - which is what jmsfx#121 was. The colour is applied to the markup
+     * before it is parsed, and the location carries the frame amplifier, so each colour is its own cache entry and nothing is mutated after the fact.
+     * <p>
+     * Civilian wins over the frame amplifier. A civilian entity's frame is purple whatever the amplifier says, so the two are alternatives rather than an order of application.
+     */
+    SvgGraphic loadFrameGraphic(SymbolSet symbolSet, StandardIdentity identity, Status status, boolean civilianEntity, AmplifierListItem frameAmplifier);
 
     SvgGraphic loadFrameOverlayGraphic(Context context);
 

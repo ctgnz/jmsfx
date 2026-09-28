@@ -23,8 +23,6 @@ import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.paint.Color;
 
-import nz.co.ctg.foxglove.ISvgContent;
-import nz.co.ctg.foxglove.ISvgStylable;
 import nz.co.ctg.foxglove.SvgGraphic;
 import nz.co.ctg.foxglove.type.ViewBox;
 
@@ -84,7 +82,6 @@ public class IdentificationSymbol {
     private final ObjectProperty<SvgGraphic> amplifierGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> amplifierTwoGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> amplifierThreeGraphic = new SimpleObjectProperty<>();
-    private final ObjectProperty<SvgGraphic> frameAmplifierGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> sectorOneModifierGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> sectorTwoModifierGraphic = new SimpleObjectProperty<>();
     private final ObjectProperty<SvgGraphic> statusGraphic = new SimpleObjectProperty<>();
@@ -239,12 +236,10 @@ public class IdentificationSymbol {
 
         List<SvgGraphic> parts = new ArrayList<>();
         if (isFrameUsed()) {
-            SvgGraphic frame = getFrameGraphic();
-            if (isFrameAmplifierUsed()) {
-                AmplifierListItem frameAmplifier = getFrameAmplifier();
-                replaceFill(frame, Color.web(frameAmplifier.getBackgroundFill()));
-            }
-            parts.add(frame);
+            // Already in the right colour: the library applies the civilian fill or the frame
+            // amplifier's before parsing, so there is nothing to recolour here. Doing it here is
+            // what jmsfx#121 was - the parsed frame is shared, so the colour stayed on it.
+            parts.add(getFrameGraphic());
         }
         if (isStatusIconUsed()) {
             parts.add(getStatusGraphic());
@@ -394,10 +389,6 @@ public class IdentificationSymbol {
 
     public AmplifierListItem getFrameAmplifier() {
         return defaultIfNull(frameAmplifier.get(), library.getDefaultAmplifier());
-    }
-
-    public SvgGraphic getFrameAmplifierGraphic() {
-        return frameAmplifierGraphic.get();
     }
 
     public SvgGraphic getFrameGraphic() {
@@ -792,13 +783,12 @@ public class IdentificationSymbol {
             amplifierTwo, amplifierThree, frameAmplifier, countryCode));
 
         // Graphic location properties only need to be updated after the component parts are changed
-        frameGraphic.bind(Bindings.createObjectBinding(this::loadFrameGraphic, code));
+        frameGraphic.bind(Bindings.createObjectBinding(this::loadFrameGraphic, code, frameAmplifier));
         frameOverlayGraphic.bind(Bindings.createObjectBinding(this::loadFrameOverlayGraphic, code));
         mainIconGraphic.bind(Bindings.createObjectBinding(this::loadMainIconGraphic, code));
         amplifierGraphic.bind(Bindings.createObjectBinding(this::loadAmplifierGraphic, code, amplifier));
         amplifierTwoGraphic.bind(Bindings.createObjectBinding(this::loadAmplifierTwoGraphic, code, amplifierTwo));
         amplifierThreeGraphic.bind(Bindings.createObjectBinding(this::loadAmplifierThreeGraphic, code, amplifierThree));
-        frameAmplifierGraphic.bind(Bindings.createObjectBinding(this::loadFrameAmplifierGraphic, code, frameAmplifier));
         sectorOneModifierGraphic.bind(Bindings.createObjectBinding(this::loadSectorOneModifierGraphic, code, sectorOneModifier));
         sectorTwoModifierGraphic.bind(Bindings.createObjectBinding(this::loadSectorTwoModifierGraphic, code, sectorTwoModifier));
         statusGraphic.bind(Bindings.createObjectBinding(this::loadStatusGraphic, code, status));
@@ -852,12 +842,8 @@ public class IdentificationSymbol {
         return library.loadAmplifierGraphic(getAmplifierTwo(), getStandardIdentity());
     }
 
-    private SvgGraphic loadFrameAmplifierGraphic() {
-        return library.loadAmplifierGraphic(getFrameAmplifier(), getStandardIdentity());
-    }
-
     private SvgGraphic loadFrameGraphic() {
-        return library.loadFrameGraphic(getSymbolSet(), getStandardIdentity(), effectiveFrameStatus(), isCivilianEntity());
+        return library.loadFrameGraphic(getSymbolSet(), getStandardIdentity(), effectiveFrameStatus(), isCivilianEntity(), getFrameAmplifier());
     }
 
     private SvgGraphic loadFrameOverlayGraphic() {
@@ -882,21 +868,6 @@ public class IdentificationSymbol {
 
     private SvgGraphic loadStatusGraphic() {
         return library.loadStatusGraphic(getStatus(), isStatusIconUsed(), getStandardIdentity(), getSymbolSet());
-    }
-
-    private void replaceFill(ISvgContent graphic, Color fill) {
-        graphic.getContent()
-            .forEach(element -> {
-                if (element instanceof ISvgStylable) {
-                    ISvgStylable styly = (ISvgStylable) element;
-                    if (styly.isFilled()) {
-                        styly.setFill(fill);
-                    }
-                }
-                if (element instanceof ISvgContent) {
-                    replaceFill((ISvgContent) element, fill);
-                }
-            });
     }
 
 }

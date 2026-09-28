@@ -482,6 +482,8 @@ final class TestFixtures {
         private Version defaultVersion = version("00", "Current");
         private CountryCode extensionCountryCode = CountryCode.UNDEFINED;
         private SvgGraphic frameGraphic = new SvgGraphic();
+        /** The frame amplifier the last frame was asked for with - the library, not the caller, is what applies its colour since jmsfx#121. */
+        private AmplifierListItem frameAmplifierAsked;
 
         @Override
         public ObservableList<Amplifier> getAmplifiers() {
@@ -619,8 +621,13 @@ final class TestFixtures {
         }
 
         @Override
-        public SvgGraphic loadFrameGraphic(SymbolSet symbolSet, StandardIdentity identity, Status status, boolean civilianEntity) {
+        public SvgGraphic loadFrameGraphic(SymbolSet symbolSet, StandardIdentity identity, Status status, boolean civilianEntity, AmplifierListItem frameAmplifier) {
+            this.frameAmplifierAsked = frameAmplifier;
             return frameGraphic;
+        }
+
+        AmplifierListItem getFrameAmplifierAsked() {
+            return frameAmplifierAsked;
         }
 
         @Override

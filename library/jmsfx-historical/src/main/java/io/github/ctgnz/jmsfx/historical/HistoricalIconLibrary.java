@@ -7,6 +7,7 @@ import java.util.stream.Stream;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.paint.Color;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
 import nz.co.ctg.foxglove.SvgGraphic;
@@ -216,16 +217,21 @@ public class HistoricalIconLibrary implements IconLibrary {
     }
 
     /**
-     * The frame for this symbol set, identity and status, recoloured when the entity is civilian.
+     * The frame for this symbol set, identity and status, in the colour this symbol draws it.
      * <p>
-     * A civilian entity draws the ordinary frame with the identity fill replaced by {@link IdentificationSymbol#CIVILIAN_PURPLE}, rather than a frame of its own - which is why the
-     * dimension is asked for one drawing per identity and status, and not one per civilian flag as well (jmsfx#123).
+     * Three fills are possible and they are alternatives, not layers. A civilian entity's frame is {@link IdentificationSymbol#CIVILIAN_PURPLE} whatever else is set; failing that
+     * a frame amplifier replaces the identity fill with the one it carries - Battle Order colours a frame by branch of service that way; failing both, the frame keeps the identity
+     * colour it was drawn with.
+     * <p>
+     * The colour goes into the markup before it is parsed, and the frame amplifier's id goes into the cache key, so each colour is a separate entry that nothing has to mutate.
+     * Recolouring the parsed graphic instead is what jmsfx#121 was: {@code FoxgloveParser} caches by location, so one symbol's branch colour stayed on the shared frame and the
+     * next symbol inherited it.
      * <p>
      * Hostile and suspect are never civilian. Anything held to be hostile is by definition not a civilian entity, which is why no {@code c} frame was ever drawn for those two
      * identities; the guard is here rather than on {@link IdentificationSymbol#isCivilianEntity()} because it is a fact about the frame, not about the entity.
      */
     @Override
-    public SvgGraphic loadFrameGraphic(SymbolSet symbolSet, StandardIdentity identity, Status status, boolean civilianEntity) {
+    public SvgGraphic loadFrameGraphic(SymbolSet symbolSet, StandardIdentity identity, Status status, boolean civilianEntity, AmplifierListItem frameAmplifier) {
         if (symbolSet == null || !symbolSet.isPointGeometry()) {
             return null;
         }
@@ -237,7 +243,13 @@ public class HistoricalIconLibrary implements IconLibrary {
             fellBackToClasspath++;
             return parser.parseFile(location);
         }
-        return parseInjected(location, civilian ? FragmentMarkup.replaceFill(markup, IdentificationSymbol.CIVILIAN_PURPLE) : markup);
+        if (civilian) {
+            return parseInjected(location, FragmentMarkup.replaceFill(markup, IdentificationSymbol.CIVILIAN_PURPLE));
+        }
+        if (isAmplified(frameAmplifier)) {
+            return parseInjected(location + frameAmplifier.getFullId(), FragmentMarkup.replaceFill(markup, Color.web(frameAmplifier.getBackgroundFill())));
+        }
+        return parseInjected(location, markup);
     }
 
     @Override
@@ -256,6 +268,17 @@ public class HistoricalIconLibrary implements IconLibrary {
         } else {
             return null;
         }
+    }
+
+    /**
+     * Whether this frame amplifier has a fill for the frame to take.
+     * <p>
+     * Being set and not unknown is not quite enough. {@code getFrameAmplifier} falls back to the library's default amplifier, and {@code getBackgroundFill} is blank for any
+     * amplifier that is not a frame amplifier - which {@code Color.web} would throw on rather than ignore.
+     */
+    private boolean isAmplified(AmplifierListItem frameAmplifier) {
+        return frameAmplifier != null && !frameAmplifier.isUnknown() && !frameAmplifier.getBackgroundFill()
+            .isBlank();
     }
 
     /**

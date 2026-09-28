@@ -183,8 +183,8 @@ public abstract class InjectedMarkupContract {
                         .getFrameMarkup(identity, status) == null) {
                         continue;
                     }
-                    SvgGraphic military = library.loadFrameGraphic(symbolSet, identity, status, false);
-                    SvgGraphic civilian = library.loadFrameGraphic(symbolSet, identity, status, true);
+                    SvgGraphic military = library.loadFrameGraphic(symbolSet, identity, status, false, null);
+                    SvgGraphic civilian = library.loadFrameGraphic(symbolSet, identity, status, true, null);
                     if (identity.isHostile()) {
                         assertSame(military, civilian, identity.getLabel() + " drew a civilian frame");
                     } else {

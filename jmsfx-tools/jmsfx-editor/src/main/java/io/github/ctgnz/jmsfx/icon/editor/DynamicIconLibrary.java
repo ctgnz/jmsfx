@@ -9,6 +9,7 @@ import java.util.Optional;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.paint.Color;
 
 import com.google.common.collect.Lists;
 
@@ -244,29 +245,37 @@ public class DynamicIconLibrary implements IconLibrary {
     }
 
     /**
-     * The frame for this symbol set, identity and status, recoloured when the entity is civilian.
+     * The frame for this symbol set, identity and status, in the colour this symbol draws it.
      * <p>
-     * The editor renders from the fragment tree rather than from injected markup, and since jmsfx#123 that tree no longer holds the {@code c} frames: a civilian frame is its
-     * military counterpart with the identity fill replaced, so it is derived here the same way a generated library derives it. Hostile and suspect are never civilian, which is why
-     * they never had a {@code c} frame to begin with.
+     * The editor renders from the fragment tree rather than from injected markup, but the recolouring works the same way and for the same reason: the fill goes into the markup
+     * before it is parsed and the frame amplifier goes into the cache key, so no caller has to mutate a graphic the parser is sharing (jmsfx#121). Civilian wins over the frame
+     * amplifier, and since jmsfx#123 the tree no longer holds the {@code c} frames - a civilian frame is derived here as a generated library derives it.
      */
     @Override
-    public SvgGraphic loadFrameGraphic(SymbolSet symbolSet, StandardIdentity identity, Status status, boolean civilianEntity) {
+    public SvgGraphic loadFrameGraphic(SymbolSet symbolSet, StandardIdentity identity, Status status, boolean civilianEntity, AmplifierListItem frameAmplifier) {
         if (!symbolSet.isPointGeometry()) {
             return null;
         }
         boolean civilian = civilianEntity && !identity.isHostile();
         String location = symbolSet.getFrameLocation(identity, status, civilian);
-        if (!civilian) {
-            return parser.parseFile(location);
+        if (civilian) {
+            return recoloured(location, location, IdentificationSymbol.CIVILIAN_PURPLE);
         }
-        String military = symbolSet.getFrameLocation(identity, status, false);
-        try (InputStream in = DynamicIconLibrary.class.getResourceAsStream(military)) {
+        if (frameAmplifier != null && !frameAmplifier.isUnknown() && !frameAmplifier.getBackgroundFill()
+            .isBlank()) {
+            return recoloured(location, location + frameAmplifier.getFullId(), Color.web(frameAmplifier.getBackgroundFill()));
+        }
+        return parser.parseFile(location);
+    }
+
+    /** The frame at {@code location} with its fill replaced, cached under {@code key}, falling back to the frame as drawn if the file cannot be read. */
+    private SvgGraphic recoloured(String location, String key, Color fill) {
+        try (InputStream in = DynamicIconLibrary.class.getResourceAsStream(location)) {
             if (in == null) {
                 return parser.parseFile(location);
             }
-            String markup = FragmentMarkup.replaceFill(new String(in.readAllBytes(), StandardCharsets.UTF_8), IdentificationSymbol.CIVILIAN_PURPLE);
-            return parser.parseResource(location, new ByteArrayInputStream(markup.getBytes(StandardCharsets.UTF_8)));
+            String markup = FragmentMarkup.replaceFill(new String(in.readAllBytes(), StandardCharsets.UTF_8), fill);
+            return parser.parseResource(key, new ByteArrayInputStream(markup.getBytes(StandardCharsets.UTF_8)));
         } catch (IOException e) {
             return parser.parseFile(location);
         }

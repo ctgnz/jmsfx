@@ -60,8 +60,15 @@ class IdentificationSymbolIconTest {
         assertThat(((Rectangle) children.get(0)).getFill(), is(Color.WHITE));
     }
 
+    /**
+     * That the frame amplifier reaches the library, and that the icon draws the frame it gets back untouched.
+     * <p>
+     * The recolouring used to happen here, after the library had handed the frame over - which is what jmsfx#121 was, because that frame is shared with every other symbol using
+     * it. Since the fix the library applies the colour to the markup before parsing and keys the cache by the amplifier, so the two things worth checking at this level are that
+     * the amplifier is passed on and that nothing here modifies the result.
+     */
     @Test
-    void testFrameAmplifierReplacesTheFrameShapesFill() {
+    void testTheFrameAmplifierIsPassedToTheLibraryAndTheFrameDrawnUnmodified() {
         library.withFrameGraphic(svgGraphicWithFilledRectangle(Color.RED));
         var frameAmplifier = new TestFixtures.FakeAmplifierListItem("5", "Blue Fill", false) {
             @Override
@@ -76,7 +83,8 @@ class IdentificationSymbolIconTest {
             .get(0);
         Rectangle rectangle = (Rectangle) frame.getChildren()
             .get(0);
-        assertThat(rectangle.getFill(), is(Color.web("#0000FF")));
+        assertThat(library.getFrameAmplifierAsked(), is(frameAmplifier));
+        assertThat(rectangle.getFill(), is(Color.RED));
     }
 
     @Test
