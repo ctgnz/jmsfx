@@ -43,9 +43,10 @@ public enum SpeedUnit implements AmplifierListItem {
         return name();
     }
 
+    /** A frame amplifier recolours the frame rather than drawing, and a list with no graphic location has no drawings to reach. */
     @Override
     public boolean isGraphicalIcon() {
-        return true;
+        return false;
     }
 
 }

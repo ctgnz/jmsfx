@@ -209,11 +209,10 @@ public class StandardIconLibrary implements IconLibrary {
 
     @Override
     public SvgGraphic loadAmplifierGraphic(AmplifierListItem amplifierItem, StandardIdentity identity) {
-        if (!amplifierItem.isUnknown() && amplifierItem.isGraphicalIcon()) {
-            return parser.parseFile(amplifierItem.getGraphicLocation(identity));
-        } else {
+        if (amplifierItem.isUnknown() || !amplifierItem.isGraphicalIcon()) {
             return null;
         }
+        return injected(amplifierItem.getGraphicLocation(identity), amplifierItem.getGraphicMarkup(identity));
     }
 
     /**
@@ -254,11 +253,10 @@ public class StandardIconLibrary implements IconLibrary {
 
     @Override
     public SvgGraphic loadFrameOverlayGraphic(Context context) {
-        if (!context.isReality()) {
-            return parser.parseFile(context.getOverlayGraphicLocation());
-        } else {
+        if (context.isReality()) {
             return null;
         }
+        return injected(context.getOverlayGraphicLocation(), context.getOverlayGraphicMarkup());
     }
 
     @Override

@@ -1,5 +1,7 @@
 package ${iconPackage}.amplifier;
 <#assign hasBounds = amplifier.values?filter(v -> v.bounds??)?size gt 0>
+<#assign hasMarkup = amplifier.values?filter(v -> v.graphicMarkupByKey??)?size gt 0>
+<#assign hasIdentity = hasBounds || hasMarkup>
 <#if amplifier.coded>
 
 import java.util.Arrays;
@@ -14,13 +16,14 @@ import com.google.common.collect.Maps;
 
 import ${basePackage}.AmplifierList;
 import ${basePackage}.<#if amplifier.standard>StandardAmplifierItem<#elseif amplifier.country>CountryCode<#else>AmplifierListItem</#if>;<#if amplifier.extension>
-import ${basePackage}.Extension;</#if><#if hasBounds>
+import ${basePackage}.Extension;</#if><#if hasIdentity>
 import ${basePackage}.StandardIdentity;</#if>
 import ${iconPackage}.AmplifierListEnum;
 
 public enum ${amplifier.typeName} implements <#if amplifier.standard>StandardAmplifierItem<#elseif amplifier.country>CountryCode<#else>AmplifierListItem</#if> {
 <#list amplifier.values as val>
-        <#if val.extension>@Extension </#if>${val.id}("${val.code}", "${val.label}"<#if val.remarks??>, "${val.remarks}"</#if><#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#if val.bounds??> {
+        <#if val.extension>@Extension </#if>${val.id}("${val.code}", "${val.label}"<#if val.remarks??>, "${val.remarks}"</#if><#if amplifier.frameAmplifier>, "${val.backgroundFill}"</#if>)<#if val.bounds?? || val.graphicMarkupByKey??> {
+<#if val.bounds??>
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
@@ -30,6 +33,19 @@ public enum ${amplifier.typeName} implements <#if amplifier.standard>StandardAmp
                     default -> Rectangle2D.EMPTY;
                 };
             }
+</#if>
+<#if val.graphicMarkupByKey??>
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+<#list val.graphicMarkupByKey as groupCode, markup>
+                    case "${groupCode}" -> "${markup?j_string}";
+</#list>
+                    default -> null;
+                };
+            }
+</#if>
         }</#if><#sep>,
 </#list>;<#if amplifier.coded>
 
@@ -89,9 +105,10 @@ public enum ${amplifier.typeName} implements <#if amplifier.standard>StandardAmp
         return name();
     }
 
+    /** A frame amplifier recolours the frame rather than drawing, and a list with no graphic location has no drawings to reach. */
     @Override
     public boolean isGraphicalIcon() {
-        return ${amplifier.frameAmplifier?string("false", "true")};
+        return ${(!amplifier.frameAmplifier && amplifier.graphicLocation != "NA")?string("true", "false")};
     }
 <#if amplifier.unknown>
 

@@ -4,7 +4,13 @@ import ${basePackage}.Context;
 
 public enum ContextEnum implements Context {
 <#list contexts as ctx>
-        ${ctx.id}("${ctx.code}", "${ctx.label}")<#sep>,
+        ${ctx.id}("${ctx.code}", "${ctx.label}")<#if ctx.graphicMarkup??> {
+
+            @Override
+            public String getOverlayGraphicMarkup() {
+                return "${ctx.graphicMarkup?j_string}";
+            }
+        }</#if><#sep>,
 </#list>;
 
     private final String id;
