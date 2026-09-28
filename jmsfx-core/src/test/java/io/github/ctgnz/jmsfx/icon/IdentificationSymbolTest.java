@@ -2,8 +2,11 @@ package io.github.ctgnz.jmsfx.icon;
 
 import static io.github.ctgnz.jmsfx.icon.TestFixtures.amplifier;
 import static io.github.ctgnz.jmsfx.icon.TestFixtures.entity;
+import static io.github.ctgnz.jmsfx.icon.TestFixtures.exerciseContext;
 import static io.github.ctgnz.jmsfx.icon.TestFixtures.newLibrary;
+import static io.github.ctgnz.jmsfx.icon.TestFixtures.realityContext;
 import static io.github.ctgnz.jmsfx.icon.TestFixtures.status;
+import static io.github.ctgnz.jmsfx.icon.TestFixtures.svgGraphicWithContent;
 import static io.github.ctgnz.jmsfx.icon.TestFixtures.symbolSet;
 import static io.github.ctgnz.jmsfx.icon.TestFixtures.unknownAmplifier;
 import static io.github.ctgnz.jmsfx.icon.TestFixtures.unknownSectorOneModifier;
@@ -22,6 +25,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import nz.co.ctg.foxglove.SvgGraphic;
+import nz.co.ctg.foxglove.shape.SvgRectangle;
 
 import io.github.ctgnz.jmsfx.Amplifier;
 import io.github.ctgnz.jmsfx.IconGeometry;
@@ -221,6 +225,43 @@ class IdentificationSymbolTest {
             .withSymbolSet(candidate.getSymbolSet()));
 
         assertThat(candidate.isFrameUsed(), is(true));
+    }
+
+    /**
+     * That an exercise symbol carries its context indicator into the composite.
+     * <p>
+     * The overlay is what distinguishes an exercise or simulation symbol from a real one, and the composite is what {@code jmsfx-creator} saves and {@code jmsfx-server} serves.
+     * {@code IdentificationSymbolIcon} has always drawn it; this did not, so an exported exercise symbol looked exactly like the real thing.
+     */
+    @Test
+    void testAnExerciseSymbolComposesWithItsContextIndicator() {
+        library.withFrameGraphic(svgGraphicWithContent())
+            .withFrameOverlayGraphic(svgGraphicWithContent());
+        candidate.setContext(exerciseContext());
+
+        SvgGraphic combined = candidate.getCombinedGraphic();
+
+        assertThat(drawnParts(combined), is(2L));
+    }
+
+    /** And that a real symbol does not, which is the whole point of drawing it. */
+    @Test
+    void testARealitySymbolComposesWithoutAContextIndicator() {
+        library.withFrameGraphic(svgGraphicWithContent())
+            .withFrameOverlayGraphic(svgGraphicWithContent());
+        candidate.setContext(realityContext());
+
+        SvgGraphic combined = candidate.getCombinedGraphic();
+
+        assertThat(drawnParts(combined), is(1L));
+    }
+
+    /** How many drawable elements the composite picked up - the frame alone, or the frame and its context indicator. */
+    private long drawnParts(SvgGraphic combined) {
+        return combined.getContent()
+            .stream()
+            .filter(SvgRectangle.class::isInstance)
+            .count();
     }
 
     @Test

@@ -240,6 +240,12 @@ public class IdentificationSymbol {
             // amplifier's before parsing, so there is nothing to recolour here. Doing it here is
             // what jmsfx#121 was - the parsed frame is shared, so the colour stayed on it.
             parts.add(getFrameGraphic());
+            // The context indicator sits on the frame and nowhere else, so it goes on directly
+            // after it, as IdentificationSymbolIcon has always drawn it. Leaving it out here meant
+            // an exported exercise or simulation symbol was indistinguishable from a real one.
+            if (isFrameOverlayUsed()) {
+                parts.add(getFrameOverlayGraphic());
+            }
         }
         if (isStatusIconUsed()) {
             parts.add(getStatusGraphic());

@@ -11,6 +11,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 import nz.co.ctg.foxglove.SvgGraphic;
+import nz.co.ctg.foxglove.shape.SvgRectangle;
 
 import io.github.ctgnz.jmsfx.Amplifier;
 import io.github.ctgnz.jmsfx.AmplifierGuide;
@@ -60,6 +61,11 @@ final class TestFixtures {
         return new FakeContext("1", "Reality", true);
     }
 
+    /** Any context that is not Reality, which is what puts the context indicator on the frame. */
+    static FakeContext exerciseContext() {
+        return new FakeContext("2", "Exercise", false);
+    }
+
     static FakeEntity entity(String id, String label) {
         return new FakeEntity(id, label);
     }
@@ -94,6 +100,31 @@ final class TestFixtures {
 
     static FakeVersion version(String id, String label) {
         return new FakeVersion(id, label);
+    }
+
+    /**
+     * A graphic that draws nothing but can still be composed.
+     * <p>
+     * {@code SvgGraphic.getVisibleContent()} streams the content list directly while {@code getContent()} is what lazily creates it, so a graphic nothing has touched throws from
+     * {@code getCombinedGraphic}. Every graphic this library hands out goes through here so a test composing a symbol does not have to know that.
+     */
+    static SvgGraphic emptyGraphic() {
+        SvgGraphic graphic = new SvgGraphic();
+        graphic.getContent();
+        return graphic;
+    }
+
+    /**
+     * An {@link SvgGraphic} carrying one real drawable element.
+     * <p>
+     * Unlike {@link #svgGraphicWithFilledRectangle(Color)}, which fakes {@code createGroup()} for the JavaFX path, this one has actual content - which is what
+     * {@code getCombinedGraphic} composes, since it reads {@code getVisibleContent()} rather than building nodes.
+     */
+    static SvgGraphic svgGraphicWithContent() {
+        SvgGraphic graphic = new SvgGraphic();
+        graphic.getContent()
+            .add(new SvgRectangle(0, 0, 10, 10));
+        return graphic;
     }
 
     /**
@@ -481,7 +512,8 @@ final class TestFixtures {
         private SymbolSet defaultSymbolSet = symbolSet("10", "Land Unit", GeometryType.POINT_GEOMETRY);
         private Version defaultVersion = version("00", "Current");
         private CountryCode extensionCountryCode = CountryCode.UNDEFINED;
-        private SvgGraphic frameGraphic = new SvgGraphic();
+        private SvgGraphic frameGraphic = emptyGraphic();
+        private SvgGraphic frameOverlayGraphic = emptyGraphic();
         /** The frame amplifier the last frame was asked for with - the library, not the caller, is what applies its colour since jmsfx#121. */
         private AmplifierListItem frameAmplifierAsked;
 
@@ -617,7 +649,7 @@ final class TestFixtures {
 
         @Override
         public SvgGraphic loadAmplifierGraphic(AmplifierListItem amplifierItem, StandardIdentity identity) {
-            return new SvgGraphic();
+            return emptyGraphic();
         }
 
         @Override
@@ -632,32 +664,32 @@ final class TestFixtures {
 
         @Override
         public SvgGraphic loadFrameOverlayGraphic(Context context) {
-            return new SvgGraphic();
+            return frameOverlayGraphic;
         }
 
         @Override
         public SvgGraphic loadHqtfDummyGraphic(HqtfDummy hqtfDummy, StandardIdentity identity, SymbolSet symbolSet) {
-            return new SvgGraphic();
+            return emptyGraphic();
         }
 
         @Override
         public SvgGraphic loadMainIconGraphic(io.github.ctgnz.jmsfx.MainElement mainIconElement, StandardIdentity identity) {
-            return new SvgGraphic();
+            return emptyGraphic();
         }
 
         @Override
         public SvgGraphic loadSectorOneModifierGraphic(SectorOneModifier sectorOneModifier) {
-            return new SvgGraphic();
+            return emptyGraphic();
         }
 
         @Override
         public SvgGraphic loadSectorTwoModifierGraphic(SectorTwoModifier sectorTwoModifier) {
-            return new SvgGraphic();
+            return emptyGraphic();
         }
 
         @Override
         public SvgGraphic loadStatusGraphic(Status status, boolean isStatusIconUsed, StandardIdentity identity, SymbolSet symbolSet) {
-            return new SvgGraphic();
+            return emptyGraphic();
         }
 
         @Override
@@ -707,6 +739,11 @@ final class TestFixtures {
 
         FakeIconLibrary withFrameGraphic(SvgGraphic value) {
             this.frameGraphic = value;
+            return this;
+        }
+
+        FakeIconLibrary withFrameOverlayGraphic(SvgGraphic value) {
+            this.frameOverlayGraphic = value;
             return this;
         }
     }
