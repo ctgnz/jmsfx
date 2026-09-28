@@ -32,6 +32,7 @@ import io.github.ctgnz.jmsfx.StandardIdentityGroup;
 import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.Version;
+import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
 import io.github.ctgnz.jmsfx.standard.amplifier.NatoCountryCode;
 import io.github.ctgnz.jmsfx.standard.amplifier.UnknownAmplifier;
 import io.github.ctgnz.jmsfx.standard.common.CommonEntity;
@@ -214,14 +215,29 @@ public class StandardIconLibrary implements IconLibrary {
         }
     }
 
+    /**
+     * The frame for this symbol set, identity and status, recoloured when the entity is civilian.
+     * <p>
+     * A civilian entity draws the ordinary frame with the identity fill replaced by {@link IdentificationSymbol#CIVILIAN_PURPLE}, rather than a frame of its own - which is why the
+     * dimension is asked for one drawing per identity and status, and not one per civilian flag as well (jmsfx#123).
+     * <p>
+     * Hostile and suspect are never civilian. Anything held to be hostile is by definition not a civilian entity, which is why no {@code c} frame was ever drawn for those two
+     * identities; the guard is here rather than on {@link IdentificationSymbol#isCivilianEntity()} because it is a fact about the frame, not about the entity.
+     */
     @Override
     public SvgGraphic loadFrameGraphic(SymbolSet symbolSet, StandardIdentity identity, Status status, boolean civilianEntity) {
-        if (symbolSet != null && symbolSet.isPointGeometry()) {
-            String filePath = symbolSet.getFrameLocation(identity, status, civilianEntity);
-            return parser.parseFile(filePath);
-        } else {
+        if (symbolSet == null || !symbolSet.isPointGeometry()) {
             return null;
         }
+        boolean civilian = civilianEntity && !identity.isHostile();
+        String location = symbolSet.getFrameLocation(identity, status, civilian);
+        String markup = symbolSet.getDimension()
+            .getFrameMarkup(identity, status);
+        if (markup == null) {
+            fellBackToClasspath++;
+            return parser.parseFile(location);
+        }
+        return parseInjected(location, civilian ? FragmentMarkup.replaceFill(markup, IdentificationSymbol.CIVILIAN_PURPLE) : markup);
     }
 
     @Override

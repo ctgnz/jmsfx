@@ -23,7 +23,7 @@ public abstract class AbstractModel {
     protected boolean deprecated;
     protected Map<String, BoundsModel> bounds;
     protected String graphicMarkup;
-    protected Map<String, String> graphicMarkupByGroup;
+    protected Map<String, String> graphicMarkupByKey;
 
     public AbstractModel() {
     }
@@ -47,18 +47,22 @@ public abstract class AbstractModel {
         return graphicMarkup;
     }
 
-    /** The markup a {@code FULL_FRAME} element draws, by identity group id - the icon is the frame, so each identity draws a different one. Null for everything else. */
+    /**
+     * The markup this element draws when one drawing is not enough, keyed by whatever discriminates the fragment - the identity group for a {@code FULL_FRAME} element, whose icon
+     * is the frame and so differs per identity, and identity plus status frame id for a dimension's frame. Null for an element whose drawing does not vary, which carries
+     * {@link #getGraphicMarkup()} instead. Keyed the same way as {@link #getBounds()}, and {@code @JsonIgnore} for the same reason as {@link #getGraphicMarkup()}.
+     */
     @JsonIgnore
-    public Map<String, String> getGraphicMarkupByGroup() {
-        return graphicMarkupByGroup;
+    public Map<String, String> getGraphicMarkupByKey() {
+        return graphicMarkupByKey;
     }
 
     public void setGraphicMarkup(String graphicMarkup) {
         this.graphicMarkup = graphicMarkup;
     }
 
-    public void setGraphicMarkupByGroup(Map<String, String> graphicMarkupByGroup) {
-        this.graphicMarkupByGroup = graphicMarkupByGroup;
+    public void setGraphicMarkupByKey(Map<String, String> graphicMarkupByKey) {
+        this.graphicMarkupByKey = graphicMarkupByKey;
     }
 
     /**

@@ -1,5 +1,7 @@
 package ${iconPackage};
 <#assign hasBounds = dimensions?filter(v -> v.bounds??)?size gt 0>
+<#assign hasMarkup = dimensions?filter(v -> v.graphicMarkupByKey??)?size gt 0>
+<#assign hasFrames = hasBounds || hasMarkup>
 
 <#if hasBounds>import javafx.geometry.Rectangle2D;
 
@@ -7,24 +9,38 @@ package ${iconPackage};
 import java.util.List;
 
 import ${basePackage}.Dimension;
-<#if hasBounds>import ${basePackage}.StandardIdentity;
-</#if><#if hasBounds>import ${basePackage}.Status;
+<#if hasFrames>import ${basePackage}.StandardIdentity;
+import ${basePackage}.Status;
 </#if>
 import ${basePackage}.SymbolSet;
 import ${typePackage}.GeometryType;
 
 public enum DimensionEnum implements Dimension {
 <#list dimensions as dim>
-        ${dim.id}("${dim.code}", "${dim.label}", GeometryType.${dim.geometry}, "${dim.graphicLocation}") <#if dim.bounds??>{
+        ${dim.id}("${dim.code}", "${dim.label}", GeometryType.${dim.geometry}, "${dim.graphicLocation}") <#if dim.bounds?? || dim.graphicMarkupByKey??>{
+<#if dim.bounds??>
             @Override
-            public Rectangle2D getFrameBounds(StandardIdentity identity, Status status, boolean civilianEntity) {
-                return switch (identity.getId() + status.getFrameId(identity) + (civilianEntity ? "c" : "")) {
+            public Rectangle2D getFrameBounds(StandardIdentity identity, Status status) {
+                return switch (identity.getId() + status.getFrameId(identity)) {
 <#list dim.bounds as key, rect>
                     case "${key}" -> new Rectangle2D(${rect.minX?c}, ${rect.minY?c}, ${rect.width?c}, ${rect.height?c});
 </#list>
                     default -> Rectangle2D.EMPTY;
                 };
             }
+</#if>
+<#if dim.graphicMarkupByKey??>
+
+            @Override
+            public String getFrameMarkup(StandardIdentity identity, Status status) {
+                return switch (identity.getId() + status.getFrameId(identity)) {
+<#list dim.graphicMarkupByKey as key, markup>
+                    case "${key}" -> "${markup?j_string}";
+</#list>
+                    default -> null;
+                };
+            }
+</#if>
         }</#if><#sep>,
 </#list>;
 

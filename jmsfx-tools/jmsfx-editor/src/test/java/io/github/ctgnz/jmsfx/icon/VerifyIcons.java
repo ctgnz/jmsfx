@@ -112,12 +112,6 @@ public class VerifyIcons {
                                                 if (!isGraphicPresent(location)) {
                                                     System.out.format("    [%s:%s:%s]: %s not found%n", symSet.getLabel(), identity.getLabel(), status.getLabel(), location);
                                                 }
-                                                if (!identity.isHostile()) {
-                                                    location = symSet.getFrameLocation(identity, status, true);
-                                                    if (!isGraphicPresent(location)) {
-                                                        System.out.format("    [%s:%s:%s]: %s not found%n", symSet.getLabel(), identity.getLabel(), status.getLabel(), location);
-                                                    }
-                                                }
                                             }
                                         });
                                 });

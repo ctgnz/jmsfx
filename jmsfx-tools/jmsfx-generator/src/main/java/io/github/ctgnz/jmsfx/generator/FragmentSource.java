@@ -6,17 +6,22 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import io.github.ctgnz.jmsfx.generator.model.AbstractModel;
+import io.github.ctgnz.jmsfx.generator.model.DimensionModel;
 import io.github.ctgnz.jmsfx.generator.model.GraphicType;
 import io.github.ctgnz.jmsfx.generator.model.LibraryModel;
 import io.github.ctgnz.jmsfx.generator.model.SectorOneModifierModel;
 import io.github.ctgnz.jmsfx.generator.model.SectorTwoModifierModel;
 import io.github.ctgnz.jmsfx.generator.model.StandardIdentityGroupModel;
+import io.github.ctgnz.jmsfx.generator.model.StandardIdentityModel;
+import io.github.ctgnz.jmsfx.generator.model.StatusModel;
 import io.github.ctgnz.jmsfx.generator.model.SymbolSetModel;
 
 /**
@@ -37,10 +42,12 @@ import io.github.ctgnz.jmsfx.generator.model.SymbolSetModel;
 public final class FragmentSource {
 
     /**
-     * One fragment: the element that draws it, the identity group it belongs to for a {@code FULL_FRAME} element and null otherwise, the file it came from, and the markup of its
-     * content root - null when the file holds none. The identifier is kept only to report by; nothing is keyed on it.
+     * One fragment: the element that draws it, the key it is filed under when the element draws more than one, the file it came from, and the markup of its content root - null
+     * when the file holds none. The identifier is kept only to report by; nothing is keyed on it.
+     * <p>
+     * The key is null for an element with a single drawing, the identity group for a {@code FULL_FRAME} element, and identity plus status frame id for a dimension's frame.
      */
-    public record Fragment(String identifier, AbstractModel element, String groupId, Path file, String markup) {
+    public record Fragment(String identifier, AbstractModel element, String key, Path file, String markup) {
     }
 
     private static final String CONTROL_MEASURES = "ControlMeasures";
@@ -71,7 +78,7 @@ public final class FragmentSource {
         List<Fragment> fragments = locate(model, svgRoot);
         String invalidSymbol = invalidSymbolMarkup(fragments);
         List<String> missing = new ArrayList<>();
-        Map<AbstractModel, Map<String, String>> byGroup = new LinkedHashMap<>();
+        Map<AbstractModel, Map<String, String>> byKey = new LinkedHashMap<>();
         int injected = 0;
         for (Fragment fragment : fragments) {
             String markup = fragment.markup();
@@ -82,16 +89,16 @@ public final class FragmentSource {
                     continue;
                 }
             }
-            if (fragment.groupId() == null) {
+            if (fragment.key() == null) {
                 fragment.element()
                     .setGraphicMarkup(markup);
             } else {
-                byGroup.computeIfAbsent(fragment.element(), element -> new LinkedHashMap<>())
-                    .put(fragment.groupId(), markup);
+                byKey.computeIfAbsent(fragment.element(), element -> new LinkedHashMap<>())
+                    .put(fragment.key(), markup);
             }
             injected++;
         }
-        byGroup.forEach((element, markupByGroup) -> element.setGraphicMarkupByGroup(markupByGroup));
+        byKey.forEach((element, markupByKey) -> element.setGraphicMarkupByKey(markupByKey));
         return new Result(injected, missing);
     }
 
@@ -157,7 +164,42 @@ public final class FragmentSource {
                     .resolve(identifier + ".svg"), "mod2");
             }
         }
+        addFrames(fragments, model, svgRoot);
         return fragments;
+    }
+
+    /**
+     * Every frame the model can draw, hung on the dimension whose code names it.
+     * <p>
+     * Frames are keyed three ways where a main icon is keyed one: identity, frame id and status. The frame id is the dimension's own code, which is why they hang off the
+     * dimension, and the status contributes its code only for a confirmed identity - an unconfirmed one always draws the "0" variant, which is what {@code Status.getFrameId}
+     * encodes. Keyed exactly as {@link FragmentMeasurer} keys the matching bounds, so a frame's markup and its measurements cannot disagree about which frame they describe.
+     * <p>
+     * Civilian is not a key. A civilian frame is its military counterpart with the identity fill replaced, derived at load time by {@code FragmentMarkup.replaceFill}, so the 90
+     * {@code c} files were removed rather than injected twice over (jmsfx#123).
+     * <p>
+     * A frame the tree does not hold is skipped rather than reported missing or filled with the Invalid Symbol. Not every combination of dimension, identity and status names a
+     * real frame, and there is no enumeration of the ones that do - absence is how the tree says so, which is how {@link FragmentMeasurer} reads it too.
+     */
+    private static void addFrames(List<Fragment> fragments, LibraryModel model, Path svgRoot) throws IOException {
+        Path frames = svgRoot.resolve("Frames");
+        for (DimensionModel dimension : model.getDimensions()) {
+            Set<String> seen = new LinkedHashSet<>();
+            for (StandardIdentityModel identity : model.getIdentities()) {
+                for (StatusModel status : model.getStatuses()) {
+                    String statusFrameId = identity.isConfirmed() ? status.getCode() : "0";
+                    String key = identity.getCode() + statusFrameId;
+                    if (!seen.add(key)) {
+                        continue;
+                    }
+                    String identifier = String.format("0_%s%s_%s", identity.getCode(), dimension.getCode(), statusFrameId);
+                    Path file = frames.resolve(identifier + ".svg");
+                    if (Files.exists(file)) {
+                        add(fragments, identifier, dimension, key, file, "frame");
+                    }
+                }
+            }
+        }
     }
 
     /**
@@ -195,9 +237,9 @@ public final class FragmentSource {
                 .resolve(location);
     }
 
-    private static void add(List<Fragment> fragments, String identifier, AbstractModel element, String groupId, Path file, String contentRoot) throws IOException {
+    private static void add(List<Fragment> fragments, String identifier, AbstractModel element, String key, Path file, String contentRoot) throws IOException {
         String markup = Files.exists(file) ? contentRoot(Files.readString(file, StandardCharsets.UTF_8), contentRoot) : null;
-        fragments.add(new Fragment(identifier, element, groupId, file, markup));
+        fragments.add(new Fragment(identifier, element, key, file, markup));
     }
 
     private static String directoryOf(Path fragment) {

@@ -1,5 +1,9 @@
 package io.github.ctgnz.jmsfx.icon.editor;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -20,6 +24,7 @@ import io.github.ctgnz.jmsfx.Dimension;
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
+import io.github.ctgnz.jmsfx.FragmentMarkup;
 import io.github.ctgnz.jmsfx.HqtfDummy;
 import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.MainElement;
@@ -31,6 +36,7 @@ import io.github.ctgnz.jmsfx.StandardIdentityGroup;
 import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.Version;
+import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
 
 public class DynamicIconLibrary implements IconLibrary {
     private final ObservableList<Version> versions = FXCollections.observableArrayList();
@@ -237,13 +243,32 @@ public class DynamicIconLibrary implements IconLibrary {
         }
     }
 
+    /**
+     * The frame for this symbol set, identity and status, recoloured when the entity is civilian.
+     * <p>
+     * The editor renders from the fragment tree rather than from injected markup, and since jmsfx#123 that tree no longer holds the {@code c} frames: a civilian frame is its
+     * military counterpart with the identity fill replaced, so it is derived here the same way a generated library derives it. Hostile and suspect are never civilian, which is why
+     * they never had a {@code c} frame to begin with.
+     */
     @Override
     public SvgGraphic loadFrameGraphic(SymbolSet symbolSet, StandardIdentity identity, Status status, boolean civilianEntity) {
-        if (symbolSet.isPointGeometry()) {
-            String filePath = symbolSet.getFrameLocation(identity, status, civilianEntity);
-            return parser.parseFile(filePath);
-        } else {
+        if (!symbolSet.isPointGeometry()) {
             return null;
+        }
+        boolean civilian = civilianEntity && !identity.isHostile();
+        String location = symbolSet.getFrameLocation(identity, status, civilian);
+        if (!civilian) {
+            return parser.parseFile(location);
+        }
+        String military = symbolSet.getFrameLocation(identity, status, false);
+        try (InputStream in = DynamicIconLibrary.class.getResourceAsStream(military)) {
+            if (in == null) {
+                return parser.parseFile(location);
+            }
+            String markup = FragmentMarkup.replaceFill(new String(in.readAllBytes(), StandardCharsets.UTF_8), IdentificationSymbol.CIVILIAN_PURPLE);
+            return parser.parseResource(location, new ByteArrayInputStream(markup.getBytes(StandardCharsets.UTF_8)));
+        } catch (IOException e) {
+            return parser.parseFile(location);
         }
     }
 

@@ -17,7 +17,7 @@ import ${basePackage}.StandardIdentity;
 
 public enum ${symbolSet.baseTypeName}EntityType implements EntityType {
 <#list symbolSet.entityTypes as entType>
-        ${entType.id}("${entType.code}", "${entType.label}", ${symbolSet.baseTypeName}Entity.${entType.entityId}, GraphicType.${entType.graphicType})<#if entType.graphic?? || entType.graphicMarkup?? || entType.graphicMarkupByGroup??> {<#if entType.graphic??>
+        ${entType.id}("${entType.code}", "${entType.label}", ${symbolSet.baseTypeName}Entity.${entType.entityId}, GraphicType.${entType.graphicType})<#if entType.graphic?? || entType.graphicMarkup?? || entType.graphicMarkupByKey??> {<#if entType.graphic??>
             @Override
             public String getGraphicIdentifier() {
                 return "${entType.graphic}";

@@ -206,8 +206,11 @@ public class FragmentMeasurer {
     }
 
     /**
-     * Frames live at {@code /svg/Frames/0_{identity}{frameId}_{statusFrameId}{c}.svg}, and hang off the dimension because {@code frameId} is the dimension's code. The status
+     * Frames live at {@code /svg/Frames/0_{identity}{frameId}_{statusFrameId}.svg}, and hang off the dimension because {@code frameId} is the dimension's code. The status
      * contributes its own code only for a confirmed identity; otherwise the frame is the "0" variant, which is what {@code Status.getFrameId(identity)} encodes.
+     * <p>
+     * Civilian is not measured. A civilian frame is the military one recoloured and so occupies the same space - every one of the 88 that used to be measured separately matched
+     * its counterpart exactly - and since jmsfx#123 the {@code c} files no longer exist to measure.
      */
     private void measureFrames(LibraryModel model) throws InterruptedException {
         int measured = 0;
@@ -217,21 +220,17 @@ public class FragmentMeasurer {
             for (StandardIdentityModel identity : model.getIdentities()) {
                 for (StatusModel status : model.getStatuses()) {
                     String statusFrameId = identity.isConfirmed() ? status.getCode() : "0";
-                    for (boolean civilian : new boolean[] {
-                        false, true
-                    }) {
-                        String key = identity.getCode() + statusFrameId + (civilian ? "c" : "");
-                        if (byKey.containsKey(key)) {
-                            continue;
-                        }
-                        Path file = svg("Frames", "0_" + identity.getCode() + dimension.getCode() + "_" + statusFrameId + (civilian ? "c" : "") + ".svg");
-                        Bounds bounds = boundsOf(file);
-                        if (bounds == null) {
-                            absent++;
-                            continue;
-                        }
-                        byKey.put(key, rectangle(bounds));
+                    String key = identity.getCode() + statusFrameId;
+                    if (byKey.containsKey(key)) {
+                        continue;
                     }
+                    Path file = svg("Frames", "0_" + identity.getCode() + dimension.getCode() + "_" + statusFrameId + ".svg");
+                    Bounds bounds = boundsOf(file);
+                    if (bounds == null) {
+                        absent++;
+                        continue;
+                    }
+                    byKey.put(key, rectangle(bounds));
                 }
             }
             if (!byKey.isEmpty()) {

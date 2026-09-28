@@ -10,7 +10,7 @@ import ${basePackage}.StandardIdentity;
 
 public enum ${symbolSet.baseTypeName}EntitySubType implements EntitySubType {
 <#list symbolSet.entitySubTypes as subType>
-        ${subType.id}("${subType.code}", "${subType.label}", ${symbolSet.baseTypeName}EntityType.${subType.entityTypeId}, GraphicType.${subType.graphicType})<#if subType.graphic?? || subType.graphicMarkup?? || subType.graphicMarkupByGroup??> {<#if subType.graphic??>
+        ${subType.id}("${subType.code}", "${subType.label}", ${symbolSet.baseTypeName}EntityType.${subType.entityTypeId}, GraphicType.${subType.graphicType})<#if subType.graphic?? || subType.graphicMarkup?? || subType.graphicMarkupByKey??> {<#if subType.graphic??>
             @Override
             public String getGraphicIdentifier() {
                 return "${subType.graphic}";

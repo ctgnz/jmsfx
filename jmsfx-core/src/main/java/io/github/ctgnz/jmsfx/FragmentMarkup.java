@@ -1,5 +1,11 @@
 package io.github.ctgnz.jmsfx;
 
+import java.util.regex.Pattern;
+
+import javafx.scene.paint.Color;
+
+import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
+
 /**
  * Turns an element's injected markup into a document a parser will accept.
  * <p>
@@ -23,9 +29,35 @@ public final class FragmentMarkup {
      */
     private static final String ENVELOPE = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 612 792\" width=\"612px\" height=\"792px\" xml:space=\"preserve\">%s</svg>";
 
+    /** A hex fill attribute, the only thing that separates a civilian frame from the military one it is derived from. */
+    private static final Pattern HEX_FILL = Pattern.compile("fill=\"#[0-9A-Fa-f]{6}\"");
+
     /** The markup as a standalone document, or null when there is none - which means the caller should fall back to reading the fragment from the classpath. */
     public static String document(String markup) {
         return markup == null ? null : String.format(ENVELOPE, markup);
+    }
+
+    /**
+     * {@code markup} with every hex fill replaced by {@code fill}.
+     * <p>
+     * A frame carries exactly one hex fill - the identity colour on the frame shape - which holds for all 123 frames in jmsfx-standard. Everything else it draws is
+     * {@code fill="none"}, the dashed pending and anticipated outlines, and the outline colour is a {@code stroke}, a different attribute. So substituting on the fill attribute
+     * recolours the frame and touches nothing else.
+     * <p>
+     * This is how a civilian frame is produced. A civilian entity does not get a frame of its own shape, it gets the ordinary frame for its identity and status recoloured to
+     * {@link IdentificationSymbol#CIVILIAN_PURPLE}, which is why the {@code c} frames are no longer carried as files: each was its military counterpart with that one substitution
+     * applied, verified by deriving all ninety and comparing them to the committed files. See jmsfx#123.
+     */
+    public static String replaceFill(String markup, Color fill) {
+        if (markup == null) {
+            return null;
+        }
+        return HEX_FILL.matcher(markup)
+            .replaceAll(String.format("fill=\"#%02X%02X%02X\"", channel(fill.getRed()), channel(fill.getGreen()), channel(fill.getBlue())));
+    }
+
+    private static int channel(double value) {
+        return (int) Math.round(value * 255);
     }
 
     private FragmentMarkup() {

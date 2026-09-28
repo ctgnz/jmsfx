@@ -1,8 +1,11 @@
 package io.github.ctgnz.jmsfx;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.ByteArrayInputStream;
@@ -17,6 +20,9 @@ import java.util.regex.Pattern;
 import org.junit.jupiter.api.Test;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
+import nz.co.ctg.foxglove.SvgGraphic;
+
+import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
 
 /**
  * That every element in a generated library was given the drawing of the fragment it names, and not some other element's.
@@ -37,6 +43,16 @@ public abstract class InjectedMarkupContract {
     /** Enough to reach every identity group, since a FULL_FRAME element draws a different picture for each. */
     private static final List<StandardIdentity> IDENTITIES = IconLibrary.discover()
         .getStandardIdentities();
+
+    /** The statuses that vary a frame. The rest draw the same frame as Present, which is what {@code Status.getFrameId} collapses them to. */
+    private static final List<Status> FRAME_STATUSES = IconLibrary.discover()
+        .getStatuses()
+        .stream()
+        .filter(Status::isFrameStatus)
+        .toList();
+
+    /** A hex fill, removed from both sides when comparing a civilian frame with the military one it came from. */
+    private static final Pattern HEX_FILL = Pattern.compile("fill=\"#[0-9A-Fa-f]{6}\"");
 
     private static final Pattern GROUP_TAG = Pattern.compile("<(/?)(?:svg:)?g\\b([^>]*?)(/?)>");
 
@@ -83,6 +99,102 @@ public abstract class InjectedMarkupContract {
         }
         assertThat(checked, is(greaterThan(400)));
         assertThat(wrong, is(List.of()));
+    }
+
+    /**
+     * That every frame a dimension carries is the frame its own location names.
+     * <p>
+     * The same two-derivations check as the main icons above, against the third key shape: a frame is identity by frame id by status, where a main icon is one element to one file.
+     * The markup came from the generator working out which frame belonged to which dimension; {@code getFrameLocation} is jmsfx-core's unrelated derivation of the same thing.
+     */
+    @Test
+    public void everyInjectedFrameMatchesItsFragment() throws IOException {
+        List<String> wrong = new ArrayList<>();
+        int checked = 0;
+        for (SymbolSet symbolSet : IconLibrary.discover()
+            .getSymbolSets()) {
+            if (!symbolSet.isPointGeometry()) {
+                continue;
+            }
+            for (StandardIdentity identity : IDENTITIES) {
+                for (Status status : FRAME_STATUSES) {
+                    String markup = symbolSet.getDimension()
+                        .getFrameMarkup(identity, status);
+                    if (markup == null) {
+                        continue;
+                    }
+                    checked++;
+                    compare(symbolSet.getFrameLocation(identity, status, false), "frame", markup, wrong);
+                }
+            }
+        }
+        assertThat(checked, is(greaterThan(100)));
+        assertThat(wrong, is(List.of()));
+    }
+
+    /**
+     * That a civilian frame is its military counterpart and a different fill, and nothing else.
+     * <p>
+     * This is what removing the 90 {@code c} files rests on (jmsfx#123). Strip the fills from both and they must be the same drawing - the shape, the dashes and the stroke all
+     * identical - while the fill itself must have become the civilian purple.
+     */
+    @Test
+    public void aCivilianFrameIsTheMilitaryFrameRecoloured() {
+        int checked = 0;
+        for (SymbolSet symbolSet : IconLibrary.discover()
+            .getSymbolSets()) {
+            if (!symbolSet.isPointGeometry()) {
+                continue;
+            }
+            for (StandardIdentity identity : IDENTITIES) {
+                for (Status status : FRAME_STATUSES) {
+                    String military = symbolSet.getDimension()
+                        .getFrameMarkup(identity, status);
+                    if (military == null) {
+                        continue;
+                    }
+                    String civilian = FragmentMarkup.replaceFill(military, IdentificationSymbol.CIVILIAN_PURPLE);
+                    assertThat(withoutFills(civilian), is(withoutFills(military)));
+                    assertThat(civilian, containsString("#FFA1FF"));
+                    checked++;
+                }
+            }
+        }
+        assertThat(checked, is(greaterThan(100)));
+    }
+
+    /**
+     * That hostile and suspect never draw a civilian frame.
+     * <p>
+     * Anything held to be hostile is by definition not a civilian entity, which is why the fragment tree never held a {@code c} frame for those two identities. The library returns
+     * the very same graphic either way, the civilian flag having been suppressed before it reached the cache key.
+     */
+    @Test
+    public void hostileNeverDrawsACivilianFrame() {
+        IconLibrary library = IconLibrary.discover();
+        int checked = 0;
+        for (SymbolSet symbolSet : library.getSymbolSets()) {
+            if (!symbolSet.isPointGeometry()) {
+                continue;
+            }
+            for (StandardIdentity identity : IDENTITIES) {
+                for (Status status : FRAME_STATUSES) {
+                    if (symbolSet.getDimension()
+                        .getFrameMarkup(identity, status) == null) {
+                        continue;
+                    }
+                    SvgGraphic military = library.loadFrameGraphic(symbolSet, identity, status, false);
+                    SvgGraphic civilian = library.loadFrameGraphic(symbolSet, identity, status, true);
+                    if (identity.isHostile()) {
+                        assertSame(military, civilian, identity.getLabel() + " drew a civilian frame");
+                    } else {
+                        assertNotSame(military, civilian, identity.getLabel() + " ignored the civilian flag");
+                    }
+                    checked++;
+                }
+            }
+        }
+        assertThat(checked, is(greaterThan(100)));
     }
 
     /**
@@ -172,6 +284,12 @@ public abstract class InjectedMarkupContract {
         if (!markup.equals(fromFile)) {
             wrong.add(String.format("%s: injected markup differs from the fragment's %s group", location, contentRootId));
         }
+    }
+
+    /** The drawing with every fill taken out, which is all a civilian frame is allowed to differ by. */
+    private String withoutFills(String markup) {
+        return HEX_FILL.matcher(markup)
+            .replaceAll("");
     }
 
     private String read(String location) throws IOException {

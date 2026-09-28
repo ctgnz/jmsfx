@@ -543,7 +543,7 @@ public class IdentificationSymbol {
 
         if (isFrameUsed()) {
             bounds = IconGeometry.union(bounds, symbolSet.getDimension()
-                .getFrameBounds(identity, effectiveFrameStatus(), isCivilianEntity()));
+                .getFrameBounds(identity, effectiveFrameStatus()));
         }
         if (isStatusIconUsed()) {
             bounds = IconGeometry.union(bounds, getStatus().getStatusBounds(identity, symbolSet));
