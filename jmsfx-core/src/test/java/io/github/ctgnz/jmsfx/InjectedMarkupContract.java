@@ -1,4 +1,4 @@
-package io.github.ctgnz.jmsfx.standard;
+package io.github.ctgnz.jmsfx;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
@@ -18,19 +18,12 @@ import org.junit.jupiter.api.Test;
 
 import nz.co.ctg.foxglove.FoxgloveParser;
 
-import io.github.ctgnz.jmsfx.Entity;
-import io.github.ctgnz.jmsfx.EntitySubType;
-import io.github.ctgnz.jmsfx.EntityType;
-import io.github.ctgnz.jmsfx.FragmentMarkup;
-import io.github.ctgnz.jmsfx.IconLibrary;
-import io.github.ctgnz.jmsfx.MainElement;
-import io.github.ctgnz.jmsfx.SectorOneModifier;
-import io.github.ctgnz.jmsfx.SectorTwoModifier;
-import io.github.ctgnz.jmsfx.StandardIdentity;
-import io.github.ctgnz.jmsfx.SymbolSet;
-
 /**
- * That every element was given the drawing of the fragment it names, and not some other element's.
+ * That every element in a generated library was given the drawing of the fragment it names, and not some other element's.
+ * <p>
+ * Shared by every library rather than copied into each. The checks reach everything through {@link IconLibrary#discover()} and jmsfx-core's own interfaces, so they are
+ * library-agnostic - but they cannot run in jmsfx-core, which deliberately has no library on its classpath (jmsfx#76). So they are published in this module's test jar and each
+ * library's own test is a subclass with nothing in it. Verification code that exists three times is verification code that drifts.
  * <p>
  * This is the check jmsfx#122 rests on, and it works by playing two independent derivations against each other. The markup was put on each constant by the generator, which worked
  * out for itself which file belonged to which element. {@code getGraphicLocation} is jmsfx-core's own, unrelated derivation of the same thing, used at render time. If they
@@ -39,7 +32,7 @@ import io.github.ctgnz.jmsfx.SymbolSet;
  * The content root is extracted here rather than by calling the generator's extractor, deliberately. A shared implementation would agree with itself whatever it did; two
  * implementations agreeing is the evidence.
  */
-class InjectedMarkupMatchesTheFragmentTest {
+public abstract class InjectedMarkupContract {
 
     /** Enough to reach every identity group, since a FULL_FRAME element draws a different picture for each. */
     private static final List<StandardIdentity> IDENTITIES = IconLibrary.discover()
@@ -48,17 +41,17 @@ class InjectedMarkupMatchesTheFragmentTest {
     private static final Pattern GROUP_TAG = Pattern.compile("<(/?)(?:svg:)?g\\b([^>]*?)(/?)>");
 
     @Test
-    void everyInjectedMainIconMatchesItsFragment() throws IOException {
+    public void everyInjectedMainIconMatchesItsFragment() throws IOException {
         List<String> wrong = new ArrayList<>();
         int checked = 0;
         for (SymbolSet symbolSet : IconLibrary.discover()
             .getSymbolSets()) {
             for (Entity entity : symbolSet.getEntities()) {
-                checked += check(entity, wrong);
+                checked += checkElement(entity, wrong);
                 for (EntityType entityType : entity.getEntityTypes()) {
-                    checked += check(entityType, wrong);
+                    checked += checkElement(entityType, wrong);
                     for (EntitySubType subType : entityType.getEntitySubTypes()) {
-                        checked += check(subType, wrong);
+                        checked += checkElement(subType, wrong);
                     }
                 }
             }
@@ -68,7 +61,7 @@ class InjectedMarkupMatchesTheFragmentTest {
     }
 
     @Test
-    void everyInjectedModifierMatchesItsFragment() throws IOException {
+    public void everyInjectedModifierMatchesItsFragment() throws IOException {
         List<String> wrong = new ArrayList<>();
         int checked = 0;
         for (SymbolSet symbolSet : IconLibrary.discover()
@@ -103,7 +96,7 @@ class InjectedMarkupMatchesTheFragmentTest {
      * all and look like a missing icon rather than a broken one - the same silent failure the Invalid Symbol fallback exists to prevent one level up.
      */
     @Test
-    void everyInjectedDocumentParses() {
+    public void everyInjectedDocumentParses() {
         FoxgloveParser parser = new FoxgloveParser();
         List<String> unparseable = new ArrayList<>();
         int parsed = 0;
@@ -122,7 +115,7 @@ class InjectedMarkupMatchesTheFragmentTest {
 
     /** That the check above would notice. A parse that cannot fail is not a check, and this one is only meaningful if malformed markup throws rather than coming back empty. */
     @Test
-    void theParseCheckWouldNoticeMalformedMarkup() {
+    public void theParseCheckWouldNoticeMalformedMarkup() {
         FoxgloveParser parser = new FoxgloveParser();
 
         assertThrows(Exception.class, () -> parser.parse(new ByteArrayInputStream(FragmentMarkup.document("<g id=\"main\"><path")
@@ -161,7 +154,7 @@ class InjectedMarkupMatchesTheFragmentTest {
     }
 
     /** @return how many drawings this element contributed - four for a FULL_FRAME element, one for anything else that has markup. */
-    private int check(MainElement element, List<String> wrong) throws IOException {
+    private int checkElement(MainElement element, List<String> wrong) throws IOException {
         int checked = 0;
         for (StandardIdentity identity : IDENTITIES) {
             String markup = element.getGraphicMarkup(identity);
