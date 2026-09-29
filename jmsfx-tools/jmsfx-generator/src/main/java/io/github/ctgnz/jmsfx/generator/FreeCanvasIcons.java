@@ -29,8 +29,19 @@ import io.github.ctgnz.jmsfx.generator.model.SymbolSetModel;
  */
 public final class FreeCanvasIcons {
 
-    /** One main icon: the graphic identifier that names it, enough label to report it by, its graphic type, the model element it belongs to, and the fragment it draws. */
-    public record Icon(String identifier, String label, String symbolSet, GraphicType graphicType, AbstractModel element, Path fragment) {
+    /**
+     * One main icon: the graphic identifier that names it, enough label to report it by, its graphic type, the model element it belongs to, the appendix directory its fragments
+     * are filed under, and the fragment it draws.
+     * <p>
+     * The location is carried as well as the resolved path because a {@code FULL_FRAME} element draws four fragments, one per identity group, and the canonical name it is
+     * collected under is not one of them - so that path resolves nowhere and cannot be used to find the siblings that do exist. See {@link #sibling(FragmentTree, String)}.
+     */
+    public record Icon(String identifier, String label, String symbolSet, GraphicType graphicType, AbstractModel element, String location, Path fragment) {
+
+        /** A fragment filed beside this one, searched through the tree rather than resolved against this one's directory - which may be a root that holds nothing. */
+        public Path sibling(FragmentTree tree, String siblingIdentifier) {
+            return tree.resolve("Appendices", location, siblingIdentifier + ".svg");
+        }
     }
 
     /** What an identifier maps to while collecting: enough to build an {@link Icon} once the symbol set's location is known. */
@@ -41,8 +52,8 @@ public final class FreeCanvasIcons {
     }
 
     /** Every free canvas icon in the model, in symbol set order, resolved against the {@code svg} directory of a resource tree. */
-    public static List<Icon> collect(LibraryModel model, Path svgRoot) {
-        return collect(model, svgRoot, type -> type == GraphicType.FREE_CANVAS);
+    public static List<Icon> collect(LibraryModel model, FragmentTree tree) {
+        return collect(model, tree, type -> type == GraphicType.FREE_CANVAS);
     }
 
     /**
@@ -51,7 +62,7 @@ public final class FreeCanvasIcons {
      * Opened up for {@link FragmentSource}, which needs all of them rather than the free canvas ones. The identifier derivation stays here and has one copy, which is the whole
      * reason this class exists - see the note about jmsfx#52 above.
      */
-    public static List<Icon> collect(LibraryModel model, Path svgRoot, Predicate<GraphicType> wanted) {
+    public static List<Icon> collect(LibraryModel model, FragmentTree tree, Predicate<GraphicType> wanted) {
         List<Icon> icons = new ArrayList<>();
         for (SymbolSetModel symbolSet : model.getSymbolSets()) {
             Map<String, Entry> identifiers = identifiers(model, symbolSet, wanted);
@@ -64,10 +75,8 @@ public final class FreeCanvasIcons {
             if (location == null) {
                 throw new IllegalStateException(String.format("symbol set %s has free canvas icons but no graphic location", symbolSet.getLabel()));
             }
-            identifiers.forEach((identifier, entry) -> icons.add(new Icon(identifier, entry.label(), symbolSet.getLabel(), entry.graphicType(), entry.element(),
-                                                                          svgRoot.resolve("Appendices")
-                                                                              .resolve(location)
-                                                                              .resolve(identifier + ".svg"))));
+            identifiers.forEach((identifier, entry) -> icons.add(new Icon(identifier, entry.label(), symbolSet.getLabel(), entry.graphicType(), entry.element(), location,
+                                                                          tree.resolve("Appendices", location, identifier + ".svg"))));
         }
         return icons;
     }

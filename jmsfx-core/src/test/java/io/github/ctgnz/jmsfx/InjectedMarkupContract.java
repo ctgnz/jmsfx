@@ -60,6 +60,19 @@ public abstract class InjectedMarkupContract {
     /** Every library keeps its generator input here, relative to its own module - which is where surefire runs these from. */
     private static final Path MODEL_ROOT = Path.of("src", "main", "model");
 
+    /**
+     * The tree of the library this one extends, or null when it extends nothing.
+     * <p>
+     * Stated by the subclass rather than worked out here. Since jmsfx#133 a library carries only the fragments it adds and resolves the rest through its base, so a check that
+     * looked only at {@link #MODEL_ROOT} would read every shared fragment as absent - which is what jmsfx-battleorder, carrying none of its own, would consist entirely of.
+     * <p>
+     * The generator learns this from {@code baseLibrary} in the config; naming it again here is deliberate. These checks exist to catch the generator agreeing with itself, so
+     * taking the search path from the same source the generator uses would defeat them.
+     */
+    protected Path baseModelRoot() {
+        return null;
+    }
+
     private static final Pattern GROUP_TAG = Pattern.compile("<(/?)(?:svg:)?g\\b([^>]*?)(/?)>");
 
     @Test
@@ -461,10 +474,16 @@ public abstract class InjectedMarkupContract {
      * From disk rather than the classpath, because since jmsfx#124 the fragments are build input and no longer ship in the jar - which is the thing these checks exist to make
      * safe. jmsfx-core still names them with classpath-style paths, and every library keeps its tree in the same place relative to its module, so the two compose.
      * <p>
+     * This library's own tree first, then the tree it extends - the same order the generator searched, arrived at independently. See {@link #baseModelRoot()}.
+     * <p>
      * A missing file reads as empty, which fails the comparison rather than passing it quietly.
      */
     private String read(String location) throws IOException {
-        Path file = MODEL_ROOT.resolve(location.startsWith("/") ? location.substring(1) : location);
+        Path relative = Path.of(location.startsWith("/") ? location.substring(1) : location);
+        Path file = MODEL_ROOT.resolve(relative);
+        if (!Files.exists(file) && baseModelRoot() != null) {
+            file = baseModelRoot().resolve(relative);
+        }
         return Files.exists(file) ? Files.readString(file, StandardCharsets.UTF_8) : "";
     }
 

@@ -62,21 +62,25 @@ public class DomainModelGenerator {
     /**
      * That the base handed in is the one the config asked for.
      * <p>
-     * The config declares what it extends by library prefix and the caller supplies where that library is, so the two can disagree - and composing an extension onto the wrong base
-     * produces a library that generates, compiles and renders while meaning something different. Cheaper to refuse than to notice later.
+     * The config declares what it extends by library prefix and the caller supplies where that library is, so the two can disagree - and resolving an extension's fragments, or
+     * composing its model, against the wrong base produces a library that generates, compiles and renders while meaning something different. Cheaper to refuse than to notice
+     * later.
+     * <p>
+     * Naming a base is what every extension does, since jmsfx#133, to resolve the fragments it does not carry itself. Composing a model onto that base is the narrower case, and
+     * {@code overlayModel} is what says so.
      */
     private void checkBaseMatchesDeclaration() {
-        if (config.isOverlay() && baseConfig == null) {
-            throw new IllegalArgumentException(String.format("%s is an overlay on %s, so the base library's config must be given as the second argument", config.getLibraryPrefix(),
+        if (config.hasBase() && baseConfig == null) {
+            throw new IllegalArgumentException(String.format("%s extends %s, so the base library's config must be given as the second argument", config.getLibraryPrefix(),
                 config.getBaseLibrary()));
         }
-        if (!config.isOverlay() && baseConfig != null) {
-            throw new IllegalArgumentException(String.format("%s is a complete model, so it takes no base - remove the second argument, or give it a baseLibrary",
+        if (!config.hasBase() && baseConfig != null) {
+            throw new IllegalArgumentException(String.format("%s extends nothing, so it takes no base - remove the second argument, or give it a baseLibrary",
                 config.getLibraryPrefix()));
         }
         if (baseConfig != null && !config.getBaseLibrary()
             .equals(baseConfig.getLibraryPrefix())) {
-            throw new IllegalArgumentException(String.format("%s composes onto %s, but the config given as its base is %s", config.getLibraryPrefix(), config.getBaseLibrary(),
+            throw new IllegalArgumentException(String.format("%s extends %s, but the config given as its base is %s", config.getLibraryPrefix(), config.getBaseLibrary(),
                 baseConfig.getLibraryPrefix()));
         }
     }
@@ -87,8 +91,7 @@ public class DomainModelGenerator {
      * After composition, deliberately: an overlay has no symbol sets of its own, so run against one alone this would find nothing.
      */
     private void injectFragments(LibraryModel dataModel) throws Exception {
-        FragmentSource.Result result = FragmentSource.inject(dataModel, config.getModelDir()
-            .resolve("svg"));
+        FragmentSource.Result result = FragmentSource.inject(dataModel, FragmentTree.of(config, baseConfig));
         System.out.format("Injected %d fragments%n", result.injected());
         if (!result.missing()
             .isEmpty()) {
@@ -117,12 +120,15 @@ public class DomainModelGenerator {
      * The model file describes symbology; what a library is called and which packages it lands in are properties of generating one, not of the standard it implements. So they live
      * in the config alone, and are applied here rather than being declared a second time at the head of every model file - which is what jmsfx#108 was about.
      * <p>
-     * A config naming {@code baseLibrary} has an <em>overlay</em> rather than a whole model: only what the extension adds, composed onto the base by {@link ModelComposer}. Where
-     * that base lives is the generator's second argument rather than something derived from this one's location - see {@link GeneratorConfig#getBaseLibrary()}. jmsfx#81.
+     * A config declaring {@code overlayModel} has an <em>overlay</em> rather than a whole model: only what the extension adds, composed onto the base by {@link ModelComposer}.
+     * Where that base lives is the generator's second argument rather than something derived from this one's location - see {@link GeneratorConfig#getBaseLibrary()}. jmsfx#81.
+     * <p>
+     * Composition turns on {@code overlayModel} and not on the base being present, since jmsfx#133: a library names a base to resolve the fragments it does not carry, which
+     * jmsfx-historical does with a complete model of its own. Composing that onto the base would try to add every element the base already has.
      */
     public LibraryModel parse() throws Exception {
         LibraryModel dataModel = parser.readLibraryModel(Files.newInputStream(config.getModelFile()));
-        if (baseConfig != null) {
+        if (config.isOverlay()) {
             System.out.format("Composing onto %s%n", baseConfig.getModelFile());
             dataModel = new ModelComposer().compose(parser.readLibraryModel(Files.newInputStream(baseConfig.getModelFile())), dataModel);
         }

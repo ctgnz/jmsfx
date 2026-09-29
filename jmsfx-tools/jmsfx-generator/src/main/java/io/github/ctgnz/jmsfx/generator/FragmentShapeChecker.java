@@ -74,9 +74,13 @@ public class FragmentShapeChecker {
             if (rest.isEmpty()) {
                 throw new IllegalArgumentException("name the config files to check, or pass --dir: see docs/fragments.md");
             }
+            List<GeneratorConfig> configs = new ArrayList<>();
             for (String config : rest) {
-                Path configFile = Path.of(config);
-                Result result = checker.run(checker.svgRoot(configFile), checker.model(checker.modelPath(configFile)), config);
+                configs.add(GeneratorConfig.load(Path.of(config)));
+            }
+            for (int at = 0; at < rest.size(); at++) {
+                GeneratorConfig config = configs.get(at);
+                Result result = checker.run(FragmentTree.of(config, baseOf(config, configs)), checker.model(config.getModelFile()), rest.get(at));
                 checked += result.checked();
                 wrong.addAll(result.wrong());
             }
@@ -90,7 +94,7 @@ public class FragmentShapeChecker {
                     System.out.format("%nno such directory, skipping: %s%n", directory);
                     continue;
                 }
-                Result result = checker.run(directory, library, directory.toString());
+                Result result = checker.run(FragmentTree.of(List.of(directory)), library, directory.toString());
                 checked += result.checked();
                 wrong.addAll(result.wrong());
             }
@@ -114,9 +118,9 @@ public class FragmentShapeChecker {
      * A fragment the model names but the disk does not hold is a failure rather than a skip. The identifier is derived rather than read, so a path that resolves nowhere means
      * either the derivation or the model is wrong, and neither should pass quietly. See jmsfx#52.
      */
-    Result run(Path svgRoot, LibraryModel model, String label) throws Exception {
+    Result run(FragmentTree tree, LibraryModel model, String label) throws Exception {
         List<String> wrong = new ArrayList<>();
-        List<FreeCanvasIcons.Icon> icons = FreeCanvasIcons.collect(model, svgRoot);
+        List<FreeCanvasIcons.Icon> icons = FreeCanvasIcons.collect(model, tree);
         for (FreeCanvasIcons.Icon icon : icons) {
             if (!Files.isRegularFile(icon.fragment())) {
                 wrong.add(String.format("%s: no such fragment (%s / %s)", icon.identifier(), icon.symbolSet(), icon.label()));
@@ -199,10 +203,22 @@ public class FragmentShapeChecker {
         }
     }
 
-    private Path svgRoot(Path configFile) throws Exception {
-        return GeneratorConfig.load(configFile)
-            .getModelDir()
-            .resolve("svg");
+    /**
+     * The base among the configs this run was given, or null when it names none.
+     * <p>
+     * Found among the configs already on the command line rather than taken as another argument. The build passes standard and historical together, which is exactly the pair a
+     * search path needs, and a config naming a base that is not present is reported rather than silently checked against its own tree alone.
+     */
+    private static GeneratorConfig baseOf(GeneratorConfig config, List<GeneratorConfig> candidates) {
+        if (!config.hasBase()) {
+            return null;
+        }
+        return candidates.stream()
+            .filter(candidate -> config.getBaseLibrary()
+                .equals(candidate.getLibraryPrefix()))
+            .findFirst()
+            .orElseThrow(() -> new IllegalArgumentException(
+                                                            String.format("%s extends %s, so that library's config has to be named too", config.getLibraryPrefix(), config.getBaseLibrary())));
     }
 
     /** The value following a flag, removing both from the list - so what is left is the positional arguments. */

@@ -38,13 +38,14 @@ class FragmentSourceTest {
     private static final Path CONFIG = Path.of("../../library/jmsfx-standard/src/main/model/config.yml");
 
     private LibraryModel model;
-    private Path svgRoot;
+    private FragmentTree tree;
 
     @BeforeEach
     void readTheStandardLibrary() throws IOException {
         GeneratorConfig config = GeneratorConfig.load(CONFIG);
-        svgRoot = config.getModelDir()
-            .resolve("svg");
+        // Standard is the base, so its tree is one root - which is also the case worth having here,
+        // since it is the shape that has to keep working unchanged.
+        tree = FragmentTree.of(config, null);
         try (var in = Files.newInputStream(config.getModelFile())) {
             model = new JmsfxParser().readLibraryModel(in);
         }
@@ -52,7 +53,7 @@ class FragmentSourceTest {
 
     @Test
     void findsEveryFragmentTheStandardModelNames() throws IOException {
-        FragmentSource.Result result = FragmentSource.inject(model, svgRoot);
+        FragmentSource.Result result = FragmentSource.inject(model, tree);
 
         assertThat(result.missing(), is(List.of()));
         assertThat(result.injected(), is(greaterThan(1500)));
@@ -61,7 +62,7 @@ class FragmentSourceTest {
     /** The markup ends up on the element that draws it, which is the whole point - no table, and nothing keyed on a filename. */
     @Test
     void hangsTheMarkupOnTheElement() throws IOException {
-        FragmentSource.inject(model, svgRoot);
+        FragmentSource.inject(model, tree);
 
         String markup = anEntityOf("Land Units").getGraphicMarkup();
 
@@ -72,7 +73,7 @@ class FragmentSourceTest {
     /** The content root only: no envelope, and none of the scaffolding that is three quarters of the file. */
     @Test
     void injectsTheContentRootRatherThanTheFile() throws IOException {
-        FragmentSource.inject(model, svgRoot);
+        FragmentSource.inject(model, tree);
 
         String markup = anEntityOf("Land Units").getGraphicMarkup();
 
@@ -83,7 +84,7 @@ class FragmentSourceTest {
     /** A FULL_FRAME element is four drawings, one per identity group, because the icon is the frame. */
     @Test
     void givesAFullFrameElementOnePerIdentityGroup() throws IOException {
-        FragmentSource.inject(model, svgRoot);
+        FragmentSource.inject(model, tree);
 
         AbstractModel fullFrame = model.getSymbolSets()
             .stream()
@@ -104,7 +105,7 @@ class FragmentSourceTest {
      */
     @Test
     void hangsAFrameOnItsDimension() throws IOException {
-        FragmentSource.inject(model, svgRoot);
+        FragmentSource.inject(model, tree);
 
         Map<String, String> frames = dimension("LAND_UNIT").getGraphicMarkupByKey();
 
@@ -115,7 +116,7 @@ class FragmentSourceTest {
     /** Civilian frames were removed at jmsfx#123 and are derived from the military one at load time, so nothing should be injected under a "c" key. */
     @Test
     void injectsNoCivilianFrame() throws IOException {
-        FragmentSource.inject(model, svgRoot);
+        FragmentSource.inject(model, tree);
 
         assertThat(dimension("LAND_UNIT").getGraphicMarkupByKey()
             .keySet()
@@ -126,7 +127,7 @@ class FragmentSourceTest {
 
     @Test
     void givesAModifierItsOwnMarkup() throws IOException {
-        FragmentSource.inject(model, svgRoot);
+        FragmentSource.inject(model, tree);
 
         AbstractModel modifier = symbolSet("Land Units").getSectorOneMods()
             .stream()

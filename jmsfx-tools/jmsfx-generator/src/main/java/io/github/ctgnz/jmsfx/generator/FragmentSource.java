@@ -96,8 +96,8 @@ public final class FragmentSource {
      * be quieter and worse: {@code FoxgloveParser} already swallows a missing file and returns an empty graphic, which is how three fragments in jmsfx-historical came to draw
      * nothing unnoticed. A generation failure should be visible at runtime.
      */
-    public static Result inject(LibraryModel model, Path svgRoot) throws IOException {
-        List<Fragment> fragments = locate(model, svgRoot);
+    public static Result inject(LibraryModel model, FragmentTree tree) throws IOException {
+        List<Fragment> fragments = locate(model, tree);
         String invalidSymbol = invalidSymbolMarkup(fragments);
         List<String> missing = new ArrayList<>();
         Map<AbstractModel, Map<String, String>> byKey = new LinkedHashMap<>();
@@ -145,17 +145,20 @@ public final class FragmentSource {
     }
 
     /** Every fragment the model names, with its content root read where the file holds one and null where it does not. */
-    static List<Fragment> locate(LibraryModel model, Path svgRoot) throws IOException {
+    static List<Fragment> locate(LibraryModel model, FragmentTree tree) throws IOException {
         List<Fragment> fragments = new ArrayList<>();
-        for (FreeCanvasIcons.Icon icon : FreeCanvasIcons.collect(model, svgRoot, type -> type != GraphicType.NA)) {
+        for (FreeCanvasIcons.Icon icon : FreeCanvasIcons.collect(model, tree, type -> type != GraphicType.NA)) {
             if (icon.graphicType() == GraphicType.FULL_FRAME) {
                 // Four files, one per identity group, because a full frame icon is the frame and each
                 // identity draws a different one. The suffix is the group's own, as MainElement uses it.
                 for (StandardIdentityGroupModel group : model.getIdentityGroups()) {
                     if (group.getGraphicSuffix() != null) {
                         String identifier = icon.identifier() + group.getGraphicSuffix();
-                        add(fragments, identifier, icon.element(), group.getCode(), icon.fragment()
-                            .resolveSibling(identifier + ".svg"), MAIN_ROOTS);
+                        // Searched through the tree, not resolved against icon.fragment(): a FULL_FRAME
+                        // element has no fragment under its canonical name, so that path resolves to this
+                        // library's own root whether or not anything is there - and since jmsfx#133 a
+                        // library may hold none of these files itself.
+                        add(fragments, identifier, icon.element(), group.getCode(), icon.sibling(tree, identifier), MAIN_ROOTS);
                     }
                 }
             } else {
@@ -163,7 +166,7 @@ public final class FragmentSource {
             }
         }
         for (SymbolSetModel symbolSet : model.getSymbolSets()) {
-            Path location = modifierRoot(svgRoot, model, symbolSet);
+            String location = modifierLocation(model, symbolSet);
             if (location == null) {
                 continue;
             }
@@ -176,23 +179,21 @@ public final class FragmentSource {
                     continue;
                 }
                 String identifier = modifierIdentifier(baseCode, modifier.getGroupId(), modifier.getCode(), "1");
-                add(fragments, identifier, modifier, null, location.resolve("mod1")
-                    .resolve(identifier + ".svg"), "mod1");
+                add(fragments, identifier, modifier, null, tree.resolve("Appendices", location, "mod1", identifier + ".svg"), "mod1");
             }
             for (SectorTwoModifierModel modifier : symbolSet.getSectorTwoMods()) {
                 if (drawsNothing(modifier.getGroupId(), modifier.getCode())) {
                     continue;
                 }
                 String identifier = modifierIdentifier(baseCode, modifier.getGroupId(), modifier.getCode(), "2");
-                add(fragments, identifier, modifier, null, location.resolve("mod2")
-                    .resolve(identifier + ".svg"), "mod2");
+                add(fragments, identifier, modifier, null, tree.resolve("Appendices", location, "mod2", identifier + ".svg"), "mod2");
             }
         }
-        addFrames(fragments, model, svgRoot);
-        addFrameFurniture(fragments, model, svgRoot, "OCA", "oca", model.getStatuses(), (key, code) -> "0" + key + code + "2");
-        addFrameFurniture(fragments, model, svgRoot, "HQTFFD", "hqtffd", model.getHqtfDummies(), (key, code) -> key + code);
-        addAmplifiers(fragments, model, svgRoot);
-        addOverlays(fragments, model, svgRoot);
+        addFrames(fragments, model, tree);
+        addFrameFurniture(fragments, model, tree, "OCA", "oca", model.getStatuses(), (key, code) -> "0" + key + code + "2");
+        addFrameFurniture(fragments, model, tree, "HQTFFD", "hqtffd", model.getHqtfDummies(), (key, code) -> key + code);
+        addAmplifiers(fragments, model, tree);
+        addOverlays(fragments, model, tree);
         return fragments;
     }
 
@@ -205,16 +206,15 @@ public final class FragmentSource {
      * Only the standard lists are walked, matching the measurer. A list whose {@code graphicLocation} is {@code NA} carries no drawings at all - it is a text amplifier, and the
      * paths it can derive name a directory that does not exist.
      */
-    private static void addAmplifiers(List<Fragment> fragments, LibraryModel model, Path svgRoot) throws IOException {
+    private static void addAmplifiers(List<Fragment> fragments, LibraryModel model, FragmentTree tree) throws IOException {
         for (AmplifierListModel list : model.getAmplifierGroups()) {
             if (!list.isStandard() || list.isUnknown() || NO_GRAPHIC.equals(list.getGraphicLocation())) {
                 continue;
             }
-            Path root = svgRoot.resolve(list.getGraphicLocation());
             for (AmplifierListItemModel item : list.getValues()) {
                 for (StandardIdentityGroupModel group : model.getIdentityGroups()) {
                     String identifier = group.getCode() + item.getCode();
-                    Path file = root.resolve(identifier + ".svg");
+                    Path file = tree.resolve(list.getGraphicLocation(), identifier + ".svg");
                     if (Files.exists(file)) {
                         add(fragments, identifier, item, group.getCode(), file, CONTENT_ROOTS.get(list.getGraphicLocation()));
                     }
@@ -229,13 +229,11 @@ public final class FragmentSource {
      * The only category with no key at all: a context indicator is one drawing, the same whatever the symbol underneath it. Reality has no file and draws nothing, which is the
      * same reason it has no location worth reading.
      */
-    private static void addOverlays(List<Fragment> fragments, LibraryModel model, Path svgRoot) throws IOException {
-        Path root = svgRoot.resolve("Frames")
-            .resolve("Overlay");
+    private static void addOverlays(List<Fragment> fragments, LibraryModel model, FragmentTree tree) throws IOException {
         for (ContextModel context : model.getContexts()) {
             // The model's code, not its id: ContextEnum passes the code as the field its
             // getOverlayGraphicLocation formats, so the file is 2.svg and not EXERCISE.svg.
-            Path file = root.resolve(context.getCode() + ".svg");
+            Path file = tree.resolve("Frames", "Overlay", context.getCode() + ".svg");
             if (Files.exists(file)) {
                 add(fragments, context.getCode(), context, null, file, "frame_overlay");
             }
@@ -257,15 +255,14 @@ public final class FragmentSource {
      * Keyed exactly as {@link FragmentMeasurer} keys the matching bounds, so a drawing and its measurements cannot disagree about which fragment they describe. As with frames, a
      * combination the tree does not hold is skipped rather than reported missing: not every identity group draws in every dimension, and absence is how the tree says so.
      */
-    private static void addFrameFurniture(List<Fragment> fragments, LibraryModel model, Path svgRoot, String directory, String contentRoot,
+    private static void addFrameFurniture(List<Fragment> fragments, LibraryModel model, FragmentTree tree, String directory, String contentRoot,
                                           List<? extends AbstractModel> elements, Naming naming) throws IOException {
-        Path root = svgRoot.resolve(directory);
         for (AbstractModel element : elements) {
             for (StandardIdentityGroupModel group : model.getIdentityGroups()) {
                 for (DimensionModel dimension : model.getDimensions()) {
                     String key = group.getCode() + dimension.getCode();
                     String identifier = naming.identifier(key, element.getCode());
-                    Path file = root.resolve(identifier + ".svg");
+                    Path file = tree.resolve(directory, identifier + ".svg");
                     if (Files.exists(file)) {
                         add(fragments, identifier, element, key, file, contentRoot);
                     }
@@ -287,8 +284,7 @@ public final class FragmentSource {
      * A frame the tree does not hold is skipped rather than reported missing or filled with the Invalid Symbol. Not every combination of dimension, identity and status names a
      * real frame, and there is no enumeration of the ones that do - absence is how the tree says so, which is how {@link FragmentMeasurer} reads it too.
      */
-    private static void addFrames(List<Fragment> fragments, LibraryModel model, Path svgRoot) throws IOException {
-        Path frames = svgRoot.resolve("Frames");
+    private static void addFrames(List<Fragment> fragments, LibraryModel model, FragmentTree tree) throws IOException {
         for (DimensionModel dimension : model.getDimensions()) {
             Set<String> seen = new LinkedHashSet<>();
             for (StandardIdentityModel identity : model.getIdentities()) {
@@ -299,7 +295,7 @@ public final class FragmentSource {
                         continue;
                     }
                     String identifier = String.format("0_%s%s_%s", identity.getCode(), dimension.getCode(), statusFrameId);
-                    Path file = frames.resolve(identifier + ".svg");
+                    Path file = tree.resolve("Frames", identifier + ".svg");
                     if (Files.exists(file)) {
                         add(fragments, identifier, dimension, key, file, "frame");
                     }
@@ -331,16 +327,14 @@ public final class FragmentSource {
         return groupId == null ? baseCode + code + sector : String.format("C%s%s%s", sector, groupId, code);
     }
 
-    /** Where a symbol set's modifier directories sit, or null when it files its fragments somewhere this does not cover. */
-    private static Path modifierRoot(Path svgRoot, LibraryModel model, SymbolSetModel symbolSet) {
+    /** The appendix directory a symbol set files its modifiers under, or null when it names none. */
+    private static String modifierLocation(LibraryModel model, SymbolSetModel symbolSet) {
         String location = symbolSet.getGraphicLocation();
         if (location == null && model.getDimension(symbolSet.getDimensionId()) != null) {
             location = model.getDimension(symbolSet.getDimensionId())
                 .getGraphicLocation();
         }
-        return location == null ? null
-            : svgRoot.resolve("Appendices")
-                .resolve(location);
+        return location;
     }
 
     private static void add(List<Fragment> fragments, String identifier, AbstractModel element, String key, Path file, String contentRoot) throws IOException {
