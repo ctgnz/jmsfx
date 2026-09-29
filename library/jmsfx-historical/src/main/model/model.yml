@@ -1,149 +1,271 @@
 statuses:
-- {code: "6", id: EXTINCT, label: "Present/Extinct"}
+- details: {code: "6", id: EXTINCT, label: "Present/Extinct"}
+  bounds:
+    "100": {minX: 132.72, minY: 574.0, width: 347.01, height: 58.0}
+    "101": {minX: 132.72, minY: 522.0, width: 347.01, height: 58.0}
+    "105": {minX: 132.72, minY: 522.0, width: 347.01, height: 58.0}
+    "110": {minX: 132.72, minY: 574.0, width: 347.01, height: 58.0}
+    "115": {minX: 132.72, minY: 574.0, width: 347.01, height: 58.0}
+    "120": {minX: 132.72, minY: 574.0, width: 347.01, height: 58.0}
+    "127": {minX: 132.72, minY: 574.0, width: 347.01, height: 58.0}
+    "130": {minX: 132.72, minY: 574.0, width: 347.01, height: 58.0}
+    "135": {minX: 132.72, minY: 596.0, width: 347.01, height: 58.0}
+    "140": {minX: 132.72, minY: 574.0, width: 347.01, height: 58.0}
+    "160": {minX: 132.72, minY: 574.0, width: 347.01, height: 58.0}
+    "300": {minX: 159.5, minY: 551.0, width: 293.0, height: 58.0}
+    "301": {minX: 174.06, minY: 525.0, width: 265.79, height: 58.0}
+    "305": {minX: 174.06, minY: 525.0, width: 265.79, height: 58.0}
+    "310": {minX: 123.58, minY: 524.0, width: 365.0, height: 58.0}
+    "315": {minX: 159.5, minY: 551.0, width: 293.0, height: 58.0}
+    "320": {minX: 123.58, minY: 524.0, width: 365.0, height: 58.0}
+    "327": {minX: 159.5, minY: 551.0, width: 293.0, height: 58.0}
+    "330": {minX: 159.5, minY: 551.0, width: 293.0, height: 58.0}
+    "335": {minX: 174.06, minY: 600.0, width: 265.79, height: 58.0}
+    "340": {minX: 123.58, minY: 524.0, width: 365.0, height: 58.0}
+    "360": {minX: 123.58, minY: 524.0, width: 365.0, height: 58.0}
+    "400": {minX: 171.5, minY: 540.0, width: 269.0, height: 58.0}
+    "401": {minX: 171.5, minY: 550.0, width: 269.0, height: 58.0}
+    "405": {minX: 171.5, minY: 521.0, width: 269.0, height: 58.0}
+    "410": {minX: 171.5, minY: 540.0, width: 269.0, height: 58.0}
+    "415": {minX: 171.5, minY: 540.0, width: 269.0, height: 58.0}
+    "420": {minX: 171.5, minY: 540.0, width: 269.0, height: 58.0}
+    "427": {minX: 171.5, minY: 540.0, width: 269.0, height: 58.0}
+    "430": {minX: 171.5, minY: 540.0, width: 269.0, height: 58.0}
+    "435": {minX: 171.5, minY: 550.0, width: 269.0, height: 58.0}
+    "440": {minX: 171.5, minY: 540.0, width: 269.0, height: 58.0}
+    "460": {minX: 171.5, minY: 540.0, width: 269.0, height: 58.0}
+    "600": {minX: 132.72, minY: 580.0, width: 348.78, height: 58.0}
+    "601": {minX: 170.75, minY: 523.0, width: 269.0, height: 58.0}
+    "605": {minX: 171.75, minY: 523.0, width: 269.0, height: 58.0}
+    "610": {minX: 130.5, minY: 580.0, width: 351.0, height: 58.0}
+    "615": {minX: 130.5, minY: 581.0, width: 351.0, height: 58.0}
+    "620": {minX: 130.5, minY: 577.0, width: 351.0, height: 58.0}
+    "627": {minX: 130.5, minY: 581.0, width: 351.0, height: 58.0}
+    "630": {minX: 132.72, minY: 580.0, width: 347.01, height: 58.0}
+    "635": {minX: 171.25, minY: 596.0, width: 269.0, height: 58.0}
+    "640": {minX: 132.72, minY: 580.0, width: 347.01, height: 58.0}
+    "660": {minX: 130.5, minY: 580.0, width: 351.0, height: 58.0}
+  dimensions:
+  - ACTIVITY
+  - AIR
+  - COMMON
+  - CYBERSPACE
+  - DISMOUNTED
+  - LAND_EQUIPMENT
+  - LAND_INSTALLATION
+  - LAND_UNIT
+  - SEA_SUBSURFACE
+  - SEA_SURFACE
+  - SPACE
 amplifiers:
-- {id: "AZ", type: GRAPHIC, code: "Overlay", label: "Overlay", description: An additional graphic overlaid over the whole icon coordinate space.}
+- details: {id: "AZ", type: GRAPHIC, code: "Overlay", label: "Overlay", description: An additional graphic overlaid over the whole icon coordinate space.}
 amplifierGroups:
 - details: {code: "3", id: EQUIP_MOBILITY}
   config: {}
   values:
-  - {code: "38", id: "MOUNTED", before: 41, label: "Mounted", bounds: {"1": {minX: 252.93, minY: 563.25, width: 106.15, height: 56.07}, "3": {minX: 252.93, minY: 538.25, width: 106.15, height: 56.07}, "4": {minX: 252.93, minY: 532.25, width: 106.15, height: 56.07}, "6": {minX: 252.93, minY: 554.25, width: 106.15, height: 56.07}}}
-  - {code: "39", id: "ANIMAL_DRAWN", before: 41, label: "Animal-drawn vehicle", bounds: {"1": {minX: 252.93, minY: 563.25, width: 106.15, height: 56.07}, "3": {minX: 252.93, minY: 538.25, width: 106.15, height: 56.07}, "4": {minX: 252.93, minY: 532.25, width: 106.15, height: 56.07}, "6": {minX: 252.93, minY: 554.25, width: 106.15, height: 56.07}}}
-  - {code: "3A", id: "CYCLE", before: 41, label: "Bicycle/Motorcycle", bounds: {"1": {minX: 238.89, minY: 563.75, width: 134.22, height: 55.07}, "3": {minX: 228.89, minY: 540.75, width: 152.22, height: 55.07}, "4": {minX: 229.39, minY: 525.5, width: 151.22, height: 55.07}, "6": {minX: 240.5, minY: 569.75, width: 131.0, height: 55.07}}}
+  - details: {code: "38", id: "MOUNTED", before: 41, label: "Mounted"}
+    bounds:
+      "1": {minX: 252.93, minY: 563.25, width: 106.15, height: 56.07}
+      "3": {minX: 252.93, minY: 538.25, width: 106.15, height: 56.07}
+      "4": {minX: 252.93, minY: 532.25, width: 106.15, height: 56.07}
+      "6": {minX: 252.93, minY: 554.25, width: 106.15, height: 56.07}
+  - details: {code: "39", id: "ANIMAL_DRAWN", before: 41, label: "Animal-drawn vehicle"}
+    bounds:
+      "1": {minX: 252.93, minY: 563.25, width: 106.15, height: 56.07}
+      "3": {minX: 252.93, minY: 538.25, width: 106.15, height: 56.07}
+      "4": {minX: 252.93, minY: 532.25, width: 106.15, height: 56.07}
+      "6": {minX: 252.93, minY: 554.25, width: 106.15, height: 56.07}
+  - details: {code: "3A", id: "CYCLE", before: 41, label: "Bicycle/Motorcycle"}
+    bounds:
+      "1": {minX: 252.96, minY: 567.19, width: 106.09, height: 47.7}
+      "3": {minX: 252.96, minY: 542.19, width: 106.09, height: 47.7}
+      "4": {minX: 252.96, minY: 536.19, width: 106.09, height: 47.7}
+      "6": {minX: 252.96, minY: 558.19, width: 106.09, height: 47.7}
 - details: {code: "7", id: LEADERSHIP_INDICATOR}
   config: {}
   values:
-  - {code: "73", id: "SENIOR_ENLISTED_ADVISOR", label: "Senior Enlisted Advisor", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
-  - {code: "74", id: "STAFF_J1", label: "J1 Personnel/Manpower", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
-  - {code: "75", id: "STAFF_J2", label: "J2 Intelligence/Security", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
-  - {code: "76", id: "STAFF_J3", label: "J3 Operations", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
-  - {code: "77", id: "STAFF_J4", label: "J4 Logistics", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
-  - {code: "78", id: "STAFF_J5", label: "J5 Plans", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
-  - {code: "79", id: "STAFF_J6", label: "J6 Signals/Communications", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
-  - {code: "7A", id: "STAFF_J7", label: "J7 Training/Military Education", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
-  - {code: "7B", id: "STAFF_J8", label: "J8 Finance/Contracts", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
-  - {code: "7C", id: "STAFF_J9", label: "J9 Civil-Military Co-operation", bounds: {"1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}, "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}, "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}, "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}}}
+  - details: {code: "73", id: "SENIOR_ENLISTED_ADVISOR", label: "Senior Enlisted Advisor"}
+    bounds:
+      "1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}
+      "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}
+      "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}
+      "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}
+  - details: {code: "74", id: "STAFF_J1", label: "J1 Personnel/Manpower"}
+    bounds:
+      "1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}
+      "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}
+      "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}
+      "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}
+  - details: {code: "75", id: "STAFF_J2", label: "J2 Intelligence/Security"}
+    bounds:
+      "1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}
+      "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}
+      "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}
+      "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}
+  - details: {code: "76", id: "STAFF_J3", label: "J3 Operations"}
+    bounds:
+      "1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}
+      "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}
+      "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}
+      "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}
+  - details: {code: "77", id: "STAFF_J4", label: "J4 Logistics"}
+    bounds:
+      "1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}
+      "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}
+      "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}
+      "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}
+  - details: {code: "78", id: "STAFF_J5", label: "J5 Plans"}
+    bounds:
+      "1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}
+      "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}
+      "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}
+      "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}
+  - details: {code: "79", id: "STAFF_J6", label: "J6 Signals/Communications"}
+    bounds:
+      "1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}
+      "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}
+      "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}
+      "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}
+  - details: {code: "7A", id: "STAFF_J7", label: "J7 Training/Military Education"}
+    bounds:
+      "1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}
+      "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}
+      "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}
+      "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}
+  - details: {code: "7B", id: "STAFF_J8", label: "J8 Finance/Contracts"}
+    bounds:
+      "1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}
+      "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}
+      "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}
+      "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}
+  - details: {code: "7C", id: "STAFF_J9", label: "J9 Civil-Military Co-operation"}
+    bounds:
+      "1": {minX: 132.28, minY: 183.0, width: 345.45, height: 127.26}
+      "3": {minX: 170.79, minY: 225.5, width: 268.41, height: 82.0}
+      "4": {minX: 167.5, minY: 193.63, width: 274.0, height: 60.0}
+      "6": {minX: 113.98, minY: 179.87, width: 382.04, height: 195.25}
 - details: {code: "8", id: SERVICE_TIER, label: "Service Tier", before: A1}
   config: {typeName: ServiceTier, graphicLocation: "Amplifier", standard: true, frameAmplifier: true, enumId: SERVICE_TIER, enumDesc: "Service Tiers", symbolSets: [LAND_UNIT]}
   values:
-  - {code: "1", id: "REGULARS", label: "Regulars", backgroundFill: "#80E0FF"}
-  - {code: "2", id: "CONSCRIPTS", label: "Conscripts", backgroundFill: "#FF8080"}
-  - {code: "3", id: "RESERVE_L1", label: "Reserve Level 1 (Regulars)", backgroundFill: "#AAFFAA"}
-  - {code: "4", id: "RESERVE_L2", label: "Reserve Level 2 (Volunteers)", backgroundFill: "#FFFF80"}
-  - {code: "5", id: "RESERVE_L3", label: "Reserve Level 3 (Militia)", backgroundFill: "#E68646"}
-  - {code: "6", id: "CONTRACTORS", label: "Civilian Contractors", backgroundFill: "#FFA1FF"}
+  - details: {code: "1", id: "REGULARS", label: "Regulars", backgroundFill: "#80E0FF"}
+  - details: {code: "2", id: "CONSCRIPTS", label: "Conscripts", backgroundFill: "#FF8080"}
+  - details: {code: "3", id: "RESERVE_L1", label: "Reserve Level 1 (Regulars)", backgroundFill: "#AAFFAA"}
+  - details: {code: "4", id: "RESERVE_L2", label: "Reserve Level 2 (Volunteers)", backgroundFill: "#FFFF80"}
+  - details: {code: "5", id: "RESERVE_L3", label: "Reserve Level 3 (Militia)", backgroundFill: "#E68646"}
+  - details: {code: "6", id: "CONTRACTORS", label: "Civilian Contractors", backgroundFill: "#FFA1FF"}
 - details: {code: "9", id: NATO_RANK, label: "NATO Ranks", before: A1}
-  config: {typeName: NatoRank, graphicLocation: "Amplifier", enumId: NATO_RANK, enumDesc: "NATO Standard Ranks"}
+  config: {typeName: NatoRank, graphicLocation: "NA", enumId: NATO_RANK, enumDesc: "NATO Standard Ranks"}
   values:
-  - {code: "11", id: "RANK_OR1", label: "OR-1"}
-  - {code: "12", id: "RANK_OR2", label: "OR-2"}
-  - {code: "13", id: "RANK_OR3", label: "OR-3"}
-  - {code: "14", id: "RANK_OR4", label: "OR-4"}
-  - {code: "15", id: "RANK_OR5", label: "OR-5"}
-  - {code: "16", id: "RANK_OR6", label: "OR-6"}
-  - {code: "17", id: "RANK_OR7", label: "OR-7"}
-  - {code: "18", id: "RANK_OR8", label: "OR-8"}
-  - {code: "19", id: "RANK_OR9", label: "OR-9"}
-  - {code: "21", id: "RANK_WO1", label: "WO-1"}
-  - {code: "22", id: "RANK_WO2", label: "WO-2"}
-  - {code: "23", id: "RANK_WO3", label: "WO-3"}
-  - {code: "24", id: "RANK_WO4", label: "WO-4"}
-  - {code: "25", id: "RANK_WO5", label: "WO-5"}
-  - {code: "2F", id: "RANK_OFD", label: "OF-D"}
-  - {code: "30", id: "RANK_OF1A", label: "OF-1A"}
-  - {code: "31", id: "RANK_OF1", label: "OF-1"}
-  - {code: "32", id: "RANK_OF2", label: "OF-2"}
-  - {code: "33", id: "RANK_OF3", label: "OF-3"}
-  - {code: "34", id: "RANK_OF4", label: "OF-4"}
-  - {code: "35", id: "RANK_OF5", label: "OF-5"}
-  - {code: "36", id: "RANK_OF6", label: "OF-6"}
-  - {code: "37", id: "RANK_OF7", label: "OF-7"}
-  - {code: "38", id: "RANK_OF8", label: "OF-8"}
-  - {code: "39", id: "RANK_OF9", label: "OF-9"}
-  - {code: "3A", id: "RANK_OF10", label: "OF-10"}
+  - details: {code: "11", id: "RANK_OR1", label: "OR-1"}
+  - details: {code: "12", id: "RANK_OR2", label: "OR-2"}
+  - details: {code: "13", id: "RANK_OR3", label: "OR-3"}
+  - details: {code: "14", id: "RANK_OR4", label: "OR-4"}
+  - details: {code: "15", id: "RANK_OR5", label: "OR-5"}
+  - details: {code: "16", id: "RANK_OR6", label: "OR-6"}
+  - details: {code: "17", id: "RANK_OR7", label: "OR-7"}
+  - details: {code: "18", id: "RANK_OR8", label: "OR-8"}
+  - details: {code: "19", id: "RANK_OR9", label: "OR-9"}
+  - details: {code: "21", id: "RANK_WO1", label: "WO-1"}
+  - details: {code: "22", id: "RANK_WO2", label: "WO-2"}
+  - details: {code: "23", id: "RANK_WO3", label: "WO-3"}
+  - details: {code: "24", id: "RANK_WO4", label: "WO-4"}
+  - details: {code: "25", id: "RANK_WO5", label: "WO-5"}
+  - details: {code: "2F", id: "RANK_OFD", label: "OF-D"}
+  - details: {code: "30", id: "RANK_OF1A", label: "OF-1A"}
+  - details: {code: "31", id: "RANK_OF1", label: "OF-1"}
+  - details: {code: "32", id: "RANK_OF2", label: "OF-2"}
+  - details: {code: "33", id: "RANK_OF3", label: "OF-3"}
+  - details: {code: "34", id: "RANK_OF4", label: "OF-4"}
+  - details: {code: "35", id: "RANK_OF5", label: "OF-5"}
+  - details: {code: "36", id: "RANK_OF6", label: "OF-6"}
+  - details: {code: "37", id: "RANK_OF7", label: "OF-7"}
+  - details: {code: "38", id: "RANK_OF8", label: "OF-8"}
+  - details: {code: "39", id: "RANK_OF9", label: "OF-9"}
+  - details: {code: "3A", id: "RANK_OF10", label: "OF-10"}
 - details: {code: "AA", id: COUNTRY_CODE}
   config: {}
   values:
-  - {code: "XAL", id: "XA", before: XXI, extension: true, label: "Scotland", remarks: "827"}
-  - {code: "XCW", id: "XY", before: XXI, extension: true, label: "Wales", remarks: "828"}
-  - {code: "HRO", id: "HX", extension: true, label: "Roman Empire", remarks: "990"}
-  - {code: "XRU", id: "X7", extension: true, label: "Ruritania", remarks: "991"}
-  - {code: "HDK", id: "HD", extension: true, label: "German Empire", remarks: "993"}
-  - {code: "HWB", id: "HW", extension: true, label: "Kingdom of Württemberg", remarks: "994"}
-  - {code: "HSX", id: "HS", extension: true, label: "Kingdom of Saxony", remarks: "995"}
-  - {code: "HBV", id: "HB", extension: true, label: "Kingdom of Bavaria", remarks: "996"}
-  - {code: "HPR", id: "HP", extension: true, label: "Kingdom of Prussia", remarks: "997"}
+  - details: {code: "XAL", id: "XA", before: XXI, extension: true, label: "Scotland", remarks: "827"}
+  - details: {code: "XCW", id: "XY", before: XXI, extension: true, label: "Wales", remarks: "828"}
+  - details: {code: "HRO", id: "HX", extension: true, label: "Roman Empire", remarks: "990"}
+  - details: {code: "XRU", id: "X7", extension: true, label: "Ruritania", remarks: "991"}
+  - details: {code: "HDK", id: "HD", extension: true, label: "German Empire", remarks: "993"}
+  - details: {code: "HWB", id: "HW", extension: true, label: "Kingdom of Württemberg", remarks: "994"}
+  - details: {code: "HSX", id: "HS", extension: true, label: "Kingdom of Saxony", remarks: "995"}
+  - details: {code: "HBV", id: "HB", extension: true, label: "Kingdom of Bavaria", remarks: "996"}
+  - details: {code: "HPR", id: "HP", extension: true, label: "Kingdom of Prussia", remarks: "997"}
 symbolSets:
 - details: {code: "00", id: COMMON}
   config: {useFrame: true}
   sectorOneMods:
-  - {groupId: 1, code: "A1", category: Capability, id: VERY_HEAVY, label: "Very Heavy"}
-  - {groupId: 2, code: "02", category: MissionArea, id: BOMBER, label: "Bomber"}
-  - {groupId: 2, code: "04", category: MissionArea, id: FIGHTER, label: "Fighter"}
-  - {groupId: 2, code: "05", category: MissionArea, id: INTERCEPTOR, label: "Interceptor"}
-  - {groupId: 2, code: "06", category: MissionArea, id: TANKER, label: "Tanker"}
-  - {groupId: 2, code: "09", category: MissionArea, id: PASSENGER, label: "Passenger"}
-  - {groupId: 2, code: "10", category: MissionArea, id: ULTRA_LIGHT, label: "Ultra Light"}
-  - {groupId: 2, code: "11", category: MissionArea, id: ACP, label: "Airborne Command Post (ACP)"}
-  - {groupId: 2, code: "12", category: MissionArea, id: AEW, label: "Airborne Early Warning (AEW)"}
-  - {groupId: 2, code: "13", category: MissionArea, id: GOV, label: "Government"}
-  - {groupId: 2, code: "16", category: MissionArea, id: EC, label: "Electronic Combat (EC)/Jammer"}
-  - {groupId: 2, code: "17", category: MissionArea, id: PATROL, label: "Patrol"}
-  - {groupId: 2, code: "18", category: MissionArea, id: RECON, label: "Reconnaissance"}
-  - {groupId: 2, code: "19", category: MissionArea, id: TRAINER, label: "Trainer"}
-  - {groupId: 2, code: "20", category: MissionArea, id: PHOTO, label: "Photographic (Reconnaissance)"}
-  - {groupId: 2, code: "21", category: MissionArea, id: PERSONNEL_RECOVERY, label: "Personnel Recovery"}
-  - {groupId: 2, code: "23", category: MissionArea, id: COMMS, label: "Communications"}
-  - {groupId: 2, code: "24", category: MissionArea, id: ESM, label: "Electronic Support Measures (ESM)"}
-  - {groupId: 2, code: "29", category: MissionArea, id: VIP, label: "Very Important Person (VIP) Transport"}
-  - {groupId: 2, code: "30", category: MissionArea, id: CSAR, label: "Combat Search and Rescue (CSAR)"}
-  - {groupId: 2, code: "31", category: MissionArea, id: SUPP_EAD, label: "Suppression of Enemy Air Defenses"}
-  - {groupId: 2, code: "32", category: MissionArea, id: ASUW, label: "Antisurface Warfare"}
-  - {groupId: 2, code: "33", category: MissionArea, id: FB, label: "Fighter/Bomber"}
-  - {groupId: 2, code: "34", category: MissionArea, id: IC, label: "Intensive Care"}
-  - {groupId: 2, code: "35", category: MissionArea, id: EA, label: "Electronic Attack (EA)"}
-  - {groupId: 2, code: "36", category: MissionArea, id: MULTIMISSION, label: "Multimission"}
-  - {groupId: 2, code: "A1", category: MissionArea, id: LIAISON, label: "Liaison"}
-  - {groupId: 2, code: "A2", category: MissionArea, id: WEATHER, label: "Weather"}
-  - {groupId: 2, code: "A3", category: MissionArea, id: ES, label: "Electronic Surveillance Measures (ES)"}
-  - {groupId: 2, code: "A4", category: MissionArea, id: OBSERVATION, label: "Observation"}
+  - details: {groupId: 1, code: "A1", category: Capability, id: VERY_HEAVY, label: "Very Heavy"}
+  - details: {groupId: 2, code: "02", category: MissionArea, id: BOMBER, label: "Bomber"}
+  - details: {groupId: 2, code: "04", category: MissionArea, id: FIGHTER, label: "Fighter"}
+  - details: {groupId: 2, code: "05", category: MissionArea, id: INTERCEPTOR, label: "Interceptor"}
+  - details: {groupId: 2, code: "06", category: MissionArea, id: TANKER, label: "Tanker"}
+  - details: {groupId: 2, code: "09", category: MissionArea, id: PASSENGER, label: "Passenger"}
+  - details: {groupId: 2, code: "10", category: MissionArea, id: ULTRA_LIGHT, label: "Ultra Light"}
+  - details: {groupId: 2, code: "11", category: MissionArea, id: ACP, label: "Airborne Command Post (ACP)"}
+  - details: {groupId: 2, code: "12", category: MissionArea, id: AEW, label: "Airborne Early Warning (AEW)"}
+  - details: {groupId: 2, code: "13", category: MissionArea, id: GOV, label: "Government"}
+  - details: {groupId: 2, code: "16", category: MissionArea, id: EC, label: "Electronic Combat (EC)/Jammer"}
+  - details: {groupId: 2, code: "17", category: MissionArea, id: PATROL, label: "Patrol"}
+  - details: {groupId: 2, code: "18", category: MissionArea, id: RECON, label: "Reconnaissance"}
+  - details: {groupId: 2, code: "19", category: MissionArea, id: TRAINER, label: "Trainer"}
+  - details: {groupId: 2, code: "20", category: MissionArea, id: PHOTO, label: "Photographic (Reconnaissance)"}
+  - details: {groupId: 2, code: "21", category: MissionArea, id: PERSONNEL_RECOVERY, label: "Personnel Recovery"}
+  - details: {groupId: 2, code: "23", category: MissionArea, id: COMMS, label: "Communications"}
+  - details: {groupId: 2, code: "24", category: MissionArea, id: ESM, label: "Electronic Support Measures (ESM)"}
+  - details: {groupId: 2, code: "29", category: MissionArea, id: VIP, label: "Very Important Person (VIP) Transport"}
+  - details: {groupId: 2, code: "30", category: MissionArea, id: CSAR, label: "Combat Search and Rescue (CSAR)"}
+  - details: {groupId: 2, code: "31", category: MissionArea, id: SUPP_EAD, label: "Suppression of Enemy Air Defenses"}
+  - details: {groupId: 2, code: "32", category: MissionArea, id: ASUW, label: "Antisurface Warfare"}
+  - details: {groupId: 2, code: "33", category: MissionArea, id: FB, label: "Fighter/Bomber"}
+  - details: {groupId: 2, code: "34", category: MissionArea, id: IC, label: "Intensive Care"}
+  - details: {groupId: 2, code: "35", category: MissionArea, id: EA, label: "Electronic Attack (EA)"}
+  - details: {groupId: 2, code: "36", category: MissionArea, id: MULTIMISSION, label: "Multimission"}
+  - details: {groupId: 2, code: "A1", category: MissionArea, id: LIAISON, label: "Liaison"}
+  - details: {groupId: 2, code: "A2", category: MissionArea, id: WEATHER, label: "Weather"}
+  - details: {groupId: 2, code: "A3", category: MissionArea, id: ES, label: "Electronic Surveillance Measures (ES)"}
+  - details: {groupId: 2, code: "A4", category: MissionArea, id: OBSERVATION, label: "Observation"}
   sectorTwoMods:
-  - {groupId: 1, code: "A1", category: Capability, id: VERY_HEAVY, label: "Very Heavy"}
-  - {groupId: 1, code: "A2", category: Capability, id: VERY_LONG_RANGE, label: "Very Long Range"}
-  - {groupId: 2, code: "A1", category: MissionArea, id: BOMBER, label: "Bomber"}
-  - {groupId: 2, code: "A2", category: MissionArea, id: FIGHTER, label: "Fighter"}
-  - {groupId: 2, code: "A3", category: MissionArea, id: INTERCEPTOR, label: "Interceptor"}
-  - {groupId: 2, code: "A4", category: MissionArea, id: TANKER, label: "Tanker"}
-  - {groupId: 2, code: "A5", category: MissionArea, id: PASSENGER, label: "Passenger"}
-  - {groupId: 2, code: "A6", category: MissionArea, id: ULTRA_LIGHT, label: "Ultra Light"}
-  - {groupId: 2, code: "A7", category: MissionArea, id: ACP, label: "Airborne Command Post (ACP)"}
-  - {groupId: 2, code: "A8", category: MissionArea, id: AEW, label: "Airborne Early Warning (AEW)"}
-  - {groupId: 2, code: "A9", category: MissionArea, id: GOV, label: "Government"}
-  - {groupId: 2, code: "AA", category: MissionArea, id: EC, label: "Electronic Combat (EC)/Jammer"}
-  - {groupId: 2, code: "AB", category: MissionArea, id: PATROL, label: "Patrol"}
-  - {groupId: 2, code: "AC", category: MissionArea, id: RECON, label: "Reconnaissance"}
-  - {groupId: 2, code: "AD", category: MissionArea, id: TRAINER, label: "Trainer"}
-  - {groupId: 2, code: "AE", category: MissionArea, id: PHOTO, label: "Photographic (Reconnaissance)"}
-  - {groupId: 2, code: "AF", category: MissionArea, id: PERSONNEL_RECOVERY, label: "Personnel Recovery"}
-  - {groupId: 2, code: "B1", category: MissionArea, id: COMMS, label: "Communications"}
-  - {groupId: 2, code: "B2", category: MissionArea, id: ESM, label: "Electronic Support Measures (ESM)"}
-  - {groupId: 2, code: "B3", category: MissionArea, id: VIP, label: "Very Important Person (VIP) Transport"}
-  - {groupId: 2, code: "B4", category: MissionArea, id: CSAR, label: "Combat Search and Rescue (CSAR)"}
-  - {groupId: 2, code: "B5", category: MissionArea, id: SUPP_EAD, label: "Suppression of Enemy Air Defenses"}
-  - {groupId: 2, code: "B6", category: MissionArea, id: ASUW, label: "Antisurface Warfare"}
-  - {groupId: 2, code: "B7", category: MissionArea, id: FB, label: "Fighter/Bomber"}
-  - {groupId: 2, code: "B8", category: MissionArea, id: IC, label: "Intensive Care"}
-  - {groupId: 2, code: "B9", category: MissionArea, id: EA, label: "Electronic Attack (EA)"}
-  - {groupId: 2, code: "BA", category: MissionArea, id: MULTIMISSION, label: "Multimission"}
-  - {groupId: 2, code: "BB", category: MissionArea, id: LIAISON, label: "Liaison"}
-  - {groupId: 2, code: "BC", category: MissionArea, id: ESCORT, label: "Escort"}
-  - {groupId: 2, code: "BD", category: MissionArea, id: CARGO, label: "Cargo/Transport"}
-  - {groupId: 2, code: "BE", category: MissionArea, id: WEATHER, label: "Weather"}
-  - {groupId: 2, code: "BF", category: MissionArea, id: OBSERVATION, label: "Observation"}
-  - {groupId: 2, code: "C1", category: Capability, id: DAY, label: "Day"}
-  - {groupId: 2, code: "C2", category: Capability, id: NIGHT, label: "Night"}
-  - {groupId: 2, code: "C3", category: Capability, id: ALL_WEATHER, label: "All Weather"}
-  - {groupId: 2, code: "C4", category: Capability, id: DIVE, label: "Dive"}
-  - {groupId: 2, code: "D1", category: Mobility, id: PARACHUTE, label: "Parachute"}
+  - details: {groupId: 1, code: "A1", category: Capability, id: VERY_HEAVY, label: "Very Heavy"}
+  - details: {groupId: 1, code: "A2", category: Capability, id: VERY_LONG_RANGE, label: "Very Long Range"}
+  - details: {groupId: 2, code: "A1", category: MissionArea, id: BOMBER, label: "Bomber"}
+  - details: {groupId: 2, code: "A2", category: MissionArea, id: FIGHTER, label: "Fighter"}
+  - details: {groupId: 2, code: "A3", category: MissionArea, id: INTERCEPTOR, label: "Interceptor"}
+  - details: {groupId: 2, code: "A4", category: MissionArea, id: TANKER, label: "Tanker"}
+  - details: {groupId: 2, code: "A5", category: MissionArea, id: PASSENGER, label: "Passenger"}
+  - details: {groupId: 2, code: "A6", category: MissionArea, id: ULTRA_LIGHT, label: "Ultra Light"}
+  - details: {groupId: 2, code: "A7", category: MissionArea, id: ACP, label: "Airborne Command Post (ACP)"}
+  - details: {groupId: 2, code: "A8", category: MissionArea, id: AEW, label: "Airborne Early Warning (AEW)"}
+  - details: {groupId: 2, code: "A9", category: MissionArea, id: GOV, label: "Government"}
+  - details: {groupId: 2, code: "AA", category: MissionArea, id: EC, label: "Electronic Combat (EC)/Jammer"}
+  - details: {groupId: 2, code: "AB", category: MissionArea, id: PATROL, label: "Patrol"}
+  - details: {groupId: 2, code: "AC", category: MissionArea, id: RECON, label: "Reconnaissance"}
+  - details: {groupId: 2, code: "AD", category: MissionArea, id: TRAINER, label: "Trainer"}
+  - details: {groupId: 2, code: "AE", category: MissionArea, id: PHOTO, label: "Photographic (Reconnaissance)"}
+  - details: {groupId: 2, code: "AF", category: MissionArea, id: PERSONNEL_RECOVERY, label: "Personnel Recovery"}
+  - details: {groupId: 2, code: "B1", category: MissionArea, id: COMMS, label: "Communications"}
+  - details: {groupId: 2, code: "B2", category: MissionArea, id: ESM, label: "Electronic Support Measures (ESM)"}
+  - details: {groupId: 2, code: "B3", category: MissionArea, id: VIP, label: "Very Important Person (VIP) Transport"}
+  - details: {groupId: 2, code: "B4", category: MissionArea, id: CSAR, label: "Combat Search and Rescue (CSAR)"}
+  - details: {groupId: 2, code: "B5", category: MissionArea, id: SUPP_EAD, label: "Suppression of Enemy Air Defenses"}
+  - details: {groupId: 2, code: "B6", category: MissionArea, id: ASUW, label: "Antisurface Warfare"}
+  - details: {groupId: 2, code: "B7", category: MissionArea, id: FB, label: "Fighter/Bomber"}
+  - details: {groupId: 2, code: "B8", category: MissionArea, id: IC, label: "Intensive Care"}
+  - details: {groupId: 2, code: "B9", category: MissionArea, id: EA, label: "Electronic Attack (EA)"}
+  - details: {groupId: 2, code: "BA", category: MissionArea, id: MULTIMISSION, label: "Multimission"}
+  - details: {groupId: 2, code: "BB", category: MissionArea, id: LIAISON, label: "Liaison"}
+  - details: {groupId: 2, code: "BC", category: MissionArea, id: ESCORT, label: "Escort"}
+  - details: {groupId: 2, code: "BD", category: MissionArea, id: CARGO, label: "Cargo/Transport"}
+  - details: {groupId: 2, code: "BE", category: MissionArea, id: WEATHER, label: "Weather"}
+  - details: {groupId: 2, code: "BF", category: MissionArea, id: OBSERVATION, label: "Observation"}
+  - details: {groupId: 2, code: "C1", category: Capability, id: DAY, label: "Day"}
+  - details: {groupId: 2, code: "C2", category: Capability, id: NIGHT, label: "Night"}
+  - details: {groupId: 2, code: "C3", category: Capability, id: ALL_WEATHER, label: "All Weather"}
+  - details: {groupId: 2, code: "C4", category: Capability, id: DIVE, label: "Dive"}
+  - details: {groupId: 2, code: "D1", category: Mobility, id: PARACHUTE, label: "Parachute"}
 - details: {code: "01", id: AIR}
   config: {useFrame: true}
   amplifierGuides:
@@ -153,49 +275,49 @@ symbolSets:
     entityTypes:
     - details: {code: "01", id: FIXED_WING}
       entitySubTypes:
-      - {code: "A1", id: ES, graphicType: MAIN, label: "Electronic Surveillance Measures (ES)"}
-      - {code: "A2", id: LN, graphicType: MAIN, label: "Liaison (LN)"}
-      - {code: "A3", id: OBSERVATION, graphicType: MAIN, label: "Observation"}
+      - details: {code: "A1", id: ES, graphicType: MAIN, label: "Electronic Surveillance Measures (ES)"}
+      - details: {code: "A2", id: LN, graphicType: MAIN, label: "Liaison (LN)"}
+      - details: {code: "A3", id: OBSERVATION, graphicType: MAIN, label: "Observation"}
   sectorOneMods:
-  - {code: "A1", category: MissionArea, id: LIAISON, label: "Liaison"}
-  - {code: "A2", category: MissionArea, id: WEATHER, label: "Weather"}
-  - {code: "A3", category: MissionArea, id: ES, label: "Electronic Surveillance Measures (ES)"}
-  - {code: "A4", category: MissionArea, id: OBSERVATION, label: "Observation"}
+  - details: {code: "A1", category: MissionArea, id: LIAISON, label: "Liaison"}
+  - details: {code: "A2", category: MissionArea, id: WEATHER, label: "Weather"}
+  - details: {code: "A3", category: MissionArea, id: ES, label: "Electronic Surveillance Measures (ES)"}
+  - details: {code: "A4", category: MissionArea, id: OBSERVATION, label: "Observation"}
   sectorTwoMods:
-  - {code: "A1", category: MissionArea, id: BOMBER, label: "Bomber"}
-  - {code: "A2", category: MissionArea, id: FIGHTER, label: "Fighter"}
-  - {code: "A3", category: MissionArea, id: INTERCEPTOR, label: "Interceptor"}
-  - {code: "A4", category: MissionArea, id: TANKER, label: "Tanker"}
-  - {code: "A5", category: MissionArea, id: PASSENGER, label: "Passenger"}
-  - {code: "A6", category: MissionArea, id: ULTRA_LIGHT, label: "Ultra Light"}
-  - {code: "A7", category: MissionArea, id: ACP, label: "Airborne Command Post (ACP)"}
-  - {code: "A8", category: MissionArea, id: AEW, label: "Airborne Early Warning (AEW)"}
-  - {code: "A9", category: MissionArea, id: GOV, label: "Government"}
-  - {code: "AA", category: MissionArea, id: EC, label: "Electronic Combat (EC)/Jammer"}
-  - {code: "AB", category: MissionArea, id: PATROL, label: "Patrol"}
-  - {code: "AC", category: MissionArea, id: RECON, label: "Reconnaissance"}
-  - {code: "AD", category: MissionArea, id: TRAINER, label: "Trainer"}
-  - {code: "AE", category: MissionArea, id: PHOTO, label: "Photographic (Reconnaissance)"}
-  - {code: "AF", category: MissionArea, id: PERSONNEL_RECOVERY, label: "Personnel Recovery"}
-  - {code: "B1", category: MissionArea, id: COMMS, label: "Communications"}
-  - {code: "B2", category: MissionArea, id: ESM, label: "Electronic Support Measures (ESM)"}
-  - {code: "B3", category: MissionArea, id: VIP, label: "Very Important Person (VIP) Transport"}
-  - {code: "B4", category: MissionArea, id: CSAR, label: "Combat Search and Rescue (CSAR)"}
-  - {code: "B5", category: MissionArea, id: SUPP_EAD, label: "Suppression of Enemy Air Defenses"}
-  - {code: "B6", category: MissionArea, id: ASUW, label: "Antisurface Warfare"}
-  - {code: "B7", category: MissionArea, id: FB, label: "Fighter/Bomber"}
-  - {code: "B8", category: MissionArea, id: IC, label: "Intensive Care"}
-  - {code: "B9", category: MissionArea, id: EA, label: "Electronic Attack (EA)"}
-  - {code: "BA", category: MissionArea, id: MULTIMISSION, label: "Multimission"}
-  - {code: "BB", category: MissionArea, id: LIAISON, label: "Liaison"}
-  - {code: "BC", category: MissionArea, id: ESCORT, label: "Escort"}
-  - {code: "BD", category: MissionArea, id: CARGO, label: "Cargo/Transport"}
-  - {code: "BE", category: MissionArea, id: WEATHER, label: "Weather"}
-  - {code: "BF", category: MissionArea, id: OBSERVATION, label: "Observation"}
-  - {code: "C1", category: Capability, id: DAY, label: "Day"}
-  - {code: "C2", category: Capability, id: NIGHT, label: "Night"}
-  - {code: "C3", category: Capability, id: ALL_WEATHER, label: "All Weather"}
-  - {code: "C4", category: Capability, id: DIVE, label: "Dive"}
+  - details: {code: "A1", category: MissionArea, id: BOMBER, label: "Bomber"}
+  - details: {code: "A2", category: MissionArea, id: FIGHTER, label: "Fighter"}
+  - details: {code: "A3", category: MissionArea, id: INTERCEPTOR, label: "Interceptor"}
+  - details: {code: "A4", category: MissionArea, id: TANKER, label: "Tanker"}
+  - details: {code: "A5", category: MissionArea, id: PASSENGER, label: "Passenger"}
+  - details: {code: "A6", category: MissionArea, id: ULTRA_LIGHT, label: "Ultra Light"}
+  - details: {code: "A7", category: MissionArea, id: ACP, label: "Airborne Command Post (ACP)"}
+  - details: {code: "A8", category: MissionArea, id: AEW, label: "Airborne Early Warning (AEW)"}
+  - details: {code: "A9", category: MissionArea, id: GOV, label: "Government"}
+  - details: {code: "AA", category: MissionArea, id: EC, label: "Electronic Combat (EC)/Jammer"}
+  - details: {code: "AB", category: MissionArea, id: PATROL, label: "Patrol"}
+  - details: {code: "AC", category: MissionArea, id: RECON, label: "Reconnaissance"}
+  - details: {code: "AD", category: MissionArea, id: TRAINER, label: "Trainer"}
+  - details: {code: "AE", category: MissionArea, id: PHOTO, label: "Photographic (Reconnaissance)"}
+  - details: {code: "AF", category: MissionArea, id: PERSONNEL_RECOVERY, label: "Personnel Recovery"}
+  - details: {code: "B1", category: MissionArea, id: COMMS, label: "Communications"}
+  - details: {code: "B2", category: MissionArea, id: ESM, label: "Electronic Support Measures (ESM)"}
+  - details: {code: "B3", category: MissionArea, id: VIP, label: "Very Important Person (VIP) Transport"}
+  - details: {code: "B4", category: MissionArea, id: CSAR, label: "Combat Search and Rescue (CSAR)"}
+  - details: {code: "B5", category: MissionArea, id: SUPP_EAD, label: "Suppression of Enemy Air Defenses"}
+  - details: {code: "B6", category: MissionArea, id: ASUW, label: "Antisurface Warfare"}
+  - details: {code: "B7", category: MissionArea, id: FB, label: "Fighter/Bomber"}
+  - details: {code: "B8", category: MissionArea, id: IC, label: "Intensive Care"}
+  - details: {code: "B9", category: MissionArea, id: EA, label: "Electronic Attack (EA)"}
+  - details: {code: "BA", category: MissionArea, id: MULTIMISSION, label: "Multimission"}
+  - details: {code: "BB", category: MissionArea, id: LIAISON, label: "Liaison"}
+  - details: {code: "BC", category: MissionArea, id: ESCORT, label: "Escort"}
+  - details: {code: "BD", category: MissionArea, id: CARGO, label: "Cargo/Transport"}
+  - details: {code: "BE", category: MissionArea, id: WEATHER, label: "Weather"}
+  - details: {code: "BF", category: MissionArea, id: OBSERVATION, label: "Observation"}
+  - details: {code: "C1", category: Capability, id: DAY, label: "Day"}
+  - details: {code: "C2", category: Capability, id: NIGHT, label: "Night"}
+  - details: {code: "C3", category: Capability, id: ALL_WEATHER, label: "All Weather"}
+  - details: {code: "C4", category: Capability, id: DIVE, label: "Dive"}
 - details: {code: "02", id: AIR_MISSILE}
   config: {useFrame: true}
   amplifierGuides:
@@ -218,7 +340,7 @@ symbolSets:
     entityTypes:
     - details: {code: "03", id: FIELD_ARTILLERY}
       entitySubTypes:
-      - {code: "A1", id: FA_HORSE, graphicType: FULL_FRAME, label: "Horse Artillery"}
+      - details: {code: "A1", id: FA_HORSE, graphicType: FULL_FRAME, label: "Horse Artillery"}
     - details: {code: "A1", id: SIEGE_ARTILLERY, graphicType: MAIN, label: "Siege Artillery"}
   - details: {code: "16", id: SUSTAINMENT}
     entityTypes:
@@ -230,8 +352,8 @@ symbolSets:
     - details: {code: "39", id: US_SUPPLY_CLASS_III, graphicType: FULL_FRAME, label: "US Supply Class III", before: 40}
     - details: {code: "41", id: US_SUPPLY_CLASS_V, graphicType: FULL_FRAME, label: "US Supply Class V", before: 42}
   sectorTwoMods:
-  - {code: "A1", category: Mobility, id: HORSE_DRAWN, label: "Horse-Drawn"}
-  - {code: "A2", category: Capability, id: LIGHT_INFANTRY, label: "Light Infantry"}
+  - details: {code: "A1", category: Mobility, id: HORSE_DRAWN, label: "Horse-Drawn"}
+  - details: {code: "A2", category: Capability, id: LIGHT_INFANTRY, label: "Light Infantry"}
 - details: {code: "11", id: LAND_CIVILIAN}
   config: {useFrame: true}
   amplifierGuides:
@@ -295,104 +417,104 @@ symbolSets:
     entityTypes:
     - details: {code: "01", id: SERVICE, graphicType: NA, label: "Service Branch", before: '02'}
       entitySubTypes:
-      - {code: "01", id: AVIATION, graphicType: FULL_OCTAGON, label: "Aviation"}
-      - {code: "02", id: MUSIC, graphicType: FULL_OCTAGON, label: "Music"}
-      - {code: "03", id: CBRN, graphicType: FULL_OCTAGON, label: "CBRN"}
-      - {code: "05", id: ENGINEERS, graphicType: FULL_OCTAGON, label: "Engineers"}
-      - {code: "06", id: ARTILLERY, graphicType: FULL_OCTAGON, label: "Artillery"}
-      - {code: "07", id: INFANTRY, graphicType: FULL_OCTAGON, label: "Infantry"}
-      - {code: "08", id: MEDICAL, graphicType: FULL_OCTAGON, label: "Medical"}
-      - {code: "09", id: ORDNANCE, graphicType: FULL_OCTAGON, label: "Ordnance"}
-      - {code: "10", id: QUARTERMASTER, graphicType: FULL_OCTAGON, label: "Quartermaster"}
-      - {code: "11", id: SIGNAL, graphicType: FULL_OCTAGON, label: "Signals"}
-      - {code: "12", id: ADMINISTRATION, graphicType: FULL_OCTAGON, label: "Administration"}
-      - {code: "14", id: FINANCE, graphicType: FULL_OCTAGON, label: "Finance"}
-      - {code: "16", id: RELIGIOUS_SUPPORT, graphicType: FULL_OCTAGON, label: "Religious Support"}
-      - {code: "17", id: ARMOUR, graphicType: FULL_OCTAGON, label: "Armour"}
-      - {code: "18", id: RECONNAISSANCE, graphicType: FULL_OCTAGON, label: "Reconnaissance"}
-      - {code: "19", id: MILITARY_POLICE, graphicType: FULL_OCTAGON, label: "Military Police"}
-      - {code: "20", id: GENERAL, graphicType: FULL_OCTAGON, label: "General"}
-      - {code: "27", id: LEGAL, graphicType: FULL_OCTAGON, label: "Legal"}
-      - {code: "29", id: COMBAT, graphicType: FULL_OCTAGON, label: "Combat"}
-      - {code: "30", id: MILITARY_INTELLIGENCE, graphicType: FULL_OCTAGON, label: "Military Intelligence"}
-      - {code: "31", id: SPECIAL_FORCES, graphicType: FULL_OCTAGON, label: "Special Forces"}
-      - {code: "32", id: SECURITY_SERVICE, graphicType: FULL_OCTAGON, label: "Security"}
-      - {code: "33", id: PSYCHOLOGICAL_OPERATIONS, graphicType: FULL_OCTAGON, label: "Psychological Operations (MISO)"}
-      - {code: "34", id: CYBER, graphicType: FULL_OCTAGON, label: "Cyber"}
-      - {code: "37", id: COMBAT_SUPPORT, graphicType: FULL_OCTAGON, label: "Combat Support (Maneuver Enhancement)"}
-      - {code: "40", id: SPACE, graphicType: FULL_OCTAGON, label: "Space Operations"}
-      - {code: "41", id: CIVIL_AFFAIRS, graphicType: FULL_OCTAGON, label: "Civil Affairs"}
-      - {code: "43", id: MAINTENANCE, graphicType: FULL_OCTAGON, label: "Maintenance"}
-      - {code: "44", id: AIR_DEFENCE_ARTILLERY, graphicType: FULL_OCTAGON, label: "Air Defence Artillery"}
-      - {code: "45", id: PUBLIC_AFFAIRS, graphicType: FULL_OCTAGON, label: "Public Affairs"}
-      - {code: "53", id: INFORMATION_OPERATIONS, graphicType: FULL_OCTAGON, label: "Information Operations"}
-      - {code: "54", id: LOGISTICS, graphicType: FULL_OCTAGON, label: "Logistics"}
-      - {code: "55", id: TRANSPORTATION, graphicType: FULL_OCTAGON, label: "Transportation"}
-      - {code: "63", id: COMBAT_SERVICE_SUPPORT, graphicType: FULL_OCTAGON, label: "Combat Service Support (Sustainment)"}
-      - {code: "71", id: TACTICAL_CYBER, graphicType: FULL_OCTAGON, label: "Tactical Cyber"}
-      - {code: "90", id: ACQUISITION, graphicType: FULL_OCTAGON, label: "Acquisition"}
-      - {code: "97", id: TRAINING_EDUCATION, graphicType: FULL_OCTAGON, label: "Training/Education"}
-      - {code: "99", id: NAVAL, graphicType: FULL_OCTAGON, label: "Naval"}
+      - details: {code: "01", id: AVIATION, graphicType: FULL_OCTAGON, label: "Aviation"}
+      - details: {code: "02", id: MUSIC, graphicType: FULL_OCTAGON, label: "Music"}
+      - details: {code: "03", id: CBRN, graphicType: FULL_OCTAGON, label: "CBRN"}
+      - details: {code: "05", id: ENGINEERS, graphicType: FULL_OCTAGON, label: "Engineers"}
+      - details: {code: "06", id: ARTILLERY, graphicType: FULL_OCTAGON, label: "Artillery"}
+      - details: {code: "07", id: INFANTRY, graphicType: FULL_OCTAGON, label: "Infantry"}
+      - details: {code: "08", id: MEDICAL, graphicType: FULL_OCTAGON, label: "Medical"}
+      - details: {code: "09", id: ORDNANCE, graphicType: FULL_OCTAGON, label: "Ordnance"}
+      - details: {code: "10", id: QUARTERMASTER, graphicType: FULL_OCTAGON, label: "Quartermaster"}
+      - details: {code: "11", id: SIGNAL, graphicType: FULL_OCTAGON, label: "Signals"}
+      - details: {code: "12", id: ADMINISTRATION, graphicType: FULL_OCTAGON, label: "Administration"}
+      - details: {code: "14", id: FINANCE, graphicType: FULL_OCTAGON, label: "Finance"}
+      - details: {code: "16", id: RELIGIOUS_SUPPORT, graphicType: FULL_OCTAGON, label: "Religious Support"}
+      - details: {code: "17", id: ARMOUR, graphicType: FULL_OCTAGON, label: "Armour"}
+      - details: {code: "18", id: RECONNAISSANCE, graphicType: FULL_OCTAGON, label: "Reconnaissance"}
+      - details: {code: "19", id: MILITARY_POLICE, graphicType: FULL_OCTAGON, label: "Military Police"}
+      - details: {code: "20", id: GENERAL, graphicType: FULL_OCTAGON, label: "General"}
+      - details: {code: "27", id: LEGAL, graphicType: FULL_OCTAGON, label: "Legal"}
+      - details: {code: "29", id: COMBAT, graphicType: FULL_OCTAGON, label: "Combat"}
+      - details: {code: "30", id: MILITARY_INTELLIGENCE, graphicType: FULL_OCTAGON, label: "Military Intelligence"}
+      - details: {code: "31", id: SPECIAL_FORCES, graphicType: FULL_OCTAGON, label: "Special Forces"}
+      - details: {code: "32", id: SECURITY_SERVICE, graphicType: FULL_OCTAGON, label: "Security"}
+      - details: {code: "33", id: PSYCHOLOGICAL_OPERATIONS, graphicType: FULL_OCTAGON, label: "Psychological Operations (MISO)"}
+      - details: {code: "34", id: CYBER, graphicType: FULL_OCTAGON, label: "Cyber"}
+      - details: {code: "37", id: COMBAT_SUPPORT, graphicType: FULL_OCTAGON, label: "Combat Support (Maneuver Enhancement)"}
+      - details: {code: "40", id: SPACE, graphicType: FULL_OCTAGON, label: "Space Operations"}
+      - details: {code: "41", id: CIVIL_AFFAIRS, graphicType: FULL_OCTAGON, label: "Civil Affairs"}
+      - details: {code: "43", id: MAINTENANCE, graphicType: FULL_OCTAGON, label: "Maintenance"}
+      - details: {code: "44", id: AIR_DEFENCE_ARTILLERY, graphicType: FULL_OCTAGON, label: "Air Defence Artillery"}
+      - details: {code: "45", id: PUBLIC_AFFAIRS, graphicType: FULL_OCTAGON, label: "Public Affairs"}
+      - details: {code: "53", id: INFORMATION_OPERATIONS, graphicType: FULL_OCTAGON, label: "Information Operations"}
+      - details: {code: "54", id: LOGISTICS, graphicType: FULL_OCTAGON, label: "Logistics"}
+      - details: {code: "55", id: TRANSPORTATION, graphicType: FULL_OCTAGON, label: "Transportation"}
+      - details: {code: "63", id: COMBAT_SERVICE_SUPPORT, graphicType: FULL_OCTAGON, label: "Combat Service Support (Sustainment)"}
+      - details: {code: "71", id: TACTICAL_CYBER, graphicType: FULL_OCTAGON, label: "Tactical Cyber"}
+      - details: {code: "90", id: ACQUISITION, graphicType: FULL_OCTAGON, label: "Acquisition"}
+      - details: {code: "97", id: TRAINING_EDUCATION, graphicType: FULL_OCTAGON, label: "Training/Education"}
+      - details: {code: "99", id: NAVAL, graphicType: FULL_OCTAGON, label: "Naval"}
     - details: {code: "02", id: TASK}
       entitySubTypes:
-      - {code: "A0", id: STAFF, graphicType: MAIN, label: "Staff"}
-      - {code: "A1", id: DRIVER, graphicType: MAIN, label: "Driver"}
-      - {code: "A2", id: GUNNER, graphicType: MAIN, label: "Gunner"}
-      - {code: "A3", id: LOADER, graphicType: MAIN, label: "Loader"}
-      - {code: "A4", id: PILOT, graphicType: MAIN, label: "Pilot"}
-      - {code: "A5", id: NAVIGATOR, graphicType: MAIN, label: "Navigator"}
-      - {code: "A6", id: FLIGHT_ENGINEER, graphicType: MAIN, label: "Flight Engineer"}
-      - {code: "A7", id: LOADMASTER, graphicType: MAIN, label: "Loadmaster"}
-      - {code: "A8", id: OPERATOR, graphicType: MAIN, label: "Operator"}
-      - {code: "A9", id: SURVEYOR, graphicType: MAIN, label: "Topographical Surveyor"}
-      - {code: "AA", id: MUSICIAN, graphicType: MAIN, label: "Musician"}
-      - {code: "AB", id: FOOD_PROVISION, graphicType: MAIN, label: "Food Provision/Chef"}
-      - {code: "AC", id: ANALYST, graphicType: MAIN, label: "Analyst"}
-      - {code: "AD", id: INSTRUCTOR, graphicType: MAIN, label: "Instructor"}
-      - {code: "AE", id: DETECTIVE, graphicType: MAIN, label: "Detective"}
-      - {code: "AF", id: UAS_OPERATOR, graphicType: MAIN, label: "UAS Operator"}
-      - {code: "B0", id: AVIATION_TECHNICIAN, graphicType: MAIN, label: "Aviation Technician"}
-      - {code: "B1", id: AVIATION_OPERATIONS, graphicType: MAIN, label: "Aviation Operations"}
-      - {code: "B2", id: WATERCRAFT_OPERATOR, graphicType: MAIN, label: "Watercraft Operator"}
-      - {code: "B3", id: METEOROLOGIST, graphicType: MAIN, label: "Meteorologist"}
-      - {code: "B4", id: DIVER, graphicType: MAIN, label: "Diver"}
-      - {code: "B5", id: FIREFIGHTER, graphicType: MAIN, label: "Firefighter"}
-      - {code: "B6", id: DOG_HANDLER, graphicType: MAIN, label: "DogHandler"}
-      - {code: "B7", id: VETERINARY, graphicType: FULL_OCTAGON, label: "Veterinary"}
-      - {code: "B8", id: DENTIST, graphicType: FULL_OCTAGON, label: "Dentist"}
-      - {code: "B9", id: NURSE, graphicType: FULL_OCTAGON, label: "Nurse"}
-      - {code: "BA", id: SEAPORT_OPERATOR, graphicType: MAIN, label: "Sea Port Operator"}
-      - {code: "BB", id: AIRPORT_OPERATOR, graphicType: MAIN, label: "Airport Operator"}
-      - {code: "BC", id: RAILWAY_OPERATOR, graphicType: MAIN, label: "Railway Operator"}
+      - details: {code: "A0", id: STAFF, graphicType: MAIN, label: "Staff"}
+      - details: {code: "A1", id: DRIVER, graphicType: MAIN, label: "Driver"}
+      - details: {code: "A2", id: GUNNER, graphicType: MAIN, label: "Gunner"}
+      - details: {code: "A3", id: LOADER, graphicType: MAIN, label: "Loader"}
+      - details: {code: "A4", id: PILOT, graphicType: MAIN, label: "Pilot"}
+      - details: {code: "A5", id: NAVIGATOR, graphicType: MAIN, label: "Navigator"}
+      - details: {code: "A6", id: FLIGHT_ENGINEER, graphicType: MAIN, label: "Flight Engineer"}
+      - details: {code: "A7", id: LOADMASTER, graphicType: MAIN, label: "Loadmaster"}
+      - details: {code: "A8", id: OPERATOR, graphicType: MAIN, label: "Operator"}
+      - details: {code: "A9", id: SURVEYOR, graphicType: MAIN, label: "Topographical Surveyor"}
+      - details: {code: "AA", id: MUSICIAN, graphicType: MAIN, label: "Musician"}
+      - details: {code: "AB", id: FOOD_PROVISION, graphicType: MAIN, label: "Food Provision/Chef"}
+      - details: {code: "AC", id: ANALYST, graphicType: MAIN, label: "Analyst"}
+      - details: {code: "AD", id: INSTRUCTOR, graphicType: MAIN, label: "Instructor"}
+      - details: {code: "AE", id: DETECTIVE, graphicType: MAIN, label: "Detective"}
+      - details: {code: "AF", id: UAS_OPERATOR, graphicType: MAIN, label: "UAS Operator"}
+      - details: {code: "B0", id: AVIATION_TECHNICIAN, graphicType: MAIN, label: "Aviation Technician"}
+      - details: {code: "B1", id: AVIATION_OPERATIONS, graphicType: MAIN, label: "Aviation Operations"}
+      - details: {code: "B2", id: WATERCRAFT_OPERATOR, graphicType: MAIN, label: "Watercraft Operator"}
+      - details: {code: "B3", id: METEOROLOGIST, graphicType: MAIN, label: "Meteorologist"}
+      - details: {code: "B4", id: DIVER, graphicType: MAIN, label: "Diver"}
+      - details: {code: "B5", id: FIREFIGHTER, graphicType: MAIN, label: "Firefighter"}
+      - details: {code: "B6", id: DOG_HANDLER, graphicType: MAIN, label: "DogHandler"}
+      - details: {code: "B7", id: VETERINARY, graphicType: FULL_OCTAGON, label: "Veterinary"}
+      - details: {code: "B8", id: DENTIST, graphicType: FULL_OCTAGON, label: "Dentist"}
+      - details: {code: "B9", id: NURSE, graphicType: FULL_OCTAGON, label: "Nurse"}
+      - details: {code: "BA", id: SEAPORT_OPERATOR, graphicType: MAIN, label: "Sea Port Operator"}
+      - details: {code: "BB", id: AIRPORT_OPERATOR, graphicType: MAIN, label: "Airport Operator"}
+      - details: {code: "BC", id: RAILWAY_OPERATOR, graphicType: MAIN, label: "Railway Operator"}
   sectorOneMods:
-  - {code: "A0", category: Echelon, id: STAFFEL, before: 51, label: "Staffel"}
-  - {code: "A1", category: Echelon, id: BRIGADE, label: "Brigade"}
-  - {code: "A2", category: Echelon, id: DIVISION, label: "Division"}
-  - {code: "A3", category: Echelon, id: CORPS, label: "Corps/MEF"}
-  - {code: "A4", category: Echelon, id: ARMY, label: "Army"}
-  - {code: "A5", category: Echelon, id: ARMY_GROUP, label: "Army Group/Front"}
-  - {code: "A6", category: Echelon, id: THEATRE, label: "Theatre/Region"}
-  - {code: "A7", category: Echelon, id: COMMAND, label: "Command"}
+  - details: {code: "A0", category: Echelon, id: STAFFEL, before: 51, label: "Staffel"}
+  - details: {code: "A1", category: Echelon, id: BRIGADE, label: "Brigade"}
+  - details: {code: "A2", category: Echelon, id: DIVISION, label: "Division"}
+  - details: {code: "A3", category: Echelon, id: CORPS, label: "Corps/MEF"}
+  - details: {code: "A4", category: Echelon, id: ARMY, label: "Army"}
+  - details: {code: "A5", category: Echelon, id: ARMY_GROUP, label: "Army Group/Front"}
+  - details: {code: "A6", category: Echelon, id: THEATRE, label: "Theatre/Region"}
+  - details: {code: "A7", category: Echelon, id: COMMAND, label: "Command"}
   sectorTwoMods:
-  - {code: "A1", category: Rank, id: OFA, label: "OF-1A"}
-  - {code: "A2", category: Rank, id: CIV, label: "Civilian"}
-  - {code: "A3", category: FunctionalStaffArea, id: CDR, label: "Commander"}
-  - {code: "A4", category: FunctionalStaffArea, id: SIC, label: "Second-in-Command"}
-  - {code: "A5", category: FunctionalStaffArea, id: SEA, label: "Senior Enlisted Advisor"}
-  - {code: "B1", category: Crew, id: COMMAND_CONTROL_MOD2, label: "Command/Control"}
-  - {code: "B2", category: Crew, id: DRIVER_MOD2, label: "Driver"}
-  - {code: "B3", category: Crew, id: GUNNER_MOD2, label: "Gunner"}
-  - {code: "B4", category: Crew, id: LOADER_MOD2, label: "Loader"}
-  - {code: "B5", category: Crew, id: PILOT_MOD2, label: "Pilot"}
-  - {code: "B6", category: Crew, id: NAVIGATOR_MOD2, label: "Navigator"}
-  - {code: "B7", category: Crew, id: FLIGHT_ENGINEER_MOD2, label: "Flight Engineer"}
-  - {code: "B8", category: Crew, id: OPERATOR_MOD2, label: "Operator"}
-  - {code: "B9", category: Crew, id: OBSERVER_MOD2, label: "Observer"}
-  - {code: "BA", category: Crew, id: SIGNAL_MOD2, label: "Signal"}
-  - {code: "BB", category: Crew, id: MEDICAL_MOD2, label: "Medical"}
-  - {code: "BC", category: Crew, id: LOGISTICS_MOD2, label: "Logistics"}
-  - {code: "BD", category: Crew, id: MAINTENANCE_MOD2, label: "Maintenance"}
-  - {code: "BE", category: Crew, id: FAO_MOD2, label: "FAO"}
+  - details: {code: "A1", category: Rank, id: OFA, label: "OF-1A"}
+  - details: {code: "A2", category: Rank, id: CIV, label: "Civilian"}
+  - details: {code: "A3", category: FunctionalStaffArea, id: CDR, label: "Commander"}
+  - details: {code: "A4", category: FunctionalStaffArea, id: SIC, label: "Second-in-Command"}
+  - details: {code: "A5", category: FunctionalStaffArea, id: SEA, label: "Senior Enlisted Advisor"}
+  - details: {code: "B1", category: Crew, id: COMMAND_CONTROL_MOD2, label: "Command/Control"}
+  - details: {code: "B2", category: Crew, id: DRIVER_MOD2, label: "Driver"}
+  - details: {code: "B3", category: Crew, id: GUNNER_MOD2, label: "Gunner"}
+  - details: {code: "B4", category: Crew, id: LOADER_MOD2, label: "Loader"}
+  - details: {code: "B5", category: Crew, id: PILOT_MOD2, label: "Pilot"}
+  - details: {code: "B6", category: Crew, id: NAVIGATOR_MOD2, label: "Navigator"}
+  - details: {code: "B7", category: Crew, id: FLIGHT_ENGINEER_MOD2, label: "Flight Engineer"}
+  - details: {code: "B8", category: Crew, id: OPERATOR_MOD2, label: "Operator"}
+  - details: {code: "B9", category: Crew, id: OBSERVER_MOD2, label: "Observer"}
+  - details: {code: "BA", category: Crew, id: SIGNAL_MOD2, label: "Signal"}
+  - details: {code: "BB", category: Crew, id: MEDICAL_MOD2, label: "Medical"}
+  - details: {code: "BC", category: Crew, id: LOGISTICS_MOD2, label: "Logistics"}
+  - details: {code: "BD", category: Crew, id: MAINTENANCE_MOD2, label: "Maintenance"}
+  - details: {code: "BE", category: Crew, id: FAO_MOD2, label: "FAO"}
 - details: {code: "30", id: SEA_SURFACE}
   config: {useFrame: true}
   amplifierGuides:

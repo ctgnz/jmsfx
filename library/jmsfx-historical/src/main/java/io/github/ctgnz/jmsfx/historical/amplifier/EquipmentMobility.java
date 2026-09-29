@@ -180,6 +180,17 @@ public enum EquipmentMobility implements StandardAmplifierItem {
                     default -> Rectangle2D.EMPTY;
                 };
             }
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+                    case "1" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,616.323 280.965,566.25 306.001,616.323 331.037,566.25 356.073,616.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
+                    case "3" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,591.323 280.965,541.25 306.001,591.323 331.037,541.25 356.073,591.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
+                    case "4" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,585.323 280.965,535.25 306.001,585.323 331.037,535.25 356.073,585.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
+                    case "6" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,607.323 280.965,557.25 306.001,607.323 331.037,557.25 356.073,607.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
+                    default -> null;
+                };
+            }
         },
         ANIMAL_DRAWN("39", "Animal-drawn vehicle") {
             @Override
@@ -192,16 +203,38 @@ public enum EquipmentMobility implements StandardAmplifierItem {
                     default -> Rectangle2D.EMPTY;
                 };
             }
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+                    case "1" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,616.323 280.965,566.25 306.001,616.323 331.037,566.25 356.073,616.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
+                    case "3" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,591.323 280.965,541.25 306.001,591.323 331.037,541.25 356.073,591.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
+                    case "4" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,585.323 280.965,535.25 306.001,585.323 331.037,535.25 356.073,585.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
+                    case "6" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,607.323 280.965,557.25 306.001,607.323 331.037,557.25 356.073,607.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
+                    default -> null;
+                };
+            }
         },
         CYCLE("3A", "Bicycle/Motorcycle") {
             @Override
             public Rectangle2D getAmplifierBounds(StandardIdentity identity) {
                 return switch (identity.getGroupId()) {
-                    case "1" -> new Rectangle2D(238.89, 563.75, 134.22, 55.07);
-                    case "3" -> new Rectangle2D(228.89, 540.75, 152.22, 55.07);
-                    case "4" -> new Rectangle2D(229.39, 525.5, 151.22, 55.07);
-                    case "6" -> new Rectangle2D(240.5, 569.75, 131, 55.07);
+                    case "1" -> new Rectangle2D(252.96, 567.19, 106.09, 47.7);
+                    case "3" -> new Rectangle2D(252.96, 542.19, 106.09, 47.7);
+                    case "4" -> new Rectangle2D(252.96, 536.19, 106.09, 47.7);
+                    case "6" -> new Rectangle2D(252.96, 558.19, 106.09, 47.7);
                     default -> Rectangle2D.EMPTY;
+                };
+            }
+
+            @Override
+            public String getGraphicMarkup(StandardIdentity identity) {
+                return switch (identity.getGroupId()) {
+                    case "1" -> "<g id=\"amplifier\" transform=\"translate(-4.6166,59.39864)\">\n    <circle cx=\"281.17471\" cy=\"613.34528\" r=\"21.10037\" style=\"fill:none;stroke:#000000;stroke-width:5;stroke-dasharray:none\" transform=\"translate(0,-81.45725)\"/>\n    <circle cx=\"340.05948\" cy=\"613.34528\" r=\"21.10037\" style=\"fill:none;stroke:#000000;stroke-width:5;stroke-dasharray:none\" transform=\"translate(0,-81.45725)\"/>\n    <polyline fill=\"none\" points=\"255.928,591.323 356.073,591.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\" transform=\"matrix(0.6007,0,0,1,127.54494,-80.53537)\"/>\n  </g>";
+                    case "3" -> "<g id=\"amplifier\" transform=\"translate(-4.6166,34.39864)\">\n    <circle cx=\"281.17471\" cy=\"613.34528\" r=\"21.10037\" style=\"fill:none;stroke:#000000;stroke-width:5;stroke-dasharray:none\" transform=\"translate(0,-81.45725)\"/>\n    <circle cx=\"340.05948\" cy=\"613.34528\" r=\"21.10037\" style=\"fill:none;stroke:#000000;stroke-width:5;stroke-dasharray:none\" transform=\"translate(0,-81.45725)\"/>\n    <polyline fill=\"none\" points=\"255.928,591.323 356.073,591.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\" transform=\"matrix(0.6007,0,0,1,127.54494,-80.53537)\"/>\n  </g>";
+                    case "4" -> "<g id=\"amplifier\" transform=\"translate(-4.6166,28.39864)\">\n    <circle cx=\"281.17471\" cy=\"613.34528\" r=\"21.10037\" style=\"fill:none;stroke:#000000;stroke-width:5;stroke-dasharray:none\" transform=\"translate(0,-81.45725)\"/>\n    <circle cx=\"340.05948\" cy=\"613.34528\" r=\"21.10037\" style=\"fill:none;stroke:#000000;stroke-width:5;stroke-dasharray:none\" transform=\"translate(0,-81.45725)\"/>\n    <polyline fill=\"none\" points=\"255.928,591.323 356.073,591.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\" transform=\"matrix(0.6007,0,0,1,127.54494,-80.53537)\"/>\n  </g>";
+                    case "6" -> "<g id=\"amplifier\" transform=\"translate(-4.6166,50.39864)\">\n    <circle cx=\"281.17471\" cy=\"613.34528\" r=\"21.10037\" style=\"fill:none;stroke:#000000;stroke-width:5;stroke-dasharray:none\" transform=\"translate(0,-81.45725)\"/>\n    <circle cx=\"340.05948\" cy=\"613.34528\" r=\"21.10037\" style=\"fill:none;stroke:#000000;stroke-width:5;stroke-dasharray:none\" transform=\"translate(0,-81.45725)\"/>\n    <polyline fill=\"none\" points=\"255.928,591.323 356.073,591.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\" transform=\"matrix(0.6007,0,0,1,127.54494,-80.53537)\"/>\n  </g>";
+                    default -> null;
                 };
             }
         },

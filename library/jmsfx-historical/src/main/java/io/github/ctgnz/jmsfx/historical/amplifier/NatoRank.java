@@ -47,7 +47,7 @@ public enum NatoRank implements AmplifierListItem {
 
     @Override
     public String getGraphicLocation() {
-        return "Amplifier";
+        return "NA";
     }
 
     @Override
@@ -68,7 +68,7 @@ public enum NatoRank implements AmplifierListItem {
     /** A frame amplifier recolours the frame rather than drawing, and a list with no graphic location has no drawings to reach. */
     @Override
     public boolean isGraphicalIcon() {
-        return true;
+        return false;
     }
 
 }

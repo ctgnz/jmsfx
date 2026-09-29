@@ -1,5 +1,7 @@
 package io.github.ctgnz.jmsfx.historical.landunits;
 
+import javafx.geometry.Rectangle2D;
+
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
 import io.github.ctgnz.jmsfx.historical.SymbolSetEnum;
@@ -298,6 +300,11 @@ public enum LandUnitsSectorTwoModifier implements SectorTwoModifier {
             @Override
             public String getGraphicMarkup() {
                 return "<g id=\"mod2\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"123.5\" x2=\"488.5\" y1=\"445.01501\" y2=\"445.295\"/>\n  </g>";
+            }
+
+            @Override
+            public Rectangle2D getModifierBounds() {
+                return new Rectangle2D(121, 442.52, 370, 5.28);
             }
         },
         NAVY_BARGE_SELF_PROPELLED("64", "Navy Barge Self-Propelled", ModifierCategory.Capability) {
