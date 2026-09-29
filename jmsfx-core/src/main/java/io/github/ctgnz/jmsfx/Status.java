@@ -16,8 +16,12 @@ public interface Status extends CodeElement {
      * literal here, so the status id beside it is free; were both renderings implemented, that position would have to carry which one was meant. jmsfx-historical uses the room: it
      * adds {@code 6}, Present/Extinct, beyond the six APP-6E defines.
      */
-    default String getGraphicLocation(StandardIdentity identity, SymbolSet symbolSet) {
-        return String.format("/svg/OCA/0%s%s%s2.svg", identity.getGroupId(), symbolSet.getFrameId(), getId());
+    default String getGraphicKey(StandardIdentity identity, SymbolSet symbolSet) {
+        return String.format("/svg/Status/%s/%s/%s.svg", symbolSet.getDimension()
+            .getName(),
+            identity.getGroup()
+                .getName(),
+            getName());
     }
 
     default boolean isFrameStatus() {
@@ -32,6 +36,13 @@ public interface Status extends CodeElement {
 
     default String getFrameId(StandardIdentity identity) {
         return identity.isConfirmed() ? getId() : "0";
+    }
+
+    /**
+     * The name of the status a frame is drawn for: this one when the identity is confirmed, and Present otherwise - the same collapse {@link #getFrameId(StandardIdentity)} does.
+     */
+    default String getFrameName(StandardIdentity identity) {
+        return identity.isConfirmed() ? getName() : "PRESENT";
     }
 
     default boolean isSupported(SymbolSet symbolSet) {

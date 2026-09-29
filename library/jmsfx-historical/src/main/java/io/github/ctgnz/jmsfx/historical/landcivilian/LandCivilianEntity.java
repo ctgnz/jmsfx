@@ -43,6 +43,11 @@ public enum LandCivilianEntity implements Entity {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.LAND_CIVILIAN;
     }

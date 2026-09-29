@@ -40,7 +40,7 @@ public final class FreeCanvasIcons {
 
         /** A fragment filed beside this one, searched through the tree rather than resolved against this one's directory - which may be a root that holds nothing. */
         public Path sibling(FragmentTree tree, String siblingIdentifier) {
-            return tree.resolve("Appendices", location, siblingIdentifier + ".svg");
+            return tree.resolve("Dimensions", location, siblingIdentifier + ".svg");
         }
     }
 
@@ -71,12 +71,12 @@ public final class FreeCanvasIcons {
             }
             // Asked for only once there is something to file, so a set that contributes no free canvas
             // icons is never required to say where fragments it does not have would live.
-            String location = graphicLocation(model, symbolSet);
+            String location = baseDimension(model, symbolSet);
             if (location == null) {
-                throw new IllegalStateException(String.format("symbol set %s has free canvas icons but no graphic location", symbolSet.getLabel()));
+                throw new IllegalStateException(String.format("symbol set %s has free canvas icons but no dimension", symbolSet.getLabel()));
             }
             identifiers.forEach((identifier, entry) -> icons.add(new Icon(identifier, entry.label(), symbolSet.getLabel(), entry.graphicType(), entry.element(), location,
-                                                                          tree.resolve("Appendices", location, identifier + ".svg"))));
+                                                                          tree.resolve("Dimensions", location, identifier + ".svg"))));
         }
         return icons;
     }
@@ -90,24 +90,20 @@ public final class FreeCanvasIcons {
         Map<String, Entry> identifiers = new LinkedHashMap<>();
         for (EntityModel entity : symbolSet.getEntities()) {
             if (wanted.test(entity.getGraphicType())) {
-                identifiers.put(baseCode(model, symbolSet, entity) + entity.getCode() + "0000", new Entry(entity.getLabel(), entity.getGraphicType(), entity));
+                identifiers.put(entity.getId(), new Entry(entity.getLabel(), entity.getGraphicType(), entity));
             }
         }
         for (EntityTypeModel entityType : symbolSet.getEntityTypes()) {
             if (wanted.test(entityType.getGraphicType())) {
-                EntityModel entity = entityType.getEntity();
-                String identifier = entityType.getGraphic() != null ? entityType.getGraphic()
-                    : baseCode(model, symbolSet, entity) + entity.getCode() + entityType.getCode() + "00";
-                identifiers.put(identifier, new Entry(entityType.getLabel(), entityType.getGraphicType(), entityType));
+                identifiers.put(entityType.getEntity()
+                    .getId() + "/" + entityType.getId(), new Entry(entityType.getLabel(), entityType.getGraphicType(), entityType));
             }
         }
         for (EntitySubTypeModel subType : symbolSet.getEntitySubTypes()) {
             if (wanted.test(subType.getGraphicType())) {
                 EntityTypeModel entityType = subType.getEntityType();
-                EntityModel entity = entityType.getEntity();
-                String identifier = subType.getGraphic() != null ? subType.getGraphic()
-                    : baseCode(model, symbolSet, entity) + entity.getCode() + entityType.getCode() + subType.getCode();
-                identifiers.put(identifier, new Entry(subType.getLabel(), subType.getGraphicType(), subType));
+                identifiers.put(entityType.getEntity()
+                    .getId() + "/" + entityType.getId() + "/" + subType.getId(), new Entry(subType.getLabel(), subType.getGraphicType(), subType));
             }
         }
         return identifiers;
@@ -121,17 +117,25 @@ public final class FreeCanvasIcons {
      * in the first case and per class in the second, so both end up at the same identifier; reading only the entity's left every variant set resolving to fragments that do not
      * exist.
      */
-    static String baseCode(LibraryModel model, SymbolSetModel symbolSet, EntityModel entity) {
+    static String baseDimension(LibraryModel model, SymbolSetModel symbolSet) {
+        return dimensionOf(model, baseSymbolSet(model, symbolSet, null));
+    }
+
+    /** The dimension a symbol set belongs to, which names its directory. */
+    private static String dimensionOf(LibraryModel model, SymbolSetModel symbolSet) {
+        return symbolSet == null ? null : symbolSet.getDimensionId();
+    }
+
+    static SymbolSetModel baseSymbolSet(LibraryModel model, SymbolSetModel symbolSet, EntityModel entity) {
         String baseId = entity != null && entity.getBaseSymbolSet() != null ? entity.getBaseSymbolSet() : symbolSet.getBaseSymbolSet();
         if (baseId == null) {
-            return symbolSet.getCode();
+            return symbolSet;
         }
         return model.getSymbolSets()
             .stream()
             .filter(candidate -> baseId.equals(candidate.getId()))
             .findFirst()
-            .map(SymbolSetModel::getCode)
-            .orElse(symbolSet.getCode());
+            .orElse(symbolSet);
     }
 
     /** Where a symbol set's fragments live, which falls back to the dimension's directory when the set does not name its own - as {@code SymbolSetEnum} does. */

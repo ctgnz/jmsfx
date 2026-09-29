@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -17,7 +15,6 @@ import io.github.ctgnz.jmsfx.StandardIdentityGroup;
 
 public class StandardIdentityGroupImpl extends CodeElementImpl implements StandardIdentityGroup {
 
-    private final StringProperty graphicSuffix = new SimpleStringProperty();
     private final ObservableList<StandardIdentity> identities = FXCollections.observableArrayList();
 
     public StandardIdentityGroupImpl() {
@@ -26,7 +23,6 @@ public class StandardIdentityGroupImpl extends CodeElementImpl implements Standa
     @SuppressWarnings("this-escape")
     public StandardIdentityGroupImpl(StandardIdentityGroup identityGroup) {
         super(identityGroup);
-        this.graphicSuffix.set(identityGroup.getGraphicSuffix());
         this.identities.setAll(identityGroup.getIdentities()
             .stream()
             .map(this::createIdentityAdapter)
@@ -47,17 +43,8 @@ public class StandardIdentityGroupImpl extends CodeElementImpl implements Standa
     }
 
     @Override
-    public String getGraphicSuffix() {
-        return graphicSuffix.get();
-    }
-
-    @Override
     public List<StandardIdentity> getIdentities() {
         return identities;
-    }
-
-    public StringProperty graphicSuffixProperty() {
-        return graphicSuffix;
     }
 
     @Override

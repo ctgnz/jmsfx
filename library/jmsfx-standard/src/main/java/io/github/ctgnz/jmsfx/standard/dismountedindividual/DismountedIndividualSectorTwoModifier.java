@@ -243,6 +243,11 @@ public enum DismountedIndividualSectorTwoModifier implements SectorTwoModifier {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.DISMOUNTED;
     }

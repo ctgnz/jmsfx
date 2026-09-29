@@ -17,8 +17,8 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 })
 public class StandardIdentityModel extends AbstractModel {
 
-    private static final Set<String> KNOWN_IDENTITIES = Set.of("SI_UNKNOWN", "SI_FRIEND", "SI_NEUTRAL", "SI_HOSTILE_FAKER");
-    private static final Set<String> HOSTILE_IDENTITIES = Set.of("SI_SUSPECT_JOKER", "SI_HOSTILE_FAKER");
+    private static final Set<String> KNOWN_IDENTITIES = Set.of("UNKNOWN", "FRIEND", "NEUTRAL", "HOSTILE_FAKER");
+    private static final Set<String> HOSTILE_IDENTITIES = Set.of("SUSPECT_JOKER", "HOSTILE_FAKER");
     private String groupID;
 
     public StandardIdentityModel() {

@@ -375,7 +375,7 @@ public enum CommonSectorOneModifier implements SectorOneModifier {
 
     @Override
     public String getGraphicIdentifier() {
-        return String.format("C1%s%s", getGroupId(), getId());
+        return getName();
     }
 
     @Override
@@ -391,6 +391,11 @@ public enum CommonSectorOneModifier implements SectorOneModifier {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

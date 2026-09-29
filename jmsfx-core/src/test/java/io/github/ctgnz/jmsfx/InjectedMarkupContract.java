@@ -105,14 +105,14 @@ public abstract class InjectedMarkupContract {
                 String markup = modifier.getGraphicMarkup();
                 if (markup != null) {
                     checked++;
-                    compare(modifier.getFullGraphicLocation(), "mod1", markup, wrong);
+                    compare(modifier.getGraphicKey(), "mod1", markup, wrong);
                 }
             }
             for (SectorTwoModifier modifier : symbolSet.getSectorTwoModifiers()) {
                 String markup = modifier.getGraphicMarkup();
                 if (markup != null) {
                     checked++;
-                    compare(modifier.getFullGraphicLocation(), "mod2", markup, wrong);
+                    compare(modifier.getGraphicKey(), "mod2", markup, wrong);
                 }
             }
         }
@@ -143,7 +143,7 @@ public abstract class InjectedMarkupContract {
                         continue;
                     }
                     checked++;
-                    compare(symbolSet.getFrameLocation(identity, status, false), "frame", markup, wrong);
+                    compare(symbolSet.getFrameKey(identity, status, false), "frame", markup, wrong);
                 }
             }
         }
@@ -171,7 +171,7 @@ public abstract class InjectedMarkupContract {
                         continue;
                     }
                     checked++;
-                    compare(status.getGraphicLocation(identity, symbolSet), "oca", markup, wrong);
+                    compare(status.getGraphicKey(identity, symbolSet), "oca", markup, wrong);
                 }
             }
         }
@@ -194,7 +194,7 @@ public abstract class InjectedMarkupContract {
                         continue;
                     }
                     checked++;
-                    compare(hqtfDummy.getGraphicLocation(identity, symbolSet), "hqtffd", markup, wrong);
+                    compare(hqtfDummy.getGraphicKey(identity, symbolSet), "hqtffd", markup, wrong);
                 }
             }
         }
@@ -221,7 +221,7 @@ public abstract class InjectedMarkupContract {
                         continue;
                     }
                     checked++;
-                    compare(item.getGraphicLocation(identity), item.getGraphicLocation()
+                    compare(item.getGraphicKey(identity), item.getGraphicLocation()
                         .toLowerCase(Locale.ROOT), markup, wrong);
                 }
             }
@@ -242,7 +242,7 @@ public abstract class InjectedMarkupContract {
                 continue;
             }
             checked++;
-            compare(context.getOverlayGraphicLocation(), "frame_overlay", markup, wrong);
+            compare(context.getOverlayGraphicKey(), "frame_overlay", markup, wrong);
         }
         assertThat(checked, is(greaterThan(1)));
         assertThat(wrong, is(List.of()));
@@ -428,7 +428,7 @@ public abstract class InjectedMarkupContract {
                 continue;
             }
             checked++;
-            compare(element.getGraphicLocation(identity), rootsOf(element), markup, wrong);
+            compare(element.getGraphicKey(identity), rootsOf(element), markup, wrong);
         }
         return checked;
     }

@@ -80,8 +80,8 @@ public enum ContextEnum implements Context {
     }
 
     @Override
-    public String getOverlayGraphicLocation() {
-        return String.format("/svg/Frames/Overlay/%s.svg", id);
+    public String getName() {
+        return name();
     }
 
     @Override

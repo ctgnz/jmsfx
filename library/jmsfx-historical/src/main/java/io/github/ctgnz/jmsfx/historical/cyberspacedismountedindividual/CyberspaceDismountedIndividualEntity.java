@@ -50,6 +50,11 @@ public enum CyberspaceDismountedIndividualEntity implements Entity {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.CYBERSPACE_DISMOUNTED;
     }

@@ -75,7 +75,7 @@ public enum SeaSurfaceEntityType implements EntityType {
                 return "<g id=\"main\">\n    <path d=\"M323.053,441.079c-44.975,0-92.593-36.461-92.593-81.434\" fill=\"none\" stroke=\"#000000\" stroke-width=\"16.4513\"/>\n    <polyline fill=\"none\" points=\"234.778,385.878 313.982,352.038 313.988,404.285 379.25,356.457\" stroke=\"#000000\" stroke-width=\"16.4513\"/>\n  </g>";
             }
         },
-        AUX("01", "Auxiliary Ship", SeaSurfaceEntity.MILITARY_NON_COMBAT, GraphicType.MAIN) {
+        AUXILIARY("01", "Auxiliary Ship", SeaSurfaceEntity.MILITARY_NON_COMBAT, GraphicType.MAIN) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"130\" id=\"AA\" transform=\"matrix(1 0 0 1 209.5 443.0146)\">AA</text>\n  </g>";
@@ -155,6 +155,11 @@ public enum SeaSurfaceEntityType implements EntityType {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

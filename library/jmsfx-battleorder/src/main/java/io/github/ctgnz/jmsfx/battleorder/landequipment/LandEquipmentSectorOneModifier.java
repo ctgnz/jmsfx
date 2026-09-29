@@ -63,6 +63,11 @@ public enum LandEquipmentSectorOneModifier implements SectorOneModifier {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.LAND_EQUIPMENT;
     }

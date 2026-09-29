@@ -2,8 +2,6 @@ package io.github.ctgnz.jmsfx.historical.controlmeasure;
 
 import java.util.List;
 
-import javafx.geometry.Rectangle2D;
-
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.StandardIdentity;
@@ -23,11 +21,6 @@ public enum ControlMeasureEntity implements Entity {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return "<svg:g font-style=\"normal\" id=\"main\">\n    <svg:g font-style=\"normal\">\n      <svg:line fill=\"none\" font-style=\"normal\" stroke=\"#000000\" stroke-width=\"10\" x1=\"205.5\" x2=\"205.5\" y1=\"221\" y2=\"571\"/>\n      <svg:line fill=\"none\" font-style=\"normal\" stroke=\"#000000\" stroke-width=\"10\" x1=\"405.5\" x2=\"405.5\" y1=\"221\" y2=\"571\"/>\n    </svg:g>\n    <svg:circle cx=\"305.5\" cy=\"396.5\" font-style=\"normal\" r=\"50\" stroke=\"#000000\"/>\n  </svg:g><svg:g display=\"inline\" font-style=\"normal\" id=\"template\">\n    <svg:g display=\"inline\" font-style=\"normal\" transform=\"translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1) translate(0 -1)\">\n      <svg:text dx=\"0.0\" dy=\"0.0\" fill=\"#0000FF\" font-family=\"sans-serif\" font-size=\"24\" font-style=\"normal\" transform=\"matrix(1 0 0 1 254 396)\" x=\"0\" y=\"0\">CENTER</svg:text>\n      <svg:text dx=\"0.0\" dy=\"0.0\" fill=\"#0000FF\" font-family=\"sans-serif\" font-size=\"24\" font-style=\"normal\" stroke=\"#000000\" transform=\"matrix(1 0 0 1 254 396)\" x=\"0\" y=\"0\">CENTER</svg:text>\n      <svg:text dx=\"0.0\" dy=\"0.0\" fill=\"#0000FF\" font-family=\"sans-serif\" font-size=\"24\" font-style=\"normal\" transform=\"matrix(1 0 0 1 265 421)\" x=\"0\" y=\"0\">POINT</svg:text>\n      <svg:text dx=\"0.0\" dy=\"0.0\" fill=\"#0000FF\" font-family=\"sans-serif\" font-size=\"24\" font-style=\"normal\" stroke=\"#000000\" transform=\"matrix(1 0 0 1 265 421)\" x=\"0\" y=\"0\">POINT</svg:text>\n    </svg:g>\n    <svg:g display=\"inline\" font-style=\"normal\" transform=\"translate(0 1) translate(0 1) translate(0 1) translate(0 1) translate(200 143) scale(1 0.7931) translate(-200 -143) translate(200 143) scale(1 0.93478) translate(-200 -143)\">\n      <svg:line fill=\"none\" font-style=\"normal\" stroke=\"#0000FF\" stroke-width=\"3\" x1=\"305\" x2=\"305\" y1=\"354.256\" y2=\"409.256\"/>\n      <svg:polygon fill=\"#FFFFFF\" font-style=\"normal\" points=\"305,412.256 298,397.256 312,397.256\" stroke=\"#0000FF\"/>\n    </svg:g>\n  </svg:g>";
-            }
-
-            @Override
-            public Rectangle2D getIconBounds() {
-                return new Rectangle2D(200.5, 221, 210, 350);
             }
         },
         AIRSPACE_CONTROL_LINES("19", "Airspace Control Lines", GraphicType.NA),
@@ -73,6 +66,11 @@ public enum ControlMeasureEntity implements Entity {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

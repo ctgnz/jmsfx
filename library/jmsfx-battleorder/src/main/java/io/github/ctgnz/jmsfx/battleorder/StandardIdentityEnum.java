@@ -6,16 +6,16 @@ import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.StandardIdentityGroup;
 
 public enum StandardIdentityEnum implements StandardIdentity {
-        SI_PENDING("0", StandardIdentityGroupEnum.SIG_UNKNOWN, "Pending"),
-        SI_UNKNOWN("1", StandardIdentityGroupEnum.SIG_UNKNOWN, "Unknown"),
-        SI_ASSUMED_FRIEND("2", StandardIdentityGroupEnum.SIG_FRIEND, "Assumed Friend"),
-        SI_FRIEND("3", StandardIdentityGroupEnum.SIG_FRIEND, "Friend"),
-        SI_NEUTRAL("4", StandardIdentityGroupEnum.SIG_NEUTRAL, "Neutral"),
-        SI_SUSPECT_JOKER("5", StandardIdentityGroupEnum.SIG_HOSTILE, "Suspect/Joker"),
-        SI_HOSTILE_FAKER("6", StandardIdentityGroupEnum.SIG_HOSTILE, "Hostile/Faker");
+        PENDING("0", StandardIdentityGroupEnum.UNKNOWN, "Pending"),
+        UNKNOWN("1", StandardIdentityGroupEnum.UNKNOWN, "Unknown"),
+        ASSUMED_FRIEND("2", StandardIdentityGroupEnum.FRIEND, "Assumed Friend"),
+        FRIEND("3", StandardIdentityGroupEnum.FRIEND, "Friend"),
+        NEUTRAL("4", StandardIdentityGroupEnum.NEUTRAL, "Neutral"),
+        SUSPECT_JOKER("5", StandardIdentityGroupEnum.HOSTILE, "Suspect/Joker"),
+        HOSTILE_FAKER("6", StandardIdentityGroupEnum.HOSTILE, "Hostile/Faker");
 
-    private static final EnumSet<StandardIdentityEnum> KNOWN_IDENTITIES = EnumSet.of(SI_UNKNOWN, SI_FRIEND, SI_NEUTRAL, SI_HOSTILE_FAKER);
-    private static final EnumSet<StandardIdentityEnum> HOSTILE_IDENTITIES = EnumSet.of(SI_SUSPECT_JOKER, SI_HOSTILE_FAKER);
+    private static final EnumSet<StandardIdentityEnum> KNOWN_IDENTITIES = EnumSet.of(UNKNOWN, FRIEND, NEUTRAL, HOSTILE_FAKER);
+    private static final EnumSet<StandardIdentityEnum> HOSTILE_IDENTITIES = EnumSet.of(SUSPECT_JOKER, HOSTILE_FAKER);
 
     private final String id;
     private final StandardIdentityGroup group;
@@ -45,6 +45,11 @@ public enum StandardIdentityEnum implements StandardIdentity {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

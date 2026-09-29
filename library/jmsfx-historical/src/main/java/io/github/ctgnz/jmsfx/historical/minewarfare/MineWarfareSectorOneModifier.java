@@ -34,6 +34,11 @@ public enum MineWarfareSectorOneModifier implements SectorOneModifier {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.MINE_WARFARE;
     }

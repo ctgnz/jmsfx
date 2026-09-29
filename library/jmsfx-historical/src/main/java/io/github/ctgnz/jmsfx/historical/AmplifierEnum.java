@@ -126,6 +126,11 @@ public enum AmplifierEnum implements Amplifier {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public int getMax() {
         return max;
     }

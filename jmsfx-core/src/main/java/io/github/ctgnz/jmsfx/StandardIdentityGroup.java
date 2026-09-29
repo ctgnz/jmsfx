@@ -6,8 +6,6 @@ public interface StandardIdentityGroup extends CodeElement {
 
     List<StandardIdentity> getIdentities();
 
-    String getGraphicSuffix();
-
     boolean owns(StandardIdentity id);
 
 }

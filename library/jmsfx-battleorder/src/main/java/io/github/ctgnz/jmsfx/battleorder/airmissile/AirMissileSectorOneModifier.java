@@ -48,7 +48,7 @@ public enum AirMissileSectorOneModifier implements SectorOneModifier {
                 return "<g id=\"mod1\">\n    <text font-family=\"sans-serif\" font-size=\"85\" id=\"C\" transform=\"matrix(1 0 0 1 195.543 423.5166)\">C</text>\n  </g>";
             }
         },
-        INTERCEPTOR("08", "Interceptor", ModifierCategory.MissileClass) {
+        INTERCEPTOR_MISSILE("08", "Interceptor", ModifierCategory.MissileClass) {
             @Override
             public String getGraphicMarkup() {
                 return "<g id=\"mod1\">\n    <text font-family=\"sans-serif\" font-size=\"85\" id=\"I\" transform=\"matrix(1 0 0 1 213.543 423.5166)\">I</text>\n  </g>";
@@ -84,6 +84,11 @@ public enum AirMissileSectorOneModifier implements SectorOneModifier {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

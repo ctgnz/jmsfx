@@ -31,7 +31,7 @@ public enum CommonSectorTwoModifier implements SectorTwoModifier {
 
     @Override
     public String getGraphicIdentifier() {
-        return String.format("C2%s%s", getGroupId(), getId());
+        return getName();
     }
 
     @Override
@@ -47,6 +47,11 @@ public enum CommonSectorTwoModifier implements SectorTwoModifier {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

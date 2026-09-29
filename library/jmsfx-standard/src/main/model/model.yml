@@ -14,18 +14,18 @@ contexts:
 - {code: "7", id: RESTRICTED_TARGET_SIMULATION, label: "Restricted Target - Simulation"}
 - {code: "8", id: NO_STRIKE_ENTITY_SIMULATION, label: "No Strike Entity - Simulation"}
 identityGroups:
-- {code: "1", id: SIG_UNKNOWN, graphicSuffix: _0, label: "Unknown"}
-- {code: "3", id: SIG_FRIEND, graphicSuffix: _1, label: "Friend"}
-- {code: "4", id: SIG_NEUTRAL, graphicSuffix: _2, label: "Neutral"}
-- {code: "6", id: SIG_HOSTILE, graphicSuffix: _3, label: "Hostile"}
+- {code: "1", id: UNKNOWN, label: "Unknown"}
+- {code: "3", id: FRIEND, label: "Friend"}
+- {code: "4", id: NEUTRAL, label: "Neutral"}
+- {code: "6", id: HOSTILE, label: "Hostile"}
 identities:
-- {code: "0", id: SI_PENDING, label: "Pending", groupID: SIG_UNKNOWN}
-- {code: "1", id: SI_UNKNOWN, label: "Unknown", groupID: SIG_UNKNOWN}
-- {code: "2", id: SI_ASSUMED_FRIEND, label: "Assumed Friend", groupID: SIG_FRIEND}
-- {code: "3", id: SI_FRIEND, label: "Friend", groupID: SIG_FRIEND}
-- {code: "4", id: SI_NEUTRAL, label: "Neutral", groupID: SIG_NEUTRAL}
-- {code: "5", id: SI_SUSPECT_JOKER, label: "Suspect/Joker", groupID: SIG_HOSTILE}
-- {code: "6", id: SI_HOSTILE_FAKER, label: "Hostile/Faker", groupID: SIG_HOSTILE}
+- {code: "0", id: PENDING, label: "Pending", groupID: UNKNOWN}
+- {code: "1", id: UNKNOWN, label: "Unknown", groupID: UNKNOWN}
+- {code: "2", id: ASSUMED_FRIEND, label: "Assumed Friend", groupID: FRIEND}
+- {code: "3", id: FRIEND, label: "Friend", groupID: FRIEND}
+- {code: "4", id: NEUTRAL, label: "Neutral", groupID: NEUTRAL}
+- {code: "5", id: SUSPECT_JOKER, label: "Suspect/Joker", groupID: HOSTILE}
+- {code: "6", id: HOSTILE_FAKER, label: "Hostile/Faker", groupID: HOSTILE}
 statuses:
 - {code: "0", id: PRESENT, label: "Present"}
 - {code: "1", id: PLANNED, label: "Planned/Anticipated/Suspect"}
@@ -1440,7 +1440,7 @@ symbolSets:
   - {code: "05", category: MissileClass, id: AB, label: "Anti-Ballistic"}
   - {code: "06", category: MissileClass, id: BALLISTIC, label: "Ballistic"}
   - {code: "07", category: MissileClass, id: CRUISE, label: "Cruise"}
-  - {code: "08", category: MissileClass, id: INTERCEPTOR, label: "Interceptor"}
+  - {code: "08", category: MissileClass, id: INTERCEPTOR_MISSILE, label: "Interceptor"}
   - {code: "09", category: MissileClass, id: HYPERSONIC, label: "Interceptor"}
   sectorTwoMods:
   - {code: "01", category: MissileDestination, id: AIR_DEST, label: "Air"}
@@ -3382,7 +3382,7 @@ symbolSets:
     - details: {code: "11", id: SEA_BASED_X, graphicType: MAIN, label: "Sea-Based X-Band (SBX) Radar"}
   - details: {code: "13", id: MILITARY_NON_COMBAT, graphicType: MAIN, label: "Military Noncombatant"}
     entityTypes:
-    - details: {code: "01", id: AUX, graphicType: MAIN, label: "Auxiliary Ship"}
+    - details: {code: "01", id: AUXILIARY, graphicType: MAIN, label: "Auxiliary Ship"}
       entitySubTypes:
       - {code: "01", id: AMMO_SHIP, graphicType: MAIN, label: "Ammunition Ship"}
       - {code: "02", id: NAVAL_STORES, graphicType: MAIN, label: "Naval Stores Ship"}
@@ -4092,7 +4092,7 @@ symbolSets:
     - details: {code: "02", id: NON_NATION_STATE, graphicType: MAIN, label: "Non Nation State"}
     - details: {code: "03", id: CRIMINAL, graphicType: MAIN, label: "Unknown"}
     - details: {code: "04", id: INSIDER, graphicType: MAIN, label: "Insider"}
-  - details: {code: "18", id: END_POINT, graphicType: MAIN, baseSymbolSet: CYBERSPACE_LAND_EQUIPMENT, label: "End Point"}
+  - details: {code: "18", id: END_POINT, graphicType: MAIN, label: "End Point"}
     entityTypes:
     - details: {code: "01", id: SERVER, graphicType: MAIN, label: "Server"}
     - details: {code: "02", id: MOBILE_SMARTPHONE, graphicType: MAIN, label: "Mobile/Smartphone"}
@@ -4103,7 +4103,7 @@ symbolSets:
     - details: {code: "07", id: PRINTER, graphicType: MAIN, label: "Printer"}
     - details: {code: "08", id: ROUTER, graphicType: MAIN, label: "Router"}
     - details: {code: "09", id: SWITCH, graphicType: MAIN, label: "Switch"}
-  - details: {code: "19", id: WEARABLE, graphicType: MAIN, baseSymbolSet: CYBERSPACE_LAND_EQUIPMENT, label: "Wearable"}
+  - details: {code: "19", id: WEARABLE, graphicType: MAIN, label: "Wearable"}
     entityTypes:
     - details: {code: "01", id: HEALTH_MONITOR, graphicType: MAIN, label: "Health Monitor"}
     - details: {code: "02", id: SMARTVEST, graphicType: MAIN, label: "Smartvest"}

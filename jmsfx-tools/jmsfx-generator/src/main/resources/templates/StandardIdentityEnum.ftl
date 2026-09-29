@@ -44,6 +44,11 @@ public enum StandardIdentityEnum implements StandardIdentity {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public boolean isConfirmed() {
         return KNOWN_IDENTITIES.contains(this);
     }

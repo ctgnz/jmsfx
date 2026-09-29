@@ -11,7 +11,7 @@ public interface EntitySubType extends MainElement {
 
     @Override
     default String getGraphicIdentifier() {
-        return String.format("%s%s%s%s", getBaseSymbolSet().getId(), getEntity().getId(), getEntityType().getId(), getId());
+        return getEntity().getName() + "/" + getEntityType().getName() + "/" + getName();
     }
 
 }

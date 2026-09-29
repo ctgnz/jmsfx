@@ -98,6 +98,11 @@ public enum MineWarfareEntity implements Entity {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.MINE_WARFARE;
     }

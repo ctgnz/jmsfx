@@ -50,6 +50,11 @@ public enum CyberspaceAirEntity implements Entity {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.CYBERSPACE_AIR;
     }

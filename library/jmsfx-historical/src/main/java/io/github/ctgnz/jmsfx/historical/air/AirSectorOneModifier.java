@@ -219,6 +219,11 @@ public enum AirSectorOneModifier implements SectorOneModifier {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.AIR;
     }

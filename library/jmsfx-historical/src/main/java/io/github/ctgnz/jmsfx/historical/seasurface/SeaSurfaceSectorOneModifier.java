@@ -75,6 +75,11 @@ public enum SeaSurfaceSectorOneModifier implements SectorOneModifier {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.SEA_SURFACE;
     }

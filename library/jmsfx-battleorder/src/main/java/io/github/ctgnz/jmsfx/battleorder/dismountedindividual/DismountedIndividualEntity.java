@@ -38,6 +38,11 @@ public enum DismountedIndividualEntity implements Entity {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.DISMOUNTED;
     }

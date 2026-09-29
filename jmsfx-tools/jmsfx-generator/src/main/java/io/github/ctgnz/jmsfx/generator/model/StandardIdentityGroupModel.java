@@ -10,21 +10,11 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
     "code", "label", "remarks"
 })
 @JsonPropertyOrder({
-    "code", "id", "graphicSuffix", "extension", "deprecated", "label", "remarks"
+    "code", "id", "extension", "deprecated", "label", "remarks"
 })
 public class StandardIdentityGroupModel extends AbstractModel {
 
-    private String graphicSuffix;
-
     public StandardIdentityGroupModel() {
-    }
-
-    public String getGraphicSuffix() {
-        return graphicSuffix;
-    }
-
-    public void setGraphicSuffix(String graphicSuffix) {
-        this.graphicSuffix = graphicSuffix;
     }
 
 }

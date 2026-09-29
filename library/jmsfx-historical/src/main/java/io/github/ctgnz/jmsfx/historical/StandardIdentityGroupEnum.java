@@ -7,24 +7,17 @@ import io.github.ctgnz.jmsfx.StandardIdentity;
 import io.github.ctgnz.jmsfx.StandardIdentityGroup;
 
 public enum StandardIdentityGroupEnum implements StandardIdentityGroup {
-        SIG_UNKNOWN("1", "Unknown", "_0"),
-        SIG_FRIEND("3", "Friend", "_1"),
-        SIG_NEUTRAL("4", "Neutral", "_2"),
-        SIG_HOSTILE("6", "Hostile", "_3");
+        UNKNOWN("1", "Unknown"),
+        FRIEND("3", "Friend"),
+        NEUTRAL("4", "Neutral"),
+        HOSTILE("6", "Hostile");
 
     private final String id;
     private final String label;
-    private final String graphicSuffix;
 
-    StandardIdentityGroupEnum(String id, String label, String graphicSuffix) {
+    StandardIdentityGroupEnum(String id, String label) {
         this.id = id;
         this.label = label;
-        this.graphicSuffix = graphicSuffix;
-    }
-
-    @Override
-    public String getGraphicSuffix() {
-        return graphicSuffix;
     }
 
     @Override
@@ -43,6 +36,11 @@ public enum StandardIdentityGroupEnum implements StandardIdentityGroup {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

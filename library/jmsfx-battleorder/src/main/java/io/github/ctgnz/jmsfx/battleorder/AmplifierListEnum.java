@@ -85,6 +85,11 @@ public enum AmplifierListEnum implements AmplifierList {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public List<SymbolSet> getSymbolSets() {
         return Arrays.asList(symbolSets);
     }

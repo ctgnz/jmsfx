@@ -113,6 +113,11 @@ public enum CyberspaceSeaSurfaceEntityType implements EntityType {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public Entity getEntity() {
         return entity;
     }

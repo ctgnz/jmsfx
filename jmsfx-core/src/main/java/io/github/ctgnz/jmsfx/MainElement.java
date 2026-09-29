@@ -34,15 +34,22 @@ public interface MainElement extends CodeElement {
 
     Entity getEntity();
 
-    default String getGraphicLocation(StandardIdentity identity) {
-        String graphicLocation = getSymbolSet().getGraphicLocation();
-        String graphicIdentifier = getGraphicIdentifier();
+    /**
+     * Where this element's fragment is, and the key its parsed graphic is cached under.
+     * <p>
+     * Under the dimension of the element's <em>base</em> symbol set, not of the one that owns it. That indirection is what keeps the nine Cyberspace variants to one copy of each
+     * drawing: they file under Cyberspace's numbering, so 1,700 elements resolve to 1,570 fragments, and keying on the owning set would need 130 duplicates (jmsfx#136).
+     * <p>
+     * A {@code FULL_FRAME} element draws four fragments, one per identity group, so its name carries the group. Everything else ignores the argument.
+     */
+    default String getGraphicKey(StandardIdentity identity) {
+        String dimension = getBaseSymbolSet().getDimension()
+            .getName();
         if (isFullFrameIcon()) {
-            return String.format("/svg/Appendices/%s/%s%s.svg", graphicLocation, graphicIdentifier, identity.getGroup()
-                .getGraphicSuffix());
-        } else {
-            return String.format("/svg/Appendices/%s/%s.svg", graphicLocation, graphicIdentifier);
+            return String.format("/svg/Dimensions/%s/%s_%s.svg", dimension, getGraphicIdentifier(), identity.getGroup()
+                .getName());
         }
+        return String.format("/svg/Dimensions/%s/%s.svg", dimension, getGraphicIdentifier());
     }
 
     /**

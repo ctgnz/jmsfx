@@ -63,6 +63,11 @@ public enum ControlMeasureSectorTwoModifier implements SectorTwoModifier {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.CONTROL_MEASURE;
     }
