@@ -203,13 +203,15 @@ public final class FragmentSource {
                 if (drawsNothing(modifier.getGroupId(), modifier.getCode())) {
                     continue;
                 }
-                add(fragments, modifier.getId(), modifier, null, tree.resolve("Dimensions", location, "mod1", modifier.getId() + ".svg"), "mod1");
+                add(fragments, modifierBoundsKey(location, "mod1", modifier.getId()), modifier, null,
+                    tree.resolve("Dimensions", location, "mod1", modifier.getId() + ".svg"), "mod1");
             }
             for (SectorTwoModifierModel modifier : symbolSet.getSectorTwoMods()) {
                 if (drawsNothing(modifier.getGroupId(), modifier.getCode())) {
                     continue;
                 }
-                add(fragments, modifier.getId(), modifier, null, tree.resolve("Dimensions", location, "mod2", modifier.getId() + ".svg"), "mod2");
+                add(fragments, modifierBoundsKey(location, "mod2", modifier.getId()), modifier, null,
+                    tree.resolve("Dimensions", location, "mod2", modifier.getId() + ".svg"), "mod2");
             }
         }
         addFrames(fragments, model, tree);
@@ -331,6 +333,17 @@ public final class FragmentSource {
      */
     private static boolean drawsNothing(String groupId, String code) {
         return groupId == null ? UNSPECIFIED.equals(code) : "0".equals(groupId) && UNSPECIFIED.equals(code);
+    }
+
+    /**
+     * How a sector modifier's measured bounds are keyed: its own path within the fragment tree.
+     * <p>
+     * The id alone will not do. 30 of the 472 modifier fragment names appear under more than one dimension or sector - {@code ATTACK} is a Common sector one modifier and a Land
+     * Unit sector two one - so a bare id would hand one modifier another's extent. This matches how {@code iconBounds} has been keyed since jmsfx#136, and is written by
+     * {@code FragmentMeasurer} from the same shape.
+     */
+    static String modifierBoundsKey(String dimension, String sector, String id) {
+        return String.format("%s/%s/%s", dimension, sector, id);
     }
 
     private static void add(List<Fragment> fragments, String identifier, AbstractModel element, String key, Path file, String contentRoot) throws IOException {
