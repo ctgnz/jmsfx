@@ -1,11 +1,18 @@
 package io.github.ctgnz.jmsfx.icon;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import io.github.ctgnz.jmsfx.AmplifierList;
+import io.github.ctgnz.jmsfx.AmplifierListItem;
 import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.Status;
 import io.github.ctgnz.jmsfx.icon.editor.DynamicIconLibrary;
@@ -14,33 +21,39 @@ import io.github.ctgnz.jmsfx.icon.editor.SymbolSetImpl;
 
 public class VerifyIcons {
 
+    /** The group ids a fragment's own drawing sits under, as the generator names them. */
+    private static final List<String> CONTENT_ROOTS = List.of("main", "mod1", "mod2", "frame", "oca", "hqtffd", "amplifier", "echelon");
+
     private List<Path> usedPaths;
-    private Path fragmentRoot;
+    private List<Path> fragmentRoots;
 
     /**
      * @param args
-     *            a library's {@code src/main/model} directory - the fragment tree to verify against.
+     *            the {@code src/main/model} directories to search, nearest first - the library's own tree, then the tree of each library it overlays.
      *            <p>
      *            Named rather than found. Until jmsfx#124 the tree was on the classpath and this could reach it through {@code getResource}; it is now build input, and which
-     *            library to check is the caller's choice for the same reason the generator makes it one.
+     *            library to check is the caller's choice for the same reason the generator makes it one. More than one because since jmsfx#133 an overlay holds only the fragments
+     *            it adds, and the rest are its base library's - the same search path the generator walks, given here rather than inferred so this stays a tool you point at trees.
      */
     public static void main(String[] args) {
         if (args.length < 1) {
-            System.err.println("usage: VerifyIcons <library>/src/main/model");
+            System.err.println("usage: VerifyIcons <library>/src/main/model [<base library>/src/main/model ...]");
             return;
         }
         try {
             VerifyIcons verifier = new VerifyIcons();
-            verifier.verify(Path.of(args[0]));
+            verifier.verify(Arrays.stream(args)
+                .map(Path::of)
+                .toList());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void verify(Path fragmentRoot) throws Exception {
-        this.fragmentRoot = fragmentRoot;
+    public void verify(List<Path> fragmentRoots) throws Exception {
+        this.fragmentRoots = fragmentRoots;
         this.usedPaths = new ArrayList<>();
-        DynamicIconLibrary library = new DynamicIconLibrary(IconLibrary.discover(), fragmentRoot);
+        DynamicIconLibrary library = new DynamicIconLibrary(IconLibrary.discover(), fragmentRoots.get(0));
         System.out.println("Version");
         library.getVersions()
             .forEach(version -> {
@@ -208,6 +221,16 @@ public class VerifyIcons {
                     });
             });
         System.out.println("Standard Amplifiers");
+        // Since jmsfx#121 a frame amplifier is a fill substituted into the frame, not a fragment of
+        // its own, so none of its values names a file and asking for one would report the whole list
+        // missing. Taken from the symbol sets rather than a flag on the list because that is where
+        // the library states it.
+        Set<String> frameAmplifiers = library.getSymbolSets()
+            .stream()
+            .flatMap(symbolSet -> symbolSet.getFrameAmplifierList()
+                .stream())
+            .map(AmplifierListItem::getFullId)
+            .collect(Collectors.toCollection(HashSet::new));
         library.getListAmplifiers()
             .stream()
             .filter(AmplifierList::isStandardAmplifier)
@@ -216,7 +239,7 @@ public class VerifyIcons {
                 amp.getItems()
                     .forEach(value -> {
                         System.out.format("    [%s] %s%n", value.getFullId(), value.getLabel());
-                        if (!amp.isUnknown()) {
+                        if (!amp.isUnknown() && !frameAmplifiers.contains(value.getFullId())) {
                             library.getStandardIdentities()
                                 .forEach(identity -> {
                                     String location = value.getGraphicKey(identity);
@@ -230,25 +253,59 @@ public class VerifyIcons {
         System.out.println();
         System.out.println();
         System.out.println("Unused Files");
-        Path rootDir = fragmentRoot.resolve("svg");
-        Files.walk(rootDir)
-            .forEach(path -> {
-                if (Files.isRegularFile(path) && path.toFile()
-                    .getName()
-                    .endsWith(".svg")) {
-                    if (!usedPaths.contains(path)) {
+        Path rootDir = fragmentRoots.get(0)
+            .resolve("svg");
+        // Since jmsfx#133 an overlay may add no fragments of its own, so its tree is absent rather
+        // than empty - jmsfx-battleorder has none at all. Nothing of its own can be unused.
+        if (!Files.isDirectory(rootDir)) {
+            System.out.format("  no fragments of its own: %s%n", rootDir);
+            return;
+        }
+        List<Path> blank = new ArrayList<>();
+        try (Stream<Path> tree = Files.walk(rootDir)) {
+            tree.filter(Files::isRegularFile)
+                .filter(path -> path.getFileName()
+                    .toString()
+                    .endsWith(".svg"))
+                .filter(path -> !usedPaths.contains(path))
+                .forEach(path -> {
+                    if (isDeliberatelyBlank(path)) {
+                        blank.add(path);
+                    } else {
                         System.out.format("%s%n", path);
                     }
-                }
-            });
+                });
+        }
+        System.out.format("%n%d deliberately blank%n", blank.size());
+        blank.forEach(path -> System.out.format("  %s%n", path));
+    }
+
+    /**
+     * Whether a fragment nothing asked for says so, by carrying an empty content group.
+     * <p>
+     * An element that draws nothing - an "unspecified" modifier, or a type that exists only to hold its sub-types - still has a file, and nothing ever names it. Without a mark
+     * there is no way to read that file apart from one whose drawing was never finished, which is how the eight orphans jmsfx#136 found sat there unnoticed. An empty {@code <g>}
+     * at the content root is that mark: the blank is the drawing.
+     */
+    private boolean isDeliberatelyBlank(Path path) {
+        try {
+            String markup = Files.readString(path);
+            return CONTENT_ROOTS.stream()
+                .anyMatch(root -> markup.contains(String.format("<g id=\"%s\"/>", root)) || markup.contains(String.format("<g id=\"%s\"></g>", root)));
+        } catch (IOException e) {
+            return false;
+        }
     }
 
     private boolean isGraphicPresent(String location) {
-        Path path = fragmentRoot.resolve(location.startsWith("/") ? location.substring(1) : location);
-        if (!Files.exists(path)) {
-            return false;
+        String relative = location.startsWith("/") ? location.substring(1) : location;
+        for (Path root : fragmentRoots) {
+            Path path = root.resolve(relative);
+            if (Files.exists(path)) {
+                usedPaths.add(path);
+                return true;
+            }
         }
-        usedPaths.add(path);
-        return true;
+        return false;
     }
 }

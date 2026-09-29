@@ -135,7 +135,14 @@ public class FragmentNormaliser {
             }
             for (String config : rest) {
                 Path configFile = Path.of(config);
-                dirty.addAll(normaliser.run(normaliser.svgRoot(configFile), config, apply, show));
+                Path root = normaliser.svgRoot(configFile);
+                // Since jmsfx#133 an overlay may hold no fragments of its own, so its tree is absent
+                // rather than empty - skipped for the same reason a missing --dir is, below.
+                if (!Files.isDirectory(root)) {
+                    System.out.format("%nno fragments of its own, skipping: %s%n", config);
+                    continue;
+                }
+                dirty.addAll(normaliser.run(root, config, apply, show));
             }
         } else {
             for (Path directory : directories) {
