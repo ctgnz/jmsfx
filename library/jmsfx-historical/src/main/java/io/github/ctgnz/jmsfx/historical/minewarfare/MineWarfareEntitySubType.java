@@ -1,11 +1,8 @@
 package io.github.ctgnz.jmsfx.historical.minewarfare;
 
-import javafx.geometry.Rectangle2D;
-
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.StandardIdentity;
-import io.github.ctgnz.jmsfx.historical.IconBounds;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum MineWarfareEntitySubType implements EntitySubType {
@@ -199,11 +196,6 @@ public enum MineWarfareEntitySubType implements EntitySubType {
     @Override
     public GraphicType getGraphicType() {
         return graphicType;
-    }
-
-    @Override
-    public Rectangle2D getIconBounds() {
-        return IconBounds.lookup(getGraphicIdentifier(), getGraphicType());
     }
 
     @Override

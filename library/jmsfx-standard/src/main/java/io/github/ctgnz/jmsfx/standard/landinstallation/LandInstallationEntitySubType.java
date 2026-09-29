@@ -1,11 +1,8 @@
 package io.github.ctgnz.jmsfx.standard.landinstallation;
 
-import javafx.geometry.Rectangle2D;
-
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.StandardIdentity;
-import io.github.ctgnz.jmsfx.standard.IconBounds;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum LandInstallationEntitySubType implements EntitySubType {
@@ -361,11 +358,6 @@ public enum LandInstallationEntitySubType implements EntitySubType {
     @Override
     public GraphicType getGraphicType() {
         return graphicType;
-    }
-
-    @Override
-    public Rectangle2D getIconBounds() {
-        return IconBounds.lookup(getGraphicIdentifier(), getGraphicType());
     }
 
     @Override

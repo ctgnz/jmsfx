@@ -1,4 +1,4 @@
-<#import "fragment-markup.ftl" as frag><#assign hasIconBounds = (iconBounds??) && (iconBounds?size gt 0)>package ${iconPackage}.${symbolSet.packageName};
+<#import "fragment-markup.ftl" as frag><#assign hasIconBounds = symbolSet.entityTypes?filter(v -> v.measuredBounds??)?size gt 0>package ${iconPackage}.${symbolSet.packageName};
 
 <#if symbolSet.entitySubTypePresent>
 import java.util.List;
@@ -12,8 +12,7 @@ import ${basePackage}.EntitySubType;
 </#if>
 import ${basePackage}.EntityType;
 import ${basePackage}.StandardIdentity;
-<#if hasIconBounds>import ${iconPackage}.IconBounds;
-</#if>import ${typePackage}.GraphicType;
+import ${typePackage}.GraphicType;
 
 public enum ${symbolSet.baseTypeName}EntityType implements EntityType {
 <#list symbolSet.entityTypes as entType>
@@ -22,7 +21,7 @@ public enum ${symbolSet.baseTypeName}EntityType implements EntityType {
             public String getGraphicIdentifier() {
                 return "${entType.graphic}";
             }
-</#if><@frag.main entType/>        }</#if><#sep>,
+</#if><@frag.main entType/><@frag.bounds entType "getIconBounds"/>        }</#if><#sep>,
 </#list>;
 
     private final String id;
@@ -42,13 +41,6 @@ public enum ${symbolSet.baseTypeName}EntityType implements EntityType {
         return graphicType;
     }
 
-<#if hasIconBounds>
-    @Override
-    public Rectangle2D getIconBounds() {
-        return IconBounds.lookup(getGraphicIdentifier(), getGraphicType());
-    }
-
-</#if>
     @Override
     public String getId() {
         return id;

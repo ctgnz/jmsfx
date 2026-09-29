@@ -22,6 +22,7 @@ public abstract class AbstractModel {
     protected boolean extension;
     protected boolean deprecated;
     protected String before;
+    protected BoundsModel measuredBounds;
     protected Map<String, BoundsModel> bounds;
     protected String graphicMarkup;
     protected Map<String, String> graphicMarkupByKey;
@@ -34,6 +35,29 @@ public abstract class AbstractModel {
         this.label = label;
         this.code = code;
         this.remarks = remarks;
+    }
+
+    /**
+     * This element's own measured extent, where the rule does not give it one.
+     * <p>
+     * Almost every element takes its bounds by rule - the bounding octagon for an icon or a sector modifier - which is what lets a symbol's extent be worked out without a JavaFX
+     * toolkit. The exceptions are measured: every {@code FREE_CANVAS} element, which may use any part of the canvas, and the handful of sector modifiers that legitimately draw
+     * past the octagon.
+     * <p>
+     * Hung on the element by {@link io.github.ctgnz.jmsfx.generator.FragmentSource}, from the measurements {@code FragmentMeasurer} wrote, using the same identifier derivation
+     * that finds the element's fragment - so a measurement and a drawing cannot end up on different elements. It replaces the {@code IconBounds} and {@code ModifierBounds} lookup
+     * tables, which were keyed by the fragment's file stem (jmsfx#139).
+     * <p>
+     * {@code @JsonIgnore} because the measurements are already in the model, under {@code iconBounds} and {@code modifierBounds}; this is where they are put for generation, not a
+     * second copy to maintain.
+     */
+    @JsonIgnore
+    public BoundsModel getMeasuredBounds() {
+        return measuredBounds;
+    }
+
+    public void setMeasuredBounds(BoundsModel measuredBounds) {
+        this.measuredBounds = measuredBounds;
     }
 
     /**

@@ -42,3 +42,21 @@
             }
     </#if>
 </#macro>
+<#--
+    An element's own measured extent, emitted only where the rule does not give it one.
+
+    jmsfx#139: this was a lookup in a generated IconBounds or ModifierBounds class, keyed by the fragment's file stem, with every constant overriding the method to consult it - so
+    the overwhelming majority paid a failed map lookup to arrive at the answer their interface already had. The rule lives in jmsfx-core, where it was written anyway, and only an
+    exception says anything now.
+
+    The accessor is a parameter because a main icon and a sector modifier answer different questions - getIconBounds and getModifierBounds - from the same measurement.
+-->
+<#macro bounds el accessor>
+    <#if el.measuredBounds??>
+
+            @Override
+            public Rectangle2D ${accessor}() {
+                return new Rectangle2D(${el.measuredBounds.minX?c}, ${el.measuredBounds.minY?c}, ${el.measuredBounds.width?c}, ${el.measuredBounds.height?c});
+            }
+    </#if>
+</#macro>

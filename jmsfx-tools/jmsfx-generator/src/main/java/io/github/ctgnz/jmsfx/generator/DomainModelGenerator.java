@@ -107,8 +107,6 @@ public class DomainModelGenerator {
             .forEach(enumConfig -> generateStandardEnum(dataModel, enumConfig));
         generateAmplifierEnum(dataModel);
         generateListAmplifierEnums(dataModel);
-        generateIconBounds(dataModel);
-        generateModifierBounds(dataModel);
         generateSymbolSets(dataModel);
         generateLibrary(dataModel);
     }
@@ -222,30 +220,6 @@ public class DomainModelGenerator {
                     throw new IllegalArgumentException("Unable to create amplifier group enum", e);
                 }
             });
-    }
-
-    /** Only emitted when there is something to emit - a model with no FREE_CANVAS elements needs no lookup. */
-    private void generateIconBounds(LibraryModel dataModel) throws Exception {
-        if (dataModel.getIconBounds() == null || dataModel.getIconBounds()
-            .isEmpty()) {
-            return;
-        }
-        Template template = config.getTemplateConfig()
-            .getTemplate("IconBounds.ftl");
-        template.process(dataModel, newWriter(config.getIconPackageDir()
-            .resolve("IconBounds.java")));
-    }
-
-    /** Only emitted when there is something to emit - a model whose modifiers all keep within the octagon needs no lookup. */
-    private void generateModifierBounds(LibraryModel dataModel) throws Exception {
-        if (dataModel.getModifierBounds() == null || dataModel.getModifierBounds()
-            .isEmpty()) {
-            return;
-        }
-        Template template = config.getTemplateConfig()
-            .getTemplate("ModifierBounds.ftl");
-        template.process(dataModel, newWriter(config.getIconPackageDir()
-            .resolve("ModifierBounds.java")));
     }
 
     private void generateStandardEnum(LibraryModel dataModel, String typeName) {

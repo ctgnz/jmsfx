@@ -1,10 +1,7 @@
 package io.github.ctgnz.jmsfx.historical.seasubsurface;
 
-import javafx.geometry.Rectangle2D;
-
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.historical.ModifierBounds;
 import io.github.ctgnz.jmsfx.historical.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.types.ModifierCategory;
 
@@ -118,8 +115,4 @@ public enum SeaSubsurfaceSectorTwoModifier implements SectorTwoModifier {
         return SymbolSetEnum.SEA_SUBSURFACE;
     }
 
-    @Override
-    public Rectangle2D getModifierBounds() {
-        return ModifierBounds.lookup(getGraphicIdentifier());
-    }
 }

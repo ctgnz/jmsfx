@@ -16,6 +16,7 @@ import java.util.regex.Pattern;
 import io.github.ctgnz.jmsfx.generator.model.AbstractModel;
 import io.github.ctgnz.jmsfx.generator.model.AmplifierListItemModel;
 import io.github.ctgnz.jmsfx.generator.model.AmplifierListModel;
+import io.github.ctgnz.jmsfx.generator.model.BoundsModel;
 import io.github.ctgnz.jmsfx.generator.model.ContextModel;
 import io.github.ctgnz.jmsfx.generator.model.DimensionModel;
 import io.github.ctgnz.jmsfx.generator.model.GraphicType;
@@ -121,7 +122,31 @@ public final class FragmentSource {
             injected++;
         }
         byKey.forEach((element, markupByKey) -> element.setGraphicMarkupByKey(markupByKey));
+        attachBounds(model, fragments);
         return new Result(injected, missing);
+    }
+
+    /**
+     * Hangs each measured extent on the element it was measured from.
+     * <p>
+     * Here, and from this fragment list, because the measurements are keyed by graphic identifier and this is the one place that derives an identifier from an element. Looking
+     * them up anywhere else would mean a second derivation of the same thing, which is what jmsfx#52 is a caution against - and four of the bugs found while injecting fragments
+     * were exactly that.
+     * <p>
+     * Only the exceptions are measured. An element with no entry keeps the rule its interface states, which is why there is nothing to do for the great majority.
+     */
+    private static void attachBounds(LibraryModel model, List<Fragment> fragments) {
+        Map<String, BoundsModel> icons = model.getIconBounds() == null ? Map.of() : model.getIconBounds();
+        Map<String, BoundsModel> modifiers = model.getModifierBounds() == null ? Map.of() : model.getModifierBounds();
+        for (Fragment fragment : fragments) {
+            BoundsModel measured = fragment.element() instanceof SectorOneModifierModel || fragment.element() instanceof SectorTwoModifierModel
+                ? modifiers.get(fragment.identifier())
+                : icons.get(fragment.identifier());
+            if (measured != null) {
+                fragment.element()
+                    .setMeasuredBounds(measured);
+            }
+        }
     }
 
     /**

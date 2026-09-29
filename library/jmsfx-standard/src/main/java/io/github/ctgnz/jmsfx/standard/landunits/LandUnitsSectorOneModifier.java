@@ -4,7 +4,6 @@ import javafx.geometry.Rectangle2D;
 
 import io.github.ctgnz.jmsfx.SectorOneModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.standard.ModifierBounds;
 import io.github.ctgnz.jmsfx.standard.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.types.ModifierCategory;
 
@@ -410,6 +409,11 @@ public enum LandUnitsSectorOneModifier implements SectorOneModifier {
             public String getGraphicMarkup() {
                 return "<g id=\"mod1\">\n    <g aria-label=\"XXXXX\" style=\"font-size:72px\" transform=\"matrix(1.0329 0 0 1 184.3594 345.1309)\">\n      <path d=\"m 46.96875,-52.34766 -18.070313,25.875 L 46.9336,0 H 38.882812 L 24.60938,-21.55078 9.98438,0 H 2.39063 L 20.63672,-26.15625 2.8125,-52.34766 h 8.01563 l 14.09766,21.26953 14.41406,-21.26953 z\"/>\n      <path d=\"m 96.29297,-52.34766 -18.070313,25.875 L 96.25781,0 H 88.20703 L 73.9336,-21.55078 59.3086,0 h -7.59375 L 69.96094,-26.15625 52.13672,-52.34766 h 8.01563 L 74.25,-31.07813 88.66406,-52.34766 Z\"/>\n      <path d=\"m 145.61719,-52.34766 -18.0703,25.875 L 145.58203,0 h -8.05078 L 123.25781,-21.55078 108.63281,0 h -7.59375 l 18.2461,-26.15625 -17.82422,-26.1914 h 8.01562 l 14.09766,21.26953 14.41406,-21.26953 z\"/>\n      <path d=\"m 194.94141,-52.34766 -18.07032,25.875 L 194.90625,0 h -8.05078 L 172.58203,-21.55078 157.95703,0 h -7.59375 l 18.2461,-26.15625 -17.8242,-26.1914 h 8.01562 l 14.09766,21.26953 14.41406,-21.26953 z\"/>\n      <path d=\"m 244.26562,-52.34766 -18.0703,25.875 L 244.23047,0 h -8.05078 L 221.90625,-21.55078 207.28125,0 h -7.59375 l 18.2461,-26.15625 -17.82422,-26.1914 h 8.01563 l 14.09766,21.26953 14.41406,-21.26953 z\"/>\n    </g>\n  </g>";
             }
+
+            @Override
+            public Rectangle2D getModifierBounds() {
+                return new Rectangle2D(186.83, 292.78, 249.83, 52.35);
+            }
         },
         ARMY_THEATRE_ARMY("95", "Army or Theatre Army", ModifierCategory.Capability) {
             @Override
@@ -427,6 +431,11 @@ public enum LandUnitsSectorOneModifier implements SectorOneModifier {
             @Override
             public String getGraphicMarkup() {
                 return "<g id=\"mod1\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"131.5\" x2=\"479.5\" y1=\"345\" y2=\"345\"/>\n  </g>";
+            }
+
+            @Override
+            public Rectangle2D getModifierBounds() {
+                return new Rectangle2D(131.5, 342.5, 348, 5);
             }
         };
 
@@ -460,8 +469,4 @@ public enum LandUnitsSectorOneModifier implements SectorOneModifier {
         return SymbolSetEnum.LAND_UNIT;
     }
 
-    @Override
-    public Rectangle2D getModifierBounds() {
-        return ModifierBounds.lookup(getGraphicIdentifier());
-    }
 }
