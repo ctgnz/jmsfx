@@ -10,8 +10,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -24,6 +25,7 @@ import nz.co.ctg.foxglove.FoxgloveParser;
 import nz.co.ctg.foxglove.SvgGraphic;
 
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 /**
  * That every element in a generated library was given the drawing of the fragment it names, and not some other element's.
@@ -54,6 +56,9 @@ public abstract class InjectedMarkupContract {
 
     /** A hex fill, removed from both sides when comparing a civilian frame with the military one it came from. */
     private static final Pattern HEX_FILL = Pattern.compile("fill=\"#[0-9A-Fa-f]{6}\"");
+
+    /** Every library keeps its generator input here, relative to its own module - which is where surefire runs these from. */
+    private static final Path MODEL_ROOT = Path.of("src", "main", "model");
 
     private static final Pattern GROUP_TAG = Pattern.compile("<(/?)(?:svg:)?g\\b([^>]*?)(/?)>");
 
@@ -410,15 +415,37 @@ public abstract class InjectedMarkupContract {
                 continue;
             }
             checked++;
-            compare(element.getGraphicLocation(identity), "main", markup, wrong);
+            compare(element.getGraphicLocation(identity), rootsOf(element), markup, wrong);
         }
         return checked;
     }
 
+    /**
+     * The groups a main icon's drawing is made of.
+     * <p>
+     * A free canvas icon contributes its {@code template} as well as its {@code main}, because the preview the creator and the server show is the drawing inside the template that
+     * frames it. Its {@code example} groups stay in the source file. Everything else is the {@code main} group alone.
+     */
+    private List<String> rootsOf(MainElement element) {
+        return element.getGraphicType() == GraphicType.FREE_CANVAS ? List.of("main", "template") : List.of("main");
+    }
+
     private void compare(String location, String contentRootId, String markup, List<String> wrong) throws IOException {
-        String fromFile = contentRoot(read(location), contentRootId);
-        if (!markup.equals(fromFile)) {
-            wrong.add(String.format("%s: injected markup differs from the fragment's %s group", location, contentRootId));
+        compare(location, List.of(contentRootId), markup, wrong);
+    }
+
+    /** The named groups of the fragment at {@code location}, concatenated in order, against what was injected. A group the file does not hold contributes nothing. */
+    private void compare(String location, List<String> contentRootIds, String markup, List<String> wrong) throws IOException {
+        String svg = read(location);
+        StringBuilder fromFile = new StringBuilder();
+        for (String id : contentRootIds) {
+            String content = contentRoot(svg, id);
+            if (content != null) {
+                fromFile.append(content);
+            }
+        }
+        if (!markup.contentEquals(fromFile)) {
+            wrong.add(String.format("%s: injected markup differs from the fragment's %s", location, String.join(" + ", contentRootIds)));
         }
     }
 
@@ -428,13 +455,17 @@ public abstract class InjectedMarkupContract {
             .replaceAll("");
     }
 
+    /**
+     * The fragment file behind a location, read from the library's own source tree.
+     * <p>
+     * From disk rather than the classpath, because since jmsfx#124 the fragments are build input and no longer ship in the jar - which is the thing these checks exist to make
+     * safe. jmsfx-core still names them with classpath-style paths, and every library keeps its tree in the same place relative to its module, so the two compose.
+     * <p>
+     * A missing file reads as empty, which fails the comparison rather than passing it quietly.
+     */
     private String read(String location) throws IOException {
-        try (InputStream in = getClass().getResourceAsStream(location)) {
-            if (in == null) {
-                return "";
-            }
-            return new String(in.readAllBytes(), StandardCharsets.UTF_8);
-        }
+        Path file = MODEL_ROOT.resolve(location.startsWith("/") ? location.substring(1) : location);
+        return Files.exists(file) ? Files.readString(file, StandardCharsets.UTF_8) : "";
     }
 
     /** Depth-counted, because these groups nest and a self-closing one closes itself - an empty content root is legitimate. */

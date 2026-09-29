@@ -1,9 +1,7 @@
 package io.github.ctgnz.jmsfx.icon;
 
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,19 +15,32 @@ import io.github.ctgnz.jmsfx.icon.editor.SymbolSetImpl;
 public class VerifyIcons {
 
     private List<Path> usedPaths;
+    private Path fragmentRoot;
 
+    /**
+     * @param args
+     *            a library's {@code src/main/model} directory - the fragment tree to verify against.
+     *            <p>
+     *            Named rather than found. Until jmsfx#124 the tree was on the classpath and this could reach it through {@code getResource}; it is now build input, and which
+     *            library to check is the caller's choice for the same reason the generator makes it one.
+     */
     public static void main(String[] args) {
+        if (args.length < 1) {
+            System.err.println("usage: VerifyIcons <library>/src/main/model");
+            return;
+        }
         try {
             VerifyIcons verifier = new VerifyIcons();
-            verifier.verify();
+            verifier.verify(Path.of(args[0]));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void verify() throws Exception {
+    public void verify(Path fragmentRoot) throws Exception {
+        this.fragmentRoot = fragmentRoot;
         this.usedPaths = new ArrayList<>();
-        DynamicIconLibrary library = new DynamicIconLibrary(IconLibrary.discover());
+        DynamicIconLibrary library = new DynamicIconLibrary(IconLibrary.discover(), fragmentRoot);
         System.out.println("Version");
         library.getVersions()
             .forEach(version -> {
@@ -219,8 +230,7 @@ public class VerifyIcons {
         System.out.println();
         System.out.println();
         System.out.println("Unused Files");
-        Path rootDir = Paths.get(IdentificationSymbol.class.getResource("/svg")
-            .toURI());
+        Path rootDir = fragmentRoot.resolve("svg");
         Files.walk(rootDir)
             .forEach(path -> {
                 if (Files.isRegularFile(path) && path.toFile()
@@ -234,13 +244,11 @@ public class VerifyIcons {
     }
 
     private boolean isGraphicPresent(String location) {
-        try {
-            URL resource = IdentificationSymbol.class.getResource(location);
-            Path path = Paths.get(resource.toURI());
-            usedPaths.add(path);
-            return true;
-        } catch (Exception e) {
+        Path path = fragmentRoot.resolve(location.startsWith("/") ? location.substring(1) : location);
+        if (!Files.exists(path)) {
             return false;
         }
+        usedPaths.add(path);
+        return true;
     }
 }

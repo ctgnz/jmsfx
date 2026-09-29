@@ -146,11 +146,11 @@
                             <arguments>
                                 <argument>--check</argument>
                                 <argument>--dir</argument>
-                                <argument>${project.basedir}/../../library/jmsfx-standard/src/main/resources/svg</argument>
+                                <argument>${project.basedir}/../../library/jmsfx-standard/src/main/model/svg</argument>
                                 <argument>--dir</argument>
-                                <argument>${project.basedir}/../../library/jmsfx-historical/src/main/resources/svg</argument>
+                                <argument>${project.basedir}/../../library/jmsfx-historical/src/main/model/svg</argument>
                                 <argument>--dir</argument>
-                                <argument>${project.basedir}/../../library/jmsfx-battleorder/src/main/resources/svg</argument>
+                                <argument>${project.basedir}/../../library/jmsfx-battleorder/src/main/model/svg</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -164,13 +164,13 @@
                             <mainClass>io.github.ctgnz.jmsfx.generator.FragmentShapeChecker</mainClass>
                             <arguments>
                                 <argument>--dir</argument>
-                                <argument>${project.basedir}/../../library/jmsfx-standard/src/main/resources/svg</argument>
+                                <argument>${project.basedir}/../../library/jmsfx-standard/src/main/model/svg</argument>
                                 <argument>--dir</argument>
-                                <argument>${project.basedir}/../../library/jmsfx-historical/src/main/resources/svg</argument>
+                                <argument>${project.basedir}/../../library/jmsfx-historical/src/main/model/svg</argument>
                                 <argument>--dir</argument>
-                                <argument>${project.basedir}/../../library/jmsfx-battleorder/src/main/resources/svg</argument>
+                                <argument>${project.basedir}/../../library/jmsfx-battleorder/src/main/model/svg</argument>
                                 <argument>--model</argument>
-                                <argument>${project.basedir}/../../library/jmsfx-standard/src/main/resources/model.yml</argument>
+                                <argument>${project.basedir}/../../library/jmsfx-standard/src/main/model/model.yml</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -194,8 +194,8 @@
                         <configuration>
                             <mainClass>io.github.ctgnz.jmsfx.generator.ModelComparator</mainClass>
                             <arguments>
-                                <argument>${project.basedir}/../../library/jmsfx-standard/src/main/resources/config.yml</argument>
-                                <argument>${project.basedir}/../../library/jmsfx-historical/src/main/resources/config.yml</argument>
+                                <argument>${project.basedir}/../../library/jmsfx-standard/src/main/model/config.yml</argument>
+                                <argument>${project.basedir}/../../library/jmsfx-historical/src/main/model/config.yml</argument>
                             </arguments>
                         </configuration>
                     </execution>

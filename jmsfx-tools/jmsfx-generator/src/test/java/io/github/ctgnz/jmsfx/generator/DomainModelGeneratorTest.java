@@ -19,9 +19,9 @@ import org.junit.jupiter.api.Test;
  */
 class DomainModelGeneratorTest {
 
-    private static final Path STANDARD = Path.of("../../library/jmsfx-standard/src/main/resources/config.yml");
-    private static final Path HISTORICAL = Path.of("../../library/jmsfx-historical/src/main/resources/config.yml");
-    private static final Path BATTLEORDER = Path.of("../../library/jmsfx-battleorder/src/main/resources/config.yml");
+    private static final Path STANDARD = Path.of("../../library/jmsfx-standard/src/main/model/config.yml");
+    private static final Path HISTORICAL = Path.of("../../library/jmsfx-historical/src/main/model/config.yml");
+    private static final Path BATTLEORDER = Path.of("../../library/jmsfx-battleorder/src/main/model/config.yml");
 
     @Test
     void acceptsAnOverlayWithTheBaseItNames() {

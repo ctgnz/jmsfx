@@ -89,24 +89,6 @@
 
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**</include>
-                </includes>
-                <!--
-                    The generator's input, not this library's output. config.yml and model.yml live here
-                    since jmsfx#116, beside the fragments the model carries bounds for, which is right for
-                    the source tree and wrong for the jar: model.yml alone is 411KB of a 3.0MB artifact,
-                    nothing reads either at runtime, and both would ship to Central for good.
-                -->
-                <excludes>
-                    <exclude>config.yml</exclude>
-                    <exclude>model.yml</exclude>
-                </excludes>
-            </resource>
-        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

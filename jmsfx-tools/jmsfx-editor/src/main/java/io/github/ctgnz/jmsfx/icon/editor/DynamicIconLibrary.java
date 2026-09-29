@@ -2,8 +2,9 @@ package io.github.ctgnz.jmsfx.icon.editor;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -54,7 +55,16 @@ public class DynamicIconLibrary implements IconLibrary {
     private CountryCode countryCode = CountryCode.UNDEFINED;
     private final FoxgloveParser parser = new FoxgloveParser();
 
-    public DynamicIconLibrary() {
+    /**
+     * Where this library reads fragments from: a library's {@code src/main/model} directory.
+     * <p>
+     * A path rather than the classpath, since jmsfx#124 moved the fragment tree out of the published jar. The editor renders a model that is being edited, so it needs the files
+     * themselves - the generated libraries carry their drawings as constants, but a model with no generated library yet has only the tree.
+     */
+    private final Path fragmentRoot;
+
+    public DynamicIconLibrary(Path fragmentRoot) {
+        this.fragmentRoot = fragmentRoot;
     }
 
     /**
@@ -67,7 +77,8 @@ public class DynamicIconLibrary implements IconLibrary {
     }
 
     @SuppressWarnings("this-escape")
-    public DynamicIconLibrary(IconLibrary staticLibrary) {
+    public DynamicIconLibrary(IconLibrary staticLibrary, Path fragmentRoot) {
+        this.fragmentRoot = fragmentRoot;
         this.versions.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getVersions()), VersionImpl::new));
         this.contexts.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getContexts()), ContextImpl::new));
         this.standardIdentityGroups.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getStandardIdentityGroups()), StandardIdentityGroupImpl::new));
@@ -238,7 +249,7 @@ public class DynamicIconLibrary implements IconLibrary {
     @Override
     public SvgGraphic loadAmplifierGraphic(AmplifierListItem amplifierItem, StandardIdentity identity) {
         if (!amplifierItem.isUnknown() && amplifierItem.isGraphicalIcon()) {
-            return parser.parseFile(amplifierItem.getGraphicLocation(identity));
+            return parse(amplifierItem.getGraphicLocation(identity));
         } else {
             return null;
         }
@@ -265,26 +276,36 @@ public class DynamicIconLibrary implements IconLibrary {
             .isBlank()) {
             return recoloured(location, location + frameAmplifier.getFullId(), Color.web(frameAmplifier.getBackgroundFill()));
         }
-        return parser.parseFile(location);
+        return parse(location);
+    }
+
+    /** A fragment location as a file under {@link #fragmentRoot}. jmsfx-core still names fragments with classpath-style paths, which is what they were until jmsfx#124. */
+    private Path fileFor(String location) {
+        return fragmentRoot.resolve(location.startsWith("/") ? location.substring(1) : location);
+    }
+
+    private SvgGraphic parse(String location) {
+        return parser.parseFile(fileFor(location).toFile());
     }
 
     /** The frame at {@code location} with its fill replaced, cached under {@code key}, falling back to the frame as drawn if the file cannot be read. */
     private SvgGraphic recoloured(String location, String key, Color fill) {
-        try (InputStream in = DynamicIconLibrary.class.getResourceAsStream(location)) {
-            if (in == null) {
-                return parser.parseFile(location);
-            }
-            String markup = FragmentMarkup.replaceFill(new String(in.readAllBytes(), StandardCharsets.UTF_8), fill);
+        Path file = fileFor(location);
+        if (!Files.exists(file)) {
+            return parse(location);
+        }
+        try {
+            String markup = FragmentMarkup.replaceFill(Files.readString(file, StandardCharsets.UTF_8), fill);
             return parser.parseResource(key, new ByteArrayInputStream(markup.getBytes(StandardCharsets.UTF_8)));
         } catch (IOException e) {
-            return parser.parseFile(location);
+            return parse(location);
         }
     }
 
     @Override
     public SvgGraphic loadFrameOverlayGraphic(Context context) {
         if (!context.isReality()) {
-            return parser.parseFile(context.getOverlayGraphicLocation());
+            return parse(context.getOverlayGraphicLocation());
         } else {
             return null;
         }
@@ -293,7 +314,7 @@ public class DynamicIconLibrary implements IconLibrary {
     @Override
     public SvgGraphic loadHqtfDummyGraphic(HqtfDummy hqtfDummy, StandardIdentity identity, SymbolSet symbolSet) {
         if (!hqtfDummy.isUnknown()) {
-            return parser.parseFile(hqtfDummy.getGraphicLocation(identity, symbolSet));
+            return parse(hqtfDummy.getGraphicLocation(identity, symbolSet));
         } else {
             return null;
         }
@@ -303,7 +324,7 @@ public class DynamicIconLibrary implements IconLibrary {
     public SvgGraphic loadMainIconGraphic(MainElement mainIconElement, StandardIdentity identity) {
         if (mainIconElement.isGraphicalIcon()) {
             String filePath = mainIconElement.getGraphicLocation(identity);
-            return parser.parseFile(filePath);
+            return parse(filePath);
         } else {
             return null;
         }
@@ -312,7 +333,7 @@ public class DynamicIconLibrary implements IconLibrary {
     @Override
     public SvgGraphic loadSectorOneModifierGraphic(SectorOneModifier sectorOneModifier) {
         if (!sectorOneModifier.isUnknown()) {
-            return parser.parseFile(sectorOneModifier.getFullGraphicLocation());
+            return parse(sectorOneModifier.getFullGraphicLocation());
         } else {
             return null;
         }
@@ -321,7 +342,7 @@ public class DynamicIconLibrary implements IconLibrary {
     @Override
     public SvgGraphic loadSectorTwoModifierGraphic(SectorTwoModifier sectorTwoModifier) {
         if (!sectorTwoModifier.isUnknown()) {
-            return parser.parseFile(sectorTwoModifier.getFullGraphicLocation());
+            return parse(sectorTwoModifier.getFullGraphicLocation());
         } else {
             return null;
         }
@@ -330,7 +351,7 @@ public class DynamicIconLibrary implements IconLibrary {
     @Override
     public SvgGraphic loadStatusGraphic(Status status, boolean isStatusIconUsed, StandardIdentity identity, SymbolSet symbolSet) {
         if (isStatusIconUsed) {
-            return parser.parseFile(status.getGraphicLocation(identity, symbolSet));
+            return parse(status.getGraphicLocation(identity, symbolSet));
         } else {
             return null;
         }

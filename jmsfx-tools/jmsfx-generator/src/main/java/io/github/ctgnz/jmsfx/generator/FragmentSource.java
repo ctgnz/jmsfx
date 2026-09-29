@@ -34,13 +34,16 @@ import io.github.ctgnz.jmsfx.generator.model.SymbolSetModel;
  * edited against a visible frame, and they never render. Measured across jmsfx-standard the content roots are 26% of the bytes - 0.90 MB against 3.52 MB of files - so what reaches
  * a generated class is the content root alone, and the {@code svg} envelope is added back once at load time rather than 1,600 times in the source.
  * <p>
- * Which root is the content is never guessed: a main icon's is {@code main}, a sector modifier's is {@code mod1} or {@code mod2}. Anything else in the file is left behind -
- * scaffolding, and the {@code template} and {@code example} groups a free canvas fragment carries by jmsfx#78.
+ * Which root is the content is never guessed: a main icon's is {@code main}, a sector modifier's is {@code mod1} or {@code mod2}. Anything else in the file is left behind, being
+ * scaffolding - except for a free canvas icon, which contributes its {@code template} as well, since for those the template is part of what a preview has to show. Its
+ * {@code example} groups are left behind either way.
  * <p>
  * Main icon identifiers come from {@link FreeCanvasIcons}, so the derivation mapping an element to its fragment keeps one copy rather than gaining one per caller; jmsfx#52 is what
  * happens when it drifts. Modifier identifiers are derived here, no other tool having needed them, and follow the generated classes exactly.
  * <p>
- * Control Measures are excluded throughout, as they are in {@link FragmentMeasurer}: APP-6E 8.1.3 exempts them from icon composition, and they are map graphics rather than icons.
+ * No symbol set is excluded. Control Measures used to be, on the grounds that APP-6E 8.1.3 exempts them from icon composition - but what makes them different is that every one of
+ * their icons is {@code FREE_CANVAS}, and Cyberspace has three of those too. So the behaviour is keyed by graphic type, which is where it belongs, and their sector modifiers are
+ * injected like any other symbol set's. {@link FragmentMeasurer} still excludes them from bounds, which is a separate question - a free canvas icon has no meaningful extent.
  */
 public final class FragmentSource {
 
@@ -53,7 +56,19 @@ public final class FragmentSource {
     public record Fragment(String identifier, AbstractModel element, String key, Path file, String markup) {
     }
 
-    private static final String CONTROL_MEASURES = "ControlMeasures";
+    /** What an ordinary main icon contributes: the group that draws, and nothing else in the file. */
+    private static final List<String> MAIN_ROOTS = List.of("main");
+
+    /**
+     * What a free canvas icon contributes.
+     * <p>
+     * A free canvas fragment holds one {@code main}, an optional {@code template}, and any number of {@code example} groups (jmsfx#78). The creator and the server show what an
+     * implementation would look like rather than offering a drawing toolkit, so the preview is the main group plus the template that frames it; the examples are illustration for
+     * whoever is authoring the fragment and stay in the source file.
+     * <p>
+     * This is the one place a fragment contributes two groups rather than one - a deliberate exception, because for these icons the template is part of what there is to show.
+     */
+    private static final List<String> FREE_CANVAS_ROOTS = List.of("main", "template");
     /** The graphic location a text amplifier list carries: it draws nothing, so there is no directory behind it. */
     private static final String NO_GRAPHIC = "NA";
     /** The content root each amplifier directory files its drawing under. */
@@ -124,13 +139,15 @@ public final class FragmentSource {
             .orElse(null);
     }
 
+    /** The roots this graphic type contributes, in the order they are drawn. */
+    private static List<String> rootsFor(GraphicType graphicType) {
+        return graphicType == GraphicType.FREE_CANVAS ? FREE_CANVAS_ROOTS : MAIN_ROOTS;
+    }
+
     /** Every fragment the model names, with its content root read where the file holds one and null where it does not. */
     static List<Fragment> locate(LibraryModel model, Path svgRoot) throws IOException {
         List<Fragment> fragments = new ArrayList<>();
         for (FreeCanvasIcons.Icon icon : FreeCanvasIcons.collect(model, svgRoot, type -> type != GraphicType.NA)) {
-            if (CONTROL_MEASURES.equals(directoryOf(icon.fragment()))) {
-                continue;
-            }
             if (icon.graphicType() == GraphicType.FULL_FRAME) {
                 // Four files, one per identity group, because a full frame icon is the frame and each
                 // identity draws a different one. The suffix is the group's own, as MainElement uses it.
@@ -138,11 +155,11 @@ public final class FragmentSource {
                     if (group.getGraphicSuffix() != null) {
                         String identifier = icon.identifier() + group.getGraphicSuffix();
                         add(fragments, identifier, icon.element(), group.getCode(), icon.fragment()
-                            .resolveSibling(identifier + ".svg"), "main");
+                            .resolveSibling(identifier + ".svg"), MAIN_ROOTS);
                     }
                 }
             } else {
-                add(fragments, icon.identifier(), icon.element(), null, icon.fragment(), "main");
+                add(fragments, icon.identifier(), icon.element(), null, icon.fragment(), rootsFor(icon.graphicType()));
             }
         }
         for (SymbolSetModel symbolSet : model.getSymbolSets()) {
@@ -321,21 +338,35 @@ public final class FragmentSource {
             location = model.getDimension(symbolSet.getDimensionId())
                 .getGraphicLocation();
         }
-        return location == null || CONTROL_MEASURES.equals(location) ? null
+        return location == null ? null
             : svgRoot.resolve("Appendices")
                 .resolve(location);
     }
 
     private static void add(List<Fragment> fragments, String identifier, AbstractModel element, String key, Path file, String contentRoot) throws IOException {
-        String markup = Files.exists(file) ? contentRoot(Files.readString(file, StandardCharsets.UTF_8), contentRoot) : null;
-        fragments.add(new Fragment(identifier, element, key, file, markup));
+        add(fragments, identifier, element, key, file, List.of(contentRoot));
     }
 
-    private static String directoryOf(Path fragment) {
-        Path parent = fragment.getParent();
-        return parent == null ? null
-            : parent.getFileName()
-                .toString();
+    /**
+     * Reads the roots this fragment contributes and hangs them on the element, in the order given.
+     * <p>
+     * More than one only for a free canvas icon. A root the file does not hold is skipped rather than failing, because {@code template} is optional; all of them missing leaves the
+     * markup null, which is what reports a fragment as missing.
+     */
+    private static void add(List<Fragment> fragments, String identifier, AbstractModel element, String key, Path file, List<String> contentRoots) throws IOException {
+        String markup = null;
+        if (Files.exists(file)) {
+            String svg = Files.readString(file, StandardCharsets.UTF_8);
+            StringBuilder found = new StringBuilder();
+            for (String root : contentRoots) {
+                String content = contentRoot(svg, root);
+                if (content != null) {
+                    found.append(content);
+                }
+            }
+            markup = found.isEmpty() ? null : found.toString();
+        }
+        fragments.add(new Fragment(identifier, element, key, file, markup));
     }
 
     /**

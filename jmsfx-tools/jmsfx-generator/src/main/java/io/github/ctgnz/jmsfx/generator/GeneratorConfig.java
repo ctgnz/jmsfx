@@ -142,14 +142,30 @@ public class GeneratorConfig {
         return location.resolve("model.yml");
     }
 
-    /** Generated sources, in the module's {@code src/main/java} - the sibling of the resources directory this config sits in. */
+    /** Generated sources, in the module's {@code src/main/java} - the sibling of the model directory this config sits in. */
     public Path getOutputDir() {
         return location.resolveSibling("java");
     }
 
-    /** The resources this library owns: the {@code svg} tree, and the service file naming its generated {@code IconLibrary}. The config sits in it. */
-    public Path getResourceDir() {
+    /**
+     * The library's generator input: the {@code svg} tree, the model, and this config. All of it lives in {@code src/main/model} since jmsfx#124.
+     * <p>
+     * Deliberately not a resource root, so none of it reaches the jar - which is what the per-pom {@code excludes} used to do for the two yaml files, and could never have done for
+     * the fragments while they were still read from the classpath at render time. {@code src/main/resources} still exists next door, holding the service file that names the
+     * generated {@code IconLibrary} and nothing else.
+     */
+    public Path getModelDir() {
         return location;
+    }
+
+    /**
+     * The library's real resource root, {@code src/main/resources} - which since jmsfx#124 holds the service file naming the generated {@code IconLibrary} and nothing else.
+     * <p>
+     * Separate from {@link #getModelDir()} because the two now mean different things and one of them ships. Writing the service file relative to the model directory instead put it
+     * outside the resource root, where it would have been silently dropped from the jar and taken {@code IconLibrary.discover()} with it.
+     */
+    public Path getResourcesDir() {
+        return location.resolveSibling("resources");
     }
 
     public List<String> getStandardEnums() {

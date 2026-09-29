@@ -87,7 +87,7 @@ public class DomainModelGenerator {
      * After composition, deliberately: an overlay has no symbol sets of its own, so run against one alone this would find nothing.
      */
     private void injectFragments(LibraryModel dataModel) throws Exception {
-        FragmentSource.Result result = FragmentSource.inject(dataModel, config.getResourceDir()
+        FragmentSource.Result result = FragmentSource.inject(dataModel, config.getModelDir()
             .resolve("svg"));
         System.out.format("Injected %d fragments%n", result.injected());
         if (!result.missing()
@@ -188,7 +188,7 @@ public class DomainModelGenerator {
      * for the library rather than depending on it, and that is worth keeping: it has no need of jmsfx-core on its own classpath.
      */
     private void generateServiceDeclaration(String className) throws IOException {
-        Path services = config.getResourceDir()
+        Path services = config.getResourcesDir()
             .resolve("META-INF")
             .resolve("services");
         Files.createDirectories(services);
