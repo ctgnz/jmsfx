@@ -210,7 +210,7 @@ public class FragmentShapeChecker {
      * search path needs, and a config naming a base that is not present is reported rather than silently checked against its own tree alone.
      */
     private static GeneratorConfig baseOf(GeneratorConfig config, List<GeneratorConfig> candidates) {
-        if (!config.hasBase()) {
+        if (!config.isOverlay()) {
             return null;
         }
         return candidates.stream()

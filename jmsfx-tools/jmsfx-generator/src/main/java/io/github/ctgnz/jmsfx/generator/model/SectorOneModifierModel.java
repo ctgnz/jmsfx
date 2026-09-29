@@ -11,7 +11,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
     "code", "label", "remarks"
 })
 @JsonPropertyOrder({
-    "groupId", "code", "category", "id", "extension", "deprecated", "label", "remarks"
+    "groupId", "code", "category", "id", "before", "extension", "deprecated", "label", "remarks"
 })
 public class SectorOneModifierModel extends AbstractModel {
 

@@ -55,7 +55,6 @@ public class GeneratorConfig {
     private String libraryPrefix;
     private String countryCodeClass;
     private String baseLibrary;
-    private boolean overlayModel;
     private String libraryFile = "Base.xml";
     private String extensionCountryCode = "000";
 
@@ -80,26 +79,14 @@ public class GeneratorConfig {
         return baseLibrary;
     }
 
-    public void setOverlayModel(boolean overlayModel) {
-        this.overlayModel = overlayModel;
-    }
-
     /**
-     * Whether this config describes an overlay to compose onto its base, rather than a model complete in itself.
+     * Whether this library extends another: its fragments resolve through that library's tree, and its model composes onto that library's model.
      * <p>
-     * Declared rather than inferred from {@link #getBaseLibrary()}, because since jmsfx#133 those are two different things. Naming a base says where shared <em>fragments</em> come
-     * from, which every extension needs; having an overlay <em>model</em> is a separate choice. jmsfx-historical names Standard as its base and still carries a complete model - it
-     * is a superset rather than an addition - while jmsfx-battleorder names the same base and carries thirty lines to compose onto it.
-     * <p>
-     * Declared, too, because it is not inferrable safely. An overlay model is recognisable by what it leaves out, so a complete model that lost a section in an edit would look
-     * exactly like one - and be composed onto the base, silently filling the gap back in.
+     * One declaration rather than two. jmsfx#137 briefly split them, because jmsfx-historical named a base for its fragments while still carrying a complete model of its own - but
+     * reducing that model to an overlay closed the gap, and nothing now names a base without composing onto it. A library that needs the one without the other can split this again
+     * when that is real.
      */
     public boolean isOverlay() {
-        return overlayModel;
-    }
-
-    /** Whether this library extends another, and so resolves fragments through it. Every overlay does; a complete model may. */
-    public boolean hasBase() {
         return baseLibrary != null;
     }
 

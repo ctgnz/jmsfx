@@ -101,7 +101,7 @@ public class FragmentMeasurer {
         this.parser = new JmsfxParser();
         this.config = GeneratorConfig.load(configFile);
         GeneratorConfig baseConfig = baseConfigFile == null ? null : GeneratorConfig.load(baseConfigFile);
-        if (config.hasBase() && baseConfig == null) {
+        if (config.isOverlay() && baseConfig == null) {
             throw new IllegalArgumentException(String.format("%s extends %s, so the base library's config must be given as the second argument", config.getLibraryPrefix(),
                 config.getBaseLibrary()));
         }

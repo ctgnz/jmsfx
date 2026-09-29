@@ -21,6 +21,7 @@ public abstract class AbstractModel {
     protected String remarks;
     protected boolean extension;
     protected boolean deprecated;
+    protected String before;
     protected Map<String, BoundsModel> bounds;
     protected String graphicMarkup;
     protected Map<String, String> graphicMarkupByKey;
@@ -33,6 +34,25 @@ public abstract class AbstractModel {
         this.label = label;
         this.code = code;
         this.remarks = remarks;
+    }
+
+    /**
+     * Where this element goes among the base's, when it is an addition in an overlay - the code of the element it follows.
+     * <p>
+     * Only meaningful in an overlay, and only where an addition is not simply appended. Constant order in a generated enum comes from the order of the values in the model file
+     * rather than from their codes, and that order carries meaning - jmsfx-historical puts {@code Staffel} between Platoon and Company, which is echelon order and not code order.
+     * So an overlay has to be able to say where an addition sits. Measured across jmsfx-historical, 8 of the 11 lists that differ simply append and need nothing here; 3 interleave
+     * and do. See jmsfx#137.
+     * <p>
+     * Null everywhere else, and absent from a whole model - the base never has anything to position itself against.
+     */
+    @JsonInclude(Include.NON_NULL)
+    public String getBefore() {
+        return before;
+    }
+
+    public void setBefore(String before) {
+        this.before = before;
     }
 
     /**

@@ -18,7 +18,7 @@ public enum AmplifierListEnum implements AmplifierList {
                            SymbolSetEnum.LAND_INSTALLATION),
         TOWED_ARRAYS("6", "Naval Towed Array Types", AmplifierEnum.AG_AuxiliaryEquipmentIndicator, TowedArrayType.class, SymbolSetEnum.SEA_SURFACE),
         LEADERSHIP_ROLE("7", "Leadership Role", AmplifierEnum.AV_LeadershipIdentifier, LeadershipRole.class, SymbolSetEnum.DISMOUNTED),
-        SERVICE_TIER("8", "Service Tiers", null, ServiceTier.class),
+        SERVICE_TIER("8", "Service Tiers", null, ServiceTier.class, SymbolSetEnum.LAND_UNIT),
         NATO_RANK("9", "NATO Standard Ranks", null, NatoRank.class),
         REINFORCED("A1", "Reinforced or Reduced", AmplifierEnum.F_ReinforcedOrReduced, ReinforcedReduced.class),
         RELIABILITY_RATING("A2", "Reliability Rating", AmplifierEnum.J_EvaluationRating, ReliabilityRating.class),
