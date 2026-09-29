@@ -45,6 +45,11 @@ public enum CyberspaceLandEquipmentSectorTwoModifier implements SectorTwoModifie
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.CYBERSPACE_LAND_EQUIPMENT;
     }

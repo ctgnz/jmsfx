@@ -38,6 +38,11 @@ public enum ${symbolSet.baseTypeName}SectorOneModifier implements SectorOneModif
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.${symbolSet.id};
     }

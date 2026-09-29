@@ -261,6 +261,11 @@ public enum AirSectorTwoModifier implements SectorTwoModifier {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.AIR;
     }

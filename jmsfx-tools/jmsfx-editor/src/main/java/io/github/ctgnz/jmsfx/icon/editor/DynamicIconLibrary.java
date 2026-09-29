@@ -249,7 +249,7 @@ public class DynamicIconLibrary implements IconLibrary {
     @Override
     public SvgGraphic loadAmplifierGraphic(AmplifierListItem amplifierItem, StandardIdentity identity) {
         if (!amplifierItem.isUnknown() && amplifierItem.isGraphicalIcon()) {
-            return parse(amplifierItem.getGraphicLocation(identity));
+            return parse(amplifierItem.getGraphicKey(identity));
         } else {
             return null;
         }
@@ -268,7 +268,7 @@ public class DynamicIconLibrary implements IconLibrary {
             return null;
         }
         boolean civilian = civilianEntity && !identity.isHostile();
-        String location = symbolSet.getFrameLocation(identity, status, civilian);
+        String location = symbolSet.getFrameKey(identity, status, civilian);
         if (civilian) {
             return recoloured(location, location, IdentificationSymbol.CIVILIAN_PURPLE);
         }
@@ -305,7 +305,7 @@ public class DynamicIconLibrary implements IconLibrary {
     @Override
     public SvgGraphic loadFrameOverlayGraphic(Context context) {
         if (!context.isReality()) {
-            return parse(context.getOverlayGraphicLocation());
+            return parse(context.getOverlayGraphicKey());
         } else {
             return null;
         }
@@ -314,7 +314,7 @@ public class DynamicIconLibrary implements IconLibrary {
     @Override
     public SvgGraphic loadHqtfDummyGraphic(HqtfDummy hqtfDummy, StandardIdentity identity, SymbolSet symbolSet) {
         if (!hqtfDummy.isUnknown()) {
-            return parse(hqtfDummy.getGraphicLocation(identity, symbolSet));
+            return parse(hqtfDummy.getGraphicKey(identity, symbolSet));
         } else {
             return null;
         }
@@ -323,7 +323,7 @@ public class DynamicIconLibrary implements IconLibrary {
     @Override
     public SvgGraphic loadMainIconGraphic(MainElement mainIconElement, StandardIdentity identity) {
         if (mainIconElement.isGraphicalIcon()) {
-            String filePath = mainIconElement.getGraphicLocation(identity);
+            String filePath = mainIconElement.getGraphicKey(identity);
             return parse(filePath);
         } else {
             return null;
@@ -333,7 +333,7 @@ public class DynamicIconLibrary implements IconLibrary {
     @Override
     public SvgGraphic loadSectorOneModifierGraphic(SectorOneModifier sectorOneModifier) {
         if (!sectorOneModifier.isUnknown()) {
-            return parse(sectorOneModifier.getFullGraphicLocation());
+            return parse(sectorOneModifier.getGraphicKey());
         } else {
             return null;
         }
@@ -342,7 +342,7 @@ public class DynamicIconLibrary implements IconLibrary {
     @Override
     public SvgGraphic loadSectorTwoModifierGraphic(SectorTwoModifier sectorTwoModifier) {
         if (!sectorTwoModifier.isUnknown()) {
-            return parse(sectorTwoModifier.getFullGraphicLocation());
+            return parse(sectorTwoModifier.getGraphicKey());
         } else {
             return null;
         }
@@ -351,7 +351,7 @@ public class DynamicIconLibrary implements IconLibrary {
     @Override
     public SvgGraphic loadStatusGraphic(Status status, boolean isStatusIconUsed, StandardIdentity identity, SymbolSet symbolSet) {
         if (isStatusIconUsed) {
-            return parse(status.getGraphicLocation(identity, symbolSet));
+            return parse(status.getGraphicKey(identity, symbolSet));
         } else {
             return null;
         }

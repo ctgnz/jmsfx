@@ -9,8 +9,12 @@ public interface HqtfDummy extends CodeElement {
 
     List<String> getDimensionIds();
 
-    default String getGraphicLocation(StandardIdentity identity, SymbolSet symbolSet) {
-        return String.format("/svg/HQTFFD/%s%s%s.svg", identity.getGroupId(), symbolSet.getDimensionId(), getId());
+    default String getGraphicKey(StandardIdentity identity, SymbolSet symbolSet) {
+        return String.format("/svg/HQTFFD/%s/%s/%s.svg", symbolSet.getDimension()
+            .getName(),
+            identity.getGroup()
+                .getName(),
+            getName());
     }
 
     default boolean isSupported(SymbolSet symbolSet) {

@@ -8,22 +8,15 @@ import ${basePackage}.StandardIdentityGroup;
 
 public enum StandardIdentityGroupEnum implements StandardIdentityGroup {
 <#list identityGroups as ident>
-        ${ident.id}("${ident.code}", "${ident.label}", "${ident.graphicSuffix}")<#sep>,
+        ${ident.id}("${ident.code}", "${ident.label}")<#sep>,
 </#list>;
 
     private final String id;
     private final String label;
-    private final String graphicSuffix;
 
-    StandardIdentityGroupEnum(String id, String label, String graphicSuffix) {
+    StandardIdentityGroupEnum(String id, String label) {
         this.id = id;
         this.label = label;
-        this.graphicSuffix = graphicSuffix;
-    }
-
-    @Override
-    public String getGraphicSuffix() {
-        return graphicSuffix;
     }
 
     @Override
@@ -42,6 +35,11 @@ public enum StandardIdentityGroupEnum implements StandardIdentityGroup {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

@@ -20,7 +20,7 @@ public class ContextImpl extends CodeElementImpl implements Context {
 
     public ContextImpl(Context context) {
         super(context);
-        this.overlayGraphicLocation.set(context.getOverlayGraphicLocation());
+        this.overlayGraphicLocation.set(context.getOverlayGraphicKey());
         this.reality.set(context.isReality());
     }
 
@@ -38,7 +38,7 @@ public class ContextImpl extends CodeElementImpl implements Context {
     }
 
     @Override
-    public String getOverlayGraphicLocation() {
+    public String getOverlayGraphicKey() {
         return overlayGraphicLocation.get();
     }
 

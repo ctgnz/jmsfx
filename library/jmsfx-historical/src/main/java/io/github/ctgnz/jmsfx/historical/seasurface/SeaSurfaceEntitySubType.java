@@ -174,79 +174,79 @@ public enum SeaSurfaceEntitySubType implements EntitySubType {
                 return "<g id=\"main\">\n    <polygon points=\"228.281,445.086 228.281,346.915 383.718,346.915 383.718,445.086 350.994,445.086 350.994,379.639 261.005,379.639 261.005,445.086\" stroke=\"#000000\" stroke-width=\"0.8181\"/>\n  </g>";
             }
         },
-        AMMO_SHIP("01", "Ammunition Ship", SeaSurfaceEntityType.AUX, GraphicType.MAIN) {
+        AMMO_SHIP("01", "Ammunition Ship", SeaSurfaceEntityType.AUXILIARY, GraphicType.MAIN) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"130\" id=\"AE\" transform=\"matrix(1 0 0 1 209.5 443.0146)\">AE</text>\n  </g>";
             }
         },
-        NAVAL_STORES("02", "Naval Stores Ship", SeaSurfaceEntityType.AUX, GraphicType.MAIN) {
+        NAVAL_STORES("02", "Naval Stores Ship", SeaSurfaceEntityType.AUXILIARY, GraphicType.MAIN) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"130\" transform=\"matrix(1 0 0 1 218.5 443.0146)\">AF</text>\n  </g>";
             }
         },
-        AUX_FLAG("03", "Auxiliary Flag Ship", SeaSurfaceEntityType.AUX, GraphicType.MAIN) {
+        AUX_FLAG("03", "Auxiliary Flag Ship", SeaSurfaceEntityType.AUXILIARY, GraphicType.MAIN) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"100\" id=\"AGF\" transform=\"matrix(1 0 0 1 199.5 431.25)\">AGF</text>\n  </g>";
             }
         },
-        INTEL_COLLECTOR("04", "Intelligence Collector", SeaSurfaceEntityType.AUX, GraphicType.MAIN) {
+        INTEL_COLLECTOR("04", "Intelligence Collector", SeaSurfaceEntityType.AUXILIARY, GraphicType.MAIN) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"120\" id=\"AGI\" transform=\"matrix(1 0 0 1 201.5 438.25)\">AGI</text>\n  </g>";
             }
         },
-        OCEANO_RESEARCH("05", "Oceanographic Research Ship", SeaSurfaceEntityType.AUX, GraphicType.MAIN) {
+        OCEANO_RESEARCH("05", "Oceanographic Research Ship", SeaSurfaceEntityType.AUXILIARY, GraphicType.MAIN) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"100\" id=\"AGO\" transform=\"matrix(1 0 0 1 197.5 432.25)\">AGO</text>\n  </g>";
             }
         },
-        SURVEY("06", "Survey Ship", SeaSurfaceEntityType.AUX, GraphicType.MAIN) {
+        SURVEY("06", "Survey Ship", SeaSurfaceEntityType.AUXILIARY, GraphicType.MAIN) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"100\" id=\"AGS\" transform=\"matrix(1 0 0 1 200.5 432.25)\">AGS</text>\n  </g>";
             }
         },
-        HOSPITAL("07", "Hospital Ship", SeaSurfaceEntityType.AUX, GraphicType.MAIN) {
+        HOSPITAL("07", "Hospital Ship", SeaSurfaceEntityType.AUXILIARY, GraphicType.MAIN) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"130\" id=\"AH\" transform=\"matrix(1 0 0 1 210.5 443.0146)\">AH</text>\n  </g>";
             }
         },
-        NAVAL_CARGO("08", "Naval Cargo Ship", SeaSurfaceEntityType.AUX, GraphicType.MAIN) {
+        NAVAL_CARGO("08", "Naval Cargo Ship", SeaSurfaceEntityType.AUXILIARY, GraphicType.MAIN) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"130\" id=\"AK\" transform=\"matrix(1 0 0 1 210.5 443.0146)\">AK</text>\n  </g>";
             }
         },
-        COMBAT_SUPPORT_FAST("09", "Combat Support Ship, Fast", SeaSurfaceEntityType.AUX, GraphicType.MAIN) {
+        COMBAT_SUPPORT_FAST("09", "Combat Support Ship, Fast", SeaSurfaceEntityType.AUXILIARY, GraphicType.MAIN) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"100\" id=\"AOE\" transform=\"matrix(1 0 0 1 198.5 432.25)\">AOE</text>\n  </g>";
             }
         },
-        OILER("10", "Oiler, Replenishment", SeaSurfaceEntityType.AUX, GraphicType.MAIN) {
+        OILER("10", "Oiler, Replenishment", SeaSurfaceEntityType.AUXILIARY, GraphicType.MAIN) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"96\" id=\"AOR\" transform=\"matrix(1 0 0 1 198.5 432.25)\">AOR</text>\n  </g>";
             }
         },
-        REPAIR("11", "Repair Ship", SeaSurfaceEntityType.AUX, GraphicType.MAIN) {
+        REPAIR("11", "Repair Ship", SeaSurfaceEntityType.AUXILIARY, GraphicType.MAIN) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"130\" id=\"AR\" transform=\"matrix(1 0 0 1 210.5 443.0146)\">AR</text>\n  </g>";
             }
         },
-        SUB_TENDER("12", "Submarine Tender", SeaSurfaceEntityType.AUX, GraphicType.MAIN) {
+        SUB_TENDER("12", "Submarine Tender", SeaSurfaceEntityType.AUXILIARY, GraphicType.MAIN) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"130\" id=\"AS\" transform=\"matrix(1 0 0 1 210.5 443.0146)\">AS</text>\n  </g>";
             }
         },
-        TUG("13", "Tug, Ocean Going", SeaSurfaceEntityType.AUX, GraphicType.MAIN) {
+        TUG("13", "Tug, Ocean Going", SeaSurfaceEntityType.AUXILIARY, GraphicType.MAIN) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
                 return "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"130\" id=\"AT\" transform=\"matrix(1 0 0 1 227.5 443.0146)\">AT</text>\n  </g>";
@@ -428,6 +428,11 @@ public enum SeaSurfaceEntitySubType implements EntitySubType {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

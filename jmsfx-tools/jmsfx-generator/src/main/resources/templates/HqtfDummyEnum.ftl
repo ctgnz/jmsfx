@@ -68,6 +68,11 @@ public enum HqtfDummyEnum implements HqtfDummy {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public boolean isUnknown() {
         return this == NA;
     }

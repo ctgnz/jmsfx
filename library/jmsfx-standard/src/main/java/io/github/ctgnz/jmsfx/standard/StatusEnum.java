@@ -456,6 +456,11 @@ public enum StatusEnum implements Status {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public boolean isOperationalCondition() {
         return operationalCondition;
     }

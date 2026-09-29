@@ -144,7 +144,7 @@ public class StandardIconLibrary implements IconLibrary {
 
     @Override
     public StandardIdentity getDefaultStandardIdentity() {
-        return StandardIdentityEnum.SI_FRIEND;
+        return StandardIdentityEnum.FRIEND;
     }
 
     @Override
@@ -212,7 +212,7 @@ public class StandardIconLibrary implements IconLibrary {
         if (amplifierItem.isUnknown() || !amplifierItem.isGraphicalIcon()) {
             return null;
         }
-        return injected(amplifierItem.getGraphicLocation(identity), amplifierItem.getGraphicMarkup(identity));
+        return injected(amplifierItem.getGraphicKey(identity), amplifierItem.getGraphicMarkup(identity));
     }
 
     /**
@@ -235,7 +235,7 @@ public class StandardIconLibrary implements IconLibrary {
             return null;
         }
         boolean civilian = civilianEntity && !identity.isHostile();
-        String location = symbolSet.getFrameLocation(identity, status, civilian);
+        String location = symbolSet.getFrameKey(identity, status, civilian);
         String markup = symbolSet.getDimension()
             .getFrameMarkup(identity, status);
         if (markup == null) {
@@ -256,7 +256,7 @@ public class StandardIconLibrary implements IconLibrary {
         if (context.isReality()) {
             return null;
         }
-        return injected(context.getOverlayGraphicLocation(), context.getOverlayGraphicMarkup());
+        return injected(context.getOverlayGraphicKey(), context.getOverlayGraphicMarkup());
     }
 
     @Override
@@ -264,7 +264,7 @@ public class StandardIconLibrary implements IconLibrary {
         if (hqtfDummy.isUnknown()) {
             return null;
         }
-        return injected(hqtfDummy.getGraphicLocation(identity, symbolSet), hqtfDummy.getHqtfDummyMarkup(identity, symbolSet));
+        return injected(hqtfDummy.getGraphicKey(identity, symbolSet), hqtfDummy.getHqtfDummyMarkup(identity, symbolSet));
     }
 
     /**
@@ -324,7 +324,7 @@ public class StandardIconLibrary implements IconLibrary {
         if (!mainIconElement.isGraphicalIcon()) {
             return null;
         }
-        String location = mainIconElement.getGraphicLocation(identity);
+        String location = mainIconElement.getGraphicKey(identity);
         SvgGraphic injected = parseInjected(location, mainIconElement.getGraphicMarkup(identity));
         return injected != null ? injected : parser.parseFile(location);
     }
@@ -334,7 +334,7 @@ public class StandardIconLibrary implements IconLibrary {
         if (sectorOneModifier.isUnknown()) {
             return null;
         }
-        String location = sectorOneModifier.getFullGraphicLocation();
+        String location = sectorOneModifier.getGraphicKey();
         SvgGraphic injected = parseInjected(location, sectorOneModifier.getGraphicMarkup());
         return injected != null ? injected : parser.parseFile(location);
     }
@@ -344,7 +344,7 @@ public class StandardIconLibrary implements IconLibrary {
         if (sectorTwoModifier.isUnknown()) {
             return null;
         }
-        String location = sectorTwoModifier.getFullGraphicLocation();
+        String location = sectorTwoModifier.getGraphicKey();
         SvgGraphic injected = parseInjected(location, sectorTwoModifier.getGraphicMarkup());
         return injected != null ? injected : parser.parseFile(location);
     }
@@ -354,7 +354,7 @@ public class StandardIconLibrary implements IconLibrary {
         if (!isStatusIconUsed) {
             return null;
         }
-        return injected(status.getGraphicLocation(identity, symbolSet), status.getStatusMarkup(identity, symbolSet));
+        return injected(status.getGraphicKey(identity, symbolSet), status.getStatusMarkup(identity, symbolSet));
     }
 
     @Override

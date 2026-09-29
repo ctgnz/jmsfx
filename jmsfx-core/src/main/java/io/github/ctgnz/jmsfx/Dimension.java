@@ -18,8 +18,6 @@ public interface Dimension extends CodeElement {
 
     List<SymbolSet> getSymbolSets();
 
-    String getName();
-
     /**
      * Where the frame draws for this dimension, or {@link Rectangle2D#EMPTY} when it has none - Control Measure is mixed geometry and carries no frame. Frames hang off the
      * dimension because the frame id is the dimension's own code. Generated from measurements, so no JavaFX toolkit is needed.

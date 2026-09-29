@@ -8,7 +8,6 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import io.github.ctgnz.jmsfx.EntitySubType;
 import io.github.ctgnz.jmsfx.EntityType;
-import io.github.ctgnz.jmsfx.StandardIdentity;
 
 public class EntitySubTypeImpl extends MainIconImpl implements EntitySubType {
     private final ObjectProperty<EntityType> entityType = new SimpleObjectProperty<>();
@@ -41,18 +40,6 @@ public class EntitySubTypeImpl extends MainIconImpl implements EntitySubType {
     @Override
     public EntityType getEntityType() {
         return entityType.get();
-    }
-
-    @Override
-    public String getGraphicLocation(StandardIdentity identity) {
-        String graphicLocation = getSymbolSet().getGraphicLocation();
-        String graphicIdentifier = getGraphicIdentifier();
-        if (isFullFrameIcon()) {
-            return String.format("/svg/Appendices/%s/%s%s.svg", graphicLocation, graphicIdentifier, identity.getGroup()
-                .getGraphicSuffix());
-        } else {
-            return String.format("/svg/Appendices/%s/%s.svg", graphicLocation, graphicIdentifier);
-        }
     }
 
     @Override

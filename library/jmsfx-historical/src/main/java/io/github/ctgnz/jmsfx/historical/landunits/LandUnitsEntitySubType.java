@@ -555,6 +555,11 @@ public enum LandUnitsEntitySubType implements EntitySubType {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public EntityType getEntityType() {
         return entityType;
     }

@@ -99,6 +99,11 @@ public enum SpaceSectorTwoModifier implements SectorTwoModifier {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.SPACE;
     }

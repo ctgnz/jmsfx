@@ -69,6 +69,11 @@ public enum SpaceSectorOneModifier implements SectorOneModifier {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.SPACE;
     }

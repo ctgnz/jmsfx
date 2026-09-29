@@ -339,6 +339,11 @@ public enum ControlMeasureSectorOneModifier implements SectorOneModifier {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.CONTROL_MEASURE;
     }

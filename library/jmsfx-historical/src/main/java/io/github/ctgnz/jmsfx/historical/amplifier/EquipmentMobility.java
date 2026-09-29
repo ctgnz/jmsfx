@@ -180,17 +180,6 @@ public enum EquipmentMobility implements StandardAmplifierItem {
                     default -> Rectangle2D.EMPTY;
                 };
             }
-
-            @Override
-            public String getGraphicMarkup(StandardIdentity identity) {
-                return switch (identity.getGroupId()) {
-                    case "1" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,616.323 280.965,566.25 306.001,616.323 331.037,566.25 356.073,616.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
-                    case "3" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,591.323 280.965,541.25 306.001,591.323 331.037,541.25 356.073,591.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
-                    case "4" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,585.323 280.965,535.25 306.001,585.323 331.037,535.25 356.073,585.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
-                    case "6" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,607.323 280.965,557.25 306.001,607.323 331.037,557.25 356.073,607.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
-                    default -> null;
-                };
-            }
         },
         ANIMAL_DRAWN("39", "Animal-drawn vehicle") {
             @Override
@@ -201,17 +190,6 @@ public enum EquipmentMobility implements StandardAmplifierItem {
                     case "4" -> new Rectangle2D(252.93, 532.25, 106.15, 56.07);
                     case "6" -> new Rectangle2D(252.93, 554.25, 106.15, 56.07);
                     default -> Rectangle2D.EMPTY;
-                };
-            }
-
-            @Override
-            public String getGraphicMarkup(StandardIdentity identity) {
-                return switch (identity.getGroupId()) {
-                    case "1" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,616.323 280.965,566.25 306.001,616.323 331.037,566.25 356.073,616.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
-                    case "3" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,591.323 280.965,541.25 306.001,591.323 331.037,541.25 356.073,591.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
-                    case "4" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,585.323 280.965,535.25 306.001,585.323 331.037,535.25 356.073,585.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
-                    case "6" -> "<g id=\"amplifier\">\n    <polyline fill=\"none\" points=\"255.928,607.323 280.965,557.25 306.001,607.323 331.037,557.25 356.073,607.323\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"5\"/>\n  </g>";
-                    default -> null;
                 };
             }
         },

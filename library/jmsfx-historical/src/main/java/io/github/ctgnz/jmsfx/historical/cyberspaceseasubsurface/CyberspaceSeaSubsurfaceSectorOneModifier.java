@@ -87,6 +87,11 @@ public enum CyberspaceSeaSubsurfaceSectorOneModifier implements SectorOneModifie
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.CYBERSPACE_SEA_SUBSURFACE;
     }

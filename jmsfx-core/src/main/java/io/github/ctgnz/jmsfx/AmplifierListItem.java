@@ -14,8 +14,10 @@ public interface AmplifierListItem extends CodeElement {
 
     String getGraphicLocation();
 
-    default String getGraphicLocation(StandardIdentity identity) {
-        return String.format("/svg/%s/%s%s.svg", getGraphicLocation(), identity.getGroupId(), getFullId());
+    /** One directory per amplifier list, so Echelon sits beside Equipment Mobility rather than beside the container that holds them (jmsfx#136). */
+    default String getGraphicKey(StandardIdentity identity) {
+        return String.format("/svg/Amplifiers/%s/%s/%s.svg", getAmplifierList().getName(), identity.getGroup()
+            .getName(), getName());
     }
 
     /**
@@ -47,7 +49,5 @@ public interface AmplifierListItem extends CodeElement {
     }
 
     boolean isGraphicalIcon();
-
-    String getName();
 
 }

@@ -25,4 +25,9 @@ public enum VersionEnum implements Version {
         return label;
     }
 
+    @Override
+    public String getName() {
+        return name();
+    }
+
 }

@@ -4,7 +4,10 @@ public interface Context extends CodeElement {
 
     boolean isReality();
 
-    String getOverlayGraphicLocation();
+    /** The context indicator that sits on the frame, under the frames it belongs to. Reality has none - it is the absence of an indicator. */
+    default String getOverlayGraphicKey() {
+        return String.format("/svg/Frames/_overlay/%s.svg", getName());
+    }
 
     /**
      * The markup this context's frame overlay draws, or null when it has none - Reality draws no indicator, being the absence of one.

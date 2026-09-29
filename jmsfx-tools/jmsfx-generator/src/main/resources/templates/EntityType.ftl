@@ -16,12 +16,7 @@ import ${typePackage}.GraphicType;
 
 public enum ${symbolSet.baseTypeName}EntityType implements EntityType {
 <#list symbolSet.entityTypes as entType>
-        ${entType.id}("${entType.code}", "${entType.label}", ${symbolSet.baseTypeName}Entity.${entType.entityId}, GraphicType.${entType.graphicType})<#if entType.graphic?? || entType.graphicMarkup?? || entType.graphicMarkupByKey??> {<#if entType.graphic??>
-            @Override
-            public String getGraphicIdentifier() {
-                return "${entType.graphic}";
-            }
-</#if><@frag.main entType/><@frag.bounds entType "getIconBounds"/>        }</#if><#sep>,
+        ${entType.id}("${entType.code}", "${entType.label}", ${symbolSet.baseTypeName}Entity.${entType.entityId}, GraphicType.${entType.graphicType})<#if entType.graphicMarkup?? || entType.graphicMarkupByKey??> {<@frag.main entType/><@frag.bounds entType "getIconBounds"/>        }</#if><#sep>,
 </#list>;
 
     private final String id;
@@ -49,6 +44,11 @@ public enum ${symbolSet.baseTypeName}EntityType implements EntityType {
     @Override
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public String getName() {
+        return name();
     }
 
     @Override

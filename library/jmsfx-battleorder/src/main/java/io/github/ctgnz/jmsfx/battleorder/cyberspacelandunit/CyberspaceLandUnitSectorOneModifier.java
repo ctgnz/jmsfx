@@ -87,6 +87,11 @@ public enum CyberspaceLandUnitSectorOneModifier implements SectorOneModifier {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.CYBERSPACE_LAND_UNIT;
     }

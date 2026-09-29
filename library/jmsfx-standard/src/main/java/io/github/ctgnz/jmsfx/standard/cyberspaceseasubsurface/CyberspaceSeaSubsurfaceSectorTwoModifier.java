@@ -45,6 +45,11 @@ public enum CyberspaceSeaSubsurfaceSectorTwoModifier implements SectorTwoModifie
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public SymbolSet getSymbolSet() {
         return SymbolSetEnum.CYBERSPACE_SEA_SUBSURFACE;
     }

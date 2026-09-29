@@ -51,7 +51,7 @@ public class VerifyIcons {
             .forEach(context -> {
                 System.out.format("  [%s] %s%n", context.getId(), context.getLabel());
                 if (!context.isReality()) {
-                    String location = context.getOverlayGraphicLocation();
+                    String location = context.getOverlayGraphicKey();
                     if (!isGraphicPresent(location)) {
                         System.out.format("    [%s]: %s not found%n", context.getLabel(), location);
                     }
@@ -73,7 +73,7 @@ public class VerifyIcons {
                         .forEach(symbolSet -> {
                             library.getStandardIdentities()
                                 .forEach(identity -> {
-                                    String location = status.getGraphicLocation(identity, symbolSet);
+                                    String location = status.getGraphicKey(identity, symbolSet);
                                     if (!isGraphicPresent(location)) {
                                         System.out.format("    [%s:%s:%s]: %s not found%n", status.getLabel(), symbolSet.getLabel(), identity.getLabel(), location);
                                     }
@@ -91,7 +91,7 @@ public class VerifyIcons {
                     .forEach(symbolSet -> {
                         library.getStandardIdentities()
                             .forEach(identity -> {
-                                String location = dummy.getGraphicLocation(identity, symbolSet);
+                                String location = dummy.getGraphicKey(identity, symbolSet);
                                 if (!isGraphicPresent(location) && !dummy.isUnknown()) {
                                     System.out.format("    [%s:%s:%s]: %s not found%n", dummy.getLabel(), symbolSet.getLabel(), identity.getLabel(), location);
                                 }
@@ -119,7 +119,7 @@ public class VerifyIcons {
                                         .filter(Status::isFrameStatus)
                                         .forEach(status -> {
                                             if (identity.isConfirmed() || status.isPresent()) {
-                                                String location = symSet.getFrameLocation(identity, status, false);
+                                                String location = symSet.getFrameKey(identity, status, false);
                                                 if (!isGraphicPresent(location)) {
                                                     System.out.format("    [%s:%s:%s]: %s not found%n", symSet.getLabel(), identity.getLabel(), status.getLabel(), location);
                                                 }
@@ -133,7 +133,7 @@ public class VerifyIcons {
                                 if (entity.isGraphicalIcon()) {
                                     library.getStandardIdentities()
                                         .forEach(identity -> {
-                                            String location = entity.getGraphicLocation(identity);
+                                            String location = entity.getGraphicKey(identity);
                                             if (!isGraphicPresent(location)) {
                                                 System.out.format("      [%s] Missing entity icon: %s (%s) (%s)%n", symSet.getLabel(), entity.getLabel(), identity.getLabel(), location);
                                             }
@@ -145,7 +145,7 @@ public class VerifyIcons {
                                         if (entityType.isGraphicalIcon()) {
                                             library.getStandardIdentities()
                                                 .forEach(identity -> {
-                                                    String location = entityType.getGraphicLocation(identity);
+                                                    String location = entityType.getGraphicKey(identity);
                                                     if (!isGraphicPresent(location)) {
                                                         System.out.format("      [%s] Missing entity icon: %s (%s) (%s)%n", symSet.getLabel(), entityType.getLabel(), identity.getLabel(), location);
                                                     }
@@ -157,7 +157,7 @@ public class VerifyIcons {
                                                 if (subType.isGraphicalIcon()) {
                                                     library.getStandardIdentities()
                                                         .forEach(identity -> {
-                                                            String location = ((EntitySubTypeImpl) subType).getGraphicLocation(identity);
+                                                            String location = ((EntitySubTypeImpl) subType).getGraphicKey(identity);
                                                             if (!isGraphicPresent(location)) {
                                                                 System.out.format("      [%s] Missing entity icon: %s (%s) (%s)%n", symSet.getLabel(), subType.getLabel(), identity.getLabel(),
                                                                     location);
@@ -172,7 +172,7 @@ public class VerifyIcons {
                             .forEach(mod1 -> {
                                 System.out.format("      %s%n", mod1.getLabel());
                                 if (!mod1.isUnknown()) {
-                                    String location = mod1.getFullGraphicLocation();
+                                    String location = mod1.getGraphicKey();
                                     if (!isGraphicPresent(location)) {
                                         System.out.format("      [%s] Missing mod1 icon: %s (%s)%n", symSet.getLabel(), mod1.getLabel(), location);
                                     }
@@ -183,7 +183,7 @@ public class VerifyIcons {
                             .forEach(mod2 -> {
                                 System.out.format("      %s%n", mod2.getLabel());
                                 if (!mod2.isUnknown()) {
-                                    String location = mod2.getFullGraphicLocation();
+                                    String location = mod2.getGraphicKey();
                                     if (!isGraphicPresent(location)) {
                                         System.out.format("      [%s] Missing mod2 icon: %s (%s)%n", symSet.getLabel(), mod2.getLabel(), location);
                                     }
@@ -219,7 +219,7 @@ public class VerifyIcons {
                         if (!amp.isUnknown()) {
                             library.getStandardIdentities()
                                 .forEach(identity -> {
-                                    String location = value.getGraphicLocation(identity);
+                                    String location = value.getGraphicKey(identity);
                                     if (!isGraphicPresent(location)) {
                                         System.out.format("    [%s:%s]: %s not found%n", value.getLabel(), identity.getLabel(), location);
                                     }

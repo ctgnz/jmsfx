@@ -7,17 +7,15 @@ public interface SectorTwoModifier extends ModifierElement {
     Comparator<SectorTwoModifier> VIEW_ORDER = Comparator.comparing(SectorTwoModifier::getCategory)
         .thenComparing(SectorTwoModifier::getLabel);
 
-    default String getFullGraphicLocation() {
-        return String.format("/svg/Appendices/%s/mod2/%s.svg", getGraphicLocation(), getGraphicIdentifier());
+    /** Under the dimension its symbol set belongs to, in the sector's own directory - see {@link MainElement#getGraphicKey(StandardIdentity)}. */
+    default String getGraphicKey() {
+        return String.format("/svg/Dimensions/%s/mod2/%s.svg", getBaseSymbolSet().getDimension()
+            .getName(), getGraphicIdentifier());
     }
 
     @Override
     default String getGraphicIdentifier() {
-        return String.format("%s%s2", getBaseSymbolSet().getId(), getId());
-    }
-
-    default String getGraphicLocation() {
-        return getSymbolSet().getGraphicLocation();
+        return getName();
     }
 
 }

@@ -142,6 +142,11 @@ public enum SymbolSetEnum implements SymbolSet {
     }
 
     @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
     public List<SectorOneModifier> getSectorOneModifiers() {
         return symbolSetInfo.getSectorOneModifiers();
     }

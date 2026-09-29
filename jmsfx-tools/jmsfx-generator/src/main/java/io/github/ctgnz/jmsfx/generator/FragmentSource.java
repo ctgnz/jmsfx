@@ -175,10 +175,11 @@ public final class FragmentSource {
         for (FreeCanvasIcons.Icon icon : FreeCanvasIcons.collect(model, tree, type -> type != GraphicType.NA)) {
             if (icon.graphicType() == GraphicType.FULL_FRAME) {
                 // Four files, one per identity group, because a full frame icon is the frame and each
-                // identity draws a different one. The suffix is the group's own, as MainElement uses it.
+                // identity draws a different one. The group names its own, as MainElement does - which
+                // replaced the positional suffix that group carried only to index a filename (jmsfx#136).
                 for (StandardIdentityGroupModel group : model.getIdentityGroups()) {
-                    if (group.getGraphicSuffix() != null) {
-                        String identifier = icon.identifier() + group.getGraphicSuffix();
+                    {
+                        String identifier = icon.identifier() + "_" + group.getId();
                         // Searched through the tree, not resolved against icon.fragment(): a FULL_FRAME
                         // element has no fragment under its canonical name, so that path resolves to this
                         // library's own root whether or not anything is there - and since jmsfx#133 a
@@ -191,11 +192,10 @@ public final class FragmentSource {
             }
         }
         for (SymbolSetModel symbolSet : model.getSymbolSets()) {
-            String location = modifierLocation(model, symbolSet);
+            String location = FreeCanvasIcons.baseDimension(model, symbolSet);
             if (location == null) {
                 continue;
             }
-            String baseCode = FreeCanvasIcons.baseCode(model, symbolSet, null);
             // An "unspecified" modifier draws nothing and has no fragment - the generated library returns
             // null from loadSectorOneModifierGraphic when isUnknown(). See drawsNothing for why that is
             // not simply "the code is 00".
@@ -203,20 +203,18 @@ public final class FragmentSource {
                 if (drawsNothing(modifier.getGroupId(), modifier.getCode())) {
                     continue;
                 }
-                String identifier = modifierIdentifier(baseCode, modifier.getGroupId(), modifier.getCode(), "1");
-                add(fragments, identifier, modifier, null, tree.resolve("Appendices", location, "mod1", identifier + ".svg"), "mod1");
+                add(fragments, modifier.getId(), modifier, null, tree.resolve("Dimensions", location, "mod1", modifier.getId() + ".svg"), "mod1");
             }
             for (SectorTwoModifierModel modifier : symbolSet.getSectorTwoMods()) {
                 if (drawsNothing(modifier.getGroupId(), modifier.getCode())) {
                     continue;
                 }
-                String identifier = modifierIdentifier(baseCode, modifier.getGroupId(), modifier.getCode(), "2");
-                add(fragments, identifier, modifier, null, tree.resolve("Appendices", location, "mod2", identifier + ".svg"), "mod2");
+                add(fragments, modifier.getId(), modifier, null, tree.resolve("Dimensions", location, "mod2", modifier.getId() + ".svg"), "mod2");
             }
         }
         addFrames(fragments, model, tree);
-        addFrameFurniture(fragments, model, tree, "OCA", "oca", model.getStatuses(), (key, code) -> "0" + key + code + "2");
-        addFrameFurniture(fragments, model, tree, "HQTFFD", "hqtffd", model.getHqtfDummies(), (key, code) -> key + code);
+        addFrameFurniture(fragments, model, tree, "Status", "oca", model.getStatuses());
+        addFrameFurniture(fragments, model, tree, "HQTFFD", "hqtffd", model.getHqtfDummies());
         addAmplifiers(fragments, model, tree);
         addOverlays(fragments, model, tree);
         return fragments;
@@ -238,8 +236,8 @@ public final class FragmentSource {
             }
             for (AmplifierListItemModel item : list.getValues()) {
                 for (StandardIdentityGroupModel group : model.getIdentityGroups()) {
-                    String identifier = group.getCode() + item.getCode();
-                    Path file = tree.resolve(list.getGraphicLocation(), identifier + ".svg");
+                    String identifier = String.format("%s/%s/%s", list.getEnumId(), group.getId(), item.getId());
+                    Path file = tree.resolve("Amplifiers", list.getEnumId(), group.getId(), item.getId() + ".svg");
                     if (Files.exists(file)) {
                         add(fragments, identifier, item, group.getCode(), file, CONTENT_ROOTS.get(list.getGraphicLocation()));
                     }
@@ -258,16 +256,11 @@ public final class FragmentSource {
         for (ContextModel context : model.getContexts()) {
             // The model's code, not its id: ContextEnum passes the code as the field its
             // getOverlayGraphicLocation formats, so the file is 2.svg and not EXERCISE.svg.
-            Path file = tree.resolve("Frames", "Overlay", context.getCode() + ".svg");
+            Path file = tree.resolve("Frames", "_overlay", context.getId() + ".svg");
             if (Files.exists(file)) {
-                add(fragments, context.getCode(), context, null, file, "frame_overlay");
+                add(fragments, context.getId(), context, null, file, "frame_overlay");
             }
         }
-    }
-
-    /** How a category of frame furniture names the file for one element under one key. */
-    private interface Naming {
-        String identifier(String key, String code);
     }
 
     /**
@@ -281,13 +274,13 @@ public final class FragmentSource {
      * combination the tree does not hold is skipped rather than reported missing: not every identity group draws in every dimension, and absence is how the tree says so.
      */
     private static void addFrameFurniture(List<Fragment> fragments, LibraryModel model, FragmentTree tree, String directory, String contentRoot,
-                                          List<? extends AbstractModel> elements, Naming naming) throws IOException {
+                                          List<? extends AbstractModel> elements) throws IOException {
         for (AbstractModel element : elements) {
             for (StandardIdentityGroupModel group : model.getIdentityGroups()) {
                 for (DimensionModel dimension : model.getDimensions()) {
                     String key = group.getCode() + dimension.getCode();
-                    String identifier = naming.identifier(key, element.getCode());
-                    Path file = tree.resolve(directory, identifier + ".svg");
+                    String identifier = String.format("%s/%s/%s", dimension.getId(), group.getId(), element.getId());
+                    Path file = tree.resolve(directory, dimension.getId(), group.getId(), element.getId() + ".svg");
                     if (Files.exists(file)) {
                         add(fragments, identifier, element, key, file, contentRoot);
                     }
@@ -319,8 +312,9 @@ public final class FragmentSource {
                     if (!seen.add(key)) {
                         continue;
                     }
-                    String identifier = String.format("0_%s%s_%s", identity.getCode(), dimension.getCode(), statusFrameId);
-                    Path file = tree.resolve("Frames", identifier + ".svg");
+                    String statusName = identity.isConfirmed() ? status.getId() : "PRESENT";
+                    String identifier = String.format("%s/%s/%s", dimension.getId(), identity.getId(), statusName);
+                    Path file = tree.resolve("Frames", dimension.getId(), identity.getId(), statusName + ".svg");
                     if (Files.exists(file)) {
                         add(fragments, identifier, dimension, key, file, "frame");
                     }
@@ -337,29 +331,6 @@ public final class FragmentSource {
      */
     private static boolean drawsNothing(String groupId, String code) {
         return groupId == null ? UNSPECIFIED.equals(code) : "0".equals(groupId) && UNSPECIFIED.equals(code);
-    }
-
-    /**
-     * A modifier's identifier, matching what the generated class returns.
-     * <p>
-     * A modifier carrying a group id belongs to the common table, which numbers its fragments {@code C1} then the group id then the modifier id - see
-     * {@code CommonSectorOneModifier}. Every other modifier is numbered with its <em>base</em> symbol set's code, the modifier id, and the sector: the nine Cyberspace variants
-     * file their modifiers under Cyberspace's numbering, and the generated classes override {@code getBaseSymbolSet} per class to say so.
-     */
-    private static String modifierIdentifier(String baseCode, String groupId, String code, String sector) {
-        // The model's code is what the generated class returns from getId(); the model's id names the Java
-        // constant. Reading the wrong one asked for C10UNSPECIFIED instead of C1000.
-        return groupId == null ? baseCode + code + sector : String.format("C%s%s%s", sector, groupId, code);
-    }
-
-    /** The appendix directory a symbol set files its modifiers under, or null when it names none. */
-    private static String modifierLocation(LibraryModel model, SymbolSetModel symbolSet) {
-        String location = symbolSet.getGraphicLocation();
-        if (location == null && model.getDimension(symbolSet.getDimensionId()) != null) {
-            location = model.getDimension(symbolSet.getDimensionId())
-                .getGraphicLocation();
-        }
-        return location;
     }
 
     private static void add(List<Fragment> fragments, String identifier, AbstractModel element, String key, Path file, String contentRoot) throws IOException {
