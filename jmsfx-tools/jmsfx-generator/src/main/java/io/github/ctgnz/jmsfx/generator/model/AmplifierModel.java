@@ -1,44 +1,34 @@
 package io.github.ctgnz.jmsfx.generator.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
-@YamlFlowStyle
-@YamlForceQuote(properties = {
-    "id", "code", "label", "remarks"
+@JsonIgnoreProperties({
+    "id", "label", "code", "extension", "deprecated", "remarks", "before"
 })
 @JsonPropertyOrder({
-    "id", "type", "min", "max", "code", "extension", "deprecated", "label", "description", "remarks"
+    "details"
 })
 public class AmplifierModel extends AbstractModel {
-
-    private String description;
-    private AmplifierType type;
-    private int min;
-    private int max;
-
-    public AmplifierModel() {
+    @YamlFlowStyle
+    @YamlForceQuote(properties = {
+        "id", "code", "label", "remarks"
+    })
+    public record Details(String id, AmplifierType type, int min, int max, String code, boolean extension, boolean deprecated, String label, String description, String remarks) {
     }
 
-    @JsonCreator
-    public AmplifierModel(@JsonProperty("id") String id,
-                          @JsonProperty("label") String label,
-                          @JsonProperty("code") String code,
-                          @JsonProperty("remarks") String remarks,
-                          @JsonProperty("type") AmplifierType type,
-                          @JsonProperty("description") String description,
-                          @JsonProperty("min") int min,
-                          @JsonProperty("max") int max) {
-        super(id, label, code, remarks);
-        this.type = type;
-        this.description = description;
-        this.min = min;
-        this.max = max;
+    private @JsonIgnore String description;
+    private @JsonIgnore AmplifierType type;
+    private @JsonIgnore int min;
+    private @JsonIgnore int max;
+
+    public AmplifierModel() {
     }
 
     @JsonIgnore
@@ -76,6 +66,25 @@ public class AmplifierModel extends AbstractModel {
 
     public void setType(AmplifierType type) {
         this.type = type;
+    }
+
+    @JsonGetter("details")
+    private Details getDetails() {
+        return new Details(id, type, min, max, code, extension, deprecated, label, description, remarks);
+    }
+
+    @JsonSetter("details")
+    private void setDetails(Details details) {
+        this.id = details.id;
+        this.type = details.type;
+        this.min = details.min;
+        this.max = details.max;
+        this.code = details.code;
+        this.extension = details.extension;
+        this.deprecated = details.deprecated;
+        this.label = details.label;
+        this.description = details.description;
+        this.remarks = details.remarks;
     }
 
 }

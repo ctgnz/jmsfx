@@ -144,7 +144,7 @@ public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
     }
 
     public String getAmplifierGuideTemplateLocation() {
-        return String.format("/svg/Amplifier/%s.svg", getDimension().getName());
+        return String.format("/svg/Templates/Amplifier/%s.svg", getDimension().getName());
     }
 
     @Override

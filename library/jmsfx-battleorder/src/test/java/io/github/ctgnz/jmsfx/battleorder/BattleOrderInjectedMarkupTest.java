@@ -2,6 +2,7 @@ package io.github.ctgnz.jmsfx.battleorder;
 
 import java.nio.file.Path;
 
+import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.InjectedMarkupContract;
 
 /**
@@ -16,5 +17,11 @@ class BattleOrderInjectedMarkupTest extends InjectedMarkupContract {
     @Override
     protected Path baseModelRoot() {
         return Path.of("..", "jmsfx-standard", "src", "main", "model");
+    }
+
+    /** BattleOrderIconLibrary counts its own fallbacks; the contract is written against IconLibrary, which does not carry that. See jmsfx#127. */
+    @Override
+    protected int classpathFallbacks() {
+        return ((BattleOrderIconLibrary) IconLibrary.discover()).getClasspathFallbacks();
     }
 }

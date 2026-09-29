@@ -7,12 +7,22 @@
 
     <!--
         The first library generated from a base model plus an overlay rather than from a whole model
-        of its own - jmsfx#81. Its model.yml is thirty lines; everything else in src/main/java is
+        of its own - jmsfx#81. Its model.yml is a dozen lines; everything else in src/main/java is
         composed onto jmsfx-standard's model at generation time.
 
-        It does not carry SVG fragments yet, so it compiles and registers itself but cannot draw a
-        symbol. Sharing a fragment set between libraries without putting two IconLibrary
-        implementations on one classpath is the open question in jmsfx#81, and jmsfx#82 may remove it.
+        It carries no SVG fragments of its own at all. Since jmsfx#133 a library's fragments resolve
+        through the tree of the library it extends, so this one draws jmsfx-standard's - and since
+        jmsfx#122 the drawings are injected into the generated code, so nothing is read at render
+        time and there is no second IconLibrary on the classpath. That was the open question in
+        jmsfx#81, and the jmsfx#82 epic answered it.
+
+        Note what the frame amplifier does to the frame. In APP-6E the frame fill *is* the standard
+        identity - blue friend, red hostile, yellow unknown, green neutral - and a frame amplifier
+        replaces that fill. Battle Order charts draw every unit as Friend whichever side they
+        describe, so the fill is free to carry something else. A consumer of this library gets
+        branch colour instead of affiliation colour, not as well as it. The colours are Battle
+        Order's own (https://www.battleorder.org/icons, "New Unit Symbols", Headquarters row);
+        ServiceBranchFrameTest is where the rest of the reasoning lives.
     -->
 
     <parent>

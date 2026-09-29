@@ -28,10 +28,10 @@ class ModelComparatorTest {
                         entityTypes:
                         - details: {code: "01", id: A_TYPE, graphicType: NA, label: "A Type"}
                           entitySubTypes:
-                          - {code: "02", id: A_SUB_TYPE, graphicType: NA, label: "A Sub Type"}
+                          - details: {code: "02", id: A_SUB_TYPE, graphicType: NA, label: "A Sub Type"}
                       sectorOneMods:
-                      - {groupId: 1, code: "00", category: Mobility, id: ROBOTIC, label: "Robotic"}
-                      - {groupId: 2, code: "00", category: MissionArea, id: BOMBER, label: "Bomber"}
+                      - details: {groupId: 1, code: "00", category: Mobility, id: ROBOTIC, label: "Robotic"}
+                      - details: {groupId: 2, code: "00", category: MissionArea, id: BOMBER, label: "Bomber"}
                     """;
 
     private final ModelComparator comparator = new ModelComparator();
@@ -45,10 +45,10 @@ class ModelComparatorTest {
     @Test
     void acceptsAnOverlayThatOnlyAdds() throws IOException {
         String overlay = BASE.replace("""
-                          - {groupId: 2, code: "00", category: MissionArea, id: BOMBER, label: "Bomber"}
+                          - details: {groupId: 2, code: "00", category: MissionArea, id: BOMBER, label: "Bomber"}
                         """, """
-                          - {groupId: 2, code: "00", category: MissionArea, id: BOMBER, label: "Bomber"}
-                          - {groupId: 2, code: "01", category: MissionArea, id: FIGHTER, label: "Fighter"}
+                          - details: {groupId: 2, code: "00", category: MissionArea, id: BOMBER, label: "Bomber"}
+                          - details: {groupId: 2, code: "01", category: MissionArea, id: FIGHTER, label: "Fighter"}
                         """);
 
         assertThat(comparator.compare(model(BASE), model(overlay)), is(true));
@@ -81,7 +81,7 @@ class ModelComparatorTest {
     @Test
     void rejectsAnOverlayThatDropsASharedElement() throws IOException {
         String overlay = BASE.replace("""
-                          - {groupId: 2, code: "00", category: MissionArea, id: BOMBER, label: "Bomber"}
+                          - details: {groupId: 2, code: "00", category: MissionArea, id: BOMBER, label: "Bomber"}
                         """, "");
 
         assertThat(comparator.compare(model(BASE), model(overlay)), is(false));

@@ -16,6 +16,7 @@ import io.github.ctgnz.jmsfx.types.ModifierCategory;
 
 public class SectorTwoModifierImpl extends CodeElementImpl implements SectorTwoModifier {
     private final ObjectProperty<SymbolSet> symbolSet = new SimpleObjectProperty<>();
+    private final ObjectProperty<SymbolSet> baseSymbolSet = new SimpleObjectProperty<>();
     private final BooleanProperty unknown = new SimpleBooleanProperty();
     private final ObjectProperty<ModifierCategory> category = new SimpleObjectProperty<>();
     private final StringProperty graphicIdentifier = new SimpleStringProperty();
@@ -26,6 +27,7 @@ public class SectorTwoModifierImpl extends CodeElementImpl implements SectorTwoM
     public SectorTwoModifierImpl(SectorTwoModifier modifier) {
         super(modifier);
         this.symbolSet.set(modifier.getSymbolSet());
+        this.baseSymbolSet.set(modifier.getBaseSymbolSet());
         this.category.set(modifier.getCategory());
         this.unknown.set(modifier.isUnknown());
         this.graphicIdentifier.set(modifier.getGraphicIdentifier());
@@ -56,6 +58,11 @@ public class SectorTwoModifierImpl extends CodeElementImpl implements SectorTwoM
     @Override
     public String getGraphicIdentifier() {
         return graphicIdentifier.get();
+    }
+
+    @Override
+    public SymbolSet getBaseSymbolSet() {
+        return baseSymbolSet.get();
     }
 
     @Override

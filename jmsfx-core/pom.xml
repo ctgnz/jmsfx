@@ -53,6 +53,16 @@
 
                     Triplicating them was the alternative, and verification code that exists three times
                     is verification code that drifts. See jmsfx#122.
+
+                    This jar is published, deliberately. A test jar is an attached artifact, so
+                    -Prelease deploy sends it to Central along with the main one, and it carries all of
+                    this module's test classes - TestFixtures and its fake IconLibrary among them.
+                    excludeArtifacts cannot separate them: it matches on artifactId, so excluding the
+                    test jar would exclude jmsfx-core itself. Weighed at 2.0.0 and accepted: it is 44K,
+                    and a consumer generating their own library is exactly who would want the contract
+                    to subclass. The alternative considered was a jmsfx-core-testkit module, which could
+                    be excluded by name; revisit that if the fixtures turn out to be worth hiding.
+                    See jmsfx#127.
                 -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
