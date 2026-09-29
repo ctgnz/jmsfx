@@ -1,10 +1,7 @@
 package io.github.ctgnz.jmsfx.historical.landequipment;
 
-import javafx.geometry.Rectangle2D;
-
 import io.github.ctgnz.jmsfx.SectorTwoModifier;
 import io.github.ctgnz.jmsfx.SymbolSet;
-import io.github.ctgnz.jmsfx.historical.ModifierBounds;
 import io.github.ctgnz.jmsfx.historical.SymbolSetEnum;
 import io.github.ctgnz.jmsfx.types.ModifierCategory;
 
@@ -46,8 +43,4 @@ public enum LandEquipmentSectorTwoModifier implements SectorTwoModifier {
         return SymbolSetEnum.LAND_EQUIPMENT;
     }
 
-    @Override
-    public Rectangle2D getModifierBounds() {
-        return ModifierBounds.lookup(getGraphicIdentifier());
-    }
 }

@@ -1,11 +1,8 @@
 package io.github.ctgnz.jmsfx.historical.cyberspacespace;
 
-import javafx.geometry.Rectangle2D;
-
 import io.github.ctgnz.jmsfx.Entity;
 import io.github.ctgnz.jmsfx.EntityType;
 import io.github.ctgnz.jmsfx.StandardIdentity;
-import io.github.ctgnz.jmsfx.historical.IconBounds;
 import io.github.ctgnz.jmsfx.types.GraphicType;
 
 public enum CyberspaceSpaceEntityType implements EntityType {
@@ -103,11 +100,6 @@ public enum CyberspaceSpaceEntityType implements EntityType {
     @Override
     public GraphicType getGraphicType() {
         return graphicType;
-    }
-
-    @Override
-    public Rectangle2D getIconBounds() {
-        return IconBounds.lookup(getGraphicIdentifier(), getGraphicType());
     }
 
     @Override

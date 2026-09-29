@@ -1,17 +1,15 @@
-<#import "fragment-markup.ftl" as frag><#assign hasModBounds = (modifierBounds??) && (modifierBounds?size gt 0)>package ${iconPackage}.${symbolSet.packageName};
+<#import "fragment-markup.ftl" as frag><#assign hasModBounds = symbolSet.sectorTwoMods?filter(v -> v.measuredBounds??)?size gt 0>package ${iconPackage}.${symbolSet.packageName};
 
 <#if hasModBounds>import javafx.geometry.Rectangle2D;
 
 </#if>import ${basePackage}.SectorTwoModifier;
 import ${basePackage}.SymbolSet;
 import ${iconPackage}.SymbolSetEnum;
-<#if hasModBounds>import ${iconPackage}.ModifierBounds;
-</#if>
 import ${typePackage}.ModifierCategory;
 
 public enum ${symbolSet.baseTypeName}SectorTwoModifier implements SectorTwoModifier {
 <#list symbolSet.sectorTwoMods as mod>
-        ${mod.id}("${mod.code}", "${mod.label}", ModifierCategory.${mod.category})<#if mod.graphicMarkup??> {<@frag.modifier mod/>        }</#if><#sep>,
+        ${mod.id}("${mod.code}", "${mod.label}", ModifierCategory.${mod.category})<#if mod.graphicMarkup?? || mod.measuredBounds??> {<@frag.modifier mod/><@frag.bounds mod "getModifierBounds"/>        }</#if><#sep>,
 </#list>;
 
     private final String id;
@@ -51,9 +49,4 @@ public enum ${symbolSet.baseTypeName}SectorTwoModifier implements SectorTwoModif
     }
 </#if>
 
-<#if hasModBounds>
-    @Override
-    public Rectangle2D getModifierBounds() {
-        return ModifierBounds.lookup(getGraphicIdentifier());
-    }
-</#if>}
+}
