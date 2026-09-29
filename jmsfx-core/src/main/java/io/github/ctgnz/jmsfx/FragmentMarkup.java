@@ -21,13 +21,18 @@ public final class FragmentMarkup {
     /**
      * The envelope an injected fragment is parsed inside.
      * <p>
-     * Deliberately minimal. No {@code xmlns:xlink}, because no fragment in any library contains a {@code use} element or an {@code xlink:href} that would need one - which is also
-     * why none of them needs a base URI to resolve against, and why injecting them is sound at all.
+     * Deliberately minimal, but it has to declare every prefix the fragments actually use. {@code xmlns:svg} is there because 547 fragments - every one of them a Control Measure,
+     * injected since jmsfx#124 - write their elements as {@code svg:g} rather than {@code g}. Without the declaration those parse to nothing, and because the parser swallows the
+     * failure and hands back an empty graphic they would have drawn nothing quietly (ctgnz/foxglove#229). {@code svg} is the only prefix any fragment uses.
+     * <p>
+     * No {@code xmlns:xlink}, because no fragment in any library contains a {@code use} element or an {@code xlink:href} that would need one - which is also why none of them needs
+     * a base URI to resolve against, and why injecting them is sound at all.
      * <p>
      * {@code xml:space="preserve"} is not optional. Around eight hundred fragments draw with {@code text}, and without it their whitespace is normalised and they render
      * differently. That was verified by parsing every main icon and modifier fragment both ways and comparing: 1,613 of 1,613 identical, including all 790 containing {@code text}.
      */
-    private static final String ENVELOPE = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 612 792\" width=\"612px\" height=\"792px\" xml:space=\"preserve\">%s</svg>";
+    private static final String ENVELOPE = "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 612 792\" width=\"612px\""
+                                           + " height=\"792px\" xml:space=\"preserve\">%s</svg>";
 
     /** A hex fill attribute, the only thing that separates a civilian frame from the military one it is derived from. */
     private static final Pattern HEX_FILL = Pattern.compile("fill=\"#[0-9A-Fa-f]{6}\"");

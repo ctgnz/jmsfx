@@ -24,6 +24,7 @@ import nz.co.ctg.foxglove.FoxgloveParser;
 import nz.co.ctg.foxglove.SvgGraphic;
 
 import io.github.ctgnz.jmsfx.icon.IdentificationSymbol;
+import io.github.ctgnz.jmsfx.types.GraphicType;
 
 /**
  * That every element in a generated library was given the drawing of the fragment it names, and not some other element's.
@@ -410,15 +411,37 @@ public abstract class InjectedMarkupContract {
                 continue;
             }
             checked++;
-            compare(element.getGraphicLocation(identity), "main", markup, wrong);
+            compare(element.getGraphicLocation(identity), rootsOf(element), markup, wrong);
         }
         return checked;
     }
 
+    /**
+     * The groups a main icon's drawing is made of.
+     * <p>
+     * A free canvas icon contributes its {@code template} as well as its {@code main}, because the preview the creator and the server show is the drawing inside the template that
+     * frames it. Its {@code example} groups stay in the source file. Everything else is the {@code main} group alone.
+     */
+    private List<String> rootsOf(MainElement element) {
+        return element.getGraphicType() == GraphicType.FREE_CANVAS ? List.of("main", "template") : List.of("main");
+    }
+
     private void compare(String location, String contentRootId, String markup, List<String> wrong) throws IOException {
-        String fromFile = contentRoot(read(location), contentRootId);
-        if (!markup.equals(fromFile)) {
-            wrong.add(String.format("%s: injected markup differs from the fragment's %s group", location, contentRootId));
+        compare(location, List.of(contentRootId), markup, wrong);
+    }
+
+    /** The named groups of the fragment at {@code location}, concatenated in order, against what was injected. A group the file does not hold contributes nothing. */
+    private void compare(String location, List<String> contentRootIds, String markup, List<String> wrong) throws IOException {
+        String svg = read(location);
+        StringBuilder fromFile = new StringBuilder();
+        for (String id : contentRootIds) {
+            String content = contentRoot(svg, id);
+            if (content != null) {
+                fromFile.append(content);
+            }
+        }
+        if (!markup.contentEquals(fromFile)) {
+            wrong.add(String.format("%s: injected markup differs from the fragment's %s", location, String.join(" + ", contentRootIds)));
         }
     }
 
