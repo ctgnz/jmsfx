@@ -103,7 +103,7 @@ ends up dominated by changes that have nothing to do with the drawing.
 
 ```
 mvn -q -Pstandard -pl :jmsfx-generator exec:java \
-  -Dexec.mainClass=io.github.ctgnz.jmsfx.generator.FragmentNormaliser   -Dexec.arguments=--apply,--dir,../../library/jmsfx-standard/src/main/resources/svg,--dir,../../library/jmsfx-historical/src/main/resources/svg
+  -Dexec.mainClass=io.github.ctgnz.jmsfx.generator.FragmentNormaliser   -Dexec.arguments=--apply,--dir,../../library/jmsfx-standard/src/main/model/svg,--dir,../../library/jmsfx-historical/src/main/model/svg
 ```
 
 Either name the directories, as above, or name the libraries' `config.yml` files and let it find the

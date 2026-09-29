@@ -10,8 +10,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -55,6 +56,9 @@ public abstract class InjectedMarkupContract {
 
     /** A hex fill, removed from both sides when comparing a civilian frame with the military one it came from. */
     private static final Pattern HEX_FILL = Pattern.compile("fill=\"#[0-9A-Fa-f]{6}\"");
+
+    /** Every library keeps its generator input here, relative to its own module - which is where surefire runs these from. */
+    private static final Path MODEL_ROOT = Path.of("src", "main", "model");
 
     private static final Pattern GROUP_TAG = Pattern.compile("<(/?)(?:svg:)?g\\b([^>]*?)(/?)>");
 
@@ -451,13 +455,17 @@ public abstract class InjectedMarkupContract {
             .replaceAll("");
     }
 
+    /**
+     * The fragment file behind a location, read from the library's own source tree.
+     * <p>
+     * From disk rather than the classpath, because since jmsfx#124 the fragments are build input and no longer ship in the jar - which is the thing these checks exist to make
+     * safe. jmsfx-core still names them with classpath-style paths, and every library keeps its tree in the same place relative to its module, so the two compose.
+     * <p>
+     * A missing file reads as empty, which fails the comparison rather than passing it quietly.
+     */
     private String read(String location) throws IOException {
-        try (InputStream in = getClass().getResourceAsStream(location)) {
-            if (in == null) {
-                return "";
-            }
-            return new String(in.readAllBytes(), StandardCharsets.UTF_8);
-        }
+        Path file = MODEL_ROOT.resolve(location.startsWith("/") ? location.substring(1) : location);
+        return Files.exists(file) ? Files.readString(file, StandardCharsets.UTF_8) : "";
     }
 
     /** Depth-counted, because these groups nest and a self-closing one closes itself - an empty content root is legitimate. */

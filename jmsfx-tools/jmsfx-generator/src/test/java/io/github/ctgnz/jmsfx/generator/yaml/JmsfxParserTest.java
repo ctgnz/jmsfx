@@ -31,7 +31,7 @@ import io.github.ctgnz.jmsfx.generator.model.VersionModel;
  */
 class JmsfxParserTest {
 
-    private static final Path STANDARD_CONFIG = Path.of("../../library/jmsfx-standard/src/main/resources/config.yml");
+    private static final Path STANDARD_CONFIG = Path.of("../../library/jmsfx-standard/src/main/model/config.yml");
 
     private JmsfxParser candidate;
 
@@ -59,7 +59,7 @@ class JmsfxParserTest {
             .toAbsolutePath()
             .normalize();
 
-        assertThat(config.getResourceDir(), is(library));
+        assertThat(config.getModelDir(), is(library));
         assertThat(config.getModelFile(), is(library.resolve("model.yml")));
         assertThat(config.getOutputDir(), is(library.resolveSibling("java")));
     }

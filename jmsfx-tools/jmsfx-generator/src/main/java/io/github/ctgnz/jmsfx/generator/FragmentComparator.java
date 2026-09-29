@@ -120,10 +120,10 @@ public class FragmentComparator {
     private Path svgRoot(Path configFile) throws Exception {
         {
             GeneratorConfig config = GeneratorConfig.load(configFile);
-            if (config.getResourceDir() == null) {
+            if (config.getModelDir() == null) {
                 throw new IllegalStateException(configFile + " has no resourceDir, so its fragments cannot be found");
             }
-            return config.getResourceDir()
+            return config.getModelDir()
                 .resolve("svg");
         }
     }

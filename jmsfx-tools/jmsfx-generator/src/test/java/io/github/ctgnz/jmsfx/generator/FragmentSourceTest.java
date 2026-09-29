@@ -35,7 +35,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
  */
 class FragmentSourceTest {
 
-    private static final Path CONFIG = Path.of("../../library/jmsfx-standard/src/main/resources/config.yml");
+    private static final Path CONFIG = Path.of("../../library/jmsfx-standard/src/main/model/config.yml");
 
     private LibraryModel model;
     private Path svgRoot;
@@ -43,7 +43,7 @@ class FragmentSourceTest {
     @BeforeEach
     void readTheStandardLibrary() throws IOException {
         GeneratorConfig config = GeneratorConfig.load(CONFIG);
-        svgRoot = config.getResourceDir()
+        svgRoot = config.getModelDir()
             .resolve("svg");
         try (var in = Files.newInputStream(config.getModelFile())) {
             model = new JmsfxParser().readLibraryModel(in);

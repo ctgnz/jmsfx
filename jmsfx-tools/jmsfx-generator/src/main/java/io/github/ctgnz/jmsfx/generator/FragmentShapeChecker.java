@@ -55,7 +55,7 @@ public class FragmentShapeChecker {
     private static final String DEFS_ELEMENT = "defs";
 
     /** Which model the shape rules are read from when the build passes directories rather than configs. A filesystem path since jmsfx#116. */
-    private static final String DEFAULT_MODEL = "library/jmsfx-standard/src/main/resources/model.yml";
+    private static final String DEFAULT_MODEL = "library/jmsfx-standard/src/main/model/model.yml";
 
     private final JmsfxParser parser = new JmsfxParser();
 
@@ -201,7 +201,7 @@ public class FragmentShapeChecker {
 
     private Path svgRoot(Path configFile) throws Exception {
         return GeneratorConfig.load(configFile)
-            .getResourceDir()
+            .getModelDir()
             .resolve("svg");
     }
 

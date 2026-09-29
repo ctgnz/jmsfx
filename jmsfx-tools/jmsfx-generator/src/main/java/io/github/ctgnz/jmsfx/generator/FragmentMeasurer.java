@@ -61,7 +61,7 @@ public class FragmentMeasurer {
 
     public static void main(String[] args) {
         if (args.length < 1) {
-            System.err.println("usage: FragmentMeasurer <library>/src/main/resources/config.yml");
+            System.err.println("usage: FragmentMeasurer <library>/src/main/model/config.yml");
             return;
         }
         Path configFile = Path.of(args[0]);
@@ -100,7 +100,7 @@ public class FragmentMeasurer {
     public void measure() throws Exception {
         LibraryModel model = parser.readLibraryModel(Files.newInputStream(config.getModelFile()));
         List<StandardIdentityGroupModel> groups = model.getIdentityGroups();
-        System.out.format("Measuring against %s%n", config.getResourceDir());
+        System.out.format("Measuring against %s%n", config.getModelDir());
         System.out.format("Identity groups: %s%n", groups.stream()
             .map(StandardIdentityGroupModel::getCode)
             .toList());
@@ -252,7 +252,7 @@ public class FragmentMeasurer {
     private void measureIcons(LibraryModel model) throws Exception {
         Map<String, BoundsModel> measured = new TreeMap<>();
         List<String> missing = new ArrayList<>();
-        List<FreeCanvasIcons.Icon> icons = FreeCanvasIcons.collect(model, config.getResourceDir()
+        List<FreeCanvasIcons.Icon> icons = FreeCanvasIcons.collect(model, config.getModelDir()
             .resolve("svg"));
         for (FreeCanvasIcons.Icon icon : icons) {
             Bounds bounds = boundsOf(icon.fragment());
@@ -275,7 +275,7 @@ public class FragmentMeasurer {
      * belongs to a symbol set or to one of the two common sets, and the file stem already is that identifier - so scanning avoids duplicating logic that has gone wrong before.
      */
     private void measureSectorModifiers(LibraryModel model) throws Exception {
-        Path appendices = config.getResourceDir()
+        Path appendices = config.getModelDir()
             .resolve("svg")
             .resolve("Appendices");
         if (!Files.isDirectory(appendices)) {
@@ -331,7 +331,7 @@ public class FragmentMeasurer {
     }
 
     private Path svg(String directory, String fileName) {
-        return config.getResourceDir()
+        return config.getModelDir()
             .resolve("svg")
             .resolve(directory)
             .resolve(fileName);
@@ -357,7 +357,7 @@ public class FragmentMeasurer {
      */
     private Path fragmentFor(AmplifierListModel list, AmplifierListItemModel item, StandardIdentityGroupModel group) {
         String name = group.getCode() + item.getCode() + ".svg";
-        return config.getResourceDir()
+        return config.getModelDir()
             .resolve("svg")
             .resolve(list.getGraphicLocation())
             .resolve(name);

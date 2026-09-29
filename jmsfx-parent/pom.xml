@@ -101,21 +101,21 @@
             <id>standard</id>
             <properties>
                 <jmsfx.library>standard</jmsfx.library>
-                <jmsfx.library.dir>${maven.multiModuleProjectDirectory}/library/jmsfx-standard/src/main/resources</jmsfx.library.dir>
+                <jmsfx.library.dir>${maven.multiModuleProjectDirectory}/library/jmsfx-standard/src/main/model</jmsfx.library.dir>
             </properties>
         </profile>
         <profile>
             <id>historical</id>
             <properties>
                 <jmsfx.library>historical</jmsfx.library>
-                <jmsfx.library.dir>${maven.multiModuleProjectDirectory}/library/jmsfx-historical/src/main/resources</jmsfx.library.dir>
+                <jmsfx.library.dir>${maven.multiModuleProjectDirectory}/library/jmsfx-historical/src/main/model</jmsfx.library.dir>
             </properties>
         </profile>
         <profile>
             <id>battleorder</id>
             <properties>
                 <jmsfx.library>battleorder</jmsfx.library>
-                <jmsfx.library.dir>${maven.multiModuleProjectDirectory}/library/jmsfx-battleorder/src/main/resources</jmsfx.library.dir>
+                <jmsfx.library.dir>${maven.multiModuleProjectDirectory}/library/jmsfx-battleorder/src/main/model</jmsfx.library.dir>
             </properties>
         </profile>
         <profile>
