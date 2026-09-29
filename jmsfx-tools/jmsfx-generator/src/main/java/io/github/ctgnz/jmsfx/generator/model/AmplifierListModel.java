@@ -14,7 +14,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
 @JsonIgnoreProperties({
-    "id", "label", "code", "extension", "deprecated", "remarks"
+    "id", "label", "code", "extension", "deprecated", "remarks", "before"
 })
 @JsonPropertyOrder({
     "details", "config", "values"
@@ -24,7 +24,7 @@ public class AmplifierListModel extends AbstractModel {
     @YamlForceQuote(properties = {
         "code", "label", "remarks"
     })
-    public record Details(String code, String id, boolean extension, boolean deprecated, String label, String amplifierId, String remarks) {
+    public record Details(String code, String id, boolean extension, boolean deprecated, String label, String amplifierId, String remarks, String before) {
     }
 
     @YamlFlowStyle
@@ -122,7 +122,7 @@ public class AmplifierListModel extends AbstractModel {
 
     @JsonGetter("details")
     private Details getDetails() {
-        return new Details(code, id, extension, deprecated, label, amplifierId, remarks);
+        return new Details(code, id, extension, deprecated, label, amplifierId, remarks, before);
     }
 
     @JsonSetter("config")
@@ -151,6 +151,7 @@ public class AmplifierListModel extends AbstractModel {
         this.label = details.label;
         this.remarks = details.remarks;
         this.amplifierId = details.amplifierId;
+        this.before = details.before;
     }
 
 }

@@ -33,37 +33,18 @@ class DomainModelGeneratorTest {
         assertDoesNotThrow(() -> new DomainModelGenerator(STANDARD));
     }
 
-    /**
-     * Naming a base and having an overlay model are two different things since jmsfx#133.
-     * <p>
-     * jmsfx-historical carries a complete model - it is a superset of the standard one rather than an addition to it - and still names Standard as its base, so that the fragments
-     * it does not carry itself resolve through Standard's tree. Before, naming a base meant the model would be composed, and this combination was refused.
-     */
+    /** jmsfx-historical became an overlay at jmsfx#137, so it needs its base for the same reasons jmsfx-battleorder does. */
     @Test
-    void acceptsACompleteModelThatNamesABaseForItsFragments() {
+    void acceptsTheHistoricalOverlayWithItsBase() {
         assertDoesNotThrow(() -> new DomainModelGenerator(HISTORICAL, STANDARD));
     }
 
-    /** And it must still be given, since without it every shared fragment would read as missing. */
+    /** And must be given it - without the base, every shared element and every shared fragment would be missing. */
     @Test
-    void refusesALibraryThatNamesABaseWithoutOne() {
+    void refusesAnExtensionWithoutItsBase() {
         IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> new DomainModelGenerator(HISTORICAL));
 
         assertThat(thrown.getMessage(), containsString("must be given as the second argument"));
-    }
-
-    @Test
-    void refusesAnOverlayWithNoBase() {
-        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> new DomainModelGenerator(BATTLEORDER));
-
-        assertThat(thrown.getMessage(), containsString("must be given as the second argument"));
-    }
-
-    @Test
-    void refusesACompleteModelGivenABase() {
-        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> new DomainModelGenerator(STANDARD, STANDARD));
-
-        assertThat(thrown.getMessage(), containsString("takes no base"));
     }
 
     /** The one that matters: this is silent otherwise, and the result looks entirely healthy. */

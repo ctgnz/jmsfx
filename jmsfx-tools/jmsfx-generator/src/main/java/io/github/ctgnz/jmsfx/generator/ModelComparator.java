@@ -40,7 +40,15 @@ import io.github.ctgnz.jmsfx.generator.yaml.JmsfxParser;
  * java io.github.ctgnz.jmsfx.generator.ModelComparator [/config.yml] [/config-historical.yml]
  * </pre>
  *
- * Reports only; nothing is written. Bound to {@code verify} in this module, and fails the build when the overlay is not additive.
+ * Reports only; nothing is written.
+ * <p>
+ * No longer bound to {@code verify}. Since jmsfx#137 every extension is an overlay composed onto its base, so the superset property holds by construction and a build-time check of
+ * it asserts what composition already guarantees. What the tool is still good for is answering what an extension actually adds, and comparing two whole models - which is how the
+ * shape of jmsfx#137 was worked out in the first place. Run it by hand:
+ *
+ * <pre>
+ * java io.github.ctgnz.jmsfx.generator.ModelComparator library/jmsfx-standard/.../config.yml library/jmsfx-historical/.../config.yml
+ * </pre>
  */
 public class ModelComparator {
 
@@ -77,8 +85,19 @@ public class ModelComparator {
     private final ObjectMapper mapper = new ObjectMapper();
 
     /** @return true when the overlay model is a true superset of the base. */
-    public boolean compare(Path baseConfig, Path overlayConfig) throws Exception {
-        return compare(read(baseConfig), read(overlayConfig));
+    public boolean compare(Path baseConfig, Path extensionConfig) throws Exception {
+        LibraryModel base = read(baseConfig);
+        GeneratorConfig extension = GeneratorConfig.load(extensionConfig);
+        LibraryModel model = read(extensionConfig);
+        if (extension.isOverlay()) {
+            // Composed first, or this compares a whole model against a few hundred additions and reports
+            // the entire base as removed. Since jmsfx#137 both extensions are overlays, so this is the
+            // normal path rather than the exception.
+            System.out.format("Composing %s onto the base first%n", extension.getLibraryPrefix());
+            model = new ModelComposer().compose(read(baseConfig), model);
+            base = read(baseConfig);
+        }
+        return compare(base, model);
     }
 
     /** @return true when the overlay model is a true superset of the base. */

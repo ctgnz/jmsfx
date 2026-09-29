@@ -178,31 +178,6 @@
                             </arguments>
                         </configuration>
                     </execution>
-                    <execution>
-                        <!--
-                            The extension model must stay a true superset of the standard one: it may add
-                            elements, and may not remove, rename or alter one the base defines. That is the
-                            precondition for generating a library from a base plus an overlay (jmsfx#81), and
-                            an overlay that quietly changed a shared element would produce a library whose
-                            codes no longer mean what the standard says - with nothing downstream noticing.
-
-                            Both models are reached through their library's config, which since jmsfx#116
-                            lives beside the model it describes - so these are the only two paths needed, and
-                            they are relative to this module. Takes well under a second.
-                        -->
-                        <id>check-model-superset</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>java</goal>
-                        </goals>
-                        <configuration>
-                            <mainClass>io.github.ctgnz.jmsfx.generator.ModelComparator</mainClass>
-                            <arguments>
-                                <argument>${project.basedir}/../../library/jmsfx-standard/src/main/model/config.yml</argument>
-                                <argument>${project.basedir}/../../library/jmsfx-historical/src/main/model/config.yml</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
                 </executions>
             </plugin>
         </plugins>

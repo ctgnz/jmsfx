@@ -2,6 +2,8 @@ package io.github.ctgnz.jmsfx.generator.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 
@@ -9,6 +11,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 public class AmplifierGuideModel {
     private @JsonBackReference SymbolSetModel symbolSet;
     private String code;
+    private String before;
     private GuideType type;
     private String amplifier;
     private double[] points;
@@ -22,6 +25,16 @@ public class AmplifierGuideModel {
 
     public String getCode() {
         return code;
+    }
+
+    /** Where this guide goes among the base's, when it is an addition in an overlay - see {@link AbstractModel#getBefore()}. Only one needs it: Dismounted's {@code R}. */
+    @JsonInclude(Include.NON_NULL)
+    public String getBefore() {
+        return before;
+    }
+
+    public void setBefore(String before) {
+        this.before = before;
     }
 
     @JsonIgnore

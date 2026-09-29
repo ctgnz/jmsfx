@@ -18,7 +18,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
 @JsonIgnoreProperties({
-    "id", "label", "code", "extension", "deprecated", "remarks"
+    "id", "label", "code", "extension", "deprecated", "remarks", "before"
 })
 @JsonPropertyOrder({
     "details", "entityTypes"
@@ -28,7 +28,8 @@ public class EntityModel extends AbstractModel {
     @YamlForceQuote(properties = {
         "code", "label", "remarks"
     })
-    public record Details(String code, String id, GraphicType graphicType, String baseSymbolSet, boolean extension, boolean deprecated, String label, String remarks) {
+    public record Details(String code, String id, GraphicType graphicType, String baseSymbolSet, boolean extension, boolean deprecated, String label, String remarks,
+                          String before) {
     }
 
     private @JsonBackReference SymbolSetModel symbolSet;
@@ -84,7 +85,7 @@ public class EntityModel extends AbstractModel {
 
     @JsonGetter("details")
     private Details getDetails() {
-        return new Details(code, id, graphicType, baseSymbolSet, extension, deprecated, label, remarks);
+        return new Details(code, id, graphicType, baseSymbolSet, extension, deprecated, label, remarks, before);
     }
 
     @JsonSetter("details")
@@ -97,6 +98,7 @@ public class EntityModel extends AbstractModel {
         this.remarks = details.remarks;
         this.baseSymbolSet = details.baseSymbolSet;
         this.graphicType = details.graphicType;
+        this.before = details.before;
     }
 
 }

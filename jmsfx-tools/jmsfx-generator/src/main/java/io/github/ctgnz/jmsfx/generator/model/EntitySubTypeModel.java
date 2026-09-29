@@ -14,7 +14,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
     "code", "label", "remarks"
 })
 @JsonPropertyOrder({
-    "code", "id", "graphicType", "graphic", "extension", "deprecated", "label", "remarks"
+    "code", "id", "before", "graphicType", "graphic", "extension", "deprecated", "label", "remarks"
 })
 public class EntitySubTypeModel extends AbstractModel {
     private @JsonBackReference EntityTypeModel entityType;

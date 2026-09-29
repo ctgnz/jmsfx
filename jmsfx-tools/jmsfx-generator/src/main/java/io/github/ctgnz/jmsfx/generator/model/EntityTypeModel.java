@@ -18,7 +18,7 @@ import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
 import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
 
 @JsonIgnoreProperties({
-    "id", "label", "code", "extension", "deprecated", "remarks"
+    "id", "label", "code", "extension", "deprecated", "remarks", "before"
 })
 @JsonPropertyOrder({
     "details", "entitySubTypes"
@@ -28,7 +28,8 @@ public class EntityTypeModel extends AbstractModel {
     @YamlForceQuote(properties = {
         "code", "label", "remarks"
     })
-    public record Details(String code, String id, GraphicType graphicType, String graphic, boolean extension, boolean deprecated, String label, String remarks) {
+    public record Details(String code, String id, GraphicType graphicType, String graphic, boolean extension, boolean deprecated, String label, String remarks,
+                          String before) {
     }
 
     private @JsonBackReference EntityModel entity;
@@ -47,6 +48,11 @@ public class EntityTypeModel extends AbstractModel {
     @JsonIgnore
     public String getBaseTypeName() {
         return StringUtils.deleteWhitespace(label);
+    }
+
+    /** The live list, as {@link EntityModel#getEntityTypes()} is - so composition can insert an addition at the position it names rather than only appending. */
+    public List<EntitySubTypeModel> getEntitySubTypes() {
+        return entitySubTypes;
     }
 
     public EntityModel getEntity() {
@@ -76,7 +82,7 @@ public class EntityTypeModel extends AbstractModel {
 
     @JsonGetter("details")
     private Details getDetails() {
-        return new Details(code, id, graphicType, graphic, extension, deprecated, label, remarks);
+        return new Details(code, id, graphicType, graphic, extension, deprecated, label, remarks, before);
     }
 
     @JsonSetter("details")
@@ -89,6 +95,7 @@ public class EntityTypeModel extends AbstractModel {
         this.remarks = details.remarks;
         this.graphic = details.graphic;
         this.graphicType = details.graphicType;
+        this.before = details.before;
     }
 
 }
