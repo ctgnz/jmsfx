@@ -1,5 +1,6 @@
 package io.github.ctgnz.jmsfx.generator;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -61,13 +62,14 @@ public class FragmentMeasurer {
 
     public static void main(String[] args) {
         if (args.length < 1) {
-            System.err.println("usage: FragmentMeasurer <library>/src/main/model/config.yml");
+            System.err.println("usage: FragmentMeasurer <library>/src/main/model/config.yml [<base-library>/src/main/model/config.yml]");
             return;
         }
         Path configFile = Path.of(args[0]);
+        Path baseConfigFile = args.length > 1 ? Path.of(args[1]) : null;
         try {
             startToolkit();
-            FragmentMeasurer measurer = new FragmentMeasurer(configFile);
+            FragmentMeasurer measurer = new FragmentMeasurer(configFile, baseConfigFile);
             measurer.measure();
         } catch (Exception e) {
             e.printStackTrace();
@@ -86,12 +88,24 @@ public class FragmentMeasurer {
     }
 
     private final GeneratorConfig config;
+    private final FragmentTree tree;
     private final JmsfxParser parser;
     private final FoxgloveParser svgParser = new FoxgloveParser();
 
-    public FragmentMeasurer(Path configFile) throws Exception {
+    /**
+     * @param baseConfigFile
+     *            the config of the library this one extends, or null. Required when the config names a {@code baseLibrary}, because a fragment this library does not carry itself
+     *            lives in that base's tree and would otherwise measure as absent - see {@link FragmentTree}.
+     */
+    public FragmentMeasurer(Path configFile, Path baseConfigFile) throws Exception {
         this.parser = new JmsfxParser();
         this.config = GeneratorConfig.load(configFile);
+        GeneratorConfig baseConfig = baseConfigFile == null ? null : GeneratorConfig.load(baseConfigFile);
+        if (config.hasBase() && baseConfig == null) {
+            throw new IllegalArgumentException(String.format("%s extends %s, so the base library's config must be given as the second argument", config.getLibraryPrefix(),
+                config.getBaseLibrary()));
+        }
+        this.tree = FragmentTree.of(config, baseConfig);
         // The two null checks that used to be here are gone with the paths they guarded: the
         // fragments are the config's own directory and the model is the file beside it, so neither
         // can be unset. Whether they exist is a different question, and reported where they are read.
@@ -252,8 +266,7 @@ public class FragmentMeasurer {
     private void measureIcons(LibraryModel model) throws Exception {
         Map<String, BoundsModel> measured = new TreeMap<>();
         List<String> missing = new ArrayList<>();
-        List<FreeCanvasIcons.Icon> icons = FreeCanvasIcons.collect(model, config.getModelDir()
-            .resolve("svg"));
+        List<FreeCanvasIcons.Icon> icons = FreeCanvasIcons.collect(model, tree);
         for (FreeCanvasIcons.Icon icon : icons) {
             Bounds bounds = boundsOf(icon.fragment());
             if (bounds == null) {
@@ -275,17 +288,20 @@ public class FragmentMeasurer {
      * belongs to a symbol set or to one of the two common sets, and the file stem already is that identifier - so scanning avoids duplicating logic that has gone wrong before.
      */
     private void measureSectorModifiers(LibraryModel model) throws Exception {
-        Path appendices = config.getModelDir()
-            .resolve("svg")
-            .resolve("Appendices");
-        if (!Files.isDirectory(appendices)) {
-            System.out.format("  %-24s no Appendices directory at %s%n", "sector modifiers", appendices);
+        List<Path> appendixRoots = tree.roots()
+            .stream()
+            .map(root -> root.resolve("Appendices"))
+            .filter(Files::isDirectory)
+            .toList();
+        if (appendixRoots.isEmpty()) {
+            System.out.format("  %-24s no Appendices directory under %s%n", "sector modifiers", tree);
             return;
         }
         Map<String, BoundsModel> escaping = new TreeMap<>();
         int inspected = 0;
-        try (Stream<Path> tree = Files.walk(appendices)) {
-            List<Path> fragments = tree.filter(Files::isRegularFile)
+        try (Stream<Path> walked = appendixRoots.stream()
+            .flatMap(FragmentMeasurer::walk)) {
+            List<Path> fragments = walked.filter(Files::isRegularFile)
                 .filter(path -> path.getFileName()
                     .toString()
                     .endsWith(".svg"))
@@ -330,11 +346,22 @@ public class FragmentMeasurer {
                && bounds.getMaxX() <= OCTAGON_MAX_X + TOLERANCE && bounds.getMaxY() <= OCTAGON_MAX_Y + TOLERANCE;
     }
 
+    /**
+     * Every file under a root, or nothing if it cannot be read.
+     * <p>
+     * Wrapped because {@code Files.walk} throws a checked exception and this is used inside a stream. Failing silently is right here: the caller has already established the
+     * directory exists, and a scan that finds nothing reports zero fragments rather than pretending to have checked.
+     */
+    private static Stream<Path> walk(Path root) {
+        try {
+            return Files.walk(root);
+        } catch (IOException e) {
+            return Stream.empty();
+        }
+    }
+
     private Path svg(String directory, String fileName) {
-        return config.getModelDir()
-            .resolve("svg")
-            .resolve(directory)
-            .resolve(fileName);
+        return tree.resolve(directory, fileName);
     }
 
     /** Measured bounds for a fragment, or null when the file is absent or draws nothing. */
@@ -356,11 +383,7 @@ public class FragmentMeasurer {
      * express division and above - those codes begin with a 2, and every item was prefixed with the list's 1.
      */
     private Path fragmentFor(AmplifierListModel list, AmplifierListItemModel item, StandardIdentityGroupModel group) {
-        String name = group.getCode() + item.getCode() + ".svg";
-        return config.getModelDir()
-            .resolve("svg")
-            .resolve(list.getGraphicLocation())
-            .resolve(name);
+        return tree.resolve(list.getGraphicLocation(), group.getCode() + item.getCode() + ".svg");
     }
 
     private Bounds measureFile(Path file) {

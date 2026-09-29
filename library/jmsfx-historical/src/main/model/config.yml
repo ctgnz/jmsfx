@@ -1,6 +1,10 @@
 # How this library is generated. Paths are not configured: the model is model.yml beside this
 # file, the fragments are svg/ beside it, and the generated sources go in ../java (jmsfx#116).
 # This directory is src/main/model, which is not a resource root, so none of it ships (jmsfx#124).
+# Standard is this library's base: the fragments it does not carry itself are resolved from
+# Standard's svg tree (jmsfx#133). The model here is complete, not an overlay - historical is a
+# superset of the standard model rather than an addition to it - so overlayModel is not set.
+baseLibrary: "Standard"
 iconPackage: "io.github.ctgnz.jmsfx.historical"
 commonPackage: "io.github.ctgnz.jmsfx.historical.common"
 amplifierPackage: "io.github.ctgnz.jmsfx.historical.amplifier"

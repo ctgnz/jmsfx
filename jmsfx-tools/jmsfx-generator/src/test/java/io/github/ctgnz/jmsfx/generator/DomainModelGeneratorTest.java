@@ -33,6 +33,25 @@ class DomainModelGeneratorTest {
         assertDoesNotThrow(() -> new DomainModelGenerator(STANDARD));
     }
 
+    /**
+     * Naming a base and having an overlay model are two different things since jmsfx#133.
+     * <p>
+     * jmsfx-historical carries a complete model - it is a superset of the standard one rather than an addition to it - and still names Standard as its base, so that the fragments
+     * it does not carry itself resolve through Standard's tree. Before, naming a base meant the model would be composed, and this combination was refused.
+     */
+    @Test
+    void acceptsACompleteModelThatNamesABaseForItsFragments() {
+        assertDoesNotThrow(() -> new DomainModelGenerator(HISTORICAL, STANDARD));
+    }
+
+    /** And it must still be given, since without it every shared fragment would read as missing. */
+    @Test
+    void refusesALibraryThatNamesABaseWithoutOne() {
+        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> new DomainModelGenerator(HISTORICAL));
+
+        assertThat(thrown.getMessage(), containsString("must be given as the second argument"));
+    }
+
     @Test
     void refusesAnOverlayWithNoBase() {
         IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> new DomainModelGenerator(BATTLEORDER));
@@ -52,7 +71,7 @@ class DomainModelGeneratorTest {
     void refusesAnOverlayGivenTheWrongBase() {
         IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> new DomainModelGenerator(BATTLEORDER, HISTORICAL));
 
-        assertThat(thrown.getMessage(), containsString("composes onto Standard, but the config given as its base is Historical"));
+        assertThat(thrown.getMessage(), containsString("extends Standard, but the config given as its base is Historical"));
     }
 
 }
