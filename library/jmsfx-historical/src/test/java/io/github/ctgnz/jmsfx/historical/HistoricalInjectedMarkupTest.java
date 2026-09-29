@@ -2,6 +2,7 @@ package io.github.ctgnz.jmsfx.historical;
 
 import java.nio.file.Path;
 
+import io.github.ctgnz.jmsfx.IconLibrary;
 import io.github.ctgnz.jmsfx.InjectedMarkupContract;
 
 /**
@@ -17,4 +18,11 @@ class HistoricalInjectedMarkupTest extends InjectedMarkupContract {
     protected Path baseModelRoot() {
         return Path.of("..", "jmsfx-standard", "src", "main", "model");
     }
+
+    /** HistoricalIconLibrary counts its own fallbacks; the contract is written against IconLibrary, which does not carry that. See jmsfx#127. */
+    @Override
+    protected int classpathFallbacks() {
+        return ((HistoricalIconLibrary) IconLibrary.discover()).getClasspathFallbacks();
+    }
+
 }

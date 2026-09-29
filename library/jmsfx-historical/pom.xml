@@ -15,6 +15,19 @@
             <artifactId>jmsfx-core</artifactId>
             <version>${jmsfx.core.version}</version>
         </dependency>
+        <!-- Without an engine on the test classpath surefire finds no tests and says nothing, so the
+             contract below compiled and never ran. The other two libraries declare these; this one
+             did not. See jmsfx#127. -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <scope>test</scope>
+        </dependency>
         <!-- The injected-markup contract, which this library's own test subclasses. See jmsfx#122. -->
         <dependency>
             <groupId>io.github.ctgnz</groupId>

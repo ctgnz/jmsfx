@@ -14,8 +14,11 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -74,6 +77,26 @@ public abstract class InjectedMarkupContract {
     }
 
     private static final Pattern GROUP_TAG = Pattern.compile("<(/?)(?:svg:)?g\\b([^>]*?)(/?)>");
+
+    /**
+     * How often this library has reached past its own markup so far.
+     * <p>
+     * Stated by the subclass because {@code getClasspathFallbacks} sits on the generated class and not on {@link IconLibrary}, which this contract is otherwise written entirely
+     * against. Reaching it reflectively would work and read badly; putting a diagnostics method on the public interface to make one test possible would widen the API for the
+     * benefit of the test alone. A hook costs each library one line and leaves both alone. See jmsfx#127.
+     */
+    protected abstract int classpathFallbacks();
+
+    /**
+     * The parts of this library that have no artwork, and so legitimately find nothing to inject - named as {@code "<what> / <content root>"}.
+     * <p>
+     * A gap has to be declared rather than tolerated. The whole point of the count below is that a mismatch between what is injected and what is asked for is otherwise invisible:
+     * the fallback reads the fragment from the classpath and the symbol renders, while injection quietly did nothing. Declaring the known gaps by name keeps that check sharp - a
+     * new one fails here and says which element it was, rather than nudging a total nobody reads.
+     */
+    protected Set<String> undrawn() {
+        return Set.of();
+    }
 
     @Test
     public void everyInjectedMainIconMatchesItsFragment() throws IOException {
@@ -369,6 +392,102 @@ public abstract class InjectedMarkupContract {
 
         assertThrows(Exception.class, () -> parser.parse(new ByteArrayInputStream(FragmentMarkup.document("<g id=\"main\"><path")
             .getBytes(StandardCharsets.UTF_8))));
+    }
+
+    /**
+     * That every drawing a caller can ask for comes from the markup on the constant, and not from a file.
+     * <p>
+     * This is what jmsfx#122 was for, and until now it was measured by hand rather than asserted. It walks all eight of {@link IconLibrary}'s load paths - main icons, both sector
+     * modifiers, frames, status, HQ/TF/dummy, amplifiers and the context overlay - and watches the library's own fallback counter after each call, so a fallback is reported
+     * against the thing that caused it rather than as a total.
+     * <p>
+     * It has to go through {@code load*Graphic} rather than reading {@code getGraphicMarkup}: the fallback only happens on the load path, and the load path is what a caller uses.
+     * That also makes this the one check here that exercises the composition the way an application does.
+     */
+    @Test
+    public void everyDrawingComesFromInjectedMarkup() {
+        IconLibrary library = IconLibrary.discover();
+        Map<String, Integer> fellBack = new LinkedHashMap<>();
+        seenFallbacks = classpathFallbacks();
+        int calls = 0;
+
+        for (Context context : library.getContexts()) {
+            if (!context.isReality()) {
+                library.loadFrameOverlayGraphic(context);
+                calls += charge(fellBack, "context overlay", "frame_overlay");
+            }
+        }
+        for (AmplifierList list : library.getListAmplifiers()) {
+            for (AmplifierListItem item : list.<AmplifierListItem> getItems()) {
+                for (StandardIdentity identity : IDENTITIES) {
+                    library.loadAmplifierGraphic(item, identity);
+                    calls += charge(fellBack, list.getLabel(), "amplifier");
+                }
+            }
+        }
+        for (SymbolSet symbolSet : library.getSymbolSets()) {
+            for (StandardIdentity identity : IDENTITIES) {
+                for (Entity entity : symbolSet.getEntities()) {
+                    calls += mainIcon(library, fellBack, symbolSet, entity, identity);
+                    for (EntityType entityType : entity.getEntityTypes()) {
+                        calls += mainIcon(library, fellBack, symbolSet, entityType, identity);
+                        for (EntitySubType subType : entityType.getEntitySubTypes()) {
+                            calls += mainIcon(library, fellBack, symbolSet, subType, identity);
+                        }
+                    }
+                }
+                for (Status status : library.getStatuses()) {
+                    if (status.isFrameStatus() && symbolSet.getSymbolSetInfo()
+                        .isFramedIcon()) {
+                        for (boolean civilian : new boolean[] {
+                            false, true
+                        }) {
+                            library.loadFrameGraphic(symbolSet, identity, status, civilian, null);
+                            calls += charge(fellBack, symbolSet.getLabel(), "frame");
+                        }
+                    }
+                    if (status.isOperationalCondition() && status.isSupported(symbolSet)) {
+                        library.loadStatusGraphic(status, true, identity, symbolSet);
+                        calls += charge(fellBack, symbolSet.getLabel(), "oca");
+                    }
+                }
+                for (HqtfDummy dummy : library.getHqtfDummys()) {
+                    if (!dummy.isUnknown() && dummy.isSupported(symbolSet)) {
+                        library.loadHqtfDummyGraphic(dummy, identity, symbolSet);
+                        calls += charge(fellBack, symbolSet.getLabel(), "hqtffd");
+                    }
+                }
+            }
+            for (SectorOneModifier modifier : symbolSet.getSectorOneModifiers()) {
+                library.loadSectorOneModifierGraphic(modifier);
+                calls += charge(fellBack, symbolSet.getLabel(), "mod1");
+            }
+            for (SectorTwoModifier modifier : symbolSet.getSectorTwoModifiers()) {
+                library.loadSectorTwoModifierGraphic(modifier);
+                calls += charge(fellBack, symbolSet.getLabel(), "mod2");
+            }
+        }
+
+        assertThat(calls, is(greaterThan(10000)));
+        assertThat(fellBack.toString(), fellBack.keySet(), is(undrawn()));
+    }
+
+    /** Where the fallback count stood before the last load call, so the next one can be charged to whatever caused it. */
+    private int seenFallbacks;
+
+    /** One load call, charged to whatever the library had to go looking for. Returns 1, so the caller can count calls in the same expression. */
+    private int charge(Map<String, Integer> fellBack, String what, String contentRoot) {
+        int now = classpathFallbacks();
+        if (now > seenFallbacks) {
+            fellBack.merge(what + " / " + contentRoot, now - seenFallbacks, Integer::sum);
+        }
+        seenFallbacks = now;
+        return 1;
+    }
+
+    private int mainIcon(IconLibrary library, Map<String, Integer> fellBack, SymbolSet symbolSet, MainElement element, StandardIdentity identity) {
+        library.loadMainIconGraphic(element, identity);
+        return charge(fellBack, symbolSet.getLabel(), "main");
     }
 
     /** Every drawing this library carries, however it is reached. */
