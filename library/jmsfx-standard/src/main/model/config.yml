@@ -1,5 +1,6 @@
 # How this library is generated. Paths are not configured: the model is model.yml beside this
-# file, the resources are this directory, and the generated sources go in ../java. See jmsfx#116.
+# file, the fragments are svg/ beside it, and the generated sources go in ../java (jmsfx#116).
+# This directory is src/main/model, which is not a resource root, so none of it ships (jmsfx#124).
 iconPackage: "io.github.ctgnz.jmsfx.standard"
 commonPackage: "io.github.ctgnz.jmsfx.standard.common"
 amplifierPackage: "io.github.ctgnz.jmsfx.standard.amplifier"
