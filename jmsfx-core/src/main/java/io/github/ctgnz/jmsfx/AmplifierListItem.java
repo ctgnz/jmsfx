@@ -24,7 +24,7 @@ public interface AmplifierListItem extends CodeElement {
      * The markup this amplifier draws for an identity, or null when it has none.
      * <p>
      * Keyed by the identity group alone, which is the only thing that varies the fragment - the same key {@link StandardAmplifierItem#getAmplifierBounds(StandardIdentity)} uses,
-     * and the same one {@link #getGraphicLocation(StandardIdentity)} puts in the path. See jmsfx#130.
+     * and the same one {@link #getGraphicKey(StandardIdentity)} puts in the key. See jmsfx#130.
      */
     default String getGraphicMarkup(StandardIdentity identity) {
         return null;

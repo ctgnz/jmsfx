@@ -52,8 +52,8 @@ public interface Status extends CodeElement {
 
     /**
      * Where this status's operational-condition graphic draws, or {@link Rectangle2D#EMPTY} when it has none - {@code Present} and {@code Planned} are frame statuses and draw no
-     * bar of their own. Keyed by the same things that pick the fragment in {@link #getGraphicLocation(StandardIdentity, SymbolSet)}: the identity's group and the symbol set's
-     * frame id. Generated from measurements rather than computed, so no JavaFX toolkit is needed.
+     * bar of their own. Keyed by the same things that pick the fragment in {@link #getGraphicKey(StandardIdentity, SymbolSet)}: the identity's group and the symbol set's frame id.
+     * Generated from measurements rather than computed, so no JavaFX toolkit is needed.
      */
     default Rectangle2D getStatusBounds(StandardIdentity identity, SymbolSet symbolSet) {
         return Rectangle2D.EMPTY;
@@ -62,7 +62,7 @@ public interface Status extends CodeElement {
     /**
      * The markup this status's operational-condition bar draws, or null when it has none - a frame status draws no bar, and so carries no drawing either.
      * <p>
-     * Keyed the same way as {@link #getStatusBounds(StandardIdentity, SymbolSet)} and {@link #getGraphicLocation(StandardIdentity, SymbolSet)}: identity group by frame id. See
+     * Keyed the same way as {@link #getStatusBounds(StandardIdentity, SymbolSet)} and {@link #getGraphicKey(StandardIdentity, SymbolSet)}: identity group by frame id. See
      * jmsfx#123.
      */
     default String getStatusMarkup(StandardIdentity identity, SymbolSet symbolSet) {

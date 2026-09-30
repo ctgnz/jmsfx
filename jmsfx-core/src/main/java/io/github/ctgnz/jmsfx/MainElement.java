@@ -9,9 +9,10 @@ public interface MainElement extends CodeElement {
     /**
      * The markup this element draws, ready to parse, or null when it carries none.
      * <p>
-     * A generated library overrides this per element so the drawing lives on the thing that draws it, rather than in a table keyed by a filename - which would make the fragment
-     * layout permanent, and jmsfx#124 exists to change it. Null means the caller should fall back to reading {@link #getGraphicLocation(StandardIdentity)} from the classpath,
-     * which is what every library did before jmsfx#122 and what the categories jmsfx#123 covers still do.
+     * A generated library overrides this per element so the drawing lives on the thing that draws it, rather than in a table keyed by a filename - which would have made the
+     * fragment layout permanent, and is what let jmsfx#136 rename every fragment afterwards. Null means the caller has to read the fragment itself, from
+     * {@link #getGraphicKey(StandardIdentity)}; that is what every library did before jmsfx#122, and since jmsfx#130 finished the job no generated library returns null here for
+     * anything it can draw. The contract in {@code InjectedMarkupContract} asserts that, by counting the times a library reached past its own markup and requiring nought.
      * <p>
      * Takes the identity because a {@code FULL_FRAME} element is four drawings, one per identity group: the icon <em>is</em> the frame, so each identity draws a different one.
      * Everything else ignores the argument.
