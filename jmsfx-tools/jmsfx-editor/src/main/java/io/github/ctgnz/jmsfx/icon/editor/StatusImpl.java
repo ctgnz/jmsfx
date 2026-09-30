@@ -36,9 +36,7 @@ public class StatusImpl extends CodeElementImpl implements Status {
             return true;
         }
         if (obj instanceof StatusImpl rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
@@ -50,8 +48,7 @@ public class StatusImpl extends CodeElementImpl implements Status {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(3329, 9239).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(3329, 9239).append(getId()).toHashCode();
     }
 
     @Override

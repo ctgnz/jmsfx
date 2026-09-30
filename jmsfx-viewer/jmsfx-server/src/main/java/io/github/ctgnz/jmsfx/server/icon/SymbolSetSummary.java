@@ -9,9 +9,7 @@ public record SymbolSetSummary(String id, String label, String path) {
     }
 
     public static String pathFor(SymbolSet symbolSet) {
-        return symbolSet.getLabel()
-            .replaceAll("\\s", "")
-            .replaceAll("-", "");
+        return symbolSet.getLabel().replaceAll("\\s", "").replaceAll("-", "");
     }
 
 }

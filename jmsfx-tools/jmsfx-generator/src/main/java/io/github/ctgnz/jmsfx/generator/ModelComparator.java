@@ -207,16 +207,15 @@ public class ModelComparator {
     }
 
     private void flatten(String prefix, ObjectNode node, Map<String, JsonNode> flat) {
-        node.fieldNames()
-            .forEachRemaining(name -> {
-                String path = prefix.isEmpty() ? name : prefix + "." + name;
-                JsonNode value = node.get(name);
-                if (value instanceof ObjectNode nested) {
-                    flatten(path, nested, flat);
-                } else {
-                    flat.put(path, value);
-                }
-            });
+        node.fieldNames().forEachRemaining(name -> {
+            String path = prefix.isEmpty() ? name : prefix + "." + name;
+            JsonNode value = node.get(name);
+            if (value instanceof ObjectNode nested) {
+                flatten(path, nested, flat);
+            } else {
+                flat.put(path, value);
+            }
+        });
     }
 
     /**
@@ -259,21 +258,16 @@ public class ModelComparator {
             elements.put(prefix, shallow(symbolSet));
             put(elements, prefix + "/sectorOne", symbolSet.getSectorOneMods());
             put(elements, prefix + "/sectorTwo", symbolSet.getSectorTwoMods());
-            symbolSet.getAmplifierGuides()
-                .forEach(guide -> elements.put(String.format("%s/guide/%s", prefix, guide.getCode()), shallow(guide)));
-            symbolSet.getEntities()
-                .forEach(entity -> elements.put(entityPath(entity), shallow(entity)));
-            symbolSet.getEntityTypes()
-                .forEach(entityType -> elements.put(typePath(entityType), shallow(entityType)));
-            symbolSet.getEntitySubTypes()
-                .forEach(subType -> elements.put(String.format("%s/subType/%s", typePath(subType.getEntityType()), subType.getCode()), shallow(subType)));
+            symbolSet.getAmplifierGuides().forEach(guide -> elements.put(String.format("%s/guide/%s", prefix, guide.getCode()), shallow(guide)));
+            symbolSet.getEntities().forEach(entity -> elements.put(entityPath(entity), shallow(entity)));
+            symbolSet.getEntityTypes().forEach(entityType -> elements.put(typePath(entityType), shallow(entityType)));
+            symbolSet.getEntitySubTypes().forEach(subType -> elements.put(String.format("%s/subType/%s", typePath(subType.getEntityType()), subType.getCode()), shallow(subType)));
         }
         return elements;
     }
 
     private String entityPath(EntityModel entity) {
-        return String.format("symbolSet/%s/entity/%s", entity.getSymbolSet()
-            .getCode(), entity.getCode());
+        return String.format("symbolSet/%s/entity/%s", entity.getSymbolSet().getCode(), entity.getCode());
     }
 
     private String typePath(EntityTypeModel entityType) {

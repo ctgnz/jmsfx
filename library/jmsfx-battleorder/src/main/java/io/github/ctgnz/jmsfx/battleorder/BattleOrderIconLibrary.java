@@ -98,8 +98,7 @@ public class BattleOrderIconLibrary implements IconLibrary {
 
     @Override
     public ObservableList<CountryCode> getCountryCodes() {
-        return FXCollections.observableArrayList(Stream.concat(Stream.of(CountryCode.UNDEFINED), Stream.of(NatoCountryCode.values()))
-            .toList());
+        return FXCollections.observableArrayList(Stream.concat(Stream.of(CountryCode.UNDEFINED), Stream.of(NatoCountryCode.values())).toList());
     }
 
     @Override
@@ -236,8 +235,7 @@ public class BattleOrderIconLibrary implements IconLibrary {
         }
         boolean civilian = civilianEntity && !identity.isHostile();
         String location = symbolSet.getFrameKey(identity, status, civilian);
-        String markup = symbolSet.getDimension()
-            .getFrameMarkup(identity, status);
+        String markup = symbolSet.getDimension().getFrameMarkup(identity, status);
         if (markup == null) {
             fellBackToClasspath++;
             return parser.parseFile(location);
@@ -274,8 +272,7 @@ public class BattleOrderIconLibrary implements IconLibrary {
      * amplifier that is not a frame amplifier - which {@code Color.web} would throw on rather than ignore.
      */
     private boolean isAmplified(AmplifierListItem frameAmplifier) {
-        return frameAmplifier != null && !frameAmplifier.isUnknown() && !frameAmplifier.getBackgroundFill()
-            .isBlank();
+        return frameAmplifier != null && !frameAmplifier.isUnknown() && !frameAmplifier.getBackgroundFill().isBlank();
     }
 
     /**

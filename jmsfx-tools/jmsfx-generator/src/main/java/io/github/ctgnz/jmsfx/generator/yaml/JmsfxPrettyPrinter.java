@@ -68,9 +68,7 @@ public final class JmsfxPrettyPrinter extends DefaultPrettyPrinter {
 
     @Override
     public void writeEndObject(JsonGenerator g, int nrOfEntries) throws IOException {
-        String fieldName = g.getOutputContext()
-            .getParent()
-            .getCurrentName();
+        String fieldName = g.getOutputContext().getParent().getCurrentName();
         if (isMapElement(fieldName)) {
             this.mapElement = false;
             --_nesting;
@@ -89,8 +87,7 @@ public final class JmsfxPrettyPrinter extends DefaultPrettyPrinter {
 
     @Override
     public void writeObjectEntrySeparator(JsonGenerator g) throws IOException {
-        String fieldName = g.getOutputContext()
-            .getCurrentName();
+        String fieldName = g.getOutputContext().getCurrentName();
         // if (isMapElement(fieldName)) {
         // this.mapElement = true;
         // ++_nesting;
@@ -110,11 +107,8 @@ public final class JmsfxPrettyPrinter extends DefaultPrettyPrinter {
     @Override
     public void writeStartObject(JsonGenerator g) throws IOException {
         super.writeStartObject(g);
-        if (g.getOutputContext()
-            .getCurrentValue() instanceof Map<?, ?>) {
-            String fieldName = g.getOutputContext()
-                .getParent()
-                .getCurrentName();
+        if (g.getOutputContext().getCurrentValue() instanceof Map<?, ?>) {
+            String fieldName = g.getOutputContext().getParent().getCurrentName();
             if (isMapElement(fieldName)) {
                 this.mapElement = true;
                 ++_nesting;
@@ -124,13 +118,11 @@ public final class JmsfxPrettyPrinter extends DefaultPrettyPrinter {
     }
 
     private boolean isMapElement(String fieldName) {
-        return Arrays.stream(MAP_FIELDS)
-            .anyMatch(name -> name.equals(fieldName));
+        return Arrays.stream(MAP_FIELDS).anyMatch(name -> name.equals(fieldName));
     }
 
     private boolean isNewLineField(String fieldName) {
-        return Arrays.stream(NEWLINE_FIELDS)
-            .anyMatch(name -> name.equals(fieldName));
+        return Arrays.stream(NEWLINE_FIELDS).anyMatch(name -> name.equals(fieldName));
     }
 
     private boolean isPrimitiveArrayType(JsonGenerator g) {

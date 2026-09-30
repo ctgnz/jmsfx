@@ -16,8 +16,7 @@ public interface AmplifierListItem extends CodeElement {
 
     /** One directory per amplifier list, so Echelon sits beside Equipment Mobility rather than beside the container that holds them (jmsfx#136). */
     default String getGraphicKey(StandardIdentity identity) {
-        return String.format("/svg/Amplifiers/%s/%s/%s.svg", getAmplifierList().getName(), identity.getGroup()
-            .getName(), getName());
+        return String.format("/svg/Amplifiers/%s/%s/%s.svg", getAmplifierList().getName(), identity.getGroup().getName(), getName());
     }
 
     /**
@@ -32,8 +31,7 @@ public interface AmplifierListItem extends CodeElement {
 
     default boolean isDeprecated() {
         try {
-            return getClass().getField(getName())
-                .getAnnotation(Deprecated.class) != null;
+            return getClass().getField(getName()).getAnnotation(Deprecated.class) != null;
         } catch (NoSuchFieldException | SecurityException e) {
             return false;
         }
@@ -41,8 +39,7 @@ public interface AmplifierListItem extends CodeElement {
 
     default boolean isExtension() {
         try {
-            return getClass().getField(getName())
-                .getAnnotation(Extension.class) != null;
+            return getClass().getField(getName()).getAnnotation(Extension.class) != null;
         } catch (NoSuchFieldException | SecurityException e) {
             return false;
         }

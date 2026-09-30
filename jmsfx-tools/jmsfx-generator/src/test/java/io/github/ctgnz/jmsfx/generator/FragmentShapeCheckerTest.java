@@ -65,8 +65,7 @@ class FragmentShapeCheckerTest {
     /** What 25218800 and 25281901 looked like: the id on the drawing element itself, with no group to hold it. */
     @Test
     void rejectsContentLooseAtTheRoot(@TempDir Path dir) throws Exception {
-        assertThat(check(dir, "f.svg", "  <polygon id=\"main\" points=\"1,1 2,2 3,3\"/>\n", TEMPLATE),
-            contains(containsString("<polygon> at the root"), containsString("no <g id=\"main\">")));
+        assertThat(check(dir, "f.svg", "  <polygon id=\"main\" points=\"1,1 2,2 3,3\"/>\n", TEMPLATE), contains(containsString("<polygon> at the root"), containsString("no <g id=\"main\">")));
     }
 
     /** What 60200100 came back as after Inkscape, once the normaliser dropped the generated id its example group was carrying. */
@@ -103,7 +102,8 @@ class FragmentShapeCheckerTest {
     @Test
     void ignoresEditorMetadata(@TempDir Path dir) throws Exception {
         Path file = dir.resolve("l.svg");
-        Files.writeString(file, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+        Files.writeString(file,
+            "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
                                 + "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:sodipodi=\"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd\" viewBox=\"0 0 612 792\">\n"
                                 + "  <sodipodi:namedview id=\"namedview1\"/>\n" + MAIN + TEMPLATE + "</svg>\n",
             StandardCharsets.UTF_8);

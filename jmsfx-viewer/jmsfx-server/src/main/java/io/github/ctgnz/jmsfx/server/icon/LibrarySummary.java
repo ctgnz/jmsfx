@@ -12,8 +12,7 @@ import io.github.ctgnz.jmsfx.IconLibrary;
 public record LibrarySummary(String name, int symbolSets) {
 
     public static LibrarySummary of(IconLibrary library) {
-        return new LibrarySummary(library.getName(), library.getSymbolSets()
-            .size());
+        return new LibrarySummary(library.getName(), library.getSymbolSets().size());
     }
 
 }

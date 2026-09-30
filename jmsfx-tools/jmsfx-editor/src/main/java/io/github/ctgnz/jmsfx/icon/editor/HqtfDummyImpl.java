@@ -32,9 +32,7 @@ public class HqtfDummyImpl extends CodeElementImpl implements HqtfDummy {
             return true;
         }
         if (obj instanceof HqtfDummyImpl rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
@@ -46,8 +44,7 @@ public class HqtfDummyImpl extends CodeElementImpl implements HqtfDummy {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(8951, 1601).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(8951, 1601).append(getId()).toHashCode();
     }
 
     @Override

@@ -75,8 +75,8 @@ public final class FreeCanvasIcons {
             if (location == null) {
                 throw new IllegalStateException(String.format("symbol set %s has free canvas icons but no dimension", symbolSet.getLabel()));
             }
-            identifiers.forEach((identifier, entry) -> icons.add(new Icon(identifier, entry.label(), symbolSet.getLabel(), entry.graphicType(), entry.element(), location,
-                                                                          tree.resolve("Dimensions", location, identifier + ".svg"))));
+            identifiers.forEach((identifier, entry) -> icons
+                .add(new Icon(identifier, entry.label(), symbolSet.getLabel(), entry.graphicType(), entry.element(), location, tree.resolve("Dimensions", location, identifier + ".svg"))));
         }
         return icons;
     }
@@ -95,15 +95,13 @@ public final class FreeCanvasIcons {
         }
         for (EntityTypeModel entityType : symbolSet.getEntityTypes()) {
             if (wanted.test(entityType.getGraphicType())) {
-                identifiers.put(entityType.getEntity()
-                    .getId() + "/" + entityType.getId(), new Entry(entityType.getLabel(), entityType.getGraphicType(), entityType));
+                identifiers.put(entityType.getEntity().getId() + "/" + entityType.getId(), new Entry(entityType.getLabel(), entityType.getGraphicType(), entityType));
             }
         }
         for (EntitySubTypeModel subType : symbolSet.getEntitySubTypes()) {
             if (wanted.test(subType.getGraphicType())) {
                 EntityTypeModel entityType = subType.getEntityType();
-                identifiers.put(entityType.getEntity()
-                    .getId() + "/" + entityType.getId() + "/" + subType.getId(), new Entry(subType.getLabel(), subType.getGraphicType(), subType));
+                identifiers.put(entityType.getEntity().getId() + "/" + entityType.getId() + "/" + subType.getId(), new Entry(subType.getLabel(), subType.getGraphicType(), subType));
             }
         }
         return identifiers;
@@ -131,11 +129,7 @@ public final class FreeCanvasIcons {
         if (baseId == null) {
             return symbolSet;
         }
-        return model.getSymbolSets()
-            .stream()
-            .filter(candidate -> baseId.equals(candidate.getId()))
-            .findFirst()
-            .orElse(symbolSet);
+        return model.getSymbolSets().stream().filter(candidate -> baseId.equals(candidate.getId())).findFirst().orElse(symbolSet);
     }
 
     /** Where a symbol set's fragments live, which falls back to the dimension's directory when the set does not name its own - as {@code SymbolSetEnum} does. */

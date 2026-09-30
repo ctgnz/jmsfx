@@ -70,15 +70,12 @@ public class DomainModelGenerator {
      */
     private void checkBaseMatchesDeclaration() {
         if (config.isOverlay() && baseConfig == null) {
-            throw new IllegalArgumentException(String.format("%s extends %s, so the base library's config must be given as the second argument", config.getLibraryPrefix(),
-                config.getBaseLibrary()));
+            throw new IllegalArgumentException(String.format("%s extends %s, so the base library's config must be given as the second argument", config.getLibraryPrefix(), config.getBaseLibrary()));
         }
         if (!config.isOverlay() && baseConfig != null) {
-            throw new IllegalArgumentException(String.format("%s extends nothing, so it takes no base - remove the second argument, or give it a baseLibrary",
-                config.getLibraryPrefix()));
+            throw new IllegalArgumentException(String.format("%s extends nothing, so it takes no base - remove the second argument, or give it a baseLibrary", config.getLibraryPrefix()));
         }
-        if (baseConfig != null && !config.getBaseLibrary()
-            .equals(baseConfig.getLibraryPrefix())) {
+        if (baseConfig != null && !config.getBaseLibrary().equals(baseConfig.getLibraryPrefix())) {
             throw new IllegalArgumentException(String.format("%s extends %s, but the config given as its base is %s", config.getLibraryPrefix(), config.getBaseLibrary(),
                 baseConfig.getLibraryPrefix()));
         }
@@ -92,19 +89,16 @@ public class DomainModelGenerator {
     private void injectFragments(LibraryModel dataModel) throws Exception {
         FragmentSource.Result result = FragmentSource.inject(dataModel, FragmentTree.of(config, baseConfig));
         System.out.format("Injected %d fragments%n", result.injected());
-        if (!result.missing()
-            .isEmpty()) {
+        if (!result.missing().isEmpty()) {
             // Reported rather than fatal: these elements now draw the Invalid Symbol, which is visible,
             // where before they drew nothing at all and nobody noticed.
-            System.out.format("  %d named by the model but not found, and will draw the Invalid Symbol: %s%n", result.missing()
-                .size(), String.join(", ", result.missing()));
+            System.out.format("  %d named by the model but not found, and will draw the Invalid Symbol: %s%n", result.missing().size(), String.join(", ", result.missing()));
         }
     }
 
     public void generate(LibraryModel dataModel) throws Exception {
         deleteOldSourceFiles();
-        config.getStandardEnums()
-            .forEach(enumConfig -> generateStandardEnum(dataModel, enumConfig));
+        config.getStandardEnums().forEach(enumConfig -> generateStandardEnum(dataModel, enumConfig));
         generateAmplifierEnum(dataModel);
         generateListAmplifierEnums(dataModel);
         generateSymbolSets(dataModel);
@@ -149,33 +143,24 @@ public class DomainModelGenerator {
             // from an overlay rather than checked in whole.
             return;
         }
-        Files.list(outputDir)
-            .findFirst()
-            .ifPresent(packageRoot -> {
-                try {
-                    Files.walk(packageRoot)
-                        .map(Path::toFile)
-                        .sorted(Comparator.reverseOrder())
-                        .forEach(File::delete);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            });
+        Files.list(outputDir).findFirst().ifPresent(packageRoot -> {
+            try {
+                Files.walk(packageRoot).map(Path::toFile).sorted(Comparator.reverseOrder()).forEach(File::delete);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     private void generateAmplifierEnum(LibraryModel dataModel) throws Exception {
-        Template template = config.getTemplateConfig()
-            .getTemplate("AmplifierEnum.ftl");
-        template.process(dataModel, newWriter(config.getIconPackageDir()
-            .resolve("AmplifierEnum.java")));
+        Template template = config.getTemplateConfig().getTemplate("AmplifierEnum.ftl");
+        template.process(dataModel, newWriter(config.getIconPackageDir().resolve("AmplifierEnum.java")));
     }
 
     private void generateLibrary(LibraryModel dataModel) throws Exception {
-        Template template = config.getTemplateConfig()
-            .getTemplate("IconLibrary.ftl");
+        Template template = config.getTemplateConfig().getTemplate("IconLibrary.ftl");
         String className = dataModel.getLibraryPrefix() + "IconLibrary";
-        template.process(dataModel, newWriter(config.getIconPackageDir()
-            .resolve(className + ".java")));
+        template.process(dataModel, newWriter(config.getIconPackageDir().resolve(className + ".java")));
         generateServiceDeclaration(className);
     }
 
@@ -189,9 +174,7 @@ public class DomainModelGenerator {
      * for the library rather than depending on it, and that is worth keeping: it has no need of jmsfx-core on its own classpath.
      */
     private void generateServiceDeclaration(String className) throws IOException {
-        Path services = config.getResourcesDir()
-            .resolve("META-INF")
-            .resolve("services");
+        Path services = config.getResourcesDir().resolve("META-INF").resolve("services");
         Files.createDirectories(services);
         try (Writer writer = newWriter(services.resolve(config.getBasePackage() + ".IconLibrary"))) {
             writer.write(String.format("# Generated by %s - do not edit.%n", DomainModelGenerator.class.getSimpleName()));
@@ -200,35 +183,29 @@ public class DomainModelGenerator {
     }
 
     private void generateListAmplifierEnums(LibraryModel dataModel) throws Exception {
-        Template template = config.getTemplateConfig()
-            .getTemplate("AmplifierListEnum.ftl");
-        template.process(dataModel, newWriter(config.getIconPackageDir()
-            .resolve("AmplifierListEnum.java")));
-        Template amplifierTemplate = config.getTemplateConfig()
-            .getTemplate("AmplifierListItem.ftl");
+        Template template = config.getTemplateConfig().getTemplate("AmplifierListEnum.ftl");
+        template.process(dataModel, newWriter(config.getIconPackageDir().resolve("AmplifierListEnum.java")));
+        Template amplifierTemplate = config.getTemplateConfig().getTemplate("AmplifierListItem.ftl");
         Path amplifierPath = config.getAmplifierPackageDir();
         if (!Files.exists(amplifierPath)) {
             Files.createDirectories(amplifierPath);
         }
-        dataModel.getAmplifierGroups()
-            .forEach(enumType -> {
-                try {
-                    System.out.format("Processing amplifier enum %s%n", enumType.getTypeName());
-                    dataModel.setAmplifier(enumType);
-                    amplifierTemplate.process(dataModel, newWriter(amplifierPath.resolve(enumType.getTypeName() + ".java")));
-                } catch (Exception e) {
-                    throw new IllegalArgumentException("Unable to create amplifier group enum", e);
-                }
-            });
+        dataModel.getAmplifierGroups().forEach(enumType -> {
+            try {
+                System.out.format("Processing amplifier enum %s%n", enumType.getTypeName());
+                dataModel.setAmplifier(enumType);
+                amplifierTemplate.process(dataModel, newWriter(amplifierPath.resolve(enumType.getTypeName() + ".java")));
+            } catch (Exception e) {
+                throw new IllegalArgumentException("Unable to create amplifier group enum", e);
+            }
+        });
     }
 
     private void generateStandardEnum(LibraryModel dataModel, String typeName) {
         try {
             System.out.format("Processing standard enum %s%n", typeName);
-            Template template = config.getTemplateConfig()
-                .getTemplate(typeName + ".ftl");
-            template.process(dataModel, newWriter(config.getIconPackageDir()
-                .resolve(typeName + ".java")));
+            Template template = config.getTemplateConfig().getTemplate(typeName + ".ftl");
+            template.process(dataModel, newWriter(config.getIconPackageDir().resolve(typeName + ".java")));
         } catch (Exception e) {
             throw new IllegalArgumentException("Unable to create enum", e);
         }
@@ -237,35 +214,28 @@ public class DomainModelGenerator {
     private void generateSymbolSet(LibraryModel dataModel, SymbolSetModel symSetDetails) {
         try {
             String packageName = symSetDetails.getPackageName();
-            Path packagePath = config.getIconPackageDir()
-                .resolve(packageName);
+            Path packagePath = config.getIconPackageDir().resolve(packageName);
             if (!Files.exists(packagePath)) {
                 Files.createDirectories(packagePath);
             }
             System.out.format("  Adding entities for symbol set %s%n", symSetDetails.getLabel());
             dataModel.setSymbolSet(symSetDetails);
-            Template symSetInfoTemplate = config.getTemplateConfig()
-                .getTemplate("SymbolSetInfo.ftl");
+            Template symSetInfoTemplate = config.getTemplateConfig().getTemplate("SymbolSetInfo.ftl");
             symSetInfoTemplate.process(dataModel, newWriter(packagePath.resolve(symSetDetails.getBaseTypeName() + "SymbolSet.java")));
-            Template entityTemplate = config.getTemplateConfig()
-                .getTemplate("Entity.ftl");
+            Template entityTemplate = config.getTemplateConfig().getTemplate("Entity.ftl");
             entityTemplate.process(dataModel, newWriter(packagePath.resolve(symSetDetails.getBaseTypeName() + "Entity.java")));
             if (symSetDetails.isEntityTypePresent()) {
-                Template entityTypeTemplate = config.getTemplateConfig()
-                    .getTemplate("EntityType.ftl");
+                Template entityTypeTemplate = config.getTemplateConfig().getTemplate("EntityType.ftl");
                 entityTypeTemplate.process(dataModel, newWriter(packagePath.resolve(symSetDetails.getBaseTypeName() + "EntityType.java")));
             }
             if (symSetDetails.isEntitySubTypePresent()) {
-                Template entitySubTypeTemplate = config.getTemplateConfig()
-                    .getTemplate("EntitySubType.ftl");
+                Template entitySubTypeTemplate = config.getTemplateConfig().getTemplate("EntitySubType.ftl");
                 entitySubTypeTemplate.process(dataModel, newWriter(packagePath.resolve(symSetDetails.getBaseTypeName() + "EntitySubType.java")));
             }
             if (symSetDetails.isCommon()) {
-                Template s1ModTemplate = config.getTemplateConfig()
-                    .getTemplate("CommonSectorOneModifier.ftl");
+                Template s1ModTemplate = config.getTemplateConfig().getTemplate("CommonSectorOneModifier.ftl");
                 s1ModTemplate.process(dataModel, newWriter(packagePath.resolve("CommonSectorOneModifier.java")));
-                Template s2ModTemplate = config.getTemplateConfig()
-                    .getTemplate("CommonSectorTwoModifier.ftl");
+                Template s2ModTemplate = config.getTemplateConfig().getTemplate("CommonSectorTwoModifier.ftl");
                 s2ModTemplate.process(dataModel, newWriter(packagePath.resolve("CommonSectorTwoModifier.java")));
             } else {
                 // Emitted for every symbol set, including the two whose lists are empty. An enum with no
@@ -273,16 +243,13 @@ public class DomainModelGenerator {
                 // name: jmsfx-server's controllers are generic over the modifier types, and where no enum
                 // existed they fell back to the interface, which Spring cannot convert a path variable to -
                 // so the request failed as a server error rather than a bad one. See #90.
-                Template s1ModTemplate = config.getTemplateConfig()
-                    .getTemplate("SectorOneModifier.ftl");
+                Template s1ModTemplate = config.getTemplateConfig().getTemplate("SectorOneModifier.ftl");
                 s1ModTemplate.process(dataModel, newWriter(packagePath.resolve(symSetDetails.getBaseTypeName() + "SectorOneModifier.java")));
-                Template s2ModTemplate = config.getTemplateConfig()
-                    .getTemplate("SectorTwoModifier.ftl");
+                Template s2ModTemplate = config.getTemplateConfig().getTemplate("SectorTwoModifier.ftl");
                 s2ModTemplate.process(dataModel, newWriter(packagePath.resolve(symSetDetails.getBaseTypeName() + "SectorTwoModifier.java")));
             }
             if (symSetDetails.isAmplifierGuidesPresent()) {
-                Template template = config.getTemplateConfig()
-                    .getTemplate("AmplifierGuide.ftl");
+                Template template = config.getTemplateConfig().getTemplate("AmplifierGuide.ftl");
                 template.process(dataModel, newWriter(packagePath.resolve(symSetDetails.getBaseTypeName() + "AmplifierGuide.java")));
             }
         } catch (Exception e) {
@@ -294,12 +261,9 @@ public class DomainModelGenerator {
     private void generateSymbolSets(LibraryModel dataModel) throws Exception {
         List<SymbolSetModel> values = dataModel.getSymbolSets();
         Collections.sort(values, AbstractModel.getStandardOrder());
-        Template template = config.getTemplateConfig()
-            .getTemplate("SymbolSetEnum.ftl");
-        template.process(dataModel, newWriter(config.getIconPackageDir()
-            .resolve("SymbolSetEnum.java")));
-        dataModel.getSymbolSets()
-            .forEach(symSet -> generateSymbolSet(dataModel, symSet));
+        Template template = config.getTemplateConfig().getTemplate("SymbolSetEnum.ftl");
+        template.process(dataModel, newWriter(config.getIconPackageDir().resolve("SymbolSetEnum.java")));
+        dataModel.getSymbolSets().forEach(symSet -> generateSymbolSet(dataModel, symSet));
     }
 
 }

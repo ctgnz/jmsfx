@@ -80,10 +80,7 @@ public enum SymbolSetEnum implements SymbolSet {
 
     @Override
     public AmplifierGuide getAmplifierGuide(Amplifier amplifier) {
-        return getAmplifierGuides().stream()
-            .filter(guide -> guide.getAmplifier() == amplifier)
-            .findFirst()
-            .orElse(null);
+        return getAmplifierGuides().stream().filter(guide -> guide.getAmplifier() == amplifier).findFirst().orElse(null);
     }
 
     @Override

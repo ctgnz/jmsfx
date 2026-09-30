@@ -87,8 +87,7 @@ public enum LandInstallationEntitySubType implements EntitySubType {
         COMMERCIAL_FOOD_DISTRIBUTION("03", "Commercial Food Distribution Center", LandInstallationEntityType.AGRICULTURE_FOOD_INFRASTRUCTURE, GraphicType.FULL_FRAME) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
-                return switch (identity.getGroup()
-                    .getId()) {
+                return switch (identity.getGroup().getId()) {
                     case "1" -> "<g id=\"main\">\n    <g transform=\"scale(0.7) translate(95 115.714)\">\n      <path d=\"M365,389.285c-60,0-60,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n      <path d=\"M365,389.285c-30,0-30,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n    </g>\n    <text font-family=\"sans-serif\" font-size=\"52\" transform=\"matrix(1 0 0 1 244.3418 347.0001)\">COM</text>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"148.377\" x2=\"463.622\" y1=\"444\" y2=\"444\"/>\n  </g>";
                     case "3" -> "<g id=\"main\">\n    <g transform=\"scale(0.7) translate(95 115.714)\">\n      <path d=\"M365,389.285c-60,0-60,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n      <path d=\"M365,389.285c-30,0-30,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n    </g>\n    <text font-family=\"sans-serif\" font-size=\"52\" transform=\"matrix(1 0 0 1 244.3418 347.0001)\">COM</text>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"126.5\" x2=\"485.5\" y1=\"444\" y2=\"444\"/>\n  </g>";
                     case "4" -> "<g id=\"main\">\n    <g transform=\"scale(0.7) translate(95 115.714)\">\n      <path d=\"M365,389.285c-60,0-60,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n      <path d=\"M365,389.285c-30,0-30,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n    </g>\n    <text font-family=\"sans-serif\" font-size=\"52\" transform=\"matrix(1 0 0 1 244.3418 347.0001)\">COM</text>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"174\" x2=\"438\" y1=\"444\" y2=\"444\"/>\n  </g>";
@@ -100,8 +99,7 @@ public enum LandInstallationEntitySubType implements EntitySubType {
         FOOD_DISTRIBUTION("05", "Food Distribution", LandInstallationEntityType.AGRICULTURE_FOOD_INFRASTRUCTURE, GraphicType.FULL_FRAME) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
-                return switch (identity.getGroup()
-                    .getId()) {
+                return switch (identity.getGroup().getId()) {
                     case "1" -> "<g id=\"main\">\n    <line fill=\"none\" id=\"line\" stroke=\"#000000\" stroke-width=\"5\" x1=\"149.696\" x2=\"462.304\" y1=\"446\" y2=\"446\"/>\n    <path d=\"M301.169,396.149c0-19.191,12.044-35.563,28.983-41.987 c-4.949-1.877-10.313-2.914-15.918-2.914c-24.799,0-44.902,20.103-44.902,44.901c0,24.798,20.103,44.901,44.902,44.901 c5.604,0,10.969-1.036,15.918-2.914C313.213,431.711,301.169,415.341,301.169,396.149z\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n  </g>";
                     case "3" -> "<g id=\"main\">\n    <line fill=\"none\" id=\"line\" stroke=\"#000000\" stroke-width=\"5\" x1=\"126.082\" x2=\"486.082\" y1=\"445.015\" y2=\"445.295\"/>\n    <path d=\"M301.169,396.149c0-19.191,12.044-35.563,28.983-41.987 c-4.949-1.877-10.313-2.914-15.918-2.914c-24.799,0-44.902,20.103-44.902,44.901c0,24.798,20.103,44.9,44.902,44.9 c5.604,0,10.969-1.036,15.918-2.914C313.213,431.711,301.169,415.341,301.169,396.149z\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n  </g>";
                     case "4" -> "<g id=\"main\">\n    <line fill=\"none\" id=\"line\" stroke=\"#000000\" stroke-width=\"5\" x1=\"174\" x2=\"438\" y1=\"446\" y2=\"446\"/>\n    <path d=\"M301.169,396.149c0-19.191,12.044-35.563,28.983-41.987 c-4.949-1.877-10.313-2.914-15.918-2.914c-24.799,0-44.902,20.103-44.902,44.901c0,24.798,20.103,44.901,44.902,44.901 c5.604,0,10.969-1.036,15.918-2.914C313.213,431.711,301.169,415.341,301.169,396.149z\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n  </g>";
@@ -113,8 +111,7 @@ public enum LandInstallationEntitySubType implements EntitySubType {
         FOOD_PRODUCTION_CENTER("06", "Food Production Center", LandInstallationEntityType.AGRICULTURE_FOOD_INFRASTRUCTURE, GraphicType.FULL_FRAME) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
-                return switch (identity.getGroup()
-                    .getId()) {
+                return switch (identity.getGroup().getId()) {
                     case "1" -> "<g id=\"main\">\n    <g transform=\"scale(0.7) translate(95 115.714)\">\n      <path d=\"M365,389.285c-60,0-60,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n      <path d=\"M365,389.285c-30,0-30,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n    </g>\n    <text font-family=\"sans-serif\" font-size=\"52\" transform=\"matrix(1 0 0 1 232.8818 347.0001)\">PROD</text>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"148.377\" x2=\"463.622\" y1=\"444\" y2=\"444\"/>\n  </g>";
                     case "3" -> "<g id=\"main\">\n    <g transform=\"scale(0.7) translate(95 115.714)\">\n      <path d=\"M365,389.285c-60,0-60,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n      <path d=\"M365,389.285c-30,0-30,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n    </g>\n    <text font-family=\"sans-serif\" font-size=\"52\" transform=\"matrix(1 0 0 1 234.8818 347.0001)\">PROD</text>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"126.5\" x2=\"485.5\" y1=\"444\" y2=\"444\"/>\n  </g>";
                     case "4" -> "<g id=\"main\">\n    <g transform=\"scale(0.7) translate(95 115.714)\">\n      <path d=\"M365,389.285c-60,0-60,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n      <path d=\"M365,389.285c-30,0-30,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n    </g>\n    <text font-family=\"sans-serif\" font-size=\"52\" transform=\"matrix(1 0 0 1 234.8818 347.0001)\">PROD</text>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"174\" x2=\"438\" y1=\"444\" y2=\"444\"/>\n  </g>";
@@ -126,8 +123,7 @@ public enum LandInstallationEntitySubType implements EntitySubType {
         FOOD_RETAIL("07", "Food Retail", LandInstallationEntityType.AGRICULTURE_FOOD_INFRASTRUCTURE, GraphicType.FULL_FRAME) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
-                return switch (identity.getGroup()
-                    .getId()) {
+                return switch (identity.getGroup().getId()) {
                     case "1" -> "<g id=\"main\">\n    <g transform=\"scale(0.7) translate(95 115.714)\">\n      <path d=\"M365,389.285c-60,0-60,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n      <path d=\"M365,389.285c-30,0-30,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n    </g>\n    <text font-family=\"sans-serif\" font-size=\"52\" transform=\"matrix(1 0 0 1 264.46 348.0001)\">RTL</text>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"148.377\" x2=\"463.622\" y1=\"444\" y2=\"444\"/>\n  </g>";
                     case "3" -> "<g id=\"main\">\n    <g transform=\"scale(0.7) translate(95 115.714)\">\n      <path d=\"M365,389.285c-60,0-60,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n      <path d=\"M365,389.285c-30,0-30,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n    </g>\n    <text font-family=\"sans-serif\" font-size=\"52\" transform=\"matrix(1 0 0 1 261.46 347.0001)\">RTL</text>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"126.5\" x2=\"485.5\" y1=\"444\" y2=\"444\"/>\n  </g>";
                     case "4" -> "<g id=\"main\">\n    <g transform=\"scale(0.7) translate(95 115.714)\">\n      <path d=\"M365,389.285c-60,0-60,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n      <path d=\"M365,389.285c-30,0-30,115.001,0,115.001\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n    </g>\n    <text font-family=\"sans-serif\" font-size=\"52\" transform=\"matrix(1 0 0 1 261.46 347.0001)\">RTL</text>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"174\" x2=\"438\" y1=\"444\" y2=\"444\"/>\n  </g>";
@@ -205,8 +201,7 @@ public enum LandInstallationEntitySubType implements EntitySubType {
         MEDICAL("01", "Medical", LandInstallationEntityType.MEDICAL_INFRASTRUCTURE, GraphicType.FULL_FRAME) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
-                return switch (identity.getGroup()
-                    .getId()) {
+                return switch (identity.getGroup().getId()) {
                     case "1" -> "<g id=\"main\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"306\" x2=\"306\" y1=\"224.916\" y2=\"567.25\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"132\" x2=\"480\" y1=\"396\" y2=\"396\"/>\n  </g>";
                     case "3" -> "<g id=\"main\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"306\" x2=\"306\" y1=\"273.6\" y2=\"517.5\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"131.5\" x2=\"479.5\" y1=\"396\" y2=\"396\"/>\n  </g>";
                     case "4" -> "<g id=\"main\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"306\" x2=\"306\" y1=\"264\" y2=\"528\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"174\" x2=\"438\" y1=\"396\" y2=\"396\"/>\n  </g>";
@@ -218,8 +213,7 @@ public enum LandInstallationEntitySubType implements EntitySubType {
         MTF_HOSPITAL("02", "Medical Treatment Facility (Hospital)", LandInstallationEntityType.MEDICAL_INFRASTRUCTURE, GraphicType.FULL_FRAME) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
-                return switch (identity.getGroup()
-                    .getId()) {
+                return switch (identity.getGroup().getId()) {
                     case "1" -> "<g id=\"main\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"306\" x2=\"306\" y1=\"224.916\" y2=\"567.25\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"132\" x2=\"480\" y1=\"396\" y2=\"396\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"228.5\" x2=\"228.5\" y1=\"365.5\" y2=\"425.5\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"382.5\" x2=\"382.5\" y1=\"365.5\" y2=\"425.5\"/>\n  </g>";
                     case "3" -> "<g id=\"main\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"306\" x2=\"306\" y1=\"273.6\" y2=\"517.5\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"131.5\" x2=\"479.5\" y1=\"396\" y2=\"396\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"231.5\" x2=\"231.5\" y1=\"364.5\" y2=\"424.5\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"385.5\" x2=\"385.5\" y1=\"364.5\" y2=\"424.5\"/>\n  </g>";
                     case "4" -> "<g id=\"main\">\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"306\" x2=\"306\" y1=\"264\" y2=\"528\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"174\" x2=\"438\" y1=\"396\" y2=\"396\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"228.5\" x2=\"228.5\" y1=\"365.5\" y2=\"425.5\"/>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"382.5\" x2=\"382.5\" y1=\"365.5\" y2=\"425.5\"/>\n  </g>";

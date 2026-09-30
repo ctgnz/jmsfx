@@ -43,9 +43,7 @@ public class StandardAmplifierItemImpl<A extends StandardAmplifierItem> extends 
             return true;
         }
         if (obj instanceof StandardAmplifierItemImpl<?> rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
@@ -84,8 +82,7 @@ public class StandardAmplifierItemImpl<A extends StandardAmplifierItem> extends 
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(4271, 1733).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(4271, 1733).append(getId()).toHashCode();
     }
 
     @Override

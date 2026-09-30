@@ -18,8 +18,7 @@ public enum LandInstallationEntityType implements EntityType {
         AMMUNITION_CACHE("03", "Ammunition Cache", LandInstallationEntity.INSTALLATION, GraphicType.FULL_FRAME) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
-                return switch (identity.getGroup()
-                    .getId()) {
+                return switch (identity.getGroup().getId()) {
                     case "1" -> "<g id=\"main\">\n    <line fill=\"none\" id=\"line\" stroke=\"#000000\" stroke-width=\"5\" x1=\"149.03\" x2=\"462.97\" y1=\"445.015\" y2=\"445.015\"/>\n    <g>\n      <path d=\"M285.762,441.453c0-29.548-0.169-50.313,0.945-70.15 c0.76-13.533,12.519-17.831,21.73-17.831c8.779,0,21.888,6.491,22.398,19.837c0.895,23.18,0.624,37.569,0.624,68.144\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n      <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"277.5\" x2=\"339.501\" y1=\"438.464\" y2=\"438.464\"/>\n    </g>\n  </g>";
                     case "3" -> "<g id=\"main\">\n    <line fill=\"none\" id=\"line\" stroke=\"#000000\" stroke-width=\"5\" x1=\"126.082\" x2=\"486.082\" y1=\"445.015\" y2=\"445.295\"/>\n    <g>\n      <path d=\"M285.762,441.453c0-29.548-0.169-50.313,0.945-70.15 c0.76-13.533,12.519-17.831,21.73-17.831c8.781,0,21.888,6.491,22.4,19.837c0.893,23.18,0.624,37.569,0.624,68.144\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n      <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"277.5\" x2=\"339.501\" y1=\"438.464\" y2=\"438.464\"/>\n    </g>\n  </g>";
                     case "4" -> "<g id=\"main\">\n    <line fill=\"none\" id=\"line\" stroke=\"#000000\" stroke-width=\"5\" x1=\"174\" x2=\"438\" y1=\"445.015\" y2=\"445.015\"/>\n    <g>\n      <path d=\"M285.762,441.453c0-29.548-0.169-50.313,0.945-70.15 c0.76-13.533,12.519-17.831,21.73-17.831c8.779,0,21.888,6.491,22.398,19.837c0.895,23.18,0.624,37.569,0.624,68.144\" fill=\"none\" stroke=\"#000000\" stroke-width=\"5\"/>\n      <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"277.5\" x2=\"339.501\" y1=\"438.464\" y2=\"438.464\"/>\n    </g>\n  </g>";
@@ -79,8 +78,7 @@ public enum LandInstallationEntityType implements EntityType {
         MATERIEL("12", "Materiel", LandInstallationEntity.INSTALLATION, GraphicType.FULL_FRAME) {
             @Override
             public String getGraphicMarkup(StandardIdentity identity) {
-                return switch (identity.getGroup()
-                    .getId()) {
+                return switch (identity.getGroup().getId()) {
                     case "1" -> "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"100\" transform=\"matrix(1 0 0 1 201.5 430.25)\">MAT</text>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"146.255\" x2=\"466.254\" y1=\"445.015\" y2=\"445.015\"/>\n  </g>";
                     case "3" -> "<g id=\"main\">\n    <line fill=\"none\" id=\"line\" stroke=\"#000000\" stroke-width=\"5\" x1=\"126.082\" x2=\"486.082\" y1=\"445.015\" y2=\"445.295\"/>\n    <g id=\"text\">\n      <text font-family=\"sans-serif\" font-size=\"100\" transform=\"matrix(1 0 0 1 201.5 433.25)\">MAT</text>\n    </g>\n  </g>";
                     case "4" -> "<g id=\"main\">\n    <text font-family=\"sans-serif\" font-size=\"100\" transform=\"matrix(1 0 0 1 201.5 431.25)\">MAT</text>\n    <line fill=\"none\" stroke=\"#000000\" stroke-width=\"5\" x1=\"174\" x2=\"438\" y1=\"449.5\" y2=\"449.5\"/>\n  </g>";

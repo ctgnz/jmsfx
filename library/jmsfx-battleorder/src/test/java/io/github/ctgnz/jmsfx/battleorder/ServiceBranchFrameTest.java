@@ -47,8 +47,7 @@ class ServiceBranchFrameTest {
 
     @Test
     void landUnitsOffersTheSevenBranchesAndUnknown() {
-        assertThat(landUnits().getFrameAmplifierList()
-            .size(), is(8));
+        assertThat(landUnits().getFrameAmplifierList().size(), is(8));
     }
 
     @Test
@@ -109,25 +108,16 @@ class ServiceBranchFrameTest {
     private String render(AmplifierListItem frameAmplifier) throws Exception {
         SymbolSet landUnits = landUnits();
         IdentificationSymbol symbol = new IdentificationSymbol(IconLibrary.discover());
-        symbol.symbolSetProperty()
-            .set(landUnits);
-        symbol.entityProperty()
-            .set(landUnits.getEntities()
-                .getFirst());
+        symbol.symbolSetProperty().set(landUnits);
+        symbol.entityProperty().set(landUnits.getEntities().getFirst());
         if (frameAmplifier != null) {
-            symbol.frameAmplifierProperty()
-                .set(frameAmplifier);
+            symbol.frameAmplifierProperty().set(frameAmplifier);
         }
         return parser.write(symbol.getCombinedGraphic(), false);
     }
 
     private SymbolSet landUnits() {
-        return IconLibrary.discover()
-            .getSymbolSets()
-            .stream()
-            .filter(set -> "LAND_UNIT".equals(set.getId()) || "Land Units".equals(set.getLabel()))
-            .findFirst()
-            .orElseThrow();
+        return IconLibrary.discover().getSymbolSets().stream().filter(set -> "LAND_UNIT".equals(set.getId()) || "Land Units".equals(set.getLabel())).findFirst().orElseThrow();
     }
 
 }

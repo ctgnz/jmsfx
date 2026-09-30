@@ -40,9 +40,7 @@ public class AmplifierImpl extends CodeElementImpl implements Amplifier {
             return true;
         }
         if (obj instanceof AmplifierImpl rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
@@ -69,8 +67,7 @@ public class AmplifierImpl extends CodeElementImpl implements Amplifier {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(5261, 1627).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(5261, 1627).append(getId()).toHashCode();
     }
 
     public IntegerProperty maxProperty() {

@@ -28,8 +28,7 @@ public class EntityTypeModel extends AbstractModel {
     @YamlForceQuote(properties = {
         "code", "label", "remarks"
     })
-    public record Details(String code, String id, GraphicType graphicType, String graphic, boolean extension, boolean deprecated, String label, String remarks,
-                          String before) {
+    public record Details(String code, String id, GraphicType graphicType, String graphic, boolean extension, boolean deprecated, String label, String remarks, String before) {
     }
 
     private @JsonBackReference EntityModel entity;

@@ -17,26 +17,19 @@ class CreatorDownloadsTest {
     void namesTheBundlesForItsOwnLibraryAndVersion() {
         CreatorDownloads downloads = CreatorDownloads.of("Standard", "2.0.0");
 
-        assertThat(downloads.bundles()
-            .stream()
-            .map(CreatorDownloads.Bundle::filename)
-            .toList(),
+        assertThat(downloads.bundles().stream().map(CreatorDownloads.Bundle::filename).toList(),
             contains("jmsfx-creator-2.0.0-standard-windows.zip", "jmsfx-creator-2.0.0-standard-macos.zip", "jmsfx-creator-2.0.0-standard-linux.tar.gz"));
     }
 
     @Test
     void linksToTheReleaseTheVersionNames() {
-        assertThat(CreatorDownloads.of("Historical", "2.1.0")
-            .bundles()
-            .getFirst()
-            .url(), is("https://github.com/ctgnz/jmsfx/releases/download/2.1.0/jmsfx-creator-2.1.0-historical-windows.zip"));
+        assertThat(CreatorDownloads.of("Historical", "2.1.0").bundles().getFirst().url(), is("https://github.com/ctgnz/jmsfx/releases/download/2.1.0/jmsfx-creator-2.1.0-historical-windows.zip"));
     }
 
     /** The library name is capitalised on IconLibrary and lowercase in a filename, which is also how the Maven profile and the jar classifier spell it. */
     @Test
     void lowercasesTheLibraryName() {
-        assertThat(CreatorDownloads.of("BattleOrder", "2.0.0")
-            .library(), is("battleorder"));
+        assertThat(CreatorDownloads.of("BattleOrder", "2.0.0").library(), is("battleorder"));
     }
 
     /** Running from exploded classes - an IDE - leaves no manifest to read, which is not an error. */
@@ -45,12 +38,8 @@ class CreatorDownloadsTest {
         CreatorDownloads downloads = CreatorDownloads.of("Standard", null);
 
         assertThat(downloads.versioned(), is(false));
-        assertThat(downloads.bundles()
-            .getFirst()
-            .filename(), is(nullValue()));
-        assertThat(downloads.bundles()
-            .getFirst()
-            .url(), is("https://github.com/ctgnz/jmsfx/releases/latest"));
+        assertThat(downloads.bundles().getFirst().filename(), is(nullValue()));
+        assertThat(downloads.bundles().getFirst().url(), is("https://github.com/ctgnz/jmsfx/releases/latest"));
     }
 
     /**
@@ -61,15 +50,12 @@ class CreatorDownloadsTest {
         CreatorDownloads downloads = CreatorDownloads.of("Standard", "2.0.0-SNAPSHOT");
 
         assertThat(downloads.versioned(), is(false));
-        assertThat(downloads.bundles()
-            .getFirst()
-            .url(), is("https://github.com/ctgnz/jmsfx/releases/latest"));
+        assertThat(downloads.bundles().getFirst().url(), is("https://github.com/ctgnz/jmsfx/releases/latest"));
     }
 
     @Test
     void treatsABlankVersionAsAbsent() {
-        assertThat(CreatorDownloads.of("Standard", "  ")
-            .versioned(), is(false));
+        assertThat(CreatorDownloads.of("Standard", "  ").versioned(), is(false));
     }
 
 }

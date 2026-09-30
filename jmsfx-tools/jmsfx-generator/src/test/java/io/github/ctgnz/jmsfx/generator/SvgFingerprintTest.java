@@ -108,13 +108,9 @@ class SvgFingerprintTest {
     @Test
     void editorMetadataIsIgnored() throws Exception {
         String plain = exact(svg("<line x1=\"10\"/>"));
-        String inkscaped = SvgFingerprint.exact(parse("<svg xmlns=\"http://www.w3.org/2000/svg\""
-                                                      + " xmlns:sodipodi=\"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd\""
-                                                      + " xmlns:inkscape=\"http://www.inkscape.org/namespaces/inkscape\""
-                                                      + " viewBox=\"0 0 612 792\">"
-                                                      + "<defs id=\"defs2\"/>"
-                                                      + "<sodipodi:namedview id=\"namedview1\" pagecolor=\"#ffffff\"/>"
-                                                      + "<line x1=\"10\" id=\"line1\" inkscape:label=\"x\"/></svg>"));
+        String inkscaped = SvgFingerprint.exact(parse("<svg xmlns=\"http://www.w3.org/2000/svg\"" + " xmlns:sodipodi=\"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd\""
+                                                      + " xmlns:inkscape=\"http://www.inkscape.org/namespaces/inkscape\"" + " viewBox=\"0 0 612 792\">" + "<defs id=\"defs2\"/>"
+                                                      + "<sodipodi:namedview id=\"namedview1\" pagecolor=\"#ffffff\"/>" + "<line x1=\"10\" id=\"line1\" inkscape:label=\"x\"/></svg>"));
         assertThat(SvgFingerprint.equivalent(plain, inkscaped, TOLERANCE), is(true));
     }
 

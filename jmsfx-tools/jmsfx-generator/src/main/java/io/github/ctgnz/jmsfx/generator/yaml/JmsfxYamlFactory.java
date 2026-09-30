@@ -19,11 +19,9 @@ public class JmsfxYamlFactory extends YAMLFactory {
     protected YAMLGenerator _createGenerator(Writer out, IOContext ctxt) throws IOException {
         int feats = _yamlGeneratorFeatures;
         if (_dumperOptions == null) {
-            return new JmsfxYamlGenerator(ctxt, _generatorFeatures, feats,
-                                          _quotingChecker, _objectCodec, out, _version);
+            return new JmsfxYamlGenerator(ctxt, _generatorFeatures, feats, _quotingChecker, _objectCodec, out, _version);
         } else {
-            return new JmsfxYamlGenerator(ctxt, _generatorFeatures, feats,
-                                          _quotingChecker, _objectCodec, out, _dumperOptions);
+            return new JmsfxYamlGenerator(ctxt, _generatorFeatures, feats, _quotingChecker, _objectCodec, out, _dumperOptions);
         }
     }
 }

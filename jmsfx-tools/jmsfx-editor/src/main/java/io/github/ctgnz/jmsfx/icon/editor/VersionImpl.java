@@ -20,17 +20,14 @@ public class VersionImpl extends CodeElementImpl implements Version {
             return true;
         }
         if (obj instanceof VersionImpl rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(8353, 3539).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(8353, 3539).append(getId()).toHashCode();
     }
 
 }

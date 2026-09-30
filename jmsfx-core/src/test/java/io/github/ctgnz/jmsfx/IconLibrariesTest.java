@@ -35,10 +35,9 @@ class IconLibrariesTest {
     private static IconLibrary stub(Class<? extends IconLibrary> type) {
         return (IconLibrary) Proxy.newProxyInstance(IconLibrariesTest.class.getClassLoader(), new Class<?>[] {
             type
-        },
-            (proxy, method, args) -> {
-                throw new UnsupportedOperationException("selection should not call " + method.getName());
-            });
+        }, (proxy, method, args) -> {
+            throw new UnsupportedOperationException("selection should not call " + method.getName());
+        });
     }
 
     private final IconLibrary one = stub(First.class);
@@ -62,17 +61,14 @@ class IconLibrariesTest {
         IllegalStateException thrown = assertThrows(IllegalStateException.class, () -> IconLibraries.select(List.of(one, two), null));
         assertThat(thrown.getMessage(), containsString("More than one"));
         // Naming both is the point: the reader needs to know which dependency to drop.
-        assertThat(thrown.getMessage(), containsString(one.getClass()
-            .getName()));
-        assertThat(thrown.getMessage(), containsString(two.getClass()
-            .getName()));
+        assertThat(thrown.getMessage(), containsString(one.getClass().getName()));
+        assertThat(thrown.getMessage(), containsString(two.getClass().getName()));
         assertThat(thrown.getMessage(), containsString(IconLibrary.LIBRARY_PROPERTY));
     }
 
     @Test
     void namingOneSettlesIt() {
-        assertThat(IconLibraries.select(List.of(one, two), two.getClass()
-            .getName()), is(sameInstance(two)));
+        assertThat(IconLibraries.select(List.of(one, two), two.getClass().getName()), is(sameInstance(two)));
     }
 
     @Test
@@ -81,8 +77,7 @@ class IconLibrariesTest {
         // library are different mistakes, and the message should not send the reader looking for the wrong one.
         IllegalStateException thrown = assertThrows(IllegalStateException.class, () -> IconLibraries.select(List.of(one), "com.example.NotHere"));
         assertThat(thrown.getMessage(), containsString("which is not on the classpath"));
-        assertThat(thrown.getMessage(), containsString(one.getClass()
-            .getName()));
+        assertThat(thrown.getMessage(), containsString(one.getClass().getName()));
     }
 
     @Test

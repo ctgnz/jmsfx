@@ -185,13 +185,9 @@ public final class SvgFingerprint {
 
     private static void append(Node node, StringBuilder out, boolean round) {
         if (node.getNodeType() == Node.TEXT_NODE || node.getNodeType() == Node.CDATA_SECTION_NODE) {
-            String text = node.getNodeValue()
-                .trim()
-                .replaceAll("\\s+", " ");
+            String text = node.getNodeValue().trim().replaceAll("\\s+", " ");
             if (!text.isEmpty()) {
-                out.append('"')
-                    .append(text)
-                    .append('"');
+                out.append('"').append(text).append('"');
             }
             return;
         }
@@ -202,10 +198,7 @@ public final class SvgFingerprint {
         // The namespace, not just the name: an element's namespace is what makes it SVG, and it is carried by
         // a declaration the fingerprint otherwise ignores. Without this, deleting xmlns="http://www.w3.org/2000/svg"
         // leaves every element's local name unchanged and the fingerprint none the wiser.
-        out.append('<')
-            .append(element.getNamespaceURI())
-            .append(':')
-            .append(element.getLocalName());
+        out.append('<').append(element.getNamespaceURI()).append(':').append(element.getLocalName());
         NamedNodeMap attributes = element.getAttributes();
         Map<String, String> sorted = new TreeMap<>();
         for (int i = 0; i < attributes.getLength(); i++) {
@@ -215,10 +208,7 @@ public final class SvgFingerprint {
             }
             sorted.put(attribute.getLocalName(), normalise(attribute.getValue(), round));
         }
-        sorted.forEach((name, value) -> out.append(' ')
-            .append(name)
-            .append('=')
-            .append(value));
+        sorted.forEach((name, value) -> out.append(' ').append(name).append('=').append(value));
         out.append('>');
         NodeList children = element.getChildNodes();
         for (int i = 0; i < children.getLength(); i++) {
@@ -228,14 +218,12 @@ public final class SvgFingerprint {
 
     /** Collapses whitespace and, when {@code round} is set, rounds every number, so re-serialisation drift and reformatted lists compare equal. */
     private static String normalise(String value, boolean round) {
-        String collapsed = value.trim()
-            .replaceAll("\\s+", " ");
+        String collapsed = value.trim().replaceAll("\\s+", " ");
         StringBuilder out = new StringBuilder(collapsed.length());
         int i = 0;
         while (i < collapsed.length()) {
             int start = i;
-            while (i < collapsed.length() && (Character.isDigit(collapsed.charAt(i)) || collapsed.charAt(i) == '.'
-                                              || (collapsed.charAt(i) == '-' && i == start))) {
+            while (i < collapsed.length() && (Character.isDigit(collapsed.charAt(i)) || collapsed.charAt(i) == '.' || (collapsed.charAt(i) == '-' && i == start))) {
                 i++;
             }
             if (i > start) {

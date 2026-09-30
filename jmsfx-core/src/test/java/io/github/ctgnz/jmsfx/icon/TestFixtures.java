@@ -123,8 +123,7 @@ final class TestFixtures {
      */
     static SvgGraphic svgGraphicWithContent() {
         SvgGraphic graphic = new SvgGraphic();
-        graphic.getContent()
-            .add(new SvgRectangle(0, 0, 10, 10));
+        graphic.getContent().add(new SvgRectangle(0, 0, 10, 10));
         return graphic;
     }
 
@@ -172,8 +171,7 @@ final class TestFixtures {
         /** A fake has no constant to be named by, so it takes its name from its label - which is where a generated constant's name comes from too. */
         @Override
         public String getName() {
-            return label == null ? null : label.toUpperCase(Locale.ROOT)
-                .replaceAll("[^A-Z0-9]+", "_");
+            return label == null ? null : label.toUpperCase(Locale.ROOT).replaceAll("[^A-Z0-9]+", "_");
         }
 
         @Override
@@ -309,8 +307,7 @@ final class TestFixtures {
         /** A fake has no constant to be named by, so it takes its name from its label - which is where a generated constant's name comes from too. */
         @Override
         public String getName() {
-            return label == null ? null : label.toUpperCase(Locale.ROOT)
-                .replaceAll("[^A-Z0-9]+", "_");
+            return label == null ? null : label.toUpperCase(Locale.ROOT).replaceAll("[^A-Z0-9]+", "_");
         }
 
         @Override
@@ -360,8 +357,7 @@ final class TestFixtures {
         /** A fake has no constant to be named by, so it takes its name from its label - which is where a generated constant's name comes from too. */
         @Override
         public String getName() {
-            return label == null ? null : label.toUpperCase(Locale.ROOT)
-                .replaceAll("[^A-Z0-9]+", "_");
+            return label == null ? null : label.toUpperCase(Locale.ROOT).replaceAll("[^A-Z0-9]+", "_");
         }
 
         @Override
@@ -433,8 +429,7 @@ final class TestFixtures {
         /** A fake has no constant to be named by, so it takes its name from its label - which is where a generated constant's name comes from too. */
         @Override
         public String getName() {
-            return label == null ? null : label.toUpperCase(Locale.ROOT)
-                .replaceAll("[^A-Z0-9]+", "_");
+            return label == null ? null : label.toUpperCase(Locale.ROOT).replaceAll("[^A-Z0-9]+", "_");
         }
 
         FakeEntitySubType withGraphicType(GraphicType value) {
@@ -484,8 +479,7 @@ final class TestFixtures {
         /** A fake has no constant to be named by, so it takes its name from its label - which is where a generated constant's name comes from too. */
         @Override
         public String getName() {
-            return label == null ? null : label.toUpperCase(Locale.ROOT)
-                .replaceAll("[^A-Z0-9]+", "_");
+            return label == null ? null : label.toUpperCase(Locale.ROOT).replaceAll("[^A-Z0-9]+", "_");
         }
 
         FakeEntityType withEntitySubTypes(List<EntitySubType> value) {
@@ -526,8 +520,7 @@ final class TestFixtures {
         /** A fake has no constant to be named by, so it takes its name from its label - which is where a generated constant's name comes from too. */
         @Override
         public String getName() {
-            return label == null ? null : label.toUpperCase(Locale.ROOT)
-                .replaceAll("[^A-Z0-9]+", "_");
+            return label == null ? null : label.toUpperCase(Locale.ROOT).replaceAll("[^A-Z0-9]+", "_");
         }
     }
 
@@ -825,8 +818,7 @@ final class TestFixtures {
         /** A fake has no constant to be named by, so it takes its name from its label - which is where a generated constant's name comes from too. */
         @Override
         public String getName() {
-            return label == null ? null : label.toUpperCase(Locale.ROOT)
-                .replaceAll("[^A-Z0-9]+", "_");
+            return label == null ? null : label.toUpperCase(Locale.ROOT).replaceAll("[^A-Z0-9]+", "_");
         }
 
         @Override
@@ -864,8 +856,7 @@ final class TestFixtures {
         /** A fake has no constant to be named by, so it takes its name from its label - which is where a generated constant's name comes from too. */
         @Override
         public String getName() {
-            return label == null ? null : label.toUpperCase(Locale.ROOT)
-                .replaceAll("[^A-Z0-9]+", "_");
+            return label == null ? null : label.toUpperCase(Locale.ROOT).replaceAll("[^A-Z0-9]+", "_");
         }
 
         @Override
@@ -908,8 +899,7 @@ final class TestFixtures {
         /** A fake has no constant to be named by, so it takes its name from its label - which is where a generated constant's name comes from too. */
         @Override
         public String getName() {
-            return label == null ? null : label.toUpperCase(Locale.ROOT)
-                .replaceAll("[^A-Z0-9]+", "_");
+            return label == null ? null : label.toUpperCase(Locale.ROOT).replaceAll("[^A-Z0-9]+", "_");
         }
 
         @Override
@@ -954,8 +944,7 @@ final class TestFixtures {
         /** A fake has no constant to be named by, so it takes its name from its label - which is where a generated constant's name comes from too. */
         @Override
         public String getName() {
-            return label == null ? null : label.toUpperCase(Locale.ROOT)
-                .replaceAll("[^A-Z0-9]+", "_");
+            return label == null ? null : label.toUpperCase(Locale.ROOT).replaceAll("[^A-Z0-9]+", "_");
         }
 
         @Override
@@ -1095,8 +1084,7 @@ final class TestFixtures {
         /** A fake has no constant to be named by, so it takes its name from its label - which is where a generated constant's name comes from too. */
         @Override
         public String getName() {
-            return label == null ? null : label.toUpperCase(Locale.ROOT)
-                .replaceAll("[^A-Z0-9]+", "_");
+            return label == null ? null : label.toUpperCase(Locale.ROOT).replaceAll("[^A-Z0-9]+", "_");
         }
 
         @Override
@@ -1152,8 +1140,7 @@ final class TestFixtures {
         /** A fake has no constant to be named by, so it takes its name from its label - which is where a generated constant's name comes from too. */
         @Override
         public String getName() {
-            return label == null ? null : label.toUpperCase(Locale.ROOT)
-                .replaceAll("[^A-Z0-9]+", "_");
+            return label == null ? null : label.toUpperCase(Locale.ROOT).replaceAll("[^A-Z0-9]+", "_");
         }
     }
 }

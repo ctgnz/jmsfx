@@ -78,21 +78,17 @@ public final class GraphicAmplifierValue {
     }
 
     private Transform calculateTransform() {
-        Group group = graphic.get()
-            .createGroup();
+        Group group = graphic.get().createGroup();
         Bounds bounds = group.getLayoutBounds();
         double dx = guide.getWidth() / bounds.getWidth();
         double dy = guide.getHeight() / bounds.getHeight();
         switch (getScaleDirection()) {
             case Both:
-                return Transform.translate(guide.getX(), guide.getY())
-                    .createConcatenation(Transform.scale(dx, dy));
+                return Transform.translate(guide.getX(), guide.getY()).createConcatenation(Transform.scale(dx, dy));
             case Horizontal:
-                return Transform.translate(guide.getX(), guide.getY())
-                    .createConcatenation(Transform.scale(dx, dx));
+                return Transform.translate(guide.getX(), guide.getY()).createConcatenation(Transform.scale(dx, dx));
             case Vertical:
-                return Transform.translate(guide.getX(), guide.getY())
-                    .createConcatenation(Transform.scale(dy, dy));
+                return Transform.translate(guide.getX(), guide.getY()).createConcatenation(Transform.scale(dy, dy));
             default:
                 return Transform.translate(guide.getX(), guide.getY());
         }

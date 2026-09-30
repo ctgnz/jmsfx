@@ -51,26 +51,14 @@ public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
         SymbolSetInfo info = symbolSet.getSymbolSetInfo();
         this.symbolSetInfo.set(info);
         this.framedIcon.set(info.isFramedIcon());
-        info.getEntities()
-            .stream()
-            .map(EntityImpl::new)
-            .forEach(this::addEntity);
-        info.getSectorOneModifiers()
-            .stream()
-            .map(SectorOneModifierImpl::new)
-            .forEach(this::addSectorOneModifier);
-        info.getSectorTwoModifiers()
-            .stream()
-            .map(SectorTwoModifierImpl::new)
-            .forEach(this::addSectorTwoModifier);
+        info.getEntities().stream().map(EntityImpl::new).forEach(this::addEntity);
+        info.getSectorOneModifiers().stream().map(SectorOneModifierImpl::new).forEach(this::addSectorOneModifier);
+        info.getSectorTwoModifiers().stream().map(SectorTwoModifierImpl::new).forEach(this::addSectorTwoModifier);
         this.amplifier1.setAll(info.getAmplifiers());
         this.amplifier2.setAll(info.getAmplifiersTwo());
         this.amplifier3.setAll(info.getAmplifiersThree());
         this.frameAmplifiers.setAll(info.getFrameAmplifiers());
-        info.getAmplifierGuides()
-            .stream()
-            .map(AmplifierGuideImpl::new)
-            .forEach(this::addAmplifierGuide);
+        info.getAmplifierGuides().stream().map(AmplifierGuideImpl::new).forEach(this::addAmplifierGuide);
     }
 
     public void addAmplifierGuide(AmplifierGuideImpl adapter) {
@@ -103,9 +91,7 @@ public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
             return true;
         }
         if (obj instanceof SymbolSetImpl rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
@@ -132,10 +118,7 @@ public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
 
     @Override
     public AmplifierGuide getAmplifierGuide(Amplifier amplifier) {
-        return amplifierGuides.stream()
-            .filter(guide -> guide.getAmplifier() == amplifier)
-            .findFirst()
-            .orElse(null);
+        return amplifierGuides.stream().filter(guide -> guide.getAmplifier() == amplifier).findFirst().orElse(null);
     }
 
     @Override
@@ -192,8 +175,7 @@ public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
     }
 
     public String getPath() {
-        return getLabel().replaceAll("\\s", "")
-            .replaceAll("-", "");
+        return getLabel().replaceAll("\\s", "").replaceAll("-", "");
     }
 
     @Override
@@ -217,8 +199,7 @@ public class SymbolSetImpl extends CodeElementImpl implements SymbolSet {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(9643, 3491).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(9643, 3491).append(getId()).toHashCode();
     }
 
     public boolean isAmplifierGuidesPresent() {

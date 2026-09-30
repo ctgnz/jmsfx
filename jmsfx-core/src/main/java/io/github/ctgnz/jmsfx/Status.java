@@ -17,11 +17,7 @@ public interface Status extends CodeElement {
      * adds {@code 6}, Present/Extinct, beyond the six APP-6E defines.
      */
     default String getGraphicKey(StandardIdentity identity, SymbolSet symbolSet) {
-        return String.format("/svg/Status/%s/%s/%s.svg", symbolSet.getDimension()
-            .getName(),
-            identity.getGroup()
-                .getName(),
-            getName());
+        return String.format("/svg/Status/%s/%s/%s.svg", symbolSet.getDimension().getName(), identity.getGroup().getName(), getName());
     }
 
     default boolean isFrameStatus() {
@@ -46,8 +42,7 @@ public interface Status extends CodeElement {
     }
 
     default boolean isSupported(SymbolSet symbolSet) {
-        return getDimensionIds().isEmpty() || getDimensionIds().contains(symbolSet.getDimension()
-            .getName());
+        return getDimensionIds().isEmpty() || getDimensionIds().contains(symbolSet.getDimension().getName());
     }
 
     /**

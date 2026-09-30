@@ -105,8 +105,7 @@ public class FragmentMeasurer {
         this.config = GeneratorConfig.load(configFile);
         this.baseConfig = baseConfigFile == null ? null : GeneratorConfig.load(baseConfigFile);
         if (config.isOverlay() && baseConfig == null) {
-            throw new IllegalArgumentException(String.format("%s extends %s, so the base library's config must be given as the second argument", config.getLibraryPrefix(),
-                config.getBaseLibrary()));
+            throw new IllegalArgumentException(String.format("%s extends %s, so the base library's config must be given as the second argument", config.getLibraryPrefix(), config.getBaseLibrary()));
         }
         this.tree = FragmentTree.of(config, baseConfig);
         // The two null checks that used to be here are gone with the paths they guarded: the
@@ -121,14 +120,10 @@ public class FragmentMeasurer {
         // `standard: true` - and the loops below, which ask whether a list is standard and iterate
         // the dimensions and identities, would skip it entirely.
         LibraryModel model = config.isOverlay()
-            ? new ModelComposer().compose(parser.readLibraryModel(Files.newInputStream(baseConfig.getModelFile())), parser.readLibraryModel(Files.newInputStream(config
-                .getModelFile())))
-            : own;
+            ? new ModelComposer().compose(parser.readLibraryModel(Files.newInputStream(baseConfig.getModelFile())), parser.readLibraryModel(Files.newInputStream(config.getModelFile()))) : own;
         List<StandardIdentityGroupModel> groups = model.getIdentityGroups();
         System.out.format("Measuring against %s%n", config.getModelDir());
-        System.out.format("Identity groups: %s%n", groups.stream()
-            .map(StandardIdentityGroupModel::getCode)
-            .toList());
+        System.out.format("Identity groups: %s%n", groups.stream().map(StandardIdentityGroupModel::getCode).toList());
 
         int measured = 0;
         int missing = 0;
@@ -156,8 +151,7 @@ public class FragmentMeasurer {
                     perList++;
                 }
             }
-            System.out.format("  %-24s %d of %d items measured%n", list.getTypeName(), perList, list.getValues()
-                .size());
+            System.out.format("  %-24s %d of %d items measured%n", list.getTypeName(), perList, list.getValues().size());
         }
 
         System.out.format("  %-24s %d items, %d fragments absent%n", "(amplifiers total)", measured, missing);
@@ -205,8 +199,7 @@ public class FragmentMeasurer {
                 measured++;
             }
         }
-        System.out.format("  %-24s %d of %d measured, %d absent%n", "statuses", measured, model.getStatuses()
-            .size(), absent);
+        System.out.format("  %-24s %d of %d measured, %d absent%n", "statuses", measured, model.getStatuses().size(), absent);
     }
 
     /** HQ/task force/dummy graphics live at {@code /svg/HQTFFD/{dimension}/{identityGroup}/{hqtfDummy}.svg}. See jmsfx#136. */
@@ -232,8 +225,7 @@ public class FragmentMeasurer {
                 measured++;
             }
         }
-        System.out.format("  %-24s %d of %d measured, %d absent%n", "hqtf/dummy", measured, model.getHqtfDummies()
-            .size(), absent);
+        System.out.format("  %-24s %d of %d measured, %d absent%n", "hqtf/dummy", measured, model.getHqtfDummies().size(), absent);
     }
 
     /**
@@ -270,8 +262,7 @@ public class FragmentMeasurer {
                 measured++;
             }
         }
-        System.out.format("  %-24s %d of %d measured, %d absent%n", "frames (by dimension)", measured, model.getDimensions()
-            .size(), absent);
+        System.out.format("  %-24s %d of %d measured, %d absent%n", "frames (by dimension)", measured, model.getDimensions().size(), absent);
     }
 
     /**
@@ -287,8 +278,7 @@ public class FragmentMeasurer {
         List<String> elsewhere = new ArrayList<>();
         List<FreeCanvasIcons.Icon> icons = FreeCanvasIcons.collect(model, tree);
         for (FreeCanvasIcons.Icon icon : icons) {
-            if (!icon.fragment()
-                .startsWith(tree.own())) {
+            if (!icon.fragment().startsWith(tree.own())) {
                 elsewhere.add(icon.identifier());
                 continue;
             }
@@ -300,8 +290,7 @@ public class FragmentMeasurer {
             measured.put(icon.identifier(), rectangle(bounds));
         }
         target.setIconBounds(measured.isEmpty() ? null : measured);
-        System.out.format("  %-24s %d free-canvas icons, %d measured, %d unreadable or absent, %d in the base's tree%n", "main icons", icons.size(), measured.size(),
-            missing.size(), elsewhere.size());
+        System.out.format("  %-24s %d free-canvas icons, %d measured, %d unreadable or absent, %d in the base's tree%n", "main icons", icons.size(), measured.size(), missing.size(), elsewhere.size());
         missing.forEach(name -> System.out.format("      no fragment for %s%n", name));
     }
 
@@ -315,10 +304,7 @@ public class FragmentMeasurer {
     private void measureSectorModifiers(LibraryModel model) throws Exception {
         // The overlay's own tree only. A base's modifiers are measured when the base is measured, and
         // recording them here would put the same number in two model files.
-        List<Path> dimensionRoots = Stream.of(tree.own()
-            .resolve("Dimensions"))
-            .filter(Files::isDirectory)
-            .toList();
+        List<Path> dimensionRoots = Stream.of(tree.own().resolve("Dimensions")).filter(Files::isDirectory).toList();
         if (dimensionRoots.isEmpty()) {
             model.setModifierBounds(null);
             System.out.format("  %-24s no Dimensions directory of its own, so no modifier bounds%n", "sector modifiers");
@@ -326,30 +312,18 @@ public class FragmentMeasurer {
         }
         Map<String, BoundsModel> escaping = new TreeMap<>();
         int inspected = 0;
-        try (Stream<Path> walked = dimensionRoots.stream()
-            .flatMap(FragmentMeasurer::walk)) {
-            List<Path> fragments = walked.filter(Files::isRegularFile)
-                .filter(path -> path.getFileName()
-                    .toString()
-                    .endsWith(".svg"))
-                .filter(FragmentMeasurer::isSectorModifier)
-                .sorted()
-                .toList();
+        try (Stream<Path> walked = dimensionRoots.stream().flatMap(FragmentMeasurer::walk)) {
+            List<Path> fragments = walked.filter(Files::isRegularFile).filter(path -> path.getFileName().toString().endsWith(".svg")).filter(FragmentMeasurer::isSectorModifier).sorted().toList();
             for (Path fragment : fragments) {
                 inspected++;
                 Bounds bounds = boundsOf(fragment);
                 if (bounds == null || containedInOctagon(bounds)) {
                     continue;
                 }
-                String fileName = fragment.getFileName()
-                    .toString();
+                String fileName = fragment.getFileName().toString();
                 Path sector = fragment.getParent();
-                escaping.put(FragmentSource.modifierBoundsKey(sector.getParent()
-                    .getFileName()
-                    .toString(),
-                    sector.getFileName()
-                        .toString(),
-                    fileName.substring(0, fileName.length() - ".svg".length())), rectangle(bounds));
+                escaping.put(FragmentSource.modifierBoundsKey(sector.getParent().getFileName().toString(), sector.getFileName().toString(), fileName.substring(0, fileName.length() - ".svg".length())),
+                    rectangle(bounds));
             }
         }
         model.setModifierBounds(escaping.isEmpty() ? null : escaping);
@@ -373,19 +347,13 @@ public class FragmentMeasurer {
                 copyBounds(byId(from.getValues(), item.getId()), item);
             }
         }
-        own.getStatuses()
-            .forEach(status -> copyBounds(byId(measured.getStatuses(), status.getId()), status));
-        own.getHqtfDummies()
-            .forEach(dummy -> copyBounds(byId(measured.getHqtfDummies(), dummy.getId()), dummy));
-        own.getDimensions()
-            .forEach(dimension -> copyBounds(byId(measured.getDimensions(), dimension.getId()), dimension));
+        own.getStatuses().forEach(status -> copyBounds(byId(measured.getStatuses(), status.getId()), status));
+        own.getHqtfDummies().forEach(dummy -> copyBounds(byId(measured.getHqtfDummies(), dummy.getId()), dummy));
+        own.getDimensions().forEach(dimension -> copyBounds(byId(measured.getDimensions(), dimension.getId()), dimension));
     }
 
     private static <E extends AbstractModel> E byId(List<E> elements, String id) {
-        return elements == null ? null : elements.stream()
-            .filter(element -> Objects.equals(element.getId(), id))
-            .findFirst()
-            .orElse(null);
+        return elements == null ? null : elements.stream().filter(element -> Objects.equals(element.getId(), id)).findFirst().orElse(null);
     }
 
     private static void copyBounds(AbstractModel from, AbstractModel to) {
@@ -399,22 +367,19 @@ public class FragmentMeasurer {
         if (parent == null || parent.getParent() == null) {
             return false;
         }
-        String directory = parent.getFileName()
-            .toString();
+        String directory = parent.getFileName().toString();
         if (!"mod1".equals(directory) && !"mod2".equals(directory)) {
             return false;
         }
         // Control Measures do not obey the icon composition rules - they are map graphics rather than
         // symbols built within the octagon - so their fragments are excluded here as everywhere else.
-        return !CONTROL_MEASURES.equals(parent.getParent()
-            .getFileName()
-            .toString());
+        return !CONTROL_MEASURES.equals(parent.getParent().getFileName().toString());
     }
 
     /** Within the octagon of {@code BoundingOctagon.svg}, allowing the same tolerance the measurements are rounded to. */
     private static boolean containedInOctagon(Bounds bounds) {
-        return bounds.getMinX() >= OCTAGON_MIN_X - TOLERANCE && bounds.getMinY() >= OCTAGON_MIN_Y - TOLERANCE
-               && bounds.getMaxX() <= OCTAGON_MAX_X + TOLERANCE && bounds.getMaxY() <= OCTAGON_MAX_Y + TOLERANCE;
+        return bounds.getMinX() >= OCTAGON_MIN_X - TOLERANCE && bounds.getMinY() >= OCTAGON_MIN_Y - TOLERANCE && bounds.getMaxX() <= OCTAGON_MAX_X + TOLERANCE
+               && bounds.getMaxY() <= OCTAGON_MAX_Y + TOLERANCE;
     }
 
     /**
@@ -462,13 +427,11 @@ public class FragmentMeasurer {
         // hands back an empty SvgGraphic rather than throwing, so a wrong path reads as "measured
         // nothing" instead of an error.
         SvgGraphic graphic = svgParser.parseFile(file.toFile());
-        if (graphic == null || graphic.getVisibleContent() == null || graphic.getVisibleContent()
-            .isEmpty()) {
+        if (graphic == null || graphic.getVisibleContent() == null || graphic.getVisibleContent().isEmpty()) {
             return null;
         }
         SvgGraphic solo = new SvgGraphic();
-        solo.getContent()
-            .addAll(graphic.getVisibleContent());
+        solo.getContent().addAll(graphic.getVisibleContent());
         Group group = solo.createGroup();
         group.autosize();
         return group.getBoundsInLocal();

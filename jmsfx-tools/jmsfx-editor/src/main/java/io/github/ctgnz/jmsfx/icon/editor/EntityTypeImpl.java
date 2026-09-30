@@ -25,10 +25,7 @@ public class EntityTypeImpl extends MainIconImpl implements EntityType {
     public EntityTypeImpl(EntityType entityType) {
         super(entityType);
         this.entity.set(entityType.getEntity());
-        this.entitySubTypes.addAll(entityType.getEntitySubTypes()
-            .stream()
-            .map(this::adaptSubType)
-            .toList());
+        this.entitySubTypes.addAll(entityType.getEntitySubTypes().stream().map(this::adaptSubType).toList());
     }
 
     public ObjectProperty<Entity> entityProperty() {
@@ -41,9 +38,7 @@ public class EntityTypeImpl extends MainIconImpl implements EntityType {
             return true;
         }
         if (obj instanceof EntityTypeImpl rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
@@ -60,8 +55,7 @@ public class EntityTypeImpl extends MainIconImpl implements EntityType {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(9371, 1741).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(9371, 1741).append(getId()).toHashCode();
     }
 
     @Override

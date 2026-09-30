@@ -52,8 +52,7 @@ class IdentificationSymbolTest {
         candidate.addGraphicAmplifier(amplifier, new SvgGraphic(), ScaleDirection.Original, Pos.TOP_LEFT);
         var second = candidate.addOverlayAmplifier(amplifier, new SvgGraphic());
 
-        assertThat(candidate.getGraphicAmplifiers()
-            .size(), is(1));
+        assertThat(candidate.getGraphicAmplifiers().size(), is(1));
         assertThat(candidate.getGraphicAmplifier(amplifier), sameInstance(second));
     }
 
@@ -63,8 +62,7 @@ class IdentificationSymbolTest {
         candidate.addTextAmplifier(amplifier, Pos.TOP_LEFT, "first");
         var value = candidate.addTextAmplifier(amplifier, Pos.TOP_LEFT, "second");
 
-        assertThat(candidate.getTextAmplifiers()
-            .size(), is(1));
+        assertThat(candidate.getTextAmplifiers().size(), is(1));
         assertThat(value.getText(), is("second"));
     }
 
@@ -170,8 +168,7 @@ class IdentificationSymbolTest {
 
     @Test
     void testIsCivilianEntityReflectsEntityFlag() {
-        candidate.setEntity(entity("10", "Infantry").withCivilian(true)
-            .withSymbolSet(candidate.getSymbolSet()));
+        candidate.setEntity(entity("10", "Infantry").withCivilian(true).withSymbolSet(candidate.getSymbolSet()));
 
         assertThat(candidate.isCivilianEntity(), is(true));
     }
@@ -202,8 +199,7 @@ class IdentificationSymbolTest {
         // element happened to sit in.
         assertThat(candidate.isFrameUsed(), is(true));
 
-        candidate.setEntity(entity("11", "Data Path Segment").withGraphicType(GraphicType.FREE_CANVAS)
-            .withSymbolSet(candidate.getSymbolSet()));
+        candidate.setEntity(entity("11", "Data Path Segment").withGraphicType(GraphicType.FREE_CANVAS).withSymbolSet(candidate.getSymbolSet()));
 
         assertThat(candidate.isFrameUsed(), is(false));
     }
@@ -212,8 +208,7 @@ class IdentificationSymbolTest {
     void testAFreeCanvasElementDropsTheStatusIconWithTheFrame() {
         // Not a separate rule: the status ring is drawn around a frame, and isStatusIconUsed already
         // requires one. Pinned because it is the layer most likely to be reinstated by accident.
-        candidate.setEntity(entity("11", "Data Path Segment").withGraphicType(GraphicType.FREE_CANVAS)
-            .withSymbolSet(candidate.getSymbolSet()));
+        candidate.setEntity(entity("11", "Data Path Segment").withGraphicType(GraphicType.FREE_CANVAS).withSymbolSet(candidate.getSymbolSet()));
 
         assertThat(candidate.isStatusIconUsed(), is(false));
     }
@@ -221,8 +216,7 @@ class IdentificationSymbolTest {
     @Test
     void testANormalElementIsStillFramed() {
         // The exemption must be the exception - every other icon in a point-geometry set keeps its frame.
-        candidate.setEntity(entity("11", "Infantry").withGraphicType(GraphicType.MAIN)
-            .withSymbolSet(candidate.getSymbolSet()));
+        candidate.setEntity(entity("11", "Infantry").withGraphicType(GraphicType.MAIN).withSymbolSet(candidate.getSymbolSet()));
 
         assertThat(candidate.isFrameUsed(), is(true));
     }
@@ -235,8 +229,7 @@ class IdentificationSymbolTest {
      */
     @Test
     void testAnExerciseSymbolComposesWithItsContextIndicator() {
-        library.withFrameGraphic(svgGraphicWithContent())
-            .withFrameOverlayGraphic(svgGraphicWithContent());
+        library.withFrameGraphic(svgGraphicWithContent()).withFrameOverlayGraphic(svgGraphicWithContent());
         candidate.setContext(exerciseContext());
 
         SvgGraphic combined = candidate.getCombinedGraphic();
@@ -247,8 +240,7 @@ class IdentificationSymbolTest {
     /** And that a real symbol does not, which is the whole point of drawing it. */
     @Test
     void testARealitySymbolComposesWithoutAContextIndicator() {
-        library.withFrameGraphic(svgGraphicWithContent())
-            .withFrameOverlayGraphic(svgGraphicWithContent());
+        library.withFrameGraphic(svgGraphicWithContent()).withFrameOverlayGraphic(svgGraphicWithContent());
         candidate.setContext(realityContext());
 
         SvgGraphic combined = candidate.getCombinedGraphic();
@@ -258,10 +250,7 @@ class IdentificationSymbolTest {
 
     /** How many drawable elements the composite picked up - the frame alone, or the frame and its context indicator. */
     private long drawnParts(SvgGraphic combined) {
-        return combined.getContent()
-            .stream()
-            .filter(SvgRectangle.class::isInstance)
-            .count();
+        return combined.getContent().stream().filter(SvgRectangle.class::isInstance).count();
     }
 
     @Test
@@ -270,8 +259,7 @@ class IdentificationSymbolTest {
         // document. Without a viewBox that has no intrinsic size, and an <img> showing it stretches to
         // fill whatever its styling allows - on the Browse tree, half the column.
         candidate.setSymbolSet(symbolSet("25", "Control Measure", GeometryType.LINE_GEOMETRY));
-        candidate.setEntity(entity("11", "Command and Control Lines").withGraphicType(GraphicType.NA)
-            .withSymbolSet(candidate.getSymbolSet()));
+        candidate.setEntity(entity("11", "Command and Control Lines").withGraphicType(GraphicType.NA).withSymbolSet(candidate.getSymbolSet()));
 
         SvgGraphic combined = candidate.getCombinedGraphic();
 
@@ -287,17 +275,14 @@ class IdentificationSymbolTest {
     void testASymbolThatDrawsNothingIsSizedWhenTrimmedToo() {
         // The trimmed path measures ink, and there is none, so it falls through the same gap.
         candidate.setSymbolSet(symbolSet("25", "Control Measure", GeometryType.LINE_GEOMETRY));
-        candidate.setEntity(entity("11", "Command and Control Lines").withGraphicType(GraphicType.NA)
-            .withSymbolSet(candidate.getSymbolSet()));
+        candidate.setEntity(entity("11", "Command and Control Lines").withGraphicType(GraphicType.NA).withSymbolSet(candidate.getSymbolSet()));
 
-        assertThat(candidate.getCombinedGraphic(true)
-            .getViewBox(), is(notNullValue()));
+        assertThat(candidate.getCombinedGraphic(true).getViewBox(), is(notNullValue()));
     }
 
     @Test
     void testIsMainIconUsedReflectsGraphicType() {
-        candidate.setEntity(entity("10", "Infantry").withGraphicType(GraphicType.NA)
-            .withSymbolSet(candidate.getSymbolSet()));
+        candidate.setEntity(entity("10", "Infantry").withGraphicType(GraphicType.NA).withSymbolSet(candidate.getSymbolSet()));
 
         assertThat(candidate.isMainIconUsed(), is(false));
     }
@@ -320,8 +305,7 @@ class IdentificationSymbolTest {
         candidate.removeTextAmplifier(amplifier);
 
         assertThat(candidate.getTextAmplifier(amplifier), nullValue());
-        assertThat(candidate.getTextAmplifiers()
-            .entrySet(), empty());
+        assertThat(candidate.getTextAmplifiers().entrySet(), empty());
     }
 
     @Test
@@ -334,20 +318,17 @@ class IdentificationSymbolTest {
 
         var newDefaultAmplifier = new TestFixtures.FakeAmplifierListItem("00", "Unspecified", false);
         var newDefaultEntity = entity("20", "Aircraft");
-        library.withDefaultAmplifier(newDefaultAmplifier)
-            .withDefaultEntity(newDefaultEntity);
+        library.withDefaultAmplifier(newDefaultAmplifier).withDefaultEntity(newDefaultEntity);
         candidate.setSymbolSet(symbolSet("20", "Air", GeometryType.POINT_GEOMETRY));
 
         assertThat(candidate.getAmplifier(), sameInstance((StandardAmplifierItem) newDefaultAmplifier));
         assertThat(candidate.getEntity(), sameInstance(newDefaultEntity));
-        assertThat(candidate.getTextAmplifiers()
-            .entrySet(), empty());
+        assertThat(candidate.getTextAmplifiers().entrySet(), empty());
     }
 
     @Test
     void testToStringConcatenatesTheThreeDigitGroups() {
-        assertThat(candidate.toString(),
-            is(candidate.getFirstTenDigits() + " " + candidate.getSecondTenDigits() + " " + candidate.getThirdTenDigits()));
+        assertThat(candidate.toString(), is(candidate.getFirstTenDigits() + " " + candidate.getSecondTenDigits() + " " + candidate.getThirdTenDigits()));
     }
 
     /**
@@ -366,13 +347,11 @@ class IdentificationSymbolTest {
     @Test
     void testTheAmplifierAlwaysOccupiesTwoPositions() {
         candidate.setAmplifier(new TestFixtures.FakeAmplifierListItem("24", "Army Group/Front", true));
-        int withOne = candidate.getFirstTenDigits()
-            .length();
+        int withOne = candidate.getFirstTenDigits().length();
 
         candidate.setAmplifier(new TestFixtures.FakeAmplifierListItem("11", "Team/Crew", true));
 
-        assertThat(candidate.getFirstTenDigits()
-            .length(), is(withOne));
+        assertThat(candidate.getFirstTenDigits().length(), is(withOne));
         assertThat(candidate.getFirstTenDigits(), endsWith("11"));
     }
 
@@ -383,14 +362,11 @@ class IdentificationSymbolTest {
     @Test
     void testAnUnspecifiedAmplifierFillsBothOfItsPositions() {
         candidate.setAmplifier(new TestFixtures.FakeAmplifierListItem("0", "Unspecified", false, true));
-        int unspecified = candidate.getFirstTenDigits()
-            .length();
+        int unspecified = candidate.getFirstTenDigits().length();
 
         candidate.setAmplifier(new TestFixtures.FakeAmplifierListItem("24", "Army Group/Front", true));
 
-        assertThat(candidate.getFirstTenDigits()
-            .length(), is(unspecified));
-        assertThat(unspecified, is(candidate.getFirstTenDigits()
-            .length()));
+        assertThat(candidate.getFirstTenDigits().length(), is(unspecified));
+        assertThat(unspecified, is(candidate.getFirstTenDigits().length()));
     }
 }

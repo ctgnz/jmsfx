@@ -106,13 +106,7 @@ public class FragmentComparator {
     private Map<String, Path> index(Path root) throws Exception {
         Map<String, Path> files = new TreeMap<>();
         try (Stream<Path> tree = Files.walk(root)) {
-            tree.filter(Files::isRegularFile)
-                .filter(path -> path.getFileName()
-                    .toString()
-                    .endsWith(".svg"))
-                .forEach(path -> files.put(root.relativize(path)
-                    .toString()
-                    .replace('\\', '/'), path));
+            tree.filter(Files::isRegularFile).filter(path -> path.getFileName().toString().endsWith(".svg")).forEach(path -> files.put(root.relativize(path).toString().replace('\\', '/'), path));
         }
         return files;
     }
@@ -123,8 +117,7 @@ public class FragmentComparator {
             if (config.getModelDir() == null) {
                 throw new IllegalStateException(configFile + " has no resourceDir, so its fragments cannot be found");
             }
-            return config.getModelDir()
-                .resolve("svg");
+            return config.getModelDir().resolve("svg");
         }
     }
 

@@ -37,20 +37,17 @@ class IdentificationSymbolIconTest {
     }
 
     private Group renderedContainer() {
-        return (Group) candidate.getChildren()
-            .get(0);
+        return (Group) candidate.getChildren().get(0);
     }
 
     @Test
     void testConstructionRendersFrameStatusAndMainIconByDefault() {
-        assertThat(renderedContainer().getChildren()
-            .size(), is(3));
+        assertThat(renderedContainer().getChildren().size(), is(3));
     }
 
     @Test
     void testFillBackgroundRefreshesTheIconWhenToggled() {
-        assertThat(renderedContainer().getChildren()
-            .size(), is(3));
+        assertThat(renderedContainer().getChildren().size(), is(3));
 
         candidate.setFillBackground(true);
 
@@ -79,31 +76,25 @@ class IdentificationSymbolIconTest {
 
         symbol.setFrameAmplifier(frameAmplifier);
 
-        Group frame = (Group) renderedContainer().getChildren()
-            .get(0);
-        Rectangle rectangle = (Rectangle) frame.getChildren()
-            .get(0);
+        Group frame = (Group) renderedContainer().getChildren().get(0);
+        Rectangle rectangle = (Rectangle) frame.getChildren().get(0);
         assertThat(library.getFrameAmplifierAsked(), is(frameAmplifier));
         assertThat(rectangle.getFill(), is(Color.RED));
     }
 
     @Test
     void testSettingNonGraphicalEntityRemovesTheMainIconGroup() {
-        symbol.setEntity(entity("20", "Non-graphical").withGraphicType(GraphicType.NA)
-            .withSymbolSet(symbol.getSymbolSet()));
+        symbol.setEntity(entity("20", "Non-graphical").withGraphicType(GraphicType.NA).withSymbolSet(symbol.getSymbolSet()));
 
-        assertThat(renderedContainer().getChildren()
-            .size(), is(2));
+        assertThat(renderedContainer().getChildren().size(), is(2));
     }
 
     @Test
     void testUpdateScaleAppliesATransformMatchingTheScaleFactor() {
         symbol.setScale(IconScale.Large);
 
-        assertThat(renderedContainer().getTransforms()
-            .size(), is(1));
-        Scale transform = (Scale) renderedContainer().getTransforms()
-            .get(0);
+        assertThat(renderedContainer().getTransforms().size(), is(1));
+        Scale transform = (Scale) renderedContainer().getTransforms().get(0);
         assertThat(transform.getX(), is(IconScale.Large.getFactor()));
         assertThat(transform.getY(), is(IconScale.Large.getFactor()));
     }

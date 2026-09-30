@@ -33,8 +33,7 @@ public class GeneratorConfig {
      * way, and making it circular is not an option - so loading by path is precisely what lets the file sit with the model and the fragments it belongs to.
      */
     public static GeneratorConfig load(Path configFile) throws IOException {
-        Path absolute = configFile.toAbsolutePath()
-            .normalize();
+        Path absolute = configFile.toAbsolutePath().normalize();
         if (Files.notExists(absolute)) {
             throw new IllegalArgumentException("no generator config at " + absolute);
         }
@@ -185,8 +184,7 @@ public class GeneratorConfig {
 
     public Configuration getTemplateConfig() throws IOException, URISyntaxException {
         Configuration configuration = new Configuration(Configuration.VERSION_2_3_30);
-        configuration.setDirectoryForTemplateLoading(new File(GeneratorConfig.class.getResource("/templates")
-            .toURI()));
+        configuration.setDirectoryForTemplateLoading(new File(GeneratorConfig.class.getResource("/templates").toURI()));
         // FreeMarker's default handler writes the error into the output and carries on, which for a code
         // generator means a .java file containing a stack trace where an import should be. That is how a
         // config missing countryCodeClass produced 179 files of which one was garbage, caught by javac

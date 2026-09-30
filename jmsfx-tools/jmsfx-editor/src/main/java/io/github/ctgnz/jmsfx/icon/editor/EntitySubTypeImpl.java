@@ -30,9 +30,7 @@ public class EntitySubTypeImpl extends MainIconImpl implements EntitySubType {
             return true;
         }
         if (obj instanceof EntitySubTypeImpl rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
@@ -44,8 +42,7 @@ public class EntitySubTypeImpl extends MainIconImpl implements EntitySubType {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(2377, 7741).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(2377, 7741).append(getId()).toHashCode();
     }
 
     @Override

@@ -44,11 +44,9 @@ public interface MainElement extends CodeElement {
      * A {@code FULL_FRAME} element draws four fragments, one per identity group, so its name carries the group. Everything else ignores the argument.
      */
     default String getGraphicKey(StandardIdentity identity) {
-        String dimension = getBaseSymbolSet().getDimension()
-            .getName();
+        String dimension = getBaseSymbolSet().getDimension().getName();
         if (isFullFrameIcon()) {
-            return String.format("/svg/Dimensions/%s/%s_%s.svg", dimension, getGraphicIdentifier(), identity.getGroup()
-                .getName());
+            return String.format("/svg/Dimensions/%s/%s_%s.svg", dimension, getGraphicIdentifier(), identity.getGroup().getName());
         }
         return String.format("/svg/Dimensions/%s/%s.svg", dimension, getGraphicIdentifier());
     }

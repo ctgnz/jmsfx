@@ -10,17 +10,11 @@ public interface HqtfDummy extends CodeElement {
     List<String> getDimensionIds();
 
     default String getGraphicKey(StandardIdentity identity, SymbolSet symbolSet) {
-        return String.format("/svg/HQTFFD/%s/%s/%s.svg", symbolSet.getDimension()
-            .getName(),
-            identity.getGroup()
-                .getName(),
-            getName());
+        return String.format("/svg/HQTFFD/%s/%s/%s.svg", symbolSet.getDimension().getName(), identity.getGroup().getName(), getName());
     }
 
     default boolean isSupported(SymbolSet symbolSet) {
-        return getDimensionIds().isEmpty() || getDimensionIds().stream()
-            .anyMatch(dim -> Objects.equals(dim, symbolSet.getDimension()
-                .getName()));
+        return getDimensionIds().isEmpty() || getDimensionIds().stream().anyMatch(dim -> Objects.equals(dim, symbolSet.getDimension().getName()));
     }
 
     /**
