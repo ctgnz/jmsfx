@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.ctgnz</groupId>
 	<artifactId>jmsfx-parent</artifactId>
-	<version>2.0.0</version>
+	<version>2.0.1-SNAPSHOT</version>
 	<name>JMSFX Parent</name>
 	<description>Shared build configuration for every JMSFX module: the Java level, the encoding, the formatter and import order, and the release profile. Carries no modules, so it can be versioned independently of the tree it configures.</description>
 	<packaging>pom</packaging>
