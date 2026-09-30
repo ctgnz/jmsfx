@@ -206,6 +206,17 @@
                             held out until someone decided. An extension library is a library - a consumer
                             renders with it exactly as they would with jmsfx-standard - so Central is where
                             it belongs.
+
+                            jmsfx-battleorder joins them at 2.0.0. It was excluded "until it can draw",
+                            carrying no SVG fragments of its own and so registering itself as an IconLibrary
+                            that rendered nothing - publishing that would have been publishing a library that
+                            failed the moment anyone used it, and a Central release cannot be withdrawn. The
+                            jmsfx#82 epic settled how a library gets its fragments: they are injected into the
+                            generated code, so this one draws jmsfx-standard's through the tree it extends
+                            (jmsfx#133) with no second IconLibrary on the classpath. It reports 0 classpath
+                            fallbacks across 17,513 load calls, and ServiceBranchFrameTest renders the branch
+                            colours. The condition that held it back is met, so it goes - and the same
+                            reasoning as jmsfx-historical applies: an extension library is a library.
                         -->
                         <groupId>org.sonatype.central</groupId>
                         <artifactId>central-publishing-maven-plugin</artifactId>
@@ -235,16 +246,6 @@
                                 <excludeArtifact>jmsfx-viewer</excludeArtifact>
                                 <excludeArtifact>jmsfx-creator</excludeArtifact>
                                 <excludeArtifact>jmsfx-server</excludeArtifact>
-                                <!--
-                                    jmsfx-battleorder is excluded until it can draw. It is the first
-                                    library composed from a base plus an overlay (jmsfx#81) and carries no
-                                    SVG fragments of its own, so it compiles and registers itself as an
-                                    IconLibrary but renders nothing. Publishing that would be publishing a
-                                    library that fails the moment anyone uses it, and a Central release
-                                    cannot be withdrawn. Comes off this list once jmsfx#82 or the fragment
-                                    packaging question settles how a library gets its fragments.
-                                -->
-                                <excludeArtifact>jmsfx-battleorder</excludeArtifact>
                             </excludeArtifacts>
                         </configuration>
                     </plugin>
