@@ -5,13 +5,13 @@
 
 A JavaFX implementation of **NATO APP-6, Edition E (2023)** military symbology - the standard set of symbols used to represent units, equipment, installations and activities on a military map.
 
-Symbols are composed and rendered as ordinary `javafx.scene.Node`s, by way of [foxglove](https://github.com/ctgnz/foxglove), so they can be styled, transformed and embedded in a scene graph like any other JavaFX content. The same model also serialises back out to SVG, or rasterises to PNG.
+Symbols are composed and rendered as ordinary `javafx.scene.Node`s, by way of [foxglove](https://github.com/ctgnz/foxglove), so they can be styled, transformed and embedded in a scene graph like any other JavaFX content. The same model also serialises back out to SVG.
 
 > **APP-6E, not MIL-STD-2525D.** The two are related and largely converged, but they are formally distinct documents and differ in detail. This project targets the NATO standard. Its data lineage comes from Esri's `joint-military-symbology-xml` (JMSML), which modelled MIL-STD-2525D specifically; that project is no longer maintained, and JMSFX now owns the schema and instance data going forward.
 
 ## Try it
 
-**[jmsfx.ctg.co.nz](https://jmsfx.ctg.co.nz/)** - browse the symbol sets and compose icons in the browser, with SVG and PNG export. It runs the `jmsfx-server` module from this repository.
+**[jmsfx.ctg.co.nz](https://jmsfx.ctg.co.nz/)** - browse the symbol sets and compose icons in the browser, with SVG export. It runs the `jmsfx-server` module from this repository.
 
 ## How a symbol is put together
 
@@ -51,13 +51,48 @@ Grouped by deliverable, so that things which share a release sit together:
 | `library/` | The generated libraries. A plain directory, not a module: each library tracks its own domain, so these are the lifecycles that should *not* move together. |
 | &nbsp;&nbsp;`jmsfx-standard` | The generated APP-6E domain model. Not hand-written; see above. |
 | &nbsp;&nbsp;`jmsfx-historical` | An extension library - icons APP-6E dropped, an enlarged Dismounted Individual set, extra amplifiers. |
-| &nbsp;&nbsp;`jmsfx-battleorder` | An extension colouring a unit's frame by branch of service. Documentation only for now - it needs [#81](https://github.com/ctgnz/jmsfx/issues/81) to be generated, so it is not yet in the reactor. |
+| &nbsp;&nbsp;`jmsfx-battleorder` | An extension colouring a unit's frame by branch of service, following [Battle Order](https://www.battleorder.org/icons)'s palette. Generated from an overlay on the standard model rather than a model of its own. |
 
 The editor sits with the generator rather than with the applications because it edits the model file, which is the generator's input. Nothing in either pom says so - the coupling runs through the YAML.
 
+## Using it
+
+Published to Maven Central from 2.0.0. Take `jmsfx-core` for the API and exactly one generated library -
+**exactly one**, because a library registers itself as an `IconLibrary` service and discovery has to fail
+rather than choose when two are on a classpath.
+
+```xml
+<dependency>
+    <groupId>io.github.ctgnz</groupId>
+    <artifactId>jmsfx-core</artifactId>
+    <version>2.0.0</version>
+</dependency>
+<dependency>
+    <groupId>io.github.ctgnz</groupId>
+    <artifactId>jmsfx-standard</artifactId>   <!-- or jmsfx-historical, or jmsfx-battleorder -->
+    <version>2.0.0</version>
+</dependency>
+```
+
+A library carries every drawing it can render as generated code, so there is nothing to put on the
+classpath beyond the jar and nothing read from it at render time.
+
+Writing your own extension library? `jmsfx-core`'s test jar publishes the injected-markup contract that
+each library here verifies itself against:
+
+```xml
+<dependency>
+    <groupId>io.github.ctgnz</groupId>
+    <artifactId>jmsfx-core</artifactId>
+    <version>2.0.0</version>
+    <type>test-jar</type>
+    <scope>test</scope>
+</dependency>
+```
+
 ## Building
 
-Requires **JDK 25** and Maven. JMSFX is not yet published to Maven Central, so build it from source:
+Requires **JDK 25** and Maven.
 
 ```sh
 git clone --recurse-submodules https://github.com/ctgnz/jmsfx.git
@@ -79,6 +114,9 @@ java -jar jmsfx-viewer/jmsfx-server/target/jmsfx-server-*-standard.jar
 ```
 
 It serves on port 8080 by default.
+
+Cutting a release is [docs/releasing.md](docs/releasing.md) - the sequence, and the several ways it has
+gone wrong.
 
 The web application runs headless, with no display or JavaFX toolkit required - icons are composed and served as SVG. It deliberately does not rasterise: converting SVG to other formats is a job existing tools already do well.
 
