@@ -28,8 +28,7 @@ public class EntityModel extends AbstractModel {
     @YamlForceQuote(properties = {
         "code", "label", "remarks"
     })
-    public record Details(String code, String id, GraphicType graphicType, String baseSymbolSet, boolean extension, boolean deprecated, String label, String remarks,
-                          String before) {
+    public record Details(String code, String id, GraphicType graphicType, String baseSymbolSet, boolean extension, boolean deprecated, String label, String remarks, String before) {
     }
 
     private @JsonBackReference SymbolSetModel symbolSet;
@@ -75,8 +74,7 @@ public class EntityModel extends AbstractModel {
     }
 
     protected Stream<EntitySubTypeModel> streamEntitySubTypes() {
-        return entityTypes.stream()
-            .flatMap(EntityTypeModel::streamEntitySubTypes);
+        return entityTypes.stream().flatMap(EntityTypeModel::streamEntitySubTypes);
     }
 
     protected Stream<EntityTypeModel> streamEntityTypes() {

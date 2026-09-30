@@ -30,9 +30,7 @@ public class ContextImpl extends CodeElementImpl implements Context {
             return true;
         }
         if (obj instanceof ContextImpl rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
@@ -44,8 +42,7 @@ public class ContextImpl extends CodeElementImpl implements Context {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(6619, 9173).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(6619, 9173).append(getId()).toHashCode();
     }
 
     @Override

@@ -37,9 +37,7 @@ public class StandardIdentityImpl extends CodeElementImpl implements StandardIde
             return true;
         }
         if (obj instanceof StandardIdentityImpl rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
@@ -60,8 +58,7 @@ public class StandardIdentityImpl extends CodeElementImpl implements StandardIde
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(1447, 7451).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(1447, 7451).append(getId()).toHashCode();
     }
 
     public BooleanProperty hostileProperty() {

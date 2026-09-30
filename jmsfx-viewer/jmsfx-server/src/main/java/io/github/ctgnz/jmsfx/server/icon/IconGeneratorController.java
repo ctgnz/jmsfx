@@ -21,11 +21,7 @@ public class IconGeneratorController {
     /** The symbol sets of whichever library is on the classpath, each carrying the path segment the icon API is reached at. */
     @GetMapping("/symbols")
     public List<SymbolSetSummary> getSupportedSymbolSets() {
-        return IconLibrary.discover()
-            .getSymbolSets()
-            .stream()
-            .map(SymbolSetSummary::of)
-            .toList();
+        return IconLibrary.discover().getSymbolSets().stream().map(SymbolSetSummary::of).toList();
     }
 
 }

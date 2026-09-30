@@ -43,9 +43,7 @@ public class SectorTwoModifierImpl extends CodeElementImpl implements SectorTwoM
             return true;
         }
         if (obj instanceof SectorTwoModifierImpl rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
@@ -76,8 +74,7 @@ public class SectorTwoModifierImpl extends CodeElementImpl implements SectorTwoM
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(7297, 7933).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(7297, 7933).append(getId()).toHashCode();
     }
 
     @Override

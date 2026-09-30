@@ -18,19 +18,17 @@ public class IconGallery extends TabPane {
         this.library = library;
         this.mainStage = mainStage;
         setMaxWidth(mainStage.getWidth());
-        library.getSymbolSets()
-            .forEach(sym -> {
-                Tab tab = new Tab(sym.getLabel());
-                tab.setUserData(sym);
-                getTabs().add(tab);
-            });
+        library.getSymbolSets().forEach(sym -> {
+            Tab tab = new Tab(sym.getLabel());
+            tab.setUserData(sym);
+            getTabs().add(tab);
+        });
 
         // Rendering every combination of every symbol set up front froze the UI
         // before the dialog could even appear. A tab now builds its gallery the
         // first time it is shown - the work has to stay on the FX thread, since
         // it builds scene graph nodes, so it is deferred rather than moved off.
-        getSelectionModel().selectedItemProperty()
-            .addListener((obs, oldTab, newTab) -> populate(newTab));
+        getSelectionModel().selectedItemProperty().addListener((obs, oldTab, newTab) -> populate(newTab));
         populate(getSelectionModel().getSelectedItem());
     }
 

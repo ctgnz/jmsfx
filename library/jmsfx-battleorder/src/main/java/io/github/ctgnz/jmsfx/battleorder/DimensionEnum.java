@@ -435,10 +435,7 @@ public enum DimensionEnum implements Dimension {
 
     @Override
     public SymbolSet getDefaultSymbolSet() {
-        return Arrays.stream(SymbolSetEnum.values())
-            .filter(sym -> sym.getDimension() == this)
-            .findFirst()
-            .orElse(SymbolSetEnum.COMMON);
+        return Arrays.stream(SymbolSetEnum.values()).filter(sym -> sym.getDimension() == this).findFirst().orElse(SymbolSetEnum.COMMON);
     }
 
     @Override
@@ -473,10 +470,7 @@ public enum DimensionEnum implements Dimension {
 
     @Override
     public List<SymbolSet> getSymbolSets() {
-        return Arrays.stream(SymbolSetEnum.values())
-            .filter(sym -> sym.getDimension() == this)
-            .map(SymbolSet.class::cast)
-            .toList();
+        return Arrays.stream(SymbolSetEnum.values()).filter(sym -> sym.getDimension() == this).map(SymbolSet.class::cast).toList();
     }
 
 }

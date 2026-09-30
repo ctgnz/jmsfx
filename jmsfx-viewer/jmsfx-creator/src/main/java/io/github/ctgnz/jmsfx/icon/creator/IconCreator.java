@@ -73,8 +73,7 @@ public class IconCreator extends Application {
                 setGraphic(null);
             } else {
                 setTooltip(new Tooltip(item.name()));
-                setGraphic(new ImageView(new Image(IconCreator.class.getResourceAsStream(String.format("/%s.png", item.name()
-                    .toLowerCase())))));
+                setGraphic(new ImageView(new Image(IconCreator.class.getResourceAsStream(String.format("/%s.png", item.name().toLowerCase())))));
             }
         }
     }
@@ -95,8 +94,7 @@ public class IconCreator extends Application {
     private final ObservableList<AmplifierListItem> amplifiersTwo = FXCollections.observableArrayList(Arrays.asList(library.getDefaultAmplifier()));
     private final ObservableList<AmplifierListItem> amplifiersThree = FXCollections.observableArrayList(Arrays.asList(library.getDefaultAmplifier()));
     private final ObservableList<AmplifierListItem> frameAmplifiers = FXCollections.observableArrayList(Arrays.asList(library.getDefaultAmplifier()));
-    private final ObservableList<Entity> entities = FXCollections.observableArrayList(library.getDefaultSymbolSet()
-        .getEntities());
+    private final ObservableList<Entity> entities = FXCollections.observableArrayList(library.getDefaultSymbolSet().getEntities());
     private final ObservableList<EntityType> entityTypes = FXCollections.observableArrayList(Arrays.asList(library.getDefaultEntityType()));
     private final ObservableList<EntitySubType> entitySubTypes = FXCollections.observableArrayList(Arrays.asList(library.getDefaultEntitySubType()));
     private final ObservableList<SectorOneModifier> sectorOneModifiers = FXCollections.observableArrayList(library.getCommonSectorOneModifiers());
@@ -133,8 +131,7 @@ public class IconCreator extends Application {
 
     private Node createAmplifierButtons() {
         final CheckBox showGuides = new CheckBox("Show Amplifier Guides");
-        symbol.amplifierGuidesVisibleProperty()
-            .bind(showGuides.selectedProperty());
+        symbol.amplifierGuidesVisibleProperty().bind(showGuides.selectedProperty());
 
         amplifierGuidePane = new GridPane();
         amplifierGuidePane.setVgap(6);
@@ -145,18 +142,15 @@ public class IconCreator extends Application {
         amplifierGuidePane.add(title, 0, 0);
         amplifierGuidePane.add(showGuides, 0, 1);
 
-        symbol.symbolSetProperty()
-            .addListener((obs, oldValue, newValue) -> {
-                amplifierGuidePane.getChildren()
-                    .clear();
-                amplifierGuidePane.add(title, 0, 0);
-                amplifierGuidePane.add(showGuides, 0, 1);
-                AtomicInteger row = new AtomicInteger(2);
-                if (newValue != null) {
-                    newValue.getAmplifierGuides()
-                        .forEach(guide -> createAmplifierGuide(row, guide));
-                }
-            });
+        symbol.symbolSetProperty().addListener((obs, oldValue, newValue) -> {
+            amplifierGuidePane.getChildren().clear();
+            amplifierGuidePane.add(title, 0, 0);
+            amplifierGuidePane.add(showGuides, 0, 1);
+            AtomicInteger row = new AtomicInteger(2);
+            if (newValue != null) {
+                newValue.getAmplifierGuides().forEach(guide -> createAmplifierGuide(row, guide));
+            }
+        });
 
         ScrollPane sp = new ScrollPane(amplifierGuidePane);
         sp.setMinWidth(620);
@@ -167,80 +161,60 @@ public class IconCreator extends Application {
         int rowIndex = row.getAndIncrement();
 
         ComboBox<String> guideSelect = new ComboBox<>(FXCollections.observableArrayList("None", "Text", "Graphic"));
-        guideSelect.getSelectionModel()
-            .select(0);
-        guideSelect.valueProperty()
-            .addListener((obs, oldValue, newValue) -> {
-                // Each mode owns one kind of amplifier, so switching has to drop
-                // the other kind - otherwise the previous one stays attached to
-                // the symbol while the UI claims the new mode is in effect.
-                switch (newValue) {
-                    case "Text":
-                        symbol.removeGraphicAmplifier(guide.getAmplifier());
-                        symbol.addTextAmplifier(guide.getAmplifier(), Pos.TOP_LEFT, guide.getCode());
-                        break;
-                    case "Graphic":
-                        symbol.removeTextAmplifier(guide.getAmplifier());
-                        break;
-                    default:
-                        symbol.removeTextAmplifier(guide.getAmplifier());
-                        symbol.removeGraphicAmplifier(guide.getAmplifier());
-                }
-            });
+        guideSelect.getSelectionModel().select(0);
+        guideSelect.valueProperty().addListener((obs, oldValue, newValue) -> {
+            // Each mode owns one kind of amplifier, so switching has to drop
+            // the other kind - otherwise the previous one stays attached to
+            // the symbol while the UI claims the new mode is in effect.
+            switch (newValue) {
+                case "Text":
+                    symbol.removeGraphicAmplifier(guide.getAmplifier());
+                    symbol.addTextAmplifier(guide.getAmplifier(), Pos.TOP_LEFT, guide.getCode());
+                    break;
+                case "Graphic":
+                    symbol.removeTextAmplifier(guide.getAmplifier());
+                    break;
+                default:
+                    symbol.removeTextAmplifier(guide.getAmplifier());
+                    symbol.removeGraphicAmplifier(guide.getAmplifier());
+            }
+        });
 
         ComboBox<Pos> amplifierAttachment = new ComboBox<>(FXCollections.observableArrayList(Pos.values()));
         amplifierAttachment.setCellFactory(p -> new PosListCell());
         amplifierAttachment.setButtonCell(new PosListCell());
-        amplifierAttachment.disableProperty()
-            .bind(guideSelect.valueProperty()
-                .isEqualTo("None"));
-        amplifierAttachment.getSelectionModel()
-            .select(Pos.TOP_LEFT);
-        amplifierAttachment.valueProperty()
-            .addListener((obs, oldValue, newValue) -> {
-                switch (guideSelect.getValue()) {
-                    case "Text":
-                        symbol.getTextAmplifier(guide.getAmplifier())
-                            .setAttachment(newValue);
-                        break;
-                    case "Graphic":
-                        symbol.getGraphicAmplifier(guide.getAmplifier())
-                            .setAttachment(newValue);
-                        break;
-                }
-            });
+        amplifierAttachment.disableProperty().bind(guideSelect.valueProperty().isEqualTo("None"));
+        amplifierAttachment.getSelectionModel().select(Pos.TOP_LEFT);
+        amplifierAttachment.valueProperty().addListener((obs, oldValue, newValue) -> {
+            switch (guideSelect.getValue()) {
+                case "Text":
+                    symbol.getTextAmplifier(guide.getAmplifier()).setAttachment(newValue);
+                    break;
+                case "Graphic":
+                    symbol.getGraphicAmplifier(guide.getAmplifier()).setAttachment(newValue);
+                    break;
+            }
+        });
 
         ComboBox<ScaleDirection> amplifierScaleDirection = new ComboBox<>(FXCollections.observableArrayList(ScaleDirection.values()));
-        amplifierScaleDirection.disableProperty()
-            .bind(guideSelect.valueProperty()
-                .isNotEqualTo("Graphic"));
-        amplifierScaleDirection.getSelectionModel()
-            .select(ScaleDirection.Original);
-        amplifierScaleDirection.valueProperty()
-            .addListener((obs, oldValue, newValue) -> {
-                symbol.getGraphicAmplifier(guide.getAmplifier())
-                    .setScaleDirection(newValue);
-            });
+        amplifierScaleDirection.disableProperty().bind(guideSelect.valueProperty().isNotEqualTo("Graphic"));
+        amplifierScaleDirection.getSelectionModel().select(ScaleDirection.Original);
+        amplifierScaleDirection.valueProperty().addListener((obs, oldValue, newValue) -> {
+            symbol.getGraphicAmplifier(guide.getAmplifier()).setScaleDirection(newValue);
+        });
 
         TextField amplifierText = new TextField();
-        amplifierText.disableProperty()
-            .bind(guideSelect.valueProperty()
-                .isNotEqualTo("Text"));
-        amplifierText.textProperty()
-            .addListener((obs, oldValue, newValue) -> {
-                symbol.getTextAmplifier(guide.getAmplifier())
-                    .setText(newValue);
-            });
+        amplifierText.disableProperty().bind(guideSelect.valueProperty().isNotEqualTo("Text"));
+        amplifierText.textProperty().addListener((obs, oldValue, newValue) -> {
+            symbol.getTextAmplifier(guide.getAmplifier()).setText(newValue);
+        });
 
         Button amplifierGraphic = new Button("...");
-        amplifierGraphic.disableProperty()
-            .bind(guideSelect.valueProperty()
-                .isNotEqualTo("Graphic"));
+        amplifierGraphic.disableProperty().bind(guideSelect.valueProperty().isNotEqualTo("Graphic"));
         amplifierGraphic.setOnAction(evt -> {
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Select Amplifier Graphic");
-            fileChooser.getExtensionFilters()
-                .add(new ExtensionFilter("SVG Graphic Files", "*.svg"));
+            fileChooser.getExtensionFilters().add(new ExtensionFilter("SVG Graphic Files", "*.svg"));
             fileChooser.setInitialDirectory(lastDirectory);
             File selectedFile = fileChooser.showOpenDialog(mainStage);
             if (selectedFile != null) {
@@ -248,13 +222,11 @@ public class IconCreator extends Application {
                 SvgGraphic graphic = svgParser.parseFile(selectedFile);
                 // parseFile returns an empty graphic rather than throwing, so an
                 // unreadable file would otherwise attach nothing and say nothing.
-                if (graphic.getContent()
-                    .isEmpty()) {
+                if (graphic.getContent().isEmpty()) {
                     Alert alert = new Alert(AlertType.ERROR);
                     alert.initOwner(mainStage);
                     alert.setHeaderText("Could not use that graphic");
-                    alert.setContentText(selectedFile.getName()
-                                         + " could not be read as SVG, or contains nothing to draw.");
+                    alert.setContentText(selectedFile.getName() + " could not be read as SVG, or contains nothing to draw.");
                     alert.showAndWait();
                     return;
                 }
@@ -263,8 +235,7 @@ public class IconCreator extends Application {
         });
 
         int colIndex = 0;
-        amplifierGuidePane.add(new Label(String.format("[%s] %s", guide.getCode(), guide.getAmplifier()
-            .getLabel())), colIndex++, rowIndex);
+        amplifierGuidePane.add(new Label(String.format("[%s] %s", guide.getCode(), guide.getAmplifier().getLabel())), colIndex++, rowIndex);
         amplifierGuidePane.add(guideSelect, colIndex++, rowIndex);
         amplifierGuidePane.add(amplifierGraphic, colIndex++, rowIndex);
         amplifierGuidePane.add(amplifierScaleDirection, colIndex++, rowIndex);
@@ -274,167 +245,132 @@ public class IconCreator extends Application {
 
     private Node createButtons() {
         ComboBox<CountryCode> country = new ComboBox<>(library.getCountryCodes());
-        country.valueProperty()
-            .addListener((obs, oldValue, newValue) -> {
-                library.setExtensionCountryCode(newValue);
-            });
+        country.valueProperty().addListener((obs, oldValue, newValue) -> {
+            library.setExtensionCountryCode(newValue);
+        });
         country.setCellFactory(p -> new CodeElementListCell<>());
         country.setButtonCell(new CodeElementListCell<>());
         country.setMaxWidth(300);
-        country.valueProperty()
-            .bindBidirectional(symbol.countryCodeProperty());
+        country.valueProperty().bindBidirectional(symbol.countryCodeProperty());
 
         ComboBox<IconScale> scale = new ComboBox<>(FXCollections.observableArrayList(IconScale.values()));
         scale.setCellFactory(p -> new IconScaleListCell());
         scale.setButtonCell(new IconScaleListCell());
-        scale.valueProperty()
-            .bindBidirectional(symbol.scaleProperty());
+        scale.valueProperty().bindBidirectional(symbol.scaleProperty());
 
         Text sidc = new Text(symbol.getCode());
         // this is only a one-way binding from a read-only property
-        sidc.textProperty()
-            .bind(symbol.codeProperty());
+        sidc.textProperty().bind(symbol.codeProperty());
 
         ComboBox<Context> context = new ComboBox<>(library.getContexts());
         context.setCellFactory(p -> new CodeElementListCell<>());
         context.setButtonCell(new CodeElementListCell<>());
         context.setMaxWidth(300);
-        context.valueProperty()
-            .bindBidirectional(symbol.contextProperty());
+        context.valueProperty().bindBidirectional(symbol.contextProperty());
 
         ComboBox<StandardIdentity> stdIdentity = new ComboBox<>(library.getStandardIdentities());
         stdIdentity.setCellFactory(p -> new CodeElementListCell<>());
         stdIdentity.setButtonCell(new CodeElementListCell<>());
         stdIdentity.setMaxWidth(300);
-        stdIdentity.valueProperty()
-            .bindBidirectional(symbol.standardIdentityProperty());
+        stdIdentity.valueProperty().bindBidirectional(symbol.standardIdentityProperty());
 
         ComboBox<SymbolSet> symbolSet = new ComboBox<>(library.getSymbolSets());
         symbolSet.setCellFactory(p -> new CodeElementListCell<>());
         symbolSet.setButtonCell(new CodeElementListCell<>());
         symbolSet.setMaxWidth(300);
-        symbolSet.valueProperty()
-            .bindBidirectional(symbol.symbolSetProperty());
+        symbolSet.valueProperty().bindBidirectional(symbol.symbolSetProperty());
 
         ComboBox<Status> status = new ComboBox<>(library.getStatuses());
         status.setCellFactory(p -> new CodeElementListCell<>());
         status.setButtonCell(new CodeElementListCell<>());
         status.setMaxWidth(300);
-        status.valueProperty()
-            .bindBidirectional(symbol.statusProperty());
+        status.valueProperty().bindBidirectional(symbol.statusProperty());
 
         ComboBox<HqtfDummy> hqtfDummy = new ComboBox<>(library.getHqtfDummys());
         hqtfDummy.setCellFactory(p -> new CodeElementListCell<>());
         hqtfDummy.setButtonCell(new CodeElementListCell<>());
         hqtfDummy.setMaxWidth(300);
-        hqtfDummy.valueProperty()
-            .bindBidirectional(symbol.hqtfDummyProperty());
+        hqtfDummy.valueProperty().bindBidirectional(symbol.hqtfDummyProperty());
 
         ComboBox<AmplifierListItem> amplifier = new ComboBox<>(amplifiers);
         amplifier.setCellFactory(p -> new CodeElementListCell<>());
         amplifier.setButtonCell(new CodeElementListCell<>());
         amplifier.setMaxWidth(300);
-        amplifier.valueProperty()
-            .bindBidirectional(symbol.amplifierProperty());
-        amplifier.disableProperty()
-            .bind(Bindings.size(amplifiers)
-                .lessThan(2));
+        amplifier.valueProperty().bindBidirectional(symbol.amplifierProperty());
+        amplifier.disableProperty().bind(Bindings.size(amplifiers).lessThan(2));
 
         ComboBox<AmplifierListItem> amplifierTwo = new ComboBox<>(amplifiersTwo);
         amplifierTwo.setCellFactory(p -> new CodeElementListCell<>());
         amplifierTwo.setButtonCell(new CodeElementListCell<>());
         amplifierTwo.setMaxWidth(300);
-        amplifierTwo.valueProperty()
-            .bindBidirectional(symbol.amplifierTwoProperty());
-        amplifierTwo.disableProperty()
-            .bind(Bindings.size(amplifiersTwo)
-                .lessThan(2));
+        amplifierTwo.valueProperty().bindBidirectional(symbol.amplifierTwoProperty());
+        amplifierTwo.disableProperty().bind(Bindings.size(amplifiersTwo).lessThan(2));
 
         ComboBox<AmplifierListItem> amplifierThree = new ComboBox<>(amplifiersThree);
         amplifierThree.setCellFactory(p -> new CodeElementListCell<>());
         amplifierThree.setButtonCell(new CodeElementListCell<>());
         amplifierThree.setMaxWidth(300);
-        amplifierThree.valueProperty()
-            .bindBidirectional(symbol.amplifierThreeProperty());
-        amplifierThree.disableProperty()
-            .bind(Bindings.size(amplifiersThree)
-                .lessThan(2));
+        amplifierThree.valueProperty().bindBidirectional(symbol.amplifierThreeProperty());
+        amplifierThree.disableProperty().bind(Bindings.size(amplifiersThree).lessThan(2));
 
         ComboBox<AmplifierListItem> frameAmplifier = new ComboBox<>(frameAmplifiers);
         frameAmplifier.setCellFactory(p -> new CodeElementListCell<>());
         frameAmplifier.setButtonCell(new CodeElementListCell<>());
         frameAmplifier.setMaxWidth(300);
-        frameAmplifier.valueProperty()
-            .bindBidirectional(symbol.frameAmplifierProperty());
-        frameAmplifier.disableProperty()
-            .bind(Bindings.size(frameAmplifiers)
-                .lessThan(2));
+        frameAmplifier.valueProperty().bindBidirectional(symbol.frameAmplifierProperty());
+        frameAmplifier.disableProperty().bind(Bindings.size(frameAmplifiers).lessThan(2));
 
         ComboBox<Entity> entity = new ComboBox<>(entities);
         entity.setCellFactory(p -> new CodeElementListCell<>());
         entity.setButtonCell(new CodeElementListCell<>());
         entity.setMaxWidth(300);
-        entity.valueProperty()
-            .bindBidirectional(symbol.entityProperty());
-        entity.valueProperty()
-            .addListener((obs, oldValue, newValue) -> {
-                reset(entityTypes, library.getDefaultEntityType(), newValue == null ? null : newValue.getEntityTypes());
-            });
+        entity.valueProperty().bindBidirectional(symbol.entityProperty());
+        entity.valueProperty().addListener((obs, oldValue, newValue) -> {
+            reset(entityTypes, library.getDefaultEntityType(), newValue == null ? null : newValue.getEntityTypes());
+        });
 
         ComboBox<EntityType> entityType = new ComboBox<>(entityTypes);
         entityType.setCellFactory(p -> new CodeElementListCell<>());
         entityType.setButtonCell(new CodeElementListCell<>());
         entityType.setMaxWidth(300);
-        entityType.disableProperty()
-            .bind(Bindings.size(entityTypes)
-                .isEqualTo(1));
-        entityType.valueProperty()
-            .bindBidirectional(symbol.entityTypeProperty());
-        entityType.valueProperty()
-            .addListener((obs, oldValue, newValue) -> {
-                reset(entitySubTypes, library.getDefaultEntitySubType(), newValue == null ? null : newValue.getEntitySubTypes());
-            });
+        entityType.disableProperty().bind(Bindings.size(entityTypes).isEqualTo(1));
+        entityType.valueProperty().bindBidirectional(symbol.entityTypeProperty());
+        entityType.valueProperty().addListener((obs, oldValue, newValue) -> {
+            reset(entitySubTypes, library.getDefaultEntitySubType(), newValue == null ? null : newValue.getEntitySubTypes());
+        });
 
         ComboBox<EntitySubType> entitySubType = new ComboBox<>(entitySubTypes);
         entitySubType.setCellFactory(p -> new CodeElementListCell<>());
         entitySubType.setButtonCell(new CodeElementListCell<>());
         entitySubType.setMaxWidth(300);
-        entitySubType.disableProperty()
-            .bind(Bindings.size(entitySubTypes)
-                .isEqualTo(1));
-        entitySubType.valueProperty()
-            .bindBidirectional(symbol.entitySubTypeProperty());
+        entitySubType.disableProperty().bind(Bindings.size(entitySubTypes).isEqualTo(1));
+        entitySubType.valueProperty().bindBidirectional(symbol.entitySubTypeProperty());
 
         ComboBox<SectorOneModifier> mod1 = new ComboBox<>(sectorOneModifiers);
         mod1.setCellFactory(p -> new CodeElementListCell<>());
         mod1.setButtonCell(new CodeElementListCell<>());
         mod1.setMaxWidth(300);
-        mod1.disableProperty()
-            .bind(Bindings.isEmpty(sectorOneModifiers));
-        mod1.valueProperty()
-            .bindBidirectional(symbol.sectorOneModifierProperty());
+        mod1.disableProperty().bind(Bindings.isEmpty(sectorOneModifiers));
+        mod1.valueProperty().bindBidirectional(symbol.sectorOneModifierProperty());
 
         ComboBox<SectorTwoModifier> mod2 = new ComboBox<>(sectorTwoModifiers);
         mod2.setCellFactory(p -> new CodeElementListCell<>());
         mod2.setButtonCell(new CodeElementListCell<>());
         mod2.setMaxWidth(300);
-        mod2.disableProperty()
-            .bind(Bindings.isEmpty(sectorTwoModifiers));
-        mod2.valueProperty()
-            .bindBidirectional(symbol.sectorTwoModifierProperty());
+        mod2.disableProperty().bind(Bindings.isEmpty(sectorTwoModifiers));
+        mod2.valueProperty().bindBidirectional(symbol.sectorTwoModifierProperty());
 
-        symbolSet.valueProperty()
-            .addListener((obs, oldValue, newValue) -> {
-                reset(amplifiers, library.getDefaultAmplifier(), newValue == null ? null : newValue.getAmplifierList());
-                reset(amplifiersTwo, library.getDefaultAmplifier(), newValue == null ? null : newValue.getAmplifierListTwo());
-                reset(amplifiersThree, library.getDefaultAmplifier(), newValue == null ? null : newValue.getAmplifierListThree());
-                reset(frameAmplifiers, library.getDefaultAmplifier(), newValue == null ? null : newValue.getFrameAmplifierList());
-                reset(sectorOneModifiers, library.getCommonSectorOneModifiers(), newValue == null ? null : newValue.getSectorOneModifiers());
-                reset(sectorTwoModifiers, library.getCommonSectorTwoModifiers(), newValue == null ? null : newValue.getSectorTwoModifiers());
-                reset(entities, library.getDefaultEntity(), newValue == null ? null : newValue.getEntities());
-                sectorOneModifiers.sort(SectorOneModifier.VIEW_ORDER);
-                sectorTwoModifiers.sort(SectorTwoModifier.VIEW_ORDER);
-            });
+        symbolSet.valueProperty().addListener((obs, oldValue, newValue) -> {
+            reset(amplifiers, library.getDefaultAmplifier(), newValue == null ? null : newValue.getAmplifierList());
+            reset(amplifiersTwo, library.getDefaultAmplifier(), newValue == null ? null : newValue.getAmplifierListTwo());
+            reset(amplifiersThree, library.getDefaultAmplifier(), newValue == null ? null : newValue.getAmplifierListThree());
+            reset(frameAmplifiers, library.getDefaultAmplifier(), newValue == null ? null : newValue.getFrameAmplifierList());
+            reset(sectorOneModifiers, library.getCommonSectorOneModifiers(), newValue == null ? null : newValue.getSectorOneModifiers());
+            reset(sectorTwoModifiers, library.getCommonSectorTwoModifiers(), newValue == null ? null : newValue.getSectorTwoModifiers());
+            reset(entities, library.getDefaultEntity(), newValue == null ? null : newValue.getEntities());
+            sectorOneModifiers.sort(SectorOneModifier.VIEW_ORDER);
+            sectorTwoModifiers.sort(SectorTwoModifier.VIEW_ORDER);
+        });
 
         GridPane gridPane = new GridPane();
         gridPane.setVgap(12);
@@ -504,15 +440,10 @@ public class IconCreator extends Application {
         Button showAll = new Button("Show All");
         showAll.setOnAction(evt -> {
             Dialog<String> dialog = new Dialog<>();
-            dialog.getDialogPane()
-                .setContent(new IconGallery(library, mainStage));
-            dialog.getDialogPane()
-                .getButtonTypes()
-                .addAll(ButtonType.OK, ButtonType.CANCEL);
+            dialog.getDialogPane().setContent(new IconGallery(library, mainStage));
+            dialog.getDialogPane().getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
             dialog.setOnShown(e2 -> {
-                Stage window = (Stage) dialog.getDialogPane()
-                    .getScene()
-                    .getWindow();
+                Stage window = (Stage) dialog.getDialogPane().getScene().getWindow();
                 window.setMaximized(true);
             });
             dialog.show();
@@ -527,8 +458,7 @@ public class IconCreator extends Application {
     private void saveCompositeSvg() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save Composite SVG");
-        fileChooser.getExtensionFilters()
-            .add(new ExtensionFilter("SVG Graphic Files", "*.svg"));
+        fileChooser.getExtensionFilters().add(new ExtensionFilter("SVG Graphic Files", "*.svg"));
         fileChooser.setInitialDirectory(lastDirectory);
         fileChooser.setInitialFileName(defaultSvgFileName());
         File selectedFile = fileChooser.showSaveDialog(mainStage);
@@ -556,8 +486,7 @@ public class IconCreator extends Application {
         // keep that grouping legible in a directory listing without putting
         // spaces in a file name.
         String code = symbol.getCode();
-        String name = code == null ? "" : code.trim()
-            .replaceAll("\\s+", "-");
+        String name = code == null ? "" : code.trim().replaceAll("\\s+", "-");
         return (name.isEmpty() ? "icon" : name) + ".svg";
     }
 
@@ -565,13 +494,10 @@ public class IconCreator extends Application {
         this.symbol = new IdentificationSymbol(library);
         this.icon = symbol.createIcon();
         icon.setFillBackground(true);
-        symbol.codeProperty()
-            .addListener((obs, oldValue, newValue) -> {
-                icon.setLayoutX(icon.getLayoutBounds()
-                    .getMinX());
-                icon.setLayoutY(icon.getLayoutBounds()
-                    .getMinY());
-            });
+        symbol.codeProperty().addListener((obs, oldValue, newValue) -> {
+            icon.setLayoutX(icon.getLayoutBounds().getMinX());
+            icon.setLayoutY(icon.getLayoutBounds().getMinY());
+        });
         Group stack = new Group(icon);
         BorderPane.setAlignment(stack, Pos.TOP_CENTER);
         return stack;
@@ -593,9 +519,7 @@ public class IconCreator extends Application {
     private static <E> void reset(ObservableList<E> list, List<? extends E> defaults, List<? extends E> items) {
         List<E> rebuilt = new ArrayList<>(defaults);
         if (items != null) {
-            items.stream()
-                .filter(item -> !rebuilt.contains(item))
-                .forEach(rebuilt::add);
+            items.stream().filter(item -> !rebuilt.contains(item)).forEach(rebuilt::add);
         }
         list.setAll(rebuilt);
     }

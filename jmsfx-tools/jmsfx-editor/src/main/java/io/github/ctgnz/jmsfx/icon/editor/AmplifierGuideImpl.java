@@ -37,8 +37,7 @@ public class AmplifierGuideImpl implements AmplifierGuide {
         this.type.set(model.getType());
         this.code.set(model.getCode());
         this.shape.set(createShape(model.getPoints()));
-        Arrays.stream(model.getPoints())
-            .forEach(points::add);
+        Arrays.stream(model.getPoints()).forEach(points::add);
     }
 
     @Override
@@ -47,9 +46,7 @@ public class AmplifierGuideImpl implements AmplifierGuide {
             return true;
         }
         if (obj instanceof AmplifierGuideImpl rhs) {
-            return new EqualsBuilder()
-                .append(getCode(), rhs.getCode())
-                .isEquals();
+            return new EqualsBuilder().append(getCode(), rhs.getCode()).isEquals();
         }
         return super.equals(obj);
     }
@@ -66,15 +63,12 @@ public class AmplifierGuideImpl implements AmplifierGuide {
 
     @Override
     public double getHeight() {
-        return getShape().getLayoutBounds()
-            .getHeight();
+        return getShape().getLayoutBounds().getHeight();
     }
 
     @Override
     public double[] getPoints() {
-        return points.stream()
-            .mapToDouble(Double::doubleValue)
-            .toArray();
+        return points.stream().mapToDouble(Double::doubleValue).toArray();
     }
 
     @Override
@@ -89,26 +83,22 @@ public class AmplifierGuideImpl implements AmplifierGuide {
 
     @Override
     public double getWidth() {
-        return getShape().getLayoutBounds()
-            .getWidth();
+        return getShape().getLayoutBounds().getWidth();
     }
 
     @Override
     public double getX() {
-        return getShape().getLayoutBounds()
-            .getMinX();
+        return getShape().getLayoutBounds().getMinX();
     }
 
     @Override
     public double getY() {
-        return getShape().getLayoutBounds()
-            .getMinY();
+        return getShape().getLayoutBounds().getMinY();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(6449, 9461).append(getCode())
-            .toHashCode();
+        return new HashCodeBuilder(6449, 9461).append(getCode()).toHashCode();
     }
 
     protected void setSymbolSet(SymbolSetImpl symbolSet) {

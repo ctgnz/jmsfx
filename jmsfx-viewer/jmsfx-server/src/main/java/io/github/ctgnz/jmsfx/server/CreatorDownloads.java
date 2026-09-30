@@ -58,9 +58,7 @@ public record CreatorDownloads(String library, String version, List<Bundle> bund
         // The classifier is the lowercased library name, which is how the profile ids and the
         // bundle filenames spell it - "Standard" here is "standard" there.
         String library = libraryName.toLowerCase(Locale.ROOT);
-        List<Bundle> bundles = PLATFORMS.stream()
-            .map(platform -> bundle(library, version, platform[0], platform[1], platform[2]))
-            .toList();
+        List<Bundle> bundles = PLATFORMS.stream().map(platform -> bundle(library, version, platform[0], platform[1], platform[2])).toList();
         return new CreatorDownloads(library, version, bundles);
     }
 

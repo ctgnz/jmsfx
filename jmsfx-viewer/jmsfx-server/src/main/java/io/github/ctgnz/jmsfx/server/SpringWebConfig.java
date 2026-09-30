@@ -33,19 +33,15 @@ public class SpringWebConfig implements ApplicationContextAware, WebMvcConfigure
     }
 
     @Override
-    public void setApplicationContext(final ApplicationContext applicationContext)
-                                                                                   throws BeansException {
+    public void setApplicationContext(final ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
     }
 
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/images/**")
-            .addResourceLocations("classpath:/images/");
-        registry.addResourceHandler("/css/**")
-            .addResourceLocations("classpath:/bootstrap/css/");
-        registry.addResourceHandler("/js/**")
-            .addResourceLocations("classpath:/bootstrap/js/");
+        registry.addResourceHandler("/images/**").addResourceLocations("classpath:/images/");
+        registry.addResourceHandler("/css/**").addResourceLocations("classpath:/bootstrap/css/");
+        registry.addResourceHandler("/js/**").addResourceLocations("classpath:/bootstrap/js/");
     }
 
     @Bean

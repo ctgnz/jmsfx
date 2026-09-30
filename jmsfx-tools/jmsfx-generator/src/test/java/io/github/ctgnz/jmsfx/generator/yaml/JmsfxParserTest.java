@@ -55,9 +55,7 @@ class JmsfxParserTest {
     @Test
     void testDerivesEveryPathFromTheConfigsOwnLocation() throws IOException {
         GeneratorConfig config = GeneratorConfig.load(STANDARD_CONFIG);
-        Path library = STANDARD_CONFIG.getParent()
-            .toAbsolutePath()
-            .normalize();
+        Path library = STANDARD_CONFIG.getParent().toAbsolutePath().normalize();
 
         assertThat(config.getModelDir(), is(library));
         assertThat(config.getModelFile(), is(library.resolve("model.yml")));
@@ -73,11 +71,7 @@ class JmsfxParserTest {
     void testReadLibraryModelParsesSymbolSetDetailsAndNestedEntities() throws IOException {
         LibraryModel library = readRealLibraryModel();
 
-        SymbolSetModel common = library.getSymbolSets()
-            .stream()
-            .filter(sym -> "COMMON".equals(sym.getId()))
-            .findFirst()
-            .orElseThrow();
+        SymbolSetModel common = library.getSymbolSets().stream().filter(sym -> "COMMON".equals(sym.getId())).findFirst().orElseThrow();
 
         assertThat(common.getCode(), is("00"));
         assertThat(common.getDimensionId(), is("COMMON"));
@@ -85,11 +79,7 @@ class JmsfxParserTest {
         assertThat(common.isUseFrame(), is(true));
         assertThat(common.getEntities(), hasSize(3));
 
-        var unspecified = common.getEntities()
-            .stream()
-            .filter(entity -> "UNSPECIFIED".equals(entity.getId()))
-            .findFirst()
-            .orElseThrow();
+        var unspecified = common.getEntities().stream().filter(entity -> "UNSPECIFIED".equals(entity.getId())).findFirst().orElseThrow();
         assertThat(unspecified.getEntityTypes(), hasSize(1));
         assertThat(common.getEntitySubTypes(), hasSize(1));
     }
@@ -114,8 +104,7 @@ class JmsfxParserTest {
 
         assertThat(library.getVersions(), hasSize(4));
 
-        VersionModel original = library.getVersions()
-            .get(0);
+        VersionModel original = library.getVersions().get(0);
         assertThat(original.getId(), is("ORIGINAL"));
         assertThat(original.getCode(), is("10"));
         assertThat(original.getLabel(), is("APP-6(D)/MIL-STD-2525D October 2017"));
@@ -128,17 +117,11 @@ class JmsfxParserTest {
         String written = candidate.writeLibraryModel(original);
         LibraryModel roundTripped = candidate.readLibraryModel(new ByteArrayInputStream(written.getBytes(StandardCharsets.UTF_8)));
 
-        assertThat(roundTripped.getVersions(), hasSize(original.getVersions()
-            .size()));
-        assertThat(roundTripped.getSymbolSets(), hasSize(original.getSymbolSets()
-            .size()));
+        assertThat(roundTripped.getVersions(), hasSize(original.getVersions().size()));
+        assertThat(roundTripped.getSymbolSets(), hasSize(original.getSymbolSets().size()));
         assertThat(roundTripped.getLibraryPrefix(), is(original.getLibraryPrefix()));
 
-        SymbolSetModel roundTrippedCommon = roundTripped.getSymbolSets()
-            .stream()
-            .filter(sym -> "COMMON".equals(sym.getId()))
-            .findFirst()
-            .orElseThrow();
+        SymbolSetModel roundTrippedCommon = roundTripped.getSymbolSets().stream().filter(sym -> "COMMON".equals(sym.getId())).findFirst().orElseThrow();
         assertThat(roundTrippedCommon.getLabel(), is("Common"));
         assertThat(roundTrippedCommon.getEntities(), hasSize(3));
     }

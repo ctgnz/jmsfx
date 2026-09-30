@@ -57,8 +57,7 @@ public final class FragmentMarkup {
         if (markup == null) {
             return null;
         }
-        return HEX_FILL.matcher(markup)
-            .replaceAll(String.format("fill=\"#%02X%02X%02X\"", channel(fill.getRed()), channel(fill.getGreen()), channel(fill.getBlue())));
+        return HEX_FILL.matcher(markup).replaceAll(String.format("fill=\"#%02X%02X%02X\"", channel(fill.getRed()), channel(fill.getGreen()), channel(fill.getBlue())));
     }
 
     private static int channel(double value) {

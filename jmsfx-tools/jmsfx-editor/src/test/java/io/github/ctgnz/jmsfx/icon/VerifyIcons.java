@@ -42,9 +42,7 @@ public class VerifyIcons {
         }
         try {
             VerifyIcons verifier = new VerifyIcons();
-            verifier.verify(Arrays.stream(args)
-                .map(Path::of)
-                .toList());
+            verifier.verify(Arrays.stream(args).map(Path::of).toList());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,171 +53,138 @@ public class VerifyIcons {
         this.usedPaths = new ArrayList<>();
         DynamicIconLibrary library = new DynamicIconLibrary(IconLibrary.discover(), fragmentRoots.get(0));
         System.out.println("Version");
-        library.getVersions()
-            .forEach(version -> {
-                System.out.format("  [%s] %s%n", version.getId(), version.getLabel());
-            });
+        library.getVersions().forEach(version -> {
+            System.out.format("  [%s] %s%n", version.getId(), version.getLabel());
+        });
         System.out.println("Context");
-        library.getContexts()
-            .forEach(context -> {
-                System.out.format("  [%s] %s%n", context.getId(), context.getLabel());
-                if (!context.isReality()) {
-                    String location = context.getOverlayGraphicKey();
-                    if (!isGraphicPresent(location)) {
-                        System.out.format("    [%s]: %s not found%n", context.getLabel(), location);
-                    }
+        library.getContexts().forEach(context -> {
+            System.out.format("  [%s] %s%n", context.getId(), context.getLabel());
+            if (!context.isReality()) {
+                String location = context.getOverlayGraphicKey();
+                if (!isGraphicPresent(location)) {
+                    System.out.format("    [%s]: %s not found%n", context.getLabel(), location);
                 }
-            });
+            }
+        });
         System.out.println("Standard Identity");
-        library.getStandardIdentities()
-            .forEach(sid -> {
-                System.out.format("  [%s] %s (%s)%n", sid.getId(), sid.getLabel(), sid.getGroup());
-            });
+        library.getStandardIdentities().forEach(sid -> {
+            System.out.format("  [%s] %s (%s)%n", sid.getId(), sid.getLabel(), sid.getGroup());
+        });
         System.out.println("Status");
-        library.getStatuses()
-            .forEach(status -> {
-                System.out.format("  [%s] %s%n", status.getId(), status.getLabel());
-                if (status.isOperationalCondition()) {
-                    library.getSymbolSets()
-                        .stream()
-                        .filter(sym -> status.isSupported(sym))
-                        .forEach(symbolSet -> {
-                            library.getStandardIdentities()
-                                .forEach(identity -> {
-                                    String location = status.getGraphicKey(identity, symbolSet);
-                                    if (!isGraphicPresent(location)) {
-                                        System.out.format("    [%s:%s:%s]: %s not found%n", status.getLabel(), symbolSet.getLabel(), identity.getLabel(), location);
-                                    }
-                                });
-                        });
-                }
-            });
-        System.out.println("HQ/TF/Dummy");
-        library.getHqtfDummys()
-            .forEach(dummy -> {
-                System.out.format("  [%s] %s%n", dummy.getId(), dummy.getLabel());
-                library.getSymbolSets()
-                    .stream()
-                    .filter(sym -> dummy.isSupported(sym))
-                    .forEach(symbolSet -> {
-                        library.getStandardIdentities()
-                            .forEach(identity -> {
-                                String location = dummy.getGraphicKey(identity, symbolSet);
-                                if (!isGraphicPresent(location) && !dummy.isUnknown()) {
-                                    System.out.format("    [%s:%s:%s]: %s not found%n", dummy.getLabel(), symbolSet.getLabel(), identity.getLabel(), location);
-                                }
-                            });
+        library.getStatuses().forEach(status -> {
+            System.out.format("  [%s] %s%n", status.getId(), status.getLabel());
+            if (status.isOperationalCondition()) {
+                library.getSymbolSets().stream().filter(sym -> status.isSupported(sym)).forEach(symbolSet -> {
+                    library.getStandardIdentities().forEach(identity -> {
+                        String location = status.getGraphicKey(identity, symbolSet);
+                        if (!isGraphicPresent(location)) {
+                            System.out.format("    [%s:%s:%s]: %s not found%n", status.getLabel(), symbolSet.getLabel(), identity.getLabel(), location);
+                        }
                     });
+                });
+            }
+        });
+        System.out.println("HQ/TF/Dummy");
+        library.getHqtfDummys().forEach(dummy -> {
+            System.out.format("  [%s] %s%n", dummy.getId(), dummy.getLabel());
+            library.getSymbolSets().stream().filter(sym -> dummy.isSupported(sym)).forEach(symbolSet -> {
+                library.getStandardIdentities().forEach(identity -> {
+                    String location = dummy.getGraphicKey(identity, symbolSet);
+                    if (!isGraphicPresent(location) && !dummy.isUnknown()) {
+                        System.out.format("    [%s:%s:%s]: %s not found%n", dummy.getLabel(), symbolSet.getLabel(), identity.getLabel(), location);
+                    }
+                });
             });
-        library.getDimensions()
-            .forEach(dimension -> {
-                System.out.format("%s%n", dimension.getLabel());
-                dimension.getSymbolSets()
-                    .forEach(ss -> {
-                        SymbolSetImpl symSet = (SymbolSetImpl) ss;
-                        System.out.format("  %s%n", symSet.getLabel());
-                        if (symSet.isFramedIcon()) {
-                            if (symSet.isAmplifierGuidesPresent()) {
-                                String location = symSet.getAmplifierGuideTemplateLocation();
+        });
+        library.getDimensions().forEach(dimension -> {
+            System.out.format("%s%n", dimension.getLabel());
+            dimension.getSymbolSets().forEach(ss -> {
+                SymbolSetImpl symSet = (SymbolSetImpl) ss;
+                System.out.format("  %s%n", symSet.getLabel());
+                if (symSet.isFramedIcon()) {
+                    if (symSet.isAmplifierGuidesPresent()) {
+                        String location = symSet.getAmplifierGuideTemplateLocation();
+                        if (!isGraphicPresent(location)) {
+                            System.out.format("    [%s]: %s not found%n", symSet.getLabel(), location);
+                        }
+                    }
+                    library.getStandardIdentities().forEach(identity -> {
+                        library.getStatuses().stream().filter(Status::isFrameStatus).forEach(status -> {
+                            if (identity.isConfirmed() || status.isPresent()) {
+                                String location = symSet.getFrameKey(identity, status, false);
                                 if (!isGraphicPresent(location)) {
-                                    System.out.format("    [%s]: %s not found%n", symSet.getLabel(), location);
+                                    System.out.format("    [%s:%s:%s]: %s not found%n", symSet.getLabel(), identity.getLabel(), status.getLabel(), location);
                                 }
                             }
-                            library.getStandardIdentities()
-                                .forEach(identity -> {
-                                    library.getStatuses()
-                                        .stream()
-                                        .filter(Status::isFrameStatus)
-                                        .forEach(status -> {
-                                            if (identity.isConfirmed() || status.isPresent()) {
-                                                String location = symSet.getFrameKey(identity, status, false);
-                                                if (!isGraphicPresent(location)) {
-                                                    System.out.format("    [%s:%s:%s]: %s not found%n", symSet.getLabel(), identity.getLabel(), status.getLabel(), location);
-                                                }
-                                            }
-                                        });
-                                });
+                        });
+                    });
+                }
+                symSet.getEntities().forEach(entity -> {
+                    System.out.format("    %s%n", entity.getLabel());
+                    if (entity.isGraphicalIcon()) {
+                        library.getStandardIdentities().forEach(identity -> {
+                            String location = entity.getGraphicKey(identity);
+                            if (!isGraphicPresent(location)) {
+                                System.out.format("      [%s] Missing entity icon: %s (%s) (%s)%n", symSet.getLabel(), entity.getLabel(), identity.getLabel(), location);
+                            }
+                        });
+                    }
+                    entity.getEntityTypes().forEach(entityType -> {
+                        System.out.format("      %s%n", entityType.getLabel());
+                        if (entityType.isGraphicalIcon()) {
+                            library.getStandardIdentities().forEach(identity -> {
+                                String location = entityType.getGraphicKey(identity);
+                                if (!isGraphicPresent(location)) {
+                                    System.out.format("      [%s] Missing entity icon: %s (%s) (%s)%n", symSet.getLabel(), entityType.getLabel(), identity.getLabel(), location);
+                                }
+                            });
                         }
-                        symSet.getEntities()
-                            .forEach(entity -> {
-                                System.out.format("    %s%n", entity.getLabel());
-                                if (entity.isGraphicalIcon()) {
-                                    library.getStandardIdentities()
-                                        .forEach(identity -> {
-                                            String location = entity.getGraphicKey(identity);
-                                            if (!isGraphicPresent(location)) {
-                                                System.out.format("      [%s] Missing entity icon: %s (%s) (%s)%n", symSet.getLabel(), entity.getLabel(), identity.getLabel(), location);
-                                            }
-                                        });
-                                }
-                                entity.getEntityTypes()
-                                    .forEach(entityType -> {
-                                        System.out.format("      %s%n", entityType.getLabel());
-                                        if (entityType.isGraphicalIcon()) {
-                                            library.getStandardIdentities()
-                                                .forEach(identity -> {
-                                                    String location = entityType.getGraphicKey(identity);
-                                                    if (!isGraphicPresent(location)) {
-                                                        System.out.format("      [%s] Missing entity icon: %s (%s) (%s)%n", symSet.getLabel(), entityType.getLabel(), identity.getLabel(), location);
-                                                    }
-                                                });
-                                        }
-                                        entityType.getEntitySubTypes()
-                                            .forEach(subType -> {
-                                                System.out.format("        %s%n", subType.getLabel());
-                                                if (subType.isGraphicalIcon()) {
-                                                    library.getStandardIdentities()
-                                                        .forEach(identity -> {
-                                                            String location = ((EntitySubTypeImpl) subType).getGraphicKey(identity);
-                                                            if (!isGraphicPresent(location)) {
-                                                                System.out.format("      [%s] Missing entity icon: %s (%s) (%s)%n", symSet.getLabel(), subType.getLabel(), identity.getLabel(),
-                                                                    location);
-                                                            }
-                                                        });
-                                                }
-                                            });
-                                    });
-                            });
-                        System.out.println("    Sector 1 Modifiers");
-                        symSet.getSectorOneModifiers()
-                            .forEach(mod1 -> {
-                                System.out.format("      %s%n", mod1.getLabel());
-                                if (!mod1.isUnknown()) {
-                                    String location = mod1.getGraphicKey();
+                        entityType.getEntitySubTypes().forEach(subType -> {
+                            System.out.format("        %s%n", subType.getLabel());
+                            if (subType.isGraphicalIcon()) {
+                                library.getStandardIdentities().forEach(identity -> {
+                                    String location = ((EntitySubTypeImpl) subType).getGraphicKey(identity);
                                     if (!isGraphicPresent(location)) {
-                                        System.out.format("      [%s] Missing mod1 icon: %s (%s)%n", symSet.getLabel(), mod1.getLabel(), location);
+                                        System.out.format("      [%s] Missing entity icon: %s (%s) (%s)%n", symSet.getLabel(), subType.getLabel(), identity.getLabel(), location);
                                     }
-                                }
-                            });
-                        System.out.println("    Sector 2 Modifiers");
-                        symSet.getSectorTwoModifiers()
-                            .forEach(mod2 -> {
-                                System.out.format("      %s%n", mod2.getLabel());
-                                if (!mod2.isUnknown()) {
-                                    String location = mod2.getGraphicKey();
-                                    if (!isGraphicPresent(location)) {
-                                        System.out.format("      [%s] Missing mod2 icon: %s (%s)%n", symSet.getLabel(), mod2.getLabel(), location);
-                                    }
-                                }
-                            });
+                                });
+                            }
+                        });
                     });
+                });
+                System.out.println("    Sector 1 Modifiers");
+                symSet.getSectorOneModifiers().forEach(mod1 -> {
+                    System.out.format("      %s%n", mod1.getLabel());
+                    if (!mod1.isUnknown()) {
+                        String location = mod1.getGraphicKey();
+                        if (!isGraphicPresent(location)) {
+                            System.out.format("      [%s] Missing mod1 icon: %s (%s)%n", symSet.getLabel(), mod1.getLabel(), location);
+                        }
+                    }
+                });
+                System.out.println("    Sector 2 Modifiers");
+                symSet.getSectorTwoModifiers().forEach(mod2 -> {
+                    System.out.format("      %s%n", mod2.getLabel());
+                    if (!mod2.isUnknown()) {
+                        String location = mod2.getGraphicKey();
+                        if (!isGraphicPresent(location)) {
+                            System.out.format("      [%s] Missing mod2 icon: %s (%s)%n", symSet.getLabel(), mod2.getLabel(), location);
+                        }
+                    }
+                });
             });
+        });
         System.out.println("Amplifiers");
-        library.getAmplifiers()
-            .forEach(amp -> {
-                System.out.format("  [%s] %s%n", amp.getId(), amp.getLabel());
-            });
+        library.getAmplifiers().forEach(amp -> {
+            System.out.format("  [%s] %s%n", amp.getId(), amp.getLabel());
+        });
         System.out.println("List Amplifiers");
-        library.getListAmplifiers()
-            .stream()
-            .filter(amp -> !amp.isStandardAmplifier())
-            .forEach(amp -> {
-                System.out.format("  [%s] %s%n", amp.getId(), amp.getLabel());
-                amp.getItems()
-                    .forEach(value -> {
-                        System.out.format("    [%s] %s%n", value.getFullId(), value.getLabel());
-                    });
+        library.getListAmplifiers().stream().filter(amp -> !amp.isStandardAmplifier()).forEach(amp -> {
+            System.out.format("  [%s] %s%n", amp.getId(), amp.getLabel());
+            amp.getItems().forEach(value -> {
+                System.out.format("    [%s] %s%n", value.getFullId(), value.getLabel());
             });
+        });
         System.out.println("Standard Amplifiers");
         // Since jmsfx#121 a frame amplifier is a fill substituted into the frame, not a fragment of
         // its own, so none of its values names a file and asking for one would report the whole list
@@ -227,34 +192,27 @@ public class VerifyIcons {
         // the library states it.
         Set<String> frameAmplifiers = library.getSymbolSets()
             .stream()
-            .flatMap(symbolSet -> symbolSet.getFrameAmplifierList()
-                .stream())
+            .flatMap(symbolSet -> symbolSet.getFrameAmplifierList().stream())
             .map(AmplifierListItem::getFullId)
             .collect(Collectors.toCollection(HashSet::new));
-        library.getListAmplifiers()
-            .stream()
-            .filter(AmplifierList::isStandardAmplifier)
-            .forEach(amp -> {
-                System.out.format("  [%s] %s%n", amp.getId(), amp.getLabel());
-                amp.getItems()
-                    .forEach(value -> {
-                        System.out.format("    [%s] %s%n", value.getFullId(), value.getLabel());
-                        if (!amp.isUnknown() && !frameAmplifiers.contains(value.getFullId())) {
-                            library.getStandardIdentities()
-                                .forEach(identity -> {
-                                    String location = value.getGraphicKey(identity);
-                                    if (!isGraphicPresent(location)) {
-                                        System.out.format("    [%s:%s]: %s not found%n", value.getLabel(), identity.getLabel(), location);
-                                    }
-                                });
+        library.getListAmplifiers().stream().filter(AmplifierList::isStandardAmplifier).forEach(amp -> {
+            System.out.format("  [%s] %s%n", amp.getId(), amp.getLabel());
+            amp.getItems().forEach(value -> {
+                System.out.format("    [%s] %s%n", value.getFullId(), value.getLabel());
+                if (!amp.isUnknown() && !frameAmplifiers.contains(value.getFullId())) {
+                    library.getStandardIdentities().forEach(identity -> {
+                        String location = value.getGraphicKey(identity);
+                        if (!isGraphicPresent(location)) {
+                            System.out.format("    [%s:%s]: %s not found%n", value.getLabel(), identity.getLabel(), location);
                         }
                     });
+                }
             });
+        });
         System.out.println();
         System.out.println();
         System.out.println("Unused Files");
-        Path rootDir = fragmentRoots.get(0)
-            .resolve("svg");
+        Path rootDir = fragmentRoots.get(0).resolve("svg");
         // Since jmsfx#133 an overlay may add no fragments of its own, so its tree is absent rather
         // than empty - jmsfx-battleorder has none at all. Nothing of its own can be unused.
         if (!Files.isDirectory(rootDir)) {
@@ -263,18 +221,13 @@ public class VerifyIcons {
         }
         List<Path> blank = new ArrayList<>();
         try (Stream<Path> tree = Files.walk(rootDir)) {
-            tree.filter(Files::isRegularFile)
-                .filter(path -> path.getFileName()
-                    .toString()
-                    .endsWith(".svg"))
-                .filter(path -> !usedPaths.contains(path))
-                .forEach(path -> {
-                    if (isDeliberatelyBlank(path)) {
-                        blank.add(path);
-                    } else {
-                        System.out.format("%s%n", path);
-                    }
-                });
+            tree.filter(Files::isRegularFile).filter(path -> path.getFileName().toString().endsWith(".svg")).filter(path -> !usedPaths.contains(path)).forEach(path -> {
+                if (isDeliberatelyBlank(path)) {
+                    blank.add(path);
+                } else {
+                    System.out.format("%s%n", path);
+                }
+            });
         }
         System.out.format("%n%d deliberately blank%n", blank.size());
         blank.forEach(path -> System.out.format("  %s%n", path));
@@ -290,8 +243,7 @@ public class VerifyIcons {
     private boolean isDeliberatelyBlank(Path path) {
         try {
             String markup = Files.readString(path);
-            return CONTENT_ROOTS.stream()
-                .anyMatch(root -> markup.contains(String.format("<g id=\"%s\"/>", root)) || markup.contains(String.format("<g id=\"%s\"></g>", root)));
+            return CONTENT_ROOTS.stream().anyMatch(root -> markup.contains(String.format("<g id=\"%s\"/>", root)) || markup.contains(String.format("<g id=\"%s\"></g>", root)));
         } catch (IOException e) {
             return false;
         }

@@ -55,11 +55,8 @@ public class WebController {
         "/download"
     })
     public String downloadCreator(Model model) {
-        String version = buildProperties.getIfAvailable() == null ? null
-            : buildProperties.getObject()
-                .getVersion();
-        model.addAttribute("downloads", CreatorDownloads.of(IconLibrary.discover()
-            .getName(), version));
+        String version = buildProperties.getIfAvailable() == null ? null : buildProperties.getObject().getVersion();
+        model.addAttribute("downloads", CreatorDownloads.of(IconLibrary.discover().getName(), version));
         return "download";
     }
 
@@ -77,8 +74,7 @@ public class WebController {
         SymbolSet symbolSet = IconLibrary.discover()
             .getSymbolSets()
             .stream()
-            .filter(candidate -> candidate.getId()
-                .equals(symbolSetId))
+            .filter(candidate -> candidate.getId().equals(symbolSetId))
             .findFirst()
             .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Unknown symbol set: " + symbolSetId));
         model.addAttribute("symbolSet", symbolSet);

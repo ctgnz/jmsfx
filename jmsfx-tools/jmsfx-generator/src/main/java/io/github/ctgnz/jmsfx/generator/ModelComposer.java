@@ -78,10 +78,7 @@ public class ModelComposer {
             AmplifierListModel existing = find(base.getAmplifierGroups(), group.getCode());
             if (existing == null) {
                 insert(base.getAmplifierGroups(), group);
-                report.add(String.format("added amplifier group %s (%s) with %d value%s", group.getCode(), group.getTypeName(), group.getValues()
-                    .size(),
-                    group.getValues()
-                        .size() == 1 ? "" : "s"));
+                report.add(String.format("added amplifier group %s (%s) with %d value%s", group.getCode(), group.getTypeName(), group.getValues().size(), group.getValues().size() == 1 ? "" : "s"));
                 bindFrameAmplifier(base, group);
                 continue;
             }
@@ -116,31 +113,23 @@ public class ModelComposer {
      */
     private void addAmplifierGuides(String where, SymbolSetModel base, SymbolSetModel overlay) {
         for (AmplifierGuideModel guide : overlay.getAmplifierGuides()) {
-            boolean present = base.getAmplifierGuides()
-                .stream()
-                .anyMatch(existing -> existing.getCode()
-                    .equals(guide.getCode()));
+            boolean present = base.getAmplifierGuides().stream().anyMatch(existing -> existing.getCode().equals(guide.getCode()));
             if (present) {
-                throw new IllegalStateException(String.format("overlay amplifier guide %s already exists on %s - an overlay may add, position and fill, but not alter, "
-                                                              + "see jmsfx#137",
+                throw new IllegalStateException(String.format("overlay amplifier guide %s already exists on %s - an overlay may add, position and fill, but not alter, " + "see jmsfx#137",
                     guide.getCode(), where));
             }
             String before = guide.getBefore();
             guide.setBefore(null);
             if (before == null) {
-                base.getAmplifierGuides()
-                    .add(guide);
+                base.getAmplifierGuides().add(guide);
             } else {
                 AmplifierGuideModel anchor = base.getAmplifierGuides()
                     .stream()
-                    .filter(candidate -> candidate.getCode()
-                        .equals(before))
+                    .filter(candidate -> candidate.getCode().equals(before))
                     .findFirst()
-                    .orElseThrow(() -> new IllegalStateException(String.format("overlay amplifier guide %s asks to go before %s, which %s does not have - see jmsfx#137",
-                        guide.getCode(), before, where)));
-                base.getAmplifierGuides()
-                    .add(base.getAmplifierGuides()
-                        .indexOf(anchor), guide);
+                    .orElseThrow(
+                        () -> new IllegalStateException(String.format("overlay amplifier guide %s asks to go before %s, which %s does not have - see jmsfx#137", guide.getCode(), before, where)));
+                base.getAmplifierGuides().add(base.getAmplifierGuides().indexOf(anchor), guide);
             }
             report.add(String.format("added amplifier guide %s to %s%s", guide.getCode(), where, before == null ? "" : " before " + before));
         }
@@ -164,8 +153,7 @@ public class ModelComposer {
                     report.add(String.format("added entity type %s/%s (%s) to %s", existing.getCode(), type.getCode(), type.getLabel(), where));
                     continue;
                 }
-                addAll(String.format("%s entity subtype under %s/%s", where, existing.getCode(), existingType.getCode()), existingType.getEntitySubTypes(),
-                    type.getEntitySubTypes());
+                addAll(String.format("%s entity subtype under %s/%s", where, existing.getCode(), existingType.getCode()), existingType.getEntitySubTypes(), type.getEntitySubTypes());
             }
         }
     }
@@ -180,8 +168,8 @@ public class ModelComposer {
         for (T addition : additions) {
             T existing = find(base, addition);
             if (existing != null) {
-                throw new IllegalStateException(String.format("overlay %s %s (%s) already exists in the base - an overlay may add, position and fill, but not alter, see jmsfx#137",
-                    what, addition.getCode(), addition.getLabel()));
+                throw new IllegalStateException(String.format("overlay %s %s (%s) already exists in the base - an overlay may add, position and fill, but not alter, see jmsfx#137", what,
+                    addition.getCode(), addition.getLabel()));
             }
             String before = addition.getBefore();
             insert(base, addition);
@@ -208,13 +196,9 @@ public class ModelComposer {
         // meaning anything the moment it is there. Leaving it on would also put it in a measured model,
         // since FragmentMeasurer writes the model it was given back out.
         addition.setBefore(null);
-        List<T> anchors = base.stream()
-            .filter(candidate -> candidate.getCode()
-                .equals(before))
-            .toList();
+        List<T> anchors = base.stream().filter(candidate -> candidate.getCode().equals(before)).toList();
         if (anchors.size() > 1) {
-            throw new IllegalStateException(String.format("overlay element %s asks to go before %s, which appears %d times in the base - see jmsfx#137", addition.getCode(),
-                before, anchors.size()));
+            throw new IllegalStateException(String.format("overlay element %s asks to go before %s, which appears %d times in the base - see jmsfx#137", addition.getCode(), before, anchors.size()));
         }
         if (anchors.isEmpty()) {
             throw new IllegalStateException(String.format("overlay element %s asks to go before %s, which is not in the base - see jmsfx#137", addition.getCode(), before));
@@ -234,27 +218,19 @@ public class ModelComposer {
             return;
         }
         if (baseValue != null) {
-            throw new IllegalStateException(String.format("overlay sets %s on %s to %s, but the base already has %s - an overlay may fill an unset field, not change one, "
-                                                          + "see jmsfx#137",
-                field, where, overlayValue, baseValue));
+            throw new IllegalStateException(String.format("overlay sets %s on %s to %s, but the base already has %s - an overlay may fill an unset field, not change one, " + "see jmsfx#137", field,
+                where, overlayValue, baseValue));
         }
         setter.accept(overlayValue);
         report.add(String.format("filled %s on %s with %s", field, where, overlayValue));
     }
 
     private <T extends AbstractModel> T find(List<T> elements, T wanted) {
-        return elements.stream()
-            .filter(candidate -> keyOf(candidate).equals(keyOf(wanted)))
-            .findFirst()
-            .orElse(null);
+        return elements.stream().filter(candidate -> keyOf(candidate).equals(keyOf(wanted))).findFirst().orElse(null);
     }
 
     private <T extends AbstractModel> T find(List<T> elements, String code) {
-        return elements.stream()
-            .filter(candidate -> candidate.getCode()
-                .equals(code))
-            .findFirst()
-            .orElse(null);
+        return elements.stream().filter(candidate -> candidate.getCode().equals(code)).findFirst().orElse(null);
     }
 
     /**
@@ -283,21 +259,18 @@ public class ModelComposer {
         if (!group.isFrameAmplifier()) {
             return;
         }
-        if (group.getSymbolSets()
-            .isEmpty()) {
-            throw new IllegalStateException(String.format(
-                "overlay frame amplifier %s names no symbolSets, so nothing would offer it - see jmsfx#81", group.getTypeName()));
+        if (group.getSymbolSets().isEmpty()) {
+            throw new IllegalStateException(String.format("overlay frame amplifier %s names no symbolSets, so nothing would offer it - see jmsfx#81", group.getTypeName()));
         }
         for (String symbolSetId : group.getSymbolSets()) {
             SymbolSetModel symbolSet = base.getSymbolSets()
                 .stream()
                 .filter(candidate -> symbolSetId.equals(candidate.getId()))
                 .findFirst()
-                .orElseThrow(() -> new IllegalStateException(String.format("overlay frame amplifier %s names symbol set %s, which the base does not have", group.getTypeName(),
-                    symbolSetId)));
+                .orElseThrow(() -> new IllegalStateException(String.format("overlay frame amplifier %s names symbol set %s, which the base does not have", group.getTypeName(), symbolSetId)));
             if (symbolSet.isFrameAmplifierPresent()) {
-                throw new IllegalStateException(String.format("%s already has frame amplifier %s, so overlay %s would replace it rather than add - see jmsfx#81",
-                    symbolSetId, symbolSet.getFrameAmplifierClass(), group.getTypeName()));
+                throw new IllegalStateException(String.format("%s already has frame amplifier %s, so overlay %s would replace it rather than add - see jmsfx#81", symbolSetId,
+                    symbolSet.getFrameAmplifierClass(), group.getTypeName()));
             }
             symbolSet.setFrameAmplifierClass(group.getTypeName());
             report.add(String.format("%s now offers frame amplifier %s", symbolSetId, group.getTypeName()));

@@ -43,9 +43,7 @@ public class SectorOneModifierImpl extends CodeElementImpl implements SectorOneM
             return true;
         }
         if (obj instanceof SectorOneModifierImpl rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
@@ -76,8 +74,7 @@ public class SectorOneModifierImpl extends CodeElementImpl implements SectorOneM
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(6263, 3631).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(6263, 3631).append(getId()).toHashCode();
     }
 
     @Override

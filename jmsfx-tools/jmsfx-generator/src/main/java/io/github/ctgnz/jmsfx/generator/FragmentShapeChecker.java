@@ -103,8 +103,8 @@ public class FragmentShapeChecker {
         if (!wrong.isEmpty()) {
             // Thrown rather than exited, because this runs in Maven's own JVM under exec:java -
             // System.exit would take the build down without a message worth reading.
-            throw new IllegalStateException(String.format("%d of %d free canvas fragment%s off the expected shape:%n    %s%n%nSee docs/fragments.md for the shape they should hold.%n",
-                wrong.size(), checked, wrong.size() == 1 ? " is" : "s are", String.join(System.lineSeparator() + "    ", wrong)));
+            throw new IllegalStateException(String.format("%d of %d free canvas fragment%s off the expected shape:%n    %s%n%nSee docs/fragments.md for the shape they should hold.%n", wrong.size(),
+                checked, wrong.size() == 1 ? " is" : "s are", String.join(System.lineSeparator() + "    ", wrong)));
         }
     }
 
@@ -152,8 +152,7 @@ public class FragmentShapeChecker {
                 main++;
             } else if (TEMPLATE.equals(id)) {
                 template++;
-            } else if (!EXAMPLE.matcher(id)
-                .matches()) {
+            } else if (!EXAMPLE.matcher(id).matches()) {
                 faults.add(id.isEmpty() ? "a group with no id" : String.format("a group called %s", id));
             }
         }
@@ -177,10 +176,7 @@ public class FragmentShapeChecker {
         factory.setNamespaceAware(true);
         List<Element> roots = new ArrayList<>();
         try (InputStream in = Files.newInputStream(fragment)) {
-            NodeList children = factory.newDocumentBuilder()
-                .parse(in)
-                .getDocumentElement()
-                .getChildNodes();
+            NodeList children = factory.newDocumentBuilder().parse(in).getDocumentElement().getChildNodes();
             for (int i = 0; i < children.getLength(); i++) {
                 Node child = children.item(i);
                 if (child.getNodeType() == Node.ELEMENT_NODE && !SvgFingerprint.isEditorMetadata(child)) {
@@ -193,8 +189,7 @@ public class FragmentShapeChecker {
 
     /** The model a config file sits beside. */
     private Path modelPath(Path configFile) throws Exception {
-        return GeneratorConfig.load(configFile)
-            .getModelFile();
+        return GeneratorConfig.load(configFile).getModelFile();
     }
 
     private LibraryModel model(Path modelFile) throws Exception {
@@ -214,11 +209,9 @@ public class FragmentShapeChecker {
             return null;
         }
         return candidates.stream()
-            .filter(candidate -> config.getBaseLibrary()
-                .equals(candidate.getLibraryPrefix()))
+            .filter(candidate -> config.getBaseLibrary().equals(candidate.getLibraryPrefix()))
             .findFirst()
-            .orElseThrow(() -> new IllegalArgumentException(
-                                                            String.format("%s extends %s, so that library's config has to be named too", config.getLibraryPrefix(), config.getBaseLibrary())));
+            .orElseThrow(() -> new IllegalArgumentException(String.format("%s extends %s, so that library's config has to be named too", config.getLibraryPrefix(), config.getBaseLibrary())));
     }
 
     /** The value following a flag, removing both from the list - so what is left is the positional arguments. */

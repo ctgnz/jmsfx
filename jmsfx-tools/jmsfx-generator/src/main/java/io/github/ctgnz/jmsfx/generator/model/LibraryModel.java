@@ -47,10 +47,7 @@ public class LibraryModel {
     }
 
     public AmplifierListModel getAmplifierList(String enumType) {
-        return amplifierGroups.stream()
-            .filter(amp -> Objects.equals(amp.getTypeName(), enumType))
-            .findFirst()
-            .orElseThrow();
+        return amplifierGroups.stream().filter(amp -> Objects.equals(amp.getTypeName(), enumType)).findFirst().orElseThrow();
     }
 
     public String getAmplifierPackage() {
@@ -78,10 +75,7 @@ public class LibraryModel {
     }
 
     public DimensionModel getDimension(String key) {
-        return dimensions.stream()
-            .filter(dim -> Objects.equals(dim.getId(), key))
-            .findFirst()
-            .orElseThrow();
+        return dimensions.stream().filter(dim -> Objects.equals(dim.getId(), key)).findFirst().orElseThrow();
     }
 
     public List<DimensionModel> getDimensions() {

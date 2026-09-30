@@ -46,8 +46,8 @@ public class SymbologyArgumentResolver implements HandlerMethodArgumentResolver 
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
         Class<?> type = parameter.getParameterType();
-        return SymbolSet.class == type || Entity.class == type || EntityType.class == type || EntitySubType.class == type || SectorOneModifier.class == type
-               || SectorTwoModifier.class == type || AmplifierListItem.class == type;
+        return SymbolSet.class == type || Entity.class == type || EntityType.class == type || EntitySubType.class == type || SectorOneModifier.class == type || SectorTwoModifier.class == type
+               || AmplifierListItem.class == type;
     }
 
     @Override
@@ -63,8 +63,7 @@ public class SymbologyArgumentResolver implements HandlerMethodArgumentResolver 
         // the endpoint rather than of the value - an amplifier is a query parameter on /symbol and the
         // sector modifiers are path variables on /symbol/modifier/one - so the resolver takes it from
         // wherever it appears rather than needing an annotation on every argument to say which.
-        String value = Optional.ofNullable(pathVariables(request).get(name))
-            .orElseGet(() -> request.getParameter(name));
+        String value = Optional.ofNullable(pathVariables(request).get(name)).orElseGet(() -> request.getParameter(name));
         if (value == null || value.isBlank()) {
             // Absent is a legitimate answer for the optional query parameters; a path variable cannot be
             // absent, because the mapping that matched the request is what put it there.
@@ -82,8 +81,7 @@ public class SymbologyArgumentResolver implements HandlerMethodArgumentResolver 
         return IconLibrary.discover()
             .getSymbolSets()
             .stream()
-            .filter(candidate -> SymbolSetSummary.pathFor(candidate)
-                .equals(path))
+            .filter(candidate -> SymbolSetSummary.pathFor(candidate).equals(path))
             .findFirst()
             .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Unknown symbol set: " + path));
     }
@@ -99,20 +97,10 @@ public class SymbologyArgumentResolver implements HandlerMethodArgumentResolver 
             return symbolSet.getEntities();
         }
         if (EntityType.class == type) {
-            return symbolSet.getEntities()
-                .stream()
-                .flatMap(entity -> entity.getEntityTypes()
-                    .stream())
-                .toList();
+            return symbolSet.getEntities().stream().flatMap(entity -> entity.getEntityTypes().stream()).toList();
         }
         if (EntitySubType.class == type) {
-            return symbolSet.getEntities()
-                .stream()
-                .flatMap(entity -> entity.getEntityTypes()
-                    .stream())
-                .flatMap(entityType -> entityType.getEntitySubTypes()
-                    .stream())
-                .toList();
+            return symbolSet.getEntities().stream().flatMap(entity -> entity.getEntityTypes().stream()).flatMap(entityType -> entityType.getEntitySubTypes().stream()).toList();
         }
         if (SectorOneModifier.class == type) {
             return symbolSet.getSectorOneModifiers();
@@ -125,8 +113,7 @@ public class SymbologyArgumentResolver implements HandlerMethodArgumentResolver 
 
     private CodeElement find(List<? extends CodeElement> candidates, String value, String what) {
         return candidates.stream()
-            .filter(candidate -> candidate instanceof Enum<?> constant && constant.name()
-                .equals(value))
+            .filter(candidate -> candidate instanceof Enum<?> constant && constant.name().equals(value))
             .findFirst()
             .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("Unknown %s: %s", what, value)));
     }

@@ -32,10 +32,7 @@ public class DimensionImpl extends CodeElementImpl implements Dimension {
     @SuppressWarnings("this-escape")
     public DimensionImpl(Dimension dimension) {
         super(dimension);
-        dimension.getSymbolSets()
-            .stream()
-            .map(SymbolSetImpl::new)
-            .forEach(this::addSymbolSet);
+        dimension.getSymbolSets().stream().map(SymbolSetImpl::new).forEach(this::addSymbolSet);
         this.defaultSymbolSet.set(symbolSets.getFirst());
         this.geometryType.set(dimension.getGeometryType());
         this.frameId.set(dimension.getFrameId());
@@ -58,9 +55,7 @@ public class DimensionImpl extends CodeElementImpl implements Dimension {
             return true;
         }
         if (obj instanceof DimensionImpl rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
@@ -104,9 +99,7 @@ public class DimensionImpl extends CodeElementImpl implements Dimension {
 
     @Override
     public List<SymbolSet> getSymbolSets() {
-        return symbolSets.stream()
-            .map(SymbolSet.class::cast)
-            .toList();
+        return symbolSets.stream().map(SymbolSet.class::cast).toList();
     }
 
     public StringProperty graphicLocationProperty() {
@@ -115,8 +108,7 @@ public class DimensionImpl extends CodeElementImpl implements Dimension {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(9883, 3907).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(9883, 3907).append(getId()).toHashCode();
     }
 
     public StringProperty nameProperty() {

@@ -113,11 +113,9 @@ public final class FragmentSource {
                 }
             }
             if (fragment.key() == null) {
-                fragment.element()
-                    .setGraphicMarkup(markup);
+                fragment.element().setGraphicMarkup(markup);
             } else {
-                byKey.computeIfAbsent(fragment.element(), element -> new LinkedHashMap<>())
-                    .put(fragment.key(), markup);
+                byKey.computeIfAbsent(fragment.element(), element -> new LinkedHashMap<>()).put(fragment.key(), markup);
             }
             injected++;
         }
@@ -139,12 +137,10 @@ public final class FragmentSource {
         Map<String, BoundsModel> icons = model.getIconBounds() == null ? Map.of() : model.getIconBounds();
         Map<String, BoundsModel> modifiers = model.getModifierBounds() == null ? Map.of() : model.getModifierBounds();
         for (Fragment fragment : fragments) {
-            BoundsModel measured = fragment.element() instanceof SectorOneModifierModel || fragment.element() instanceof SectorTwoModifierModel
-                ? modifiers.get(fragment.identifier())
+            BoundsModel measured = fragment.element() instanceof SectorOneModifierModel || fragment.element() instanceof SectorTwoModifierModel ? modifiers.get(fragment.identifier())
                 : icons.get(fragment.identifier());
             if (measured != null) {
-                fragment.element()
-                    .setMeasuredBounds(measured);
+                fragment.element().setMeasuredBounds(measured);
             }
         }
     }
@@ -156,12 +152,7 @@ public final class FragmentSource {
      * purpose. Null if that entity has no fragment either, in which case there is nothing sensible to substitute and the element is left without markup.
      */
     private static String invalidSymbolMarkup(List<Fragment> fragments) {
-        return fragments.stream()
-            .filter(fragment -> INVALID.equals(fragment.element()
-                .getId()) && fragment.markup() != null)
-            .map(Fragment::markup)
-            .findFirst()
-            .orElse(null);
+        return fragments.stream().filter(fragment -> INVALID.equals(fragment.element().getId()) && fragment.markup() != null).map(Fragment::markup).findFirst().orElse(null);
     }
 
     /** The roots this graphic type contributes, in the order they are drawn. */
@@ -203,15 +194,13 @@ public final class FragmentSource {
                 if (drawsNothing(modifier.getGroupId(), modifier.getCode())) {
                     continue;
                 }
-                add(fragments, modifierBoundsKey(location, "mod1", modifier.getId()), modifier, null,
-                    tree.resolve("Dimensions", location, "mod1", modifier.getId() + ".svg"), "mod1");
+                add(fragments, modifierBoundsKey(location, "mod1", modifier.getId()), modifier, null, tree.resolve("Dimensions", location, "mod1", modifier.getId() + ".svg"), "mod1");
             }
             for (SectorTwoModifierModel modifier : symbolSet.getSectorTwoMods()) {
                 if (drawsNothing(modifier.getGroupId(), modifier.getCode())) {
                     continue;
                 }
-                add(fragments, modifierBoundsKey(location, "mod2", modifier.getId()), modifier, null,
-                    tree.resolve("Dimensions", location, "mod2", modifier.getId() + ".svg"), "mod2");
+                add(fragments, modifierBoundsKey(location, "mod2", modifier.getId()), modifier, null, tree.resolve("Dimensions", location, "mod2", modifier.getId() + ".svg"), "mod2");
             }
         }
         addFrames(fragments, model, tree);
@@ -379,8 +368,7 @@ public final class FragmentSource {
      * times in this codebase's history.
      */
     static String contentRoot(String svg, String id) {
-        Matcher opening = Pattern.compile("<(?:svg:)?g\\b[^>]*id=\"" + Pattern.quote(id) + "\"")
-            .matcher(svg);
+        Matcher opening = Pattern.compile("<(?:svg:)?g\\b[^>]*id=\"" + Pattern.quote(id) + "\"").matcher(svg);
         if (!opening.find()) {
             return null;
         }
@@ -389,8 +377,7 @@ public final class FragmentSource {
         Matcher tags = GROUP_TAG.matcher(svg);
         tags.region(start, svg.length());
         while (tags.find()) {
-            if (!tags.group(3)
-                .isEmpty()) {
+            if (!tags.group(3).isEmpty()) {
                 // A self-closing group closes itself. When it is the one being extracted that is the
                 // whole answer: an empty content root is legitimate - "General" in the Dismounted set is
                 // a synonym for Unknown and draws an empty frame, so its fragment is <g id="main"/>.
@@ -401,8 +388,7 @@ public final class FragmentSource {
                 }
                 continue;
             }
-            depth += tags.group(1)
-                .isEmpty() ? 1 : -1;
+            depth += tags.group(1).isEmpty() ? 1 : -1;
             if (depth == 0) {
                 return svg.substring(start, tags.end());
             }

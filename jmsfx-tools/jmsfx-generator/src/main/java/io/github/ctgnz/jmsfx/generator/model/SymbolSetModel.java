@@ -103,16 +103,12 @@ public class SymbolSetModel extends AbstractModel {
 
     @JsonIgnore
     public List<EntitySubTypeModel> getEntitySubTypes() {
-        return entities.stream()
-            .flatMap(EntityModel::streamEntitySubTypes)
-            .toList();
+        return entities.stream().flatMap(EntityModel::streamEntitySubTypes).toList();
     }
 
     @JsonIgnore
     public List<EntityTypeModel> getEntityTypes() {
-        return entities.stream()
-            .flatMap(EntityModel::streamEntityTypes)
-            .toList();
+        return entities.stream().flatMap(EntityModel::streamEntityTypes).toList();
     }
 
     @JsonIgnore
@@ -130,8 +126,7 @@ public class SymbolSetModel extends AbstractModel {
 
     @JsonIgnore
     public String getPackageName() {
-        return StringUtils.remove(StringUtils.deleteWhitespace(label)
-            .toLowerCase(), '-');
+        return StringUtils.remove(StringUtils.deleteWhitespace(label).toLowerCase(), '-');
     }
 
     public List<SectorOneModifierModel> getSectorOneMods() {

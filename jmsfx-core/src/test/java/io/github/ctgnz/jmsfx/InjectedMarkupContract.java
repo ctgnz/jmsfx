@@ -47,15 +47,10 @@ import io.github.ctgnz.jmsfx.types.GraphicType;
 public abstract class InjectedMarkupContract {
 
     /** Enough to reach every identity group, since a FULL_FRAME element draws a different picture for each. */
-    private static final List<StandardIdentity> IDENTITIES = IconLibrary.discover()
-        .getStandardIdentities();
+    private static final List<StandardIdentity> IDENTITIES = IconLibrary.discover().getStandardIdentities();
 
     /** The statuses that vary a frame. The rest draw the same frame as Present, which is what {@code Status.getFrameId} collapses them to. */
-    private static final List<Status> FRAME_STATUSES = IconLibrary.discover()
-        .getStatuses()
-        .stream()
-        .filter(Status::isFrameStatus)
-        .toList();
+    private static final List<Status> FRAME_STATUSES = IconLibrary.discover().getStatuses().stream().filter(Status::isFrameStatus).toList();
 
     /** A hex fill, removed from both sides when comparing a civilian frame with the military one it came from. */
     private static final Pattern HEX_FILL = Pattern.compile("fill=\"#[0-9A-Fa-f]{6}\"");
@@ -102,8 +97,7 @@ public abstract class InjectedMarkupContract {
     public void everyInjectedMainIconMatchesItsFragment() throws IOException {
         List<String> wrong = new ArrayList<>();
         int checked = 0;
-        for (SymbolSet symbolSet : IconLibrary.discover()
-            .getSymbolSets()) {
+        for (SymbolSet symbolSet : IconLibrary.discover().getSymbolSets()) {
             for (Entity entity : symbolSet.getEntities()) {
                 checked += checkElement(entity, wrong);
                 for (EntityType entityType : entity.getEntityTypes()) {
@@ -122,8 +116,7 @@ public abstract class InjectedMarkupContract {
     public void everyInjectedModifierMatchesItsFragment() throws IOException {
         List<String> wrong = new ArrayList<>();
         int checked = 0;
-        for (SymbolSet symbolSet : IconLibrary.discover()
-            .getSymbolSets()) {
+        for (SymbolSet symbolSet : IconLibrary.discover().getSymbolSets()) {
             for (SectorOneModifier modifier : symbolSet.getSectorOneModifiers()) {
                 String markup = modifier.getGraphicMarkup();
                 if (markup != null) {
@@ -153,15 +146,13 @@ public abstract class InjectedMarkupContract {
     public void everyInjectedFrameMatchesItsFragment() throws IOException {
         List<String> wrong = new ArrayList<>();
         int checked = 0;
-        for (SymbolSet symbolSet : IconLibrary.discover()
-            .getSymbolSets()) {
+        for (SymbolSet symbolSet : IconLibrary.discover().getSymbolSets()) {
             if (!symbolSet.isPointGeometry()) {
                 continue;
             }
             for (StandardIdentity identity : IDENTITIES) {
                 for (Status status : FRAME_STATUSES) {
-                    String markup = symbolSet.getDimension()
-                        .getFrameMarkup(identity, status);
+                    String markup = symbolSet.getDimension().getFrameMarkup(identity, status);
                     if (markup == null) {
                         continue;
                     }
@@ -184,10 +175,8 @@ public abstract class InjectedMarkupContract {
     public void everyInjectedStatusMatchesItsFragment() throws IOException {
         List<String> wrong = new ArrayList<>();
         int checked = 0;
-        for (SymbolSet symbolSet : IconLibrary.discover()
-            .getSymbolSets()) {
-            for (Status status : IconLibrary.discover()
-                .getStatuses()) {
+        for (SymbolSet symbolSet : IconLibrary.discover().getSymbolSets()) {
+            for (Status status : IconLibrary.discover().getStatuses()) {
                 for (StandardIdentity identity : IDENTITIES) {
                     String markup = status.getStatusMarkup(identity, symbolSet);
                     if (markup == null) {
@@ -207,10 +196,8 @@ public abstract class InjectedMarkupContract {
     public void everyInjectedHqtfDummyMatchesItsFragment() throws IOException {
         List<String> wrong = new ArrayList<>();
         int checked = 0;
-        for (SymbolSet symbolSet : IconLibrary.discover()
-            .getSymbolSets()) {
-            for (HqtfDummy hqtfDummy : IconLibrary.discover()
-                .getHqtfDummys()) {
+        for (SymbolSet symbolSet : IconLibrary.discover().getSymbolSets()) {
+            for (HqtfDummy hqtfDummy : IconLibrary.discover().getHqtfDummys()) {
                 for (StandardIdentity identity : IDENTITIES) {
                     String markup = hqtfDummy.getHqtfDummyMarkup(identity, symbolSet);
                     if (markup == null) {
@@ -235,8 +222,7 @@ public abstract class InjectedMarkupContract {
     public void everyInjectedAmplifierMatchesItsFragment() throws IOException {
         List<String> wrong = new ArrayList<>();
         int checked = 0;
-        for (AmplifierList list : IconLibrary.discover()
-            .getListAmplifiers()) {
+        for (AmplifierList list : IconLibrary.discover().getListAmplifiers()) {
             for (AmplifierListItem item : list.<AmplifierListItem> getItems()) {
                 for (StandardIdentity identity : IDENTITIES) {
                     String markup = item.getGraphicMarkup(identity);
@@ -244,8 +230,7 @@ public abstract class InjectedMarkupContract {
                         continue;
                     }
                     checked++;
-                    compare(item.getGraphicKey(identity), item.getGraphicLocation()
-                        .toLowerCase(Locale.ROOT), markup, wrong);
+                    compare(item.getGraphicKey(identity), item.getGraphicLocation().toLowerCase(Locale.ROOT), markup, wrong);
                 }
             }
         }
@@ -258,8 +243,7 @@ public abstract class InjectedMarkupContract {
     public void everyInjectedFrameOverlayMatchesItsFragment() throws IOException {
         List<String> wrong = new ArrayList<>();
         int checked = 0;
-        for (Context context : IconLibrary.discover()
-            .getContexts()) {
+        for (Context context : IconLibrary.discover().getContexts()) {
             String markup = context.getOverlayGraphicMarkup();
             if (markup == null) {
                 continue;
@@ -281,8 +265,7 @@ public abstract class InjectedMarkupContract {
     @Test
     public void noTextAmplifierClaimsToDraw() {
         List<String> claiming = new ArrayList<>();
-        for (AmplifierList list : IconLibrary.discover()
-            .getListAmplifiers()) {
+        for (AmplifierList list : IconLibrary.discover().getListAmplifiers()) {
             for (AmplifierListItem item : list.<AmplifierListItem> getItems()) {
                 if (item.isGraphicalIcon() && "NA".equals(item.getGraphicLocation())) {
                     claiming.add(list.getLabel() + "/" + item.getId());
@@ -301,15 +284,13 @@ public abstract class InjectedMarkupContract {
     @Test
     public void aCivilianFrameIsTheMilitaryFrameRecoloured() {
         int checked = 0;
-        for (SymbolSet symbolSet : IconLibrary.discover()
-            .getSymbolSets()) {
+        for (SymbolSet symbolSet : IconLibrary.discover().getSymbolSets()) {
             if (!symbolSet.isPointGeometry()) {
                 continue;
             }
             for (StandardIdentity identity : IDENTITIES) {
                 for (Status status : FRAME_STATUSES) {
-                    String military = symbolSet.getDimension()
-                        .getFrameMarkup(identity, status);
+                    String military = symbolSet.getDimension().getFrameMarkup(identity, status);
                     if (military == null) {
                         continue;
                     }
@@ -339,8 +320,7 @@ public abstract class InjectedMarkupContract {
             }
             for (StandardIdentity identity : IDENTITIES) {
                 for (Status status : FRAME_STATUSES) {
-                    if (symbolSet.getDimension()
-                        .getFrameMarkup(identity, status) == null) {
+                    if (symbolSet.getDimension().getFrameMarkup(identity, status) == null) {
                         continue;
                     }
                     SvgGraphic military = library.loadFrameGraphic(symbolSet, identity, status, false, null);
@@ -374,8 +354,7 @@ public abstract class InjectedMarkupContract {
         int parsed = 0;
         for (String markup : everyInjectedMarkup()) {
             try {
-                parser.parse(new ByteArrayInputStream(FragmentMarkup.document(markup)
-                    .getBytes(StandardCharsets.UTF_8)));
+                parser.parse(new ByteArrayInputStream(FragmentMarkup.document(markup).getBytes(StandardCharsets.UTF_8)));
                 parsed++;
             } catch (Exception e) {
                 unparseable.add(markup.substring(0, Math.min(90, markup.length())) + " -> " + e.getMessage());
@@ -390,8 +369,7 @@ public abstract class InjectedMarkupContract {
     public void theParseCheckWouldNoticeMalformedMarkup() {
         FoxgloveParser parser = new FoxgloveParser();
 
-        assertThrows(Exception.class, () -> parser.parse(new ByteArrayInputStream(FragmentMarkup.document("<g id=\"main\"><path")
-            .getBytes(StandardCharsets.UTF_8))));
+        assertThrows(Exception.class, () -> parser.parse(new ByteArrayInputStream(FragmentMarkup.document("<g id=\"main\"><path").getBytes(StandardCharsets.UTF_8))));
     }
 
     /**
@@ -437,8 +415,7 @@ public abstract class InjectedMarkupContract {
                     }
                 }
                 for (Status status : library.getStatuses()) {
-                    if (status.isFrameStatus() && symbolSet.getSymbolSetInfo()
-                        .isFramedIcon()) {
+                    if (status.isFrameStatus() && symbolSet.getSymbolSetInfo().isFramedIcon()) {
                         for (boolean civilian : new boolean[] {
                             false, true
                         }) {
@@ -493,38 +470,24 @@ public abstract class InjectedMarkupContract {
     /** Every drawing this library carries, however it is reached. */
     private List<String> everyInjectedMarkup() {
         List<String> markup = new ArrayList<>();
-        for (SymbolSet symbolSet : IconLibrary.discover()
-            .getSymbolSets()) {
+        for (SymbolSet symbolSet : IconLibrary.discover().getSymbolSets()) {
             for (Entity entity : symbolSet.getEntities()) {
                 collect(entity, markup);
                 for (EntityType entityType : entity.getEntityTypes()) {
                     collect(entityType, markup);
-                    entityType.getEntitySubTypes()
-                        .forEach(subType -> collect(subType, markup));
+                    entityType.getEntitySubTypes().forEach(subType -> collect(subType, markup));
                 }
             }
-            symbolSet.getSectorOneModifiers()
-                .forEach(modifier -> add(modifier.getGraphicMarkup(), markup));
-            symbolSet.getSectorTwoModifiers()
-                .forEach(modifier -> add(modifier.getGraphicMarkup(), markup));
+            symbolSet.getSectorOneModifiers().forEach(modifier -> add(modifier.getGraphicMarkup(), markup));
+            symbolSet.getSectorTwoModifiers().forEach(modifier -> add(modifier.getGraphicMarkup(), markup));
             for (StandardIdentity identity : IDENTITIES) {
-                IconLibrary.discover()
-                    .getListAmplifiers()
-                    .forEach(list -> list.<AmplifierListItem> getItems()
-                        .forEach(item -> add(item.getGraphicMarkup(identity), markup)));
-                FRAME_STATUSES.forEach(status -> add(symbolSet.getDimension()
-                    .getFrameMarkup(identity, status), markup));
-                IconLibrary.discover()
-                    .getStatuses()
-                    .forEach(status -> add(status.getStatusMarkup(identity, symbolSet), markup));
-                IconLibrary.discover()
-                    .getHqtfDummys()
-                    .forEach(hqtfDummy -> add(hqtfDummy.getHqtfDummyMarkup(identity, symbolSet), markup));
+                IconLibrary.discover().getListAmplifiers().forEach(list -> list.<AmplifierListItem> getItems().forEach(item -> add(item.getGraphicMarkup(identity), markup)));
+                FRAME_STATUSES.forEach(status -> add(symbolSet.getDimension().getFrameMarkup(identity, status), markup));
+                IconLibrary.discover().getStatuses().forEach(status -> add(status.getStatusMarkup(identity, symbolSet), markup));
+                IconLibrary.discover().getHqtfDummys().forEach(hqtfDummy -> add(hqtfDummy.getHqtfDummyMarkup(identity, symbolSet), markup));
             }
         }
-        IconLibrary.discover()
-            .getContexts()
-            .forEach(context -> add(context.getOverlayGraphicMarkup(), markup));
+        IconLibrary.discover().getContexts().forEach(context -> add(context.getOverlayGraphicMarkup(), markup));
         return markup;
     }
 
@@ -583,8 +546,7 @@ public abstract class InjectedMarkupContract {
 
     /** The drawing with every fill taken out, which is all a civilian frame is allowed to differ by. */
     private String withoutFills(String markup) {
-        return HEX_FILL.matcher(markup)
-            .replaceAll("");
+        return HEX_FILL.matcher(markup).replaceAll("");
     }
 
     /**
@@ -608,8 +570,7 @@ public abstract class InjectedMarkupContract {
 
     /** Depth-counted, because these groups nest and a self-closing one closes itself - an empty content root is legitimate. */
     private String contentRoot(String svg, String id) {
-        Matcher opening = Pattern.compile("<(?:svg:)?g\\b[^>]*id=\"" + Pattern.quote(id) + "\"")
-            .matcher(svg);
+        Matcher opening = Pattern.compile("<(?:svg:)?g\\b[^>]*id=\"" + Pattern.quote(id) + "\"").matcher(svg);
         if (!opening.find()) {
             return null;
         }
@@ -618,15 +579,13 @@ public abstract class InjectedMarkupContract {
         Matcher tags = GROUP_TAG.matcher(svg);
         tags.region(start, svg.length());
         while (tags.find()) {
-            if (!tags.group(3)
-                .isEmpty()) {
+            if (!tags.group(3).isEmpty()) {
                 if (tags.start() == start) {
                     return svg.substring(start, tags.end());
                 }
                 continue;
             }
-            depth += tags.group(1)
-                .isEmpty() ? 1 : -1;
+            depth += tags.group(1).isEmpty() ? 1 : -1;
             if (depth == 0) {
                 return svg.substring(start, tags.end());
             }

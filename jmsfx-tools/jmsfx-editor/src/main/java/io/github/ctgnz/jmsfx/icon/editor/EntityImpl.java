@@ -29,10 +29,7 @@ public class EntityImpl extends MainIconImpl implements Entity {
         this.baseSymbolSet.set(entity.getBaseSymbolSet());
         this.graphicType.set(entity.getGraphicType());
         this.unknown.set(entity.isUnknown());
-        this.entityTypes.addAll(entity.getEntityTypes()
-            .stream()
-            .map(this::adaptEntityType)
-            .toList());
+        this.entityTypes.addAll(entity.getEntityTypes().stream().map(this::adaptEntityType).toList());
     }
 
     @Override
@@ -41,9 +38,7 @@ public class EntityImpl extends MainIconImpl implements Entity {
             return true;
         }
         if (obj instanceof EntityImpl rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
@@ -70,8 +65,7 @@ public class EntityImpl extends MainIconImpl implements Entity {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(3217, 7127).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(3217, 7127).append(getId()).toHashCode();
     }
 
     public ObjectProperty<SymbolSet> symbolSetProperty() {

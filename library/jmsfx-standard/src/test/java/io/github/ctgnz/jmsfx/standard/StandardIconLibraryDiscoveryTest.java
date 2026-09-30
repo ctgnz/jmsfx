@@ -32,9 +32,7 @@ class StandardIconLibraryDiscoveryTest {
     void theDiscoveredLibraryWorks() {
         // Not just found, but usable - a provider method that returned a half-built instance would
         // satisfy the assertions above and fail here.
-        assertThat(IconLibrary.discover()
-            .getSymbolSets()
-            .isEmpty(), is(false));
+        assertThat(IconLibrary.discover().getSymbolSets().isEmpty(), is(false));
     }
 
 }

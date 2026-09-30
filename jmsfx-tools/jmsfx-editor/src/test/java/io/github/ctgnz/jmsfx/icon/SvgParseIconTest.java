@@ -27,9 +27,7 @@ public class SvgParseIconTest {
         Files.walkFileTree(Paths.get(uri), new SimpleFileVisitor<Path>() {
             @Override
             public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-                if (file.getFileName()
-                    .toString()
-                    .endsWith(".svg")) {
+                if (file.getFileName().toString().endsWith(".svg")) {
                     int progress = count.incrementAndGet();
                     if (progress % 100 == 0) {
                         System.out.format("%d parsed%n", progress);

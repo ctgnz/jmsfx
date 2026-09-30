@@ -35,8 +35,7 @@ public interface SymbolSet extends CodeElement {
      * suffix rather than a directory: since jmsfx#123 no such file exists, and it is here only to keep a recoloured frame in its own cache entry.
      */
     default String getFrameKey(StandardIdentity identity, Status status, boolean civilianEntity) {
-        return String.format("/svg/Frames/%s/%s/%s%s.svg", getDimension().getName(), identity.getName(), status.getFrameName(identity),
-            civilianEntity ? "_CIVILIAN" : "");
+        return String.format("/svg/Frames/%s/%s/%s%s.svg", getDimension().getName(), identity.getName(), status.getFrameName(identity), civilianEntity ? "_CIVILIAN" : "");
     }
 
     String getGraphicLocation();

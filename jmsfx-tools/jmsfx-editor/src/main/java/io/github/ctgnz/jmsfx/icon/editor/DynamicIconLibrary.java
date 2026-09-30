@@ -87,20 +87,14 @@ public class DynamicIconLibrary implements IconLibrary {
         this.hqtfDummys.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getHqtfDummys()), HqtfDummyImpl::new));
         this.amplifiers.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getAmplifiers()), AmplifierImpl::new));
         this.listAmplifiers.setAll(Lists.transform(Lists.newArrayList(staticLibrary.getListAmplifiers()), AmplifierListImpl::new));
-        this.symbolSets.setAll(dimensions.stream()
-            .map(DimensionImpl.class::cast)
-            .flatMap(DimensionImpl::streamSymbolSets)
-            .toList());
+        this.symbolSets.setAll(dimensions.stream().map(DimensionImpl.class::cast).flatMap(DimensionImpl::streamSymbolSets).toList());
         SymbolSet symSet = getDefaultSymbolSet();
         this.commonSectorOneModifiers.setAll(symSet.getSectorOneModifiers());
         this.commonSectorTwoModifiers.setAll(symSet.getSectorTwoModifiers());
     }
 
     public Optional<Amplifier> getAmplifier(String amplifierId) {
-        return amplifiers.stream()
-            .filter(amp -> Objects.equals(amplifierId, amp.getId()))
-            .map(Amplifier.class::cast)
-            .findFirst();
+        return amplifiers.stream().filter(amp -> Objects.equals(amplifierId, amp.getId())).map(Amplifier.class::cast).findFirst();
     }
 
     @Override
@@ -140,20 +134,17 @@ public class DynamicIconLibrary implements IconLibrary {
 
     @Override
     public Entity getDefaultEntity() {
-        return getDefaultSymbolSet().getEntities()
-            .getFirst();
+        return getDefaultSymbolSet().getEntities().getFirst();
     }
 
     @Override
     public EntitySubType getDefaultEntitySubType() {
-        return getDefaultEntityType().getEntitySubTypes()
-            .getFirst();
+        return getDefaultEntityType().getEntitySubTypes().getFirst();
     }
 
     @Override
     public EntityType getDefaultEntityType() {
-        return getDefaultEntity().getEntityTypes()
-            .getFirst();
+        return getDefaultEntity().getEntityTypes().getFirst();
     }
 
     @Override
@@ -213,10 +204,7 @@ public class DynamicIconLibrary implements IconLibrary {
 
     @Override
     public ObservableList<StandardIdentity> getStandardIdentities() {
-        return FXCollections.observableArrayList(standardIdentityGroups.stream()
-            .map(StandardIdentityGroupImpl.class::cast)
-            .flatMap(StandardIdentityGroupImpl::streamIdentities)
-            .toList());
+        return FXCollections.observableArrayList(standardIdentityGroups.stream().map(StandardIdentityGroupImpl.class::cast).flatMap(StandardIdentityGroupImpl::streamIdentities).toList());
     }
 
     @Override
@@ -230,10 +218,7 @@ public class DynamicIconLibrary implements IconLibrary {
     }
 
     public Optional<SymbolSet> getSymbolSet(String symbolSetId) {
-        return symbolSets.stream()
-            .filter(sym -> Objects.equals(symbolSetId, sym.getId()))
-            .map(SymbolSet.class::cast)
-            .findFirst();
+        return symbolSets.stream().filter(sym -> Objects.equals(symbolSetId, sym.getId())).map(SymbolSet.class::cast).findFirst();
     }
 
     @Override
@@ -272,8 +257,7 @@ public class DynamicIconLibrary implements IconLibrary {
         if (civilian) {
             return recoloured(location, location, IdentificationSymbol.CIVILIAN_PURPLE);
         }
-        if (frameAmplifier != null && !frameAmplifier.isUnknown() && !frameAmplifier.getBackgroundFill()
-            .isBlank()) {
+        if (frameAmplifier != null && !frameAmplifier.isUnknown() && !frameAmplifier.getBackgroundFill().isBlank()) {
             return recoloured(location, location + frameAmplifier.getFullId(), Color.web(frameAmplifier.getBackgroundFill()));
         }
         return parse(location);

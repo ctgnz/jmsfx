@@ -35,10 +35,7 @@ final class IconLibraries {
      * necessarily the one that can see it.
      */
     private static List<IconLibrary> load() {
-        return ServiceLoader.load(IconLibrary.class, IconLibraries.class.getClassLoader())
-            .stream()
-            .map(ServiceLoader.Provider::get)
-            .toList();
+        return ServiceLoader.load(IconLibrary.class, IconLibraries.class.getClassLoader()).stream().map(ServiceLoader.Provider::get).toList();
     }
 
     /**
@@ -51,34 +48,24 @@ final class IconLibraries {
     static IconLibrary select(List<IconLibrary> found, String named) {
         if (named != null && !named.isBlank()) {
             return found.stream()
-                .filter(library -> library.getClass()
-                    .getName()
-                    .equals(named))
+                .filter(library -> library.getClass().getName().equals(named))
                 .findFirst()
-                .orElseThrow(() -> new IllegalStateException(String.format(
-                    "%s names %s, which is not on the classpath. Found: %s", IconLibrary.LIBRARY_PROPERTY, named, describe(found))));
+                .orElseThrow(() -> new IllegalStateException(String.format("%s names %s, which is not on the classpath. Found: %s", IconLibrary.LIBRARY_PROPERTY, named, describe(found))));
         }
         if (found.isEmpty()) {
-            throw new IllegalStateException(String.format(
-                "No %s on the classpath. A symbology library such as jmsfx-standard provides one; add it as a dependency.", IconLibrary.class.getName()));
+            throw new IllegalStateException(String.format("No %s on the classpath. A symbology library such as jmsfx-standard provides one; add it as a dependency.", IconLibrary.class.getName()));
         }
         if (found.size() > 1) {
-            throw new IllegalStateException(String.format(
-                "More than one %s on the classpath, which is a packaging mistake rather than a choice: an application should depend on exactly one symbology library. Found: %s."
-                                                          + " Set -D%s=<class> to select one deliberately.",
-                IconLibrary.class.getName(), describe(found), IconLibrary.LIBRARY_PROPERTY));
+            throw new IllegalStateException(String
+                .format("More than one %s on the classpath, which is a packaging mistake rather than a choice: an application should depend on exactly one symbology library. Found: %s."
+                        + " Set -D%s=<class> to select one deliberately.",
+                    IconLibrary.class.getName(), describe(found), IconLibrary.LIBRARY_PROPERTY));
         }
         return found.get(0);
     }
 
     private static String describe(List<IconLibrary> found) {
-        return found.isEmpty() ? "none"
-            : found.stream()
-                .map(library -> library.getClass()
-                    .getName())
-                .sorted()
-                .toList()
-                .toString();
+        return found.isEmpty() ? "none" : found.stream().map(library -> library.getClass().getName()).sorted().toList().toString();
     }
 
     private IconLibraries() {

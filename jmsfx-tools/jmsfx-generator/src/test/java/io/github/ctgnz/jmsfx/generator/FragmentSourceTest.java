@@ -88,14 +88,12 @@ class FragmentSourceTest {
 
         AbstractModel fullFrame = model.getSymbolSets()
             .stream()
-            .flatMap(set -> set.getEntityTypes()
-                .stream())
+            .flatMap(set -> set.getEntityTypes().stream())
             .filter(type -> type.getGraphicType() == GraphicType.FULL_FRAME)
             .findFirst()
             .orElseThrow();
 
-        assertThat(fullFrame.getGraphicMarkupByKey()
-            .keySet(), hasSize(4));
+        assertThat(fullFrame.getGraphicMarkupByKey().keySet(), hasSize(4));
         assertThat(fullFrame.getGraphicMarkup(), is(nullValue()));
     }
 
@@ -118,22 +116,14 @@ class FragmentSourceTest {
     void injectsNoCivilianFrame() throws IOException {
         FragmentSource.inject(model, tree);
 
-        assertThat(dimension("LAND_UNIT").getGraphicMarkupByKey()
-            .keySet()
-            .stream()
-            .filter(key -> key.endsWith("c"))
-            .toList(), is(List.of()));
+        assertThat(dimension("LAND_UNIT").getGraphicMarkupByKey().keySet().stream().filter(key -> key.endsWith("c")).toList(), is(List.of()));
     }
 
     @Test
     void givesAModifierItsOwnMarkup() throws IOException {
         FragmentSource.inject(model, tree);
 
-        AbstractModel modifier = symbolSet("Land Units").getSectorOneMods()
-            .stream()
-            .filter(mod -> mod.getGraphicMarkup() != null)
-            .findFirst()
-            .orElseThrow();
+        AbstractModel modifier = symbolSet("Land Units").getSectorOneMods().stream().filter(mod -> mod.getGraphicMarkup() != null).findFirst().orElseThrow();
 
         assertThat(modifier.getGraphicMarkup(), startsWith("<g"));
     }
@@ -163,27 +153,15 @@ class FragmentSourceTest {
     }
 
     private DimensionModel dimension(String id) {
-        return model.getDimensions()
-            .stream()
-            .filter(dim -> id.equals(dim.getId()))
-            .findFirst()
-            .orElseThrow();
+        return model.getDimensions().stream().filter(dim -> id.equals(dim.getId())).findFirst().orElseThrow();
     }
 
     private AbstractModel anEntityOf(String label) {
-        return symbolSet(label).getEntities()
-            .stream()
-            .filter(entity -> entity.getGraphicMarkup() != null)
-            .findFirst()
-            .orElseThrow();
+        return symbolSet(label).getEntities().stream().filter(entity -> entity.getGraphicMarkup() != null).findFirst().orElseThrow();
     }
 
     private SymbolSetModel symbolSet(String label) {
-        return model.getSymbolSets()
-            .stream()
-            .filter(set -> label.equals(set.getLabel()))
-            .findFirst()
-            .orElseThrow();
+        return model.getSymbolSets().stream().filter(set -> label.equals(set.getLabel())).findFirst().orElseThrow();
     }
 
 }

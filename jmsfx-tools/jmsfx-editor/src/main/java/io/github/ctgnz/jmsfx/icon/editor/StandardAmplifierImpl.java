@@ -47,9 +47,7 @@ public class StandardAmplifierImpl<A extends StandardAmplifierItem> extends Code
             return true;
         }
         if (obj instanceof StandardAmplifierImpl<?> rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
@@ -82,14 +80,12 @@ public class StandardAmplifierImpl<A extends StandardAmplifierItem> extends Code
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(6599, 9967).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(6599, 9967).append(getId()).toHashCode();
     }
 
     @Override
     public boolean isUnknown() {
-        return values.isEmpty() ? false : values.getFirst()
-            .isUnknown();
+        return values.isEmpty() ? false : values.getFirst().isUnknown();
     }
 
     @Override
@@ -105,11 +101,8 @@ public class StandardAmplifierImpl<A extends StandardAmplifierItem> extends Code
     protected List<StandardAmplifierItemImpl<A>> loadValues() {
         try {
             Class<A> amplifierClass = getValueClass();
-            A[] vals = (A[]) amplifierClass.getMethod("values")
-                .invoke(amplifierClass);
-            return Arrays.stream(vals)
-                .map(StandardAmplifierItemImpl::new)
-                .toList();
+            A[] vals = (A[]) amplifierClass.getMethod("values").invoke(amplifierClass);
+            return Arrays.stream(vals).map(StandardAmplifierItemImpl::new).toList();
         } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException | SecurityException e) {
             return Collections.emptyList();
         }

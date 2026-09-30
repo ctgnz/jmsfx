@@ -70,8 +70,7 @@ public class TextAmplifierValue {
     private Point2D calculateAttachment() {
         Text holder = new Text(getText());
         holder.setFont(AMPLIFIER_FONT);
-        double width = holder.getLayoutBounds()
-            .getWidth();
+        double width = holder.getLayoutBounds().getWidth();
         double height = holder.getBaselineOffset();
         switch (getAttachment()) {
             case TOP_LEFT:

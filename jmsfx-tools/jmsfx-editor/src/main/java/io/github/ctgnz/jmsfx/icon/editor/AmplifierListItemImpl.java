@@ -42,9 +42,7 @@ public class AmplifierListItemImpl<A extends AmplifierListItem> extends CodeElem
             return true;
         }
         if (obj instanceof AmplifierListItemImpl<?> rhs) {
-            return new EqualsBuilder()
-                .append(getId(), rhs.getId())
-                .isEquals();
+            return new EqualsBuilder().append(getId(), rhs.getId()).isEquals();
         }
         return super.equals(obj);
     }
@@ -83,8 +81,7 @@ public class AmplifierListItemImpl<A extends AmplifierListItem> extends CodeElem
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(7919, 9199).append(getId())
-            .toHashCode();
+        return new HashCodeBuilder(7919, 9199).append(getId()).toHashCode();
     }
 
     @Override

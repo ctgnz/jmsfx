@@ -78,64 +78,52 @@ public class IconRestController {
     }
 
     @GetMapping("/symbol/modifier/one/{sectorOneMod}")
-    public ResponseEntity<byte[]> generateModifierOneSymbol(SymbolSet symbolSet, SectorOneModifier sectorOneMod,
-                                                            @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+    public ResponseEntity<byte[]> generateModifierOneSymbol(SymbolSet symbolSet, SectorOneModifier sectorOneMod, @RequestParam(defaultValue = "false") boolean trim) throws Exception {
         return renderSvg(buildSymbol(symbolSet, null, null, null, sectorOneMod, null, null), trim);
     }
 
     @GetMapping("/symbol/modifier/two/{sectorTwoMod}")
-    public ResponseEntity<byte[]> generateModifierTwoSymbol(SymbolSet symbolSet, SectorTwoModifier sectorTwoMod,
-                                                            @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+    public ResponseEntity<byte[]> generateModifierTwoSymbol(SymbolSet symbolSet, SectorTwoModifier sectorTwoMod, @RequestParam(defaultValue = "false") boolean trim) throws Exception {
         return renderSvg(buildSymbol(symbolSet, null, null, null, null, sectorTwoMod, null), trim);
     }
 
     @GetMapping("/symbol/entity/{entity}")
-    public ResponseEntity<byte[]> generateEntitySymbol(SymbolSet symbolSet, Entity entity, SectorOneModifier sectorOneMod, SectorTwoModifier sectorTwoMod,
-                                                       AmplifierListItem amplifier, @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+    public ResponseEntity<byte[]> generateEntitySymbol(SymbolSet symbolSet, Entity entity, SectorOneModifier sectorOneMod, SectorTwoModifier sectorTwoMod, AmplifierListItem amplifier,
+                                                       @RequestParam(defaultValue = "false") boolean trim) throws Exception {
         return renderSvg(buildSymbol(symbolSet, entity, null, null, sectorOneMod, sectorTwoMod, amplifier), trim);
     }
 
     @GetMapping("/symbol/{entityType}/{entitySubType}")
-    public ResponseEntity<byte[]> generateEntitySubTypeSymbol(SymbolSet symbolSet, EntityType entityType, EntitySubType entitySubType, SectorOneModifier sectorOneMod,
-                                                              SectorTwoModifier sectorTwoMod, AmplifierListItem amplifier,
-                                                              @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+    public ResponseEntity<byte[]> generateEntitySubTypeSymbol(SymbolSet symbolSet, EntityType entityType, EntitySubType entitySubType, SectorOneModifier sectorOneMod, SectorTwoModifier sectorTwoMod,
+                                                              AmplifierListItem amplifier, @RequestParam(defaultValue = "false") boolean trim) throws Exception {
         return renderSvg(buildSymbol(symbolSet, entityType.getEntity(), entityType, entitySubType, sectorOneMod, sectorTwoMod, amplifier), trim);
     }
 
     @GetMapping("/symbol/{entityType}")
-    public ResponseEntity<byte[]> generateSymbol(SymbolSet symbolSet, EntityType entityType, SectorOneModifier sectorOneMod, SectorTwoModifier sectorTwoMod,
-                                                 AmplifierListItem amplifier, @RequestParam(defaultValue = "false") boolean trim) throws Exception {
+    public ResponseEntity<byte[]> generateSymbol(SymbolSet symbolSet, EntityType entityType, SectorOneModifier sectorOneMod, SectorTwoModifier sectorTwoMod, AmplifierListItem amplifier,
+                                                 @RequestParam(defaultValue = "false") boolean trim) throws Exception {
         return renderSvg(buildSymbol(symbolSet, entityType.getEntity(), entityType, null, sectorOneMod, sectorTwoMod, amplifier), trim);
     }
 
     private static List<CodeElementSummary> summarise(List<? extends io.github.ctgnz.jmsfx.CodeElement> elements) {
-        return elements.stream()
-            .map(CodeElementSummary::of)
-            .toList();
+        return elements.stream().map(CodeElementSummary::of).toList();
     }
 
-    private IdentificationSymbol buildSymbol(SymbolSet symbolSet, Entity entity, EntityType entityType, EntitySubType entitySubType, SectorOneModifier sectorOneMod,
-                                             SectorTwoModifier sectorTwoMod, AmplifierListItem amplifier) {
+    private IdentificationSymbol buildSymbol(SymbolSet symbolSet, Entity entity, EntityType entityType, EntitySubType entitySubType, SectorOneModifier sectorOneMod, SectorTwoModifier sectorTwoMod,
+                                             AmplifierListItem amplifier) {
         IdentificationSymbol symbol = new IdentificationSymbol(IconLibrary.discover());
-        symbol.symbolSetProperty()
-            .set(symbolSet);
-        symbol.entityProperty()
-            .set(entity);
-        symbol.entityTypeProperty()
-            .set(entityType);
-        symbol.entitySubTypeProperty()
-            .set(entitySubType);
+        symbol.symbolSetProperty().set(symbolSet);
+        symbol.entityProperty().set(entity);
+        symbol.entityTypeProperty().set(entityType);
+        symbol.entitySubTypeProperty().set(entitySubType);
         if (sectorOneMod != null) {
-            symbol.sectorOneModifierProperty()
-                .set(sectorOneMod);
+            symbol.sectorOneModifierProperty().set(sectorOneMod);
         }
         if (sectorTwoMod != null) {
-            symbol.sectorTwoModifierProperty()
-                .set(sectorTwoMod);
+            symbol.sectorTwoModifierProperty().set(sectorTwoMod);
         }
         if (amplifier != null) {
-            symbol.amplifierProperty()
-                .set(amplifier);
+            symbol.amplifierProperty().set(amplifier);
         }
         return symbol;
     }
@@ -146,9 +134,7 @@ public class IconRestController {
      */
     private ResponseEntity<byte[]> renderSvg(IdentificationSymbol symbol, boolean trim) throws Exception {
         String svg = parser.write(symbol.getCombinedGraphic(trim), false);
-        return ResponseEntity.ok()
-            .contentType(MediaType.valueOf("image/svg+xml"))
-            .body(svg.getBytes(StandardCharsets.UTF_8));
+        return ResponseEntity.ok().contentType(MediaType.valueOf("image/svg+xml")).body(svg.getBytes(StandardCharsets.UTF_8));
     }
 
 }

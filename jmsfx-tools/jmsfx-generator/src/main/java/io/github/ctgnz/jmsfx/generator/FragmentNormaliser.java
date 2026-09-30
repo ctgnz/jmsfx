@@ -61,9 +61,9 @@ public class FragmentNormaliser {
      * The test is deliberately conservative: an SVG element name followed by digits, and nothing else. A name like {@code mod2_1_} or {@code varW1} does not match, because
      * {@code mod} and {@code var} are not element names.
      */
-    private static final Pattern GENERATED_ID = Pattern.compile("^(?:(?:svg|g|path|line|polyline|polygon|rect|circle|ellipse|text|tspan|use|defs|image|marker|stop"
-                                                                + "|linearGradient|radialGradient|clipPath|mask|pattern|filter|symbol|title|desc|namedview|flowRoot|flowPara)"
-                                                                + "[-_]?\\d+(?:[-_]\\d+)*_?|XMLID_\\d+_|_x3C_.*_x3E_.*)$");
+    private static final Pattern GENERATED_ID = Pattern
+        .compile("^(?:(?:svg|g|path|line|polyline|polygon|rect|circle|ellipse|text|tspan|use|defs|image|marker|stop"
+                 + "|linearGradient|radialGradient|clipPath|mask|pattern|filter|symbol|title|desc|namedview|flowRoot|flowPara)" + "[-_]?\\d+(?:[-_]\\d+)*_?|XMLID_\\d+_|_x3C_.*_x3E_.*)$");
 
     private static final String ID_ATTRIBUTE = "id";
 
@@ -80,8 +80,8 @@ public class FragmentNormaliser {
     private static final Set<String> COORDINATE_ATTRIBUTES = Set.of("d", "points");
 
     /** Attributes whose values are numbers, and so are worth writing at their shortest faithful length. */
-    private static final Set<String> NUMERIC_ATTRIBUTES = Set.of("d", "points", "x", "y", "x1", "y1", "x2", "y2", "cx", "cy", "r", "rx", "ry", "width", "height", "viewBox",
-        "transform", "stroke-width", "stroke-dasharray", "stroke-dashoffset", "stroke-miterlimit", "font-size", "offset", "opacity", "fill-opacity", "stroke-opacity", "style");
+    private static final Set<String> NUMERIC_ATTRIBUTES = Set.of("d", "points", "x", "y", "x1", "y1", "x2", "y2", "cx", "cy", "r", "rx", "ry", "width", "height", "viewBox", "transform",
+        "stroke-width", "stroke-dasharray", "stroke-dashoffset", "stroke-miterlimit", "font-size", "offset", "opacity", "fill-opacity", "stroke-opacity", "style");
 
     /**
      * Only a number carrying a decimal point is a candidate, which is what keeps this away from everything else a value can hold.
@@ -160,13 +160,10 @@ public class FragmentNormaliser {
         if (check && !dirty.isEmpty()) {
             // Thrown rather than exited, because this runs in Maven's own JVM under exec:java -
             // System.exit would take the build down without a message worth reading.
-            throw new IllegalStateException(String.format(
-                "%d SVG fragment%s %s not normalised: %s%s%nRun the normaliser with --apply to bring %s into line:"
+            throw new IllegalStateException(String.format("%d SVG fragment%s %s not normalised: %s%s%nRun the normaliser with --apply to bring %s into line:"
                                                           + "%n    mvn -q -pl jmsfx-generator exec:java -Dexec.mainClass=%s -Dexec.args=--apply%n",
-                dirty.size(), dirty.size() == 1 ? "" : "s", dirty.size() == 1 ? "is" : "are",
-                String.join(", ", dirty.subList(0, Math.min(5, dirty.size()))),
-                dirty.size() > 5 ? String.format(" (and %d more)", dirty.size() - 5) : "",
-                dirty.size() == 1 ? "it" : "them", FragmentNormaliser.class.getName()));
+                dirty.size(), dirty.size() == 1 ? "" : "s", dirty.size() == 1 ? "is" : "are", String.join(", ", dirty.subList(0, Math.min(5, dirty.size()))),
+                dirty.size() > 5 ? String.format(" (and %d more)", dirty.size() - 5) : "", dirty.size() == 1 ? "it" : "them", FragmentNormaliser.class.getName()));
         }
     }
 
@@ -193,9 +190,7 @@ public class FragmentNormaliser {
         int unchanged = 0;
 
         for (Path file : index(root)) {
-            String name = root.relativize(file)
-                .toString()
-                .replace('\\', '/');
+            String name = root.relativize(file).toString().replace('\\', '/');
             byte[] original;
             Document document;
             try {
@@ -280,17 +275,14 @@ public class FragmentNormaliser {
             if (SvgFingerprint.isEditorNamespaceDeclaration(attribute)) {
                 doomed.add(attribute);
                 tally.count("editor namespace decls");
-            } else if (attribute.getNodeName()
-                .startsWith("xmlns")) {
+            } else if (attribute.getNodeName().startsWith("xmlns")) {
                 // Every other declaration stays. SVG's own is what makes the file SVG, and xlink's is what
                 // makes an href resolve.
                 continue;
             } else if (SvgFingerprint.isEditorMetadata(attribute)) {
                 doomed.add(attribute);
                 tally.count("editor attributes");
-            } else if (ID_ATTRIBUTE.equals(attribute.getLocalName()) && !referenced.contains(attribute.getValue())
-                       && GENERATED_ID.matcher(attribute.getValue())
-                           .matches()) {
+            } else if (ID_ATTRIBUTE.equals(attribute.getLocalName()) && !referenced.contains(attribute.getValue()) && GENERATED_ID.matcher(attribute.getValue()).matches()) {
                 doomed.add(attribute);
                 tally.count("generated ids");
             } else {
@@ -309,8 +301,7 @@ public class FragmentNormaliser {
             } else if (SvgFingerprint.isEmptyDefs(child)) {
                 remove.add(child);
                 tally.count("empty <defs>");
-            } else if (child.getNodeType() == Node.TEXT_NODE && child.getNodeValue()
-                .isBlank()) {
+            } else if (child.getNodeType() == Node.TEXT_NODE && child.getNodeValue().isBlank()) {
                 // The existing indentation, which would otherwise be indented again on output.
                 remove.add(child);
             } else {
@@ -327,16 +318,14 @@ public class FragmentNormaliser {
         String value = original;
 
         if (COORDINATE_ATTRIBUTES.contains(name)) {
-            value = value.trim()
-                .replaceAll("\\s+", " ");
+            value = value.trim().replaceAll("\\s+", " ");
             if (!value.equals(original)) {
                 tally.count("coordinate whitespace");
             }
         }
         if (NUMERIC_ATTRIBUTES.contains(name)) {
             String spaced = value;
-            value = DECIMAL.matcher(value)
-                .replaceAll(match -> Matcher.quoteReplacement(shorten(match.group())));
+            value = DECIMAL.matcher(value).replaceAll(match -> Matcher.quoteReplacement(shorten(match.group())));
             if (!value.equals(spaced)) {
                 tally.count("number precision");
             }
@@ -372,8 +361,7 @@ public class FragmentNormaliser {
         for (int places = 0; places <= 9; places++) {
             String candidate = String.format(Locale.ROOT, "%." + places + "f", value);
             if (Math.abs(Double.parseDouble(candidate) - value) <= TOLERANCE) {
-                return candidate.contains(".") ? candidate.replaceAll("0+$", "")
-                    .replaceAll("\\.$", "") : candidate;
+                return candidate.contains(".") ? candidate.replaceAll("0+$", "").replaceAll("\\.$", "") : candidate;
             }
         }
         return token;
@@ -392,8 +380,7 @@ public class FragmentNormaliser {
         }
         NamedNodeMap attributes = node.getAttributes();
         for (int i = 0; i < attributes.getLength(); i++) {
-            Matcher matcher = REFERENCE.matcher(((Attr) attributes.item(i)).getValue()
-                .trim());
+            Matcher matcher = REFERENCE.matcher(((Attr) attributes.item(i)).getValue().trim());
             while (matcher.find()) {
                 referenced.add(matcher.group(1) != null ? matcher.group(1) : matcher.group(2));
             }
@@ -419,18 +406,11 @@ public class FragmentNormaliser {
         out.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
         DocumentType doctype = document.getDoctype();
         if (doctype != null) {
-            out.append("<!DOCTYPE ")
-                .append(doctype.getName());
+            out.append("<!DOCTYPE ").append(doctype.getName());
             if (doctype.getPublicId() != null) {
-                out.append(" PUBLIC \"")
-                    .append(doctype.getPublicId())
-                    .append("\" \"")
-                    .append(doctype.getSystemId())
-                    .append('"');
+                out.append(" PUBLIC \"").append(doctype.getPublicId()).append("\" \"").append(doctype.getSystemId()).append('"');
             } else if (doctype.getSystemId() != null) {
-                out.append(" SYSTEM \"")
-                    .append(doctype.getSystemId())
-                    .append('"');
+                out.append(" SYSTEM \"").append(doctype.getSystemId()).append('"');
             }
             out.append(">\n");
         }
@@ -440,9 +420,7 @@ public class FragmentNormaliser {
         for (int i = 0; i < top.getLength(); i++) {
             Node node = top.item(i);
             if (node.getNodeType() == Node.COMMENT_NODE) {
-                out.append("<!--")
-                    .append(node.getNodeValue())
-                    .append("-->\n");
+                out.append("<!--").append(node.getNodeValue()).append("-->\n");
             }
         }
         write(document.getDocumentElement(), 0, out);
@@ -452,16 +430,11 @@ public class FragmentNormaliser {
 
     private void write(Element element, int depth, StringBuilder out) {
         indent(depth, out);
-        out.append('<')
-            .append(element.getNodeName());
+        out.append('<').append(element.getNodeName());
         NamedNodeMap attributes = element.getAttributes();
         for (int i = 0; i < attributes.getLength(); i++) {
             Attr attribute = (Attr) attributes.item(i);
-            out.append(' ')
-                .append(attribute.getNodeName())
-                .append("=\"")
-                .append(escape(attribute.getValue(), true))
-                .append('"');
+            out.append(' ').append(attribute.getNodeName()).append("=\"").append(escape(attribute.getValue(), true)).append('"');
         }
         List<Node> children = childrenOf(element);
         if (children.isEmpty()) {
@@ -476,9 +449,7 @@ public class FragmentNormaliser {
                 out.append('\n');
                 if (child.getNodeType() == Node.COMMENT_NODE) {
                     indent(depth + 1, out);
-                    out.append("<!--")
-                        .append(child.getNodeValue())
-                        .append("-->");
+                    out.append("<!--").append(child.getNodeValue()).append("-->");
                 } else {
                     write((Element) child, depth + 1, out);
                 }
@@ -486,29 +457,20 @@ public class FragmentNormaliser {
             out.append('\n');
             indent(depth, out);
         }
-        out.append("</")
-            .append(element.getNodeName())
-            .append('>');
+        out.append("</").append(element.getNodeName()).append('>');
     }
 
     private void writeInline(Node node, StringBuilder out) {
         switch (node.getNodeType()) {
             case Node.TEXT_NODE, Node.CDATA_SECTION_NODE -> out.append(escape(node.getNodeValue(), false));
-            case Node.COMMENT_NODE -> out.append("<!--")
-                .append(node.getNodeValue())
-                .append("-->");
+            case Node.COMMENT_NODE -> out.append("<!--").append(node.getNodeValue()).append("-->");
             case Node.ELEMENT_NODE -> {
                 Element element = (Element) node;
-                out.append('<')
-                    .append(element.getNodeName());
+                out.append('<').append(element.getNodeName());
                 NamedNodeMap attributes = element.getAttributes();
                 for (int i = 0; i < attributes.getLength(); i++) {
                     Attr attribute = (Attr) attributes.item(i);
-                    out.append(' ')
-                        .append(attribute.getNodeName())
-                        .append("=\"")
-                        .append(escape(attribute.getValue(), true))
-                        .append('"');
+                    out.append(' ').append(attribute.getNodeName()).append("=\"").append(escape(attribute.getValue(), true)).append('"');
                 }
                 List<Node> children = childrenOf(element);
                 if (children.isEmpty()) {
@@ -516,9 +478,7 @@ public class FragmentNormaliser {
                 } else {
                     out.append('>');
                     children.forEach(child -> writeInline(child, out));
-                    out.append("</")
-                        .append(element.getNodeName())
-                        .append('>');
+                    out.append("</").append(element.getNodeName()).append('>');
                 }
             }
             default -> {
@@ -534,8 +494,7 @@ public class FragmentNormaliser {
         for (int i = 0; i < nodes.getLength(); i++) {
             Node node = nodes.item(i);
             if (node.getNodeType() == Node.ELEMENT_NODE || node.getNodeType() == Node.COMMENT_NODE
-                || ((node.getNodeType() == Node.TEXT_NODE || node.getNodeType() == Node.CDATA_SECTION_NODE) && !node.getNodeValue()
-                    .isBlank())) {
+                || ((node.getNodeType() == Node.TEXT_NODE || node.getNodeType() == Node.CDATA_SECTION_NODE) && !node.getNodeValue().isBlank())) {
                 children.add(node);
             }
         }
@@ -543,8 +502,7 @@ public class FragmentNormaliser {
     }
 
     private boolean holdsText(List<Node> children) {
-        return children.stream()
-            .anyMatch(child -> child.getNodeType() == Node.TEXT_NODE || child.getNodeType() == Node.CDATA_SECTION_NODE);
+        return children.stream().anyMatch(child -> child.getNodeType() == Node.TEXT_NODE || child.getNodeType() == Node.CDATA_SECTION_NODE);
     }
 
     private void indent(int depth, StringBuilder out) {
@@ -572,12 +530,7 @@ public class FragmentNormaliser {
 
     private List<Path> index(Path root) throws Exception {
         try (Stream<Path> tree = Files.walk(root)) {
-            return tree.filter(Files::isRegularFile)
-                .filter(path -> path.getFileName()
-                    .toString()
-                    .endsWith(".svg"))
-                .sorted()
-                .toList();
+            return tree.filter(Files::isRegularFile).filter(path -> path.getFileName().toString().endsWith(".svg")).sorted().toList();
         }
     }
 
@@ -595,8 +548,7 @@ public class FragmentNormaliser {
             if (config.getModelDir() == null) {
                 throw new IllegalStateException(configFile + " has no resourceDir, so its fragments cannot be found");
             }
-            return config.getModelDir()
-                .resolve("svg");
+            return config.getModelDir().resolve("svg");
         }
     }
 

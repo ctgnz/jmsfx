@@ -54,8 +54,7 @@ public enum LandInstallationAmplifierGuide implements AmplifierGuide {
 
     @Override
     public double getHeight() {
-        return shape.getLayoutBounds()
-            .getHeight();
+        return shape.getLayoutBounds().getHeight();
     }
 
     public double[] getPoints() {
@@ -72,20 +71,17 @@ public enum LandInstallationAmplifierGuide implements AmplifierGuide {
 
     @Override
     public double getWidth() {
-        return shape.getLayoutBounds()
-            .getWidth();
+        return shape.getLayoutBounds().getWidth();
     }
 
     @Override
     public double getX() {
-        return shape.getLayoutBounds()
-            .getMinX();
+        return shape.getLayoutBounds().getMinX();
     }
 
     @Override
     public double getY() {
-        return shape.getLayoutBounds()
-            .getMinY();
+        return shape.getLayoutBounds().getMinY();
     }
 
     private Shape createShape() {

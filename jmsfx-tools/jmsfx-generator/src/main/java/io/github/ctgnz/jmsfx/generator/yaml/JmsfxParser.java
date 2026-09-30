@@ -32,8 +32,7 @@ public class JmsfxParser {
     }
 
     public LibraryModel readLibraryModel(InputStream input) throws IOException {
-        return mapper.reader()
-            .readValue(input, LibraryModel.class);
+        return mapper.reader().readValue(input, LibraryModel.class);
     }
 
     public String writeLibraryModel(LibraryModel library) throws JsonProcessingException {

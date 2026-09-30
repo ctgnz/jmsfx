@@ -90,13 +90,11 @@ public class AmplifierListModel extends AbstractModel {
     @Override
     @JsonIgnore
     public boolean isExtension() {
-        return values.stream()
-            .anyMatch(AmplifierListItemModel::isExtension);
+        return values.stream().anyMatch(AmplifierListItemModel::isExtension);
     }
 
     public boolean isFor(String symbolSetId) {
-        return symbolSets.stream()
-            .anyMatch(id -> id.equals(symbolSetId));
+        return symbolSets.stream().anyMatch(id -> id.equals(symbolSetId));
     }
 
     public boolean isFrameAmplifier() {
@@ -137,8 +135,7 @@ public class AmplifierListModel extends AbstractModel {
         this.enumId = config.enumId;
         this.enumDesc = config.enumDesc;
         if (config.symbolSets != null) {
-            Arrays.stream(config.symbolSets)
-                .forEach(symbolSets::add);
+            Arrays.stream(config.symbolSets).forEach(symbolSets::add);
         }
     }
 
