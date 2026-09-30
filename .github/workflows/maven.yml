@@ -19,6 +19,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v7
+
+    # Windows and macOS resolve paths case-insensitively, so two index entries differing only by
+    # case address the same file and nothing fails locally - no build error, no test failure, and
+    # `git status` clean, because the second path stats successfully and its content matches. That
+    # is how jmsfx#136's rename put 228 HQTFFD fragments into the index twice, as HQTFFD and
+    # Hqtffd, and only a stricter client noticed (jmsfx#150). This runner is case-sensitive, which
+    # makes it the cheapest place to catch it.
+    - name: No two paths differing only by case
+      run: |
+        git ls-files > tracked.txt
+        tr '[:upper:]' '[:lower:]' < tracked.txt | sort | uniq -d > collisions.txt
+        if [ -s collisions.txt ]; then
+          echo "::error::the index holds paths differing only by case, which cannot both exist on a case-insensitive filesystem"
+          while IFS= read -r lower; do
+            awk -v want="$lower" 'tolower($0) == want { print "  " $0 }' tracked.txt
+          done < collisions.txt
+          rm -f tracked.txt collisions.txt
+          exit 1
+        fi
+        echo "no case-only duplicates among $(wc -l < tracked.txt) tracked paths"
+        rm -f tracked.txt collisions.txt
+
     - name: Set up JDK 25
       uses: actions/setup-java@v5
       with:
