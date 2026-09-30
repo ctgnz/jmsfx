@@ -13,9 +13,15 @@
 #
 #     grep -rn "<version>" --include=pom.xml . | grep -v target | grep SNAPSHOT
 #
-# jmsfx isn't published to Maven Central yet (unlike foxglove) - this only builds jars and attaches them to a
-# GitHub Release. Once Central Portal publishing is set up here too, add a deploy step matching foxglove's
-# release.yml (central-publishing-maven-plugin, GPG signing, the release profile).
+# A tag stages a deployment on the Maven Central Portal and creates a GitHub Release. autoPublish is false in
+# the pom, so the Portal holds the staging until someone publishes it deliberately - a bad one is dropped
+# rather than superseded. 2.0.0 is the first jmsfx release to reach Central; 1.5.0 and earlier only ever
+# produced GitHub Release artifacts.
+#
+# The four secrets this needs are GPG_PRIVATE_KEY (the armoured secret key, not the public one, and not
+# base64-of-binary), GPG_PASSPHRASE, and the Portal user token as CENTRAL_USERNAME and CENTRAL_PASSWORD. The
+# 2.0.0 tag failed its first run with "gpg: no default secret key" because the workflow was copied from
+# foxglove and the secrets were never created here.
 
 name: Release
 
@@ -110,7 +116,15 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         allowUpdates: true
-        artifacts: "jmsfx-core/target/*.jar,library/jmsfx-standard/target/*.jar"
+        # Named rather than globbed. This step runs after the publish, so -Prelease has already
+        # built sources, javadoc and jmsfx-core's test jar into the same directories - and those
+        # belong on Central, where a build resolves them, not attached here as well. All four
+        # libraries, because all four publish.
+        artifacts: >-
+          jmsfx-core/target/jmsfx-core-${{ github.ref_name }}.jar,
+          library/jmsfx-standard/target/jmsfx-standard-${{ github.ref_name }}.jar,
+          library/jmsfx-historical/target/jmsfx-historical-${{ github.ref_name }}.jar,
+          library/jmsfx-battleorder/target/jmsfx-battleorder-${{ github.ref_name }}.jar
         token: ${{ secrets.GITHUB_TOKEN }}
 
   # jpackage bundles a Java runtime with the application, and can only produce a
@@ -124,12 +138,14 @@ jobs:
       # One combination failing should not deny the others their artifacts.
       fail-fast: false
       # A genuine cross product: every library on every platform, which is what jmsfx#112 means by
-      # one build product per library. Two libraries by three platforms is six jobs today, and
-      # jmsfx-battleorder makes it nine once jmsfx#81 can generate it - one word on the line below.
+      # one build product per library. Three libraries by three platforms, nine jobs. jmsfx-battleorder
+      # joined at 2.0.0: it was held out while it could not draw, and the jmsfx#82 epic settled how a
+      # library gets its fragments, so it now renders through the tree it extends (jmsfx#133).
       matrix:
         library:
           - standard
           - historical
+          - battleorder
         target:
           - os: windows-latest
             platform: windows
