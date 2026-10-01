@@ -12,8 +12,8 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
-import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
-import io.github.ctgnz.jmsfx.generator.yaml.YamlForceQuote;
+import io.github.ctgnz.yamlflock.YamlFlowStyle;
+import io.github.ctgnz.yamlflock.YamlForceQuote;
 
 @JsonIgnoreProperties({
     "id", "label", "code", "extension", "deprecated", "remarks"

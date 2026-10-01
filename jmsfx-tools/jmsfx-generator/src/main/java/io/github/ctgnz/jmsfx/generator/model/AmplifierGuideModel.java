@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+import io.github.ctgnz.yamlflock.YamlFlowStyle;
 
 @YamlFlowStyle
 public class AmplifierGuideModel {

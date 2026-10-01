@@ -19,6 +19,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import io.github.ctgnz.jmsfx.generator.GeneratorConfig;
 import io.github.ctgnz.jmsfx.generator.model.LibraryModel;
+import io.github.ctgnz.yamlflock.FlockYamlFactory;
 
 public class JmsfxParser {
     private ObjectMapper mapper;
@@ -48,7 +49,7 @@ public class JmsfxParser {
         options.setLineBreak(LineBreak.WIN);
         LoaderOptions loaderOptions = new LoaderOptions();
         loaderOptions.setCodePointLimit(16 * 1024 * 1024);
-        YAMLFactory factory = new JmsfxYamlFactory(YAMLFactory.builder()
+        YAMLFactory factory = new FlockYamlFactory(YAMLFactory.builder()
             .enable(YAMLGenerator.Feature.MINIMIZE_QUOTES)
             .disable(YAMLGenerator.Feature.WRITE_DOC_START_MARKER)
             .loaderOptions(loaderOptions)

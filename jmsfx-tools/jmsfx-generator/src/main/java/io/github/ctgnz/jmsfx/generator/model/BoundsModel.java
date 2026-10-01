@@ -2,7 +2,7 @@ package io.github.ctgnz.jmsfx.generator.model;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-import io.github.ctgnz.jmsfx.generator.yaml.YamlFlowStyle;
+import io.github.ctgnz.yamlflock.YamlFlowStyle;
 
 /**
  * A measured rectangle on the shared 612 x 792 canvas, as written back into the model by {@code FragmentMeasurer}.
