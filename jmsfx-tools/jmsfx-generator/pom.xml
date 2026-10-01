@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <lombok.version>1.18.6</lombok.version>
         <jackson.version>2.22.2</jackson.version>
-        <yaml.flock.version>1.0.0-SNAPSHOT</yaml.flock.version>
+        <yaml.flock.version>1.0.0</yaml.flock.version>
     </properties>
     
 
@@ -55,7 +55,7 @@
             <version>${jackson.version}</version>
         </dependency>
         <!-- The mixed flow/block YAML emitter that writes the model files, extracted out of this
-             module (#155). Still a snapshot: switch to 1.0.0 from Central once that is published. -->
+             module (#155), now resolved from Maven Central. -->
         <dependency>
             <groupId>io.github.ctgnz</groupId>
             <artifactId>yaml-flock</artifactId>
