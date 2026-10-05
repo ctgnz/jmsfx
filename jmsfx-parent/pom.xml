@@ -32,6 +32,14 @@
 
 
 	<properties>
+	    <!--
+	        The repository root, from each project's own directory: one level up for the projects
+	        directly below it, which inherit this; two levels up for those below a group or in library/,
+	        which override it; the root itself overrides it too. Not ${maven.multiModuleProjectDirectory}:
+	        the mvn launcher sets that, and Eclipse's m2e, which runs Maven without it, leaves it
+	        unresolved - so Spotless, and the library profiles, failed in the IDE.
+	    -->
+	    <jmsfx.root>${project.basedir}/..</jmsfx.root>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Declared once here: jmsfx-core and jmsfx-standard both depend on foxglove and must agree. -->
         <foxglove.version>0.12.0</foxglove.version>
@@ -101,21 +109,21 @@
             <id>standard</id>
             <properties>
                 <jmsfx.library>standard</jmsfx.library>
-                <jmsfx.library.dir>${maven.multiModuleProjectDirectory}/library/jmsfx-standard/src/main/model</jmsfx.library.dir>
+                <jmsfx.library.dir>${jmsfx.root}/library/jmsfx-standard/src/main/model</jmsfx.library.dir>
             </properties>
         </profile>
         <profile>
             <id>historical</id>
             <properties>
                 <jmsfx.library>historical</jmsfx.library>
-                <jmsfx.library.dir>${maven.multiModuleProjectDirectory}/library/jmsfx-historical/src/main/model</jmsfx.library.dir>
+                <jmsfx.library.dir>${jmsfx.root}/library/jmsfx-historical/src/main/model</jmsfx.library.dir>
             </properties>
         </profile>
         <profile>
             <id>battleorder</id>
             <properties>
                 <jmsfx.library>battleorder</jmsfx.library>
-                <jmsfx.library.dir>${maven.multiModuleProjectDirectory}/library/jmsfx-battleorder/src/main/model</jmsfx.library.dir>
+                <jmsfx.library.dir>${jmsfx.root}/library/jmsfx-battleorder/src/main/model</jmsfx.library.dir>
             </properties>
         </profile>
         <profile>
@@ -374,11 +382,11 @@
                 <configuration>
                     <java>
                         <importOrder>
-                            <file>${maven.multiModuleProjectDirectory}/config/eclipse.importorder</file>
+                            <file>${jmsfx.root}/config/eclipse.importorder</file>
                         </importOrder>
                         <removeUnusedImports/>
                         <eclipse>
-                            <file>${maven.multiModuleProjectDirectory}/config/eclipse-formatter.xml</file>
+                            <file>${jmsfx.root}/config/eclipse-formatter.xml</file>
                         </eclipse>
                         <trimTrailingWhitespace/>
                     </java>

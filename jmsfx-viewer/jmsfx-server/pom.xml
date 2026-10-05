@@ -11,6 +11,8 @@
     </parent>
 
     <properties>
+        <!-- Two levels below the repository root (see jmsfx-parent). -->
+        <jmsfx.root>${project.basedir}/../..</jmsfx.root>
         <spring.boot.version>4.1.1</spring.boot.version>
     </properties>
 	

@@ -14,6 +14,11 @@
 		<relativePath>jmsfx-parent/pom.xml</relativePath>
 	</parent>
 
+	<properties>
+	    <!-- The repository root is this project's own directory (see jmsfx-parent). -->
+	    <jmsfx.root>${project.basedir}</jmsfx.root>
+	</properties>
+
 	<!--
 		An aggregator, and almost nothing else. Everything that configures a build moved to
 		jmsfx-parent, which carries no modules - so the shared configuration can be versioned and
