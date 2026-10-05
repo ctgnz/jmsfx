@@ -22,13 +22,13 @@
                     <div class="d-flex align-items-center flex-wrap gap-2 my-4" th:if="${downloads.versioned()}">
                         <a class="btn btn-primary" th:each="bundle : ${downloads.bundles()}" th:href="${bundle.url()}"
                            th:title="${bundle.filename()}" th:text="${bundle.system()}">Windows</a>
-                        <a class="btn btn-outline-primary" href="https://github.com/ctgnz/jmsfx">Source code</a>
+                        <a class="btn btn-outline-primary" href="https://github.com/ctggames/jmsfx">Source code</a>
                     </div>
                     <!-- No manifest to read a version from, which means running from exploded classes rather
                          than a jar - so there is no bundle to name and the releases page is the honest answer. -->
                     <div class="d-flex align-items-center flex-wrap gap-2 my-4" th:unless="${downloads.versioned()}">
                         <a class="btn btn-primary" th:href="${downloads.releasesUrl()} + '/latest'">Downloads on GitHub</a>
-                        <a class="btn btn-outline-primary" href="https://github.com/ctgnz/jmsfx">Source code</a>
+                        <a class="btn btn-outline-primary" href="https://github.com/ctggames/jmsfx">Source code</a>
                     </div>
 
                     <p class="text-body-secondary small" th:if="${downloads.versioned()}">
@@ -97,7 +97,7 @@
                     <p>
                         It is also <strong>untested</strong>. Nobody working on JMSFX has a Mac, so while the build is produced and checked
                         automatically, no one has watched it run. If you try it, an
-                        <a href="https://github.com/ctgnz/jmsfx/issues">issue</a> saying whether it worked would be genuinely useful.
+                        <a href="https://github.com/ctggames/jmsfx/issues">issue</a> saying whether it worked would be genuinely useful.
                     </p>
                 </div>
             </div>

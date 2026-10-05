@@ -25,9 +25,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/ctgnz/jmsfx.git</connection>
+        <connection>scm:git:git://github.com/ctggames/jmsfx.git</connection>
         <developerConnection>scm:git:ssh://github.com:ctgnz/jmsfx.git</developerConnection>
-        <url>http://github.com/ctgnz/jmsfx/tree/master</url>
+        <url>http://github.com/ctggames/jmsfx/tree/master</url>
     </scm>
 
 

@@ -1,6 +1,6 @@
 [Unit]
 Description=JMSFX Icon Generator
-Documentation=https://github.com/ctgnz/jmsfx
+Documentation=https://github.com/ctggames/jmsfx
 After=network-online.target
 Wants=network-online.target
 

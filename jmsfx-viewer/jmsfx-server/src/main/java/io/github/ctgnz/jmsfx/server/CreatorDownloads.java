@@ -24,7 +24,7 @@ import io.github.ctgnz.jmsfx.IconLibrary;
  */
 public record CreatorDownloads(String library, String version, List<Bundle> bundles) {
 
-    private static final String RELEASES = "https://github.com/ctgnz/jmsfx/releases";
+    private static final String RELEASES = "https://github.com/ctggames/jmsfx/releases";
 
     /**
      * One platform's bundle.
