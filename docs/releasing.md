@@ -45,7 +45,7 @@ mvn versions:set -DnewVersion=X.Y.Z -DprocessAllModules=true -DgenerateBackupPom
 grep -rn SNAPSHOT --include=pom.xml . | grep -v target      # must be empty
 ```
 
-**`-DprocessAllModules=true` is not optional.** Since [#102](https://github.com/ctgnz/jmsfx/issues/102) no
+**`-DprocessAllModules=true` is not optional.** Since [#102](https://github.com/ctggames/jmsfx/issues/102) no
 module declares the root aggregator as its parent, so the default parent-chain walk bumps the aggregator
 alone and silently leaves the other eleven poms behind. This is what made `versions:set` look unreliable.
 
@@ -145,7 +145,7 @@ The public half must be discoverable on a keyserver — Central validates it.
 
 ### Conditional exclusions
 
-[#148](https://github.com/ctgnz/jmsfx/issues/148) proposes a CI javadoc run plus a greppable
+[#148](https://github.com/ctggames/jmsfx/issues/148) proposes a CI javadoc run plus a greppable
 `release-gate: <repo>#<issue>` convention, so a comment saying *remove this once X lands* becomes a build
 signal rather than something someone has to remember.
 

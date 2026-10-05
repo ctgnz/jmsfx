@@ -23,7 +23,7 @@ class CreatorDownloadsTest {
 
     @Test
     void linksToTheReleaseTheVersionNames() {
-        assertThat(CreatorDownloads.of("Historical", "2.1.0").bundles().getFirst().url(), is("https://github.com/ctgnz/jmsfx/releases/download/2.1.0/jmsfx-creator-2.1.0-historical-windows.zip"));
+        assertThat(CreatorDownloads.of("Historical", "2.1.0").bundles().getFirst().url(), is("https://github.com/ctggames/jmsfx/releases/download/2.1.0/jmsfx-creator-2.1.0-historical-windows.zip"));
     }
 
     /** The library name is capitalised on IconLibrary and lowercase in a filename, which is also how the Maven profile and the jar classifier spell it. */
@@ -39,7 +39,7 @@ class CreatorDownloadsTest {
 
         assertThat(downloads.versioned(), is(false));
         assertThat(downloads.bundles().getFirst().filename(), is(nullValue()));
-        assertThat(downloads.bundles().getFirst().url(), is("https://github.com/ctgnz/jmsfx/releases/latest"));
+        assertThat(downloads.bundles().getFirst().url(), is("https://github.com/ctggames/jmsfx/releases/latest"));
     }
 
     /**
@@ -50,7 +50,7 @@ class CreatorDownloadsTest {
         CreatorDownloads downloads = CreatorDownloads.of("Standard", "2.0.0-SNAPSHOT");
 
         assertThat(downloads.versioned(), is(false));
-        assertThat(downloads.bundles().getFirst().url(), is("https://github.com/ctgnz/jmsfx/releases/latest"));
+        assertThat(downloads.bundles().getFirst().url(), is("https://github.com/ctggames/jmsfx/releases/latest"));
     }
 
     @Test

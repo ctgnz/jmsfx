@@ -1,11 +1,11 @@
 # JMSFX - Joint Military Symbology on JavaFX
 
-[![Java CI with Maven](https://github.com/ctgnz/jmsfx/actions/workflows/maven.yml/badge.svg)](https://github.com/ctgnz/jmsfx/actions/workflows/maven.yml)
+[![Java CI with Maven](https://github.com/ctggames/jmsfx/actions/workflows/maven.yml/badge.svg)](https://github.com/ctggames/jmsfx/actions/workflows/maven.yml)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE.md)
 
 A JavaFX implementation of **NATO APP-6, Edition E (2023)** military symbology - the standard set of symbols used to represent units, equipment, installations and activities on a military map.
 
-Symbols are composed and rendered as ordinary `javafx.scene.Node`s, by way of [foxglove](https://github.com/ctgnz/foxglove), so they can be styled, transformed and embedded in a scene graph like any other JavaFX content. The same model also serialises back out to SVG.
+Symbols are composed and rendered as ordinary `javafx.scene.Node`s, by way of [foxglove](https://github.com/ctggames/foxglove), so they can be styled, transformed and embedded in a scene graph like any other JavaFX content. The same model also serialises back out to SVG.
 
 > **APP-6E, not MIL-STD-2525D.** The two are related and largely converged, but they are formally distinct documents and differ in detail. This project targets the NATO standard. Its data lineage comes from Esri's `joint-military-symbology-xml` (JMSML), which modelled MIL-STD-2525D specifically; that project is no longer maintained, and JMSFX now owns the schema and instance data going forward.
 
@@ -95,7 +95,7 @@ each library here verifies itself against:
 Requires **JDK 25** and Maven.
 
 ```sh
-git clone --recurse-submodules https://github.com/ctgnz/jmsfx.git
+git clone --recurse-submodules https://github.com/ctggames/jmsfx.git
 cd jmsfx
 mvn -Pstandard install
 ```
@@ -104,7 +104,7 @@ mvn -Pstandard install
 default - a build that names none is refused rather than producing an application with nothing to
 render with - so every `mvn` invocation here carries `-Pstandard` or `-Phistorical`.
 
-The `--recurse-submodules` matters: `jmsfx-server` takes its branding stylesheet from the [ctg-brand](https://github.com/ctgnz/ctg-brand) submodule, and Maven will quietly skip the missing directory rather than fail if it is absent.
+The `--recurse-submodules` matters: `jmsfx-server` takes its branding stylesheet from the [ctg-brand](https://github.com/ctggames/ctg-brand) submodule, and Maven will quietly skip the missing directory rather than fail if it is absent.
 
 To run the web application locally:
 

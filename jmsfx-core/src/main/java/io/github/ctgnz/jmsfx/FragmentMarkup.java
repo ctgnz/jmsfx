@@ -23,7 +23,7 @@ public final class FragmentMarkup {
      * <p>
      * Deliberately minimal, but it has to declare every prefix the fragments actually use. {@code xmlns:svg} is there because 547 fragments - every one of them a Control Measure,
      * injected since jmsfx#124 - write their elements as {@code svg:g} rather than {@code g}. Without the declaration those parse to nothing, and because the parser swallows the
-     * failure and hands back an empty graphic they would have drawn nothing quietly (ctgnz/foxglove#229). {@code svg} is the only prefix any fragment uses.
+     * failure and hands back an empty graphic they would have drawn nothing quietly (ctggames/foxglove#229). {@code svg} is the only prefix any fragment uses.
      * <p>
      * No {@code xmlns:xlink}, because no fragment in any library contains a {@code use} element or an {@code xlink:href} that would need one - which is also why none of them needs
      * a base URI to resolve against, and why injecting them is sound at all.
