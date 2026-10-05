@@ -12,6 +12,8 @@
     </parent>
 
     <properties>
+        <!-- Two levels below the repository root (see jmsfx-parent). -->
+        <jmsfx.root>${project.basedir}/../..</jmsfx.root>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <lombok.version>1.18.6</lombok.version>
         <jackson.version>2.22.2</jackson.version>

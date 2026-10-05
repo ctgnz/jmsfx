@@ -11,6 +11,11 @@
         <relativePath>../pom.xml</relativePath>        
     </parent>
 
+    <properties>
+        <!-- Two levels below the repository root (see jmsfx-parent). -->
+        <jmsfx.root>${project.basedir}/../..</jmsfx.root>
+    </properties>
+
     <dependencies>
         <!--
             Compiled against the interfaces only. The creator works through IconLibrary and names no
