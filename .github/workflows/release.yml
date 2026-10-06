@@ -25,6 +25,15 @@
 
 name: Release
 
+# Needed to create the GitHub Release. Since the move into the ctggames organisation the default
+# workflow token is read-only, so without this the publish succeeds and then the release call 403s -
+# which is how 2.0.1 reached Central with no GitHub Release or desktop bundles. Declared here rather
+# than widening the repository-wide setting: it grants the one workflow the one permission, and it
+# travels with the file. A re-run uses the workflow at the tagged commit, so this has to be in place
+# before a tag, not fixed afterwards (#163).
+permissions:
+  contents: write
+
 # Can also be run manually from the Actions tab, which builds the platform bundles
 # and leaves them as workflow artifacts without creating or touching a release. The
 # packaging job runs on three platforms, two of which cannot be tested locally here,
