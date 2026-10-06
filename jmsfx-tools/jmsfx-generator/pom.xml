@@ -16,7 +16,7 @@
         <jmsfx.root>${project.basedir}/../..</jmsfx.root>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <lombok.version>1.18.6</lombok.version>
-        <jackson.version>2.22.2</jackson.version>
+        <jackson.version>2.22.3</jackson.version>
         <yaml.flock.version>1.0.0</yaml.flock.version>
     </properties>
     
