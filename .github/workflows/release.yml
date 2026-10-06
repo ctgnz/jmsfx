@@ -25,6 +25,12 @@
 
 name: Release
 
+# A tag pushed by hand stages the deployment on the Portal for a person to publish. A tag pushed by the
+# release train publishes straight through, because the train has already had its approval
+# (ctggames/release-train#6). Every tag run, and every rehearsal, lists the files it published or would
+# publish as release-artifacts.txt, in the run summary and as a workflow artifact, so the train can
+# compare a release with its rehearsal.
+
 # Needed to create the GitHub Release. Since the move into the ctggames organisation the default
 # workflow token is read-only, so without this the publish succeeds and then the release call 403s -
 # which is how 2.0.1 reached Central with no GitHub Release or desktop bundles. Declared here rather
@@ -45,6 +51,15 @@ on:
     tags:
       - '*'
   workflow_dispatch:
+    inputs:
+      mode:
+        description: >-
+          "bundles" builds the platform bundles and keeps them as workflow artifacts, without creating or
+          touching a release. "rehearse" runs the release build - javadoc, sources and signing - and lists
+          what a release would publish, then stops: nothing reaches the Portal and no bundles are built.
+        type: choice
+        options: [bundles, rehearse]
+        default: bundles
 
 jobs:
   build:
@@ -100,23 +115,108 @@ jobs:
     # application with no library in it. The library named here is the one whose artifacts go to
     # Central, which is the standard APP-6E one.
     - name: Build
+      if: inputs.mode != 'rehearse'
       run: mvn -B --no-transfer-progress -DskipTests -Pstandard package
 
+    # Everything a release does except the two steps that cannot be undone. install rather than package,
+    # so the artifacts land in the local repository in the layout a real release stages them in, for the
+    # artifact list below. Tests skipped as in the publish, for the same reason as the build above.
+    - name: Rehearse the release build
+      if: github.event_name == 'workflow_dispatch' && inputs.mode == 'rehearse'
+      run: mvn -B --no-transfer-progress -DskipTests -Pstandard,release install
+      env:
+        MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+    # A tag pushed by the release train has already had its approval, so it publishes straight through and
+    # waits until Central reports it published. Any other tag stages a validated deployment for a person to
+    # publish in the Portal, as before. The train's bot account is named in the RELEASE_TRAIN_BOT
+    # organisation variable; while that is unset, every release stages.
+    - name: Decide how the release reaches Central
+      id: publish
+      if: github.ref_type == 'tag'
+      env:
+        TRAIN_BOT: ${{ vars.RELEASE_TRAIN_BOT }}
+      run: |
+        if [ "$GITHUB_EVENT_NAME" = push ] && [ -n "$TRAIN_BOT" ] && [ "$GITHUB_ACTOR" = "$TRAIN_BOT" ]; then
+          echo "Tag pushed by the release train ($GITHUB_ACTOR): publishing automatically."
+          echo "auto=true" >> "$GITHUB_OUTPUT"
+          echo "wait=PUBLISHED" >> "$GITHUB_OUTPUT"
+        else
+          echo "Staging a validated deployment, to be published in the Portal."
+          echo "auto=false" >> "$GITHUB_OUTPUT"
+          echo "wait=VALIDATED" >> "$GITHUB_OUTPUT"
+        fi
+
     # Tag only: a manual run carries a snapshot version, which the Portal will not take, and
-    # publishing is not what a rehearsal is for. autoPublish is false in the pom, so this stages
-    # a validated deployment and publishing to Central stays a deliberate click - a bad staging
-    # can be dropped rather than having to be superseded.
+    # publishing is not what a rehearsal is for. autoPublish is false by default, so a tag pushed by
+    # hand stages a validated deployment and publishing to Central stays a deliberate click - a bad
+    # staging can be dropped rather than having to be superseded. The release train's tags publish
+    # straight through (see "Decide how the release reaches Central").
     - name: Publish to the Maven Central Portal
       if: github.ref_type == 'tag'
       # Both profiles: -Prelease alone now fails the enforcer rule, which is the point of it. That
       # is exactly the trap jmsfx#112 describes - naming a profile deactivates an activeByDefault
       # one, so a defaulted library would have silently dropped out here and published an
       # application that starts and then answers 500 to everything.
-      run: mvn -B --no-transfer-progress -DskipTests -Pstandard,release deploy
+      run: >-
+        mvn -B --no-transfer-progress -DskipTests -Pstandard,release deploy
+        -Dcentral.autoPublish=${{ steps.publish.outputs.auto }}
+        -Dcentral.waitUntil=${{ steps.publish.outputs.wait }}
       env:
         MAVEN_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
         MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+    # The files a release publishes, or a rehearsal would publish, in repository layout without signatures
+    # or checksums: what the release train compares with its own rehearsal. A real release lists what the
+    # publishing plugin staged; a rehearsal lists what it installed locally. Either way the list holds only
+    # this repository's own modules, read from its poms, less any the poms' excludeArtifacts keep off
+    # Central: a local repository also holds other ctggames artifacts, from the cache or from a whole-train
+    # rehearsal, and a sibling library can share this version number. An empty list fails the step, so a
+    # change in either layout cannot pass unnoticed as "nothing to compare".
+    - name: List the release artifacts
+      if: github.ref_type == 'tag' || inputs.mode == 'rehearse'
+      run: |
+        VERSION=$(mvn -q -B help:evaluate -Dexpression=project.version -DforceStdout 2>/dev/null | tail -n1)
+        GROUP=$(mvn -q -B help:evaluate -Dexpression=project.groupId -DforceStdout 2>/dev/null | tail -n1 | tr . /)
+        STAGING=$(find . -type d -path '*/target/central-staging' | head -n1)
+        ROOT=${STAGING:-$HOME/.m2/repository}
+        MODULES=$(python3 - <<'PY'
+        import pathlib, xml.etree.ElementTree as ET
+        ns = {'m': 'http://maven.apache.org/POM/4.0.0'}
+        modules, excluded = set(), set()
+        for pom in pathlib.Path('.').rglob('pom.xml'):
+            if 'target' in pom.parts:
+                continue
+            root = ET.parse(pom).getroot()
+            modules.add(root.find('m:artifactId', ns).text)
+            excluded.update(e.text for e in root.iter('{%s}excludeArtifact' % ns['m']))
+        print('|'.join(sorted(modules - excluded)))
+        PY
+        )
+        echo "Listing $GROUP at $VERSION from $ROOT, for: $MODULES"
+        (cd "$ROOT" && find "$GROUP" -type f -path "*/$VERSION/*") \
+          | grep -E "^$GROUP/($MODULES)/$VERSION/" \
+          | grep -vE '\.(asc|md5|sha1|sha256|sha512)$|/maven-metadata[^/]*$|/_remote\.repositories$|\.lastUpdated$' \
+          | sort > release-artifacts.txt || true
+        if [ ! -s release-artifacts.txt ]; then
+          echo "::error::no artifacts found for $GROUP ($MODULES) at $VERSION under $ROOT"
+          exit 1
+        fi
+        cat release-artifacts.txt
+        {
+          echo "### Release artifacts: $VERSION"
+          echo '```'
+          cat release-artifacts.txt
+          echo '```'
+        } >> "$GITHUB_STEP_SUMMARY"
+
+    - name: Keep the artifact list
+      if: github.ref_type == 'tag' || inputs.mode == 'rehearse'
+      uses: actions/upload-artifact@v7
+      with:
+        name: release-artifacts
+        path: release-artifacts.txt
 
     # After the publish, so a failed deploy cannot leave a release announcing a version that
     # never reached Central - which is how foxglove's 0.9.5 went wrong.
@@ -143,6 +243,8 @@ jobs:
   package:
     name: Package (${{ matrix.library }}, ${{ matrix.target.platform }})
     needs: build
+    # A rehearsal proves the release build, not the bundles; "bundles" is the mode that builds them.
+    if: inputs.mode != 'rehearse'
     strategy:
       # One combination failing should not deny the others their artifacts.
       fail-fast: false
