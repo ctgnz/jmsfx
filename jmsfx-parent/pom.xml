@@ -66,6 +66,13 @@
         <jmsfx.standard.version>${project.version}</jmsfx.standard.version>
         <jmsfx.historical.version>${project.version}</jmsfx.historical.version>
         <jmsfx.battleorder.version>${project.version}</jmsfx.battleorder.version>
+        <!--
+            How a release reaches Central. These defaults stage a validated deployment and leave publishing
+            to a person in the Portal. The release workflow sets them to true and PUBLISHED only when the
+            release train pushed the tag, after its own approval (ctggames/release-train#6).
+        -->
+        <central.autoPublish>false</central.autoPublish>
+        <central.waitUntil>VALIDATED</central.waitUntil>
     </properties>
 
     <!--
@@ -232,7 +239,8 @@
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central</publishingServerId>
-                            <autoPublish>false</autoPublish>
+                            <autoPublish>${central.autoPublish}</autoPublish>
+                            <waitUntil>${central.waitUntil}</waitUntil>
                             <excludeArtifacts>
                                 <!--
                                     The aggregator stops being published at 2.0.0. It was the parent
