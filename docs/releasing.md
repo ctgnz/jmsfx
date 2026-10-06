@@ -135,10 +135,14 @@ CENTRAL_USERNAME    a Central Portal *user token*, not the Portal login
 CENTRAL_PASSWORD
 ```
 
-Pipe the export straight in so the key never reaches a shell history:
+Since the move to the ctggames organisation (2026-10-05) these are **organisation secrets**, shared with
+every repository in it, so jmsfx needs none of its own - and a repository secret of the same name would
+shadow the organisation's. Check with `gh secret list --repo ctggames/jmsfx`, which should list nothing.
+
+To replace one, pipe the export straight in so the key never reaches a shell history:
 
 ```bash
-gpg --armor --export-secret-keys <KEY_ID> | gh secret set GPG_PRIVATE_KEY --repo ctgnz/jmsfx
+gpg --armor --export-secret-keys <KEY_ID> | gh secret set GPG_PRIVATE_KEY --org ctggames --visibility all
 ```
 
 The public half must be discoverable on a keyserver — Central validates it.
