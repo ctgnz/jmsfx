@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.ctgnz</groupId>
 	<artifactId>jmsfx-parent</artifactId>
-	<version>2.0.2-SNAPSHOT</version>
+	<version>2.0.2</version>
 	<name>JMSFX Parent</name>
 	<description>Shared build configuration for every JMSFX module: the Java level, the encoding, the formatter and import order, and the release profile. Carries no modules, so it can be versioned independently of the tree it configures.</description>
 	<packaging>pom</packaging>
@@ -42,7 +42,7 @@
 	    <jmsfx.root>${project.basedir}/..</jmsfx.root>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Declared once here: jmsfx-core and jmsfx-standard both depend on foxglove and must agree. -->
-        <foxglove.version>0.12.0</foxglove.version>
+        <foxglove.version>0.13.0</foxglove.version>
         <!-- Likewise for JavaFX, which jmsfx-standard declares directly and jmsfx-server pins again for
              its linux natives. These have to match each other and what foxglove pulls transitively, or
              the classpath ends up carrying two JavaFX versions at once. Stay on an LTS line (11, 17,

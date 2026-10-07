@@ -65,7 +65,7 @@ rather than choose when two are on a classpath.
 <dependency>
     <groupId>io.github.ctgnz</groupId>
     <artifactId>jmsfx-core</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.2</version>
 </dependency>
 <dependency>
     <groupId>io.github.ctgnz</groupId>
@@ -84,7 +84,7 @@ each library here verifies itself against:
 <dependency>
     <groupId>io.github.ctgnz</groupId>
     <artifactId>jmsfx-core</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.2</version>
     <type>test-jar</type>
     <scope>test</scope>
 </dependency>
