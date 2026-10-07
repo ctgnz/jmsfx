@@ -54,6 +54,31 @@ deployed.
 
 ## Deploying
 
+A release is deployed by the **Deploy jmsfx-server** workflow (`.github/workflows/deploy-server.yml`):
+start it from the Actions tab with the tag and the library, or let the release train start it after
+jmsfx's release. It waits at the `production` environment for approval, then:
+
+1. builds the tag's server with that library's profile, refusing a jar without `brand.css`;
+2. checks the live site serves the same library (`/info/library`);
+3. uploads the jar beside the live one and compares `sha256sum` at both ends;
+4. keeps the live jar as `jmsfx-server.jar.prev`, installs the new one as `jmsfx:jmsfx`, and restarts
+   `jmsfx-server`;
+5. checks the installed jar's `sha256sum`, the service, `/info/library`, the five pages, `/css/brand.css`
+   and a composed symbol;
+6. if anything after the backup fails, puts `.prev` back and restarts.
+
+The `production` environment holds the instance's key as the secret `LIGHTSAIL_SSH_KEY`, and the
+variables `LIGHTSAIL_HOST` (`ubuntu@<static-ip>`), `LIGHTSAIL_KNOWN_HOSTS` (`ssh-keyscan <static-ip>`,
+checked against the box's own fingerprints) and `JMSFX_URL`.
+
+To roll back by hand to the jar before the last deploy:
+
+```sh
+ssh ubuntu@<static-ip> 'sudo cp -p /opt/jmsfx/jmsfx-server.jar.prev /opt/jmsfx/jmsfx-server.jar && sudo systemctl restart jmsfx-server'
+```
+
+### By hand
+
 From your workstation:
 
 ```sh

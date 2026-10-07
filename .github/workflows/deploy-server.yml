@@ -1,0 +1,170 @@
+# Deploys a released jmsfx-server to its Lightsail instance - the steps of
+# jmsfx-viewer/jmsfx-server/deploy/README.md, run from a tag and checked at every step.
+#
+# Started by hand from the Actions tab, or by the release train after jmsfx's release
+# (ctggames/release-train). Either way the job waits at the `production` environment for approval.
+#
+# The `production` environment holds:
+#   LIGHTSAIL_SSH_KEY       (secret)    the instance's private key
+#   LIGHTSAIL_HOST          (variable)  ubuntu@<static ip>
+#   LIGHTSAIL_KNOWN_HOSTS   (variable)  the instance's host keys, as ssh-keyscan prints them
+#   JMSFX_URL               (variable)  https://jmsfx.ctg.co.nz
+#
+# One instance per library (jmsfx#112): the library is named, never inferred, and checked against what
+# the live site reports at /info/library.
+name: Deploy jmsfx-server
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: The release tag to deploy, e.g. 2.0.2
+        required: true
+      library:
+        description: The library the instance serves
+        type: choice
+        options: [standard]
+        default: standard
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-jmsfx-server-${{ inputs.library }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy ${{ inputs.library }} ${{ inputs.tag }}
+    runs-on: ubuntu-24.04
+    environment: production
+    env:
+      TAG: ${{ inputs.tag }}
+      LIBRARY: ${{ inputs.library }}
+      HOST: ${{ vars.LIGHTSAIL_HOST }}
+      URL: ${{ vars.JMSFX_URL }}
+    steps:
+    - name: Check the tag is a release
+      run: |
+        if ! [[ "$TAG" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+          echo "::error::$TAG is not a release version"
+          exit 1
+        fi
+
+    - uses: actions/checkout@v7
+      with:
+        ref: refs/tags/${{ inputs.tag }}
+        submodules: recursive
+
+    - name: Set up JDK 25
+      uses: actions/setup-java@v5
+      with:
+        java-version: '25'
+        distribution: 'temurin'
+        cache: 'maven'
+
+    # verify, not package: spring-boot:repackage is bound to post-integration-test. The tag's tests ran
+    # before it was released, so they are not run again here.
+    - name: Build the ${{ inputs.library }} server
+      run: |
+        version=$(mvn -q -B help:evaluate -Dexpression=project.version -DforceStdout -pl :jmsfx-server 2>/dev/null | tail -n1)
+        if [ "$version" != "$TAG" ]; then
+          echo "::error::the tag $TAG builds version $version"
+          exit 1
+        fi
+        mvn -B --no-transfer-progress -P"$LIBRARY" -pl :jmsfx-server -am verify -DskipTests
+        jar="jmsfx-viewer/jmsfx-server/target/jmsfx-server-$version-$LIBRARY.jar"
+        # A missing submodule builds green and ships without the brand stylesheet.
+        python3 -c 'import sys, zipfile; names = zipfile.ZipFile(sys.argv[1]).namelist(); sys.exit(0 if any(n.endswith("css/brand.css") for n in names) else "brand.css is not in the jar")' "$jar"
+        cp "$jar" jmsfx-server.jar
+        sha256sum jmsfx-server.jar | cut -d' ' -f1 > jmsfx-server.jar.sha256
+        echo "Built $(basename "$jar"), $(du -h jmsfx-server.jar | cut -f1), sha256 $(cat jmsfx-server.jar.sha256)"
+
+    - name: Set up SSH
+      env:
+        SSH_KEY: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+        KNOWN_HOSTS: ${{ vars.LIGHTSAIL_KNOWN_HOSTS }}
+      run: |
+        if [ -z "$SSH_KEY" ] || [ -z "$KNOWN_HOSTS" ] || [ -z "$HOST" ] || [ -z "$URL" ]; then
+          echo "::error::the production environment needs LIGHTSAIL_SSH_KEY, LIGHTSAIL_KNOWN_HOSTS, LIGHTSAIL_HOST and JMSFX_URL"
+          exit 1
+        fi
+        install -d -m 700 ~/.ssh
+        printf '%s\n' "$SSH_KEY" > ~/.ssh/lightsail
+        chmod 600 ~/.ssh/lightsail
+        printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+        printf 'Host *\n  IdentityFile ~/.ssh/lightsail\n  StrictHostKeyChecking yes\n  BatchMode yes\n' > ~/.ssh/config
+
+    - name: Check the live site serves ${{ inputs.library }}
+      run: |
+        live=$(curl -fsS "$URL/info/library" | jq -r .name)
+        if [ "${live,,}" != "$LIBRARY" ]; then
+          echo "::error::$URL serves $live, not $LIBRARY"
+          exit 1
+        fi
+
+    # Uploaded beside the live jar and checked there, so a failed transfer never replaces it.
+    - name: Upload the jar
+      run: |
+        scp -q jmsfx-server.jar "$HOST:/tmp/jmsfx-server.jar.new"
+        remote=$(ssh "$HOST" "sha256sum /tmp/jmsfx-server.jar.new | cut -d' ' -f1")
+        if [ "$remote" != "$(cat jmsfx-server.jar.sha256)" ]; then
+          echo "::error::the uploaded jar's sha256 is $remote"
+          exit 1
+        fi
+
+    # From here on, a failure rolls back to the jar kept as .prev.
+    - name: Install and restart
+      id: install
+      run: |
+        ssh "$HOST" 'sudo cp -p /opt/jmsfx/jmsfx-server.jar /opt/jmsfx/jmsfx-server.jar.prev'
+        echo "backed_up=true" >> "$GITHUB_OUTPUT"
+        ssh "$HOST" 'set -e
+          sudo install -o jmsfx -g jmsfx -m 0644 /tmp/jmsfx-server.jar.new /opt/jmsfx/jmsfx-server.jar
+          rm -f /tmp/jmsfx-server.jar.new
+          sudo systemctl restart jmsfx-server'
+
+    # Startup takes a few seconds, during which Caddy answers 502.
+    - name: Check the live site
+      id: check
+      run: |
+        for i in $(seq 1 30); do
+          if curl -fsS -o /dev/null "$URL/info/library"; then break; fi
+          sleep 5
+        done
+        failed=0
+        check() { echo "$1: $2"; if [ "$2" != ok ]; then failed=1; fi; }
+        live=$(ssh "$HOST" "sha256sum /opt/jmsfx/jmsfx-server.jar | cut -d' ' -f1")
+        check "installed jar" "$([ "$live" = "$(cat jmsfx-server.jar.sha256)" ] && echo ok || echo "sha256 $live")"
+        check "jmsfx-server" "$([ "$(ssh "$HOST" systemctl is-active jmsfx-server)" = active ] && echo ok || echo 'not active')"
+        name=$(curl -fsS "$URL/info/library" | jq -r .name || true)
+        check "/info/library" "$([ "${name,,}" = "$LIBRARY" ] && echo ok || echo "reports '$name'")"
+        for path in / /generate /browse /download /symbology /css/brand.css; do
+          code=$(curl -s -o /dev/null -w '%{http_code}' "$URL$path")
+          check "$path" "$([ "$code" = 200 ] && echo ok || echo "HTTP $code")"
+        done
+        # A composed symbol: the frame and the icon, drawn as real geometry.
+        svg=$(curl -fsS "$URL/LandUnits/symbol/AIR_TRAFFIC_SERVICES_AIRFIELD_OPERATIONS" || true)
+        check "composed symbol" "$(grep -q 'id="frame"' <<< "$svg" && grep -q 'id="main"' <<< "$svg" && sed 's/.*id="main"//' <<< "$svg" | grep -Eq '<svg:(path|polygon|polyline|line|circle|ellipse|rect)' && echo ok || echo 'no frame, or no icon geometry')"
+        if [ "$failed" = 1 ]; then
+          echo "::error::$TAG is installed but the live site fails its checks"
+          exit 1
+        fi
+        echo "$URL is serving $LIBRARY $TAG" >> "$GITHUB_STEP_SUMMARY"
+
+    - name: Roll back to the previous jar
+      if: failure() && steps.install.outputs.backed_up == 'true'
+      run: |
+        ssh "$HOST" 'set -e
+          sudo cp -p /opt/jmsfx/jmsfx-server.jar.prev /opt/jmsfx/jmsfx-server.jar
+          sudo systemctl restart jmsfx-server'
+        for i in $(seq 1 30); do
+          if [ "$(curl -s -o /dev/null -w '%{http_code}' "$URL/info/library")" = 200 ]; then
+            echo "::warning::rolled back: $URL is serving the previous jar again"
+            echo "Rolled back: $URL is serving the previous jar again; $TAG failed its checks." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          sleep 5
+        done
+        echo "::error::rolled back, but $URL/info/library still does not answer - the site needs a person"
+        exit 1
